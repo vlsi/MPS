@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class float_boxing_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
-  public  float_boxing_SubtypingRule() {
+  public float_boxing_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode floatType) {

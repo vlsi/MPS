@@ -21,7 +21,7 @@ public class StaticMethodCall_Actions {
 
     /* package */SNode myNode;
 
-    public  StaticMethodCall_Actions_DELETE(SNode node) {
+    public StaticMethodCall_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
 

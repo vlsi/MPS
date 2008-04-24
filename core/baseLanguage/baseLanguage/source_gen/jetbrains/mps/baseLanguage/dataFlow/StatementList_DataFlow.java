@@ -16,7 +16,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class StatementList_DataFlow extends DataFlowBuilder {
 
-  public  StatementList_DataFlow() {
+  public StatementList_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

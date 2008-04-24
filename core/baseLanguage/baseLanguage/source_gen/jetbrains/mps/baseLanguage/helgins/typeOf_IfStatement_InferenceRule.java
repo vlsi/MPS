@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_IfStatement_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeOf_IfStatement_InferenceRule() {
+  public typeOf_IfStatement_InferenceRule() {
   }
 
   public void applyRule(final SNode ifStatement) {

@@ -22,7 +22,7 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 
 public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvider {
 
-  public  BaseMethodDeclaration_NameCellComponent(SNode node) {
+  public BaseMethodDeclaration_NameCellComponent(SNode node) {
     super(node);
   }
 
@@ -74,7 +74,7 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
 
   public static class BaseMethodDeclaration_name_postfixCellMenu extends AbstractCellMenuPart_PropertyPostfixHints {
 
-    public  BaseMethodDeclaration_name_postfixCellMenu() {
+    public BaseMethodDeclaration_name_postfixCellMenu() {
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {

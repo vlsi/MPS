@@ -402,7 +402,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
 
   public static class _RefNodeListHandler59 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler59(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler59(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -445,7 +445,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler63 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler63(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler63(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

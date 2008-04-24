@@ -13,7 +13,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 
 public class ThisExpression_classConcept_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  ThisExpression_classConcept_ReferentConstraint() {
+  public ThisExpression_classConcept_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

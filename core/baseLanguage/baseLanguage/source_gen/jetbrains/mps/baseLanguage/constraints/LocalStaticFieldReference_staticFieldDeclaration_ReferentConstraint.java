@@ -14,7 +14,7 @@ import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 
 public class LocalStaticFieldReference_staticFieldDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  LocalStaticFieldReference_staticFieldDeclaration_ReferentConstraint() {
+  public LocalStaticFieldReference_staticFieldDeclaration_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

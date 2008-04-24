@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_ContinueStatement_InferenceRule implements InferenceRule_Runtime {
 
-  public  check_ContinueStatement_InferenceRule() {
+  public check_ContinueStatement_InferenceRule() {
   }
 
   public void applyRule(final SNode nodeToCheck) {

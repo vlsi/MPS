@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class PropertyReference_property_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  PropertyReference_property_ReferentConstraint() {
+  public PropertyReference_property_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

@@ -59,7 +59,7 @@ public class PropertyReference_Editor extends DefaultNodeEditor {
 
   public static class _Inline24 extends AbstractCellProvider {
 
-    public  _Inline24() {
+    public _Inline24() {
       super();
     }
 

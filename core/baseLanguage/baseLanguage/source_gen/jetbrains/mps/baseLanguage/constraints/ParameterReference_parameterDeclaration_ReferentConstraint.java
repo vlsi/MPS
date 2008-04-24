@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class ParameterReference_parameterDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  ParameterReference_parameterDeclaration_ReferentConstraint() {
+  public ParameterReference_parameterDeclaration_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

@@ -451,7 +451,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
 
   public static class _RefNodeListHandler57 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler57(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler57(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -494,7 +494,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler58 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler58(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler58(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

@@ -159,7 +159,7 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
 
   public static class _Inline25 extends AbstractCellProvider {
 
-    public  _Inline25() {
+    public _Inline25() {
       super();
     }
 
@@ -212,7 +212,7 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler67 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler67(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler67(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

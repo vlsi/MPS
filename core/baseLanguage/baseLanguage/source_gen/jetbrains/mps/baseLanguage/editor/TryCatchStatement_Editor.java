@@ -228,7 +228,7 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
 
   public static class _RefNodeListHandler29 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler29(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler29(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

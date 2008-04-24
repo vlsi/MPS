@@ -38,14 +38,14 @@ public class MoveInitializerToConstructor_Intention extends BaseIntention implem
 
   public void execute(SNode node, EditorContext editorContext) {
     SNode classNode = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    // null
+    // 
     SNode assignmentStmt = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
     SNode assignmentExpr = SLinkOperations.setNewChild(assignmentStmt, "expression", "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
     SLinkOperations.setTarget(assignmentExpr, "rValue", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "initializer", true)), true);
     SNode fieldReference = SLinkOperations.setNewChild(assignmentExpr, "lValue", "jetbrains.mps.baseLanguage.structure.FieldReference");
     SLinkOperations.setTarget(fieldReference, "variableDeclaration", node, false);
     SLinkOperations.setNewChild(fieldReference, "instance", "jetbrains.mps.baseLanguage.structure.ThisExpression");
-    // null
+    // 
     {
       ICursor<SNode> _zCursor1 = CursorFactory.createCursor(SLinkOperations.getTargets(classNode, "constructor", true));
       try {
@@ -57,7 +57,7 @@ public class MoveInitializerToConstructor_Intention extends BaseIntention implem
         _zCursor1.release();
       }
     }
-    // null
+    // 
     SLinkOperations.deleteChild(node, "initializer");
   }
 

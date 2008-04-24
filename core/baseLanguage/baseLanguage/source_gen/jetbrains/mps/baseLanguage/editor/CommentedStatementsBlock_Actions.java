@@ -21,7 +21,7 @@ public class CommentedStatementsBlock_Actions {
 
     /* package */SNode myNode;
 
-    public  CommentedStatementsBlock_Actions_DELETE(SNode node) {
+    public CommentedStatementsBlock_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
 

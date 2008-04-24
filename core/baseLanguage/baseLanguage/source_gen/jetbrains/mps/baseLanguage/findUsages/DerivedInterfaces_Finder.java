@@ -40,7 +40,7 @@ public class DerivedInterfaces_Finder extends GeneratedFinder {
   protected void doFind(SNode node, IScope scope, List<SNode> _results, IAdaptiveProgressMonitor monitor) {
     List<SNode> derived = new ArrayList<SNode>();
     ListOperations.addElement(derived, node);
-    // null
+    // 
     int passed = 0;
     while(SequenceOperations.getSize(derived) != passed) {
       SNode passingNode = ListOperations.getElement(derived, passed);

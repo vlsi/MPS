@@ -13,7 +13,7 @@ import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 
 public class EnumConstantReference_enumConstantDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  EnumConstantReference_enumConstantDeclaration_ReferentConstraint() {
+  public EnumConstantReference_enumConstantDeclaration_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

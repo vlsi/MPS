@@ -404,7 +404,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
 
   public static class _RefNodeListHandler42 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler42(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler42(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -469,7 +469,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler47 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler47(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler47(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -512,7 +512,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler48 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler48(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler48(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

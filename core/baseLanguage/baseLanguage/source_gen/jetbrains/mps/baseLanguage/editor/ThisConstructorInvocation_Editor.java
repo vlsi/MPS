@@ -134,7 +134,7 @@ public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
 
   public static class _RefNodeListHandler41 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler41(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler41(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

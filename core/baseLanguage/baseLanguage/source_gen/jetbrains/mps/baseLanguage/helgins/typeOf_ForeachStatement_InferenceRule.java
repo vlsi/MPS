@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_ForeachStatement_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeOf_ForeachStatement_InferenceRule() {
+  public typeOf_ForeachStatement_InferenceRule() {
   }
 
   public void applyRule(final SNode foreachStatement) {

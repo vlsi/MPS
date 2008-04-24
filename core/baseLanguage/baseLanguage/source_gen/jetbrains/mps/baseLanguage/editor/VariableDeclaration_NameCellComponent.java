@@ -23,7 +23,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 
 public class VariableDeclaration_NameCellComponent extends AbstractCellProvider {
 
-  public  VariableDeclaration_NameCellComponent(SNode node) {
+  public VariableDeclaration_NameCellComponent(SNode node) {
     super(node);
   }
 
@@ -77,7 +77,7 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
 
   public static class VariableDeclaration_name_postfixCellMenu extends AbstractCellMenuPart_PropertyPostfixHints {
 
-    public  VariableDeclaration_name_postfixCellMenu() {
+    public VariableDeclaration_name_postfixCellMenu() {
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {

@@ -12,7 +12,7 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
 
   /* package */Pattern_10 myMatchingPattern;
 
-  public  ObjectArraySupertypes_SubtypingRule() {
+  public ObjectArraySupertypes_SubtypingRule() {
   }
 
   public List<SNode> getSubOrSuperTypes(SNode objectArrayType) {

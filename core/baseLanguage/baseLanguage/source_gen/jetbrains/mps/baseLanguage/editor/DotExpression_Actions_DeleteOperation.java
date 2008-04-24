@@ -19,7 +19,7 @@ public class DotExpression_Actions_DeleteOperation {
 
     /* package */SNode myNode;
 
-    public  DotExpression_Actions_DeleteOperation_DELETE(SNode node) {
+    public DotExpression_Actions_DeleteOperation_DELETE(SNode node) {
       this.myNode = node;
     }
 

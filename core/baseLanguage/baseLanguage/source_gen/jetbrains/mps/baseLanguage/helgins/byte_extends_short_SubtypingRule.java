@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class byte_extends_short_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
-  public  byte_extends_short_SubtypingRule() {
+  public byte_extends_short_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode byteType) {

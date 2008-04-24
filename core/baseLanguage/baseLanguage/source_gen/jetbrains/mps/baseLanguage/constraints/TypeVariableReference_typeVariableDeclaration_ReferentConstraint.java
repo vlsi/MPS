@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class TypeVariableReference_typeVariableDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  TypeVariableReference_typeVariableDeclaration_ReferentConstraint() {
+  public TypeVariableReference_typeVariableDeclaration_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

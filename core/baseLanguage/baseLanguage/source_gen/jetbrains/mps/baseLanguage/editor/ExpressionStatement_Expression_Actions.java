@@ -18,7 +18,7 @@ public class ExpressionStatement_Expression_Actions {
 
     /* package */SNode myNode;
 
-    public  ExpressionStatement_Expression_Actions_DELETE(SNode node) {
+    public ExpressionStatement_Expression_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
 

@@ -9,7 +9,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class AssertStatement_DataFlow extends DataFlowBuilder {
 
-  public  AssertStatement_DataFlow() {
+  public AssertStatement_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

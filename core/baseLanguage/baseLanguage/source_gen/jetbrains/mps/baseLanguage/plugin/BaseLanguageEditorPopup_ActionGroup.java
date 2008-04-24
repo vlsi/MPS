@@ -14,7 +14,7 @@ public class BaseLanguageEditorPopup_ActionGroup extends BaseActionGroup {
   public static Logger LOG = Logger.getLogger(BaseLanguageEditorPopup_ActionGroup.class);
   public static final String ID = "jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopup";
 
-  public  BaseLanguageEditorPopup_ActionGroup(MPSProject project) {
+  public BaseLanguageEditorPopup_ActionGroup(MPSProject project) {
     super("", BaseLanguageEditorPopup_ActionGroup.ID);
     this.setInternal(false);
     try {

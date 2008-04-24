@@ -19,7 +19,7 @@ import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 
 public class FieldReferenceOperation_fieldDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  FieldReferenceOperation_fieldDeclaration_ReferentConstraint() {
+  public FieldReferenceOperation_fieldDeclaration_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

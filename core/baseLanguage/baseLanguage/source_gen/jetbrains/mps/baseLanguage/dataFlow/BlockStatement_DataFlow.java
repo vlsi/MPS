@@ -9,7 +9,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class BlockStatement_DataFlow extends DataFlowBuilder {
 
-  public  BlockStatement_DataFlow() {
+  public BlockStatement_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

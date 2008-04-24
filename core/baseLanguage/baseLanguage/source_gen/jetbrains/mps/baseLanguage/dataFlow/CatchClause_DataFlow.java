@@ -9,7 +9,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class CatchClause_DataFlow extends DataFlowBuilder {
 
-  public  CatchClause_DataFlow() {
+  public CatchClause_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

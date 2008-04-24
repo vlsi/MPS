@@ -576,7 +576,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
 
   public static class _RefNodeListHandler20 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler20(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler20(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -648,7 +648,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler28 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler28(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler28(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -697,7 +697,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler53 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler53(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler53(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -740,7 +740,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler54 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler54(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler54(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

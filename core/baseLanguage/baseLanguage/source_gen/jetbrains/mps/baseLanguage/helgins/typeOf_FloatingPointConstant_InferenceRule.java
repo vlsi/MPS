@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_FloatingPointConstant_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeOf_FloatingPointConstant_InferenceRule() {
+  public typeOf_FloatingPointConstant_InferenceRule() {
   }
 
   public void applyRule(final SNode floatConst) {

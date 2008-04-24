@@ -10,7 +10,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class ArrayLiteral_DataFlow extends DataFlowBuilder {
 
-  public  ArrayLiteral_DataFlow() {
+  public ArrayLiteral_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

@@ -62,7 +62,7 @@ public class ClosureParameterReference_Editor extends DefaultNodeEditor {
 
   public static class _Inline15 extends AbstractCellProvider {
 
-    public  _Inline15() {
+    public _Inline15() {
       super();
     }
 

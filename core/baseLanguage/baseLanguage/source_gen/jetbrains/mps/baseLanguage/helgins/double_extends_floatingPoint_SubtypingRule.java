@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class double_extends_floatingPoint_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
-  public  double_extends_floatingPoint_SubtypingRule() {
+  public double_extends_floatingPoint_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode doubleType) {

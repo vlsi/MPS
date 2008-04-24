@@ -9,7 +9,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class ArrayAccessExpression_DataFlow extends DataFlowBuilder {
 
-  public  ArrayAccessExpression_DataFlow() {
+  public ArrayAccessExpression_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

@@ -10,7 +10,7 @@ public class Boolean_extends_boolean_2_SubtypingRule extends SubtypingRule_Runti
 
   /* package */Pattern_ myMatchingPattern;
 
-  public  Boolean_extends_boolean_2_SubtypingRule() {
+  public Boolean_extends_boolean_2_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode boolType) {

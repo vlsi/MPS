@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class double_boxing_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
-  public  double_boxing_SubtypingRule() {
+  public double_boxing_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode doubleType) {

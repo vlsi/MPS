@@ -9,7 +9,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class SwitchCase_DataFlow extends DataFlowBuilder {
 
-  public  SwitchCase_DataFlow() {
+  public SwitchCase_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

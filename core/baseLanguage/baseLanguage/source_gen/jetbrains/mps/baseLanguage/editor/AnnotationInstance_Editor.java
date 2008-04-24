@@ -182,7 +182,7 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
 
   public static class _Inline21 extends AbstractCellProvider {
 
-    public  _Inline21() {
+    public _Inline21() {
       super();
     }
 
@@ -235,7 +235,7 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler64 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler64(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler64(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 
 public class TestCoercion_Keymap extends EditorCellKeyMap {
 
-  public  TestCoercion_Keymap() {
+  public TestCoercion_Keymap() {
     this.setApplicableToEveryModel(true);
     EditorCellKeyMapAction action;
     action = new TestCoercion_Keymap.TestCoercion_Keymap_Action0();
@@ -23,7 +23,7 @@ public class TestCoercion_Keymap extends EditorCellKeyMap {
   }
   public static class TestCoercion_Keymap_Action0 extends EditorCellKeyMapAction {
 
-    public  TestCoercion_Keymap_Action0() {
+    public TestCoercion_Keymap_Action0() {
       this.setShownInPopupMenu(true);
     }
 

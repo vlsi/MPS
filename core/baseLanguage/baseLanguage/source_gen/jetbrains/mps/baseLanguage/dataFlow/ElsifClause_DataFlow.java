@@ -10,7 +10,7 @@ import jetbrains.mps.baseLanguage.constraints.ElsifClause_Behavior;
 
 public class ElsifClause_DataFlow extends DataFlowBuilder {
 
-  public  ElsifClause_DataFlow() {
+  public ElsifClause_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

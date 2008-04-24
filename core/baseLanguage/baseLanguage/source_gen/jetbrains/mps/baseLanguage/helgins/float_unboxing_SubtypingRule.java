@@ -10,7 +10,7 @@ public class float_unboxing_SubtypingRule extends SubtypingRule_Runtime implemen
 
   /* package */Pattern_4 myMatchingPattern;
 
-  public  float_unboxing_SubtypingRule() {
+  public float_unboxing_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode floatType) {

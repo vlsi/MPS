@@ -9,7 +9,7 @@ import jetbrains.mps.baseLanguage.constraints.ContinueStatement_Behavior;
 
 public class ContinueStatement_DataFlow extends DataFlowBuilder {
 
-  public  ContinueStatement_DataFlow() {
+  public ContinueStatement_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

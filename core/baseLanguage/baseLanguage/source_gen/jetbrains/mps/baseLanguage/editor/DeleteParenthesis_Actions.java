@@ -19,7 +19,7 @@ public class DeleteParenthesis_Actions {
 
     /* package */SNode myNode;
 
-    public  DeleteParenthesis_Actions_DELETE(SNode node) {
+    public DeleteParenthesis_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
 

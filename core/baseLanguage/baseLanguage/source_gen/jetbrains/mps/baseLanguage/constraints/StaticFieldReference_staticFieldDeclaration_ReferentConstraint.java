@@ -13,7 +13,7 @@ import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 
 public class StaticFieldReference_staticFieldDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  StaticFieldReference_staticFieldDeclaration_ReferentConstraint() {
+  public StaticFieldReference_staticFieldDeclaration_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

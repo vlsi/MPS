@@ -9,7 +9,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class DoWhileStatement_DataFlow extends DataFlowBuilder {
 
-  public  DoWhileStatement_DataFlow() {
+  public DoWhileStatement_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

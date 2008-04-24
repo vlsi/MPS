@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class AnnotationInstanceValue_key_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  AnnotationInstanceValue_key_ReferentConstraint() {
+  public AnnotationInstanceValue_key_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

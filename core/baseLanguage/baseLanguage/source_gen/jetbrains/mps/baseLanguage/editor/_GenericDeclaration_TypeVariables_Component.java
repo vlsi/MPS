@@ -23,7 +23,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
 
   /* package */AbstractCellListHandler myTypeVariableDeclarationListHandler_typeVariableDeclarationList_;
 
-  public  _GenericDeclaration_TypeVariables_Component(SNode node) {
+  public _GenericDeclaration_TypeVariables_Component(SNode node) {
     super(node);
   }
 
@@ -111,7 +111,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
 
   public static class _RefNodeListHandler24 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler24(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler24(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

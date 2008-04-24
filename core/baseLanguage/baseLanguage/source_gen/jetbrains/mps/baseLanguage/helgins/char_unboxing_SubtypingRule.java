@@ -10,7 +10,7 @@ public class char_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
 
   /* package */Pattern_1 myMatchingPattern;
 
-  public  char_unboxing_SubtypingRule() {
+  public char_unboxing_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode charType) {

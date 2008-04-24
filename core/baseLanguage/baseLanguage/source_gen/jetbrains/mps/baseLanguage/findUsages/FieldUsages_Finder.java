@@ -51,7 +51,7 @@ public class FieldUsages_Finder extends GeneratedFinder {
     if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null) {
       ListOperations.addAllElements(fieldDeclarations, (List<SNode>)this.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingFields_Finder", node, scope, monitor));
     }
-    // null
+    // 
     {
       ICursor<SNode> _zCursor5 = CursorFactory.createCursor(fieldDeclarations);
       try {

@@ -17,7 +17,6 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperati
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.baseLanguage.constraints.Type_Behavior;
-import jetbrains.mps.baseLanguage.constraints.ClassConcept_Behavior;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import java.util.List;
@@ -253,7 +252,7 @@ public class QueriesGenerated {
           SNode classifierType = expectedType;
           if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(classifierType, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
             SNode classConcept = SLinkOperations.getTarget(classifierType, "classifier", false);
-            if (!(ClassConcept_Behavior.call_isAbstract_1178610171302(classConcept))) {
+            if (!(SPropertyOperations.getBoolean(classConcept, "abstractClass"))) {
               SNode constructorDeclaration = SequenceOperations.getFirst(SLinkOperations.getTargets(classConcept, "constructor", true));
               if (constructorDeclaration != null) {
                 SLinkOperations.setTarget(_context.getNewNode(), "baseMethodDeclaration", constructorDeclaration, false);

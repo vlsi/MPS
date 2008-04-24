@@ -9,7 +9,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class ForeachStatement_DataFlow extends DataFlowBuilder {
 
-  public  ForeachStatement_DataFlow() {
+  public ForeachStatement_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

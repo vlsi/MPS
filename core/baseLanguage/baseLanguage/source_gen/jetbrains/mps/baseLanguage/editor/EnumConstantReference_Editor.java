@@ -142,7 +142,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
 
   public static class _Inline4 extends AbstractCellProvider {
 
-    public  _Inline4() {
+    public _Inline4() {
       super();
     }
 
@@ -197,7 +197,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
 }
   public static class _Inline11 extends AbstractCellProvider {
 
-    public  _Inline11() {
+    public _Inline11() {
       super();
     }
 
@@ -250,7 +250,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
 }
   public static class EnumConstantReference_customReplace_cellMenu extends AbstractCellMenuPart_ReplaceNode_Group {
 
-    public  EnumConstantReference_customReplace_cellMenu() {
+    public EnumConstantReference_customReplace_cellMenu() {
     }
 
     public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
@@ -272,7 +272,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
 }
   public static class EnumConstantReference_enumConstantDeclaration_cellMenu extends PrimaryReferentMenuCellMenuPart {
 
-    public  EnumConstantReference_enumConstantDeclaration_cellMenu() {
+    public EnumConstantReference_enumConstantDeclaration_cellMenu() {
     }
 }
 

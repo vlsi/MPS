@@ -56,9 +56,9 @@ public class QueriesUtil {
   }
 
   public static SNode create_enclosingClassObject(SNode nodeInsideClosure) {
-    // null
+    // 
     // must be invoked in $COPY-SRC$ because use ref on class in 'input model'
-    // null
+    // 
     SNode enclosingClass = SNodeOperations.getAncestor(nodeInsideClosure, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     if (enclosingClass == null) {
       return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NullLiteral", null);

@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class interfaces_are_comparable_ComparisonRule extends ComparisonRule_Runtime {
 
-  public  interfaces_are_comparable_ComparisonRule() {
+  public interfaces_are_comparable_ComparisonRule() {
   }
 
   public boolean areComparable(SNode node1, SNode node2) {

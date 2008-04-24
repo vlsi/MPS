@@ -21,7 +21,7 @@ public class ExtractMethod_Action extends CurrentProjectMPSAction {
   private List<SNode> nodes;
   private boolean isAlwaysVisible = false;
 
-  public  ExtractMethod_Action(MPSProject project) {
+  public ExtractMethod_Action(MPSProject project) {
     super(project, "Extract Method");
   }
 

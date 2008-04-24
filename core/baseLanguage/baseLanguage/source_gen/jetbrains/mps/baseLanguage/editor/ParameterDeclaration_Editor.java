@@ -324,7 +324,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
 
   public static class _RefNodeListHandler60 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler60(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler60(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -367,7 +367,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler62 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler62(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler62(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

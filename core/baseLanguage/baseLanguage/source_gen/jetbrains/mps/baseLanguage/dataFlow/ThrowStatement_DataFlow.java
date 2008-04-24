@@ -8,7 +8,7 @@ import jetbrains.mps.dataFlow.DataFlowBuilderContext;
 
 public class ThrowStatement_DataFlow extends DataFlowBuilder {
 
-  public  ThrowStatement_DataFlow() {
+  public ThrowStatement_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

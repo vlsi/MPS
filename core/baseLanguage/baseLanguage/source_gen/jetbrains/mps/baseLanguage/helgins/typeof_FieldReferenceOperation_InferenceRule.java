@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_FieldReferenceOperation_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_FieldReferenceOperation_InferenceRule() {
+  public typeof_FieldReferenceOperation_InferenceRule() {
   }
 
   public void applyRule(final SNode fieldReference) {

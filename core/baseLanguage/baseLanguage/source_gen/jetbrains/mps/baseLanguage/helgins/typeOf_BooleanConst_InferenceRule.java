@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_BooleanConst_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeOf_BooleanConst_InferenceRule() {
+  public typeOf_BooleanConst_InferenceRule() {
   }
 
   public void applyRule(final SNode boolConst) {

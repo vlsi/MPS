@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ValueParameter_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_ValueParameter_InferenceRule() {
+  public typeof_ValueParameter_InferenceRule() {
   }
 
   public void applyRule(final SNode valueParameter) {

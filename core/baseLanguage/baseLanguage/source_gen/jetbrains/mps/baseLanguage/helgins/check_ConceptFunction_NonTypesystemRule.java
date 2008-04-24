@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_ConceptFunction_NonTypesystemRule implements NonTypesystemRule_Runtime {
 
-  public  check_ConceptFunction_NonTypesystemRule() {
+  public check_ConceptFunction_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode nodeToCheck) {

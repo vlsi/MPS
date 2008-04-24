@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_DotExpression_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_DotExpression_InferenceRule() {
+  public typeof_DotExpression_InferenceRule() {
   }
 
   public void applyRule(final SNode dotExpression) {

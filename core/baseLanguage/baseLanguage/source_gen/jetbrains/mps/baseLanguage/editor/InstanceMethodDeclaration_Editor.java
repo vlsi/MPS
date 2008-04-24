@@ -666,7 +666,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
 
   public static class _RefNodeListHandler19 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler19(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler19(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -738,7 +738,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler39 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler39(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler39(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -787,7 +787,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler51 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler51(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler51(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -830,7 +830,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler52 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler52(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler52(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

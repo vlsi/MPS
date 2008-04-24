@@ -12,7 +12,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class AnonymousClass_name_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
 
-  public  AnonymousClass_name_PropertyConstraint() {
+  public AnonymousClass_name_PropertyConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

@@ -142,7 +142,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
 
   public static class _Inline2 extends AbstractCellProvider {
 
-    public  _Inline2() {
+    public _Inline2() {
       super();
     }
 
@@ -196,7 +196,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
 }
   public static class _Inline12 extends AbstractCellProvider {
 
-    public  _Inline12() {
+    public _Inline12() {
       super();
     }
 
@@ -249,7 +249,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
 }
   public static class StaticFieldReference_customReplace_cellMenu extends AbstractCellMenuPart_ReplaceNode_Group {
 
-    public  StaticFieldReference_customReplace_cellMenu() {
+    public StaticFieldReference_customReplace_cellMenu() {
     }
 
     public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
@@ -271,7 +271,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
 }
   public static class StaticFieldReference_staticFieldDeclaration_cellMenu extends PrimaryReferentMenuCellMenuPart {
 
-    public  StaticFieldReference_staticFieldDeclaration_cellMenu() {
+    public StaticFieldReference_staticFieldDeclaration_cellMenu() {
     }
 }
 

@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class long_extends_integral_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
-  public  long_extends_integral_SubtypingRule() {
+  public long_extends_integral_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode longType) {

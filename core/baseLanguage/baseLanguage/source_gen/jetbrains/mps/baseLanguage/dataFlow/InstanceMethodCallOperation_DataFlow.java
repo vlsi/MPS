@@ -10,7 +10,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class InstanceMethodCallOperation_DataFlow extends DataFlowBuilder {
 
-  public  InstanceMethodCallOperation_DataFlow() {
+  public InstanceMethodCallOperation_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

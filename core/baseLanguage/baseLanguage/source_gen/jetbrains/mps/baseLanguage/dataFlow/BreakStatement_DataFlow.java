@@ -9,7 +9,7 @@ import jetbrains.mps.baseLanguage.constraints.BreakStatement_Behavior;
 
 public class BreakStatement_DataFlow extends DataFlowBuilder {
 
-  public  BreakStatement_DataFlow() {
+  public BreakStatement_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

@@ -12,7 +12,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 
 public class WhileStatement_DataFlow extends DataFlowBuilder {
 
-  public  WhileStatement_DataFlow() {
+  public WhileStatement_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

@@ -19,7 +19,7 @@ public class AssignmentExpression_RightArgument_Actions {
 
     /* package */SNode myNode;
 
-    public  AssignmentExpression_RightArgument_Actions_DELETE(SNode node) {
+    public AssignmentExpression_RightArgument_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
 

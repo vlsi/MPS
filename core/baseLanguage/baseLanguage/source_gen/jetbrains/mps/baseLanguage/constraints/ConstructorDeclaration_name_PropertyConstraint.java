@@ -12,7 +12,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 
 public class ConstructorDeclaration_name_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
 
-  public  ConstructorDeclaration_name_PropertyConstraint() {
+  public ConstructorDeclaration_name_PropertyConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

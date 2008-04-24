@@ -550,7 +550,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
 
   public static class _RefNodeListHandler6 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler6(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler6(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -615,7 +615,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler7 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler7(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler7(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -680,7 +680,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler8 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler8(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler8(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -745,7 +745,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler9 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler9(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler9(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -810,7 +810,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler10 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler10(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler10(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -875,7 +875,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler32 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler32(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler32(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

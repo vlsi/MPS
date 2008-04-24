@@ -22,7 +22,7 @@ public class IfStatement_elseBlockStatement_delete {
 
     /* package */SNode myNode;
 
-    public  IfStatement_elseBlockStatement_delete_DELETE(SNode node) {
+    public IfStatement_elseBlockStatement_delete_DELETE(SNode node) {
       this.myNode = node;
     }
 

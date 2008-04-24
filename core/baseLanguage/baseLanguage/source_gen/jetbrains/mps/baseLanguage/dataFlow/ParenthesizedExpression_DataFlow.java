@@ -9,7 +9,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class ParenthesizedExpression_DataFlow extends DataFlowBuilder {
 
-  public  ParenthesizedExpression_DataFlow() {
+  public ParenthesizedExpression_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

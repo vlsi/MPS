@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_thisExpr_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeOf_thisExpr_InferenceRule() {
+  public typeOf_thisExpr_InferenceRule() {
   }
 
   public void applyRule(final SNode thisExpr) {

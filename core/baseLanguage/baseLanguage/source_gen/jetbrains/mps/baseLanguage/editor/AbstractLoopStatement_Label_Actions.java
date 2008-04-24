@@ -18,7 +18,7 @@ public class AbstractLoopStatement_Label_Actions {
 
     /* package */SNode myNode;
 
-    public  AbstractLoopStatement_Label_Actions_DELETE(SNode node) {
+    public AbstractLoopStatement_Label_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
 

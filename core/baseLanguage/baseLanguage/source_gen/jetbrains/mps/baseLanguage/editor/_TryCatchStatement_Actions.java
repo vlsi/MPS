@@ -18,7 +18,7 @@ public class _TryCatchStatement_Actions {
 
     /* package */SNode myNode;
 
-    public  _TryCatchStatement_Actions_RIGHT_TRANSFORM(SNode node) {
+    public _TryCatchStatement_Actions_RIGHT_TRANSFORM(SNode node) {
       this.myNode = node;
     }
 

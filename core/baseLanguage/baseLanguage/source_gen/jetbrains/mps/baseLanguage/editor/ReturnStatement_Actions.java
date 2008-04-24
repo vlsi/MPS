@@ -20,7 +20,7 @@ public class ReturnStatement_Actions {
 
     /* package */SNode myNode;
 
-    public  ReturnStatement_Actions_RIGHT_TRANSFORM(SNode node) {
+    public ReturnStatement_Actions_RIGHT_TRANSFORM(SNode node) {
       this.myNode = node;
     }
 
@@ -43,7 +43,7 @@ public class ReturnStatement_Actions {
 
     /* package */SNode myNode;
 
-    public  ReturnStatement_Actions_DELETE(SNode node) {
+    public ReturnStatement_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
 

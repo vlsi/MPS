@@ -19,7 +19,7 @@ public class UncommentStatements_Action extends CurrentProjectMPSAction {
   private SNode node;
   private boolean isAlwaysVisible = false;
 
-  public  UncommentStatements_Action(MPSProject project) {
+  public UncommentStatements_Action(MPSProject project) {
     super(project, "Uncomment Statements");
   }
 

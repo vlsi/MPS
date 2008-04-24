@@ -59,7 +59,7 @@ public class FieldReferenceOperation_Editor extends DefaultNodeEditor {
 
   public static class _Inline23 extends AbstractCellProvider {
 
-    public  _Inline23() {
+    public _Inline23() {
       super();
     }
 

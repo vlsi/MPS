@@ -18,7 +18,7 @@ public class _BaseMethodDeclaration_Actions {
 
     /* package */SNode myNode;
 
-    public  _BaseMethodDeclaration_Actions_RIGHT_TRANSFORM(SNode node) {
+    public _BaseMethodDeclaration_Actions_RIGHT_TRANSFORM(SNode node) {
       this.myNode = node;
     }
 

@@ -9,7 +9,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class SynchronizedStatement_DataFlow extends DataFlowBuilder {
 
-  public  SynchronizedStatement_DataFlow() {
+  public SynchronizedStatement_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

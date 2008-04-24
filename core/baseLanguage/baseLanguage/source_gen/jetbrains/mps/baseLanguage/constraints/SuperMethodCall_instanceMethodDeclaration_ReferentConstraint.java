@@ -17,7 +17,7 @@ import jetbrains.mps.baseLanguage.structure.SuperMethodCall;
 
 public class SuperMethodCall_instanceMethodDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  SuperMethodCall_instanceMethodDeclaration_ReferentConstraint() {
+  public SuperMethodCall_instanceMethodDeclaration_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

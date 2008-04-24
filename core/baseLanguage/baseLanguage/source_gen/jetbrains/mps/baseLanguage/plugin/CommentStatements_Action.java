@@ -23,7 +23,7 @@ public class CommentStatements_Action extends CurrentProjectMPSAction {
   private List<SNode> nodes;
   private boolean isAlwaysVisible = false;
 
-  public  CommentStatements_Action(MPSProject project) {
+  public CommentStatements_Action(MPSProject project) {
     super(project, "Comment Statements");
   }
 

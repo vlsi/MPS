@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_InstanceInitializer_NonTypesystemRule implements NonTypesystemRule_Runtime {
 
-  public  check_InstanceInitializer_NonTypesystemRule() {
+  public check_InstanceInitializer_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode nodeToCheck) {

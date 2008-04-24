@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_VarRef_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeOf_VarRef_InferenceRule() {
+  public typeOf_VarRef_InferenceRule() {
   }
 
   public void applyRule(final SNode varRef) {

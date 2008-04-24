@@ -56,7 +56,7 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
         _zCursor10.release();
       }
     }
-    // null
+    // 
     Set<SNode> implementorsAndAncestorsNodes = new HashSet<SNode>();
     {
       ICursor<SNode> _zCursor11 = CursorFactory.createCursor(implementorsAndAncestorsList);
@@ -69,7 +69,7 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
         _zCursor11.release();
       }
     }
-    // null
+    // 
     {
       ICursor<SNode> _zCursor12 = CursorFactory.createCursor(implementorsAndAncestorsNodes);
       try {

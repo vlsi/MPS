@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_Switch_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeOf_Switch_InferenceRule() {
+  public typeOf_Switch_InferenceRule() {
   }
 
   public void applyRule(final SNode switchStatement) {

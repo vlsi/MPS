@@ -582,7 +582,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 
   public static class _Inline17 extends AbstractCellProvider {
 
-    public  _Inline17() {
+    public _Inline17() {
       super();
     }
 
@@ -636,7 +636,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler33 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler33(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler33(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -702,7 +702,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler34 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler34(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler34(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -774,7 +774,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler35 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler35(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler35(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -843,7 +843,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler65 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler65(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler65(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -892,7 +892,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 }
   public static class AnonymousClass_generic_cellMenu extends AbstractCellMenuPart_Generic_Item {
 
-    public  AnonymousClass_generic_cellMenu() {
+    public AnonymousClass_generic_cellMenu() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
@@ -906,7 +906,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 }
   public static class AnonymousClass_generic_cellMenu1 extends AbstractCellMenuPart_Generic_Item {
 
-    public  AnonymousClass_generic_cellMenu1() {
+    public AnonymousClass_generic_cellMenu1() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
@@ -920,7 +920,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 }
   public static class AnonymousClass_generic_cellMenu2 extends AbstractCellMenuPart_Generic_Item {
 
-    public  AnonymousClass_generic_cellMenu2() {
+    public AnonymousClass_generic_cellMenu2() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {

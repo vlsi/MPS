@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ArrayLiteral_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_ArrayLiteral_InferenceRule() {
+  public typeof_ArrayLiteral_InferenceRule() {
   }
 
   public void applyRule(final SNode arrayLiteral) {

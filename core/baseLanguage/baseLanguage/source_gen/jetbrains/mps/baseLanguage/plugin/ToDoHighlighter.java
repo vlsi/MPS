@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.event.SModelPropertyEvent;
 
 public class ToDoHighlighter extends EditorCheckerAdapter {
 
-  public  ToDoHighlighter() {
+  public ToDoHighlighter() {
   }
 
   public Set<IEditorMessage> createMessages(SNode rootNode, IOperationContext operationContext) {

@@ -19,7 +19,7 @@ public class CastExpression_Actions {
 
     /* package */SNode myNode;
 
-    public  CastExpression_Actions_DELETE(SNode node) {
+    public CastExpression_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
 

@@ -10,7 +10,7 @@ public class short_unboxing_SubtypingRule extends SubtypingRule_Runtime implemen
 
   /* package */Pattern_7 myMatchingPattern;
 
-  public  short_unboxing_SubtypingRule() {
+  public short_unboxing_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode shortType) {

@@ -156,7 +156,7 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
 
   public static class _Inline19 extends AbstractCellProvider {
 
-    public  _Inline19() {
+    public _Inline19() {
       super();
     }
 
@@ -210,7 +210,7 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler36 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler36(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler36(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

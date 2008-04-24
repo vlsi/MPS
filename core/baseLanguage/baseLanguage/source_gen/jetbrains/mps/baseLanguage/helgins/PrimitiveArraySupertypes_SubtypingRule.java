@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class PrimitiveArraySupertypes_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
-  public  PrimitiveArraySupertypes_SubtypingRule() {
+  public PrimitiveArraySupertypes_SubtypingRule() {
   }
 
   public List<SNode> getSubOrSuperTypes(SNode arrayType) {

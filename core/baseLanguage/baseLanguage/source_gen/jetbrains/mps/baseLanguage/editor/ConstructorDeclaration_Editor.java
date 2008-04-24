@@ -552,7 +552,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
 
   public static class _RefNodeListHandler17 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler17(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler17(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -624,7 +624,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler31 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler31(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler31(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -673,7 +673,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler49 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler49(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler49(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -716,7 +716,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler50 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler50(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler50(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

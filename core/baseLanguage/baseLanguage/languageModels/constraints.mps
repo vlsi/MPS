@@ -23,6 +23,7 @@
   <language namespace="jetbrains.mps.core" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="48" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -4831,20 +4832,6 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178610164825">
     <property name="package" value="classConcept" />
     <link role="concept" targetNodeId="1.1068390468198" />
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1178610171302">
-      <property name="name" value="isAbstract" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1178610172895" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178610171304">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1199822131623">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977956100">
-            <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1199822136625" />
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1199822140957">
-              <link role="property" targetNodeId="1.1075300953594" resolveInfo="abstractClass" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1194954280187">
       <property name="name" value="getMembers" />
       <link role="overriddenMethod" targetNodeId="1194952456574" resolveInfo="getMembers" />

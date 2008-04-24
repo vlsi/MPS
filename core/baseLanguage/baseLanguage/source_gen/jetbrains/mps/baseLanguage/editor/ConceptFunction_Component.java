@@ -27,7 +27,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ConceptFunction_Component extends AbstractCellProvider {
 
-  public  ConceptFunction_Component(SNode node) {
+  public ConceptFunction_Component(SNode node) {
     super(node);
   }
 

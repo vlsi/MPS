@@ -18,7 +18,7 @@ import jetbrains.mps.baseLanguage.structure.DotExpression;
 
 public class InstanceMethodCallOperation_instanceMethodDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  InstanceMethodCallOperation_instanceMethodDeclaration_ReferentConstraint() {
+  public InstanceMethodCallOperation_instanceMethodDeclaration_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

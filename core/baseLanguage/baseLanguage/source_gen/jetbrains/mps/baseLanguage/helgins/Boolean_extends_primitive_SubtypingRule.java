@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class Boolean_extends_primitive_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
-  public  Boolean_extends_primitive_SubtypingRule() {
+  public Boolean_extends_primitive_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode boolType) {

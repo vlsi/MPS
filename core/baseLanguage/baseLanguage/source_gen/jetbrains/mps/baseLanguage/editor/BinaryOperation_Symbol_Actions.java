@@ -17,7 +17,7 @@ public class BinaryOperation_Symbol_Actions {
 
     /* package */SNode myNode;
 
-    public  BinaryOperation_Symbol_Actions_DELETE(SNode node) {
+    public BinaryOperation_Symbol_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
 

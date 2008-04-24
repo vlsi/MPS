@@ -12,7 +12,7 @@ import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 
 public class Interface_DefaultSearchScope implements INodeReferentSearchScopeProvider {
 
-  public  Interface_DefaultSearchScope() {
+  public Interface_DefaultSearchScope() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

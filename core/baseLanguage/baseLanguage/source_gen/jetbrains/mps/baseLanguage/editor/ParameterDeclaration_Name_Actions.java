@@ -19,7 +19,7 @@ public class ParameterDeclaration_Name_Actions {
 
     /* package */SNode myNode;
 
-    public  ParameterDeclaration_Name_Actions_RIGHT_TRANSFORM(SNode node) {
+    public ParameterDeclaration_Name_Actions_RIGHT_TRANSFORM(SNode node) {
       this.myNode = node;
     }
 

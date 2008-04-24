@@ -18,7 +18,7 @@ public class LocalVariableDeclaration_Initializer_Actions {
 
     /* package */SNode myNode;
 
-    public  LocalVariableDeclaration_Initializer_Actions_DELETE(SNode node) {
+    public LocalVariableDeclaration_Initializer_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
 

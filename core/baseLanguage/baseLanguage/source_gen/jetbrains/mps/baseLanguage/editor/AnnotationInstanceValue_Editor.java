@@ -129,7 +129,7 @@ public class AnnotationInstanceValue_Editor extends DefaultNodeEditor {
 
   public static class _Inline22 extends AbstractCellProvider {
 
-    public  _Inline22() {
+    public _Inline22() {
       super();
     }
 

@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
-  public  subtyping_classifier_SubtypingRule() {
+  public subtyping_classifier_SubtypingRule() {
   }
 
   public List<SNode> getSubOrSuperTypes(SNode clt) {

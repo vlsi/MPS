@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_ClassifierType_NonTypesystemRule implements NonTypesystemRule_Runtime {
 
-  public  check_ClassifierType_NonTypesystemRule() {
+  public check_ClassifierType_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode classifierType) {

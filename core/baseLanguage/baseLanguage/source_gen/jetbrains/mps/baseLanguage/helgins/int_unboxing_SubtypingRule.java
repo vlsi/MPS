@@ -10,7 +10,7 @@ public class int_unboxing_SubtypingRule extends SubtypingRule_Runtime implements
 
   /* package */Pattern_5 myMatchingPattern;
 
-  public  int_unboxing_SubtypingRule() {
+  public int_unboxing_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode integerType) {

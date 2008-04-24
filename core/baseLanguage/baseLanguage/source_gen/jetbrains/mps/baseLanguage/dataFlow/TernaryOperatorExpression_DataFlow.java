@@ -9,7 +9,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class TernaryOperatorExpression_DataFlow extends DataFlowBuilder {
 
-  public  TernaryOperatorExpression_DataFlow() {
+  public TernaryOperatorExpression_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

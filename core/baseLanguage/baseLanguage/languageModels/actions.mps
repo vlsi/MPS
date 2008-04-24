@@ -18,6 +18,7 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="41" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="4" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -598,8 +599,8 @@
                                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198099022496">
                                   <link role="variableDeclaration" targetNodeId="1198098989995" resolveInfo="classConcept" />
                                 </node>
-                                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1198099022497">
-                                  <link role="conceptMethodDeclaration" targetNodeId="35.1178610171302" resolveInfo="isAbstract" />
+                                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1209065101924">
+                                  <link role="property" targetNodeId="1.1075300953594" resolveInfo="abstractClass" />
                                 </node>
                               </node>
                             </node>

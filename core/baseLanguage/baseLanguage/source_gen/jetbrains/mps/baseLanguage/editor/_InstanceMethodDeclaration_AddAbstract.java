@@ -18,7 +18,7 @@ public class _InstanceMethodDeclaration_AddAbstract {
 
     /* package */SNode myNode;
 
-    public  _InstanceMethodDeclaration_AddAbstract_RIGHT_TRANSFORM(SNode node) {
+    public _InstanceMethodDeclaration_AddAbstract_RIGHT_TRANSFORM(SNode node) {
       this.myNode = node;
     }
 

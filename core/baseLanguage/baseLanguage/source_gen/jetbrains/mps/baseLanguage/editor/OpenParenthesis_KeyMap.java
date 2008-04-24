@@ -14,7 +14,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 
 public class OpenParenthesis_KeyMap extends EditorCellKeyMap {
 
-  public  OpenParenthesis_KeyMap() {
+  public OpenParenthesis_KeyMap() {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
     action = new OpenParenthesis_KeyMap.OpenParenthesis_KeyMap_Action0();
@@ -24,7 +24,7 @@ public class OpenParenthesis_KeyMap extends EditorCellKeyMap {
   }
   public static class OpenParenthesis_KeyMap_Action0 extends EditorCellKeyMapAction {
 
-    public  OpenParenthesis_KeyMap_Action0() {
+    public OpenParenthesis_KeyMap_Action0() {
       this.setShownInPopupMenu(false);
     }
 
@@ -67,7 +67,7 @@ public class OpenParenthesis_KeyMap extends EditorCellKeyMap {
 }
   public static class OpenParenthesis_KeyMap_Action1 extends EditorCellKeyMapAction {
 
-    public  OpenParenthesis_KeyMap_Action1() {
+    public OpenParenthesis_KeyMap_Action1() {
       this.setShownInPopupMenu(false);
     }
 

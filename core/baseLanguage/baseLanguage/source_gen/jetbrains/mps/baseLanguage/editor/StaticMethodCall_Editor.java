@@ -159,7 +159,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
 
   public static class _Inline3 extends AbstractCellProvider {
 
-    public  _Inline3() {
+    public _Inline3() {
       super();
     }
 
@@ -213,7 +213,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
 }
   public static class _Inline13 extends AbstractCellProvider {
 
-    public  _Inline13() {
+    public _Inline13() {
       super();
     }
 
@@ -266,7 +266,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
 }
   public static class StaticMethodCall_customReplace_cellMenu extends AbstractCellMenuPart_ReplaceNode_Group {
 
-    public  StaticMethodCall_customReplace_cellMenu() {
+    public StaticMethodCall_customReplace_cellMenu() {
     }
 
     public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
@@ -288,7 +288,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
 }
   public static class StaticMethodCall_staticMethodDeclaration_cellMenu extends PrimaryReferentMenuCellMenuPart {
 
-    public  StaticMethodCall_staticMethodDeclaration_cellMenu() {
+    public StaticMethodCall_staticMethodDeclaration_cellMenu() {
     }
 }
 

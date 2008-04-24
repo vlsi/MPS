@@ -15,7 +15,7 @@ import jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall;
 
 public class LocalStaticMethodCall_staticMethodDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  LocalStaticMethodCall_staticMethodDeclaration_ReferentConstraint() {
+  public LocalStaticMethodCall_staticMethodDeclaration_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

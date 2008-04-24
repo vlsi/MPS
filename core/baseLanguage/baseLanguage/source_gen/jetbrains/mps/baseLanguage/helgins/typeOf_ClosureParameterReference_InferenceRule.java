@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_ClosureParameterReference_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeOf_ClosureParameterReference_InferenceRule() {
+  public typeOf_ClosureParameterReference_InferenceRule() {
   }
 
   public void applyRule(final SNode closureParmRef) {

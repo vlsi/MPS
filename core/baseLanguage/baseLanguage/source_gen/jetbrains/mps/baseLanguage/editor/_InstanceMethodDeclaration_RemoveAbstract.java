@@ -18,7 +18,7 @@ public class _InstanceMethodDeclaration_RemoveAbstract {
 
     /* package */SNode myNode;
 
-    public  _InstanceMethodDeclaration_RemoveAbstract_DELETE(SNode node) {
+    public _InstanceMethodDeclaration_RemoveAbstract_DELETE(SNode node) {
       this.myNode = node;
     }
 

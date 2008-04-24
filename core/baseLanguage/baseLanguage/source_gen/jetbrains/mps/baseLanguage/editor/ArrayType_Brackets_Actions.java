@@ -19,7 +19,7 @@ public class ArrayType_Brackets_Actions {
 
     /* package */SNode myNode;
 
-    public  ArrayType_Brackets_Actions_DELETE(SNode node) {
+    public ArrayType_Brackets_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
 

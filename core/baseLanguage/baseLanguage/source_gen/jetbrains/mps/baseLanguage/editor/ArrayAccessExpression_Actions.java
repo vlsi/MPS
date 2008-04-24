@@ -19,7 +19,7 @@ public class ArrayAccessExpression_Actions {
 
     /* package */SNode myNode;
 
-    public  ArrayAccessExpression_Actions_DELETE(SNode node) {
+    public ArrayAccessExpression_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
 

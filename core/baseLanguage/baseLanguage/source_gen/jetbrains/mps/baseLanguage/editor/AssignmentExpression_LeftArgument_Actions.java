@@ -19,7 +19,7 @@ public class AssignmentExpression_LeftArgument_Actions {
 
     /* package */SNode myNode;
 
-    public  AssignmentExpression_LeftArgument_Actions_DELETE(SNode node) {
+    public AssignmentExpression_LeftArgument_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
 

@@ -145,7 +145,7 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
 
   public static class ContinueStatement_generic_cellMenu extends AbstractCellMenuPart_Generic_Group {
 
-    public  ContinueStatement_generic_cellMenu() {
+    public ContinueStatement_generic_cellMenu() {
     }
 
     public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {

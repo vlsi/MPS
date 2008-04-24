@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_BaseMethodDeclaration_UnreachableStatements_NonTypesystemRule implements NonTypesystemRule_Runtime {
 
-  public  check_BaseMethodDeclaration_UnreachableStatements_NonTypesystemRule() {
+  public check_BaseMethodDeclaration_UnreachableStatements_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode nodeToCheck) {

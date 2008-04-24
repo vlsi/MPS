@@ -19,7 +19,7 @@ public class NotExpression_Parens_Actions {
 
     /* package */SNode myNode;
 
-    public  NotExpression_Parens_Actions_DELETE(SNode node) {
+    public NotExpression_Parens_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
 

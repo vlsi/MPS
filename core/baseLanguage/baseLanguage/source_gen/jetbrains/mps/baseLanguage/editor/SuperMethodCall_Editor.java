@@ -194,7 +194,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
 
   public static class _Inline5 extends AbstractCellProvider {
 
-    public  _Inline5() {
+    public _Inline5() {
       super();
     }
 
@@ -247,7 +247,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler21 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler21(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler21(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

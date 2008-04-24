@@ -146,7 +146,7 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
 
   public static class _RefNodeListHandler11 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler11(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler11(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

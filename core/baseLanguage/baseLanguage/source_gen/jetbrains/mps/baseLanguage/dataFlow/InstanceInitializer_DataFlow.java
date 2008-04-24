@@ -9,7 +9,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class InstanceInitializer_DataFlow extends DataFlowBuilder {
 
-  public  InstanceInitializer_DataFlow() {
+  public InstanceInitializer_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

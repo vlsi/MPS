@@ -18,7 +18,7 @@ public class BreakStatement_Actions {
 
     /* package */SNode myNode;
 
-    public  BreakStatement_Actions_DELETE(SNode node) {
+    public BreakStatement_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
 

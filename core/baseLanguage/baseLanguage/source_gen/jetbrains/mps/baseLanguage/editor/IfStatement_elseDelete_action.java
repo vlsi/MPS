@@ -18,7 +18,7 @@ public class IfStatement_elseDelete_action {
 
     /* package */SNode myNode;
 
-    public  IfStatement_elseDelete_action_DELETE(SNode node) {
+    public IfStatement_elseDelete_action_DELETE(SNode node) {
       this.myNode = node;
     }
 

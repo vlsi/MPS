@@ -13,7 +13,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.constraints.ClassConcept_Behavior;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Vertical;
@@ -618,7 +618,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
 
   public static boolean _QueryFunction_NodeCondition_1178610229481(SNode node, EditorContext editorContext, IScope scope) {
-    return ClassConcept_Behavior.call_isAbstract_1178610171302(node);
+    return SPropertyOperations.getBoolean(node, "abstractClass");
   }
 
   public static boolean _QueryFunction_NodeCondition_1188208597248(SNode node, EditorContext editorContext, IScope scope) {
@@ -1547,7 +1547,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
 
   public static class _Inline16 extends AbstractCellProvider {
 
-    public  _Inline16() {
+    public _Inline16() {
       super();
     }
 
@@ -1600,7 +1600,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler1 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler1(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler1(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -1665,7 +1665,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler2 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler2(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler2(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -1730,7 +1730,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler3 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler3(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler3(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -1795,7 +1795,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler4 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler4(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler4(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -1860,7 +1860,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler14 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler14(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler14(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -1925,7 +1925,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler15 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler15(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler15(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -1990,7 +1990,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler40 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler40(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler40(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -2061,7 +2061,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler43 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler43(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler43(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -2104,7 +2104,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler44 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler44(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler44(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -2147,7 +2147,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler66 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler66(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler66(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_ThrowStatement_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeOf_ThrowStatement_InferenceRule() {
+  public typeOf_ThrowStatement_InferenceRule() {
   }
 
   public void applyRule(final SNode throwStatement) {

@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class char_extends_int_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
-  public  char_extends_int_SubtypingRule() {
+  public char_extends_int_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode charType) {

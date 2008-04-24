@@ -11,7 +11,7 @@ import jetbrains.mps.nodeEditor.IEditorComponent;
 
 public class ToDoMessage extends DefaultEditorMessage {
 
-  public  ToDoMessage(SNode node, String message, IEditorMessageOwner owner) {
+  public ToDoMessage(SNode node, String message, IEditorMessageOwner owner) {
     super(node, Color.BLUE, message, owner);
   }
 

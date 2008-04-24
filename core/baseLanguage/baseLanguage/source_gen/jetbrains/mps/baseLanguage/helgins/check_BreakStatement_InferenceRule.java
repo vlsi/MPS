@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_BreakStatement_InferenceRule implements InferenceRule_Runtime {
 
-  public  check_BreakStatement_InferenceRule() {
+  public check_BreakStatement_InferenceRule() {
   }
 
   public void applyRule(final SNode nodeToCheck) {

@@ -60,7 +60,7 @@ public class LocalStaticFieldReference_Editor extends DefaultNodeEditor {
 
   public static class _Inline18 extends AbstractCellProvider {
 
-    public  _Inline18() {
+    public _Inline18() {
       super();
     }
 

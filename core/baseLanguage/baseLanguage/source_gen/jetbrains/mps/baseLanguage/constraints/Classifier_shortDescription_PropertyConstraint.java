@@ -12,7 +12,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 
 public class Classifier_shortDescription_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
 
-  public  Classifier_shortDescription_PropertyConstraint() {
+  public Classifier_shortDescription_PropertyConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

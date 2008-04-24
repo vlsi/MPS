@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SNode;
 
 public class SwitchStatement_DataFlow extends DataFlowBuilder {
 
-  public  SwitchStatement_DataFlow() {
+  public SwitchStatement_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class PrimitiveSubtyping_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
-  public  PrimitiveSubtyping_SubtypingRule() {
+  public PrimitiveSubtyping_SubtypingRule() {
   }
 
   public List<SNode> getSubOrSuperTypes(SNode primitiveTypeDescriptor) {

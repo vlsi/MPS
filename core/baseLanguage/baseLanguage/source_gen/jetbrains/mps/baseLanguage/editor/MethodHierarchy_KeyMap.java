@@ -21,7 +21,7 @@ import jetbrains.mps.baseLanguage.plugin.uiActions.ImplementMethodDialog;
 
 public class MethodHierarchy_KeyMap extends EditorCellKeyMap {
 
-  public  MethodHierarchy_KeyMap() {
+  public MethodHierarchy_KeyMap() {
     this.setApplicableToEveryModel(true);
     EditorCellKeyMapAction action;
     action = new MethodHierarchy_KeyMap.MethodHierarchy_KeyMap_Action0();
@@ -33,7 +33,7 @@ public class MethodHierarchy_KeyMap extends EditorCellKeyMap {
   }
   public static class MethodHierarchy_KeyMap_Action0 extends EditorCellKeyMapAction {
 
-    public  MethodHierarchy_KeyMap_Action0() {
+    public MethodHierarchy_KeyMap_Action0() {
       this.setShownInPopupMenu(true);
     }
 
@@ -86,7 +86,7 @@ public class MethodHierarchy_KeyMap extends EditorCellKeyMap {
 }
   public static class MethodHierarchy_KeyMap_Action1 extends EditorCellKeyMapAction {
 
-    public  MethodHierarchy_KeyMap_Action1() {
+    public MethodHierarchy_KeyMap_Action1() {
       this.setShownInPopupMenu(true);
     }
 
@@ -130,7 +130,7 @@ public class MethodHierarchy_KeyMap extends EditorCellKeyMap {
 }
   public static class MethodHierarchy_KeyMap_Action2 extends EditorCellKeyMapAction {
 
-    public  MethodHierarchy_KeyMap_Action2() {
+    public MethodHierarchy_KeyMap_Action2() {
       this.setShownInPopupMenu(true);
     }
 

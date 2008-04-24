@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class ClosureParameterReference_closureParameter_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  ClosureParameterReference_closureParameter_ReferentConstraint() {
+  public ClosureParameterReference_closureParameter_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

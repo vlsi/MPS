@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class any_type_subtypeof_wildcard_type_InequationReplacementRule extends InequationReplacementRule_Runtime {
 
-  public  any_type_subtypeof_wildcard_type_InequationReplacementRule() {
+  public any_type_subtypeof_wildcard_type_InequationReplacementRule() {
   }
 
   public void processInequation(SNode subtype, SNode supertype, EquationInfo equationInfo) {

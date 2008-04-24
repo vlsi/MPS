@@ -11,7 +11,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 
 public class Property_alias_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
 
-  public  Property_alias_PropertyConstraint() {
+  public Property_alias_PropertyConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

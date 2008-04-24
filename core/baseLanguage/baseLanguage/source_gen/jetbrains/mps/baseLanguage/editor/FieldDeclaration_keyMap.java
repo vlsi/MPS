@@ -16,7 +16,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 
 public class FieldDeclaration_keyMap extends EditorCellKeyMap {
 
-  public  FieldDeclaration_keyMap() {
+  public FieldDeclaration_keyMap() {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
     action = new FieldDeclaration_keyMap.FieldDeclaration_keyMap_Action0();
@@ -28,7 +28,7 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
   }
   public static class FieldDeclaration_keyMap_Action0 extends EditorCellKeyMapAction {
 
-    public  FieldDeclaration_keyMap_Action0() {
+    public FieldDeclaration_keyMap_Action0() {
       this.setShownInPopupMenu(true);
     }
 
@@ -78,7 +78,7 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
 }
   public static class FieldDeclaration_keyMap_Action1 extends EditorCellKeyMapAction {
 
-    public  FieldDeclaration_keyMap_Action1() {
+    public FieldDeclaration_keyMap_Action1() {
       this.setShownInPopupMenu(true);
     }
 

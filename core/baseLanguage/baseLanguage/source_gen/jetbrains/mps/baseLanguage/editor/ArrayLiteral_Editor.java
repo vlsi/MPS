@@ -96,7 +96,7 @@ public class ArrayLiteral_Editor extends DefaultNodeEditor {
 
   public static class _RefNodeListHandler61 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler61(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler61(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

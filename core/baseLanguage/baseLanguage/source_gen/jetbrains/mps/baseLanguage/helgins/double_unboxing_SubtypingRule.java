@@ -10,7 +10,7 @@ public class double_unboxing_SubtypingRule extends SubtypingRule_Runtime impleme
 
   /* package */Pattern_2 myMatchingPattern;
 
-  public  double_unboxing_SubtypingRule() {
+  public double_unboxing_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode doubleType) {

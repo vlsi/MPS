@@ -208,7 +208,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
 
   public static class _Inline10 extends AbstractCellProvider {
 
-    public  _Inline10() {
+    public _Inline10() {
       super();
     }
 
@@ -261,7 +261,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
 }
   public static class _Inline14 extends AbstractCellProvider {
 
-    public  _Inline14() {
+    public _Inline14() {
       super();
     }
 
@@ -314,7 +314,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler23 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler23(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler23(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

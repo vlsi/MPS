@@ -164,7 +164,7 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
 
   public static class _RefNodeListHandler26 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler26(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler26(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_ThisExpression_NonTypesystemRule implements NonTypesystemRule_Runtime {
 
-  public  check_ThisExpression_NonTypesystemRule() {
+  public check_ThisExpression_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode thisExpression) {

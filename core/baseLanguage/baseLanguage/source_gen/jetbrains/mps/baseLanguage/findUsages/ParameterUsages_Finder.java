@@ -50,10 +50,10 @@ public class ParameterUsages_Finder extends GeneratedFinder {
     {
       nodeParentMethod = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", false, false);
     }
-    // null
+    // 
     List<SNode> overridingMethods = this.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder", nodeParentMethod, scope, monitor);
     ListOperations.addElement(overridingMethods, nodeParentMethod);
-    // null
+    // 
     {
       ICursor<SNode> _zCursor14 = CursorFactory.createCursor(overridingMethods);
       try {
@@ -88,10 +88,10 @@ public class ParameterUsages_Finder extends GeneratedFinder {
     {
       nodeParentMethod = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", false, false);
     }
-    // null
+    // 
     List<SNode> overridingMethods = this.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder", nodeParentMethod, scope, new NullAdaptiveProgressMonitor());
     ListOperations.addElement(overridingMethods, nodeParentMethod);
-    // null
+    // 
     {
       ICursor<SNode> _zCursor16 = CursorFactory.createCursor(overridingMethods);
       try {

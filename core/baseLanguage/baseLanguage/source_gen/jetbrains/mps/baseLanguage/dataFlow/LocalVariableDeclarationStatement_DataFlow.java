@@ -9,7 +9,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class LocalVariableDeclarationStatement_DataFlow extends DataFlowBuilder {
 
-  public  LocalVariableDeclarationStatement_DataFlow() {
+  public LocalVariableDeclarationStatement_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

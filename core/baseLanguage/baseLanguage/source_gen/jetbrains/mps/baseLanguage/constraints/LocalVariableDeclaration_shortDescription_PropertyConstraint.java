@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.IScope;
 
 public class LocalVariableDeclaration_shortDescription_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
 
-  public  LocalVariableDeclaration_shortDescription_PropertyConstraint() {
+  public LocalVariableDeclaration_shortDescription_PropertyConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

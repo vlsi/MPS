@@ -14,7 +14,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class _Component_Visibility extends AbstractCellProvider {
 
-  public  _Component_Visibility(SNode node) {
+  public _Component_Visibility(SNode node) {
     super(node);
   }
 

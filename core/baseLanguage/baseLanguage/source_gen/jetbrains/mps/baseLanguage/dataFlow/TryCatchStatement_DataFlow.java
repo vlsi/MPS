@@ -10,7 +10,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class TryCatchStatement_DataFlow extends DataFlowBuilder {
 
-  public  TryCatchStatement_DataFlow() {
+  public TryCatchStatement_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

@@ -19,7 +19,7 @@ public class StaticFieldReference_Actions {
 
     /* package */SNode myNode;
 
-    public  StaticFieldReference_Actions_DELETE(SNode node) {
+    public StaticFieldReference_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
 

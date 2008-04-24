@@ -10,7 +10,7 @@ public class long_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
 
   /* package */Pattern_6 myMatchingPattern;
 
-  public  long_unboxing_SubtypingRule() {
+  public long_unboxing_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode longType) {

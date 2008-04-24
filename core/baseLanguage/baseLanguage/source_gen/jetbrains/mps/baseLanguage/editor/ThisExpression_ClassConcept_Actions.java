@@ -18,7 +18,7 @@ public class ThisExpression_ClassConcept_Actions {
 
     /* package */SNode myNode;
 
-    public  ThisExpression_ClassConcept_Actions_DELETE(SNode node) {
+    public ThisExpression_ClassConcept_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
 

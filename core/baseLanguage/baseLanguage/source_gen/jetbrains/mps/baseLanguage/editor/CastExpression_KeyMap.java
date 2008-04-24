@@ -14,7 +14,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class CastExpression_KeyMap extends EditorCellKeyMap {
 
-  public  CastExpression_KeyMap() {
+  public CastExpression_KeyMap() {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
     action = new CastExpression_KeyMap.CastExpression_KeyMap_Action0();
@@ -22,7 +22,7 @@ public class CastExpression_KeyMap extends EditorCellKeyMap {
   }
   public static class CastExpression_KeyMap_Action0 extends EditorCellKeyMapAction {
 
-    public  CastExpression_KeyMap_Action0() {
+    public CastExpression_KeyMap_Action0() {
       this.setShownInPopupMenu(false);
     }
 

@@ -18,7 +18,7 @@ public class ContinueStatement_Actions {
 
     /* package */SNode myNode;
 
-    public  ContinueStatement_Actions_DELETE(SNode node) {
+    public ContinueStatement_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
 

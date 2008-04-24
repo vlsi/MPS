@@ -20,6 +20,7 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="72" />
   <import index="17" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="18" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -115,11 +116,11 @@
           <property name="text" value="abstract" />
           <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1178610229481">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178610229482">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1178610242537">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1209065132973">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977967145">
                   <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1178610247717" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1179419284617">
-                    <link role="conceptMethodDeclaration" targetNodeId="53.1178610171302" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1209065130253">
+                    <link role="property" targetNodeId="17.1075300953594" resolveInfo="abstractClass" />
                   </node>
                 </node>
               </node>

@@ -145,7 +145,7 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
 
   public static class BreakStatement_generic_cellMenu extends AbstractCellMenuPart_Generic_Group {
 
-    public  BreakStatement_generic_cellMenu() {
+    public BreakStatement_generic_cellMenu() {
     }
 
     public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {

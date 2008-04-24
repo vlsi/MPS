@@ -611,7 +611,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
 
   public static class _RefNodeListHandler68 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler68(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler68(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
