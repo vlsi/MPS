@@ -13,11 +13,11 @@ import java.util.List;
 
 public class DefaultClassifierMethodCallOperation extends BaseConcept implements IMemberOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation";
-  public static String ACTUAL_ARGUMENT = "actualArgument";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String MEMBER = "member";
+  public static String ACTUAL_ARGUMENT = "actualArgument";
 
   public  DefaultClassifierMethodCallOperation(SNode node) {
     super(node);
@@ -31,26 +31,6 @@ public class DefaultClassifierMethodCallOperation extends BaseConcept implements
     return DefaultClassifierMethodCallOperation.newInstance(sm, false);
   }
 
-
-  public int getActualArgumentsCount() {
-    return this.getChildCount(DefaultClassifierMethodCallOperation.ACTUAL_ARGUMENT);
-  }
-
-  public Iterator<Expression> actualArguments() {
-    return this.children(DefaultClassifierMethodCallOperation.ACTUAL_ARGUMENT);
-  }
-
-  public List<Expression> getActualArguments() {
-    return this.getChildren(DefaultClassifierMethodCallOperation.ACTUAL_ARGUMENT);
-  }
-
-  public void addActualArgument(Expression node) {
-    this.addChild(DefaultClassifierMethodCallOperation.ACTUAL_ARGUMENT, node);
-  }
-
-  public void insertActualArgument(Expression prev, Expression node) {
-    this.insertChild(prev, DefaultClassifierMethodCallOperation.ACTUAL_ARGUMENT, node);
-  }
 
   public String getShortDescription() {
     return this.getProperty(DefaultClassifierMethodCallOperation.SHORT_DESCRIPTION);
@@ -90,6 +70,26 @@ public class DefaultClassifierMethodCallOperation extends BaseConcept implements
 
   public void setMethod(DefaultClassifierMethodDeclaration node) {
     this.setMember(node);
+  }
+
+  public int getActualArgumentsCount() {
+    return this.getChildCount(DefaultClassifierMethodCallOperation.ACTUAL_ARGUMENT);
+  }
+
+  public Iterator<Expression> actualArguments() {
+    return this.children(DefaultClassifierMethodCallOperation.ACTUAL_ARGUMENT);
+  }
+
+  public List<Expression> getActualArguments() {
+    return this.getChildren(DefaultClassifierMethodCallOperation.ACTUAL_ARGUMENT);
+  }
+
+  public void addActualArgument(Expression node) {
+    this.addChild(DefaultClassifierMethodCallOperation.ACTUAL_ARGUMENT, node);
+  }
+
+  public void insertActualArgument(Expression prev, Expression node) {
+    this.insertChild(prev, DefaultClassifierMethodCallOperation.ACTUAL_ARGUMENT, node);
   }
 
 }

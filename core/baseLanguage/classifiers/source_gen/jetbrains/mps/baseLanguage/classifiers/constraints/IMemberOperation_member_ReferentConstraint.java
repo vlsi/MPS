@@ -43,9 +43,9 @@ public class IMemberOperation_member_ReferentConstraint implements IModelConstra
     {
       IMatchingPattern pattern_1205765124703 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType");
       SNode coercedNode_1205765117789 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(operand), pattern_1205765124703);
-      if(coercedNode_1205765117789 != null) {
+      if (coercedNode_1205765117789 != null) {
         for(SNode member : BaseClassifierType_Behavior.call_getMembers_1205837324654(coercedNode_1205765117789, _context.getEnclosingNode())) {
-          if(SNodeOperations.isInstanceOf(member, NameUtil.nodeFQName(_context.getLinkTarget()))) {
+          if (SNodeOperations.isInstanceOf(member, NameUtil.nodeFQName(_context.getLinkTarget()))) {
             ListOperations.addElement(applicableMembers, member);
           }
         }
