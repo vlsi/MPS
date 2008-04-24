@@ -3,13 +3,13 @@
   <models>
     <modelRoot path="${solution_descriptor}\" namespacePrefix="" />
   </models>
-  <module />
-  <languages />
   <classPath />
-  <runtimeClassPath />
   <sourcePath />
   <dependencies>
-    <dependency>jetbrains.mps.transformation.TLBase</dependency>
+    <dependency reexport="true">jetbrains.mps.transformation.TLBase</dependency>
   </dependencies>
+  <usedLanguages>
+    <usedLanguages>jetbrains.mps.transformation.TLBase</usedLanguages>
+  </usedLanguages>
 </solution>
 

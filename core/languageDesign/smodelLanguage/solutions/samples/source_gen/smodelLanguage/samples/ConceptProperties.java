@@ -4,6 +4,7 @@ package smodelLanguage.samples;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
 public class ConceptProperties {
 
@@ -20,6 +21,10 @@ public class ConceptProperties {
       isAbstract = true;
     }
     boolean isAbstract2 = SConceptPropertyOperations.getBoolean(node, "abstract");
+  }
+
+  public void m1(SNode node) {
+    SConceptPropertyOperations.getString(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "alias");
   }
 
 }
