@@ -20,7 +20,6 @@ public class TransientModelsModule extends AbstractModule {
   private MPSProject myProject;
   private Set<String> myModelsToKeep = new HashSet<String>();
 
-
   public TransientModelsModule(MPSProject project) {
     myProject = project;
     MPSModuleRepository.getInstance().addModule(this, myProject);
