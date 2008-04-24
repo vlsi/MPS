@@ -17,6 +17,7 @@
   <languageAspect modelUID="jetbrains.mps.buildlanguage.structure" version="16" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="jetbrains.mps.mpsLayoutLanguage.structure" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.core.structure" />
@@ -289,22 +290,6 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204737220833">
     <property name="name" value="RuntimeClassPath" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1204737234365">
-      <property name="name" value="prefix" />
-      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1204737237975">
-      <property name="name" value="path" />
-      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1204737251695">
-      <property name="name" value="suffix" />
-      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1204739069629">
-      <property name="name" value="pathInModuleDescriptor" />
-      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
-    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1208952075958">
       <property name="name" value="fullPath" />
       <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
