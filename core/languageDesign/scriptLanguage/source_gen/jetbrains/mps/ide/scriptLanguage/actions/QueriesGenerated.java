@@ -5,6 +5,9 @@ package jetbrains.mps.ide.scriptLanguage.actions;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.action.NodeSetupContext;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.ide.VersionUtil;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
@@ -17,6 +20,10 @@ public class QueriesGenerated {
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1185457769594(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return (SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.ide.scriptLanguage.structure.Script", true, false) != null);
+  }
+
+  public static void nodeFactory_NodeSetup_MigrationScript_1209061300939(final IOperationContext operationContext, final NodeSetupContext _context) {
+    SPropertyOperations.set(_context.getNewNode(), "migrationFromBuild", VersionUtil.getVersionString());
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1185457754240(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {

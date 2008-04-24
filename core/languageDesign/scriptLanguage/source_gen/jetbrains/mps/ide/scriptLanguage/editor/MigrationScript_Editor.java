@@ -415,7 +415,7 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
 
   public static class _RefNodeListHandler extends RefNodeListHandler {
 
-    public  _RefNodeListHandler(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -458,21 +458,21 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
 }
   public static class MigrationScript_category_cellMenu extends AbstractCellMenuPart_PropertyValues {
 
-    public  MigrationScript_category_cellMenu() {
+    public MigrationScript_category_cellMenu() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      return SequenceOperations.toList(SequenceOperations.select(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.ide.scriptLanguage.structure.MigrationScript"), new zSelector(null, null)));
+      return SequenceOperations.toList(SequenceOperations.select(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.ide.scriptLanguage.structure.MigrationScript"), new zSelector(MigrationScript_category_cellMenu.this, null)));
     }
 
 }
   public static class MigrationScript_migrationFromBuild_cellMenu extends AbstractCellMenuPart_PropertyValues {
 
-    public  MigrationScript_migrationFromBuild_cellMenu() {
+    public MigrationScript_migrationFromBuild_cellMenu() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      return SequenceOperations.toList(SequenceOperations.select(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.ide.scriptLanguage.structure.MigrationScript"), new zSelector1(null, null)));
+      return SequenceOperations.toList(SequenceOperations.select(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.ide.scriptLanguage.structure.MigrationScript"), new zSelector1(MigrationScript_migrationFromBuild_cellMenu.this, null)));
     }
 
 }

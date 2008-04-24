@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_MigrationScriptPart_node_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_MigrationScriptPart_node_InferenceRule() {
+  public typeof_MigrationScriptPart_node_InferenceRule() {
   }
 
   public void applyRule(final SNode node) {

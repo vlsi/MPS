@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class MigrationScriptPart_Instance_Updater extends ConceptFunction {
   public static final String concept = "jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Updater";
 
-  public  MigrationScriptPart_Instance_Updater(SNode node) {
+  public MigrationScriptPart_Instance_Updater(SNode node) {
     super(node);
   }
 

@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class MigrationScriptPart_Instance_Predicate extends ConceptFunction {
   public static final String concept = "jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Predicate";
 
-  public  MigrationScriptPart_Instance_Predicate(SNode node) {
+  public MigrationScriptPart_Instance_Predicate(SNode node) {
     super(node);
   }
 

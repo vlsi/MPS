@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class MigrationScriptPart_node extends ConceptFunctionParameter {
   public static final String concept = "jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node";
 
-  public  MigrationScriptPart_node(SNode node) {
+  public MigrationScriptPart_node(SNode node) {
     super(node);
   }
 
