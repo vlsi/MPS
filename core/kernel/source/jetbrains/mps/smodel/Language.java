@@ -37,7 +37,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   private LanguageDescriptor myLanguageDescriptor;
   private List<Generator> myGenerators = new ArrayList<Generator>();
   private HashMap<String, AbstractConceptDeclaration> myNameToConceptCache = new HashMap<String, AbstractConceptDeclaration>();
-  private boolean myUpToDate = true;
   private IClassPathItem myLanguageRuntimeClasspath;
 
   private Set<SNodePointer> myNotFoundRefactorings = new HashSet<SNodePointer>(2);
