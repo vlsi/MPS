@@ -31,6 +31,8 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <maxImportIndex value="12" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
@@ -163,46 +165,6 @@
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithAnotherOperation" id="1182160813298">
                 <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1182160815709">
                   <link role="variableDeclaration" targetNodeId="1182160720253" resolveInfo="newExpr" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1199821750695">
-    <property name="name" value="RefactorAbstractClasses" />
-    <property name="title" value="Refactor abstract classes" />
-    <property name="migrationFromBuild" value="470" />
-    <property name="category" value="base lang" />
-    <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1199821771399">
-      <link role="affectedInstanceConcept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
-      <node role="affectedInstancePredicate" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Predicate" id="1199821771400">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199821771401">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199821781216">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977956183">
-              <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1199821781217" />
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1199821783018">
-                <link role="conceptMethodDeclaration" targetNodeId="4.1178610171302" resolveInfo="isAbstract" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="affectedInstanceUpdater" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Updater" id="1199821771402">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199821771403">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199821882924">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977954170">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977967228">
-                <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1199821882925" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1199821885882">
-                  <link role="property" targetNodeId="1.1075300953594" resolveInfo="abstractClass" />
-                </node>
-              </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1199821888604">
-                <node role="value" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1199821889388">
-                  <property name="value" value="true" />
                 </node>
               </node>
             </node>
