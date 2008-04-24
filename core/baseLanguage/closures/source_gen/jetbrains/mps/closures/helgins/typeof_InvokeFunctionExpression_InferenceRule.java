@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_InvokeFunctionExpression_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_InvokeFunctionExpression_InferenceRule() {
+  public typeof_InvokeFunctionExpression_InferenceRule() {
   }
 
   public void applyRule(final SNode invoke) {

@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class wildcardtype_comparable_ComparisonRule extends ComparisonRule_Runtime {
 
-  public  wildcardtype_comparable_ComparisonRule() {
+  public wildcardtype_comparable_ComparisonRule() {
   }
 
   public boolean areComparable(SNode node1, SNode node2) {

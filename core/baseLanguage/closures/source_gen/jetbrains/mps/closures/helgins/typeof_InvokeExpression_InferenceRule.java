@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_InvokeExpression_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_InvokeExpression_InferenceRule() {
+  public typeof_InvokeExpression_InferenceRule() {
   }
 
   public void applyRule(final SNode invoke) {

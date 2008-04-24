@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule extends InequationReplacementRule_Runtime {
 
-  public  FunctionType_subtypeOf_ClassifierType_InequationReplacementRule() {
+  public FunctionType_subtypeOf_ClassifierType_InequationReplacementRule() {
   }
 
   public void processInequation(SNode subtype, SNode supertype, EquationInfo equationInfo) {

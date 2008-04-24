@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class supertypesOf_FunctionType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
-  public  supertypesOf_FunctionType_SubtypingRule() {
+  public supertypesOf_FunctionType_SubtypingRule() {
   }
 
   public List<SNode> getSubOrSuperTypes(SNode ft) {
