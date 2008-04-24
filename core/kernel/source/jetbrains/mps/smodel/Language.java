@@ -674,6 +674,10 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   }
 
   public void save() {
+    if (isPackaged()){
+      LOG.warning("Trying to save packaged language " + getModuleUID());
+      return;
+    }
     DescriptorsPersistence.saveLanguageDescriptor(myDescriptorFile, getLanguageDescriptor());
   }
 
