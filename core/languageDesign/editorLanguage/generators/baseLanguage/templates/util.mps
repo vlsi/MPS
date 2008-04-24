@@ -14,6 +14,7 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="6" />
   <import index="1" modelUID="jetbrains.mps.generator.template@java_stub" version="-1" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.editorLanguage.generator.baseLanguage.template.util" version="-1" />
@@ -41,16 +42,18 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1186771609165">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1186771845384">
-            <link role="baseMethodDeclaration" targetNodeId="1.~ITemplateGenerator.findOutputNodeByInputNodeAndMappingName(jetbrains.mps.smodel.SNode,java.lang.String):jetbrains.mps.smodel.SNode" resolveInfo="findOutputNodeByInputNodeAndMappingName" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1186771845385">
-              <link role="variableDeclaration" targetNodeId="1186771602771" resolveInfo="containingRoot" />
-            </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1186771845386">
-              <property name="value" value="generatedClass" />
-            </node>
-            <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1186771845387">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208995323900">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1186771845387">
               <link role="variableDeclaration" targetNodeId="1186771613135" resolveInfo="generator" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208995323901">
+              <link role="baseMethodDeclaration" targetNodeId="1.~ITemplateGenerator.findOutputNodeByInputNodeAndMappingName(jetbrains.mps.smodel.SNode,java.lang.String):jetbrains.mps.smodel.SNode" resolveInfo="findOutputNodeByInputNodeAndMappingName" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1186771845385">
+                <link role="variableDeclaration" targetNodeId="1186771602771" resolveInfo="containingRoot" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1186771845386">
+                <property name="value" value="generatedClass" />
+              </node>
             </node>
           </node>
         </node>
@@ -98,19 +101,21 @@
               </node>
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186773915896">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1186773976121">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1186773976122">
-                    <link role="baseMethodDeclaration" targetNodeId="1.~ITemplateGenerator.findOutputNodeByInputNodeAndMappingName(jetbrains.mps.smodel.SNode,java.lang.String):jetbrains.mps.smodel.SNode" resolveInfo="findOutputNodeByInputNodeAndMappingName" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227890028">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1186774967964">
-                        <link role="variableDeclaration" targetNodeId="1186773722859" resolveInfo="inputCellModel" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1186774967963" />
-                    </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1186773976124">
-                      <property name="value" value="nodeListHandler" />
-                    </node>
-                    <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1186773976125">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208995329079">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1186773976125">
                       <link role="variableDeclaration" targetNodeId="1186773787502" resolveInfo="generator" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208995329080">
+                      <link role="baseMethodDeclaration" targetNodeId="1.~ITemplateGenerator.findOutputNodeByInputNodeAndMappingName(jetbrains.mps.smodel.SNode,java.lang.String):jetbrains.mps.smodel.SNode" resolveInfo="findOutputNodeByInputNodeAndMappingName" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227890028">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1186774967964">
+                          <link role="variableDeclaration" targetNodeId="1186773722859" resolveInfo="inputCellModel" />
+                        </node>
+                        <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1186774967963" />
+                      </node>
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1186773976124">
+                        <property name="value" value="nodeListHandler" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -133,23 +138,27 @@
               </node>
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1186775118223">
                 <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1186775123865">
-                  <link role="concept" targetNodeId="3.1080736578640" />
+                  <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1208995357732">
+                    <link role="conceptDeclaration" targetNodeId="3.1080736578640" resolveInfo="BaseEditorComponent" />
+                  </node>
                 </node>
               </node>
             </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1186775156401">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1186775165997">
-            <link role="baseMethodDeclaration" targetNodeId="1.~ITemplateGenerator.findOutputNodeByInputNodeAndMappingName(jetbrains.mps.smodel.SNode,java.lang.String):jetbrains.mps.smodel.SNode" resolveInfo="findOutputNodeByInputNodeAndMappingName" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1186775185425">
-              <link role="variableDeclaration" targetNodeId="1186775150070" resolveInfo="ancestor" />
-            </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1186775166001">
-              <property name="value" value="generatedClass" />
-            </node>
-            <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1186775166002">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208995332348">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1186775166002">
               <link role="variableDeclaration" targetNodeId="1186773787502" resolveInfo="generator" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208995332349">
+              <link role="baseMethodDeclaration" targetNodeId="1.~ITemplateGenerator.findOutputNodeByInputNodeAndMappingName(jetbrains.mps.smodel.SNode,java.lang.String):jetbrains.mps.smodel.SNode" resolveInfo="findOutputNodeByInputNodeAndMappingName" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1186775185425">
+                <link role="variableDeclaration" targetNodeId="1186775150070" resolveInfo="ancestor" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1186775166001">
+                <property name="value" value="generatedClass" />
+              </node>
             </node>
           </node>
         </node>
@@ -190,7 +199,10 @@
             <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType" id="1186776253124">
               <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1186776253125" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1186775966516">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208995339510">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1186776238856">
+                <link role="variableDeclaration" targetNodeId="1186776238854" resolveInfo="ancestors" />
+              </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.MappingOperation" id="1186776072208">
                 <node role="mapper" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapperBlock" id="1186776072209">
                   <node role="defaultInputElement" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.DefaultInputElement" id="1186776072210">
@@ -201,16 +213,18 @@
                       <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1186776164210">
                         <property name="name" value="output" />
                         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1186776171056" />
-                        <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1186776093732">
-                          <link role="baseMethodDeclaration" targetNodeId="1.~ITemplateGenerator.findOutputNodeByInputNodeAndMappingName(jetbrains.mps.smodel.SNode,java.lang.String):jetbrains.mps.smodel.SNode" resolveInfo="findOutputNodeByInputNodeAndMappingName" />
-                          <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1186776082370">
+                        <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208995333956">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1186776082370">
                             <link role="variableDeclaration" targetNodeId="1186775920920" resolveInfo="generator" />
                           </node>
-                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1186776097186">
-                            <link role="closureParameter" targetNodeId="1186776072210" resolveInfo="it" />
-                          </node>
-                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1186776106626">
-                            <property name="value" value="generatedClass" />
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208995333957">
+                            <link role="baseMethodDeclaration" targetNodeId="1.~ITemplateGenerator.findOutputNodeByInputNodeAndMappingName(jetbrains.mps.smodel.SNode,java.lang.String):jetbrains.mps.smodel.SNode" resolveInfo="findOutputNodeByInputNodeAndMappingName" />
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1186776097186">
+                              <link role="closureParameter" targetNodeId="1186776072210" resolveInfo="it" />
+                            </node>
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1186776106626">
+                              <property name="value" value="generatedClass" />
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -234,18 +248,15 @@
                   </node>
                 </node>
               </node>
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1186776238856">
-                <link role="variableDeclaration" targetNodeId="1186776238854" resolveInfo="ancestors" />
-              </node>
             </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1186776271252">
-          <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1186776275005">
-            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation" id="1186776276756" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208995338460">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1186776273629">
               <link role="variableDeclaration" targetNodeId="1186776253123" resolveInfo="outputClasses" />
             </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation" id="1186776276756" />
           </node>
         </node>
       </node>
@@ -271,23 +282,24 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1189585233685">
             <property name="name" value="itemClass" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1189585237867" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1189585203661">
-              <link role="baseMethodDeclaration" targetNodeId="1.~ITemplateGenerator.findOutputNodeByInputNodeAndMappingName(jetbrains.mps.smodel.SNode,java.lang.String):jetbrains.mps.smodel.SNode" resolveInfo="findOutputNodeByInputNodeAndMappingName" />
-              <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1189585183956">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208995312854">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1189585183956">
                 <link role="variableDeclaration" targetNodeId="1189585156438" resolveInfo="generator" />
               </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1189585220600">
-                <link role="variableDeclaration" targetNodeId="1189585159188" resolveInfo="item" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1189585221989">
-                <property name="value" value="generatedClass" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208995312855">
+                <link role="baseMethodDeclaration" targetNodeId="1.~ITemplateGenerator.findOutputNodeByInputNodeAndMappingName(jetbrains.mps.smodel.SNode,java.lang.String):jetbrains.mps.smodel.SNode" resolveInfo="findOutputNodeByInputNodeAndMappingName" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1189585220600">
+                  <link role="variableDeclaration" targetNodeId="1189585159188" resolveInfo="item" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1189585221989">
+                  <property name="value" value="generatedClass" />
+                </node>
               </node>
             </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1189585242008">
-          <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1189585262411">
-            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation" id="1189585263547" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208995339233">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227926259">
               <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1189585242586">
                 <link role="concept" targetNodeId="4.1068390468198" />
@@ -299,6 +311,7 @@
                 <link role="link" targetNodeId="4.1068390468201" />
               </node>
             </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation" id="1189585263547" />
           </node>
         </node>
       </node>
