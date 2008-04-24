@@ -44,7 +44,7 @@ public class ConvertForEachStatementToForeachStatement_Intention extends BaseInt
     SPropertyOperations.set(newVariable, "name", SPropertyOperations.getString(_zClosureContext.oldVariable, "name"));
     SLinkOperations.setTarget(newVariable, "type", variableType, true);
     {
-      ICursor<SNode> _zCursor = CursorFactory.createCursor(SequenceOperations.where(SNodeOperations.getDescendants(SLinkOperations.getTarget(foreachStatement, "body", true), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference", false), new zPredicate(null, _zClosureContext)));
+      ICursor<SNode> _zCursor = CursorFactory.createCursor(SequenceOperations.where(SNodeOperations.getDescendants(SLinkOperations.getTarget(foreachStatement, "body", true), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference", false), new zPredicate(ConvertForEachStatementToForeachStatement_Intention.this, _zClosureContext)));
       try {
         while(_zCursor.moveToNext()) {
           SNode oldRef = _zCursor.getCurrent();
