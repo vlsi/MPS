@@ -18,7 +18,7 @@ public class AssertThrows extends Statement implements MessageHolder {
   public static String EXCEPTION_TYPE = "exceptionType";
   public static String MESSAGE = "message";
 
-  public  AssertThrows(SNode node) {
+  public AssertThrows(SNode node) {
     super(node);
   }
 

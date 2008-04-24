@@ -78,7 +78,7 @@ public class TestMethodTreeNode extends MPSTreeNode {
   }
 
   public void doubleClick() {
-    IDEProjectFrame ide = (IDEProjectFrame) this.getOperationContext().getComponent(AbstractProjectFrame.class);
+    IDEProjectFrame ide = (IDEProjectFrame)this.getOperationContext().getComponent(AbstractProjectFrame.class);
     ide.openNode(this.testMethod, this.getOperationContext());
   }
 

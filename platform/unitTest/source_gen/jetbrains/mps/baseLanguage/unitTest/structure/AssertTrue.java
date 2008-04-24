@@ -13,7 +13,7 @@ public class AssertTrue extends Statement {
   public static final String concept = "jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue";
   public static String CONDITION = "condition";
 
-  public  AssertTrue(SNode node) {
+  public AssertTrue(SNode node) {
     super(node);
   }
 

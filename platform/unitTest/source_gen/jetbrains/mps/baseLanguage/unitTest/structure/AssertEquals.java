@@ -14,7 +14,7 @@ public class AssertEquals extends Statement {
   public static String EXPECTED = "expected";
   public static String ACTUAL = "actual";
 
-  public  AssertEquals(SNode node) {
+  public AssertEquals(SNode node) {
     super(node);
   }
 

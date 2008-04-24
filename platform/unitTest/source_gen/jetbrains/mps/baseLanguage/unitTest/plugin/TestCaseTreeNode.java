@@ -49,7 +49,7 @@ public class TestCaseTreeNode extends MPSTreeNode {
   }
 
   public void doubleClick() {
-    IDEProjectFrame ide = (IDEProjectFrame) this.getOperationContext().getComponent(AbstractProjectFrame.class);
+    IDEProjectFrame ide = (IDEProjectFrame)this.getOperationContext().getComponent(AbstractProjectFrame.class);
     ide.openNode(this.testCase, this.getOperationContext());
   }
 

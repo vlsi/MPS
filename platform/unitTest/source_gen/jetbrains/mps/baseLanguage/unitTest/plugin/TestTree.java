@@ -20,7 +20,7 @@ public class TestTree extends MPSTree {
   private Map<SNode, List<SNode>> tests;
   private TestNameMap<TestCaseTreeNode, TestMethodTreeNode> map;
 
-  public  TestTree() {
+  public TestTree() {
     this.tests = new LinkedHashMap<SNode, List<SNode>>();
     this.map = new TestNameMap<TestCaseTreeNode, TestMethodTreeNode>();
   }

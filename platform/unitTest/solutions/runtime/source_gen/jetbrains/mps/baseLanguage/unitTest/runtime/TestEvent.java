@@ -26,7 +26,7 @@ public class TestEvent {
   private long memoryUsage;
   private long time;
 
-  public  TestEvent(String token, Test test) {
+  public TestEvent(String token, Test test) {
     this.token = token;
     this.testCaseName = test.getClass().getName();
     if (test instanceof TestCase) {
@@ -36,7 +36,7 @@ public class TestEvent {
     this.memoryUsage = runtime.totalMemory() - runtime.freeMemory();
     this.time = System.currentTimeMillis();
   }
-  private  TestEvent() {
+  private TestEvent() {
   }
 
   public static String isTestEvent(String messageString) {

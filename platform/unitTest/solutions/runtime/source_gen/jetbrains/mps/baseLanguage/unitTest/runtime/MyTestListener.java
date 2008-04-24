@@ -11,7 +11,7 @@ public class MyTestListener implements TestListener {
   private CommandOutputStream out;
   private CommandOutputStream err;
 
-  public  MyTestListener(CommandOutputStream out, CommandOutputStream err) {
+  public MyTestListener(CommandOutputStream out, CommandOutputStream err) {
     this.out = out;
     this.err = err;
   }

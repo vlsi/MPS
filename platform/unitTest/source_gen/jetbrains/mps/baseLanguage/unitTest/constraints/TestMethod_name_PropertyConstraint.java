@@ -11,7 +11,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 
 public class TestMethod_name_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
 
-  public  TestMethod_name_PropertyConstraint() {
+  public TestMethod_name_PropertyConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

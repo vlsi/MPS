@@ -21,7 +21,7 @@ public enum TestState {
 
   private Icon icon;
 
- TestState(String iconName) {
+TestState(String iconName) {
     Language language = Language.getLanguageFor(SNodeOperations.getModel(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.BTestCase")).getModelDescriptor());
     String pathToIcon = Macros.languageDescriptor().expandPath(Macros.LANGUAGE_DESCRIPTOR + "\\icons\\states\\" + iconName, language.getDescriptorFile());
     this.icon = IconManager.loadIcon(pathToIcon, true);

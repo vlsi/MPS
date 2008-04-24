@@ -13,7 +13,7 @@ public class BTestCase extends ClassConcept {
   public static String TEST_CASE_NAME = "testCaseName";
   public static String TEST_METHOD_LIST = "testMethodList";
 
-  public  BTestCase(SNode node) {
+  public BTestCase(SNode node) {
     super(node);
   }
 

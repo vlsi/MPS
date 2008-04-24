@@ -15,7 +15,7 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 
 public class TestRunner extends BaseTestRunner {
 
-  public  TestRunner() {
+  public TestRunner() {
   }
 
   public static void main(String[] argv) {
@@ -23,6 +23,7 @@ public class TestRunner extends BaseTestRunner {
     try {
       runner.start(argv);
     } catch (Throwable t) {
+      t.printStackTrace(System.err);
       System.exit(1);
     }
   }

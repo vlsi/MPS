@@ -12,7 +12,7 @@ public class TestMethod extends BaseMethodDeclaration {
   public static final String concept = "jetbrains.mps.baseLanguage.unitTest.structure.TestMethod";
   public static String METHOD_NAME = "methodName";
 
-  public  TestMethod(SNode node) {
+  public TestMethod(SNode node) {
     super(node);
   }
 

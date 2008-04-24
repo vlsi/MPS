@@ -14,7 +14,7 @@ public class AssertSame extends Statement {
   public static String EXPECTED = "expected";
   public static String ACTUAL = "actual";
 
-  public  AssertSame(SNode node) {
+  public AssertSame(SNode node) {
     super(node);
   }
 

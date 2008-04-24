@@ -15,7 +15,7 @@ public class Fail extends Statement implements MessageHolder {
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String MESSAGE = "message";
 
-  public  Fail(SNode node) {
+  public Fail(SNode node) {
     super(node);
   }
 

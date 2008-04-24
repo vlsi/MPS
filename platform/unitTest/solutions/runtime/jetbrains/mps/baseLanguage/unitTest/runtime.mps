@@ -535,6 +535,20 @@
               </node>
             </node>
             <node role="catchBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208533695890">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1209031340423">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209031340852">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1209031340424">
+                    <link role="variableDeclaration" targetNodeId="1208533695888" resolveInfo="t" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209031348153">
+                    <link role="baseMethodDeclaration" targetNodeId="3.~Throwable.printStackTrace(java.io.PrintStream):void" resolveInfo="printStackTrace" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1209031350203">
+                      <link role="classifier" targetNodeId="3.~System" resolveInfo="System" />
+                      <link role="variableDeclaration" targetNodeId="3.~System.err" resolveInfo="err" />
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208533880578">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1208533882546">
                   <link role="baseMethodDeclaration" targetNodeId="3.~System.exit(int):void" resolveInfo="exit" />

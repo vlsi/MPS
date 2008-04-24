@@ -11,7 +11,7 @@ public class CommandOutputStream extends FilterOutputStream {
   private int lastChar;
   private PrintStream printOut;
 
-  public  CommandOutputStream(PrintStream out) {
+  public CommandOutputStream(PrintStream out) {
     super(out);
     this.printOut = out;
   }
