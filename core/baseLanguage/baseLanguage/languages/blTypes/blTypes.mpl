@@ -8,10 +8,10 @@
     <model modelUID="jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors" />
   </accessoryModels>
   <generators />
-  <classPath />
-  <runtimeClassPath>
+  <classPath>
     <entry path="${mps_home}\core\baseLanguage\baseLanguage\classes" />
-  </runtimeClassPath>
+  </classPath>
+  <languageRuntimeClassPath />
   <sourcePath />
   <osgiOptions>
     <requiredBundles />

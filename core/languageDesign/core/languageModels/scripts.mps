@@ -26,6 +26,8 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <maxImportIndex value="28" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.ide.action@java_stub" version="-1" />
@@ -1268,6 +1270,56 @@
             <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201261631187">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1201261632376">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1201261633940" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.logging.refactoring.structure.Refactoring" id="1209043749725">
+    <property name="name" value="RenameModel_new" />
+    <property name="userFriendlyName" value="Rename Model (under construction)" />
+    <link role="applicableConcept" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="internalArguments" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument" id="1209044427701">
+      <property name="name" value="modelDescriptor" />
+      <node role="argumentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1209044433671">
+        <link role="classifier" targetNodeId="5.~SModelDescriptor" resolveInfo="SModelDescriptor" />
+      </node>
+    </node>
+    <node role="arguments" type="jetbrains.mps.logging.refactoring.structure.RequiredUserEnteredArgument" id="1209043860574">
+      <property name="name" value="newName" />
+      <property name="presentation" value="new model name" />
+      <node role="argumentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1209043869561">
+        <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
+      </node>
+      <node role="initialValue" type="jetbrains.mps.logging.refactoring.structure.InitialValueClause" id="1209043888767">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1209043888768">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1209043892957">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209043916266">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209043894271">
+                <node role="operand" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_ActionContext" id="1209043892958" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209043912655">
+                  <link role="baseMethodDeclaration" targetNodeId="2.~ActionContext.getModel():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModel" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209043930128">
+                <link role="baseMethodDeclaration" targetNodeId="5.~SModelDescriptor.getLongName():java.lang.String" resolveInfo="getLongName" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="isApplicableClause" type="jetbrains.mps.logging.refactoring.structure.IsApplicableClause" id="1209044447860">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1209044447861">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1209044451628">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1209044499916">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1209044501060" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209044486818">
+              <node role="operand" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_ActionContext" id="1209044451629" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209044498415">
+                <link role="baseMethodDeclaration" targetNodeId="2.~ActionContext.getModel():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModel" />
               </node>
             </node>
           </node>
