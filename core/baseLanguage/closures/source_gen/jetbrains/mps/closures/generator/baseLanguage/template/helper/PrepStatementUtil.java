@@ -15,7 +15,7 @@ public class PrepStatementUtil {
   private PrepStatementUtil.Context ctx;
   private ITemplateGenerator generator;
 
-  private  PrepStatementUtil(ITemplateGenerator generator) {
+  private PrepStatementUtil(ITemplateGenerator generator) {
     this.ctx = new PrepStatementUtil.Context();
     this.generator = generator;
   }
@@ -283,7 +283,7 @@ public class PrepStatementUtil {
 
     public int label;
 
-    public  Context() {
+    public Context() {
       this.label = 0;
     }
 

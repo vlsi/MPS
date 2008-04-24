@@ -134,7 +134,7 @@ public class FunctionTypeUtil {
 
   public static class FunctionTypeComparator implements Comparator<SNode> {
 
-    public  FunctionTypeComparator() {
+    public FunctionTypeComparator() {
     }
 
     public int compare(SNode x, SNode y) {
