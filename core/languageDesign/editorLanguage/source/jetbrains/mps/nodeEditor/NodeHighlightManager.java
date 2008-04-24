@@ -13,6 +13,7 @@ import java.awt.*;
 public class NodeHighlightManager implements IEditorMessageOwner {
   private AbstractEditorComponent myEditor;
   private Map<IEditorMessageOwner, Set<IEditorMessage>> myMessages = new HashMap<IEditorMessageOwner, Set<IEditorMessage>>();
+  private final Object myMessagesLock = new Object();
 
   public NodeHighlightManager(AbstractEditorComponent edtitor) {
     myEditor = edtitor;
@@ -22,48 +23,29 @@ public class NodeHighlightManager implements IEditorMessageOwner {
     for (IEditorMessageOwner owner : myMessages.keySet()) {
       myEditor.getMessagesGutter().removeMessages(owner);
     }
-    myMessages.clear();
+    synchronized (myMessagesLock) {
+      myMessages.clear();
+    }
     myEditor.getExternalComponent().repaint();
   }
 
   public boolean clearForOwner(IEditorMessageOwner owner) {
     boolean result = myEditor.getMessagesGutter().removeMessages(owner);
-    myMessages.remove(owner);
+    synchronized (myMessagesLock) {
+      myMessages.remove(owner);
+    }
     myEditor.getExternalComponent().repaint();
     return result;
   }
 
   private Iterable<IEditorMessage> myMessages() {
-    return new Iterable<IEditorMessage>() {
-      public Iterator<IEditorMessage> iterator() {
-        return new Iterator<IEditorMessage>() {
-          Iterator<Set<IEditorMessage>> mySetIterator = myMessages.values().iterator();
-          Iterator<IEditorMessage> myCurrentIterator = null;
-          public boolean hasNext() {
-            if (myCurrentIterator == null) {
-              return mySetIterator.hasNext();
-            }
-            if (myCurrentIterator.hasNext()) return true;
-            return mySetIterator.hasNext();
-          }
-
-          public IEditorMessage next() {
-            if (myCurrentIterator == null) {
-              myCurrentIterator = mySetIterator.next().iterator();
-            }
-            if (myCurrentIterator.hasNext()) {
-              return myCurrentIterator.next();
-            }
-            myCurrentIterator = mySetIterator.next().iterator();
-            return myCurrentIterator.next();
-          }
-
-          public void remove() {
-            throw new UnsupportedOperationException();
-          }
-        };
+    Set<IEditorMessage> messages = new HashSet<IEditorMessage>();
+    synchronized (myMessagesLock) {
+      for (Set<IEditorMessage> messageForOwner : myMessages.values()) {
+        messages.addAll(messageForOwner);
       }
-    };
+    }
+    return messages;
   }
 
   public void mark(SNode node, Color color, String messageText, IEditorMessageOwner owner) {
