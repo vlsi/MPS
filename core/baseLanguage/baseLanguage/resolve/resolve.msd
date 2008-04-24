@@ -6,10 +6,12 @@
     <modelRoot path="${mps_home}\models\java" namespacePrefix="java" />
   </models>
   <classPath />
-  <runtimeClassPath />
   <sourcePath />
   <dependencies>
     <dependency reexport="true">jetbrains.mps.annotations</dependency>
   </dependencies>
+  <usedLanguages>
+    <usedLanguages>jetbrains.mps.annotations</usedLanguages>
+  </usedLanguages>
 </solution>
 

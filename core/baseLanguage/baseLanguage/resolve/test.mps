@@ -5,7 +5,7 @@
   <language namespace="jetbrains.mps.baseLanguage">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
-  <language namespace="jetbrains.mps.comments" />
+  <language namespace="jetbrains.mps.annotations" />
   <maxImportIndex value="234" />
   <import index="1" modelUID="jetbrains.mps.resolve@java_stub" version="-1" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />
@@ -48,31 +48,6 @@
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1121172827473">
       <property name="name" value="boo" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1121172827475">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1121172827476">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1121172827477">
-            <property name="name" value="f" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1121172827478" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1121172827479">
-              <property name="value" value="6" />
-              <node role="_attr_$property_attribute$value" type="jetbrains.mps.comments.structure.PropertyComment" id="1136562675102">
-                <property name="propertyName" value="value" />
-                <property name="text" value="sdsdsd" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1127826357147">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1127826357148">
-            <property name="name" value="a" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1127826357149" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1127826360679">
-              <property name="value" value="45" />
-            </node>
-          </node>
-          <node role="_attr_$attribute" type="jetbrains.mps.comments.structure.Comment" id="1136562682166">
-            <property name="text" value="blah-blah-blah" />
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1127826363866">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1127826363867">
             <property name="name" value="b" />
@@ -506,7 +481,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1158941295135" />
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1121253852508" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1121253857102">
