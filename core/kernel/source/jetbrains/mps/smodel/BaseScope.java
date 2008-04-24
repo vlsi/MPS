@@ -17,6 +17,7 @@ public abstract class BaseScope implements IScope {
 
   private Set<IModule> myVisibleModules;
   private Map<String, Language> myLanguages = new HashMap<String, Language>();
+  private Map<String, DevKit> myDevkits = new HashMap<String, DevKit>();
 
   private Map<SModelUID, SModelDescriptor> myDescriptors = new HashMap<SModelUID, SModelDescriptor>();
   
@@ -45,16 +46,13 @@ public abstract class BaseScope implements IScope {
   }
 
   public List<DevKit> getVisibleDevkits() {
-    return new ArrayList<DevKit>(CollectionUtil.filter(DevKit.class, getVisibleModules()));
+    initialize();
+    return new ArrayList<DevKit>(myDevkits.values());
   }
 
   public DevKit getDevKit(String devKitNamespace) {
-    for (DevKit dk : getVisibleDevkits()) {
-      if (devKitNamespace.equals(dk.getName())) {
-        return dk;
-      }
-    }
-    return null;
+    initialize();
+    return myDevkits.get(devKitNamespace);
   }
 
   public boolean isVisibleDevKit(String devKitNamespace) {
@@ -104,6 +102,14 @@ public abstract class BaseScope implements IScope {
 
     Set<Language> usedLanguages = new HashSet<Language>();
     usedLanguages.addAll(getInitialUsedLanguages());
+
+    Set<DevKit> usedDevkits = new HashSet<DevKit>();
+    for (IModule m : getInitialModules()) {
+      for (DevKit dk : m.getUsedDevkits()) {
+        usedDevkits.add(dk);
+        usedLanguages.addAll(dk.getExportedLanguages());
+      }
+    }
 
     boolean changed = true;
     while (changed) {
@@ -157,18 +163,15 @@ public abstract class BaseScope implements IScope {
           }
         }
       }
-
-      for (DevKit dk : CollectionUtil.filter(DevKit.class, visibleModules)) {
-        for (Language l : dk.getExportedLanguages()) {
-          if (!usedLanguages.contains(l)) {
-            usedLanguages.add(l);
-            changed = true;
-          }
-        }
-      }
     }
 
     myVisibleModules = visibleModules;
+
+    myDevkits = new HashMap<String, DevKit>();
+    for (DevKit dk : usedDevkits) {
+      myDevkits.put(dk.getModuleUID(), dk);
+    }
+
     myLanguages = new HashMap<String, Language>();
     for (Language l : usedLanguages) {
       myLanguages.put(l.getNamespace(), l);

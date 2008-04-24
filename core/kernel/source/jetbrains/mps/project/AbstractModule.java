@@ -19,10 +19,6 @@ import jetbrains.mps.vfs.JarFileEntryFile;
 import java.io.File;
 import java.util.*;
 
-/**
- * Igor Alshannikov
- * Sep 9, 2005
- */
 public abstract class AbstractModule implements IModule {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
 
