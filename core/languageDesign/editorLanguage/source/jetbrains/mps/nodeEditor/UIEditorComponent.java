@@ -64,7 +64,7 @@ public class UIEditorComponent extends AbstractEditorComponent implements IEdito
   }
 
   public EditorCell createRootCell(List<SModelEvent> events) {
-    if (getEditedNode() == null) {
+    if (getEditedNode() == null || getEditorContext() == null) {
       return new EditorCell_Constant(new EditorContext(this, null, null), null, "<NO NODE>");
     }
     return getEditorContext().createRootCell(getEditedNode(), events);
