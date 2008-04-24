@@ -8,9 +8,7 @@
   <classPath>
     <entry path="${language_descriptor}\classes" />
   </classPath>
-  <runtimeClassPath>
-    <entry path="${language_descriptor}\classes" />
-  </runtimeClassPath>
+  <languageRuntimeClassPath />
   <sourcePath />
   <osgiOptions>
     <requiredBundles />

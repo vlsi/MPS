@@ -43,8 +43,7 @@ class ClasspathCollector {
     }
     myVisited.add(current);
 
-    myResult.add(current.getRuntimeClasspath());
-    myResult.add(current.getJavaStubsClassPathItem());
+    myResult.add(current.getClassPathItem());
 
     for (IModule dep : current.getDependOnModules()) {
       doCollect(dep);

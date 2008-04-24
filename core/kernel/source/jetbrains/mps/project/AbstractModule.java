@@ -40,24 +40,38 @@ public abstract class AbstractModule implements IModule {
 
   private ModuleScope myScope = new ModuleScope();
 
-  private IClassPathItem myRuntimeClassPathItem;
-  private IClassPathItem myJavaStubsClassPathItem;  
-
+  private IClassPathItem myClassPath;
   private Map<String, Class> myClassesCache = new HashMap<String, Class>();
 
 
   protected void reload() {
     MPSModuleRepository.getInstance().unRegisterModules(this);
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
-
     rereadModels();
-    updateRuntimeClassPath();
-    reloadStubs();
+
+    updateClassPath();
 
     createManifest();
   }
 
   public void convert() {
+
+
+    boolean save = false;
+
+    Set<String> visited = new HashSet<String>();
+    for (ClassPathEntry e : getModuleDescriptor().getClassPathEntrys()) {
+      if (visited.contains(e.getPath())) {
+        e.delete();
+        save = true;
+      }
+
+      visited.add(e.getPath());
+    }
+
+    if (save) {
+      save();
+    }
   }
 
   public boolean isPackaged() {
@@ -254,32 +268,14 @@ public abstract class AbstractModule implements IModule {
   public List<String> getClassPath() {
     ArrayList<String> result = new ArrayList<String>();
 
+    if (getClassesGen() != null && getClassesGen().exists()) {
+      result.add(getClassesGen().getCanonicalPath());
+    }
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor != null) {
-      for (ClassPathEntry entry : CollectionUtil.iteratorAsIterable(descriptor.classPathEntrys())) {
+      for (ClassPathEntry entry : descriptor.getClassPathEntrys()) {
         result.add(entry.getPath());
       }
-    }
-
-    return result;
-  }
-
-  public List<String> getRuntimeClassPathItems() {
-    ArrayList<String> result = new ArrayList<String>();
-
-    if (getClassesGen() != null) {
-      result.add(getClassesGen().getPath());
-    }
-
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor != null) {
-      for (ClassPathEntry entry : CollectionUtil.iteratorAsIterable(descriptor.runtimeClassPathEntrys())) {
-        result.add(entry.getPath());
-      }
-    }
-
-    if (BootstrapLanguagesManager.getInstance().getLanguagesUIDsUsedInCore().contains(getModuleUID())) {
-      result.add(ClassLoaderManager.getInstance().getBaseMPSPath());
     }
 
     return result;
@@ -311,33 +307,8 @@ public abstract class AbstractModule implements IModule {
     MPSModuleRepository.getInstance().fireModuleInitialized(this);
   }
 
-  /**
-   * Call this method after you have set module descriptor
-   */
-  public void updateRuntimeClassPath() {
-    CompositeClassPathItem result = new CompositeClassPathItem();
-    for (String s : getRuntimeClassPathItems()) {
-      if (!FileSystem.getFile(s).exists()) {
-        if (!s.equals(getClassesGen().getPath())) {
-          LOG.error("Classpath item doesn't exist " + s + "in" + this);
-        }
-        continue;
-      }
-
-      if (s.equals(ClassLoaderManager.getInstance().getBaseMPSPath())) {
-        result.add(ClassLoaderManager.getInstance().getMPSPath());
-      } else if (FileSystem.getFile(s).isDirectory()) {
-        result.add(new FileClassPathItem(s));
-      } else {
-        result.add(new JarFileClassPathItem(s));
-      }
-    }
-
-    myRuntimeClassPathItem = result;
-  }
-
-  public IClassPathItem getRuntimeClasspath() {
-    return myRuntimeClassPathItem;
+  public IClassPathItem getClassPathItem() {
+    return myClassPath;
   }
 
   public Class getClass(String fqName) {
@@ -350,7 +321,7 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
-  public void reloadStubs() {
+  public void updateClassPath() {
     updateClassPathItem();
     releaseJavaStubs();
     loadNewStubs();
@@ -374,7 +345,7 @@ public abstract class AbstractModule implements IModule {
       }
     }
 
-    myJavaStubsClassPathItem = result;
+    myClassPath = result;
   }
 
   private void releaseJavaStubs() {
@@ -390,7 +361,7 @@ public abstract class AbstractModule implements IModule {
 
     ClassPathModelRootManager manager = new ClassPathModelRootManager() {
       protected IClassPathItem getClassPathItem() {
-        return myJavaStubsClassPathItem;
+        return myClassPath;
       }
     };
 
@@ -412,9 +383,6 @@ public abstract class AbstractModule implements IModule {
     }
   }
 
-  public IClassPathItem getJavaStubsClassPathItem() {
-    return myJavaStubsClassPathItem;
-  }
 
   public IClassPathItem getModuleWithDependenciesClassPathItem() {
     return getDependenciesClasspath(CollectionUtil.asSet((IModule) this), false, false);
@@ -541,8 +509,8 @@ public abstract class AbstractModule implements IModule {
     }
 
     String basePath = descriptor.getParent().getCanonicalPath();
-    for (int i = 0; i < getRuntimeClassPathItems().size(); i++) {
-      String s = getRuntimeClassPathItems().get(i);
+    for (int i = 0; i < getClassPath().size(); i++) {
+      String s = getClassPath().get(i);
 
       if (FileSystem.getFile(s).isDirectory()) {
         s += "/";
@@ -551,7 +519,7 @@ public abstract class AbstractModule implements IModule {
       String relativePath = getPathRelativeTo(s, basePath);
       relativePath = relativePath.replace(File.separatorChar, '/');
       result.append("  ").append(relativePath);
-      if (i != getRuntimeClassPathItems().size() - 1) {
+      if (i != getClassPath().size() - 1) {
         result.append(",");
       }
       result.append("\n");

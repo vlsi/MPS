@@ -148,6 +148,7 @@ public class DevKit extends AbstractModule {
   }
 
   public void convert() {
+    super.convert();
   }
 
   private void devKitChanged() {

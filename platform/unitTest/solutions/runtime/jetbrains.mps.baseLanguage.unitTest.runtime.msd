@@ -6,9 +6,6 @@
   <classPath>
     <entry path="${mps_home}\lib\junit4\junit-4.1.jar" />
   </classPath>
-  <runtimeClassPath>
-    <entry path="${mps_home}\lib\junit4\junit-4.1.jar" />
-  </runtimeClassPath>
   <sourcePath />
   <usedLanguages>
     <usedLanguages>jetbrains.mps.baseLanguage</usedLanguages>

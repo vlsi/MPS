@@ -9,9 +9,7 @@
   <classPath>
     <entry path="${mps_home}\core\languageDesign\annotations\classes" />
   </classPath>
-  <runtimeClassPath>
-    <entry path="${mps_home}\core\languageDesign\annotations\classes" />
-  </runtimeClassPath>
+  <languageRuntimeClassPath />
   <sourcePath />
   <osgiOptions>
     <requiredBundles />

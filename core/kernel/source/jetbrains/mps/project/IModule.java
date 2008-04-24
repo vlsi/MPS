@@ -48,15 +48,15 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   List<String> getSourcePaths();
   Class getClass(String fqName);
 
-  IClassPathItem getJavaStubsClassPathItem();
-  IClassPathItem getRuntimeClasspath();
+  IClassPathItem getClassPathItem();
+  
   IClassPathItem getModuleWithDependenciesClassPathItem();
 
   boolean isCompileInMPS();
   boolean reloadClassesAfterGeneration();
 
   void invalidateCaches();
-  void reloadStubs();
+  void updateClassPath();
   void save();
   void convert();
   boolean isPackaged();

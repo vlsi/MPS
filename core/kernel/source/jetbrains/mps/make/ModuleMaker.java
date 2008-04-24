@@ -203,8 +203,7 @@ public class ModuleMaker {
     }
 
     for (IModule module : modules) {
-      module.reloadStubs();
-      ((AbstractModule) module).updateRuntimeClassPath();
+      module.updateClassPath();
     }
 
     return new jetbrains.mps.plugin.CompilationResult(errorCount, 0, false);

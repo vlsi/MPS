@@ -9,7 +9,7 @@
     <model modelUID="jetbrains.mpslite.treeAspect" />
   </accessoryModels>
   <generators>
-    <generator generatorUID="jetbrains.mpslite#1182846582475" targetLanguage="jetbrains.mps.baseLanguage">
+    <generator generatorUID="jetbrains.mpslite#1182846582475">
       <models>
         <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mpslite.generator.baseLanguage.template" />
       </models>
@@ -54,9 +54,7 @@
   <classPath>
     <entry path="${mps_home}\core\languageDesign\mps-lite\classes" />
   </classPath>
-  <runtimeClassPath>
-    <entry path="${mps_home}\core\languageDesign\mps-lite\classes" />
-  </runtimeClassPath>
+  <languageRuntimeClassPath />
   <sourcePath />
   <osgiOptions>
     <requiredBundles />

@@ -41,9 +41,6 @@
   <classPath>
     <entry path="${language_descriptor}\classes" />
   </classPath>
-  <runtimeClassPath>
-    <entry path="${language_descriptor}\classes" />
-  </runtimeClassPath>
   <languageRuntimeClassPath>
     <entry path="${language_descriptor}\classes" />
   </languageRuntimeClassPath>

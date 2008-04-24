@@ -53,6 +53,7 @@ public class Solution extends AbstractModule {
   }
 
   public void convert() {
+    super.convert();
   }
 
 
@@ -178,10 +179,10 @@ public class Solution extends AbstractModule {
   }
 
   protected void collectRuntimePackages(Set<String> result, String current) {
-    if (!"".equals(current) && !getRuntimeClasspath().getAvailableClasses(current).isEmpty()) {
+    if (!"".equals(current) && !getClassPathItem().getAvailableClasses(current).isEmpty()) {
       result.add(current);
     }
-    for (String subpack : getRuntimeClasspath().getSubpackages(current)) {
+    for (String subpack : getClassPathItem().getSubpackages(current)) {
       collectRuntimePackages(result, subpack);
     }
   }

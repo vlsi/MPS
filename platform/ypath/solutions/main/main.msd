@@ -6,9 +6,6 @@
   <classPath>
     <entry path="${mps_home}\platform\ypath\solutions\classes" />
   </classPath>
-  <runtimeClassPath>
-    <entry path="${mps_home}\platform\ypath\solutions\classes" />
-  </runtimeClassPath>
   <sourcePath />
   <dependencies>
     <dependency reexport="true">jetbrains.mps.ypath</dependency>

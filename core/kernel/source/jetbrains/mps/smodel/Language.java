@@ -31,10 +31,6 @@ import java.util.*;
 import java.lang.reflect.Constructor;
 
 
-/**
- * Author: Sergey Dmitriev
- * Created Jan 30, 2004
- */
 public class Language extends AbstractModule implements Marshallable<Language> {
   private static final Logger LOG = Logger.getLogger(Language.class);
 
@@ -127,9 +123,8 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     }
 
     rereadModels();
-    updateRuntimeClassPath();
     updateLanguageRuntimeClassPathItem();
-    reloadStubs();
+    updateClassPath();
     revalidateGenerators();
 
     SModelRepository.getInstance().registerModelDescriptor(myLanguageDescriptor.getModel().getModelDescriptor(), this);
@@ -296,7 +291,9 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     }
   }
 
-  public void convert() {
+  public void convert() {    
+    super.convert();
+
     validateExtends();
 
     for (Generator g : getGenerators()) {
