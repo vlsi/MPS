@@ -11,7 +11,7 @@ public class NotExpression extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.NotExpression";
   public static String EXPRESSION = "expression";
 
-  public  NotExpression(SNode node) {
+  public NotExpression(SNode node) {
     super(node);
   }
 

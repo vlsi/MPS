@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ShortType extends PrimitiveType {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ShortType";
 
-  public  ShortType(SNode node) {
+  public ShortType(SNode node) {
     super(node);
   }
 

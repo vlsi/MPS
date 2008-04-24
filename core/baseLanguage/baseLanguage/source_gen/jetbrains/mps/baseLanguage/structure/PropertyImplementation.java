@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class PropertyImplementation extends BaseConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.PropertyImplementation";
 
-  public  PropertyImplementation(SNode node) {
+  public PropertyImplementation(SNode node) {
     super(node);
   }
 

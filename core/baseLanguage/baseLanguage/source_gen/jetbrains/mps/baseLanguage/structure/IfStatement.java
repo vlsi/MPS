@@ -16,7 +16,7 @@ public class IfStatement extends Statement {
   public static String IF_TRUE = "ifTrue";
   public static String ELSIF_CLAUSES = "elsifClauses";
 
-  public  IfStatement(SNode node) {
+  public IfStatement(SNode node) {
     super(node);
   }
 

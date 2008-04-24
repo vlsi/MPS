@@ -16,7 +16,7 @@ public class ClosureParameter extends BaseConcept implements INamedConcept {
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  ClosureParameter(SNode node) {
+  public ClosureParameter(SNode node) {
     super(node);
   }
 

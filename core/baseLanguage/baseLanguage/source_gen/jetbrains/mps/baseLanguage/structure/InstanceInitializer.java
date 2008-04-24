@@ -12,7 +12,7 @@ public class InstanceInitializer extends BaseConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.InstanceInitializer";
   public static String STATEMENT_LIST = "statementList";
 
-  public  InstanceInitializer(SNode node) {
+  public InstanceInitializer(SNode node) {
     super(node);
   }
 

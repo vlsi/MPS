@@ -14,7 +14,7 @@ public class ConstructorDeclaration extends BaseMethodDeclaration implements Cla
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String VISIBILITY = "visibility";
 
-  public  ConstructorDeclaration(SNode node) {
+  public ConstructorDeclaration(SNode node) {
     super(node);
   }
 

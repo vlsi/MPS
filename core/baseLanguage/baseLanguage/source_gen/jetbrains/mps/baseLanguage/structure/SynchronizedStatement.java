@@ -12,7 +12,7 @@ public class SynchronizedStatement extends Statement {
   public static String EXPRESSION = "expression";
   public static String BLOCK = "block";
 
-  public  SynchronizedStatement(SNode node) {
+  public SynchronizedStatement(SNode node) {
     super(node);
   }
 

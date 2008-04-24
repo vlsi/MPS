@@ -14,7 +14,7 @@ public class ClassifierType extends Type {
   public static String CLASSIFIER = "classifier";
   public static String PARAMETER = "parameter";
 
-  public  ClassifierType(SNode node) {
+  public ClassifierType(SNode node) {
     super(node);
   }
 

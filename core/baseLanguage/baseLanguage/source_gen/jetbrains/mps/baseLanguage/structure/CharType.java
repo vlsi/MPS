@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class CharType extends PrimitiveType {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.CharType";
 
-  public  CharType(SNode node) {
+  public CharType(SNode node) {
     super(node);
   }
 

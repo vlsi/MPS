@@ -20,7 +20,7 @@ public class EnumConstantDeclaration extends BaseConcept implements INamedConcep
   public static String VISIBILITY = "visibility";
   public static String ACTUAL_ARGUMENT = "actualArgument";
 
-  public  EnumConstantDeclaration(SNode node) {
+  public EnumConstantDeclaration(SNode node) {
     super(node);
   }
 

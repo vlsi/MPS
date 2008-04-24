@@ -14,7 +14,7 @@ public class ArrayLengthOperation extends BaseConcept implements IOperation {
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  ArrayLengthOperation(SNode node) {
+  public ArrayLengthOperation(SNode node) {
     super(node);
   }
 

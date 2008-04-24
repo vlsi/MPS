@@ -18,7 +18,7 @@ public class InstanceMethodCallOperation extends BaseConcept implements IOperati
   public static String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
   public static String ACTUAL_ARGUMENT = "actualArgument";
 
-  public  InstanceMethodCallOperation(SNode node) {
+  public InstanceMethodCallOperation(SNode node) {
     super(node);
   }
 

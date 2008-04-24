@@ -11,7 +11,7 @@ public class BooleanConstant extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.BooleanConstant";
   public static String VALUE = "value";
 
-  public  BooleanConstant(SNode node) {
+  public BooleanConstant(SNode node) {
     super(node);
   }
 

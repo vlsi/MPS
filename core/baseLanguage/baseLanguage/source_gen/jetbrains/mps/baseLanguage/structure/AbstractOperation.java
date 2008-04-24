@@ -14,7 +14,7 @@ public class AbstractOperation extends BaseConcept implements IOperation {
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  AbstractOperation(SNode node) {
+  public AbstractOperation(SNode node) {
     super(node);
   }
 

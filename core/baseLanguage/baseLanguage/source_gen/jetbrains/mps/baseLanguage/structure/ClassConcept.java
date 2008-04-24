@@ -24,7 +24,7 @@ public class ClassConcept extends Classifier {
   public static String STATIC_INNER_CLASSIFIERS = "staticInnerClassifiers";
   public static String PROPERTY = "property";
 
-  public  ClassConcept(SNode node) {
+  public ClassConcept(SNode node) {
     super(node);
   }
 

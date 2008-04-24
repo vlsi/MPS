@@ -11,7 +11,7 @@ public class HexIntegerLiteral extends IntegerLiteral {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.HexIntegerLiteral";
   public static String VALUE = "value";
 
-  public  HexIntegerLiteral(SNode node) {
+  public HexIntegerLiteral(SNode node) {
     super(node);
   }
 

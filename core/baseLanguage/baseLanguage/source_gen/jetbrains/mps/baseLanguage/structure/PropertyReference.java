@@ -15,7 +15,7 @@ public class PropertyReference extends BaseConcept implements IOperation {
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String PROPERTY = "property";
 
-  public  PropertyReference(SNode node) {
+  public PropertyReference(SNode node) {
     super(node);
   }
 

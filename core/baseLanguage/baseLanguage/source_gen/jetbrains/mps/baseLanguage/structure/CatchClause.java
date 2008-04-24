@@ -13,7 +13,7 @@ public class CatchClause extends BaseConcept {
   public static String THROWABLE = "throwable";
   public static String CATCH_BODY = "catchBody";
 
-  public  CatchClause(SNode node) {
+  public CatchClause(SNode node) {
     super(node);
   }
 

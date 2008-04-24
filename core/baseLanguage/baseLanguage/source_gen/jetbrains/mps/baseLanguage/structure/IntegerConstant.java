@@ -11,7 +11,7 @@ public class IntegerConstant extends IntegerLiteral {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.IntegerConstant";
   public static String VALUE = "value";
 
-  public  IntegerConstant(SNode node) {
+  public IntegerConstant(SNode node) {
     super(node);
   }
 

@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class EqualsExpression extends BinaryOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.EqualsExpression";
 
-  public  EqualsExpression(SNode node) {
+  public EqualsExpression(SNode node) {
     super(node);
   }
 

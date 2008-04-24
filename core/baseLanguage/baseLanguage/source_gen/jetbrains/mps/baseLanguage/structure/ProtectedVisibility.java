@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ProtectedVisibility extends Visibility {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ProtectedVisibility";
 
-  public  ProtectedVisibility(SNode node) {
+  public ProtectedVisibility(SNode node) {
     super(node);
   }
 

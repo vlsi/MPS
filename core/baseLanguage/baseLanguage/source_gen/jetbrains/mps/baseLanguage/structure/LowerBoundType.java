@@ -11,7 +11,7 @@ public class LowerBoundType extends Type {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.LowerBoundType";
   public static String BOUND = "bound";
 
-  public  LowerBoundType(SNode node) {
+  public LowerBoundType(SNode node) {
     super(node);
   }
 

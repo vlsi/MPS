@@ -13,7 +13,7 @@ public class Closure extends ConceptFunction implements Closureoid {
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  Closure(SNode node) {
+  public Closure(SNode node) {
     super(node);
   }
 

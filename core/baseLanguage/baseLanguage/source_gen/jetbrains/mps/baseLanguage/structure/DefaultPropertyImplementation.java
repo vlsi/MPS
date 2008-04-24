@@ -12,7 +12,7 @@ public class DefaultPropertyImplementation extends PropertyImplementation {
   public static String DEFAULT_GET_ACCESSOR = "defaultGetAccessor";
   public static String DEFAULT_SET_ACCESSOR = "defaultSetAccessor";
 
-  public  DefaultPropertyImplementation(SNode node) {
+  public DefaultPropertyImplementation(SNode node) {
     super(node);
   }
 

@@ -15,7 +15,7 @@ public class FieldReferenceOperation extends BaseConcept implements IOperation {
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String FIELD_DECLARATION = "fieldDeclaration";
 
-  public  FieldReferenceOperation(SNode node) {
+  public FieldReferenceOperation(SNode node) {
     super(node);
   }
 

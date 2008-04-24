@@ -12,7 +12,7 @@ public class ConceptFunctionParameter extends Expression {
   public static String CPR_DontUseParameterObject = "dontUseParameterObject";
   public static String CLNK_ConceptFunctionParameterType = "conceptFunctionParameterType";
 
-  public  ConceptFunctionParameter(SNode node) {
+  public ConceptFunctionParameter(SNode node) {
     super(node);
   }
 

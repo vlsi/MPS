@@ -12,7 +12,7 @@ public class CastExpression extends Expression {
   public static String TYPE = "type";
   public static String EXPRESSION = "expression";
 
-  public  CastExpression(SNode node) {
+  public CastExpression(SNode node) {
     super(node);
   }
 

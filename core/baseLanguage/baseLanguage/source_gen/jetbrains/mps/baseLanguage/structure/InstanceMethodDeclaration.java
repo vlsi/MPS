@@ -15,7 +15,7 @@ public class InstanceMethodDeclaration extends BaseMethodDeclaration implements 
   public static String IS_ABSTRACT = "isAbstract";
   public static String VISIBILITY = "visibility";
 
-  public  InstanceMethodDeclaration(SNode node) {
+  public InstanceMethodDeclaration(SNode node) {
     super(node);
   }
 

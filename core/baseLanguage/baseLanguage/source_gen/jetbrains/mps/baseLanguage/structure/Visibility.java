@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class Visibility extends BaseConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.Visibility";
 
-  public  Visibility(SNode node) {
+  public Visibility(SNode node) {
     super(node);
   }
 

@@ -12,7 +12,7 @@ public class AbstractLoopStatement extends Statement {
   public static String LABEL = "label";
   public static String BODY = "body";
 
-  public  AbstractLoopStatement(SNode node) {
+  public AbstractLoopStatement(SNode node) {
     super(node);
   }
 

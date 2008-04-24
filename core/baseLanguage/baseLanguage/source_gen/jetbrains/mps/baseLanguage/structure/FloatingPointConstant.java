@@ -11,7 +11,7 @@ public class FloatingPointConstant extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.FloatingPointConstant";
   public static String VALUE = "value";
 
-  public  FloatingPointConstant(SNode node) {
+  public FloatingPointConstant(SNode node) {
     super(node);
   }
 

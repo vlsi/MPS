@@ -11,7 +11,7 @@ public class RemarkStatement extends Statement {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.RemarkStatement";
   public static String VALUE = "value";
 
-  public  RemarkStatement(SNode node) {
+  public RemarkStatement(SNode node) {
     super(node);
   }
 

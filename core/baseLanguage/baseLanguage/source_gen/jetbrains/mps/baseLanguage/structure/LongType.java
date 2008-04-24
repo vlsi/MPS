@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class LongType extends PrimitiveType {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.LongType";
 
-  public  LongType(SNode node) {
+  public LongType(SNode node) {
     super(node);
   }
 

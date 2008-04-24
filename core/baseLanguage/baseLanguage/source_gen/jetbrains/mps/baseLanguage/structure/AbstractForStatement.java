@@ -11,7 +11,7 @@ public class AbstractForStatement extends AbstractLoopStatement {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.AbstractForStatement";
   public static String VARIABLE = "variable";
 
-  public  AbstractForStatement(SNode node) {
+  public AbstractForStatement(SNode node) {
     super(node);
   }
 

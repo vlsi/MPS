@@ -13,7 +13,7 @@ public class BinaryOperation extends Expression {
   public static String RIGHT_EXPRESSION = "rightExpression";
   public static String LEFT_EXPRESSION = "leftExpression";
 
-  public  BinaryOperation(SNode node) {
+  public BinaryOperation(SNode node) {
     super(node);
   }
 

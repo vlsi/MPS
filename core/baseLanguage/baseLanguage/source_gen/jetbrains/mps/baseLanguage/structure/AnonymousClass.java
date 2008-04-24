@@ -15,7 +15,7 @@ public class AnonymousClass extends ClassConcept {
   public static String PARAMETER = "parameter";
   public static String TYPE_PARAMETER = "typeParameter";
 
-  public  AnonymousClass(SNode node) {
+  public AnonymousClass(SNode node) {
     super(node);
   }
 

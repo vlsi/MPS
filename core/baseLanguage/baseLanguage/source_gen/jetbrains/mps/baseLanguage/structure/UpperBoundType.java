@@ -11,7 +11,7 @@ public class UpperBoundType extends Type {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.UpperBoundType";
   public static String BOUND = "bound";
 
-  public  UpperBoundType(SNode node) {
+  public UpperBoundType(SNode node) {
     super(node);
   }
 

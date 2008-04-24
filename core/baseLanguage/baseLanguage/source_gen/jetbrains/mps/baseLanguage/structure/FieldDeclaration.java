@@ -14,7 +14,7 @@ public class FieldDeclaration extends VariableDeclaration implements ClassifierM
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String VISIBILITY = "visibility";
 
-  public  FieldDeclaration(SNode node) {
+  public FieldDeclaration(SNode node) {
     super(node);
   }
 

@@ -11,7 +11,7 @@ public class CharConstant extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.CharConstant";
   public static String CHAR_CONSTANT = "charConstant";
 
-  public  CharConstant(SNode node) {
+  public CharConstant(SNode node) {
     super(node);
   }
 

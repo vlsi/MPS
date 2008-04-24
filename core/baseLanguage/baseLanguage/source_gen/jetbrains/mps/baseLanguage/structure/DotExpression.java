@@ -12,7 +12,7 @@ public class DotExpression extends Expression {
   public static String OPERAND = "operand";
   public static String OPERATION = "operation";
 
-  public  DotExpression(SNode node) {
+  public DotExpression(SNode node) {
     super(node);
   }
 

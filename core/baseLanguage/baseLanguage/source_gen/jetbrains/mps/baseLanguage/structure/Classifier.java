@@ -19,7 +19,7 @@ public class Classifier extends GenericDeclaration implements HasAnnotation, IMe
   public static String METHOD = "method";
   public static String ANNOTATION = "annotation";
 
-  public  Classifier(SNode node) {
+  public Classifier(SNode node) {
     super(node);
   }
 

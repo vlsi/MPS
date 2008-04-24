@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ParameterReference extends VariableReference {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ParameterReference";
 
-  public  ParameterReference(SNode node) {
+  public ParameterReference(SNode node) {
     super(node);
   }
 

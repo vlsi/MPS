@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class Statement extends BaseConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.Statement";
 
-  public  Statement(SNode node) {
+  public Statement(SNode node) {
     super(node);
   }
 

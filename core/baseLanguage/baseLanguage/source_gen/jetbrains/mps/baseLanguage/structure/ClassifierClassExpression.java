@@ -11,7 +11,7 @@ public class ClassifierClassExpression extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ClassifierClassExpression";
   public static String CLASSIFIER = "classifier";
 
-  public  ClassifierClassExpression(SNode node) {
+  public ClassifierClassExpression(SNode node) {
     super(node);
   }
 

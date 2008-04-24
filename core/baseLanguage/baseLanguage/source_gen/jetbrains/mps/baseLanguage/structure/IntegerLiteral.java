@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class IntegerLiteral extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.IntegerLiteral";
 
-  public  IntegerLiteral(SNode node) {
+  public IntegerLiteral(SNode node) {
     super(node);
   }
 

@@ -11,7 +11,7 @@ public class BreakStatement extends Statement {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.BreakStatement";
   public static String LABEL = "label";
 
-  public  BreakStatement(SNode node) {
+  public BreakStatement(SNode node) {
     super(node);
   }
 

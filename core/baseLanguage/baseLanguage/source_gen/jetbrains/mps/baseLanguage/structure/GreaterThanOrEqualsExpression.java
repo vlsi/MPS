@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class GreaterThanOrEqualsExpression extends BinaryOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression";
 
-  public  GreaterThanOrEqualsExpression(SNode node) {
+  public GreaterThanOrEqualsExpression(SNode node) {
     super(node);
   }
 

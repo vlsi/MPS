@@ -11,7 +11,7 @@ public class ExpressionStatement extends Statement {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ExpressionStatement";
   public static String EXPRESSION = "expression";
 
-  public  ExpressionStatement(SNode node) {
+  public ExpressionStatement(SNode node) {
     super(node);
   }
 

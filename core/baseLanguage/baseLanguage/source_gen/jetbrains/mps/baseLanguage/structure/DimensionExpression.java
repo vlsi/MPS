@@ -12,7 +12,7 @@ public class DimensionExpression extends BaseConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.DimensionExpression";
   public static String EXPRESSION = "expression";
 
-  public  DimensionExpression(SNode node) {
+  public DimensionExpression(SNode node) {
     super(node);
   }
 

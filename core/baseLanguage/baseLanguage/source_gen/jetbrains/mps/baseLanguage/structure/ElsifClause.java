@@ -13,7 +13,7 @@ public class ElsifClause extends BaseConcept {
   public static String CONDITION = "condition";
   public static String STATEMENT_LIST = "statementList";
 
-  public  ElsifClause(SNode node) {
+  public ElsifClause(SNode node) {
     super(node);
   }
 

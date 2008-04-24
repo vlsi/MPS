@@ -12,7 +12,7 @@ public class ArrayAccessExpression extends Expression {
   public static String ARRAY = "array";
   public static String INDEX = "index";
 
-  public  ArrayAccessExpression(SNode node) {
+  public ArrayAccessExpression(SNode node) {
     super(node);
   }
 

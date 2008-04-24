@@ -14,7 +14,7 @@ public class ReturnStatement extends Statement implements TypeDerivable {
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String EXPRESSION = "expression";
 
-  public  ReturnStatement(SNode node) {
+  public ReturnStatement(SNode node) {
     super(node);
   }
 

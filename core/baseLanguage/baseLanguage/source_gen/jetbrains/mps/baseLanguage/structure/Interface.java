@@ -14,7 +14,7 @@ public class Interface extends Classifier {
   public static String NAME = "name";
   public static String EXTENDED_INTERFACE = "extendedInterface";
 
-  public  Interface(SNode node) {
+  public Interface(SNode node) {
     super(node);
   }
 

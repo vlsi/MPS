@@ -17,7 +17,7 @@ public class BaseMethodCall extends Expression implements TypeDerivable, IMethod
   public static String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
   public static String ACTUAL_ARGUMENT = "actualArgument";
 
-  public  BaseMethodCall(SNode node) {
+  public BaseMethodCall(SNode node) {
     super(node);
   }
 

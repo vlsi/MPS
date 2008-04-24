@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class LocalStaticFieldReference extends VariableReference {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference";
 
-  public  LocalStaticFieldReference(SNode node) {
+  public LocalStaticFieldReference(SNode node) {
     super(node);
   }
 

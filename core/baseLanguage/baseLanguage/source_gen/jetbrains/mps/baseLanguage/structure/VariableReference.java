@@ -11,7 +11,7 @@ public class VariableReference extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.VariableReference";
   public static String VARIABLE_DECLARATION = "variableDeclaration";
 
-  public  VariableReference(SNode node) {
+  public VariableReference(SNode node) {
     super(node);
   }
 

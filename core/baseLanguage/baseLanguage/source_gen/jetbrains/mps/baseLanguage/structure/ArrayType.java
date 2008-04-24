@@ -11,7 +11,7 @@ public class ArrayType extends Type {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ArrayType";
   public static String COMPONENT_TYPE = "componentType";
 
-  public  ArrayType(SNode node) {
+  public ArrayType(SNode node) {
     super(node);
   }
 

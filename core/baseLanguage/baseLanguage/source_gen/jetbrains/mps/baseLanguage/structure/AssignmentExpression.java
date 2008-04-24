@@ -15,7 +15,7 @@ public class AssignmentExpression extends Expression implements TypeDerivable {
   public static String L_VALUE = "lValue";
   public static String R_VALUE = "rValue";
 
-  public  AssignmentExpression(SNode node) {
+  public AssignmentExpression(SNode node) {
     super(node);
   }
 

@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class LessThanExpression extends BinaryOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.LessThanExpression";
 
-  public  LessThanExpression(SNode node) {
+  public LessThanExpression(SNode node) {
     super(node);
   }
 

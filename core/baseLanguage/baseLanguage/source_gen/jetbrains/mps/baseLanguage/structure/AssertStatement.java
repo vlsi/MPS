@@ -12,7 +12,7 @@ public class AssertStatement extends Statement {
   public static String CONDITION = "condition";
   public static String MESSAGE = "message";
 
-  public  AssertStatement(SNode node) {
+  public AssertStatement(SNode node) {
     super(node);
   }
 

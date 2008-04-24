@@ -11,7 +11,7 @@ public class ContinueStatement extends Statement {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ContinueStatement";
   public static String LABEL = "label";
 
-  public  ContinueStatement(SNode node) {
+  public ContinueStatement(SNode node) {
     super(node);
   }
 

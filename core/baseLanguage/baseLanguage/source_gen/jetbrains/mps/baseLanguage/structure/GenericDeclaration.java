@@ -19,7 +19,7 @@ public class GenericDeclaration extends BaseConcept implements INamedConcept {
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String TYPE_VARIABLE_DECLARATION = "typeVariableDeclaration";
 
-  public  GenericDeclaration(SNode node) {
+  public GenericDeclaration(SNode node) {
     super(node);
   }
 

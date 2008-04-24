@@ -11,7 +11,7 @@ public class ClosureParameterReference extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ClosureParameterReference";
   public static String CLOSURE_PARAMETER = "closureParameter";
 
-  public  ClosureParameterReference(SNode node) {
+  public ClosureParameterReference(SNode node) {
     super(node);
   }
 

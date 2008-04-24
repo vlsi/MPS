@@ -11,7 +11,7 @@ public class ForeachStatement extends AbstractForStatement {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ForeachStatement";
   public static String ITERABLE = "iterable";
 
-  public  ForeachStatement(SNode node) {
+  public ForeachStatement(SNode node) {
     super(node);
   }
 

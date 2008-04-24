@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class VarType extends Type {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.VarType";
 
-  public  VarType(SNode node) {
+  public VarType(SNode node) {
     super(node);
   }
 

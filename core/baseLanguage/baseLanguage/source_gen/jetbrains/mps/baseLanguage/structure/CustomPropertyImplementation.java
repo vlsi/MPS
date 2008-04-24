@@ -12,7 +12,7 @@ public class CustomPropertyImplementation extends PropertyImplementation {
   public static String GET_ACCESSOR = "getAccessor";
   public static String SET_ACCESSOR = "setAccessor";
 
-  public  CustomPropertyImplementation(SNode node) {
+  public CustomPropertyImplementation(SNode node) {
     super(node);
   }
 

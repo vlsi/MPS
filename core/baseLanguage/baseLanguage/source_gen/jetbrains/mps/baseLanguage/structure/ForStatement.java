@@ -12,7 +12,7 @@ public class ForStatement extends AbstractForStatement {
   public static String CONDITION = "condition";
   public static String ITERATION = "iteration";
 
-  public  ForStatement(SNode node) {
+  public ForStatement(SNode node) {
     super(node);
   }
 

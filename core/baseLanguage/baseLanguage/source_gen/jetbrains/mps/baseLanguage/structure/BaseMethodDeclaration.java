@@ -23,7 +23,7 @@ public class BaseMethodDeclaration extends GenericDeclaration implements INamedC
   public static String THROWS_ITEM = "throwsItem";
   public static String ANNOTATION = "annotation";
 
-  public  BaseMethodDeclaration(SNode node) {
+  public BaseMethodDeclaration(SNode node) {
     super(node);
   }
 

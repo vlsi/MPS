@@ -14,7 +14,7 @@ public class TryCatchStatement extends Statement {
   public static String BODY = "body";
   public static String CATCH_CLAUSE = "catchClause";
 
-  public  TryCatchStatement(SNode node) {
+  public TryCatchStatement(SNode node) {
     super(node);
   }
 

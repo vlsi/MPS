@@ -22,7 +22,7 @@ public class VariableDeclaration extends BaseConcept implements INamedConcept, H
   public static String INITIALIZER = "initializer";
   public static String ANNOTATION = "annotation";
 
-  public  VariableDeclaration(SNode node) {
+  public VariableDeclaration(SNode node) {
     super(node);
   }
 

@@ -11,7 +11,7 @@ public class StaticMethodCall extends BaseMethodCall {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.StaticMethodCall";
   public static String CLASS_CONCEPT = "classConcept";
 
-  public  StaticMethodCall(SNode node) {
+  public StaticMethodCall(SNode node) {
     super(node);
   }
 

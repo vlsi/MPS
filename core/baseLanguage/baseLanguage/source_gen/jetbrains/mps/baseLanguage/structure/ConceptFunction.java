@@ -17,7 +17,7 @@ public class ConceptFunction extends BaseConcept {
   public static String CLNK_ApplicableConceptFunctionParameter = "applicableConceptFunctionParameter";
   public static String BODY = "body";
 
-  public  ConceptFunction(SNode node) {
+  public ConceptFunction(SNode node) {
     super(node);
   }
 

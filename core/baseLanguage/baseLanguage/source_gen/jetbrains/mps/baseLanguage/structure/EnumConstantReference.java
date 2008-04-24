@@ -12,7 +12,7 @@ public class EnumConstantReference extends Expression {
   public static String ENUM_CLASS = "enumClass";
   public static String ENUM_CONSTANT_DECLARATION = "enumConstantDeclaration";
 
-  public  EnumConstantReference(SNode node) {
+  public EnumConstantReference(SNode node) {
     super(node);
   }
 

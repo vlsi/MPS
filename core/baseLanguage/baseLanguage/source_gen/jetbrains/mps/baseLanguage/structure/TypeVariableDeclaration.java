@@ -16,7 +16,7 @@ public class TypeVariableDeclaration extends BaseConcept implements INamedConcep
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  TypeVariableDeclaration(SNode node) {
+  public TypeVariableDeclaration(SNode node) {
     super(node);
   }
 

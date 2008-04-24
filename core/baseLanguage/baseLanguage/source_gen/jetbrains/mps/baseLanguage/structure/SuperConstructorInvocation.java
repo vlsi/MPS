@@ -14,7 +14,7 @@ public class SuperConstructorInvocation extends Statement {
   public static String CONSTRUCTOR_DECLARATION = "constructorDeclaration";
   public static String ACTUAL_ARGUMENT = "actualArgument";
 
-  public  SuperConstructorInvocation(SNode node) {
+  public SuperConstructorInvocation(SNode node) {
     super(node);
   }
 

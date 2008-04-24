@@ -18,7 +18,7 @@ public class Property extends BaseConcept implements ClassifierMember {
   public static String PROPERTY_IMPLEMENTATION = "propertyImplementation";
   public static String VISIBILITY = "visibility";
 
-  public  Property(SNode node) {
+  public Property(SNode node) {
     super(node);
   }
 

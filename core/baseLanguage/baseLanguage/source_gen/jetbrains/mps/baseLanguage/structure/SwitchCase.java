@@ -13,7 +13,7 @@ public class SwitchCase extends BaseConcept {
   public static String EXPRESSION = "expression";
   public static String BODY = "body";
 
-  public  SwitchCase(SNode node) {
+  public SwitchCase(SNode node) {
     super(node);
   }
 

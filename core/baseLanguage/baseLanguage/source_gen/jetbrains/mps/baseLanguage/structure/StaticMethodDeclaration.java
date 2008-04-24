@@ -14,7 +14,7 @@ public class StaticMethodDeclaration extends BaseMethodDeclaration implements Cl
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String VISIBILITY = "visibility";
 
-  public  StaticMethodDeclaration(SNode node) {
+  public StaticMethodDeclaration(SNode node) {
     super(node);
   }
 

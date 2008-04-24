@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class BooleanType extends PrimitiveType {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.BooleanType";
 
-  public  BooleanType(SNode node) {
+  public BooleanType(SNode node) {
     super(node);
   }
 

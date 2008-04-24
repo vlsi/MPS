@@ -15,7 +15,7 @@ public class LocalVariableDeclaration extends VariableDeclaration implements IRe
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  LocalVariableDeclaration(SNode node) {
+  public LocalVariableDeclaration(SNode node) {
     super(node);
   }
 

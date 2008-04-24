@@ -13,7 +13,7 @@ public class AnnotationInstanceValue extends BaseConcept {
   public static String KEY = "key";
   public static String VALUE = "value";
 
-  public  AnnotationInstanceValue(SNode node) {
+  public AnnotationInstanceValue(SNode node) {
     super(node);
   }
 

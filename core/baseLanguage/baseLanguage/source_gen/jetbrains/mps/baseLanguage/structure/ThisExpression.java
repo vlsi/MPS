@@ -11,7 +11,7 @@ public class ThisExpression extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ThisExpression";
   public static String CLASS_CONCEPT = "classConcept";
 
-  public  ThisExpression(SNode node) {
+  public ThisExpression(SNode node) {
     super(node);
   }
 

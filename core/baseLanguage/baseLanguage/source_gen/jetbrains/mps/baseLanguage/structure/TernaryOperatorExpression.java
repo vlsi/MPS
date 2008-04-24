@@ -13,7 +13,7 @@ public class TernaryOperatorExpression extends Expression {
   public static String IF_TRUE = "ifTrue";
   public static String IF_FALSE = "ifFalse";
 
-  public  TernaryOperatorExpression(SNode node) {
+  public TernaryOperatorExpression(SNode node) {
     super(node);
   }
 

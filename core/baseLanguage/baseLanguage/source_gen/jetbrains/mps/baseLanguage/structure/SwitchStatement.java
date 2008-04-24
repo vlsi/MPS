@@ -16,7 +16,7 @@ public class SwitchStatement extends Statement {
   public static String DEFAULT_BLOCK = "defaultBlock";
   public static String CASE = "case";
 
-  public  SwitchStatement(SNode node) {
+  public SwitchStatement(SNode node) {
     super(node);
   }
 

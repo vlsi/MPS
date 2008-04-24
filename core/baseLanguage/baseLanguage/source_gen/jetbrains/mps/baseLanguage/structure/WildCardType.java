@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class WildCardType extends Type {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.WildCardType";
 
-  public  WildCardType(SNode node) {
+  public WildCardType(SNode node) {
     super(node);
   }
 

@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class AnnotationMethodDeclaration extends InstanceMethodDeclaration {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration";
 
-  public  AnnotationMethodDeclaration(SNode node) {
+  public AnnotationMethodDeclaration(SNode node) {
     super(node);
   }
 

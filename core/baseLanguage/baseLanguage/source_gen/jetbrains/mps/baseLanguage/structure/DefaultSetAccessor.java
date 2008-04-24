@@ -12,7 +12,7 @@ public class DefaultSetAccessor extends BaseConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.DefaultSetAccessor";
   public static String VISIBILITY = "visibility";
 
-  public  DefaultSetAccessor(SNode node) {
+  public DefaultSetAccessor(SNode node) {
     super(node);
   }
 

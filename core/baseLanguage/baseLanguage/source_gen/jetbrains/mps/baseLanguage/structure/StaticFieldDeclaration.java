@@ -14,7 +14,7 @@ public class StaticFieldDeclaration extends VariableDeclaration implements Class
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String VISIBILITY = "visibility";
 
-  public  StaticFieldDeclaration(SNode node) {
+  public StaticFieldDeclaration(SNode node) {
     super(node);
   }
 

@@ -15,7 +15,7 @@ public class AnnotationInstance extends BaseConcept {
   public static String ANNOTATION = "annotation";
   public static String VALUE = "value";
 
-  public  AnnotationInstance(SNode node) {
+  public AnnotationInstance(SNode node) {
     super(node);
   }
 

@@ -15,7 +15,7 @@ public class ParameterDeclaration extends VariableDeclaration implements IResolv
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  ParameterDeclaration(SNode node) {
+  public ParameterDeclaration(SNode node) {
     super(node);
   }
 

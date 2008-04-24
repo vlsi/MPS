@@ -12,7 +12,7 @@ public class ArrayCreator extends AbstractCreator {
   public static String COMPONENT_TYPE = "componentType";
   public static String DIMENSION_EXPRESSION = "dimensionExpression";
 
-  public  ArrayCreator(SNode node) {
+  public ArrayCreator(SNode node) {
     super(node);
   }
 

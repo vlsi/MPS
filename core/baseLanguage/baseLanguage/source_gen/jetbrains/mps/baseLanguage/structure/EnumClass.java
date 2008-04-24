@@ -14,7 +14,7 @@ public class EnumClass extends ClassConcept {
   public static String NAME = "name";
   public static String ENUM_CONSTANT = "enumConstant";
 
-  public  EnumClass(SNode node) {
+  public EnumClass(SNode node) {
     super(node);
   }
 

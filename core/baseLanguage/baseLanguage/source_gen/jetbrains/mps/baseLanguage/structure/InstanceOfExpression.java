@@ -12,7 +12,7 @@ public class InstanceOfExpression extends Expression {
   public static String LEFT_EXPRESSION = "leftExpression";
   public static String CLASS_TYPE = "classType";
 
-  public  InstanceOfExpression(SNode node) {
+  public InstanceOfExpression(SNode node) {
     super(node);
   }
 
