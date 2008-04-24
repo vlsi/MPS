@@ -65,7 +65,7 @@ public class ReplaceForEachLoopWithIndexedLoop_Intention extends BaseIntention i
     SPropertyOperations.set(SLinkOperations.getTarget(SLinkOperations.getTarget(iterationExpr, "rValue", true), "rightExpression", true), "value", "" + (1));
     // null
     _zClosureContext.fake_node = node;
-    SequenceOperations.forEach(SequenceOperations.where(SNodeOperations.getDescendants(SLinkOperations.getTarget(node, "body", true), null, false), new zPredicate2(null, _zClosureContext)), new zForEach(null, _zClosureContext));
+    SequenceOperations.forEach(SequenceOperations.where(SNodeOperations.getDescendants(SLinkOperations.getTarget(node, "body", true), null, false), new zPredicate(ReplaceForEachLoopWithIndexedLoop_Intention.this, _zClosureContext)), new zForEach(ReplaceForEachLoopWithIndexedLoop_Intention.this, _zClosureContext));
     SLinkOperations.setTarget(forStatement, "body", SLinkOperations.getTarget(node, "body", true), true);
     // null
     SNodeOperations.replaceWithAnother(node, forStatement);

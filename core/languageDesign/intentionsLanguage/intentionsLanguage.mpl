@@ -10,11 +10,25 @@
       <models>
         <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.bootstrap.intentionsLanguage.generator.baseLanguage.template" />
       </models>
-      <external-templates />
+      <external-templates>
+        <generator generatorUID="jetbrains.mps.bootstrap.sharedConcepts#1161623873951" />
+      </external-templates>
       <dependencies>
         <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
       </dependencies>
-      <mapping-priorities />
+      <mapping-priorities>
+        <mapping-priority-rule kind="strictly_together">
+          <greater-priority-mapping>
+            <mapping-node modelUID="jetbrains.mps.bootstrap.intentionsLanguage.generator.baseLanguage.template.main@templates" nodeID="1192798704064" />
+          </greater-priority-mapping>
+          <lesser-priority-mapping>
+            <generator generatorUID="jetbrains.mps.bootstrap.sharedConcepts#1161623873951" />
+            <external-mapping>
+              <mapping-node modelUID="jetbrains.mps.bootstrap.sharedConcepts.generator.baseLanguage.template.main@templates" nodeID="1161623876737" />
+            </external-mapping>
+          </lesser-priority-mapping>
+        </mapping-priority-rule>
+      </mapping-priorities>
     </generator>
   </generators>
   <classPath>

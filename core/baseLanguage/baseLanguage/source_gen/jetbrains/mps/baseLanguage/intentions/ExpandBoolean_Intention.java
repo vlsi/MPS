@@ -49,10 +49,10 @@ public class ExpandBoolean_Intention extends BaseIntention implements Intention 
     // null
     _zClosureContext1.fake_node = node;
     Iterable<SNode> refs;
-    refs = SequenceOperations.where(SNodeOperations.getDescendants(SequenceOperations.getFirst(SLinkOperations.getTargets(ifTrue, "statement", true)), null, false), new zPredicate3(null, _zClosureContext1));
-    SequenceOperations.forEach(refs, new zForEach1(null, _zClosureContext1));
-    refs = SequenceOperations.where(SNodeOperations.getDescendants(SequenceOperations.getFirst(SLinkOperations.getTargets(ifFalse, "statement", true)), null, false), new zPredicate4(null, _zClosureContext1));
-    SequenceOperations.forEach(refs, new zForEach2(null, _zClosureContext1));
+    refs = SequenceOperations.where(SNodeOperations.getDescendants(SequenceOperations.getFirst(SLinkOperations.getTargets(ifTrue, "statement", true)), null, false), new zPredicate1(ExpandBoolean_Intention.this, _zClosureContext1));
+    SequenceOperations.forEach(refs, new zForEach1(ExpandBoolean_Intention.this, _zClosureContext1));
+    refs = SequenceOperations.where(SNodeOperations.getDescendants(SequenceOperations.getFirst(SLinkOperations.getTargets(ifFalse, "statement", true)), null, false), new zPredicate2(ExpandBoolean_Intention.this, _zClosureContext1));
+    SequenceOperations.forEach(refs, new zForEach2(ExpandBoolean_Intention.this, _zClosureContext1));
     // null
     SNodeOperations.deleteNode(statementNode);
   }

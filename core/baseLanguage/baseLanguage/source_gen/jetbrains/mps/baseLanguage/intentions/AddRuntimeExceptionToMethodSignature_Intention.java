@@ -28,7 +28,7 @@ public class AddRuntimeExceptionToMethodSignature_Intention extends BaseIntentio
   }
 
   public boolean isApplicable(SNode node, EditorContext editorContext) {
-    final zClosureContext3 _zClosureContext2 = new zClosureContext3();
+    final zClosureContext2 _zClosureContext2 = new zClosureContext2();
     // check that this is done in a method
     SNode methodDecl = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
     if (methodDecl == null) {
@@ -48,7 +48,7 @@ public class AddRuntimeExceptionToMethodSignature_Intention extends BaseIntentio
       return false;
     }
     // check if it's not thrown by a method yet
-    if (!(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(methodDecl, "throwsItem", true), new zPredicate1(null, _zClosureContext2))))) {
+    if (!(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(methodDecl, "throwsItem", true), new zPredicate3(AddRuntimeExceptionToMethodSignature_Intention.this, _zClosureContext2))))) {
       return false;
     }
     return true;
