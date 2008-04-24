@@ -29,6 +29,7 @@ public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
   private ClassLoaderManager myClassLoaderManager;
   protected Thread myThread;
   private HashSet<IEditorChecker> myCheckers = new LinkedHashSet<IEditorChecker>(3);
+  private Set<IEditorChecker> myCheckersToRemove = new LinkedHashSet<IEditorChecker>();
   private List<SModelEvent> myLastEvents = new ArrayList<SModelEvent>();
   private Set<IEditorComponent> myCheckedOnceEditors = new WeakSet<IEditorComponent>();
 
@@ -50,11 +51,16 @@ public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
   }
 
   public void addChecker(IEditorChecker checker) {
-    myCheckers.add(checker);
+    if (checker != null) {
+      myCheckers.add(checker);
+    }
   }
 
   public void removeChecker(IEditorChecker checker) {
-    myCheckers.remove(checker);
+    if (checker != null) {
+      myCheckers.remove(checker);
+      myCheckersToRemove.add(checker);
+    }
   }
 
   @Dependency
@@ -88,8 +94,8 @@ public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
         if (IdeMain.isTestMode()) return;
 
         CommandProcessor commandProcessor = CommandProcessor.instance();
-        try {
-          while (true) {
+        while (true) {
+          try {
             while (commandProcessor.isInsideCommand()) {
               Thread.sleep(200);
             }
@@ -98,10 +104,11 @@ public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
               break;
             }
             Thread.sleep(300);
+          } catch (Throwable t) {
+            LOG.error(t);
           }
-        } catch (Exception e) {
-          LOG.error(e);
         }
+
       }
 
     };
@@ -109,6 +116,7 @@ public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
   }
 
   public void stopUpdater() {
+    LOG.warning("stopping an updater from a thread " + Thread.currentThread());
     myStopThread = true;
   }
 
@@ -221,6 +229,19 @@ public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
         highlightManager.mark(message);
       }
     }
+    for (final IEditorChecker checker : myCheckersToRemove) {
+      final IEditorMessageOwner[] owners = new IEditorMessageOwner[1];
+      Runnable runnable = new Runnable() {
+        public void run() {
+          SNode node = editor.getEditedNode();
+          if (node == null) return;
+          owners[0] = checker.getOwner(node);
+        }
+      };
+      CommandProcessor.instance().executeLightweightCommand(runnable);
+      highlightManager.clearForOwner(owners[0]);
+    }
+    myCheckersToRemove.clear();
 
     return true;
   }
