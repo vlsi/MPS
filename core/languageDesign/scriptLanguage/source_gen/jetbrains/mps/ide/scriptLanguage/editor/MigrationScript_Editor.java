@@ -30,6 +30,8 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.ide.VersionUtil;
 
 public class MigrationScript_Editor extends DefaultNodeEditor {
 
@@ -462,7 +464,7 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      return SequenceOperations.toList(SequenceOperations.select(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.ide.scriptLanguage.structure.MigrationScript"), new zSelector(MigrationScript_category_cellMenu.this, null)));
+      return SequenceOperations.toList(SequenceOperations.distinct(SequenceOperations.select(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.ide.scriptLanguage.structure.MigrationScript"), new zSelector(MigrationScript_category_cellMenu.this, null))));
     }
 
 }
@@ -472,7 +474,9 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      return SequenceOperations.toList(SequenceOperations.select(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.ide.scriptLanguage.structure.MigrationScript"), new zSelector1(MigrationScript_migrationFromBuild_cellMenu.this, null)));
+      List<String> list = SequenceOperations.toList(SequenceOperations.select(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.ide.scriptLanguage.structure.MigrationScript"), new zSelector1(MigrationScript_migrationFromBuild_cellMenu.this, null)));
+      ListOperations.addElement(list, VersionUtil.getVersionString());
+      return SequenceOperations.toList(SequenceOperations.distinct(list));
     }
 
 }
