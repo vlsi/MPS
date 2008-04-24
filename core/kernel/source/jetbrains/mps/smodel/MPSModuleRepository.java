@@ -1,22 +1,17 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.projectLanguage.structure.Root;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ManyToManyMap;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.component.*;
 import jetbrains.mps.component.Dependency;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.util.*;
@@ -408,7 +403,7 @@ public class MPSModuleRepository implements IComponentLifecycle {
     }
     modules.add(l);
     myFileToModuleMap.put(l.newDescriptorFileByNewName(newUID).getCanonicalPath(), l);
-  }
+  }                 
 
   public Language getLanguageSafe(String namespace) {
     Language result = getLanguage(namespace);
@@ -422,6 +417,13 @@ public class MPSModuleRepository implements IComponentLifecycle {
     List<IModule> modules = myUIDToModulesMap.get(namespace);
     if (modules == null || modules.isEmpty()) return null;
     return modulesAsLanguage(modules);
+  }
+
+  public DevKit getDevKit(String namespace) {
+    List<IModule> modules = myUIDToModulesMap.get(namespace);
+    if (modules == null || modules.isEmpty()) return null;
+    return modulesAsDevKit(modules);
+
   }
 
   private List<IModule> getModules(String namespace, MPSModuleOwner moduleOwner) {
@@ -460,6 +462,29 @@ public class MPSModuleRepository implements IComponentLifecycle {
     }
     return language;
   }
+
+  private DevKit modulesAsDevKit(List<IModule> modules) {
+    DevKit devKit = null;
+    for (IModule module : modules) {
+      if (module instanceof DevKit) {
+        devKit = (DevKit) module;
+      }
+    }
+    if (devKit != null && modules.size() > 1) {
+      LOG.error("more than 1 devKit registered with the same namespace: " + devKit.getModuleUID());
+      for (IModule m : modules) {
+        IFile descriptorFile = m.getDescriptorFile();
+        if (descriptorFile == null) {
+          LOG.error("module without descriptor");
+        } else {
+          LOG.error(descriptorFile.getAbsolutePath());
+        }
+      }
+
+    }
+    return devKit;
+  }
+
 
   public Language getLanguage(String namespace, MPSModuleOwner moduleOwner) {
     return modulesAsLanguage(getModules(namespace, moduleOwner));
@@ -500,6 +525,10 @@ public class MPSModuleRepository implements IComponentLifecycle {
 
   public List<Language> getAllLanguages() {
     return getAllModules(Language.class);
+  }
+
+  public List<DevKit> getAllDevkits() {
+    return getAllModules(DevKit.class);
   }
 
   public List<IModule> getAllModules() {
