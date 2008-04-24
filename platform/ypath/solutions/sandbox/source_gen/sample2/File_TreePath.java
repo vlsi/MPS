@@ -9,7 +9,7 @@ import sample2.File_TreePath.FILE_name_Property;
 
 public class File_TreePath extends TreePath<File> {
 
-  public  File_TreePath() {
+  public File_TreePath() {
   }
 
   public File parent(File node) {
@@ -25,7 +25,7 @@ public class File_TreePath extends TreePath<File> {
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;
 
-    public  Parent(Object enclosingClass, Object closureContext) {
+    public Parent(Object enclosingClass, Object closureContext) {
       this._enclosingClass = enclosingClass;
       this._closureContext = (Object)closureContext;
     }
@@ -40,7 +40,7 @@ public class File_TreePath extends TreePath<File> {
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;
 
-    public  Children(Object enclosingClass, Object closureContext) {
+    public Children(Object enclosingClass, Object closureContext) {
       this._enclosingClass = enclosingClass;
       this._closureContext = (Object)closureContext;
     }
@@ -56,15 +56,15 @@ public class File_TreePath extends TreePath<File> {
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;
 
-    private  FILE_NodeKindTrigger() {
+    private FILE_NodeKindTrigger() {
     }
-    public  FILE_NodeKindTrigger(Object enclosingClass, Object closureContext) {
+    public FILE_NodeKindTrigger(Object enclosingClass, Object closureContext) {
       this._enclosingClass = enclosingClass;
       this._closureContext = (Object)closureContext;
     }
 
     public static IFilter<File> getInstance() {
-      if(File_TreePath.FILE_NodeKindTrigger.instance == null) {
+      if (File_TreePath.FILE_NodeKindTrigger.instance == null) {
         File_TreePath.FILE_NodeKindTrigger.instance = new File_TreePath.FILE_NodeKindTrigger();
       }
       return File_TreePath.FILE_NodeKindTrigger.instance;
@@ -82,15 +82,15 @@ public class File_TreePath extends TreePath<File> {
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;
 
-    private  DIR_NodeKindTrigger() {
+    private DIR_NodeKindTrigger() {
     }
-    public  DIR_NodeKindTrigger(Object enclosingClass, Object closureContext) {
+    public DIR_NodeKindTrigger(Object enclosingClass, Object closureContext) {
       this._enclosingClass = enclosingClass;
       this._closureContext = (Object)closureContext;
     }
 
     public static IFilter<File> getInstance() {
-      if(File_TreePath.DIR_NodeKindTrigger.instance == null) {
+      if (File_TreePath.DIR_NodeKindTrigger.instance == null) {
         File_TreePath.DIR_NodeKindTrigger.instance = new File_TreePath.DIR_NodeKindTrigger();
       }
       return File_TreePath.DIR_NodeKindTrigger.instance;
@@ -106,7 +106,7 @@ public class File_TreePath extends TreePath<File> {
 
     public static IFilter<File> getMatcher(final String matchValue) {
       IFilter filter;
-      if(matchValue != null) {
+      if (matchValue != null) {
         filter = new IFilter() {
 
           public boolean accept(Object n) {
@@ -136,7 +136,7 @@ public class File_TreePath extends TreePath<File> {
       /* package */Object _enclosingClass;
       /* package */Object _closureContext;
 
-      public  Getter(Object enclosingClass, Object closureContext) {
+      public Getter(Object enclosingClass, Object closureContext) {
         this._enclosingClass = enclosingClass;
         this._closureContext = (Object)closureContext;
       }

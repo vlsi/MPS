@@ -13,7 +13,7 @@ import org.w3c.dom.Element;
 
 public class DOMF extends TreePath<Node> {
 
-  public  DOMF() {
+  public DOMF() {
     this.registerFeature(new DOMF.Desc_Feature_elements());
   }
 
@@ -31,7 +31,7 @@ public class DOMF extends TreePath<Node> {
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;
 
-    public  Parent(Object enclosingClass, Object closureContext) {
+    public Parent(Object enclosingClass, Object closureContext) {
       this._enclosingClass = enclosingClass;
       this._closureContext = (Object)closureContext;
     }
@@ -46,7 +46,7 @@ public class DOMF extends TreePath<Node> {
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;
 
-    public  Children(Object enclosingClass, Object closureContext) {
+    public Children(Object enclosingClass, Object closureContext) {
       this._enclosingClass = enclosingClass;
       this._closureContext = (Object)closureContext;
     }
@@ -55,7 +55,7 @@ public class DOMF extends TreePath<Node> {
 
     private Node thisNode;
 
-    public  Feature_elements(Node thisNode) {
+    public Feature_elements(Node thisNode) {
       this.thisNode = thisNode;
     }
 
@@ -82,7 +82,7 @@ public class DOMF extends TreePath<Node> {
     private Node thisNode;
     private String param;
 
-    public  Feature_child(Node thisNode, String param) {
+    public Feature_child(Node thisNode, String param) {
       this.thisNode = thisNode;
       this.param = param;
     }
@@ -104,7 +104,7 @@ public class DOMF extends TreePath<Node> {
 }
   public static class Desc_Feature_elements extends IFeatureDescriptor.Stub<Node> implements IFeatureDescriptor<Node> {
 
-    public  Desc_Feature_elements() {
+    public Desc_Feature_elements() {
     }
 
     public Iterable<Node> getContents(Node node) {
@@ -132,7 +132,7 @@ public class DOMF extends TreePath<Node> {
 
     private String param;
 
-    public  Desc_Feature_child(String param) {
+    public Desc_Feature_child(String param) {
       this.param = param;
     }
 

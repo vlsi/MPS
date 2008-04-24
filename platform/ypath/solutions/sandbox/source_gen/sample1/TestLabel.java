@@ -20,7 +20,7 @@ label:
 none:
             for(int i = 0 ; i < 10 ; i = i + 1) {
               System.out.println("i=" + i);
-              if(i == 5) {
+              if (i == 5) {
                 continue outer;
               }
             }

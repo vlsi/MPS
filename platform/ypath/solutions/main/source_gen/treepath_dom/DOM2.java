@@ -18,7 +18,7 @@ import jetbrains.mps.ypath.runtime.IFeatureDescriptor;
 
 public class DOM2 extends TreePath<Node> {
 
-  public  DOM2() {
+  public DOM2() {
     this.registerFeature(new DOM2.Desc_Feature_attributes());
     this.registerFeature(new DOM2.Desc_Feature_nodes());
   }
@@ -32,7 +32,7 @@ public class DOM2 extends TreePath<Node> {
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;
 
-    public  Parent(Object enclosingClass, Object closureContext) {
+    public Parent(Object enclosingClass, Object closureContext) {
       this._enclosingClass = enclosingClass;
       this._closureContext = (Object)closureContext;
     }
@@ -47,7 +47,7 @@ public class DOM2 extends TreePath<Node> {
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;
 
-    public  Children(Object enclosingClass, Object closureContext) {
+    public Children(Object enclosingClass, Object closureContext) {
       this._enclosingClass = enclosingClass;
       this._closureContext = (Object)closureContext;
     }
@@ -58,15 +58,15 @@ public class DOM2 extends TreePath<Node> {
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;
 
-    private  ELEMENT_NodeKindTrigger() {
+    private ELEMENT_NodeKindTrigger() {
     }
-    public  ELEMENT_NodeKindTrigger(Object enclosingClass, Object closureContext) {
+    public ELEMENT_NodeKindTrigger(Object enclosingClass, Object closureContext) {
       this._enclosingClass = enclosingClass;
       this._closureContext = (Object)closureContext;
     }
 
     public static IFilter<Node> getInstance() {
-      if(DOM2.ELEMENT_NodeKindTrigger.instance == null) {
+      if (DOM2.ELEMENT_NodeKindTrigger.instance == null) {
         DOM2.ELEMENT_NodeKindTrigger.instance = new DOM2.ELEMENT_NodeKindTrigger();
       }
       return DOM2.ELEMENT_NodeKindTrigger.instance;
@@ -84,15 +84,15 @@ public class DOM2 extends TreePath<Node> {
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;
 
-    private  ATTR_NodeKindTrigger() {
+    private ATTR_NodeKindTrigger() {
     }
-    public  ATTR_NodeKindTrigger(Object enclosingClass, Object closureContext) {
+    public ATTR_NodeKindTrigger(Object enclosingClass, Object closureContext) {
       this._enclosingClass = enclosingClass;
       this._closureContext = (Object)closureContext;
     }
 
     public static IFilter<Node> getInstance() {
-      if(DOM2.ATTR_NodeKindTrigger.instance == null) {
+      if (DOM2.ATTR_NodeKindTrigger.instance == null) {
         DOM2.ATTR_NodeKindTrigger.instance = new DOM2.ATTR_NodeKindTrigger();
       }
       return DOM2.ATTR_NodeKindTrigger.instance;
@@ -108,7 +108,7 @@ public class DOM2 extends TreePath<Node> {
 
     public static IFilter<Node> getMatcher(final String matchValue) {
       IFilter filter;
-      if(matchValue != null) {
+      if (matchValue != null) {
         filter = new IFilter() {
 
           public boolean accept(Object n) {
@@ -138,7 +138,7 @@ public class DOM2 extends TreePath<Node> {
       /* package */Object _enclosingClass;
       /* package */Object _closureContext;
 
-      public  Getter(Object enclosingClass, Object closureContext) {
+      public Getter(Object enclosingClass, Object closureContext) {
         this._enclosingClass = enclosingClass;
         this._closureContext = (Object)closureContext;
       }
@@ -154,7 +154,7 @@ public class DOM2 extends TreePath<Node> {
 
     public static IFilter<Node> getMatcher(final String matchValue) {
       IFilter filter;
-      if(matchValue != null) {
+      if (matchValue != null) {
         filter = new IFilter() {
 
           public boolean accept(Object n) {
@@ -184,7 +184,7 @@ public class DOM2 extends TreePath<Node> {
       /* package */Object _enclosingClass;
       /* package */Object _closureContext;
 
-      public  Getter(Object enclosingClass, Object closureContext) {
+      public Getter(Object enclosingClass, Object closureContext) {
         this._enclosingClass = enclosingClass;
         this._closureContext = (Object)closureContext;
       }
@@ -200,7 +200,7 @@ public class DOM2 extends TreePath<Node> {
 
     public static IFilter<Node> getMatcher(final String matchValue) {
       IFilter filter;
-      if(matchValue != null) {
+      if (matchValue != null) {
         filter = new IFilter() {
 
           public boolean accept(Object n) {
@@ -230,7 +230,7 @@ public class DOM2 extends TreePath<Node> {
       /* package */Object _enclosingClass;
       /* package */Object _closureContext;
 
-      public  Getter(Object enclosingClass, Object closureContext) {
+      public Getter(Object enclosingClass, Object closureContext) {
         this._enclosingClass = enclosingClass;
         this._closureContext = (Object)closureContext;
       }
@@ -246,7 +246,7 @@ public class DOM2 extends TreePath<Node> {
 
     private Node thisNode;
 
-    public  Feature_attributes(Node thisNode) {
+    public Feature_attributes(Node thisNode) {
       this.thisNode = thisNode;
     }
 
@@ -275,12 +275,12 @@ public class DOM2 extends TreePath<Node> {
 
     private Node thisNode;
 
-    public  Feature_nodes(Node thisNode) {
+    public Feature_nodes(Node thisNode) {
       this.thisNode = thisNode;
     }
 
     public Node get(int idx) {
-      if(idx < 0 || idx >= this.size()) {
+      if (idx < 0 || idx >= this.size()) {
         throw new IndexOutOfBoundsException();
       }
       return this.thisNode.getChildNodes().item(idx);
@@ -291,7 +291,7 @@ public class DOM2 extends TreePath<Node> {
     }
 
     public Node set(int idx, Node value) {
-      if(idx < 0 || idx >= this.size()) {
+      if (idx < 0 || idx >= this.size()) {
         throw new IndexOutOfBoundsException();
       }
       Node __oldValue__ = this.get(idx);
@@ -300,10 +300,10 @@ public class DOM2 extends TreePath<Node> {
     }
 
     public void add(int idx, Node value) {
-      if(idx < 0 || idx > this.size()) {
+      if (idx < 0 || idx > this.size()) {
         throw new IndexOutOfBoundsException();
       }
-      if(idx < this.thisNode.getChildNodes().getLength()) {
+      if (idx < this.thisNode.getChildNodes().getLength()) {
         this.thisNode.insertBefore(this.thisNode.getChildNodes().item(idx), value);
       } else
       {
@@ -312,7 +312,7 @@ public class DOM2 extends TreePath<Node> {
     }
 
     public Node remove(int idx) {
-      if(idx < 0 || idx >= this.size()) {
+      if (idx < 0 || idx >= this.size()) {
         throw new IndexOutOfBoundsException();
       }
       Node __oldValue__ = this.get(idx);
@@ -323,7 +323,7 @@ public class DOM2 extends TreePath<Node> {
 }
   public static class Desc_Feature_attributes extends IFeatureDescriptor.Stub<Node> implements IFeatureDescriptor<Node> {
 
-    public  Desc_Feature_attributes() {
+    public Desc_Feature_attributes() {
     }
 
     public Iterable<Node> getContents(Node node) {
@@ -349,7 +349,7 @@ public class DOM2 extends TreePath<Node> {
 }
   public static class Desc_Feature_nodes extends IFeatureDescriptor.Stub<Node> implements IFeatureDescriptor<Node> {
 
-    public  Desc_Feature_nodes() {
+    public Desc_Feature_nodes() {
     }
 
     public Iterable<Node> getContents(Node node) {

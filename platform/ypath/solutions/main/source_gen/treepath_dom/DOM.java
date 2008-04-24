@@ -16,7 +16,7 @@ import treepath_dom.DOM.ATTR_value_Property;
 
 public class DOM extends TreePath<Node> {
 
-  public  DOM() {
+  public DOM() {
   }
 
   public Node parent(Node node) {
@@ -32,7 +32,7 @@ public class DOM extends TreePath<Node> {
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;
 
-    public  Parent(Object enclosingClass, Object closureContext) {
+    public Parent(Object enclosingClass, Object closureContext) {
       this._enclosingClass = enclosingClass;
       this._closureContext = (Object)closureContext;
     }
@@ -47,14 +47,14 @@ public class DOM extends TreePath<Node> {
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;
 
-    public  Children(Object enclosingClass, Object closureContext) {
+    public Children(Object enclosingClass, Object closureContext) {
       this._enclosingClass = enclosingClass;
       this._closureContext = (Object)closureContext;
     }
 
     public static Iterable<Node> children(Node node) {
       Iterable<Node> children = new NodeListIterableAdapter(node.getChildNodes());
-      if(node instanceof Element) {
+      if (node instanceof Element) {
         return (Iterable<Node>)new ChainedIterable(new NamedNodeMapIterableAdapter(node.getAttributes()), children);
       }
       return (Iterable<Node>)children;
@@ -67,15 +67,15 @@ public class DOM extends TreePath<Node> {
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;
 
-    private  ELEMENT_NodeKindTrigger() {
+    private ELEMENT_NodeKindTrigger() {
     }
-    public  ELEMENT_NodeKindTrigger(Object enclosingClass, Object closureContext) {
+    public ELEMENT_NodeKindTrigger(Object enclosingClass, Object closureContext) {
       this._enclosingClass = enclosingClass;
       this._closureContext = (Object)closureContext;
     }
 
     public static IFilter<Node> getInstance() {
-      if(DOM.ELEMENT_NodeKindTrigger.instance == null) {
+      if (DOM.ELEMENT_NodeKindTrigger.instance == null) {
         DOM.ELEMENT_NodeKindTrigger.instance = new DOM.ELEMENT_NodeKindTrigger();
       }
       return DOM.ELEMENT_NodeKindTrigger.instance;
@@ -93,15 +93,15 @@ public class DOM extends TreePath<Node> {
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;
 
-    private  ATTR_NodeKindTrigger() {
+    private ATTR_NodeKindTrigger() {
     }
-    public  ATTR_NodeKindTrigger(Object enclosingClass, Object closureContext) {
+    public ATTR_NodeKindTrigger(Object enclosingClass, Object closureContext) {
       this._enclosingClass = enclosingClass;
       this._closureContext = (Object)closureContext;
     }
 
     public static IFilter<Node> getInstance() {
-      if(DOM.ATTR_NodeKindTrigger.instance == null) {
+      if (DOM.ATTR_NodeKindTrigger.instance == null) {
         DOM.ATTR_NodeKindTrigger.instance = new DOM.ATTR_NodeKindTrigger();
       }
       return DOM.ATTR_NodeKindTrigger.instance;
@@ -117,7 +117,7 @@ public class DOM extends TreePath<Node> {
 
     public static IFilter<Node> getMatcher(final String matchValue) {
       IFilter filter;
-      if(matchValue != null) {
+      if (matchValue != null) {
         filter = new IFilter() {
 
           public boolean accept(Object n) {
@@ -147,7 +147,7 @@ public class DOM extends TreePath<Node> {
       /* package */Object _enclosingClass;
       /* package */Object _closureContext;
 
-      public  Getter(Object enclosingClass, Object closureContext) {
+      public Getter(Object enclosingClass, Object closureContext) {
         this._enclosingClass = enclosingClass;
         this._closureContext = (Object)closureContext;
       }
@@ -163,7 +163,7 @@ public class DOM extends TreePath<Node> {
 
     public static IFilter<Node> getMatcher(final String matchValue) {
       IFilter filter;
-      if(matchValue != null) {
+      if (matchValue != null) {
         filter = new IFilter() {
 
           public boolean accept(Object n) {
@@ -193,7 +193,7 @@ public class DOM extends TreePath<Node> {
       /* package */Object _enclosingClass;
       /* package */Object _closureContext;
 
-      public  Getter(Object enclosingClass, Object closureContext) {
+      public Getter(Object enclosingClass, Object closureContext) {
         this._enclosingClass = enclosingClass;
         this._closureContext = (Object)closureContext;
       }
@@ -209,7 +209,7 @@ public class DOM extends TreePath<Node> {
 
     public static IFilter<Node> getMatcher(final String matchValue) {
       IFilter filter;
-      if(matchValue != null) {
+      if (matchValue != null) {
         filter = new IFilter() {
 
           public boolean accept(Object n) {
@@ -239,7 +239,7 @@ public class DOM extends TreePath<Node> {
       /* package */Object _enclosingClass;
       /* package */Object _closureContext;
 
-      public  Getter(Object enclosingClass, Object closureContext) {
+      public Getter(Object enclosingClass, Object closureContext) {
         this._enclosingClass = enclosingClass;
         this._closureContext = (Object)closureContext;
       }

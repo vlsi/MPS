@@ -13,7 +13,7 @@ import jetbrains.mps.ypath.runtime.IFeatureDescriptor;
 
 public class FILE_NG extends TreePath<File> {
 
-  public  FILE_NG() {
+  public FILE_NG() {
     this.registerFeature(new FILE_NG.Desc_Feature_children());
     this.registerFeature(new FILE_NG.Desc_Feature_parent());
   }
@@ -23,15 +23,15 @@ public class FILE_NG extends TreePath<File> {
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;
 
-    private  DIR_NodeKindTrigger() {
+    private DIR_NodeKindTrigger() {
     }
-    public  DIR_NodeKindTrigger(Object enclosingClass, Object closureContext) {
+    public DIR_NodeKindTrigger(Object enclosingClass, Object closureContext) {
       this._enclosingClass = enclosingClass;
       this._closureContext = (Object)closureContext;
     }
 
     public static IFilter<File> getInstance() {
-      if(FILE_NG.DIR_NodeKindTrigger.instance == null) {
+      if (FILE_NG.DIR_NodeKindTrigger.instance == null) {
         FILE_NG.DIR_NodeKindTrigger.instance = new FILE_NG.DIR_NodeKindTrigger();
       }
       return FILE_NG.DIR_NodeKindTrigger.instance;
@@ -47,12 +47,12 @@ public class FILE_NG extends TreePath<File> {
 
     private File thisNode;
 
-    public  Feature_children(File thisNode) {
+    public Feature_children(File thisNode) {
       this.thisNode = thisNode;
     }
 
     public File get(int idx) {
-      if(idx < 0 || idx >= this.size()) {
+      if (idx < 0 || idx >= this.size()) {
         throw new IndexOutOfBoundsException();
       }
       return this.thisNode.listFiles()[idx];
@@ -70,7 +70,7 @@ public class FILE_NG extends TreePath<File> {
 
     private File thisNode;
 
-    public  Feature_parent(File thisNode) {
+    public Feature_parent(File thisNode) {
       this.thisNode = thisNode;
     }
 
@@ -89,7 +89,7 @@ public class FILE_NG extends TreePath<File> {
 }
   public static class Desc_Feature_children extends IFeatureDescriptor.Stub<File> implements IFeatureDescriptor<File> {
 
-    public  Desc_Feature_children() {
+    public Desc_Feature_children() {
     }
 
     public Iterable<File> getContents(File node) {
@@ -115,7 +115,7 @@ public class FILE_NG extends TreePath<File> {
 }
   public static class Desc_Feature_parent extends IFeatureDescriptor.Stub<File> implements IFeatureDescriptor<File> {
 
-    public  Desc_Feature_parent() {
+    public Desc_Feature_parent() {
     }
 
     public Iterable<File> getContents(File node) {

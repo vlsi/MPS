@@ -76,7 +76,7 @@ __switch__:
                     case 6:
                       this._6_bar = 0;
                     case 7:
-                      if(!(this._6_bar < 5)) {
+                      if (!(this._6_bar < 5)) {
                         this.__CP__ = 10;
                         break;
                       }
@@ -89,7 +89,7 @@ __switch__:
                     case 13:
                       this._13_bar = 6;
                     case 14:
-                      if(!(this._13_bar < 13)) {
+                      if (!(this._13_bar < 13)) {
                         this.__CP__ = 17;
                         break;
                       }
@@ -102,7 +102,7 @@ __switch__:
                     case 17:
                       this._20_bar = 13;
                     case 21:
-                      if(!(this._20_bar < 20)) {
+                      if (!(this._20_bar < 20)) {
                         this.__CP__ = 1;
                         break;
                       }
@@ -202,7 +202,7 @@ __switch__:
                     case 2:
                       this._2_i = 1;
                     case 3:
-                      if(!(this._2_i < 10)) {
+                      if (!(this._2_i < 10)) {
                         this.__CP__ = 1;
                         break;
                       }
@@ -215,7 +215,7 @@ __switch__:
                     case 6:
                       this._6_j = 2;
                     case 7:
-                      if(!(this._6_j < 5)) {
+                      if (!(this._6_j < 5)) {
                         this.__CP__ = 5;
                         break;
                       }
@@ -226,7 +226,7 @@ __switch__:
                       this.__CP__ = 7;
                       break;
                     case 10:
-                      if(this._2_i % this._6_j == 0) {
+                      if (this._2_i % this._6_j == 0) {
                         this.__CP__ = 11;
                         break;
                       }
@@ -286,14 +286,14 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 4:
-                      if(this._3_i > 0) {
+                      if (this._3_i > 0) {
                         this.__CP__ = 5;
                         break;
                       }
                       this.__CP__ = 1;
                       break;
                     case 9:
-                      if(this._7_j > 0) {
+                      if (this._7_j > 0) {
                         this.__CP__ = 8;
                         break;
                       }
@@ -361,7 +361,7 @@ __switch__:
                     case 2:
                       this._2_i = 0;
                     case 3:
-                      if(!(this._2_i < 5)) {
+                      if (!(this._2_i < 5)) {
                         this.__CP__ = 1;
                         break;
                       }
@@ -418,7 +418,7 @@ __switch__:
                     case 2:
                       this._2_i_it = si.iterator();
                     case 3:
-                      if(!(this._2_i_it.hasNext())) {
+                      if (!(this._2_i_it.hasNext())) {
                         this.__CP__ = 1;
                         break;
                       }
@@ -490,14 +490,14 @@ __switch__:
                           break __switch__;
                       }
                     case 6:
-                      if(this._3_i >= 0) {
+                      if (this._3_i >= 0) {
                         this.__CP__ = 7;
                         break;
                       }
                       this.__CP__ = 1;
                       break;
                     case 11:
-                      if(this._9_j > 0) {
+                      if (this._9_j > 0) {
                         this.__CP__ = 10;
                         break;
                       }
