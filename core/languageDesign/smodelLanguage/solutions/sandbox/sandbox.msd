@@ -4,10 +4,14 @@
     <modelRoot path="${solution_descriptor}\" namespacePrefix="" />
   </models>
   <classPath />
-  <runtimeClassPath />
   <sourcePath />
   <dependencies>
     <dependency reexport="false">jetbrains.mps.transformation.TLBase</dependency>
+    <dependency reexport="false">jetbrains.mps.bootstrap.editorLanguage</dependency>
   </dependencies>
+  <usedLanguages>
+    <usedLanguages>jetbrains.mps.bootstrap.smodelLanguage</usedLanguages>
+    <usedLanguages>jetbrains.mps.quotation</usedLanguages>
+  </usedLanguages>
 </solution>
 

@@ -2,12 +2,13 @@
 <model name="smodelLanguage.sandbox.testActions_withDotExpression">
   <persistence version="1" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
-  </language>
   <language namespace="jetbrains.mps.baseLanguage">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
+  <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+  </language>
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="3" />
