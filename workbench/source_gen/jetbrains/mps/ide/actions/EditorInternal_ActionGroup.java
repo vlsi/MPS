@@ -19,7 +19,7 @@ public class EditorInternal_ActionGroup extends BaseActionGroup {
   public static Logger LOG = Logger.getLogger(EditorInternal_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.EditorInternal";
 
-  public  EditorInternal_ActionGroup(MPSProject project) {
+  public EditorInternal_ActionGroup(MPSProject project) {
     super("Internal", EditorInternal_ActionGroup.ID);
     this.setInternal(true);
     try {

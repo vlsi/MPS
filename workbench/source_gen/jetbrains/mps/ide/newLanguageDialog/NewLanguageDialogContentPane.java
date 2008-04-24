@@ -49,7 +49,7 @@ public class NewLanguageDialogContentPane extends JPanel {
 
   };
 
-  public  NewLanguageDialogContentPane() {
+  public NewLanguageDialogContentPane() {
     this.myThis = this;
     myThis.setLanguageNamespace("");
     myThis.setLanguagePath("");

@@ -13,7 +13,7 @@ public class TransientModulesActions_ActionGroup extends BaseActionGroup {
   public static Logger LOG = Logger.getLogger(TransientModulesActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.TransientModulesActions";
 
-  public  TransientModulesActions_ActionGroup(MPSProject project) {
+  public TransientModulesActions_ActionGroup(MPSProject project) {
     super("", TransientModulesActions_ActionGroup.ID);
     this.setInternal(false);
     try {

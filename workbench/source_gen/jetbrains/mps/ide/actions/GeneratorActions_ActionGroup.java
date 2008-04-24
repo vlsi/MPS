@@ -20,7 +20,7 @@ public class GeneratorActions_ActionGroup extends BaseActionGroup {
   public static final String LABEL_ID_generatorNew = "generatorNew";
   public static final String LABEL_ID_VCS = "VCS";
 
-  public  GeneratorActions_ActionGroup(MPSProject project) {
+  public GeneratorActions_ActionGroup(MPSProject project) {
     super("", GeneratorActions_ActionGroup.ID);
     this.setInternal(false);
     try {

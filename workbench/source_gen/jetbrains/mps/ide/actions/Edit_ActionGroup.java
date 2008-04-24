@@ -21,7 +21,7 @@ public class Edit_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.Edit";
   public static final String LABEL_ID_custom = "custom";
 
-  public  Edit_ActionGroup(MPSProject project) {
+  public Edit_ActionGroup(MPSProject project) {
     super("Edit", Edit_ActionGroup.ID);
     this.setMnemonic("E".charAt(0));
     this.setInternal(false);

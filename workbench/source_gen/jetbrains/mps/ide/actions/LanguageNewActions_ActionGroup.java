@@ -15,7 +15,7 @@ public class LanguageNewActions_ActionGroup extends BaseActionGroup {
   public static Logger LOG = Logger.getLogger(LanguageNewActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.LanguageNewActions";
 
-  public  LanguageNewActions_ActionGroup(MPSProject project) {
+  public LanguageNewActions_ActionGroup(MPSProject project) {
     super("New", LanguageNewActions_ActionGroup.ID);
     this.setInternal(false);
     try {

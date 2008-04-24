@@ -5,26 +5,16 @@
   <language namespace="jetbrains.mps.baseLanguage">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
+  <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   </language>
-  <language namespace="jetbrains.mps.bootstrap.helgins" />
-  <language namespace="jetbrains.mps.bootstrap.helgins.test" />
-  <language namespace="jetbrains.mps.patterns" />
-  <language namespace="jetbrains.mps.baseLanguage.blTypes" />
-  <language namespace="jetbrains.mps.core" />
   <language namespace="jetbrains.mps.quotation" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="9" />
-  <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <import index="2" modelUID="java.lang@java_stub" version="-1" />
-  <import index="3" modelUID="jetbrains.mps.baseLanguage.helgins" version="-1" />
-  <import index="4" modelUID="jetbrains.mps.baseLanguage.blTypes.structure" version="-1" />
-  <import index="5" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
-  <import index="6" modelUID="java.util@java_stub" version="-1" />
-  <import index="7" modelUID="java.io@java_stub" version="-1" />
   <import index="8" modelUID="jetbrains.mps.bootstrap.helgins.structure" version="-1" />
   <import index="9" modelUID="jetbrains.mps.bootstrap.helgins.sandbox.sb1" version="-1" />
   <node type="jetbrains.mps.bootstrap.helgins.structure.InferenceRule" id="1194962178954">

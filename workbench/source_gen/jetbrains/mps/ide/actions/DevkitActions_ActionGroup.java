@@ -18,7 +18,7 @@ public class DevkitActions_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.DevkitActions";
   public static final String LABEL_ID_VCS = "VCS";
 
-  public  DevkitActions_ActionGroup(MPSProject project) {
+  public DevkitActions_ActionGroup(MPSProject project) {
     super("", DevkitActions_ActionGroup.ID);
     this.setInternal(false);
     try {

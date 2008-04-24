@@ -16,7 +16,7 @@ public class ProjectNewActions_ActionGroup extends BaseActionGroup {
   public static Logger LOG = Logger.getLogger(ProjectNewActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.ProjectNewActions";
 
-  public  ProjectNewActions_ActionGroup(MPSProject project) {
+  public ProjectNewActions_ActionGroup(MPSProject project) {
     super("New", ProjectNewActions_ActionGroup.ID);
     this.setInternal(false);
     try {

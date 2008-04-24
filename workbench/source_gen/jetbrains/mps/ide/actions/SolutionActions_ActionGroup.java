@@ -27,7 +27,7 @@ public class SolutionActions_ActionGroup extends BaseActionGroup {
   public static final String LABEL_ID_solutionNew = "solutionNew";
   public static final String LABEL_ID_VCS = "VCS";
 
-  public  SolutionActions_ActionGroup(MPSProject project) {
+  public SolutionActions_ActionGroup(MPSProject project) {
     super("", SolutionActions_ActionGroup.ID);
     this.setInternal(false);
     try {

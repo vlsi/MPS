@@ -46,7 +46,7 @@ public class NewDevKitDialogContentPane extends JPanel {
 
   };
 
-  public  NewDevKitDialogContentPane() {
+  public NewDevKitDialogContentPane() {
     this.myThis = this;
     myThis.setDevkitName("");
     myThis.setDevkitDir("");

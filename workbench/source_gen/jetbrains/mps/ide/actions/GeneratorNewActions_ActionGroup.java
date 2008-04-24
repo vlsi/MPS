@@ -14,7 +14,7 @@ public class GeneratorNewActions_ActionGroup extends BaseActionGroup {
   public static Logger LOG = Logger.getLogger(GeneratorNewActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.GeneratorNewActions";
 
-  public  GeneratorNewActions_ActionGroup(MPSProject project) {
+  public GeneratorNewActions_ActionGroup(MPSProject project) {
     super("New", GeneratorNewActions_ActionGroup.ID);
     this.setInternal(false);
     try {

@@ -22,7 +22,7 @@ public class Tools_ActionGroup extends BaseActionGroup {
   public static final String INTERNAL_LABEL_ID_Internal = "Internal";
   public static final String INTERNAL_LABEL_ID_VersionControl = "VersionControl";
 
-  public  Tools_ActionGroup(MPSProject project) {
+  public Tools_ActionGroup(MPSProject project) {
     super("Tools", Tools_ActionGroup.ID);
     this.setMnemonic("T".charAt(0));
     this.setInternal(false);

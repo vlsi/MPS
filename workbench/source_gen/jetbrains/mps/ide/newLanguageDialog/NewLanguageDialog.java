@@ -13,7 +13,7 @@ public class NewLanguageDialog extends BaseDialog {
 
   public NewLanguageDialogContentPane myContentPane;
 
-  public  NewLanguageDialog(Frame frame) {
+  public NewLanguageDialog(Frame frame) {
     super(frame, "New Language");
   }
 

@@ -27,7 +27,7 @@ public class LanguageActions_ActionGroup extends BaseActionGroup {
   public static final String LABEL_ID_newGroup = "newGroup";
   public static final String LABEL_ID_VCS = "VCS";
 
-  public  LanguageActions_ActionGroup(MPSProject project) {
+  public LanguageActions_ActionGroup(MPSProject project) {
     super("", LanguageActions_ActionGroup.ID);
     this.setInternal(false);
     try {

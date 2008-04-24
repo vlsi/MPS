@@ -52,7 +52,7 @@ public class NewSolutionDialogContentPane extends JPanel {
 
   };
 
-  public  NewSolutionDialogContentPane() {
+  public NewSolutionDialogContentPane() {
     this.myThis = this;
     myThis.setSolutionPath("");
     myThis.setSolutionName("NewSolution");

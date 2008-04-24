@@ -19,7 +19,7 @@ public class ProjectActions_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.ProjectActions";
   public static final String LABEL_ID_projectNew = "projectNew";
 
-  public  ProjectActions_ActionGroup(MPSProject project) {
+  public ProjectActions_ActionGroup(MPSProject project) {
     super("", ProjectActions_ActionGroup.ID);
     this.setInternal(false);
     try {

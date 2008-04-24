@@ -7,10 +7,11 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.uiLanguage" />
+  <language namespace="jetbrains.mps.baseLanguage.classifiers" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   </language>
-  <language namespace="jetbrains.mps.baseLanguage.classifiers" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="13" />
@@ -20,9 +21,7 @@
   <import index="4" modelUID="java.io@java_stub" version="-1" />
   <import index="5" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <import index="6" modelUID="jetbrains.mps.projectLanguage.structure" version="-1" />
-  <import index="7" modelUID="jetbrains.mps.projectLanguage@java_stub" version="-1" />
   <import index="8" modelUID="jetbrains.mps.projectLanguage.structure@java_stub" version="-1" />
-  <import index="9" modelUID="jetbrains.mps.ide.common@java_stub" version="-1" />
   <import index="10" modelUID="jetbrains.mps.ide.command@java_stub" version="-1" />
   <import index="11" modelUID="java.awt@java_stub" version="-1" />
   <import index="13" modelUID="jetbrains.mps.ide.common" version="-1" />

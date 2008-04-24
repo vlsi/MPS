@@ -4,7 +4,6 @@
     <modelRoot path="${solution_descriptor}\" namespacePrefix="" />
   </models>
   <classPath />
-  <runtimeClassPath />
   <sourcePath />
   <dependencies>
     <dependency reexport="true">jetbrains.mps.bootstrap.helgins</dependency>
@@ -14,6 +13,7 @@
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.bootstrap.helgins.test</usedLanguages>
+    <usedLanguages>jetbrains.mps.quotation</usedLanguages>
   </usedLanguages>
 </solution>
 

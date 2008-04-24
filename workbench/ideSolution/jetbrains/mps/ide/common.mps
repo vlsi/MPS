@@ -2,18 +2,14 @@
 <model name="jetbrains.mps.ide.common">
   <persistence version="1" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.ide.uiLanguage" />
   <language namespace="jetbrains.mps.baseLanguage">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.uiLanguage" />
-  <language namespace="jetbrains.mps.bootstrap.constraintsLanguage">
-    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
-  </language>
   <language namespace="jetbrains.mps.baseLanguage.classifiers" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <maxImportIndex value="5" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
-  <import index="2" modelUID="java.util@java_stub" version="-1" />
   <import index="3" modelUID="java.awt@java_stub" version="-1" />
   <import index="4" modelUID="jetbrains.mps.ide.ui.filechoosers.treefilechooser@java_stub" version="-1" />
   <import index="5" modelUID="jetbrains.mps.vfs@java_stub" version="-1" />
