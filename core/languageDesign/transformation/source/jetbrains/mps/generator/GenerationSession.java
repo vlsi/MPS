@@ -37,7 +37,6 @@ public class GenerationSession implements IGenerationSession {
   private IMessageHandler myMessagesHandler;
   private ILoggingHandler myLoggingHandler;
 
-  private String mySessionId;
   private GenerationSessionContext mySessionContext;
 
   private int myInvocationCount = 0;
@@ -49,7 +48,6 @@ public class GenerationSession implements IGenerationSession {
     myInvocationContext = invocationContext;
     myDiscardTransients = !saveTransientModels;
     myProgressMonitor = progressMonitor;
-    mySessionId = "" + System.currentTimeMillis();
     myMessagesHandler = messagesHandler;
   }
 
@@ -71,10 +69,6 @@ public class GenerationSession implements IGenerationSession {
       };
     }
     return myLoggingHandler;
-  }
-
-  public String getSessionId() {
-    return mySessionId;
   }
 
   public void discardTransients() {
@@ -182,14 +176,13 @@ public class GenerationSession implements IGenerationSession {
   }
 
   private SModel generateModel_stepIntern(SModel inputModel, ITemplateGenerator generator) {
-    GenerationSessionContext generationContext = generator.getGeneratorSessionContext();
     String modelsLongName = inputModel.getLongName();
     SModel currentInputModel = inputModel;
 
     // -----------------------
     // run pre-processing scripts
     // -----------------------
-    List<MappingScript> preMappingScripts = generationContext.getPreMappingScripts();
+    List<MappingScript> preMappingScripts = mySessionContext.getPreMappingScripts();
     if (!preMappingScripts.isEmpty()) {
       // need to clone input model?
       boolean needToCloneInputMode = !myDiscardTransients;  // clone model if save transients (needed for tracing)
@@ -209,7 +202,7 @@ public class GenerationSession implements IGenerationSession {
         CloneUtil.cloneModel(currentInputModel, currentInputModel_clone, generator.getScope());
 
         if (!myDiscardTransients) { // tracing
-          generationContext.getGenerationTracer().registerPreMappingScripts(currentInputModel, currentInputModel_clone, preMappingScripts);
+          mySessionContext.getGenerationTracer().registerPreMappingScripts(currentInputModel, currentInputModel_clone, preMappingScripts);
         }
 
         // probably we can forget about former input model here
@@ -228,7 +221,7 @@ public class GenerationSession implements IGenerationSession {
     }
 
     SModel currentOutputModel = createTransientModel(modelsLongName);
-    generationContext.getGenerationTracer().startTracing(currentInputModel, currentOutputModel);
+    mySessionContext.getGenerationTracer().startTracing(currentInputModel, currentOutputModel);
 
     // -----------------------
     // primary mapping
@@ -250,16 +243,16 @@ public class GenerationSession implements IGenerationSession {
 
       // apply mapping to the output model
       addMessage(MessageKind.INFORMATION, "generating model '" + currentOutputModel.getUID() + "'");
-      generationContext.clearTransientObjects();
+      mySessionContext.clearTransientObjects();
       SModel transientModel = createTransientModel(modelsLongName);
       // probably we can forget about former input model here
       recycleWasteModel(currentInputModel);
       currentInputModel = currentOutputModel;
       currentInputModel.setLoading(false);
-      generationContext.getGenerationTracer().startTracing(currentInputModel, transientModel);
+      mySessionContext.getGenerationTracer().startTracing(currentInputModel, transientModel);
       if (!generator.doSecondaryMapping(currentInputModel, transientModel)) {
         // nothing has been generated
-        generationContext.getGenerationTracer().discardTracing(currentInputModel, transientModel);
+        mySessionContext.getGenerationTracer().discardTracing(currentInputModel, transientModel);
         addMessage(MessageKind.INFORMATION, "remove empty model '" + transientModel.getUID() + "'");
         SModelRepository.getInstance().removeModelDescriptor(transientModel.getModelDescriptor());
         myTransientModelsCount--;
@@ -268,9 +261,9 @@ public class GenerationSession implements IGenerationSession {
 
       if (++secondaryMappingRepeatCount > 10) {
         generator.showErrorMessage(null, "failed to generate output after 10 repeated mappings");
-        if (generationContext.getGenerationTracer().hasTracebackData(transientModel.getUID())) {
+        if (mySessionContext.getGenerationTracer().hasTracebackData(transientModel.getUID())) {
           generator.showErrorMessage(null, "last rules applied:");
-          List<Pair<SNode, SNode>> pairs = generationContext.getGenerationTracer().getAllAppiedRulesWithInputNodes(transientModel.getUID());
+          List<Pair<SNode, SNode>> pairs = mySessionContext.getGenerationTracer().getAllAppiedRulesWithInputNodes(transientModel.getUID());
           for (Pair<SNode, SNode> pair : pairs) {
             generator.showErrorMessage(pair.o1, "rule: " + pair.o1.getDebugText());
             generator.showErrorMessage(pair.o2, "-- input: " + (pair.o2 != null ? pair.o2.getDebugText() : "n/a"));
@@ -289,14 +282,14 @@ public class GenerationSession implements IGenerationSession {
     // -----------------------
     // run post-processing scripts
     // -----------------------
-    List<MappingScript> postMappingScripts = generationContext.getPostMappingScripts();
+    List<MappingScript> postMappingScripts = mySessionContext.getPostMappingScripts();
     if (!postMappingScripts.isEmpty() &&
       !myDiscardTransients) {  // clone model - needed for tracing
       SModel currentOutputModel_clone = createTransientModel(modelsLongName);
       addMessage(MessageKind.INFORMATION, "clone model '" + currentOutputModel.getUID() + "' --> '" + currentOutputModel_clone.getUID() + "'");
       CloneUtil.cloneModel(currentOutputModel, currentOutputModel_clone, generator.getScope());
 
-      generationContext.getGenerationTracer().registerPostMappingScripts(currentOutputModel, currentOutputModel_clone, postMappingScripts);
+      mySessionContext.getGenerationTracer().registerPostMappingScripts(currentOutputModel, currentOutputModel_clone, postMappingScripts);
       currentOutputModel = currentOutputModel_clone;
     }
 
@@ -345,11 +338,6 @@ public class GenerationSession implements IGenerationSession {
   private void addProgressMessage(final MessageKind kind, final String text) {
     myProgressMonitor.addText(text);
     addMessage(new Message(kind, text));
-  }
-
-
-  public String getSessionModuleName() {
-    return "generationSession_" + getSessionId();
   }
 
   private boolean checkGenerationStep(AbstractGenerationStepController stepController) {
