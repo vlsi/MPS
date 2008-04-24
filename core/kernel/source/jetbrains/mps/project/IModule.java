@@ -26,6 +26,9 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   List<String> getUsedLanguagesNamespaces();
   List<Language> getUsedLanguages();
 
+  List<String> getUsedDevKitNamespaces();
+  List<DevKit> getUsedDevkits();
+
   List<IModule> getExplicitlyDependOnModules();
   List<IModule> getExplicitlyDependOnModules(boolean includeBootstrap);
 

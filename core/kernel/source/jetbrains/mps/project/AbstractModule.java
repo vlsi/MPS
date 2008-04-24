@@ -208,6 +208,32 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
+  public List<String> getUsedDevKitNamespaces() {
+    List<String> result = new ArrayList<String>();
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor != null) {
+      for (DevKitReference dr : descriptor.getUsedDevKits()) {
+        result.add(dr.getName());
+      }
+    }
+    return result;
+  }
+
+  public List<DevKit> getUsedDevkits() {
+    List<DevKit> result = new ArrayList<DevKit>();
+
+    for (String namespace : getUsedDevKitNamespaces()) {
+      DevKit dk = MPSModuleRepository.getInstance().getDevKit(namespace);
+      if (dk != null) {
+        result.add(dk);
+      } else {
+        LOG.error("Can't load devkit " + dk + " from " + this);
+      }
+    }
+
+    return result;
+  }
+
   protected static List<IModule> appendBootstrapLanguages(List<IModule> list) {
     Set<Language> languages = BootstrapLanguagesManager.getInstance().getLanguages();
     for (Language language : languages) {
