@@ -16,13 +16,9 @@ public class MPSProjects {
   }
 
   private ArrayList<MPSProject> myProjects = new ArrayList<MPSProject>();
-  private ArrayList<IMPSProjectsListener> myMPSProjectsListeners = new ArrayList<IMPSProjectsListener>();
 
   public void addProject(MPSProject mpsProject) {
     myProjects.add(mpsProject);
-    for(IMPSProjectsListener listener : myMPSProjectsListeners) {
-      listener.projectAdded(mpsProject);
-    }
   }
 
   public List<MPSProject> getProjects() {
@@ -31,19 +27,5 @@ public class MPSProjects {
 
   public void removeProject(MPSProject mpsProject) {
     myProjects.remove(mpsProject);
-    for(IMPSProjectsListener listener : myMPSProjectsListeners) {
-      listener.projectRemoved(mpsProject);
-    }
   }
-
-  @SuppressWarnings({"UnusedDeclaration"})
-  public void addMPSProjectsListener(IMPSProjectsListener listener) {
-    myMPSProjectsListeners.add(listener);
-  }
-
-  @SuppressWarnings({"UnusedDeclaration"})
-  public void removeMPSProjectsListener(IMPSProjectsListener listener) {
-    myMPSProjectsListeners.remove(listener);
-  }
-
 }

@@ -78,9 +78,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
   private IContext myContext = new ContextImpl(ApplicationComponents.getInstance().getContext());
 
-  private List<IMPSProjectCommandListener> myProjectCommandListeners = new ArrayList<IMPSProjectCommandListener>();
-  private ProjectEventTranslator myEventTranslator;
-  private PluginManager myPluginManager = new PluginManager(this);  
+  private PluginManager myPluginManager = new PluginManager(this);
 
   public MPSProject(final @NotNull File projectFile) {
     myContext.register(MPSProject.class, this);
@@ -113,10 +111,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
         ClassLoaderManager.getInstance().reloadAll();
       }
     });
-
-
-    myEventTranslator = new ProjectEventTranslator();
-    CommandProcessor.instance().addCommandListener(myEventTranslator);
 
     Highlighter hilghlighter = new Highlighter();
     myContext.register(Highlighter.class, hilghlighter);
@@ -227,8 +221,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
     readModules();
     ClassLoaderManager.getInstance().reloadAll();
-
-    myEventTranslator.projectChanged();
   }
 
   public void addProjectLanguage(@NotNull Language language) {
@@ -241,7 +233,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     languagePath.setPath(descriptorFile.getAbsolutePath());
     projectDescriptor.addProjectLanguage(languagePath);
     setProjectDescriptor(projectDescriptor);
-    myEventTranslator.projectChanged();
   }
 
   public void removeProjectLanguage(@NotNull Language language) {
@@ -257,7 +248,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
       }
     }
     setProjectDescriptor(projectDescriptor);
-    myEventTranslator.projectChanged();
   }
 
   @NotNull
@@ -306,7 +296,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
       }
     }
     setProjectDescriptor(projectDescriptor);
-    myEventTranslator.projectChanged();
   }
 
   public void addProjectDevKit(@NotNull IFile devKitDescriptorFile) {
@@ -319,8 +308,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     projectDescriptor.addProjectDevkit(devKitPath);
 
     setProjectDescriptor(projectDescriptor);
-
-    myEventTranslator.projectChanged();
   }
 
   public void removeProjectDevKit(@NotNull DevKit devkit) {
@@ -336,7 +323,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
       }
     }
     setProjectDescriptor(projectDescriptor);
-    myEventTranslator.projectChanged();
   }
 
   @NotNull
@@ -664,7 +650,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
           }
         }
 
-        CommandProcessor.instance().removeCommandListener(myEventTranslator);
         MPSModuleRepository.getInstance().unRegisterModules(MPSProject.this);
         SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
 
@@ -698,20 +683,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
       if (owners.contains(l)) return l;
     }
     return null;
-  }
-
-  public void addMPSProjectCommandListener(@NotNull IMPSProjectCommandListener listener) {
-    myProjectCommandListeners.add(listener);
-  }
-
-  public void removeMPSProjectCommandListener(@NotNull IMPSProjectCommandListener listener) {
-    myProjectCommandListeners.remove(listener);
-  }
-
-  void fireMPSProjectChangedInCommand() {
-    for (IMPSProjectCommandListener listener : new ArrayList<IMPSProjectCommandListener>(myProjectCommandListeners)) {
-      listener.projectChangedInCommand(this);
-    }
   }
 
   public static class TestResult {
@@ -907,16 +878,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
   public void invalidateCaches() {
     myScope.invalidateCaches();
-  }
-
-  private class ProjectEventTranslator extends CommandEventTranslator {
-    protected void fireCommandEvent() {
-      fireMPSProjectChangedInCommand();
-    }
-
-    public void projectChanged() {
-      markCurrentCommandsDirty();
-    }
   }
 
   //TODO: make private (was made visible for usages view to save view scope by Mihail Muhin)
