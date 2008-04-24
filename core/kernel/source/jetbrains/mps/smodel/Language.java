@@ -40,8 +40,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   private LanguageDescriptor myLanguageDescriptor;
   private List<Generator> myGenerators = new ArrayList<Generator>();
   private HashMap<String, AbstractConceptDeclaration> myNameToConceptCache = new HashMap<String, AbstractConceptDeclaration>();
-  private List<LanguageCommandListener> myCommandListeners = new ArrayList<LanguageCommandListener>();
-  private LanguageEventTranslator myEventTranslator = new LanguageEventTranslator();
   private boolean myUpToDate = true;
   private IClassPathItem myLanguageRuntimeClasspath;
 
@@ -52,19 +50,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
   private Map<String, Set<String>> myAncestorsNamesMap = new HashMap<String, Set<String>>();
   private Map<String, Set<String>> myParentsNamesMap = new HashMap<String, Set<String>>();
-  private SModelCommandListener myAspectModelsListener = new SModelCommandListener() {
-    public void eventsHappenedInCommand(List<SModelEvent> events) {
-      if (myUpToDate) {
-        myUpToDate = false;
-        CommandProcessor.instance().executeCommand(new Runnable() {
-          public void run() {
-            myEventTranslator.languageChanged();
-          }
-        });
-      }
-    }
-  };
-
 
   public static Language newInstance(IFile descriptorFile, MPSModuleOwner moduleOwner) {
     Language language = new Language();
@@ -306,9 +291,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
       super.readModels();
 
       if (isInitialized()) {
-        CommandProcessor.instance().addCommandListener(myEventTranslator);
-        registerAspectListener();
-
         fireModuleInitialized();
       }
     }
@@ -341,8 +323,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   public void dispose() {
     //Call this method before you remove it and its models from repositories
     //To unregister it correctly from different services we need it and its models    
-    CommandProcessor.instance().removeCommandListener(myEventTranslator);
-    unRegisterAspectListener();
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
     MPSModuleRepository.getInstance().unRegisterModules(this);
     if (myGenerators != null) {
@@ -357,7 +337,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
   public void setLanguageDescriptor(final LanguageDescriptor newDescriptor) {
     // release modules and models (except descriptor model)
-    unRegisterAspectListener();
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), Language.this);
 
     assert modelDescriptor != null;
@@ -368,11 +347,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
     ClassLoaderManager.getInstance().reloadAll();
 
-    registerAspectListener();
-
     MPSModuleRepository.getInstance().invalidateCaches();
-
-    myEventTranslator.languageChanged();
   }
 
   public boolean structureHaveToBeLoadedFromApplicationClassLoader() {
@@ -419,20 +394,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     }
 
     return result;
-  }
-
-  private void registerAspectListener() {
-    for (SModelDescriptor aspectModel : getAspectModelDescriptors()) {
-      if (aspectModel != null) aspectModel.addModelCommandListener(myAspectModelsListener);
-    }
-  }
-
-  private void unRegisterAspectListener() {
-    for (SModelDescriptor aspectModel : getAspectModelDescriptors()) {
-      if (aspectModel != null) {
-        aspectModel.removeModelCommandListener(myAspectModelsListener);
-      }
-    }
   }
 
   public int getVersion() {
@@ -758,29 +719,9 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return getLanguageDescriptor().getNamespace();
   }
 
-  public void addLanguageCommandListener(LanguageCommandListener listener) {
-    myCommandListeners.add(listener);
-  }
-
-  public void removeLanguageCommandListener(LanguageCommandListener listener) {
-    myCommandListeners.remove(listener);
-  }
-
   @Hack("Created to simplify New Language Dialog")
   public ModelRoot getDefaultModelRoot() {
     return getLanguageDescriptor().modelRoots().next();
-  }
-
-  private class LanguageEventTranslator extends CommandEventTranslator {
-    public void languageChanged() {
-      markCurrentCommandsDirty();
-    }
-
-    protected void fireCommandEvent() {
-      for (LanguageCommandListener l : myCommandListeners) {
-        l.languageChangedInCommand(Language.this);
-      }
-    }
   }
 
   public Set<ILoggableRefactoring> getRefactorings() {

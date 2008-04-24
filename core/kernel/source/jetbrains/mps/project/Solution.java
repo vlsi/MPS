@@ -23,8 +23,6 @@ public class Solution extends AbstractModule {
   private static Logger LOG = Logger.getLogger(Solution.class);
 
   private SolutionDescriptor mySolutionDescriptor;
-  private List<SolutionCommandListener> myCommandListeners = new LinkedList<SolutionCommandListener>();
-  private SolutionEventTranslator myEventTranslator = new SolutionEventTranslator();
 
   // -------------------------------------------------------------------
 
@@ -62,7 +60,6 @@ public class Solution extends AbstractModule {
       super.readModels();
 
       if (isInitialized()) {
-        CommandProcessor.instance().addCommandListener(myEventTranslator);
         fireModuleInitialized();
       }
     }
@@ -82,12 +79,9 @@ public class Solution extends AbstractModule {
     reload();
 
     ClassLoaderManager.getInstance().reloadAll();
-
-    myEventTranslator.solutionChanged();
   }
 
   public void dispose() {
-    CommandProcessor.instance().removeCommandListener(myEventTranslator);
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
     MPSModuleRepository.getInstance().unRegisterModules(this);
   }
@@ -102,27 +96,6 @@ public class Solution extends AbstractModule {
 
   public ModuleDescriptor getModuleDescriptor() {
     return mySolutionDescriptor;
-  }
-
-  public void addSolutionCommandListener(SolutionCommandListener listener) {
-    myCommandListeners.add(listener);
-  }
-
-  public void removeSolutionCommandListener(SolutionCommandListener listener) {
-    myCommandListeners.remove(listener);
-  }
-
-  private class SolutionEventTranslator extends CommandEventTranslator {
-
-    public void solutionChanged() {
-      markCurrentCommandsDirty();
-    }
-
-    protected void fireCommandEvent() {
-      for (SolutionCommandListener l : new ArrayList<SolutionCommandListener>(myCommandListeners)) {
-        l.solutionChangedInCommand(Solution.this);
-      }
-    }
   }
 
   public String toString() {
