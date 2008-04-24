@@ -4,7 +4,6 @@
     <modelRoot path="${solution_descriptor}\" namespacePrefix="" />
   </models>
   <classPath />
-  <runtimeClassPath />
   <sourcePath />
   <dependencies>
     <dependency reexport="false">jetbrains.mps.projectLanguage</dependency>
@@ -14,6 +13,7 @@
   <usedLanguages>
     <usedLanguages>jetbrains.mps.uiLanguage</usedLanguages>
     <usedLanguages>jetbrains.mps.ide.uiLanguage</usedLanguages>
+    <usedLanguages>jetbrains.mps.bootstrap.pluginLanguage</usedLanguages>
   </usedLanguages>
 </solution>
 
