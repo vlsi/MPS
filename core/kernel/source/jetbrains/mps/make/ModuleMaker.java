@@ -28,6 +28,9 @@ public class ModuleMaker {
   private Map<String, IModule> myContainingModules = new HashMap<String, IModule>();
   private Map<IModule, ModuleSources> myModuleSources = new HashMap<IModule, ModuleSources>();
 
+  public ModuleMaker() {
+  }
+
   public void clean(final Set<IModule> modules, final IAdaptiveProgressMonitor monitor) {
     try {
       monitor.start("Clean", 2000);
