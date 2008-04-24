@@ -55,8 +55,6 @@ public abstract class AbstractModule implements IModule {
   }
 
   public void convert() {
-
-
     boolean save = false;
 
     Set<String> visited = new HashSet<String>();
