@@ -14,6 +14,7 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="jetbrains.mps.generator.template@java_stub" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1186794504964">
@@ -24,14 +25,16 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1186794552718" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186794552719">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1186794617828">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1186794629849">
-            <link role="baseMethodDeclaration" targetNodeId="1.~ITemplateGenerator.findOutputNodeByInputNodeAndMappingName(jetbrains.mps.smodel.SNode,java.lang.String):jetbrains.mps.smodel.SNode" resolveInfo="findOutputNodeByInputNodeAndMappingName" />
-            <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1186794621455">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208997308828">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1186794621455">
               <link role="variableDeclaration" targetNodeId="1186794582238" resolveInfo="generator" />
             </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1186794663057" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1186794670496">
-              <property name="value" value="classQueriesGenerated" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208997308829">
+              <link role="baseMethodDeclaration" targetNodeId="1.~ITemplateGenerator.findOutputNodeByInputNodeAndMappingName(jetbrains.mps.smodel.SNode,java.lang.String):jetbrains.mps.smodel.SNode" resolveInfo="findOutputNodeByInputNodeAndMappingName" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1186794663057" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1186794670496">
+                <property name="value" value="classQueriesGenerated" />
+              </node>
             </node>
           </node>
         </node>
