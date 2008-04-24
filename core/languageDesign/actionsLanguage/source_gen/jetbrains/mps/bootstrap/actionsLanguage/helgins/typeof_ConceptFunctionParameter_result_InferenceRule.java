@@ -17,7 +17,7 @@ public class typeof_ConceptFunctionParameter_result_InferenceRule implements Inf
   public void applyRule(final SNode result) {
     SNode conceptOfResult = null;
     SNode ancestor = SNodeOperations.getAncestorWhereConceptInList(result, new String[]{"jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptRightTransformPart","jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptRightTransformMenuPart"}, false, false);
-    if(SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptRightTransformPart")) {
+    if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptRightTransformPart")) {
       conceptOfResult = SLinkOperations.getTarget(ancestor, "concept", false);
     } else
     {
