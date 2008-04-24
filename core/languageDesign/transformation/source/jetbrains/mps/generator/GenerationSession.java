@@ -183,7 +183,6 @@ public class GenerationSession implements IGenerationSession {
 
   private SModel generateModel_stepIntern(SModel inputModel, ITemplateGenerator generator) {
     GenerationSessionContext generationContext = generator.getGeneratorSessionContext();
-    IModule module = generationContext.getModule();
     String modelsLongName = inputModel.getLongName();
     SModel currentInputModel = inputModel;
 
@@ -205,7 +204,7 @@ public class GenerationSession implements IGenerationSession {
         }
       }
       if (needToCloneInputMode) {
-        SModel currentInputModel_clone = createTransientModel(modelsLongName, module);
+        SModel currentInputModel_clone = createTransientModel(modelsLongName);
         addMessage(MessageKind.INFORMATION, "clone model '" + currentInputModel.getUID() + "' --> '" + currentInputModel_clone.getUID() + "'");
         CloneUtil.cloneModel(currentInputModel, currentInputModel_clone, generator.getScope());
 
@@ -228,7 +227,7 @@ public class GenerationSession implements IGenerationSession {
       GeneratorUtil.executeMappingScript(preMappingScript, currentInputModel, generator);
     }
 
-    SModel currentOutputModel = createTransientModel(modelsLongName, module);
+    SModel currentOutputModel = createTransientModel(modelsLongName);
     generationContext.getGenerationTracer().startTracing(currentInputModel, currentOutputModel);
 
     // -----------------------
@@ -252,7 +251,7 @@ public class GenerationSession implements IGenerationSession {
       // apply mapping to the output model
       addMessage(MessageKind.INFORMATION, "generating model '" + currentOutputModel.getUID() + "'");
       generationContext.clearTransientObjects();
-      SModel transientModel = createTransientModel(modelsLongName, module);
+      SModel transientModel = createTransientModel(modelsLongName);
       // probably we can forget about former input model here
       recycleWasteModel(currentInputModel);
       currentInputModel = currentOutputModel;
@@ -293,7 +292,7 @@ public class GenerationSession implements IGenerationSession {
     List<MappingScript> postMappingScripts = generationContext.getPostMappingScripts();
     if (!postMappingScripts.isEmpty() &&
       !myDiscardTransients) {  // clone model - needed for tracing
-      SModel currentOutputModel_clone = createTransientModel(modelsLongName, module);
+      SModel currentOutputModel_clone = createTransientModel(modelsLongName);
       addMessage(MessageKind.INFORMATION, "clone model '" + currentOutputModel.getUID() + "' --> '" + currentOutputModel_clone.getUID() + "'");
       CloneUtil.cloneModel(currentOutputModel, currentOutputModel_clone, generator.getScope());
 
@@ -314,13 +313,12 @@ public class GenerationSession implements IGenerationSession {
     return currentOutputModel;
   }
 
-  private SModel createTransientModel(String longName, ModelOwner modelOwner) {
+  private SModel createTransientModel(String longName) {
     String stereotype = "" + myInvocationCount + "_" + myTransientModelsCount;
     while (SModelRepository.getInstance().getModelDescriptor(new SModelUID(longName, stereotype)) != null) {
       stereotype += "_";
     }
-    TransientModelsModule transientModelsModule = mySessionContext.getModule();
-    SModelDescriptor transientModel = transientModelsModule.createTransientModel(longName, stereotype);
+    SModelDescriptor transientModel = mySessionContext.getModule().createTransientModel(longName, stereotype);
     myTransientModelsCount++;
     transientModel.getSModel().setLoading(true); // we dont need any events to be casted
     return transientModel.getSModel();
