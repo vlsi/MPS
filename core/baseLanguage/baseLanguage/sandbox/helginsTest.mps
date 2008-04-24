@@ -5,23 +5,21 @@
   <language namespace="jetbrains.mps.baseLanguage">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
-  <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.core" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   </language>
+  <language namespace="jetbrains.mps.bootstrap.helgins" />
+  <language namespace="jetbrains.mps.quotation" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   </language>
-  <language namespace="jetbrains.mps.transformation.TLBase">
-    <languageAspect modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
-  </language>
-  <language namespace="jetbrains.mps.quotation" />
-  <language namespace="jetbrains.mps.baseLanguage.strings" />
+  <languageAspect modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <maxImportIndex value="7" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <maxImportIndex value="9" />
   <import index="1" modelUID="java.util@java_stub" version="-1" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="java.io@java_stub" version="-1" />
@@ -29,6 +27,8 @@
   <import index="5" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <import index="6" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="7" modelUID="jetbrains.mps.util@java_stub" version="-1" />
+  <import index="8" modelUID="jetbrains.mps.generator.template@java_stub" version="-1" />
+  <import index="9" modelUID="jetbrains.mps.generator@java_stub" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1182952452380">
     <property name="name" value="TestHelgins" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1182952459350">
@@ -427,12 +427,15 @@
                 <link role="classifier" targetNodeId="5.~SModelDescriptor" resolveInfo="SModelDescriptor" />
               </node>
             </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1208998430268" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186051491169">
-          <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1186051436251">
-            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ToListOperation" id="1186051436261" />
-            <node role="operand" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1186051436252">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208998388319">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208998388301">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1186051436253">
+                <link role="variableDeclaration" targetNodeId="1186051436245" resolveInfo="modelDescriptors" />
+              </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SelectOperation" id="1186051436254">
                 <node role="selector" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SelectorBlock" id="1186051436255">
                   <node role="defaultInputElement" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.DefaultInputElement" id="1186051436256">
@@ -452,10 +455,8 @@
                   </node>
                 </node>
               </node>
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1186051436253">
-                <link role="variableDeclaration" targetNodeId="1186051436245" resolveInfo="modelDescriptors" />
-              </node>
             </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ToListOperation" id="1186051436261" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198597999718">
@@ -659,8 +660,6 @@
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1194442994996" />
   </node>
-  <visible index="2" modelUID="jetbrains.mps.generator.template@java_stub" />
-  <visible index="3" modelUID="jetbrains.mps.generator@java_stub" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1203973337091">
     <property name="name" value="bug_MethodCallType" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1203973355327">
@@ -672,16 +671,18 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1203973384286">
             <property name="name" value="g" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203973384287">
-              <link role="classifier" targetNodeId="2v.~TemplateGenerator" resolveInfo="TemplateGenerator" />
+              <link role="classifier" targetNodeId="8.~TemplateGenerator" resolveInfo="TemplateGenerator" />
             </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1208998250663" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1203974476620">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1203974476621">
             <property name="name" value="c" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203974476622">
-              <link role="classifier" targetNodeId="3v.~GenerationSessionContext" resolveInfo="GenerationSessionContext" />
+              <link role="classifier" targetNodeId="9.~GenerationSessionContext" resolveInfo="GenerationSessionContext" />
             </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1208998260325" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203974492108">
@@ -690,7 +691,7 @@
               <link role="variableDeclaration" targetNodeId="1203974476621" resolveInfo="c" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1203974500253">
-              <link role="baseMethodDeclaration" targetNodeId="3v.~GenerationSessionContext.getInvocationContext():jetbrains.mps.smodel.IOperationContext" resolveInfo="getInvocationContext" />
+              <link role="baseMethodDeclaration" targetNodeId="9.~GenerationSessionContext.getInvocationContext():jetbrains.mps.smodel.IOperationContext" resolveInfo="getInvocationContext" />
             </node>
           </node>
         </node>
@@ -707,7 +708,7 @@
                 <link role="variableDeclaration" targetNodeId="1203973384286" resolveInfo="g" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204585151101">
-                <link role="baseMethodDeclaration" targetNodeId="2v.~TemplateGenerator.getGeneratorSessionContext():jetbrains.mps.generator.GenerationSessionContext" resolveInfo="getGeneratorSessionContext" />
+                <link role="baseMethodDeclaration" targetNodeId="8.~TemplateGenerator.getGeneratorSessionContext():jetbrains.mps.generator.GenerationSessionContext" resolveInfo="getGeneratorSessionContext" />
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1204585141481" />
@@ -723,7 +724,7 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204585141459">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1203973384292">
-                <link role="baseMethodDeclaration" targetNodeId="2v.~TemplateGenerator.getGeneratorSessionContext():jetbrains.mps.generator.GenerationSessionContext" resolveInfo="getGeneratorSessionContext" />
+                <link role="baseMethodDeclaration" targetNodeId="8.~TemplateGenerator.getGeneratorSessionContext():jetbrains.mps.generator.GenerationSessionContext" resolveInfo="getGeneratorSessionContext" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1204585141460" />
             </node>
@@ -742,7 +743,7 @@
                 <link role="variableDeclaration" targetNodeId="1203973384286" resolveInfo="g" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204585151161">
-                <link role="baseMethodDeclaration" targetNodeId="2v.~TemplateGenerator.getGeneratorSessionContext():jetbrains.mps.generator.GenerationSessionContext" resolveInfo="getGeneratorSessionContext" />
+                <link role="baseMethodDeclaration" targetNodeId="8.~TemplateGenerator.getGeneratorSessionContext():jetbrains.mps.generator.GenerationSessionContext" resolveInfo="getGeneratorSessionContext" />
               </node>
             </node>
           </node>
@@ -754,13 +755,13 @@
                 <link role="variableDeclaration" targetNodeId="1203973384286" resolveInfo="g" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1203977338504">
-                <link role="baseMethodDeclaration" targetNodeId="2v.~TemplateGenerator.getGeneratorSessionContext():jetbrains.mps.generator.GenerationSessionContext" resolveInfo="getGeneratorSessionContext" />
+                <link role="baseMethodDeclaration" targetNodeId="8.~TemplateGenerator.getGeneratorSessionContext():jetbrains.mps.generator.GenerationSessionContext" resolveInfo="getGeneratorSessionContext" />
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204055114189">
-              <link role="baseMethodDeclaration" targetNodeId="3v.~GenerationSessionContext.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+              <link role="baseMethodDeclaration" targetNodeId="9.~GenerationSessionContext.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1204055132520">
-                <link role="classifier" targetNodeId="3v.~IGenerationType" resolveInfo="IGenerationType" />
+                <link role="classifier" targetNodeId="9.~IGenerationType" resolveInfo="IGenerationType" />
               </node>
             </node>
           </node>
@@ -772,13 +773,13 @@
                 <link role="variableDeclaration" targetNodeId="1203973384286" resolveInfo="g" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204056565432">
-                <link role="baseMethodDeclaration" targetNodeId="2v.~TemplateGenerator.getGeneratorSessionContext():jetbrains.mps.generator.GenerationSessionContext" resolveInfo="getGeneratorSessionContext" />
+                <link role="baseMethodDeclaration" targetNodeId="8.~TemplateGenerator.getGeneratorSessionContext():jetbrains.mps.generator.GenerationSessionContext" resolveInfo="getGeneratorSessionContext" />
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204056784285">
-              <link role="baseMethodDeclaration" targetNodeId="3v.~GenerationSessionContext.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+              <link role="baseMethodDeclaration" targetNodeId="9.~GenerationSessionContext.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1204056813289">
-                <link role="classifier" targetNodeId="3v.~IGenerationType" resolveInfo="IGenerationType" />
+                <link role="classifier" targetNodeId="9.~IGenerationType" resolveInfo="IGenerationType" />
               </node>
             </node>
           </node>

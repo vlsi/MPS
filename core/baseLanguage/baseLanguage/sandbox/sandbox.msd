@@ -13,11 +13,17 @@
     <dependency reexport="true">jetbrains.mps.baseLanguageInternal</dependency>
     <dependency reexport="true">jetbrains.mps.baseLanguage.strings</dependency>
     <dependency reexport="true">jetbrains.mps.logging.refactoring</dependency>
-    <dependency reexport="true">webr.css</dependency>
     <dependency reexport="false">jetbrains.mps.transformation.TLBase</dependency>
+    <dependency reexport="false">jetbrains.mps.bootstrap.smodelLanguage</dependency>
+    <dependency reexport="false">jetbrains.mps.bootstrap.helgins</dependency>
+    <dependency reexport="false">jetbrains.mps.quotation</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
+    <usedLanguages>jetbrains.mps.bootstrap.smodelLanguage</usedLanguages>
+    <usedLanguages>jetbrains.mps.bootstrap.helgins</usedLanguages>
+    <usedLanguages>jetbrains.mps.quotation</usedLanguages>
+    <usedLanguages>jetbrains.mps.baseLanguage.strings</usedLanguages>
   </usedLanguages>
 </solution>
 

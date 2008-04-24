@@ -5,34 +5,23 @@
   <language namespace="jetbrains.mps.baseLanguage">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
-  <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
-  </language>
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   </language>
-  <language namespace="jetbrains.mps.bootstrap.helgins" />
-  <language namespace="jetbrains.mps.core" />
-  <language namespace="jetbrains.mps.quotation" />
-  <language namespace="jetbrains.teamsys.dnq" />
-  <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.baseLanguage.strings" />
-  <language namespace="jetbrains.springframework.configuration" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <maxImportIndex value="130" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <maxImportIndex value="131" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="java.util@java_stub" version="-1" />
-  <import index="123" modelUID="jetbrains.mps.baseLanguage.sandbox.test" version="-1" />
   <import index="124" modelUID="java.io@java_stub" version="-1" />
   <import index="125" modelUID="jetbrains.mps.core.structure" version="-1" />
-  <import index="126" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <import index="127" modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
-  <import index="128" modelUID="jetbrains.mps.util@java_stub" version="-1" />
-  <import index="129" modelUID="jetbrains.mps.webr.runtime.requestProcessor" version="-1" />
-  <import index="130" modelUID="jetbrains.mps.webr.runtime.templateComponent" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.smodel@java_stub" />
   <refactoringLog type="jetbrains.mps.logging.refactoring.structure.RuntimeLogStack" id="1191250524181">
     <node role="log" type="jetbrains.mps.logging.refactoring.structure.RuntimeLog" id="1191250524182">
@@ -450,15 +439,15 @@
             <property name="name" value="oldActionControllers" />
             <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapType" id="1207669124025">
               <node role="keyType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1207669124026" />
-              <node role="valueType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207669124027">
-                <link role="classifier" targetNodeId="130.1181386460650" resolveInfo="ActionController" />
+              <node role="valueType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208998318004">
+                <link role="classifier" targetNodeId="3.~AbstractCollection" resolveInfo="AbstractCollection" />
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1207669124028">
               <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.HashMapCreator" id="1207669124029">
                 <node role="keyType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1207669124030" />
-                <node role="valueType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207669124031">
-                  <link role="classifier" targetNodeId="130.1181386460650" resolveInfo="ActionController" />
+                <node role="valueType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208998323962">
+                  <link role="classifier" targetNodeId="3.~AbstractCollection" resolveInfo="AbstractCollection" />
                 </node>
               </node>
             </node>
