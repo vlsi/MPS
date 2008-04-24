@@ -34,14 +34,14 @@ public class _Line_Actions extends EditorCellKeyMap {
 
     public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
-      if((contextCell == null)) {
+      if ((contextCell == null)) {
         return false;
       }
       SNode contextNode = contextCell.getSNode();
-      if(contextNode == null) {
+      if (contextNode == null) {
         return false;
       }
-      if(contextNode.isInstanceOfConcept("jetbrains.mpslite.structure.Line")) {
+      if (contextNode.isInstanceOfConcept("jetbrains.mpslite.structure.Line")) {
         return true;
       }
       return false;
@@ -54,7 +54,7 @@ public class _Line_Actions extends EditorCellKeyMap {
 
     private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
       SNode selectedNode = editorContext.getSelectedNode();
-      if(selectedNode == null) {
+      if (selectedNode == null) {
         return;
       }
       SNode part = SNodeOperations.getAncestor(selectedNode, "jetbrains.mpslite.structure.LinePart", true, false);
