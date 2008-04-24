@@ -51,6 +51,8 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     myTemplateModels = myGenerationStepController.getTemplateModels();
     myMappingConfigurations = new LinkedHashSet<MappingConfiguration>(myGenerationStepController.getCurrentMappings());
 
+    getModule().setInvocationContext(invocationContext.getModule());
+
     if (prevContext != null) {
       mySessionObjects = prevContext.mySessionObjects;
       myUsedNames = prevContext.myUsedNames;
@@ -92,7 +94,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   }
 
   @NotNull
-  public IModule getModule() {
+  public TransientModelsModule getModule() {
     return getProject().getComponentSafe(TransientModelsModule.class);
   }
 

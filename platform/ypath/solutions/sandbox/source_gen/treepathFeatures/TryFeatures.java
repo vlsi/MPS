@@ -15,7 +15,7 @@ import jetbrains.mps.ypath.runtime.IFeatureDescriptor;
 
 public class TryFeatures extends TreePath<Node> {
 
-  public  TryFeatures() {
+  public TryFeatures() {
     this.registerFeature(new TryFeatures.Desc_Feature_nodes());
     this.registerFeature(new TryFeatures.Desc_Feature_attributes());
   }
@@ -29,7 +29,7 @@ public class TryFeatures extends TreePath<Node> {
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;
 
-    public  Parent(Object enclosingClass, Object closureContext) {
+    public Parent(Object enclosingClass, Object closureContext) {
       this._enclosingClass = enclosingClass;
       this._closureContext = (Object)closureContext;
     }
@@ -44,7 +44,7 @@ public class TryFeatures extends TreePath<Node> {
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;
 
-    public  Children(Object enclosingClass, Object closureContext) {
+    public Children(Object enclosingClass, Object closureContext) {
       this._enclosingClass = enclosingClass;
       this._closureContext = (Object)closureContext;
     }
@@ -55,15 +55,15 @@ public class TryFeatures extends TreePath<Node> {
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;
 
-    private  foo_NodeKindTrigger() {
+    private foo_NodeKindTrigger() {
     }
-    public  foo_NodeKindTrigger(Object enclosingClass, Object closureContext) {
+    public foo_NodeKindTrigger(Object enclosingClass, Object closureContext) {
       this._enclosingClass = enclosingClass;
       this._closureContext = (Object)closureContext;
     }
 
     public static IFilter<Node> getInstance() {
-      if(TryFeatures.foo_NodeKindTrigger.instance == null) {
+      if (TryFeatures.foo_NodeKindTrigger.instance == null) {
         TryFeatures.foo_NodeKindTrigger.instance = new TryFeatures.foo_NodeKindTrigger();
       }
       return TryFeatures.foo_NodeKindTrigger.instance;
@@ -79,7 +79,7 @@ public class TryFeatures extends TreePath<Node> {
 
     public static IFilter<Node> getMatcher(final String matchValue) {
       IFilter filter;
-      if(matchValue != null) {
+      if (matchValue != null) {
         filter = new IFilter() {
 
           public boolean accept(Object n) {
@@ -109,7 +109,7 @@ public class TryFeatures extends TreePath<Node> {
       /* package */Object _enclosingClass;
       /* package */Object _closureContext;
 
-      public  Getter(Object enclosingClass, Object closureContext) {
+      public Getter(Object enclosingClass, Object closureContext) {
         this._enclosingClass = enclosingClass;
         this._closureContext = (Object)closureContext;
       }
@@ -125,7 +125,7 @@ public class TryFeatures extends TreePath<Node> {
 
     public static IFilter<Node> getMatcher(final String matchValue) {
       IFilter filter;
-      if(matchValue != null) {
+      if (matchValue != null) {
         filter = new IFilter() {
 
           public boolean accept(Object n) {
@@ -155,7 +155,7 @@ public class TryFeatures extends TreePath<Node> {
       /* package */Object _enclosingClass;
       /* package */Object _closureContext;
 
-      public  Getter(Object enclosingClass, Object closureContext) {
+      public Getter(Object enclosingClass, Object closureContext) {
         this._enclosingClass = enclosingClass;
         this._closureContext = (Object)closureContext;
       }
@@ -171,12 +171,12 @@ public class TryFeatures extends TreePath<Node> {
 
     private Node thisNode;
 
-    public  Feature_nodes(Node thisNode) {
+    public Feature_nodes(Node thisNode) {
       this.thisNode = thisNode;
     }
 
     public Node get(int idx) {
-      if(idx < 0 || idx >= this.size()) {
+      if (idx < 0 || idx >= this.size()) {
         throw new IndexOutOfBoundsException();
       }
       return this.thisNode.getChildNodes().item(idx);
@@ -187,7 +187,7 @@ public class TryFeatures extends TreePath<Node> {
     }
 
     public Node set(int idx, Node value) {
-      if(idx < 0 || idx >= this.size()) {
+      if (idx < 0 || idx >= this.size()) {
         throw new IndexOutOfBoundsException();
       }
       Node __oldValue__ = this.get(idx);
@@ -196,10 +196,10 @@ public class TryFeatures extends TreePath<Node> {
     }
 
     public void add(int idx, Node value) {
-      if(idx < 0 || idx > this.size()) {
+      if (idx < 0 || idx > this.size()) {
         throw new IndexOutOfBoundsException();
       }
-      if(idx < this.thisNode.getChildNodes().getLength()) {
+      if (idx < this.thisNode.getChildNodes().getLength()) {
         this.thisNode.insertBefore(this.thisNode.getChildNodes().item(idx), value);
       } else
       {
@@ -208,7 +208,7 @@ public class TryFeatures extends TreePath<Node> {
     }
 
     public Node remove(int idx) {
-      if(idx < 0 || idx >= this.size()) {
+      if (idx < 0 || idx >= this.size()) {
         throw new IndexOutOfBoundsException();
       }
       Node __oldValue__ = this.get(idx);
@@ -221,7 +221,7 @@ public class TryFeatures extends TreePath<Node> {
 
     private Node thisNode;
 
-    public  Feature_attributes(Node thisNode) {
+    public Feature_attributes(Node thisNode) {
       this.thisNode = thisNode;
     }
 
@@ -248,7 +248,7 @@ public class TryFeatures extends TreePath<Node> {
 }
   public static class Desc_Feature_nodes extends IFeatureDescriptor.Stub<Node> implements IFeatureDescriptor<Node> {
 
-    public  Desc_Feature_nodes() {
+    public Desc_Feature_nodes() {
     }
 
     public Iterable<Node> getContents(Node node) {
@@ -274,7 +274,7 @@ public class TryFeatures extends TreePath<Node> {
 }
   public static class Desc_Feature_attributes extends IFeatureDescriptor.Stub<Node> implements IFeatureDescriptor<Node> {
 
-    public  Desc_Feature_attributes() {
+    public Desc_Feature_attributes() {
     }
 
     public Iterable<Node> getContents(Node node) {

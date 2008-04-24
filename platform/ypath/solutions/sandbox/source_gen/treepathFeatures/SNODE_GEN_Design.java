@@ -34,7 +34,7 @@ public class SNODE_GEN_Design {
       SNode op = null;
       SLinkOperations.setTarget(opExpr, "leftExpression", expression, true);
       Cardinality card = Cardinality.parseValue(SPropertyOperations.getString_def(param, "sourceCardinality", "0..1"));
-      if(card == Cardinality._0__1 || card == Cardinality._1) {
+      if (card == Cardinality._0__1 || card == Cardinality._1) {
         op = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess", null);
         SLinkOperations.setTarget(op, "link", param, false);
       } else
@@ -73,7 +73,7 @@ public class SNODE_GEN_Design {
       SNode op = null;
       SLinkOperations.setTarget(opExpr, "leftExpression", expression, true);
       Cardinality card = Cardinality.parseValue(SPropertyOperations.getString_def(param, "sourceCardinality", "0..1"));
-      if(card == Cardinality._0__1 || card == Cardinality._1) {
+      if (card == Cardinality._0__1 || card == Cardinality._1) {
         op = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess", null);
         SLinkOperations.setTarget(op, "link", param, false);
       } else

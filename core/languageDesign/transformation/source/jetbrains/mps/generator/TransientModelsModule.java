@@ -1,9 +1,6 @@
 package jetbrains.mps.generator;
 
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.Dependency;
-import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.*;
 import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
 import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
@@ -18,6 +15,7 @@ import java.util.HashSet;
  */
 public class TransientModelsModule extends AbstractModule {
   private MPSProject myProject;
+  private IModule myInvocationContext;
   private Set<String> myModelsToKeep = new HashSet<String>();
 
   public TransientModelsModule(MPSProject project) {
@@ -25,9 +23,21 @@ public class TransientModelsModule extends AbstractModule {
     MPSModuleRepository.getInstance().addModule(this, myProject);
   }
 
+  public void setInvocationContext(IModule invocationContext) {
+    myInvocationContext = invocationContext;
+  }
+
   @NotNull
   public String toString() {
     return "Transient models [" + myProject.getProjectFile().toString() + "]";
+  }
+
+
+  public Class getClass(String fqName) {
+    if (myInvocationContext == null) {
+      throw new IllegalStateException();
+    }    
+    return myInvocationContext.getClass(fqName);
   }
 
   public IScope getScope() {
@@ -57,6 +67,7 @@ public class TransientModelsModule extends AbstractModule {
   public void clearAll() {
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
     SModelRepository.getInstance().removeUnusedDescriptors();
+    setInvocationContext(null);
     myModelsToKeep.clear();
   }
 

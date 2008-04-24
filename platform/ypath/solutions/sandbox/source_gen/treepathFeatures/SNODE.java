@@ -12,7 +12,7 @@ import java.util.Iterator;
 
 public class SNODE extends TreePath<SNode> {
 
-  public  SNODE() {
+  public SNODE() {
   }
 
   public static IFeatureDescriptor<SNode> child(String param) {
@@ -33,7 +33,7 @@ public class SNODE extends TreePath<SNode> {
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;
 
-    public  Parent(Object enclosingClass, Object closureContext) {
+    public Parent(Object enclosingClass, Object closureContext) {
       this._enclosingClass = enclosingClass;
       this._closureContext = (Object)closureContext;
     }
@@ -48,7 +48,7 @@ public class SNODE extends TreePath<SNode> {
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;
 
-    public  Children(Object enclosingClass, Object closureContext) {
+    public Children(Object enclosingClass, Object closureContext) {
       this._enclosingClass = enclosingClass;
       this._closureContext = (Object)closureContext;
     }
@@ -58,7 +58,7 @@ public class SNODE extends TreePath<SNode> {
     private SNode thisNode;
     private String param;
 
-    public  Feature_child(SNode thisNode, String param) {
+    public Feature_child(SNode thisNode, String param) {
       this.thisNode = thisNode;
       this.param = param;
     }
@@ -81,7 +81,7 @@ public class SNODE extends TreePath<SNode> {
     private SNode thisNode;
     private String param;
 
-    public  Feature_link(SNode thisNode, String param) {
+    public Feature_link(SNode thisNode, String param) {
       this.thisNode = thisNode;
       this.param = param;
     }
@@ -103,7 +103,7 @@ public class SNODE extends TreePath<SNode> {
 
     private String param;
 
-    public  Desc_Feature_child(String param) {
+    public Desc_Feature_child(String param) {
       this.param = param;
     }
 
@@ -132,7 +132,7 @@ public class SNODE extends TreePath<SNode> {
 
     private String param;
 
-    public  Desc_Feature_link(String param) {
+    public Desc_Feature_link(String param) {
       this.param = param;
     }
 
