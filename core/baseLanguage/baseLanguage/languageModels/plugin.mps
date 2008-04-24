@@ -21,6 +21,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="38" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.plugin.uiActions@java_stub" version="-1" />
@@ -3721,7 +3722,7 @@
             <link role="baseMethodDeclaration" targetNodeId="1208534513091" resolveInfo="createModuleClasspath" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208534641136">
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208534641137">
-                <link role="baseMethodDeclaration" targetNodeId="10.~IModule.getJavaStubsClassPathItem():jetbrains.mps.reloading.IClassPathItem" resolveInfo="getJavaStubsClassPathItem" />
+                <link role="baseMethodDeclaration" targetNodeId="10.~IModule.getClassPathItem():jetbrains.mps.reloading.IClassPathItem" resolveInfo="getClassPathItem" />
               </node>
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1208534641138">
                 <link role="variableDeclaration" targetNodeId="1208519128603" resolveInfo="module" />
