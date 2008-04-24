@@ -29,6 +29,8 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <maxImportIndex value="12" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
@@ -172,6 +174,8 @@
   <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1199821750695">
     <property name="name" value="RefactorAbstractClasses" />
     <property name="title" value="Refactor abstract classes" />
+    <property name="migrationFromBuild" value="470" />
+    <property name="category" value="base lang" />
     <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1199821771399">
       <link role="affectedInstanceConcept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
       <node role="affectedInstancePredicate" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Predicate" id="1199821771400">

@@ -23,6 +23,7 @@
   <languageAspect modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="13" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
@@ -293,6 +294,8 @@
   <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1207758457650">
     <property name="name" value="add_typeParameter_to_SequenceCreatorWithSupplier" />
     <property name="title" value="Add type parameter to sequence creator" />
+    <property name="migrationFromBuild" value="531" />
+    <property name="category" value="collections" />
     <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1207758497737">
       <property name="description" value="add type parameter" />
       <link role="affectedInstanceConcept" targetNodeId="1.1152141311721" resolveInfo="SequenceCreatorWithSupplier" />
