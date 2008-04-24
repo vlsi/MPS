@@ -506,11 +506,6 @@ public class SModel implements Iterable<SNode> {
     for (Language language : devKit.getExportedLanguages()) {
       addAspectModelsVersions(language);
     }
-    for (SModelDescriptor modelDescriptor : devKit.getExportedModelDescriptors()) {
-      if (!hasImportedModel(modelDescriptor.getModelUID())) {
-        addAdditionalModelVersion(modelDescriptor.getModelUID(), modelDescriptor.getVersion());
-      }
-    }
   }
 
   @Deprecated
@@ -832,15 +827,6 @@ public class SModel implements Iterable<SNode> {
       for (SModelDescriptor accessoryModels : language.getAccessoryModels()) {
         if (accessoryModels != sourceModel && !result.contains(accessoryModels)) {
           result.add(accessoryModels);
-        }
-      }
-    }
-
-    List<DevKit> devkits = getDevkits(scope);
-    for (DevKit dk : devkits) {
-      for (SModelDescriptor dkModel : dk.getExportedModelDescriptors()) {
-        if (dkModel != sourceModel && !result.contains(dkModel)) {
-          result.add(dkModel);
         }
       }
     }

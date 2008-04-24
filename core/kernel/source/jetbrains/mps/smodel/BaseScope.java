@@ -140,7 +140,7 @@ public abstract class BaseScope implements IScope {
           }
         }
       }
-
+                                          
       for (Language language : new ArrayList<Language>(usedLanguages)) {
         for (Language extendedLanguage : language.getExtendedLanguages()) {
           if (extendedLanguage == null) {

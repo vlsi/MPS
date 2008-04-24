@@ -2,11 +2,9 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
-import jetbrains.mps.projectLanguage.structure.DevKitDescriptor;
-import jetbrains.mps.projectLanguage.structure.Model;
-import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
-import jetbrains.mps.projectLanguage.structure.ModuleReference;
+import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.NameUtil;
@@ -97,29 +95,16 @@ public class DevKit extends AbstractModule {
     List<Language> langs = new ArrayList<Language>();
 
 
-    for (ModuleReference ref : myDescriptor.getDependencys()) {
-      IModule m = MPSModuleRepository.getInstance().getModuleByUID(ref.getName());
-      if (m instanceof Language) {
-        langs.add((Language) m);
+    for (jetbrains.mps.projectLanguage.structure.Language l : myDescriptor.getExportedLanguages()) {
+      String namespace = l.getName();
+      Language lang = MPSModuleRepository.getInstance().getLanguage(namespace);
+      if (lang != null) {
+        langs.add(lang);
       }
     }
 
     Collections.sort(langs, new ToStringComparator());
     return langs;
-  }
-
-  public List<SModelDescriptor> getExportedModelDescriptors() {
-    List<SModelDescriptor> modelDescriptors = new ArrayList<SModelDescriptor>();
-    for (Model m : myDescriptor.getExportedModels()) {
-      SModelDescriptor sm = getScope().getModelDescriptor(SModelUID.fromString(m.getName()));
-      if (sm != null) {
-        modelDescriptors.add(sm);
-      } else {
-        System.out.println("Can't find a model descriptor " + m.getName() + " in " + this);
-      }
-    }
-    Collections.sort(modelDescriptors, new ToStringComparator());
-    return modelDescriptors;
   }
 
   public List<String> getLanguageNamespaces() {
