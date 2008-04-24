@@ -17,6 +17,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="131" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="java.util@java_stub" version="-1" />
@@ -269,7 +270,7 @@
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1208879116686">
-              <property name="value" value="todo: hjshfjdhfjhdf" />
+              <property name="value" value="todo: hdddddddddddddddddddfjdhfjhdf" />
             </node>
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1208262958471">
