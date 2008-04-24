@@ -18,10 +18,10 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
       try {
         while(_zCursor2.moveToNext()) {
           Integer num = _zCursor2.getCurrent();
-          if(num >= 10) {
+          if (num >= 10) {
             break;
           }
-          if(num % 2 != 0) {
+          if (num % 2 != 0) {
             continue;
           }
           System.out.println(num);

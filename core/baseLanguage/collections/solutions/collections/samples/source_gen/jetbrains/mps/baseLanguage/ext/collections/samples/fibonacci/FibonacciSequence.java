@@ -6,7 +6,7 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.SequenceWithSupplier;
 
 /* package */class FibonacciSequence {
 
-  /* package */ FibonacciSequence() {
+  /* package */FibonacciSequence() {
   }
 
   /* package */Iterable<Integer> numbers(int max) {
