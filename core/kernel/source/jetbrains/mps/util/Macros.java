@@ -95,8 +95,11 @@ public abstract class Macros {
 
       if (result == null) {
         if (path.startsWith("${")) {
-          LOG.error("Wasn't able to expand path " + path);
-          LOG.error("Please define path variable in path variables section of settings");
+          int end = path.indexOf("}");
+          if (end != -1) {
+            LOG.error("Wasn't able to expand path " + path);
+            LOG.error("Please define path variable " + path.substring(2, end)+ " in path variables section of settings");
+          }
           return path;
         }
 
