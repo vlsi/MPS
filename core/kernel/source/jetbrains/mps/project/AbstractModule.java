@@ -161,6 +161,13 @@ public abstract class AbstractModule implements IModule {
         result.add(usedLanguage);
       }
     }
+
+    for (DevKit dk : getUsedDevkits()) {
+      if (!result.contains(dk)) {
+        result.add(dk);
+      }
+    }
+
     if (includeBootstrap) {
       return appendBootstrapLanguages(result);
     }
