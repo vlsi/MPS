@@ -22,6 +22,7 @@ public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
   private static final Logger LOG = Logger.getLogger(Highlighter.class);
   public static final int CHECK_DELAY = 1000;
   private static final Object EVENTS_LOCK = new Object();
+  private static final Object CHECKERS_LOCK = new Object();
 
   private boolean myStopThread = false;
   private MPSProjects myProjects;
@@ -52,14 +53,18 @@ public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
 
   public void addChecker(IEditorChecker checker) {
     if (checker != null) {
-      myCheckers.add(checker);
+      synchronized (CHECKERS_LOCK) {
+        myCheckers.add(checker);
+      }
     }
   }
 
   public void removeChecker(IEditorChecker checker) {
     if (checker != null) {
-      myCheckers.remove(checker);
-      myCheckersToRemove.add(checker);
+      synchronized (CHECKERS_LOCK) {
+        myCheckers.remove(checker);
+        myCheckersToRemove.add(checker);
+      }
     }
   }
 
@@ -167,13 +172,24 @@ public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
   private boolean updateEditorComponent(IEditorComponent component, final List<SModelEvent> events) {
     final SNode editedNode = component.getEditedNode();
     if (editedNode != null) {
+      final Set<IEditorChecker> checkers = new LinkedHashSet<IEditorChecker>();
+      Set<IEditorChecker> checkersToRemove = new LinkedHashSet<IEditorChecker>();
+
+      // to avoid inconsistency between checkers, we collect them from fields here
+      // in the synchronized block and then do not read the fields in this iteration anymore
+      synchronized (CHECKERS_LOCK) {
+        checkers.addAll(myCheckers);
+        checkersToRemove.addAll(myCheckersToRemove);
+        myCheckersToRemove.clear();
+      }
+
       final Set<IEditorChecker> checkersToRecheck = new LinkedHashSet<IEditorChecker>();
       if (!wasCheckedOnce(component)) {
-        checkersToRecheck.addAll(myCheckers);
+        checkersToRecheck.addAll(checkers);
       } else {
         CommandProcessor.instance().tryToExecuteLightweightCommand(new Runnable() {
           public void run() {
-            for (IEditorChecker checker : myCheckers) {
+            for (IEditorChecker checker : checkers) {
               if (checker.hasDramaticalEvent(events)) {
                 checkersToRecheck.add(checker);
               }
@@ -187,7 +203,7 @@ public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
       }
 
       myCheckedOnceEditors.add(component);
-      if (updateEditor(component, checkersToRecheck)) {
+      if (updateEditor(component, checkersToRecheck, checkersToRemove)) {
         return true;
       }
     }
@@ -198,7 +214,7 @@ public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
     return myCheckedOnceEditors.contains(editorComponent);
   }
 
-  protected boolean updateEditor(final IEditorComponent editor, Set<IEditorChecker> checkersToRecheck) {
+  protected boolean updateEditor(final IEditorComponent editor, Set<IEditorChecker> checkersToRecheck, Set<IEditorChecker> checkersToRemove) {
     if (editor == null || editor.getRootCell() == null) {
       return false;
     }
@@ -229,7 +245,7 @@ public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
         highlightManager.mark(message);
       }
     }
-    for (final IEditorChecker checker : myCheckersToRemove) {
+    for (final IEditorChecker checker : checkersToRemove) {
       final IEditorMessageOwner[] owners = new IEditorMessageOwner[1];
       Runnable runnable = new Runnable() {
         public void run() {
@@ -241,7 +257,6 @@ public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
       CommandProcessor.instance().executeLightweightCommand(runnable);
       highlightManager.clearForOwner(owners[0]);
     }
-    myCheckersToRemove.clear();
 
     return true;
   }

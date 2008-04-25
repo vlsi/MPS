@@ -194,7 +194,7 @@ public class MessagesGutter extends JPanel {
             text.append("\n");
           }
           text.append(msg.getMessage());
-          text.append("(owner: " + msg.getOwner() + ")");
+         // text.append("(owner: " + msg.getOwner() + ")");
         }
         return text.toString();
       }
