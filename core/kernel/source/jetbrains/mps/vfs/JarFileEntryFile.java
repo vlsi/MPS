@@ -74,7 +74,7 @@ public class JarFileEntryFile implements IFile {
   }
 
   public IFile child(String suffix) {
-    return new JarFileEntryFile(myJarFileData, myEntryPath + "/" + suffix);
+    return new JarFileEntryFile(myJarFileData, myEntryPath.length() > 0 ? myEntryPath + "/" + suffix : suffix);
   }
 
   public boolean isDirectory() {
