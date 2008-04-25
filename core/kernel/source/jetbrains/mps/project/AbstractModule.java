@@ -108,6 +108,16 @@ public abstract class AbstractModule implements IModule {
     save();
   }
 
+  public void addUsedDevkit(String devkit) {
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    SModel model = descriptor.getModel();
+    DevKitReference ref = DevKitReference.newInstance(model);
+    ref.setName(devkit);
+    descriptor.addUsedDevKit(ref);
+    setModuleDescriptor(descriptor);
+    save();
+  }
+
   public String getModuleUID() {
     return toString();
   }

@@ -33,7 +33,8 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   List<IModule> getExplicitlyDependOnModules(boolean includeBootstrap);
 
   void addDependency(String modelUID, boolean reexport);
-  void addUsedLangauge(String languageNamespace);  
+  void addUsedLangauge(String languageNamespace);
+  void addUsedDevkit(String devkit);
 
   SModelDescriptor createModel(SModelUID uid, ModelRoot root);
 
