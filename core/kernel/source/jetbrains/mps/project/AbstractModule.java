@@ -87,6 +87,17 @@ public abstract class AbstractModule implements IModule {
     return true;
   }
 
+  public void addDependency(String modelUID, boolean reexport) {
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    SModel model = descriptor.getModel();
+    ModuleReference ref = ModuleReference.newInstance(model);
+    ref.setName(modelUID);
+    ref.setReexport(reexport);
+    descriptor.addDependency(ref);
+    setModuleDescriptor(descriptor);
+    save();
+  }
+
   public String getModuleUID() {
     return toString();
   }

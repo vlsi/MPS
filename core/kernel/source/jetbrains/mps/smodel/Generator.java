@@ -85,7 +85,11 @@ public class Generator extends AbstractModule {
 
 
   public void setModuleDescriptor(ModuleDescriptor moduleDescriptor) {
-    LOG.error(new UnsupportedOperationException());
+    int index = getSourceLanguage().getGenerators().indexOf(this);
+    LanguageDescriptor languageDescriptor = getSourceLanguage().getLanguageDescriptor();
+    GeneratorDescriptor oldDescriptor = languageDescriptor.getGenerators().get(index);
+    languageDescriptor.replaceChild(oldDescriptor, CopyUtil.copy(moduleDescriptor));
+    getSourceLanguage().setLanguageDescriptor(languageDescriptor);
   }
 
   public String getName() {
@@ -121,7 +125,6 @@ public class Generator extends AbstractModule {
   public GeneratorDescriptor getGeneratorDescriptor() {
     return myGeneratorDescriptor;
   }
-
 
   public void save() {
     mySourceLanguage.save();

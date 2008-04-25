@@ -67,4 +67,6 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   void dispose();
 
   boolean isValid();
+
+  void addDependency(String modelUID, boolean reexport);
 }
