@@ -15,6 +15,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="5" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />
@@ -38,21 +39,6 @@
                   <link role="classifier" targetNodeId="4.~SModelTreeNode" resolveInfo="SModelTreeNode" />
                   <link role="variableDeclaration" targetNodeId="4.~SModelTreeNode.PACK" resolveInfo="PACK" />
                 </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="properties" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint" id="1209148337917">
-      <link role="applicableProperty" targetNodeId="1.1156235010670" resolveInfo="alias" />
-      <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertyGetter" id="1209148342700">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1209148342701">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1209148352264">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209148352297">
-              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintsFunctionParameter_node" id="1209148352265" />
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess" id="1209148355003">
-                <link role="conceptProperty" targetNodeId="1.1137473891462" resolveInfo="alias" />
               </node>
             </node>
           </node>
@@ -94,19 +80,6 @@
         <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1180102203533">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1198897586141">
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198897586142">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1198897594900">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198897597371">
-                <property name="value" value="???" />
-              </node>
-            </node>
-          </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1198897590506">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1198897593055" />
-            <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1198897588958" />
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1198897625857">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198897625858">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198898840060">

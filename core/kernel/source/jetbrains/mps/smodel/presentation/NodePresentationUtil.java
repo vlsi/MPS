@@ -5,10 +5,12 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.NamedConcept;
 import jetbrains.mps.core.structure.INamedConcept;
+import jetbrains.mps.core.structure.IResolveInfo;
 import jetbrains.mps.ide.icons.IconManager;
 
 import javax.swing.Icon;
@@ -45,6 +47,7 @@ public class NodePresentationUtil {
       }
     }
 
+    // handle concept declarations is a special way.
     if (nodeAdapter instanceof ConceptDeclaration) {
       if (!referent_presentation) {
         String alias = nodeAdapter.getConceptProperty("alias");
@@ -55,14 +58,17 @@ public class NodePresentationUtil {
       return nodeAdapter.getName();
     }
 
-    // all other nodes (not a concept declarations)
-    if (nodeAdapter instanceof BaseConcept) {
-      String customAlias = ((BaseConcept) nodeAdapter).getAlias();
-      if (customAlias != null) return customAlias;
-    }
-
-    // todo: get rid of 'getPresentation' - only use 'alias'
     return nodeAdapter.getNode().getPresentation();
+//    String presentation = nodeAdapter.getNode().getPresentation();
+//    if (presentation != null) {
+//      return presentation;
+//    }
+//
+//    if (nodeAdapter instanceof INamedConcept) {
+//      return ((INamedConcept) nodeAdapter).getName();
+//    }
+//
+//    return ((BaseConcept) nodeAdapter).getAlias();
   }
 
   public static String descriptionText(SNode node) {

@@ -167,8 +167,8 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1198587176398" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204585141457">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1201467800040" />
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1204585141458">
-                <link role="fieldDeclaration" targetNodeId="1201384189984" resolveInfo="k2" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.PropertyReference" id="1209151997244">
+                <link role="property" targetNodeId="1201454757436" />
               </node>
             </node>
           </node>
