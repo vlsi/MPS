@@ -77,7 +77,7 @@ class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
   }
 
   private void populate() {
-    TextTreeNode exportedLangs = new TextTreeNode("Exported Languages");
+    TextTreeNode exportedLangs = new TextTreeNode("exported Languages");
     for (Language l : myDevKit.getExportedLanguages()) {
       exportedLangs.add(ProjectModuleTreeNode.createFor(getOperationContext().getProject(), l));
     }
