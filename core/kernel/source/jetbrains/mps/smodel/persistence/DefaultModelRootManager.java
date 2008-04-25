@@ -289,6 +289,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       if (projectHandler != null) {
         try {
           projectHandler.deleteFilesAndRemoveFromVCS(CollectionUtil.asList(FileSystem.toFile(oldModelFile)));
+          projectHandler.addFilesToVCS(CollectionUtil.asList(FileSystem.toFile(dest)));
         } catch(RemoteException ex) {
           LOG.error(ex);
           return false;
