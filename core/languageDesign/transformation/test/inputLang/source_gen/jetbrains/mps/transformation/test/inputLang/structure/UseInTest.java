@@ -9,6 +9,7 @@ public enum UseInTest {
   test1("test1", "test1"),
   getPrevInputTest("getPrevInputTest", "getPrevInputTest"),
   reduceInheritors("reduceInheritors", "reduceInheritors"),
+  reduceExpressionToStatement("reduceExpressionToStatement", "reduceExpressionToStatement"),
   none("none", "none");
 
   /* package */String myName;
@@ -24,6 +25,7 @@ UseInTest(String name, String value) {
     list.add(UseInTest.test1);
     list.add(UseInTest.getPrevInputTest);
     list.add(UseInTest.reduceInheritors);
+    list.add(UseInTest.reduceExpressionToStatement);
     list.add(UseInTest.none);
     return list;
   }
@@ -44,6 +46,9 @@ UseInTest(String name, String value) {
     }
     if (value.equals(UseInTest.reduceInheritors.getValueAsString())) {
       return UseInTest.reduceInheritors;
+    }
+    if (value.equals(UseInTest.reduceExpressionToStatement.getValueAsString())) {
+      return UseInTest.reduceExpressionToStatement;
     }
     if (value.equals(UseInTest.none.getValueAsString())) {
       return UseInTest.none;

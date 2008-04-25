@@ -86,6 +86,10 @@
       <property name="externalValue" value="reduceInheritors" />
       <property name="internalValue" value="reduceInheritors" />
     </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1209146734796">
+      <property name="externalValue" value="reduceExpressionToStatement" />
+      <property name="internalValue" value="reduceExpressionToStatement" />
+    </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1202242822699">
       <property name="externalValue" value="none" />
       <property name="internalValue" value="none" />
@@ -98,6 +102,19 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1206462895210">
     <property name="name" value="InputNode_C" />
     <link role="extends" targetNodeId="1206459872650" resolveInfo="InputNode_B" />
+  </node>
+  <visible index="2" modelUID="jetbrains.mps.baseLanguage.structure" />
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1209146548167">
+    <property name="name" value="MyExpressionToReduceToStatement" />
+    <link role="extends" targetNodeId="2v.1068431790191" resolveInfo="Expression" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1209146621012">
+      <property name="value" value="expression to reduce to statement" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1209146642483">
+      <property name="value" value="generator should produce clear warning" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
+    </node>
   </node>
 </model>
 

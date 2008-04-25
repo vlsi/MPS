@@ -11,7 +11,7 @@ import jetbrains.mps.nodeEditor.EditorCell_Error;
 
 public class AbstractOperation_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myCellProvider2;
+  /* package */AbstractCellProvider myCellProvider1;
 
   private static void setupBasic_CellModel_Custom(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1208623526502");
@@ -23,10 +23,10 @@ public class AbstractOperation_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createCellModel_Custom(EditorContext context, SNode node) {
-    if (this.myCellProvider2 == null) {
-      this.myCellProvider2 = this._cellProviderFactory_1208623526502(node, context);
+    if (this.myCellProvider1 == null) {
+      this.myCellProvider1 = this._cellProviderFactory_1208623526502(node, context);
     }
-    EditorCell editorCell = this.myCellProvider2.createEditorCell(context);
+    EditorCell editorCell = this.myCellProvider1.createEditorCell(context);
     AbstractOperation_Editor.setupBasic_CellModel_Custom(editorCell, node, context);
     return editorCell;
   }

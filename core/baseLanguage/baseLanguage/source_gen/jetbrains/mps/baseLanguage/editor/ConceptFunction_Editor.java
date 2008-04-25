@@ -16,7 +16,7 @@ import jetbrains.mps.baseLanguage.constraints.ConceptFunction_Behavior;
 public class ConceptFunction_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellProvider myConceptFunction_Component;
-  /* package */AbstractCellProvider myCellProvider1;
+  /* package */AbstractCellProvider myCellProvider;
 
   private static void setupBasic_ConceptFunction_ComponentCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1196975582231");
@@ -45,10 +45,10 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createCellModel_Custom(EditorContext context, SNode node) {
-    if (this.myCellProvider1 == null) {
-      this.myCellProvider1 = this._cellProviderFactory_1207577922324(node, context);
+    if (this.myCellProvider == null) {
+      this.myCellProvider = this._cellProviderFactory_1207577922324(node, context);
     }
-    EditorCell editorCell = this.myCellProvider1.createEditorCell(context);
+    EditorCell editorCell = this.myCellProvider.createEditorCell(context);
     ConceptFunction_Editor.setupBasic_CellModel_Custom(editorCell, node, context);
     return editorCell;
   }

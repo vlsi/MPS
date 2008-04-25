@@ -7,31 +7,67 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
+import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.nodeEditor.EditorManager;
 
 public class Expression_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myCellProvider;
+  /* package */AbstractCellProvider myCellProvider2;
+
+  private static void setupBasic_CellAlternation(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1209147315297");
+  }
 
   private static void setupBasic_CellModel_Custom(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198574536104");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1209147315298");
+  }
+
+  private static void setupBasic_AliasCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1209147903996");
+  }
+
+  private static void setupLabel_AliasCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1209147315324(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getString(node, "alias") == null;
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCellModel_Custom(context, node);
+    return this.createCellAlternation(context, node);
+  }
+
+  public EditorCell createCellAlternation(EditorContext context, SNode node) {
+    boolean alternationCondition = true;
+    alternationCondition = Expression_Editor._QueryFunction_NodeCondition_1209147315324(node, context, context.getOperationContext().getScope());
+    EditorCell editorCell = null;
+    if (alternationCondition) {
+      editorCell = this.createCellModel_Custom(context, node);
+    } else
+    {
+      editorCell = this.createAliasCell(context, node);
+    }
+    Expression_Editor.setupBasic_CellAlternation(editorCell, node, context);
+    return editorCell;
   }
 
   public EditorCell createCellModel_Custom(EditorContext context, SNode node) {
-    if (this.myCellProvider == null) {
-      this.myCellProvider = this._cellProviderFactory_1198574536104(node, context);
+    if (this.myCellProvider2 == null) {
+      this.myCellProvider2 = this._cellProviderFactory_1209147315298(node, context);
     }
-    EditorCell editorCell = this.myCellProvider.createEditorCell(context);
+    EditorCell editorCell = this.myCellProvider2.createEditorCell(context);
     Expression_Editor.setupBasic_CellModel_Custom(editorCell, node, context);
     return editorCell;
   }
 
-  public AbstractCellProvider _cellProviderFactory_1198574536104(final SNode node, final EditorContext editorContext) {
+  public AbstractCellProvider _cellProviderFactory_1209147315298(final SNode node, final EditorContext editorContext) {
     return new AbstractCellProvider() {
 
       public EditorCell createEditorCell(EditorContext context) {
@@ -39,6 +75,35 @@ public class Expression_Editor extends DefaultNodeEditor {
       }
 
     };
+  }
+
+  public EditorCell createAliasCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(null);
+    EditorCell editorCell = provider.createEditorCell(context);
+    Expression_Editor.setupBasic_AliasCell(editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      Expression_Editor.setupLabel_AliasCell((EditorCell_Label)editorCell, node, context);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    return editorCell;
+  }
+
+  public EditorCell createAliasCell(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, context);
+    provider.setRole("alias");
+    provider.setNoTargetText("");
+    provider.setReadOnly(true);
+    provider.setAllowsEmptyTarget(false);
+    EditorCell cellWithRole = this.createAliasCellinternal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else
+    return cellWithRole;
   }
 
 }
