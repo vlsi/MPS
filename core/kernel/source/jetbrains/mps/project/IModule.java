@@ -32,6 +32,9 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   List<IModule> getExplicitlyDependOnModules();
   List<IModule> getExplicitlyDependOnModules(boolean includeBootstrap);
 
+  void addDependency(String modelUID, boolean reexport);
+  void addUsedLangauge(String languageNamespace);  
+
   SModelDescriptor createModel(SModelUID uid, ModelRoot root);
 
   Set<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm);
@@ -67,6 +70,4 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   void dispose();
 
   boolean isValid();
-
-  void addDependency(String modelUID, boolean reexport);
 }

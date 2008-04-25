@@ -98,6 +98,16 @@ public abstract class AbstractModule implements IModule {
     save();
   }
 
+  public void addUsedLangauge(String languageNamespace) {
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    SModel model = descriptor.getModel();
+    LanguageReference ref = LanguageReference.newInstance(model);
+    ref.setName(languageNamespace);
+    descriptor.addUsedLanguage(ref);
+    setModuleDescriptor(descriptor);
+    save();
+  }
+
   public String getModuleUID() {
     return toString();
   }
