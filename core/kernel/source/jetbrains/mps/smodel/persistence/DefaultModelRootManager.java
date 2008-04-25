@@ -282,14 +282,23 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     SModelUID newModelUID = new SModelUID(newLongName, modelDescriptor.getStereotype());
     SModelUID oldModelUID = modelDescriptor.getModelUID();
     IFile dest = createFileForModelUID(root, newModelUID);
-
+    ModelOwner owner = SModelRepository.getInstance().getOwners(modelDescriptor).iterator().next();
     IFile oldModelFile = modelDescriptor.getModelFile();
+    String oldFileName = oldModelFile.getAbsolutePath();
+
+    //stub
+    String stubFileName = oldFileName.substring(0, oldFileName.lastIndexOf(MODEL_EXTENSION)) + STUB_EXTENSION;
+    SModelDescriptor stubDescriptor = getInstance(this, root, true, stubFileName, oldModelUID, owner);
+    stubDescriptor.save();
+    IFile stubDescriptorModelFile = stubDescriptor.getModelFile();
+
     IProjectHandler projectHandler = project.getProjectHandler();
     if (!dest.equals(oldModelFile)) {    // change file
       if (projectHandler != null) {
         try {
           projectHandler.deleteFilesAndRemoveFromVCS(CollectionUtil.asList(FileSystem.toFile(oldModelFile)));
           projectHandler.addFilesToVCS(CollectionUtil.asList(FileSystem.toFile(dest)));
+          projectHandler.addFilesToVCS(CollectionUtil.asList(FileSystem.toFile(stubDescriptorModelFile)));
         } catch(RemoteException ex) {
           LOG.error(ex);
           return false;
