@@ -74,7 +74,8 @@ public class JarFileEntryFile implements IFile {
   }
 
   public IFile child(String suffix) {
-    return new JarFileEntryFile(myJarFileData, myEntryPath.length() > 0 ? myEntryPath + "/" + suffix : suffix);
+    String path = myEntryPath.length() > 0 ? myEntryPath + "/" + suffix : suffix;
+    return new JarFileEntryFile(myJarFileData, path);
   }
 
   public boolean isDirectory() {
@@ -147,22 +148,5 @@ public class JarFileEntryFile implements IFile {
 
   public String toString() {
     return myEntryPath;
-  }
-
-  public static void main(String[] args) {
-    JarFileEntryFile jfef = new JarFileEntryFile(new File("C:/MPS/lib/asm/asm.jar"));
-
-    printTree("", jfef);
-  }
-
-  private static void printTree(String indent, IFile file) {
-    if (file.isFile()) {
-      System.out.println(indent + file.getName());
-    } else {
-      System.out.println(indent + file.getName() + "/");
-      for (IFile f : file.list()) {
-        printTree("  " + indent, f);
-      }
-    }
   }
 }
