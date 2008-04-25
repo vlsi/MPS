@@ -32,7 +32,12 @@ import java.util.*;
     // enable R/O access
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
-        result[0] = createActions_internal(sourceNode, transformTag, context);
+        try {
+          result[0] = createActions_internal(sourceNode, transformTag, context);
+        } catch (Throwable t) {
+          LOG.error(t);
+          result[0] = new ArrayList<INodeSubstituteAction>();
+        }
       }
     });
 
