@@ -13,6 +13,7 @@
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="11" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
@@ -28,12 +29,6 @@
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1087833392642">
       <property name="name" value="aspectMethodName" />
       <link role="dataType" targetNodeId="2.1082983041843" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1087833315485">
-      <property name="targetCardinality" value="0..n" />
-      <property name="role" value="property" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="3.1071489288299" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1167756362303">
       <property name="metaClass" value="aggregation" />
@@ -85,12 +80,6 @@
     <property name="name" value="ReferenceMacro" />
     <property name="package" value="macro" />
     <link role="extends" targetNodeId="2.1133920641626" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1088761943575">
-      <property name="targetCardinality" value="0..n" />
-      <property name="role" value="link" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="3.1071489288298" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1167770376702">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="referentFunction" />
