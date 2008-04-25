@@ -32,6 +32,19 @@ public class ViewOptions implements IExternalizeable {
     myShowSearchedNodes = true,
     myGroupSearchedNodes = true;
 
+  public boolean mySearchedNodesButtonsVisible = true;
+
+  public ViewOptions() {
+
+  }
+
+  public ViewOptions(boolean count, boolean info, boolean showSearchedNodes, boolean groupSearchedNodes, boolean searchedNodesButtonsVisible) {
+    myCount = count;
+    myInfo = info;
+    myShowSearchedNodes = showSearchedNodes;
+    myGroupSearchedNodes = groupSearchedNodes;
+    mySearchedNodesButtonsVisible = searchedNodesButtonsVisible;
+  }
 
   public void read(Element element, MPSProject project) {
     Element viewOptionsXML = element.getChild(OPTIONS);
@@ -82,5 +95,7 @@ public class ViewOptions implements IExternalizeable {
     myInfo = options.myInfo;
     myShowSearchedNodes = options.myShowSearchedNodes;
     myGroupSearchedNodes = options.myGroupSearchedNodes;
+
+    mySearchedNodesButtonsVisible = options.mySearchedNodesButtonsVisible;
   }
 }

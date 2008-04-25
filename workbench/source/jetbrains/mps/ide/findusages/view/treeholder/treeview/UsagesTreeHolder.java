@@ -44,6 +44,8 @@ public abstract class UsagesTreeHolder extends JPanel implements IChangeListener
   private ViewOptions myViewOptions = new ViewOptions();
   private ViewOptions myDefaultOptions;
 
+  private boolean mySearchedNodesButtonsVisible = true;
+
   private boolean myIsAdjusting = false;
 
   public UsagesTreeHolder(ViewOptions defaultOptions) {
@@ -303,6 +305,12 @@ public abstract class UsagesTreeHolder extends JPanel implements IChangeListener
         myShowSearchedNodesButton.setState(options.myShowSearchedNodes);
         myGroupSearchedNodesButton.setState(options.myGroupSearchedNodes);
 
+        mySearchedNodesButtonsVisible = options.mySearchedNodesButtonsVisible;
+        if (!mySearchedNodesButtonsVisible) {
+          remove(myShowSearchedNodesButton);
+          remove(myGroupSearchedNodesButton);
+        }
+
         myTree.finishAdjusting();
       }
 
@@ -311,6 +319,8 @@ public abstract class UsagesTreeHolder extends JPanel implements IChangeListener
         options.myInfo = myAdditionalInfoNeededButton.getState();
         options.myShowSearchedNodes = myShowSearchedNodesButton.getState();
         options.myGroupSearchedNodes = myGroupSearchedNodesButton.getState();
+
+        options.mySearchedNodesButtonsVisible = mySearchedNodesButtonsVisible;
       }
     }
 
