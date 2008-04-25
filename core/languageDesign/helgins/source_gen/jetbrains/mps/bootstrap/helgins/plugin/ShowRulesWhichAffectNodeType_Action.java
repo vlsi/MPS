@@ -13,10 +13,14 @@ import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.helgins.inference.NodeTypesComponent;
 import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+
 import java.util.Set;
+
 import jetbrains.mps.util.Pair;
+
 import java.util.List;
 import java.util.ArrayList;
+
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -27,6 +31,7 @@ import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.helgins.uiActions.MyMenu;
 import jetbrains.mps.nodeEditor.EditorCell;
+
 import java.awt.Component;
 
 public class ShowRulesWhichAffectNodeType_Action extends CurrentProjectMPSAction {
@@ -38,7 +43,7 @@ public class ShowRulesWhichAffectNodeType_Action extends CurrentProjectMPSAction
   private MPSProject project;
   private boolean isAlwaysVisible = false;
 
-  public  ShowRulesWhichAffectNodeType_Action(MPSProject project) {
+  public ShowRulesWhichAffectNodeType_Action(MPSProject project) {
     super(project, "Show Rules Which Affect Node's Type");
   }
 
@@ -47,7 +52,7 @@ public class ShowRulesWhichAffectNodeType_Action extends CurrentProjectMPSAction
     return "";
   }
 
-  public void doUpdate(@NotNull() ActionContext context) {
+  public void doUpdate(@NotNull()ActionContext context) {
     try {
       super.doUpdate(context);
       if (!(this.fillFieldsIfNecessary(context))) {
@@ -104,7 +109,7 @@ public class ShowRulesWhichAffectNodeType_Action extends CurrentProjectMPSAction
     return true;
   }
 
-  public void doExecute(@NotNull() ActionContext context) {
+  public void doExecute(@NotNull()ActionContext context) {
     try {
       if (!(this.fillFieldsIfNecessary(context))) {
         return;
@@ -122,7 +127,7 @@ public class ShowRulesWhichAffectNodeType_Action extends CurrentProjectMPSAction
         {
           ICursor<Pair<String, String>> _zCursor1 = CursorFactory.createCursor(rulesIds);
           try {
-            while(_zCursor1.moveToNext()) {
+            while (_zCursor1.moveToNext()) {
               Pair<String, String> ruleId = _zCursor1.getCurrent();
               {
                 SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(ruleId.o1));
@@ -157,8 +162,7 @@ public class ShowRulesWhichAffectNodeType_Action extends CurrentProjectMPSAction
         Component invoker;
         if (currentEditor == null) {
           invoker = context.getFrame();
-        } else
-        {
+        } else {
           invoker = currentEditor.getCurrentEditorComponent();
         }
         m.show(invoker, x, y);

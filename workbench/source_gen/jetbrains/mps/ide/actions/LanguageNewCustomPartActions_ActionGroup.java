@@ -7,7 +7,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.ide.actions.language.NewAspectModelAction;
-import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
 import jetbrains.mps.ide.action.ActionGroup;
 
@@ -16,7 +15,7 @@ public class LanguageNewCustomPartActions_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.LanguageNewCustomPartActions";
 
   public LanguageNewCustomPartActions_ActionGroup(MPSProject project) {
-    super("", LanguageNewCustomPartActions_ActionGroup.ID);
+    super("", LanguageNewCustomPartActions_ActionGroup.ID, project);
     this.setInternal(false);
     try {
       for (LanguageAspect aspect : LanguageAspect.values()) {
@@ -27,10 +26,10 @@ public class LanguageNewCustomPartActions_ActionGroup extends BaseActionGroup {
     }
   }
 
-  public void adjust(ActionManager manager, IActionGroupElementOwner owner) {
+  public void adjust(IActionGroupElementOwner owner) {
     {
-      ActionGroup gTo = manager.getGroup(LanguageNewActions_ActionGroup.ID);
-      ActionGroup gWhat = manager.getGroup(LanguageNewCustomPartActions_ActionGroup.ID);
+      ActionGroup gTo = this.getGroup(LanguageNewActions_ActionGroup.ID);
+      ActionGroup gWhat = this.getGroup(LanguageNewCustomPartActions_ActionGroup.ID);
       if (gTo == null || gWhat == null) {
         return;
       }

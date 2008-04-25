@@ -6,7 +6,6 @@ import jetbrains.mps.plugins.actions.BaseActionGroup;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.plugin.uiActions.TestReferenceResolvingPerformance;
-import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
 import jetbrains.mps.ide.action.ActionGroup;
 import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
@@ -16,7 +15,7 @@ public class BaseLanguageEditorPopupInternal_ActionGroup extends BaseActionGroup
   public static final String ID = "jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopupInternal";
 
   public BaseLanguageEditorPopupInternal_ActionGroup(MPSProject project) {
-    super("", BaseLanguageEditorPopupInternal_ActionGroup.ID);
+    super("", BaseLanguageEditorPopupInternal_ActionGroup.ID, project);
     this.setInternal(false);
     try {
       this.add(new TestReferenceResolvingPerformance(TestReferenceResolvingPerformance.EDITOR), this);
@@ -26,10 +25,10 @@ public class BaseLanguageEditorPopupInternal_ActionGroup extends BaseActionGroup
     }
   }
 
-  public void adjust(ActionManager manager, IActionGroupElementOwner owner) {
+  public void adjust(IActionGroupElementOwner owner) {
     {
-      ActionGroup gTo = manager.getGroup(EditorInternal_ActionGroup.ID);
-      ActionGroup gWhat = manager.getGroup(BaseLanguageEditorPopupInternal_ActionGroup.ID);
+      ActionGroup gTo = this.getGroup(EditorInternal_ActionGroup.ID);
+      ActionGroup gWhat = this.getGroup(BaseLanguageEditorPopupInternal_ActionGroup.ID);
       if (gTo == null || gWhat == null) {
         return;
       }

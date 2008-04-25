@@ -6,7 +6,6 @@ import jetbrains.mps.plugins.actions.BaseActionGroup;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.nodes.ShowNodeTypeAction;
-import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
 import jetbrains.mps.ide.action.ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
@@ -15,8 +14,8 @@ public class TypesystemActions_ActionGroup extends BaseActionGroup {
   public static Logger LOG = Logger.getLogger(TypesystemActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.bootstrap.helgins.plugin.TypesystemActions";
 
-  public  TypesystemActions_ActionGroup(MPSProject project) {
-    super("Type System", TypesystemActions_ActionGroup.ID);
+  public TypesystemActions_ActionGroup(MPSProject project) {
+    super("Type System", TypesystemActions_ActionGroup.ID, project);
     this.setInternal(false);
     try {
       this.add(new ShowNodeTypeAction(), this);
@@ -29,10 +28,10 @@ public class TypesystemActions_ActionGroup extends BaseActionGroup {
     }
   }
 
-  public void adjust(ActionManager manager, IActionGroupElementOwner owner) {
+  public void adjust(IActionGroupElementOwner owner) {
     {
-      ActionGroup gTo = manager.getGroup(EditorPopup_ActionGroup.ID);
-      ActionGroup gWhat = manager.getGroup(TypesystemActions_ActionGroup.ID);
+      ActionGroup gTo = this.getGroup(EditorPopup_ActionGroup.ID);
+      ActionGroup gWhat = this.getGroup(TypesystemActions_ActionGroup.ID);
       if (gTo == null || gWhat == null) {
         return;
       }

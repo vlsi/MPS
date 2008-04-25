@@ -6,7 +6,6 @@ import jetbrains.mps.plugins.actions.BaseActionGroup;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.tools.RemoveTransientModulesAction;
-import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
 
 public class TransientModulesActions_ActionGroup extends BaseActionGroup {
@@ -14,7 +13,7 @@ public class TransientModulesActions_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.TransientModulesActions";
 
   public TransientModulesActions_ActionGroup(MPSProject project) {
-    super("", TransientModulesActions_ActionGroup.ID);
+    super("", TransientModulesActions_ActionGroup.ID, project);
     this.setInternal(false);
     try {
       this.add(new RemoveTransientModulesAction(), this);
@@ -23,7 +22,7 @@ public class TransientModulesActions_ActionGroup extends BaseActionGroup {
     }
   }
 
-  public void adjust(ActionManager manager, IActionGroupElementOwner owner) {
+  public void adjust(IActionGroupElementOwner owner) {
   }
 
 }

@@ -11,7 +11,9 @@ import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.dataFlow.framework.Program;
 import jetbrains.mps.dataFlow.DataFlowManager;
 import jetbrains.mps.dataFlow.framework.AnalysisResult;
+
 import java.util.Set;
+
 import jetbrains.mps.dataFlow.framework.analyzers.InitializedVariablesAnalyzer;
 
 public class PrintInitializationInformation_Action extends CurrentProjectMPSAction {
@@ -20,7 +22,7 @@ public class PrintInitializationInformation_Action extends CurrentProjectMPSActi
   private SNode node;
   private boolean isAlwaysVisible = false;
 
-  public  PrintInitializationInformation_Action(MPSProject project) {
+  public PrintInitializationInformation_Action(MPSProject project) {
     super(project, "Print DFA Initialization Information");
   }
 
@@ -29,7 +31,7 @@ public class PrintInitializationInformation_Action extends CurrentProjectMPSActi
     return "";
   }
 
-  public void doUpdate(@NotNull() ActionContext context) {
+  public void doUpdate(@NotNull()ActionContext context) {
     try {
       super.doUpdate(context);
       if (!(this.fillFieldsIfNecessary(context))) {
@@ -68,7 +70,7 @@ public class PrintInitializationInformation_Action extends CurrentProjectMPSActi
     return true;
   }
 
-  public void doExecute(@NotNull() ActionContext context) {
+  public void doExecute(@NotNull()ActionContext context) {
     try {
       if (!(this.fillFieldsIfNecessary(context))) {
         return;

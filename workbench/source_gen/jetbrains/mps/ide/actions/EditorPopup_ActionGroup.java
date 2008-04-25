@@ -26,7 +26,6 @@ import jetbrains.mps.ide.actions.nodes.ShowConceptStructureAction;
 import jetbrains.mps.ide.actions.nodes.CloneRootAction;
 import jetbrains.mps.ide.actions.cells.ShowCellKeymapsAction;
 import jetbrains.mps.ide.actions.baseLanguage.ShowParametersAction;
-import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
 
 public class EditorPopup_ActionGroup extends BaseActionGroup {
@@ -34,7 +33,7 @@ public class EditorPopup_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.EditorPopup";
 
   public EditorPopup_ActionGroup(MPSProject project) {
-    super("", EditorPopup_ActionGroup.ID);
+    super("", EditorPopup_ActionGroup.ID, project);
     this.setInternal(false);
     try {
       this.add(new GoByReferenceGroup(), this);
@@ -72,7 +71,7 @@ public class EditorPopup_ActionGroup extends BaseActionGroup {
     }
   }
 
-  public void adjust(ActionManager manager, IActionGroupElementOwner owner) {
+  public void adjust(IActionGroupElementOwner owner) {
   }
 
 }

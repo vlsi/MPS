@@ -17,7 +17,7 @@ public class PrintDFAResult_Action extends CurrentProjectMPSAction {
   private SNode node;
   private boolean isAlwaysVisible = false;
 
-  public  PrintDFAResult_Action(MPSProject project) {
+  public PrintDFAResult_Action(MPSProject project) {
     super(project, "Print DFA");
   }
 
@@ -26,7 +26,7 @@ public class PrintDFAResult_Action extends CurrentProjectMPSAction {
     return "";
   }
 
-  public void doUpdate(@NotNull() ActionContext context) {
+  public void doUpdate(@NotNull()ActionContext context) {
     try {
       super.doUpdate(context);
       if (!(this.fillFieldsIfNecessary(context))) {
@@ -65,7 +65,7 @@ public class PrintDFAResult_Action extends CurrentProjectMPSAction {
     return true;
   }
 
-  public void doExecute(@NotNull() ActionContext context) {
+  public void doExecute(@NotNull()ActionContext context) {
     try {
       if (!(this.fillFieldsIfNecessary(context))) {
         return;

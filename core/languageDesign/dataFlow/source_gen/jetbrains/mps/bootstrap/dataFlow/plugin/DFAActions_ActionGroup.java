@@ -5,7 +5,6 @@ package jetbrains.mps.bootstrap.dataFlow.plugin;
 import jetbrains.mps.plugins.actions.BaseActionGroup;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
 import jetbrains.mps.ide.action.ActionGroup;
 import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
@@ -14,8 +13,8 @@ public class DFAActions_ActionGroup extends BaseActionGroup {
   public static Logger LOG = Logger.getLogger(DFAActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.bootstrap.dataFlow.plugin.DFAActions";
 
-  public  DFAActions_ActionGroup(MPSProject project) {
-    super("", DFAActions_ActionGroup.ID);
+  public DFAActions_ActionGroup(MPSProject project) {
+    super("", DFAActions_ActionGroup.ID, project);
     this.setInternal(false);
     try {
       this.add(new PrintDFAResult_Action(project), this);
@@ -26,10 +25,10 @@ public class DFAActions_ActionGroup extends BaseActionGroup {
     }
   }
 
-  public void adjust(ActionManager manager, IActionGroupElementOwner owner) {
+  public void adjust(IActionGroupElementOwner owner) {
     {
-      ActionGroup gTo = manager.getGroup(EditorInternal_ActionGroup.ID);
-      ActionGroup gWhat = manager.getGroup(DFAActions_ActionGroup.ID);
+      ActionGroup gTo = this.getGroup(EditorInternal_ActionGroup.ID);
+      ActionGroup gWhat = this.getGroup(DFAActions_ActionGroup.ID);
       if (gTo == null || gWhat == null) {
         return;
       }

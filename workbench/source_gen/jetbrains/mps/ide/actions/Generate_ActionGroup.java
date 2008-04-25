@@ -9,7 +9,6 @@ import jetbrains.mps.ide.actions.module.GenerateAllModelsInModuleAction_false;
 import jetbrains.mps.ide.actions.generate.ToggleTransientModelsSavingAction;
 import jetbrains.mps.ide.actions.generate.GenerateFilesFromCurrentModelAction;
 import jetbrains.mps.ide.actions.generate.GenerateTextFromCurrentModelAction;
-import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
 import jetbrains.mps.ide.action.ActionGroup;
 
@@ -18,7 +17,7 @@ public class Generate_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.Generate";
 
   public Generate_ActionGroup(MPSProject project) {
-    super("Generate", Generate_ActionGroup.ID);
+    super("Generate", Generate_ActionGroup.ID, project);
     this.setMnemonic("G".charAt(0));
     this.setInternal(false);
     try {
@@ -33,10 +32,10 @@ public class Generate_ActionGroup extends BaseActionGroup {
     }
   }
 
-  public void adjust(ActionManager manager, IActionGroupElementOwner owner) {
+  public void adjust(IActionGroupElementOwner owner) {
     {
-      ActionGroup gTo = manager.getGroup(MainMenu_ActionGroup.ID);
-      ActionGroup gWhat = manager.getGroup(Generate_ActionGroup.ID);
+      ActionGroup gTo = this.getGroup(MainMenu_ActionGroup.ID);
+      ActionGroup gWhat = this.getGroup(Generate_ActionGroup.ID);
       if (gTo == null || gWhat == null) {
         return;
       }

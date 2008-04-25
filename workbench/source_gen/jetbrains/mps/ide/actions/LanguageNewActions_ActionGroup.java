@@ -7,7 +7,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.language.NewGeneratorAction;
 import jetbrains.mps.ide.actions.language.NewAccessoryModelAction;
-import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
 import jetbrains.mps.ide.action.ActionGroup;
 
@@ -16,7 +15,7 @@ public class LanguageNewActions_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.LanguageNewActions";
 
   public LanguageNewActions_ActionGroup(MPSProject project) {
-    super("New", LanguageNewActions_ActionGroup.ID);
+    super("New", LanguageNewActions_ActionGroup.ID, project);
     this.setInternal(false);
     try {
       this.add(new NewGeneratorAction(), this);
@@ -28,10 +27,10 @@ public class LanguageNewActions_ActionGroup extends BaseActionGroup {
     }
   }
 
-  public void adjust(ActionManager manager, IActionGroupElementOwner owner) {
+  public void adjust(IActionGroupElementOwner owner) {
     {
-      ActionGroup gTo = manager.getGroup(LanguageActions_ActionGroup.ID);
-      ActionGroup gWhat = manager.getGroup(LanguageNewActions_ActionGroup.ID);
+      ActionGroup gTo = this.getGroup(LanguageActions_ActionGroup.ID);
+      ActionGroup gWhat = this.getGroup(LanguageNewActions_ActionGroup.ID);
       if (gTo == null || gWhat == null) {
         return;
       }

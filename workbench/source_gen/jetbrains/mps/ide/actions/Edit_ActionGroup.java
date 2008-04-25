@@ -12,7 +12,6 @@ import jetbrains.mps.ide.actions.nodes.CutNodeAction;
 import jetbrains.mps.ide.action.Label;
 import jetbrains.mps.ide.actions.model.AddModelImportAction;
 import jetbrains.mps.ide.actions.model.AddLanguageImportAction;
-import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
 import jetbrains.mps.ide.action.ActionGroup;
 
@@ -22,7 +21,7 @@ public class Edit_ActionGroup extends BaseActionGroup {
   public static final String LABEL_ID_custom = "custom";
 
   public Edit_ActionGroup(MPSProject project) {
-    super("Edit", Edit_ActionGroup.ID);
+    super("Edit", Edit_ActionGroup.ID, project);
     this.setMnemonic("E".charAt(0));
     this.setInternal(false);
     try {
@@ -44,10 +43,10 @@ public class Edit_ActionGroup extends BaseActionGroup {
     }
   }
 
-  public void adjust(ActionManager manager, IActionGroupElementOwner owner) {
+  public void adjust(IActionGroupElementOwner owner) {
     {
-      ActionGroup gTo = manager.getGroup(MainMenu_ActionGroup.ID);
-      ActionGroup gWhat = manager.getGroup(Edit_ActionGroup.ID);
+      ActionGroup gTo = this.getGroup(MainMenu_ActionGroup.ID);
+      ActionGroup gWhat = this.getGroup(Edit_ActionGroup.ID);
       if (gTo == null || gWhat == null) {
         return;
       }

@@ -18,7 +18,6 @@ import jetbrains.mps.ide.actions.make.MakeModuleAction;
 import jetbrains.mps.ide.actions.make.RebuildModuleAction;
 import jetbrains.mps.ide.actions.make.CleanModuleAction;
 import jetbrains.mps.ide.actions.module.SetModuleFolderAction;
-import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
 
 public class LanguageActions_ActionGroup extends BaseActionGroup {
@@ -28,7 +27,7 @@ public class LanguageActions_ActionGroup extends BaseActionGroup {
   public static final String LABEL_ID_VCS = "VCS";
 
   public LanguageActions_ActionGroup(MPSProject project) {
-    super("", LanguageActions_ActionGroup.ID);
+    super("", LanguageActions_ActionGroup.ID, project);
     this.setInternal(false);
     try {
       this.add(new Label(LanguageActions_ActionGroup.LABEL_ID_newGroup), this);
@@ -55,7 +54,7 @@ public class LanguageActions_ActionGroup extends BaseActionGroup {
     }
   }
 
-  public void adjust(ActionManager manager, IActionGroupElementOwner owner) {
+  public void adjust(IActionGroupElementOwner owner) {
   }
 
 }

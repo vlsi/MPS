@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.plugin;
 import jetbrains.mps.plugins.actions.BaseActionGroup;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
 import jetbrains.mps.ide.action.ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
@@ -15,7 +14,7 @@ public class BaseLanguageEditorPopup_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopup";
 
   public BaseLanguageEditorPopup_ActionGroup(MPSProject project) {
-    super("", BaseLanguageEditorPopup_ActionGroup.ID);
+    super("", BaseLanguageEditorPopup_ActionGroup.ID, project);
     this.setInternal(false);
     try {
       this.add(new CommentStatements_Action(project), this);
@@ -28,10 +27,10 @@ public class BaseLanguageEditorPopup_ActionGroup extends BaseActionGroup {
     }
   }
 
-  public void adjust(ActionManager manager, IActionGroupElementOwner owner) {
+  public void adjust(IActionGroupElementOwner owner) {
     {
-      ActionGroup gTo = manager.getGroup(EditorPopup_ActionGroup.ID);
-      ActionGroup gWhat = manager.getGroup(BaseLanguageEditorPopup_ActionGroup.ID);
+      ActionGroup gTo = this.getGroup(EditorPopup_ActionGroup.ID);
+      ActionGroup gWhat = this.getGroup(BaseLanguageEditorPopup_ActionGroup.ID);
       if (gTo == null || gWhat == null) {
         return;
       }

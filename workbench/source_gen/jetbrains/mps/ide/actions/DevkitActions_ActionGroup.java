@@ -10,7 +10,6 @@ import jetbrains.mps.ide.actions.project.AddModuleToProjectAction;
 import jetbrains.mps.ide.actions.project.RemoveModuleFromProjectAction;
 import jetbrains.mps.ide.actions.devkit.DevKitPropertiesAction;
 import jetbrains.mps.ide.action.Label;
-import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
 
 public class DevkitActions_ActionGroup extends BaseActionGroup {
@@ -19,7 +18,7 @@ public class DevkitActions_ActionGroup extends BaseActionGroup {
   public static final String LABEL_ID_VCS = "VCS";
 
   public DevkitActions_ActionGroup(MPSProject project) {
-    super("", DevkitActions_ActionGroup.ID);
+    super("", DevkitActions_ActionGroup.ID, project);
     this.setInternal(false);
     try {
       this.add(new SetModuleFolderAction(), this);
@@ -34,7 +33,7 @@ public class DevkitActions_ActionGroup extends BaseActionGroup {
     }
   }
 
-  public void adjust(ActionManager manager, IActionGroupElementOwner owner) {
+  public void adjust(IActionGroupElementOwner owner) {
   }
 
 }

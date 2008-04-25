@@ -18,7 +18,7 @@ public class ShowDFA_Action extends CurrentProjectMPSAction {
   private SNode node;
   private boolean isAlwaysVisible = false;
 
-  public  ShowDFA_Action(MPSProject project) {
+  public ShowDFA_Action(MPSProject project) {
     super(project, "Show DFA (under construction)");
   }
 
@@ -27,7 +27,7 @@ public class ShowDFA_Action extends CurrentProjectMPSAction {
     return "";
   }
 
-  public void doUpdate(@NotNull() ActionContext context) {
+  public void doUpdate(@NotNull()ActionContext context) {
     try {
       super.doUpdate(context);
       if (!(this.fillFieldsIfNecessary(context))) {
@@ -66,7 +66,7 @@ public class ShowDFA_Action extends CurrentProjectMPSAction {
     return true;
   }
 
-  public void doExecute(@NotNull() ActionContext context) {
+  public void doExecute(@NotNull()ActionContext context) {
     try {
       if (!(this.fillFieldsIfNecessary(context))) {
         return;

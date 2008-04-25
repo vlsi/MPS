@@ -5,7 +5,6 @@ package jetbrains.mps.bootstrap.editorLanguage.plugin;
 import jetbrains.mps.plugins.actions.BaseActionGroup;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
 import jetbrains.mps.ide.action.ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
@@ -15,8 +14,8 @@ public class EditorActions_ActionGroup extends BaseActionGroup {
   public static Logger LOG = Logger.getLogger(EditorActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.bootstrap.editorLanguage.plugin.EditorActions";
 
-  public  EditorActions_ActionGroup(MPSProject project) {
-    super("", EditorActions_ActionGroup.ID);
+  public EditorActions_ActionGroup(MPSProject project) {
+    super("", EditorActions_ActionGroup.ID, project);
     this.setInternal(false);
     try {
       this.add(new CopyThisDown_Action(project), this);
@@ -25,18 +24,18 @@ public class EditorActions_ActionGroup extends BaseActionGroup {
     }
   }
 
-  public void adjust(ActionManager manager, IActionGroupElementOwner owner) {
+  public void adjust(IActionGroupElementOwner owner) {
     {
-      ActionGroup gTo = manager.getGroup(EditorPopup_ActionGroup.ID);
-      ActionGroup gWhat = manager.getGroup(EditorActions_ActionGroup.ID);
+      ActionGroup gTo = this.getGroup(EditorPopup_ActionGroup.ID);
+      ActionGroup gWhat = this.getGroup(EditorActions_ActionGroup.ID);
       if (gTo == null || gWhat == null) {
         return;
       }
       gTo.addEveryFrom(gWhat, owner);
     }
     {
-      ActionGroup gTo = manager.getGroup(Edit_ActionGroup.ID);
-      ActionGroup gWhat = manager.getGroup(EditorActions_ActionGroup.ID);
+      ActionGroup gTo = this.getGroup(Edit_ActionGroup.ID);
+      ActionGroup gWhat = this.getGroup(EditorActions_ActionGroup.ID);
       if (gTo == null || gWhat == null) {
         return;
       }

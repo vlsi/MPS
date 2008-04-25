@@ -12,7 +12,6 @@ import jetbrains.mps.ide.actions.tools.RebuildAllModulesAction;
 import jetbrains.mps.ide.actions.tools.CleanAllModulesAction;
 import jetbrains.mps.ide.action.Label;
 import jetbrains.mps.svn.ui.SVNCheckOutAction;
-import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
 import jetbrains.mps.ide.action.ActionGroup;
 
@@ -23,7 +22,7 @@ public class Tools_ActionGroup extends BaseActionGroup {
   public static final String INTERNAL_LABEL_ID_VersionControl = "VersionControl";
 
   public Tools_ActionGroup(MPSProject project) {
-    super("Tools", Tools_ActionGroup.ID);
+    super("Tools", Tools_ActionGroup.ID, project);
     this.setMnemonic("T".charAt(0));
     this.setInternal(false);
     try {
@@ -42,10 +41,10 @@ public class Tools_ActionGroup extends BaseActionGroup {
     }
   }
 
-  public void adjust(ActionManager manager, IActionGroupElementOwner owner) {
+  public void adjust(IActionGroupElementOwner owner) {
     {
-      ActionGroup gTo = manager.getGroup(MainMenu_ActionGroup.ID);
-      ActionGroup gWhat = manager.getGroup(Tools_ActionGroup.ID);
+      ActionGroup gTo = this.getGroup(MainMenu_ActionGroup.ID);
+      ActionGroup gWhat = this.getGroup(Tools_ActionGroup.ID);
       if (gTo == null || gWhat == null) {
         return;
       }

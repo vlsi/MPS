@@ -8,7 +8,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.project.NewSolutionAction;
 import jetbrains.mps.ide.actions.project.NewLanguageAction;
 import jetbrains.mps.ide.actions.project.NewDevKitAction;
-import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
 import jetbrains.mps.ide.action.ActionGroup;
 
@@ -17,7 +16,7 @@ public class ProjectNewActions_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.ProjectNewActions";
 
   public ProjectNewActions_ActionGroup(MPSProject project) {
-    super("New", ProjectNewActions_ActionGroup.ID);
+    super("New", ProjectNewActions_ActionGroup.ID, project);
     this.setInternal(false);
     try {
       this.add(new NewSolutionAction(), this);
@@ -28,10 +27,10 @@ public class ProjectNewActions_ActionGroup extends BaseActionGroup {
     }
   }
 
-  public void adjust(ActionManager manager, IActionGroupElementOwner owner) {
+  public void adjust(IActionGroupElementOwner owner) {
     {
-      ActionGroup gTo = manager.getGroup(ProjectActions_ActionGroup.ID);
-      ActionGroup gWhat = manager.getGroup(ProjectNewActions_ActionGroup.ID);
+      ActionGroup gTo = this.getGroup(ProjectActions_ActionGroup.ID);
+      ActionGroup gWhat = this.getGroup(ProjectNewActions_ActionGroup.ID);
       if (gTo == null || gWhat == null) {
         return;
       }

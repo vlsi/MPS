@@ -15,7 +15,6 @@ import jetbrains.mps.ide.actions.nodes.GoToRulesAction;
 import jetbrains.mps.ide.actions.gotoMenu.GoToProjectPaneAction;
 import jetbrains.mps.ide.actions.gotoMenu.GoToLanguageAction;
 import jetbrains.mps.ide.actions.gotoMenu.GoToModelAction;
-import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
 import jetbrains.mps.ide.action.ActionGroup;
 
@@ -24,7 +23,7 @@ public class Goto_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.Goto";
 
   public Goto_ActionGroup(MPSProject project) {
-    super("Go To", Goto_ActionGroup.ID);
+    super("Go To", Goto_ActionGroup.ID, project);
     this.setMnemonic("O".charAt(0));
     this.setInternal(false);
     try {
@@ -46,10 +45,10 @@ public class Goto_ActionGroup extends BaseActionGroup {
     }
   }
 
-  public void adjust(ActionManager manager, IActionGroupElementOwner owner) {
+  public void adjust(IActionGroupElementOwner owner) {
     {
-      ActionGroup gTo = manager.getGroup(MainMenu_ActionGroup.ID);
-      ActionGroup gWhat = manager.getGroup(Goto_ActionGroup.ID);
+      ActionGroup gTo = this.getGroup(MainMenu_ActionGroup.ID);
+      ActionGroup gWhat = this.getGroup(Goto_ActionGroup.ID);
       if (gTo == null || gWhat == null) {
         return;
       }

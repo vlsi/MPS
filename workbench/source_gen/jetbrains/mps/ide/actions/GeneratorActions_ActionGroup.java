@@ -11,7 +11,6 @@ import jetbrains.mps.ide.actions.language.GenerateTemplateQueriesAction_false;
 import jetbrains.mps.ide.actions.language.DeleteGeneratorAction;
 import jetbrains.mps.ide.modelchecker.CheckGeneratorAction;
 import jetbrains.mps.ide.actions.language.GeneratorPropertiesAction;
-import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
 
 public class GeneratorActions_ActionGroup extends BaseActionGroup {
@@ -21,7 +20,7 @@ public class GeneratorActions_ActionGroup extends BaseActionGroup {
   public static final String LABEL_ID_VCS = "VCS";
 
   public GeneratorActions_ActionGroup(MPSProject project) {
-    super("", GeneratorActions_ActionGroup.ID);
+    super("", GeneratorActions_ActionGroup.ID, project);
     this.setInternal(false);
     try {
       this.add(new Label(GeneratorActions_ActionGroup.LABEL_ID_generatorNew), this);
@@ -40,7 +39,7 @@ public class GeneratorActions_ActionGroup extends BaseActionGroup {
     }
   }
 
-  public void adjust(ActionManager manager, IActionGroupElementOwner owner) {
+  public void adjust(IActionGroupElementOwner owner) {
   }
 
 }

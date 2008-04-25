@@ -6,7 +6,6 @@ import jetbrains.mps.plugins.actions.BaseActionGroup;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.model.NewModelAction;
-import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
 import jetbrains.mps.ide.action.ActionGroup;
 
@@ -15,7 +14,7 @@ public class SolutionNewActions_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.SolutionNewActions";
 
   public SolutionNewActions_ActionGroup(MPSProject project) {
-    super("New", SolutionNewActions_ActionGroup.ID);
+    super("New", SolutionNewActions_ActionGroup.ID, project);
     this.setInternal(false);
     try {
       this.add(new NewModelAction(), this);
@@ -24,10 +23,10 @@ public class SolutionNewActions_ActionGroup extends BaseActionGroup {
     }
   }
 
-  public void adjust(ActionManager manager, IActionGroupElementOwner owner) {
+  public void adjust(IActionGroupElementOwner owner) {
     {
-      ActionGroup gTo = manager.getGroup(SolutionActions_ActionGroup.ID);
-      ActionGroup gWhat = manager.getGroup(SolutionNewActions_ActionGroup.ID);
+      ActionGroup gTo = this.getGroup(SolutionActions_ActionGroup.ID);
+      ActionGroup gWhat = this.getGroup(SolutionNewActions_ActionGroup.ID);
       if (gTo == null || gWhat == null) {
         return;
       }

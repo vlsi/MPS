@@ -20,7 +20,7 @@ public class CopyThisDown_Action extends CurrentProjectMPSAction {
   private SNode inputNode;
   private boolean isAlwaysVisible = false;
 
-  public  CopyThisDown_Action(MPSProject project) {
+  public CopyThisDown_Action(MPSProject project) {
     super(project, "Duplicate Node");
   }
 
@@ -29,7 +29,7 @@ public class CopyThisDown_Action extends CurrentProjectMPSAction {
     return "ctrl D";
   }
 
-  public void doUpdate(@NotNull() ActionContext context) {
+  public void doUpdate(@NotNull()ActionContext context) {
     try {
       super.doUpdate(context);
       if (!(this.fillFieldsIfNecessary(context))) {
@@ -68,18 +68,18 @@ public class CopyThisDown_Action extends CurrentProjectMPSAction {
     return true;
   }
 
-  public void doExecute(@NotNull() ActionContext context) {
+  public void doExecute(@NotNull()ActionContext context) {
     try {
       if (!(this.fillFieldsIfNecessary(context))) {
         return;
       }
       {
         SNode nodeToCopy = this.inputNode;
-        while(SNodeOperations.getParent(nodeToCopy, null, false, false) != null) {
+        while (SNodeOperations.getParent(nodeToCopy, null, false, false) != null) {
           SNode parent = SNodeOperations.getParent(nodeToCopy, null, false, false);
           SNode acd = SNodeOperations.getConceptDeclaration(parent);
           String role = nodeToCopy.getRole_();
-          LinkDeclaration linkDeclaration = SModelUtil_new.findLinkDeclaration(((AbstractConceptDeclaration)SNodeOperations.getAdapter(acd)), role);
+          LinkDeclaration linkDeclaration = SModelUtil_new.findLinkDeclaration(((AbstractConceptDeclaration) SNodeOperations.getAdapter(acd)), role);
           if (linkDeclaration == null) {
             return;
           }
