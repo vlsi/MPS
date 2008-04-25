@@ -13,7 +13,7 @@ public enum Option {
   /* package */String myName;
   /* package */String myValue;
 
- Option(String name, String value) {
+Option(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }

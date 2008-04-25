@@ -20,7 +20,7 @@ public class OutputRoot extends BaseConcept implements INamedConcept {
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String OUTPUT_CHILD = "outputChild";
 
-  public  OutputRoot(SNode node) {
+  public OutputRoot(SNode node) {
     super(node);
   }
 

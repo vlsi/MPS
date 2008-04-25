@@ -20,7 +20,7 @@ public class InputRoot extends BaseConcept implements INamedConcept {
   public static String USE_IN_TEST = "useInTest";
   public static String INPUT_CHILD = "inputChild";
 
-  public  InputRoot(SNode node) {
+  public InputRoot(SNode node) {
     super(node);
   }
 

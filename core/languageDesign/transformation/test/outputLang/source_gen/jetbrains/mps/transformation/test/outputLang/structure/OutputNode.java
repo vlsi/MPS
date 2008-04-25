@@ -15,7 +15,7 @@ public class OutputNode extends BaseConcept {
   public static String TEXT = "text";
   public static String OUTPUT_CHILD = "outputChild";
 
-  public  OutputNode(SNode node) {
+  public OutputNode(SNode node) {
     super(node);
   }
 

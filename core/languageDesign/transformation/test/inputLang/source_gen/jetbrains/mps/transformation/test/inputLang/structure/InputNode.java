@@ -19,7 +19,7 @@ public class InputNode extends BaseConcept implements INamedConcept {
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String INPUT_CHILD = "inputChild";
 
-  public  InputNode(SNode node) {
+  public InputNode(SNode node) {
     super(node);
   }
 

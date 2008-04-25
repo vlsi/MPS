@@ -14,7 +14,7 @@ public enum UseInTest {
   /* package */String myName;
   /* package */String myValue;
 
- UseInTest(String name, String value) {
+UseInTest(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }

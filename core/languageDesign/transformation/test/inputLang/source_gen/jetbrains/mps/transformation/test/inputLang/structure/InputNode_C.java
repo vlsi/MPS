@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class InputNode_C extends InputNode_B {
   public static final String concept = "jetbrains.mps.transformation.test.inputLang.structure.InputNode_C";
 
-  public  InputNode_C(SNode node) {
+  public InputNode_C(SNode node) {
     super(node);
   }
 
