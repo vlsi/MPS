@@ -32,6 +32,10 @@ public abstract class BaseActionGroup extends ActionGroup implements IActionGrou
     }
   }
 
-  public void adjust(IActionGroupElementOwner owner) {
+  protected void doUpdate(ActionContext context) {
+    super.doUpdate(context);
+    checkProject(context);
   }
+
+  public abstract void adjust(IActionGroupElementOwner owner);
 }
