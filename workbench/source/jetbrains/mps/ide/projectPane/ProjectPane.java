@@ -598,7 +598,6 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
       }
       ProjectTreeNode root = new ProjectTreeNode(getProject());
 
-
       List<MPSTreeNode> moduleNodes = new ArrayList<MPSTreeNode>();
 
       List<Solution> solutions = getProject().getProjectSolutions();
