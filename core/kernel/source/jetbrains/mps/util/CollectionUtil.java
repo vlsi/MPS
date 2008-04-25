@@ -98,35 +98,44 @@ public class CollectionUtil {
     };
   }
 
+  public static<T> Set<T> union(Set<T>... sets) {
+    Set<T> result = new LinkedHashSet<T>();
+    for (Set<T> s : sets) {
+      result.addAll(s);
+    }
+    return result;
+  }
+
+  public static<T> List<T> union(List<T>... sets) {
+    List<T> result = new ArrayList<T>();
+    for (List<T> s : sets) {
+      result.addAll(s);
+    }
+    return result;
+  }
+
+
   public static <T> Set<T> asSet(T... ts) {
     Set<T> result = new HashSet<T>();
-    for (T t : ts) {
-      result.add(t);
-    }
+    result.addAll(Arrays.asList(ts));
     return result;
   }
 
   public static <T> Set<T> asStableSet(T... ts) {
     Set<T> result = new LinkedHashSet<T>();
-    for (T t : ts) {
-      result.add(t);
-    }
+    result.addAll(Arrays.asList(ts));
     return result;
   }
 
   public static <T> List<T> asList(T... ts) {
     List<T> result = new ArrayList<T>();
-    for (T t : ts) {
-      result.add(t);
-    }
+    result.addAll(Arrays.asList(ts));
     return result;
   }
 
   public static <T> Vector<T> asVector(T... ts) {
     Vector<T> result = new Vector<T>();
-    for (T t : ts) {
-      result.add(t);
-    }
+    result.addAll(Arrays.asList(ts));
     return result;
   }
 
