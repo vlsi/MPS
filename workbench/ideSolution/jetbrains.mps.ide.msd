@@ -15,6 +15,7 @@
     <usedLanguages>jetbrains.mps.ide.uiLanguage</usedLanguages>
     <usedLanguages>jetbrains.mps.bootstrap.pluginLanguage</usedLanguages>
     <usedLanguages>jetbrains.mps.bootstrap.smodelLanguage</usedLanguages>
+    <usedLanguages>jetbrains.mps.internal.collections</usedLanguages>
   </usedLanguages>
 </solution>
 
