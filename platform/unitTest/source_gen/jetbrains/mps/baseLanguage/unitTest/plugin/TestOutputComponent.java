@@ -40,14 +40,14 @@ public class TestOutputComponent {
       this.filterMethod = filterMethod;
       this.output.clear();
       {
-        ICursor<TestOutputComponent.Message> _zCursor6 = CursorFactory.createCursor(this.messages);
+        ICursor<TestOutputComponent.Message> _zCursor7 = CursorFactory.createCursor(this.messages);
         try {
-          while(_zCursor6.moveToNext()) {
-            TestOutputComponent.Message message = _zCursor6.getCurrent();
+          while(_zCursor7.moveToNext()) {
+            TestOutputComponent.Message message = _zCursor7.getCurrent();
             this.append(message);
           }
         } finally {
-          _zCursor6.release();
+          _zCursor7.release();
         }
       }
     }

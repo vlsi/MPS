@@ -23,25 +23,26 @@ public class TestTree extends MPSTree {
   public TestTree() {
     this.tests = new LinkedHashMap<SNode, List<SNode>>();
     this.map = new TestNameMap<TestCaseTreeNode, TestMethodTreeNode>();
+    this.rebuildLater();
   }
 
   public MPSTreeNode rebuild() {
     MPSTreeNode root = new TextTreeNode("Tests");
     this.map.clear();
     {
-      ICursor<SNode> _zCursor3 = CursorFactory.createCursor(MapOperations.keys(this.tests));
+      ICursor<SNode> _zCursor4 = CursorFactory.createCursor(MapOperations.keys(this.tests));
       try {
-        while(_zCursor3.moveToNext()) {
-          SNode testCase = _zCursor3.getCurrent();
+        while(_zCursor4.moveToNext()) {
+          SNode testCase = _zCursor4.getCurrent();
           {
             TestCaseTreeNode testCaseTreeNode = new TestCaseTreeNode(this.operationContext, testCase);
             root.add(testCaseTreeNode);
             this.map.put(testCase, testCaseTreeNode);
             {
-              ICursor<SNode> _zCursor4 = CursorFactory.createCursor(this.tests.get(testCase));
+              ICursor<SNode> _zCursor5 = CursorFactory.createCursor(this.tests.get(testCase));
               try {
-                while(_zCursor4.moveToNext()) {
-                  SNode method = _zCursor4.getCurrent();
+                while(_zCursor5.moveToNext()) {
+                  SNode method = _zCursor5.getCurrent();
                   {
                     TestMethodTreeNode testMethodTreeNode = new TestMethodTreeNode(this.operationContext, method);
                     testCaseTreeNode.add(testMethodTreeNode);
@@ -49,13 +50,13 @@ public class TestTree extends MPSTree {
                   }
                 }
               } finally {
-                _zCursor4.release();
+                _zCursor5.release();
               }
             }
           }
         }
       } finally {
-        _zCursor3.release();
+        _zCursor4.release();
       }
     }
     return root;

@@ -30,10 +30,10 @@ public abstract class TestContainerRow implements TestStatisticsRow {
   public long getElapsedTime() {
     long elapsedTime = 0;
     {
-      ICursor<TestStatisticsRow> _zCursor11 = CursorFactory.createCursor(this.rows);
+      ICursor<TestStatisticsRow> _zCursor12 = CursorFactory.createCursor(this.rows);
       try {
-        while(_zCursor11.moveToNext()) {
-          TestStatisticsRow row = _zCursor11.getCurrent();
+        while(_zCursor12.moveToNext()) {
+          TestStatisticsRow row = _zCursor12.getCurrent();
           {
             long methodTime = row.getElapsedTime();
             if (methodTime >= 0) {
@@ -42,7 +42,7 @@ public abstract class TestContainerRow implements TestStatisticsRow {
           }
         }
       } finally {
-        _zCursor11.release();
+        _zCursor12.release();
       }
     }
     return elapsedTime;
@@ -85,27 +85,11 @@ public abstract class TestContainerRow implements TestStatisticsRow {
   public int getSuccessful() {
     int count = 0;
     {
-      ICursor<TestStatisticsRow> _zCursor12 = CursorFactory.createCursor(this.rows);
-      try {
-        while(_zCursor12.moveToNext()) {
-          TestStatisticsRow row = _zCursor12.getCurrent();
-          count = count + row.getSuccessful();
-        }
-      } finally {
-        _zCursor12.release();
-      }
-    }
-    return count;
-  }
-
-  public int getErrored() {
-    int count = 0;
-    {
       ICursor<TestStatisticsRow> _zCursor13 = CursorFactory.createCursor(this.rows);
       try {
         while(_zCursor13.moveToNext()) {
           TestStatisticsRow row = _zCursor13.getCurrent();
-          count = count + row.getErrored();
+          count = count + row.getSuccessful();
         }
       } finally {
         _zCursor13.release();
@@ -114,17 +98,33 @@ public abstract class TestContainerRow implements TestStatisticsRow {
     return count;
   }
 
-  public int getFailed() {
+  public int getErrored() {
     int count = 0;
     {
       ICursor<TestStatisticsRow> _zCursor14 = CursorFactory.createCursor(this.rows);
       try {
         while(_zCursor14.moveToNext()) {
           TestStatisticsRow row = _zCursor14.getCurrent();
-          count = count + row.getFailed();
+          count = count + row.getErrored();
         }
       } finally {
         _zCursor14.release();
+      }
+    }
+    return count;
+  }
+
+  public int getFailed() {
+    int count = 0;
+    {
+      ICursor<TestStatisticsRow> _zCursor15 = CursorFactory.createCursor(this.rows);
+      try {
+        while(_zCursor15.moveToNext()) {
+          TestStatisticsRow row = _zCursor15.getCurrent();
+          count = count + row.getFailed();
+        }
+      } finally {
+        _zCursor15.release();
       }
     }
     return count;
