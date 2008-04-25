@@ -32,6 +32,8 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <maxImportIndex value="28" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.ide.action@java_stub" version="-1" />
@@ -1440,6 +1442,16 @@
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1209124275446">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1209124277151">
               <link role="variableDeclaration" targetNodeId="1209124174314" resolveInfo="success" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1209127907693">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209127908788">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1209127907694">
+              <link role="variableDeclaration" targetNodeId="1209124038621" resolveInfo="model" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209127910176">
+              <link role="baseMethodDeclaration" targetNodeId="5.~SModelDescriptor.save():void" resolveInfo="save" />
             </node>
           </node>
         </node>
