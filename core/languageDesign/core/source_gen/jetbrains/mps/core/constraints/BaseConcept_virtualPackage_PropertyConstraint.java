@@ -11,7 +11,7 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 
 public class BaseConcept_virtualPackage_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
 
-  public  BaseConcept_virtualPackage_PropertyConstraint() {
+  public BaseConcept_virtualPackage_PropertyConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

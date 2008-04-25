@@ -19,12 +19,14 @@ public class BaseConcept extends BaseAdapter {
   public static String CPR_Deprecated_415 = "deprecated_415";
   public static String CPR_Deprecated_470 = "deprecated_470";
   public static String CPR_Deprecated_504 = "deprecated_504";
-  public static String CPR_Deprecated_next_after_504 = "deprecated_next_after_504";
+  public static String CPR_Deprecated_531 = "deprecated_531";
+  public static String CPR_Deprecated_578 = "deprecated_578";
+  public static String CPR_Deprecated_next_after_578 = "deprecated_next_after_578";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  BaseConcept(SNode node) {
+  public BaseConcept(SNode node) {
     super(node);
   }
 

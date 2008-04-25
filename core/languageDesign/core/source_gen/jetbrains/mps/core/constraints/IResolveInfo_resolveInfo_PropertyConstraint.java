@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.IScope;
 
 public class IResolveInfo_resolveInfo_PropertyConstraint implements IModelConstraints, INodePropertyGetter, INodePropertySetter {
 
-  public  IResolveInfo_resolveInfo_PropertyConstraint() {
+  public IResolveInfo_resolveInfo_PropertyConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
