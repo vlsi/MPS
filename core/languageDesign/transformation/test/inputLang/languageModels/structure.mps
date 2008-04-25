@@ -105,7 +105,7 @@
   </node>
   <visible index="2" modelUID="jetbrains.mps.baseLanguage.structure" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1209146548167">
-    <property name="name" value="MyExpressionToReduceToStatement" />
+    <property name="name" value="ExpressionToReduceToStatement" />
     <link role="extends" targetNodeId="2v.1068431790191" resolveInfo="Expression" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1209146621012">
       <property name="value" value="expression to reduce to statement" />
@@ -114,6 +114,24 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1209146642483">
       <property name="value" value="generator should produce clear warning" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1209149421970">
+    <property name="name" value="InputRootWithStatementList" />
+    <property name="rootable" value="true" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1209149449081">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="statementList" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2v.1068580123136" resolveInfo="StatementList" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1209149492537">
+      <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1209149495553">
+      <property name="name" value="useInTest" />
+      <link role="dataType" targetNodeId="1202242680337" resolveInfo="UseInTest" />
     </node>
   </node>
 </model>
