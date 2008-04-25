@@ -14,7 +14,8 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1"/>
   </language>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
-  <maxImportIndex value="39"/>
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
+  <maxImportIndex value="41"/>
   <import index="1" modelUID="jetbrains.mps.ide.actions.nodes@java_stub" version="-1"/>
   <import index="2" modelUID="jetbrains.mps.ide.modelchecker@java_stub" version="-1"/>
   <import index="3" modelUID="jetbrains.mps.ide.actions.model@java_stub" version="-1"/>
@@ -47,6 +48,8 @@
   <import index="37" modelUID="java.lang@java_stub" version="-1"/>
   <import index="38" modelUID="org.jetbrains.annotations@java_stub" version="-1"/>
   <import index="39" modelUID="javax.swing@java_stub" version="-1"/>
+  <import index="40" modelUID="jetbrains.mps.smodel@java_stub" version="-1"/>
+  <import index="41" modelUID="jetbrains.mps.ide.projectPane@java_stub" version="-1"/>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991215587">
     <property name="name" value="ProjectPaneNodeActions"/>
     <property name="id" value="ProjectPaneNodeActions"/>
@@ -1337,6 +1340,46 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1209134592489">
+    <property name="package" value="ProjectPane.Language"/>
+    <property name="name" value="LanguageNewCustomPartActions"/>
+    <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.BuildGroupBlock" id="1209134668045">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1209134668046">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1209134926486">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1209134926487">
+            <node role="statement" type="jetbrains.mps.bootstrap.pluginLanguage.structure.AddElementStatement"
+                  id="1209134945441">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1209134945442">
+                <link role="baseMethodDeclaration"
+                      targetNodeId="8.~NewAspectModelAction.&lt;init&gt;(jetbrains.mps.smodel.LanguageAspect)"
+                      resolveInfo="NewAspectModelAction"/>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
+                      id="1209134948819">
+                  <link role="variableDeclaration" targetNodeId="1209134926490" resolveInfo="aspect"/>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1209134942078">
+            <link role="baseMethodDeclaration"
+                  targetNodeId="40.~LanguageAspect.values():jetbrains.mps.smodel.LanguageAspect[]"
+                  resolveInfo="values"/>
+            <link role="classConcept" targetNodeId="40.~LanguageAspect" resolveInfo="LanguageAspect"/>
+          </node>
+          <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1209134926490">
+            <property name="name" value="aspect"/>
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1209134930869">
+              <link role="classifier" targetNodeId="40.~LanguageAspect" resolveInfo="LanguageAspect"/>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
+          id="1209134675047">
+      <link role="modifiedGroup" targetNodeId="1204991225922" resolveInfo="LanguageNewActions"/>
     </node>
   </node>
 </model>
