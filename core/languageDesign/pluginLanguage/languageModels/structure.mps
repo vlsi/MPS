@@ -37,6 +37,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <maxImportIndex value="17"/>
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0"/>
   <import index="6" modelUID="jetbrains.mps.core.structure" version="-1"/>
@@ -1495,34 +1496,6 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty"
           id="1208530482383">
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473994950" resolveInfo="dontSubstituteByDefault"/>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1208530514238">
-    <property name="package" value="Tool.Operations"/>
-    <property name="name" value="ShowToolOperation"/>
-    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
-    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference"
-          id="1208530514239">
-      <link role="intfc" targetNodeId="2.1197027803184" resolveInfo="IOperation"/>
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
-          id="1208530514240">
-      <property name="value" value="show"/>
-      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1208529751505">
-    <property name="package" value="Tool.Operations"/>
-    <property name="name" value="HideToolOperation"/>
-    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
-    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference"
-          id="1208529756396">
-      <link role="intfc" targetNodeId="2.1197027803184" resolveInfo="IOperation"/>
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
-          id="1208529774065">
-      <property name="value" value="hide"/>
-      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1208530601190">

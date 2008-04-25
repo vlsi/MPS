@@ -23,6 +23,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <maxImportIndex value="38"/>
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0"/>
   <import index="2" modelUID="jetbrains.mps.baseLanguage.plugin.uiActions@java_stub" version="-1"/>
@@ -5559,6 +5560,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.Tool" id="1208789093348">
     <property name="name" value="Run Class"/>
+    <property name="icon" value="${language_descriptor}\icons\run.png"/>
     <node role="component" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1208789114563">
       <link role="baseMethodDeclaration" targetNodeId="1205861021916" resolveInfo="RunComponent"/>
     </node>

@@ -30,7 +30,9 @@ public class TodoViewer extends JPanel {
       public void mouseClicked(MouseEvent e) {
         removeAll();
 
-        myUsageView = new UsageView(projectFrame, new ViewOptions()) {
+        ViewOptions viewOptions = new ViewOptions(true, false, false, false, false);
+
+        myUsageView = new UsageView(projectFrame, viewOptions) {
           public void close() {
             //hideTool();
           }
