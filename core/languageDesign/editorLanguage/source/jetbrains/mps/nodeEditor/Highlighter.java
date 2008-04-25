@@ -130,26 +130,39 @@ public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
     //   public void run() {
     if (myProjects == null) return;
     MPSProjects projects = myProjects;
+
+    List<SModelEvent> events = new ArrayList<SModelEvent>();
+    synchronized (EVENTS_LOCK) {
+      events.addAll(myLastEvents);
+      myLastEvents.clear();
+    }
+
+    Set<IEditorChecker> checkers = new LinkedHashSet<IEditorChecker>();
+    Set<IEditorChecker> checkersToRemove = new LinkedHashSet<IEditorChecker>();
+    // to avoid inconsistency between checkers, we collect them from fields here
+    // in the synchronized block and then do not read the fields in this iteration anymore
+    synchronized (CHECKERS_LOCK) {
+      checkers.addAll(myCheckers);
+      checkersToRemove.addAll(myCheckersToRemove);
+      myCheckersToRemove.clear();
+    }
+
     for (MPSProject project : projects.getProjects()) {
       IDEProjectFrame projectFrame = project.getComponent(IDEProjectFrame.class);
       if (projectFrame == null) continue;
 
       EditorsPane editorsPane = project.getComponentSafe(AbstractProjectFrame.class).getEditorsPane();
       boolean isUpdated = false;
-      List<SModelEvent> events = new ArrayList<SModelEvent>();
-      synchronized (EVENTS_LOCK) {
-        events.addAll(myLastEvents);
-        myLastEvents.clear();
-      }
+
       for (IEditor editor : editorsPane.getEditors()) {
         AbstractEditorComponent component = editor.getCurrentEditorComponent();
         if (component != null) {
-          if (updateEditorComponent(component, events)) {
+          if (updateEditorComponent(component, events, checkers, checkersToRemove)) {
             isUpdated = true;
           }
 
           if (component instanceof NodeEditorComponent) {
-            updateEditorComponent(((NodeEditorComponent) component).getInspector(), events);
+            updateEditorComponent(((NodeEditorComponent) component).getInspector(), events, checkers, checkersToRemove);
           }
         }
       }
@@ -169,19 +182,9 @@ public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
     //  });
   }
 
-  private boolean updateEditorComponent(IEditorComponent component, final List<SModelEvent> events) {
+  private boolean updateEditorComponent(IEditorComponent component, final List<SModelEvent> events, final Set<IEditorChecker> checkers, Set<IEditorChecker> checkersToRemove) {
     final SNode editedNode = component.getEditedNode();
     if (editedNode != null) {
-      final Set<IEditorChecker> checkers = new LinkedHashSet<IEditorChecker>();
-      Set<IEditorChecker> checkersToRemove = new LinkedHashSet<IEditorChecker>();
-
-      // to avoid inconsistency between checkers, we collect them from fields here
-      // in the synchronized block and then do not read the fields in this iteration anymore
-      synchronized (CHECKERS_LOCK) {
-        checkers.addAll(myCheckers);
-        checkersToRemove.addAll(myCheckersToRemove);
-        myCheckersToRemove.clear();
-      }
 
       final Set<IEditorChecker> checkersToRecheck = new LinkedHashSet<IEditorChecker>();
       if (!wasCheckedOnce(component)) {
