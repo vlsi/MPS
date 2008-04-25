@@ -8692,7 +8692,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1209153929575">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209153931592">
               <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintsFunctionParameter_node" id="1209153929576" />
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1209153935002">
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1209154440064">
                 <link role="property" targetNodeId="1.1201371481316" resolveInfo="propertyName" />
               </node>
             </node>
