@@ -63,7 +63,7 @@ public abstract class AbstractModule implements IModule {
       visited.add(e.getPath());
     }
 
-    if (save) {
+    if (save && !isPackaged()) {
       save();
     }
   }
