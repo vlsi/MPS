@@ -226,7 +226,7 @@ public class EditorManager {
       NodeReadAccessCaster.setCellBuildNodeReadAccessListener(nodeAccessListener);
       nodeCell = isInspectorCell ? editor.createInspectedCell(context, node) : editor.createEditorCell(context, node);
       //-voodoo
-    } catch (Exception e) {
+    } catch (Throwable e) {
       LOG.error("Failed to create cell for node " + node.getDebugText(), e);
       nodeCell = new EditorCell_Error(context, node, "!exception!:" + node.getDebugText());
     } finally {
