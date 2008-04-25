@@ -308,8 +308,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       uid = getSModel().getUID();
     }
 
-    String name = myShowLongName ? uid.toString()
-      : uid.getShortName();
+    String name = myShowLongName ? uid.getLongName() : uid.getShortName();
 
     if (uid.getStereotype().length() > 0) {
       name += "@" + uid.getStereotype();
