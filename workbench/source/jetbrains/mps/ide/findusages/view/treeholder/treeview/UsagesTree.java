@@ -8,6 +8,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.path.nodepaths.NodeRootNodeP
 import jetbrains.mps.ide.findusages.view.treeholder.path.nodepaths.NodeRootToNodePath;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.TextOptions;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.BaseNodeData;
+import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.ModelNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.NodeNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.tree.DataNode;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.tree.DataTree;
@@ -17,6 +18,7 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.TextMPSTreeNode;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Calculable;
 
@@ -341,6 +343,13 @@ public abstract class UsagesTree extends MPSTree {
           } else {
             LOG.info("clicked node was deleted");
           }
+        } else if (data instanceof ModelNodeData) {
+          SModel model = (SModel) ((ModelNodeData) data).getIdObject();
+          if (model != null) {
+            if (inProject) {
+              navigateToModelInTree(model);
+            }
+          }
         }
       }
     });
@@ -475,6 +484,13 @@ public abstract class UsagesTree extends MPSTree {
     ProjectPane projectPane = getProjectFrame().getProjectPane();
     getProjectFrame().showMainProjectPane();
     projectPane.selectNode(node, new ProjectOperationContext(getProjectFrame().getProject()));
+    projectPane.getTree().requestFocus();
+  }
+
+  private void navigateToModelInTree(SModel model) {
+    ProjectPane projectPane = getProjectFrame().getProjectPane();
+    getProjectFrame().showMainProjectPane();
+    projectPane.selectModel(model.getModelDescriptor());
     projectPane.getTree().requestFocus();
   }
 
