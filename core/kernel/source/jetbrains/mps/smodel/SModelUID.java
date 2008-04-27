@@ -40,6 +40,12 @@ public class SModelUID implements Comparable<Object> {
     myUIDString = InternUtil.intern(myLongName + (myStereotype.length() == 0 ? "" : "@" + myStereotype));
   }
 
+  public SModelUID(SModelUID pattern) {
+    myLongName = pattern.myLongName;
+    myStereotype = pattern.myStereotype;
+    myUIDString = pattern.myUIDString;
+  }
+
   public static SModelUID fromString(String s) {
     if (s == null) s = "";
     int index = s.indexOf("@");

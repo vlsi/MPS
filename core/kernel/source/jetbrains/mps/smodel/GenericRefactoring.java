@@ -132,13 +132,11 @@ public class GenericRefactoring {
 
       Map<IModule, List<SModel>> calculatedSourceModels = CommandProcessor.instance().executeCommand(new Calculable<Map<IModule, List<SModel>>>() {
         public Map<IModule, List<SModel>> calculate() {
+          SModelDescriptor modelDescriptor = context.getModel();
+          SModelUID initialModelUID = modelDescriptor.getModelUID();
           myRefactoring.doRefactor(context, refactoringContext);
 
-          SModelDescriptor modelDescriptor = context.getModel();
-
-          if (modelDescriptor == null) return null;
           SModel model = modelDescriptor.getSModel();
-          SModelUID initialModelUID = modelDescriptor.getModelUID();
 
           refactoringContext.computeCaches();
           SearchResults usages = refactoringContext.getUsages();
