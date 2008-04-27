@@ -10,6 +10,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.treedata.TextOptions;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.BaseNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.ModelNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.NodeNodeData;
+import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.ModuleNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.tree.DataNode;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.tree.DataTree;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
@@ -18,6 +19,7 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.TextMPSTreeNode;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Calculable;
@@ -338,7 +340,7 @@ public abstract class UsagesTree extends MPSTree {
             if (!inProject) {
               navigateToNode(node);
             } else {
-              navigateToNodeInTree(node);
+              navigateInTree(node);
             }
           } else {
             LOG.info("clicked node was deleted");
@@ -347,7 +349,14 @@ public abstract class UsagesTree extends MPSTree {
           SModel model = (SModel) ((ModelNodeData) data).getIdObject();
           if (model != null) {
             if (inProject) {
-              navigateToModelInTree(model);
+              navigateInTree(model);
+            }
+          }
+        } else if (data instanceof ModuleNodeData) {
+          IModule module = (IModule) ((ModuleNodeData) data).getIdObject();
+          if (module != null) {
+            if (inProject) {
+              navigateInTree(module);
             }
           }
         }
@@ -480,17 +489,18 @@ public abstract class UsagesTree extends MPSTree {
       getProjectFrame().getProject(), true);
   }
 
-  private void navigateToNodeInTree(SNode node) {
+  private void navigateInTree(Object o) {
     ProjectPane projectPane = getProjectFrame().getProjectPane();
     getProjectFrame().showMainProjectPane();
-    projectPane.selectNode(node, new ProjectOperationContext(getProjectFrame().getProject()));
-    projectPane.getTree().requestFocus();
-  }
-
-  private void navigateToModelInTree(SModel model) {
-    ProjectPane projectPane = getProjectFrame().getProjectPane();
-    getProjectFrame().showMainProjectPane();
-    projectPane.selectModel(model.getModelDescriptor());
+    if (o instanceof SNode) {
+      projectPane.selectNode((SNode) o, new ProjectOperationContext(getProjectFrame().getProject()));
+    } else if (o instanceof SModel) {
+      projectPane.selectModel(((SModel) o).getModelDescriptor());
+    } else if (o instanceof IModule) {
+      projectPane.selectModule((IModule) o);
+    } else {
+      throw new IllegalArgumentException();
+    }
     projectPane.getTree().requestFocus();
   }
 
