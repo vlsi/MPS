@@ -12,6 +12,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProject.ProjectScope;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.annotation.Hack;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
@@ -33,6 +34,14 @@ public class SearchQuery implements IExternalizeable {
   private SNodePointer myNodePointer;
   private IScope myScope;
 
+  @Hack
+  private SModel myModel;
+
+  public SearchQuery(SModel model, IScope scope) {
+    myModel = model;
+    myScope = scope;
+  }
+
   public SearchQuery(@NotNull SNodePointer nodePointer, IScope scope) {
     myNodePointer = nodePointer;
     myScope = scope;
@@ -48,6 +57,10 @@ public class SearchQuery implements IExternalizeable {
 
   public SNode getNode() {
     return myNodePointer.getNode();
+  }
+
+  public SModel getModel() {
+    return myModel;
   }
 
   public IScope getScope() {
