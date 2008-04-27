@@ -34,7 +34,7 @@ public class NodeNodeData extends BaseNodeData {
   public NodeNodeData(String creator, SNode node, boolean isResultNode, INodeRepresentator nodeRepresentator) {
     super(
       creator,
-      isResultNode ? nodeRepresentator.getPresentation(node) : snodeRepresentation(node),
+      (isResultNode && nodeRepresentator != null) ? nodeRepresentator.getPresentation(node) : snodeRepresentation(node),
       nodeAdditionalInfo(node),
       false
     );

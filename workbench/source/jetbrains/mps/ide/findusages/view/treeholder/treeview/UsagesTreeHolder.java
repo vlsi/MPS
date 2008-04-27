@@ -16,6 +16,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jdom.Element;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -32,7 +33,8 @@ public abstract class UsagesTreeHolder extends JPanel implements IChangeListener
   private static final String PLAIN_PATH_PROVIDER = "plain_path_provider";
   private static final String CLASS_NAME = "class_name";
 
-  private Class myNodeRepresentatorClass = SimpleRepresentator.class;
+  @Nullable
+  private Class myNodeRepresentatorClass = null;
 
   private UsagesTree myTree;
   private DataTree myContents = new DataTree();
@@ -64,7 +66,6 @@ public abstract class UsagesTreeHolder extends JPanel implements IChangeListener
 
     myPathProvider.add("");
     myPathProvider.add(NodePlainPath.class.getName());
-    myNodeRepresentatorClass = SimpleRepresentator.class;
 
     myViewToolbar = new ViewToolbar();
     myActionsToolbar = new ActionsToolbar();
@@ -84,13 +85,17 @@ public abstract class UsagesTreeHolder extends JPanel implements IChangeListener
   }
 
   public void setContents(SearchResults contents) {
-    try {
-      myContents.setContents(contents, (INodeRepresentator) myNodeRepresentatorClass.newInstance());
-    } catch (InstantiationException e) {
-      e.printStackTrace();
-    } catch (IllegalAccessException e) {
-      e.printStackTrace();
+    INodeRepresentator nodeRepresentator = null;
+    if (myNodeRepresentatorClass != null) {
+      try {
+        nodeRepresentator = (INodeRepresentator) myNodeRepresentatorClass.newInstance();
+      } catch (InstantiationException e) {
+        e.printStackTrace();
+      } catch (IllegalAccessException e) {
+        e.printStackTrace();
+      }
     }
+    myContents.setContents(contents, nodeRepresentator);
   }
 
   public void changed() {
@@ -128,12 +133,16 @@ public abstract class UsagesTreeHolder extends JPanel implements IChangeListener
 
   public void read(Element element, MPSProject project) throws CantLoadSomethingException {
     Element nodeRepresentatorClass = element.getChild(PLAIN_PATH_PROVIDER);
-    String className = nodeRepresentatorClass.getAttribute(CLASS_NAME).getValue();
-    try {
-      myNodeRepresentatorClass = (Class) Class.forName(className);
-    } catch (Exception e) {
-      LOG.error("Can't instantiate node representator " + className, e);
-      throw new CantLoadSomethingException("Can't instantiate node representator " + className, e);
+    String className = nodeRepresentatorClass.getAttributeValue(CLASS_NAME);
+    if (className != null) {
+      try {
+        myNodeRepresentatorClass = (Class) Class.forName(className);
+      } catch (Exception e) {
+        LOG.error("Can't instantiate node representator " + className, e);
+        throw new CantLoadSomethingException("Can't instantiate node representator " + className, e);
+      }
+    } else {
+      myNodeRepresentatorClass = null;
     }
     Element viewOptionsXML = element.getChild(VIEW_OPTIONS);
     myViewOptions.read(viewOptionsXML, project);
@@ -147,7 +156,9 @@ public abstract class UsagesTreeHolder extends JPanel implements IChangeListener
 
   public void write(Element element, MPSProject project) throws CantSaveSomethingException {
     Element plainPathProviderClass = new Element(PLAIN_PATH_PROVIDER);
-    plainPathProviderClass.setAttribute(CLASS_NAME, myNodeRepresentatorClass.getName());
+    if (myNodeRepresentatorClass != null) {
+      plainPathProviderClass.setAttribute(CLASS_NAME, myNodeRepresentatorClass.getName());
+    }
     element.addContent(plainPathProviderClass);
 
     Element viewOptionsXML = new Element(VIEW_OPTIONS);
