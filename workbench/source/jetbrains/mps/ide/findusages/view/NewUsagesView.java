@@ -15,6 +15,7 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinde
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.view.UsageView.ButtonConfiguration;
 import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesDialog;
@@ -231,7 +232,7 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     } else if (resCount == 1 && !showOne) {
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          SNode node = searchResults.getSearchResults().get(0).getNode();
+          SNode node = ((SearchResult<SNode>) searchResults.getSearchResults().get(0)).getObject();
           if (node != null) {
             NavigationActionProcessor.executeNavigationAction(
               new EditorNavigationCommand(node, myProjectFrame.getEditorsPane().getCurrentEditor(), myProjectFrame.getEditorsPane()),

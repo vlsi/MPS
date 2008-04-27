@@ -39,8 +39,8 @@ public class SearchResults {
   @Deprecated
   public Set<SModel> getModelsWithResults() {
     Set<SModel> result = new HashSet<SModel>();
-    for (SearchResult searchResult : mySearchResults) {
-      SNode node = searchResult.getNode();
+    for (SearchResult<SNode> searchResult : mySearchResults) {
+      SNode node = searchResult.getObject();
       if (node != null) {
         result.add(node.getModel());
       }
@@ -50,7 +50,7 @@ public class SearchResults {
 
   public void remove(SNode node) {
     for (SearchResult result : new ArrayList<SearchResult>(mySearchResults)) {
-      if (result.getNode() == node) {
+      if (result.getObject() == node) {
         mySearchResults.remove(result);
       }
     }
@@ -63,7 +63,7 @@ public class SearchResults {
   public List<SearchResult> getAliveResults() {
     List<SearchResult> alive = new ArrayList<SearchResult>();
     for (SearchResult result : mySearchResults) {
-      if (result.getNode() != null) {
+      if (result.getObject() != null) {
         alive.add(result);
       }
     }

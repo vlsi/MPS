@@ -81,7 +81,7 @@ public abstract class BaseNode implements IResultProvider {
     }
     boolean error = false;
     for (SearchResult result : results.getSearchResults()) {
-      if (result.getNode() == null) {
+      if (result.getObject() == null) {
         LOG.error("GetResults returned results containing null, which means that some of your filters and finders is incorrect");
         error = true;
       }
@@ -89,7 +89,7 @@ public abstract class BaseNode implements IResultProvider {
     if (error) {
       List<SearchResult> newResults = new ArrayList<SearchResult>();
       for (SearchResult result : results.getSearchResults()) {
-        if (result.getNode() != null) {
+        if (result.getObject() != null) {
           newResults.add(result);
         }
       }
