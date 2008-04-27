@@ -174,14 +174,22 @@ public class PrepStatementUtil {
     int beginLabel = label;
     int ifTrueLabel = this.ctx.incrementLabel();
     int ifFalseLabel = -1;
+    int nextLabel = this.calcNextLabel(ifstmt);
+    PrepStatementUtil.putPrepData(SLinkOperations.getTarget(ifstmt, "ifTrue", true), new Integer[]{ifTrueLabel,nextLabel}, this.generator);
+    this.prepStatementList(SLinkOperations.getTarget(ifstmt, "ifTrue", true));
+    if (SLinkOperations.getCount(ifstmt, "elsifClauses") > 0) {
+      for(SNode eicls : SLinkOperations.getTargets(ifstmt, "elsifClauses", true)) {
+        int tmp = this.ctx.incrementLabel();
+        PrepStatementUtil.putPrepData(SLinkOperations.getTarget(eicls, "statementList", true), new Integer[]{tmp,nextLabel}, this.generator);
+        this.prepStatementList(SLinkOperations.getTarget(eicls, "statementList", true));
+        PrepStatementUtil.putPrepData(eicls, new Integer[]{tmp}, this.generator);
+      }
+    }
     if ((SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true) != null)) {
       if (StatementListUtil.isControlStatement(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true)) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
         ifFalseLabel = this.ctx.incrementLabel();
       }
     }
-    int nextLabel = this.calcNextLabel(ifstmt);
-    PrepStatementUtil.putPrepData(SLinkOperations.getTarget(ifstmt, "ifTrue", true), new Integer[]{ifTrueLabel,nextLabel}, this.generator);
-    this.prepStatementList(SLinkOperations.getTarget(ifstmt, "ifTrue", true));
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
       PrepStatementUtil.putPrepData(SLinkOperations.getTarget(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true), "statements", true), new Integer[]{ifFalseLabel,nextLabel}, this.generator);
       this.prepStatementList(SLinkOperations.getTarget(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true), "statements", true));

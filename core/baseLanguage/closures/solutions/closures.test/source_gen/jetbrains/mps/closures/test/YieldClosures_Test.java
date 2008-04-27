@@ -62,7 +62,7 @@ __switch__:
                         this.__CP__ = 7;
                         break;
                       }
-                      this.__CP__ = 8;
+                      this.__CP__ = 10;
                       break;
                     case 12:
                       if (false) {
@@ -79,15 +79,15 @@ __switch__:
                       this.__CP__ = 5;
                       this.yield(2);
                       return true;
-                    case 10:
-                      this.__CP__ = 9;
+                    case 9:
+                      this.__CP__ = 8;
                       this.yield(3);
                       return true;
                     case 11:
-                      this.__CP__ = 9;
+                      this.__CP__ = 8;
                       this.yield(4);
                       return true;
-                    case 9:
+                    case 8:
                       this.__CP__ = 12;
                       this.yield(5);
                       return true;
@@ -102,9 +102,9 @@ __switch__:
                       this.__CP__ = 6;
                       break;
                     case 7:
-                      this.__CP__ = 10;
+                      this.__CP__ = 9;
                       break;
-                    case 8:
+                    case 10:
                       this.__CP__ = 11;
                       break;
                     case 13:
@@ -779,6 +779,120 @@ __switch__:
                       break;
                     case 16:
                       this.__CP__ = 3;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    });
+  }
+
+  @Test()
+  public void test_elseIfClauses() throws Exception {
+    this.assertResultsEqual(new FunctionTypes._void_from_T <List<Integer>>() {
+
+      public void invoke(List<Integer> exp) {
+        for(int i = 1 ; i <= 10 ; i = i + 1) {
+          if (i % 2 == 0) {
+            exp.add(i * 10);
+          } else if (i % 3 == 0) {
+            exp.add(i * 100);
+          } else if (i % 5 == 0) {
+            exp.add(i * 1000);
+          } else
+          {
+            exp.add(i * 10000);
+          }
+        }
+      }
+
+    }, new FunctionTypes._R <Iterable<Integer>>() {
+
+      public Iterable<Integer> invoke() {
+        return new Iterable <Integer>() {
+
+          public Iterator<Integer> iterator() {
+            return new YieldingIterator <Integer>() {
+
+              private int __CP__ = 0;
+              private int _2_i;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      this._2_i = 1;
+                    case 3:
+                      if (!(this._2_i <= 10)) {
+                        this.__CP__ = 1;
+                        break;
+                      }
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      this._2_i = this._2_i + 1;
+                      this.__CP__ = 3;
+                      break;
+                    case 6:
+                      if (this._2_i % 2 == 0) {
+                        this.__CP__ = 7;
+                        break;
+                      } else if (this._2_i % 3 == 0) {
+                        this.__CP__ = 9;
+                        break;
+                      } else if (this._2_i % 5 == 0) {
+                        this.__CP__ = 11;
+                        break;
+                      }
+                      this.__CP__ = 13;
+                      break;
+                    case 8:
+                      this.__CP__ = 5;
+                      this.yield(this._2_i * 10);
+                      return true;
+                    case 10:
+                      this.__CP__ = 5;
+                      this.yield(this._2_i * 100);
+                      return true;
+                    case 14:
+                      this.__CP__ = 5;
+                      this.yield(this._2_i * 10000);
+                      return true;
+                    case 12:
+                      this.__CP__ = 5;
+                      this.yield(this._2_i * 1000);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    case 4:
+                      this.__CP__ = 6;
+                      break;
+                    case 7:
+                      this.__CP__ = 8;
+                      break;
+                    case 9:
+                      this.__CP__ = 10;
+                      break;
+                    case 13:
+                      this.__CP__ = 14;
+                      break;
+                    case 11:
+                      this.__CP__ = 12;
                       break;
                     default:
                       break __loop__;

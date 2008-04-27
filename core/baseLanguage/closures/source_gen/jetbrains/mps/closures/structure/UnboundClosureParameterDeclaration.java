@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class UnboundClosureParameterDeclaration extends ParameterDeclaration {
   public static final String concept = "jetbrains.mps.closures.structure.UnboundClosureParameterDeclaration";
 
-  public  UnboundClosureParameterDeclaration(SNode node) {
+  public UnboundClosureParameterDeclaration(SNode node) {
     super(node);
   }
 

@@ -14,7 +14,7 @@ public class InvokeExpression extends Expression {
   public static final String concept = "jetbrains.mps.closures.structure.InvokeExpression";
   public static String PARAMETER = "parameter";
 
-  public  InvokeExpression(SNode node) {
+  public InvokeExpression(SNode node) {
     super(node);
   }
 

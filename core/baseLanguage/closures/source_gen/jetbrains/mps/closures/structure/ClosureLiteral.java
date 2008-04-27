@@ -21,7 +21,7 @@ public class ClosureLiteral extends Expression implements IStatementListContaine
   public static String BODY = "body";
   public static String PARAMETER = "parameter";
 
-  public  ClosureLiteral(SNode node) {
+  public ClosureLiteral(SNode node) {
     super(node);
   }
 

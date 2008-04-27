@@ -15,7 +15,7 @@ public class InvokeFunctionExpression extends Expression {
   public static String FUNCTION = "function";
   public static String PARAMETER = "parameter";
 
-  public  InvokeFunctionExpression(SNode node) {
+  public InvokeFunctionExpression(SNode node) {
     super(node);
   }
 

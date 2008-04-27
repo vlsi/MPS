@@ -13,7 +13,7 @@ public class YieldStatement extends Statement {
   public static final String concept = "jetbrains.mps.closures.structure.YieldStatement";
   public static String EXPRESSION = "expression";
 
-  public  YieldStatement(SNode node) {
+  public YieldStatement(SNode node) {
     super(node);
   }
 

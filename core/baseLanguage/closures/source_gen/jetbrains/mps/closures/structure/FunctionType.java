@@ -15,7 +15,7 @@ public class FunctionType extends Type {
   public static String RESULT_TYPE = "resultType";
   public static String PARAMETER_TYPE = "parameterType";
 
-  public  FunctionType(SNode node) {
+  public FunctionType(SNode node) {
     super(node);
   }
 

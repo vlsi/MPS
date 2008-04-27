@@ -4,11 +4,11 @@ package jetbrains.mps.closures.test;
 
 import org.junit.Test;
 import jetbrains.mps.closures.runtime.FunctionTypes;
-import jetbrains.mps.baseLanguage.ext.collections.internal.SequenceWithSupplier;
-import java.util.List;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
 import jetbrains.mps.closures.runtime.YieldingIterator;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class SequenceFunctionTypes_Test extends ClosuresBase_Test {
 
@@ -18,7 +18,45 @@ public class SequenceFunctionTypes_Test extends ClosuresBase_Test {
     FunctionTypes._R<? extends Iterable<Integer>> fun2 = null;
     fun1 = fun2;
     fun2 = fun1;
-    final Iterable<Integer> seq = new SequenceWithSupplier<Integer>(new zValueSupplier(null, null));
+    final Iterable<Integer> seq = Sequence.fromClosure(new ISequenceClosure <Integer>() {
+
+      public Iterable<Integer> iterable() {
+        return new Iterable <Integer>() {
+
+          public Iterator<Integer> iterator() {
+            return new YieldingIterator <Integer>() {
+
+              private int __CP__ = 0;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      this.__CP__ = 1;
+                      this.yield(Integer.valueOf(1));
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    });
     fun1 = new FunctionTypes._R <Iterable<Integer>>() {
 
       public Iterable<Integer> invoke() {
@@ -28,10 +66,10 @@ public class SequenceFunctionTypes_Test extends ClosuresBase_Test {
     };
     // TODO: fix the test
     /*
-      fun1 = new FunctionTypes._R <List<Integer>>() {
+      fun1 = new FunctionTypes._R <Type>() {
 
-        public List<Integer> invoke() {
-          return ListOperations.<Integer>createList(Integer.valueOf(1));
+        public Type invoke() {
+          return ListSequence.<Integer>fromArray(Integer.valueOf(1));
         }
 
       };
@@ -136,7 +174,53 @@ __switch__:
 
   @Test()
   public void test_resultsReturnSequence() throws Exception {
-    final Iterable<Integer> seq = new SequenceWithSupplier<Integer>(new zValueSupplier1(null, null));
+    final Iterable<Integer> seq = Sequence.fromClosure(new ISequenceClosure <Integer>() {
+
+      public Iterable<Integer> iterable() {
+        return new Iterable <Integer>() {
+
+          public Iterator<Integer> iterator() {
+            return new YieldingIterator <Integer>() {
+
+              private int __CP__ = 0;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      this.__CP__ = 3;
+                      this.yield(1);
+                      return true;
+                    case 3:
+                      this.__CP__ = 4;
+                      this.yield(2);
+                      return true;
+                    case 4:
+                      this.__CP__ = 1;
+                      this.yield(3);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    });
     this.assertResultsEqual(new FunctionTypes._R <Iterable<Integer>>() {
 
       public Iterable<Integer> invoke() {
