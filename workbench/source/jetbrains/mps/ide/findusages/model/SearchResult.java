@@ -3,17 +3,15 @@ package jetbrains.mps.ide.findusages.model;
 import jetbrains.mps.smodel.SNode;
 
 public class SearchResult {
-  /*
-  private static final String CATEGORY = "category";
-  private static final String ATTRIBUTES = "attributes";
-  private static final String NODE = "node";
-  */
-
   protected SNode myNode;
   protected String myCategory;
 
   public SearchResult() {
 
+  }
+
+  public SearchResult(SearchResult src) {
+    this(src.getNode(), src.getCategory());
   }
 
   public SearchResult(SNode node, String category) {
@@ -39,30 +37,4 @@ public class SearchResult {
     if (!myCategory.equals(((SearchResult) o).myCategory)) return false;
     return true;
   }
-
-  /*
-  public void write(Element element, MPSProject project) {
-    Element attributesXML = new Element(ATTRIBUTES);
-    attributesXML.setAttribute(CATEGORY, myCategory);
-    element.addContent(attributesXML);
-
-    if (myNodePointer.getNode() != null) {
-      Element nodeXML = new Element(NODE);
-      nodeXML.addContent(ComponentsUtil.nodeToElement(myNodePointer.getNode()));
-      element.addContent(nodeXML);
-    }
-  }
-
-  public void read(Element element, MPSProject project) {
-    Element attributesXML = element.getChild(ATTRIBUTES);
-    myCategory = attributesXML.getAttribute(CATEGORY).getValue();
-
-    Element nodeXML = element.getChild(NODE);
-    if (nodeXML == null) {
-      myNodePointer = new SNodePointer((SNode) null);
-    } else {
-      myNodePointer = new SNodePointer(ComponentsUtil.nodeFromElement((Element) nodeXML.getChildren().get(0)));
-    }
-  }
-  */
 }

@@ -2,7 +2,6 @@ package jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes;
 
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
-import jetbrains.mps.ide.moduleRepositoryViewer.ModuleRepositoryView;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;

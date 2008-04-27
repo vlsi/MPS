@@ -8,17 +8,17 @@ import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.Model
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.NodeNodeData;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Condition;
 import org.jdom.Element;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.lang.reflect.InvocationTargetException;
 
 public class DataNode implements IExternalizeable, IChangeListener {
   private static Logger LOG = Logger.getLogger(DataNode.class);

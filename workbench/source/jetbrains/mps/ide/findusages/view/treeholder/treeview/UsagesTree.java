@@ -3,9 +3,9 @@ package jetbrains.mps.ide.findusages.view.treeholder.treeview;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.findusages.view.treeholder.path.PlainPath;
-import jetbrains.mps.ide.findusages.view.treeholder.path.RootNodePath;
-import jetbrains.mps.ide.findusages.view.treeholder.path.RootToNodePath;
+import jetbrains.mps.ide.findusages.view.treeholder.path.nodepaths.NodePlainPath;
+import jetbrains.mps.ide.findusages.view.treeholder.path.nodepaths.NodeRootNodePath;
+import jetbrains.mps.ide.findusages.view.treeholder.path.nodepaths.NodeRootToNodePath;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.TextOptions;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.BaseNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.NodeNodeData;
@@ -22,8 +22,8 @@ import jetbrains.mps.util.Calculable;
 
 import javax.swing.AbstractAction;
 import javax.swing.KeyStroke;
-import javax.swing.event.TreeExpansionListener;
 import javax.swing.event.TreeExpansionEvent;
+import javax.swing.event.TreeExpansionListener;
 import javax.swing.tree.TreePath;
 import java.awt.event.*;
 import java.util.ArrayList;
@@ -50,7 +50,7 @@ public abstract class UsagesTree extends MPSTree {
     myCountersNeeded = false;
     myAdditionalInfoNeeded = false;
 
-    myResultPathProvider.add(PlainPath.class.getName());
+    myResultPathProvider.add(NodePlainPath.class.getName());
 
     setRootVisible(false);
 
@@ -203,10 +203,10 @@ public abstract class UsagesTree extends MPSTree {
           HashSet<String> searchedNodesPathProvider = new HashSet<String>();
           searchedNodesPathProvider.add("");
           if (myGroupSearchedNodes) {
-            searchedNodesPathProvider.add(RootNodePath.class.getName());
-            searchedNodesPathProvider.add(RootToNodePath.class.getName());
+            searchedNodesPathProvider.add(NodeRootNodePath.class.getName());
+            searchedNodesPathProvider.add(NodeRootToNodePath.class.getName());
           }
-          searchedNodesPathProvider.add(PlainPath.class.getName());
+          searchedNodesPathProvider.add(NodePlainPath.class.getName());
 
           root.add(buildSubtree(myContents.getTreeRoot().getChild(0), searchedNodesPathProvider).get(0));
         }
