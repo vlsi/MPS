@@ -40,6 +40,7 @@ public class SearchQuery implements IExternalizeable {
   public SearchQuery(SModel model, IScope scope) {
     myModel = model;
     myScope = scope;
+    myNodePointer = new SNodePointer((SNode) null);
   }
 
   public SearchQuery(@NotNull SNodePointer nodePointer, IScope scope) {
