@@ -8,7 +8,7 @@ import javax.swing.Icon;
 
 public class MainNodeData extends BaseNodeData {
   public MainNodeData(String creator) {
-    super(creator, "", "", true);
+    super(creator, "", "", true, false);
   }
 
   public MainNodeData(Element element, MPSProject project) throws CantLoadSomethingException {

@@ -21,8 +21,8 @@ public class ModuleNodeData extends BaseNodeData {
   private boolean myIsRemoved = false;
   public String myModuleUID = "";
 
-  public ModuleNodeData(String creator, String moduleUID) {
-    super(creator, moduleUID, "", true);
+  public ModuleNodeData(String creator, String moduleUID, boolean isResult) {
+    super(creator, moduleUID, "", true, isResult);
     myModuleUID = moduleUID;
 
     startListening();

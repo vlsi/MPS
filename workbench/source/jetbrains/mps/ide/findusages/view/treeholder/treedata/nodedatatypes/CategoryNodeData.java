@@ -14,7 +14,7 @@ public class CategoryNodeData extends BaseNodeData {
   private String myCategory = "";
 
   public CategoryNodeData(String creator, String category) {
-    super(creator, "<b>" + category + "</b>", "", true);
+    super(creator, "<b>" + category + "</b>", "", true, false);
     myCategory = category;
   }
 

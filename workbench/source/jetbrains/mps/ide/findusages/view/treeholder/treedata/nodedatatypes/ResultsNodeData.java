@@ -12,7 +12,7 @@ public class ResultsNodeData extends BaseNodeData {
   private static final String CATEGORY_NAME = "results";
 
   public ResultsNodeData(String creator) {
-    super(creator, CATEGORY_NAME, "", true);
+    super(creator, CATEGORY_NAME, "", true, false);
   }
 
   public ResultsNodeData(Element element, MPSProject project) throws CantLoadSomethingException {

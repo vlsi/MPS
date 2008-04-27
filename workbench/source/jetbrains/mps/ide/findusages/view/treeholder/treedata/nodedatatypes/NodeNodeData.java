@@ -24,10 +24,8 @@ public class NodeNodeData extends BaseNodeData {
   private static Logger LOG = Logger.getLogger(NodeNodeData.class);
 
   private static final String NODE = "node";
-  private static final String RESULT = "result";
 
   private SNodePointer myNodePointer;
-  private boolean myIsResultNode;
   private SModelListener myModelListener = null;
   private boolean myIsRemoved = false;
 
@@ -36,10 +34,10 @@ public class NodeNodeData extends BaseNodeData {
       creator,
       (isResultNode && nodeRepresentator != null) ? nodeRepresentator.getPresentation(node) : snodeRepresentation(node),
       nodeAdditionalInfo(node),
-      false
+      false,
+      isResultNode
     );
     myNodePointer = new SNodePointer(node);
-    myIsResultNode = isResultNode;
 
     startListening();
   }
@@ -72,10 +70,6 @@ public class NodeNodeData extends BaseNodeData {
     return (SNode) getIdObject();
   }
 
-  public boolean isResultNode() {
-    return myIsResultNode;
-  }
-
   public Icon getIcon() {
     if (myNodePointer.getNode() == null || myIsRemoved) return null;
     return IconManager.getIconFor(myNodePointer.getNode());
@@ -88,7 +82,6 @@ public class NodeNodeData extends BaseNodeData {
 
   public void write(Element element, MPSProject project) throws CantSaveSomethingException {
     super.write(element, project);
-    element.setAttribute(RESULT, Boolean.toString(myIsResultNode));
     Element nodeXML = new Element(NODE);
     if (myNodePointer.getNode() != null) {
       nodeXML.addContent(ComponentsUtil.nodeToElement(myNodePointer.getNode()));
@@ -104,7 +97,6 @@ public class NodeNodeData extends BaseNodeData {
       node = ComponentsUtil.nodeFromElement((Element) children.get(0));
     }
     myNodePointer = new SNodePointer(node);
-    myIsResultNode = Boolean.parseBoolean(element.getAttributeValue(RESULT));
 
     if (!isInvalid()) {
       startListening();

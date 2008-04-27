@@ -9,8 +9,8 @@ import jetbrains.mps.ide.findusages.view.treeholder.path.nodepaths.NodeRootToNod
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.TextOptions;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.BaseNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.ModelNodeData;
-import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.NodeNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.ModuleNodeData;
+import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.NodeNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.tree.DataNode;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.tree.DataTree;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
@@ -18,8 +18,8 @@ import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.TextMPSTreeNode;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Calculable;
@@ -365,8 +365,7 @@ public abstract class UsagesTree extends MPSTree {
   }
 
   private boolean isResultNode(DataNode node) {
-    if (!(node.getData() instanceof NodeNodeData)) return false;
-    return ((NodeNodeData) node.getData()).isResultNode();
+    return node.getData().isResultNode();
   }
 
   private UsagesTreeNode findFirstResultInSubtree(UsagesTreeNode root, boolean includeRoot) {

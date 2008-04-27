@@ -19,6 +19,7 @@ public abstract class BaseNodeData implements IExternalizeable {
   private static final String EXCLUDED = "excluded";
   private static final String CREATOR = "creator";
   private static final String RESULTS = "results";
+  private static final String ISRESULT = "isresult";
 
   private List<IChangeListener> myListeners = new ArrayList<IChangeListener>();
 
@@ -28,6 +29,7 @@ public abstract class BaseNodeData implements IExternalizeable {
   private boolean myIsExcluded;
   private boolean myIsExpanded;
   private int mySubresultsCount;
+  private boolean myIsResultNode;
 
   protected BaseNodeData() {
 
@@ -37,12 +39,13 @@ public abstract class BaseNodeData implements IExternalizeable {
     read(element, project);
   }
 
-  public BaseNodeData(String creatorID, String caption, String additionalInfo, boolean isExpanded) {
+  public BaseNodeData(String creatorID, String caption, String additionalInfo, boolean isExpanded, boolean isResultNode) {
     myCreatorID = creatorID;
     myCaption = caption;
     myAdditionalInfo = additionalInfo;
     myIsExcluded = false;
     myIsExpanded = isExpanded;
+    myIsResultNode = isResultNode;
   }
 
   //----MAIN DATA STUFF----
@@ -97,6 +100,10 @@ public abstract class BaseNodeData implements IExternalizeable {
     myCaption = caption;
   }
 
+  public boolean isResultNode() {
+    return myIsResultNode;
+  }
+
   //----SAVE/LOAD STUFF----
 
   public void write(Element element, MPSProject project) throws CantSaveSomethingException {
@@ -106,6 +113,7 @@ public abstract class BaseNodeData implements IExternalizeable {
     element.setAttribute(EXPANDED, Boolean.toString(myIsExpanded));
     element.setAttribute(CREATOR, myCreatorID);
     element.setAttribute(RESULTS, Integer.toString(mySubresultsCount));
+    element.setAttribute(ISRESULT, Boolean.toString(myIsResultNode));
   }
 
   public void read(Element element, MPSProject project) throws CantLoadSomethingException {
@@ -115,6 +123,7 @@ public abstract class BaseNodeData implements IExternalizeable {
     myIsExpanded = Boolean.parseBoolean(element.getAttributeValue(EXPANDED));
     myCreatorID = element.getAttributeValue(CREATOR);
     mySubresultsCount = Integer.parseInt(element.getAttributeValue(RESULTS));
+    myIsResultNode = Boolean.parseBoolean(element.getAttributeValue(ISRESULT));
   }
 
   //----CONCRETE DATA TYPE STUFF----

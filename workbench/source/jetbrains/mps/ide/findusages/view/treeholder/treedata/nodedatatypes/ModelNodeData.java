@@ -19,8 +19,8 @@ public class ModelNodeData extends BaseNodeData {
   private SModelRepositoryListener myModelRepositoryListener = null;
   private boolean myIsRemoved = false;
 
-  public ModelNodeData(String creator, SModel model) {
-    super(creator, model.getModelDescriptor().getLongName(), "", false);
+  public ModelNodeData(String creator, SModel model, boolean isResult) {
+    super(creator, model.getModelDescriptor().getLongName(), "", false, isResult);
     myModelUID = model.getModelDescriptor().getModelUID();
 
     startListening();
