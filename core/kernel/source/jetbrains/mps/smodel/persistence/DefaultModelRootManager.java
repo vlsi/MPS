@@ -76,11 +76,11 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
 
     SModel model = ModelPersistence.readModel(modelDescriptor.getModelFile());
     LOG.assertLog(model.getUID().equals(modelDescriptor.getModelUID()),
-            "\nError loading model from file: \"" + modelDescriptor.getModelFile() + "\"\n" +
-                    "expected model UID     : \"" + modelDescriptor.getModelUID() + "\"\n" +
-                    "but was UID            : \"" + model.getUID() + "\"\n" +
-                    "the model will not be available.\n" +
-                    "Make sure that all project's roots and/or the model namespace is correct");
+      "\nError loading model from file: \"" + modelDescriptor.getModelFile() + "\"\n" +
+        "expected model UID     : \"" + modelDescriptor.getModelUID() + "\"\n" +
+        "but was UID            : \"" + model.getUID() + "\"\n" +
+        "the model will not be available.\n" +
+        "Make sure that all project's roots and/or the model namespace is correct");
     return model;
   }
 
@@ -236,7 +236,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       IFile modelFile = FileSystem.getFile(fileName);
       if (createStub) {
         StubModelDescriptor stubModelDescriptor = new StubModelDescriptor(manager, modelFile, modelUID);
-        stubModelDescriptor.readStub(modelFile);
+        stubModelDescriptor.readStub(modelFile);//todo what if no file exists?
         modelDescriptor = stubModelDescriptor;
       } else {
         modelDescriptor = new DefaultSModelDescriptor(manager, modelFile, modelUID);
@@ -281,33 +281,12 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     assert modelDescriptor instanceof DefaultSModelDescriptor;
     SModelUID newModelUID = new SModelUID(newLongName, modelDescriptor.getStereotype());
     SModelUID oldModelUID = modelDescriptor.getModelUID();
-    IFile dest = createFileForModelUID(root, newModelUID);
     ModelOwner owner = SModelRepository.getInstance().getOwners(modelDescriptor).iterator().next();
     IFile oldModelFile = modelDescriptor.getModelFile();
     String oldFileName = oldModelFile.getAbsolutePath();
 
-    //stub
-    String stubFileName = oldFileName.substring(0, oldFileName.lastIndexOf(MODEL_EXTENSION)) + STUB_EXTENSION;
-    SModelDescriptor stubDescriptor = getInstance(this, root, true, stubFileName, oldModelUID, owner);
-    stubDescriptor.save();
-    IFile stubDescriptorModelFile = stubDescriptor.getModelFile();
-
-    IProjectHandler projectHandler = project.getProjectHandler();
-    if (!dest.equals(oldModelFile)) {    // change file
-      if (projectHandler != null) {
-        try {
-          projectHandler.deleteFilesAndRemoveFromVCS(CollectionUtil.asList(FileSystem.toFile(oldModelFile)));
-          projectHandler.addFilesToVCS(CollectionUtil.asList(FileSystem.toFile(dest)));
-          projectHandler.addFilesToVCS(CollectionUtil.asList(FileSystem.toFile(stubDescriptorModelFile)));
-        } catch(RemoteException ex) {
-          LOG.error(ex);
-          return false;
-        }
-      } else {
-        oldModelFile.delete();
-      }
-      ((DefaultSModelDescriptor)modelDescriptor).setModelFile(dest);
-    }
+    //create a file for a new model
+    IFile dest = createFileForModelUID(root, newModelUID);
 
     // if imports itself: rename import here
     if (modelDescriptor.getSModel().hasImportedModel(oldModelUID)) {
@@ -319,6 +298,32 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
 
     // update node pointers
     SNodePointer.changeModelUID(oldModelUID, newModelUID);
+
+    //set model file
+    ((DefaultSModelDescriptor)modelDescriptor).setModelFile(dest);
+
+    //create stub for an old UID
+    String stubFileName = oldFileName.substring(0, oldFileName.lastIndexOf(MODEL_EXTENSION)) + STUB_EXTENSION;
+    SModelDescriptor stubDescriptor = new StubModelDescriptor(this, FileSystem.getFile(stubFileName), oldModelUID, newModelUID);
+    SModelRepository.getInstance().registerModelDescriptor(stubDescriptor, owner);
+    stubDescriptor.save();
+    IFile stubDescriptorModelFile = stubDescriptor.getModelFile();
+
+    //vcs
+    IProjectHandler projectHandler = project.getProjectHandler();
+    if (projectHandler != null) {
+      try {
+        projectHandler.deleteFilesAndRemoveFromVCS(CollectionUtil.asList(FileSystem.toFile(oldModelFile)));
+        projectHandler.addFilesToVCS(CollectionUtil.asList(FileSystem.toFile(dest)));
+        projectHandler.addFilesToVCS(CollectionUtil.asList(FileSystem.toFile(stubDescriptorModelFile)));
+      } catch(RemoteException ex) {
+        LOG.error(ex);
+        return false;
+      }
+    } else {
+      oldModelFile.delete();
+    }
+
     return true;
   }
 
