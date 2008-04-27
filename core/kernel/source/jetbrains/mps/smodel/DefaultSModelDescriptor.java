@@ -6,6 +6,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDecla
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
@@ -375,6 +376,28 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
       }
     }
     return result;
+  }
+
+  public boolean hasUsages(Set<SModelUID> models) {
+    if (!myModelRootManager.isFindUsagesSupported()) return false;
+
+    Set<String> strings = new HashSet<String>();
+    for (SModelUID model : models) {
+      if (mySModel == null || !SModelRepository.getInstance().isChanged(mySModel)) {
+        strings.add(quoteSpecialXMLCharacters(model.toString()));
+      }
+    }
+
+    if (!myModelRootManager.containsSomeString(this, strings)) return false;
+    getSModel();
+    if (mySModel != null) {
+      for (SModelDescriptor modelDescriptor : mySModel.allImportedModels(GlobalScope.getInstance())) {
+        if (models.contains(modelDescriptor.getModelUID())) {
+           return true;
+        }
+      }
+    }
+    return false;
   }
 
   private String quoteSpecialXMLCharacters(String s) {

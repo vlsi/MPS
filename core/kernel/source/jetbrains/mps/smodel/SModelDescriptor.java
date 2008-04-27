@@ -52,6 +52,7 @@ public interface SModelDescriptor {
 
   Set<SReference> findUsages(Set<SNode> node);
   Set<SReference> findUsages(SNode node);
+  boolean hasUsages(Set<SModelUID> models);
   Set<AbstractConceptDeclaration> findDescendants(AbstractConceptDeclaration node, Set<AbstractConceptDeclaration> descendantsKnownInModel);
   Set<SNode> findInstances(AbstractConceptDeclaration concept, IScope scope);
 
