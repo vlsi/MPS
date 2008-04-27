@@ -7,6 +7,7 @@ import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.icons.Icons;
 import jetbrains.mps.ide.findusages.view.treeholder.path.nodepaths.*;
+import jetbrains.mps.ide.findusages.view.treeholder.path.modelpaths.ModelPlainPath;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.tree.DataTree;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.tree.IChangeListener;
 import jetbrains.mps.ide.findusages.view.util.AnonymButton;
@@ -66,6 +67,7 @@ public abstract class UsagesTreeHolder extends JPanel implements IChangeListener
 
     myPathProvider.add("");
     myPathProvider.add(NodePlainPath.class.getName());
+    myPathProvider.add(ModelPlainPath.class.getName());
 
     myViewToolbar = new ViewToolbar();
     myActionsToolbar = new ActionsToolbar();

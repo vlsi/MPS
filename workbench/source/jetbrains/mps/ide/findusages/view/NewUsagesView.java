@@ -29,6 +29,7 @@ import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.nodeEditor.EditorUtil;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModel;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
 
@@ -252,6 +253,14 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
 
       myTabbedPane.addTab("", usageViewData.myUsageView.getComponent());
       myTabbedPane.setSelectedIndex(myTabbedPane.getTabCount() - 1);
+
+/*
+      TEST- CAN REMOVE
+      SearchResults s = new SearchResults();
+      for (SearchResult<SNode> sr:searchResults.getAliveResults()){
+        s.getSearchResults().add(new SearchResult<SModel>(sr.getObject().getModel(),""));
+      }
+*/
 
       usageViewData.myUsageView.setRunOptions(provider, query, new ButtonConfiguration(isRerunnable), searchResults);
 
