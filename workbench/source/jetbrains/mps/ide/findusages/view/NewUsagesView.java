@@ -253,14 +253,6 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
       myTabbedPane.addTab("", usageViewData.myUsageView.getComponent());
       myTabbedPane.setSelectedIndex(myTabbedPane.getTabCount() - 1);
 
-/*
-      TEST- CAN REMOVE
-      SearchResults s = new SearchResults();
-      for (SearchResult<SNode> sr:searchResults.getAliveResults()){
-        s.getSearchResults().add(new SearchResult<SModel>(sr.getObject().getModel(),""));
-      }
-*/
-
       usageViewData.myUsageView.setRunOptions(provider, query, new ButtonConfiguration(isRerunnable), searchResults);
 
       myTabbedPane.setTitleAt(currentTabIndex(), usageViewData.myUsageView.getCaption());

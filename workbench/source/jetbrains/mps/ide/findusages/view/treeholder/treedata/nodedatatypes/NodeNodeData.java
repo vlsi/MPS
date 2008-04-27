@@ -4,6 +4,7 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.components.ComponentsUtil;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
+import jetbrains.mps.ide.findusages.view.treeholder.path.PathItemRole;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.logging.Logger;
@@ -29,9 +30,9 @@ public class NodeNodeData extends BaseNodeData {
   private SModelListener myModelListener = null;
   private boolean myIsRemoved = false;
 
-  public NodeNodeData(String creator, SNode node, boolean isResultNode, INodeRepresentator nodeRepresentator) {
+  public NodeNodeData(PathItemRole role, SNode node, boolean isResultNode, INodeRepresentator nodeRepresentator) {
     super(
-      creator,
+      role,
       (isResultNode && nodeRepresentator != null) ? nodeRepresentator.getPresentation(node) : snodeRepresentation(node),
       nodeAdditionalInfo(node),
       false,

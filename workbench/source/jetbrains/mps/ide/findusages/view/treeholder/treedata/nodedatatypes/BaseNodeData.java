@@ -3,6 +3,7 @@ package jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.IExternalizeable;
+import jetbrains.mps.ide.findusages.view.treeholder.path.PathItemRole;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.TextOptions;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.tree.IChangeListener;
 import jetbrains.mps.project.MPSProject;
@@ -17,13 +18,13 @@ public abstract class BaseNodeData implements IExternalizeable {
   private static final String CAPTION = "caption";
   private static final String INFO = "info";
   private static final String EXCLUDED = "excluded";
-  private static final String CREATOR = "creator";
   private static final String RESULTS = "results";
   private static final String ISRESULT = "isresult";
+  private static final String ROLE = "role";
 
   private List<IChangeListener> myListeners = new ArrayList<IChangeListener>();
 
-  private String myCreatorID;
+  private PathItemRole myRole;
   private String myCaption;
   private String myAdditionalInfo;
   private boolean myIsExcluded;
@@ -39,8 +40,8 @@ public abstract class BaseNodeData implements IExternalizeable {
     read(element, project);
   }
 
-  public BaseNodeData(String creatorID, String caption, String additionalInfo, boolean isExpanded, boolean isResultNode) {
-    myCreatorID = creatorID;
+  public BaseNodeData(PathItemRole role, String caption, String additionalInfo, boolean isExpanded, boolean isResultNode) {
+    myRole = role;
     myCaption = caption;
     myAdditionalInfo = additionalInfo;
     myIsExcluded = false;
@@ -76,8 +77,8 @@ public abstract class BaseNodeData implements IExternalizeable {
     mySubresultsCount = subresultsCount;
   }
 
-  public String getCreatorID() {
-    return myCreatorID;
+  public PathItemRole getRole() {
+    return myRole;
   }
 
   public String getText(TextOptions options) {
@@ -111,9 +112,12 @@ public abstract class BaseNodeData implements IExternalizeable {
     element.setAttribute(INFO, myAdditionalInfo);
     element.setAttribute(EXCLUDED, Boolean.toString(myIsExcluded));
     element.setAttribute(EXPANDED, Boolean.toString(myIsExpanded));
-    element.setAttribute(CREATOR, myCreatorID);
     element.setAttribute(RESULTS, Integer.toString(mySubresultsCount));
     element.setAttribute(ISRESULT, Boolean.toString(myIsResultNode));
+
+    Element roleXML = new Element(ROLE);
+    PathItemRole.write(myRole, roleXML);
+    element.addContent(roleXML);
   }
 
   public void read(Element element, MPSProject project) throws CantLoadSomethingException {
@@ -121,9 +125,11 @@ public abstract class BaseNodeData implements IExternalizeable {
     myAdditionalInfo = element.getAttributeValue(INFO);
     myIsExcluded = Boolean.parseBoolean(element.getAttributeValue(EXCLUDED));
     myIsExpanded = Boolean.parseBoolean(element.getAttributeValue(EXPANDED));
-    myCreatorID = element.getAttributeValue(CREATOR);
     mySubresultsCount = Integer.parseInt(element.getAttributeValue(RESULTS));
     myIsResultNode = Boolean.parseBoolean(element.getAttributeValue(ISRESULT));
+
+    Element roleXML = element.getChild(ROLE);
+    myRole = PathItemRole.read(roleXML);
   }
 
   //----CONCRETE DATA TYPE STUFF----

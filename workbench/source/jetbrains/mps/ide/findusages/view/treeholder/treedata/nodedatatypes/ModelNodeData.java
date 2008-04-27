@@ -2,6 +2,7 @@ package jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes;
 
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
+import jetbrains.mps.ide.findusages.view.treeholder.path.PathItemRole;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
@@ -19,8 +20,8 @@ public class ModelNodeData extends BaseNodeData {
   private SModelRepositoryListener myModelRepositoryListener = null;
   private boolean myIsRemoved = false;
 
-  public ModelNodeData(String creator, SModel model, boolean isResult) {
-    super(creator, model.getModelDescriptor().getLongName(), "", false, isResult);
+  public ModelNodeData(PathItemRole role, SModel model, boolean isResult) {
+    super(role, model.getModelDescriptor().getLongName(), "", false, isResult);
     myModelUID = model.getModelDescriptor().getModelUID();
 
     startListening();

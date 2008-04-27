@@ -6,8 +6,7 @@ import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.icons.Icons;
-import jetbrains.mps.ide.findusages.view.treeholder.path.nodepaths.*;
-import jetbrains.mps.ide.findusages.view.treeholder.path.modelpaths.ModelPlainPath;
+import jetbrains.mps.ide.findusages.view.treeholder.path.PathItemRole;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.tree.DataTree;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.tree.IChangeListener;
 import jetbrains.mps.ide.findusages.view.util.AnonymButton;
@@ -39,7 +38,7 @@ public abstract class UsagesTreeHolder extends JPanel implements IChangeListener
 
   private UsagesTree myTree;
   private DataTree myContents = new DataTree();
-  private Set<String> myPathProvider = new HashSet<String>();
+  private Set<PathItemRole> myPathProvider = new HashSet<PathItemRole>();
 
   private ViewToolbar myViewToolbar;
   private ActionsToolbar myActionsToolbar;
@@ -65,9 +64,8 @@ public abstract class UsagesTreeHolder extends JPanel implements IChangeListener
 
     setEmptyContents();
 
-    myPathProvider.add("");
-    myPathProvider.add(NodePlainPath.class.getName());
-    myPathProvider.add(ModelPlainPath.class.getName());
+    myPathProvider.add(PathItemRole.ROLE_MAIN_RESULTS);
+    myPathProvider.add(PathItemRole.ROLE_TARGET_NODE);
 
     myViewToolbar = new ViewToolbar();
     myActionsToolbar = new ActionsToolbar();
@@ -104,15 +102,15 @@ public abstract class UsagesTreeHolder extends JPanel implements IChangeListener
     myTree.setContents(myContents, myPathProvider);
   }
 
-  public void addPathComponent(Class pathProviderClass) {
-    if (!myPathProvider.contains(pathProviderClass.getName())) {
-      myPathProvider.add(pathProviderClass.getName());
+  public void addPathComponent(PathItemRole role) {
+    if (!myPathProvider.contains(role)) {
+      myPathProvider.add(role);
     }
     myTree.setResultPathProvider(myPathProvider);
   }
 
-  public void removePathComponent(Class pathProviderClass) {
-    myPathProvider.remove(pathProviderClass.getName());
+  public void removePathComponent(PathItemRole role) {
+    myPathProvider.remove(role);
     myTree.setResultPathProvider(myPathProvider);
   }
 
@@ -348,47 +346,47 @@ public abstract class UsagesTreeHolder extends JPanel implements IChangeListener
         setBorderPainted(false);
         myCategoryPathButton = new MyAnonymToggleButton(Icons.CATEGORY_ICON, "Group by category") {
           public void actionSelected() {
-            addPathComponent(NodeCategoryPath.class);
+            addPathComponent(PathItemRole.ROLE_CATEGORY);
           }
 
           public void actionDeselected() {
-            removePathComponent(NodeCategoryPath.class);
+            removePathComponent(PathItemRole.ROLE_CATEGORY);
           }
         };
         add(myCategoryPathButton);
 
         myModulePathButton = new MyAnonymToggleButton(Icons.MODULE_ICON, "Group by module") {
           public void actionSelected() {
-            addPathComponent(NodeModulePath.class);
+            addPathComponent(PathItemRole.ROLE_MODULE);
           }
 
           public void actionDeselected() {
-            removePathComponent(NodeModulePath.class);
+            removePathComponent(PathItemRole.ROLE_MODULE);
           }
         };
         add(myModulePathButton);
 
         myModelPathButton = new MyAnonymToggleButton(Icons.MODEL_ICON, "Group by model") {
           public void actionSelected() {
-            addPathComponent(NodeModelPath.class);
+            addPathComponent(PathItemRole.ROLE_MODEL);
           }
 
           public void actionDeselected() {
-            removePathComponent(NodeModelPath.class);
+            removePathComponent(PathItemRole.ROLE_MODEL);
           }
         };
         add(myModelPathButton);
 
         myRootPathButton = new MyAnonymToggleButton(Icons.ROOT_ICON, "Group by root node") {
           public void actionSelected() {
-            addPathComponent(NodeRootNodePath.class);
+            addPathComponent(PathItemRole.ROLE_ROOT);
           }
 
           public void actionDeselected() {
             if (myNamedConceptPathButton.getModel().isSelected()) {
               getModel().setSelected(true);
             } else {
-              removePathComponent(NodeRootNodePath.class);
+              removePathComponent(PathItemRole.ROLE_ROOT);
             }
           }
         };
@@ -397,13 +395,13 @@ public abstract class UsagesTreeHolder extends JPanel implements IChangeListener
         myNamedConceptPathButton = new MyAnonymToggleButton(Icons.PATH_ICON, "Group by path") {
           public void actionSelected() {
             myTree.startAdjusting();
-            addPathComponent(NodeRootToNodePath.class);
+            addPathComponent(PathItemRole.ROLE_ROOT_TO_TARGET_NODE);
             myRootPathButton.setState(true);
             myTree.finishAdjusting();
           }
 
           public void actionDeselected() {
-            removePathComponent(NodeRootToNodePath.class);
+            removePathComponent(PathItemRole.ROLE_ROOT_TO_TARGET_NODE);
           }
         };
         add(myNamedConceptPathButton);

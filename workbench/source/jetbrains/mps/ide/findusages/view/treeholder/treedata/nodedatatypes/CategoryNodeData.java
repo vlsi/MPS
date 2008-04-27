@@ -2,6 +2,7 @@ package jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes;
 
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
+import jetbrains.mps.ide.findusages.view.treeholder.path.PathItemRole;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.TextOptions;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.project.MPSProject;
@@ -13,8 +14,8 @@ public class CategoryNodeData extends BaseNodeData {
   private static final String CATEGORY = "category";
   private String myCategory = "";
 
-  public CategoryNodeData(String creator, String category) {
-    super(creator, "<b>" + category + "</b>", "", true, false);
+  public CategoryNodeData(PathItemRole role, String category) {
+    super(role, "<b>" + category + "</b>", "", true, false);
     myCategory = category;
   }
 

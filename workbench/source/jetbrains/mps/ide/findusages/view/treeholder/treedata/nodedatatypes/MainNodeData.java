@@ -1,14 +1,15 @@
 package jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes;
 
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
+import jetbrains.mps.ide.findusages.view.treeholder.path.PathItemRole;
 import jetbrains.mps.project.MPSProject;
 import org.jdom.Element;
 
 import javax.swing.Icon;
 
 public class MainNodeData extends BaseNodeData {
-  public MainNodeData(String creator) {
-    super(creator, "", "", true, false);
+  public MainNodeData(PathItemRole role) {
+    super(role, "", "", true, false);
   }
 
   public MainNodeData(Element element, MPSProject project) throws CantLoadSomethingException {

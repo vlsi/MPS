@@ -3,9 +3,7 @@ package jetbrains.mps.ide.findusages.view.treeholder.treeview;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.findusages.view.treeholder.path.nodepaths.NodePlainPath;
-import jetbrains.mps.ide.findusages.view.treeholder.path.nodepaths.NodeRootNodePath;
-import jetbrains.mps.ide.findusages.view.treeholder.path.nodepaths.NodeRootToNodePath;
+import jetbrains.mps.ide.findusages.view.treeholder.path.PathItemRole;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.TextOptions;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.BaseNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.ModelNodeData;
@@ -41,7 +39,7 @@ public abstract class UsagesTree extends MPSTree {
   private static final String COMMAND_TOGGLE = "toggle";
 
   private DataTree myContents = new DataTree();
-  private HashSet<String> myResultPathProvider = new HashSet<String>();
+  private HashSet<PathItemRole> myResultPathProvider = new HashSet<PathItemRole>();
 
   private boolean myCountersNeeded;
   private boolean myAdditionalInfoNeeded;
@@ -54,7 +52,7 @@ public abstract class UsagesTree extends MPSTree {
     myCountersNeeded = false;
     myAdditionalInfoNeeded = false;
 
-    myResultPathProvider.add(NodePlainPath.class.getName());
+    myResultPathProvider.add(PathItemRole.ROLE_TARGET_NODE);
 
     setRootVisible(false);
 
@@ -128,7 +126,7 @@ public abstract class UsagesTree extends MPSTree {
     });
   }
 
-  public void setContents(DataTree contents, Set<String> pathProvider) {
+  public void setContents(DataTree contents, Set<PathItemRole> pathProvider) {
     myContents = contents;
     myResultPathProvider.clear();
     myResultPathProvider.addAll(pathProvider);
@@ -144,7 +142,7 @@ public abstract class UsagesTree extends MPSTree {
     }
   }
 
-  public void setResultPathProvider(Set<String> resultPathProvider) {
+  public void setResultPathProvider(Set<PathItemRole> resultPathProvider) {
     myResultPathProvider.clear();
     myResultPathProvider.addAll(resultPathProvider);
     if (!myIsAdjusting) {
@@ -180,7 +178,7 @@ public abstract class UsagesTree extends MPSTree {
     }
   }
 
-  public void setAll(DataTree contents, HashSet<String> pathProvider) {
+  public void setAll(DataTree contents, HashSet<PathItemRole> pathProvider) {
     myContents = contents;
     myResultPathProvider = pathProvider;
     if (!myIsAdjusting) {
@@ -204,13 +202,13 @@ public abstract class UsagesTree extends MPSTree {
       public UsagesTreeNode calculate() {
         UsagesTreeNode root = new UsagesTreeNode("");
         if (myShowSearchedNodes) {
-          HashSet<String> searchedNodesPathProvider = new HashSet<String>();
-          searchedNodesPathProvider.add("");
+          HashSet<PathItemRole> searchedNodesPathProvider = new HashSet<PathItemRole>();
+          searchedNodesPathProvider.add(PathItemRole.ROLE_MAIN_SEARCHED_NODES);
           if (myGroupSearchedNodes) {
-            searchedNodesPathProvider.add(NodeRootNodePath.class.getName());
-            searchedNodesPathProvider.add(NodeRootToNodePath.class.getName());
+            searchedNodesPathProvider.add(PathItemRole.ROLE_ROOT);
+            searchedNodesPathProvider.add(PathItemRole.ROLE_ROOT_TO_TARGET_NODE);
           }
-          searchedNodesPathProvider.add(NodePlainPath.class.getName());
+          searchedNodesPathProvider.add(PathItemRole.ROLE_TARGET_NODE);
 
           root.add(buildSubtree(myContents.getTreeRoot().getChild(0), searchedNodesPathProvider).get(0));
         }
@@ -228,13 +226,13 @@ public abstract class UsagesTree extends MPSTree {
     });
   }
 
-  private List<UsagesTreeNode> buildSubtree(DataNode root, Set<String> nodeCategories) {
+  private List<UsagesTreeNode> buildSubtree(DataNode root, HashSet<PathItemRole> nodeCategories) {
     List<UsagesTreeNode> children = new ArrayList<UsagesTreeNode>();
     for (DataNode child : root.getChildren()) {
       children.addAll(buildSubtree(child, nodeCategories));
     }
     BaseNodeData data = root.getData();
-    if (nodeCategories.contains(data.getCreatorID())) {
+    if (nodeCategories.contains(data.getRole())) {
       UsagesTreeNode node = new UsagesTreeNode("");
       node.setNodeIdentifier(data.getPlainText());
 

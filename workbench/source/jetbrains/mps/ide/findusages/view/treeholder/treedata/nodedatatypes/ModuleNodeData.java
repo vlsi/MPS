@@ -2,6 +2,7 @@ package jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes;
 
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
+import jetbrains.mps.ide.findusages.view.treeholder.path.PathItemRole;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
@@ -21,8 +22,8 @@ public class ModuleNodeData extends BaseNodeData {
   private boolean myIsRemoved = false;
   public String myModuleUID = "";
 
-  public ModuleNodeData(String creator, String moduleUID, boolean isResult) {
-    super(creator, moduleUID, "", true, isResult);
+  public ModuleNodeData(PathItemRole role, String moduleUID, boolean isResult) {
+    super(role, moduleUID, "", true, isResult);
     myModuleUID = moduleUID;
 
     startListening();
