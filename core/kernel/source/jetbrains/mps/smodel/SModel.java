@@ -16,6 +16,8 @@ import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.WeakSet;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.annotation.ForDebug;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -780,6 +782,15 @@ public class SModel implements Iterable<SNode> {
       modelDescriptors.add(modelDescriptor);
     }
     return modelDescriptors;
+  }
+
+  @NotNull
+  public Set<SModelUID> getDependenciesModelUIDs() {
+    return CollectionUtil.map(getDependenciesModels(), new Mapper<SModelDescriptor, SModelUID>() {
+      public SModelUID map(SModelDescriptor sModelDescriptor) {
+        return sModelDescriptor.getModelUID();
+      }
+    });
   }
 
   @Nullable

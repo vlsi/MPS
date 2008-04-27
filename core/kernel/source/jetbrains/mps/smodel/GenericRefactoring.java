@@ -138,6 +138,7 @@ public class GenericRefactoring {
 
           if (modelDescriptor == null) return null;
           SModel model = modelDescriptor.getSModel();
+          SModelUID initialModelUID = modelDescriptor.getModelUID();
 
           refactoringContext.computeCaches();
           SearchResults usages = refactoringContext.getUsages();
@@ -152,8 +153,15 @@ public class GenericRefactoring {
                 }
                 if (!anotherDescriptor.isInitialized()) continue;
                 SModel anotherModel = anotherDescriptor.getSModel();
+
+                //debug
+                if ("importsRenamedModel".equals(anotherModel.getShortName())) {
+                  System.err.println("oy vey!");
+                }
+
+                Set<SModelUID> dependenciesModels = anotherModel.getDependenciesModelUIDs();
                 if (model != anotherModel
-                  && !anotherModel.getDependenciesModels().contains(modelDescriptor)) continue;
+                  && !dependenciesModels.contains(initialModelUID)) continue;
                 processModel(anotherModel, model, refactoringContext);
               }
             }
