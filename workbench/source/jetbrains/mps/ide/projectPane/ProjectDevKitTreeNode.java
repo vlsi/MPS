@@ -4,10 +4,7 @@ import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.vfs.IFile;
@@ -77,10 +74,22 @@ class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
   }
 
   private void populate() {
-    TextTreeNode exportedLangs = new TextTreeNode("exported Languages");
+    TextTreeNode extendedDevkits = new TextTreeNode("extended devkits");
+    for (DevKit d : myDevKit.getExtendedDevKits()) {
+      extendedDevkits.add(ProjectModuleTreeNode.createFor(getOperationContext().getProject(), d));
+    }
+    add(extendedDevkits);
+
+    TextTreeNode exportedLangs = new TextTreeNode("exported languages");
     for (Language l : myDevKit.getExportedLanguages()) {
       exportedLangs.add(ProjectModuleTreeNode.createFor(getOperationContext().getProject(), l));
     }
     add(exportedLangs);
+
+    TextTreeNode exportedSolutions = new TextTreeNode("exported solutions");
+    for (Solution s : myDevKit.getExportedSolutions()) {
+      exportedSolutions.add(ProjectModuleTreeNode.createFor(getOperationContext().getProject(), s));
+    }
+    add(exportedSolutions);
   }
 }
