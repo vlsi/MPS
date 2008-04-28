@@ -151,6 +151,7 @@ public abstract class MPSTree extends JTree {
             if (item != null) {
               item.getAction().actionPerformed(new ActionEvent(this, 0, ""));
               e.consume();
+              return;
             }
           }
         }
