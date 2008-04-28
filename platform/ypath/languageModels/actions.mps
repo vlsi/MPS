@@ -19,6 +19,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="47" />
   <import index="1" modelUID="jetbrains.mps.ypath.structure" version="12" />
   <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
@@ -3183,6 +3184,7 @@
         <link role="conceptToRemove" targetNodeId="1.1196414630662" resolveInfo="GenericFeatureFunHolder" />
       </node>
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1196424385220">
+        <link role="concept" targetNodeId="1.1196414630662" resolveInfo="GenericFeatureFunHolder" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SimpleItemSubstitutePart" id="1196424390907">
           <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_Substitute_Handler" id="1196424390908">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196424390909">
@@ -3296,6 +3298,7 @@
       <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="4.1068431790191" resolveInfo="Expression" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1196791164260">
+        <link role="concept" targetNodeId="1.1195686097730" resolveInfo="EmptySequenceExpression" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SimpleItemSubstitutePart" id="1196791167004">
           <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_Substitute_Handler" id="1196791167005">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196791167006">
@@ -3487,6 +3490,7 @@
       <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1184066209434" resolveInfo="IFeature" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1197904817000">
+        <link role="concept" targetNodeId="1.1184066209434" resolveInfo="IFeature" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedRightTransformMenuPart" id="1197904818271">
           <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197904820793">
             <link role="classifier" targetNodeId="47.~Pair" resolveInfo="Pair" />
@@ -5322,6 +5326,7 @@
         </node>
       </node>
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1198013853611">
+        <link role="concept" targetNodeId="1.1168468602533" resolveInfo="TreePathOperationExpression" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedRightTransformMenuPart" id="1198015881028">
           <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198015903340">
             <link role="classifier" targetNodeId="47.~Quadruplet" resolveInfo="Quadruplet" />
