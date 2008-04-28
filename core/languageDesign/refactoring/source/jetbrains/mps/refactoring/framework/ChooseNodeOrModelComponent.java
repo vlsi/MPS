@@ -204,8 +204,8 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
   class MyChooseItemComponent extends ChooseItemComponent<SModelDescriptor> {
     public MyChooseItemComponent() {
       super(null);
-      setMinimumSize(new Dimension(50, 100));
-      setPreferredSize(new Dimension(50, 100));
+      setMinimumSize(new Dimension(400, 100));
+      setPreferredSize(new Dimension(400, 100));
     }
 
     public void askForDispose() {
