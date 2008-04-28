@@ -6,6 +6,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import java.util.Iterator;
+import java.util.List;
 
 public class ArrayCreator extends AbstractCreator {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ArrayCreator";
@@ -33,12 +35,24 @@ public class ArrayCreator extends AbstractCreator {
     super.setChild(ArrayCreator.COMPONENT_TYPE, node);
   }
 
-  public DimensionExpression getDimensionExpression() {
-    return (DimensionExpression)this.getChild(ArrayCreator.DIMENSION_EXPRESSION);
+  public int getDimensionExpressionsCount() {
+    return this.getChildCount(ArrayCreator.DIMENSION_EXPRESSION);
   }
 
-  public void setDimensionExpression(DimensionExpression node) {
-    super.setChild(ArrayCreator.DIMENSION_EXPRESSION, node);
+  public Iterator<DimensionExpression> dimensionExpressions() {
+    return this.children(ArrayCreator.DIMENSION_EXPRESSION);
+  }
+
+  public List<DimensionExpression> getDimensionExpressions() {
+    return this.getChildren(ArrayCreator.DIMENSION_EXPRESSION);
+  }
+
+  public void addDimensionExpression(DimensionExpression node) {
+    this.addChild(ArrayCreator.DIMENSION_EXPRESSION, node);
+  }
+
+  public void insertDimensionExpression(DimensionExpression prev, DimensionExpression node) {
+    this.insertChild(prev, ArrayCreator.DIMENSION_EXPRESSION, node);
   }
 
 }

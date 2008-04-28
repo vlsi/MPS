@@ -22,6 +22,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="72" />
   <import index="17" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="18" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -5511,6 +5512,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1154543001514">
+    <property name="package" value="array" />
     <link role="conceptDeclaration" targetNodeId="17.1154542696413" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1154543006078">
       <property name="drawBorder" value="false" />
@@ -8384,6 +8386,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1173175587503">
+    <property name="package" value="array" />
     <link role="conceptDeclaration" targetNodeId="17.1173175405605" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1173175599366">
       <property name="drawBorder" value="false" />
@@ -9963,18 +9966,20 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1184951028097">
+    <property name="package" value="array" />
     <link role="conceptDeclaration" targetNodeId="17.1184950988562" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1184951038630">
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1184951056679">
         <link role="relationDeclaration" targetNodeId="17.1184951007469" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1184952981434">
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1209401468678">
         <link role="relationDeclaration" targetNodeId="17.1184952969026" />
       </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1184952950988">
+    <property name="package" value="array" />
     <link role="conceptDeclaration" targetNodeId="17.1184952934362" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1184952954177">
       <property name="vertical" value="false" />
@@ -10421,6 +10426,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1188220208781">
+    <property name="package" value="array" />
     <link role="conceptDeclaration" targetNodeId="17.1188220165133" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1188220210986">
       <property name="vertical" value="false" />

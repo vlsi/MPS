@@ -5,6 +5,9 @@ package jetbrains.mps.baseLanguage.dataFlow;
 import jetbrains.mps.dataFlow.DataFlowBuilder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.dataFlow.DataFlowBuilderContext;
+import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
 public class ArrayCreator_DataFlow extends DataFlowBuilder {
@@ -13,7 +16,17 @@ public class ArrayCreator_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build(SLinkOperations.getTarget(_context.getNode(), "dimensionExpression", true));
+    {
+      ICursor<SNode> _zCursor1 = CursorFactory.createCursor(SLinkOperations.getTargets(_context.getNode(), "dimensionExpression", true));
+      try {
+        while(_zCursor1.moveToNext()) {
+          SNode expression = _zCursor1.getCurrent();
+          _context.getBuilder().build(expression);
+        }
+      } finally {
+        _zCursor1.release();
+      }
+    }
   }
 
 }

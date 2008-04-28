@@ -1744,6 +1744,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1154542696413">
     <property name="name" value="ArrayCreatorWithInitializer" />
+    <property name="package" value="array" />
     <link role="extends" targetNodeId="1145552809883" resolveInfo="AbstractCreator" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1154542793668">
       <property name="targetCardinality" value="0..1" />
@@ -2105,6 +2106,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1173175405605">
     <property name="name" value="ArrayAccessExpression" />
+    <property name="package" value="array" />
     <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1173175590490">
       <property name="metaClass" value="aggregation" />
@@ -2265,6 +2267,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1184950988562">
     <property name="name" value="ArrayCreator" />
+    <property name="package" value="array" />
     <link role="extends" targetNodeId="1145552809883" resolveInfo="AbstractCreator" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1184951023034">
       <property name="value" value="array" />
@@ -2279,17 +2282,18 @@
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1184952969026">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="dimensionExpression" />
-      <property name="sourceCardinality" value="1" />
+      <property name="sourceCardinality" value="1..n" />
       <link role="target" targetNodeId="1184952934362" resolveInfo="DimensionExpression" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1184952934362">
     <property name="name" value="DimensionExpression" />
+    <property name="package" value="array" />
     <link role="extends" targetNodeId="4.1133920641626" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1184953288404">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="expression" />
-      <property name="sourceCardinality" value="1" />
+      <property name="sourceCardinality" value="0..1" />
       <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
     </node>
   </node>
@@ -2372,6 +2376,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1188220165133">
     <property name="name" value="ArrayLiteral" />
+    <property name="package" value="array" />
     <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1188220181652">
       <property name="value" value="{" />
