@@ -585,16 +585,17 @@ public abstract class AbstractModule implements IModule {
     for (int i = 0; i < classpath.size(); i++) {
       String s = classpath.get(i);
 
-      if (s.contains("..")) {
-        LOG.warning("Classpath contains entries with .. inside. This may cause problems in packaged modules.");
-      }
-
       if (FileSystem.getFile(s).isDirectory()) {
         s += "/";
       }
 
       String relativePath = getPathRelativeTo(s, basePath);
       relativePath = relativePath.replace(File.separatorChar, '/');
+
+      if (relativePath.contains("..")) {
+        LOG.warning("Classpath " + relativePath + "contains ... This may cause problems in packaged modules.", this);
+      }
+
       result.append("  ").append(relativePath);
       if (i != classpath.size() - 1) {
         result.append(",");
