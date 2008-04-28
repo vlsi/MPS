@@ -44,7 +44,17 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
       setAdditionalText(null);
     }
     setText(getModulePresentation());
+
     setErrorState(!getModule().isValid());
+    if (getModule().validate().isEmpty()) {
+      setTooltipText(null);
+    } else {
+      String result = "<html>";
+      for (String error : getModule().validate()) {
+        result += error + "<br>";
+      }
+      setTooltipText(result);
+    }
   }
 
   public void updateNodePresentationInTree() {

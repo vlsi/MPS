@@ -71,4 +71,5 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   void dispose();
 
   boolean isValid();
+  List<String> validate();
 }

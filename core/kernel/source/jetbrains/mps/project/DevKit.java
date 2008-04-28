@@ -176,8 +176,7 @@ public class DevKit extends AbstractModule {
     });
   }
 
-
-
+  
   public void save() {
     DescriptorsPersistence.saveDevKitDescriptor(getModuleDescriptor(), myDescriptorFile);
   }

@@ -72,19 +72,25 @@ public abstract class AbstractModule implements IModule {
     return getDescriptorFile().isReadOnly();
   }
 
-  public boolean isValid() {
+
+  public List<String> validate() {
+    List<String> errors = new ArrayList<String>();
     for (Dependency dep : getDependOn()) {
       String modelUID = dep.getModuleUID();
       if (MPSModuleRepository.getInstance().getModuleByUID(modelUID) == null) {
-        return false;
+        errors.add("Can't find dependency: " + modelUID);
       }
     }
     for (String usedLanguage : getUsedLanguagesNamespaces()) {
       if (MPSModuleRepository.getInstance().getModuleByUID(usedLanguage) == null) {
-        return false;
+        errors.add("Can't find used language: " + usedLanguage);
       }
     }
-    return true;
+    return errors;
+  }
+
+  public final boolean isValid() {
+    return validate().isEmpty();
   }
 
   public void addDependency(String modelUID, boolean reexport) {

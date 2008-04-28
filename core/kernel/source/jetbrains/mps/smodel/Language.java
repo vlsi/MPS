@@ -233,18 +233,14 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return result;
   }
 
-  public boolean isValid() {
-    if (!super.isValid()) {
-      return false;
-    }
-
+  public List<String> validate() {
+    List<String> errors = new ArrayList<String>(super.validate());
     for (String lang : getExtendedLanguageNamespaces()) {
       if (MPSModuleRepository.getInstance().getModuleByUID(lang) == null) {
-        return false;
+        errors.add("Can't find extended language " + lang);
       }
     }
-
-    return true;
+    return errors;
   }
 
   private void collectExtendedLanguages(Set<Language> result) {
