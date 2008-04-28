@@ -226,6 +226,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
     if (wereChanges) {
       module.setModuleDescriptor(md);
+      module.save();
     }
   }
 }
