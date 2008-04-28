@@ -416,14 +416,19 @@ public class MPSModuleRepository implements IComponentLifecycle {
   public Language getLanguage(String namespace) {
     List<IModule> modules = myUIDToModulesMap.get(namespace);
     if (modules == null || modules.isEmpty()) return null;
-    return modulesAsLanguage(modules);
+    return modulesAs(Language.class, modules);
   }
 
   public DevKit getDevKit(String namespace) {
     List<IModule> modules = myUIDToModulesMap.get(namespace);
     if (modules == null || modules.isEmpty()) return null;
-    return modulesAsDevKit(modules);
+    return modulesAs(DevKit.class, modules);
+  }
 
+  public Solution getSolution(String namespace) {
+    List<IModule> modules = myUIDToModulesMap.get(namespace);
+    if (modules == null || modules.isEmpty()) return null;
+    return modulesAs(Solution.class, modules);
   }
 
   private List<IModule> getModules(String namespace, MPSModuleOwner moduleOwner) {
@@ -441,15 +446,15 @@ public class MPSModuleRepository implements IComponentLifecycle {
     return result;
   }
 
-  private Language modulesAsLanguage(List<IModule> modules) {
-    Language language = null;
+  private<M extends IModule> M  modulesAs(Class<? extends M> cls, List<IModule> modules) {
+    M result = null;
     for (IModule module : modules) {
-      if (module instanceof Language) {
-        language = (Language) module;
+      if (cls.isInstance(module)) {
+        result = (M) module;
       }
     }
-    if (language != null && modules.size() > 1) {
-      LOG.error("more than 1 language registered with the same namespace: " + language.getNamespace());
+    if (result != null && modules.size() > 1) {
+      LOG.error("more than 1 result registered with the same namespace: " + result.getModuleUID());
       for (IModule m : modules) {
         IFile descriptorFile = m.getDescriptorFile();
         if (descriptorFile == null) {
@@ -460,34 +465,11 @@ public class MPSModuleRepository implements IComponentLifecycle {
       }
 
     }
-    return language;
+    return result;
   }
-
-  private DevKit modulesAsDevKit(List<IModule> modules) {
-    DevKit devKit = null;
-    for (IModule module : modules) {
-      if (module instanceof DevKit) {
-        devKit = (DevKit) module;
-      }
-    }
-    if (devKit != null && modules.size() > 1) {
-      LOG.error("more than 1 devKit registered with the same namespace: " + devKit.getModuleUID());
-      for (IModule m : modules) {
-        IFile descriptorFile = m.getDescriptorFile();
-        if (descriptorFile == null) {
-          LOG.error("module without descriptor");
-        } else {
-          LOG.error(descriptorFile.getAbsolutePath());
-        }
-      }
-
-    }
-    return devKit;
-  }
-
 
   public Language getLanguage(String namespace, MPSModuleOwner moduleOwner) {
-    return modulesAsLanguage(getModules(namespace, moduleOwner));
+    return modulesAs(Language.class, getModules(namespace, moduleOwner));
   }
 
   public <MT extends IModule> List<MT> getModules(MPSModuleOwner moduleOwner, Class<MT> cls) {
@@ -525,6 +507,10 @@ public class MPSModuleRepository implements IComponentLifecycle {
 
   public List<Language> getAllLanguages() {
     return getAllModules(Language.class);
+  }
+
+  public List<Solution> getAllSolutions() {
+    return getAllModules(Solution.class);
   }
 
   public List<DevKit> getAllDevkits() {
