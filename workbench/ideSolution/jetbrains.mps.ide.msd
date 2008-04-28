@@ -5,18 +5,5 @@
   </models>
   <classPath />
   <sourcePath />
-  <dependencies>
-    <dependency reexport="false">jetbrains.mps.logging.refactoring#1189697379687</dependency>
-    <dependency reexport="false">jetbrains.mps.projectLanguage</dependency>
-    <dependency reexport="false">jetbrains.mps.projectLanguage</dependency>
-  </dependencies>
-  <usedLanguages>
-    <usedLanguages>jetbrains.mps.bootstrap.pluginLanguage</usedLanguages>
-    <usedLanguages>jetbrains.mps.baseLanguage.classifiers</usedLanguages>
-    <usedLanguages>jetbrains.mps.internal.collections</usedLanguages>
-    <usedLanguages>jetbrains.mps.ide.uiLanguage</usedLanguages>
-    <usedLanguages>jetbrains.mps.uiLanguage</usedLanguages>
-    <usedLanguages>jetbrains.mps.bootstrap.smodelLanguage</usedLanguages>
-  </usedLanguages>
 </solution>
 

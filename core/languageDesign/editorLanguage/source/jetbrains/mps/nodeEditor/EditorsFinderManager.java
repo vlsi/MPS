@@ -42,6 +42,10 @@ public class EditorsFinderManager implements IComponentLifecycle {
       finder = new DefaultGeneralizingEntityEditorFinder();
     }
 
+    if (node.getLanguage(context.getScope()) == null) {
+      return new ErrorNodeEditor();
+    }
+
     if (ourCachedEditors.containsKey(node.getConceptFqName())) {
       Constructor constructor = ourCachedEditors.get(node.getConceptFqName());
       if (constructor != null) {

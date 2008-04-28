@@ -20,11 +20,6 @@ import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.util.*;
 
-
-/**
- * Author: Sergey Dmitriev.
- * Time: Nov 7, 2003 7:06:31 PM
- */
 public class EditorManager {
   private static final Logger LOG = Logger.getLogger(EditorManager.class);
 

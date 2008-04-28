@@ -3,10 +3,10 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 
-public class DefaultNodeEditor implements INodeEditor {
+public class ErrorNodeEditor implements INodeEditor {
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return new EditorCell_Error(editorContext, node, "no editor found");
+    return new EditorCell_Error(editorContext, node, "Can't find editor. Language " + node.getLanguageNamespace() + " isn't visible in scope of module");
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
