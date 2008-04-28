@@ -146,11 +146,16 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   }
 
   public boolean isValid(IScope scope) {
+    return validate(scope).isEmpty();
+  }
+
+  public List<String> validate(IScope scope) {
+    List<String> errors = new ArrayList<String>();
     SModel model = getSModel();
 
     for (SModelUID uid : model.getImportedModelUIDs()) {
       if (scope.getModelDescriptor(uid) == null) {
-        return false;
+        errors.add("Can't find model " + uid);
       }
     }
 
@@ -159,15 +164,16 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     langsToCheck.addAll(model.getEngagedOnGenerationLanguages());
     for (String lang : langsToCheck) {
       if (scope.getLanguage(lang) == null) {
-        return false;
+        errors.add("Can't find language " + lang);
       }
     }
 
     for (String devKit : model.getDevKitNamespaces()) {
       if (scope.getDevKit(devKit) == null) {
-        return false;
+        errors.add("Can't find devkit " + devKit);
       }
     }
-    return true;
+
+    return errors;
   }
 }

@@ -11,6 +11,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Set;
 import java.util.Map;
+import java.util.List;
 
 /**
  * User: Sergey Dmitriev
@@ -22,6 +23,7 @@ public interface SModelDescriptor {
    */
   SModel getSModel();
   SModelUID getModelUID();
+
   /**
    * todo: should return "long name"
    */
@@ -108,5 +110,6 @@ public interface SModelDescriptor {
 
   Set<IModule> getModules();
 
+  List<String> validate(IScope scope);
   boolean isValid(IScope scope);
 }

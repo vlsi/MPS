@@ -118,6 +118,16 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
     if (myModelDescriptor != null && myModelDescriptor.isInitialized()) {
       setErrorState(!getSModelDescriptor().isValid(getOperationContext().getScope()));
+      List<String> errors = getSModelDescriptor().validate(getOperationContext().getScope());
+      if (errors.isEmpty()) {
+        setTooltipText(null);
+      } else {
+        String result = "<html>";
+        for (String r : errors) {
+          result += r + "<br>";
+        }
+        setTooltipText(result);
+      }
     }
 
     setText(calculateText());

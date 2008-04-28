@@ -33,6 +33,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   private String myNodeIdentifier;
   private String myText;
   private String myAdditionalText = null;
+  private String myTooltipText;
   private Color myColor = Color.BLACK;
   private int myFontStyle = Font.PLAIN;
   private boolean myAutoExpandable = true;
@@ -298,6 +299,14 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
 
   public final void setText(String text) {
     myText = text;
+  }
+
+  public final String getTooltipText() {
+    return myTooltipText;
+  }
+
+  public final void setTooltipText(String tooltipText) {
+    myTooltipText = tooltipText;
   }
 
   public final boolean isErrorState() {

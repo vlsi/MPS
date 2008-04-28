@@ -37,8 +37,9 @@ public abstract class MPSTree extends JTree {
   private boolean myAutoOpen = false;
 
   protected MPSTree() {
-
     new MPSTreeSpeedSearch(this);
+
+    ToolTipManager.sharedInstance().registerComponent(this);
 
     largeModel = true;
 
@@ -285,6 +286,14 @@ public abstract class MPSTree extends JTree {
     myAutoOpen = autoOpen;
   }
 
+  public String getToolTipText(MouseEvent event) {
+    TreePath path = getPathForLocation(event.getX(), event.getY());
+    if (path != null && path.getLastPathComponent() instanceof MPSTreeNode) {
+      final MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
+      return node.getTooltipText();
+    }
+    return null;
+  }
 
   private static class Pair {
     KeyStroke myKeyStroke;
