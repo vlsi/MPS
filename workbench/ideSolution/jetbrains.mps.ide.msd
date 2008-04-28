@@ -5,11 +5,6 @@
   </models>
   <classPath />
   <sourcePath />
-  <dependencies>
-    <dependency reexport="false">jetbrains.mps.projectLanguage</dependency>
-    <dependency reexport="false">jetbrains.mps.logging.refactoring</dependency>
-    <dependency reexport="false">MPS.Classpath</dependency>
-  </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.uiLanguage</usedLanguages>
     <usedLanguages>jetbrains.mps.ide.uiLanguage</usedLanguages>
