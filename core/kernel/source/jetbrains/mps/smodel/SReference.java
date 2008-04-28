@@ -49,27 +49,32 @@ public abstract class SReference {
 
   public final SNode getTargetNode() {
     SModelUID targetModelUID = getTargetModelUID();
-    SModelDescriptor sourceModelDescriptor = mySourceNode.getModel().getModelDescriptor();
-    SModelDescriptor targetModelDescriptor = null;
-    Set<IModule> modules = sourceModelDescriptor.getModules();
 
-    if (modules.isEmpty()) {
-      targetModelDescriptor = GlobalScope.getInstance().getModelDescriptor(targetModelUID);
-    } else {
-      for (IModule module : modules) {
-        SModelDescriptor sModelDescriptor = module.getScope().getModelDescriptor(targetModelUID);
-        if (sModelDescriptor != null) {
-          targetModelDescriptor = sModelDescriptor;
-          break;
+    // check target model accessibility
+    if (isExternal()) {
+      SModelDescriptor sourceModelDescriptor = mySourceNode.getModel().getModelDescriptor();
+      SModelDescriptor targetModelDescriptor = null;
+      Set<IModule> modules = sourceModelDescriptor.getModules();
+
+      if (modules.isEmpty()) {
+        targetModelDescriptor = GlobalScope.getInstance().getModelDescriptor(targetModelUID);
+      } else {
+        for (IModule module : modules) {
+          SModelDescriptor sModelDescriptor = module.getScope().getModelDescriptor(targetModelUID);
+          if (sModelDescriptor != null) {
+            targetModelDescriptor = sModelDescriptor;
+            break;
+          }
         }
       }
-    }
 
-    if (targetModelDescriptor == null) {
-      return null;
-    }
+      if (targetModelDescriptor == null) {
+        error("couldn't access model '" + targetModelUID + "'");
+        return null;
+      }
+    } // is external
 
-    SNode targetNode = getTargetNode_internal(targetModelDescriptor);
+    SNode targetNode = getTargetNode_internal();
     if (targetNode != null) {
       // moved here from SNode.getReference(role)
       NodeReadEventsCaster.fireNodeReferentReadAccess(mySourceNode, myRole, targetNode);
@@ -77,7 +82,7 @@ public abstract class SReference {
     return targetNode;
   }
 
-  protected abstract SNode getTargetNode_internal(SModelDescriptor targetModelDescriptor);
+  protected abstract SNode getTargetNode_internal();
 
   public abstract SModelUID getTargetModelUID();
 

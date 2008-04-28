@@ -2,9 +2,6 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.ide.messages.Message;
-import jetbrains.mps.ide.messages.MessageKind;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.GlobalOperationContext;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
@@ -47,7 +44,7 @@ public class DynamicReference extends SReferenceBase {
   }
 
 
-  protected SNode getTargetNode_internal(SModelDescriptor targetModelDescriptor) {
+  protected SNode getTargetNode_internal() {
     if (!mature()) {
       return myTargetNode;
     }

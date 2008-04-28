@@ -44,7 +44,7 @@ public class PostponedReference extends SReference {
     throw new RuntimeException("not supported");
   }
 
-  protected SNode getTargetNode_internal(SModelDescriptor targetModelDescriptor) {
+  protected SNode getTargetNode_internal() {
     SReference ref = getReplacementReference();
     if (ref == null) return null;
     return ref.getTargetNode();
@@ -82,14 +82,12 @@ public class PostponedReference extends SReference {
         outputTargetNode = myReferenceInfo.doResolve_Tricky(myGenerator);
       }
       if (outputTargetNode != null) {
-        // test
-        if (!checkResolvedTarget(outputSourceNode, role, outputTargetNode)) {
-          myReferenceInfo.showErrorMessage(myGenerator);
-          myReplacementReference = new StaticReference(role, outputSourceNode, targetModelUID, null, myReferenceInfo.getResolveInfoForNothing());
-          // test
-        } else {
+        if (checkResolvedTarget(outputSourceNode, role, outputTargetNode)) {
           // ok
           myReplacementReference = new StaticReference(role, outputSourceNode, outputTargetNode);
+        } else {
+          myReferenceInfo.showErrorMessage(myGenerator);
+          myReplacementReference = new StaticReference(role, outputSourceNode, targetModelUID, null, myReferenceInfo.getResolveInfoForNothing());
         }
       } else if (myReferenceInfo.isRequired()) {
         myReferenceInfo.showErrorMessage(myGenerator);

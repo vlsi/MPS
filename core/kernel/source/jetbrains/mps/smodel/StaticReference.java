@@ -53,7 +53,7 @@ public class StaticReference extends SReferenceBase {
     myTargetNodeId = nodeId;
   }
 
-  protected SNode getTargetNode_internal(SModelDescriptor targetModelDescriptor) {
+  protected SNode getTargetNode_internal() {
     NodeReadAccessCaster.fireReferenceTargetReadAccessed(getSourceNode(), getTargetModelUID(), getTargetNodeId());
 
     if (!mature()) {
@@ -66,7 +66,7 @@ public class StaticReference extends SReferenceBase {
       return null;
     }
 
-    SModel targetModel = getTargetModel(targetModelDescriptor);
+    SModel targetModel = getTargetModel();
     if (targetModel == null) return null;
     SNode targetNode = targetModel.getNodeById(targetNodeId);
     if (targetNode != null) return targetNode;
