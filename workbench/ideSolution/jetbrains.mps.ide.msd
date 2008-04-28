@@ -8,6 +8,7 @@
   <usedLanguages>
     <usedLanguages>jetbrains.mps.uiLanguage</usedLanguages>
     <usedLanguages>jetbrains.mps.ide.uiLanguage</usedLanguages>
+    <usedLanguages>jetbrains.mps.bootstrap.smodelLanguage</usedLanguages>
   </usedLanguages>
 </solution>
 
