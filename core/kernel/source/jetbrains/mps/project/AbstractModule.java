@@ -295,7 +295,11 @@ public abstract class AbstractModule implements IModule {
   }
 
   public Set<Language> getImplicitlyImportedLanguages(SModelDescriptor sm) {
-    return new LinkedHashSet<Language>();
+    LinkedHashSet<Language> result = new LinkedHashSet<Language>();
+    if (SModelStereotype.TEMPLATES.equals(sm.getStereotype())) {
+      result.add(BootstrapLanguagesManager.getInstance().getTLBase());
+    }
+    return result;
   }
 
   public IFile getDescriptorFile() {

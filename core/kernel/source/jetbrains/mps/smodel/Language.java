@@ -469,7 +469,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   }
 
   public Set<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm) {
-    Set<SModelDescriptor> result = new LinkedHashSet<SModelDescriptor>();
+    Set<SModelDescriptor> result = new LinkedHashSet<SModelDescriptor>(super.getImplicitlyImportedModelsFor(sm));
 
     LanguageAspect aspect = Language.getModelAspect(sm);
 
@@ -496,21 +496,18 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   }
 
   public Set<Language> getImplicitlyImportedLanguages(SModelDescriptor sm) {
-    LanguageAspect aspect = Language.getModelAspect(sm);
+    Set<Language> result = new LinkedHashSet<Language>(super.getImplicitlyImportedLanguages(sm));
 
+    LanguageAspect aspect = Language.getModelAspect(sm);
     if (aspect != null) {
-      Set<Language> result = new LinkedHashSet<Language>();
       for (String namespace : aspect.getAllLanguagesToImport(this)) {
         Language language = GlobalScope.getInstance().getLanguage(namespace);
         if (language != null) {
           result.add(language);
         }
       }
-
-      return result;
     }
-
-    return new HashSet<Language>();
+    return result;
   }
 
   public SModelDescriptor getHelginsTypesystemModelDescriptor() {
