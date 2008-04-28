@@ -70,7 +70,7 @@ import org.jetbrains.annotations.Nullable;
     }
   }
 
-  protected SModel getTargetModel() {
+  protected SModel getTargetModel(SModelDescriptor modelDescriptor) {
     if (!myExternal) {
       return getSourceNode().getModel();
     }
@@ -82,7 +82,7 @@ import org.jetbrains.annotations.Nullable;
       return null;
     }
 
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelUID);
+    //SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelUID);
     if (modelDescriptor == null) {
       error("path to the target model '" + getTargetModelUID() + "' is not specified");
       return null;

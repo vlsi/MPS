@@ -3,6 +3,8 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.WeakSet;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Set;
@@ -46,7 +48,28 @@ public abstract class SReference {
   }
 
   public final SNode getTargetNode() {
-    SNode targetNode = getTargetNode_internal();
+    SModelUID targetModelUID = getTargetModelUID();
+    SModelDescriptor sourceModelDescriptor = mySourceNode.getModel().getModelDescriptor();
+    SModelDescriptor targetModelDescriptor = null;
+    Set<IModule> modules = sourceModelDescriptor.getModules();
+
+    if (modules.isEmpty()) {
+      targetModelDescriptor = GlobalScope.getInstance().getModelDescriptor(targetModelUID);
+    } else {
+      for (IModule module : modules) {
+        SModelDescriptor sModelDescriptor = module.getScope().getModelDescriptor(targetModelUID);
+        if (sModelDescriptor != null) {
+          targetModelDescriptor = sModelDescriptor;
+          break;
+        }
+      }
+    }
+
+    if (targetModelDescriptor == null) {
+      return null;
+    }
+
+    SNode targetNode = getTargetNode_internal(targetModelDescriptor);
     if (targetNode != null) {
       // moved here from SNode.getReference(role)
       NodeReadEventsCaster.fireNodeReferentReadAccess(mySourceNode, myRole, targetNode);
@@ -54,7 +77,7 @@ public abstract class SReference {
     return targetNode;
   }
 
-  protected abstract SNode getTargetNode_internal();
+  protected abstract SNode getTargetNode_internal(SModelDescriptor targetModelDescriptor);
 
   public abstract SModelUID getTargetModelUID();
 

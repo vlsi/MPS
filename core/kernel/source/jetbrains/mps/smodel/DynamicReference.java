@@ -47,7 +47,7 @@ public class DynamicReference extends SReferenceBase {
   }
 
 
-  protected SNode getTargetNode_internal() {
+  protected SNode getTargetNode_internal(SModelDescriptor targetModelDescriptor) {
     if (!mature()) {
       return myTargetNode;
     }

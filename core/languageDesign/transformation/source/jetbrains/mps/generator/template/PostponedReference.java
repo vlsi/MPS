@@ -3,13 +3,14 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TemplateLanguageUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Igor Alshannikov
  * Nov 28, 2007
  * <p/>
  * These references are created in transient models.
- * They are allways internal.
+ * They are always internal.
  */
 public class PostponedReference extends SReference {
   private ReferenceInfo myReferenceInfo;
@@ -27,15 +28,23 @@ public class PostponedReference extends SReference {
     return false;
   }
 
+  @Nullable
   public SModelUID getTargetModelUID() {
-    return myReferenceInfo.getOutputSourceNode().getModel().getUID();
+    if (myReferenceInfo != null) {
+      return myReferenceInfo.getOutputSourceNode().getModel().getUID();
+    } else if (myReplacementReference != null) {
+      return myReplacementReference.getTargetModelUID();
+    }
+
+    // ok, reference is unresolved and not required
+    return null;
   }
 
   public void setTargetModelUID(@NotNull SModelUID modelUID) {
     throw new RuntimeException("not supported");
   }
 
-  protected SNode getTargetNode_internal() {
+  protected SNode getTargetNode_internal(SModelDescriptor targetModelDescriptor) {
     SReference ref = getReplacementReference();
     if (ref == null) return null;
     return ref.getTargetNode();
@@ -63,10 +72,10 @@ public class PostponedReference extends SReference {
     } else if (SReferenceUtil.isDynamicResolve(role, outputSourceNode)) {
 //      myGenerator.showInformationMessage(outputSourceNode, "!!!create dynamic!!!");
       myReplacementReference = new DynamicReference(
-              role,
-              outputSourceNode,
-              targetModelUID,
-              myReferenceInfo.getResolveInfoForDynamicResolve());
+        role,
+        outputSourceNode,
+        targetModelUID,
+        myReferenceInfo.getResolveInfoForDynamicResolve());
     } else {
       outputTargetNode = myReferenceInfo.doResolve_WithCustomReferenceResolver();
       if (outputTargetNode == null) {
