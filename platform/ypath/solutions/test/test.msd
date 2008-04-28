@@ -6,7 +6,6 @@
   <classPath>
     <entry path="${mps_home}\platform\ypath\classes" />
     <entry path="${mps_home}\platform\ypath\solutions\classes" />
-    <entry path="${mps_home}\lib\junit4\junit-4.1.jar" />
   </classPath>
   <sourcePath />
   <dependencies>

@@ -1044,7 +1044,7 @@
         <option name="LOCAL" value="true" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Profile ">
-        <option name="myExternalizedOptions" value="&#13;&#10;snapshots-dir=&#13;&#10;" />
+        <option name="myExternalizedOptions" value="&#10;additional-options=&#10;snapshots-dir=&#10;" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
@@ -1486,15 +1486,6 @@
       <JAVADOC />
       <SOURCES>
         <root url="jar://$PROJECT_DIR$/lib/spring/spring-src.zip!/" />
-      </SOURCES>
-    </library>
-    <library name="JUnit4">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/junit4/junit-4.1.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/junit4/junit-4.1-src.jar!/" />
       </SOURCES>
     </library>
     <library name="joda-time">

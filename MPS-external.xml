@@ -26,7 +26,6 @@
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\jdom" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\joda-time" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\junit" />
-    <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\junit4" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\log4j" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\spring" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\stax" />
@@ -104,9 +103,6 @@
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\junit">
       <fileset dir="lib\junit" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, " />
-    </copy>
-    <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\junit4">
-      <fileset dir="lib\junit4" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, " />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\log4j">
       <fileset dir="lib\log4j" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, " />
