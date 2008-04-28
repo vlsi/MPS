@@ -107,7 +107,8 @@ public abstract class BaseScope implements IScope {
     for (IModule m : getInitialModules()) {
       for (DevKit dk : m.getUsedDevkits()) {
         usedDevkits.add(dk);
-        usedLanguages.addAll(dk.getExportedLanguages());
+        usedLanguages.addAll(dk.getAllExportedLanguages());
+        visibleModules.addAll(dk.getAllExportedSolutions());        
       }
     }
 
