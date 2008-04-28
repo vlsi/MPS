@@ -93,8 +93,6 @@ public class DevKit extends AbstractModule {
 
   public List<Language> getExportedLanguages() {
     List<Language> langs = new ArrayList<Language>();
-
-
     for (jetbrains.mps.projectLanguage.structure.Language l : myDescriptor.getExportedLanguages()) {
       String namespace = l.getName();
       Language lang = MPSModuleRepository.getInstance().getLanguage(namespace);
@@ -102,9 +100,72 @@ public class DevKit extends AbstractModule {
         langs.add(lang);
       }
     }
-
     Collections.sort(langs, new ToStringComparator());
     return langs;
+  }
+
+  public List<Language> getAllExportedLanguages() {
+    List<Language> result = new ArrayList<Language>();
+    for (DevKit dk : getAllExtendedDevkits()) {
+      for (Language l : dk.getExportedLanguages()) {
+        if (!result.contains(l)) {
+          result.add(l);        
+        }
+      }
+    }
+    return result;
+  }
+
+  public List<DevKit> getExtendedDevKits() {
+    List<DevKit> result = new ArrayList<DevKit>();
+    for (DevKitReference ref : myDescriptor.getExtendedDevKits()) {
+      String uid = ref.getName();
+      DevKit devKit = MPSModuleRepository.getInstance().getDevKit(uid);
+      if (devKit != null) {
+        result.add(devKit);
+      }
+    }
+    return result;
+  }
+
+  public List<DevKit> getAllExtendedDevkits() {
+    List<DevKit> result = new ArrayList<DevKit>();
+    collectDevKits(result);
+    return result;
+  }
+
+  private void collectDevKits(List<DevKit> result) {
+    if (result.contains(this)) {
+      return;
+    }
+    result.add(this);
+    for (DevKit dk : getExtendedDevKits()) {
+      dk.collectDevKits(result);
+    }
+  }
+
+  public List<Solution> getExportedSolutions() {
+    List<Solution> result = new ArrayList<Solution>();    
+    for (SolutionReference ref : myDescriptor.getExportedSolutions()) {
+      String uid = ref.getName();
+      Solution solution = MPSModuleRepository.getInstance().getSolution(uid);
+      if (solution != null) {
+        result.add(solution);
+      }
+    }
+    return result;
+  }
+
+  public List<Solution> getAllExportedSolutions() {
+    List<Solution> result = new ArrayList<Solution>();
+    for (DevKit dk : getAllExtendedDevkits()) {
+      for (Solution s : dk.getExportedSolutions()) {
+        if (!result.contains(s)) {
+          result.add(s);        
+        }
+      }
+    }
+    return result;
   }
 
   public List<String> getLanguageNamespaces() {
