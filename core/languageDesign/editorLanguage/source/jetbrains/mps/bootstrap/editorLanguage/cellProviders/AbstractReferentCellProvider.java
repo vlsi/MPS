@@ -88,7 +88,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
     SReference reference = node.getReference(myGenuineRole);
 
     if (!myIsAggregation) {
-      if (reference != null && reference.getTargetNode() == null) {
+      if (reference != null && (reference.getTargetNode() == null || context.getScope().getModelDescriptor(reference.getTargetModelUID()) == null)) {
         EditorCell_Error noRefCell = new EditorCell_Error(context, node, null);
         noRefCell.setText(reference.getResolveInfo());
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
