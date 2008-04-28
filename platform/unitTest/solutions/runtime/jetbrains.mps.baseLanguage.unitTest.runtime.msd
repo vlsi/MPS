@@ -4,12 +4,16 @@
     <modelRoot path="${solution_descriptor}\" namespacePrefix="" />
   </models>
   <classPath>
-    <entry path="${mps_home}\lib\junit4\junit-4.1.jar" />
+    <entry path="${solution_descriptor}\lib\junit-4.1.jar" />
   </classPath>
   <sourcePath />
   <usedLanguages>
     <usedLanguages>jetbrains.mps.baseLanguage</usedLanguages>
     <usedLanguages>jetbrains.mps.regexp</usedLanguages>
   </usedLanguages>
+  <osgiOptions>
+    <requiredBundles />
+    <exportedPackage />
+  </osgiOptions>
 </solution>
 

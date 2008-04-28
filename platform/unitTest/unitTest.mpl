@@ -18,21 +18,22 @@
     </generator>
   </generators>
   <classPath />
-  <runtimeClassPath />
+  <languageRuntimeClassPath />
   <sourcePath />
   <osgiOptions>
     <requiredBundles />
-    <exportedPackage>
-      <package>junit.framework</package>
-    </exportedPackage>
+    <exportedPackage />
   </osgiOptions>
   <dependencies>
-    <dependency reexport="true">jetbrains.mps.baseLanguage.unitTest.runtime</dependency>
+    <dependency reexport="false">jetbrains.mps.baseLanguage.unitTest.runtime</dependency>
     <dependency reexport="false">jetbrains.mps.bootstrap.pluginLanguage</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.baseLanguage.strings</usedLanguages>
   </usedLanguages>
+  <runtime>
+    <dependency reexport="true">jetbrains.mps.baseLanguage.unitTest.runtime</dependency>
+  </runtime>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>
     <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>
