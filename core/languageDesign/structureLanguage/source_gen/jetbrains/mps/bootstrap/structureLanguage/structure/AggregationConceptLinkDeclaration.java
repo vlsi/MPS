@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class AggregationConceptLinkDeclaration extends ConceptLinkDeclaration {
   public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLinkDeclaration";
 
-  public  AggregationConceptLinkDeclaration(SNode node) {
+  public AggregationConceptLinkDeclaration(SNode node) {
     super(node);
   }
 

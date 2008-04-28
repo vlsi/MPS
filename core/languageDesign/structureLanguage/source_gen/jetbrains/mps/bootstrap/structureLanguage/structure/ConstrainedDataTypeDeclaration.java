@@ -11,7 +11,7 @@ public class ConstrainedDataTypeDeclaration extends DataTypeDeclaration {
   public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.ConstrainedDataTypeDeclaration";
   public static String CONSTRAINT = "constraint";
 
-  public  ConstrainedDataTypeDeclaration(SNode node) {
+  public ConstrainedDataTypeDeclaration(SNode node) {
     super(node);
   }
 

@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.search.ISearchScope;
 
 public class ConceptDeclaration_extends_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  ConceptDeclaration_extends_ReferentConstraint() {
+  public ConceptDeclaration_extends_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

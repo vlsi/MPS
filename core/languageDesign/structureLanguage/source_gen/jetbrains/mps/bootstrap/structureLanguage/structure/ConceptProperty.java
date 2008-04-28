@@ -12,7 +12,7 @@ public class ConceptProperty extends BaseConcept {
   public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptProperty";
   public static String CONCEPT_PROPERTY_DECLARATION = "conceptPropertyDeclaration";
 
-  public  ConceptProperty(SNode node) {
+  public ConceptProperty(SNode node) {
     super(node);
   }
 

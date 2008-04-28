@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.search.ISearchScope;
 
 public class ReferenceConceptLink_target_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  ReferenceConceptLink_target_ReferentConstraint() {
+  public ReferenceConceptLink_target_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

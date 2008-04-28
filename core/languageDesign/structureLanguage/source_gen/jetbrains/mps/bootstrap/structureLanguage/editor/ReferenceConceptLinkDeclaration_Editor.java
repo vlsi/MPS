@@ -156,7 +156,7 @@ public class ReferenceConceptLinkDeclaration_Editor extends DefaultNodeEditor {
 
   public static class _Inline7 extends AbstractCellProvider {
 
-    public  _Inline7() {
+    public _Inline7() {
       super();
     }
 

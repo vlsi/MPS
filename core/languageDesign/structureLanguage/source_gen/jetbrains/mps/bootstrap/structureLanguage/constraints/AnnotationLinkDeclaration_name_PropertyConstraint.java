@@ -11,7 +11,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 
 public class AnnotationLinkDeclaration_name_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
 
-  public  AnnotationLinkDeclaration_name_PropertyConstraint() {
+  public AnnotationLinkDeclaration_name_PropertyConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

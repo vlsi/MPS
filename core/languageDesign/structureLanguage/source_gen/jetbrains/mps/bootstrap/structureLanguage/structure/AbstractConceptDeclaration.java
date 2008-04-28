@@ -24,7 +24,7 @@ public class AbstractConceptDeclaration extends BaseConcept implements INamedCon
   public static String CONCEPT_PROPERTY_DECLARATION = "conceptPropertyDeclaration";
   public static String CONCEPT_LINK_DECLARATION = "conceptLinkDeclaration";
 
-  public  AbstractConceptDeclaration(SNode node) {
+  public AbstractConceptDeclaration(SNode node) {
     super(node);
   }
 

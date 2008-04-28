@@ -11,7 +11,7 @@ public class IntegerConceptProperty extends ConceptProperty {
   public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.IntegerConceptProperty";
   public static String VALUE = "value";
 
-  public  IntegerConceptProperty(SNode node) {
+  public IntegerConceptProperty(SNode node) {
     super(node);
   }
 

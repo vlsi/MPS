@@ -15,7 +15,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
 public class ConceptProperty_conceptPropertyDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  ConceptProperty_conceptPropertyDeclaration_ReferentConstraint() {
+  public ConceptProperty_conceptPropertyDeclaration_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

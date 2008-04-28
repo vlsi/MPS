@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class BooleanConceptProperty extends ConceptProperty {
   public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty";
 
-  public  BooleanConceptProperty(SNode node) {
+  public BooleanConceptProperty(SNode node) {
     super(node);
   }
 

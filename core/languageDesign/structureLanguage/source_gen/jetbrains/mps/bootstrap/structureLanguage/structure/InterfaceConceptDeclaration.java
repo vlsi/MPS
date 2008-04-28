@@ -13,7 +13,7 @@ public class InterfaceConceptDeclaration extends AbstractConceptDeclaration {
   public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration";
   public static String EXTENDS = "extends";
 
-  public  InterfaceConceptDeclaration(SNode node) {
+  public InterfaceConceptDeclaration(SNode node) {
     super(node);
   }
 

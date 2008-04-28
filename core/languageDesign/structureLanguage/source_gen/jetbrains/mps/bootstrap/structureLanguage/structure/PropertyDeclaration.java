@@ -17,7 +17,7 @@ public class PropertyDeclaration extends BaseConcept implements INamedConcept {
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String DATA_TYPE = "dataType";
 
-  public  PropertyDeclaration(SNode node) {
+  public PropertyDeclaration(SNode node) {
     super(node);
   }
 

@@ -668,7 +668,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
 
   public static class _RefNodeListHandler6 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler6(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler6(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -711,7 +711,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler7 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler7(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler7(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -754,7 +754,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler8 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler8(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler8(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -797,7 +797,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler9 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler9(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler9(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -840,7 +840,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler10 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler10(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler10(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -883,7 +883,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler11 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler11(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler11(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -926,7 +926,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler15 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler15(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler15(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -977,7 +977,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler16 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler16(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler16(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -1028,7 +1028,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class InterfaceConceptDeclaration_generic_cellMenu extends AbstractCellMenuPart_Generic_Item {
 
-    public  InterfaceConceptDeclaration_generic_cellMenu() {
+    public InterfaceConceptDeclaration_generic_cellMenu() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
@@ -1044,7 +1044,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class InterfaceConceptDeclaration_generic_cellMenu1 extends AbstractCellMenuPart_Generic_Item {
 
-    public  InterfaceConceptDeclaration_generic_cellMenu1() {
+    public InterfaceConceptDeclaration_generic_cellMenu1() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {

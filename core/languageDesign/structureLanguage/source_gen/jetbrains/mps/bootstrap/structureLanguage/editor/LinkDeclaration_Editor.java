@@ -298,7 +298,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
 
   public static class _Inline12 extends AbstractCellProvider {
 
-    public  _Inline12() {
+    public _Inline12() {
       super();
     }
 
@@ -351,7 +351,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class _Inline13 extends AbstractCellProvider {
 
-    public  _Inline13() {
+    public _Inline13() {
       super();
     }
 
@@ -405,7 +405,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class LinkDeclaration_sourceCardinality_cellMenu extends AbstractCellMenuPart_PropertyValues {
 
-    public  LinkDeclaration_sourceCardinality_cellMenu() {
+    public LinkDeclaration_sourceCardinality_cellMenu() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
@@ -425,7 +425,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class LinkDeclaration_role_postfixCellMenu extends AbstractCellMenuPart_PropertyPostfixHints {
 
-    public  LinkDeclaration_role_postfixCellMenu() {
+    public LinkDeclaration_role_postfixCellMenu() {
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {

@@ -16,7 +16,7 @@ public class DataTypeDeclaration extends BaseConcept implements INamedConcept {
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  DataTypeDeclaration(SNode node) {
+  public DataTypeDeclaration(SNode node) {
     super(node);
   }
 

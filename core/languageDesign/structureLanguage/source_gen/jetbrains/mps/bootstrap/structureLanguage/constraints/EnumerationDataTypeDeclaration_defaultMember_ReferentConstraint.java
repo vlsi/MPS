@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.search.SubnodesSearchScope;
 
 public class EnumerationDataTypeDeclaration_defaultMember_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  EnumerationDataTypeDeclaration_defaultMember_ReferentConstraint() {
+  public EnumerationDataTypeDeclaration_defaultMember_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

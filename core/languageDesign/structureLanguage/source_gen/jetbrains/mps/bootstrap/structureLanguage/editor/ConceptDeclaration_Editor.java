@@ -1021,7 +1021,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
 
   public static class _Inline extends AbstractCellProvider {
 
-    public  _Inline() {
+    public _Inline() {
       super();
     }
 
@@ -1075,7 +1075,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler extends RefNodeListHandler {
 
-    public  _RefNodeListHandler(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -1118,7 +1118,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler1 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler1(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler1(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -1161,7 +1161,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler2 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler2(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler2(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -1204,7 +1204,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler3 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler3(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler3(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -1247,7 +1247,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler4 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler4(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler4(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -1290,7 +1290,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler12 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler12(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler12(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -1333,7 +1333,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler13 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler13(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler13(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -1384,7 +1384,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler14 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler14(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler14(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -1435,7 +1435,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class ConceptDeclaration_generic_cellMenu extends AbstractCellMenuPart_Generic_Item {
 
-    public  ConceptDeclaration_generic_cellMenu() {
+    public ConceptDeclaration_generic_cellMenu() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
@@ -1451,7 +1451,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class ConceptDeclaration_generic_cellMenu1 extends AbstractCellMenuPart_Generic_Item {
 
-    public  ConceptDeclaration_generic_cellMenu1() {
+    public ConceptDeclaration_generic_cellMenu1() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {

@@ -62,7 +62,7 @@ public class BooleanConceptProperty_Editor extends DefaultNodeEditor {
 
   public static class _Inline9 extends AbstractCellProvider {
 
-    public  _Inline9() {
+    public _Inline9() {
       super();
     }
 

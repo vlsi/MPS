@@ -21,7 +21,7 @@ public class AnnotationLinkDeclaration extends BaseConcept implements INamedConc
   public static String SOURCE = "source";
   public static String TARGET = "target";
 
-  public  AnnotationLinkDeclaration(SNode node) {
+  public AnnotationLinkDeclaration(SNode node) {
     super(node);
   }
 

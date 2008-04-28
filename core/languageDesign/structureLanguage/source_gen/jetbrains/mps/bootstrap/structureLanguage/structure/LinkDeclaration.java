@@ -17,7 +17,7 @@ public class LinkDeclaration extends BaseConcept {
   public static String SPECIALIZED_LINK = "specializedLink";
   public static String TARGET = "target";
 
-  public  LinkDeclaration(SNode node) {
+  public LinkDeclaration(SNode node) {
     super(node);
   }
 

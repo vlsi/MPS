@@ -12,7 +12,7 @@ public class AggregationConceptLink extends ConceptLink {
   public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink";
   public static String TARGET = "target";
 
-  public  AggregationConceptLink(SNode node) {
+  public AggregationConceptLink(SNode node) {
     super(node);
   }
 

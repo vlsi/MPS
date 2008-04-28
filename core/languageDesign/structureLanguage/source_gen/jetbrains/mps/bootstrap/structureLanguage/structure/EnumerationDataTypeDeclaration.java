@@ -16,7 +16,7 @@ public class EnumerationDataTypeDeclaration extends DataTypeDeclaration {
   public static String DEFAULT_MEMBER = "defaultMember";
   public static String MEMBER = "member";
 
-  public  EnumerationDataTypeDeclaration(SNode node) {
+  public EnumerationDataTypeDeclaration(SNode node) {
     super(node);
   }
 

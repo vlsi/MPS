@@ -13,7 +13,7 @@ public enum AnnotationLinkStereotype {
   /* package */String myName;
   /* package */String myValue;
 
- AnnotationLinkStereotype(String name, String value) {
+AnnotationLinkStereotype(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }

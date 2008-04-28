@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class LinkDeclaration_specializedLink_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  LinkDeclaration_specializedLink_ReferentConstraint() {
+  public LinkDeclaration_specializedLink_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

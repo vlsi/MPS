@@ -546,7 +546,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
   public static class _Inline10 extends AbstractCellProvider {
 
-    public  _Inline10() {
+    public _Inline10() {
       super();
     }
 
@@ -599,7 +599,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class _Inline11 extends AbstractCellProvider {
 
-    public  _Inline11() {
+    public _Inline11() {
       super();
     }
 
@@ -654,7 +654,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler5 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler5(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler5(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

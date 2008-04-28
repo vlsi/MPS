@@ -12,7 +12,7 @@ public class ReferenceConceptLink extends ConceptLink {
   public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink";
   public static String TARGET = "target";
 
-  public  ReferenceConceptLink(SNode node) {
+  public ReferenceConceptLink(SNode node) {
     super(node);
   }
 

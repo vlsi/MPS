@@ -12,7 +12,7 @@ public class InterfaceConceptReference extends BaseConcept {
   public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference";
   public static String INTFC = "intfc";
 
-  public  InterfaceConceptReference(SNode node) {
+  public InterfaceConceptReference(SNode node) {
     super(node);
   }
 

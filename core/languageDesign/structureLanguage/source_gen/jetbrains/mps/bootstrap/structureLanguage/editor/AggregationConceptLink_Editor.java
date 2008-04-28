@@ -141,7 +141,7 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
 
   public static class _Inline4 extends AbstractCellProvider {
 
-    public  _Inline4() {
+    public _Inline4() {
       super();
     }
 
@@ -196,7 +196,7 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
 }
   public static class AggregationConceptLink_target_cellMenu extends AbstractCellMenuPart_ReplaceChild_CustomChildConcept {
 
-    public  AggregationConceptLink_target_cellMenu() {
+    public AggregationConceptLink_target_cellMenu() {
     }
 
     public SNode getConceptOfChild(SNode node, SNode currentChild, SNode defaultConceptOfChild, IScope scope, IOperationContext operationContext) {

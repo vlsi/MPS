@@ -16,7 +16,7 @@ public class ConceptPropertyDeclaration extends BaseConcept implements INamedCon
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  ConceptPropertyDeclaration(SNode node) {
+  public ConceptPropertyDeclaration(SNode node) {
     super(node);
   }
 

@@ -12,7 +12,7 @@ public class ConceptLink extends BaseConcept {
   public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptLink";
   public static String CONCEPT_LINK_DECLARATION = "conceptLinkDeclaration";
 
-  public  ConceptLink(SNode node) {
+  public ConceptLink(SNode node) {
     super(node);
   }
 

@@ -19,7 +19,7 @@ public class EnumerationMemberDeclaration extends BaseConcept implements INamedC
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  EnumerationMemberDeclaration(SNode node) {
+  public EnumerationMemberDeclaration(SNode node) {
     super(node);
   }
 

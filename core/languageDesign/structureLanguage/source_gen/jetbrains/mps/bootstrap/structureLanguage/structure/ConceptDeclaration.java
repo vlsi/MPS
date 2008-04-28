@@ -16,7 +16,7 @@ public class ConceptDeclaration extends AbstractConceptDeclaration {
   public static String EXTENDS = "extends";
   public static String IMPLEMENTS = "implements";
 
-  public  ConceptDeclaration(SNode node) {
+  public ConceptDeclaration(SNode node) {
     super(node);
   }
 

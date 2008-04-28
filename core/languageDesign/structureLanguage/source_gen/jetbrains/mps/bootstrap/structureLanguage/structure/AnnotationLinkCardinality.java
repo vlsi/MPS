@@ -12,7 +12,7 @@ public enum AnnotationLinkCardinality {
   /* package */String myName;
   /* package */String myValue;
 
- AnnotationLinkCardinality(String name, String value) {
+AnnotationLinkCardinality(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
