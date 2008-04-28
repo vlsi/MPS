@@ -244,7 +244,6 @@
     <antcall target="pack.dates_unittest" />
     <antcall target="pack.jetbrains.mps.internal.collections" />
     <antcall target="pack.jetbrains.accounting.money" />
-    <antcall target="pack.editor" />
     <antcall target="pack.JDK" />
     <antcall target="pack.jetbrains.mps.baseLanguage.blTypes" />
     <antcall target="pack.jetbrains.mps.baseLanguage" />

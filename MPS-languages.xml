@@ -2,7 +2,6 @@
 <project name="MPS-languages" default="pack.jetbrains.mps.baseLanguageInternal">
   <property file=".\MPS.properties" />
   <target name="pack.jetbrains.mps.baseLanguageInternal">
-    <mkdir dir="core\baseLanguage\baseLanguageInternal\classes_gen" />
     <mkdir dir="core\baseLanguage\baseLanguageInternal\classes" />
     <mkdir dir="core\baseLanguage\baseLanguageInternal\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguageInternal.tmp">
@@ -10,14 +9,10 @@
       <fileset dir="core\baseLanguage\baseLanguageInternal" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguageInternal.lib.jar">
-      <fileset dir="core\baseLanguage\baseLanguageInternal\classes_gen" />
       <fileset dir="core\baseLanguage\baseLanguageInternal\classes" />
       <fileset dir="core\baseLanguage\baseLanguageInternal\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguageInternal.tmp">
-      <fileset dir="core\baseLanguage\baseLanguageInternal">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\baseLanguage\baseLanguageInternal">
         <include name="classes\" />
       </fileset>
@@ -29,7 +24,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguageInternal.tmp" />
   </target>
   <target name="pack.jetbrains.mps.closures">
-    <mkdir dir="core\baseLanguage\closures\classes_gen" />
     <mkdir dir="core\baseLanguage\closures\runtime\classes" />
     <mkdir dir="core\baseLanguage\closures\classes" />
     <mkdir dir="core\baseLanguage\closures\classes_gen" />
@@ -38,15 +32,11 @@
       <fileset dir="core\baseLanguage\closures" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.closures.lib.jar">
-      <fileset dir="core\baseLanguage\closures\classes_gen" />
       <fileset dir="core\baseLanguage\closures\runtime\classes" />
       <fileset dir="core\baseLanguage\closures\classes" />
       <fileset dir="core\baseLanguage\closures\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.closures.tmp">
-      <fileset dir="core\baseLanguage\closures">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\baseLanguage\closures">
         <include name="runtime\classes\" />
       </fileset>
@@ -62,24 +52,14 @@
   </target>
   <target name="pack.closures.test">
     <mkdir dir="core\baseLanguage\closures\solutions\closures.test\classes_gen" />
-    <mkdir dir="core\baseLanguage\closures\solutions\closures.test\classes_gen" />
-    <mkdir dir="core\baseLanguage\closures\solutions\closures.test\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\closures.test.tmp">
       <fileset dir="core\baseLanguage\closures\solutions\closures.test" excludes="**/*.java, **/*.class, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
       <fileset dir="core\baseLanguage\closures\solutions\closures.test" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\closures.test.lib.jar">
       <fileset dir="core\baseLanguage\closures\solutions\closures.test\classes_gen" />
-      <fileset dir="core\baseLanguage\closures\solutions\closures.test\classes_gen" />
-      <fileset dir="core\baseLanguage\closures\solutions\closures.test\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\closures.test.tmp">
-      <fileset dir="core\baseLanguage\closures\solutions\closures.test">
-        <include name="classes_gen\" />
-      </fileset>
-      <fileset dir="core\baseLanguage\closures\solutions\closures.test">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\baseLanguage\closures\solutions\closures.test">
         <include name="classes_gen\" />
       </fileset>
@@ -88,7 +68,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\closures.test.tmp" />
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.ext.collections.lang">
-    <mkdir dir="core\baseLanguage\collections\classes_gen" />
     <mkdir dir="core\baseLanguage\collections\classes" />
     <mkdir dir="core\baseLanguage\collections\runtime\classes" />
     <mkdir dir="core\baseLanguage\collections\classes_gen" />
@@ -97,15 +76,11 @@
       <fileset dir="core\baseLanguage\collections" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.collections.lang.lib.jar">
-      <fileset dir="core\baseLanguage\collections\classes_gen" />
       <fileset dir="core\baseLanguage\collections\classes" />
       <fileset dir="core\baseLanguage\collections\runtime\classes" />
       <fileset dir="core\baseLanguage\collections\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.collections.lang.tmp">
-      <fileset dir="core\baseLanguage\collections">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\baseLanguage\collections">
         <include name="classes\" />
       </fileset>
@@ -126,24 +101,14 @@
   </target>
   <target name="pack.collections_samples">
     <mkdir dir="core\baseLanguage\collections\solutions\collections\samples\classes_gen" />
-    <mkdir dir="core\baseLanguage\collections\solutions\collections\samples\classes_gen" />
-    <mkdir dir="core\baseLanguage\collections\solutions\collections\samples\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\collections_samples.tmp">
       <fileset dir="core\baseLanguage\collections\solutions\collections\samples" excludes="**/*.java, **/*.class, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
       <fileset dir="core\baseLanguage\collections\solutions\collections\samples" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\collections_samples.lib.jar">
       <fileset dir="core\baseLanguage\collections\solutions\collections\samples\classes_gen" />
-      <fileset dir="core\baseLanguage\collections\solutions\collections\samples\classes_gen" />
-      <fileset dir="core\baseLanguage\collections\solutions\collections\samples\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\collections_samples.tmp">
-      <fileset dir="core\baseLanguage\collections\solutions\collections\samples">
-        <include name="classes_gen\" />
-      </fileset>
-      <fileset dir="core\baseLanguage\collections\solutions\collections\samples">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\baseLanguage\collections\solutions\collections\samples">
         <include name="classes_gen\" />
       </fileset>
@@ -153,24 +118,14 @@
   </target>
   <target name="pack.collections_unittest">
     <mkdir dir="core\baseLanguage\collections\solutions\collections\unittest\classes_gen" />
-    <mkdir dir="core\baseLanguage\collections\solutions\collections\unittest\classes_gen" />
-    <mkdir dir="core\baseLanguage\collections\solutions\collections\unittest\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\collections_unittest.tmp">
       <fileset dir="core\baseLanguage\collections\solutions\collections\unittest" excludes="**/*.java, **/*.class, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
       <fileset dir="core\baseLanguage\collections\solutions\collections\unittest" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\collections_unittest.lib.jar">
       <fileset dir="core\baseLanguage\collections\solutions\collections\unittest\classes_gen" />
-      <fileset dir="core\baseLanguage\collections\solutions\collections\unittest\classes_gen" />
-      <fileset dir="core\baseLanguage\collections\solutions\collections\unittest\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\collections_unittest.tmp">
-      <fileset dir="core\baseLanguage\collections\solutions\collections\unittest">
-        <include name="classes_gen\" />
-      </fileset>
-      <fileset dir="core\baseLanguage\collections\solutions\collections\unittest">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\baseLanguage\collections\solutions\collections\unittest">
         <include name="classes_gen\" />
       </fileset>
@@ -179,7 +134,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\collections_unittest.tmp" />
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.ext.csharp">
-    <mkdir dir="core\baseLanguage\csharp\classes_gen" />
     <mkdir dir="core\baseLanguage\csharp\classes" />
     <mkdir dir="core\baseLanguage\csharp\runtime\classes" />
     <mkdir dir="core\baseLanguage\csharp\classes_gen" />
@@ -188,15 +142,11 @@
       <fileset dir="core\baseLanguage\csharp" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.csharp.lib.jar">
-      <fileset dir="core\baseLanguage\csharp\classes_gen" />
       <fileset dir="core\baseLanguage\csharp\classes" />
       <fileset dir="core\baseLanguage\csharp\runtime\classes" />
       <fileset dir="core\baseLanguage\csharp\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.csharp.tmp">
-      <fileset dir="core\baseLanguage\csharp">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\baseLanguage\csharp">
         <include name="classes\" />
       </fileset>
@@ -314,7 +264,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\dates_unittest.tmp" />
   </target>
   <target name="pack.jetbrains.mps.internal.collections">
-    <mkdir dir="core\baseLanguage\internalCollections\languages\collections\classes_gen" />
     <mkdir dir="core\baseLanguage\internalCollections\languages\collections\runtime\classes" />
     <mkdir dir="core\baseLanguage\internalCollections\classes" />
     <mkdir dir="core\baseLanguage\internalCollections\languages\collections\classes_gen" />
@@ -323,15 +272,11 @@
       <fileset dir="core\baseLanguage\internalCollections\languages\collections" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.internal.collections.lib.jar">
-      <fileset dir="core\baseLanguage\internalCollections\languages\collections\classes_gen" />
       <fileset dir="core\baseLanguage\internalCollections\languages\collections\runtime\classes" />
       <fileset dir="core\baseLanguage\internalCollections\classes" />
       <fileset dir="core\baseLanguage\internalCollections\languages\collections\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.internal.collections.tmp">
-      <fileset dir="core\baseLanguage\internalCollections\languages\collections">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\baseLanguage\internalCollections\languages\collections">
         <include name="runtime\classes\" />
       </fileset>
@@ -348,7 +293,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.internal.collections.tmp" />
   </target>
   <target name="pack.jetbrains.accounting.money">
-    <mkdir dir="core\baseLanguage\money\classes_gen" />
     <mkdir dir="core\baseLanguage\money\classes" />
     <mkdir dir="core\baseLanguage\money\runtime\classes" />
     <mkdir dir="core\baseLanguage\money\classes_gen" />
@@ -357,15 +301,11 @@
       <fileset dir="core\baseLanguage\money" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.accounting.money.lib.jar">
-      <fileset dir="core\baseLanguage\money\classes_gen" />
       <fileset dir="core\baseLanguage\money\classes" />
       <fileset dir="core\baseLanguage\money\runtime\classes" />
       <fileset dir="core\baseLanguage\money\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.accounting.money.tmp">
-      <fileset dir="core\baseLanguage\money">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\baseLanguage\money">
         <include name="classes\" />
       </fileset>
@@ -379,36 +319,7 @@
     <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.accounting.money.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.accounting.money.tmp" />
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.accounting.money.tmp" />
   </target>
-  <target name="pack.editor">
-    <mkdir dir="core\baseLanguage\baseLanguage\editor\classes_gen" />
-    <mkdir dir="core\baseLanguage\baseLanguage\editor\classes_gen" />
-    <mkdir dir="core\baseLanguage\baseLanguage\editor\classes_gen" />
-    <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\editor.tmp">
-      <fileset dir="core\baseLanguage\baseLanguage\editor" excludes="**/*.java, **/*.class, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
-      <fileset dir="core\baseLanguage\baseLanguage\editor" includes="*.mpl, *.msd, *.devkit" />
-    </copy>
-    <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\editor.lib.jar">
-      <fileset dir="core\baseLanguage\baseLanguage\editor\classes_gen" />
-      <fileset dir="core\baseLanguage\baseLanguage\editor\classes_gen" />
-      <fileset dir="core\baseLanguage\baseLanguage\editor\classes_gen" />
-    </jar>
-    <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\editor.tmp">
-      <fileset dir="core\baseLanguage\baseLanguage\editor">
-        <include name="classes_gen\" />
-      </fileset>
-      <fileset dir="core\baseLanguage\baseLanguage\editor">
-        <include name="classes_gen\" />
-      </fileset>
-      <fileset dir="core\baseLanguage\baseLanguage\editor">
-        <include name="classes_gen\" />
-      </fileset>
-    </copy>
-    <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\editor.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\editor.tmp" />
-    <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\editor.tmp" />
-  </target>
   <target name="pack.JDK">
-    <mkdir dir="core\baseLanguage\baseLanguage\solutions\JDK\classes_gen" />
-    <mkdir dir="core\baseLanguage\baseLanguage\solutions\JDK\classes_gen" />
     <mkdir dir="core\baseLanguage\baseLanguage\solutions\JDK\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\JDK.tmp">
       <fileset dir="core\baseLanguage\baseLanguage\solutions\JDK" excludes="**/*.java, **/*.class, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
@@ -416,16 +327,8 @@
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\JDK.lib.jar">
       <fileset dir="core\baseLanguage\baseLanguage\solutions\JDK\classes_gen" />
-      <fileset dir="core\baseLanguage\baseLanguage\solutions\JDK\classes_gen" />
-      <fileset dir="core\baseLanguage\baseLanguage\solutions\JDK\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\JDK.tmp">
-      <fileset dir="core\baseLanguage\baseLanguage\solutions\JDK">
-        <include name="classes_gen\" />
-      </fileset>
-      <fileset dir="core\baseLanguage\baseLanguage\solutions\JDK">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\baseLanguage\baseLanguage\solutions\JDK">
         <include name="classes_gen\" />
       </fileset>
@@ -434,7 +337,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\JDK.tmp" />
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.blTypes">
-    <mkdir dir="core\baseLanguage\baseLanguage\languages\blTypes\classes_gen" />
     <mkdir dir="core\baseLanguage\baseLanguage\classes" />
     <mkdir dir="core\baseLanguage\baseLanguage\languages\blTypes\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.blTypes.tmp">
@@ -442,14 +344,10 @@
       <fileset dir="core\baseLanguage\baseLanguage\languages\blTypes" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.blTypes.lib.jar">
-      <fileset dir="core\baseLanguage\baseLanguage\languages\blTypes\classes_gen" />
       <fileset dir="core\baseLanguage\baseLanguage\classes" />
       <fileset dir="core\baseLanguage\baseLanguage\languages\blTypes\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.blTypes.tmp">
-      <fileset dir="core\baseLanguage\baseLanguage\languages\blTypes">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\baseLanguage\baseLanguage">
         <include name="classes\" />
       </fileset>
@@ -463,7 +361,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.blTypes.tmp" />
   </target>
   <target name="pack.jetbrains.mps.baseLanguage">
-    <mkdir dir="core\baseLanguage\baseLanguage\classes_gen" />
     <mkdir dir="core\baseLanguage\baseLanguage\classes" />
     <mkdir dir="core\baseLanguage\baseLanguage\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.tmp">
@@ -471,14 +368,10 @@
       <fileset dir="core\baseLanguage\baseLanguage" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.lib.jar">
-      <fileset dir="core\baseLanguage\baseLanguage\classes_gen" />
       <fileset dir="core\baseLanguage\baseLanguage\classes" />
       <fileset dir="core\baseLanguage\baseLanguage\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.tmp">
-      <fileset dir="core\baseLanguage\baseLanguage">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\baseLanguage\baseLanguage">
         <include name="classes\" />
       </fileset>
@@ -490,7 +383,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.strings">
-    <mkdir dir="core\baseLanguage\strings\classes_gen" />
     <mkdir dir="core\baseLanguage\strings\classes" />
     <mkdir dir="core\baseLanguage\strings\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.strings.tmp">
@@ -498,14 +390,10 @@
       <fileset dir="core\baseLanguage\strings" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.strings.lib.jar">
-      <fileset dir="core\baseLanguage\strings\classes_gen" />
       <fileset dir="core\baseLanguage\strings\classes" />
       <fileset dir="core\baseLanguage\strings\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.strings.tmp">
-      <fileset dir="core\baseLanguage\strings">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\baseLanguage\strings">
         <include name="classes\" />
       </fileset>
@@ -518,24 +406,14 @@
   </target>
   <target name="pack.MPS.Classpath">
     <mkdir dir="core\baseLanguage\baseLanguage\solutions\MPS.Classpath\classes_gen" />
-    <mkdir dir="core\baseLanguage\baseLanguage\solutions\MPS.Classpath\classes_gen" />
-    <mkdir dir="core\baseLanguage\baseLanguage\solutions\MPS.Classpath\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\MPS.Classpath.tmp">
       <fileset dir="core\baseLanguage\baseLanguage\solutions\MPS.Classpath" excludes="**/*.java, **/*.class, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
       <fileset dir="core\baseLanguage\baseLanguage\solutions\MPS.Classpath" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\MPS.Classpath.lib.jar">
       <fileset dir="core\baseLanguage\baseLanguage\solutions\MPS.Classpath\classes_gen" />
-      <fileset dir="core\baseLanguage\baseLanguage\solutions\MPS.Classpath\classes_gen" />
-      <fileset dir="core\baseLanguage\baseLanguage\solutions\MPS.Classpath\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\MPS.Classpath.tmp">
-      <fileset dir="core\baseLanguage\baseLanguage\solutions\MPS.Classpath">
-        <include name="classes_gen\" />
-      </fileset>
-      <fileset dir="core\baseLanguage\baseLanguage\solutions\MPS.Classpath">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\baseLanguage\baseLanguage\solutions\MPS.Classpath">
         <include name="classes_gen\" />
       </fileset>
@@ -545,24 +423,14 @@
   </target>
   <target name="pack.refactoring">
     <mkdir dir="core\baseLanguage\baseLanguage\refactoring\classes_gen" />
-    <mkdir dir="core\baseLanguage\baseLanguage\refactoring\classes_gen" />
-    <mkdir dir="core\baseLanguage\baseLanguage\refactoring\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\refactoring.tmp">
       <fileset dir="core\baseLanguage\baseLanguage\refactoring" excludes="**/*.java, **/*.class, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
       <fileset dir="core\baseLanguage\baseLanguage\refactoring" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\refactoring.lib.jar">
       <fileset dir="core\baseLanguage\baseLanguage\refactoring\classes_gen" />
-      <fileset dir="core\baseLanguage\baseLanguage\refactoring\classes_gen" />
-      <fileset dir="core\baseLanguage\baseLanguage\refactoring\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\refactoring.tmp">
-      <fileset dir="core\baseLanguage\baseLanguage\refactoring">
-        <include name="classes_gen\" />
-      </fileset>
-      <fileset dir="core\baseLanguage\baseLanguage\refactoring">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\baseLanguage\baseLanguage\refactoring">
         <include name="classes_gen\" />
       </fileset>
@@ -572,24 +440,14 @@
   </target>
   <target name="pack.resolve">
     <mkdir dir="core\baseLanguage\baseLanguage\resolve\classes_gen" />
-    <mkdir dir="core\baseLanguage\baseLanguage\resolve\classes_gen" />
-    <mkdir dir="core\baseLanguage\baseLanguage\resolve\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\resolve.tmp">
       <fileset dir="core\baseLanguage\baseLanguage\resolve" excludes="**/*.java, **/*.class, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
       <fileset dir="core\baseLanguage\baseLanguage\resolve" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\resolve.lib.jar">
       <fileset dir="core\baseLanguage\baseLanguage\resolve\classes_gen" />
-      <fileset dir="core\baseLanguage\baseLanguage\resolve\classes_gen" />
-      <fileset dir="core\baseLanguage\baseLanguage\resolve\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\resolve.tmp">
-      <fileset dir="core\baseLanguage\baseLanguage\resolve">
-        <include name="classes_gen\" />
-      </fileset>
-      <fileset dir="core\baseLanguage\baseLanguage\resolve">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\baseLanguage\baseLanguage\resolve">
         <include name="classes_gen\" />
       </fileset>
@@ -599,24 +457,14 @@
   </target>
   <target name="pack.testLogger">
     <mkdir dir="core\baseLanguage\baseLanguage\solutions\testLogger\classes_gen" />
-    <mkdir dir="core\baseLanguage\baseLanguage\solutions\testLogger\classes_gen" />
-    <mkdir dir="core\baseLanguage\baseLanguage\solutions\testLogger\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\testLogger.tmp">
       <fileset dir="core\baseLanguage\baseLanguage\solutions\testLogger" excludes="**/*.java, **/*.class, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
       <fileset dir="core\baseLanguage\baseLanguage\solutions\testLogger" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\testLogger.lib.jar">
       <fileset dir="core\baseLanguage\baseLanguage\solutions\testLogger\classes_gen" />
-      <fileset dir="core\baseLanguage\baseLanguage\solutions\testLogger\classes_gen" />
-      <fileset dir="core\baseLanguage\baseLanguage\solutions\testLogger\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\testLogger.tmp">
-      <fileset dir="core\baseLanguage\baseLanguage\solutions\testLogger">
-        <include name="classes_gen\" />
-      </fileset>
-      <fileset dir="core\baseLanguage\baseLanguage\solutions\testLogger">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\baseLanguage\baseLanguage\solutions\testLogger">
         <include name="classes_gen\" />
       </fileset>
@@ -626,24 +474,14 @@
   </target>
   <target name="pack.testLogger2">
     <mkdir dir="core\baseLanguage\baseLanguage\solutions\testLogger2\classes_gen" />
-    <mkdir dir="core\baseLanguage\baseLanguage\solutions\testLogger2\classes_gen" />
-    <mkdir dir="core\baseLanguage\baseLanguage\solutions\testLogger2\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\testLogger2.tmp">
       <fileset dir="core\baseLanguage\baseLanguage\solutions\testLogger2" excludes="**/*.java, **/*.class, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
       <fileset dir="core\baseLanguage\baseLanguage\solutions\testLogger2" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\testLogger2.lib.jar">
       <fileset dir="core\baseLanguage\baseLanguage\solutions\testLogger2\classes_gen" />
-      <fileset dir="core\baseLanguage\baseLanguage\solutions\testLogger2\classes_gen" />
-      <fileset dir="core\baseLanguage\baseLanguage\solutions\testLogger2\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\testLogger2.tmp">
-      <fileset dir="core\baseLanguage\baseLanguage\solutions\testLogger2">
-        <include name="classes_gen\" />
-      </fileset>
-      <fileset dir="core\baseLanguage\baseLanguage\solutions\testLogger2">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\baseLanguage\baseLanguage\solutions\testLogger2">
         <include name="classes_gen\" />
       </fileset>
@@ -652,7 +490,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\testLogger2.tmp" />
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.classifiers">
-    <mkdir dir="core\baseLanguage\classifiers\classes_gen" />
     <mkdir dir="core\baseLanguage\classifiers\classes" />
     <mkdir dir="core\baseLanguage\classifiers\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.classifiers.tmp">
@@ -660,14 +497,10 @@
       <fileset dir="core\baseLanguage\classifiers" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.classifiers.lib.jar">
-      <fileset dir="core\baseLanguage\classifiers\classes_gen" />
       <fileset dir="core\baseLanguage\classifiers\classes" />
       <fileset dir="core\baseLanguage\classifiers\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.classifiers.tmp">
-      <fileset dir="core\baseLanguage\classifiers">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\baseLanguage\classifiers">
         <include name="classes\" />
       </fileset>
@@ -679,7 +512,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.classifiers.tmp" />
   </target>
   <target name="pack.jetbrains.mps.bootstrap.actionsLanguage">
-    <mkdir dir="core\languageDesign\actionsLanguage\classes_gen" />
     <mkdir dir="core\languageDesign\actionsLanguage\classes" />
     <mkdir dir="core\languageDesign\actionsLanguage\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.actionsLanguage.tmp">
@@ -687,14 +519,10 @@
       <fileset dir="core\languageDesign\actionsLanguage" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.actionsLanguage.lib.jar">
-      <fileset dir="core\languageDesign\actionsLanguage\classes_gen" />
       <fileset dir="core\languageDesign\actionsLanguage\classes" />
       <fileset dir="core\languageDesign\actionsLanguage\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.actionsLanguage.tmp">
-      <fileset dir="core\languageDesign\actionsLanguage">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\languageDesign\actionsLanguage">
         <include name="classes\" />
       </fileset>
@@ -706,7 +534,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.actionsLanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.annotations">
-    <mkdir dir="core\languageDesign\annotations\languages\annotations\classes_gen" />
     <mkdir dir="core\languageDesign\annotations\classes" />
     <mkdir dir="core\languageDesign\annotations\languages\annotations\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.annotations.tmp">
@@ -714,14 +541,10 @@
       <fileset dir="core\languageDesign\annotations\languages\annotations" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.annotations.lib.jar">
-      <fileset dir="core\languageDesign\annotations\languages\annotations\classes_gen" />
       <fileset dir="core\languageDesign\annotations\classes" />
       <fileset dir="core\languageDesign\annotations\languages\annotations\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.annotations.tmp">
-      <fileset dir="core\languageDesign\annotations\languages\annotations">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\languageDesign\annotations">
         <include name="classes\" />
       </fileset>
@@ -735,7 +558,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.annotations.tmp" />
   </target>
   <target name="pack.jetbrains.mps.bootstrap.constraintsLanguage">
-    <mkdir dir="core\languageDesign\constraintsLanguage\classes_gen" />
     <mkdir dir="core\languageDesign\constraintsLanguage\classes" />
     <mkdir dir="core\languageDesign\constraintsLanguage\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.constraintsLanguage.tmp">
@@ -743,14 +565,10 @@
       <fileset dir="core\languageDesign\constraintsLanguage" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.constraintsLanguage.lib.jar">
-      <fileset dir="core\languageDesign\constraintsLanguage\classes_gen" />
       <fileset dir="core\languageDesign\constraintsLanguage\classes" />
       <fileset dir="core\languageDesign\constraintsLanguage\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.constraintsLanguage.tmp">
-      <fileset dir="core\languageDesign\constraintsLanguage">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\languageDesign\constraintsLanguage">
         <include name="classes\" />
       </fileset>
@@ -762,7 +580,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.constraintsLanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.bootstrap.editorLanguage">
-    <mkdir dir="core\languageDesign\editorLanguage\classes_gen" />
     <mkdir dir="core\languageDesign\editorLanguage\classes" />
     <mkdir dir="core\languageDesign\editorLanguage\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.editorLanguage.tmp">
@@ -770,14 +587,10 @@
       <fileset dir="core\languageDesign\editorLanguage" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.editorLanguage.lib.jar">
-      <fileset dir="core\languageDesign\editorLanguage\classes_gen" />
       <fileset dir="core\languageDesign\editorLanguage\classes" />
       <fileset dir="core\languageDesign\editorLanguage\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.editorLanguage.tmp">
-      <fileset dir="core\languageDesign\editorLanguage">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\languageDesign\editorLanguage">
         <include name="classes\" />
       </fileset>
@@ -794,7 +607,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.editorLanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.bootstrap.findUsagesLanguage">
-    <mkdir dir="core\languageDesign\findUsagesLanguage\classes_gen" />
     <mkdir dir="core\languageDesign\findUsagesLanguage\classes" />
     <mkdir dir="core\languageDesign\findUsagesLanguage\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.findUsagesLanguage.tmp">
@@ -802,14 +614,10 @@
       <fileset dir="core\languageDesign\findUsagesLanguage" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.findUsagesLanguage.lib.jar">
-      <fileset dir="core\languageDesign\findUsagesLanguage\classes_gen" />
       <fileset dir="core\languageDesign\findUsagesLanguage\classes" />
       <fileset dir="core\languageDesign\findUsagesLanguage\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.findUsagesLanguage.tmp">
-      <fileset dir="core\languageDesign\findUsagesLanguage">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\languageDesign\findUsagesLanguage">
         <include name="classes\" />
       </fileset>
@@ -821,7 +629,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.findUsagesLanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.bootstrap.helgins">
-    <mkdir dir="core\languageDesign\helgins\classes_gen" />
     <mkdir dir="core\languageDesign\helgins\classes" />
     <mkdir dir="core\languageDesign\helgins\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.helgins.tmp">
@@ -829,14 +636,10 @@
       <fileset dir="core\languageDesign\helgins" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.helgins.lib.jar">
-      <fileset dir="core\languageDesign\helgins\classes_gen" />
       <fileset dir="core\languageDesign\helgins\classes" />
       <fileset dir="core\languageDesign\helgins\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.helgins.tmp">
-      <fileset dir="core\languageDesign\helgins">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\languageDesign\helgins">
         <include name="classes\" />
       </fileset>
@@ -853,7 +656,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.helgins.tmp" />
   </target>
   <target name="pack.jetbrains.mps.bootstrap.intentionsLanguage">
-    <mkdir dir="core\languageDesign\intentionsLanguage\classes_gen" />
     <mkdir dir="core\languageDesign\intentionsLanguage\classes" />
     <mkdir dir="core\languageDesign\intentionsLanguage\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.intentionsLanguage.tmp">
@@ -861,14 +663,10 @@
       <fileset dir="core\languageDesign\intentionsLanguage" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.intentionsLanguage.lib.jar">
-      <fileset dir="core\languageDesign\intentionsLanguage\classes_gen" />
       <fileset dir="core\languageDesign\intentionsLanguage\classes" />
       <fileset dir="core\languageDesign\intentionsLanguage\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.intentionsLanguage.tmp">
-      <fileset dir="core\languageDesign\intentionsLanguage">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\languageDesign\intentionsLanguage">
         <include name="classes\" />
       </fileset>
@@ -885,7 +683,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.intentionsLanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.bootstrap.dataFlow">
-    <mkdir dir="core\languageDesign\dataFlow\classes_gen" />
     <mkdir dir="core\languageDesign\dataFlow\classes" />
     <mkdir dir="core\languageDesign\dataFlow\runtime\classes" />
     <mkdir dir="core\languageDesign\dataFlow\classes_gen" />
@@ -894,15 +691,11 @@
       <fileset dir="core\languageDesign\dataFlow" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.dataFlow.lib.jar">
-      <fileset dir="core\languageDesign\dataFlow\classes_gen" />
       <fileset dir="core\languageDesign\dataFlow\classes" />
       <fileset dir="core\languageDesign\dataFlow\runtime\classes" />
       <fileset dir="core\languageDesign\dataFlow\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.dataFlow.tmp">
-      <fileset dir="core\languageDesign\dataFlow">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\languageDesign\dataFlow">
         <include name="classes\" />
       </fileset>
@@ -925,7 +718,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.dataFlow.tmp" />
   </target>
   <target name="pack.jetbrains.mpslite">
-    <mkdir dir="core\languageDesign\mps-lite\languages\mpslite\classes_gen" />
     <mkdir dir="core\languageDesign\mps-lite\classes" />
     <mkdir dir="core\languageDesign\mps-lite\languages\mpslite\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mpslite.tmp">
@@ -933,14 +725,10 @@
       <fileset dir="core\languageDesign\mps-lite\languages\mpslite" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mpslite.lib.jar">
-      <fileset dir="core\languageDesign\mps-lite\languages\mpslite\classes_gen" />
       <fileset dir="core\languageDesign\mps-lite\classes" />
       <fileset dir="core\languageDesign\mps-lite\languages\mpslite\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mpslite.tmp">
-      <fileset dir="core\languageDesign\mps-lite\languages\mpslite">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\languageDesign\mps-lite">
         <include name="classes\" />
       </fileset>
@@ -954,7 +742,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mpslite.tmp" />
   </target>
   <target name="pack.jetbrains.mps.nanoj">
-    <mkdir dir="core\languageDesign\mps-lite\languages\nanoj\classes_gen" />
     <mkdir dir="core\languageDesign\mps-lite\classes" />
     <mkdir dir="core\languageDesign\mps-lite\languages\nanoj\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.nanoj.tmp">
@@ -962,14 +749,10 @@
       <fileset dir="core\languageDesign\mps-lite\languages\nanoj" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.nanoj.lib.jar">
-      <fileset dir="core\languageDesign\mps-lite\languages\nanoj\classes_gen" />
       <fileset dir="core\languageDesign\mps-lite\classes" />
       <fileset dir="core\languageDesign\mps-lite\languages\nanoj\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.nanoj.tmp">
-      <fileset dir="core\languageDesign\mps-lite\languages\nanoj">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\languageDesign\mps-lite">
         <include name="classes\" />
       </fileset>
@@ -983,7 +766,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.nanoj.tmp" />
   </target>
   <target name="pack.jetbrains.mps.patterns">
-    <mkdir dir="core\languageDesign\patternLanguage\classes_gen" />
     <mkdir dir="core\languageDesign\patternLanguage\classes" />
     <mkdir dir="core\languageDesign\patternLanguage\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.patterns.tmp">
@@ -991,14 +773,10 @@
       <fileset dir="core\languageDesign\patternLanguage" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.patterns.lib.jar">
-      <fileset dir="core\languageDesign\patternLanguage\classes_gen" />
       <fileset dir="core\languageDesign\patternLanguage\classes" />
       <fileset dir="core\languageDesign\patternLanguage\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.patterns.tmp">
-      <fileset dir="core\languageDesign\patternLanguage">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\languageDesign\patternLanguage">
         <include name="classes\" />
       </fileset>
@@ -1015,7 +793,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.patterns.tmp" />
   </target>
   <target name="pack.jetbrains.mps.quotation">
-    <mkdir dir="core\languageDesign\quotation\classes_gen" />
     <mkdir dir="core\languageDesign\quotation\classes" />
     <mkdir dir="core\languageDesign\quotation\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.quotation.tmp">
@@ -1023,14 +800,10 @@
       <fileset dir="core\languageDesign\quotation" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.quotation.lib.jar">
-      <fileset dir="core\languageDesign\quotation\classes_gen" />
       <fileset dir="core\languageDesign\quotation\classes" />
       <fileset dir="core\languageDesign\quotation\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.quotation.tmp">
-      <fileset dir="core\languageDesign\quotation">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\languageDesign\quotation">
         <include name="classes\" />
       </fileset>
@@ -1042,7 +815,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.quotation.tmp" />
   </target>
   <target name="pack.jetbrains.mps.bootstrap.pluginLanguage">
-    <mkdir dir="core\languageDesign\pluginLanguage\classes_gen" />
     <mkdir dir="core\languageDesign\pluginLanguage\classes" />
     <mkdir dir="core\languageDesign\pluginLanguage\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.pluginLanguage.tmp">
@@ -1050,14 +822,10 @@
       <fileset dir="core\languageDesign\pluginLanguage" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.pluginLanguage.lib.jar">
-      <fileset dir="core\languageDesign\pluginLanguage\classes_gen" />
       <fileset dir="core\languageDesign\pluginLanguage\classes" />
       <fileset dir="core\languageDesign\pluginLanguage\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.pluginLanguage.tmp">
-      <fileset dir="core\languageDesign\pluginLanguage">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\languageDesign\pluginLanguage">
         <include name="classes\" />
       </fileset>
@@ -1074,7 +842,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.pluginLanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.bootstrap.sharedConcepts">
-    <mkdir dir="core\languageDesign\sharedConcepts\classes_gen" />
     <mkdir dir="core\languageDesign\sharedConcepts\classes" />
     <mkdir dir="core\languageDesign\sharedConcepts\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.sharedConcepts.tmp">
@@ -1082,14 +849,10 @@
       <fileset dir="core\languageDesign\sharedConcepts" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.sharedConcepts.lib.jar">
-      <fileset dir="core\languageDesign\sharedConcepts\classes_gen" />
       <fileset dir="core\languageDesign\sharedConcepts\classes" />
       <fileset dir="core\languageDesign\sharedConcepts\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.sharedConcepts.tmp">
-      <fileset dir="core\languageDesign\sharedConcepts">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\languageDesign\sharedConcepts">
         <include name="classes\" />
       </fileset>
@@ -1101,7 +864,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.sharedConcepts.tmp" />
   </target>
   <target name="pack.jetbrains.mps.bootstrap.smodelLanguage">
-    <mkdir dir="core\languageDesign\smodelLanguage\classes_gen" />
     <mkdir dir="core\languageDesign\smodelLanguage\classes" />
     <mkdir dir="core\languageDesign\smodelLanguage\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.smodelLanguage.tmp">
@@ -1109,14 +871,10 @@
       <fileset dir="core\languageDesign\smodelLanguage" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.smodelLanguage.lib.jar">
-      <fileset dir="core\languageDesign\smodelLanguage\classes_gen" />
       <fileset dir="core\languageDesign\smodelLanguage\classes" />
       <fileset dir="core\languageDesign\smodelLanguage\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.smodelLanguage.tmp">
-      <fileset dir="core\languageDesign\smodelLanguage">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\languageDesign\smodelLanguage">
         <include name="classes\" />
       </fileset>
@@ -1133,7 +891,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.smodelLanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.ide.scriptLanguage">
-    <mkdir dir="core\languageDesign\scriptLanguage\classes_gen" />
     <mkdir dir="core\languageDesign\scriptLanguage\classes" />
     <mkdir dir="core\languageDesign\scriptLanguage\runtime\classes" />
     <mkdir dir="core\languageDesign\scriptLanguage\classes_gen" />
@@ -1142,15 +899,11 @@
       <fileset dir="core\languageDesign\scriptLanguage" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.ide.scriptLanguage.lib.jar">
-      <fileset dir="core\languageDesign\scriptLanguage\classes_gen" />
       <fileset dir="core\languageDesign\scriptLanguage\classes" />
       <fileset dir="core\languageDesign\scriptLanguage\runtime\classes" />
       <fileset dir="core\languageDesign\scriptLanguage\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.ide.scriptLanguage.tmp">
-      <fileset dir="core\languageDesign\scriptLanguage">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\languageDesign\scriptLanguage">
         <include name="classes\" />
       </fileset>
@@ -1170,7 +923,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.ide.scriptLanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.ide.scriptLanguageInternal">
-    <mkdir dir="core\languageDesign\scriptLanguageInternal\classes_gen" />
     <mkdir dir="core\languageDesign\scriptLanguageInternal\classes" />
     <mkdir dir="core\languageDesign\scriptLanguageInternal\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.ide.scriptLanguageInternal.tmp">
@@ -1178,14 +930,10 @@
       <fileset dir="core\languageDesign\scriptLanguageInternal" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.ide.scriptLanguageInternal.lib.jar">
-      <fileset dir="core\languageDesign\scriptLanguageInternal\classes_gen" />
       <fileset dir="core\languageDesign\scriptLanguageInternal\classes" />
       <fileset dir="core\languageDesign\scriptLanguageInternal\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.ide.scriptLanguageInternal.tmp">
-      <fileset dir="core\languageDesign\scriptLanguageInternal">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\languageDesign\scriptLanguageInternal">
         <include name="classes\" />
       </fileset>
@@ -1197,7 +945,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.ide.scriptLanguageInternal.tmp" />
   </target>
   <target name="pack.jetbrains.mps.bootstrap.structureLanguage">
-    <mkdir dir="core\languageDesign\structureLanguage\classes_gen" />
     <mkdir dir="core\languageDesign\structureLanguage\classes" />
     <mkdir dir="core\languageDesign\structureLanguage\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.structureLanguage.tmp">
@@ -1205,14 +952,10 @@
       <fileset dir="core\languageDesign\structureLanguage" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.structureLanguage.lib.jar">
-      <fileset dir="core\languageDesign\structureLanguage\classes_gen" />
       <fileset dir="core\languageDesign\structureLanguage\classes" />
       <fileset dir="core\languageDesign\structureLanguage\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.structureLanguage.tmp">
-      <fileset dir="core\languageDesign\structureLanguage">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\languageDesign\structureLanguage">
         <include name="classes\" />
       </fileset>
@@ -1224,7 +967,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.structureLanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.core">
-    <mkdir dir="core\languageDesign\core\classes_gen" />
     <mkdir dir="core\languageDesign\core\classes" />
     <mkdir dir="core\languageDesign\core\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.core.tmp">
@@ -1232,14 +974,10 @@
       <fileset dir="core\languageDesign\core" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.core.lib.jar">
-      <fileset dir="core\languageDesign\core\classes_gen" />
       <fileset dir="core\languageDesign\core\classes" />
       <fileset dir="core\languageDesign\core\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.core.tmp">
-      <fileset dir="core\languageDesign\core">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\languageDesign\core">
         <include name="classes\" />
       </fileset>
@@ -1251,7 +989,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.core.tmp" />
   </target>
   <target name="pack.jetbrains.mps.logging.refactoring">
-    <mkdir dir="core\languageDesign\refactoring\classes_gen" />
     <mkdir dir="core\languageDesign\refactoring\classes" />
     <mkdir dir="core\languageDesign\refactoring\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.logging.refactoring.tmp">
@@ -1259,14 +996,10 @@
       <fileset dir="core\languageDesign\refactoring" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.logging.refactoring.lib.jar">
-      <fileset dir="core\languageDesign\refactoring\classes_gen" />
       <fileset dir="core\languageDesign\refactoring\classes" />
       <fileset dir="core\languageDesign\refactoring\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.logging.refactoring.tmp">
-      <fileset dir="core\languageDesign\refactoring">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\languageDesign\refactoring">
         <include name="classes\" />
       </fileset>
@@ -1283,7 +1016,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.logging.refactoring.tmp" />
   </target>
   <target name="pack.jetbrains.mps.transformation.test.inputLang">
-    <mkdir dir="core\languageDesign\transformation\test\inputLang\classes_gen" />
     <mkdir dir="core\languageDesign\transformation\classes" />
     <mkdir dir="core\languageDesign\transformation\test\inputLang\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.test.inputLang.tmp">
@@ -1291,14 +1023,10 @@
       <fileset dir="core\languageDesign\transformation\test\inputLang" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.test.inputLang.lib.jar">
-      <fileset dir="core\languageDesign\transformation\test\inputLang\classes_gen" />
       <fileset dir="core\languageDesign\transformation\classes" />
       <fileset dir="core\languageDesign\transformation\test\inputLang\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.test.inputLang.tmp">
-      <fileset dir="core\languageDesign\transformation\test\inputLang">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\languageDesign\transformation">
         <include name="classes\" />
       </fileset>
@@ -1312,7 +1040,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.test.inputLang.tmp" />
   </target>
   <target name="pack.jetbrains.mps.transformation.test.outputLang">
-    <mkdir dir="core\languageDesign\transformation\test\outputLang\classes_gen" />
     <mkdir dir="core\languageDesign\transformation\classes" />
     <mkdir dir="core\languageDesign\transformation\test\outputLang\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.test.outputLang.tmp">
@@ -1320,14 +1047,10 @@
       <fileset dir="core\languageDesign\transformation\test\outputLang" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.test.outputLang.lib.jar">
-      <fileset dir="core\languageDesign\transformation\test\outputLang\classes_gen" />
       <fileset dir="core\languageDesign\transformation\classes" />
       <fileset dir="core\languageDesign\transformation\test\outputLang\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.test.outputLang.tmp">
-      <fileset dir="core\languageDesign\transformation\test\outputLang">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\languageDesign\transformation">
         <include name="classes\" />
       </fileset>
@@ -1341,7 +1064,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.test.outputLang.tmp" />
   </target>
   <target name="pack.jetbrains.mps.transformation.TLBase">
-    <mkdir dir="core\languageDesign\transformation\classes_gen" />
     <mkdir dir="core\languageDesign\transformation\classes" />
     <mkdir dir="core\languageDesign\transformation\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.TLBase.tmp">
@@ -1349,14 +1071,10 @@
       <fileset dir="core\languageDesign\transformation" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.TLBase.lib.jar">
-      <fileset dir="core\languageDesign\transformation\classes_gen" />
       <fileset dir="core\languageDesign\transformation\classes" />
       <fileset dir="core\languageDesign\transformation\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.TLBase.tmp">
-      <fileset dir="core\languageDesign\transformation">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\languageDesign\transformation">
         <include name="classes\" />
       </fileset>
@@ -1369,24 +1087,14 @@
   </target>
   <target name="pack.smodelLanguage-samples">
     <mkdir dir="core\languageDesign\smodelLanguage\solutions\samples\classes_gen" />
-    <mkdir dir="core\languageDesign\smodelLanguage\solutions\samples\classes_gen" />
-    <mkdir dir="core\languageDesign\smodelLanguage\solutions\samples\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\smodelLanguage-samples.tmp">
       <fileset dir="core\languageDesign\smodelLanguage\solutions\samples" excludes="**/*.java, **/*.class, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
       <fileset dir="core\languageDesign\smodelLanguage\solutions\samples" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\smodelLanguage-samples.lib.jar">
       <fileset dir="core\languageDesign\smodelLanguage\solutions\samples\classes_gen" />
-      <fileset dir="core\languageDesign\smodelLanguage\solutions\samples\classes_gen" />
-      <fileset dir="core\languageDesign\smodelLanguage\solutions\samples\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\smodelLanguage-samples.tmp">
-      <fileset dir="core\languageDesign\smodelLanguage\solutions\samples">
-        <include name="classes_gen\" />
-      </fileset>
-      <fileset dir="core\languageDesign\smodelLanguage\solutions\samples">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\languageDesign\smodelLanguage\solutions\samples">
         <include name="classes_gen\" />
       </fileset>
@@ -1396,24 +1104,14 @@
   </target>
   <target name="pack.smodelLanguage_typetest">
     <mkdir dir="core\languageDesign\smodelLanguage\solutions\typetest\classes_gen" />
-    <mkdir dir="core\languageDesign\smodelLanguage\solutions\typetest\classes_gen" />
-    <mkdir dir="core\languageDesign\smodelLanguage\solutions\typetest\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\smodelLanguage_typetest.tmp">
       <fileset dir="core\languageDesign\smodelLanguage\solutions\typetest" excludes="**/*.java, **/*.class, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
       <fileset dir="core\languageDesign\smodelLanguage\solutions\typetest" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\smodelLanguage_typetest.lib.jar">
       <fileset dir="core\languageDesign\smodelLanguage\solutions\typetest\classes_gen" />
-      <fileset dir="core\languageDesign\smodelLanguage\solutions\typetest\classes_gen" />
-      <fileset dir="core\languageDesign\smodelLanguage\solutions\typetest\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\smodelLanguage_typetest.tmp">
-      <fileset dir="core\languageDesign\smodelLanguage\solutions\typetest">
-        <include name="classes_gen\" />
-      </fileset>
-      <fileset dir="core\languageDesign\smodelLanguage\solutions\typetest">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\languageDesign\smodelLanguage\solutions\typetest">
         <include name="classes_gen\" />
       </fileset>
@@ -1423,24 +1121,14 @@
   </target>
   <target name="pack.jetbrains.mps.vcs">
     <mkdir dir="core\kernel\vcs\generic\solutions\jetbrains.mps.vcs\classes_gen" />
-    <mkdir dir="core\kernel\vcs\generic\solutions\jetbrains.mps.vcs\classes_gen" />
-    <mkdir dir="core\kernel\vcs\generic\solutions\jetbrains.mps.vcs\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\kernel\vcs\generic\jetbrains.mps.vcs.tmp">
       <fileset dir="core\kernel\vcs\generic\solutions\jetbrains.mps.vcs" excludes="**/*.java, **/*.class, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
       <fileset dir="core\kernel\vcs\generic\solutions\jetbrains.mps.vcs" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\kernel\vcs\generic\jetbrains.mps.vcs.lib.jar">
       <fileset dir="core\kernel\vcs\generic\solutions\jetbrains.mps.vcs\classes_gen" />
-      <fileset dir="core\kernel\vcs\generic\solutions\jetbrains.mps.vcs\classes_gen" />
-      <fileset dir="core\kernel\vcs\generic\solutions\jetbrains.mps.vcs\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\kernel\vcs\generic\jetbrains.mps.vcs.tmp">
-      <fileset dir="core\kernel\vcs\generic\solutions\jetbrains.mps.vcs">
-        <include name="classes_gen\" />
-      </fileset>
-      <fileset dir="core\kernel\vcs\generic\solutions\jetbrains.mps.vcs">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\kernel\vcs\generic\solutions\jetbrains.mps.vcs">
         <include name="classes_gen\" />
       </fileset>
@@ -1449,7 +1137,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\kernel\vcs\generic\jetbrains.mps.vcs.tmp" />
   </target>
   <target name="pack.jetbrains.mps.projectLanguage">
-    <mkdir dir="core\projectLanguage\classes_gen" />
     <mkdir dir="core\projectLanguage\classes" />
     <mkdir dir="core\projectLanguage\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\jetbrains.mps.projectLanguage.tmp">
@@ -1457,14 +1144,10 @@
       <fileset dir="core\projectLanguage" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\jetbrains.mps.projectLanguage.lib.jar">
-      <fileset dir="core\projectLanguage\classes_gen" />
       <fileset dir="core\projectLanguage\classes" />
       <fileset dir="core\projectLanguage\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\jetbrains.mps.projectLanguage.tmp">
-      <fileset dir="core\projectLanguage">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="core\projectLanguage">
         <include name="classes\" />
       </fileset>
@@ -1476,8 +1159,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\jetbrains.mps.projectLanguage.tmp" />
   </target>
   <target name="pack.ypath.main">
-    <mkdir dir="platform\ypath\solutions\main\classes_gen" />
-    <mkdir dir="platform\ypath\solutions\main\classes_gen" />
     <mkdir dir="platform\ypath\solutions\classes" />
     <mkdir dir="platform\ypath\solutions\main\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\ypath.main.tmp">
@@ -1485,18 +1166,10 @@
       <fileset dir="platform\ypath\solutions\main" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\ypath.main.lib.jar">
-      <fileset dir="platform\ypath\solutions\main\classes_gen" />
-      <fileset dir="platform\ypath\solutions\main\classes_gen" />
       <fileset dir="platform\ypath\solutions\classes" />
       <fileset dir="platform\ypath\solutions\main\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\ypath.main.tmp">
-      <fileset dir="platform\ypath\solutions\main">
-        <include name="classes_gen\" />
-      </fileset>
-      <fileset dir="platform\ypath\solutions\main">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="platform\ypath">
         <include name="solutions\classes\" />
       </fileset>
@@ -1510,8 +1183,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\ypath.main.tmp" />
   </target>
   <target name="pack.ypath.test">
-    <mkdir dir="platform\ypath\solutions\test\classes_gen" />
-    <mkdir dir="platform\ypath\solutions\test\classes_gen" />
     <mkdir dir="platform\ypath\classes" />
     <mkdir dir="platform\ypath\solutions\classes" />
     <mkdir dir="platform\ypath\solutions\test\classes_gen" />
@@ -1520,19 +1191,11 @@
       <fileset dir="platform\ypath\solutions\test" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\ypath.test.lib.jar">
-      <fileset dir="platform\ypath\solutions\test\classes_gen" />
-      <fileset dir="platform\ypath\solutions\test\classes_gen" />
       <fileset dir="platform\ypath\classes" />
       <fileset dir="platform\ypath\solutions\classes" />
       <fileset dir="platform\ypath\solutions\test\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\ypath.test.tmp">
-      <fileset dir="platform\ypath\solutions\test">
-        <include name="classes_gen\" />
-      </fileset>
-      <fileset dir="platform\ypath\solutions\test">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="platform\ypath">
         <include name="classes\" />
       </fileset>
@@ -1551,7 +1214,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\ypath.test.tmp" />
   </target>
   <target name="pack.jetbrains.mps.ypath">
-    <mkdir dir="platform\ypath\classes_gen" />
     <mkdir dir="platform\ypath\classes" />
     <mkdir dir="platform\ypath\runtime\classes" />
     <mkdir dir="platform\ypath\classes_gen" />
@@ -1560,15 +1222,11 @@
       <fileset dir="platform\ypath" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.ypath.lib.jar">
-      <fileset dir="platform\ypath\classes_gen" />
       <fileset dir="platform\ypath\classes" />
       <fileset dir="platform\ypath\runtime\classes" />
       <fileset dir="platform\ypath\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.ypath.tmp">
-      <fileset dir="platform\ypath">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="platform\ypath">
         <include name="classes\" />
       </fileset>
@@ -1588,7 +1246,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.ypath.tmp" />
   </target>
   <target name="pack.jetbrains.mps.buildlanguage">
-    <mkdir dir="platform\buildlanguage\languages\buildlanguage\classes_gen" />
     <mkdir dir="platform\buildlanguage\classes" />
     <mkdir dir="platform\buildlanguage\languages\buildlanguage\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.buildlanguage.tmp">
@@ -1596,14 +1253,10 @@
       <fileset dir="platform\buildlanguage\languages\buildlanguage" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.buildlanguage.lib.jar">
-      <fileset dir="platform\buildlanguage\languages\buildlanguage\classes_gen" />
       <fileset dir="platform\buildlanguage\classes" />
       <fileset dir="platform\buildlanguage\languages\buildlanguage\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.buildlanguage.tmp">
-      <fileset dir="platform\buildlanguage\languages\buildlanguage">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="platform\buildlanguage">
         <include name="classes\" />
       </fileset>
@@ -1617,7 +1270,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.buildlanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.mpsLayoutLanguage">
-    <mkdir dir="platform\buildlanguage\languages\mpsLayoutLanguage\classes_gen" />
     <mkdir dir="platform\buildlanguage\classes" />
     <mkdir dir="platform\buildlanguage\languages\mpsLayoutLanguage\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.mpsLayoutLanguage.tmp">
@@ -1625,14 +1277,10 @@
       <fileset dir="platform\buildlanguage\languages\mpsLayoutLanguage" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.mpsLayoutLanguage.lib.jar">
-      <fileset dir="platform\buildlanguage\languages\mpsLayoutLanguage\classes_gen" />
       <fileset dir="platform\buildlanguage\classes" />
       <fileset dir="platform\buildlanguage\languages\mpsLayoutLanguage\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.mpsLayoutLanguage.tmp">
-      <fileset dir="platform\buildlanguage\languages\mpsLayoutLanguage">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="platform\buildlanguage">
         <include name="classes\" />
       </fileset>
@@ -1646,7 +1294,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.mpsLayoutLanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.mpsProjectLanguage">
-    <mkdir dir="platform\buildlanguage\languages\mpsProjectLanguage\classes_gen" />
     <mkdir dir="platform\buildlanguage\classes" />
     <mkdir dir="platform\buildlanguage\languages\mpsProjectLanguage\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.mpsProjectLanguage.tmp">
@@ -1654,14 +1301,10 @@
       <fileset dir="platform\buildlanguage\languages\mpsProjectLanguage" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.mpsProjectLanguage.lib.jar">
-      <fileset dir="platform\buildlanguage\languages\mpsProjectLanguage\classes_gen" />
       <fileset dir="platform\buildlanguage\classes" />
       <fileset dir="platform\buildlanguage\languages\mpsProjectLanguage\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.mpsProjectLanguage.tmp">
-      <fileset dir="platform\buildlanguage\languages\mpsProjectLanguage">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="platform\buildlanguage">
         <include name="classes\" />
       </fileset>
@@ -1675,7 +1318,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.mpsProjectLanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.propertylanguage">
-    <mkdir dir="platform\buildlanguage\languages\propertylanguage\classes_gen" />
     <mkdir dir="platform\buildlanguage\classes" />
     <mkdir dir="platform\buildlanguage\languages\propertylanguage\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.propertylanguage.tmp">
@@ -1683,14 +1325,10 @@
       <fileset dir="platform\buildlanguage\languages\propertylanguage" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.propertylanguage.lib.jar">
-      <fileset dir="platform\buildlanguage\languages\propertylanguage\classes_gen" />
       <fileset dir="platform\buildlanguage\classes" />
       <fileset dir="platform\buildlanguage\languages\propertylanguage\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.propertylanguage.tmp">
-      <fileset dir="platform\buildlanguage\languages\propertylanguage">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="platform\buildlanguage">
         <include name="classes\" />
       </fileset>
@@ -1704,7 +1342,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.propertylanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.bookLanguage">
-    <mkdir dir="platform\textLanguage\languages\bookLanguage\classes_gen" />
     <mkdir dir="platform\textLanguage\classes" />
     <mkdir dir="platform\textLanguage\languages\bookLanguage\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.bookLanguage.tmp">
@@ -1712,14 +1349,10 @@
       <fileset dir="platform\textLanguage\languages\bookLanguage" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.bookLanguage.lib.jar">
-      <fileset dir="platform\textLanguage\languages\bookLanguage\classes_gen" />
       <fileset dir="platform\textLanguage\classes" />
       <fileset dir="platform\textLanguage\languages\bookLanguage\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.bookLanguage.tmp">
-      <fileset dir="platform\textLanguage\languages\bookLanguage">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="platform\textLanguage">
         <include name="classes\" />
       </fileset>
@@ -1733,7 +1366,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.bookLanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.regexp">
-    <mkdir dir="platform\regexp\classes_gen" />
     <mkdir dir="platform\regexp\classes" />
     <mkdir dir="platform\regexp\runtime\classes" />
     <mkdir dir="platform\regexp\classes_gen" />
@@ -1742,15 +1374,11 @@
       <fileset dir="platform\regexp" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.regexp.lib.jar">
-      <fileset dir="platform\regexp\classes_gen" />
       <fileset dir="platform\regexp\classes" />
       <fileset dir="platform\regexp\runtime\classes" />
       <fileset dir="platform\regexp\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.regexp.tmp">
-      <fileset dir="platform\regexp">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="platform\regexp">
         <include name="classes\" />
       </fileset>
@@ -1771,24 +1399,14 @@
   </target>
   <target name="pack.jetbrains.mps.regexp.examples">
     <mkdir dir="platform\regexp\solutions\jetbrains.mps.regexp.examples\classes_gen" />
-    <mkdir dir="platform\regexp\solutions\jetbrains.mps.regexp.examples\classes_gen" />
-    <mkdir dir="platform\regexp\solutions\jetbrains.mps.regexp.examples\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.regexp.examples.tmp">
       <fileset dir="platform\regexp\solutions\jetbrains.mps.regexp.examples" excludes="**/*.java, **/*.class, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
       <fileset dir="platform\regexp\solutions\jetbrains.mps.regexp.examples" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.regexp.examples.lib.jar">
       <fileset dir="platform\regexp\solutions\jetbrains.mps.regexp.examples\classes_gen" />
-      <fileset dir="platform\regexp\solutions\jetbrains.mps.regexp.examples\classes_gen" />
-      <fileset dir="platform\regexp\solutions\jetbrains.mps.regexp.examples\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.regexp.examples.tmp">
-      <fileset dir="platform\regexp\solutions\jetbrains.mps.regexp.examples">
-        <include name="classes_gen\" />
-      </fileset>
-      <fileset dir="platform\regexp\solutions\jetbrains.mps.regexp.examples">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="platform\regexp\solutions\jetbrains.mps.regexp.examples">
         <include name="classes_gen\" />
       </fileset>
@@ -1797,7 +1415,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.regexp.examples.tmp" />
   </target>
   <target name="pack.jetbrains.mps.textLanguage">
-    <mkdir dir="platform\textLanguage\languages\textLanguage\classes_gen" />
     <mkdir dir="platform\textLanguage\classes" />
     <mkdir dir="platform\textLanguage\languages\textLanguage\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.tmp">
@@ -1805,14 +1422,10 @@
       <fileset dir="platform\textLanguage\languages\textLanguage" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.lib.jar">
-      <fileset dir="platform\textLanguage\languages\textLanguage\classes_gen" />
       <fileset dir="platform\textLanguage\classes" />
       <fileset dir="platform\textLanguage\languages\textLanguage\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.tmp">
-      <fileset dir="platform\textLanguage\languages\textLanguage">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="platform\textLanguage">
         <include name="classes\" />
       </fileset>
@@ -1826,7 +1439,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.textLanguage.formula">
-    <mkdir dir="platform\textLanguage\languages\formula\classes_gen" />
     <mkdir dir="platform\textLanguage\classes" />
     <mkdir dir="platform\textLanguage\languages\formula\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.formula.tmp">
@@ -1834,14 +1446,10 @@
       <fileset dir="platform\textLanguage\languages\formula" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.formula.lib.jar">
-      <fileset dir="platform\textLanguage\languages\formula\classes_gen" />
       <fileset dir="platform\textLanguage\classes" />
       <fileset dir="platform\textLanguage\languages\formula\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.formula.tmp">
-      <fileset dir="platform\textLanguage\languages\formula">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="platform\textLanguage">
         <include name="classes\" />
       </fileset>
@@ -1855,7 +1463,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.formula.tmp" />
   </target>
   <target name="pack.jetbrains.mps.textLanguage.table">
-    <mkdir dir="platform\textLanguage\languages\table\classes_gen" />
     <mkdir dir="platform\textLanguage\classes" />
     <mkdir dir="platform\textLanguage\languages\table\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.table.tmp">
@@ -1863,14 +1470,10 @@
       <fileset dir="platform\textLanguage\languages\table" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.table.lib.jar">
-      <fileset dir="platform\textLanguage\languages\table\classes_gen" />
       <fileset dir="platform\textLanguage\classes" />
       <fileset dir="platform\textLanguage\languages\table\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.table.tmp">
-      <fileset dir="platform\textLanguage\languages\table">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="platform\textLanguage">
         <include name="classes\" />
       </fileset>
@@ -1884,7 +1487,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.table.tmp" />
   </target>
   <target name="pack.jetbrains.mps.uiLanguage">
-    <mkdir dir="platform\uiLanguage\classes_gen" />
     <mkdir dir="platform\uiLanguage\classes" />
     <mkdir dir="platform\uiLanguage\runtime\classes" />
     <mkdir dir="platform\uiLanguage\classes_gen" />
@@ -1893,15 +1495,11 @@
       <fileset dir="platform\uiLanguage" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.uiLanguage.lib.jar">
-      <fileset dir="platform\uiLanguage\classes_gen" />
       <fileset dir="platform\uiLanguage\classes" />
       <fileset dir="platform\uiLanguage\runtime\classes" />
       <fileset dir="platform\uiLanguage\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.uiLanguage.tmp">
-      <fileset dir="platform\uiLanguage">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="platform\uiLanguage">
         <include name="classes\" />
       </fileset>
@@ -1945,6 +1543,7 @@
   <target name="pack.jetbrains.mps.baseLanguage.unitTest.runtime">
     <mkdir dir="platform\unitTest\solutions\runtime\classes_gen" />
     <mkdir dir="platform\unitTest\solutions\runtime\classes_gen" />
+    <mkdir dir="platform\unitTest\solutions\runtime\lib\junit-4.1.jar" />
     <mkdir dir="platform\unitTest\solutions\runtime\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.baseLanguage.unitTest.runtime.tmp">
       <fileset dir="platform\unitTest\solutions\runtime" excludes="**/*.java, **/*.class, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
@@ -1953,6 +1552,7 @@
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.baseLanguage.unitTest.runtime.lib.jar">
       <fileset dir="platform\unitTest\solutions\runtime\classes_gen" />
       <fileset dir="platform\unitTest\solutions\runtime\classes_gen" />
+      <fileset dir="platform\unitTest\solutions\runtime\lib\junit-4.1.jar" />
       <fileset dir="platform\unitTest\solutions\runtime\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.baseLanguage.unitTest.runtime.tmp">
@@ -1961,6 +1561,9 @@
       </fileset>
       <fileset dir="platform\unitTest\solutions\runtime">
         <include name="classes_gen\" />
+      </fileset>
+      <fileset dir="platform\unitTest\solutions\runtime">
+        <include name="lib\junit-4.1.jar\" />
       </fileset>
       <fileset dir="platform\unitTest\solutions\runtime">
         <include name="classes_gen\" />
@@ -1970,7 +1573,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.baseLanguage.unitTest.runtime.tmp" />
   </target>
   <target name="pack.jetbrains.mps.xml">
-    <mkdir dir="platform\xml\classes_gen" />
     <mkdir dir="platform\xml\classes" />
     <mkdir dir="platform\xml\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.xml.tmp">
@@ -1978,14 +1580,10 @@
       <fileset dir="platform\xml" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.xml.lib.jar">
-      <fileset dir="platform\xml\classes_gen" />
       <fileset dir="platform\xml\classes" />
       <fileset dir="platform\xml\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.xml.tmp">
-      <fileset dir="platform\xml">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="platform\xml">
         <include name="classes\" />
       </fileset>
@@ -2220,7 +1818,6 @@
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.gtext.runtime.tmp" />
   </target>
   <target name="pack.jetbrains.mps.ide.uiLanguage">
-    <mkdir dir="workbench\ideUiLanguage\classes_gen" />
     <mkdir dir="workbench\ideUiLanguage\classes" />
     <mkdir dir="workbench\ideUiLanguage\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\workbench\jetbrains.mps.ide.uiLanguage.tmp">
@@ -2228,14 +1825,10 @@
       <fileset dir="workbench\ideUiLanguage" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\workbench\jetbrains.mps.ide.uiLanguage.lib.jar">
-      <fileset dir="workbench\ideUiLanguage\classes_gen" />
       <fileset dir="workbench\ideUiLanguage\classes" />
       <fileset dir="workbench\ideUiLanguage\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\workbench\jetbrains.mps.ide.uiLanguage.tmp">
-      <fileset dir="workbench\ideUiLanguage">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="workbench\ideUiLanguage">
         <include name="classes\" />
       </fileset>
@@ -2277,24 +1870,14 @@
   </target>
   <target name="pack.jetbrains.mps.ide">
     <mkdir dir="workbench\ideSolution\classes_gen" />
-    <mkdir dir="workbench\ideSolution\classes_gen" />
-    <mkdir dir="workbench\ideSolution\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\workbench\jetbrains.mps.ide.tmp">
       <fileset dir="workbench\ideSolution" excludes="**/*.java, **/*.class, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
       <fileset dir="workbench\ideSolution" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\workbench\jetbrains.mps.ide.lib.jar">
       <fileset dir="workbench\ideSolution\classes_gen" />
-      <fileset dir="workbench\ideSolution\classes_gen" />
-      <fileset dir="workbench\ideSolution\classes_gen" />
     </jar>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\workbench\jetbrains.mps.ide.tmp">
-      <fileset dir="workbench\ideSolution">
-        <include name="classes_gen\" />
-      </fileset>
-      <fileset dir="workbench\ideSolution">
-        <include name="classes_gen\" />
-      </fileset>
       <fileset dir="workbench\ideSolution">
         <include name="classes_gen\" />
       </fileset>
