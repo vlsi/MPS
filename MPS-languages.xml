@@ -1741,6 +1741,38 @@
     <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.gtext.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.gtext.tmp" />
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.gtext.tmp" />
   </target>
+  <target name="pack.jetbrains.mps.gtext.runtime">
+    <mkdir dir="platform\webr\languages\gtext\runtime\classes_gen" />
+    <mkdir dir="platform\webr\languages\gtext\runtime\classes_gen" />
+    <mkdir dir="platform\webr\languages\gtext\runtime\classes_gen" />
+    <mkdir dir="platform\webr\languages\gtext\runtime\classes_gen" />
+    <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.gtext.runtime.tmp">
+      <fileset dir="platform\webr\languages\gtext\runtime" excludes="**/*.java, **/*.class, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="platform\webr\languages\gtext\runtime" includes="*.mpl, *.msd, *.devkit" />
+    </copy>
+    <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.gtext.runtime.lib.jar">
+      <fileset dir="platform\webr\languages\gtext\runtime\classes_gen" />
+      <fileset dir="platform\webr\languages\gtext\runtime\classes_gen" />
+      <fileset dir="platform\webr\languages\gtext\runtime\classes_gen" />
+      <fileset dir="platform\webr\languages\gtext\runtime\classes_gen" />
+    </jar>
+    <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.gtext.runtime.tmp">
+      <fileset dir="platform\webr\languages\gtext\runtime">
+        <include name="classes_gen\" />
+      </fileset>
+      <fileset dir="platform\webr\languages\gtext\runtime">
+        <include name="classes_gen\" />
+      </fileset>
+      <fileset dir="platform\webr\languages\gtext\runtime">
+        <include name="classes_gen\" />
+      </fileset>
+      <fileset dir="platform\webr\languages\gtext\runtime">
+        <include name="classes_gen\" />
+      </fileset>
+    </copy>
+    <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.gtext.runtime.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.gtext.runtime.tmp" />
+    <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.gtext.runtime.tmp" />
+  </target>
   <target name="pack.webr.xmlInternal">
     <mkdir dir="platform\webr\languages\xmlInternal\classes_gen" />
     <mkdir dir="platform\webr\languages\xmlInternal\classes_gen" />
