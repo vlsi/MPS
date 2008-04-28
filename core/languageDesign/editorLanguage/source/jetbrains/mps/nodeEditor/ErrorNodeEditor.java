@@ -6,7 +6,7 @@ import org.jetbrains.annotations.NotNull;
 public class ErrorNodeEditor implements INodeEditor {
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return new EditorCell_Error(editorContext, node, "Can't find editor. Language " + node.getLanguageNamespace() + " isn't visible in scope of module");
+    return new EditorCell_Error(editorContext, node, "Can't find an editor. Language " + node.getLanguageNamespace() + " isn't visible in scope of module");
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
