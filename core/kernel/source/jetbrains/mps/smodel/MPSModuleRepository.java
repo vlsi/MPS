@@ -383,8 +383,8 @@ public class MPSModuleRepository implements IComponentLifecycle {
     try {
       Class<? extends IModule> cls = myExtensionsToModuleTypes.get(extension);
       registerModule(dir, owner, cls);
-    } catch (Exception e) {
-      LOG.error("Fail to load module from descriptor " + dir.getAbsolutePath(), e);
+    } catch (Throwable t) {
+      LOG.error("Fail to load module from descriptor " + dir.getAbsolutePath(), t);
     }
   }
 
