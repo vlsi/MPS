@@ -4,11 +4,14 @@
     <modelRoot path="${solution_descriptor}\" namespacePrefix="jetbrains.mps.baseLanguage.ext.collections.samples" />
   </models>
   <classPath />
-  <runtimeClassPath />
   <sourcePath />
   <dependencies>
     <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
     <dependency reexport="true">jetbrains.mps.baseLanguage.ext.collections.lang</dependency>
   </dependencies>
+  <osgiOptions>
+    <requiredBundles />
+    <exportedPackage />
+  </osgiOptions>
 </solution>
 
