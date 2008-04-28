@@ -18,7 +18,7 @@ public class LanguageNewCustomPartActions_ActionGroup extends BaseActionGroup {
     super("", LanguageNewCustomPartActions_ActionGroup.ID, project);
     this.setInternal(false);
     try {
-      for (LanguageAspect aspect : LanguageAspect.values()) {
+      for(LanguageAspect aspect : LanguageAspect.values()) {
         this.add(new NewAspectModelAction(aspect), this);
       }
     } catch (Throwable t) {

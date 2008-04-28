@@ -5,10 +5,10 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.projectLanguage.structure.ModelRoot;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.projectLanguage.structure.*;
+import jetbrains.mps.project.*;
+import jetbrains.mps.project.DevKit;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 
@@ -175,5 +175,57 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     }
 
     return errors;
+  }
+
+  public void addMissingDependencies() {
+    IModule module = getModule();
+    assert module != null;
+    IScope moduleScope = module.getScope();
+    boolean wereChanges = false;
+
+    ModuleDescriptor md = module.getModuleDescriptor();
+    SModel model = md.getModel();
+
+    for (SModelUID modelImport : getSModel().getImportedModelUIDs()) {
+      if (moduleScope.getModelDescriptor(modelImport) == null) {
+        SModelDescriptor sm = GlobalScope.getInstance().getModelDescriptor(modelImport);
+        if (sm != null && sm.getModule() != null) {
+          ModuleReference ref = ModuleReference.newInstance(model);
+          ref.setName(sm.getModule().getModuleUID());
+          md.addDependency(ref);
+          wereChanges = true;
+        }
+      }
+    }
+
+    for (String namespace : CollectionUtil.union(
+      getSModel().getExplicitlyImportedLanguages(),
+      getSModel().getEngagedOnGenerationLanguages())) {
+      if (moduleScope.getLanguage(namespace) == null) {
+        Language lang = GlobalScope.getInstance().getLanguage(namespace);
+        if (lang != null) {
+          LanguageReference ref = LanguageReference.newInstance(model);
+          ref.setName(namespace);
+          md.addUsedLanguage(ref);
+          wereChanges = true;
+        }
+      }
+    }
+
+    for (String devKitNamespace : getSModel().getDevKitNamespaces()) {
+      if (moduleScope.getDevKit(devKitNamespace) == null) {
+        DevKit devKit = GlobalScope.getInstance().getDevKit(devKitNamespace);
+        if (devKit != null) {
+          DevKitReference ref = DevKitReference.newInstance(model);
+          ref.setName(devKitNamespace);
+          md.addUsedDevKit(ref);
+          wereChanges = true;
+        }
+      }
+    }
+
+    if (wereChanges) {
+      module.setModuleDescriptor(md);
+    }
   }
 }
