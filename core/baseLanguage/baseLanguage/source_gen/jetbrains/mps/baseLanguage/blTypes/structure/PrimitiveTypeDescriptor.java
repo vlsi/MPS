@@ -14,7 +14,7 @@ public class PrimitiveTypeDescriptor extends NamedConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor";
   public static String EXTENDS = "extends";
 
-  public  PrimitiveTypeDescriptor(SNode node) {
+  public PrimitiveTypeDescriptor(SNode node) {
     super(node);
   }
 

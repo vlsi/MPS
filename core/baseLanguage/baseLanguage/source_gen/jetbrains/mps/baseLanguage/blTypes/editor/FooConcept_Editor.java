@@ -7,38 +7,32 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 
-public class BLArrayType_Editor extends DefaultNodeEditor {
+public class FooConcept_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1161696750124");
-    editorCell.setDrawBorder(false);
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1209476314803");
   }
 
-  private static void setupBasic_ComponentTypeReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1161696750125");
-    editorCell.setDrawBorder(false);
+  private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1209476325993");
   }
 
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1161696750128");
-    editorCell.setDrawBorder(false);
+  private static void setupBasic_BarReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1209476379605");
   }
 
-  private static void setupLabel_ComponentTypeReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+  private static void setupLabel_BarReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -48,42 +42,34 @@ public class BLArrayType_Editor extends DefaultNodeEditor {
 
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    BLArrayType_Editor.setupBasic_RowCell(editorCell, node, context);
+    FooConcept_Editor.setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createComponentTypeReferenceCell(context, node));
-    editorCell.addEditorCell(this.createConstantCell(context, node, "[]"));
+    editorCell.addEditorCell(this.createNameCell(context, node));
+    editorCell.addEditorCell(this.createBarReferenceCell(context, node));
     return editorCell;
   }
 
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    BLArrayType_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    BLArrayType_Editor.setupLabel_ConstantCell(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public EditorCell createComponentTypeReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createNameCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new BLArrayType_Editor._Inline1());
+    provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    BLArrayType_Editor.setupBasic_ComponentTypeReferenceCell(editorCell, node, context);
+    FooConcept_Editor.setupBasic_NameCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      BLArrayType_Editor.setupLabel_ComponentTypeReferenceCell((EditorCell_Label)editorCell, node, context);
+      FooConcept_Editor.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createComponentTypeReferenceCell(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, context);
-    provider.setRole("componentType");
+  public EditorCell createNameCell(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, context);
+    provider.setRole("name");
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createComponentTypeReferenceCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -94,14 +80,43 @@ public class BLArrayType_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline1 extends AbstractCellProvider {
+  public EditorCell createBarReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(new FooConcept_Editor._Inline2());
+    EditorCell editorCell = provider.createEditorCell(context);
+    FooConcept_Editor.setupBasic_BarReferenceCell(editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      FooConcept_Editor.setupLabel_BarReferenceCell((EditorCell_Label)editorCell, node, context);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    return editorCell;
+  }
 
-    public _Inline1() {
+  public EditorCell createBarReferenceCell(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, context);
+    provider.setRole("bar");
+    provider.setNoTargetText("");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(false);
+    EditorCell cellWithRole = this.createBarReferenceCellinternal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else
+    return cellWithRole;
+  }
+
+  public static class _Inline2 extends AbstractCellProvider {
+
+    public _Inline2() {
       super();
     }
 
     private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1161696750127");
+      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1209476428083");
     }
 
     private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -120,9 +135,9 @@ public class BLArrayType_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      BLArrayType_Editor._Inline1.setupBasic_NameCell(editorCell, node, context);
+      FooConcept_Editor._Inline2.setupBasic_NameCell(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        BLArrayType_Editor._Inline1.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        FooConcept_Editor._Inline2.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -132,7 +147,7 @@ public class BLArrayType_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("");
-      provider.setReadOnly(false);
+      provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();

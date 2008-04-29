@@ -12,7 +12,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class BLArrayType_name_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
 
-  public  BLArrayType_name_PropertyConstraint() {
+  public BLArrayType_name_PropertyConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

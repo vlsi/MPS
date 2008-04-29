@@ -15,7 +15,7 @@ public class FunctionType extends BaseConcept {
   public static String RESULT = "result";
   public static String PARAM = "param";
 
-  public  FunctionType(SNode node) {
+  public FunctionType(SNode node) {
     super(node);
   }
 

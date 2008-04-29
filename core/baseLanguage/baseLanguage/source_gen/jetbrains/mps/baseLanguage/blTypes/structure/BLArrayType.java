@@ -12,7 +12,7 @@ public class BLArrayType extends NamedConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.blTypes.structure.BLArrayType";
   public static String COMPONENT_TYPE = "componentType";
 
-  public  BLArrayType(SNode node) {
+  public BLArrayType(SNode node) {
     super(node);
   }
 
