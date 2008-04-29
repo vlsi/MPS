@@ -17,7 +17,9 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.JarFileEntryFile;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.*;
+import java.awt.image.ImagingOpException;
 
 public abstract class AbstractModule implements IModule {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
@@ -396,20 +398,26 @@ public abstract class AbstractModule implements IModule {
   }
 
   private void updateClassPathItem() {
+
+
     CompositeClassPathItem result = new CompositeClassPathItem();
     for (String s : getClassPath()) {
-      IFile file = FileSystem.getFile(s);
-      if (!file.exists()) {
-        LOG.error("Can't load class path item " + s + " in " + this);
-      } else {
-        IClassPathItem currentItem;
-        if (file.isDirectory()) {
-          currentItem = new FileClassPathItem(s);
+      try {
+        IFile file = FileSystem.getFile(s);
+        if (!file.exists()) {
+          LOG.error("Can't load class path item " + s + " in " + this);
         } else {
-          currentItem = new JarFileClassPathItem(s);
-        }
+          IClassPathItem currentItem;
+          if (file.isDirectory()) {
+            currentItem = new FileClassPathItem(s);
+          } else {
+            currentItem = new JarFileClassPathItem(s);
+          }
 
-        result.add(currentItem);
+          result.add(currentItem);
+        }
+      } catch (IOException e) {
+        LOG.error(e);
       }
     }
 
@@ -456,7 +464,7 @@ public abstract class AbstractModule implements IModule {
     return getDependenciesClasspath(CollectionUtil.asSet((IModule) this), false, false);
   }
 
-  protected IClassPathItem createClassPathItem(String s) {
+  protected IClassPathItem createClassPathItem(String s) throws IOException {
     IFile f = FileSystem.getFile(s);
     IClassPathItem classPathItem = null;
     if (f.exists()) {

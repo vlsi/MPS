@@ -28,19 +28,14 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
   private Map<String, Set<String>> mySubpackages = new HashMap<String, Set<String>>();
   private Map<String, ZipEntry> myEntries = new HashMap<String, ZipEntry>();
 
-  public JarFileClassPathItem(String path) {
+  public JarFileClassPathItem(String path) throws IOException {
     this(new File(path));
   }
 
-  public JarFileClassPathItem(File jarFile) {
-    try {
-      myFile = jarFile;
-      myPrefix = "jar:" + jarFile.toURL() + "!/";
-      myZipFile = new ZipFile(jarFile);
-    } catch (IOException e) {
-      LOG.error(e);
-    }
-
+  public JarFileClassPathItem(File jarFile) throws IOException {
+    myFile = jarFile;
+    myPrefix = "jar:" + jarFile.toURL() + "!/";
+    myZipFile = new ZipFile(jarFile);
     buildCaches();
   }
 

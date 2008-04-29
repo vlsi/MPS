@@ -24,6 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.*;
 import java.lang.reflect.Constructor;
 
@@ -128,16 +129,20 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   private void updateLanguageRuntimeClassPathItem() {
     CompositeClassPathItem result = new CompositeClassPathItem();
     for (String s : getLanguageRuntimeClassPathItems()) {
-      IFile file = FileSystem.getFile(s);
-      if (!file.exists()) {
-        LOG.error("Can't find " + s);
-        continue;
-      }
-
-      if (file.isFile()) {
-        result.add(new JarFileClassPathItem(s));
-      } else {
-        result.add(new FileClassPathItem(s));
+      try {
+        IFile file = FileSystem.getFile(s);
+        if (!file.exists()) {
+          LOG.error("Can't find " + s);
+          continue;
+        }
+  
+        if (file.isFile()) {
+          result.add(new JarFileClassPathItem(s));
+        } else {
+          result.add(new FileClassPathItem(s));
+        }
+      } catch (IOException e) {
+        LOG.error(e);
       }
     }
     myLanguageRuntimeClasspath = result;

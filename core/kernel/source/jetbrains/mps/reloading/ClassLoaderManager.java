@@ -23,6 +23,7 @@ import org.osgi.service.packageadmin.PackageAdmin;
 import sun.misc.Launcher;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.*;
@@ -329,10 +330,14 @@ public class ClassLoaderManager implements IComponentLifecycle {
     path = PathManager.getHomePath() + path.replace('/', File.separatorChar);
     File file = new File(path);
     if (file.exists()) {
-      if (file.isDirectory()) {
-        item.add(new FileClassPathItem(path));
-      } else {
-        item.add(new JarFileClassPathItem(path));
+      try {
+        if (file.isDirectory()) {
+          item.add(new FileClassPathItem(path));
+        } else {
+          item.add(new JarFileClassPathItem(path));
+        }
+      } catch (IOException e) {
+        LOG.error(e);
       }
     }
   }
@@ -343,7 +348,11 @@ public class ClassLoaderManager implements IComponentLifecycle {
     if (path != null) {
       if (path.endsWith(".jar")) {
         if (myMPSJar == null) {
-          myMPSJar = new JarFileClassPathItem(path);
+          try {
+            myMPSJar = new JarFileClassPathItem(path);
+          } catch (IOException e) {
+            LOG.error(e);
+          }
         }
         return myMPSJar;
       } else {
@@ -414,6 +423,8 @@ public class ClassLoaderManager implements IComponentLifecycle {
           return new JarFileClassPathItem(file);
         }
       } catch (URISyntaxException e) {
+        LOG.error(e);
+      } catch (IOException e) {
         LOG.error(e);
       }
     }
