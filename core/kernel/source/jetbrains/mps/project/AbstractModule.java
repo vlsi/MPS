@@ -225,6 +225,15 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
+  public List<IModule> getAllDependOnModules() {
+    Set<IModule> result = new LinkedHashSet<IModule>();
+    result.addAll(getDependOnModules());
+    for (DevKit dk : getUsedDevkits()) {
+      result.addAll(dk.getAllExportedSolutions());
+    }
+    return new ArrayList<IModule>(result);
+  }
+
   public List<String> getUsedLanguagesNamespaces() {
     List<String> result = new ArrayList<String>();
     ModuleDescriptor descriptor = getModuleDescriptor();
@@ -251,6 +260,15 @@ public abstract class AbstractModule implements IModule {
     result.add(BootstrapLanguagesManager.getInstance().getProjectLanguage());
     result.add(BootstrapLanguagesManager.getInstance().getCollectionsLanguage());
     return result;
+  }
+
+  public List<Language> getAllUsedLanguages() {
+    Set<Language> result = new LinkedHashSet<Language>();
+    result.addAll(getUsedLanguages());
+    for (DevKit dk : getUsedDevkits()) {
+      result.addAll(dk.getAllExportedLanguages());
+    }
+    return new ArrayList<Language>(result);
   }
 
   public List<String> getUsedDevKitNamespaces() {
@@ -502,7 +520,6 @@ public abstract class AbstractModule implements IModule {
 
       return FileSystem.toFile(descriptorFile.getParent());
     }
-
 
     return null;
   }

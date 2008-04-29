@@ -15,16 +15,17 @@ import java.util.Set;
 public interface IModule extends ModelOwner, MPSModuleOwner {
   String getModuleUID();
 
-  <T extends IModule> Set<T> getAllDependOnModules(Class<T> cls);
 
   List<SModelDescriptor> getOwnModelDescriptors();
   List<ModelRoot> getModelRoots();
 
   List<Dependency> getDependOn();
   List<IModule> getDependOnModules();
+  List<IModule> getAllDependOnModules();
 
   List<String> getUsedLanguagesNamespaces();
   List<Language> getUsedLanguages();
+  List<Language> getAllUsedLanguages();
 
   List<String> getUsedDevKitNamespaces();
   List<DevKit> getUsedDevkits();
@@ -40,6 +41,7 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   Set<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm);
   Set<Language> getImplicitlyImportedLanguages(SModelDescriptor sm);
+  <T extends IModule> Set<T> getAllDependOnModules(Class<T> cls);
 
   IFile getDescriptorFile();
 

@@ -49,11 +49,11 @@ class ClasspathCollector {
     myVisited.add(current);
     myResult.add(current.getClassPathItem());
 
-    for (IModule dep : current.getDependOnModules()) {
+    for (IModule dep : current.getAllDependOnModules()) {
       doCollect(dep);
     }
 
-    for (Language l : current.getUsedLanguages()) {
+    for (Language l : current.getAllUsedLanguages()) {
       myResult.add(l.getLanguageRuntimeClasspath());
       for (IModule runtimeModule : l.getRuntimeDependOnModules()) {
         doCollect(runtimeModule);        
