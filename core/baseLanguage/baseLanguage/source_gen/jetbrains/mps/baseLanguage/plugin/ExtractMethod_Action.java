@@ -45,7 +45,7 @@ public class ExtractMethod_Action extends CurrentProjectMPSAction {
         this.setVisible(true);
       }
     } catch (Throwable t) {
-      ExtractMethod_Action.LOG.error("User's action doUpdate method failed. Action:" + "ExtractMethod", t);
+      LOG.error("User's action doUpdate method failed. Action:" + "ExtractMethod", t);
       this.setEnabled(false);
       this.setVisible(this.isAlwaysVisible);
     }
@@ -91,7 +91,7 @@ public class ExtractMethod_Action extends CurrentProjectMPSAction {
         dialog.showDialog();
       }
     } catch (Throwable t) {
-      ExtractMethod_Action.LOG.error("User's action execute method failed. Action:" + "ExtractMethod", t);
+      LOG.error("User's action execute method failed. Action:" + "ExtractMethod", t);
     }
   }
 

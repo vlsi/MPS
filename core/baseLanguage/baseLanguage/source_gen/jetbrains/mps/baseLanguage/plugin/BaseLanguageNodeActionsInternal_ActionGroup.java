@@ -15,12 +15,12 @@ public class BaseLanguageNodeActionsInternal_ActionGroup extends BaseActionGroup
   public static final String ID = "jetbrains.mps.baseLanguage.plugin.BaseLanguageNodeActionsInternal";
 
   public BaseLanguageNodeActionsInternal_ActionGroup(MPSProject project) {
-    super("", BaseLanguageNodeActionsInternal_ActionGroup.ID, project);
+    super("", ID, project);
     this.setInternal(false);
     try {
       this.add(new TestReferenceResolvingPerformance(TestReferenceResolvingPerformance.NODE), this);
     } catch (Throwable t) {
-      BaseLanguageNodeActionsInternal_ActionGroup.LOG.error("User group error", t);
+      LOG.error("User group error", t);
     }
   }
 

@@ -32,7 +32,7 @@ public class TodoViewer_Tool extends BaseTool {
   }
 
   public Icon getIcon() {
-    return TodoViewer_Tool.ICON;
+    return ICON;
   }
 
   public JComponent getComponent() {

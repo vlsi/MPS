@@ -46,7 +46,7 @@ public class UncommentStatements_Action extends CurrentProjectMPSAction {
         this.setVisible(enabled || this.isAlwaysVisible);
       }
     } catch (Throwable t) {
-      UncommentStatements_Action.LOG.error("User's action doUpdate method failed. Action:" + "UncommentStatements", t);
+      LOG.error("User's action doUpdate method failed. Action:" + "UncommentStatements", t);
       this.setEnabled(false);
       this.setVisible(this.isAlwaysVisible);
     }
@@ -98,7 +98,7 @@ public class UncommentStatements_Action extends CurrentProjectMPSAction {
         SNodeOperations.deleteNode(commentedStatementsBlock);
       }
     } catch (Throwable t) {
-      UncommentStatements_Action.LOG.error("User's action execute method failed. Action:" + "UncommentStatements", t);
+      LOG.error("User's action execute method failed. Action:" + "UncommentStatements", t);
     }
   }
 

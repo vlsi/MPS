@@ -15,13 +15,13 @@ public class BaseLanguageEditorPopupInternal_ActionGroup extends BaseActionGroup
   public static final String ID = "jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopupInternal";
 
   public BaseLanguageEditorPopupInternal_ActionGroup(MPSProject project) {
-    super("", BaseLanguageEditorPopupInternal_ActionGroup.ID, project);
+    super("", ID, project);
     this.setInternal(false);
     try {
       this.add(new TestReferenceResolvingPerformance(TestReferenceResolvingPerformance.EDITOR), this);
       this.add(new ShowInternalExtractMethodStuff_Action(project), this);
     } catch (Throwable t) {
-      BaseLanguageEditorPopupInternal_ActionGroup.LOG.error("User group error", t);
+      LOG.error("User group error", t);
     }
   }
 
