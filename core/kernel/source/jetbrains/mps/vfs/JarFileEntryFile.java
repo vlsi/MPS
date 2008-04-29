@@ -12,7 +12,7 @@ public class JarFileEntryFile implements IFile {
   private String myEntryPath;
 
   JarFileEntryFile(File zipFile) {
-    this(JarFileDataCache.getDataFor(zipFile), "");
+    this(JarFileDataCache.instance().getDataFor(zipFile), "");
   }
 
   JarFileEntryFile(JarFileData jarFileData, String path) {
