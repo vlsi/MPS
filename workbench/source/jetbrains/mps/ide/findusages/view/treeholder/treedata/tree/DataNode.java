@@ -6,6 +6,7 @@ import jetbrains.mps.ide.findusages.IExternalizeable;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.BaseNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.ModelNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.NodeNodeData;
+import jetbrains.mps.ide.findusages.view.treeholder.path.PathItemRole;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModel;
@@ -19,6 +20,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 
 public class DataNode implements IExternalizeable, IChangeListener {
   private static Logger LOG = Logger.getLogger(DataNode.class);
@@ -166,6 +168,14 @@ public class DataNode implements IExternalizeable, IChangeListener {
       nodes.addAll(child.getIncludedNodes());
     }
     return nodes;
+  }
+
+  public boolean containsNodes(Class dataClass) {
+    if (dataClass.isInstance(myData)) return true;
+    for (DataNode node : myChildren) {
+      if (node.containsNodes(dataClass)) return true;
+    }
+    return false;
   }
 
   public List<SNodePointer> getAllNodes() {

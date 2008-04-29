@@ -201,12 +201,21 @@ public abstract class UsagesTree extends MPSTree {
         if (myShowSearchedNodes) {
           HashSet<PathItemRole> searchedNodesPathProvider = new HashSet<PathItemRole>();
           searchedNodesPathProvider.add(PathItemRole.ROLE_MAIN_SEARCHED_NODES);
-          if (myGroupSearchedNodes) {
-            searchedNodesPathProvider.add(PathItemRole.ROLE_ROOT);
-            searchedNodesPathProvider.add(PathItemRole.ROLE_ROOT_TO_TARGET_NODE);
-          }
-          searchedNodesPathProvider.add(PathItemRole.ROLE_TARGET_NODE);
 
+          if (myContents.getTreeRoot().getChild(0).containsNodes(NodeNodeData.class)) {
+            if (myGroupSearchedNodes) {
+              searchedNodesPathProvider.add(PathItemRole.ROLE_ROOT);
+              searchedNodesPathProvider.add(PathItemRole.ROLE_ROOT_TO_TARGET_NODE);
+            }
+            searchedNodesPathProvider.add(PathItemRole.ROLE_TARGET_NODE);
+          } else if (myContents.getTreeRoot().getChild(0).containsNodes(ModelNodeData.class)) {
+            if (myGroupSearchedNodes) {
+              searchedNodesPathProvider.add(PathItemRole.ROLE_MODULE);
+            }
+            searchedNodesPathProvider.add(PathItemRole.ROLE_MODEL);
+          } else {
+            searchedNodesPathProvider.add(PathItemRole.ROLE_MODULE);
+          }
           root.add(buildGoodSubtreeWithIcons(myContents.getTreeRoot().getChild(0), searchedNodesPathProvider).get(0));
         }
         root.add(buildGoodSubtreeWithIcons(myContents.getTreeRoot().getChild(1), myResultPathProvider).get(0));
