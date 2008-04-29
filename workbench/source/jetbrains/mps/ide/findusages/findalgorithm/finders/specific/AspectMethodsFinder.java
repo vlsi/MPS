@@ -36,8 +36,8 @@ public class AspectMethodsFinder extends BaseFinder {
     myMethodName = methodName;
   }
 
-  public SearchResults find(SearchQuery query, IAdaptiveProgressMonitor monitor) {
-    SearchResults res = new SearchResults();
+  public SearchResults<SNode> find(SearchQuery query, IAdaptiveProgressMonitor monitor) {
+    SearchResults<SNode> res = new SearchResults<SNode>();
     for (SModel model : myModels) {
       for (SNode root : model.getRoots()) {
         findNodes(res, root, myMethodName);
@@ -46,7 +46,7 @@ public class AspectMethodsFinder extends BaseFinder {
     return res;
   }
 
-  private void findNodes(SearchResults res, SNode node, String methodName) {
+  private void findNodes(SearchResults<SNode> res, SNode node, String methodName) {
     for (String value : node.getProperties().values()) {
       if (methodName.endsWith(value)) {
         res.getSearchResults().add(new SearchResult<SNode>(node, "Aspect methods"));

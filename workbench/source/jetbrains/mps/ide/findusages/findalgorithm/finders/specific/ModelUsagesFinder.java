@@ -19,6 +19,7 @@ public class ModelUsagesFinder extends BaseFinder {
 
   public SearchResults find(SearchQuery query, IAdaptiveProgressMonitor monitor) {
     SearchResults searchResults = new SearchResults();
+    searchResults.getSearchedNodes().add(query.getModel());
     SModelUID modelUID = query.getModel().getUID();
     for (SModelDescriptor modelDescriptor : SModelRepository.getInstance().getAllModelDescriptors()) {
       if (monitor.isCanceled()) return searchResults;

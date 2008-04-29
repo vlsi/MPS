@@ -17,7 +17,7 @@ import java.util.Collection;
 public class ConstantFinder extends BaseFinder {
   private static final String RESULTS = "results";
 
-  private SearchResults myResults = new SearchResults();
+  private SearchResults<SNode> myResults = new SearchResults<SNode>();
 
   public ConstantFinder(final Collection<SNode> nodes, final String categoryName) {
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
@@ -33,7 +33,7 @@ public class ConstantFinder extends BaseFinder {
     myResults.getSearchResults().addAll(searchResults);
   }
 
-  public SearchResults find(SearchQuery query, IAdaptiveProgressMonitor monitor) {
+  public SearchResults<SNode> find(SearchQuery query, IAdaptiveProgressMonitor monitor) {
     return myResults;
   }
 

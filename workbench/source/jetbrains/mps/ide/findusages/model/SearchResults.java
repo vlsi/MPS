@@ -8,24 +8,24 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class SearchResults {
-  private Set<SNode> mySearchedNodes = new HashSet<SNode>();
-  private List<SearchResult> mySearchResults = new ArrayList<SearchResult>();
+public class SearchResults<T> {
+  private Set<T> mySearchedNodes = new HashSet<T>();
+  private List<SearchResult<T>> mySearchResults = new ArrayList<SearchResult<T>>();
 
   public SearchResults() {
 
   }
 
-  public SearchResults(Set<SNode> searchedNodePointers, List<SearchResult> searchResults) {
-    mySearchedNodes = searchedNodePointers;
+  public SearchResults(Set<T> searchedNodes, List<SearchResult<T>> searchResults) {
+    mySearchedNodes = searchedNodes;
     mySearchResults = searchResults;
   }
 
-  public Set<SNode> getSearchedNodes() {
+  public Set<T> getSearchedNodes() {
     return mySearchedNodes;
   }
 
-  public List<SearchResult> getSearchResults() {
+  public List<SearchResult<T>> getSearchResults() {
     return mySearchResults;
   }
 
@@ -42,7 +42,7 @@ public class SearchResults {
     return result;
   }
 
-  public void remove(SNode node) {
+  public void remove(T node) {
     for (SearchResult result : new ArrayList<SearchResult>(mySearchResults)) {
       if (result.getObject() == node) {
         mySearchResults.remove(result);
@@ -50,12 +50,12 @@ public class SearchResults {
     }
   }
 
-  public void remove(SearchResult searchResult) {
+  public void remove(SearchResult<T> searchResult) {
     mySearchResults.remove(searchResult);
   }
 
-  public List<SearchResult> getAliveResults() {
-    List<SearchResult> alive = new ArrayList<SearchResult>();
+  public List<SearchResult<T>> getAliveResults() {
+    List<SearchResult<T>> alive = new ArrayList<SearchResult<T>>();
     for (SearchResult result : mySearchResults) {
       if (result.getObject() != null) {
         alive.add(result);
@@ -64,9 +64,9 @@ public class SearchResults {
     return alive;
   }
 
-  public Set<SNode> getAliveNodes() {
-    Set<SNode> alive = new HashSet<SNode>();
-    for (SNode node : mySearchedNodes) {
+  public Set<T> getAliveNodes() {
+    Set<T> alive = new HashSet<T>();
+    for (T node : mySearchedNodes) {
       if (node != null) {
         alive.add(node);
       }
