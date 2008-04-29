@@ -11,7 +11,6 @@ import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.Modul
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.NodeNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.tree.DataNode;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.tree.DataTree;
-import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTree.UsagesTreeNode;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.projectPane.ProjectPane;
@@ -208,22 +207,38 @@ public abstract class UsagesTree extends MPSTree {
           }
           searchedNodesPathProvider.add(PathItemRole.ROLE_TARGET_NODE);
 
-          root.add(buildSubtree(myContents.getTreeRoot().getChild(0), searchedNodesPathProvider).get(0));
+          root.add(buildGoodSubtreeWithIcons(myContents.getTreeRoot().getChild(0), searchedNodesPathProvider).get(0));
         }
-        root.add(buildSubtree(myContents.getTreeRoot().getChild(1), myResultPathProvider).get(0));
+        root.add(buildGoodSubtreeWithIcons(myContents.getTreeRoot().getChild(1), myResultPathProvider).get(0));
 
         makeAllNodesHTMLNodes(root);
-
-        setTreeIcons((UsagesTreeNode) root.getChildAt(0));
-        sortChildrenByTextPresentation((UsagesTreeNode) root.getChildAt(0));
-        if (myShowSearchedNodes) {
-          setTreeIcons((UsagesTreeNode) root.getChildAt(1));
-          sortChildrenByTextPresentation((UsagesTreeNode) root.getChildAt(1));
-        }
 
         return root;
       }
     });
+  }
+
+  private List<UsagesTreeNode> buildGoodSubtreeWithIcons(DataNode root, HashSet<PathItemRole> nodeCategories) {
+    List<UsagesTreeNode> children = buildSubtree(root, nodeCategories);
+    mergeChildren(children);
+    sortChildrenByTextPresentation(children);
+    for (UsagesTreeNode child : children) {
+      setTreeIcons(child);
+    }
+    return children;
+  }
+
+  private void sortChildrenByTextPresentation(List<UsagesTreeNode> children) {
+    Collections.sort(children, new Comparator<UsagesTreeNode>() {
+      public int compare(UsagesTreeNode o1, UsagesTreeNode o2) {
+        String s1 = o1.getUserObject().getData().getPlainText();
+        String s2 = o2.getUserObject().getData().getPlainText();
+        return s1.compareTo(s2);
+      }
+    });
+    for (UsagesTreeNode child : children) {
+      sortChildrenByTextPresentation(child.internalGetChildren());
+    }
   }
 
   private List<UsagesTreeNode> buildSubtree(DataNode root, HashSet<PathItemRole> nodeCategories) {
@@ -231,9 +246,6 @@ public abstract class UsagesTree extends MPSTree {
     for (DataNode child : root.getChildren()) {
       children.addAll(buildSubtree(child, nodeCategories));
     }
-
-    //glue duplicates (e.g. same solutions under diffirent categories if categories are not shown)
-    mergeChildren(children);
 
     BaseNodeData data = root.getData();
     if (nodeCategories.contains(data.getRole())) {
@@ -260,43 +272,33 @@ public abstract class UsagesTree extends MPSTree {
     return children;
   }
 
-  private void sortChildrenByTextPresentation(UsagesTreeNode root) {
-    Collections.sort(root.internalGetChildren(), new Comparator<UsagesTreeNode>() {
-      public int compare(UsagesTreeNode o1, UsagesTreeNode o2) {
-        String s1 = o1.getUserObject().getData().getPlainText();
-        String s2 = o2.getUserObject().getData().getPlainText();
-        return s1.compareTo(s2);
-      }
-    });
-    for (UsagesTreeNode child : root.internalGetChildren()) {
-      sortChildrenByTextPresentation(child);
-    }
-  }
-
   private void mergeChildren(List<UsagesTreeNode> children) {
-    /*sortChildrenByObject(children);
+    sortChildrenByObject(children);
 
     List<UsagesTreeNode> gluedChildren = new ArrayList<UsagesTreeNode>();
     for (UsagesTreeNode child : children) {
       boolean addAsElements = false;
-      UsagesTreeNode currentNode = gluedChildren.get(gluedChildren.size() - 1);
-      Object additionID = child.getUserObject().getData().getIdObject();
-      Object currentID = currentNode.getUserObject().getData().getIdObject();
-
-      //it's not known what to do in the case of deleted nodes, we won't merge them
-      if (additionID == null) addAsElements = false;
-      else if (additionID instanceof String) addAsElements = additionID.equals(currentID);
-      else addAsElements = (additionID == currentID);
-
-      if (addAsElements) {
-        for (UsagesTreeNode additionChild)
-        currentNode.add();
-      } else {
+      if (gluedChildren.isEmpty()) {
         gluedChildren.add(child);
+      } else {
+        UsagesTreeNode currentNode = gluedChildren.get(gluedChildren.size() - 1);
+        Object additionID = child.getUserObject().getData().getIdObject();
+        Object currentID = currentNode.getUserObject().getData().getIdObject();
+
+        //it's not known what to do in the case of deleted nodes, we won't merge them
+        if (additionID == null) addAsElements = false;
+        else if (additionID instanceof String) addAsElements = additionID.equals(currentID);
+        else addAsElements = (additionID == currentID);
+
+        if (addAsElements) {
+          for (UsagesTreeNode additionChild : child.internalGetChildren())
+            currentNode.add(additionChild);
+        } else {
+          gluedChildren.add(child);
+        }
       }
     }
     children = gluedChildren;
-    */
   }
 
   private void sortChildrenByObject(List<UsagesTreeNode> children) {
@@ -581,7 +583,7 @@ public abstract class UsagesTree extends MPSTree {
     }
 
     List<UsagesTreeNode> internalGetChildren() {
-      return this.children;
+      return Collections.list(this.children());
     }
   }
 }
