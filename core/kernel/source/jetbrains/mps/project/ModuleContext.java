@@ -82,20 +82,9 @@ public class ModuleContext extends StandaloneMPSContext {
     MPSProject project = frame.getProject();
     Set<IModule> owningModules = SModelRepository.getInstance().getOwners(model, IModule.class);
     if (owningModules.isEmpty()) {
-      String uuid = model != null ? model.getModelUID().toString() : "null";
-    LOG.error("Couldn't create module context for node:" +
-              "\nCouldn't find owner module for model \"" + uuid + "\"");
+    LOG.error("couldn't create module context for node:" +
+              "\ncouldn't find owner module for model '" + model.getModelUID() + "'");
       return null;
-    }
-
-    if (owningModules.size() > 1) {
-      Iterator<IModule> it = owningModules.iterator();
-      while (it.hasNext()) {
-        IModule m = it.next();
-        if (m instanceof Solution && "outputModels".equals(((Solution) m).getSolutionDescriptor().getName())) {
-          it.remove();
-        }
-      }
     }
 
     IModule module;
