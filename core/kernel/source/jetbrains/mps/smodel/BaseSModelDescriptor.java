@@ -97,7 +97,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
   private IOperationContext findOperationContext() {
     IOperationContext operationContext = null;
-  outer :
+    outer :
     for (IModule module : getModules()) {
       if (module instanceof Generator) {
         module = ((Generator)module).getSourceLanguage();
@@ -189,11 +189,14 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     for (SModelUID modelImport : getSModel().getImportedModelUIDs()) {
       if (moduleScope.getModelDescriptor(modelImport) == null) {
         SModelDescriptor sm = GlobalScope.getInstance().getModelDescriptor(modelImport);
-        if (sm != null && sm.getModule() != null) {
-          ModuleReference ref = ModuleReference.newInstance(model);
-          ref.setName(sm.getModule().getModuleUID());
-          md.addDependency(ref);
-          wereChanges = true;
+        if (sm != null) {
+          IModule anotherModule = sm.getModule();
+          if (anotherModule != null && anotherModule != module) {
+            ModuleReference ref = ModuleReference.newInstance(model);
+            ref.setName(sm.getModule().getModuleUID());
+            md.addDependency(ref);
+            wereChanges = true;
+          }
         }
       }
     }
