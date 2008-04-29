@@ -7,9 +7,10 @@ import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.search.EmptySearchScope;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall;
 
@@ -27,11 +28,14 @@ public class LocalStaticMethodCall_staticMethodDeclaration_ReferentConstraint im
   }
 
   public boolean canCreateNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return (SNodeOperations.getAncestorWhereConceptInList(_context.getEnclosingNode(), new String[]{"jetbrains.mps.baseLanguage.structure.ClassConcept"}, false, false) != null);
+    return true;
   }
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode clazz = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+    if (clazz == null) {
+      return new EmptySearchScope();
+    }
     return new StaticMethodCall_StaticMethodScope(((ClassConcept)SNodeOperations.getAdapter(clazz)), ((LocalStaticMethodCall)SNodeOperations.getAdapter(_context.getReferenceNode())));
   }
 
