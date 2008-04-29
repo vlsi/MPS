@@ -35,6 +35,15 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
     EditorCell selectedCell = editor.getSelectedCell();
 
+    if (selectedCell != null) {
+      //allow deepest selected cell to process event.
+      EditorCell deepestSelectedCell = editor.getDeepestSelectedCell();
+      if (allowCellToProcessEvent(deepestSelectedCell, keyEvent, editorContext)) {
+        editor.changeSelection(deepestSelectedCell);
+        return true;
+      }
+    }
+
     // process cell keymaps first
 
     if (selectedCell != null) {
@@ -121,9 +130,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
     }
 
     // process action
-
     if (selectedCell != null) {
-
       if (actionType != null && !actionType.equals(EditorCellAction.DELETE)) {
         if (!(EditorCellAction.RIGHT_TRANSFORM.equals(actionType) && dontExecuteRT)) {
           if (EditorUtil.executeCellAction(selectedCell, actionType, editorContext)) {
@@ -158,16 +165,6 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
           return true;
         }
       }
-
-      if (!keyEvent.isConsumed()) {
-        //allow deepest selected cell to process event.
-        EditorCell deepestSelectedCell = editor.getDeepestSelectedCell();
-        if (allowCellToProcessEvent(deepestSelectedCell, keyEvent, editorContext)) {
-          editor.changeSelection(deepestSelectedCell);
-          return true;
-        }
-
-      } // if (!keyEvent.isConsumed())
     } // if (selectedCell != null)
 
     if (actionType != null) {
