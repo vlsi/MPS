@@ -29,13 +29,12 @@ public class SearchResults {
     return mySearchResults;
   }
 
-  @Deprecated
   public Set<SModel> getModelsWithResults() {
     Set<SModel> result = new HashSet<SModel>();
     for (SearchResult searchResult : mySearchResults) {
       Object resultObject = searchResult.getObject();
       if (resultObject instanceof SNode) {
-        result.add(((SNode)resultObject).getModel());
+        result.add(((SNode) resultObject).getModel());
       } else if (resultObject instanceof SModel) {
         result.add((SModel) resultObject);
       }
