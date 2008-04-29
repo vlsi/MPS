@@ -2,12 +2,14 @@ package jetbrains.mps.reloading;
 
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ReadUtil;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.FileSystemFile;
+import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.*;
@@ -18,6 +20,35 @@ import java.util.zip.ZipFile;
  * @author Kostik
  */
 public class JarFileClassPathItem extends AbstractClassPathItem {
+  private static File transformFile(IFile f) throws IOException {
+    if (f instanceof FileSystemFile) {
+      return ((FileSystemFile) f).getFile();
+    }
+
+    File tmpFile = File.createTempFile("mps", "");
+    tmpFile.deleteOnExit();
+
+    OutputStream os = null;
+    InputStream is = null;
+    try {
+      is = new BufferedInputStream(f.openInputStream());
+      os = new BufferedOutputStream(new FileOutputStream(tmpFile));
+      int result;
+      while ((result = is.read()) != -1) {
+        os.write(result);
+      }
+    } finally {
+      if (is != null) {
+        is.close();
+      }
+      if (os != null) {
+        os.close();
+      }
+    }
+
+    return tmpFile;
+  }
+
   private static final Logger LOG = Logger.getLogger(JarFileClassPathItem.class);
 
   private ZipFile myZipFile;
@@ -29,10 +60,14 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
   private Map<String, ZipEntry> myEntries = new HashMap<String, ZipEntry>();
 
   public JarFileClassPathItem(String path) throws IOException {
-    this(new File(path));
+    this(FileSystem.getFile(path));
   }
 
-  public JarFileClassPathItem(File jarFile) throws IOException {
+  public JarFileClassPathItem(IFile file) throws IOException {
+    this(transformFile(file));
+  }
+
+  private JarFileClassPathItem(File jarFile) throws IOException {
     myFile = jarFile;
     myPrefix = "jar:" + jarFile.toURL() + "!/";
     myZipFile = new ZipFile(jarFile);
