@@ -16,7 +16,9 @@ public class FileSystem {
         entryPath = entryPath.substring(1);
       }
 
-      JarFileEntryFile root = new JarFileEntryFile(new JarFileData(new File(jarFileName)), entryPath);
+      JarFileEntryFile root = new JarFileEntryFile(
+        JarFileDataCache.instance().getDataFor(new File(jarFileName)), entryPath);
+      
       return root;
     } else {
       return new FileSystemFile(new File(path));
