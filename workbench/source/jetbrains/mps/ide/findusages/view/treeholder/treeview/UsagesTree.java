@@ -221,14 +221,14 @@ public abstract class UsagesTree extends MPSTree {
   private List<UsagesTreeNode> buildGoodSubtreeWithIcons(DataNode root, HashSet<PathItemRole> nodeCategories) {
     List<UsagesTreeNode> children = buildSubtree(root, nodeCategories);
     mergeChildren(children);
-    sortChildrenByTextPresentation(children);
+    sortSubtreeByTextPresentation(children);
     for (UsagesTreeNode child : children) {
       setTreeIcons(child);
     }
     return children;
   }
 
-  private void sortChildrenByTextPresentation(List<UsagesTreeNode> children) {
+  private void sortSubtreeByTextPresentation(List<UsagesTreeNode> children) {
     Collections.sort(children, new Comparator<UsagesTreeNode>() {
       public int compare(UsagesTreeNode o1, UsagesTreeNode o2) {
         String s1 = o1.getUserObject().getData().getPlainText();
@@ -237,7 +237,7 @@ public abstract class UsagesTree extends MPSTree {
       }
     });
     for (UsagesTreeNode child : children) {
-      sortChildrenByTextPresentation(child.internalGetChildren());
+      sortSubtreeByTextPresentation(child.internalGetChildren());
     }
   }
 
@@ -273,35 +273,37 @@ public abstract class UsagesTree extends MPSTree {
   }
 
   private void mergeChildren(List<UsagesTreeNode> children) {
-    sortChildrenByObject(children);
+    List<UsagesTreeNode> mergedChildren = new ArrayList<UsagesTreeNode>();
 
-    List<UsagesTreeNode> gluedChildren = new ArrayList<UsagesTreeNode>();
+    Map<Object, UsagesTreeNode> childMap = new HashMap<Object, UsagesTreeNode>();
     for (UsagesTreeNode child : children) {
-      boolean addAsElements = false;
-      if (gluedChildren.isEmpty()) {
-        gluedChildren.add(child);
+      Object additionID = child.getUserObject().getData().getIdObject();
+      if (additionID == null) {
+        //we don't know what to do in the case of deleted nodes, so we won't merge them
+        mergedChildren.add(child);
       } else {
-        UsagesTreeNode currentNode = gluedChildren.get(gluedChildren.size() - 1);
-        Object additionID = child.getUserObject().getData().getIdObject();
-        Object currentID = currentNode.getUserObject().getData().getIdObject();
-
-        //it's not known what to do in the case of deleted nodes, we won't merge them
-        if (additionID == null) addAsElements = false;
-        else if (additionID instanceof String) addAsElements = additionID.equals(currentID);
-        else addAsElements = (additionID == currentID);
-
-        if (addAsElements) {
-          for (UsagesTreeNode additionChild : child.internalGetChildren()) currentNode.add(additionChild);
+        UsagesTreeNode addToNode = childMap.get(additionID);
+        if (addToNode == null) {
+          childMap.put(additionID, child);
         } else {
-          gluedChildren.add(child);
+          Object addToNodeID = addToNode.getUserObject().getData().getIdObject();
+
+          if (additionID.equals(addToNodeID)) {
+            for (UsagesTreeNode additionChild : child.internalGetChildren()) addToNode.add(additionChild);
+          } else {
+            childMap.put(additionID, child);
+          }
         }
       }
     }
-    children = gluedChildren;
-  }
+    mergedChildren.addAll(childMap.values());
 
-  private void sortChildrenByObject(List<UsagesTreeNode> children) {
+    for (UsagesTreeNode child : mergedChildren) {
+      mergeChildren(child.internalGetChildren());
+    }
 
+    //noinspection UnusedAssignment
+    children = mergedChildren;
   }
 
   private void setTreeIcons(UsagesTreeNode root) {
@@ -399,9 +401,7 @@ public abstract class UsagesTree extends MPSTree {
         } else if (data instanceof ModuleNodeData) {
           IModule module = (IModule) ((ModuleNodeData) data).getIdObject();
           if (module != null) {
-            if (inProjectIfPossible) {
-              navigateInTree(module);
-            }
+            navigateInTree(module);
           }
         }
       }
