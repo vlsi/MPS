@@ -19,6 +19,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="41" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="4" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -2563,7 +2564,9 @@
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1177400765734">
                   <property name="name" value="concepts" />
                   <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType" id="1180142293018">
-                    <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType" id="1180142294945" />
+                    <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType" id="1180142294945">
+                      <link role="conceptDeclaraton" targetNodeId="1.1068580123157" resolveInfo="Statement" />
+                    </node>
                   </node>
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1177400765778">
                     <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListCreatorWithInit" id="1180142302161">
@@ -2573,7 +2576,9 @@
                       <node role="initValue" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptRefExpression" id="1180142327333">
                         <link role="conceptDeclaration" targetNodeId="1.1082113931046" />
                       </node>
-                      <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType" id="1180142304217" />
+                      <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType" id="1180142304217">
+                        <link role="conceptDeclaraton" targetNodeId="1.1068580123157" resolveInfo="Statement" />
+                      </node>
                     </node>
                   </node>
                 </node>
