@@ -114,8 +114,8 @@ public abstract class UsageView implements IExternalizeable {
   }
 
   public void rerun() {
-    if (mySearchQuery == null) return;
-    if ((mySearchQuery.getScope() == null) && (mySearchQuery.getNode() == null)) return;
+    assert mySearchQuery != null;
+    if ((mySearchQuery.getScope() == null) || (mySearchQuery.getNode() == null)) return;
     run();
   }
 
