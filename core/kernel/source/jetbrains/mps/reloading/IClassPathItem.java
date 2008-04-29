@@ -19,6 +19,7 @@ public interface IClassPathItem {
 
   long getTimestamp();
 
+  List<IClassPathItem> flatten();
   IClassPathItem optimize();
 
 }

@@ -71,6 +71,9 @@ public abstract class AbstractModule implements IModule {
   }
 
   public boolean isPackaged() {
+    if (getDescriptorFile() == null) {
+      return false;
+    }
     return getDescriptorFile().isReadOnly();
   }
 
@@ -398,8 +401,6 @@ public abstract class AbstractModule implements IModule {
   }
 
   private void updateClassPathItem() {
-
-
     CompositeClassPathItem result = new CompositeClassPathItem();
     for (String s : getClassPath()) {
       try {
@@ -418,6 +419,20 @@ public abstract class AbstractModule implements IModule {
         }
       } catch (IOException e) {
         LOG.error(e);
+      }
+    }
+
+    if (isPackaged()) {
+      File parent = getBundleHome().getParentFile();
+      String name = getModuleUID() + ".lib.jar";
+      File file = new File(parent, name);
+
+      if (file.exists()) {
+        try {
+          result.add(new JarFileClassPathItem(file.getPath()));
+        } catch (IOException e) {
+          LOG.error(e);
+        }
       }
     }
 

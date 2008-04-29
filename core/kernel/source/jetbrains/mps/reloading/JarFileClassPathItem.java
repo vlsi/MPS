@@ -51,6 +51,7 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
   private ZipFile myZipFile;
   private String myPrefix;
   private File myFile;
+  private IFile myIFile;
 
   private Map<String, Set<String>> myClasses = new HashMap<String, Set<String>>();
   private Map<String, Set<String>> mySubpackages = new HashMap<String, Set<String>>();
@@ -61,14 +62,15 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
   }
 
   public JarFileClassPathItem(IFile file) throws IOException {
-    this(transformFile(file));
+    myIFile = file;
+    myFile = transformFile(file);
+    myPrefix = "jar:" + myFile.toURL() + "!/";
+    myZipFile = new ZipFile(myFile);
+    buildCaches();
   }
 
-  private JarFileClassPathItem(File jarFile) throws IOException {
-    myFile = jarFile;
-    myPrefix = "jar:" + jarFile.toURL() + "!/";
-    myZipFile = new ZipFile(jarFile);
-    buildCaches();
+  public IFile getIFile() {
+    return myIFile;
   }
 
   public File getFile() {
@@ -180,6 +182,12 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
 
   public long getTimestamp() {
     return myFile.lastModified();
+  }
+
+  public List<IClassPathItem> flatten() {
+    List<IClassPathItem> result = new ArrayList<IClassPathItem>();
+    result.add(this);
+    return result;
   }
 
   private void buildPackageCaches(String namespace) {

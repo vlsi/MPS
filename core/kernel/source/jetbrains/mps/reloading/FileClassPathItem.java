@@ -131,6 +131,12 @@ public class FileClassPathItem extends AbstractClassPathItem {
     return result;
   }
 
+  public List<IClassPathItem> flatten() {
+    List<IClassPathItem> result = new ArrayList<IClassPathItem>();
+    result.add(this);
+    return result;
+  }
+
   private IFile getModelDir(String namespace) {
     if (namespace == null) namespace = "";
     return FileSystem.getFile(myClassPath + File.separatorChar + namespace.replace('.', File.separatorChar));

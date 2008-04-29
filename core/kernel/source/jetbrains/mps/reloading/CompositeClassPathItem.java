@@ -79,7 +79,7 @@ public class CompositeClassPathItem implements IClassPathItem {
     return new ArrayList<IClassPathItem>(myChildren);
   }
 
-  private List<IClassPathItem> flatten() {
+  public List<IClassPathItem> flatten() {
     List<IClassPathItem> result = new ArrayList<IClassPathItem>();
 
     for (IClassPathItem child : myChildren) {

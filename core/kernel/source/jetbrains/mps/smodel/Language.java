@@ -145,6 +145,21 @@ public class Language extends AbstractModule implements Marshallable<Language> {
         LOG.error(e);
       }
     }
+
+    if (isPackaged()) {
+      File parent = getBundleHome().getParentFile();
+      String name = getModuleUID() + ".runtime.jar";
+      File file = new File(parent, name);
+
+      if (file.exists()) {
+        try {
+          result.add(new JarFileClassPathItem(file.getPath()));
+        } catch (IOException e) {
+          LOG.error(e);
+        }
+      }
+    }
+
     myLanguageRuntimeClasspath = result;
   }
 
