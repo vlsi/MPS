@@ -220,7 +220,7 @@ public abstract class UsagesTree extends MPSTree {
 
   private List<UsagesTreeNode> buildGoodSubtreeWithIcons(DataNode root, HashSet<PathItemRole> nodeCategories) {
     List<UsagesTreeNode> children = buildSubtree(root, nodeCategories);
-    mergeChildren(children);
+    //mergeChildren(children);
     sortSubtreeByTextPresentation(children);
     for (UsagesTreeNode child : children) {
       setTreeIcons(child);
@@ -289,7 +289,9 @@ public abstract class UsagesTree extends MPSTree {
           Object addToNodeID = addToNode.getUserObject().getData().getIdObject();
 
           if (additionID.equals(addToNodeID)) {
-            for (UsagesTreeNode additionChild : child.internalGetChildren()) addToNode.add(additionChild);
+            for (UsagesTreeNode additionChild : child.internalGetChildren()) {
+              addToNode.add(additionChild);
+            }
           } else {
             childMap.put(additionID, child);
           }
