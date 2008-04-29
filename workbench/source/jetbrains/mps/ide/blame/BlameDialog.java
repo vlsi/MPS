@@ -4,7 +4,6 @@ import jetbrains.mps.ide.BaseDialog;
 import jetbrains.mps.ide.VersionUtil;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.util.ExceptionUtil;
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.project.MPSProject;
 
