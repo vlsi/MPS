@@ -580,7 +580,8 @@ public abstract class UsagesTree extends MPSTree {
     }
 
     List<UsagesTreeNode> internalGetChildren() {
-      return Collections.list(this.children());
+      if (children == null) return new ArrayList<UsagesTreeNode>();
+      return children;
     }
   }
 }
