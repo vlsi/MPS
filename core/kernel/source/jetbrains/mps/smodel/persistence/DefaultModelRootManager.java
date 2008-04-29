@@ -323,7 +323,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     } else {
       oldModelFile.delete();
     }
-
+    MPSModuleRepository.getInstance().invalidateCaches();
     return true;
   }
 
