@@ -27,6 +27,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="48" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -4149,26 +4150,6 @@
                 <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_referenceNode" id="1190152050357" />
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1190152061267" />
               </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="searchScopeCanCreate" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_CanCreate" id="1159221567130">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1159221567131">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1159221571413">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1159221581406">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977956412">
-                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="1159221578759" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1171484232735">
-                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1159221578761" />
-                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1159221578762">
-                    <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1207781906000">
-                      <link role="conceptDeclaration" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1159221578757" />
             </node>
           </node>
         </node>
