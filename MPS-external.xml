@@ -33,7 +33,6 @@
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\xstream" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\app" />
-    <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\app" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\app\agreement" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\app\complexLanguage" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\app\dslbook_example" />
@@ -50,7 +49,6 @@
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\kernel\vcs\generic" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\panacea" />
-    <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\springframework" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\docs" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\META-INF" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\plugin" />
