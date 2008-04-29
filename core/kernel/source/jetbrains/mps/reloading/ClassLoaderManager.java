@@ -3,6 +3,7 @@ package jetbrains.mps.reloading;
 import jetbrains.mps.component.Dependency;
 import jetbrains.mps.component.IComponentLifecycle;
 import jetbrains.mps.MPSActivator;
+import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.command.CommandAdapter;
 import jetbrains.mps.ide.command.CommandEvent;
@@ -420,7 +421,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
         if (!file.exists()) continue;
 
         if (file.getPath().endsWith(name)) {
-          return new JarFileClassPathItem(file);
+          return new JarFileClassPathItem(new FileSystemFile(file));
         }
       } catch (URISyntaxException e) {
         LOG.error(e);
