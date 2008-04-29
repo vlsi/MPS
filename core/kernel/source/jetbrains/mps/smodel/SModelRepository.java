@@ -140,6 +140,10 @@ public class SModelRepository implements IComponentLifecycle {
       throw new IllegalStateException();
     }
 
+    if (!SModelStereotype.JAVA_STUB.equals(modelDescriptor.getStereotype())) {
+      LOG.warning("Model " + modelDescriptor.getModelUID() + " has more than one owner.");
+    }
+
     myModelsToOwners.addLink(modelDescriptor, owner);
 
     myUIDToModelDescriptorMap.put(modelDescriptor.getModelUID(), modelDescriptor);
