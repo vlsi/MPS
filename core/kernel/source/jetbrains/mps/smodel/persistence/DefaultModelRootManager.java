@@ -57,7 +57,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
               public void run() {
                 NodeReadAccessCaster.blockEvents();
                 try {
-                  Merger.merge(file);
+//                  Merger.merge(file);
                 } finally {
                   NodeReadAccessCaster.unblockEvents();
                 }
