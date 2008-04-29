@@ -16,9 +16,6 @@ import java.util.*;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-/**
- * @author Kostik
- */
 public class JarFileClassPathItem extends AbstractClassPathItem {
   private static File transformFile(IFile f) throws IOException {
     if (f instanceof FileSystemFile) {
