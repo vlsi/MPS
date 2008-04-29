@@ -5,6 +5,7 @@
   <language namespace="jetbrains.mps.baseLanguage">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
+  <language namespace="jetbrains.mps.baseLanguage.blTypes" />
   <maxImportIndex value="2" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="2" modelUID="java.io@java_stub" version="-1" />
@@ -47,6 +48,9 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1209124981943" />
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1209124973658" />
+  </node>
+  <node type="jetbrains.mps.baseLanguage.blTypes.structure.BarConcept" id="1209476665415">
+    <property name="name" value="myBar" />
   </node>
 </model>
 

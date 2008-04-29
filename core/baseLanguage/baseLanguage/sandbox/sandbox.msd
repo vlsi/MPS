@@ -6,7 +6,6 @@
   <classPath>
     <entry path="${mps_home}\lib\annotations\annotations.jar" />
   </classPath>
-  <runtimeClassPath />
   <sourcePath />
   <dependencies>
     <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
@@ -24,6 +23,11 @@
     <usedLanguages>jetbrains.mps.bootstrap.helgins</usedLanguages>
     <usedLanguages>jetbrains.mps.quotation</usedLanguages>
     <usedLanguages>jetbrains.mps.baseLanguage.strings</usedLanguages>
+    <usedLanguages>jetbrains.mps.baseLanguage.blTypes</usedLanguages>
   </usedLanguages>
+  <osgiOptions>
+    <requiredBundles />
+    <exportedPackage />
+  </osgiOptions>
 </solution>
 
