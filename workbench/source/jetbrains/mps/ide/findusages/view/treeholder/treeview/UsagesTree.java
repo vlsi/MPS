@@ -11,6 +11,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.Modul
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.NodeNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.tree.DataNode;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.tree.DataTree;
+import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTree.UsagesTreeNode;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.projectPane.ProjectPane;
@@ -28,10 +29,7 @@ import javax.swing.event.TreeExpansionEvent;
 import javax.swing.event.TreeExpansionListener;
 import javax.swing.tree.TreePath;
 import java.awt.event.*;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public abstract class UsagesTree extends MPSTree {
   private static final String COMMAND_OPEN_NODE_IN_PROJECT = "open_node_in_project";
@@ -217,8 +215,10 @@ public abstract class UsagesTree extends MPSTree {
         makeAllNodesHTMLNodes(root);
 
         setTreeIcons((UsagesTreeNode) root.getChildAt(0));
+        sortChildrenByTextPresentation((UsagesTreeNode) root.getChildAt(0));
         if (myShowSearchedNodes) {
           setTreeIcons((UsagesTreeNode) root.getChildAt(1));
+          sortChildrenByTextPresentation((UsagesTreeNode) root.getChildAt(1));
         }
 
         return root;
@@ -231,6 +231,10 @@ public abstract class UsagesTree extends MPSTree {
     for (DataNode child : root.getChildren()) {
       children.addAll(buildSubtree(child, nodeCategories));
     }
+
+    //glue duplicates (e.g. same solutions under diffirent categories if categories are not shown)
+    mergeChildren(children);
+
     BaseNodeData data = root.getData();
     if (nodeCategories.contains(data.getRole())) {
       UsagesTreeNode node = new UsagesTreeNode("");
@@ -254,6 +258,49 @@ public abstract class UsagesTree extends MPSTree {
       children.add(node);
     }
     return children;
+  }
+
+  private void sortChildrenByTextPresentation(UsagesTreeNode root) {
+    Collections.sort(root.internalGetChildren(), new Comparator<UsagesTreeNode>() {
+      public int compare(UsagesTreeNode o1, UsagesTreeNode o2) {
+        String s1 = o1.getUserObject().getData().getPlainText();
+        String s2 = o2.getUserObject().getData().getPlainText();
+        return s1.compareTo(s2);
+      }
+    });
+    for (UsagesTreeNode child : root.internalGetChildren()) {
+      sortChildrenByTextPresentation(child);
+    }
+  }
+
+  private void mergeChildren(List<UsagesTreeNode> children) {
+    /*sortChildrenByObject(children);
+
+    List<UsagesTreeNode> gluedChildren = new ArrayList<UsagesTreeNode>();
+    for (UsagesTreeNode child : children) {
+      boolean addAsElements = false;
+      UsagesTreeNode currentNode = gluedChildren.get(gluedChildren.size() - 1);
+      Object additionID = child.getUserObject().getData().getIdObject();
+      Object currentID = currentNode.getUserObject().getData().getIdObject();
+
+      //it's not known what to do in the case of deleted nodes, we won't merge them
+      if (additionID == null) addAsElements = false;
+      else if (additionID instanceof String) addAsElements = additionID.equals(currentID);
+      else addAsElements = (additionID == currentID);
+
+      if (addAsElements) {
+        for (UsagesTreeNode additionChild)
+        currentNode.add();
+      } else {
+        gluedChildren.add(child);
+      }
+    }
+    children = gluedChildren;
+    */
+  }
+
+  private void sortChildrenByObject(List<UsagesTreeNode> children) {
+
   }
 
   private void setTreeIcons(UsagesTreeNode root) {
@@ -531,6 +578,10 @@ public abstract class UsagesTree extends MPSTree {
 
     public boolean isLeaf() {
       return getChildCount() == 0;
+    }
+
+    List<UsagesTreeNode> internalGetChildren() {
+      return this.children;
     }
   }
 }
