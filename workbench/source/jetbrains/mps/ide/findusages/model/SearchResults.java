@@ -32,10 +32,12 @@ public class SearchResults {
   @Deprecated
   public Set<SModel> getModelsWithResults() {
     Set<SModel> result = new HashSet<SModel>();
-    for (SearchResult<SNode> searchResult : mySearchResults) {
-      SNode node = searchResult.getObject();
-      if (node != null) {
-        result.add(node.getModel());
+    for (SearchResult searchResult : mySearchResults) {
+      Object resultObject = searchResult.getObject();
+      if (resultObject instanceof SNode) {
+        result.add(((SNode)resultObject).getModel());
+      } else if (resultObject instanceof SModel) {
+        result.add((SModel) resultObject);
       }
     }
     return result;
