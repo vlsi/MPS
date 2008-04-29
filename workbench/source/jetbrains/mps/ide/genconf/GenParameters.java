@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Comparator;
 
 public class GenParameters {
   private List<SModelDescriptor> myModels = new ArrayList<SModelDescriptor>();
@@ -15,6 +16,13 @@ public class GenParameters {
 
   public GenParameters(List<SModelDescriptor> models, IModule module) {
     myModels.addAll(models);
+
+    Collections.sort(myModels, new Comparator<SModelDescriptor>() {
+      public int compare(SModelDescriptor o1, SModelDescriptor o2) {
+        return o1.getModelUID().compareTo(o2.getModelUID());
+      }
+    });
+
     myModule = module;
   }
 
