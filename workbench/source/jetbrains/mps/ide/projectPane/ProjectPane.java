@@ -539,19 +539,23 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
   }
 
   //externalization
-  public void read(Element element, MPSProject project) {
-    getTree().fromXML(element.getChild(MPSTree.MPS_TREE));
-    getTree().scrollRectToVisible(ComponentsUtil.elementToRectangle(element.getChild(ComponentsUtil.RECTANGLE)));
-    if (element.getAttributeValue(SHOW_P_AND_R) != null) {
-      setShowPropertiesAndReferences("true".equals(element.getAttributeValue(SHOW_P_AND_R)));
-    }
-    if (element.getAttributeValue(AUTOSCROLL_TO_SOURCE) != null) {
-      myTree.setAutoOpen("true".equals(element.getAttributeValue(AUTOSCROLL_TO_SOURCE)));
-      myAutoscrollToSource.getModel().setSelected(myTree.isAutoOpen());
-    }
-    if (element.getAttributeValue(AUTOSCROLL_FROM_SOURCE) != null) {
-      myAutoscrollFromSource.getModel().setSelected("true".equals(element.getAttributeValue(AUTOSCROLL_FROM_SOURCE)));
-    }
+  public void read(final Element element, MPSProject project) {
+    CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
+      public void run() {
+        getTree().fromXML(element.getChild(MPSTree.MPS_TREE));
+        getTree().scrollRectToVisible(ComponentsUtil.elementToRectangle(element.getChild(ComponentsUtil.RECTANGLE)));
+        if (element.getAttributeValue(SHOW_P_AND_R) != null) {
+          setShowPropertiesAndReferences("true".equals(element.getAttributeValue(SHOW_P_AND_R)));
+        }
+        if (element.getAttributeValue(AUTOSCROLL_TO_SOURCE) != null) {
+          myTree.setAutoOpen("true".equals(element.getAttributeValue(AUTOSCROLL_TO_SOURCE)));
+          myAutoscrollToSource.getModel().setSelected(myTree.isAutoOpen());
+        }
+        if (element.getAttributeValue(AUTOSCROLL_FROM_SOURCE) != null) {
+          myAutoscrollFromSource.getModel().setSelected("true".equals(element.getAttributeValue(AUTOSCROLL_FROM_SOURCE)));
+        }
+      }
+    });
   }
 
   public void write(Element element, MPSProject project) {
