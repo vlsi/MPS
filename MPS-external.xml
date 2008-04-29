@@ -233,14 +233,12 @@
     </copy>
     <antcall target="pack.jetbrains.mps.baseLanguageInternal" />
     <antcall target="pack.jetbrains.mps.closures" />
-    <antcall target="pack.closures.test" />
     <antcall target="pack.jetbrains.mps.baseLanguage.ext.collections.lang" />
     <antcall target="pack.collections_samples" />
     <antcall target="pack.jetbrains.mps.baseLanguage.ext.csharp" />
     <antcall target="pack.jetbrains.mps.baseLanguage.ext.dates.lang" />
     <antcall target="pack.jetbrains.mps.baseLanguage.ext.dates.internal" />
     <antcall target="pack.jetbrains.mps.baseLanguage.dates.runtime" />
-    <antcall target="pack.dates_unittest" />
     <antcall target="pack.jetbrains.mps.internal.collections" />
     <antcall target="pack.jetbrains.accounting.money" />
     <antcall target="pack.JDK" />
@@ -270,11 +268,7 @@
     <antcall target="pack.jetbrains.mps.bootstrap.structureLanguage" />
     <antcall target="pack.jetbrains.mps.core" />
     <antcall target="pack.jetbrains.mps.logging.refactoring" />
-    <antcall target="pack.jetbrains.mps.transformation.test.inputLang" />
-    <antcall target="pack.jetbrains.mps.transformation.test.outputLang" />
     <antcall target="pack.jetbrains.mps.transformation.TLBase" />
-    <antcall target="pack.smodelLanguage-samples" />
-    <antcall target="pack.smodelLanguage_typetest" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\configuration">
       <fileset dir="core\configuration" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
