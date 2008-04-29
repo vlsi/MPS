@@ -236,7 +236,6 @@
     <antcall target="pack.closures.test" />
     <antcall target="pack.jetbrains.mps.baseLanguage.ext.collections.lang" />
     <antcall target="pack.collections_samples" />
-    <antcall target="pack.collections_unittest" />
     <antcall target="pack.jetbrains.mps.baseLanguage.ext.csharp" />
     <antcall target="pack.jetbrains.mps.baseLanguage.ext.dates.lang" />
     <antcall target="pack.jetbrains.mps.baseLanguage.ext.dates.internal" />
@@ -250,9 +249,6 @@
     <antcall target="pack.jetbrains.mps.baseLanguage.strings" />
     <antcall target="pack.MPS.Classpath" />
     <antcall target="pack.refactoring" />
-    <antcall target="pack.resolve" />
-    <antcall target="pack.testLogger" />
-    <antcall target="pack.testLogger2" />
     <antcall target="pack.jetbrains.mps.baseLanguage.classifiers" />
     <antcall target="pack.jetbrains.mps.bootstrap.actionsLanguage" />
     <antcall target="pack.jetbrains.mps.annotations" />
