@@ -49,7 +49,7 @@ public class AspectMethodsFinder extends BaseFinder {
   private void findNodes(SearchResults res, SNode node, String methodName) {
     for (String value : node.getProperties().values()) {
       if (methodName.endsWith(value)) {
-        res.getSearchResults().add(new SearchResult(node, "Aspect methods"));
+        res.getSearchResults().add(new SearchResult<SNode>(node, "Aspect methods"));
         break;
       }
     }

@@ -23,13 +23,13 @@ public class ConstantFinder extends BaseFinder {
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
         for (SNode node : nodes) {
-          myResults.getSearchResults().add(new SearchResult(node, categoryName));
+          myResults.getSearchResults().add(new SearchResult<SNode>(node, categoryName));
         }
       }
     });
   }
 
-  public ConstantFinder(Collection<SearchResult> searchResults) {
+  public ConstantFinder(Collection<SearchResult<SNode>> searchResults) {
     myResults.getSearchResults().addAll(searchResults);
   }
 
@@ -38,18 +38,11 @@ public class ConstantFinder extends BaseFinder {
   }
 
   public void read(Element element, MPSProject project) throws CantLoadSomethingException {
-    super.read(element, project);
-    throw new CantLoadSomethingException("do not call read on ConstantFinder!!!");
-    //Element resultsXML = element.getChild(RESULTS);
-    //myResults.read(resultsXML, project);
+    throw new UnsupportedOperationException("do not call read on ConstantFinder!!!");
   }
 
   public void write(Element element, MPSProject project) throws CantSaveSomethingException {
-    super.write(element, project);
-    throw new CantSaveSomethingException("do not call write on ConstantFinder!!!");
-    //Element resultsXML = new Element(RESULTS);
-    //myResults.write(resultsXML, project);
-    //element.addContent(resultsXML);
+    throw new UnsupportedOperationException("do not call write on ConstantFinder!!!");
   }
 
   public String getDescription() {
