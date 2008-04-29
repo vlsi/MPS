@@ -291,8 +291,7 @@ public abstract class UsagesTree extends MPSTree {
         else addAsElements = (additionID == currentID);
 
         if (addAsElements) {
-          for (UsagesTreeNode additionChild : child.internalGetChildren())
-            currentNode.add(additionChild);
+          for (UsagesTreeNode additionChild : child.internalGetChildren()) currentNode.add(additionChild);
         } else {
           gluedChildren.add(child);
         }
@@ -367,13 +366,13 @@ public abstract class UsagesTree extends MPSTree {
     goByNodeLink(treeNode, inProject);
   }
 
-  private void openCurrentNodeLink(boolean inProject) {
+  private void openCurrentNodeLink(boolean inProjectIfPossible) {
     UsagesTreeNode treeNode = getCurrentNode();
     if (treeNode == null) return;
-    goByNodeLink(treeNode, inProject);
+    goByNodeLink(treeNode, inProjectIfPossible);
   }
 
-  private void goByNodeLink(final UsagesTreeNode treeNode, final boolean inProject) {
+  private void goByNodeLink(final UsagesTreeNode treeNode, final boolean inProjectIfPossible) {
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
         if (treeNode.getUserObject() == null) {
@@ -384,7 +383,7 @@ public abstract class UsagesTree extends MPSTree {
         if (data instanceof NodeNodeData) {
           SNode node = ((NodeNodeData) data).getNode();
           if (node != null) {
-            if (!inProject) {
+            if (!inProjectIfPossible) {
               navigateToNode(node);
             } else {
               navigateInTree(node);
@@ -395,14 +394,12 @@ public abstract class UsagesTree extends MPSTree {
         } else if (data instanceof ModelNodeData) {
           SModel model = (SModel) ((ModelNodeData) data).getIdObject();
           if (model != null) {
-            if (inProject) {
-              navigateInTree(model);
-            }
+            navigateInTree(model);
           }
         } else if (data instanceof ModuleNodeData) {
           IModule module = (IModule) ((ModuleNodeData) data).getIdObject();
           if (module != null) {
-            if (inProject) {
+            if (inProjectIfPossible) {
               navigateInTree(module);
             }
           }
