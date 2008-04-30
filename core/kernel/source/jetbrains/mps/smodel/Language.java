@@ -135,7 +135,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
           LOG.error("Can't find " + s);
           continue;
         }
-  
+
         if (file.isFile()) {
           result.add(new JarFileClassPathItem(s));
         } else {
@@ -288,7 +288,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     }
   }
 
-  public void convert() {    
+  public void convert() {
     super.convert();
 
     validateExtends();
@@ -693,13 +693,28 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     DescriptorsPersistence.saveLanguageDescriptor(myDescriptorFile, getLanguageDescriptor());
   }
 
+  private SModelDescriptor replaceAccessoryModel(SModelDescriptor accessoryModel, Model accessoryModelMPSNode) {
+    if (accessoryModel instanceof StubModelDescriptor) {
+      StubModelDescriptor stubModelDescriptor = (StubModelDescriptor) accessoryModel;
+      SModelDescriptor actualDescriptor = stubModelDescriptor.getActualDescriptor();
+
+      if (getLanguageDescriptor().equals(accessoryModelMPSNode.getParent())) {
+        Model newAccessoryModelNode = Model.newInstance(accessoryModelMPSNode.getModel());
+        newAccessoryModelNode.setName(actualDescriptor.toString());
+        getLanguageDescriptor().replaceChild(accessoryModelMPSNode, newAccessoryModelNode);
+        return actualDescriptor;
+      }
+    }
+    return accessoryModel;
+  }
+
   public List<SModelDescriptor> getAccessoryModels() {
     List<SModelDescriptor> result = new LinkedList<SModelDescriptor>();
-    Iterator<Model> accessoryModels = getLanguageDescriptor().accessoryModels();
-    while (accessoryModels.hasNext()) {
-      Model model = accessoryModels.next();
+    List<Model> accessoryModels = new ArrayList<Model>(getLanguageDescriptor().getAccessoryModels());
+    for (Model model : accessoryModels) {
       SModelDescriptor modelDescriptor = getScope().getModelDescriptor(SModelUID.fromString(model.getName()));
       if (modelDescriptor != null) {
+        modelDescriptor = replaceAccessoryModel(modelDescriptor, model);
         result.add(modelDescriptor);
       }
     }
