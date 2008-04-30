@@ -51,7 +51,7 @@
   </osgiOptions>
   <dependencies>
     <dependency reexport="false">jetbrains.mps.closures#1199623535494</dependency>
-  </dependencies>
+	  </dependencies>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>
     <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>

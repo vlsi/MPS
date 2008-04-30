@@ -29,10 +29,20 @@ public class StatementListUtil {
         if (StatementListUtil.isControlStatement(stmt)) {
           break;
         }
-        res.add(stmt);
+        if (!(StatementListUtil.isIgnoredStatement(stmt))) {
+          res.add(stmt);
+        }
       }
     }
     return res;
+  }
+
+  public static SNode nextSibling(SNode stmt) {
+    SNode nextSibling = SNodeOperations.getNextSibling(stmt);
+    while((nextSibling != null) && StatementListUtil.isIgnoredStatement(nextSibling)) {
+      nextSibling = SNodeOperations.getNextSibling(nextSibling);
+    }
+    return nextSibling;
   }
 
   public static boolean isControlStatement(SNode stmt) {
@@ -55,6 +65,13 @@ public class StatementListUtil {
       return true;
     }
     if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.closures.structure.YieldStatement")) {
+      return true;
+    }
+    return false;
+  }
+
+  public static boolean isIgnoredStatement(SNode stmt) {
+    if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
       return true;
     }
     return false;

@@ -1931,6 +1931,35 @@
                                   </node>
                                 </node>
                               </node>
+                              <node role="statement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1209564384949">
+                                <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1209564384950">
+                                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1209564386660">
+                                    <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1209564386661">
+                                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1209564406317">
+                                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209564406318">
+                                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1209564409787">
+                                            <link role="variableDeclaration" targetNodeId="1209325985931" resolveInfo="exp" />
+                                          </node>
+                                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209564406320">
+                                            <link role="baseMethodDeclaration" targetNodeId="1.~List.add(java.lang.Object):boolean" resolveInfo="add" />
+                                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.MulExpression" id="1209564406321">
+                                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1209564406322">
+                                                <property name="value" value="100000" />
+                                              </node>
+                                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1209564406323">
+                                                <link role="variableDeclaration" targetNodeId="1209326000122" resolveInfo="i" />
+                                              </node>
+                                            </node>
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                    <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1209564388236">
+                                      <property name="value" value="true" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -2059,6 +2088,27 @@
                                   </node>
                                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1209326184629">
                                     <link role="variableDeclaration" targetNodeId="1209326157810" resolveInfo="i" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node role="statement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1209564421319">
+                                <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1209564421320">
+                                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1209564422291">
+                                    <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1209564422292">
+                                      <node role="statement" type="jetbrains.mps.closures.structure.YieldStatement" id="1209564425941">
+                                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.MulExpression" id="1209564427886">
+                                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1209564428458">
+                                            <property name="value" value="100000" />
+                                          </node>
+                                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1209564427693">
+                                            <link role="variableDeclaration" targetNodeId="1209326157810" resolveInfo="i" />
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                    <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1209564423697">
+                                      <property name="value" value="true" />
+                                    </node>
                                   </node>
                                 </node>
                               </node>

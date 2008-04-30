@@ -811,6 +811,9 @@ __switch__:
           } else
           {
             exp.add(i * 10000);
+            if (true) {
+              exp.add(i * 100000);
+            }
           }
         }
       }
@@ -860,6 +863,13 @@ __switch__:
                       }
                       this.__CP__ = 13;
                       break;
+                    case 16:
+                      if (true) {
+                        this.__CP__ = 17;
+                        break;
+                      }
+                      this.__CP__ = 5;
+                      break;
                     case 8:
                       this.__CP__ = 5;
                       this.yield(this._2_i * 10);
@@ -869,12 +879,16 @@ __switch__:
                       this.yield(this._2_i * 100);
                       return true;
                     case 14:
-                      this.__CP__ = 5;
+                      this.__CP__ = 15;
                       this.yield(this._2_i * 10000);
                       return true;
                     case 12:
                       this.__CP__ = 5;
                       this.yield(this._2_i * 1000);
+                      return true;
+                    case 18:
+                      this.__CP__ = 5;
+                      this.yield(this._2_i * 100000);
                       return true;
                     case 0:
                       this.__CP__ = 2;
@@ -893,6 +907,12 @@ __switch__:
                       break;
                     case 11:
                       this.__CP__ = 12;
+                      break;
+                    case 15:
+                      this.__CP__ = 16;
+                      break;
+                    case 17:
+                      this.__CP__ = 18;
                       break;
                     default:
                       break __loop__;

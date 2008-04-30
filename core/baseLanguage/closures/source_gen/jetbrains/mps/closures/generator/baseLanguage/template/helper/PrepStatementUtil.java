@@ -121,6 +121,9 @@ public class PrepStatementUtil {
     } else
     if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.ContinueStatement")) {
       this.prepContinueStatement(stmt);
+    } else
+    if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
+      return this.prepBlockStatement(stmt, label);
     }
     return label;
   }
@@ -263,6 +266,15 @@ public class PrepStatementUtil {
       }
     }
     PrepStatementUtil.putPrepData(cstmt, new Integer[]{conLabel}, this.generator);
+  }
+
+  private int prepBlockStatement(SNode bs, int label) {
+    int beginLabel = label;
+    int nextLabel = this.calcNextLabel(bs);
+    PrepStatementUtil.putPrepData(SLinkOperations.getTarget(bs, "statements", true), new Integer[]{beginLabel,nextLabel}, this.generator);
+    int tmp = this.prepStatementList(SLinkOperations.getTarget(bs, "statements", true));
+    PrepStatementUtil.putPrepData(bs, new Integer[]{beginLabel,tmp}, this.generator);
+    return tmp;
   }
 
   private int prepLocalvariableDeclarationStatement(SNode lstmt, int label) {
