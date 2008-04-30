@@ -702,6 +702,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
         Model newAccessoryModelNode = Model.newInstance(accessoryModelMPSNode.getModel());
         newAccessoryModelNode.setName(actualDescriptor.toString());
         getLanguageDescriptor().replaceChild(accessoryModelMPSNode, newAccessoryModelNode);
+        save();
         return actualDescriptor;
       }
     }
