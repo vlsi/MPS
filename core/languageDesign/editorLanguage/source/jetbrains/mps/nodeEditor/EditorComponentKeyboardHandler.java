@@ -35,6 +35,12 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
     EditorCell selectedCell = editor.getSelectedCell();
 
+    if (selectedCell != null) {
+      if (allowCellToProcessEvent(selectedCell, keyEvent, false)) {
+        return true;
+      }
+    }
+
     // process cell keymaps first
 
     if (selectedCell != null) {
@@ -150,7 +156,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
         }
 
         // allow selected cell to process event.
-        if (allowCellToProcessEvent(selectedCell, keyEvent, editorContext)) return true;
+        if (allowCellToProcessEvent(selectedCell, keyEvent, true)) return true;
       }// if (!keyEvent.isConsumed())
 
       if (EditorCellAction.DELETE.equals(actionType)) {
@@ -162,7 +168,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
       if (!keyEvent.isConsumed()) {
         //allow deepest selected cell to process event.
         EditorCell deepestSelectedCell = editor.getDeepestSelectedCell();
-        if (allowCellToProcessEvent(deepestSelectedCell, keyEvent, editorContext)) {
+        if (allowCellToProcessEvent(deepestSelectedCell, keyEvent, true)) {
           editor.changeSelection(deepestSelectedCell);
           return true;
         }
@@ -184,8 +190,8 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
     return false;
   }
 
-  private boolean allowCellToProcessEvent(EditorCell selectedCell, KeyEvent keyEvent, EditorContext editorContext) {
-    return selectedCell.processKeyPressed(keyEvent);
+  private boolean allowCellToProcessEvent(EditorCell selectedCell, KeyEvent keyEvent, boolean allowErrors) {
+    return selectedCell.processKeyPressed(keyEvent, allowErrors);
   }
 
   private boolean isDeleteKeystroke(final KeyEvent keyEvent) {
