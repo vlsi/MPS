@@ -25,10 +25,6 @@ public class InvertIfCondition_Intention extends BaseIntention implements Intent
     return "Invert If condition";
   }
 
-  public boolean isApplicable(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "ifFalseStatement", true) != null);
-  }
-
   public void execute(SNode node, EditorContext editorContext) {
     // Invert condition
     SNode condition = SLinkOperations.getTarget(node, "condition", true);
@@ -72,23 +68,31 @@ public class InvertIfCondition_Intention extends BaseIntention implements Intent
     // Flip ifTrue and ifFalse
     SNode ifTrue = SLinkOperations.getTarget(node, "ifTrue", true);
     SNode ifFalse = SLinkOperations.getTarget(node, "ifFalseStatement", true);
-    // Set new ifFalseStatement
+    SNode newIfTrue;
+    SNode newIfFalse;
+    // Set new ifFalse
     if (SLinkOperations.getCount(ifTrue, "statement") == 0) {
-      SLinkOperations.setTarget(node, "ifFalseStatement", null, true);
+      newIfFalse = null;
     } else
     if (SLinkOperations.getCount(ifTrue, "statement") == 1 && SNodeOperations.isInstanceOf(SequenceOperations.getFirst(SLinkOperations.getTargets(ifTrue, "statement", true)), "jetbrains.mps.baseLanguage.structure.IfStatement")) {
-      SLinkOperations.setTarget(node, "ifFalseStatement", SequenceOperations.getFirst(SLinkOperations.getTargets(ifTrue, "statement", true)), true);
+      newIfFalse = SequenceOperations.getFirst(SLinkOperations.getTargets(ifTrue, "statement", true));
     } else
     {
-      SLinkOperations.addAll(SLinkOperations.getTarget(SLinkOperations.setNewChild(node, "ifFalseStatement", "jetbrains.mps.baseLanguage.structure.BlockStatement"), "statements", true), "statement", SLinkOperations.getTargets(ifTrue, "statement", true));
+      newIfFalse = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BlockStatement", null);
+      SLinkOperations.setTarget(newIfFalse, "statements", ifTrue, true);
     }
     // Set new ifTrue
     if (SNodeOperations.isInstanceOf(ifFalse, "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
-      SLinkOperations.setTarget(node, "ifTrue", SLinkOperations.getTarget(ifFalse, "statements", true), true);
+      newIfTrue = SLinkOperations.getTarget(ifFalse, "statements", true);
     } else
     {
-      SLinkOperations.addChild(SLinkOperations.setNewChild(node, "ifTrue", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", ifFalse);
+      newIfTrue = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
+      if (ifFalse != null) {
+        SLinkOperations.addChild(newIfTrue, "statement", ifFalse);
+      }
     }
+    SLinkOperations.setTarget(node, "ifTrue", newIfTrue, true);
+    SLinkOperations.setTarget(node, "ifFalseStatement", newIfFalse, true);
   }
 
 }
