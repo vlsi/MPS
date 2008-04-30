@@ -6,7 +6,7 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator generatorUID="webr.logging#1167240554582" targetLanguage="jetbrains.mps.baseLanguage">
+    <generator generatorUID="webr.logging#1167240554582">
       <models>
         <modelRoot path="${language_descriptor}\generators\baseLanguage\templates" namespacePrefix="webr.logging.generator.baseLanguage.template" />
       </models>
@@ -24,7 +24,7 @@
     <entry path="${mps_home}\lib\commons-logging\commons-logging-1.1.jar" />
     <entry path="${language_descriptor}\classes_gen" />
   </classPath>
-  <runtimeClassPath />
+  <languageRuntimeClassPath />
   <sourcePath>
     <source path="${language_descriptor}\source" />
   </sourcePath>
