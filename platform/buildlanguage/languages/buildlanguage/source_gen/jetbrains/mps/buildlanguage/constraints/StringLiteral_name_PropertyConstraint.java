@@ -11,7 +11,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 
 public class StringLiteral_name_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
 
-  public  StringLiteral_name_PropertyConstraint() {
+  public StringLiteral_name_PropertyConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

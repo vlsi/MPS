@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class StringEnum extends Enum {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.StringEnum";
 
-  public  StringEnum(SNode node) {
+  public StringEnum(SNode node) {
     super(node);
   }
 

@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class CallReferenceType extends Type {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.CallReferenceType";
 
-  public  CallReferenceType(SNode node) {
+  public CallReferenceType(SNode node) {
     super(node);
   }
 

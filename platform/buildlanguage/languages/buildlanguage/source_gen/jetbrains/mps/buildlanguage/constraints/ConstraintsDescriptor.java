@@ -11,7 +11,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
 
   private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
 
-  public  ConstraintsDescriptor() {
+  public ConstraintsDescriptor() {
     this.myConstraints.add(new StringLiteral_name_PropertyConstraint());
     this.myConstraints.add(new GenericCall_name_PropertyConstraint());
     this.myConstraints.add(new TargetReference_targetDeclaration_ReferentConstraint());

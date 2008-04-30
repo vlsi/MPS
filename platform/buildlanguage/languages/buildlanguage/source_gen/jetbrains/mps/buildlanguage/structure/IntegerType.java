@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class IntegerType extends Type {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.IntegerType";
 
-  public  IntegerType(SNode node) {
+  public IntegerType(SNode node) {
     super(node);
   }
 

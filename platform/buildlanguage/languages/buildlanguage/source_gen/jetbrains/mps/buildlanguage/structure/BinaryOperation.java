@@ -13,7 +13,7 @@ public class BinaryOperation extends PropertyValueExpression {
   public static String LEFT = "left";
   public static String RIGHT = "right";
 
-  public  BinaryOperation(SNode node) {
+  public BinaryOperation(SNode node) {
     super(node);
   }
 

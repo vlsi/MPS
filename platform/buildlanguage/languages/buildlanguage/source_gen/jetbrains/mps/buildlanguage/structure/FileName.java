@@ -11,7 +11,7 @@ public class FileName extends PropertyValueExpression {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.FileName";
   public static String VALUE = "value";
 
-  public  FileName(SNode node) {
+  public FileName(SNode node) {
     super(node);
   }
 

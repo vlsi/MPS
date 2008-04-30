@@ -14,7 +14,7 @@ public class PropertyValueExpression extends BaseConcept implements ISource {
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  PropertyValueExpression(SNode node) {
+  public PropertyValueExpression(SNode node) {
     super(node);
   }
 

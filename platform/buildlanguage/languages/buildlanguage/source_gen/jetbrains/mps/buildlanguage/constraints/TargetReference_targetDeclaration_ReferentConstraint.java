@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class TargetReference_targetDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  TargetReference_targetDeclaration_ReferentConstraint() {
+  public TargetReference_targetDeclaration_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

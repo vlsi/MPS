@@ -11,7 +11,7 @@ public class IntLiteral extends PropertyValueExpression {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.IntLiteral";
   public static String VALUE = "value";
 
-  public  IntLiteral(SNode node) {
+  public IntLiteral(SNode node) {
     super(node);
   }
 

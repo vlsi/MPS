@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class PlusOperation extends BinaryOperation {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.PlusOperation";
 
-  public  PlusOperation(SNode node) {
+  public PlusOperation(SNode node) {
     super(node);
   }
 

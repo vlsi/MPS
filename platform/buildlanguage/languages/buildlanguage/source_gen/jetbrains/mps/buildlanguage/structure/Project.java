@@ -25,7 +25,7 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
   public static String IMPORT_PROPERTIES = "importProperties";
   public static String PROPERTY = "property";
 
-  public  Project(SNode node) {
+  public Project(SNode node) {
     super(node);
   }
 

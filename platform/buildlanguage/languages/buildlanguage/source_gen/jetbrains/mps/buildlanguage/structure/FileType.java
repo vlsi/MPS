@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class FileType extends Type {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.FileType";
 
-  public  FileType(SNode node) {
+  public FileType(SNode node) {
     super(node);
   }
 

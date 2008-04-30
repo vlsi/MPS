@@ -12,7 +12,7 @@ public class CallReference extends PropertyValueExpression {
   public static String CPR_CallName = "callName";
   public static String CALL = "call";
 
-  public  CallReference(SNode node) {
+  public CallReference(SNode node) {
     super(node);
   }
 

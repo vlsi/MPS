@@ -17,7 +17,7 @@ public class PropertyDeclaration extends BaseConcept implements IProjectComponen
   public static String TYPE = "type";
   public static String PROPERTY_VALUE = "propertyValue";
 
-  public  PropertyDeclaration(SNode node) {
+  public PropertyDeclaration(SNode node) {
     super(node);
   }
 

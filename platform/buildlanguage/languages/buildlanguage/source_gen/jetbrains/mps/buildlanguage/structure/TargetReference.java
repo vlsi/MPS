@@ -12,7 +12,7 @@ public class TargetReference extends BaseConcept {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.TargetReference";
   public static String TARGET_DECLARATION = "targetDeclaration";
 
-  public  TargetReference(SNode node) {
+  public TargetReference(SNode node) {
     super(node);
   }
 

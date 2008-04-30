@@ -12,7 +12,7 @@ public class ImportProject extends BaseConcept {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.ImportProject";
   public static String PROJECT = "project";
 
-  public  ImportProject(SNode node) {
+  public ImportProject(SNode node) {
     super(node);
   }
 

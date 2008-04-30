@@ -20,7 +20,7 @@ public class TargetDeclaration extends BaseConcept implements IProjectComponent,
   public static String DEPENDS = "depends";
   public static String PROPERTY_LIST = "propertyList";
 
-  public  TargetDeclaration(SNode node) {
+  public TargetDeclaration(SNode node) {
     super(node);
   }
 

@@ -16,7 +16,7 @@ public class StringLiteral extends PropertyValueExpression implements INamedConc
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  StringLiteral(SNode node) {
+  public StringLiteral(SNode node) {
     super(node);
   }
 

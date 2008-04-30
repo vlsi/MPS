@@ -16,7 +16,7 @@ public class PropertyReference extends PropertyValueExpression implements INamed
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String PROPERTY_DECLARATION = "propertyDeclaration";
 
-  public  PropertyReference(SNode node) {
+  public PropertyReference(SNode node) {
     super(node);
   }
 
