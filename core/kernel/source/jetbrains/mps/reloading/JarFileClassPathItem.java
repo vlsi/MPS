@@ -22,7 +22,7 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
       return ((FileSystemFile) f).getFile();
     }
 
-    File tmpFile = File.createTempFile(f.getName(), "");
+    File tmpFile = File.createTempFile(f.getName(), "tmp");
     tmpFile.deleteOnExit();
 
     OutputStream os = null;
