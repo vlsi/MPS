@@ -245,6 +245,14 @@ public class GenericRefactoring {
     return myRefactoring.getKeyStroke();
   }
 
+  public boolean isApplicableToModel() {
+    return myRefactoring.isApplicableToModel();
+  }
+
+  public boolean isApplicableToModel(SModelDescriptor modelDescriptor) {
+    return myRefactoring.isApplicableToModel(modelDescriptor);
+  }
+
   public boolean isApplicable(SNode node) {
     return myRefactoring.isApplicableWRTConcept(node);
   }

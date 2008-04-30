@@ -27,7 +27,7 @@ public class LanguageActions_ActionGroup extends BaseActionGroup {
   public static final String LABEL_ID_VCS = "VCS";
 
   public LanguageActions_ActionGroup(MPSProject project) {
-    super("", LanguageActions_ActionGroup.ID, project);
+    super("", ID, project);
     this.setInternal(false);
     try {
       this.add(new Label(LanguageActions_ActionGroup.LABEL_ID_newGroup), this);
@@ -50,7 +50,7 @@ public class LanguageActions_ActionGroup extends BaseActionGroup {
       this.add(new SetModuleFolderAction(), this);
       this.add(new Label(LanguageActions_ActionGroup.LABEL_ID_VCS), this);
     } catch (Throwable t) {
-      LanguageActions_ActionGroup.LOG.error("User group error", t);
+      LOG.error("User group error", t);
     }
   }
 

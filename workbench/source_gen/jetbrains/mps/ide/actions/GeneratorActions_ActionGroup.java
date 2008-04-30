@@ -20,7 +20,7 @@ public class GeneratorActions_ActionGroup extends BaseActionGroup {
   public static final String LABEL_ID_VCS = "VCS";
 
   public GeneratorActions_ActionGroup(MPSProject project) {
-    super("", GeneratorActions_ActionGroup.ID, project);
+    super("", ID, project);
     this.setInternal(false);
     try {
       this.add(new Label(GeneratorActions_ActionGroup.LABEL_ID_generatorNew), this);
@@ -35,7 +35,7 @@ public class GeneratorActions_ActionGroup extends BaseActionGroup {
       this.add(new GeneratorPropertiesAction(), this);
       this.add(new Label(GeneratorActions_ActionGroup.LABEL_ID_VCS), this);
     } catch (Throwable t) {
-      GeneratorActions_ActionGroup.LOG.error("User group error", t);
+      LOG.error("User group error", t);
     }
   }
 

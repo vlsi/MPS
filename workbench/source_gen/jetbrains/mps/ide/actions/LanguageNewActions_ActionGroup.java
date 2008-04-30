@@ -15,7 +15,7 @@ public class LanguageNewActions_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.LanguageNewActions";
 
   public LanguageNewActions_ActionGroup(MPSProject project) {
-    super("New", LanguageNewActions_ActionGroup.ID, project);
+    super("New", ID, project);
     this.setInternal(false);
     try {
       this.add(new NewGeneratorAction(), this);
@@ -23,7 +23,7 @@ public class LanguageNewActions_ActionGroup extends BaseActionGroup {
       this.add(new NewAccessoryModelAction(), this);
       this.addSeparator();
     } catch (Throwable t) {
-      LanguageNewActions_ActionGroup.LOG.error("User group error", t);
+      LOG.error("User group error", t);
     }
   }
 

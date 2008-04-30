@@ -22,7 +22,7 @@ public class Tools_ActionGroup extends BaseActionGroup {
   public static final String INTERNAL_LABEL_ID_VersionControl = "VersionControl";
 
   public Tools_ActionGroup(MPSProject project) {
-    super("Tools", Tools_ActionGroup.ID, project);
+    super("Tools", ID, project);
     this.setMnemonic("T".charAt(0));
     this.setInternal(false);
     try {
@@ -37,7 +37,7 @@ public class Tools_ActionGroup extends BaseActionGroup {
       this.add(new Label(Tools_ActionGroup.INTERNAL_LABEL_ID_VersionControl));
       this.add(new SVNCheckOutAction(), this);
     } catch (Throwable t) {
-      Tools_ActionGroup.LOG.error("User group error", t);
+      LOG.error("User group error", t);
     }
   }
 

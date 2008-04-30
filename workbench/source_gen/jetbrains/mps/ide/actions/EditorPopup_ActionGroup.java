@@ -33,7 +33,7 @@ public class EditorPopup_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.EditorPopup";
 
   public EditorPopup_ActionGroup(MPSProject project) {
-    super("", EditorPopup_ActionGroup.ID, project);
+    super("", ID, project);
     this.setInternal(false);
     try {
       this.add(new GoByReferenceGroup(), this);
@@ -67,7 +67,7 @@ public class EditorPopup_ActionGroup extends BaseActionGroup {
       this.addSeparator();
       this.addSeparator();
     } catch (Throwable t) {
-      EditorPopup_ActionGroup.LOG.error("User group error", t);
+      LOG.error("User group error", t);
     }
   }
 

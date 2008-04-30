@@ -15,7 +15,7 @@ public class ToolsInternal_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.Internal";
 
   public ToolsInternal_ActionGroup(MPSProject project) {
-    super("Internal", ToolsInternal_ActionGroup.ID, project);
+    super("Internal", ID, project);
     this.setInternal(true);
     try {
       this.add(new RemoveTransientModulesAction(), this);
@@ -24,7 +24,7 @@ public class ToolsInternal_ActionGroup extends BaseActionGroup {
       this.addSeparator();
       this.add(new InternalRefactoringAction(), this);
     } catch (Throwable t) {
-      ToolsInternal_ActionGroup.LOG.error("User group error", t);
+      LOG.error("User group error", t);
     }
   }
 

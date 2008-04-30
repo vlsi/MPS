@@ -5,6 +5,7 @@ import jetbrains.mps.plugins.CurrentProjectMPSAction;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.GenericRefactoring;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -33,9 +34,16 @@ public class GenericRefactoringAction extends CurrentProjectMPSAction {
 
   public void doUpdate(@NotNull ActionContext context) {
     boolean enabled = false;
-    SNode node = context.getNode();
-    if (node != null) {
-      enabled = myRefactoring.isApplicable(node);
+    if (myRefactoring.isApplicableToModel()) {
+      SModelDescriptor modelDescriptor = context.getModel();
+      if (modelDescriptor != null) {
+        enabled = myRefactoring.isApplicableToModel(modelDescriptor);
+      }
+    } else {
+      SNode node = context.getNode();
+      if (node != null) {
+        enabled = myRefactoring.isApplicable(node);
+      }
     }
     setEnabled(enabled);
     setVisible(enabled);

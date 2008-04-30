@@ -20,6 +20,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="41" />
   <import index="1" modelUID="jetbrains.mps.ide.actions.nodes@java_stub" version="-1" />
   <import index="2" modelUID="jetbrains.mps.ide.modelchecker@java_stub" version="-1" />
@@ -163,16 +164,6 @@
         <link role="javaClass" targetNodeId="2.~CheckModelAction" resolveInfo="CheckModelAction" />
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204909253120" />
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204997991934">
-        <property name="name" value="Refactoring" />
-        <property name="caption" value="Refactoring" />
-        <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1207148434606">
-          <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1207148437061">
-            <link role="javaClass" targetNodeId="31.~RenameModelAction" resolveInfo="RenameModelAction" />
-          </node>
-        </node>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204988344441" />
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204988291723">
         <link role="javaClass" targetNodeId="3.~GenerateGroup_autoplan_files" resolveInfo="GenerateGroup_autoplan_files" />
       </node>

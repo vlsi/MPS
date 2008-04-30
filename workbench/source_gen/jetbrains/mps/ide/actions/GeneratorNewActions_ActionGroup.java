@@ -14,12 +14,12 @@ public class GeneratorNewActions_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.GeneratorNewActions";
 
   public GeneratorNewActions_ActionGroup(MPSProject project) {
-    super("New", GeneratorNewActions_ActionGroup.ID, project);
+    super("New", ID, project);
     this.setInternal(false);
     try {
       this.add(new NewModelAction(), this);
     } catch (Throwable t) {
-      GeneratorNewActions_ActionGroup.LOG.error("User group error", t);
+      LOG.error("User group error", t);
     }
   }
 

@@ -19,7 +19,7 @@ public class ProjectActions_ActionGroup extends BaseActionGroup {
   public static final String LABEL_ID_projectNew = "projectNew";
 
   public ProjectActions_ActionGroup(MPSProject project) {
-    super("", ProjectActions_ActionGroup.ID, project);
+    super("", ID, project);
     this.setInternal(false);
     try {
       this.add(new Label(ProjectActions_ActionGroup.LABEL_ID_projectNew), this);
@@ -32,7 +32,7 @@ public class ProjectActions_ActionGroup extends BaseActionGroup {
       this.addSeparator();
       this.add(new ProjectSettingsAction(), this);
     } catch (Throwable t) {
-      ProjectActions_ActionGroup.LOG.error("User group error", t);
+      LOG.error("User group error", t);
     }
   }
 

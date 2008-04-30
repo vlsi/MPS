@@ -21,7 +21,7 @@ public class Edit_ActionGroup extends BaseActionGroup {
   public static final String LABEL_ID_custom = "custom";
 
   public Edit_ActionGroup(MPSProject project) {
-    super("Edit", Edit_ActionGroup.ID, project);
+    super("Edit", ID, project);
     this.setMnemonic("E".charAt(0));
     this.setInternal(false);
     try {
@@ -39,7 +39,7 @@ public class Edit_ActionGroup extends BaseActionGroup {
       this.add(new AddModelImportAction(), this);
       this.add(new AddLanguageImportAction(), this);
     } catch (Throwable t) {
-      Edit_ActionGroup.LOG.error("User group error", t);
+      LOG.error("User group error", t);
     }
   }
 

@@ -17,7 +17,7 @@ public class Generate_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.Generate";
 
   public Generate_ActionGroup(MPSProject project) {
-    super("Generate", Generate_ActionGroup.ID, project);
+    super("Generate", ID, project);
     this.setMnemonic("G".charAt(0));
     this.setInternal(false);
     try {
@@ -28,7 +28,7 @@ public class Generate_ActionGroup extends BaseActionGroup {
       this.add(new GenerateFilesFromCurrentModelAction(), this);
       this.add(new GenerateTextFromCurrentModelAction(), this);
     } catch (Throwable t) {
-      Generate_ActionGroup.LOG.error("User group error", t);
+      LOG.error("User group error", t);
     }
   }
 

@@ -18,7 +18,7 @@ public class DevkitActions_ActionGroup extends BaseActionGroup {
   public static final String LABEL_ID_VCS = "VCS";
 
   public DevkitActions_ActionGroup(MPSProject project) {
-    super("", DevkitActions_ActionGroup.ID, project);
+    super("", ID, project);
     this.setInternal(false);
     try {
       this.add(new SetModuleFolderAction(), this);
@@ -29,7 +29,7 @@ public class DevkitActions_ActionGroup extends BaseActionGroup {
       this.add(new DevKitPropertiesAction(), this);
       this.add(new Label(DevkitActions_ActionGroup.LABEL_ID_VCS), this);
     } catch (Throwable t) {
-      DevkitActions_ActionGroup.LOG.error("User group error", t);
+      LOG.error("User group error", t);
     }
   }
 

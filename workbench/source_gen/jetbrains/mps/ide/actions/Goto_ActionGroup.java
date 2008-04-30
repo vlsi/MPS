@@ -23,7 +23,7 @@ public class Goto_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.Goto";
 
   public Goto_ActionGroup(MPSProject project) {
-    super("Go To", Goto_ActionGroup.ID, project);
+    super("Go To", ID, project);
     this.setMnemonic("O".charAt(0));
     this.setInternal(false);
     try {
@@ -41,7 +41,7 @@ public class Goto_ActionGroup extends BaseActionGroup {
       this.add(new GoToLanguageAction(), this);
       this.add(new GoToModelAction(), this);
     } catch (Throwable t) {
-      Goto_ActionGroup.LOG.error("User group error", t);
+      LOG.error("User group error", t);
     }
   }
 

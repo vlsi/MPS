@@ -16,14 +16,14 @@ public class ProjectNewActions_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.ProjectNewActions";
 
   public ProjectNewActions_ActionGroup(MPSProject project) {
-    super("New", ProjectNewActions_ActionGroup.ID, project);
+    super("New", ID, project);
     this.setInternal(false);
     try {
       this.add(new NewSolutionAction(), this);
       this.add(new NewLanguageAction(), this);
       this.add(new NewDevKitAction(), this);
     } catch (Throwable t) {
-      ProjectNewActions_ActionGroup.LOG.error("User group error", t);
+      LOG.error("User group error", t);
     }
   }
 

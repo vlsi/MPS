@@ -4,6 +4,7 @@ import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.IModule;
 
 import java.util.Map;
@@ -46,6 +47,14 @@ public abstract class AbstractLoggableRefactoring implements ILoggableRefactorin
 
   public String getApplicableConceptFQName() {
     return "";
+  }
+
+  public boolean isApplicableToModel(SModelDescriptor model) {
+    return false;
+  }
+
+  public boolean isApplicableToModel() {
+    return false;
   }
 
   public Map<IModule, List<SModel>> getModelsToGenerate(ActionContext actionContext, RefactoringContext refactoringContext) {

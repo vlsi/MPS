@@ -27,7 +27,7 @@ public class SolutionActions_ActionGroup extends BaseActionGroup {
   public static final String LABEL_ID_VCS = "VCS";
 
   public SolutionActions_ActionGroup(MPSProject project) {
-    super("", SolutionActions_ActionGroup.ID, project);
+    super("", ID, project);
     this.setInternal(false);
     try {
       this.add(new Label(SolutionActions_ActionGroup.LABEL_ID_solutionNew), this);
@@ -50,7 +50,7 @@ public class SolutionActions_ActionGroup extends BaseActionGroup {
       this.add(new SolutionPropertiesAction(), this);
       this.add(new Label(SolutionActions_ActionGroup.LABEL_ID_VCS), this);
     } catch (Throwable t) {
-      SolutionActions_ActionGroup.LOG.error("User group error", t);
+      LOG.error("User group error", t);
     }
   }
 

@@ -13,12 +13,12 @@ public class TransientModulesActions_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.TransientModulesActions";
 
   public TransientModulesActions_ActionGroup(MPSProject project) {
-    super("", TransientModulesActions_ActionGroup.ID, project);
+    super("", ID, project);
     this.setInternal(false);
     try {
       this.add(new RemoveTransientModulesAction(), this);
     } catch (Throwable t) {
-      TransientModulesActions_ActionGroup.LOG.error("User group error", t);
+      LOG.error("User group error", t);
     }
   }
 

@@ -19,7 +19,7 @@ public class EditorInternal_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.EditorInternal";
 
   public EditorInternal_ActionGroup(MPSProject project) {
-    super("Internal", EditorInternal_ActionGroup.ID, project);
+    super("Internal", ID, project);
     this.setInternal(true);
     try {
       this.add(new TestNodePathAction(), this);
@@ -31,7 +31,7 @@ public class EditorInternal_ActionGroup extends BaseActionGroup {
       this.add(new HighlightCellDependenciesAction(), this);
       this.addSeparator();
     } catch (Throwable t) {
-      EditorInternal_ActionGroup.LOG.error("User group error", t);
+      LOG.error("User group error", t);
     }
   }
 
