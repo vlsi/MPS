@@ -40,7 +40,7 @@ public class ModelRepositoryView extends DefaultTool {
   }
 
   public void toolShown() {
-    myTree.rebuildNow();
+    myTree.rebuildLater();
     myDeferringEventHandler.installListeners();
   }
 
