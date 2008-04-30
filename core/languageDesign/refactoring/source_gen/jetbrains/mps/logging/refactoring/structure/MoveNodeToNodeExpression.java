@@ -12,7 +12,7 @@ public class MoveNodeToNodeExpression extends AbstractMoveNodeExpression {
   public static final String concept = "jetbrains.mps.logging.refactoring.structure.MoveNodeToNodeExpression";
   public static String ROLE_IN_TARGET = "roleInTarget";
 
-  public  MoveNodeToNodeExpression(SNode node) {
+  public MoveNodeToNodeExpression(SNode node) {
     super(node);
   }
 

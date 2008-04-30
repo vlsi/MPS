@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class InitialValueClause extends ConceptFunction {
   public static final String concept = "jetbrains.mps.logging.refactoring.structure.InitialValueClause";
 
-  public  InitialValueClause(SNode node) {
+  public InitialValueClause(SNode node) {
     super(node);
   }
 

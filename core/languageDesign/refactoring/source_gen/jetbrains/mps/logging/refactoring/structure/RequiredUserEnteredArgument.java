@@ -13,7 +13,7 @@ public class RequiredUserEnteredArgument extends RequiredAdditionalArgument {
   public static String CHOOSE_COMPONENT_CLAUSE = "chooseComponentClause";
   public static String INITIAL_VALUE = "initialValue";
 
-  public  RequiredUserEnteredArgument(SNode node) {
+  public RequiredUserEnteredArgument(SNode node) {
     super(node);
   }
 

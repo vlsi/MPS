@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class AffectedNodesClause extends ConceptFunction {
   public static final String concept = "jetbrains.mps.logging.refactoring.structure.AffectedNodesClause";
 
-  public  AffectedNodesClause(SNode node) {
+  public AffectedNodesClause(SNode node) {
     super(node);
   }
 

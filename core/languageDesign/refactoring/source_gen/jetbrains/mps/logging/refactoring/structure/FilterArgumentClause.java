@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class FilterArgumentClause extends ConceptFunction {
   public static final String concept = "jetbrains.mps.logging.refactoring.structure.FilterArgumentClause";
 
-  public  FilterArgumentClause(SNode node) {
+  public FilterArgumentClause(SNode node) {
     super(node);
   }
 

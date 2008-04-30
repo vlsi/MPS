@@ -12,7 +12,7 @@ public class RequiredAdditionalArgumentReference extends Expression {
   public static final String concept = "jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference";
   public static String ARGUMENT = "argument";
 
-  public  RequiredAdditionalArgumentReference(SNode node) {
+  public RequiredAdditionalArgumentReference(SNode node) {
     super(node);
   }
 

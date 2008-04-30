@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ChooseComponentClause extends ConceptFunction {
   public static final String concept = "jetbrains.mps.logging.refactoring.structure.ChooseComponentClause";
 
-  public  ChooseComponentClause(SNode node) {
+  public ChooseComponentClause(SNode node) {
     super(node);
   }
 

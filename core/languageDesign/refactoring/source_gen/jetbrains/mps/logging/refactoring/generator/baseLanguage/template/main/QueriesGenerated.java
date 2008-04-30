@@ -30,7 +30,7 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1189763520881(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     SNode parent = SNodeOperations.getParent(_context.getNode(), null, false, false);
-    if(SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.AssignmentExpression")) {
+    if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.AssignmentExpression")) {
       return !(SLinkOperations.getTarget(parent, "lValue", true) == _context.getNode());
     }
     return true;
@@ -127,10 +127,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1200668668194(final IOperationContext operationContext, final PropertyMacroContext _context) {
     {
-      Pattern_ pattern_1204724150725 = new Pattern_();
-      SNode coercedNode_1204724150724 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(_context.getNode(), "argumentType", true), pattern_1204724150725);
-      if(coercedNode_1204724150724 != null) {
-        SNode abstractConceptDeclaration = (SNode)pattern_1204724150725.PatternVar;
+      Pattern_ pattern_1209561019808 = new Pattern_();
+      SNode coercedNode_1209561019807 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(_context.getNode(), "argumentType", true), pattern_1209561019808);
+      if (coercedNode_1209561019807 != null) {
+        SNode abstractConceptDeclaration = (SNode)pattern_1209561019808.PatternVar;
         return SNodeOperations.getModel(abstractConceptDeclaration).toString() + "." + SPropertyOperations.getString(abstractConceptDeclaration, "name");
       }
     }
@@ -167,6 +167,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1204633390715(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1209560834157(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.hasValue(_context.getNode(), "refactoringTargetKind", "model", null);
   }
 
   public static Object referenceMacro_GetReferent_1189764427569(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -306,6 +310,14 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "affectedNodesClause", true) != null);
   }
 
+  public static boolean ifMacro_Condition_1209560967976(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "isApplicableToModelClause", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1209560974488(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "isApplicableToModelClause", true) == null);
+  }
+
   public static SNode sourceNodeQuery_1190724923720(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "updateModelClause", true), "body", true);
   }
@@ -438,6 +450,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "feature", true);
   }
 
+  public static SNode sourceNodeQuery_1209560967967(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "isApplicableToModelClause", true), "body", true);
+  }
+
   public static List sourceNodesQuery_1189698183859(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "arguments", true);
   }
@@ -450,7 +466,7 @@ public class QueriesGenerated {
     List<SNode> result = new ArrayList<SNode>();
     List<SNode> requiredUserEnteredArguments = SLinkOperations.getTargets(_context.getNode(), "arguments", true);
     for(SNode argument : requiredUserEnteredArguments) {
-      if((SLinkOperations.getTarget(argument, "chooseComponentClause", true) != null)) {
+      if ((SLinkOperations.getTarget(argument, "chooseComponentClause", true) != null)) {
         ListOperations.addElement(result, argument);
       }
     }
@@ -461,7 +477,7 @@ public class QueriesGenerated {
     List<SNode> result = new ArrayList<SNode>();
     List<SNode> requiredUserEnteredArguments = SLinkOperations.getTargets(_context.getNode(), "arguments", true);
     for(SNode argument : requiredUserEnteredArguments) {
-      if((SLinkOperations.getTarget(argument, "initialValue", true) != null)) {
+      if ((SLinkOperations.getTarget(argument, "initialValue", true) != null)) {
         ListOperations.addElement(result, argument);
       }
     }
@@ -472,7 +488,7 @@ public class QueriesGenerated {
     List<SNode> result = new ArrayList<SNode>();
     List<SNode> requiredUserEnteredArguments = SLinkOperations.getTargets(_context.getNode(), "arguments", true);
     for(SNode argument : requiredUserEnteredArguments) {
-      if((SLinkOperations.getTarget(argument, "filterClause", true) != null)) {
+      if ((SLinkOperations.getTarget(argument, "filterClause", true) != null)) {
         ListOperations.addElement(result, argument);
       }
     }
@@ -486,12 +502,12 @@ public class QueriesGenerated {
   public static List sourceNodesQuery_1201177824403(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for(SNode argument : SLinkOperations.getTargets(_context.getNode(), "arguments", true)) {
-      if(RequiredAdditionalArgument_Behavior.call_isTransient_1201174675696(argument)) {
+      if (RequiredAdditionalArgument_Behavior.call_isTransient_1201174675696(argument)) {
         ListOperations.addElement(result, argument);
       }
     }
     for(SNode argument : SLinkOperations.getTargets(_context.getNode(), "internalArguments", true)) {
-      if(RequiredAdditionalArgument_Behavior.call_isTransient_1201174675696(argument)) {
+      if (RequiredAdditionalArgument_Behavior.call_isTransient_1201174675696(argument)) {
         ListOperations.addElement(result, argument);
       }
     }

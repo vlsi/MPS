@@ -13,7 +13,7 @@ public class UpdateModelProcedure extends Statement {
   public static final String concept = "jetbrains.mps.logging.refactoring.structure.UpdateModelProcedure";
   public static String ARGUMENT = "argument";
 
-  public  UpdateModelProcedure(SNode node) {
+  public UpdateModelProcedure(SNode node) {
     super(node);
   }
 

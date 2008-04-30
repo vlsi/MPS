@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class GetModelsToGenerateClause extends ConceptFunction {
   public static final String concept = "jetbrains.mps.logging.refactoring.structure.GetModelsToGenerateClause";
 
-  public  GetModelsToGenerateClause(SNode node) {
+  public GetModelsToGenerateClause(SNode node) {
     super(node);
   }
 

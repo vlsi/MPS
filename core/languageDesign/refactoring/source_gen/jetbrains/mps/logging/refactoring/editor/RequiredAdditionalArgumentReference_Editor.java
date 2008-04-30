@@ -60,7 +60,7 @@ public class RequiredAdditionalArgumentReference_Editor extends DefaultNodeEdito
 
   public static class _Inline extends AbstractCellProvider {
 
-    public  _Inline() {
+    public _Inline() {
       super();
     }
 

@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class UpdateModelByDefaultOperation extends Statement {
   public static final String concept = "jetbrains.mps.logging.refactoring.structure.UpdateModelByDefaultOperation";
 
-  public  UpdateModelByDefaultOperation(SNode node) {
+  public UpdateModelByDefaultOperation(SNode node) {
     super(node);
   }
 

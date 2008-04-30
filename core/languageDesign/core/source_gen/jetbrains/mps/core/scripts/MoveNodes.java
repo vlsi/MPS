@@ -132,6 +132,14 @@ public class MoveNodes extends AbstractLoggableRefactoring {
     return false;
   }
 
+  public boolean isApplicableToModel() {
+    return false;
+  }
+
+  public boolean isApplicableToModel(SModelDescriptor modelDescriptor) {
+    return true;
+  }
+
   public boolean showsAffectedNodes() {
     return true;
   }

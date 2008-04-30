@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class AbstractMoveNodesExpression extends AbstractMoveExpression {
   public static final String concept = "jetbrains.mps.logging.refactoring.structure.AbstractMoveNodesExpression";
 
-  public  AbstractMoveNodesExpression(SNode node) {
+  public AbstractMoveNodesExpression(SNode node) {
     super(node);
   }
 

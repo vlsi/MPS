@@ -10,12 +10,12 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_MoveNodeToNodeExpression_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_MoveNodeToNodeExpression_InferenceRule() {
+  public typeof_MoveNodeToNodeExpression_InferenceRule() {
   }
 
   public void applyRule(final SNode nodeToCheck) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "destination", true), "jetbrains.mps.logging.refactoring.helgins", "1199620700412", true), new QuotationClass_7().createNode(), SLinkOperations.getTarget(nodeToCheck, "destination", true), null, "jetbrains.mps.logging.refactoring.helgins", "1199620700407");
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "roleInTarget", true), "jetbrains.mps.logging.refactoring.helgins", "1199620700421", true), new QuotationClass_8().createNode(), SLinkOperations.getTarget(nodeToCheck, "roleInTarget", true), null, "jetbrains.mps.logging.refactoring.helgins", "1199620700416");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "destination", true), "jetbrains.mps.logging.refactoring.helgins", "1199620700412", true), new QuotationClass_7().createNode(), SLinkOperations.getTarget(nodeToCheck, "destination", true), null, "jetbrains.mps.logging.refactoring.helgins", "1199620700407", false);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "roleInTarget", true), "jetbrains.mps.logging.refactoring.helgins", "1199620700421", true), new QuotationClass_8().createNode(), SLinkOperations.getTarget(nodeToCheck, "roleInTarget", true), null, "jetbrains.mps.logging.refactoring.helgins", "1199620700416", false);
   }
 
   public String getApplicableConceptFQName() {

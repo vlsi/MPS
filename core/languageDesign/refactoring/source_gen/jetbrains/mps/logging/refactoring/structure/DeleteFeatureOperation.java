@@ -13,7 +13,7 @@ public class DeleteFeatureOperation extends Statement {
   public static final String concept = "jetbrains.mps.logging.refactoring.structure.DeleteFeatureOperation";
   public static String FEATURE = "feature";
 
-  public  DeleteFeatureOperation(SNode node) {
+  public DeleteFeatureOperation(SNode node) {
     super(node);
   }
 

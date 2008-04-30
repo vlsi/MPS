@@ -13,7 +13,7 @@ public class AbstractMoveExpression extends Expression {
   public static String WHAT_TO_MOVE = "whatToMove";
   public static String DESTINATION = "destination";
 
-  public  AbstractMoveExpression(SNode node) {
+  public AbstractMoveExpression(SNode node) {
     super(node);
   }
 

@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ConceptFunctionParameter_UserArgument extends ConceptFunctionParameter {
   public static final String concept = "jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_UserArgument";
 
-  public  ConceptFunctionParameter_UserArgument(SNode node) {
+  public ConceptFunctionParameter_UserArgument(SNode node) {
     super(node);
   }
 

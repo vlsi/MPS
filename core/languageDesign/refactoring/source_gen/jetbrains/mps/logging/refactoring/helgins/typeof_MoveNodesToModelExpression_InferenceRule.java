@@ -10,11 +10,11 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_MoveNodesToModelExpression_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_MoveNodesToModelExpression_InferenceRule() {
+  public typeof_MoveNodesToModelExpression_InferenceRule() {
   }
 
   public void applyRule(final SNode nodeToCheck) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "destination", true), "jetbrains.mps.logging.refactoring.helgins", "1199620849757", true), new QuotationClass_9().createNode(), SLinkOperations.getTarget(nodeToCheck, "destination", true), null, "jetbrains.mps.logging.refactoring.helgins", "1199620849752");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "destination", true), "jetbrains.mps.logging.refactoring.helgins", "1199620849757", true), new QuotationClass_9().createNode(), SLinkOperations.getTarget(nodeToCheck, "destination", true), null, "jetbrains.mps.logging.refactoring.helgins", "1199620849752", false);
   }
 
   public String getApplicableConceptFQName() {

@@ -10,11 +10,11 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_AbstractMoveNodesExpression_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_AbstractMoveNodesExpression_InferenceRule() {
+  public typeof_AbstractMoveNodesExpression_InferenceRule() {
   }
 
   public void applyRule(final SNode nodeToCheck) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "whatToMove", true), "jetbrains.mps.logging.refactoring.helgins", "1199620292746", true), new QuotationClass_5().createNode(), SLinkOperations.getTarget(nodeToCheck, "whatToMove", true), null, "jetbrains.mps.logging.refactoring.helgins", "1199620292740");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "whatToMove", true), "jetbrains.mps.logging.refactoring.helgins", "1199620292746", true), new QuotationClass_5().createNode(), SLinkOperations.getTarget(nodeToCheck, "whatToMove", true), null, "jetbrains.mps.logging.refactoring.helgins", "1199620292740", false);
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.logging.refactoring.helgins", "1199621101272", true), new QuotationClass_13().createNode(), nodeToCheck, null, "jetbrains.mps.logging.refactoring.helgins", "1199621105994");
   }
 

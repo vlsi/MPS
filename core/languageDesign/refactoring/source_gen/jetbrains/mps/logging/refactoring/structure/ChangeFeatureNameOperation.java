@@ -15,7 +15,7 @@ public class ChangeFeatureNameOperation extends Statement {
   public static String NEW_CONCEPT_F_Q_NAME = "newConceptFQName";
   public static String NEW_FEATURE_NAME = "newFeatureName";
 
-  public  ChangeFeatureNameOperation(SNode node) {
+  public ChangeFeatureNameOperation(SNode node) {
     super(node);
   }
 
