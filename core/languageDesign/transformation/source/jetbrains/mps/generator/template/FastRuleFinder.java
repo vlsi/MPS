@@ -2,7 +2,6 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.transformation.TLBase.structure.Reduction_MappingRule;
@@ -106,7 +105,7 @@ public class FastRuleFinder {
     }
   }
 
-  public SNode findReductionRule(SNode node) {
+  /*package*/ Reduction_MappingRule findReductionRule(SNode node) {
     AbstractConceptDeclaration concept = (AbstractConceptDeclaration) node.getConceptDeclarationAdapter();
     if (concept == null) {
       myGenerator.showWarningMessage(node, "skip reduction: couldn't find concept declaration adapter for " + node.getDebugText());
@@ -128,7 +127,7 @@ public class FastRuleFinder {
       if (!isDisabledReductionForNode(node, rule)) {
         if (GeneratorUtil.checkCondition(rule.getConditionFunction(), false, node, rule.getNode(), myGenerator)) {
           registerReduction(node, rule);
-          return BaseAdapter.fromAdapter(rule);
+          return rule;
         }
       }
     }
@@ -136,68 +135,98 @@ public class FastRuleFinder {
   }
 
   private void registerReduction(SNode inputNode, Reduction_MappingRule rule) {
-//    Object disabledRules = myGenerator.getGeneratorSessionContext().getStepObject(DisabledRulesByNodes.KEY);
-//    if (disabledRules == null) {
-//      disabledRules = new DisabledRulesByNodes();
-//      myGenerator.getGeneratorSessionContext().putStepObject(DisabledRulesByNodes.KEY, disabledRules);
-//    }
-//
-//    ((DisabledRulesByNodes) disabledRules).registerInputReduction(inputNode, rule);
+    getBlockedReductionsData().registerInputReduction(inputNode, rule);
   }
 
   private boolean isDisabledReductionForNode(SNode node, Reduction_MappingRule rule) {
-    return false;
-    //test
-//    Object disabledRules = myGenerator.getGeneratorSessionContext().getStepObject(DisabledRulesByNodes.KEY);
-//    if (disabledRules == null) return false;
-//    return ((DisabledRulesByNodes) disabledRules).isDisabledReduction(node, rule);
+//    return false;
+    return getBlockedReductionsData().isReductionBlocked(node, rule);
   }
 
   public void disableReductionsForOutput(SNode inputNode, SNode outputNode) {
-//    Object disabledRules = myGenerator.getGeneratorSessionContext().getStepObject(DisabledRulesByNodes.KEY);
-//    if (disabledRules == null) return;
-//    ((DisabledRulesByNodes) disabledRules).disableReductionsForOutput(inputNode, outputNode);
+    getBlockedReductionsData().blockReductionsForOutput(inputNode, outputNode);
   }
 
-//  private static class DisabledRulesByNodes {
-//    public static final Object KEY = new Object();
-//    private Map<String, Object> myInputReductionData = new HashMap<String, Object>();
-//    private Map<String, Object> myDisabledReductionData = new HashMap<String, Object>();
-//
-//    public void registerInputReduction(SNode inputNode, Reduction_MappingRule rule) {
-//      String nodeId = inputNode.getSNodeId().toString();
-//      Object o = myInputReductionData.get(nodeId);
-//      if(o == rule) return;
-//
-//      if (o == null) {
-//        myInputReductionData.put(nodeId, rule);
-//      } else if (o instanceof Reduction_MappingRule) {
-//        List<Reduction_MappingRule> list = new ArrayList<Reduction_MappingRule>(2);
-//        list.add((Reduction_MappingRule) o);
-//        list.add(rule);
-//        myInputReductionData.put(nodeId, list);
-//      } else {
-//        ((List)o).add(rule);
-//      }
-//    }
-//
-//    public boolean isDisabledReduction(SNode node, Reduction_MappingRule rule) {
-//      String nodeId = node.getSNodeId().toString();
-//      Object o = myDisabledReductionData.get(nodeId);
-//      if(o == null) return false;
-//      if(o == rule) return true;
-//      if(o instanceof List) {
-//        return ((List)o).contains(rule);
-//      }
-//      return false;
-//    }
-//
-//    public void disableReductionsForOutput(SNode inputNode, SNode outputNode) {
-//      String inputNodeId = inputNode.getSNodeId().toString();
-//      String outputNodeId = outputNode.getSNodeId().toString();
-//      Object o = myInputReductionData.get(inputNodeId);
-//      if (o == null) return;
-//      myDisabledReductionData.put(outputNodeId, o);
-//    }
-//  }
+  public boolean startReductionBlockingForInput(SNode inputNode) {
+    return getBlockedReductionsData().startReductionBlockingForInput(inputNode);
+  }
+
+  public void stopReductionBlockingForInput(SNode inputNode) {
+    getBlockedReductionsData().stopReductionBlockingForInput(inputNode);
+  }
+
+  private BlockedReductionsData getBlockedReductionsData() {
+    Object blockedReductions = myGenerator.getGeneratorSessionContext().getStepObject(BlockedReductionsData.KEY);
+    if (blockedReductions == null) {
+      blockedReductions = new BlockedReductionsData();
+      myGenerator.getGeneratorSessionContext().putStepObject(BlockedReductionsData.KEY, blockedReductions);
+    }
+    return (BlockedReductionsData) blockedReductions;
+  }
+
+  private static class BlockedReductionsData {
+    public static final Object KEY = new Object();
+    private Map<String, Object> myInputReductionsData = new HashMap<String, Object>();
+    private Map<String, Object> myBlockedReductionData = new HashMap<String, Object>();
+    private Set<String> myBlockedInput = new HashSet<String>();
+
+    public void registerInputReduction(SNode inputNode, Reduction_MappingRule rule) {
+      String nodeId = inputNode.getSNodeId().toString();
+      Object o = myInputReductionsData.get(nodeId);
+      if (o == rule) return;
+
+      if (o == null) {
+        myInputReductionsData.put(nodeId, rule);
+      } else if (o instanceof Reduction_MappingRule) {
+        List<Reduction_MappingRule> list = new ArrayList<Reduction_MappingRule>(2);
+        list.add((Reduction_MappingRule) o);
+        list.add(rule);
+        myInputReductionsData.put(nodeId, list);
+      } else {
+        ((List) o).add(rule);
+      }
+    }
+
+    public boolean isReductionBlocked(SNode node, Reduction_MappingRule rule) {
+      String nodeId = node.getSNodeId().toString();
+      boolean b = isReductionBlocked(nodeId, rule, myBlockedReductionData);
+      if (!b) {
+        if (myBlockedInput.contains(nodeId)) {
+          return isReductionBlocked(nodeId, rule, myInputReductionsData);
+        }
+      }
+      return b;
+    }
+
+    private boolean isReductionBlocked(String nodeId, Reduction_MappingRule rule, Map<String, Object> reductionBlockingData) {
+      Object o = reductionBlockingData.get(nodeId);
+      if (o == null) return false;
+      if (o == rule) return true;
+      if (o instanceof List) {
+        return ((List) o).contains(rule);
+      }
+      return false;
+    }
+
+    public void blockReductionsForOutput(SNode inputNode, SNode outputNode) {
+      String inputNodeId = inputNode.getSNodeId().toString();
+      String outputNodeId = outputNode.getSNodeId().toString();
+      Object o = myInputReductionsData.get(inputNodeId);
+      if (o == null) return;
+      myBlockedReductionData.put(outputNodeId, o);
+    }
+
+    /**
+     * @return true if the input wasn't already blocked
+     */
+    public boolean startReductionBlockingForInput(SNode inputNode) {
+      return myBlockedInput.add(inputNode.getSNodeId().toString());
+    }
+
+    public void stopReductionBlockingForInput(SNode inputNode) {
+      String id = inputNode.getSNodeId().toString();
+      assert myBlockedInput.contains(id) : "input wasn't blocked";
+      myBlockedInput.remove(id);
+    }
+  }
 }

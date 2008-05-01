@@ -42,6 +42,7 @@ public class RuleManager {
     myAbandonedRootConcepts = new ArrayList<ConceptDeclaration>();
     myReduction_MappingRules = new ArrayList<Reduction_MappingRule>();
     initRules();
+    myRuleFinder = new FastRuleFinder(myReduction_MappingRules, myGenerator);
   }
 
   private void initRules() {
@@ -135,11 +136,14 @@ public class RuleManager {
   }
 
   /*package*/ List<SNode> tryToReduce(SNode inputNode, String mappingName) {
+    boolean needStopReductionBlocking = false;
     boolean wasChanged = myGenerator.isChanged();
     try {
-      Reduction_MappingRule reductionRule = findReductionRule(inputNode);
+      Reduction_MappingRule reductionRule = myRuleFinder.findReductionRule(inputNode);
       if (reductionRule != null) {
         myGenerator.setChanged(true);
+        needStopReductionBlocking = startReductionBlockingForInput(inputNode);
+
         List<SNode> outputNodes = GeneratorUtil.applyReductionRule(inputNode, reductionRule, myGenerator);
         if (outputNodes.size() == 1) {
           // register copied node
@@ -152,22 +156,27 @@ public class RuleManager {
     } catch (DismissTopMappingRuleException ex) {
       // it's ok, just continue
       myGenerator.setChanged(wasChanged);
+    } finally {
+      if (needStopReductionBlocking) {
+        stopReductionBlockingForInput(inputNode);
+      }
     }
     return null;
-  }
-
-  private Reduction_MappingRule findReductionRule(SNode node) {
-    if (myRuleFinder == null) {
-      myRuleFinder = new FastRuleFinder(myReduction_MappingRules, myGenerator);
-    }
-    return (Reduction_MappingRule) BaseAdapter.fromNode(myRuleFinder.findReductionRule(node));
   }
 
   /**
    * prevents applying of reduction rules which have already been applied to the input node.
    */
-  /*package*/ void disableReductionsForOutput(SNode inputNode, SNode outputNode) {
-    if(myRuleFinder == null) return;
+  /*package*/ void blockReductionsForOutput(SNode inputNode, SNode outputNode) {
     myRuleFinder.disableReductionsForOutput(inputNode, outputNode);
   }
+
+  private boolean startReductionBlockingForInput(SNode inputNode) {
+    return myRuleFinder.startReductionBlockingForInput(inputNode);
+  }
+
+  private void stopReductionBlockingForInput(SNode inputNode) {
+    myRuleFinder.stopReductionBlockingForInput(inputNode);
+  }
+
 }

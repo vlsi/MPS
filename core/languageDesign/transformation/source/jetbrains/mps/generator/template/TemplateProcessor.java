@@ -431,7 +431,7 @@ public class TemplateProcessor {
     myGenerator.getGeneratorSessionContext().getGenerationTracer().pushCopyOperation();
 
     SNode outputNode = new SNode(myOutputModel, inputNode.getConceptFqName(), false);
-    myGenerator.getRuleManager().disableReductionsForOutput(inputNode, outputNode); // prevent infinite applying of the same reduction to the 'same' node.    
+    myGenerator.getRuleManager().blockReductionsForOutput(inputNode, outputNode); // prevent infinite applying of the same reduction to the 'same' node.    
 
     myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, templateNode, outputNode);
     myGenerator.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
