@@ -12,7 +12,6 @@
       </models>
       <external-templates>
         <generator generatorUID="jetbrains.mps.baseLanguage#1129914002933" />
-        <generator generatorUID="jetbrains.mps.internal.collections#1201792019188" />
       </external-templates>
       <usedLanguages>
         <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
@@ -46,7 +45,6 @@
   </osgiOptions>
   <dependencies>
     <dependency reexport="false">jetbrains.mps.transformation.TLBase</dependency>
-    <dependency reexport="true">jetbrains.mps.internal.collections</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
