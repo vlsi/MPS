@@ -44,6 +44,9 @@ public class NodeHolder implements IHolder<SNode> {
 
   public void read(Element element, MPSProject project) throws CantLoadSomethingException {
     Element nodeXML = element.getChild(NODE);
+    if (nodeXML == null) {
+      throw new CantLoadSomethingException("node is null");
+    }
     SNode node = ComponentsUtil.nodeFromElement((Element) nodeXML.getChildren().get(0));
     if (node == null) {
       throw new CantLoadSomethingException("node is null");
@@ -55,7 +58,9 @@ public class NodeHolder implements IHolder<SNode> {
     if (myNodePointer.getNode() == null) {
       throw new CantSaveSomethingException("node is null");
     }
-//    nodeXML.addContent(ComponentsUtil.nodeToElement(myNodePointer.getNode()));
-//    element.addContent(nodeXML);
+
+    Element nodeXML = new Element(NODE);
+    nodeXML.addContent(ComponentsUtil.nodeToElement(myNodePointer.getNode()));
+    element.addContent(nodeXML);
   }
 }
