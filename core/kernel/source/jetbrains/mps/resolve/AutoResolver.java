@@ -21,6 +21,10 @@ public class AutoResolver extends EditorCheckerAdapter {
 
   public Set<IEditorMessage> createMessages(SNode rootNode, IOperationContext operationContext) {
     Set<IEditorMessage> messages = new LinkedHashSet<IEditorMessage>();
+    // disable for transient models
+    if(rootNode.getModel().getModelDescriptor().isTransient()) {
+      return messages;
+    }
     List<SReference> yetBadReferences = new ArrayList<SReference>();
     SReference.disableLogging();
     try {
