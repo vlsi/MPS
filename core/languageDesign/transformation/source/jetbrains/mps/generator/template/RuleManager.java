@@ -146,11 +146,18 @@ public class RuleManager {
     myGenerator.getGeneratorSessionContext().getGenerationTracer().pushOutputNode(clonedOutputNode);
   }
 
-  Reduction_MappingRule findReductionRule(SNode node) {
+  /*package*/ Reduction_MappingRule findReductionRule(SNode node) {
     if (myRuleFinder == null) {
       myRuleFinder = new FastRuleFinder(myReduction_MappingRules, myGenerator);
     }
     return (Reduction_MappingRule) BaseAdapter.fromNode(myRuleFinder.findReductionRule(node));
   }
 
+  /**
+   * prevents applying of reduction rules which have already been applied to the input node.
+   */
+  /*package*/ void disableReductionsForOutput(SNode inputNode, SNode outputNode) {
+    if(myRuleFinder == null) return;
+    myRuleFinder.disableReductionsForOutput(inputNode, outputNode);
+  }
 }

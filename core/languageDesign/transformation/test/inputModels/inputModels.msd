@@ -4,13 +4,17 @@
     <modelRoot path="${solution_descriptor}\" namespacePrefix="jetbrains.mps.transformation.test.inputModels" />
   </models>
   <classPath />
-  <runtimeClassPath />
   <sourcePath />
   <dependencies>
     <dependency reexport="true">jetbrains.mps.transformation.test.inputLang</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.transformation.test.inputLang</usedLanguages>
+    <usedLanguages>jetbrains.mps.transformation.test.outputLang</usedLanguages>
   </usedLanguages>
+  <osgiOptions>
+    <requiredBundles />
+    <exportedPackage />
+  </osgiOptions>
 </solution>
 
