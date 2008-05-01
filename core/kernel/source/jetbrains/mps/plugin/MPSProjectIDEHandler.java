@@ -9,6 +9,7 @@ import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
@@ -90,8 +91,8 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
         new Thread() {
           public void run() {
             SearchQuery searchQuery = new SearchQuery(GlobalScope.getInstance());
-            IResultProvider resultProvider = TreeBuilder.forFinder(new AspectMethodsFinder(applicableModelDescriptors, name));
-            getProjectWindow().getUsagesView().findUsages(resultProvider, searchQuery, false, true, true);
+            BaseFinder finder = new AspectMethodsFinder(applicableModelDescriptors, name);
+            getProjectWindow().getUsagesView().findUsages(searchQuery, false, true, true, finder);
           }
         }.start();
       }

@@ -30,7 +30,7 @@ public class FindModelUsages_Action extends CurrentProjectMPSAction {
     return "alt F7";
   }
 
-  public void doUpdate(@NotNull() ActionContext context) {
+  public void doUpdate(@NotNull()ActionContext context) {
     try {
       super.doUpdate(context);
       if (!(this.fillFieldsIfNecessary(context))) {
@@ -59,17 +59,16 @@ public class FindModelUsages_Action extends CurrentProjectMPSAction {
     return true;
   }
 
-  public void doExecute(@NotNull() ActionContext context) {
+  public void doExecute(@NotNull()ActionContext context) {
     try {
       if (!(this.fillFieldsIfNecessary(context))) {
         return;
       }
       {
         SearchQuery query = new SearchQuery(this.modelDescriptor.getSModel(), context.getScope());
-        IResultProvider provider = TreeBuilder.forFinder(new ModelUsagesFinder());
         IDEProjectFrame iDEProjectFrame = context.get(IDEProjectFrame.class);
         NewUsagesView usagesView = iDEProjectFrame.getUsagesView();
-        usagesView.findUsages(provider, query, true, true, false);
+        usagesView.findUsages(query, true, true, false, new ModelUsagesFinder());
       }
     } catch (Throwable t) {
       FindModelUsages_Action.LOG.error("User's action execute method failed. Action:" + "FindModelUsages", t);
