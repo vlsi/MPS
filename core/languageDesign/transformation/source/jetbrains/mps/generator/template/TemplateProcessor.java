@@ -420,16 +420,16 @@ public class TemplateProcessor {
   }
 
   private List<SNode> copyNodeFromInputNode_internal(String mappingName, SNode templateNode, SNode inputNode) {
-    List<SNode> outputNodes = tryToReduce(inputNode);
+    List<SNode> outputNodes = tryToReduce(inputNode, mappingName);
     if (outputNodes != null) {
-      if (outputNodes.size() == 1) {
-        SNode outputNode = outputNodes.get(0);
-        { // register copied node
-          myGenerator.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
-          // output node should be accessible via 'findCopiedNode'
-          myGenerator.addCopiedOutputNodeForInputNode(inputNode, outputNode);
-        }
-      }
+//      if (outputNodes.size() == 1) {
+//        SNode outputNode = outputNodes.get(0);
+//        { // register copied node
+//          myGenerator.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
+//          // output node should be accessible via 'findCopiedNode'
+//          myGenerator.addCopiedOutputNodeForInputNode(inputNode, outputNode);
+//        }
+//      }
       return outputNodes;
     }
 
@@ -493,12 +493,20 @@ public class TemplateProcessor {
     return outputNodes;
   }
 
-  private List<SNode> tryToReduce(SNode inputNode) {
+  private List<SNode> tryToReduce(SNode inputNode, String mappingName) {
     boolean wasChanged = myGenerator.isChanged();
     try {
       Reduction_MappingRule reductionRule = myGenerator.getRuleManager().findReductionRule(inputNode);
       if (reductionRule != null) {
-        return GeneratorUtil.applyReductionRule(inputNode, reductionRule, myGenerator);
+        myGenerator.setChanged(true);
+        List<SNode> outputNodes = GeneratorUtil.applyReductionRule(inputNode, reductionRule, myGenerator);
+        if (outputNodes.size() == 1) {
+          // register copied node
+          myGenerator.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNodes.get(0));
+          // output node should be accessible via 'findCopiedNode'
+          myGenerator.addCopiedOutputNodeForInputNode(inputNode, outputNodes.get(0));
+        }
+        return outputNodes;
       }
     } catch (DismissTopMappingRuleException ex) {
       // it's ok, just continue

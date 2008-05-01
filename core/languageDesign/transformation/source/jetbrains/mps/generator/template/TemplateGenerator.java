@@ -441,7 +441,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   private void reportWasErrors(int errorCount) {
     if (errorCount > 0) {
-      addProgressMessage(errorCount + " errors encountered. Look at messages for details.");
+      addProgressMessage(errorCount + " errors");
     }
   }
 
