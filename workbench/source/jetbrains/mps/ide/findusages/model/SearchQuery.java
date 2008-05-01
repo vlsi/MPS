@@ -1,6 +1,5 @@
 package jetbrains.mps.ide.findusages.model;
 
-import jetbrains.mps.ide.components.ComponentsUtil;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.IExternalizeable;
@@ -16,7 +15,6 @@ import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 
 import javax.swing.Icon;
-import java.lang.reflect.InvocationTargetException;
 
 public class SearchQuery implements IExternalizeable {
   private static final Logger LOG = Logger.getLogger(SearchQuery.class);
@@ -42,25 +40,25 @@ public class SearchQuery implements IExternalizeable {
     read(element, project);
   }
 
-  public SearchQuery(IScope scope, IHolder objectHolder) {
+  public SearchQuery(IHolder objectHolder, IScope scope) {
     myScope = scope;
     myObjectHolder = objectHolder;
   }
 
   public SearchQuery(SModel model, IScope scope) {
-    this(scope, new ModelHolder(model));
+    this(new ModelHolder(model), scope);
   }
 
   public SearchQuery(SNode node, IScope scope) {
-    this(scope, new NodeHolder(node));
+    this(new NodeHolder(node), scope);
   }
 
   public SearchQuery(IModule module, IScope scope) {
-    this(scope, new ModuleHolder(module));
+    this(new ModuleHolder(module), scope);
   }
 
   public SearchQuery(IScope scope) {
-    this(scope, new VoidHolder());
+    this(new VoidHolder(), scope);
   }
 
   public IScope getScope() {
