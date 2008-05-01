@@ -11,10 +11,11 @@
   <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <maxImportIndex value="0" />
   <node type="jetbrains.mps.transformation.test.inputLang.structure.InputRoot" id="1209605989135">
     <property name="name" value="Input_root_1" />
-    <property name="useInTest" value="none" />
+    <property name="useInTest" value="dontApplyReductionTwice" />
   </node>
   <node type="jetbrains.mps.transformation.test.outputLang.structure.OutputRoot" id="1209658576147">
     <property name="name" value="Root_ToCopy" />

@@ -11,7 +11,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
 
   private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
 
-  public  ConstraintsDescriptor() {
+  public ConstraintsDescriptor() {
     this.myConstraints.add(new CreateRootRule_alias_PropertyConstraint());
     this.myConstraints.add(new BaseMappingRule_alias_PropertyConstraint());
     this.myConstraints.add(new Root_MappingRule_template_ReferentConstraint());

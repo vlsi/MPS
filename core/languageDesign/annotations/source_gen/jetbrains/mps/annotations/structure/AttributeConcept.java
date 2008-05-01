@@ -34,7 +34,7 @@ public class AttributeConcept extends BaseConcept {
     if ("attributedNode".equals(role)) {
       return this.getAttributedNode_internal();
     } else
-    return super.getReferent(role);
+    return (BaseAdapter) super.getReferent(role);    // cast to BaseAdapter added manually
   }
 
   public BaseConcept getAttributedNode() {
