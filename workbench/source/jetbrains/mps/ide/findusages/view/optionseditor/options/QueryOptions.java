@@ -112,7 +112,7 @@ public class QueryOptions extends BaseOptions<SearchQuery> {
       throw new IllegalArgumentException();
     }
 
-    return new SearchQuery(new SNodePointer(node), scope);
+    return new SearchQuery(node, scope);
   }
 
   public void write(Element element, MPSProject project) {

@@ -14,9 +14,9 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
@@ -24,7 +24,6 @@ import jetbrains.mps.bootstrap.structureLanguage.findUsages.ConceptInstances_Fin
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeAndDescendantsUsages_Finder;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelDescriptor;
 
 import java.util.List;
 
@@ -101,6 +100,14 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
     return true;
   }
 
+  public boolean isApplicableToModel() {
+    return false;
+  }
+
+  public boolean isApplicableToModel(SModelDescriptor modelDescriptor) {
+    return true;
+  }
+
   public boolean showsAffectedNodes() {
     return true;
   }
@@ -108,7 +115,7 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
   public SearchResults getAffectedNodes(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
       SNode node = actionContext.getNode();
-      SearchQuery searchQuery = new SearchQuery(new SNodePointer(node), GlobalScope.getInstance());
+      SearchQuery searchQuery = new SearchQuery(node, GlobalScope.getInstance());
       IResultProvider resultProvider = TreeBuilder.forFinders(new ConceptInstances_Finder(), new NodeAndDescendantsUsages_Finder());
       IDEProjectFrame projectFrame = (IDEProjectFrame) actionContext.get(IDEProjectFrame.class);
       SearchResults searchResults = resultProvider.getResults(searchQuery, projectFrame.createAdaptiveProgressMonitor());

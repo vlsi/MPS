@@ -47,7 +47,7 @@ public class TodoViewer extends JPanel {
 
             myUsageView.setRunOptions(
               TreeBuilder.forFinder(new TodoFinder()),
-              new SearchQuery(new SNodePointer((SNode) null), project.getScope()),
+              new SearchQuery(project.getScope()),
               new ButtonConfiguration(true),
               new SearchResults()
             );

@@ -4,6 +4,7 @@ import jetbrains.mps.ide.components.ComponentsUtil;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.IExternalizeable;
+import jetbrains.mps.ide.findusages.model.holders.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.AbstractModule.ModuleScope;
@@ -12,16 +13,19 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProject.ProjectScope;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.annotation.Hack;
 import org.jdom.Element;
-import org.jetbrains.annotations.NotNull;
+
+import javax.swing.Icon;
+import java.lang.reflect.InvocationTargetException;
 
 public class SearchQuery implements IExternalizeable {
   private static final Logger LOG = Logger.getLogger(SearchQuery.class);
 
-  private static final String NODE = "node";
   private static final String SCOPE = "scope";
   private static final String SCOPE_TYPE = "scope_type";
+
+  private static final String HOLDER = "holder";
+  private static final String HOLDER_CLASS = "holder_class";
 
   private static final String SCOPE_TYPE_GLOBAL = "global_scope";
   private static final String SCOPE_TYPE_PROJECT = "project_scope";
@@ -31,41 +35,48 @@ public class SearchQuery implements IExternalizeable {
   private static final String MODULE_ID = "module_id";
   private static final String MODEL_ID = "model_id";
 
-  private SNodePointer myNodePointer;
   private IScope myScope;
-
-  @Hack
-  private SModel myModel;
-
-  public SearchQuery(SModel model, IScope scope) {
-    myModel = model;
-    myScope = scope;
-    myNodePointer = new SNodePointer((SNode) null);
-  }
-
-  public SearchQuery(@NotNull SNodePointer nodePointer, IScope scope) {
-    myNodePointer = nodePointer;
-    myScope = scope;
-  }
-
-  public SearchQuery(SNode node, IScope scope) {
-    this(new SNodePointer(node), scope);
-  }
+  private IHolder myObjectHolder = new VoidHolder();
 
   public SearchQuery(Element element, MPSProject project) throws CantLoadSomethingException {
     read(element, project);
   }
 
-  public SNode getNode() {
-    return myNodePointer.getNode();
+  public SearchQuery(IScope scope, IHolder objectHolder) {
+    myScope = scope;
+    myObjectHolder = objectHolder;
   }
 
-  public SModel getModel() {
-    return myModel;
+  public SearchQuery(SModel model, IScope scope) {
+    this(scope, new ModelHolder(model));
+  }
+
+  public SearchQuery(SNode node, IScope scope) {
+    this(scope, new NodeHolder(node));
+  }
+
+  public SearchQuery(IModule module, IScope scope) {
+    this(scope, new ModuleHolder(module));
+  }
+
+  public SearchQuery(IScope scope) {
+    this(scope, new VoidHolder());
   }
 
   public IScope getScope() {
     return myScope;
+  }
+
+  public IHolder getObjectHolder() {
+    return myObjectHolder;
+  }
+
+  public String getCaption() {
+    return myObjectHolder.getCaption();
+  }
+
+  public Icon getIcon() {
+    return myObjectHolder.getIcon();
   }
 
   public void write(Element element, MPSProject project) throws CantSaveSomethingException {
@@ -95,12 +106,10 @@ public class SearchQuery implements IExternalizeable {
     }
     element.addContent(scopeXML);
 
-    if (myNodePointer.getNode() == null) {
-      throw new CantSaveSomethingException("node is null");
-    }
-    Element nodeXML = new Element(NODE);
-    nodeXML.addContent(ComponentsUtil.nodeToElement(myNodePointer.getNode()));
-    element.addContent(nodeXML);
+    Element holderXML = new Element(HOLDER);
+    holderXML.setAttribute(HOLDER_CLASS, myObjectHolder.getClass().getName());
+    myObjectHolder.write(holderXML, project);
+    element.addContent(holderXML);
   }
 
   public void read(Element element, MPSProject project) throws CantLoadSomethingException {
@@ -132,12 +141,12 @@ public class SearchQuery implements IExternalizeable {
       myScope = new ModelScope(project.getScope(), sModelDescriptor);
     }
 
-    Element nodeXML = element.getChild(NODE);
-    SNode node = ComponentsUtil.nodeFromElement((Element) nodeXML.getChildren().get(0));
-    if (node == null) {
-      LOG.warning("node is null");
-      throw new CantLoadSomethingException("node is null");
+    Element holderXML = element.getChild(HOLDER);
+    String holderClass = holderXML.getAttributeValue(HOLDER_CLASS);
+    try {
+      myObjectHolder = (IHolder) Class.forName(holderClass).getConstructor(Element.class, MPSProject.class).newInstance(element, project);
+    } catch (Exception e) {
+      throw new CantLoadSomethingException(e);
     }
-    myNodePointer = new SNodePointer(node);
   }
 }

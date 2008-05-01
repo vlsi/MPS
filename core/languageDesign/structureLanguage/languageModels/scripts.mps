@@ -27,6 +27,8 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1"/>
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
+  <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1"/>
   <maxImportIndex value="26"/>
   <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1"/>
   <import index="2" modelUID="jetbrains.mps.ide.action@java_stub" version="-1"/>
@@ -558,16 +560,11 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1201531773383">
               <link role="baseMethodDeclaration"
-                    targetNodeId="23.~SearchQuery.&lt;init&gt;(jetbrains.mps.smodel.SNodePointer,jetbrains.mps.smodel.IScope)"
+                    targetNodeId="23.~SearchQuery.&lt;init&gt;(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IScope)"
                     resolveInfo="SearchQuery"/>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1201531773384">
-                <link role="baseMethodDeclaration"
-                      targetNodeId="5.~SNodePointer.&lt;init&gt;(jetbrains.mps.smodel.SNode)"
-                      resolveInfo="SNodePointer"/>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
-                      id="1201531773385">
-                  <link role="variableDeclaration" targetNodeId="1201531773376" resolveInfo="node"/>
-                </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
+                    id="1209645994223">
+                <link role="variableDeclaration" targetNodeId="1201531773376" resolveInfo="node"/>
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall"
                     id="1207927239048">
@@ -1995,16 +1992,11 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1201533748224">
               <link role="baseMethodDeclaration"
-                    targetNodeId="23.~SearchQuery.&lt;init&gt;(jetbrains.mps.smodel.SNodePointer,jetbrains.mps.smodel.IScope)"
+                    targetNodeId="23.~SearchQuery.&lt;init&gt;(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IScope)"
                     resolveInfo="SearchQuery"/>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1201533748225">
-                <link role="baseMethodDeclaration"
-                      targetNodeId="5.~SNodePointer.&lt;init&gt;(jetbrains.mps.smodel.SNode)"
-                      resolveInfo="SNodePointer"/>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
-                      id="1201533748226">
-                  <link role="variableDeclaration" targetNodeId="1201533748217" resolveInfo="node"/>
-                </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
+                    id="1209645863749">
+                <link role="variableDeclaration" targetNodeId="1201533748217" resolveInfo="node"/>
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall"
                     id="1207927167276">
@@ -2594,16 +2586,11 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1201533903063">
               <link role="baseMethodDeclaration"
-                    targetNodeId="23.~SearchQuery.&lt;init&gt;(jetbrains.mps.smodel.SNodePointer,jetbrains.mps.smodel.IScope)"
+                    targetNodeId="23.~SearchQuery.&lt;init&gt;(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IScope)"
                     resolveInfo="SearchQuery"/>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1201533903064">
-                <link role="baseMethodDeclaration"
-                      targetNodeId="5.~SNodePointer.&lt;init&gt;(jetbrains.mps.smodel.SNode)"
-                      resolveInfo="SNodePointer"/>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
-                      id="1201533903065">
-                  <link role="variableDeclaration" targetNodeId="1201533903056" resolveInfo="node"/>
-                </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
+                    id="1209646003685">
+                <link role="variableDeclaration" targetNodeId="1201533903056" resolveInfo="node"/>
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall"
                     id="1203724815985">
@@ -3456,16 +3443,11 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1201533946605">
               <link role="baseMethodDeclaration"
-                    targetNodeId="23.~SearchQuery.&lt;init&gt;(jetbrains.mps.smodel.SNodePointer,jetbrains.mps.smodel.IScope)"
+                    targetNodeId="23.~SearchQuery.&lt;init&gt;(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IScope)"
                     resolveInfo="SearchQuery"/>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1201533946606">
-                <link role="baseMethodDeclaration"
-                      targetNodeId="5.~SNodePointer.&lt;init&gt;(jetbrains.mps.smodel.SNode)"
-                      resolveInfo="SNodePointer"/>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
-                      id="1201533946607">
-                  <link role="variableDeclaration" targetNodeId="1201533946598" resolveInfo="node"/>
-                </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
+                    id="1209645970143">
+                <link role="variableDeclaration" targetNodeId="1201533946598" resolveInfo="node"/>
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall"
                     id="1207927205310">
@@ -4769,16 +4751,11 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1201265665687">
               <link role="baseMethodDeclaration"
-                    targetNodeId="23.~SearchQuery.&lt;init&gt;(jetbrains.mps.smodel.SNodePointer,jetbrains.mps.smodel.IScope)"
+                    targetNodeId="23.~SearchQuery.&lt;init&gt;(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IScope)"
                     resolveInfo="SearchQuery"/>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1201265665688">
-                <link role="baseMethodDeclaration"
-                      targetNodeId="5.~SNodePointer.&lt;init&gt;(jetbrains.mps.smodel.SNode)"
-                      resolveInfo="SNodePointer"/>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
-                      id="1201265665689">
-                  <link role="variableDeclaration" targetNodeId="1201021165421" resolveInfo="node"/>
-                </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
+                    id="1209646018859">
+                <link role="variableDeclaration" targetNodeId="1201021165421" resolveInfo="node"/>
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall"
                     id="1207927326183">
@@ -5817,16 +5794,11 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1201283679538">
               <link role="baseMethodDeclaration"
-                    targetNodeId="23.~SearchQuery.&lt;init&gt;(jetbrains.mps.smodel.SNodePointer,jetbrains.mps.smodel.IScope)"
+                    targetNodeId="23.~SearchQuery.&lt;init&gt;(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IScope)"
                     resolveInfo="SearchQuery"/>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1201283679539">
-                <link role="baseMethodDeclaration"
-                      targetNodeId="5.~SNodePointer.&lt;init&gt;(jetbrains.mps.smodel.SNode)"
-                      resolveInfo="SNodePointer"/>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
-                      id="1201283679540">
-                  <link role="variableDeclaration" targetNodeId="1201283679531" resolveInfo="node"/>
-                </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
+                    id="1209646035269">
+                <link role="variableDeclaration" targetNodeId="1201283679531" resolveInfo="node"/>
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall"
                     id="1207927342280">

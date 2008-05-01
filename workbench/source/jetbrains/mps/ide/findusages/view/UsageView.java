@@ -12,6 +12,8 @@ import jetbrains.mps.ide.findusages.IExternalizeable;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.findusages.model.holders.IHolder;
+import jetbrains.mps.ide.findusages.model.holders.VoidHolder;
 import jetbrains.mps.ide.findusages.view.icons.Icons;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTreeHolder;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
@@ -115,7 +117,11 @@ public abstract class UsageView implements IExternalizeable {
 
   public void rerun() {
     assert mySearchQuery != null;
-    if ((mySearchQuery.getScope() == null) || (mySearchQuery.getNode() == null)) return;
+    if (mySearchQuery.getScope() == null) return;
+    IHolder holder = mySearchQuery.getObjectHolder();
+    if (!(holder instanceof VoidHolder)) {
+      if (holder.getObject() == null) return; //object was deleted
+    }
     run();
   }
 
@@ -152,17 +158,11 @@ public abstract class UsageView implements IExternalizeable {
   }
 
   public String getCaption() {
-    SNode node = mySearchQuery.getNode();
-    if (node == null) return "<null>";
-    return node.toString();
+    return mySearchQuery.getCaption();
   }
 
   public Icon getIcon() {
-    SNode node = mySearchQuery.getNode();
-    if (node == null) {
-      return null;
-    }
-    return IconManager.getIconFor(node);
+    return mySearchQuery.getIcon();
   }
 
   public abstract void close();

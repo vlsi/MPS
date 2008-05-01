@@ -14,9 +14,9 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
@@ -37,8 +37,6 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.Language;
 
 import java.util.ArrayList;
-
-import jetbrains.mps.smodel.SModelDescriptor;
 
 public class SafeDeleteLink extends AbstractLoggableRefactoring {
 
@@ -92,17 +90,25 @@ public class SafeDeleteLink extends AbstractLoggableRefactoring {
     return true;
   }
 
+  public boolean isApplicableToModel() {
+    return false;
+  }
+
+  public boolean isApplicableToModel(SModelDescriptor modelDescriptor) {
+    return true;
+  }
+
   public boolean showsAffectedNodes() {
     return true;
   }
 
-  public SearchResults<SNode> getAffectedNodes(ActionContext actionContext, RefactoringContext refactoringContext) {
+  public SearchResults getAffectedNodes(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
       SNode node = actionContext.getNode();
-      SearchQuery searchQuery = new SearchQuery(new SNodePointer(node), GlobalScope.getInstance());
+      SearchQuery searchQuery = new SearchQuery(node, GlobalScope.getInstance());
       IResultProvider resultProvider = TreeBuilder.forFinders(new LinkExamples_Finder(), new NodeAndDescendantsUsages_Finder());
       IDEProjectFrame projectFrame = (IDEProjectFrame) actionContext.get(IDEProjectFrame.class);
-      SearchResults<SNode> searchResults = resultProvider.getResults(searchQuery, projectFrame.createAdaptiveProgressMonitor());
+      SearchResults searchResults = resultProvider.getResults(searchQuery, projectFrame.createAdaptiveProgressMonitor());
       if (!(searchResults.getAliveResults().isEmpty())) {
         return searchResults;
       }

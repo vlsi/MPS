@@ -89,7 +89,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
         }
         new Thread() {
           public void run() {
-            SearchQuery searchQuery = new SearchQuery(new SNodePointer((SNode) null), GlobalScope.getInstance());
+            SearchQuery searchQuery = new SearchQuery(GlobalScope.getInstance());
             IResultProvider resultProvider = TreeBuilder.forFinder(new AspectMethodsFinder(applicableModelDescriptors, name));
             getProjectWindow().getUsagesView().findUsages(resultProvider, searchQuery, false, true, true);
           }
