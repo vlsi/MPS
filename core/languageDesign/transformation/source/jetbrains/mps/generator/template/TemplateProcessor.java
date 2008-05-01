@@ -435,11 +435,12 @@ public class TemplateProcessor {
 
     // no reduction found - do node copying
     myGenerator.getGeneratorSessionContext().getGenerationTracer().pushCopyOperation();
-    SNode outputNode = SModelUtil_new.instantiateConceptDeclaration(inputNode.getConceptFqName(), myOutputModel, myGenerator.getScope(), false);
-    if (outputNode == null) {
-      myGenerator.showErrorMessage(inputNode, templateNode, "'copyNodeFromInputNode()' cannot create output node");
-      return null;
-    }
+//    SNode outputNode = SModelUtil_new.instantiateConceptDeclaration(inputNode.getConceptFqName(), myOutputModel, myGenerator.getScope(), false);
+//    if (outputNode == null) {
+//      myGenerator.showErrorMessage(inputNode, templateNode, "'copyNodeFromInputNode()' cannot create output node");
+//      return null;
+//    }
+    SNode outputNode = new SNode(myOutputModel, inputNode.getConceptFqName(), false);
 
     myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, templateNode, outputNode);
     myGenerator.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
