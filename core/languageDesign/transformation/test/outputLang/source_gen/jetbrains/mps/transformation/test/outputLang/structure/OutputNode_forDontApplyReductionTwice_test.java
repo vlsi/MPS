@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class OutputNode_forDontApplyReductionTwice_test extends OutputRoot {
+public class OutputNode_forDontApplyReductionTwice_test extends OutputNode {
   public static final String concept = "jetbrains.mps.transformation.test.outputLang.structure.OutputNode_forDontApplyReductionTwice_test";
 
   public OutputNode_forDontApplyReductionTwice_test(SNode node) {

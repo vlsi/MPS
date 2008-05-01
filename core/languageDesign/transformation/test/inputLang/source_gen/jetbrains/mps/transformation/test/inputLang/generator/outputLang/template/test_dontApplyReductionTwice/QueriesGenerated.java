@@ -9,7 +9,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1209604575152(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SPropertyOperations.hasValue(_context.getNode(), "useInTest", "reduceExpressionToStatement", "none");
+    return SPropertyOperations.hasValue(_context.getNode(), "useInTest", "dontApplyReductionTwice", "none");
   }
 
 }

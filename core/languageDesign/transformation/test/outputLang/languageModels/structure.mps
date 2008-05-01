@@ -47,7 +47,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1209604028561">
     <property name="name" value="OutputNode_forDontApplyReductionTwice_test" />
-    <link role="extends" targetNodeId="1195164668463" resolveInfo="OutputRoot" />
+    <link role="extends" targetNodeId="1195165132070" resolveInfo="OutputNode" />
   </node>
 </model>
 
