@@ -17,12 +17,12 @@ public class AttributeReferenceOperation extends BaseConcept implements IMemberO
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String MEMBER = "member";
 
-  public  AttributeReferenceOperation(SNode node) {
+  public AttributeReferenceOperation(SNode node) {
     super(node);
   }
 
   public static AttributeReferenceOperation newInstance(SModel sm, boolean init) {
-    return (AttributeReferenceOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AttributeReferenceOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AttributeReferenceOperation newInstance(SModel sm) {
@@ -55,7 +55,7 @@ public class AttributeReferenceOperation extends BaseConcept implements IMemberO
   }
 
   public IMember getMember() {
-    return (IMember)this.getReferent(AttributeReferenceOperation.MEMBER);
+    return (IMember) this.getReferent(AttributeReferenceOperation.MEMBER);
   }
 
   public void setMember(IMember node) {
@@ -63,7 +63,7 @@ public class AttributeReferenceOperation extends BaseConcept implements IMemberO
   }
 
   public AttributeDeclaration getAttributeDeclaration() {
-    return (AttributeDeclaration)this.getMember();
+    return (AttributeDeclaration) this.getMember();
   }
 
   public void setAttributeDeclaration(AttributeDeclaration node) {

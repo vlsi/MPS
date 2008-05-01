@@ -12,12 +12,12 @@ public class ComponentType extends BaseClassifierType {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.ComponentType";
   public static String COMPONENT = "component";
 
-  public  ComponentType(SNode node) {
+  public ComponentType(SNode node) {
     super(node);
   }
 
   public static ComponentType newInstance(SModel sm, boolean init) {
-    return (ComponentType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ComponentType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ComponentType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ComponentType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ComponentType newInstance(SModel sm) {
@@ -26,7 +26,7 @@ public class ComponentType extends BaseClassifierType {
 
 
   public ComponentDeclaration getComponent() {
-    return (ComponentDeclaration)this.getReferent(ComponentType.COMPONENT);
+    return (ComponentDeclaration) this.getReferent(ComponentType.COMPONENT);
   }
 
   public void setComponent(ComponentDeclaration node) {

@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+
 import java.util.Iterator;
 import java.util.List;
 
@@ -14,12 +15,12 @@ public class GridRow extends BaseConcept {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.GridRow";
   public static String COMPONENT = "component";
 
-  public  GridRow(SNode node) {
+  public GridRow(SNode node) {
     super(node);
   }
 
   public static GridRow newInstance(SModel sm, boolean init) {
-    return (GridRow)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.GridRow", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GridRow) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.GridRow", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GridRow newInstance(SModel sm) {

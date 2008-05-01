@@ -12,12 +12,12 @@ public class ComponentCreator extends AbstractCreator {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.ComponentCreator";
   public static String COMPONENT_DECLARATION = "componentDeclaration";
 
-  public  ComponentCreator(SNode node) {
+  public ComponentCreator(SNode node) {
     super(node);
   }
 
   public static ComponentCreator newInstance(SModel sm, boolean init) {
-    return (ComponentCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ComponentCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ComponentCreator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ComponentCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ComponentCreator newInstance(SModel sm) {
@@ -26,7 +26,7 @@ public class ComponentCreator extends AbstractCreator {
 
 
   public ComponentDeclaration getComponentDeclaration() {
-    return (ComponentDeclaration)this.getReferent(ComponentCreator.COMPONENT_DECLARATION);
+    return (ComponentDeclaration) this.getReferent(ComponentCreator.COMPONENT_DECLARATION);
   }
 
   public void setComponentDeclaration(ComponentDeclaration node) {

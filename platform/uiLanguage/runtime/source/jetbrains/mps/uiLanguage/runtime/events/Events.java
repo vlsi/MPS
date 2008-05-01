@@ -13,4 +13,8 @@ public abstract class Events {
   public Event getEvent(String name) {
     return myEvents.get(name);
   }
+
+  public void initialize() {
+
+  }
 }

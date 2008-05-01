@@ -8,9 +8,13 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.search.ISearchScope;
+
 import java.util.List;
+
 import jetbrains.mps.smodel.SNode;
+
 import java.util.ArrayList;
+
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
@@ -18,7 +22,7 @@ import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class ComponentInstance_componentDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  ComponentInstance_componentDeclaration_ReferentConstraint() {
+  public ComponentInstance_componentDeclaration_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

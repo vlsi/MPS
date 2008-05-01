@@ -12,7 +12,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class ComponentController_name_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
 
-  public  ComponentController_name_PropertyConstraint() {
+  public ComponentController_name_PropertyConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

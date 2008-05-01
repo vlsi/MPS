@@ -12,12 +12,12 @@ public class BindExpression extends Expression {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.BindExpression";
   public static String EXPRESSION = "expression";
 
-  public  BindExpression(SNode node) {
+  public BindExpression(SNode node) {
     super(node);
   }
 
   public static BindExpression newInstance(SModel sm, boolean init) {
-    return (BindExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.BindExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BindExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.BindExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BindExpression newInstance(SModel sm) {
@@ -26,7 +26,7 @@ public class BindExpression extends Expression {
 
 
   public Expression getExpression() {
-    return (Expression)this.getChild(BindExpression.EXPRESSION);
+    return (Expression) this.getChild(BindExpression.EXPRESSION);
   }
 
   public void setExpression(Expression node) {

@@ -4,20 +4,21 @@ package jetbrains.mps.uiLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.baseLanguage.classifiers.structure.IMember;
-import jetbrains.mps.baseLanguage.classifiers.structure.IClassifier;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.ParameterDeclaration;
+import jetbrains.mps.baseLanguage.structure.StatementList;
 
-public class EventDeclaration extends BaseConcept implements IMember, IClassifier {
+public class EventDeclaration extends BaseConcept implements IMember {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.EventDeclaration";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String PARAMETER = "parameter";
+  public static String INITIALIZER = "initializer";
 
   public EventDeclaration(SNode node) {
     super(node);
@@ -70,6 +71,14 @@ public class EventDeclaration extends BaseConcept implements IMember, IClassifie
 
   public void setParameter(ParameterDeclaration node) {
     super.setChild(EventDeclaration.PARAMETER, node);
+  }
+
+  public StatementList getInitializer() {
+    return (StatementList) this.getChild(EventDeclaration.INITIALIZER);
+  }
+
+  public void setInitializer(StatementList node) {
+    super.setChild(EventDeclaration.INITIALIZER, node);
   }
 
 }
