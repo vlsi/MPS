@@ -243,13 +243,12 @@ public final class SNode {
 
   public void replaceChild(@NotNull SNode oldChild,
                            @NotNull SNode newChild) {
-//    assert _children().contains(oldChild);
     int index = _children().indexOf(oldChild);
     assert index >= 0;
     String role = oldChild.getRole_();
     assert role != null;
-//    insertChild(oldChild, role, newChild);
-//    removeChild(oldChild);
+    // old and new child can have the same node Id
+    // thus it is important to remove old child first  
     removeChildAt(index);
     insertChildAt(index, role, newChild);
   }
