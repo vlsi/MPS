@@ -119,25 +119,13 @@ public class RuleManager {
   }
 
   private void applyReductionRules_internal(SNode inputNode, SNode clonedOutputNode) {
-    boolean wasChanged = myGenerator.isChanged();
-    try {
-      Reduction_MappingRule reductionRule = findReductionRule(inputNode);
-      if (reductionRule != null) {
-        myGenerator.setChanged(true);
-        List<SNode> outputNodes = GeneratorUtil.applyReductionRule(inputNode, reductionRule, myGenerator);
-        if (outputNodes.size() == 1) {
-          // output node should be accessible via 'findCopiedNode'
-          myGenerator.addCopiedOutputNodeForInputNode(inputNode, outputNodes.get(0));
-        }
-        clonedOutputNode.getParent().replaceChild(clonedOutputNode, outputNodes);
-        return;
-      }
-    } catch (DismissTopMappingRuleException ex) {
-      // it's ok, just continue
-      myGenerator.setChanged(wasChanged);
+    List<SNode> outputNodes = tryToReduce(inputNode, null);
+    if (outputNodes != null) {
+      clonedOutputNode.getParent().replaceChild(clonedOutputNode, outputNodes);
+      return;
     }
 
-    // no reduction rule found
+    // no reduction rule found - keep the cloned node in output model and proceed with its children.
     myGenerator.getGeneratorSessionContext().getGenerationTracer().pushCopyOperation();
     for (SNode childInputNode : inputNode.getChildren()) {
       SNode childOutputNode = myGenerator.findOutputNodeById(childInputNode.getSNodeId());
@@ -146,7 +134,29 @@ public class RuleManager {
     myGenerator.getGeneratorSessionContext().getGenerationTracer().pushOutputNode(clonedOutputNode);
   }
 
-  /*package*/ Reduction_MappingRule findReductionRule(SNode node) {
+  /*package*/ List<SNode> tryToReduce(SNode inputNode, String mappingName) {
+    boolean wasChanged = myGenerator.isChanged();
+    try {
+      Reduction_MappingRule reductionRule = findReductionRule(inputNode);
+      if (reductionRule != null) {
+        myGenerator.setChanged(true);
+        List<SNode> outputNodes = GeneratorUtil.applyReductionRule(inputNode, reductionRule, myGenerator);
+        if (outputNodes.size() == 1) {
+          // register copied node
+          myGenerator.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNodes.get(0));
+          // output node should be accessible via 'findCopiedNode'
+          myGenerator.addCopiedOutputNodeForInputNode(inputNode, outputNodes.get(0));
+        }
+        return outputNodes;
+      }
+    } catch (DismissTopMappingRuleException ex) {
+      // it's ok, just continue
+      myGenerator.setChanged(wasChanged);
+    }
+    return null;
+  }
+
+  private Reduction_MappingRule findReductionRule(SNode node) {
     if (myRuleFinder == null) {
       myRuleFinder = new FastRuleFinder(myReduction_MappingRules, myGenerator);
     }
