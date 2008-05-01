@@ -22,10 +22,9 @@ public class RuleManager {
   private List<Weaving_MappingRule> myWeaving_MappingRules;
   private List<ConceptDeclaration> myAbandonedRootConcepts;
   private List<Reduction_MappingRule> myReduction_MappingRules;
+
   private FastRuleFinder myRuleFinder;
-
-
-  protected TemplateGenerator myGenerator;
+  private TemplateGenerator myGenerator;
 
   public RuleManager(TemplateGenerator generator) {
     myGenerator = generator;
@@ -149,9 +148,9 @@ public class RuleManager {
 
   Reduction_MappingRule findReductionRule(SNode node) {
     if (myRuleFinder == null) {
-      myRuleFinder = new FastRuleFinder(myReduction_MappingRules);
+      myRuleFinder = new FastRuleFinder(myReduction_MappingRules, myGenerator);
     }
-    return (Reduction_MappingRule) BaseAdapter.fromNode(myRuleFinder.findReductionRule(node, myGenerator));
+    return (Reduction_MappingRule) BaseAdapter.fromNode(myRuleFinder.findReductionRule(node));
   }
 
 }

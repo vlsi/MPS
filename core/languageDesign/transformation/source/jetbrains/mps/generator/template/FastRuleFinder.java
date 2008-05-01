@@ -15,13 +15,13 @@ import java.util.*;
  * Date: Jan 21, 2007
  */
 public class FastRuleFinder {
-  private List<Reduction_MappingRule> myRuleList;
   private Map<AbstractConceptDeclaration, List<Reduction_MappingRule>> myRules_all = new HashMap<AbstractConceptDeclaration, List<Reduction_MappingRule>>();
   private Map<AbstractConceptDeclaration, List<Reduction_MappingRule>> myRules_applicableExactly = new HashMap<AbstractConceptDeclaration, List<Reduction_MappingRule>>();
   private Map<AbstractConceptDeclaration, List<Reduction_MappingRule>> myRules_applicableInheritor = new HashMap<AbstractConceptDeclaration, List<Reduction_MappingRule>>();
+  private TemplateGenerator myGenerator;
 
-  public FastRuleFinder(List<Reduction_MappingRule> reductionRules) {
-    myRuleList = reductionRules;
+  public FastRuleFinder(List<Reduction_MappingRule> reductionRules, TemplateGenerator generator) {
+    myGenerator = generator;
     ConceptDeclaration baseConcept = SModelUtil_new.getBaseConcept();
     myRules_applicableExactly.put(baseConcept, new ArrayList<Reduction_MappingRule>(3));
     myRules_applicableInheritor.put(baseConcept, new ArrayList<Reduction_MappingRule>(5));
@@ -106,10 +106,10 @@ public class FastRuleFinder {
     }
   }
 
-  public SNode findReductionRule(SNode node, ITemplateGenerator generator) {
+  public SNode findReductionRule(SNode node) {
     AbstractConceptDeclaration concept = (AbstractConceptDeclaration) node.getConceptDeclarationAdapter();
     if (concept == null) {
-      generator.showWarningMessage(node, "skip reduction: couldn't find concept declaration adapter for " + node.getDebugText());
+      myGenerator.showWarningMessage(node, "skip reduction: couldn't find concept declaration adapter for " + node.getDebugText());
       return null;
     }
 
@@ -125,20 +125,7 @@ public class FastRuleFinder {
     }
 
     for (Reduction_MappingRule rule : allRules) {
-      if (GeneratorUtil.checkCondition(rule.getConditionFunction(), false, node, rule.getNode(), generator)) {
-        return BaseAdapter.fromAdapter(rule);
-      }
-    }
-    return null;
-  }
-
-  /**
-   * for test
-   */
-  public SNode findReductionRule_SLOW(SNode node, ITemplateGenerator generator) {
-    ConceptDeclaration concept = (ConceptDeclaration) node.getConceptDeclarationAdapter();
-    for (Reduction_MappingRule rule : myRuleList) {
-      if (GeneratorUtil.checkPremiseForBaseMappingRule(node, concept, rule, generator)) {
+      if (GeneratorUtil.checkCondition(rule.getConditionFunction(), false, node, rule.getNode(), myGenerator)) {
         return BaseAdapter.fromAdapter(rule);
       }
     }
