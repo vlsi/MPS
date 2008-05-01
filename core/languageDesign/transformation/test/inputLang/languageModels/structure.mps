@@ -90,6 +90,10 @@
       <property name="externalValue" value="reduceExpressionToStatement" />
       <property name="internalValue" value="reduceExpressionToStatement" />
     </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1209603553188">
+      <property name="internalValue" value="dontApplyReductionTwice" />
+      <property name="externalValue" value="dontApplyReductionTwice" />
+    </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1202242822699">
       <property name="externalValue" value="none" />
       <property name="internalValue" value="none" />

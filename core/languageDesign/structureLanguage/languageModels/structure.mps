@@ -145,9 +145,6 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1083171877298">
     <property name="name" value="EnumerationMemberDeclaration" />
-    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1173471274769">
-      <link role="intfc" targetNodeId="1.1169194658468" />
-    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1083923523171">
       <property name="name" value="internalValue" />
       <property name="propertyType" value="string" />

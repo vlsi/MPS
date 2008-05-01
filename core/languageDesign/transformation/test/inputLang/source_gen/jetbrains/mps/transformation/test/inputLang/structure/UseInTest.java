@@ -10,6 +10,7 @@ public enum UseInTest {
   getPrevInputTest("getPrevInputTest", "getPrevInputTest"),
   reduceInheritors("reduceInheritors", "reduceInheritors"),
   reduceExpressionToStatement("reduceExpressionToStatement", "reduceExpressionToStatement"),
+  dontApplyReductionTwice("dontApplyReductionTwice", "dontApplyReductionTwice"),
   none("none", "none");
 
   /* package */String myName;
@@ -26,6 +27,7 @@ UseInTest(String name, String value) {
     list.add(UseInTest.getPrevInputTest);
     list.add(UseInTest.reduceInheritors);
     list.add(UseInTest.reduceExpressionToStatement);
+    list.add(UseInTest.dontApplyReductionTwice);
     list.add(UseInTest.none);
     return list;
   }
@@ -49,6 +51,9 @@ UseInTest(String name, String value) {
     }
     if (value.equals(UseInTest.reduceExpressionToStatement.getValueAsString())) {
       return UseInTest.reduceExpressionToStatement;
+    }
+    if (value.equals(UseInTest.dontApplyReductionTwice.getValueAsString())) {
+      return UseInTest.dontApplyReductionTwice;
     }
     if (value.equals(UseInTest.none.getValueAsString())) {
       return UseInTest.none;

@@ -13,7 +13,6 @@ public class ConstraintsDescriptor implements IModelConstraints {
 
   public ConstraintsDescriptor() {
     this.myConstraints.add(new EnumerationMemberDeclaration_externalValue_PropertyConstraint());
-    this.myConstraints.add(new EnumerationMemberDeclaration_alias_PropertyConstraint());
     this.myConstraints.add(new AnnotationLinkDeclaration_name_PropertyConstraint());
     this.myConstraints.add(new ConceptDeclaration_extends_ReferentConstraint());
     this.myConstraints.add(new ConceptProperty_conceptPropertyDeclaration_ReferentConstraint());
