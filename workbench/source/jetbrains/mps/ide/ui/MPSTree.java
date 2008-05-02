@@ -595,7 +595,20 @@ public abstract class MPSTree extends JTree {
 
   private void expandPaths(List<String> paths) {
     for (String path : paths) {
-      expandPath(stringToPath(path));
+      TreePath treePath = stringToPath(path);
+      if (treePath != null) {
+        ensurePathInitialized(treePath);
+        expandPath(treePath);
+      }
+    }
+  }
+
+  private void ensurePathInitialized(TreePath path) {
+    for (Object item : path.getPath()) {
+      MPSTreeNode node = (MPSTreeNode) item;
+      if (!node.isInitialized()) {
+        node.init();
+      }
     }
   }
 
