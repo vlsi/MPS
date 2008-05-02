@@ -22,8 +22,6 @@ import java.util.List;
 public class NodeSubstituteChooser implements IKeyboardHandler {
   private static final Logger LOG = Logger.getLogger(NodeSubstituteChooser.class);
 
-  static final int MAX_MENU_LEN = 30;
-
   public static final int PREFERRED_WIDTH = 300;
   public static final int PREFERRED_HEIGHT = 200;
 
@@ -238,13 +236,13 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       return true;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_PAGE_UP) {
-      getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() - MAX_MENU_LEN);
+      getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() - getPageSize());
       repaintPopupMenu();
       updatePatternEditor();
       return true;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_PAGE_DOWN) {
-      getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() + MAX_MENU_LEN);
+      getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() + getPageSize());
       repaintPopupMenu();
       updatePatternEditor();
       return true;
@@ -269,6 +267,10 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       return true;
     }
     return true;
+  }
+
+  private int getPageSize() {
+    return myPopupWindow.myList.getLastVisibleIndex() - myPopupWindow.myList.getFirstVisibleIndex(); 
   }
 
   private void doSubstituteSelection() {
