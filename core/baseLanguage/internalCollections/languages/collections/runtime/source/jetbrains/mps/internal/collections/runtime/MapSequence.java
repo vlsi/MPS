@@ -4,6 +4,7 @@
 package jetbrains.mps.internal.collections.runtime;
 
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -225,6 +226,12 @@ public class MapSequence <U,V> extends Sequence<IMapping<U,V>> implements IMapSe
     public ISequence<IMapping<U,V>> sort(ISelector<IMapping<U,V>, Comparable<?>> selector, boolean ascending) {
         // TODO Auto-generated method stub
         return super.sort(selector, ascending);
+    }
+    
+    @Override
+    public ISequence<IMapping<U, V>> sort(Comparator<IMapping<U, V>> comparator, boolean ascending) {
+        // TODO Auto-generated method stub
+        return super.sort(comparator, ascending);
     }
 
     @Override

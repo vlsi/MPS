@@ -4,6 +4,7 @@
 package jetbrains.mps.internal.collections.runtime;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 import jetbrains.mps.internal.collections.runtime.impl.BasicSequence;
 import jetbrains.mps.internal.collections.runtime.impl.ComparingSequence;
@@ -90,7 +91,11 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
     }
     
     public ISequence<T> sort (ISelector<T, Comparable<?>> selector, boolean ascending){
-        return new SortingSequence<T> (this, selector, ascending);
+        return new SortingSequence<T> (this, new SelectComparator<T> (selector), ascending);
+    }
+    
+    public ISequence<T> sort(Comparator<T> comparator, boolean ascending) {
+        return new SortingSequence<T> (this, comparator, ascending);
     }
     
     public ISequence<T> distinct () {

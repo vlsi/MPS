@@ -10,7 +10,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 
@@ -20,15 +19,15 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 public class SortingSequence<U> extends Sequence<U> implements Iterable<U>{
 
     private final Sequence<U> input;
-    private final ISelector<U, Comparable<?>> selector;
+    private final Comparator<U> comparator;
     private final boolean ascending;
 
-    public SortingSequence (Sequence<U> input, ISelector<U, Comparable<?>> selector, boolean ascending) {
-        if (input == null || selector == null) {
+    public SortingSequence (Sequence<U> input, Comparator<U> comparator, boolean ascending) {
+        if (input == null || comparator == null) {
             throw new NullPointerException ();
         }
         this.input = input;
-        this.selector = selector;
+        this.comparator = comparator;
         this.ascending = ascending;
     }
         
@@ -46,14 +45,7 @@ public class SortingSequence<U> extends Sequence<U> implements Iterable<U>{
         }
         // this supposedly should be a safe operation
         U[] array = (U[]) cache.toArray();
-        Arrays.sort(array, new Comparator<U> () {
-            public int compare(U a, U b) {
-                // everything should be an Object, right?
-                Comparable<Object> cmpa = (Comparable<Object>) selector.select(a);
-                Comparable<Object> cmpb = (Comparable<Object>) selector.select(b);
-                return cmpa.compareTo(cmpb);
-            }
-        });
+        Arrays.sort(array, comparator);
         return Arrays.asList(array);
     }
     

@@ -7,6 +7,8 @@ import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Arrays;
+import java.util.Comparator;
+import jetbrains.mps.internal.collections.runtime.SelectComparator;
 
 public class Sort_Test extends Util_Test {
 
@@ -57,7 +59,15 @@ public class Sort_Test extends Util_Test {
       }
 
     }, false);
+    Iterable<String> test2 = Sequence.fromIterable(input).sort(new Comparator <String>() {
+
+      public int compare(String a, String b) {
+        return a.length() - b.length();
+      }
+
+    }, false);
     this.assertIterableEquals(Arrays.asList("WWWW", "XXX", "YY", "Z"), test);
+    this.assertIterableEquals(Arrays.asList("WWWW", "XXX", "YY", "Z"), test2);
     this.assertIterableEquals(input, Sequence.fromIterable(test).sort(new ISelector <String, Comparable<?>>() {
 
       public Comparable<?> select(String it) {
@@ -70,13 +80,13 @@ public class Sort_Test extends Util_Test {
   @Test()
   public void test_legacySort() throws Exception {
     Iterable<String> input = Arrays.asList("Z", "YY", "XXX", "WWWW");
-    Iterable<String> test = Sequence.fromIterable(input).sort(new ISelector <String, Comparable<?>>() {
+    Iterable<String> test = Sequence.fromIterable(input).sort(new SelectComparator<String>(new ISelector <String, Comparable<?>>() {
 
       public Comparable<?> select(String it) {
         return it.length();
       }
 
-    }, false);
+    }), false);
     this.assertIterableEquals(Arrays.asList("WWWW", "XXX", "YY", "Z"), test);
   }
 

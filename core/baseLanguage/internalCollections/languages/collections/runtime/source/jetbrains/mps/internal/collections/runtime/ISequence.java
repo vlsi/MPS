@@ -3,6 +3,8 @@
  */
 package jetbrains.mps.internal.collections.runtime;
 
+import java.util.Comparator;
+
 /**
  * @author fyodor
  */
@@ -15,6 +17,8 @@ public interface ISequence<T> extends Iterable<T> {
     <U> ISequence<U> select(ISelector<T, U> selector);
 
     ISequence<T> sort(ISelector<T, Comparable<?>> selector, boolean ascending);
+
+    ISequence<T> sort(Comparator<T> comparator, boolean ascending);
 
     ISequence<T> distinct();
 
