@@ -9,10 +9,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
@@ -28,15 +28,15 @@ public class Expression_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1209147315298");
   }
 
-  private static void setupBasic_AliasCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1209147903996");
+  private static void setupBasic_CellModel_ConceptProperty(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1209748868405");
   }
 
-  private static void setupLabel_AliasCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_CellModel_ConceptProperty(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean _QueryFunction_NodeCondition_1209147315324(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getString(node, "alias") == null;
+    return SConceptPropertyOperations.getString(node, "alias") == null;
   }
 
 
@@ -52,7 +52,7 @@ public class Expression_Editor extends DefaultNodeEditor {
       editorCell = this.createCellModel_Custom(context, node);
     } else
     {
-      editorCell = this.createAliasCell(context, node);
+      editorCell = this.createCellModel_ConceptProperty(context, node);
     }
     Expression_Editor.setupBasic_CellAlternation(editorCell, node, context);
     return editorCell;
@@ -77,25 +77,25 @@ public class Expression_Editor extends DefaultNodeEditor {
     };
   }
 
-  public EditorCell createAliasCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createCellModel_ConceptPropertyinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    Expression_Editor.setupBasic_AliasCell(editorCell, node, context);
+    Expression_Editor.setupBasic_CellModel_ConceptProperty(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      Expression_Editor.setupLabel_AliasCell((EditorCell_Label)editorCell, node, context);
+      Expression_Editor.setupLabel_CellModel_ConceptProperty((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createAliasCell(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, context);
+  public EditorCell createCellModel_ConceptProperty(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("");
-    provider.setReadOnly(true);
+    provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createAliasCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.createCellModel_ConceptPropertyinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

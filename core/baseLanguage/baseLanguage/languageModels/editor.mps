@@ -23,6 +23,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="72" />
   <import index="17" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="18" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -2065,17 +2066,16 @@
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1209147424718" />
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209147399311">
                 <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1209147395950" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1209147817727">
-                  <link role="property" targetNodeId="18.1156235010670" resolveInfo="alias" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess" id="1209748773867">
+                  <link role="conceptProperty" targetNodeId="18.1137473891462" resolveInfo="alias" />
                 </node>
               </node>
             </node>
           </node>
         </node>
       </node>
-      <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1209147903996">
-        <property name="readOnly" value="true" />
-        <link role="relationDeclaration" targetNodeId="18.1156235010670" resolveInfo="alias" />
+      <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1209748868405">
+        <link role="relationDeclaration" targetNodeId="18.1137473891462" resolveInfo="alias" />
       </node>
     </node>
   </node>
