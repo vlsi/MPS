@@ -1440,6 +1440,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       public void run() {
         CommandProcessor.instance().executeLightweightCommand(new Runnable() {
           public void run() {
+            //i.e. we are disposed. it's too late to rebuild
+            if (getEditorContext() == null) {
+              return;
+            }
 
             removeAll();
 
