@@ -144,7 +144,7 @@ public class TemplateProcessor {
           for (SNode outputChildNode : outputChildNodes) {
             // check child
             if (!GeneratorUtil.checkChild(outputNode, role, outputChildNode)) {
-              LOG.warning(" -- was input: " + inputNode.getDebugText(), inputNode);
+              LOG.warning(" -- was input: " + (inputNode != null ? inputNode.getDebugText() : "null"), inputNode);
               LOG.warning(" -- was parent in template: " + templateNode.getDebugText(), templateNode);
               LOG.warning(" -- was child in template: " + templateChildNode.getDebugText(), templateChildNode);
             }
