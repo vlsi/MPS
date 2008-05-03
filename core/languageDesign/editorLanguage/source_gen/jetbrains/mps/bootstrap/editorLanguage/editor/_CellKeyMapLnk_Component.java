@@ -15,7 +15,7 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 
 public class _CellKeyMapLnk_Component extends AbstractCellProvider {
 
-  public  _CellKeyMapLnk_Component(SNode node) {
+  public _CellKeyMapLnk_Component(SNode node) {
     super(node);
   }
 
@@ -67,7 +67,7 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
 
   public static class _Inline25 extends AbstractCellProvider {
 
-    public  _Inline25() {
+    public _Inline25() {
       super();
     }
 

@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_SelectLaterOperation_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_SelectLaterOperation_InferenceRule() {
+  public typeof_SelectLaterOperation_InferenceRule() {
   }
 
   public void applyRule(final SNode nodeToCheck) {

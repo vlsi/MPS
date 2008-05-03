@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class CellModel_Component_editorComponent_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  CellModel_Component_editorComponent_ReferentConstraint() {
+  public CellModel_Component_editorComponent_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

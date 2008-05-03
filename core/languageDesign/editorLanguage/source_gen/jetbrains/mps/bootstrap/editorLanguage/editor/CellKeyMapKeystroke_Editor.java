@@ -181,7 +181,7 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
 
   public static class CellKeyMapKeystroke_keycode_cellMenu extends AbstractCellMenuPart_PropertyValues {
 
-    public  CellKeyMapKeystroke_keycode_cellMenu() {
+    public CellKeyMapKeystroke_keycode_cellMenu() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
@@ -193,7 +193,7 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
 }
   public static class CellKeyMapKeystroke_modifiers_cellMenu extends AbstractCellMenuPart_PropertyValues {
 
-    public  CellKeyMapKeystroke_modifiers_cellMenu() {
+    public CellKeyMapKeystroke_modifiers_cellMenu() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {

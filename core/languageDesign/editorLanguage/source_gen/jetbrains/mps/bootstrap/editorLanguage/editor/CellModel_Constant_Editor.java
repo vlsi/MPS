@@ -2333,7 +2333,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
 
   public static class _Inline9 extends AbstractCellProvider {
 
-    public  _Inline9() {
+    public _Inline9() {
       super();
     }
 
@@ -2386,7 +2386,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
 }
   public static class _Inline50 extends AbstractCellProvider {
 
-    public  _Inline50() {
+    public _Inline50() {
       super();
     }
 

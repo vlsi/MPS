@@ -20,7 +20,7 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperati
 
 public class CellModel_RefNode_linkDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  CellModel_RefNode_linkDeclaration_ReferentConstraint() {
+  public CellModel_RefNode_linkDeclaration_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

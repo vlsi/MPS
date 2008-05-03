@@ -2158,7 +2158,7 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
 
   public static class _Inline8 extends AbstractCellProvider {
 
-    public  _Inline8() {
+    public _Inline8() {
       super();
     }
 
@@ -2211,7 +2211,7 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
 }
   public static class _Inline42 extends AbstractCellProvider {
 
-    public  _Inline42() {
+    public _Inline42() {
       super();
     }
 

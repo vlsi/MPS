@@ -16,7 +16,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 
 public class _SplitConctantCellIntoWordsKeyMap extends EditorCellKeyMap {
 
-  public  _SplitConctantCellIntoWordsKeyMap() {
+  public _SplitConctantCellIntoWordsKeyMap() {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
     action = new _SplitConctantCellIntoWordsKeyMap._SplitConctantCellIntoWordsKeyMap_Action0();
@@ -24,7 +24,7 @@ public class _SplitConctantCellIntoWordsKeyMap extends EditorCellKeyMap {
   }
   public static class _SplitConctantCellIntoWordsKeyMap_Action0 extends EditorCellKeyMapAction {
 
-    public  _SplitConctantCellIntoWordsKeyMap_Action0() {
+    public _SplitConctantCellIntoWordsKeyMap_Action0() {
       this.setShownInPopupMenu(true);
     }
 

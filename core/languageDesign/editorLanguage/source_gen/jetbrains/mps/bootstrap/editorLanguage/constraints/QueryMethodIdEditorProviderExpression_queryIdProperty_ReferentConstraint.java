@@ -16,7 +16,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 
 public class QueryMethodIdEditorProviderExpression_queryIdProperty_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  QueryMethodIdEditorProviderExpression_queryIdProperty_ReferentConstraint() {
+  public QueryMethodIdEditorProviderExpression_queryIdProperty_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

@@ -84,7 +84,7 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
 
   public static class _RefNodeListHandler5 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler5(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler5(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

@@ -2300,7 +2300,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
 
   public static class _Inline2 extends AbstractCellProvider {
 
-    public  _Inline2() {
+    public _Inline2() {
       super();
     }
 
@@ -2353,7 +2353,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
 }
   public static class _Inline3 extends AbstractCellProvider {
 
-    public  _Inline3() {
+    public _Inline3() {
       super();
     }
 
@@ -2406,7 +2406,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
 }
   public static class _Inline7 extends AbstractCellProvider {
 
-    public  _Inline7() {
+    public _Inline7() {
       super();
     }
 
@@ -2459,7 +2459,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
 }
   public static class _Inline45 extends AbstractCellProvider {
 
-    public  _Inline45() {
+    public _Inline45() {
       super();
     }
 

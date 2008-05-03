@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_CellModel_RefNode_InferenceRule implements InferenceRule_Runtime {
 
-  public  check_CellModel_RefNode_InferenceRule() {
+  public check_CellModel_RefNode_InferenceRule() {
   }
 
   public void applyRule(final SNode refNode) {

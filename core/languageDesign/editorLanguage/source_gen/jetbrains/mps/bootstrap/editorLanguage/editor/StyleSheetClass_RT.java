@@ -18,7 +18,7 @@ public class StyleSheetClass_RT {
 
     /* package */SNode myNode;
 
-    public  StyleSheetClass_RT_RIGHT_TRANSFORM(SNode node) {
+    public StyleSheetClass_RT_RIGHT_TRANSFORM(SNode node) {
       this.myNode = node;
     }
 

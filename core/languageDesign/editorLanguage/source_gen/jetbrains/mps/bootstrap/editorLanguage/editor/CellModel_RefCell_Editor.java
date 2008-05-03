@@ -1666,7 +1666,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
 
   public static class _Inline14 extends AbstractCellProvider {
 
-    public  _Inline14() {
+    public _Inline14() {
       super();
     }
 
@@ -1719,7 +1719,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
 }
   public static class _Inline21 extends AbstractCellProvider {
 
-    public  _Inline21() {
+    public _Inline21() {
       super();
     }
 
@@ -1772,7 +1772,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
 }
   public static class _Inline22 extends AbstractCellProvider {
 
-    public  _Inline22() {
+    public _Inline22() {
       super();
     }
 
@@ -1825,7 +1825,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
 }
   public static class _Inline26 extends AbstractCellProvider {
 
-    public  _Inline26() {
+    public _Inline26() {
       super();
     }
 
@@ -1877,7 +1877,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
 }
   public static class _Inline27 extends AbstractCellProvider {
 
-    public  _Inline27() {
+    public _Inline27() {
       super();
     }
 
@@ -1929,7 +1929,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
 }
   public static class _Inline40 extends AbstractCellProvider {
 
-    public  _Inline40() {
+    public _Inline40() {
       super();
     }
 

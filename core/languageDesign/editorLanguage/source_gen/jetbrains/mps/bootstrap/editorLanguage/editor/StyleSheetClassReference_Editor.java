@@ -59,7 +59,7 @@ public class StyleSheetClassReference_Editor extends DefaultNodeEditor {
 
   public static class _Inline52 extends AbstractCellProvider {
 
-    public  _Inline52() {
+    public _Inline52() {
       super();
     }
 

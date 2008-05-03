@@ -296,7 +296,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
 
   public static class _Inline5 extends AbstractCellProvider {
 
-    public  _Inline5() {
+    public _Inline5() {
       super();
     }
 
@@ -350,7 +350,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler4 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler4(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler4(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -393,7 +393,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class CellActionMapDeclaration_name_cellMenu extends AbstractCellMenuPart_PropertyValues {
 
-    public  CellActionMapDeclaration_name_cellMenu() {
+    public CellActionMapDeclaration_name_cellMenu() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {

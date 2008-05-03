@@ -344,7 +344,7 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
 
   public static class _Inline29 extends AbstractCellProvider {
 
-    public  _Inline29() {
+    public _Inline29() {
       super();
     }
 

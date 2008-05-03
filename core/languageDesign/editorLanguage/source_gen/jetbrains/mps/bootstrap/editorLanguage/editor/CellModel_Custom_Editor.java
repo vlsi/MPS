@@ -1214,7 +1214,7 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
 
   public static class _Inline13 extends AbstractCellProvider {
 
-    public  _Inline13() {
+    public _Inline13() {
       super();
     }
 
@@ -1267,7 +1267,7 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
 }
   public static class _Inline51 extends AbstractCellProvider {
 
-    public  _Inline51() {
+    public _Inline51() {
       super();
     }
 

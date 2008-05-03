@@ -17,7 +17,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 
 public class _CloseTag extends AbstractCellProvider {
 
-  public  _CloseTag(SNode node) {
+  public _CloseTag(SNode node) {
     super(node);
   }
 

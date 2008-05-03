@@ -431,7 +431,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
 
   public static class _Inline33 extends AbstractCellProvider {
 
-    public  _Inline33() {
+    public _Inline33() {
       super();
     }
 
@@ -483,7 +483,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
 }
   public static class _RefNodeListHandler6 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler6(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler6(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -532,7 +532,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
 }
   public static class _RefNodeListHandler7 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler7(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler7(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

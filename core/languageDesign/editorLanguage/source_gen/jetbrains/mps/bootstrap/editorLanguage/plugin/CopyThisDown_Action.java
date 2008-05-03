@@ -29,7 +29,7 @@ public class CopyThisDown_Action extends CurrentProjectMPSAction {
     return "ctrl D";
   }
 
-  public void doUpdate(@NotNull()ActionContext context) {
+  public void doUpdate(@NotNull() ActionContext context) {
     try {
       super.doUpdate(context);
       if (!(this.fillFieldsIfNecessary(context))) {
@@ -40,7 +40,7 @@ public class CopyThisDown_Action extends CurrentProjectMPSAction {
       this.setEnabled(true);
       this.setVisible(true);
     } catch (Throwable t) {
-      CopyThisDown_Action.LOG.error("User's action doUpdate method failed. Action:" + "CopyThisDown", t);
+      LOG.error("User's action doUpdate method failed. Action:" + "CopyThisDown", t);
       this.setEnabled(false);
       this.setVisible(this.isAlwaysVisible);
     }
@@ -68,18 +68,18 @@ public class CopyThisDown_Action extends CurrentProjectMPSAction {
     return true;
   }
 
-  public void doExecute(@NotNull()ActionContext context) {
+  public void doExecute(@NotNull() ActionContext context) {
     try {
       if (!(this.fillFieldsIfNecessary(context))) {
         return;
       }
       {
         SNode nodeToCopy = this.inputNode;
-        while (SNodeOperations.getParent(nodeToCopy, null, false, false) != null) {
+        while(SNodeOperations.getParent(nodeToCopy, null, false, false) != null) {
           SNode parent = SNodeOperations.getParent(nodeToCopy, null, false, false);
           SNode acd = SNodeOperations.getConceptDeclaration(parent);
           String role = nodeToCopy.getRole_();
-          LinkDeclaration linkDeclaration = SModelUtil_new.findLinkDeclaration(((AbstractConceptDeclaration) SNodeOperations.getAdapter(acd)), role);
+          LinkDeclaration linkDeclaration = SModelUtil_new.findLinkDeclaration(((AbstractConceptDeclaration)SNodeOperations.getAdapter(acd)), role);
           if (linkDeclaration == null) {
             return;
           }
@@ -93,7 +93,7 @@ public class CopyThisDown_Action extends CurrentProjectMPSAction {
         }
       }
     } catch (Throwable t) {
-      CopyThisDown_Action.LOG.error("User's action execute method failed. Action:" + "CopyThisDown", t);
+      LOG.error("User's action execute method failed. Action:" + "CopyThisDown", t);
     }
   }
 

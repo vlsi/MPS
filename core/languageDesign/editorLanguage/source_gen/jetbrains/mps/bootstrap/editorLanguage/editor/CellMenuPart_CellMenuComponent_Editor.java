@@ -184,7 +184,7 @@ public class CellMenuPart_CellMenuComponent_Editor extends DefaultNodeEditor {
 
   public static class _Inline32 extends AbstractCellProvider {
 
-    public  _Inline32() {
+    public _Inline32() {
       super();
     }
 

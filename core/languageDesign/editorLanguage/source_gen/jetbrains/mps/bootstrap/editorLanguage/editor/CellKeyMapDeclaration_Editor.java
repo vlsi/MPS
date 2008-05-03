@@ -385,7 +385,7 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
 
   public static class _Inline4 extends AbstractCellProvider {
 
-    public  _Inline4() {
+    public _Inline4() {
       super();
     }
 
@@ -439,7 +439,7 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler3 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler3(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler3(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -482,7 +482,7 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class CellKeyMapDeclaration_name_postfixCellMenu extends AbstractCellMenuPart_PropertyPostfixHints {
 
-    public  CellKeyMapDeclaration_name_postfixCellMenu() {
+    public CellKeyMapDeclaration_name_postfixCellMenu() {
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {

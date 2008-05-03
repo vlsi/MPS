@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.BaseAdapter;
 
 public class CellMenuComponentFeature_Property_propertyDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  CellMenuComponentFeature_Property_propertyDeclaration_ReferentConstraint() {
+  public CellMenuComponentFeature_Property_propertyDeclaration_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

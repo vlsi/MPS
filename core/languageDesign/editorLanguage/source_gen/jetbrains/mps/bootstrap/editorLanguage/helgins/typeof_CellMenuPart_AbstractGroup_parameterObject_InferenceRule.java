@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_CellMenuPart_AbstractGroup_parameterObject_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_CellMenuPart_AbstractGroup_parameterObject_InferenceRule() {
+  public typeof_CellMenuPart_AbstractGroup_parameterObject_InferenceRule() {
   }
 
   public void applyRule(final SNode node) {

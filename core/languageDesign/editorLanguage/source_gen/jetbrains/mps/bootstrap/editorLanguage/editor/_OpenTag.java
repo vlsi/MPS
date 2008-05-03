@@ -17,7 +17,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 
 public class _OpenTag extends AbstractCellProvider {
 
-  public  _OpenTag(SNode node) {
+  public _OpenTag(SNode node) {
     super(node);
   }
 

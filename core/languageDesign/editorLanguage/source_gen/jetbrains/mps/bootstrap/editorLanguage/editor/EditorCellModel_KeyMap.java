@@ -13,7 +13,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 
 public class EditorCellModel_KeyMap extends EditorCellKeyMap {
 
-  public  EditorCellModel_KeyMap() {
+  public EditorCellModel_KeyMap() {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
     action = new EditorCellModel_KeyMap.EditorCellModel_KeyMap_Action0();
@@ -25,7 +25,7 @@ public class EditorCellModel_KeyMap extends EditorCellKeyMap {
   }
   public static class EditorCellModel_KeyMap_Action0 extends EditorCellKeyMapAction {
 
-    public  EditorCellModel_KeyMap_Action0() {
+    public EditorCellModel_KeyMap_Action0() {
       this.setShownInPopupMenu(true);
     }
 
@@ -73,7 +73,7 @@ public class EditorCellModel_KeyMap extends EditorCellKeyMap {
 }
   public static class EditorCellModel_KeyMap_Action1 extends EditorCellKeyMapAction {
 
-    public  EditorCellModel_KeyMap_Action1() {
+    public EditorCellModel_KeyMap_Action1() {
       this.setShownInPopupMenu(true);
     }
 
@@ -121,7 +121,7 @@ public class EditorCellModel_KeyMap extends EditorCellKeyMap {
 }
   public static class EditorCellModel_KeyMap_Action2 extends EditorCellKeyMapAction {
 
-    public  EditorCellModel_KeyMap_Action2() {
+    public EditorCellModel_KeyMap_Action2() {
       this.setShownInPopupMenu(true);
     }
 

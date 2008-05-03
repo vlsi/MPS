@@ -773,7 +773,7 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
 
   public static class _Inline57 extends AbstractCellProvider {
 
-    public  _Inline57() {
+    public _Inline57() {
       super();
     }
 
@@ -826,7 +826,7 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
 }
   public static class _Inline58 extends AbstractCellProvider {
 
-    public  _Inline58() {
+    public _Inline58() {
       super();
     }
 

@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_CellActionMap_FunctionParm_selectedNode_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_CellActionMap_FunctionParm_selectedNode_InferenceRule() {
+  public typeof_CellActionMap_FunctionParm_selectedNode_InferenceRule() {
   }
 
   public void applyRule(final SNode node) {

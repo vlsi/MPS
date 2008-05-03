@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_CellMenuPart_ReplaceChild_currentChild_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_CellMenuPart_ReplaceChild_currentChild_InferenceRule() {
+  public typeof_CellMenuPart_ReplaceChild_currentChild_InferenceRule() {
   }
 
   public void applyRule(final SNode node) {

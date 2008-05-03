@@ -263,7 +263,7 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
 
   public static class _RefNodeListHandler9 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler9(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler9(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

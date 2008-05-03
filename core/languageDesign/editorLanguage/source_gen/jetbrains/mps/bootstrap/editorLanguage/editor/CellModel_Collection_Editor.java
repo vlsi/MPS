@@ -1893,7 +1893,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
 
   public static class _Inline6 extends AbstractCellProvider {
 
-    public  _Inline6() {
+    public _Inline6() {
       super();
     }
 
@@ -1946,7 +1946,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
 }
   public static class _Inline46 extends AbstractCellProvider {
 
-    public  _Inline46() {
+    public _Inline46() {
       super();
     }
 
@@ -2000,7 +2000,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler extends RefNodeListHandler {
 
-    public  _RefNodeListHandler(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -2043,7 +2043,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler1 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler1(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler1(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

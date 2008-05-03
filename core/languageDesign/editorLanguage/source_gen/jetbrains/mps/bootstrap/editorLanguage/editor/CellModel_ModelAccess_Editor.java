@@ -2210,7 +2210,7 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
 
   public static class _Inline11 extends AbstractCellProvider {
 
-    public  _Inline11() {
+    public _Inline11() {
       super();
     }
 
@@ -2263,7 +2263,7 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
 }
   public static class _Inline39 extends AbstractCellProvider {
 
-    public  _Inline39() {
+    public _Inline39() {
       super();
     }
 

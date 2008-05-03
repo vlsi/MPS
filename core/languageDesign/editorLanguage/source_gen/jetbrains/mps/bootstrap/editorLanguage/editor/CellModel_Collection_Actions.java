@@ -22,7 +22,7 @@ public class CellModel_Collection_Actions {
 
     /* package */SNode myNode;
 
-    public  CellModel_Collection_Actions_DELETE(SNode node) {
+    public CellModel_Collection_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
 

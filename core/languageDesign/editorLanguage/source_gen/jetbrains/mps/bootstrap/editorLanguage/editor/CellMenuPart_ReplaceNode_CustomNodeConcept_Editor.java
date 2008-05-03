@@ -184,7 +184,7 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
 
   public static class _Inline28 extends AbstractCellProvider {
 
-    public  _Inline28() {
+    public _Inline28() {
       super();
     }
 

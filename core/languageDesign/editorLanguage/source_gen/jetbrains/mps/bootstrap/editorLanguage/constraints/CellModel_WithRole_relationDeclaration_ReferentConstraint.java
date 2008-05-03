@@ -16,7 +16,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 
 public class CellModel_WithRole_relationDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  CellModel_WithRole_relationDeclaration_ReferentConstraint() {
+  public CellModel_WithRole_relationDeclaration_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

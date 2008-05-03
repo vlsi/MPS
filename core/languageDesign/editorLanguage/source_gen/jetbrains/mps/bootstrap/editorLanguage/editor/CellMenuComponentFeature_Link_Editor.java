@@ -61,7 +61,7 @@ public class CellMenuComponentFeature_Link_Editor extends DefaultNodeEditor {
 
   public static class _Inline31 extends AbstractCellProvider {
 
-    public  _Inline31() {
+    public _Inline31() {
       super();
     }
 

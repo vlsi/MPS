@@ -15,12 +15,12 @@ public class EditorActions_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.bootstrap.editorLanguage.plugin.EditorActions";
 
   public EditorActions_ActionGroup(MPSProject project) {
-    super("", EditorActions_ActionGroup.ID, project);
+    super("", ID, project);
     this.setInternal(false);
     try {
       this.add(new CopyThisDown_Action(project), this);
     } catch (Throwable t) {
-      EditorActions_ActionGroup.LOG.error("User group error", t);
+      LOG.error("User group error", t);
     }
   }
 
