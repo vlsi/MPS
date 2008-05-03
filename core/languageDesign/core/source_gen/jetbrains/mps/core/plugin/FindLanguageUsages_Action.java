@@ -5,29 +5,34 @@ package jetbrains.mps.core.plugin;
 import jetbrains.mps.plugins.CurrentProjectMPSAction;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.ide.IDEProjectFrame;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ModelUsagesFinder;
+import jetbrains.mps.refactoring.languages.LanguageUsagesFinder;
 
-public class FindModelUsages_Action extends CurrentProjectMPSAction {
-  public static final Logger LOG = Logger.getLogger(FindModelUsages_Action.class);
+public class FindLanguageUsages_Action extends CurrentProjectMPSAction {
+  public static final Logger LOG = Logger.getLogger(FindLanguageUsages_Action.class);
 
   private IDEProjectFrame projectFrame;
-  private SModel model;
+  private IModule module;
   private boolean isAlwaysVisible = false;
 
-  public FindModelUsages_Action(MPSProject project) {
+  public FindLanguageUsages_Action(MPSProject project) {
     super(project, "Find Usages");
   }
 
   @NotNull()
   public String getKeyStroke() {
     return "alt F7";
+  }
+
+  public boolean isApplicable(ActionContext context) {
+    return this.module instanceof Language;
   }
 
   public void doUpdate(@NotNull()ActionContext context) {
@@ -38,10 +43,13 @@ public class FindModelUsages_Action extends CurrentProjectMPSAction {
         this.setVisible(this.isAlwaysVisible);
         return;
       }
-      this.setEnabled(true);
-      this.setVisible(true);
+      {
+        boolean enabled = this.isApplicable(context);
+        this.setEnabled(enabled);
+        this.setVisible(enabled || this.isAlwaysVisible);
+      }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "FindModelUsages", t);
+      LOG.error("User's action doUpdate method failed. Action:" + "FindLanguageUsages", t);
       this.setEnabled(false);
       this.setVisible(this.isAlwaysVisible);
     }
@@ -53,14 +61,8 @@ public class FindModelUsages_Action extends CurrentProjectMPSAction {
       if (this.projectFrame == null) {
         return false;
       }
-      {
-        SModel model = null;
-        if (context.getModel() != null) {
-          model = context.getModel().getSModel();
-        }
-        this.model = model;
-      }
-      if (this.model == null) {
+      this.module = context.getOperationContext().getModule();
+      if (this.module == null) {
         return false;
       }
     } catch (Throwable t) {
@@ -75,12 +77,12 @@ public class FindModelUsages_Action extends CurrentProjectMPSAction {
         return;
       }
       {
-        SearchQuery query = new SearchQuery(this.model, context.getScope());
-        IResultProvider provider = TreeBuilder.forFinder(new ModelUsagesFinder());
+        SearchQuery query = new SearchQuery(this.module, context.getScope());
+        IResultProvider provider = TreeBuilder.forFinder(new LanguageUsagesFinder());
         this.projectFrame.getUsagesView().findUsages(provider, query, true, true, false);
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "FindModelUsages", t);
+      LOG.error("User's action execute method failed. Action:" + "FindLanguageUsages", t);
     }
   }
 
