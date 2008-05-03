@@ -576,6 +576,7 @@ public abstract class AbstractModule implements IModule {
       if (reexport) {
         result.append(";visibility:=reexport");
       }
+      result.append(";resolution:=optional");
       if (i != bundleUids.size() - 1) {
         result.append(",");
       }
