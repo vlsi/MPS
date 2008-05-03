@@ -69,7 +69,7 @@ public class ModuleMaker {
         }
 
         monitor.addText("Compiling modules: " + cycle + "...");
-        int currentErrorsCount = compile(cycle).getErrors();
+        int currentErrorsCount = compile(cycle, monitor).getErrors();
         if (currentErrorsCount != 0) {
           monitor.addText("There were compilation errors in these modules. See messages view for more information.");
         }
@@ -99,7 +99,7 @@ public class ModuleMaker {
     return toCompile;
   }
 
-  private jetbrains.mps.plugin.CompilationResult compile(Set<IModule> modules) {
+  private jetbrains.mps.plugin.CompilationResult compile(Set<IModule> modules, IAdaptiveProgressMonitor monitor) {
     boolean hasAnythingToCompile = false;
     for (IModule m : modules) {
       if (m.isCompileInMPS()) {
@@ -113,12 +113,15 @@ public class ModuleMaker {
 
     IClassPathItem classPathItems = computeDependenciesClassPath(modules);
 
-    CompositeClassPathItem classPath = (CompositeClassPathItem) classPathItems;
-    System.out.println("compiling " + modules + " with classpath:");
-    for (IClassPathItem item : classPath.getChildren()) {
-      System.out.println(item);
+    if (GlobalMakeSettings.getInstance().isPrintClassPath()) {
+      CompositeClassPathItem classPath = (CompositeClassPathItem) classPathItems;
+      monitor.addText("compiling " + modules + " with classpath:");
+      for (IClassPathItem item : classPath.getChildren()) {
+        monitor.addText(item.toString());
+      }
+      monitor.addText("----");
+      monitor.addText("");
     }
-    System.out.println("----\n\n");
 
     JavaCompiler compiler = new JavaCompiler(classPathItems);
 
