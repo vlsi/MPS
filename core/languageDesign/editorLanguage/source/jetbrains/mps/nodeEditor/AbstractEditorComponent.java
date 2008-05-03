@@ -1784,6 +1784,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myLightBulb.setError(showError);
     add(myLightBulb);
     myLightBulb.setLocation(myLightBulbLocation);
+    repaint();
   }
 
   private void hideLightBulb() {
