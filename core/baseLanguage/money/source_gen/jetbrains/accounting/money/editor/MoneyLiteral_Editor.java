@@ -15,16 +15,16 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class MoneyLiteral_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1186668017411");
+  }
+
   private static void setupBasic_AmountCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1186668023743");
   }
 
   private static void setupBasic_CurrencyCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1186668032201");
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1186668017411");
   }
 
   private static void setupLabel_AmountCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -54,8 +54,8 @@ public class MoneyLiteral_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     MoneyLiteral_Editor.setupBasic_AmountCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
-      MoneyLiteral_Editor.setupLabel_AmountCell((EditorCell_Label)editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      MoneyLiteral_Editor.setupLabel_AmountCell((EditorCell_Label) editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -70,12 +70,12 @@ public class MoneyLiteral_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createAmountCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-    return cellWithRole;
+      return cellWithRole;
   }
 
   public EditorCell createCurrencyCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -83,8 +83,8 @@ public class MoneyLiteral_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     MoneyLiteral_Editor.setupBasic_CurrencyCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
-      MoneyLiteral_Editor.setupLabel_CurrencyCell((EditorCell_Label)editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      MoneyLiteral_Editor.setupLabel_CurrencyCell((EditorCell_Label) editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -99,12 +99,12 @@ public class MoneyLiteral_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createCurrencyCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-    return cellWithRole;
+      return cellWithRole;
   }
 
 }

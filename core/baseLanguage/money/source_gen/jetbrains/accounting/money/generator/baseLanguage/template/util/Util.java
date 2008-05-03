@@ -11,7 +11,7 @@ public class Util {
   public static boolean isPlusMinusExpressionMoneyExpression(SNode expr) {
     SNode rtype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expr, "rightExpression", true));
     SNode ltype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expr, "leftExpression", true));
-    if(TypeChecker.getInstance().getSubtypingManager().isSubtype(ltype, new QuotationClass_1().createNode()) && TypeChecker.getInstance().getSubtypingManager().isSubtype(rtype, new QuotationClass_().createNode())) {
+    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(ltype, new QuotationClass_1().createNode()) && TypeChecker.getInstance().getSubtypingManager().isSubtype(rtype, new QuotationClass_().createNode())) {
       return true;
     }
     return false;
@@ -20,7 +20,7 @@ public class Util {
   public static boolean isMulDivExpressionMoneyExpression(SNode expr) {
     SNode rtype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expr, "rightExpression", true));
     SNode ltype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expr, "leftExpression", true));
-    if(TypeChecker.getInstance().getSubtypingManager().isSubtype(ltype, new QuotationClass_3().createNode()) && TypeChecker.getInstance().getSubtypingManager().isSubtype(rtype, new QuotationClass_2().createNode())) {
+    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(ltype, new QuotationClass_3().createNode()) && TypeChecker.getInstance().getSubtypingManager().isSubtype(rtype, new QuotationClass_2().createNode())) {
       return true;
     }
     return false;

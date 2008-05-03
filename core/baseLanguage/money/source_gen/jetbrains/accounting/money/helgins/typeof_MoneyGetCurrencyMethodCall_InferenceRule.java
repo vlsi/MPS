@@ -9,11 +9,11 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_MoneyGetCurrencyMethodCall_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_MoneyGetCurrencyMethodCall_InferenceRule() {
+  public typeof_MoneyGetCurrencyMethodCall_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.accounting.money.helgins", "1187360333780"), new QuotationClass_6().createNode(), argument, null, "jetbrains.accounting.money.helgins", "1187360333778");
+  public void applyRule(final SNode moneyGetCurrencyMethodCall) {
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(moneyGetCurrencyMethodCall, "jetbrains.accounting.money.helgins", "1187360333780", true), new QuotationClass_6().createNode(), moneyGetCurrencyMethodCall, null, "jetbrains.accounting.money.helgins", "1187360333778");
   }
 
   public String getApplicableConceptFQName() {

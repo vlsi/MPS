@@ -11,12 +11,12 @@ import jetbrains.mps.project.GlobalScope;
 public class MoneyType extends Type {
   public static final String concept = "jetbrains.accounting.money.structure.MoneyType";
 
-  public  MoneyType(SNode node) {
+  public MoneyType(SNode node) {
     super(node);
   }
 
   public static MoneyType newInstance(SModel sm, boolean init) {
-    return (MoneyType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.accounting.money.structure.MoneyType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MoneyType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.accounting.money.structure.MoneyType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MoneyType newInstance(SModel sm) {

@@ -10,12 +10,12 @@ import jetbrains.mps.project.GlobalScope;
 public class MoneyGetAmountMethodCall extends MoneyMethodCall {
   public static final String concept = "jetbrains.accounting.money.structure.MoneyGetAmountMethodCall";
 
-  public  MoneyGetAmountMethodCall(SNode node) {
+  public MoneyGetAmountMethodCall(SNode node) {
     super(node);
   }
 
   public static MoneyGetAmountMethodCall newInstance(SModel sm, boolean init) {
-    return (MoneyGetAmountMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.accounting.money.structure.MoneyGetAmountMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MoneyGetAmountMethodCall) SModelUtil_new.instantiateConceptDeclaration("jetbrains.accounting.money.structure.MoneyGetAmountMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MoneyGetAmountMethodCall newInstance(SModel sm) {

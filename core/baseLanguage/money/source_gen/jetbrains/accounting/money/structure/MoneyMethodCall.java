@@ -12,12 +12,12 @@ public class MoneyMethodCall extends Expression {
   public static final String concept = "jetbrains.accounting.money.structure.MoneyMethodCall";
   public static String INSTANCE = "instance";
 
-  public  MoneyMethodCall(SNode node) {
+  public MoneyMethodCall(SNode node) {
     super(node);
   }
 
   public static MoneyMethodCall newInstance(SModel sm, boolean init) {
-    return (MoneyMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.accounting.money.structure.MoneyMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MoneyMethodCall) SModelUtil_new.instantiateConceptDeclaration("jetbrains.accounting.money.structure.MoneyMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MoneyMethodCall newInstance(SModel sm) {
@@ -26,7 +26,7 @@ public class MoneyMethodCall extends Expression {
 
 
   public Expression getInstance() {
-    return (Expression)this.getChild(MoneyMethodCall.INSTANCE);
+    return (Expression) this.getChild(MoneyMethodCall.INSTANCE);
   }
 
   public void setInstance(Expression node) {

@@ -9,11 +9,11 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_MoneyIsZeroMethodCall_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_MoneyIsZeroMethodCall_InferenceRule() {
+  public typeof_MoneyIsZeroMethodCall_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.accounting.money.helgins", "1187618229155"), new QuotationClass_7().createNode(), argument, null, "jetbrains.accounting.money.helgins", "1187618239848");
+  public void applyRule(final SNode moneyIsZeroMethodCall) {
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(moneyIsZeroMethodCall, "jetbrains.accounting.money.helgins", "1187618229155", true), new QuotationClass_7().createNode(), moneyIsZeroMethodCall, null, "jetbrains.accounting.money.helgins", "1187618239848");
   }
 
   public String getApplicableConceptFQName() {

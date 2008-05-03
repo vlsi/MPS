@@ -9,11 +9,11 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_MoneyLiteral_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_MoneyLiteral_InferenceRule() {
+  public typeof_MoneyLiteral_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.accounting.money.helgins", "1187622281045"), new QuotationClass_9().createNode(), argument, null, "jetbrains.accounting.money.helgins", "1187622287642");
+  public void applyRule(final SNode moneyLiteral) {
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(moneyLiteral, "jetbrains.accounting.money.helgins", "1187622281045", true), new QuotationClass_9().createNode(), moneyLiteral, null, "jetbrains.accounting.money.helgins", "1187622287642");
   }
 
   public String getApplicableConceptFQName() {

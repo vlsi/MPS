@@ -14,12 +14,12 @@ public class MoneyCreator extends AbstractCreator {
   public static String AMOUNT = "amount";
   public static String CURRENCY = "currency";
 
-  public  MoneyCreator(SNode node) {
+  public MoneyCreator(SNode node) {
     super(node);
   }
 
   public static MoneyCreator newInstance(SModel sm, boolean init) {
-    return (MoneyCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.accounting.money.structure.MoneyCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MoneyCreator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.accounting.money.structure.MoneyCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MoneyCreator newInstance(SModel sm) {
@@ -28,7 +28,7 @@ public class MoneyCreator extends AbstractCreator {
 
 
   public Expression getAmount() {
-    return (Expression)this.getChild(MoneyCreator.AMOUNT);
+    return (Expression) this.getChild(MoneyCreator.AMOUNT);
   }
 
   public void setAmount(Expression node) {
@@ -36,7 +36,7 @@ public class MoneyCreator extends AbstractCreator {
   }
 
   public Expression getCurrency() {
-    return (Expression)this.getChild(MoneyCreator.CURRENCY);
+    return (Expression) this.getChild(MoneyCreator.CURRENCY);
   }
 
   public void setCurrency(Expression node) {

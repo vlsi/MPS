@@ -13,12 +13,12 @@ public class MoneyLiteral extends Expression {
   public static String CURRENCY = "currency";
   public static String AMOUNT = "amount";
 
-  public  MoneyLiteral(SNode node) {
+  public MoneyLiteral(SNode node) {
     super(node);
   }
 
   public static MoneyLiteral newInstance(SModel sm, boolean init) {
-    return (MoneyLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.accounting.money.structure.MoneyLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MoneyLiteral) SModelUtil_new.instantiateConceptDeclaration("jetbrains.accounting.money.structure.MoneyLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MoneyLiteral newInstance(SModel sm) {
