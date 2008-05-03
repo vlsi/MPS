@@ -14,6 +14,7 @@ import jetbrains.mps.closures.runtime.YieldingIterator;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Arrays;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.List;
 
 public class Sequence_Test extends Util_Test {
 
@@ -176,13 +177,22 @@ __switch__:
   @Test()
   public void test_toOperations() throws Exception {
     Iterable<Integer> input = this.input5();
-    Assert.assertTrue(Arrays.equals(new Integer[]{1,2,3,4,5}, ListSequence.fromIterable(input).toGenericArray()));
+    Assert.assertTrue(Arrays.equals(new Integer[]{1,2,3,4,5}, ListSequence.fromIterable(input).toGenericArray(Integer.class)));
     this.assertIterableEquals(this.expect5(), Sequence.fromIterable(input).toListSequence());
     Integer i = 1;
     for(Iterator<Integer> it = Sequence.fromIterable(input).iterator() ; it.hasNext() ; i = i + 1) {
       Assert.assertEquals(i, it.next());
     }
     Assert.assertSame(6, i);
+    String[] sarr = new String[]{"A","B","C"};
+    Object[] oarr = new Object[]{"A","B","C"};
+    List list = Arrays.asList(oarr);
+    List<String> slist = ((List<String>)list);
+    String[] toarray = ListSequence.fromList(slist).toGenericArray(String.class);
+    for(String s : toarray) {
+      Assert.assertTrue(s instanceof String);
+    }
+    Assert.assertTrue(Arrays.equals(sarr, oarr));
   }
 
   @Test()

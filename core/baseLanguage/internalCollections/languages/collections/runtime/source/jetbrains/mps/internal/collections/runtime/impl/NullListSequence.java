@@ -4,6 +4,7 @@
 package jetbrains.mps.internal.collections.runtime.impl;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
@@ -139,8 +140,14 @@ public class NullListSequence<T> extends NullSequence<T> implements IListSequenc
         return this;
     }
     
+    @SuppressWarnings("unchecked")
     public T[] toGenericArray() {
-        return null;
+        return (T[]) Collections.<T>emptyList().toArray();
+    }
+    
+    @SuppressWarnings("unchecked")
+    public T[] toGenericArray(Class<T> runtimeClass) {
+        return (T[]) Collections.<T>emptyList().toArray();
     }
 
     private static class EmptyListIterator<U> implements ListIterator<U> {

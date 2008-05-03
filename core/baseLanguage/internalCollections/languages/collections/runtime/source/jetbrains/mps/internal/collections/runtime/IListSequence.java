@@ -26,5 +26,7 @@ public interface IListSequence<T> extends ISequence<T>, List<T> {
     
     List<T> toList();
 
-    public T[] toGenericArray();
+    T[] toGenericArray();
+
+    T[] toGenericArray(Class<T> runtimeClass);
 }

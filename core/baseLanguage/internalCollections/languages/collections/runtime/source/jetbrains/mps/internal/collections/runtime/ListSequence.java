@@ -3,6 +3,7 @@
  */
 package jetbrains.mps.internal.collections.runtime;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -239,6 +240,12 @@ public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, Li
     @SuppressWarnings("unchecked")
     public T[] toGenericArray() {
         return (T[]) list.toArray();
+    }
+
+    @SuppressWarnings("unchecked")
+    public T[] toGenericArray(Class<T> runtimeClass) {
+        T[] arr = (T[]) Array.newInstance(runtimeClass, list.size());
+        return list.toArray(arr);
     }
     
     public List<T> toList() {
