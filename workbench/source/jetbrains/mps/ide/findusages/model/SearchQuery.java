@@ -120,7 +120,7 @@ public class SearchQuery implements IExternalizeable {
     } else if (scopeType.equals(SCOPE_TYPE_MODULE)) {
       String moduleUID = scopeXML.getAttribute(MODULE_ID).getValue();
       myScope = null;
-      for (IModule module : project.getModules()) {
+      for (IModule module : MPSModuleRepository.getInstance().getAllModules()) {
         if (module.getModuleUID().equals(moduleUID)) {
           myScope = module.getScope();
         }

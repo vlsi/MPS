@@ -20,45 +20,51 @@ import java.awt.event.MouseEvent;
 
 public class TodoViewer extends JPanel {
   private UsageView myUsageView;
+  private IDEProjectFrame myProjectFrame;
 
   public TodoViewer(final IDEProjectFrame projectFrame) {
+    myProjectFrame = projectFrame;
     setLayout(new BorderLayout());
 
     add(new JLabel("Click to find TODOs", JLabel.CENTER), BorderLayout.CENTER);
 
     addMouseListener(new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
-        removeAll();
-
-        ViewOptions viewOptions = new ViewOptions(true, false, false, false, false);
-
-        myUsageView = new UsageView(projectFrame, viewOptions) {
-          public void close() {
-            //hideTool();
-          }
-        };
-        add(myUsageView.getComponent(), BorderLayout.CENTER);
-
-        new Thread(new Runnable() {
-          public void run() {
-            MPSProject project = projectFrame.getProject();
-
-            if (project == null) return;
-
-            myUsageView.setRunOptions(
-              TreeBuilder.forFinder(new TodoFinder()),
-              new SearchQuery(project.getScope()),
-              new ButtonConfiguration(true),
-              new SearchResults()
-            );
-
-            myUsageView.setCustomNodeRepresentator(MyNodeRepresentator.class);
-
-            myUsageView.run();
-          }
-        }).start();
+        refresh();
       }
     });
+  }
+
+  private void refresh() {
+    removeAll();
+
+    ViewOptions viewOptions = new ViewOptions(true, false, false, false, false);
+
+    myUsageView = new UsageView(myProjectFrame, viewOptions) {
+      public void close() {
+        //hideTool();
+      }
+    };
+    add(myUsageView.getComponent(), BorderLayout.CENTER);
+
+    new Thread(new Runnable() {
+      public void run() {
+        MPSProject project = myProjectFrame.getProject();
+
+        if (project == null) return;
+
+        myUsageView.setRunOptions(
+          TreeBuilder.forFinder(new TodoFinder()),
+          new SearchQuery(project.getScope()),
+          new ButtonConfiguration(true),
+          new SearchResults()
+        );
+
+        myUsageView.setCustomNodeRepresentator(MyNodeRepresentator.class);
+
+        myUsageView.run();
+      }
+    }).start();
   }
 
   public static class MyNodeRepresentator implements INodeRepresentator {
