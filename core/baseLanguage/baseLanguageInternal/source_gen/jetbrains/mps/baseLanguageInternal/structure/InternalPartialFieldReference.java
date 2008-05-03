@@ -12,17 +12,17 @@ import jetbrains.mps.baseLanguage.structure.ClassifierType;
 
 public class InternalPartialFieldReference extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference";
+  public static String FIELD_NAME = "fieldName";
   public static String FIELD_TYPE = "fieldType";
   public static String INSTANCE_TYPE = "instanceType";
   public static String INSTANCE = "instance";
-  public static String FIELD_NAME = "fieldName";
 
-  public  InternalPartialFieldReference(SNode node) {
+  public InternalPartialFieldReference(SNode node) {
     super(node);
   }
 
   public static InternalPartialFieldReference newInstance(SModel sm, boolean init) {
-    return (InternalPartialFieldReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InternalPartialFieldReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InternalPartialFieldReference newInstance(SModel sm) {
@@ -30,8 +30,16 @@ public class InternalPartialFieldReference extends Expression {
   }
 
 
+  public String getFieldName() {
+    return this.getProperty(InternalPartialFieldReference.FIELD_NAME);
+  }
+
+  public void setFieldName(String value) {
+    this.setProperty(InternalPartialFieldReference.FIELD_NAME, value);
+  }
+
   public Type getFieldType() {
-    return (Type)this.getChild(InternalPartialFieldReference.FIELD_TYPE);
+    return (Type) this.getChild(InternalPartialFieldReference.FIELD_TYPE);
   }
 
   public void setFieldType(Type node) {
@@ -39,7 +47,7 @@ public class InternalPartialFieldReference extends Expression {
   }
 
   public ClassifierType getInstanceType() {
-    return (ClassifierType)this.getChild(InternalPartialFieldReference.INSTANCE_TYPE);
+    return (ClassifierType) this.getChild(InternalPartialFieldReference.INSTANCE_TYPE);
   }
 
   public void setInstanceType(ClassifierType node) {
@@ -47,19 +55,11 @@ public class InternalPartialFieldReference extends Expression {
   }
 
   public Expression getInstance() {
-    return (Expression)this.getChild(InternalPartialFieldReference.INSTANCE);
+    return (Expression) this.getChild(InternalPartialFieldReference.INSTANCE);
   }
 
   public void setInstance(Expression node) {
     super.setChild(InternalPartialFieldReference.INSTANCE, node);
-  }
-
-  public String getFieldName() {
-    return this.getProperty(InternalPartialFieldReference.FIELD_NAME);
-  }
-
-  public void setFieldName(String value) {
-    this.setProperty(InternalPartialFieldReference.FIELD_NAME, value);
   }
 
 }

@@ -11,12 +11,12 @@ import jetbrains.mps.project.GlobalScope;
 public class InternalThisExpression extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression";
 
-  public  InternalThisExpression(SNode node) {
+  public InternalThisExpression(SNode node) {
     super(node);
   }
 
   public static InternalThisExpression newInstance(SModel sm, boolean init) {
-    return (InternalThisExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InternalThisExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InternalThisExpression newInstance(SModel sm) {

@@ -8,22 +8,23 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Type;
+
 import java.util.Iterator;
 import java.util.List;
 
 public class InternalPartialInstanceMethodCall extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall";
+  public static String METHOD_NAME = "methodName";
   public static String RETURN_TYPE = "returnType";
   public static String INSTANCE = "instance";
   public static String ACTUAL_ARGUMENT = "actualArgument";
-  public static String METHOD_NAME = "methodName";
 
-  public  InternalPartialInstanceMethodCall(SNode node) {
+  public InternalPartialInstanceMethodCall(SNode node) {
     super(node);
   }
 
   public static InternalPartialInstanceMethodCall newInstance(SModel sm, boolean init) {
-    return (InternalPartialInstanceMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InternalPartialInstanceMethodCall) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InternalPartialInstanceMethodCall newInstance(SModel sm) {
@@ -31,8 +32,16 @@ public class InternalPartialInstanceMethodCall extends Expression {
   }
 
 
+  public String getMethodName() {
+    return this.getProperty(InternalPartialInstanceMethodCall.METHOD_NAME);
+  }
+
+  public void setMethodName(String value) {
+    this.setProperty(InternalPartialInstanceMethodCall.METHOD_NAME, value);
+  }
+
   public Type getReturnType() {
-    return (Type)this.getChild(InternalPartialInstanceMethodCall.RETURN_TYPE);
+    return (Type) this.getChild(InternalPartialInstanceMethodCall.RETURN_TYPE);
   }
 
   public void setReturnType(Type node) {
@@ -40,7 +49,7 @@ public class InternalPartialInstanceMethodCall extends Expression {
   }
 
   public Expression getInstance() {
-    return (Expression)this.getChild(InternalPartialInstanceMethodCall.INSTANCE);
+    return (Expression) this.getChild(InternalPartialInstanceMethodCall.INSTANCE);
   }
 
   public void setInstance(Expression node) {
@@ -65,14 +74,6 @@ public class InternalPartialInstanceMethodCall extends Expression {
 
   public void insertActualArgument(Expression prev, Expression node) {
     this.insertChild(prev, InternalPartialInstanceMethodCall.ACTUAL_ARGUMENT, node);
-  }
-
-  public String getMethodName() {
-    return this.getProperty(InternalPartialInstanceMethodCall.METHOD_NAME);
-  }
-
-  public void setMethodName(String value) {
-    this.setProperty(InternalPartialInstanceMethodCall.METHOD_NAME, value);
   }
 
 }

@@ -13,12 +13,12 @@ public class InternalClassExpression extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression";
   public static String TYPE = "type";
 
-  public  InternalClassExpression(SNode node) {
+  public InternalClassExpression(SNode node) {
     super(node);
   }
 
   public static InternalClassExpression newInstance(SModel sm, boolean init) {
-    return (InternalClassExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InternalClassExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InternalClassExpression newInstance(SModel sm) {
@@ -27,7 +27,7 @@ public class InternalClassExpression extends Expression {
 
 
   public Type getType() {
-    return (Type)this.getChild(InternalClassExpression.TYPE);
+    return (Type) this.getChild(InternalClassExpression.TYPE);
   }
 
   public void setType(Type node) {

@@ -13,12 +13,12 @@ public class InternalStaticFieldReference extends Expression {
   public static String FQ_CLASS_NAME = "fqClassName";
   public static String FIELD_NAME = "fieldName";
 
-  public  InternalStaticFieldReference(SNode node) {
+  public InternalStaticFieldReference(SNode node) {
     super(node);
   }
 
   public static InternalStaticFieldReference newInstance(SModel sm, boolean init) {
-    return (InternalStaticFieldReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InternalStaticFieldReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InternalStaticFieldReference newInstance(SModel sm) {

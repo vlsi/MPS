@@ -7,13 +7,15 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+
 import java.util.Iterator;
+
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_InternalThisExpression_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_InternalThisExpression_InferenceRule() {
+  public typeof_InternalThisExpression_InferenceRule() {
   }
 
   public void applyRule(final SNode ite) {
@@ -24,8 +26,8 @@ public class typeof_InternalThisExpression_InferenceRule implements InferenceRul
     {
       SNode tvd;
       Iterator<SNode> tvd_iterator = SLinkOperations.getTargets(c, "typeVariableDeclaration", true).iterator();
-      while(true) {
-        if(!(tvd_iterator.hasNext())) {
+      while (true) {
+        if (!(tvd_iterator.hasNext())) {
           break;
         }
         tvd = tvd_iterator.next();

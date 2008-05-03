@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_InternalStaticMethodCall_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_InternalStaticMethodCall_InferenceRule() {
+  public typeof_InternalStaticMethodCall_InferenceRule() {
   }
 
   public void applyRule(final SNode call) {

@@ -12,12 +12,12 @@ public class InternalClassifierType extends ClassifierType {
   public static final String concept = "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType";
   public static String FQ_CLASS_NAME = "fqClassName";
 
-  public  InternalClassifierType(SNode node) {
+  public InternalClassifierType(SNode node) {
     super(node);
   }
 
   public static InternalClassifierType newInstance(SModel sm, boolean init) {
-    return (InternalClassifierType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InternalClassifierType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InternalClassifierType newInstance(SModel sm) {
