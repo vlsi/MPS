@@ -9,6 +9,7 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.bootstrap.sharedConcepts.structure.Options_DefaultTrue;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.generator.GenerationFailedException;
@@ -360,6 +361,12 @@ public class GeneratorUtil {
             templateFragmentNode, inputNode, generator);
           String childRole = templateFragmentNode.getRole_();
           for (SNode outputNodeToWeave : outputNodesToWeave) {
+            if (!GeneratorUtil.checkChild(contextParentNode, childRole, outputNodeToWeave)) {
+              LOG.warning(" -- was input: " + inputNode.getDebugText(), inputNode);
+              LOG.warning(" -- was template: " + templateFragment.getDebugText(), templateFragment);
+              LOG.warning(" -- was rule: " + rule.getDebugText(), rule);
+            }
+
             contextParentNode.addChild(childRole, outputNodeToWeave);
           }
         } catch (DismissTopMappingRuleException e) {
@@ -607,5 +614,43 @@ public class GeneratorUtil {
       generator.showErrorMessage(inputNode, reductionTemplateNode, rule.getNode(), "error processing reduction rule");
     }
     return new ArrayList<SNode>(1);
+  }
+
+  /*package*/
+  static boolean checkChild(SNode parent, String role, SNode child) {
+    return checktLinkTarget(parent, role, child, true, false);
+  }
+
+  /*package*/
+  static boolean checkReferent(SNode reference, String role, SNode referent) {
+    return checktLinkTarget(reference, role, referent, false, true);
+  }
+
+  private static boolean checktLinkTarget(SNode sourceNode, String role, SNode targetNode, boolean child, boolean riseError) {
+    String relationKind = child ? "child" : "referent";
+    AbstractConceptDeclaration concept = sourceNode.getConceptDeclarationAdapter();
+    LinkDeclaration link = SModelUtil_new.findMostSpecificLinkDeclaration(concept, role);
+    if (link == null) {
+      reportProblem("concept '" + concept.getName() + "' can't have " + relationKind + " with role '" + role + "'", sourceNode, riseError);
+      reportProblem(" -- was " + relationKind + (child ? ": " : " (hidden in editor): ") + targetNode.getDebugText(), targetNode, riseError);
+      return false;
+    }
+    if (!SModelUtil_new.isAcceptableTarget(link, targetNode)) {
+      String expected = link.getTarget().getName();
+      String was = targetNode.getConceptDeclarationAdapter().getName();
+      reportProblem(relationKind + " '" + expected + "' is expected for role '" + role + "' but was '" + was + "'", sourceNode, riseError);
+      reportProblem(" -- was " + relationKind + ": " + targetNode.getDebugText(), targetNode, riseError);
+      return false;
+    }
+
+    return true;
+  }
+
+  private static void reportProblem(String message, SNode node, boolean error) {
+    if (error) {
+      LOG.error(message, node);
+    } else {
+      LOG.warning(message, node);
+    }
   }
 }

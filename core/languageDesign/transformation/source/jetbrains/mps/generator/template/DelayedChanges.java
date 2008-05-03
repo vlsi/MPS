@@ -4,6 +4,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.transformation.TLBase.structure.NodeMacro;
 import jetbrains.mps.util.Pair;
 
@@ -32,14 +33,14 @@ public class DelayedChanges {
 
 
   private class ExecuteMapSrcNodeMacroChange {
-    private NodeMacro myMapSrcMacro;
+    private SNode myMapSrcMacro;
     protected SNode myChildToReplace;
     private SNode myInputNode;
     private Map<String, SNode> myInputNodesByMappingName;
     private TemplateGenerator myGenerator;
 
     public ExecuteMapSrcNodeMacroChange(NodeMacro mapSrcMacro, SNode childToReplace, SNode inputNode, Map<String, SNode> inputNodesByMappingName, TemplateGenerator generator) {
-      myMapSrcMacro = mapSrcMacro;
+      myMapSrcMacro = mapSrcMacro.getNode();
       myChildToReplace = childToReplace;
       myInputNode = inputNode;
       myInputNodesByMappingName = inputNodesByMappingName;
@@ -49,21 +50,29 @@ public class DelayedChanges {
     public void doChange() {
       Map<String, SNode> old = myGenerator.setPreviousInputNodesByMappingName(myInputNodesByMappingName);
       try {
-        SNode child = MacroUtil.executeMapSrcNodeMacro(myInputNode, myMapSrcMacro.getNode(), myChildToReplace.getParent(), myGenerator);
+        SNode child = MacroUtil.executeMapSrcNodeMacro(myInputNode, myMapSrcMacro, myChildToReplace.getParent(), myGenerator);
         if (child != null) {
           if (child.isRegistered()) {
             // must be "in air"
             child = CopyUtil.copy(child);
           }
-          // check child because it's manual and thus error prone mapping
+          // replace references back to input model
           validateReferences(child);
 
-          myChildToReplace.getParent().replaceChild(myChildToReplace, child);
+          // check new child
+          SNode parent = myChildToReplace.getParent();
+          String childRole = parent.getRoleOf(myChildToReplace);
+          if(!GeneratorUtil.checkChild(parent, childRole, child)) {
+            LOG.warning(" -- was input: " + myInputNode.getDebugText(), myInputNode);
+            LOG.warning(" -- was template: " + myMapSrcMacro.getDebugText(), myMapSrcMacro);
+          }
+
+          parent.replaceChild(myChildToReplace, child);
           myGenerator.getGeneratorSessionContext().getGenerationTracer().replaceOutputNode(myChildToReplace, child);
         }
       } catch (Throwable t) {
-        myGenerator.showErrorMessage(myInputNode, myMapSrcMacro.getNode(), "mapping failed: '" + t.getMessage() + "'");
-        LOG.error(t, myMapSrcMacro.getNode());
+        myGenerator.showErrorMessage(myInputNode, myMapSrcMacro, "mapping failed: '" + t.getMessage() + "'");
+        LOG.error(t, myMapSrcMacro);
       } finally {
         myGenerator.setPreviousInputNodesByMappingName(old);
       }

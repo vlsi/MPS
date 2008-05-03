@@ -186,7 +186,7 @@ public abstract class BaseAdapter implements INodeAdapter {
     return myNode.getProperty(propertyName);
   }
 
-  public void setProperty(@NotNull final String propertyName, String propertyValue) {
+  public void setProperty(@NotNull String propertyName, String propertyValue) {
     myNode.setProperty(propertyName, propertyValue);
   }
 

@@ -1215,7 +1215,11 @@ public final class SNode {
 
   @NotNull
   public String getDebugText() {
-    String roleText = getRole_() == null ? "[root]" : "[" + getRole_() + "]";
+    String roleText = "";
+    if (isRegistered()) {
+      String s = getRole_();
+      roleText = s == null ? "[root]" : "[" + s + "]";
+    }
     String nameText;
     try {
       if ("jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration".equals(getConceptFqName())) {

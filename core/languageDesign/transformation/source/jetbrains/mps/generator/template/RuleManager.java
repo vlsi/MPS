@@ -9,13 +9,16 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.transformation.TLBase.structure.*;
+import jetbrains.mps.logging.Logger;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 public class RuleManager {
+  private static final Logger LOG = Logger.getLogger(RuleManager.class);
 
   private List<CreateRootRule> myCreateRootRules;
   private List<Root_MappingRule> myRoot_MappingRules;
@@ -122,7 +125,16 @@ public class RuleManager {
   private void applyReductionRules_internal(SNode inputNode, SNode clonedOutputNode) {
     List<SNode> outputNodes = tryToReduce(inputNode, null);
     if (outputNodes != null) {
-      clonedOutputNode.getParent().replaceChild(clonedOutputNode, outputNodes);
+      SNode parent = clonedOutputNode.getParent();
+      String childRole = parent.getRoleOf(clonedOutputNode);
+      // check new children
+      for (SNode outputNode : outputNodes) {
+        if (!GeneratorUtil.checkChild(parent, childRole, outputNode)) {
+          LOG.warning(" -- was input: " + inputNode.getDebugText(), inputNode);
+        }
+      }
+
+      parent.replaceChild(clonedOutputNode, outputNodes);
       return;
     }
 

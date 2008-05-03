@@ -2,6 +2,7 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TemplateLanguageUtil;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -13,6 +14,8 @@ import org.jetbrains.annotations.Nullable;
  * They are always internal.
  */
 public class PostponedReference extends SReference {
+  private static final Logger LOG = Logger.getLogger(PostponedReference.class);
+
   private ReferenceInfo myReferenceInfo;
   private TemplateGenerator myGenerator;
   private SReference myReplacementReference;
@@ -115,21 +118,21 @@ public class PostponedReference extends SReference {
     }
   }
 
-  private boolean checkResolvedTarget(SNode outputNode, String role, SNode outpurTargetNode) {
-    if (!SModelUtil_new.isAcceptableTarget(outputNode, role, outpurTargetNode)) {
-      myGenerator.showErrorMessage(outputNode, "unacceptable referent [wrong type]: " + outpurTargetNode.getDebugText() + " for role '" + role + "' in " + outputNode.getDebugText());
+  private boolean checkResolvedTarget(SNode outputNode, String role, SNode outputTargetNode) {
+    if (!GeneratorUtil.checkReferent(outputNode, role, outputTargetNode)) {
       return false;
     }
-    SModel referentNodeModel = outpurTargetNode.getModel();
+
+    SModel referentNodeModel = outputTargetNode.getModel();
     if (referentNodeModel != outputNode.getModel()) {
       if (TemplateLanguageUtil.isTemplatesModel(referentNodeModel)) {
         // references on template nodes are not acceptable
-        myGenerator.showErrorMessage(outputNode, "unacceptable referent [template node]: " + outpurTargetNode.getDebugText() + " for role '" + role + "' in " + outputNode.getDebugText());
+        myGenerator.showErrorMessage(outputNode, "unacceptable referent [template node]: " + outputTargetNode.getDebugText() + " for role '" + role + "' in " + outputNode.getDebugText());
         return false;
       }
       if (referentNodeModel.getModelDescriptor().isTransient()) {
         // references on transient nodes are not acceptable
-        myGenerator.showErrorMessage(outputNode, "unacceptable referent [transient node]: " + outpurTargetNode.getDebugText() + " for role '" + role + "' in " + outputNode.getDebugText());
+        myGenerator.showErrorMessage(outputNode, "unacceptable referent [transient node]: " + outputTargetNode.getDebugText() + " for role '" + role + "' in " + outputNode.getDebugText());
         return false;
       }
     }

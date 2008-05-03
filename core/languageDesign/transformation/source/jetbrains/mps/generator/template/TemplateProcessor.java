@@ -3,7 +3,9 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.plugin.debug.GenerationTracer;
 import jetbrains.mps.transformation.TLBase.structure.*;
+import jetbrains.mps.transformation.TemplateLanguageUtil;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -12,6 +14,8 @@ import java.util.List;
 import java.util.Map;
 
 public class TemplateProcessor {
+  private static final Logger LOG = Logger.getLogger(TemplateProcessor.class);
+
   private TemplateGenerator myGenerator;
   private SModel myOutputModel;
   private List<SNode> myInputHistory = new ArrayList<SNode>();
@@ -68,10 +72,6 @@ public class TemplateProcessor {
     // templateNode has no unprocessed node-macros - create output instance for the tempate node
     generationTracer.pushTemplateNode(templateNode);
     SNode outputNode = new SNode(myOutputModel, templateNode.getConceptFqName(), false);
-//    if (outputNode == null) {
-//      myGenerator.showErrorMessage(null, templateNode, "'createOutputNodesForTemplateNode' cannot create output node");
-//      return null;
-//    }
     outputNodes.add(outputNode);
     if (registerTopOutput) {
       myGenerator.addTopOutputNodeByInputNode(inputNode, outputNode);
@@ -142,11 +142,13 @@ public class TemplateProcessor {
         if (outputChildNodes != null) {
           String role = templateChildNode.getRole_();
           for (SNode outputChildNode : outputChildNodes) {
-            //          // check child
-            //          if (!SModelUtil_new.isAcceptableTarget(outputNode, role, outputChildNode)) {
-            //            myGenerator.showErrorMessage(outputChildNode, "unacceptable child node " + outputChildNode.getDebugText() + " for role '" + role + "'");
-            //            myGenerator.showErrorMessage(templateChildNode.getNode(), " -- template node " + templateChildNode.getDebugText());
-            //          }
+            // check child
+            if (!GeneratorUtil.checkChild(outputNode, role, outputChildNode)) {
+              LOG.warning(" -- was input: " + inputNode.getDebugText(), inputNode);
+              LOG.warning(" -- was parent in template: " + templateNode.getDebugText(), templateNode);
+              LOG.warning(" -- was child in template: " + templateChildNode.getDebugText(), templateChildNode);
+            }
+
             outputNode.addChild(role, outputChildNode);
           }
         }
@@ -425,11 +427,8 @@ public class TemplateProcessor {
       return outputNodes;
     }
 
-    //
     // no reduction found - do node copying
-    //
     myGenerator.getGeneratorSessionContext().getGenerationTracer().pushCopyOperation();
-
     SNode outputNode = new SNode(myOutputModel, inputNode.getConceptFqName(), false);
     myGenerator.getRuleManager().blockReductionsForOutput(inputNode, outputNode); // prevent infinite applying of the same reduction to the 'same' node.    
 
@@ -469,11 +468,14 @@ public class TemplateProcessor {
       List<SNode> outputChildNodes = copyNodeFromInputNode(null, inputChildNode, inputChildNode);
       if (outputChildNodes != null) {
         for (SNode outputChildNode : outputChildNodes) {
-//          // check child
-//          if (!SModelUtil_new.isAcceptableTarget(outputNode, childRole, outputChildNode)) {
-//            myGenerator.showErrorMessage(outputChildNode, "unacceptable child node " + outputChildNode.getDebugText() + " for role '" + childRole + "'");
-//            myGenerator.showErrorMessage(inputChildNode, " -- input node " + inputChildNode.getDebugText());
-//          }
+          // check child
+          if (!GeneratorUtil.checkChild(outputNode, childRole, outputChildNode)) {
+            LOG.warning(" -- was input: " + inputNode.getDebugText(), inputNode);
+            if (TemplateLanguageUtil.isTemplatesModel(templateNode.getModel())) {
+              LOG.warning(" -- was template: " + templateNode.getDebugText(), templateNode);
+            }
+          }
+
           outputNode.addChild(childRole, outputChildNode);
         }
       }
