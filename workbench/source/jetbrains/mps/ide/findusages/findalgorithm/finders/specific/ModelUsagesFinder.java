@@ -21,6 +21,9 @@ public class ModelUsagesFinder extends BaseFinder {
     SModelUID modelUID = model.getUID();
     for (SModelDescriptor modelDescriptor : SModelRepository.getInstance().getAllModelDescriptors()) {
       if (monitor.isCanceled()) return searchResults;
+      if (modelDescriptor instanceof StubModelDescriptor) {
+        continue;
+      }
       String stereotype = modelDescriptor.getStereotype();
       if (!stereotype.equals(SModelStereotype.NONE) && !stereotype.equals(SModelStereotype.TEMPLATES)) {
         continue;
