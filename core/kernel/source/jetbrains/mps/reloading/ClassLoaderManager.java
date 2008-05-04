@@ -161,7 +161,11 @@ public class ClassLoaderManager implements IComponentLifecycle {
     }
     myOSGIBundles.keySet().removeAll(removed);
 
-    refreshBundles(myOSGIBundles.values().toArray(new Bundle[myOSGIBundles.size()]), true);
+    if (myUseOSGI) {
+      refreshBundles(myOSGIBundles.values().toArray(new Bundle[myOSGIBundles.size()]), true);
+    } else {
+      throw new UnsupportedOperationException();
+    }
 
     for (IModule m : myModuleRepository.getAllModules()) {
       m.updateClassPath();
