@@ -218,9 +218,9 @@ public abstract class AbstractModule implements IModule {
   public List<IModule> getDesignTimeDependOnModules() {
     Set<IModule> result = new LinkedHashSet<IModule>();
     result.addAll(getAllDependOnModules());    
-    for (Language l : getAllUsedLanguages()) {
-      result.addAll(l.getRuntimeDependOnModules());
-    }
+//    for (Language l : getAllUsedLanguages()) {
+//      result.addAll(l.getRuntimeDependOnModules());
+//    }
     return new ArrayList<IModule>(result);
   }
 
@@ -264,7 +264,7 @@ public abstract class AbstractModule implements IModule {
       if (l != null) {
         result.add(l);
       } else {
-        LOG.error("Can't load language " + l + " from " + this);
+        LOG.error("Can't load language " + namespace + " from " + this);
       }
     }
     
