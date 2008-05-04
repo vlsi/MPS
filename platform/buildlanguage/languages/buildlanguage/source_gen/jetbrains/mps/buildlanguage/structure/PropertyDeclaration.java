@@ -62,11 +62,11 @@ public class PropertyDeclaration extends BaseConcept implements IProjectComponen
     this.setProperty(PropertyDeclaration.VIRTUAL_PACKAGE, value);
   }
 
-  public Type getType() {
-    return (Type)this.getChild(PropertyDeclaration.TYPE);
+  public PropertyType getType() {
+    return (PropertyType)this.getChild(PropertyDeclaration.TYPE);
   }
 
-  public void setType(Type node) {
+  public void setType(PropertyType node) {
     super.setChild(PropertyDeclaration.TYPE, node);
   }
 
