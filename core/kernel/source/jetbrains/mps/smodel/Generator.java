@@ -9,12 +9,14 @@ import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.BootstrapLanguagesManager;
+import jetbrains.mps.runtime.BytecodeLocator;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.LinkedHashSet;
+import java.net.URL;
 
 public class Generator extends AbstractModule {
   public static final Logger LOG = Logger.getLogger(Generator.class);
@@ -217,6 +219,18 @@ public class Generator extends AbstractModule {
 
   public Class getClass(String fqName) {
     return mySourceLanguage.getClass(fqName);
+  }
+
+  public BytecodeLocator getBytecodeLocator() {
+    return new BytecodeLocator() {
+      public byte[] find(String fqName) {
+        return null;
+      }
+
+      public URL findResource(String name) {
+        return null;
+      }
+    };
   }
 
   public Set<Language> getImplicitlyImportedLanguages(SModelDescriptor sm) {

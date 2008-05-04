@@ -165,36 +165,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     myLanguageRuntimeClasspath = result;
   }
 
-
-
-
-
-  public BytecodeLocator getBytecodeLocator() {
-    final BytecodeLocator oldLocator = super.getBytecodeLocator();
-    return new BytecodeLocator() {
-      public byte[] find(String fqName) {
-        if (!fqName.startsWith(getModuleUID())) {
-          return null;
-        }
-
-        if (isBootstrap()) {
-          String namespace = NameUtil.namespaceFromLongName(fqName);
-
-          if (namespace.equals(getModuleUID() + ".structure")) return null;
-          if (namespace.startsWith(getModuleUID() + ".runtime")) return null;
-
-          return null;
-        } else {
-          return oldLocator.find(fqName);
-        }
-      }
-
-      public URL findResource(String name) {
-        return oldLocator.findResource(name);
-      }
-    };
-  }
-
   public List<IModule> getExplicitlyDependOnModules(boolean includeBootstrap) {
     List<IModule> result = super.getExplicitlyDependOnModules(includeBootstrap);
 

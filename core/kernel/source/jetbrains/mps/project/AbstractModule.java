@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.ModelRootsUtil;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.JarFileEntryFile;
