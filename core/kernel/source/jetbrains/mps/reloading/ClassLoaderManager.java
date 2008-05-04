@@ -41,9 +41,6 @@ public class ClassLoaderManager implements IComponentLifecycle {
   private MPSModuleRepository myModuleRepository;
   private List<ReloadListener> myReloadHandlers = new ArrayList<ReloadListener>();
 
-  private Set<String> myToRemove = new LinkedHashSet<String>();
-  private Set<String> myToAdd = new LinkedHashSet<String>();
-
   private Map<String, Bundle> myOSGIBundles = new HashMap<String, Bundle>();
 
   private BundleContext myBundleContext = MPSActivator.ourBundleContext;
@@ -59,40 +56,6 @@ public class ClassLoaderManager implements IComponentLifecycle {
   private IClassPathItem myMPSJar = null;
 
   public ClassLoaderManager() {
-  }
-
-  @Dependency
-  public void setModuleRepostiory(MPSModuleRepository repository) {
-    repository.addModuleRepositoryListener(new ModuleRepositoryListener() {
-      public void moduleAdded(IModule module) {
-        if (myOSGIBundles.get(module.getModuleUID()) == null) {
-          if (!myToRemove.contains(module.getModuleUID())) {
-            addModule(module.getModuleUID());
-          } else {
-            myToAdd.add(module.getModuleUID());
-          }
-        } else {
-          myToAdd.add(module.getModuleUID());
-        }
-      }
-
-      public void beforeModuleRemoved(IModule module) {
-      }
-
-      public void moduleRemoved(IModule module) {
-        if (myOSGIBundles.get(module.getModuleUID()) != null) {
-          myToRemove.add(module.getModuleUID());
-        }
-
-        if (CommandProcessor.instance().getCurrentCommandKind() == CommandKind.GENERATION) {
-          handleAddAndRemoves();
-        }
-      }
-
-      public void moduleInitialized(IModule module) {
-
-      }
-    });
   }
 
   public void initComponent() {
@@ -115,67 +78,12 @@ public class ClassLoaderManager implements IComponentLifecycle {
     }
 
     updateClassPath();
-
-    CommandProcessor.instance().addCommandListener(new CommandAdapter() {
-      public void commandFinished(@NotNull CommandEvent event) {
-        handleAddAndRemoves();
-      }
-    });
   }
 
   private void invokeOnRefresh(Runnable r) {
     synchronized (myInvokeOnRefresh) {
       myInvokeOnRefresh.add(r);
     }    
-  }
-
-  private void handleAddAndRemoves() {
-    try {
-
-      Set<String> toReload = new LinkedHashSet<String>(myToAdd);
-      toReload.retainAll(myToRemove);
-
-      Set<String> toRemove = new LinkedHashSet<String>(myToRemove);
-      toRemove.removeAll(myToAdd);
-
-      Set<String> toAdd = new LinkedHashSet<String>(myToAdd);
-      toAdd.removeAll(myToRemove);
-
-
-      if (!toReload.isEmpty()) {
-        String[] reloadList = toReload.toArray(new String[0]);
-        Bundle[] bundles = new Bundle[reloadList.length];
-        for (int i = 0; i < reloadList.length; i++) {
-          bundles[i] = myOSGIBundles.get(reloadList[i]);
-        }
-        refreshBundles(bundles, true);
-      }
-
-      if (!toRemove.isEmpty()) {
-        String[] unloadList = toRemove.toArray(new String[0]);
-        Bundle[] bundles = new Bundle[unloadList.length];
-        for (int i = 0; i < unloadList.length; i++) {
-          try {
-            Bundle bundle = myOSGIBundles.get(unloadList[i]);
-            bundles[i] = bundle;
-            bundle.uninstall();
-            myOSGIBundles.remove(unloadList[i]);
-          } catch (BundleException e) {
-            LOG.error(e);
-          }
-        }
-        refreshBundles(bundles, false);
-      }
-
-      if (!toAdd.isEmpty()) {
-        for (String moduleUID : toAdd) {
-          addModule(moduleUID);
-        }
-      }
-    } finally {
-      myToRemove.clear();
-      myToAdd.clear();
-    }
   }
 
   private void addModule(String moduleUID) {
@@ -193,10 +101,6 @@ public class ClassLoaderManager implements IComponentLifecycle {
     } catch (Exception e) {
       e.printStackTrace();
     }
-  }
-
-  @Dependency
-  public void setProjects(MPSProjects projects) {
   }
 
   @Dependency
@@ -219,6 +123,25 @@ public class ClassLoaderManager implements IComponentLifecycle {
 
   public void updateClassPath() {
     LOG.debug("Updating class path");
+
+    for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
+      if (!myOSGIBundles.containsKey(m.getModuleUID())) {
+        addModule(m.getModuleUID());
+      }
+    }
+
+    Set<String> removed = new HashSet<String>();
+    for (String uid : myOSGIBundles.keySet()) {
+      if (MPSModuleRepository.getInstance().getModuleByUID(uid) == null) {
+        try {
+          myOSGIBundles.get(uid).uninstall();
+          removed.add(uid);
+        } catch (Throwable t) {
+          LOG.error(t);
+        }
+      }
+    }
+    myOSGIBundles.keySet().removeAll(removed);
 
     refreshBundles(myOSGIBundles.values().toArray(new Bundle[myOSGIBundles.size()]), true);
 
