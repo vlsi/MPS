@@ -685,6 +685,10 @@ public abstract class AbstractModule implements IModule {
 
     String relativeToParent = getPathRelativeTo(path, new File(base).getParent());
 
+    if (relativeToParent == null) {
+      return null;
+    }
+
     if (relativeToParent.startsWith(File.separator)) {
       return ".." + relativeToParent;
     } else {
