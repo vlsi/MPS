@@ -9,6 +9,8 @@ public class RuntimeEnvironment {
   private Map<String, RBundle> myBundles = new HashMap<String, RBundle>();
   private Set<String> myLoadFromParentPrefixes = new HashSet<String>();
 
+  private Map<String, Class> myClassesFromParent = new HashMap<String, Class>();
+
   public RuntimeEnvironment() {
   }
 
@@ -17,14 +19,30 @@ public class RuntimeEnvironment {
     return this;
   }
 
-  public boolean loadFromParent(String cls) {
+  public Class loadFromParent(String cls) {
     for (String prefix : myLoadFromParentPrefixes) {
       if (cls.startsWith(prefix)) {
-        return true;
+        return getFromParent(cls);
       }
     }
 
-    return false;
+    return null;
+  }
+
+  protected Class getFromParent(String name) {
+    if (myClassesFromParent.containsKey(name)) {
+      return myClassesFromParent.get(name);
+    }
+
+    Class result = null;
+    try {
+      result = Class.forName(name);
+    } catch (ClassNotFoundException e) {
+      //it's ok
+    }
+
+    myClassesFromParent.put(name, result);
+    return result;
   }
 
   public RBundle get(String name) {

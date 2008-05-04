@@ -100,7 +100,7 @@ public class BundleLoadingTest {
   }
 
   @Test(expected = RuntimeEnvironmentException.class)
-  public void bundleUndloadFailsIfItHasDependencies() {
+  public void bundleUnloadFailsIfItHasDependencies() {
     RuntimeEnvironment re = new RuntimeEnvironment();
     RBundle a = bundle("a", A.class);
     RBundle b = bundle("b", B.class).addDependency("a");
