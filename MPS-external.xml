@@ -343,7 +343,7 @@
     <copy file="mps.sh" tofile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\mps.sh" />
     <chmod file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\mps.sh" perm="ugo+x" />
     <zip destfile="${deploy.dir}\MPS-${build.number}.zip" duplicate="preserve" filesonly="true">
-      <fileset dir="${deploy.dir}\MPS-${build.number}.zip.tmp" excludes="**/*.iml, **/*.ipr" includes="" />
+      <zipfileset dir="${deploy.dir}\MPS-${build.number}.zip.tmp" excludes="**/*.iml, **/*.ipr" includes="" filemode="655" />
     </zip>
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp" />
   </target>
