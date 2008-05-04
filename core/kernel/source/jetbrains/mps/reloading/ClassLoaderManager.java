@@ -3,6 +3,9 @@ package jetbrains.mps.reloading;
 import jetbrains.mps.component.Dependency;
 import jetbrains.mps.component.IComponentLifecycle;
 import jetbrains.mps.MPSActivator;
+import jetbrains.mps.runtime.RuntimeEnvironment;
+import jetbrains.mps.runtime.RBundle;
+import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.command.CommandAdapter;
@@ -41,8 +44,9 @@ public class ClassLoaderManager implements IComponentLifecycle {
   private MPSModuleRepository myModuleRepository;
   private List<ReloadListener> myReloadHandlers = new ArrayList<ReloadListener>();
 
-  private boolean myUseOSGI = true;
+  public boolean myUseOSGI = true;
 
+  private RuntimeEnvironment myRuntimeEnvironment = createRuntimeEnvironment();
 
   //OSGi stuff: to remove
   private Map<String, Bundle> myOSGIBundles = new HashMap<String, Bundle>();
@@ -112,7 +116,15 @@ public class ClassLoaderManager implements IComponentLifecycle {
         e.printStackTrace();
       }
     } else {
-      throw new UnsupportedOperationException();
+      myRuntimeEnvironment.add(new RBundle(moduleUID, new BytecodeLocator() {
+        public byte[] find(String fqName) {
+          return null;
+        }
+
+        public URL findResource(String name) {
+          return null;
+        }
+      }));
     }
   }
 
@@ -124,7 +136,43 @@ public class ClassLoaderManager implements IComponentLifecycle {
         LOG.error(e);
       }
     } else {
-      throw new UnsupportedOperationException();
+      myRuntimeEnvironment.unload(moduleUID);
+    }
+  }
+
+  public Class getClassFor(IModule module, String classFqName) {
+    if (myUseOSGI) {
+      Bundle b = myOSGIBundles.get(module.getModuleUID());
+      if (b == null) {
+        LOG.error("Can't find a bundle for module " + module.getModuleUID());
+        return null;
+      }
+
+      try {
+        return b.loadClass(classFqName);
+      } catch (ClassNotFoundException e) {
+        if (e.getMessage().contains("because the bundle")) {
+          LOG.error(e);
+        }
+        return null;
+      } catch (NoClassDefFoundError e) {
+        LOG.error(e);
+        return null;
+      }
+    } else {
+      RBundle bundle = myRuntimeEnvironment.get(module.getModuleUID());
+
+      if (bundle == null) {
+        LOG.error("Can't find a bundle " + module.getModuleUID());
+        return null;
+      }
+
+      ClassLoader loader = bundle.getClassLoader();
+      try {
+        return Class.forName(classFqName, true, loader);
+      } catch (ClassNotFoundException e) {
+        return null;
+      }
     }
   }
 
@@ -164,12 +212,17 @@ public class ClassLoaderManager implements IComponentLifecycle {
     if (myUseOSGI) {
       refreshBundles(myOSGIBundles.values().toArray(new Bundle[myOSGIBundles.size()]), true);
     } else {
-      throw new UnsupportedOperationException();
+      myRuntimeEnvironment.reloadAll();
     }
 
     for (IModule m : myModuleRepository.getAllModules()) {
       m.updateClassPath();
     }
+  }
+
+  private RuntimeEnvironment createRuntimeEnvironment() {
+    RuntimeEnvironment re = new RuntimeEnvironment();    
+    return re;
   }
 
   private void refreshBundles(Bundle[] bundles, boolean update) {
@@ -373,26 +426,6 @@ public class ClassLoaderManager implements IComponentLifecycle {
       }
     }
     return null;
-  }
-
-  public Class getClassFor(IModule module, String classFqName) {
-    Bundle b = myOSGIBundles.get(module.getModuleUID());
-    if (b == null) {
-      LOG.error("Can't find a bundle for module " + module.getModuleUID());
-      return null;
-    }
-
-    try {
-      return b.loadClass(classFqName);
-    } catch (ClassNotFoundException e) {
-      if (e.getMessage().contains("because the bundle")) {
-        LOG.error(e);
-      }
-      return null;
-    } catch (NoClassDefFoundError e) {
-      LOG.error(e);
-      return null;
-    }
   }
 
   public void addReloadHandler(ReloadListener handler) {
