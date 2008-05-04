@@ -165,6 +165,10 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     myLanguageRuntimeClasspath = result;
   }
 
+
+
+
+
   public BytecodeLocator getBytecodeLocator() {
     final BytecodeLocator oldLocator = super.getBytecodeLocator();
     return new BytecodeLocator() {
@@ -268,6 +272,12 @@ public class Language extends AbstractModule implements Marshallable<Language> {
       }
     }
     return result;
+  }
+
+  public List<IModule> getDesignTimeDependOnModules() {
+    Set<IModule> result = new LinkedHashSet<IModule>(super.getDesignTimeDependOnModules());
+    result.addAll(getExtendedLanguages());
+    return new ArrayList<IModule>(result);
   }
 
   public List<IModule> getRuntimeDependOnModules() {

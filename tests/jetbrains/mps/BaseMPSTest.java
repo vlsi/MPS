@@ -20,7 +20,10 @@ public class BaseMPSTest extends TestCase {
     super.tearDown();
   }
 
-  protected String testProject(File project) {
+  protected String testProject(File project) {    
+//    ClassLoaderManager.getInstance().myUseOSGI = false;
+//    return TestMain.testProject(project);
+
     try {
       Bundle mpsBundle = MPSLauncher.getMPSBundle();
       Class testMain = mpsBundle.loadClass("jetbrains.mps.TestMain");

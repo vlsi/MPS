@@ -3,6 +3,7 @@ package jetbrains.mps.reloading;
 import jetbrains.mps.component.Dependency;
 import jetbrains.mps.component.IComponentLifecycle;
 import jetbrains.mps.MPSActivator;
+import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.runtime.RuntimeEnvironment;
 import jetbrains.mps.runtime.RBundle;
 import jetbrains.mps.runtime.BytecodeLocator;
@@ -101,11 +102,11 @@ public class ClassLoaderManager implements IComponentLifecycle {
   private void addModule(String moduleUID) {
     IModule module = MPSModuleRepository.getInstance().getModuleByUID(moduleUID);
 
-    if (module.getBundleHome() == null) {
-      return; //i.e. transient module
-    }
-
     if (myUseOSGI) {
+      if (module.getBundleHome() == null) {
+        return; //i.e. transient module
+      }
+
       try {
         Bundle bundle = myBundleContext.installBundle("reference:file:/" + module.getBundleHome());
 
@@ -118,7 +119,6 @@ public class ClassLoaderManager implements IComponentLifecycle {
     } else {
       RBundle bundle = new RBundle(moduleUID, module.getBytecodeLocator());
       myRuntimeEnvironment.add(bundle);
-      myRuntimeEnvironment.init(bundle);
     }
   }
 
@@ -184,9 +184,27 @@ public class ClassLoaderManager implements IComponentLifecycle {
   }
 
   public void updateClassPath() {
+    Set<String> added = new HashSet<String>();
     for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
       if (!containsBundle(m.getModuleUID())) {
         addModule(m.getModuleUID());
+        added.add(m.getModuleUID());
+      }
+    }
+
+    if (!myUseOSGI) {
+      for (String addedUID : added) {
+        IModule m = MPSModuleRepository.getInstance().getModuleByUID(addedUID);
+        RBundle b = myRuntimeEnvironment.get(addedUID);        
+        for (IModule dep : m.getDesignTimeDependOnModules()) {
+          b.addDependency(dep.getModuleUID());
+        }
+      }
+
+      for (String addedBundle : added) {
+        RBundle bundle = myRuntimeEnvironment.get(addedBundle);
+        assert bundle != null : "Can't find " + addedBundle;
+        myRuntimeEnvironment.init(bundle);
       }
     }
 

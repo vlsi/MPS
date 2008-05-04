@@ -214,6 +214,15 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
+  public List<IModule> getDesignTimeDependOnModules() {
+    Set<IModule> result = new LinkedHashSet<IModule>();
+    result.addAll(getAllDependOnModules());    
+    for (Language l : getAllUsedLanguages()) {
+      result.addAll(l.getRuntimeDependOnModules());
+    }
+    return new ArrayList<IModule>(result);
+  }
+
   public List<IModule> getDependOnModules() {
     List<IModule> result = new ArrayList<IModule>();
     for (Dependency dep : getDependOn()) {
