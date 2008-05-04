@@ -1,13 +1,30 @@
 package jetbrains.mps.runtime;
 
 import java.util.*;
+import java.util.regex.Pattern;
 
 public class RuntimeEnvironment {
 
   private List<RuntimeListener> myListeners = new ArrayList<RuntimeListener>();
   private Map<String, RBundle> myBundles = new HashMap<String, RBundle>();
+  private Set<String> myLoadFromParentPrefixes = new HashSet<String>();
 
   public RuntimeEnvironment() {
+  }
+
+  public RuntimeEnvironment addLoadFromParent(String prefix) {
+    myLoadFromParentPrefixes.add(prefix);
+    return this;
+  }
+
+  public boolean loadFromParent(String cls) {
+    for (String prefix : myLoadFromParentPrefixes) {
+      if (cls.startsWith(prefix)) {
+        return true;
+      }
+    }
+
+    return false;
   }
 
   public RBundle get(String name) {

@@ -175,9 +175,7 @@ public class BundleLoadingTest {
     RBundle a = bundle("a", A.class);
     RBundle b = bundle("b", B.class).addDependency("a");
 
-
     re.add(a, b);
-
 
     re.init(a);
     ClassLoader ca = a.getClassLoader();

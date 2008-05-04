@@ -9,7 +9,21 @@ public class BundleClassLoader extends BaseClassLoader {
     myBundle = bundle;
   }
 
-  protected Class tryToLoad(String name) {
+  protected Class loadBeforeCurrent(String name) {
+    RuntimeEnvironment re = myBundle.getRuntimeEnvironment();
+
+    if (re.loadFromParent(name)) {
+      try {
+        return getParent().loadClass(name);
+      } catch (ClassNotFoundException e) {
+        return null;
+      }
+    }
+
+    return null;
+  }
+
+  protected Class loadAfterCurrent(String name) {
     RuntimeEnvironment re = myBundle.getRuntimeEnvironment();
 
     for (String dep : re.getAllDependencies(myBundle)) {

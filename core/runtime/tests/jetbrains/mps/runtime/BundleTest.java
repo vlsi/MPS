@@ -39,6 +39,17 @@ public class BundleTest {
     assertVisible(a.getClassLoader(), A.class.getName());
     assertClassLoader(b.getClassLoader(), A.class.getName(), a.getClassLoader());    
   }
+    
+  @Test
+  public void loadFromParent() {
+    RuntimeEnvironment re = new RuntimeEnvironment();
+    re.addLoadFromParent(A.class.getName());
+
+    RBundle a = bundle("a", A.class);
+    re.add(a).init(a);
+
+    assertClassLoader(a.getClassLoader(), A.class.getName(), getClass().getClassLoader());
+  }
 
   @Test
   public void transitiveDependency() {

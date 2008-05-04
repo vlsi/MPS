@@ -1,6 +1,5 @@
 package jetbrains.mps.runtime;
 
-import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,11 +10,16 @@ abstract class BaseClassLoader extends ClassLoader {
     super(BaseClassLoader.class.getClassLoader());
   }
 
-  protected abstract byte[] findClassBytes(String name);
-
-  protected Class tryToLoad(String name) {
+  protected Class loadBeforeCurrent(String name) {
     return null;
   }
+
+  protected abstract byte[] findClassBytes(String name);
+
+  protected Class loadAfterCurrent(String name) {
+    return null;
+  }
+
 
   protected synchronized Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
     Class c = myCache.get(name);
@@ -25,28 +29,28 @@ abstract class BaseClassLoader extends ClassLoader {
     }
 
     if (c == null) {
-      byte[] bytes = null;
-
-      bytes = findClassBytes(name);
-
-      if (bytes == null) {
-        c = tryToLoad(name);
-
-        if (c == null) {
-          try {
-            c = getParent().loadClass(name);
-          } catch (ClassNotFoundException e) {
-            myCache.put(name, null);
-            throw e;
+      c = loadBeforeCurrent(name);
+      
+      if (c == null) {
+        byte[] bytes = null;
+        bytes = findClassBytes(name);
+        if (bytes == null) {
+          c = loadAfterCurrent(name);
+          if (c == null) {
+            try {
+              c = getParent().loadClass(name);
+            } catch (ClassNotFoundException e) {
+              myCache.put(name, null);
+              throw e;
+            }
           }
+          if (resolve) {
+            resolveClass(c);
+          }
+        } else {
+          definePackageIfNecessary(name);
+          c = defineClass(name, bytes, 0, bytes.length);
         }
-
-        if (resolve) {
-          resolveClass(c);
-        }
-      } else {
-        definePackageIfNecessary(name);
-        c = defineClass(name, bytes, 0, bytes.length);
       }
       myCache.put(name, c);
     }
