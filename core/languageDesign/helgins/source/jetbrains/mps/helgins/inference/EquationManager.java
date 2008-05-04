@@ -563,7 +563,7 @@ public class EquationManager {
       }
     }
     supertypes = mySubtypesToSupertypesMapStrong_check.remove(var);
-    if (subtypes != null) {
+    if (supertypes != null) {
       for (final IWrapper supertype : supertypes.keySet()) {
         Map<IWrapper, EquationInfo> map = mySupertypesToSubtypesMapStrong_check.get(supertype);
         if (map != null) {
