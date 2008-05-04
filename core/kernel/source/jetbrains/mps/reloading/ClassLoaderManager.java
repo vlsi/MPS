@@ -241,7 +241,8 @@ public class ClassLoaderManager implements IComponentLifecycle {
   }
 
   private RuntimeEnvironment createRuntimeEnvironment() {
-    RuntimeEnvironment re = new RuntimeEnvironment();    
+    RuntimeEnvironment re = new RuntimeEnvironment();
+    re.addLoadFromParent("org.jdom");
     return re;
   }
 
