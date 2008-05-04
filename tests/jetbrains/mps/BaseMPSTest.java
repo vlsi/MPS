@@ -6,9 +6,6 @@ import org.osgi.framework.Bundle;
 import java.io.File;
 import java.lang.reflect.Method;
 
-import jetbrains.mps.refactoring.framework.tests.IRefactoringTester;
-import jetbrains.mps.reloading.ClassLoaderManager;
-
 public class BaseMPSTest extends TestCase {
   protected void setUp() throws Exception {
     super.setUp();
@@ -21,7 +18,7 @@ public class BaseMPSTest extends TestCase {
   }
 
   protected String testProject(File project) {    
-//    ClassLoaderManager.getInstance().myUseOSGI = false;
+//    ClassLoaderManager.getInstance().ourUseOSGI = false;
 //    return TestMain.testProject(project);
 
     try {

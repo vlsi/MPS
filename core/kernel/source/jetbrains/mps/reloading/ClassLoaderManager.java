@@ -3,26 +3,16 @@ package jetbrains.mps.reloading;
 import jetbrains.mps.component.Dependency;
 import jetbrains.mps.component.IComponentLifecycle;
 import jetbrains.mps.MPSActivator;
-import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.runtime.RuntimeEnvironment;
 import jetbrains.mps.runtime.RBundle;
-import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.ide.SystemInfo;
-import jetbrains.mps.ide.command.CommandAdapter;
-import jetbrains.mps.ide.command.CommandEvent;
-import jetbrains.mps.ide.command.CommandKind;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProjects;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModuleRepositoryListener;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.PathManager;
-import org.jetbrains.annotations.NotNull;
 import org.osgi.framework.*;
 import org.osgi.service.packageadmin.PackageAdmin;
 import sun.misc.Launcher;
@@ -45,7 +35,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
   private MPSModuleRepository myModuleRepository;
   private List<ReloadListener> myReloadHandlers = new ArrayList<ReloadListener>();
 
-  public boolean myUseOSGI = true;
+  public static boolean ourUseOSGI = true;
 
   private RuntimeEnvironment myRuntimeEnvironment = createRuntimeEnvironment();
 
@@ -102,7 +92,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
   private void addModule(String moduleUID) {
     IModule module = MPSModuleRepository.getInstance().getModuleByUID(moduleUID);
 
-    if (myUseOSGI) {
+    if (ourUseOSGI) {
       if (module.getBundleHome() == null) {
         return; //i.e. transient module
       }
@@ -123,7 +113,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
   }
 
   private void removeBundle(String moduleUID) {
-    if (myUseOSGI) {
+    if (ourUseOSGI) {
       try {
         myOSGIBundles.get(moduleUID).uninstall();
       } catch (BundleException e) {
@@ -135,7 +125,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
   }
 
   public Class getClassFor(IModule module, String classFqName) {
-    if (myUseOSGI) {
+    if (ourUseOSGI) {
       Bundle b = myOSGIBundles.get(module.getModuleUID());
       if (b == null) {
         LOG.error("Can't find a bundle for module " + module.getModuleUID());
@@ -192,7 +182,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
       }
     }
 
-    if (!myUseOSGI) {
+    if (!ourUseOSGI) {
       for (String addedUID : added) {
         IModule m = MPSModuleRepository.getInstance().getModuleByUID(addedUID);
         RBundle b = myRuntimeEnvironment.get(addedUID);        
@@ -221,7 +211,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
     }
     myOSGIBundles.keySet().removeAll(removed);
 
-    if (myUseOSGI) {
+    if (ourUseOSGI) {
       refreshBundles(myOSGIBundles.values().toArray(new Bundle[myOSGIBundles.size()]), true);
     } else {
       myRuntimeEnvironment.reloadAll();
@@ -233,7 +223,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
   }
 
   private boolean containsBundle(String uid) {
-    if (myUseOSGI) {
+    if (ourUseOSGI) {
       return myOSGIBundles.containsKey(uid);
     } else {
       return myRuntimeEnvironment.get(uid) != null;
