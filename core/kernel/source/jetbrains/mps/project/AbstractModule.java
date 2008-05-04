@@ -631,6 +631,9 @@ public abstract class AbstractModule implements IModule {
       }
 
       String relativePath = getPathRelativeTo(s, basePath);
+
+      if (relativePath == null) continue;
+
       relativePath = relativePath.replace(File.separatorChar, '/');
 
       result.append("  ").append(relativePath);
@@ -672,6 +675,10 @@ public abstract class AbstractModule implements IModule {
   }
 
   private String getPathRelativeTo(String path, String base) {
+    if (base == null) {
+      return null;
+    }
+
     if (path.startsWith(base)) {
       return path.substring(base.length());
     }
