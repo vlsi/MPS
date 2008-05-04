@@ -19,6 +19,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="27" />
   <import index="14" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="15" modelUID="jetbrains.mps.generator.template@java_stub" version="-1" />
@@ -1886,22 +1887,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201358073616">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209071999927">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1201358073621" />
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209071999928">
-              <link role="baseMethodDeclaration" targetNodeId="1201265588977" resolveInfo="prepStatementList" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227944543">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1201358073620">
-                  <link role="variableDeclaration" targetNodeId="1201358046182" resolveInfo="fstmt" />
-                </node>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1201358073619">
-                  <link role="link" targetNodeId="14.1154032183016" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201358073645">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201358073646">
             <property name="name" value="nextLabel" />
@@ -1946,6 +1931,22 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1201358073683" />
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1209071983290">
                 <link role="fieldDeclaration" targetNodeId="1201265337464" resolveInfo="generator" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201358073616">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209071999927">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1201358073621" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209071999928">
+              <link role="baseMethodDeclaration" targetNodeId="1201265588977" resolveInfo="prepStatementList" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227944543">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1201358073620">
+                  <link role="variableDeclaration" targetNodeId="1201358046182" resolveInfo="fstmt" />
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1201358073619">
+                  <link role="link" targetNodeId="14.1154032183016" />
+                </node>
               </node>
             </node>
           </node>

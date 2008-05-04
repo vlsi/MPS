@@ -167,9 +167,9 @@ public class PrepStatementUtil {
     int condLabel = this.ctx.incrementLabel();
     int blockLabel = this.ctx.incrementLabel();
     PrepStatementUtil.putPrepData(SLinkOperations.getTarget(fstmt, "body", true), new Integer[]{blockLabel,condLabel}, this.generator);
-    this.prepStatementList(SLinkOperations.getTarget(fstmt, "body", true));
     int nextLabel = this.calcNextLabel(fstmt);
     PrepStatementUtil.putPrepData(fstmt, new Integer[]{beginLabel,condLabel,blockLabel,nextLabel}, this.generator);
+    this.prepStatementList(SLinkOperations.getTarget(fstmt, "body", true));
     return nextLabel;
   }
 
