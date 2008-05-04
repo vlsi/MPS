@@ -215,6 +215,10 @@ public class Generator extends AbstractModule {
     return result;
   }
 
+  public Class getClass(String fqName) {
+    return mySourceLanguage.getClass(fqName);
+  }
+
   public Set<Language> getImplicitlyImportedLanguages(SModelDescriptor sm) {
     Set<Language> result = new LinkedHashSet<Language>(super.getImplicitlyImportedLanguages(sm));
     if (SModelStereotype.TEMPLATES.equals(sm.getStereotype())) {

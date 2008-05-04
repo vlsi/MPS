@@ -15,11 +15,13 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.JarFileEntryFile;
+import jetbrains.mps.runtime.BytecodeLocator;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
 import java.awt.image.ImagingOpException;
+import java.net.URL;
 
 public abstract class AbstractModule implements IModule {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
@@ -495,6 +497,18 @@ public abstract class AbstractModule implements IModule {
 
   public IClassPathItem getModuleWithDependenciesClassPathItem() {
     return getDependenciesClasspath(CollectionUtil.asSet((IModule) this), false, false);
+  }
+
+  public BytecodeLocator getBytecodeLocator() {
+    return new BytecodeLocator() {
+      public byte[] find(String fqName) {
+        return getClassPathItem().getClass(fqName);
+      }
+
+      public URL findResource(String name) {
+        return getClassPathItem().getResource(name);
+      }
+    };
   }
 
   protected IClassPathItem createClassPathItem(String s) throws IOException {

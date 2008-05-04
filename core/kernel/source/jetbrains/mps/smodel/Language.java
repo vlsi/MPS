@@ -20,6 +20,7 @@ import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.runtime.BytecodeLocator;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -27,6 +28,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.*;
 import java.lang.reflect.Constructor;
+import java.net.URL;
 
 
 public class Language extends AbstractModule implements Marshallable<Language> {
@@ -161,6 +163,32 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     }
 
     myLanguageRuntimeClasspath = result;
+  }
+
+  public BytecodeLocator getBytecodeLocator() {
+    final BytecodeLocator oldLocator = super.getBytecodeLocator();
+    return new BytecodeLocator() {
+      public byte[] find(String fqName) {
+        if (!fqName.startsWith(getModuleUID())) {
+          return null;
+        }
+
+        if (isBootstrap()) {
+          String namespace = NameUtil.namespaceFromLongName(fqName);
+
+          if (namespace.equals(getModuleUID() + ".structure")) return null;
+          if (namespace.startsWith(getModuleUID() + ".runtime")) return null;
+
+          return null;
+        } else {
+          return oldLocator.find(fqName);
+        }
+      }
+
+      public URL findResource(String name) {
+        return oldLocator.findResource(name);
+      }
+    };
   }
 
   public List<IModule> getExplicitlyDependOnModules(boolean includeBootstrap) {
@@ -362,7 +390,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     MPSModuleRepository.getInstance().invalidateCaches();
   }
 
-  public boolean structureHaveToBeLoadedFromApplicationClassLoader() {
+  public boolean isBootstrap() {
     return BootstrapLanguagesManager.getInstance().getLanguagesUsedInCore().contains(this);
   }
 

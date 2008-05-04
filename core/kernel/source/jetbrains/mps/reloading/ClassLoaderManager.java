@@ -116,15 +116,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
         e.printStackTrace();
       }
     } else {
-      RBundle bundle = new RBundle(moduleUID, new BytecodeLocator() {
-        public byte[] find(String fqName) {
-          return null;
-        }
-
-        public URL findResource(String name) {
-          return null;
-        }
-      });
+      RBundle bundle = new RBundle(moduleUID, module.getBytecodeLocator());
       myRuntimeEnvironment.add(bundle);
       myRuntimeEnvironment.init(bundle);
     }

@@ -5,6 +5,7 @@ import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.runtime.BytecodeLocator;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -58,8 +59,9 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   Class getClass(String fqName);
 
   IClassPathItem getClassPathItem();
-  
   IClassPathItem getModuleWithDependenciesClassPathItem();
+
+  BytecodeLocator getBytecodeLocator();
 
   boolean isCompileInMPS();
   boolean reloadClassesAfterGeneration();

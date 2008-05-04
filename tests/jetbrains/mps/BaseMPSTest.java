@@ -7,6 +7,7 @@ import java.io.File;
 import java.lang.reflect.Method;
 
 import jetbrains.mps.refactoring.framework.tests.IRefactoringTester;
+import jetbrains.mps.reloading.ClassLoaderManager;
 
 public class BaseMPSTest extends TestCase {
   protected void setUp() throws Exception {
