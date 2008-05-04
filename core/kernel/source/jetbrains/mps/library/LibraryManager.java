@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import org.jdom.Element;
 
 import java.util.*;
@@ -142,6 +143,8 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
           }
         }
         convert(myOwner);
+
+        ClassLoaderManager.getInstance().updateClassPath();
       }
     });
   }
