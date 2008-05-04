@@ -20,6 +20,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="jetbrains.mps.mpsLayoutLanguage.structure" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.core.structure" />
@@ -187,7 +188,7 @@
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1203601923911">
       <property name="name" value="path" />
-      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
+      <link role="dataType" targetNodeId="1209888860604" resolveInfo="_Path_String" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203603490707">
@@ -433,6 +434,11 @@
     <property name="package" value="projectComponents" />
     <property name="name" value="Chmod" />
     <link role="extends" targetNodeId="1204123091967" resolveInfo="PostProcessingTask" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConstrainedDataTypeDeclaration" id="1209888860604">
+    <property name="package" value="sources" />
+    <property name="name" value="_Path_String" />
+    <property name="constraint" value="[^\\s]*" />
   </node>
 </model>
 
