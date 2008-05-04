@@ -50,7 +50,6 @@ public class SModelRepository implements IComponentLifecycle {
   }
 
   public void initComponent() {
-    new BackgroundModelLoader(this);
   }
 
   public void refreshModels() {

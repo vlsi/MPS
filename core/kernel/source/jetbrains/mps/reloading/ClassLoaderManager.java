@@ -7,6 +7,7 @@ import jetbrains.mps.runtime.RuntimeEnvironment;
 import jetbrains.mps.runtime.RBundle;
 import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.ide.SystemInfo;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.IModule;
@@ -80,7 +81,12 @@ public class ClassLoaderManager implements IComponentLifecycle {
       myPackageAdmin = (PackageAdmin) myBundleContext.getService(ref);
     }
 
-    updateClassPath();
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        updateClassPath();
+      }
+    });
+
   }
 
   private void invokeOnRefresh(Runnable r) {

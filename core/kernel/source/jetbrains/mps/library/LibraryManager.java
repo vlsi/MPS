@@ -143,8 +143,6 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
           }
         }
         convert(myOwner);
-
-        ClassLoaderManager.getInstance().updateClassPath();
       }
     });
   }
