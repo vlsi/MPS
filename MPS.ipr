@@ -994,6 +994,7 @@
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/refactoring/refactoringLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/refactoring/refactoringLanguage.iml" group="core/languageDesign/refactoring" />
       <module fileurl="file://$PROJECT_DIR$/platform/regexp/regexp.iml" filepath="$PROJECT_DIR$/platform/regexp/regexp.iml" group="platform/regexp" />
       <module fileurl="file://$PROJECT_DIR$/platform/regexp/runtime/regexp_runtime.iml" filepath="$PROJECT_DIR$/platform/regexp/runtime/regexp_runtime.iml" group="platform/regexp" />
+      <module fileurl="file://$PROJECT_DIR$/core/runtime/runtime.iml" filepath="$PROJECT_DIR$/core/runtime/runtime.iml" group="core/kernel" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/scriptLanguage/scriptLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/scriptLanguage/scriptLanguage.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/scriptLanguageInternal/scriptLanguageInternal.iml" filepath="$PROJECT_DIR$/core/languageDesign/scriptLanguageInternal/scriptLanguageInternal.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/scriptLanguage/runtime/scriptLanguage_runtime.iml" filepath="$PROJECT_DIR$/core/languageDesign/scriptLanguage/runtime/scriptLanguage_runtime.iml" group="core/languageDesign" />
