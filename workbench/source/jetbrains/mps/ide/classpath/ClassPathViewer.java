@@ -81,6 +81,7 @@ public class ClassPathViewer extends DefaultTool {
       protected void updatePresentation() {
         setText(myModule.getModuleUID());
         setIcon(IconManager.getIconFor(myModule));
+        setNodeIdentifier(myModule.getModuleUID());
       }
 
       public boolean isLeaf() {
