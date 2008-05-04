@@ -250,7 +250,18 @@ public class ChildSubstituteActionsHelper {
                                                                  SNode currentChild,
                                                                  IChildNodeSetter setter,
                                                                  IOperationContext operationContext) {
+    String conceptFqName = NameUtil.nodeFQName(applicableConcept);
+    SNode link = null;
+    if (setter instanceof DefaultChildNodeSetter) {
+      DefaultChildNodeSetter defaultSetter = (DefaultChildNodeSetter) setter;
+      link = defaultSetter.getLinkDeclaration().getNode();
+    }
+
     IScope scope = operationContext.getScope();
+
+    if (!BehaviorManager.getInstance().isApplicableInContext(conceptFqName, operationContext, parentNode, link)) {
+      return new ArrayList<INodeSubstituteAction>();
+    }
 
     LinkDeclaration smartRef = ReferenceConceptUtil.getCharacteristicReference(applicableConcept);
     if (smartRef != null) {
@@ -261,18 +272,7 @@ public class ChildSubstituteActionsHelper {
         return Collections.emptyList();
       }
     } else {
-      String conceptFqName = NameUtil.nodeFQName(applicableConcept);
-      SNode link = null;
-      if (setter instanceof DefaultChildNodeSetter) {
-        DefaultChildNodeSetter defaultSetter = (DefaultChildNodeSetter) setter;
-        link = defaultSetter.getLinkDeclaration().getNode();
-      }
-
-      if (BehaviorManager.getInstance().isApplicableInContext(conceptFqName, operationContext, parentNode, link)) {
-        return CollectionUtil.asList((INodeSubstituteAction) new DefaultChildNodeSubstituteAction(BaseAdapter.fromAdapter(applicableConcept), parentNode, currentChild, setter, scope));
-      } else {
-        return new ArrayList<INodeSubstituteAction>();
-      }
+      return CollectionUtil.asList((INodeSubstituteAction) new DefaultChildNodeSubstituteAction(BaseAdapter.fromAdapter(applicableConcept), parentNode, currentChild, setter, scope));
     }
   }
 
