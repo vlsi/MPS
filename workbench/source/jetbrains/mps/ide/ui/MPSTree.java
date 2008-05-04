@@ -37,6 +37,8 @@ public abstract class MPSTree extends JTree {
   private boolean myAutoOpen = false;
 
   protected MPSTree() {
+    setRootNode(new TextTreeNode("Empty"));
+
     new MPSTreeSpeedSearch(this);
 
     ToolTipManager.sharedInstance().registerComponent(this);
@@ -486,15 +488,19 @@ public abstract class MPSTree extends JTree {
         }
 
         MPSTreeNode root = rebuild();
-        root.setTree(MPSTree.this);
-        root.addThisAndChildren();
-
-        DefaultTreeModel model = new DefaultTreeModel(root);
-        setModel(model);
+        setRootNode(root);
 
         updateUI();
       }
     }, true);
+  }
+
+  private void setRootNode(MPSTreeNode root) {
+    root.setTree(this);
+    root.addThisAndChildren();
+
+    DefaultTreeModel model = new DefaultTreeModel(root);
+    setModel(model);
   }
 
   public void addNotify() {
