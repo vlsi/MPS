@@ -41,8 +41,11 @@ public class ClassLoaderManager implements IComponentLifecycle {
   private MPSModuleRepository myModuleRepository;
   private List<ReloadListener> myReloadHandlers = new ArrayList<ReloadListener>();
 
-  private Map<String, Bundle> myOSGIBundles = new HashMap<String, Bundle>();
+  private boolean myUseOSGI = true;
 
+
+  //OSGi stuff: to remove
+  private Map<String, Bundle> myOSGIBundles = new HashMap<String, Bundle>();
   private BundleContext myBundleContext = MPSActivator.ourBundleContext;
   private PackageAdmin myPackageAdmin;
 
@@ -56,6 +59,11 @@ public class ClassLoaderManager implements IComponentLifecycle {
   private IClassPathItem myMPSJar = null;
 
   public ClassLoaderManager() {
+  }
+
+  @Dependency
+  public void setModuleRepository(MPSModuleRepository moduleRepository) {
+    myModuleRepository = moduleRepository;
   }
 
   public void initComponent() {
@@ -88,24 +96,36 @@ public class ClassLoaderManager implements IComponentLifecycle {
 
   private void addModule(String moduleUID) {
     IModule module = MPSModuleRepository.getInstance().getModuleByUID(moduleUID);
+
     if (module.getBundleHome() == null) {
       return; //i.e. transient module
     }
 
-    try {
-      Bundle bundle = myBundleContext.installBundle("reference:file:/" + module.getBundleHome());
+    if (myUseOSGI) {
+      try {
+        Bundle bundle = myBundleContext.installBundle("reference:file:/" + module.getBundleHome());
 
-      myOSGIBundles.put(moduleUID, bundle);
+        myOSGIBundles.put(moduleUID, bundle);
 
-      bundle.update();
-    } catch (Exception e) {
-      e.printStackTrace();
+        bundle.update();
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
+    } else {
+      throw new UnsupportedOperationException();
     }
   }
 
-  @Dependency
-  public void setModuleRepository(MPSModuleRepository moduleRepository) {
-    myModuleRepository = moduleRepository;
+  private void removeBundle(String moduleUID) {
+    if (myUseOSGI) {
+      try {
+        myOSGIBundles.get(moduleUID).uninstall();
+      } catch (BundleException e) {
+        LOG.error(e);
+      }
+    } else {
+      throw new UnsupportedOperationException();
+    }
   }
 
   public void reloadAll() {
@@ -122,8 +142,6 @@ public class ClassLoaderManager implements IComponentLifecycle {
   }
 
   public void updateClassPath() {
-    LOG.debug("Updating class path");
-
     for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
       if (!myOSGIBundles.containsKey(m.getModuleUID())) {
         addModule(m.getModuleUID());
@@ -134,7 +152,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
     for (String uid : myOSGIBundles.keySet()) {
       if (MPSModuleRepository.getInstance().getModuleByUID(uid) == null) {
         try {
-          myOSGIBundles.get(uid).uninstall();
+          removeBundle(uid);
           removed.add(uid);
         } catch (Throwable t) {
           LOG.error(t);
@@ -148,8 +166,6 @@ public class ClassLoaderManager implements IComponentLifecycle {
     for (IModule m : myModuleRepository.getAllModules()) {
       m.updateClassPath();
     }
-
-    LOG.debug("Done");
   }
 
   private void refreshBundles(Bundle[] bundles, boolean update) {
