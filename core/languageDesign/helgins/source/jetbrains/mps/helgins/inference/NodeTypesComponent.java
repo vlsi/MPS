@@ -69,6 +69,8 @@ public class NodeTypesComponent implements IEditorMessageOwner, Cloneable {
 
   // for diagnostics
   private Set<SNodePointer> myNotSkippedNodes = new HashSet<SNodePointer>();
+  private IEditorMessageOwner myNotSkippedNodesMessagesOwner = new IEditorMessageOwner() {
+  };
 
   private static final Logger LOG = Logger.getLogger(NodeTypesComponent.class);
   private Set<SNode> myCurrentFrontier;
@@ -245,16 +247,17 @@ public class NodeTypesComponent implements IEditorMessageOwner, Cloneable {
           }
         }
       }
-      final Set<SNodePointer> skippedNodes = new HashSet<SNodePointer>(myNotSkippedNodes);
+      final Set<SNodePointer> notSkippedNodes = new HashSet<SNodePointer>(myNotSkippedNodes);
       if (HelginsPreferencesComponent.getInstance().isUsesDebugHighlighting()) {
         CommandProcessor.instance().invokeLater(new Runnable() {
           public void run() {
             AbstractEditorComponent component = (AbstractEditorComponent) getEditorComponent();
             if (component == null) return;
-            for (SNodePointer skippedNode : skippedNodes) {
-              markNode(component, skippedNode);
+            component.getHighlightManager().clearForOwner(component.getHighlightMessagesOwner()); //todo change an owner
+            for (SNodePointer notSkippedNode : notSkippedNodes) {
+              markNode(component, notSkippedNode);
               if (component instanceof NodeEditorComponent) {
-                markNode(((NodeEditorComponent) component).getInspector(), skippedNode);
+                markNode(((NodeEditorComponent) component).getInspector(), notSkippedNode);
               }
             }
           }
@@ -267,8 +270,8 @@ public class NodeTypesComponent implements IEditorMessageOwner, Cloneable {
     }
   }
 
-  private void markNode(AbstractEditorComponent component, SNodePointer skippedNode) {
-    component.getHighlightManager().mark(skippedNode.getNode(), new Color(255, 127, 0, 50), "", this);
+  private void markNode(AbstractEditorComponent component, SNodePointer notSkippedNode) {
+    component.getHighlightManager().mark(notSkippedNode.getNode(), new Color(255, 127, 0, 50), "", component.getHighlightMessagesOwner()); //todo change an owner
   }
 
   public void solveInequationsAndExpandTypes() {
