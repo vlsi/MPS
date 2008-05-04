@@ -12,7 +12,7 @@ public class MapRemoveOperation extends MapOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapRemoveOperation";
   public static String KEY = "key";
 
-  public  MapRemoveOperation(SNode node) {
+  public MapRemoveOperation(SNode node) {
     super(node);
   }
 

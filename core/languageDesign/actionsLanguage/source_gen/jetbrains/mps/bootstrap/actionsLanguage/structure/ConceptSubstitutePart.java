@@ -12,7 +12,7 @@ public class ConceptSubstitutePart extends MenuBuilderPart {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptSubstitutePart";
   public static String CONCEPT = "concept";
 
-  public  ConceptSubstitutePart(SNode node) {
+  public ConceptSubstitutePart(SNode node) {
     super(node);
   }
 

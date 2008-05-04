@@ -13,7 +13,7 @@ public class RuntimeErrorType extends RuntimeTypeVariable {
   public static String NODE_ID = "nodeId";
   public static String NODE_MODEL = "nodeModel";
 
-  public  RuntimeErrorType(SNode node) {
+  public RuntimeErrorType(SNode node) {
     super(node);
   }
 

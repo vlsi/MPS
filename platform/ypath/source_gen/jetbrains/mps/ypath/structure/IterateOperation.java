@@ -14,7 +14,7 @@ public class IterateOperation extends TreePathOperation {
   public static String USED_FEATURE = "usedFeature";
   public static String PARAM_OBJECT = "paramObject";
 
-  public  IterateOperation(SNode node) {
+  public IterateOperation(SNode node) {
     super(node);
   }
 

@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_HashMapCreator_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_HashMapCreator_InferenceRule() {
+  public typeof_HashMapCreator_InferenceRule() {
   }
 
   public void applyRule(final SNode hashMapCreator) {

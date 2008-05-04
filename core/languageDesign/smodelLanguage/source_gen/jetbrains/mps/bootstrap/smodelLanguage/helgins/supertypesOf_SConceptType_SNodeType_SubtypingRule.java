@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class supertypesOf_SConceptType_SNodeType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
-  public  supertypesOf_SConceptType_SNodeType_SubtypingRule() {
+  public supertypesOf_SConceptType_SNodeType_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode conceptType) {

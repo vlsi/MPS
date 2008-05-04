@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
 public class ReplaceConceptIsWithConceptEquals_Intention extends BaseIntention implements Intention {
@@ -31,7 +31,7 @@ public class ReplaceConceptIsWithConceptEquals_Intention extends BaseIntention i
 
   public void execute(SNode node, EditorContext editorContext) {
     SNode listNode = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_ConceptList", null);
-    SNode conceptRef = SNodeOperations.replaceWithNewChild(SequenceOperations.getFirst(SLinkOperations.getTargets(listNode, "concept", true)), "jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptReference");
+    SNode conceptRef = SNodeOperations.replaceWithNewChild(ListSequence.fromList(SLinkOperations.getTargets(listNode, "concept", true)).first(), "jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptReference");
     SLinkOperations.setTarget(conceptRef, "concept", SLinkOperations.getTarget(node, "concept", false), false);
     SNodeOperations.replaceWithAnother(node, listNode);
     SNodeOperations.deleteNode(node);

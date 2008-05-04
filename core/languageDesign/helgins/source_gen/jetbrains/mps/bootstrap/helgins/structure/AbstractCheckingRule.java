@@ -13,7 +13,7 @@ public class AbstractCheckingRule extends AbstractRule {
   public static String OVERRIDES = "overrides";
   public static String BODY = "body";
 
-  public  AbstractCheckingRule(SNode node) {
+  public AbstractCheckingRule(SNode node) {
     super(node);
   }
 

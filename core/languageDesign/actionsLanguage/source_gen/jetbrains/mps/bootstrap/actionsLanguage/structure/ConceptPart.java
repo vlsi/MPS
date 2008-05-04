@@ -15,7 +15,7 @@ public class ConceptPart extends MenuBuilderPart {
   public static String CONCEPT = "concept";
   public static String PART = "part";
 
-  public  ConceptPart(SNode node) {
+  public ConceptPart(SNode node) {
     super(node);
   }
 

@@ -11,7 +11,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class WhenConcreteStatement_DataFlow extends DataFlowBuilder {
 
-  public  WhenConcreteStatement_DataFlow() {
+  public WhenConcreteStatement_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

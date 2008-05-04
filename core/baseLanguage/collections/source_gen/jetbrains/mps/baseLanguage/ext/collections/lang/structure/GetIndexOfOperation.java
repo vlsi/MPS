@@ -12,7 +12,7 @@ public class GetIndexOfOperation extends SequenceOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetIndexOfOperation";
   public static String ARGUMENT = "argument";
 
-  public  GetIndexOfOperation(SNode node) {
+  public GetIndexOfOperation(SNode node) {
     super(node);
   }
 

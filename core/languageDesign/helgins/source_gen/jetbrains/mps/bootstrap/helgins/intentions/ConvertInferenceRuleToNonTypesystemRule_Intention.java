@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
@@ -30,7 +30,7 @@ public class ConvertInferenceRuleToNonTypesystemRule_Intention extends BaseInten
 
   public boolean isApplicable(SNode node, EditorContext editorContext) {
     List<SNode> descendants = SNodeOperations.getDescendantsWhereConceptInList(node, new String[]{"jetbrains.mps.bootstrap.helgins.structure.AbstractEquationStatement","jetbrains.mps.bootstrap.helgins.structure.GivetypeStatement","jetbrains.mps.bootstrap.helgins.structure.TypeVarDeclaration","jetbrains.mps.bootstrap.helgins.structure.TypeVarReference","jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression","jetbrains.mps.bootstrap.helgins.structure.WhenConcreteStatement"}, false);
-    return SequenceOperations.isEmpty(descendants);
+    return ListSequence.fromList(descendants).isEmpty();
   }
 
   public void execute(SNode node, EditorContext editorContext) {

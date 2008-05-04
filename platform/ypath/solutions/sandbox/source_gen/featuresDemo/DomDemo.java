@@ -6,9 +6,7 @@ import java.io.InputStream;
 import java.io.ByteArrayInputStream;
 import org.w3c.dom.Document;
 import javax.xml.parsers.DocumentBuilderFactory;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import org.w3c.dom.Node;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.ypath.runtime.TreeTraversalFactory;
 import jetbrains.mps.ypath.runtime.CompositeFilter;
 
@@ -19,16 +17,8 @@ public class DomDemo {
     try {
       InputStream is = new ByteArrayInputStream(INPUT.getBytes());
       Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(is);
-      {
-        ICursor<Node> _zCursor = CursorFactory.createCursor(TreeTraversalFactory.Traverse(TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new DOM_NG().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS"), "nodes"), new CompositeFilter<Node>(DOM_NG.ELEMENT_NodeKindTrigger.getInstance(), DOM_NG.ELEMENT_tag_Property.getMatcher("findme"))), TreeTraversalFactory.Axis("SELF_ANCESTORS"), "nodes"));
-        try {
-          while(_zCursor.moveToNext()) {
-            Node foo = _zCursor.getCurrent();
-            System.out.println(((Object)foo).toString());
-          }
-        } finally {
-          _zCursor.release();
-        }
+      for(Node foo : TreeTraversalFactory.Traverse(TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new DOM_NG().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS"), "nodes"), new CompositeFilter<Node>(DOM_NG.ELEMENT_NodeKindTrigger.getInstance(), DOM_NG.ELEMENT_tag_Property.getMatcher("findme"))), TreeTraversalFactory.Axis("SELF_ANCESTORS"), "nodes")) {
+        System.out.println(((Object)foo).toString());
       }
     } catch (Exception e) {
       e.printStackTrace();

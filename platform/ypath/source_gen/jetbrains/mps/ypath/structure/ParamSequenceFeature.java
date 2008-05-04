@@ -24,7 +24,7 @@ public class ParamSequenceFeature extends SequenceFeature implements IFeature, I
   public static String TO_STRING_FUNCTION = "toStringFunction";
   public static String CARDINAL = "cardinal";
 
-  public  ParamSequenceFeature(SNode node) {
+  public ParamSequenceFeature(SNode node) {
     super(node);
   }
 

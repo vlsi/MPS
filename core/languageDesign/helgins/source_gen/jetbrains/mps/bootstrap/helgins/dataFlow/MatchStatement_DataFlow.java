@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SNode;
 
 public class MatchStatement_DataFlow extends DataFlowBuilder {
 
-  public  MatchStatement_DataFlow() {
+  public MatchStatement_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

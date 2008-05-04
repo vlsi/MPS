@@ -11,8 +11,8 @@ import jetbrains.mps.baseLanguage.search.VisibleClassifierMembersScope;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
@@ -27,7 +27,13 @@ public class QueriesUtil {
     }
     ISearchScope searchScope = new VisibleClassifierMembersScope(((Classifier)SNodeOperations.getAdapter(classifier)), node, IClassifiersSearchScope.STATIC_MEMBER);
     List<SNode> members = (List<SNode>)searchScope.getNodes();
-    ListOperations.addAllElements(result, SequenceOperations.where(members, new zPredicate(null, null)));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(members).where(new IWhereFilter <SNode>() {
+
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration");
+      }
+
+    }));
     return result;
   }
 
@@ -55,7 +61,13 @@ public class QueriesUtil {
     }
     ISearchScope searchScope = new VisibleClassifierMembersScope(((Classifier)SNodeOperations.getAdapter(classifier)), node, IClassifiersSearchScope.STATIC_MEMBER);
     List<SNode> members = (List<SNode>)searchScope.getNodes();
-    ListOperations.addAllElements(result, SequenceOperations.where(members, new zPredicate1(null, null)));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(members).where(new IWhereFilter <SNode>() {
+
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration");
+      }
+
+    }));
     return result;
   }
 
@@ -83,7 +95,13 @@ public class QueriesUtil {
     }
     ISearchScope searchScope = new VisibleClassifierMembersScope(((Classifier)SNodeOperations.getAdapter(classifier)), node, IClassifiersSearchScope.STATIC_MEMBER);
     List<SNode> members = (List<SNode>)searchScope.getNodes();
-    ListOperations.addAllElements(result, SequenceOperations.where(members, new zPredicate2(null, null)));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(members).where(new IWhereFilter <SNode>() {
+
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
+      }
+
+    }));
     return result;
   }
 

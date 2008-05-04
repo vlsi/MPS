@@ -12,7 +12,7 @@ public class SubstituteNodeBuilderVariableDeclaration extends VariableDeclaratio
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.SubstituteNodeBuilderVariableDeclaration";
   public static String INITIALIZER_BLOCK = "initializerBlock";
 
-  public  SubstituteNodeBuilderVariableDeclaration(SNode node) {
+  public SubstituteNodeBuilderVariableDeclaration(SNode node) {
     super(node);
   }
 

@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class IntersectOperation extends BinaryOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.IntersectOperation";
 
-  public  IntersectOperation(SNode node) {
+  public IntersectOperation(SNode node) {
     super(node);
   }
 

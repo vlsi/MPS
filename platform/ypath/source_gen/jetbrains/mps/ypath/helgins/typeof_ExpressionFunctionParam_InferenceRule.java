@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ExpressionFunctionParam_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_ExpressionFunctionParam_InferenceRule() {
+  public typeof_ExpressionFunctionParam_InferenceRule() {
   }
 
   public void applyRule(final SNode expressionFunctionParam) {

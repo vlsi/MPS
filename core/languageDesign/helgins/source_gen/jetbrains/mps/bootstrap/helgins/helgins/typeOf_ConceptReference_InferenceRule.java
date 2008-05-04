@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_ConceptReference_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeOf_ConceptReference_InferenceRule() {
+  public typeOf_ConceptReference_InferenceRule() {
   }
 
   public void applyRule(final SNode cr) {

@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class Node_GetPrevSiblingOperation extends SNodeOperation {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetPrevSiblingOperation";
 
-  public  Node_GetPrevSiblingOperation(SNode node) {
+  public Node_GetPrevSiblingOperation(SNode node) {
     super(node);
   }
 

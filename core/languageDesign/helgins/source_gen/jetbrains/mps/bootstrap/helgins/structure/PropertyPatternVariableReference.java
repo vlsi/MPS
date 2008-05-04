@@ -13,7 +13,7 @@ public class PropertyPatternVariableReference extends Expression {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.PropertyPatternVariableReference";
   public static String PATTERN_VAR_DECL = "patternVarDecl";
 
-  public  PropertyPatternVariableReference(SNode node) {
+  public PropertyPatternVariableReference(SNode node) {
     super(node);
   }
 

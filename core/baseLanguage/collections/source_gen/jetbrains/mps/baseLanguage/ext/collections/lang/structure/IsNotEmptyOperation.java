@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class IsNotEmptyOperation extends SequenceOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.IsNotEmptyOperation";
 
-  public  IsNotEmptyOperation(SNode node) {
+  public IsNotEmptyOperation(SNode node) {
     super(node);
   }
 

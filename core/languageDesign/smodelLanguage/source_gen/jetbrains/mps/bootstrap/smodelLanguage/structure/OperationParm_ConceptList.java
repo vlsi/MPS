@@ -13,7 +13,7 @@ public class OperationParm_ConceptList extends AbstractOperationParameter {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_ConceptList";
   public static String CONCEPT = "concept";
 
-  public  OperationParm_ConceptList(SNode node) {
+  public OperationParm_ConceptList(SNode node) {
     super(node);
   }
 

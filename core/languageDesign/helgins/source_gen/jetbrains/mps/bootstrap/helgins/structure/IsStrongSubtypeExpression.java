@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class IsStrongSubtypeExpression extends IsSubtypeExpression {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.IsStrongSubtypeExpression";
 
-  public  IsStrongSubtypeExpression(SNode node) {
+  public IsStrongSubtypeExpression(SNode node) {
     super(node);
   }
 

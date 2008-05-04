@@ -16,7 +16,7 @@ public class NodeAttributeAccessQualifier extends BaseConcept implements IAttrib
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String ANNOTATION_LINK = "annotationLink";
 
-  public  NodeAttributeAccessQualifier(SNode node) {
+  public NodeAttributeAccessQualifier(SNode node) {
     super(node);
   }
 

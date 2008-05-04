@@ -15,7 +15,7 @@ public class TypesystemActions_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.bootstrap.helgins.plugin.TypesystemActions";
 
   public TypesystemActions_ActionGroup(MPSProject project) {
-    super("Type System", TypesystemActions_ActionGroup.ID, project);
+    super("Type System", ID, project);
     this.setInternal(false);
     try {
       this.add(new ShowNodeTypeAction(), this);
@@ -24,7 +24,7 @@ public class TypesystemActions_ActionGroup extends BaseActionGroup {
       this.add(new GoToNodeThisDependsOn_Action(project), this);
       this.add(new ShowSupertypes_Action(project), this);
     } catch (Throwable t) {
-      TypesystemActions_ActionGroup.LOG.error("User group error", t);
+      LOG.error("User group error", t);
     }
   }
 

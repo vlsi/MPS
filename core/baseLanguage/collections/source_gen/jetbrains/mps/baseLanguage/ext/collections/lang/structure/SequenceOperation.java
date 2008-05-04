@@ -15,7 +15,7 @@ public class SequenceOperation extends BaseConcept implements IOperation {
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  SequenceOperation(SNode node) {
+  public SequenceOperation(SNode node) {
     super(node);
   }
 

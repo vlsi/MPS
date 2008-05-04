@@ -17,7 +17,7 @@ public class PropertyAttributeAccessQualifier extends BaseConcept implements IAt
   public static String ANNOTATION_LINK = "annotationLink";
   public static String PROPERTY_QUALIFIER = "propertyQualifier";
 
-  public  PropertyAttributeAccessQualifier(SNode node) {
+  public PropertyAttributeAccessQualifier(SNode node) {
     super(node);
   }
 

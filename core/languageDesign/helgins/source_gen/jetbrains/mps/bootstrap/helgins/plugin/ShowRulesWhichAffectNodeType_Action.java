@@ -13,16 +13,10 @@ import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.helgins.inference.NodeTypesComponent;
 import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-
 import java.util.Set;
-
 import jetbrains.mps.util.Pair;
-
 import java.util.List;
 import java.util.ArrayList;
-
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelUID;
@@ -31,7 +25,6 @@ import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.helgins.uiActions.MyMenu;
 import jetbrains.mps.nodeEditor.EditorCell;
-
 import java.awt.Component;
 
 public class ShowRulesWhichAffectNodeType_Action extends CurrentProjectMPSAction {
@@ -52,7 +45,7 @@ public class ShowRulesWhichAffectNodeType_Action extends CurrentProjectMPSAction
     return "";
   }
 
-  public void doUpdate(@NotNull()ActionContext context) {
+  public void doUpdate(@NotNull() ActionContext context) {
     try {
       super.doUpdate(context);
       if (!(this.fillFieldsIfNecessary(context))) {
@@ -63,7 +56,7 @@ public class ShowRulesWhichAffectNodeType_Action extends CurrentProjectMPSAction
       this.setEnabled(true);
       this.setVisible(true);
     } catch (Throwable t) {
-      ShowRulesWhichAffectNodeType_Action.LOG.error("User's action doUpdate method failed. Action:" + "ShowRulesWhichAffectNodeType", t);
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowRulesWhichAffectNodeType", t);
       this.setEnabled(false);
       this.setVisible(this.isAlwaysVisible);
     }
@@ -109,7 +102,7 @@ public class ShowRulesWhichAffectNodeType_Action extends CurrentProjectMPSAction
     return true;
   }
 
-  public void doExecute(@NotNull()ActionContext context) {
+  public void doExecute(@NotNull() ActionContext context) {
     try {
       if (!(this.fillFieldsIfNecessary(context))) {
         return;
@@ -124,24 +117,14 @@ public class ShowRulesWhichAffectNodeType_Action extends CurrentProjectMPSAction
           return;
         }
         List<SNode> rules = new ArrayList<SNode>();
-        {
-          ICursor<Pair<String, String>> _zCursor1 = CursorFactory.createCursor(rulesIds);
-          try {
-            while (_zCursor1.moveToNext()) {
-              Pair<String, String> ruleId = _zCursor1.getCurrent();
-              {
-                SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(ruleId.o1));
-                if (modelDescriptor == null) {
-                  continue;
-                }
-                SNode rule = modelDescriptor.getSModel().getNodeById(ruleId.o2);
-                if (rule != null) {
-                  rules.add(rule);
-                }
-              }
-            }
-          } finally {
-            _zCursor1.release();
+        for(Pair<String, String> ruleId : rulesIds) {
+          SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(ruleId.o1));
+          if (modelDescriptor == null) {
+            continue;
+          }
+          SNode rule = modelDescriptor.getSModel().getNodeById(ruleId.o2);
+          if (rule != null) {
+            rules.add(rule);
           }
         }
         IEditor currentEditor = this.editorsPane.getCurrentEditor();
@@ -162,13 +145,14 @@ public class ShowRulesWhichAffectNodeType_Action extends CurrentProjectMPSAction
         Component invoker;
         if (currentEditor == null) {
           invoker = context.getFrame();
-        } else {
+        } else
+        {
           invoker = currentEditor.getCurrentEditorComponent();
         }
         m.show(invoker, x, y);
       }
     } catch (Throwable t) {
-      ShowRulesWhichAffectNodeType_Action.LOG.error("User's action execute method failed. Action:" + "ShowRulesWhichAffectNodeType", t);
+      LOG.error("User's action execute method failed. Action:" + "ShowRulesWhichAffectNodeType", t);
     }
   }
 

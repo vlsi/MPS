@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ComparisonRule_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_ComparisonRule_InferenceRule() {
+  public typeof_ComparisonRule_InferenceRule() {
   }
 
   public void applyRule(final SNode comparisonRule) {

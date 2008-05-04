@@ -192,7 +192,7 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
 
   public static class _Inline36 extends AbstractCellProvider {
 
-    public  _Inline36() {
+    public _Inline36() {
       super();
     }
 
@@ -244,7 +244,7 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
 }
   public static class _Inline37 extends AbstractCellProvider {
 
-    public  _Inline37() {
+    public _Inline37() {
       super();
     }
 
@@ -296,7 +296,7 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler2 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler2(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler2(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

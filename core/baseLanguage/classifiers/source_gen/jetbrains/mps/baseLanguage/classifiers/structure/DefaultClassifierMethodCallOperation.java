@@ -19,7 +19,7 @@ public class DefaultClassifierMethodCallOperation extends BaseConcept implements
   public static String MEMBER = "member";
   public static String ACTUAL_ARGUMENT = "actualArgument";
 
-  public  DefaultClassifierMethodCallOperation(SNode node) {
+  public DefaultClassifierMethodCallOperation(SNode node) {
     super(node);
   }
 

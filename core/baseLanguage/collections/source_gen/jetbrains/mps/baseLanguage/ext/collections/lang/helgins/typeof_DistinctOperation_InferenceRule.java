@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_DistinctOperation_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_DistinctOperation_InferenceRule() {
+  public typeof_DistinctOperation_InferenceRule() {
   }
 
   public void applyRule(final SNode op) {

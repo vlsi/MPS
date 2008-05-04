@@ -12,7 +12,7 @@ public class WhenConcreteVariableReference extends Expression {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.WhenConcreteVariableReference";
   public static String WHEN_CONCRETE_VAR = "whenConcreteVar";
 
-  public  WhenConcreteVariableReference(SNode node) {
+  public WhenConcreteVariableReference(SNode node) {
     super(node);
   }
 

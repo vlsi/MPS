@@ -14,7 +14,7 @@ public class ParameterQueryFun extends ConceptFunction implements IDesignFunctio
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  ParameterQueryFun(SNode node) {
+  public ParameterQueryFun(SNode node) {
     super(node);
   }
 

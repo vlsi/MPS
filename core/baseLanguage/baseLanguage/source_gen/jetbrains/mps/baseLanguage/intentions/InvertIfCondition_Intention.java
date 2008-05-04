@@ -9,7 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class InvertIfCondition_Intention extends BaseIntention implements Intention {
 
@@ -74,8 +74,8 @@ public class InvertIfCondition_Intention extends BaseIntention implements Intent
     if (SLinkOperations.getCount(ifTrue, "statement") == 0) {
       newIfFalse = null;
     } else
-    if (SLinkOperations.getCount(ifTrue, "statement") == 1 && SNodeOperations.isInstanceOf(SequenceOperations.getFirst(SLinkOperations.getTargets(ifTrue, "statement", true)), "jetbrains.mps.baseLanguage.structure.IfStatement")) {
-      newIfFalse = SequenceOperations.getFirst(SLinkOperations.getTargets(ifTrue, "statement", true));
+    if (SLinkOperations.getCount(ifTrue, "statement") == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.IfStatement")) {
+      newIfFalse = ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).first();
     } else
     {
       newIfFalse = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BlockStatement", null);

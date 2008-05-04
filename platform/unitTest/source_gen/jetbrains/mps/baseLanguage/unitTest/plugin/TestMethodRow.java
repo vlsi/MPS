@@ -20,7 +20,7 @@ public class TestMethodRow implements TestStatisticsRow {
   private long finishTime = -1;
   private long usageBefore = -1;
   private long usageAfter = -1;
-  private int state = TestMethodRow.UNDEFINED;
+  private int state = UNDEFINED;
 
   public TestMethodRow(SNode testMethod) {
     this.testCaseName = INamedConcept_Behavior.call_getFqName_1184686272576(SNodeOperations.getAncestor(testMethod, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false));
@@ -76,33 +76,33 @@ public class TestMethodRow implements TestStatisticsRow {
   }
 
   public void setSucceed() {
-    this.state = TestMethodRow.SUCCEED;
+    this.state = SUCCEED;
   }
 
   public void setFailed() {
-    this.state = TestMethodRow.FAILED;
+    this.state = FAILED;
   }
 
   public void setErrored() {
-    this.state = TestMethodRow.ERRORED;
+    this.state = ERRORED;
   }
 
   public int getSuccessful() {
-    return (this.state == TestMethodRow.SUCCEED ?
+    return (this.state == SUCCEED ?
       1 :
       0
     );
   }
 
   public int getErrored() {
-    return (this.state == TestMethodRow.ERRORED ?
+    return (this.state == ERRORED ?
       1 :
       0
     );
   }
 
   public int getFailed() {
-    return (this.state == TestMethodRow.FAILED ?
+    return (this.state == FAILED ?
       1 :
       0
     );

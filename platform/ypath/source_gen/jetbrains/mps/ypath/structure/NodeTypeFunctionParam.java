@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class NodeTypeFunctionParam extends ConceptFunctionParameter {
   public static final String concept = "jetbrains.mps.ypath.structure.NodeTypeFunctionParam";
 
-  public  NodeTypeFunctionParam(SNode node) {
+  public NodeTypeFunctionParam(SNode node) {
     super(node);
   }
 

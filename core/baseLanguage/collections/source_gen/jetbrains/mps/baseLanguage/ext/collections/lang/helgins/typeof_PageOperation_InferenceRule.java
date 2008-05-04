@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_PageOperation_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_PageOperation_InferenceRule() {
+  public typeof_PageOperation_InferenceRule() {
   }
 
   public void applyRule(final SNode op) {

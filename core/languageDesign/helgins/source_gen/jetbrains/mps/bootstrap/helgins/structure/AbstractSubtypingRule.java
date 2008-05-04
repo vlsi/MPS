@@ -13,7 +13,7 @@ public class AbstractSubtypingRule extends AbstractRule {
   public static String IS_WEAK = "isWeak";
   public static String BODY = "body";
 
-  public  AbstractSubtypingRule(SNode node) {
+  public AbstractSubtypingRule(SNode node) {
     super(node);
   }
 

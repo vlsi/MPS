@@ -7,9 +7,8 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 
@@ -37,17 +36,15 @@ public class AddRemoveStaticMethodModifier_Intention extends BaseIntention imple
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))) {
       return false;
     }
-    {
-      ICursor<SNode> _zCursor2 = CursorFactory.createCursor(SequenceOperations.where(SNodeOperations.getDescendants(node, null, false), new zPredicate5(AddRemoveStaticMethodModifier_Intention.this, null)));
-      try {
-        while (_zCursor2.moveToNext()) {
-          SNode variableReference = _zCursor2.getCurrent();
-          if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(variableReference, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
-            return false;
-          }
-        }
-      } finally {
-        _zCursor2.release();
+    for(SNode variableReference : ListSequence.fromList(SNodeOperations.getDescendants(node, null, false)).where(new IWhereFilter <SNode>() {
+
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.VariableReference");
+      }
+
+    })) {
+      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(variableReference, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
+        return false;
       }
     }
     return true;
@@ -58,7 +55,8 @@ public class AddRemoveStaticMethodModifier_Intention extends BaseIntention imple
     SNode method;
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
       method = SLinkOperations.addNewChild(classConcept, "method", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-    } else {
+    } else
+    {
       method = SLinkOperations.addNewChild(classConcept, "staticMethod", "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
     }
     SLinkOperations.setTarget(method, "returnType", SLinkOperations.getTarget(node, "returnType", true), true);

@@ -13,7 +13,7 @@ public class InferenceRule extends AbstractCheckingRule {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.InferenceRule";
   public static String DEPENDENCY = "dependency";
 
-  public  InferenceRule(SNode node) {
+  public InferenceRule(SNode node) {
     super(node);
   }
 

@@ -188,7 +188,7 @@ public class Model_RootsIncludingImportedOperation_Editor extends DefaultNodeEdi
 
   public static class _Inline24 extends AbstractCellProvider {
 
-    public  _Inline24() {
+    public _Inline24() {
       super();
     }
 

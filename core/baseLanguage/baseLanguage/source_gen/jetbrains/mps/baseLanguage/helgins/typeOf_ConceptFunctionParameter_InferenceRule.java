@@ -6,9 +6,8 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_ConceptFunctionParameter_InferenceRule implements InferenceRule_Runtime {
@@ -18,8 +17,8 @@ public class typeOf_ConceptFunctionParameter_InferenceRule implements InferenceR
 
   public void applyRule(final SNode conceptFunctionParameter) {
     List<SNode> conceptFunctionParameters = SLinkOperations.getConceptLinkTargets(conceptFunctionParameter, "conceptFunctionParameterType");
-    if (!(SequenceOperations.isEmpty(conceptFunctionParameters))) {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(ListOperations.getElement(conceptFunctionParameters, 0), conceptFunctionParameter, "jetbrains.mps.baseLanguage.helgins", "1177326121286");
+    if (!(ListSequence.fromList(conceptFunctionParameters).isEmpty())) {
+      TypeChecker.getInstance().getRuntimeSupport().givetype(ListSequence.fromList(conceptFunctionParameters).getElement(0), conceptFunctionParameter, "jetbrains.mps.baseLanguage.helgins", "1177326121286");
     }
   }
 

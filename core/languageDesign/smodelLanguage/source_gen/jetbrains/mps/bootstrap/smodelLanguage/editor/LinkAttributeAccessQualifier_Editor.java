@@ -145,7 +145,7 @@ public class LinkAttributeAccessQualifier_Editor extends DefaultNodeEditor {
 
   public static class _Inline33 extends AbstractCellProvider {
 
-    public  _Inline33() {
+    public _Inline33() {
       super();
     }
 

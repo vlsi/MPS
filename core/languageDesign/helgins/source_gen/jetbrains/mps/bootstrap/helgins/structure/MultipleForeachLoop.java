@@ -14,7 +14,7 @@ public class MultipleForeachLoop extends AbstractLoopStatement {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.MultipleForeachLoop";
   public static String LOOP_VARIABLE = "loopVariable";
 
-  public  MultipleForeachLoop(SNode node) {
+  public MultipleForeachLoop(SNode node) {
     super(node);
   }
 

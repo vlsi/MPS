@@ -7,7 +7,12 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.dependencies.InferenceMethod;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ITranslator;
+import jetbrains.mps.internal.collections.runtime.ISequence;
+import jetbrains.mps.internal.collections.runtime.ISequenceIterableAdapter;
+import java.util.Iterator;
+import jetbrains.mps.closures.runtime.YieldingIterator;
 
 public class RulesFunctions_Collections {
 
@@ -75,7 +80,99 @@ public class RulesFunctions_Collections {
   }
 
   public static Iterable<SNode> collectYieldStatements(SNode node) {
-    Iterable<SNode> yieldStatements = SequenceOperations.map(SNodeOperations.getChildren(node), new zMapper(null, null));
+    Iterable<SNode> yieldStatements = ListSequence.fromList(SNodeOperations.getChildren(node)).translate(new ITranslator <SNode, SNode>() {
+
+      public ISequence<SNode> translate(final SNode it) {
+        return new ISequenceIterableAdapter <SNode>() {
+
+          public Iterator<SNode> iterator() {
+            return new YieldingIterator <SNode>() {
+
+              private int __CP__ = 0;
+              private SNode _12_yieldStmt;
+              private Iterator<SNode> _12_yieldStmt_it;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 12:
+                      this._12_yieldStmt_it = RulesFunctions_Collections.collectYieldStatements(it).iterator();
+                    case 13:
+                      if (!(this._12_yieldStmt_it.hasNext())) {
+                        this.__CP__ = 9;
+                        break;
+                      }
+                      this._12_yieldStmt = this._12_yieldStmt_it.next();
+                      this.__CP__ = 14;
+                      break;
+                    case 4:
+                      if (SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.TraversalYieldStatement")) {
+                        this.__CP__ = 5;
+                        break;
+                      }
+                      this.__CP__ = 7;
+                      break;
+                    case 7:
+                      if (SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ConceptFunction") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock")) {
+                        this.__CP__ = 8;
+                        break;
+                      }
+                      this.__CP__ = 11;
+                      break;
+                    case 3:
+                      if (false) {
+                        this.__CP__ = 2;
+                        break;
+                      }
+                      this.__CP__ = 1;
+                      break;
+                    case 6:
+                      this.__CP__ = 3;
+                      this.yield(it);
+                      return true;
+                    case 15:
+                      this.__CP__ = 13;
+                      this.yield(this._12_yieldStmt);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    case 2:
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      this.__CP__ = 6;
+                      break;
+                    case 8:
+                      // don't look inside closures and other code-blocks
+                      // don't look inside commented statements
+                      this.__CP__ = 1;
+                      break;
+                    case 11:
+                      this.__CP__ = 12;
+                      break;
+                    case 14:
+                      this.__CP__ = 15;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    });
     return yieldStatements;
   }
 

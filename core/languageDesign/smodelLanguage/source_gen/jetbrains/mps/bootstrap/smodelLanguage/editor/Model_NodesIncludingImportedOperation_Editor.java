@@ -184,7 +184,7 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
 
   public static class _Inline29 extends AbstractCellProvider {
 
-    public  _Inline29() {
+    public _Inline29() {
       super();
     }
 

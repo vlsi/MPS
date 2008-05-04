@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class Node_TypeOperation extends SNodeOperation {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation";
 
-  public  Node_TypeOperation(SNode node) {
+  public Node_TypeOperation(SNode node) {
     super(node);
   }
 

@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ConstraintFunction_ReferentSetHandler extends ConceptFunction {
   public static final String concept = "jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSetHandler";
 
-  public  ConstraintFunction_ReferentSetHandler(SNode node) {
+  public ConstraintFunction_ReferentSetHandler(SNode node) {
     super(node);
   }
 

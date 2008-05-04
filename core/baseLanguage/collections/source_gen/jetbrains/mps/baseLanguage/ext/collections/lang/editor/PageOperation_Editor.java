@@ -169,7 +169,7 @@ public class PageOperation_Editor extends DefaultNodeEditor {
 
   public static class PageOperation_replaceWith_SequenceOperation_cellMenu extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
 
-    public  PageOperation_replaceWith_SequenceOperation_cellMenu() {
+    public PageOperation_replaceWith_SequenceOperation_cellMenu() {
     }
 
     public String getReplacementConceptName() {

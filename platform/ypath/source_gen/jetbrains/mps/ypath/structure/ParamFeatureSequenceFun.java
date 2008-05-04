@@ -13,7 +13,7 @@ public class ParamFeatureSequenceFun extends FeatureSequenceFun implements IPara
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  ParamFeatureSequenceFun(SNode node) {
+  public ParamFeatureSequenceFun(SNode node) {
     super(node);
   }
 

@@ -136,7 +136,7 @@ public class Model_RootsOperation_Editor extends DefaultNodeEditor {
 
   public static class _Inline19 extends AbstractCellProvider {
 
-    public  _Inline19() {
+    public _Inline19() {
       super();
     }
 

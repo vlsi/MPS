@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_LinkAttributeAccessQualifier_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_LinkAttributeAccessQualifier_InferenceRule() {
+  public typeof_LinkAttributeAccessQualifier_InferenceRule() {
   }
 
   public void applyRule(final SNode nodeToCheck) {

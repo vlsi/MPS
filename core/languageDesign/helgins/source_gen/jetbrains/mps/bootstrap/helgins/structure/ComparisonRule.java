@@ -11,7 +11,7 @@ public class ComparisonRule extends AbstractSubtypingRule {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.ComparisonRule";
   public static String ANOTHER_NODE = "anotherNode";
 
-  public  ComparisonRule(SNode node) {
+  public ComparisonRule(SNode node) {
     super(node);
   }
 

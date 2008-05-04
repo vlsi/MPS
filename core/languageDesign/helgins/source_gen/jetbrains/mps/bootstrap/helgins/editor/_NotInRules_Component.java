@@ -12,7 +12,7 @@ import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class _NotInRules_Component extends AbstractCellProvider {
 
-  public  _NotInRules_Component(SNode node) {
+  public _NotInRules_Component(SNode node) {
     super(node);
   }
 

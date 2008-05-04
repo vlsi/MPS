@@ -20,7 +20,7 @@ public enum FragmentTypeEnum {
   /* package */String myName;
   /* package */String myValue;
 
- FragmentTypeEnum(String name, String value) {
+FragmentTypeEnum(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
@@ -45,37 +45,37 @@ public enum FragmentTypeEnum {
   }
 
   public static FragmentTypeEnum parseValue(String value) {
-    if(value == null) {
+    if (value == null) {
       return FragmentTypeEnum.getDefault();
     }
-    if(value.equals(FragmentTypeEnum.replace_single.getValueAsString())) {
+    if (value.equals(FragmentTypeEnum.replace_single.getValueAsString())) {
       return FragmentTypeEnum.replace_single;
     }
-    if(value.equals(FragmentTypeEnum.replace_selection.getValueAsString())) {
+    if (value.equals(FragmentTypeEnum.replace_selection.getValueAsString())) {
       return FragmentTypeEnum.replace_selection;
     }
-    if(value.equals(FragmentTypeEnum.replace_all.getValueAsString())) {
+    if (value.equals(FragmentTypeEnum.replace_all.getValueAsString())) {
       return FragmentTypeEnum.replace_all;
     }
-    if(value.equals(FragmentTypeEnum.remove_single.getValueAsString())) {
+    if (value.equals(FragmentTypeEnum.remove_single.getValueAsString())) {
       return FragmentTypeEnum.remove_single;
     }
-    if(value.equals(FragmentTypeEnum.remove_selection.getValueAsString())) {
+    if (value.equals(FragmentTypeEnum.remove_selection.getValueAsString())) {
       return FragmentTypeEnum.remove_selection;
     }
-    if(value.equals(FragmentTypeEnum.remove_all.getValueAsString())) {
+    if (value.equals(FragmentTypeEnum.remove_all.getValueAsString())) {
       return FragmentTypeEnum.remove_all;
     }
-    if(value.equals(FragmentTypeEnum.insert_at_start.getValueAsString())) {
+    if (value.equals(FragmentTypeEnum.insert_at_start.getValueAsString())) {
       return FragmentTypeEnum.insert_at_start;
     }
-    if(value.equals(FragmentTypeEnum.insert_at_end.getValueAsString())) {
+    if (value.equals(FragmentTypeEnum.insert_at_end.getValueAsString())) {
       return FragmentTypeEnum.insert_at_end;
     }
-    if(value.equals(FragmentTypeEnum.insert_before.getValueAsString())) {
+    if (value.equals(FragmentTypeEnum.insert_before.getValueAsString())) {
       return FragmentTypeEnum.insert_before;
     }
-    if(value.equals(FragmentTypeEnum.insert_after.getValueAsString())) {
+    if (value.equals(FragmentTypeEnum.insert_after.getValueAsString())) {
       return FragmentTypeEnum.insert_after;
     }
     return FragmentTypeEnum.getDefault();

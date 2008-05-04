@@ -18,7 +18,7 @@ public class IFeature_default_DELETE {
 
     /* package */SNode myNode;
 
-    public  IFeature_default_DELETE_DELETE(SNode node) {
+    public IFeature_default_DELETE_DELETE(SNode node) {
       this.myNode = node;
     }
 

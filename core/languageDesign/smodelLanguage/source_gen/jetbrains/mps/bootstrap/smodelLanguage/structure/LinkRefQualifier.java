@@ -16,7 +16,7 @@ public class LinkRefQualifier extends BaseConcept implements ILinkAccessQualifie
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String LINK = "link";
 
-  public  LinkRefQualifier(SNode node) {
+  public LinkRefQualifier(SNode node) {
     super(node);
   }
 

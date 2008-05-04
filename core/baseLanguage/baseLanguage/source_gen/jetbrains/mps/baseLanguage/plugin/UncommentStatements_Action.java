@@ -9,8 +9,6 @@ import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
 public class UncommentStatements_Action extends CurrentProjectMPSAction {
@@ -84,16 +82,8 @@ public class UncommentStatements_Action extends CurrentProjectMPSAction {
       }
       {
         SNode commentedStatementsBlock = SNodeOperations.getAncestor(this.node, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", false, false);
-        {
-          ICursor<SNode> _zCursor = CursorFactory.createCursor(SLinkOperations.getTargets(commentedStatementsBlock, "statement", true));
-          try {
-            while(_zCursor.moveToNext()) {
-              SNode statement = _zCursor.getCurrent();
-              SNodeOperations.insertPrevSiblingChild(commentedStatementsBlock, statement);
-            }
-          } finally {
-            _zCursor.release();
-          }
+        for(SNode statement : SLinkOperations.getTargets(commentedStatementsBlock, "statement", true)) {
+          SNodeOperations.insertPrevSiblingChild(commentedStatementsBlock, statement);
         }
         SNodeOperations.deleteNode(commentedStatementsBlock);
       }

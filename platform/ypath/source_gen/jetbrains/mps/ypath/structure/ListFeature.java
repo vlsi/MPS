@@ -25,7 +25,7 @@ public class ListFeature extends BaseConcept implements INamedConcept, IFeature 
   public static String INSERT_FUNCTION = "insertFunction";
   public static String DELETE_FUNCTION = "deleteFunction";
 
-  public  ListFeature(SNode node) {
+  public ListFeature(SNode node) {
     super(node);
   }
 

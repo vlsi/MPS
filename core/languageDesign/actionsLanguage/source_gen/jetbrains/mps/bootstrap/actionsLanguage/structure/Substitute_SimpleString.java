@@ -15,7 +15,7 @@ public class Substitute_SimpleString extends BaseConcept implements ISubstitute_
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  Substitute_SimpleString(SNode node) {
+  public Substitute_SimpleString(SNode node) {
     super(node);
   }
 

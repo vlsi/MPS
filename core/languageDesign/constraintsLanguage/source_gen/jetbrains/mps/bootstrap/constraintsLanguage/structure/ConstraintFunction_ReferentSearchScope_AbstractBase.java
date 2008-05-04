@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ConstraintFunction_ReferentSearchScope_AbstractBase extends ConceptFunction {
   public static final String concept = "jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_AbstractBase";
 
-  public  ConstraintFunction_ReferentSearchScope_AbstractBase(SNode node) {
+  public ConstraintFunction_ReferentSearchScope_AbstractBase(SNode node) {
     super(node);
   }
 

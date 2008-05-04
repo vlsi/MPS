@@ -9,7 +9,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class ImmediateSupertypesExpression_DataFlow extends DataFlowBuilder {
 
-  public  ImmediateSupertypesExpression_DataFlow() {
+  public ImmediateSupertypesExpression_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

@@ -4,16 +4,16 @@ package jetbrains.mps.ypath.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
+import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ypath.constraints.IFeature_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
@@ -23,8 +23,6 @@ import jetbrains.mps.nodeEditor.ModelAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -33,7 +31,7 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.ICellContext;
@@ -41,30 +39,6 @@ import jetbrains.mps.nodeEditor.cellMenu.ICellContext;
 public class ListFeature_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellProvider myIFeature_Properties;
-
-  public static boolean _QueryFunction_NodeCondition_1184606832593(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "writable");
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1197906827847(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "default");
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1197921774694(SNode node, EditorContext editorContext, IScope scope) {
-    return IFeature_Behavior.call_hasPartialOpposites_1197917937653(node);
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1197921774702(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "opposite", false) != null) && SLinkOperations.getTarget(SLinkOperations.getTarget(node, "opposite", false), "opposite", false) != node;
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1197921774721(SNode node, EditorContext editorContext, IScope scope) {
-    return IFeature_Behavior.call_hasMutualOpposite_1197917693305(node);
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1197921774732(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "opposite", false) != null);
-  }
 
   private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1183979890826");
@@ -481,6 +455,30 @@ public class ListFeature_Editor extends DefaultNodeEditor {
   private static void setupLabel_OppositeReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
+  public static boolean _QueryFunction_NodeCondition_1184606832593(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "writable");
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1197906827847(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "default");
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1197921774694(SNode node, EditorContext editorContext, IScope scope) {
+    return IFeature_Behavior.call_hasPartialOpposites_1197917937653(node);
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1197921774702(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "opposite", false) != null) && SLinkOperations.getTarget(SLinkOperations.getTarget(node, "opposite", false), "opposite", false) != node;
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1197921774721(SNode node, EditorContext editorContext, IScope scope) {
+    return IFeature_Behavior.call_hasMutualOpposite_1197917693305(node);
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1197921774732(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "opposite", false) != null);
+  }
+
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createColumnCell(context, node);
@@ -490,7 +488,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
     boolean alternationCondition = true;
     alternationCondition = ListFeature_Editor._QueryFunction_NodeCondition_1184606832593(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
-    if(alternationCondition) {
+    if (alternationCondition) {
       editorCell = this.createColumnCell2(context, node);
     } else
     {
@@ -504,7 +502,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
     boolean alternationCondition = true;
     alternationCondition = ListFeature_Editor._QueryFunction_NodeCondition_1197906827847(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
-    if(alternationCondition) {
+    if (alternationCondition) {
       editorCell = this.createConstantCell(context, node, "default");
     } else
     {
@@ -519,7 +517,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
     boolean alternationCondition = true;
     alternationCondition = ListFeature_Editor._QueryFunction_NodeCondition_1197921774694(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
-    if(alternationCondition) {
+    if (alternationCondition) {
       editorCell = this.createRowCell2(context, node);
     } else
     {
@@ -814,20 +812,20 @@ public class ListFeature_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if(ListFeature_Editor._QueryFunction_NodeCondition_1197921774702(node, context, context.getOperationContext().getScope())) {
+    if (ListFeature_Editor._QueryFunction_NodeCondition_1197921774702(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstantCell3(context, node, "<--"));
     }
-    if(ListFeature_Editor._QueryFunction_NodeCondition_1197921774721(node, context, context.getOperationContext().getScope())) {
+    if (ListFeature_Editor._QueryFunction_NodeCondition_1197921774721(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstantCell4(context, node, "<-->"));
     }
-    if(ListFeature_Editor._QueryFunction_NodeCondition_1197921774732(node, context, context.getOperationContext().getScope())) {
+    if (ListFeature_Editor._QueryFunction_NodeCondition_1197921774732(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createOppositeReferenceCell(context, node));
     }
     return editorCell;
   }
 
   public EditorCell createIFeature_PropertiesCell(EditorContext context, SNode node) {
-    if(this.myIFeature_Properties == null) {
+    if (this.myIFeature_Properties == null) {
       this.myIFeature_Properties = new IFeature_Properties(node);
     }
     EditorCell editorCell = this.myIFeature_Properties.createEditorCell(context);
@@ -1046,17 +1044,9 @@ public class ListFeature_Editor extends DefaultNodeEditor {
       public String getText() {
         StringBuilder sb = new StringBuilder("[ ");
         String sep = "";
-        {
-          ICursor<SNode> _zCursor7 = CursorFactory.createCursor(IFeature_Behavior.call_getPartialOpposites_1197921554165(node));
-          try {
-            while(_zCursor7.moveToNext()) {
-              SNode foo = _zCursor7.getCurrent();
-              sb.append(sep).append(SPropertyOperations.getString(foo, "name"));
-              sep = ", ";
-            }
-          } finally {
-            _zCursor7.release();
-          }
+        for(SNode foo : IFeature_Behavior.call_getPartialOpposites_1197921554165(node)) {
+          sb.append(sep).append(SPropertyOperations.getString(foo, "name"));
+          sep = ", ";
         }
         return sb.append(" ]").toString();
       }
@@ -1076,7 +1066,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     ListFeature_Editor.setupBasic_NameCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       ListFeature_Editor.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -1092,7 +1082,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -1105,7 +1095,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     ListFeature_Editor.setupBasic_GetFunctionCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       ListFeature_Editor.setupLabel_GetFunctionCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -1121,7 +1111,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createGetFunctionCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -1134,7 +1124,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     ListFeature_Editor.setupBasic_SizeFunctionCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       ListFeature_Editor.setupLabel_SizeFunctionCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -1150,7 +1140,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createSizeFunctionCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -1163,7 +1153,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     ListFeature_Editor.setupBasic_SetFunctionCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       ListFeature_Editor.setupLabel_SetFunctionCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -1179,7 +1169,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createSetFunctionCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -1192,7 +1182,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     ListFeature_Editor.setupBasic_InsertFunctionCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       ListFeature_Editor.setupLabel_InsertFunctionCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -1208,7 +1198,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createInsertFunctionCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -1221,7 +1211,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     ListFeature_Editor.setupBasic_DeleteFunctionCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       ListFeature_Editor.setupLabel_DeleteFunctionCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -1237,7 +1227,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createDeleteFunctionCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -1250,7 +1240,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     ListFeature_Editor.setupBasic_GetFunctionCell1(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       ListFeature_Editor.setupLabel_GetFunctionCell1((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -1266,7 +1256,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createGetFunctionCell1internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -1279,7 +1269,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     ListFeature_Editor.setupBasic_SizeFunctionCell1(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       ListFeature_Editor.setupLabel_SizeFunctionCell1((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -1295,7 +1285,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createSizeFunctionCell1internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -1308,7 +1298,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new ListFeature_Editor._Inline11());
     EditorCell editorCell = provider.createEditorCell(context);
     ListFeature_Editor.setupBasic_OppositeReferenceCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       ListFeature_Editor.setupLabel_OppositeReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -1324,7 +1314,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createOppositeReferenceCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -1332,13 +1322,66 @@ public class ListFeature_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
+  public static class _Inline11 extends AbstractCellProvider {
+
+    public _Inline11() {
+      super();
+    }
+
+    private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
+      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1197921774731");
+      BaseLanguageStyle_StyleSheet.FIELD.apply(editorCell);
+    }
+
+    private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    }
+
+
+    public EditorCell createEditorCell(EditorContext context) {
+      return this.createEditorCell(context, this.getSNode());
+    }
+
+    public EditorCell createEditorCell(EditorContext context, SNode node) {
+      return this.createNameCell(context, node);
+    }
+
+    public EditorCell createNameCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+      CellProviderWithRole provider = aProvider;
+      provider.setAuxiliaryCellProvider(null);
+      EditorCell editorCell = provider.createEditorCell(context);
+      ListFeature_Editor._Inline11.setupBasic_NameCell(editorCell, node, context);
+      if (editorCell instanceof EditorCell_Label) {
+        ListFeature_Editor._Inline11.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+      }
+      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+      return editorCell;
+    }
+
+    public EditorCell createNameCell(EditorContext context, SNode node) {
+      CellProviderWithRole provider = new PropertyCellProvider(node, context);
+      provider.setRole("name");
+      provider.setNoTargetText("");
+      provider.setReadOnly(true);
+      provider.setAllowsEmptyTarget(false);
+      EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
+      SNode attributeConcept = provider.getRoleAttribute();
+      Class attributeKind = provider.getRoleAttributeClass();
+      if (attributeConcept != null) {
+        IOperationContext opContext = context.getOperationContext();
+        EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+        return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      } else
+      return cellWithRole;
+    }
+
+}
   public static class ListFeature_generic_cellMenu extends AbstractCellMenuPart_Generic_Group {
 
-    public  ListFeature_generic_cellMenu() {
+    public ListFeature_generic_cellMenu() {
     }
 
     public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      return ListOperations.<Boolean>createList(true, false);
+      return ListSequence.<Boolean>fromArray(true, false);
     }
 
     public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
@@ -1380,7 +1423,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
 
     /* package */menu_FeatureSetOpposite myComponent;
 
-    public  ListFeature_component_cellMenu() {
+    public ListFeature_component_cellMenu() {
       this.myComponent = new menu_FeatureSetOpposite();
     }
 
@@ -1393,7 +1436,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
 
     /* package */menu_FeatureSetOpposite myComponent;
 
-    public  ListFeature_component_cellMenu1() {
+    public ListFeature_component_cellMenu1() {
       this.myComponent = new menu_FeatureSetOpposite();
     }
 
@@ -1406,65 +1449,12 @@ public class ListFeature_Editor extends DefaultNodeEditor {
 
     /* package */menu_FeatureSetOpposite myComponent;
 
-    public  ListFeature_component_cellMenu2() {
+    public ListFeature_component_cellMenu2() {
       this.myComponent = new menu_FeatureSetOpposite();
     }
 
     public List<INodeSubstituteAction> createActions(ICellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
-    }
-
-}
-  public static class _Inline11 extends AbstractCellProvider {
-
-    public  _Inline11() {
-      super();
-    }
-
-    private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1197921774731");
-      BaseLanguageStyle_StyleSheet.FIELD.apply(editorCell);
-    }
-
-    private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    }
-
-
-    public EditorCell createEditorCell(EditorContext context) {
-      return this.createEditorCell(context, this.getSNode());
-    }
-
-    public EditorCell createEditorCell(EditorContext context, SNode node) {
-      return this.createNameCell(context, node);
-    }
-
-    public EditorCell createNameCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-      CellProviderWithRole provider = aProvider;
-      provider.setAuxiliaryCellProvider(null);
-      EditorCell editorCell = provider.createEditorCell(context);
-      ListFeature_Editor._Inline11.setupBasic_NameCell(editorCell, node, context);
-      if(editorCell instanceof EditorCell_Label) {
-        ListFeature_Editor._Inline11.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
-      }
-      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-      return editorCell;
-    }
-
-    public EditorCell createNameCell(EditorContext context, SNode node) {
-      CellProviderWithRole provider = new PropertyCellProvider(node, context);
-      provider.setRole("name");
-      provider.setNoTargetText("");
-      provider.setReadOnly(true);
-      provider.setAllowsEmptyTarget(false);
-      EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
-      SNode attributeConcept = provider.getRoleAttribute();
-      Class attributeKind = provider.getRoleAttributeClass();
-      if(attributeConcept != null) {
-        IOperationContext opContext = context.getOperationContext();
-        EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-        return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-      } else
-      return cellWithRole;
     }
 
 }

@@ -117,7 +117,7 @@ public class TreeNodeKindReference_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     TreeNodeKindReference_Editor.setupBasic_CellModel_ConceptProperty(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       TreeNodeKindReference_Editor.setupLabel_CellModel_ConceptProperty((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -133,7 +133,7 @@ public class TreeNodeKindReference_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createCellModel_ConceptPropertyinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -146,7 +146,7 @@ public class TreeNodeKindReference_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new TreeNodeKindReference_Editor._Inline3());
     EditorCell editorCell = provider.createEditorCell(context);
     TreeNodeKindReference_Editor.setupBasic_TreePathAspectReferenceCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       TreeNodeKindReference_Editor.setupLabel_TreePathAspectReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -162,7 +162,7 @@ public class TreeNodeKindReference_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createTreePathAspectReferenceCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -175,7 +175,7 @@ public class TreeNodeKindReference_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new TreeNodeKindReference_Editor._Inline4());
     EditorCell editorCell = provider.createEditorCell(context);
     TreeNodeKindReference_Editor.setupBasic_TreeNodeKindReferenceCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       TreeNodeKindReference_Editor.setupLabel_TreeNodeKindReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -191,7 +191,7 @@ public class TreeNodeKindReference_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createTreeNodeKindReferenceCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -201,7 +201,7 @@ public class TreeNodeKindReference_Editor extends DefaultNodeEditor {
 
   public static class _Inline3 extends AbstractCellProvider {
 
-    public  _Inline3() {
+    public _Inline3() {
       super();
     }
 
@@ -226,7 +226,7 @@ public class TreeNodeKindReference_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       TreeNodeKindReference_Editor._Inline3.setupBasic_NameCell(editorCell, node, context);
-      if(editorCell instanceof EditorCell_Label) {
+      if (editorCell instanceof EditorCell_Label) {
         TreeNodeKindReference_Editor._Inline3.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -242,7 +242,7 @@ public class TreeNodeKindReference_Editor extends DefaultNodeEditor {
       EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
-      if(attributeConcept != null) {
+      if (attributeConcept != null) {
         IOperationContext opContext = context.getOperationContext();
         EditorManager manager = EditorManager.getInstanceFromContext(opContext);
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -253,7 +253,7 @@ public class TreeNodeKindReference_Editor extends DefaultNodeEditor {
 }
   public static class _Inline4 extends AbstractCellProvider {
 
-    public  _Inline4() {
+    public _Inline4() {
       super();
     }
 
@@ -278,7 +278,7 @@ public class TreeNodeKindReference_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       TreeNodeKindReference_Editor._Inline4.setupBasic_NameCell(editorCell, node, context);
-      if(editorCell instanceof EditorCell_Label) {
+      if (editorCell instanceof EditorCell_Label) {
         TreeNodeKindReference_Editor._Inline4.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -294,7 +294,7 @@ public class TreeNodeKindReference_Editor extends DefaultNodeEditor {
       EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
-      if(attributeConcept != null) {
+      if (attributeConcept != null) {
         IOperationContext opContext = context.getOperationContext();
         EditorManager manager = EditorManager.getInstanceFromContext(opContext);
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);

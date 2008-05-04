@@ -10,9 +10,8 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class ConvertForEachStatementToForeachStatement_Intention extends BaseIntention implements Intention {
 
@@ -33,26 +32,23 @@ public class ConvertForEachStatementToForeachStatement_Intention extends BaseInt
   }
 
   public void execute(SNode node, EditorContext editorContext) {
-    final zClosureContext _zClosureContext = new zClosureContext();
-    _zClosureContext.oldVariable = SLinkOperations.getTarget(node, "variable", true);
-    SNode variableType = SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(_zClosureContext.oldVariable));
+    final SNode oldVariable = SLinkOperations.getTarget(node, "variable", true);
+    SNode variableType = SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(oldVariable));
     SNode foreachStatement = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.ForeachStatement");
     SLinkOperations.setTarget(foreachStatement, "body", SLinkOperations.getTarget(node, "body", true), true);
     SLinkOperations.setTarget(foreachStatement, "iterable", SLinkOperations.getTarget(node, "inputSequence", true), true);
     SPropertyOperations.set(foreachStatement, "label", SPropertyOperations.getString(node, "label"));
     SNode newVariable = SLinkOperations.setNewChild(foreachStatement, "variable", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
-    SPropertyOperations.set(newVariable, "name", SPropertyOperations.getString(_zClosureContext.oldVariable, "name"));
+    SPropertyOperations.set(newVariable, "name", SPropertyOperations.getString(oldVariable, "name"));
     SLinkOperations.setTarget(newVariable, "type", variableType, true);
-    {
-      ICursor<SNode> _zCursor = CursorFactory.createCursor(SequenceOperations.where(SNodeOperations.getDescendants(SLinkOperations.getTarget(foreachStatement, "body", true), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference", false), new zPredicate(ConvertForEachStatementToForeachStatement_Intention.this, _zClosureContext)));
-      try {
-        while(_zCursor.moveToNext()) {
-          SNode oldRef = _zCursor.getCurrent();
-          SLinkOperations.setTarget(SNodeOperations.replaceWithNewChild(oldRef, "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), "variableDeclaration", newVariable, false);
-        }
-      } finally {
-        _zCursor.release();
+    for(SNode oldRef : ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(foreachStatement, "body", true), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference", false)).where(new IWhereFilter <SNode>() {
+
+      public boolean accept(SNode it) {
+        return SLinkOperations.getTarget(it, "variable", false) == oldVariable;
       }
+
+    })) {
+      SLinkOperations.setTarget(SNodeOperations.replaceWithNewChild(oldRef, "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), "variableDeclaration", newVariable, false);
     }
   }
 

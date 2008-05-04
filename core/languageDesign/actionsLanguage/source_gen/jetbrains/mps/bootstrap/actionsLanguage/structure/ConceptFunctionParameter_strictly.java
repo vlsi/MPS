@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ConceptFunctionParameter_strictly extends ConceptFunctionParameter {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_strictly";
 
-  public  ConceptFunctionParameter_strictly(SNode node) {
+  public ConceptFunctionParameter_strictly(SNode node) {
     super(node);
   }
 

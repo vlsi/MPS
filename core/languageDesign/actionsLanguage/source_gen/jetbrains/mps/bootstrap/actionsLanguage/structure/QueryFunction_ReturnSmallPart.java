@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class QueryFunction_ReturnSmallPart extends ConceptFunction {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_ReturnSmallPart";
 
-  public  QueryFunction_ReturnSmallPart(SNode node) {
+  public QueryFunction_ReturnSmallPart(SNode node) {
     super(node);
   }
 

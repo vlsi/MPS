@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class OperationParm_Root extends AbstractOperationParameter {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Root";
 
-  public  OperationParm_Root(SNode node) {
+  public OperationParm_Root(SNode node) {
     super(node);
   }
 

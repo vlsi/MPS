@@ -201,7 +201,7 @@ public class NodeKindSpecificCase_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new NodeKindSpecificCase_Editor._Inline5());
     EditorCell editorCell = provider.createEditorCell(context);
     NodeKindSpecificCase_Editor.setupBasic_TreeNodeKindReferenceCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       NodeKindSpecificCase_Editor.setupLabel_TreeNodeKindReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -217,7 +217,7 @@ public class NodeKindSpecificCase_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createTreeNodeKindReferenceCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -230,7 +230,7 @@ public class NodeKindSpecificCase_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     NodeKindSpecificCase_Editor.setupBasic_StatementListCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       NodeKindSpecificCase_Editor.setupLabel_StatementListCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -246,7 +246,7 @@ public class NodeKindSpecificCase_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createStatementListCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -256,7 +256,7 @@ public class NodeKindSpecificCase_Editor extends DefaultNodeEditor {
 
   public static class _Inline5 extends AbstractCellProvider {
 
-    public  _Inline5() {
+    public _Inline5() {
       super();
     }
 
@@ -281,7 +281,7 @@ public class NodeKindSpecificCase_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       NodeKindSpecificCase_Editor._Inline5.setupBasic_NameCell(editorCell, node, context);
-      if(editorCell instanceof EditorCell_Label) {
+      if (editorCell instanceof EditorCell_Label) {
         NodeKindSpecificCase_Editor._Inline5.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -297,7 +297,7 @@ public class NodeKindSpecificCase_Editor extends DefaultNodeEditor {
       EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
-      if(attributeConcept != null) {
+      if (attributeConcept != null) {
         IOperationContext opContext = context.getOperationContext();
         EditorManager manager = EditorManager.getInstanceFromContext(opContext);
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);

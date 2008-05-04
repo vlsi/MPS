@@ -10,7 +10,7 @@ import jetbrains.mps.helgins.inference.TypeChecker;
 
 public class typeof_IsEmptyOperation_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_IsEmptyOperation_InferenceRule() {
+  public typeof_IsEmptyOperation_InferenceRule() {
   }
 
   public void applyRule(final SNode op) {

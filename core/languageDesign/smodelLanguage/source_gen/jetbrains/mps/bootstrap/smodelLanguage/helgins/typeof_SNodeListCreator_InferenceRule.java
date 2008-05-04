@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_SNodeListCreator_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_SNodeListCreator_InferenceRule() {
+  public typeof_SNodeListCreator_InferenceRule() {
   }
 
   public void applyRule(final SNode creator) {

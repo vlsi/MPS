@@ -13,7 +13,7 @@ public class ParamFeatureGetFun extends FeatureGetFun implements IParamFeatureFu
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  ParamFeatureGetFun(SNode node) {
+  public ParamFeatureGetFun(SNode node) {
     super(node);
   }
 

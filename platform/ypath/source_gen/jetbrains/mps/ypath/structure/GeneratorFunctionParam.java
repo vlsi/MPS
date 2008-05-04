@@ -14,7 +14,7 @@ public class GeneratorFunctionParam extends ConceptFunctionParameter implements 
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  GeneratorFunctionParam(SNode node) {
+  public GeneratorFunctionParam(SNode node) {
     super(node);
   }
 

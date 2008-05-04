@@ -8,8 +8,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 
 public class StaticMethodCall_Actions {
 
@@ -35,16 +33,8 @@ public class StaticMethodCall_Actions {
       if (classConcept1 == classConcept2) {
         SNode localStaticMethodCall = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall");
         SLinkOperations.setTarget(localStaticMethodCall, "baseMethodDeclaration", SLinkOperations.getTarget(node, "baseMethodDeclaration", false), false);
-        {
-          ICursor<SNode> _zCursor12 = CursorFactory.createCursor(SLinkOperations.getTargets(node, "actualArgument", true));
-          try {
-            while(_zCursor12.moveToNext()) {
-              SNode actualArgument = _zCursor12.getCurrent();
-              SLinkOperations.addChild(localStaticMethodCall, "actualArgument", actualArgument);
-            }
-          } finally {
-            _zCursor12.release();
-          }
+        for(SNode actualArgument : SLinkOperations.getTargets(node, "actualArgument", true)) {
+          SLinkOperations.addChild(localStaticMethodCall, "actualArgument", actualArgument);
         }
       }
     }

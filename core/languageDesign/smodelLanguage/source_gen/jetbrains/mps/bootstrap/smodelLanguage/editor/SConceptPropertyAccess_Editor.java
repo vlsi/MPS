@@ -62,7 +62,7 @@ public class SConceptPropertyAccess_Editor extends DefaultNodeEditor {
 
   public static class _Inline14 extends AbstractCellProvider {
 
-    public  _Inline14() {
+    public _Inline14() {
       super();
     }
 

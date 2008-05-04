@@ -14,7 +14,7 @@ public class StaticConceptMethodCall extends BaseMethodCall {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.StaticConceptMethodCall";
   public static String CONCEPT = "concept";
 
-  public  StaticConceptMethodCall(SNode node) {
+  public StaticConceptMethodCall(SNode node) {
     super(node);
   }
 

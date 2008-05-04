@@ -14,7 +14,7 @@ public class SNodeCreator extends AbstractCreator {
   public static String CREATED_TYPE = "createdType";
   public static String PROTOTYPE_NODE = "prototypeNode";
 
-  public  SNodeCreator(SNode node) {
+  public SNodeCreator(SNode node) {
     super(node);
   }
 

@@ -17,7 +17,7 @@ public class ListCreatorWithInit extends AbstractCreator {
   public static String ELEMENT_TYPE = "elementType";
   public static String INIT_VALUE = "initValue";
 
-  public  ListCreatorWithInit(SNode node) {
+  public ListCreatorWithInit(SNode node) {
     super(node);
   }
 

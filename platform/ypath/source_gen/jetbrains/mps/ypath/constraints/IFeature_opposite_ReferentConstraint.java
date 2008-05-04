@@ -8,14 +8,16 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class IFeature_opposite_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  IFeature_opposite_ReferentConstraint() {
+  public IFeature_opposite_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
@@ -31,10 +33,18 @@ public class IFeature_opposite_ReferentConstraint implements IModelConstraints, 
   }
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    final zClosureContext5 _zClosureContext5 = new zClosureContext5();
-    _zClosureContext5.feature = _context.getReferenceNode();
-    _zClosureContext5.isGeneric = SNodeOperations.isInstanceOf(_zClosureContext5.feature, "jetbrains.mps.ypath.structure.IGenericFeature");
-    return new SimpleSearchScope(SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(SNodeOperations.getParent(_zClosureContext5.feature, null, false, false), "features", true), new zPredicate19(null, _zClosureContext5))));
+    final SNode feature = _context.getReferenceNode();
+    final boolean isGeneric = SNodeOperations.isInstanceOf(feature, "jetbrains.mps.ypath.structure.IGenericFeature");
+    return new SimpleSearchScope(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getParent(feature, null, false, false), "features", true)).where(new IWhereFilter <SNode>() {
+
+      public boolean accept(SNode it) {
+        return it != feature && ((isGeneric ?
+          SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeature") :
+          !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeature"))
+        ));
+      }
+
+    }).toListSequence());
   }
 
   public String getNodeReferentSearchScopeDescription() {

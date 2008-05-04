@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_LinkList_AddNewChildOperation_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeOf_LinkList_AddNewChildOperation_InferenceRule() {
+  public typeOf_LinkList_AddNewChildOperation_InferenceRule() {
   }
 
   public void applyRule(final SNode op) {

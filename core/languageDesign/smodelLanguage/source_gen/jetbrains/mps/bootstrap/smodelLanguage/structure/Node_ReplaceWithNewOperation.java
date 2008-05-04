@@ -12,7 +12,7 @@ public class Node_ReplaceWithNewOperation extends SNodeOperation {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithNewOperation";
   public static String CONCEPT = "concept";
 
-  public  Node_ReplaceWithNewOperation(SNode node) {
+  public Node_ReplaceWithNewOperation(SNode node) {
     super(node);
   }
 

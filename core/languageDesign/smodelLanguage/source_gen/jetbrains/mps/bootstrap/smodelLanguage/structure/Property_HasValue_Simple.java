@@ -12,7 +12,7 @@ public class Property_HasValue_Simple extends SNodeOperation {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Simple";
   public static String VALUE = "value";
 
-  public  Property_HasValue_Simple(SNode node) {
+  public Property_HasValue_Simple(SNode node) {
     super(node);
   }
 

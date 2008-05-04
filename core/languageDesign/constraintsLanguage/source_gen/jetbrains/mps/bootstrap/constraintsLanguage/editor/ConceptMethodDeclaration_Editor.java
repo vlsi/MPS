@@ -949,7 +949,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
 
   public static class _Inline6 extends AbstractCellProvider {
 
-    public  _Inline6() {
+    public _Inline6() {
       super();
     }
 
@@ -1001,7 +1001,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class _Inline7 extends AbstractCellProvider {
 
-    public  _Inline7() {
+    public _Inline7() {
       super();
     }
 
@@ -1053,7 +1053,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler4 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler4(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler4(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -1125,7 +1125,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
 
     /* package */ConceptMethodDeclaration_Visibility myComponent;
 
-    public  ConceptMethodDeclaration_component_cellMenu() {
+    public ConceptMethodDeclaration_component_cellMenu() {
       this.myComponent = new ConceptMethodDeclaration_Visibility();
     }
 
@@ -1138,7 +1138,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
 
     /* package */ConceptMethodDeclaration_Visibility myComponent;
 
-    public  ConceptMethodDeclaration_component_cellMenu1() {
+    public ConceptMethodDeclaration_component_cellMenu1() {
       this.myComponent = new ConceptMethodDeclaration_Visibility();
     }
 
@@ -1151,7 +1151,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
 
     /* package */ConceptMethodDeclaration_Menu myComponent;
 
-    public  ConceptMethodDeclaration_component_cellMenu2() {
+    public ConceptMethodDeclaration_component_cellMenu2() {
       this.myComponent = new ConceptMethodDeclaration_Menu();
     }
 

@@ -24,7 +24,7 @@ public class NodeSubstituteActionsBuilder extends BaseConcept {
   public static String PART = "part";
   public static String VARIABLE = "variable";
 
-  public  NodeSubstituteActionsBuilder(SNode node) {
+  public NodeSubstituteActionsBuilder(SNode node) {
     super(node);
   }
 

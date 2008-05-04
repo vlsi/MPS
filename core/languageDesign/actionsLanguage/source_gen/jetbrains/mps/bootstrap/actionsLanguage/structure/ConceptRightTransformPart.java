@@ -13,7 +13,7 @@ public class ConceptRightTransformPart extends MenuBuilderPart {
   public static String CONCEPT = "concept";
   public static String HANDLER = "handler";
 
-  public  ConceptRightTransformPart(SNode node) {
+  public ConceptRightTransformPart(SNode node) {
     super(node);
   }
 

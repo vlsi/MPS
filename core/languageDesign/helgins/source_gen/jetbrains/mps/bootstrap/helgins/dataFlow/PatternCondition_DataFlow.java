@@ -9,7 +9,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class PatternCondition_DataFlow extends DataFlowBuilder {
 
-  public  PatternCondition_DataFlow() {
+  public PatternCondition_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

@@ -10,42 +10,40 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.ypath.constraints.IFeature_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 
 public class menu_FeatureSetOpposite extends AbstractCellMenuComponent {
 
-  public  menu_FeatureSetOpposite() {
+  public menu_FeatureSetOpposite() {
     super(new ISubstituteInfoPart[]{new menu_FeatureSetOpposite.IFeature_generic_cellMenu()});
   }
   public static class IFeature_generic_cellMenu extends AbstractCellMenuPart_Generic_Group {
 
-    public  IFeature_generic_cellMenu() {
+    public IFeature_generic_cellMenu() {
     }
 
     public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      final zClosureContext _zClosureContext = new zClosureContext();
-      List<Pair> res = ListOperations.<Pair>createList();
-      _zClosureContext.srcNode = node;
-      _zClosureContext.isGeneric = SNodeOperations.isInstanceOf(_zClosureContext.srcNode, "jetbrains.mps.ypath.structure.IGenericFeature");
-      {
-        ICursor<SNode> _zCursor5 = CursorFactory.createCursor(SequenceOperations.where(SLinkOperations.getTargets(SNodeOperations.getParent(_zClosureContext.srcNode, null, false, false), "features", true), new zPredicate(null, _zClosureContext)));
-        try {
-          while(_zCursor5.moveToNext()) {
-            SNode fe = _zCursor5.getCurrent();
-            ListOperations.addElement(res, new Pair(fe, Boolean.TRUE));
-            ListOperations.addElement(res, new Pair(fe, Boolean.FALSE));
-          }
-        } finally {
-          _zCursor5.release();
+      List<Pair> res = ListSequence.<Pair>fromArray();
+      final SNode srcNode = node;
+      final boolean isGeneric = SNodeOperations.isInstanceOf(srcNode, "jetbrains.mps.ypath.structure.IGenericFeature");
+      for(SNode fe : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getParent(srcNode, null, false, false), "features", true)).where(new IWhereFilter <SNode>() {
+
+        public boolean accept(SNode it) {
+          return it != srcNode && ((isGeneric ?
+            SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeature") :
+            !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeature"))
+          ));
         }
+
+      })) {
+        ListSequence.fromList(res).addElement(new Pair(fe, Boolean.TRUE));
+        ListSequence.fromList(res).addElement(new Pair(fe, Boolean.FALSE));
       }
       return res;
     }

@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ParentBlock extends LambdaMethod {
   public static final String concept = "jetbrains.mps.ypath.structure.ParentBlock";
 
-  public  ParentBlock(SNode node) {
+  public ParentBlock(SNode node) {
     super(node);
   }
 

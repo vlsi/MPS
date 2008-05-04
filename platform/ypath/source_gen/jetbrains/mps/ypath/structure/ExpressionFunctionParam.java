@@ -14,7 +14,7 @@ public class ExpressionFunctionParam extends ConceptFunctionParameter implements
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  ExpressionFunctionParam(SNode node) {
+  public ExpressionFunctionParam(SNode node) {
     super(node);
   }
 

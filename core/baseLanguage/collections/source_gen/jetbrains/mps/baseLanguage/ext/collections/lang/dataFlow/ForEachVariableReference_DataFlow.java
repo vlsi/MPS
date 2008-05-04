@@ -9,7 +9,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class ForEachVariableReference_DataFlow extends DataFlowBuilder {
 
-  public  ForEachVariableReference_DataFlow() {
+  public ForEachVariableReference_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

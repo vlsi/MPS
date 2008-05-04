@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class EmitRetStatement extends EmitStatement {
   public static final String concept = "jetbrains.mps.bootstrap.dataFlow.structure.EmitRetStatement";
 
-  public  EmitRetStatement(SNode node) {
+  public EmitRetStatement(SNode node) {
     super(node);
   }
 

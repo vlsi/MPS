@@ -12,7 +12,7 @@ public class TypeVarReference extends Expression {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.TypeVarReference";
   public static String TYPE_VAR_DECLARATION = "typeVarDeclaration";
 
-  public  TypeVarReference(SNode node) {
+  public TypeVarReference(SNode node) {
     super(node);
   }
 

@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class AddMenuPart extends ConceptPart {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart";
 
-  public  AddMenuPart(SNode node) {
+  public AddMenuPart(SNode node) {
     super(node);
   }
 

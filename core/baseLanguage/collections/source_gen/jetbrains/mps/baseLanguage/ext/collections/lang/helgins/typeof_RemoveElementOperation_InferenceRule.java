@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_RemoveElementOperation_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_RemoveElementOperation_InferenceRule() {
+  public typeof_RemoveElementOperation_InferenceRule() {
   }
 
   public void applyRule(final SNode op) {

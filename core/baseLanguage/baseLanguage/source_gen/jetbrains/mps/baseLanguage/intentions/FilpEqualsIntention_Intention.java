@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 
 public class FilpEqualsIntention_Intention extends BaseIntention implements Intention {
@@ -36,7 +36,7 @@ public class FilpEqualsIntention_Intention extends BaseIntention implements Inte
   }
 
   public void execute(SNode node, EditorContext editorContext) {
-    SNode parameter = SequenceOperations.getFirst(SLinkOperations.getTargets(node, "actualArgument", true));
+    SNode parameter = ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first();
     SNodeOperations.replaceWithAnother(parameter, SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.DotExpression", false, false), "operand", true));
     SLinkOperations.setTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.DotExpression", false, false), "operand", parameter, true);
   }

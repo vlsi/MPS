@@ -9,10 +9,10 @@ public enum Options_DefaultTrue {
   default_("<default>", null),
   true_("true", "true");
 
-  /* package */ String myName;
-  /* package */ String myValue;
+  /* package */String myName;
+  /* package */String myValue;
 
-  Options_DefaultTrue(String name, String value) {
+Options_DefaultTrue(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }

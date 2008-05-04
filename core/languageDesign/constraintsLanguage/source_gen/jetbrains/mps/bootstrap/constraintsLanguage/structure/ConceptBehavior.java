@@ -31,7 +31,7 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
   public static String METHOD = "method";
   public static String STATIC_METHOD = "staticMethod";
 
-  public  ConceptBehavior(SNode node) {
+  public ConceptBehavior(SNode node) {
     super(node);
   }
 

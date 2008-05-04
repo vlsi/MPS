@@ -13,7 +13,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class TreePathAspect_defaultFeature_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  TreePathAspect_defaultFeature_ReferentConstraint() {
+  public TreePathAspect_defaultFeature_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

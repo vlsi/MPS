@@ -19,7 +19,7 @@ public class NodeSubstituteActions extends BaseConcept implements INamedConcept 
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String ACTIONS_BUILDER = "actionsBuilder";
 
-  public  NodeSubstituteActions(SNode node) {
+  public NodeSubstituteActions(SNode node) {
     super(node);
   }
 

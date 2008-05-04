@@ -10,12 +10,12 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_VisitNodesStatement_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_VisitNodesStatement_InferenceRule() {
+  public typeof_VisitNodesStatement_InferenceRule() {
   }
 
   public void applyRule(final SNode visitNodesStatement) {
     final SNode T_typevar_1180009898513 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(visitNodesStatement, "visitBlock", true), "expression", true), "jetbrains.mps.ypath.helgins", "1180009367649", true), new QuotationClass_7().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1180009898513)), SLinkOperations.getTarget(SLinkOperations.getTarget(visitNodesStatement, "visitBlock", true), "expression", true), null, "jetbrains.mps.ypath.helgins", "1180009374907");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(visitNodesStatement, "visitBlock", true), "expression", true), "jetbrains.mps.ypath.helgins", "1180009367649", true), new QuotationClass_7().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1180009898513)), SLinkOperations.getTarget(SLinkOperations.getTarget(visitNodesStatement, "visitBlock", true), "expression", true), null, "jetbrains.mps.ypath.helgins", "1180009374907", false);
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(visitNodesStatement, "jetbrains.mps.ypath.helgins", "1180009856000", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(visitNodesStatement, "visitBlock", true), "expression", true), "jetbrains.mps.ypath.helgins", "1180009865622", true), visitNodesStatement, null, "jetbrains.mps.ypath.helgins", "1180009862290");
   }
 

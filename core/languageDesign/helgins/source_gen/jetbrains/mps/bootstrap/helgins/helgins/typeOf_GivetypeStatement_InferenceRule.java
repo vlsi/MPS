@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_GivetypeStatement_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeOf_GivetypeStatement_InferenceRule() {
+  public typeOf_GivetypeStatement_InferenceRule() {
   }
 
   public void applyRule(final SNode givetypeStatement) {

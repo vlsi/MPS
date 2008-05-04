@@ -15,7 +15,7 @@ public class EmitLabelStatement extends EmitStatement implements INamedConcept {
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  EmitLabelStatement(SNode node) {
+  public EmitLabelStatement(SNode node) {
     super(node);
   }
 

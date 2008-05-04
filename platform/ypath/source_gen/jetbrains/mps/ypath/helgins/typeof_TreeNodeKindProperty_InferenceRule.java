@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_TreeNodeKindProperty_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_TreeNodeKindProperty_InferenceRule() {
+  public typeof_TreeNodeKindProperty_InferenceRule() {
   }
 
   public void applyRule(final SNode prop) {

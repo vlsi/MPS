@@ -12,7 +12,7 @@ public class EmitMayBeUnreachable extends Statement {
   public static final String concept = "jetbrains.mps.bootstrap.dataFlow.structure.EmitMayBeUnreachable";
   public static String EMIT_STATEMENT = "emitStatement";
 
-  public  EmitMayBeUnreachable(SNode node) {
+  public EmitMayBeUnreachable(SNode node) {
     super(node);
   }
 

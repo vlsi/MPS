@@ -12,7 +12,7 @@ public class BaseEmitVariableStatement extends EmitStatement {
   public static final String concept = "jetbrains.mps.bootstrap.dataFlow.structure.BaseEmitVariableStatement";
   public static String VARIABLE = "variable";
 
-  public  BaseEmitVariableStatement(SNode node) {
+  public BaseEmitVariableStatement(SNode node) {
     super(node);
   }
 

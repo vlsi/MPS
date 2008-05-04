@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class QueryFunction_RemoveBy_Condition extends ConceptFunction {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RemoveBy_Condition";
 
-  public  QueryFunction_RemoveBy_Condition(SNode node) {
+  public QueryFunction_RemoveBy_Condition(SNode node) {
     super(node);
   }
 

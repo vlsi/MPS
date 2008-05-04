@@ -20,7 +20,7 @@ public class TreeNodeKind extends BaseConcept implements INamedConcept {
   public static String TRIGGER = "trigger";
   public static String PROPERTIES = "properties";
 
-  public  TreeNodeKind(SNode node) {
+  public TreeNodeKind(SNode node) {
     super(node);
   }
 

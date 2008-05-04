@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class TypeCheckerAccessExpression extends Expression {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.TypeCheckerAccessExpression";
 
-  public  TypeCheckerAccessExpression(SNode node) {
+  public TypeCheckerAccessExpression(SNode node) {
     super(node);
   }
 

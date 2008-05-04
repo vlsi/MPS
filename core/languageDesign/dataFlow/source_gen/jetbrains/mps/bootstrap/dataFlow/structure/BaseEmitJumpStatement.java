@@ -11,7 +11,7 @@ public class BaseEmitJumpStatement extends EmitStatement {
   public static final String concept = "jetbrains.mps.bootstrap.dataFlow.structure.BaseEmitJumpStatement";
   public static String JUMP_TO = "jumpTo";
 
-  public  BaseEmitJumpStatement(SNode node) {
+  public BaseEmitJumpStatement(SNode node) {
     super(node);
   }
 

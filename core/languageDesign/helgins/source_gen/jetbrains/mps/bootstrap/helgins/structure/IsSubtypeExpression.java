@@ -13,7 +13,7 @@ public class IsSubtypeExpression extends Expression {
   public static String SUBTYPE_EXPRESSION = "subtypeExpression";
   public static String SUPERTYPE_EXPRESSION = "supertypeExpression";
 
-  public  IsSubtypeExpression(SNode node) {
+  public IsSubtypeExpression(SNode node) {
     super(node);
   }
 

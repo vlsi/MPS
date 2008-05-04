@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule() {
+  public typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule() {
   }
 
   public void applyRule(final SNode node) {

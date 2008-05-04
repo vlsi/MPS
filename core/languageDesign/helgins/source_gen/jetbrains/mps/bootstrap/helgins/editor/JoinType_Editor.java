@@ -96,7 +96,7 @@ public class JoinType_Editor extends DefaultNodeEditor {
 
   public static class _RefNodeListHandler3 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler3(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler3(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

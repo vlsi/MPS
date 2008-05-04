@@ -136,7 +136,7 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
 
   public static class _Inline8 extends AbstractCellProvider {
 
-    public  _Inline8() {
+    public _Inline8() {
       super();
     }
 

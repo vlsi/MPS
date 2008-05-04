@@ -10,7 +10,7 @@ public class supertypesOf_ClassifierTypeList_ListType_SubtypingRule extends Subt
 
   /* package */Pattern_ myMatchingPattern;
 
-  public  supertypesOf_ClassifierTypeList_ListType_SubtypingRule() {
+  public supertypesOf_ClassifierTypeList_ListType_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode node) {

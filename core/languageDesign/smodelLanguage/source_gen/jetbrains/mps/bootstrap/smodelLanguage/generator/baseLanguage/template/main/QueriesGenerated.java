@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.constraints.Node_ConceptMethodCall_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -185,17 +185,17 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1207338310789(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return !(SequenceOperations.isEmpty(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_ConceptExpression", false)));
+    return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_ConceptExpression", false)).isNotEmpty();
   }
 
   public static boolean baseMappingRule_Condition_1207342110781(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    SNode opParm = SequenceOperations.getFirst(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept", false));
+    SNode opParm = ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept", false)).first();
     // Is deprecated role 'concept' still in use?
     return SLinkOperations.getTarget(opParm, "concept", false) != null;
   }
 
   public static boolean baseMappingRule_Condition_1207344880832(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    SNode opParm = SequenceOperations.getFirst(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept", false));
+    SNode opParm = ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept", false)).first();
     // Is new parameter used?
     return opParm != null && SLinkOperations.getTarget(opParm, "concept", false) == null;
   }
@@ -553,7 +553,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1207342110793(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode parm = SequenceOperations.getFirst(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept", false));
+    SNode parm = ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept", false)).first();
     return NameUtil.nodeFQName(SLinkOperations.getTarget(parm, "concept", false));
   }
 
@@ -1166,11 +1166,11 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1207342919715(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SequenceOperations.getFirst(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_ConceptExpression", false)), "conceptExpression", true);
+    return SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_ConceptExpression", false)).first(), "conceptExpression", true);
   }
 
   public static SNode sourceNodeQuery_1207344929972(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SequenceOperations.getFirst(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept", false)), "conceptArgument", true);
+    return SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept", false)).first(), "conceptArgument", true);
   }
 
   public static SNode sourceNodeQuery_1208783961226(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

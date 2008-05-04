@@ -14,10 +14,8 @@ import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class LinkDeclaration_specializedLink_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
@@ -38,24 +36,22 @@ public class LinkDeclaration_specializedLink_ReferentConstraint implements IMode
   }
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    final zClosureContext _zClosureContext = new zClosureContext();
-    _zClosureContext.aggregation = SPropertyOperations.hasValue(_context.getReferenceNode(), "metaClass", "aggregation", null);
+    final boolean aggregation = SPropertyOperations.hasValue(_context.getReferenceNode(), "metaClass", "aggregation", null);
     List<SNode> result = new ArrayList<SNode>();
     SNode enclosingConcept = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration", true, false);
     List<SNode> directSupers = SConceptOperations.getDirectSuperConcepts(enclosingConcept, false);
-    {
-      ICursor<SNode> _zCursor = CursorFactory.createCursor(directSupers);
-      try {
-        while(_zCursor.moveToNext()) {
-          SNode concept = _zCursor.getCurrent();
-          {
-            List<SNode> links = AbstractConceptDeclaration_Behavior.call_getLinkDeclarationsExcludingOverridden_1196820678380(concept);
-            ListOperations.addAllElements(result, SequenceOperations.where(links, new zPredicate(null, _zClosureContext)));
+    for(SNode concept : directSupers) {
+      List<SNode> links = AbstractConceptDeclaration_Behavior.call_getLinkDeclarationsExcludingOverridden_1196820678380(concept);
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(links).where(new IWhereFilter <SNode>() {
+
+        public boolean accept(SNode it) {
+          if (aggregation) {
+            return SPropertyOperations.hasValue(it, "metaClass", "aggregation", null);
           }
+          return SPropertyOperations.hasValue(it, "metaClass", null, null);
         }
-      } finally {
-        _zCursor.release();
-      }
+
+      }));
     }
     return new SimpleSearchScope(result);
   }

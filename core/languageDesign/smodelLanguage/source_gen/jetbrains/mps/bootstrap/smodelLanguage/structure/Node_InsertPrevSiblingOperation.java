@@ -12,7 +12,7 @@ public class Node_InsertPrevSiblingOperation extends SNodeOperation {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_InsertPrevSiblingOperation";
   public static String PARAMETER = "parameter";
 
-  public  Node_InsertPrevSiblingOperation(SNode node) {
+  public Node_InsertPrevSiblingOperation(SNode node) {
     super(node);
   }
 

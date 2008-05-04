@@ -14,7 +14,7 @@ public class GivetypeStatement extends Statement {
   public static String TYPE_EXPRESSION = "typeExpression";
   public static String TERM_EXPRESSION = "termExpression";
 
-  public  GivetypeStatement(SNode node) {
+  public GivetypeStatement(SNode node) {
     super(node);
   }
 

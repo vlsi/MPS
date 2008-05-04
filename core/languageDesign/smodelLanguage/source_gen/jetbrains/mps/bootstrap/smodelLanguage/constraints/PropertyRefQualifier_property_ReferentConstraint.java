@@ -20,7 +20,7 @@ import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDecl
 
 public class PropertyRefQualifier_property_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  PropertyRefQualifier_property_ReferentConstraint() {
+  public PropertyRefQualifier_property_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

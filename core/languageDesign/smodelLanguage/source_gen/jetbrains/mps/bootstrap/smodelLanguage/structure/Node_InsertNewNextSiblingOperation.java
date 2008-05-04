@@ -12,7 +12,7 @@ public class Node_InsertNewNextSiblingOperation extends SNodeOperation {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_InsertNewNextSiblingOperation";
   public static String CONCEPT = "concept";
 
-  public  Node_InsertNewNextSiblingOperation(SNode node) {
+  public Node_InsertNewNextSiblingOperation(SNode node) {
     super(node);
   }
 

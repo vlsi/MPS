@@ -17,7 +17,7 @@ public class TreePathType extends Type implements INamedConcept {
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String NODE_TYPE = "nodeType";
 
-  public  TreePathType(SNode node) {
+  public TreePathType(SNode node) {
     super(node);
   }
 

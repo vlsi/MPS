@@ -15,7 +15,7 @@ public class SimpleItemSubstitutePart extends SubstituteMenuPart {
   public static String CAN_SUBSTITUTE = "canSubstitute";
   public static String HANDLER = "handler";
 
-  public  SimpleItemSubstitutePart(SNode node) {
+  public SimpleItemSubstitutePart(SNode node) {
     super(node);
   }
 

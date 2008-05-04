@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_WarningStatement_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_WarningStatement_InferenceRule() {
+  public typeof_WarningStatement_InferenceRule() {
   }
 
   public void applyRule(final SNode nodeToCheck) {

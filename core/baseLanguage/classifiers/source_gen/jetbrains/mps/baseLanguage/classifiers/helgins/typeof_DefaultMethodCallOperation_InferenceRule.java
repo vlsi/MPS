@@ -7,12 +7,12 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import java.util.Iterator;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_DefaultMethodCallOperation_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_DefaultMethodCallOperation_InferenceRule() {
+  public typeof_DefaultMethodCallOperation_InferenceRule() {
   }
 
   public void applyRule(final SNode nodeToCheck) {
@@ -34,7 +34,7 @@ public class typeof_DefaultMethodCallOperation_InferenceRule implements Inferenc
         TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.baseLanguage.classifiers.helgins", "1205854575356", true), SLinkOperations.getTarget(parameter, "type", true), argument, null, "jetbrains.mps.baseLanguage.classifiers.helgins", "1205854571586", false);
       }
     }
-    if (SequenceOperations.count(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeToCheck, "member", false), "parameter", true)) != SLinkOperations.getCount(nodeToCheck, "actualArgument")) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeToCheck, "member", false), "parameter", true)).count() != SLinkOperations.getCount(nodeToCheck, "actualArgument")) {
       TypeChecker.getInstance().reportTypeError(nodeToCheck, "Number of parameters doesn't match", "jetbrains.mps.baseLanguage.classifiers.helgins", "1205854659855");
     }
   }

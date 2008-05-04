@@ -14,7 +14,7 @@ public class ForEachStatement extends AbstractLoopStatement {
   public static String VARIABLE = "variable";
   public static String INPUT_SEQUENCE = "inputSequence";
 
-  public  ForEachStatement(SNode node) {
+  public ForEachStatement(SNode node) {
     super(node);
   }
 

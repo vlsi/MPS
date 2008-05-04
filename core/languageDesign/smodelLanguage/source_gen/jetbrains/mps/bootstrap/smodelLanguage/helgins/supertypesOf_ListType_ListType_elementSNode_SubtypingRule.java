@@ -10,19 +10,19 @@ import java.util.ArrayList;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class supertypesOf_ListType_ListType_elementSNode_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
-  public  supertypesOf_ListType_ListType_elementSNode_SubtypingRule() {
+  public supertypesOf_ListType_ListType_elementSNode_SubtypingRule() {
   }
 
   public List<SNode> getSubOrSuperTypes(SNode listType) {
     List<SNode> result = new ArrayList<SNode>();
     SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(listType, "elementType", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
     if (SLinkOperations.getTarget(classifierType, "classifier", false) == SLinkOperations.getTarget(new QuotationClass_62().createNode(), "classifier", false)) {
-      ListOperations.addElement(result, new QuotationClass_61().createNode());
+      ListSequence.fromList(result).addElement(new QuotationClass_61().createNode());
     }
     return result;
   }

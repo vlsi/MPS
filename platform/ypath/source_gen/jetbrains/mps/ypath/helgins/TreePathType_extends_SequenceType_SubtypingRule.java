@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class TreePathType_extends_SequenceType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
-  public  TreePathType_extends_SequenceType_SubtypingRule() {
+  public TreePathType_extends_SequenceType_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode treepath) {

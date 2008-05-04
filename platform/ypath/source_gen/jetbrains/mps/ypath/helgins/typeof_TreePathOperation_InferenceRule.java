@@ -10,7 +10,7 @@ import jetbrains.mps.helgins.inference.TypeChecker;
 
 public class typeof_TreePathOperation_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_TreePathOperation_InferenceRule() {
+  public typeof_TreePathOperation_InferenceRule() {
   }
 
   public void applyRule(final SNode op) {
@@ -20,7 +20,7 @@ public class typeof_TreePathOperation_InferenceRule implements InferenceRule_Run
       {
         boolean matches_1178551167099 = false;
         matches_1178551167099 = SModelUtil_new.isAssignableConcept(parent.getConceptFqName(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
-        if(matches_1178551167099) {
+        if (matches_1178551167099) {
           TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.ypath.helgins", "1178551167102", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(matchedNode_1178551167097, "jetbrains.mps.ypath.helgins", "1178551167104", true), op, null, "jetbrains.mps.ypath.helgins", "1178551167101");
           break;
         }

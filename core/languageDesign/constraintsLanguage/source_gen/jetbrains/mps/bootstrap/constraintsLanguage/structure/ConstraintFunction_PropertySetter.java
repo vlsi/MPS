@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ConstraintFunction_PropertySetter extends ConceptFunction {
   public static final String concept = "jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertySetter";
 
-  public  ConstraintFunction_PropertySetter(SNode node) {
+  public ConstraintFunction_PropertySetter(SNode node) {
     super(node);
   }
 

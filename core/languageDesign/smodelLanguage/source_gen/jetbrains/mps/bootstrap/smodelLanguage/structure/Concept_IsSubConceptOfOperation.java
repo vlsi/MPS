@@ -11,7 +11,7 @@ public class Concept_IsSubConceptOfOperation extends SNodeOperation {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsSubConceptOfOperation";
   public static String CONCEPT_ARGUMENT = "conceptArgument";
 
-  public  Concept_IsSubConceptOfOperation(SNode node) {
+  public Concept_IsSubConceptOfOperation(SNode node) {
     super(node);
   }
 

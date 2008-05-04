@@ -19,7 +19,7 @@ public class TreePathOperationExpression_DELETE {
 
     /* package */SNode myNode;
 
-    public  TreePathOperationExpression_DELETE_DELETE(SNode node) {
+    public TreePathOperationExpression_DELETE_DELETE(SNode node) {
       this.myNode = node;
     }
 

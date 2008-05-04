@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class Node_IsNotNullOperation extends SNodeOperation {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNotNullOperation";
 
-  public  Node_IsNotNullOperation(SNode node) {
+  public Node_IsNotNullOperation(SNode node) {
     super(node);
   }
 

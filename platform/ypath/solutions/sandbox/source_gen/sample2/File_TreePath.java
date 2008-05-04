@@ -64,10 +64,10 @@ public class File_TreePath extends TreePath<File> {
     }
 
     public static IFilter<File> getInstance() {
-      if (File_TreePath.FILE_NodeKindTrigger.instance == null) {
-        File_TreePath.FILE_NodeKindTrigger.instance = new File_TreePath.FILE_NodeKindTrigger();
+      if (instance == null) {
+        instance = new File_TreePath.FILE_NodeKindTrigger();
       }
-      return File_TreePath.FILE_NodeKindTrigger.instance;
+      return instance;
     }
 
 
@@ -90,10 +90,10 @@ public class File_TreePath extends TreePath<File> {
     }
 
     public static IFilter<File> getInstance() {
-      if (File_TreePath.DIR_NodeKindTrigger.instance == null) {
-        File_TreePath.DIR_NodeKindTrigger.instance = new File_TreePath.DIR_NodeKindTrigger();
+      if (instance == null) {
+        instance = new File_TreePath.DIR_NodeKindTrigger();
       }
-      return File_TreePath.DIR_NodeKindTrigger.instance;
+      return instance;
     }
 
 

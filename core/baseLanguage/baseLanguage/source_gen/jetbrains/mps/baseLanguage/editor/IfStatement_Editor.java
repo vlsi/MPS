@@ -13,7 +13,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Vertical;
@@ -255,7 +255,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   }
 
   public static boolean _QueryFunction_NodeCondition_1206063712466(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SequenceOperations.isEmpty(SLinkOperations.getTargets(node, "elsifClauses", true)));
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).isNotEmpty();
   }
 
 

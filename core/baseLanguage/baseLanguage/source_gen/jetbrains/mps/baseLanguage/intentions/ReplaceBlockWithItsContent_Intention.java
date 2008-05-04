@@ -11,11 +11,9 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 
 public class ReplaceBlockWithItsContent_Intention extends BaseIntention implements Intention {
 
@@ -37,7 +35,7 @@ public class ReplaceBlockWithItsContent_Intention extends BaseIntention implemen
       String role = node.getRole_();
       SNode linkDeclaration = ((SNode)BaseAdapter.fromAdapter(SNodeOperations.getParent(node, null, false, false).getLinkDeclaration(role)));
       if (SConceptOperations.isSuperConceptOf(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement"), NameUtil.nodeFQName(SLinkOperations.getTarget(linkDeclaration, "target", false)))) {
-        int statementsCount = SequenceOperations.getSize(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "statements", true), "statement", true));
+        int statementsCount = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "statements", true), "statement", true)).count();
         if (SPropertyOperations.hasValue(linkDeclaration, "sourceCardinality", "0..1", "0..1")) {
           applicable = statementsCount <= 1;
         } else
@@ -57,16 +55,8 @@ public class ReplaceBlockWithItsContent_Intention extends BaseIntention implemen
 
   public void execute(SNode node, EditorContext editorContext) {
     List<SNode> statements = SLinkOperations.getTargets(SLinkOperations.getTarget(node, "statements", true), "statement", true);
-    {
-      ICursor<SNode> _zCursor = CursorFactory.createCursor(statements);
-      try {
-        while(_zCursor.moveToNext()) {
-          SNode statement = _zCursor.getCurrent();
-          SNodeOperations.insertPrevSiblingChild(node, statement);
-        }
-      } finally {
-        _zCursor.release();
-      }
+    for(SNode statement : statements) {
+      SNodeOperations.insertPrevSiblingChild(node, statement);
     }
     SNodeOperations.deleteNode(node);
   }

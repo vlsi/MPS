@@ -10,7 +10,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 
 public class MatchStatementItem_DataFlow extends DataFlowBuilder {
 
-  public  MatchStatementItem_DataFlow() {
+  public MatchStatementItem_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

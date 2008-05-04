@@ -10,14 +10,14 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_ConceptBehavior_NonTypesystemRule implements NonTypesystemRule_Runtime {
 
-  public  check_ConceptBehavior_NonTypesystemRule() {
+  public check_ConceptBehavior_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode nodeToCheck) {
@@ -28,10 +28,10 @@ public class check_ConceptBehavior_NonTypesystemRule implements NonTypesystemRul
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(nodeToCheck, "concept", false), "jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration")) {
       return;
     }
-    if (!(SequenceOperations.isEmpty(methodDeclarations))) {
+    if (!(ListSequence.fromList(methodDeclarations).isEmpty())) {
       boolean notImplementedMethods = false;
       for(SNode cm : methodDeclarations) {
-        if (!(SequenceOperations.contains(SLinkOperations.getTargets(nodeToCheck, "method", true), cm))) {
+        if (!(ListSequence.fromList(SLinkOperations.getTargets(nodeToCheck, "method", true)).contains(cm))) {
           notImplementedMethods = true;
         }
       }

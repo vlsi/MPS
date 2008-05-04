@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class WhenConcreteVariableDeclaration extends VariableDeclaration {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.WhenConcreteVariableDeclaration";
 
-  public  WhenConcreteVariableDeclaration(SNode node) {
+  public WhenConcreteVariableDeclaration(SNode node) {
     super(node);
   }
 

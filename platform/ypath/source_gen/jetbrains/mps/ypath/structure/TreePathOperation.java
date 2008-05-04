@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class TreePathOperation extends BaseConcept {
   public static final String concept = "jetbrains.mps.ypath.structure.TreePathOperation";
 
-  public  TreePathOperation(SNode node) {
+  public TreePathOperation(SNode node) {
     super(node);
   }
 

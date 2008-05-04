@@ -17,7 +17,7 @@ public class MatchStatement extends Statement {
   public static String IF_FALSE_STATEMENT = "ifFalseStatement";
   public static String ITEM = "item";
 
-  public  MatchStatement(SNode node) {
+  public MatchStatement(SNode node) {
     super(node);
   }
 

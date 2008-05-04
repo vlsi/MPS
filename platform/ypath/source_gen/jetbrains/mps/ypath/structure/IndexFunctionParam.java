@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class IndexFunctionParam extends ConceptFunctionParameter {
   public static final String concept = "jetbrains.mps.ypath.structure.IndexFunctionParam";
 
-  public  IndexFunctionParam(SNode node) {
+  public IndexFunctionParam(SNode node) {
     super(node);
   }
 

@@ -12,7 +12,7 @@ public class SConceptLinkAccess extends SNodeOperation {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptLinkAccess";
   public static String CONCEPT_LINK_DECLARATION = "conceptLinkDeclaration";
 
-  public  SConceptLinkAccess(SNode node) {
+  public SConceptLinkAccess(SNode node) {
     super(node);
   }
 

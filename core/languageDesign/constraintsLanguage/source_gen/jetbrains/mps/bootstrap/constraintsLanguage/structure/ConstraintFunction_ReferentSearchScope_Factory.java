@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ConstraintFunction_ReferentSearchScope_Factory extends ConstraintFunction_ReferentSearchScope_AbstractBase {
   public static final String concept = "jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory";
 
-  public  ConstraintFunction_ReferentSearchScope_Factory(SNode node) {
+  public ConstraintFunction_ReferentSearchScope_Factory(SNode node) {
     super(node);
   }
 

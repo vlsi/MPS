@@ -11,12 +11,14 @@ import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class LinkAttributeAccessQualifier_annotationLink_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  LinkAttributeAccessQualifier_annotationLink_ReferentConstraint() {
+  public LinkAttributeAccessQualifier_annotationLink_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
@@ -34,7 +36,13 @@ public class LinkAttributeAccessQualifier_annotationLink_ReferentConstraint impl
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode ald = SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration");
     List<SNode> annotationLinks = SConceptOperations.findConceptInstances(ald, operationContext.getScope());
-    List<SNode> linkAttrLinks = SequenceOperations.toList(SequenceOperations.where(annotationLinks, new zPredicate2(null, null)));
+    List<SNode> linkAttrLinks = ListSequence.fromList(annotationLinks).where(new IWhereFilter <SNode>() {
+
+      public boolean accept(SNode it) {
+        return SPropertyOperations.hasValue(it, "stereotype", "link", "node");
+      }
+
+    }).toListSequence();
     return new SimpleSearchScope(linkAttrLinks);
   }
 

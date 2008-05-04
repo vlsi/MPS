@@ -228,7 +228,7 @@ public class Dependency_Editor extends DefaultNodeEditor {
 
   public static class _Inline9 extends AbstractCellProvider {
 
-    public  _Inline9() {
+    public _Inline9() {
       super();
     }
 
@@ -280,7 +280,7 @@ public class Dependency_Editor extends DefaultNodeEditor {
 }
   public static class _Inline10 extends AbstractCellProvider {
 
-    public  _Inline10() {
+    public _Inline10() {
       super();
     }
 

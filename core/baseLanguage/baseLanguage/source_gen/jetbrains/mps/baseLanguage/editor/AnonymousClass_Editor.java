@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
@@ -231,27 +231,27 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   }
 
   public static boolean _QueryFunction_NodeCondition_1201186172872(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SequenceOperations.isEmpty(SLinkOperations.getTargets(node, "typeParameter", true)));
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty();
   }
 
   public static boolean _QueryFunction_NodeCondition_1208702399488(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SequenceOperations.isEmpty(SLinkOperations.getTargets(node, "method", true))) && !(SequenceOperations.isEmpty(SLinkOperations.getTargets(node, "field", true)));
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty() && ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).isNotEmpty();
   }
 
   public static boolean _QueryFunction_NodeCondition_1208703199436(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SequenceOperations.isEmpty(SLinkOperations.getTargets(node, "field", true)));
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).isNotEmpty();
   }
 
   public static boolean _QueryFunction_NodeCondition_1208703336194(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "instanceInitializer", true) != null && !(SequenceOperations.isEmpty(SLinkOperations.getTargets(node, "field", true)));
+    return SLinkOperations.getTarget(node, "instanceInitializer", true) != null && ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).isNotEmpty();
   }
 
   public static boolean _QueryFunction_NodeCondition_1208703573667(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SequenceOperations.isEmpty(SLinkOperations.getTargets(node, "method", true)));
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty();
   }
 
   public static boolean _QueryFunction_NodeCondition_1208704424523(SNode node, EditorContext editorContext, IScope scope) {
-    return !(!(SequenceOperations.isEmpty(SLinkOperations.getTargets(node, "field", true))) && !(SequenceOperations.isEmpty(SLinkOperations.getTargets(node, "method", true))) && SLinkOperations.getTarget(node, "instanceInitializer", true) != null);
+    return !(ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).isNotEmpty() && ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty() && SLinkOperations.getTarget(node, "instanceInitializer", true) != null);
   }
 
   public static boolean _QueryFunction_NodeCondition_1208706037139(SNode node, EditorContext editorContext, IScope scope) {

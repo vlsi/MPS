@@ -13,7 +13,7 @@ public class SNodeListType extends Type {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType";
   public static String ELEMENT_CONCEPT = "elementConcept";
 
-  public  SNodeListType(SNode node) {
+  public SNodeListType(SNode node) {
     super(node);
   }
 

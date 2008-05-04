@@ -17,7 +17,7 @@ import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDecl
 
 public class SConceptLinkAccess_conceptLinkDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  SConceptLinkAccess_conceptLinkDeclaration_ReferentConstraint() {
+  public SConceptLinkAccess_conceptLinkDeclaration_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

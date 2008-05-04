@@ -5,8 +5,6 @@ package jetbrains.mps.baseLanguage.actions;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.constraints.TypeDerivable_Behavior;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.patterns.util.MatchingUtil;
 
 public class ExpectedType_FactoryUtil {
@@ -26,17 +24,9 @@ public class ExpectedType_FactoryUtil {
   public static SNode getOriginalExpression(SNode enclosingNode, SNode copiedExpression) {
     SNode originalExpression = null;
     SNode expressionConcept = SNodeOperations.getConceptDeclaration(copiedExpression);
-    {
-      ICursor<SNode> _zCursor = CursorFactory.createCursor(SNodeOperations.getChildren(enclosingNode));
-      try {
-        while(_zCursor.moveToNext()) {
-          SNode child = _zCursor.getCurrent();
-          if (MatchingUtil.matchNodes(copiedExpression, child)) {
-            originalExpression = child;
-          }
-        }
-      } finally {
-        _zCursor.release();
+    for(SNode child : SNodeOperations.getChildren(enclosingNode)) {
+      if (MatchingUtil.matchNodes(copiedExpression, child)) {
+        originalExpression = child;
       }
     }
     return originalExpression;

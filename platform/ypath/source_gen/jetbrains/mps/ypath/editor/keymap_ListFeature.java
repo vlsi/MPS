@@ -15,7 +15,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class keymap_ListFeature extends EditorCellKeyMap {
 
-  public  keymap_ListFeature() {
+  public keymap_ListFeature() {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
     action = new keymap_ListFeature.keymap_ListFeature_Action0();
@@ -23,7 +23,7 @@ public class keymap_ListFeature extends EditorCellKeyMap {
   }
   public static class keymap_ListFeature_Action0 extends EditorCellKeyMapAction {
 
-    public  keymap_ListFeature_Action0() {
+    public keymap_ListFeature_Action0() {
       this.setShownInPopupMenu(false);
     }
 
@@ -37,14 +37,14 @@ public class keymap_ListFeature extends EditorCellKeyMap {
 
     public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
-      if((contextCell == null)) {
+      if ((contextCell == null)) {
         return false;
       }
       SNode contextNode = contextCell.getSNode();
-      if(contextNode == null) {
+      if (contextNode == null) {
         return false;
       }
-      if(contextNode.isInstanceOfConcept("jetbrains.mps.ypath.structure.ListFeature")) {
+      if (contextNode.isInstanceOfConcept("jetbrains.mps.ypath.structure.ListFeature")) {
         return true;
       }
       return false;

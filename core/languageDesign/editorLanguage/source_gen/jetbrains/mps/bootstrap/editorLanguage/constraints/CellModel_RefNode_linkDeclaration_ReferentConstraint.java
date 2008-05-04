@@ -16,7 +16,9 @@ import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 
 public class CellModel_RefNode_linkDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -40,7 +42,13 @@ public class CellModel_RefNode_linkDeclaration_ReferentConstraint implements IMo
     SNode editedConcept = SLinkOperations.getTarget(editorComponent, "conceptDeclaration", false);
     List linkAdapters = SModelSearchUtil_new.getLinkDeclarationsExcludingOverridden(((AbstractConceptDeclaration)SNodeOperations.getAdapter(editedConcept)));
     List<SNode> links = BaseAdapter.toNodes(linkAdapters);
-    return new SimpleSearchScope(SequenceOperations.toList(SequenceOperations.where(links, new zPredicate1(null, null))));
+    return new SimpleSearchScope(ListSequence.fromList(links).where(new IWhereFilter <SNode>() {
+
+      public boolean accept(SNode it) {
+        return SPropertyOperations.hasValue(it, "metaClass", "aggregation", null) && (SPropertyOperations.hasValue(it, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(it, "sourceCardinality", "1", "0..1"));
+      }
+
+    }).toListSequence());
   }
 
   public String getNodeReferentSearchScopeDescription() {

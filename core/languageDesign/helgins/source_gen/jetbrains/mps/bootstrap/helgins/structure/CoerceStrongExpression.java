@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class CoerceStrongExpression extends CoerceExpression {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.CoerceStrongExpression";
 
-  public  CoerceStrongExpression(SNode node) {
+  public CoerceStrongExpression(SNode node) {
     super(node);
   }
 

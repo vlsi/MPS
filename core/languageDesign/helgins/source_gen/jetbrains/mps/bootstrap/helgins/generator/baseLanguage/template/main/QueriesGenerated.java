@@ -35,7 +35,7 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.helgins.structure.NonTypesystemRule;
 import jetbrains.mps.bootstrap.helgins.structure.InequationReplacementRule;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class QueriesGenerated {
 
@@ -1388,7 +1388,7 @@ public class QueriesGenerated {
     List<SNode> variableProviders = SModelOperations.getRoots(_context.getSourceModel(), "jetbrains.mps.bootstrap.helgins.structure.VariableProviders");
     List<SNode> result = new ArrayList<SNode>();
     for(SNode varProviders : variableProviders) {
-      ListOperations.addAllElements(result, SLinkOperations.getTargets(varProviders, "item", true));
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(varProviders, "item", true)));
     }
     return result;
   }

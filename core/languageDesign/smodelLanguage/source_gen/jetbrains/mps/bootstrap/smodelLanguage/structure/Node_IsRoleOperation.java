@@ -14,7 +14,7 @@ public class Node_IsRoleOperation extends SNodeOperation {
   public static String CONCEPT_OF_PARENT = "conceptOfParent";
   public static String LINK_IN_PARENT = "linkInParent";
 
-  public  Node_IsRoleOperation(SNode node) {
+  public Node_IsRoleOperation(SNode node) {
     super(node);
   }
 

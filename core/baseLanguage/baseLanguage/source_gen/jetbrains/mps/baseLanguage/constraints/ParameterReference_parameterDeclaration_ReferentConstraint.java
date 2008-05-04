@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.search.ISearchScope;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 
@@ -34,9 +34,9 @@ public class ParameterReference_parameterDeclaration_ReferentConstraint implemen
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     List<SNode> methods = SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", true);
-    List<SNode> params = ListOperations.<SNode>createList();
+    List<SNode> params = ListSequence.<SNode>fromArray();
     for(SNode bmd : methods) {
-      ListOperations.addAllElements(params, SLinkOperations.getTargets(bmd, "parameter", true));
+      ListSequence.fromList(params).addSequence(ListSequence.fromList(SLinkOperations.getTargets(bmd, "parameter", true)));
     }
     return new SimpleSearchScope(params);
   }

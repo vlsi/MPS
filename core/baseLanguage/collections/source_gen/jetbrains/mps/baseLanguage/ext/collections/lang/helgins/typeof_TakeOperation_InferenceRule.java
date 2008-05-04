@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_TakeOperation_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_TakeOperation_InferenceRule() {
+  public typeof_TakeOperation_InferenceRule() {
   }
 
   public void applyRule(final SNode op) {

@@ -12,7 +12,7 @@ public class Model_AddRootOperation extends SNodeOperation {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.Model_AddRootOperation";
   public static String NODE_ARGUMENT = "nodeArgument";
 
-  public  Model_AddRootOperation(SNode node) {
+  public Model_AddRootOperation(SNode node) {
     super(node);
   }
 

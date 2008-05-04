@@ -19,7 +19,7 @@ public class _LinkAccessT extends Type implements IInternalType {
   public static String AGGREGATION = "aggregation";
   public static String TARGET_CONCEPT = "targetConcept";
 
-  public  _LinkAccessT(SNode node) {
+  public _LinkAccessT(SNode node) {
     super(node);
   }
 

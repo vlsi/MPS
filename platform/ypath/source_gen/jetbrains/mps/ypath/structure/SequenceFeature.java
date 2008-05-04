@@ -24,7 +24,7 @@ public class SequenceFeature extends BaseConcept implements INamedConcept, IFeat
   public static String ADD_FUNCTION = "addFunction";
   public static String REMOVE_FUNCTION = "removeFunction";
 
-  public  SequenceFeature(SNode node) {
+  public SequenceFeature(SNode node) {
     super(node);
   }
 

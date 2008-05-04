@@ -14,7 +14,7 @@ public class SNodeTypeCastExpression extends Expression {
   public static String CONCEPT = "concept";
   public static String LEFT_EXPRESSION = "leftExpression";
 
-  public  SNodeTypeCastExpression(SNode node) {
+  public SNodeTypeCastExpression(SNode node) {
     super(node);
   }
 

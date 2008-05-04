@@ -13,7 +13,7 @@ public class Node_IsInstanceOfOperation extends SNodeOperation {
   public static String CONCEPT = "concept";
   public static String CONCEPT_ARGUMENT = "conceptArgument";
 
-  public  Node_IsInstanceOfOperation(SNode node) {
+  public Node_IsInstanceOfOperation(SNode node) {
     super(node);
   }
 

@@ -12,13 +12,13 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint() {
+  public WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
@@ -37,7 +37,7 @@ public class WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint im
     List<SNode> whenConcreteStatements = SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.bootstrap.helgins.structure.WhenConcreteStatement", false);
     List<SNode> declarations = new ArrayList<SNode>();
     for(SNode whenConcreteStatement : whenConcreteStatements) {
-      ListOperations.addElement(declarations, SLinkOperations.getTarget(whenConcreteStatement, "argumentRepresentator", true));
+      ListSequence.fromList(declarations).addElement(SLinkOperations.getTarget(whenConcreteStatement, "argumentRepresentator", true));
     }
     return new SimpleSearchScope(declarations);
   }

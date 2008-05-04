@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_LinkPatternVariableReference_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_LinkPatternVariableReference_InferenceRule() {
+  public typeof_LinkPatternVariableReference_InferenceRule() {
   }
 
   public void applyRule(final SNode nodeToCheck) {

@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class Link_DeleteChildOperation extends SNodeOperation {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.Link_DeleteChildOperation";
 
-  public  Link_DeleteChildOperation(SNode node) {
+  public Link_DeleteChildOperation(SNode node) {
     super(node);
   }
 

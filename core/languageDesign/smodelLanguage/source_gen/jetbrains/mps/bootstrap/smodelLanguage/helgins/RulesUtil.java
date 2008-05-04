@@ -16,9 +16,7 @@ import jetbrains.mps.smodel.DataTypeUtil;
 import jetbrains.mps.bootstrap.structureLanguage.structure.DataTypeDeclaration;
 import jetbrains.mps.util.NameUtil;
 import java.util.List;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.patterns.IMatchingPattern;
 
 public class RulesUtil {
@@ -166,18 +164,10 @@ public class RulesUtil {
   public static boolean checkOpParameters_generic(SNode op) {
     boolean noProblem = true;
     List<SNode> applicableParmConcepts = SLinkOperations.getConceptLinkTargets(op, "applicableParameter");
-    {
-      ICursor<SNode> _zCursor3 = CursorFactory.createCursor(SLinkOperations.getTargets(op, "parameter", true));
-      try {
-        while(_zCursor3.moveToNext()) {
-          SNode parm = _zCursor3.getCurrent();
-          if (!(SequenceOperations.contains(applicableParmConcepts, SNodeOperations.getConceptDeclaration(parm)))) {
-            TypeChecker.getInstance().reportTypeError(parm, "not applicable here", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178302007667");
-            noProblem = false;
-          }
-        }
-      } finally {
-        _zCursor3.release();
+    for(SNode parm : SLinkOperations.getTargets(op, "parameter", true)) {
+      if (!(ListSequence.fromList(applicableParmConcepts).contains(SNodeOperations.getConceptDeclaration(parm)))) {
+        TypeChecker.getInstance().reportTypeError(parm, "not applicable here", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178302007667");
+        noProblem = false;
       }
     }
     return noProblem;

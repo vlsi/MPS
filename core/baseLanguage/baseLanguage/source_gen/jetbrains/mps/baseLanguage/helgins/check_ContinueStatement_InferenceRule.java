@@ -5,8 +5,10 @@ package jetbrains.mps.baseLanguage.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -16,11 +18,16 @@ public class check_ContinueStatement_InferenceRule implements InferenceRule_Runt
   }
 
   public void applyRule(final SNode nodeToCheck) {
-    final zClosureContext2 _zClosureContext2 = new zClosureContext2();
     if (!(SPropertyOperations.hasValue(nodeToCheck, "label", null))) {
-      _zClosureContext2.lbl = SPropertyOperations.getString(nodeToCheck, "label");
-      Iterable<SNode> matchingLoops = SequenceOperations.where(SNodeOperations.getAncestors(nodeToCheck, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false), new zPredicate2(check_ContinueStatement_InferenceRule.this, _zClosureContext2));
-      if (!(!(SequenceOperations.isEmpty(matchingLoops)))) {
+      final String lbl = SPropertyOperations.getString(nodeToCheck, "label");
+      Iterable<SNode> matchingLoops = ListSequence.fromList(SNodeOperations.getAncestors(nodeToCheck, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).where(new IWhereFilter <SNode>() {
+
+        public boolean accept(SNode it) {
+          return lbl.equals(SPropertyOperations.getString(it, "label"));
+        }
+
+      });
+      if (!(Sequence.fromIterable(matchingLoops).isNotEmpty())) {
         TypeChecker.getInstance().reportTypeError(nodeToCheck, "No such label", "jetbrains.mps.baseLanguage.helgins", "1199470337258");
       }
     }

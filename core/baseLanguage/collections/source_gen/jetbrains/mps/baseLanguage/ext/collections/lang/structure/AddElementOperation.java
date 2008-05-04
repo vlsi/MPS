@@ -12,7 +12,7 @@ public class AddElementOperation extends AbstractListOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation";
   public static String ARGUMENT = "argument";
 
-  public  AddElementOperation(SNode node) {
+  public AddElementOperation(SNode node) {
     super(node);
   }
 

@@ -11,12 +11,10 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.Triplet;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.ypath.runtime.TraversalAxis;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.ypath.constraints.TreePath_Behavior;
 import jetbrains.mps.ypath.constraints.ITreePathExpression_Behavior;
 import jetbrains.mps.ypath.actions.TraversalAxisUtil;
@@ -26,59 +24,35 @@ import jetbrains.mps.smodel.SModel;
 
 public class menu_SubstituteIterateOperationAxis extends AbstractCellMenuComponent {
 
-  public  menu_SubstituteIterateOperationAxis() {
+  public menu_SubstituteIterateOperationAxis() {
     super(new ISubstituteInfoPart[]{new menu_SubstituteIterateOperationAxis.IterateOperation_generic_cellMenu1()});
   }
   public static class IterateOperation_generic_cellMenu1 extends AbstractCellMenuPart_Generic_Group {
 
-    public  IterateOperation_generic_cellMenu1() {
+    public IterateOperation_generic_cellMenu1() {
     }
 
     public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
       SNode tpoe = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
-      List<Triplet> res = ListOperations.<Triplet>createList();
-      if(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true)), "jetbrains.mps.ypath.structure.TreePathType")) {
+      List<Triplet> res = ListSequence.<Triplet>fromArray();
+      if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true)), "jetbrains.mps.ypath.structure.TreePathType")) {
         SNode nodeType = SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true)), "nodeType", true);
-        {
-          ICursor<TraversalAxis> _zCursor2 = CursorFactory.createCursor(TraversalAxis.getConstants());
-          try {
-            while(_zCursor2.moveToNext()) {
-              TraversalAxis axis = _zCursor2.getCurrent();
-              ListOperations.addElement(res, new Triplet(axis, null, null));
-              {
-                ICursor<SNode> _zCursor3 = CursorFactory.createCursor(TreePath_Behavior.call_getFeature_1184591220431(ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe), nodeType));
-                try {
-                  while(_zCursor3.moveToNext()) {
-                    SNode feat = _zCursor3.getCurrent();
-                    if(TraversalAxisUtil.isAcceptableFeatureForAxis(feat, axis)) {
-                      if(SPropertyOperations.getBoolean(feat, "default")) {
-                        ListOperations.addElement(res, new Triplet(axis, feat, null));
-                      } else
-                      if(SNodeOperations.isInstanceOf(feat, "jetbrains.mps.ypath.structure.IParamFeature")) {
-                        {
-                          ICursor<SNode> _zCursor4 = CursorFactory.createCursor(IParamFeature_Behavior.call_getParameterObjects_1197461148674(feat, nodeType));
-                          try {
-                            while(_zCursor4.moveToNext()) {
-                              SNode pw = _zCursor4.getCurrent();
-                              ListOperations.addElement(res, new Triplet(axis, feat, pw));
-                            }
-                          } finally {
-                            _zCursor4.release();
-                          }
-                        }
-                      } else
-                      {
-                        ListOperations.addElement(res, new Triplet(axis, feat, null));
-                      }
-                    }
-                  }
-                } finally {
-                  _zCursor3.release();
+        for(TraversalAxis axis : TraversalAxis.getConstants()) {
+          ListSequence.fromList(res).addElement(new Triplet(axis, null, null));
+          for(SNode feat : TreePath_Behavior.call_getFeature_1184591220431(ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe), nodeType)) {
+            if (TraversalAxisUtil.isAcceptableFeatureForAxis(feat, axis)) {
+              if (SPropertyOperations.getBoolean(feat, "default")) {
+                ListSequence.fromList(res).addElement(new Triplet(axis, feat, null));
+              } else
+              if (SNodeOperations.isInstanceOf(feat, "jetbrains.mps.ypath.structure.IParamFeature")) {
+                for(SNode pw : IParamFeature_Behavior.call_getParameterObjects_1197461148674(feat, nodeType)) {
+                  ListSequence.fromList(res).addElement(new Triplet(axis, feat, pw));
                 }
+              } else
+              {
+                ListSequence.fromList(res).addElement(new Triplet(axis, feat, null));
               }
             }
-          } finally {
-            _zCursor2.release();
           }
         }
       }
@@ -111,14 +85,14 @@ public class menu_SubstituteIterateOperationAxis extends AbstractCellMenuCompone
       SNode feat = (SNode)parameterObject.second();
       SNode pw = (SNode)parameterObject.third();
       String suffix = "";
-      if((feat == null)) {
+      if ((feat == null)) {
         suffix = " *";
       } else
       {
-        if(SPropertyOperations.getBoolean(feat, "default")) {
+        if (SPropertyOperations.getBoolean(feat, "default")) {
           suffix = "";
         } else
-        if((pw != null)) {
+        if ((pw != null)) {
           suffix = SPropertyOperations.getString(pw, "name");
         } else
         {
@@ -137,14 +111,14 @@ public class menu_SubstituteIterateOperationAxis extends AbstractCellMenuCompone
       SNode feat = (SNode)parameterObject.second();
       SNode pw = (SNode)parameterObject.third();
       String suffix = "";
-      if((feat == null)) {
+      if ((feat == null)) {
         suffix = "all";
       } else
       {
-        if(SPropertyOperations.getBoolean(feat, "default")) {
+        if (SPropertyOperations.getBoolean(feat, "default")) {
           suffix = "default";
         } else
-        if((pw != null)) {
+        if ((pw != null)) {
           suffix = SPropertyOperations.getString(pw, "name") + " " + SPropertyOperations.getString(feat, "name");
         } else
         {

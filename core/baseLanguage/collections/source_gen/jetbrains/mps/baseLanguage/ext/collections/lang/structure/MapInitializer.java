@@ -14,7 +14,7 @@ public class MapInitializer extends BaseConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapInitializer";
   public static String ENTRIES = "entries";
 
-  public  MapInitializer(SNode node) {
+  public MapInitializer(SNode node) {
     super(node);
   }
 

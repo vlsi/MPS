@@ -16,7 +16,7 @@ public class CoerceStatement extends Statement {
   public static String NODE_TO_COERCE = "nodeToCoerce";
   public static String BODY = "body";
 
-  public  CoerceStatement(SNode node) {
+  public CoerceStatement(SNode node) {
     super(node);
   }
 

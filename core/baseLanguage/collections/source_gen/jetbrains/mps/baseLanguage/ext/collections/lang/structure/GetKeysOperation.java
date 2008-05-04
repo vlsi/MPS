@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class GetKeysOperation extends MapOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetKeysOperation";
 
-  public  GetKeysOperation(SNode node) {
+  public GetKeysOperation(SNode node) {
     super(node);
   }
 

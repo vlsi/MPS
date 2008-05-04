@@ -31,7 +31,7 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_PropertyValues;
 import java.util.List;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
 import jetbrains.mps.util.NameUtil;
@@ -409,15 +409,15 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      List<String> result = ListOperations.<String>createList();
+      List<String> result = ListSequence.<String>fromArray();
       if (SPropertyOperations.hasValue(node, "metaClass", "aggregation", null)) {
         for(Cardinality c : Cardinality.getConstants()) {
-          ListOperations.addElement(result, c.getValueAsString());
+          ListSequence.fromList(result).addElement(c.getValueAsString());
         }
       } else
       {
-        ListOperations.addElement(result, Cardinality._0__1.getValueAsString());
-        ListOperations.addElement(result, Cardinality._1.getValueAsString());
+        ListSequence.fromList(result).addElement(Cardinality._0__1.getValueAsString());
+        ListSequence.fromList(result).addElement(Cardinality._1.getValueAsString());
       }
       return result;
     }
@@ -429,10 +429,10 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
-      List<String> postfixes = ListOperations.<String>createList();
+      List<String> postfixes = ListSequence.<String>fromArray();
       if ((SLinkOperations.getTarget(node, "target", false) != null)) {
         String name = NameUtil.decapitalize(SPropertyOperations.getString(SLinkOperations.getTarget(node, "target", false), "name"));
-        ListOperations.addAllElements(postfixes, NameUtil.splitByCamels(name));
+        ListSequence.fromList(postfixes).addSequence(ListSequence.fromList(NameUtil.splitByCamels(name)));
       }
       return postfixes;
     }

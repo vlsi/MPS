@@ -22,7 +22,7 @@ public class InternalPartialFieldReference extends Expression {
   }
 
   public static InternalPartialFieldReference newInstance(SModel sm, boolean init) {
-    return (InternalPartialFieldReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InternalPartialFieldReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InternalPartialFieldReference newInstance(SModel sm) {
@@ -39,7 +39,7 @@ public class InternalPartialFieldReference extends Expression {
   }
 
   public Type getFieldType() {
-    return (Type) this.getChild(InternalPartialFieldReference.FIELD_TYPE);
+    return (Type)this.getChild(InternalPartialFieldReference.FIELD_TYPE);
   }
 
   public void setFieldType(Type node) {
@@ -47,7 +47,7 @@ public class InternalPartialFieldReference extends Expression {
   }
 
   public ClassifierType getInstanceType() {
-    return (ClassifierType) this.getChild(InternalPartialFieldReference.INSTANCE_TYPE);
+    return (ClassifierType)this.getChild(InternalPartialFieldReference.INSTANCE_TYPE);
   }
 
   public void setInstanceType(ClassifierType node) {
@@ -55,7 +55,7 @@ public class InternalPartialFieldReference extends Expression {
   }
 
   public Expression getInstance() {
-    return (Expression) this.getChild(InternalPartialFieldReference.INSTANCE);
+    return (Expression)this.getChild(InternalPartialFieldReference.INSTANCE);
   }
 
   public void setInstance(Expression node) {

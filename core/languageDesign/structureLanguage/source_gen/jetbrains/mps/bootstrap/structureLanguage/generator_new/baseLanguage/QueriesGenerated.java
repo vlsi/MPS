@@ -19,14 +19,17 @@ import jetbrains.mps.bootstrap.structureLanguage.constraints.EnumerationDataType
 import jetbrains.mps.generator.template.IfMacroContext;
 import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ITranslator;
+import jetbrains.mps.internal.collections.runtime.ISequence;
+import jetbrains.mps.internal.collections.runtime.ISequenceIterableAdapter;
+import java.util.Iterator;
+import jetbrains.mps.closures.runtime.YieldingIterator;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.TemplateFragmentContext;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 
 public class QueriesGenerated {
@@ -551,101 +554,768 @@ public class QueriesGenerated {
   }
 
   public static List sourceNodesQuery_1169582607427(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    final zClosureContext _zClosureContext = new zClosureContext();
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
     // all string-type-properties from implemented interfaces
-    _zClosureContext.names = ListOperations.<String>createList();
-    return SequenceOperations.toList(SequenceOperations.map(concepts, new zMapper(null, _zClosureContext)));
+    final List<String> names = ListSequence.<String>fromArray();
+    return ListSequence.fromList(concepts).translate(new ITranslator <SNode, SNode>() {
+
+      public ISequence<SNode> translate(final SNode it) {
+        return new ISequenceIterableAdapter <SNode>() {
+
+          public Iterator<SNode> iterator() {
+            return new YieldingIterator <SNode>() {
+
+              private int __CP__ = 0;
+              private SNode _2_p;
+              private Iterator<SNode> _2_p_it;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      this._2_p_it = SLinkOperations.getTargets(it, "propertyDeclaration", true).iterator();
+                    case 3:
+                      if (!(this._2_p_it.hasNext())) {
+                        this.__CP__ = 1;
+                        break;
+                      }
+                      this._2_p = this._2_p_it.next();
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      if (!(ListSequence.fromList(names).contains(SPropertyOperations.getString(this._2_p, "name")))) {
+                        this.__CP__ = 6;
+                        break;
+                      }
+                      this.__CP__ = 3;
+                      break;
+                    case 7:
+                      if (QueriesUtil.propertyDataType_isString(this._2_p)) {
+                        this.__CP__ = 8;
+                        break;
+                      }
+                      this.__CP__ = 3;
+                      break;
+                    case 10:
+                      this.__CP__ = 3;
+                      this.yield(this._2_p);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    case 4:
+                      this.__CP__ = 5;
+                      break;
+                    case 6:
+                      this.__CP__ = 7;
+                      break;
+                    case 8:
+                      ListSequence.fromList(names).addElement(SPropertyOperations.getString(this._2_p, "name"));
+                      this.__CP__ = 10;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    }).toListSequence();
   }
 
   public static List sourceNodesQuery_1169582607484(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    final zClosureContext1 _zClosureContext1 = new zClosureContext1();
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
     // all boolean-type-properties from implemented interfaces
-    _zClosureContext1.names = ListOperations.<String>createList();
-    return SequenceOperations.toList(SequenceOperations.map(concepts, new zMapper1(null, _zClosureContext1)));
+    final List<String> names = ListSequence.<String>fromArray();
+    return ListSequence.fromList(concepts).translate(new ITranslator <SNode, SNode>() {
+
+      public ISequence<SNode> translate(final SNode it) {
+        return new ISequenceIterableAdapter <SNode>() {
+
+          public Iterator<SNode> iterator() {
+            return new YieldingIterator <SNode>() {
+
+              private int __CP__ = 0;
+              private SNode _2_p;
+              private Iterator<SNode> _2_p_it;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      this._2_p_it = SLinkOperations.getTargets(it, "propertyDeclaration", true).iterator();
+                    case 3:
+                      if (!(this._2_p_it.hasNext())) {
+                        this.__CP__ = 1;
+                        break;
+                      }
+                      this._2_p = this._2_p_it.next();
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      if (!(ListSequence.fromList(names).contains(SPropertyOperations.getString(this._2_p, "name")))) {
+                        this.__CP__ = 6;
+                        break;
+                      }
+                      this.__CP__ = 3;
+                      break;
+                    case 7:
+                      if (QueriesUtil.propertyDataType_isBoolean(this._2_p)) {
+                        this.__CP__ = 8;
+                        break;
+                      }
+                      this.__CP__ = 3;
+                      break;
+                    case 10:
+                      this.__CP__ = 3;
+                      this.yield(this._2_p);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    case 4:
+                      this.__CP__ = 5;
+                      break;
+                    case 6:
+                      this.__CP__ = 7;
+                      break;
+                    case 8:
+                      ListSequence.fromList(names).addElement(SPropertyOperations.getString(this._2_p, "name"));
+                      this.__CP__ = 10;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    }).toListSequence();
   }
 
   public static List sourceNodesQuery_1169582607556(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    final zClosureContext2 _zClosureContext2 = new zClosureContext2();
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
     // all integer-type-properties from implemented interfaces
-    _zClosureContext2.names = ListOperations.<String>createList();
-    return SequenceOperations.toList(SequenceOperations.map(concepts, new zMapper2(null, _zClosureContext2)));
+    final List<String> names = ListSequence.<String>fromArray();
+    return ListSequence.fromList(concepts).translate(new ITranslator <SNode, SNode>() {
+
+      public ISequence<SNode> translate(final SNode it) {
+        return new ISequenceIterableAdapter <SNode>() {
+
+          public Iterator<SNode> iterator() {
+            return new YieldingIterator <SNode>() {
+
+              private int __CP__ = 0;
+              private SNode _2_p;
+              private Iterator<SNode> _2_p_it;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      this._2_p_it = SLinkOperations.getTargets(it, "propertyDeclaration", true).iterator();
+                    case 3:
+                      if (!(this._2_p_it.hasNext())) {
+                        this.__CP__ = 1;
+                        break;
+                      }
+                      this._2_p = this._2_p_it.next();
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      if (!(ListSequence.fromList(names).contains(SPropertyOperations.getString(this._2_p, "name")))) {
+                        this.__CP__ = 6;
+                        break;
+                      }
+                      this.__CP__ = 3;
+                      break;
+                    case 7:
+                      if (QueriesUtil.propertyDataType_isInteger(this._2_p)) {
+                        this.__CP__ = 8;
+                        break;
+                      }
+                      this.__CP__ = 3;
+                      break;
+                    case 10:
+                      this.__CP__ = 3;
+                      this.yield(this._2_p);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    case 4:
+                      this.__CP__ = 5;
+                      break;
+                    case 6:
+                      this.__CP__ = 7;
+                      break;
+                    case 8:
+                      ListSequence.fromList(names).addElement(SPropertyOperations.getString(this._2_p, "name"));
+                      this.__CP__ = 10;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    }).toListSequence();
   }
 
   public static List sourceNodesQuery_1169582607613(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    final zClosureContext3 _zClosureContext3 = new zClosureContext3();
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
     // all enum-type-properties from implemented interfaces
-    _zClosureContext3.names = ListOperations.<String>createList();
-    return SequenceOperations.toList(SequenceOperations.map(concepts, new zMapper3(null, _zClosureContext3)));
+    final List<String> names = ListSequence.<String>fromArray();
+    return ListSequence.fromList(concepts).translate(new ITranslator <SNode, SNode>() {
+
+      public ISequence<SNode> translate(final SNode it) {
+        return new ISequenceIterableAdapter <SNode>() {
+
+          public Iterator<SNode> iterator() {
+            return new YieldingIterator <SNode>() {
+
+              private int __CP__ = 0;
+              private SNode _2_p;
+              private Iterator<SNode> _2_p_it;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      this._2_p_it = SLinkOperations.getTargets(it, "propertyDeclaration", true).iterator();
+                    case 3:
+                      if (!(this._2_p_it.hasNext())) {
+                        this.__CP__ = 1;
+                        break;
+                      }
+                      this._2_p = this._2_p_it.next();
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      if (!(ListSequence.fromList(names).contains(SPropertyOperations.getString(this._2_p, "name")))) {
+                        this.__CP__ = 6;
+                        break;
+                      }
+                      this.__CP__ = 3;
+                      break;
+                    case 7:
+                      if (QueriesUtil.propertyDataType_isEnum(this._2_p)) {
+                        this.__CP__ = 8;
+                        break;
+                      }
+                      this.__CP__ = 3;
+                      break;
+                    case 10:
+                      this.__CP__ = 3;
+                      this.yield(this._2_p);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    case 4:
+                      this.__CP__ = 5;
+                      break;
+                    case 6:
+                      this.__CP__ = 7;
+                      break;
+                    case 8:
+                      ListSequence.fromList(names).addElement(SPropertyOperations.getString(this._2_p, "name"));
+                      this.__CP__ = 10;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    }).toListSequence();
   }
 
   public static List sourceNodesQuery_1169582939001(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
     // all reference links with cardinality=1 and no specialization
-    return SequenceOperations.toList(SequenceOperations.map(concepts, new zMapper4(null, null)));
+    return ListSequence.fromList(concepts).translate(new ITranslator <SNode, SNode>() {
+
+      public ISequence<SNode> translate(final SNode it) {
+        return new ISequenceIterableAdapter <SNode>() {
+
+          public Iterator<SNode> iterator() {
+            return new YieldingIterator <SNode>() {
+
+              private int __CP__ = 0;
+              private SNode _2_link;
+              private Iterator<SNode> _2_link_it;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      this._2_link_it = SLinkOperations.getTargets(it, "linkDeclaration", true).iterator();
+                    case 3:
+                      if (!(this._2_link_it.hasNext())) {
+                        this.__CP__ = 1;
+                        break;
+                      }
+                      this._2_link = this._2_link_it.next();
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      if (QueriesUtil.isRefLink_card_1_nospec(this._2_link)) {
+                        this.__CP__ = 6;
+                        break;
+                      }
+                      this.__CP__ = 3;
+                      break;
+                    case 7:
+                      this.__CP__ = 3;
+                      this.yield(this._2_link);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    case 4:
+                      this.__CP__ = 5;
+                      break;
+                    case 6:
+                      this.__CP__ = 7;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    }).toListSequence();
   }
 
   public static List sourceNodesQuery_1169583297000(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
     // all reference links with cardinality=1 and specialization
-    return SequenceOperations.toList(SequenceOperations.map(concepts, new zMapper5(null, null)));
+    return ListSequence.fromList(concepts).translate(new ITranslator <SNode, SNode>() {
+
+      public ISequence<SNode> translate(final SNode it) {
+        return new ISequenceIterableAdapter <SNode>() {
+
+          public Iterator<SNode> iterator() {
+            return new YieldingIterator <SNode>() {
+
+              private int __CP__ = 0;
+              private SNode _2_link;
+              private Iterator<SNode> _2_link_it;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      this._2_link_it = SLinkOperations.getTargets(it, "linkDeclaration", true).iterator();
+                    case 3:
+                      if (!(this._2_link_it.hasNext())) {
+                        this.__CP__ = 1;
+                        break;
+                      }
+                      this._2_link = this._2_link_it.next();
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      if (QueriesUtil.isRefLink_card_1_spec(this._2_link)) {
+                        this.__CP__ = 6;
+                        break;
+                      }
+                      this.__CP__ = 3;
+                      break;
+                    case 7:
+                      this.__CP__ = 3;
+                      this.yield(this._2_link);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    case 4:
+                      this.__CP__ = 5;
+                      break;
+                    case 6:
+                      this.__CP__ = 7;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    }).toListSequence();
   }
 
   public static List sourceNodesQuery_1169591070416(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
     // all aggregation links with cardinality:1 and no specialization
-    return SequenceOperations.toList(SequenceOperations.map(concepts, new zMapper6(null, null)));
+    return ListSequence.fromList(concepts).translate(new ITranslator <SNode, SNode>() {
+
+      public ISequence<SNode> translate(final SNode it) {
+        return new ISequenceIterableAdapter <SNode>() {
+
+          public Iterator<SNode> iterator() {
+            return new YieldingIterator <SNode>() {
+
+              private int __CP__ = 0;
+              private SNode _2_link;
+              private Iterator<SNode> _2_link_it;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      this._2_link_it = SLinkOperations.getTargets(it, "linkDeclaration", true).iterator();
+                    case 3:
+                      if (!(this._2_link_it.hasNext())) {
+                        this.__CP__ = 1;
+                        break;
+                      }
+                      this._2_link = this._2_link_it.next();
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      if (QueriesUtil.isAggLink_card_1_nospec(this._2_link)) {
+                        this.__CP__ = 6;
+                        break;
+                      }
+                      this.__CP__ = 3;
+                      break;
+                    case 7:
+                      this.__CP__ = 3;
+                      this.yield(this._2_link);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    case 4:
+                      this.__CP__ = 5;
+                      break;
+                    case 6:
+                      this.__CP__ = 7;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    }).toListSequence();
   }
 
   public static List sourceNodesQuery_1169592290002(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
     // all aggregation links with cardinality:1 and specialization
-    return SequenceOperations.toList(SequenceOperations.where(SequenceOperations.map(concepts, new zMapper7(null, null)), new zPredicate(null, null)));
+    return ListSequence.fromList(concepts).translate(new ITranslator <SNode, SNode>() {
+
+      public ISequence<SNode> translate(final SNode it) {
+        return new ISequenceIterableAdapter <SNode>() {
+
+          public Iterator<SNode> iterator() {
+            return new YieldingIterator <SNode>() {
+
+              private int __CP__ = 0;
+              private SNode _2_link;
+              private Iterator<SNode> _2_link_it;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      this._2_link_it = SLinkOperations.getTargets(it, "linkDeclaration", true).iterator();
+                    case 3:
+                      if (!(this._2_link_it.hasNext())) {
+                        this.__CP__ = 1;
+                        break;
+                      }
+                      this._2_link = this._2_link_it.next();
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      if (QueriesUtil.isAggLink_card_1_spec(this._2_link)) {
+                        this.__CP__ = 6;
+                        break;
+                      }
+                      this.__CP__ = 3;
+                      break;
+                    case 7:
+                      this.__CP__ = 3;
+                      this.yield(this._2_link);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    case 4:
+                      this.__CP__ = 5;
+                      break;
+                    case 6:
+                      this.__CP__ = 7;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    }).where(new IWhereFilter <SNode>() {
+
+      public boolean accept(SNode it) {
+        return !(SPropertyOperations.getString(it, "role").equals(SPropertyOperations.getString(SLinkOperations.getTarget(it, "specializedLink", false), "role")));
+      }
+
+    }).toListSequence();
   }
 
   public static List sourceNodesQuery_1169592375021(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
     // all aggregation links with cardinality:n and no specialization
-    return SequenceOperations.toList(SequenceOperations.map(concepts, new zMapper8(null, null)));
+    return ListSequence.fromList(concepts).translate(new ITranslator <SNode, SNode>() {
+
+      public ISequence<SNode> translate(final SNode it) {
+        return new ISequenceIterableAdapter <SNode>() {
+
+          public Iterator<SNode> iterator() {
+            return new YieldingIterator <SNode>() {
+
+              private int __CP__ = 0;
+              private SNode _2_link;
+              private Iterator<SNode> _2_link_it;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      this._2_link_it = SLinkOperations.getTargets(it, "linkDeclaration", true).iterator();
+                    case 3:
+                      if (!(this._2_link_it.hasNext())) {
+                        this.__CP__ = 1;
+                        break;
+                      }
+                      this._2_link = this._2_link_it.next();
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      if (QueriesUtil.isAggLink_card_n_nospec(this._2_link)) {
+                        this.__CP__ = 6;
+                        break;
+                      }
+                      this.__CP__ = 3;
+                      break;
+                    case 7:
+                      this.__CP__ = 3;
+                      this.yield(this._2_link);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    case 4:
+                      this.__CP__ = 5;
+                      break;
+                    case 6:
+                      this.__CP__ = 7;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    }).toListSequence();
   }
 
   public static List sourceNodesQuery_1169751054593(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true), new zPredicate1(null, null)));
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true)).where(new IWhereFilter <SNode>() {
+
+      public boolean accept(SNode p) {
+        return QueriesUtil.propertyDataType_isString(p);
+      }
+
+    }).toListSequence();
   }
 
   public static List sourceNodesQuery_1169751903568(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true), new zPredicate2(null, null)));
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true)).where(new IWhereFilter <SNode>() {
+
+      public boolean accept(SNode p) {
+        return QueriesUtil.propertyDataType_isBoolean(p);
+      }
+
+    }).toListSequence();
   }
 
   public static List sourceNodesQuery_1169751987220(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true), new zPredicate3(null, null)));
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true)).where(new IWhereFilter <SNode>() {
+
+      public boolean accept(SNode p) {
+        return QueriesUtil.propertyDataType_isInteger(p);
+      }
+
+    }).toListSequence();
   }
 
   public static List sourceNodesQuery_1169752052157(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true), new zPredicate4(null, null)));
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true)).where(new IWhereFilter <SNode>() {
+
+      public boolean accept(SNode p) {
+        return QueriesUtil.propertyDataType_isEnum(p);
+      }
+
+    }).toListSequence();
   }
 
   public static List sourceNodesQuery_1169752120196(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true), new zPredicate5(null, null)));
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).where(new IWhereFilter <SNode>() {
+
+      public boolean accept(SNode link) {
+        return QueriesUtil.isAggLink_card_1_nospec(link);
+      }
+
+    }).toListSequence();
   }
 
   public static List sourceNodesQuery_1169753230932(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true), new zPredicate6(null, null)));
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).where(new IWhereFilter <SNode>() {
+
+      public boolean accept(SNode link) {
+        return QueriesUtil.isAggLink_card_1_spec(link);
+      }
+
+    }).toListSequence();
   }
 
   public static List sourceNodesQuery_1169753275330(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true), new zPredicate7(null, null)));
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).where(new IWhereFilter <SNode>() {
+
+      public boolean accept(SNode link) {
+        return QueriesUtil.isAggLink_card_n_nospec(link);
+      }
+
+    }).toListSequence();
   }
 
   public static List sourceNodesQuery_1169753367103(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true), new zPredicate8(null, null)));
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).where(new IWhereFilter <SNode>() {
+
+      public boolean accept(SNode link) {
+        return QueriesUtil.isRefLink_card_1_nospec(link);
+      }
+
+    }).toListSequence();
   }
 
   public static List sourceNodesQuery_1169753422079(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true), new zPredicate9(null, null)));
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).where(new IWhereFilter <SNode>() {
+
+      public boolean accept(SNode link) {
+        return QueriesUtil.isRefLink_card_1_spec(link);
+      }
+
+    }).toListSequence();
   }
 
   public static List sourceNodesQuery_1170173405399(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -717,17 +1387,9 @@ public class QueriesGenerated {
 
   public static SNode templateFragment_ContextNodeQuery_1184375448947(final IOperationContext operationContext, final TemplateFragmentContext _context) {
     List<SNode> methods = SLinkOperations.getTargets(_context.getMainContextNode(), "method", true);
-    {
-      ICursor<SNode> _zCursor9 = CursorFactory.createCursor(methods);
-      try {
-        while(_zCursor9.moveToNext()) {
-          SNode method = _zCursor9.getCurrent();
-          if ("getValueAsString".equals(SPropertyOperations.getString(method, "name"))) {
-            return SLinkOperations.getTarget(method, "body", true);
-          }
-        }
-      } finally {
-        _zCursor9.release();
+    for(SNode method : methods) {
+      if ("getValueAsString".equals(SPropertyOperations.getString(method, "name"))) {
+        return SLinkOperations.getTarget(method, "body", true);
       }
     }
     return null;
@@ -735,17 +1397,9 @@ public class QueriesGenerated {
 
   public static SNode templateFragment_ContextNodeQuery_1184375906184(final IOperationContext operationContext, final TemplateFragmentContext _context) {
     List<SNode> methods = SLinkOperations.getTargets(_context.getMainContextNode(), "method", true);
-    {
-      ICursor<SNode> _zCursor10 = CursorFactory.createCursor(methods);
-      try {
-        while(_zCursor10.moveToNext()) {
-          SNode method = _zCursor10.getCurrent();
-          if ("getValueAsString".equals(SPropertyOperations.getString(method, "name"))) {
-            return SLinkOperations.getTarget(method, "body", true);
-          }
-        }
-      } finally {
-        _zCursor10.release();
+    for(SNode method : methods) {
+      if ("getValueAsString".equals(SPropertyOperations.getString(method, "name"))) {
+        return SLinkOperations.getTarget(method, "body", true);
       }
     }
     return null;
@@ -753,17 +1407,9 @@ public class QueriesGenerated {
 
   public static SNode templateFragment_ContextNodeQuery_1184375942612(final IOperationContext operationContext, final TemplateFragmentContext _context) {
     List<SNode> methods = SLinkOperations.getTargets(_context.getMainContextNode(), "method", true);
-    {
-      ICursor<SNode> _zCursor11 = CursorFactory.createCursor(methods);
-      try {
-        while(_zCursor11.moveToNext()) {
-          SNode method = _zCursor11.getCurrent();
-          if ("getValueAsString".equals(SPropertyOperations.getString(method, "name"))) {
-            return SLinkOperations.getTarget(method, "body", true);
-          }
-        }
-      } finally {
-        _zCursor11.release();
+    for(SNode method : methods) {
+      if ("getValueAsString".equals(SPropertyOperations.getString(method, "name"))) {
+        return SLinkOperations.getTarget(method, "body", true);
       }
     }
     return null;

@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ThisClassifierExpresson_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_ThisClassifierExpresson_InferenceRule() {
+  public typeof_ThisClassifierExpresson_InferenceRule() {
   }
 
   public void applyRule(final SNode nodeToCheck) {

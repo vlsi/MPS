@@ -13,7 +13,7 @@ public class ConceptReference extends BaseConcept {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptReference";
   public static String CONCEPT = "concept";
 
-  public  ConceptReference(SNode node) {
+  public ConceptReference(SNode node) {
     super(node);
   }
 

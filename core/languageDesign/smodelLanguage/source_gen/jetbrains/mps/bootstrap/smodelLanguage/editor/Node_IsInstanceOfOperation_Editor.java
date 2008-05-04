@@ -245,7 +245,7 @@ public class Node_IsInstanceOfOperation_Editor extends DefaultNodeEditor {
 
   public static class _Inline26 extends AbstractCellProvider {
 
-    public  _Inline26() {
+    public _Inline26() {
       super();
     }
 

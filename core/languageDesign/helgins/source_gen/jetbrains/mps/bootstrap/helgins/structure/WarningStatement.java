@@ -14,7 +14,7 @@ public class WarningStatement extends Statement {
   public static String WARNING_TEXT = "warningText";
   public static String NODE_TO_REPORT = "nodeToReport";
 
-  public  WarningStatement(SNode node) {
+  public WarningStatement(SNode node) {
     super(node);
   }
 

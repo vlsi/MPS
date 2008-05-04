@@ -13,7 +13,7 @@ public class MapOperationExpression extends Expression {
   public static String EXPRESSION = "expression";
   public static String MAP_OPERATION = "mapOperation";
 
-  public  MapOperationExpression(SNode node) {
+  public MapOperationExpression(SNode node) {
     super(node);
   }
 

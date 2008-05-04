@@ -139,7 +139,7 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
 
   public static class _Inline1 extends AbstractCellProvider {
 
-    public  _Inline1() {
+    public _Inline1() {
       super();
     }
 
@@ -191,7 +191,7 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
 }
   public static class _RefNodeListHandler extends RefNodeListHandler {
 
-    public  _RefNodeListHandler(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

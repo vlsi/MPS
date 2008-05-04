@@ -163,7 +163,7 @@ public class IsSubtypeExpression_Editor extends DefaultNodeEditor {
 
   public static class IsSubtypeExpression_replaceWith_IsSubtypeExpression_cellMenu extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
 
-    public  IsSubtypeExpression_replaceWith_IsSubtypeExpression_cellMenu() {
+    public IsSubtypeExpression_replaceWith_IsSubtypeExpression_cellMenu() {
     }
 
     public String getReplacementConceptName() {

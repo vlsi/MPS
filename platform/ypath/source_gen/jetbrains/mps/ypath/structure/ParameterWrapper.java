@@ -18,7 +18,7 @@ public class ParameterWrapper extends BaseConcept implements INamedConcept {
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String PARAM_REF = "paramRef";
 
-  public  ParameterWrapper(SNode node) {
+  public ParameterWrapper(SNode node) {
     super(node);
   }
 

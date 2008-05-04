@@ -11,7 +11,7 @@ public class DefaultClassifierType extends BaseClassifierType {
   public static final String concept = "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierType";
   public static String CLASSIFIER = "classifier";
 
-  public  DefaultClassifierType(SNode node) {
+  public DefaultClassifierType(SNode node) {
     super(node);
   }
 

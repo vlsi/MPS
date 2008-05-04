@@ -11,10 +11,8 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.smodel.search.ISearchScope;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersCache;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.search.VisibilityUtil;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
@@ -40,34 +38,18 @@ public class PropertyReference_property_ReferentConstraint implements IModelCons
   }
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    List<SNode> resultProperties = ListOperations.<SNode>createList();
+    List<SNode> resultProperties = ListSequence.<SNode>fromArray();
     SNode opClassifier = DotExpression_Behavior.call_getClassifier_1201997214164(_context.getEnclosingNode());
     List<SNode> classifiers = ClassifierAndSuperClassifiersCache.getInstance(opClassifier).getClassifierNodes();
-    {
-      ICursor<SNode> _zCursor5 = CursorFactory.createCursor(classifiers);
-      try {
-        while(_zCursor5.moveToNext()) {
-          SNode classifier = _zCursor5.getCurrent();
-          if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-            SNode classConcept = classifier;
-            List<SNode> properties = SLinkOperations.getTargets(classConcept, "property", true);
-            {
-              ICursor<SNode> _zCursor6 = CursorFactory.createCursor(properties);
-              try {
-                while(_zCursor6.moveToNext()) {
-                  SNode property = _zCursor6.getCurrent();
-                  if (VisibilityUtil.isVisible(_context.getEnclosingNode(), property)) {
-                    ListOperations.addElement(resultProperties, property);
-                  }
-                }
-              } finally {
-                _zCursor6.release();
-              }
-            }
+    for(SNode classifier : classifiers) {
+      if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+        SNode classConcept = classifier;
+        List<SNode> properties = SLinkOperations.getTargets(classConcept, "property", true);
+        for(SNode property : properties) {
+          if (VisibilityUtil.isVisible(_context.getEnclosingNode(), property)) {
+            ListSequence.fromList(resultProperties).addElement(property);
           }
         }
-      } finally {
-        _zCursor5.release();
       }
     }
     return new SimpleSearchScope(resultProperties);

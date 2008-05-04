@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class Node_DeleteOperation extends SNodeOperation {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_DeleteOperation";
 
-  public  Node_DeleteOperation(SNode node) {
+  public Node_DeleteOperation(SNode node) {
     super(node);
   }
 

@@ -425,7 +425,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
 
   public static class AbstractEquationStatement_replaceWith_AbstractEquationStatement_cellMenu extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
 
-    public  AbstractEquationStatement_replaceWith_AbstractEquationStatement_cellMenu() {
+    public AbstractEquationStatement_replaceWith_AbstractEquationStatement_cellMenu() {
     }
 
     public String getReplacementConceptName() {

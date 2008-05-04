@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class KindBlock extends LambdaMethod {
   public static final String concept = "jetbrains.mps.ypath.structure.KindBlock";
 
-  public  KindBlock(SNode node) {
+  public KindBlock(SNode node) {
     super(node);
   }
 

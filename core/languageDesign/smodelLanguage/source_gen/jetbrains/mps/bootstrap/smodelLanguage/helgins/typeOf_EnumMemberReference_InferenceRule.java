@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_EnumMemberReference_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeOf_EnumMemberReference_InferenceRule() {
+  public typeOf_EnumMemberReference_InferenceRule() {
   }
 
   public void applyRule(final SNode node) {

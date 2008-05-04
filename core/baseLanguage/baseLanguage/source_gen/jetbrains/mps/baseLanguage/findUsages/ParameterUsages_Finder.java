@@ -9,10 +9,9 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.ide.progress.NullAdaptiveProgressMonitor;
 import org.jetbrains.annotations.Nullable;
 
@@ -52,30 +51,12 @@ public class ParameterUsages_Finder extends GeneratedFinder {
     }
     // 
     List<SNode> overridingMethods = this.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder", nodeParentMethod, scope, monitor);
-    ListOperations.addElement(overridingMethods, nodeParentMethod);
+    ListSequence.fromList(overridingMethods).addElement(nodeParentMethod);
     // 
-    {
-      ICursor<SNode> _zCursor14 = CursorFactory.createCursor(overridingMethods);
-      try {
-        while(_zCursor14.moveToNext()) {
-          SNode methodNode = _zCursor14.getCurrent();
-          {
-            SNode parameterNode = ListOperations.getElement(SLinkOperations.getTargets(methodNode, "parameter", true), SNodeOperations.getIndexInParent(node));
-            {
-              ICursor<SNode> _zCursor15 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder", parameterNode, scope, monitor));
-              try {
-                while(_zCursor15.moveToNext()) {
-                  SNode parameterUsage = _zCursor15.getCurrent();
-                  ListOperations.addElement(_results, parameterUsage);
-                }
-              } finally {
-                _zCursor15.release();
-              }
-            }
-          }
-        }
-      } finally {
-        _zCursor14.release();
+    for(SNode methodNode : overridingMethods) {
+      SNode parameterNode = ListSequence.fromList(SLinkOperations.getTargets(methodNode, "parameter", true)).getElement(SNodeOperations.getIndexInParent(node));
+      for(SNode parameterUsage : this.executeFinder("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder", parameterNode, scope, monitor)) {
+        ListOperations.addElement(_results, parameterUsage);
       }
     }
   }
@@ -90,18 +71,10 @@ public class ParameterUsages_Finder extends GeneratedFinder {
     }
     // 
     List<SNode> overridingMethods = this.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder", nodeParentMethod, scope, new NullAdaptiveProgressMonitor());
-    ListOperations.addElement(overridingMethods, nodeParentMethod);
+    ListSequence.fromList(overridingMethods).addElement(nodeParentMethod);
     // 
-    {
-      ICursor<SNode> _zCursor16 = CursorFactory.createCursor(overridingMethods);
-      try {
-        while(_zCursor16.moveToNext()) {
-          SNode methodNode = _zCursor16.getCurrent();
-          ListOperations.addElement(_results, ListOperations.getElement(SLinkOperations.getTargets(methodNode, "parameter", true), SNodeOperations.getIndexInParent(node)));
-        }
-      } finally {
-        _zCursor16.release();
-      }
+    for(SNode methodNode : overridingMethods) {
+      ListOperations.addElement(_results, ListSequence.fromList(SLinkOperations.getTargets(methodNode, "parameter", true)).getElement(SNodeOperations.getIndexInParent(node)));
     }
   }
 

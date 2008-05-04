@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_GetLastOperation_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_GetLastOperation_InferenceRule() {
+  public typeof_GetLastOperation_InferenceRule() {
   }
 
   public void applyRule(final SNode op) {

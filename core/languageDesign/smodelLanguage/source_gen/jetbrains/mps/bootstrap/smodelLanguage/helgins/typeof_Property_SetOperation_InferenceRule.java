@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_Property_SetOperation_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_Property_SetOperation_InferenceRule() {
+  public typeof_Property_SetOperation_InferenceRule() {
   }
 
   public void applyRule(final SNode op) {

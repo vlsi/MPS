@@ -13,7 +13,7 @@ public class PageOperation extends SequenceOperation {
   public static String FROM_ELEMENT = "fromElement";
   public static String TO_ELEMENT = "toElement";
 
-  public  PageOperation(SNode node) {
+  public PageOperation(SNode node) {
     super(node);
   }
 

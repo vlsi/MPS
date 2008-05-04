@@ -14,7 +14,7 @@ public class AllAttributesQualifier extends BaseConcept implements IAttributeAcc
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  AllAttributesQualifier(SNode node) {
+  public AllAttributesQualifier(SNode node) {
     super(node);
   }
 

@@ -12,7 +12,7 @@ public class SkipOperation extends SequenceOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SkipOperation";
   public static String ELEMENTS_TO_SKIP = "elementsToSkip";
 
-  public  SkipOperation(SNode node) {
+  public SkipOperation(SNode node) {
     super(node);
   }
 

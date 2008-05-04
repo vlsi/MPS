@@ -12,7 +12,7 @@ import jetbrains.mps.bootstrap.helgins.search.TypeVarScope;
 
 public class TypeVarReference_typeVarDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  TypeVarReference_typeVarDeclaration_ReferentConstraint() {
+  public TypeVarReference_typeVarDeclaration_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

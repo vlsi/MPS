@@ -16,7 +16,7 @@ public class PropertyRefQualifier extends BaseConcept implements IPropertyAccess
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String PROPERTY = "property";
 
-  public  PropertyRefQualifier(SNode node) {
+  public PropertyRefQualifier(SNode node) {
     super(node);
   }
 

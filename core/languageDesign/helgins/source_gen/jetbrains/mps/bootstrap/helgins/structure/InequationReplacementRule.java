@@ -11,7 +11,7 @@ public class InequationReplacementRule extends AbstractSubtypingRule {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.InequationReplacementRule";
   public static String SUPERTYPE_NODE = "supertypeNode";
 
-  public  InequationReplacementRule(SNode node) {
+  public InequationReplacementRule(SNode node) {
     super(node);
   }
 

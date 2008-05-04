@@ -11,7 +11,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
 
   private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
 
-  public  ConstraintsDescriptor() {
+  public ConstraintsDescriptor() {
     this.myConstraints.add(new PropertyPatternVariableReference_patternVarDecl_ReferentConstraint());
     this.myConstraints.add(new PatternVariableReference_patternVarDecl_ReferentConstraint());
     this.myConstraints.add(new TypeVarReference_typeVarDeclaration_ReferentConstraint());

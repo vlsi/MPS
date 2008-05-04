@@ -15,7 +15,7 @@ public class MapOperation extends BaseConcept implements IOperation {
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  MapOperation(SNode node) {
+  public MapOperation(SNode node) {
     super(node);
   }
 

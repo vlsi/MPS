@@ -6,9 +6,11 @@ import jetbrains.mps.ypath.runtime.TreePath;
 import org.w3c.dom.Node;
 import jetbrains.mps.ypath.runtime.IFeatureDescriptor;
 import java.util.AbstractCollection;
-import jetbrains.mps.baseLanguage.ext.collections.internal.SequenceWithSupplier;
+import org.w3c.dom.NodeList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.closures.runtime.YieldingIterator;
 import org.w3c.dom.Element;
 
 public class DOMF extends TreePath<Node> {
@@ -60,9 +62,75 @@ public class DOMF extends TreePath<Node> {
     }
 
     public Iterable<Node> sequence() {
-      final zClosureContext1 _zClosureContext = new zClosureContext1();
-      _zClosureContext.cns = this.thisNode.getChildNodes();
-      return new SequenceWithSupplier<Node>(new zValueSupplier1(null, _zClosureContext));
+      final NodeList cns = this.thisNode.getChildNodes();
+      return Sequence.fromClosure(new ISequenceClosure <Node>() {
+
+        public Iterable<Node> iterable() {
+          return new Iterable <Node>() {
+
+            public Iterator<Node> iterator() {
+              return new YieldingIterator <Node>() {
+
+                private int __CP__ = 0;
+                private Node _7_it;
+                private int _2_i;
+
+                protected boolean moveToNext() {
+__loop__:
+                  do {
+__switch__:
+                    switch (this.__CP__) {
+                      case -1:
+                        assert false : "Internal error";
+                        return false;
+                      case 2:
+                        this._2_i = 0;
+                      case 3:
+                        if (!(this._2_i < cns.getLength())) {
+                          this.__CP__ = 1;
+                          break;
+                        }
+                        this.__CP__ = 4;
+                        break;
+                      case 5:
+                        this._2_i = this._2_i + 1;
+                        this.__CP__ = 3;
+                        break;
+                      case 8:
+                        if (this._7_it instanceof Element) {
+                          this.__CP__ = 9;
+                          break;
+                        }
+                        this.__CP__ = 5;
+                        break;
+                      case 10:
+                        this.__CP__ = 5;
+                        this.yield(this._7_it);
+                        return true;
+                      case 0:
+                        this.__CP__ = 2;
+                        break;
+                      case 4:
+                        this._7_it = cns.item(this._2_i);
+                        this.__CP__ = 8;
+                        break;
+                      case 9:
+                        this.__CP__ = 10;
+                        break;
+                      default:
+                        break __loop__;
+                    }
+                  } while(true);
+                  return false;
+                }
+
+              };
+            }
+
+          };
+        }
+
+      });
     }
 
     public Iterator<Node> iterator() {
@@ -70,10 +138,76 @@ public class DOMF extends TreePath<Node> {
     }
 
     public int size() {
-      final zClosureContext _zClosureContext1 = new zClosureContext();
-      _zClosureContext1.cns = this.thisNode.getChildNodes();
-      Iterable<Node> seq = new SequenceWithSupplier<Node>(new zValueSupplier(null, _zClosureContext1));
-      return SequenceOperations.getSize(seq);
+      final NodeList cns = this.thisNode.getChildNodes();
+      Iterable<Node> seq = Sequence.fromClosure(new ISequenceClosure <Node>() {
+
+        public Iterable<Node> iterable() {
+          return new Iterable <Node>() {
+
+            public Iterator<Node> iterator() {
+              return new YieldingIterator <Node>() {
+
+                private int __CP__ = 0;
+                private Node _7_it;
+                private int _2_i;
+
+                protected boolean moveToNext() {
+__loop__:
+                  do {
+__switch__:
+                    switch (this.__CP__) {
+                      case -1:
+                        assert false : "Internal error";
+                        return false;
+                      case 2:
+                        this._2_i = 0;
+                      case 3:
+                        if (!(this._2_i < cns.getLength())) {
+                          this.__CP__ = 1;
+                          break;
+                        }
+                        this.__CP__ = 4;
+                        break;
+                      case 5:
+                        this._2_i = this._2_i + 1;
+                        this.__CP__ = 3;
+                        break;
+                      case 8:
+                        if (this._7_it instanceof Element) {
+                          this.__CP__ = 9;
+                          break;
+                        }
+                        this.__CP__ = 5;
+                        break;
+                      case 10:
+                        this.__CP__ = 5;
+                        this.yield(this._7_it);
+                        return true;
+                      case 0:
+                        this.__CP__ = 2;
+                        break;
+                      case 4:
+                        this._7_it = cns.item(this._2_i);
+                        this.__CP__ = 8;
+                        break;
+                      case 9:
+                        this.__CP__ = 10;
+                        break;
+                      default:
+                        break __loop__;
+                    }
+                  } while(true);
+                  return false;
+                }
+
+              };
+            }
+
+          };
+        }
+
+      });
+      return Sequence.fromIterable(seq).count();
     }
 
 }
@@ -88,9 +222,63 @@ public class DOMF extends TreePath<Node> {
     }
 
     public Iterable<Node> sequence() {
-      final zClosureContext2 _zClosureContext2 = new zClosureContext2();
-      _zClosureContext2.els = ((Element)this.thisNode).getElementsByTagName(this.param);
-      return new SequenceWithSupplier<Node>(new zValueSupplier3(null, _zClosureContext2));
+      final NodeList els = ((Element)this.thisNode).getElementsByTagName(this.param);
+      return Sequence.fromClosure(new ISequenceClosure <Node>() {
+
+        public Iterable<Node> iterable() {
+          return new Iterable <Node>() {
+
+            public Iterator<Node> iterator() {
+              return new YieldingIterator <Node>() {
+
+                private int __CP__ = 0;
+                private int _2_i;
+
+                protected boolean moveToNext() {
+__loop__:
+                  do {
+__switch__:
+                    switch (this.__CP__) {
+                      case -1:
+                        assert false : "Internal error";
+                        return false;
+                      case 2:
+                        this._2_i = 0;
+                      case 3:
+                        if (!(this._2_i < els.getLength())) {
+                          this.__CP__ = 1;
+                          break;
+                        }
+                        this.__CP__ = 4;
+                        break;
+                      case 5:
+                        this._2_i = this._2_i + 1;
+                        this.__CP__ = 3;
+                        break;
+                      case 6:
+                        this.__CP__ = 5;
+                        this.yield(els.item(this._2_i));
+                        return true;
+                      case 0:
+                        this.__CP__ = 2;
+                        break;
+                      case 4:
+                        this.__CP__ = 6;
+                        break;
+                      default:
+                        break __loop__;
+                    }
+                  } while(true);
+                  return false;
+                }
+
+              };
+            }
+
+          };
+        }
+
+      });
     }
 
     public Iterator<Node> iterator() {

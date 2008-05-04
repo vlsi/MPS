@@ -189,7 +189,7 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
 
   public static class _Inline11 extends AbstractCellProvider {
 
-    public  _Inline11() {
+    public _Inline11() {
       super();
     }
 
@@ -243,7 +243,7 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
 }
   public static class _Inline12 extends AbstractCellProvider {
 
-    public  _Inline12() {
+    public _Inline12() {
       super();
     }
 

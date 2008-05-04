@@ -21,7 +21,7 @@ public class TreePathCreator extends AbstractCreator implements TreePath {
   public static String CHILDREN_BLOCK = "childrenBlock";
   public static String FEATURES = "features";
 
-  public  TreePathCreator(SNode node) {
+  public TreePathCreator(SNode node) {
     super(node);
   }
 

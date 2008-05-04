@@ -12,7 +12,7 @@ public class EmitCodeForStatement extends EmitStatement {
   public static final String concept = "jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement";
   public static String CODE_FOR = "codeFor";
 
-  public  EmitCodeForStatement(SNode node) {
+  public EmitCodeForStatement(SNode node) {
     super(node);
   }
 

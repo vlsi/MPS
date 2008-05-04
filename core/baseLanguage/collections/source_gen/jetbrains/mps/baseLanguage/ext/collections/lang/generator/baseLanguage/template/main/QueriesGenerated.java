@@ -13,7 +13,7 @@ import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.ext.collections.lang.generator.baseLanguage.template.util.QueriesUtil;
 import jetbrains.mps.baseLanguage.constraints.IOperation_Behavior;
 import java.util.List;
@@ -171,7 +171,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1168512350251(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode firstStatement = SequenceOperations.getFirst(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true));
+    SNode firstStatement = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).first();
     return SLinkOperations.getTarget(firstStatement, "expression", true);
   }
 
@@ -196,7 +196,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1170979555022(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode firstStatement = SequenceOperations.getFirst(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true));
+    SNode firstStatement = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).first();
     return SLinkOperations.getTarget(firstStatement, "expression", true);
   }
 

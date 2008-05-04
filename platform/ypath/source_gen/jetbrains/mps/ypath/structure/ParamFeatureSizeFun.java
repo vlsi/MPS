@@ -13,7 +13,7 @@ public class ParamFeatureSizeFun extends FeatureSizeFun implements IParamFeature
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  ParamFeatureSizeFun(SNode node) {
+  public ParamFeatureSizeFun(SNode node) {
     super(node);
   }
 

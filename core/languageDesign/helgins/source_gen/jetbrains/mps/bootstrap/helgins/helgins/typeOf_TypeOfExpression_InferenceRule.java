@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_TypeOfExpression_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeOf_TypeOfExpression_InferenceRule() {
+  public typeOf_TypeOfExpression_InferenceRule() {
   }
 
   public void applyRule(final SNode typeOfExpression) {

@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_Node_CopyOperation_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeOf_Node_CopyOperation_InferenceRule() {
+  public typeOf_Node_CopyOperation_InferenceRule() {
   }
 
   public void applyRule(final SNode node) {

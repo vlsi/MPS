@@ -19,7 +19,7 @@ public class TreePathAdapterExpression_DELETE {
 
     /* package */SNode myNode;
 
-    public  TreePathAdapterExpression_DELETE_DELETE(SNode node) {
+    public TreePathAdapterExpression_DELETE_DELETE(SNode node) {
       this.myNode = node;
     }
 

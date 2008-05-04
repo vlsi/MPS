@@ -9,8 +9,6 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.constraints.Type_Behavior;
@@ -47,36 +45,18 @@ public class OverridingFields_Finder extends GeneratedFinder {
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, IAdaptiveProgressMonitor monitor) {
-    {
-      ICursor<SNode> _zCursor8 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", SNodeOperations.getParent(node, null, false, false), scope, monitor));
-      try {
-        while(_zCursor8.moveToNext()) {
-          SNode classNode = _zCursor8.getCurrent();
-          {
-            Iterable<SNode> fieldsOfSameKind;
-            if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
-              fieldsOfSameKind = SLinkOperations.getTargets(classNode, "field", true);
-            } else
-            {
-              fieldsOfSameKind = SLinkOperations.getTargets(classNode, "staticField", true);
-            }
-            {
-              ICursor<SNode> _zCursor9 = CursorFactory.createCursor(fieldsOfSameKind);
-              try {
-                while(_zCursor9.moveToNext()) {
-                  SNode field = _zCursor9.getCurrent();
-                  if (SPropertyOperations.getString(field, "name").equals(SPropertyOperations.getString(node, "name")) && Type_Behavior.call_getErasureSignature_1199318924019(SLinkOperations.getTarget(field, "type", true)).equals(Type_Behavior.call_getErasureSignature_1199318924019(SLinkOperations.getTarget(node, "type", true)))) {
-                    ListOperations.addElement(_results, field);
-                  }
-                }
-              } finally {
-                _zCursor9.release();
-              }
-            }
-          }
+    for(SNode classNode : this.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", SNodeOperations.getParent(node, null, false, false), scope, monitor)) {
+      Iterable<SNode> fieldsOfSameKind;
+      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
+        fieldsOfSameKind = SLinkOperations.getTargets(classNode, "field", true);
+      } else
+      {
+        fieldsOfSameKind = SLinkOperations.getTargets(classNode, "staticField", true);
+      }
+      for(SNode field : fieldsOfSameKind) {
+        if (SPropertyOperations.getString(field, "name").equals(SPropertyOperations.getString(node, "name")) && Type_Behavior.call_getErasureSignature_1199318924019(SLinkOperations.getTarget(field, "type", true)).equals(Type_Behavior.call_getErasureSignature_1199318924019(SLinkOperations.getTarget(node, "type", true)))) {
+          ListOperations.addElement(_results, field);
         }
-      } finally {
-        _zCursor8.release();
       }
     }
   }

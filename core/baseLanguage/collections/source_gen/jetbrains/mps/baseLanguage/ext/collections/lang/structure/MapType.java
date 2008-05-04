@@ -13,7 +13,7 @@ public class MapType extends Type {
   public static String KEY_TYPE = "keyType";
   public static String VALUE_TYPE = "valueType";
 
-  public  MapType(SNode node) {
+  public MapType(SNode node) {
     super(node);
   }
 

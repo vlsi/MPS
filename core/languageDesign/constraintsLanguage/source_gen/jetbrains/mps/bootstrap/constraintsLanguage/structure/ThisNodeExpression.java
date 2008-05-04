@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ThisNodeExpression extends Expression {
   public static final String concept = "jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression";
 
-  public  ThisNodeExpression(SNode node) {
+  public ThisNodeExpression(SNode node) {
     super(node);
   }
 

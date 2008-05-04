@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class QueryFunction_SubstituteIcon extends ConceptFunction {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_SubstituteIcon";
 
-  public  QueryFunction_SubstituteIcon(SNode node) {
+  public QueryFunction_SubstituteIcon(SNode node) {
     super(node);
   }
 

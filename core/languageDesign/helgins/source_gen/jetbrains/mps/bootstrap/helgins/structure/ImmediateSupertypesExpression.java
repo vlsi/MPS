@@ -12,7 +12,7 @@ public class ImmediateSupertypesExpression extends Expression {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.ImmediateSupertypesExpression";
   public static String SUBTYPE_EXPRESSION = "subtypeExpression";
 
-  public  ImmediateSupertypesExpression(SNode node) {
+  public ImmediateSupertypesExpression(SNode node) {
     super(node);
   }
 

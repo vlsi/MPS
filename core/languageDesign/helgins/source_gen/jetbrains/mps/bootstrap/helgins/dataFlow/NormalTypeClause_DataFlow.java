@@ -9,7 +9,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class NormalTypeClause_DataFlow extends DataFlowBuilder {
 
-  public  NormalTypeClause_DataFlow() {
+  public NormalTypeClause_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

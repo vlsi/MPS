@@ -13,7 +13,7 @@ public class CoerceExpression extends Expression {
   public static String PATTERN = "pattern";
   public static String NODE_TO_COERCE = "nodeToCoerce";
 
-  public  CoerceExpression(SNode node) {
+  public CoerceExpression(SNode node) {
     super(node);
   }
 

@@ -10,8 +10,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
@@ -28,19 +26,9 @@ public class QueriesUtil {
     SModel outputModel = generator.getOutputModel();
     SNode outputClassType = SModelOperations.createNewNode(outputModel, "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(outputClassType, "classifier", enclosingClass, false);
-    {
-      ICursor<SNode> _zCursor = CursorFactory.createCursor(SLinkOperations.getTargets(enclosingClass, "typeVariableDeclaration", true));
-      try {
-        while(_zCursor.moveToNext()) {
-          SNode typeVar = _zCursor.getCurrent();
-          {
-            SNode typeVarRef = SLinkOperations.addNewChild(outputClassType, "parameter", "jetbrains.mps.baseLanguage.structure.TypeVariableReference");
-            SLinkOperations.setTarget(typeVarRef, "typeVariableDeclaration", typeVar, false);
-          }
-        }
-      } finally {
-        _zCursor.release();
-      }
+    for(SNode typeVar : SLinkOperations.getTargets(enclosingClass, "typeVariableDeclaration", true)) {
+      SNode typeVarRef = SLinkOperations.addNewChild(outputClassType, "parameter", "jetbrains.mps.baseLanguage.structure.TypeVariableReference");
+      SLinkOperations.setTarget(typeVarRef, "typeVariableDeclaration", typeVar, false);
     }
     return outputClassType;
   }

@@ -20,7 +20,7 @@ public class WhenConcreteStatement extends Statement implements Closureoid {
   public static String ARGUMENT = "argument";
   public static String ARGUMENT_REPRESENTATOR = "argumentRepresentator";
 
-  public  WhenConcreteStatement(SNode node) {
+  public WhenConcreteStatement(SNode node) {
     super(node);
   }
 

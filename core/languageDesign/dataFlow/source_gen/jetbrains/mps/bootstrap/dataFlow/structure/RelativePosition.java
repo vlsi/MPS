@@ -12,7 +12,7 @@ public class RelativePosition extends Position {
   public static final String concept = "jetbrains.mps.bootstrap.dataFlow.structure.RelativePosition";
   public static String RELATIVE_TO = "relativeTo";
 
-  public  RelativePosition(SNode node) {
+  public RelativePosition(SNode node) {
     super(node);
   }
 

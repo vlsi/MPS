@@ -15,7 +15,7 @@ public class HashMapCreator extends AbstractCreator {
   public static String VALUE_TYPE = "valueType";
   public static String INITIALIZER = "initializer";
 
-  public  HashMapCreator(SNode node) {
+  public HashMapCreator(SNode node) {
     super(node);
   }
 

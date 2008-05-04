@@ -11,7 +11,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
 
   private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
 
-  public  ConstraintsDescriptor() {
+  public ConstraintsDescriptor() {
     this.myConstraints.add(new TreeNodeKindProperty_default_PropertyConstraint());
     this.myConstraints.add(new IFeature_default_PropertyConstraint());
     this.myConstraints.add(new IterateOperation_usedFeature_ReferentConstraint());

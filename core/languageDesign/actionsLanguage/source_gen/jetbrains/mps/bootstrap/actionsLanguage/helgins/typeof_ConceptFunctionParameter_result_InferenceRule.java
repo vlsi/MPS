@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ConceptFunctionParameter_result_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_ConceptFunctionParameter_result_InferenceRule() {
+  public typeof_ConceptFunctionParameter_result_InferenceRule() {
   }
 
   public void applyRule(final SNode result) {

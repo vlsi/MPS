@@ -9,7 +9,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class CoerceStatement_DataFlow extends DataFlowBuilder {
 
-  public  CoerceStatement_DataFlow() {
+  public CoerceStatement_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

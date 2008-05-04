@@ -9,7 +9,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class ApplicableNodeReference_DataFlow extends DataFlowBuilder {
 
-  public  ApplicableNodeReference_DataFlow() {
+  public ApplicableNodeReference_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

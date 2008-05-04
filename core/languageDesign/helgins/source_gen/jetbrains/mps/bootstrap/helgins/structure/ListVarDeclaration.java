@@ -16,7 +16,7 @@ public class ListVarDeclaration extends Statement implements INamedConcept {
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  ListVarDeclaration(SNode node) {
+  public ListVarDeclaration(SNode node) {
     super(node);
   }
 

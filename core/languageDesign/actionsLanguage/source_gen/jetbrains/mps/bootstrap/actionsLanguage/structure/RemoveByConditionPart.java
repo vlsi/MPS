@@ -11,7 +11,7 @@ public class RemoveByConditionPart extends MenuBuilderPart {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.RemoveByConditionPart";
   public static String CONDITION = "condition";
 
-  public  RemoveByConditionPart(SNode node) {
+  public RemoveByConditionPart(SNode node) {
     super(node);
   }
 

@@ -12,7 +12,7 @@ public class Link_SetTargetOperation extends SNodeOperation {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation";
   public static String PARAMETER = "parameter";
 
-  public  Link_SetTargetOperation(SNode node) {
+  public Link_SetTargetOperation(SNode node) {
     super(node);
   }
 

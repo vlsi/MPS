@@ -62,7 +62,7 @@ public class LinkPatternVariableReference_Editor extends DefaultNodeEditor {
 
   public static class _Inline4 extends AbstractCellProvider {
 
-    public  _Inline4() {
+    public _Inline4() {
       super();
     }
 

@@ -14,7 +14,7 @@ public class Model_NodesIncludingImportedOperation extends SNodeOperation {
   public static String CONCEPT = "concept";
   public static String SCOPE = "scope";
 
-  public  Model_NodesIncludingImportedOperation(SNode node) {
+  public Model_NodesIncludingImportedOperation(SNode node) {
     super(node);
   }
 

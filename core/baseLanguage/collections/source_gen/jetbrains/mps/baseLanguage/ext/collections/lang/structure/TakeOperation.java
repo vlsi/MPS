@@ -12,7 +12,7 @@ public class TakeOperation extends SequenceOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.TakeOperation";
   public static String ELEMENTS_TO_TAKE = "elementsToTake";
 
-  public  TakeOperation(SNode node) {
+  public TakeOperation(SNode node) {
     super(node);
   }
 

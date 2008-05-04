@@ -12,7 +12,7 @@ public class RemovePart extends MenuBuilderPart {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.RemovePart";
   public static String CONCEPT_TO_REMOVE = "conceptToRemove";
 
-  public  RemovePart(SNode node) {
+  public RemovePart(SNode node) {
     super(node);
   }
 

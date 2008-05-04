@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_AttributeAccessOperation_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_AttributeAccessOperation_InferenceRule() {
+  public typeof_AttributeAccessOperation_InferenceRule() {
   }
 
   public void applyRule(final SNode nodeToCheck) {

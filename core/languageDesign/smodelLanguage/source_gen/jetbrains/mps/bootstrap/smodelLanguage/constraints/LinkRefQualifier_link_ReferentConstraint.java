@@ -17,12 +17,14 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
 import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class LinkRefQualifier_link_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  LinkRefQualifier_link_ReferentConstraint() {
+  public LinkRefQualifier_link_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
@@ -49,7 +51,13 @@ public class LinkRefQualifier_link_ReferentConstraint implements IModelConstrain
     }
     List<SNode> links = AbstractConceptDeclaration_Behavior.call_getLinkDeclarationsExcludingOverridden_1196820678380(dotOperandConcept);
     // reference only?
-    links = SequenceOperations.toList(SequenceOperations.where(links, new zPredicate3(null, null)));
+    links = ListSequence.fromList(links).where(new IWhereFilter <SNode>() {
+
+      public boolean accept(SNode it) {
+        return SPropertyOperations.hasValue(it, "metaClass", null, null);
+      }
+
+    }).toListSequence();
     return new SimpleSearchScope(links);
   }
 

@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ToIteratorOperation extends SequenceOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ToIteratorOperation";
 
-  public  ToIteratorOperation(SNode node) {
+  public ToIteratorOperation(SNode node) {
     super(node);
   }
 

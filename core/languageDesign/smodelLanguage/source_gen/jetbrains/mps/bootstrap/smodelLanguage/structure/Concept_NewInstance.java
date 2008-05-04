@@ -12,7 +12,7 @@ public class Concept_NewInstance extends SNodeOperation {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_NewInstance";
   public static String PROTOTYPE_NODE = "prototypeNode";
 
-  public  Concept_NewInstance(SNode node) {
+  public Concept_NewInstance(SNode node) {
     super(node);
   }
 

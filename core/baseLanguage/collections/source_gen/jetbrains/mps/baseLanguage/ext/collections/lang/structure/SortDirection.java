@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class SortDirection extends BooleanConstant {
   public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortDirection";
 
-  public  SortDirection(SNode node) {
+  public SortDirection(SNode node) {
     super(node);
   }
 

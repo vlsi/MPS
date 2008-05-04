@@ -8,7 +8,7 @@ import jetbrains.mps.dataFlow.DataFlowBuilderContext;
 
 public class ApplicableNodeCondition_DataFlow extends DataFlowBuilder {
 
-  public  ApplicableNodeCondition_DataFlow() {
+  public ApplicableNodeCondition_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

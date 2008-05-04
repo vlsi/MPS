@@ -14,7 +14,7 @@ public class ParamFunctionParam extends ConceptFunctionParameter implements IFun
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  ParamFunctionParam(SNode node) {
+  public ParamFunctionParam(SNode node) {
     super(node);
   }
 

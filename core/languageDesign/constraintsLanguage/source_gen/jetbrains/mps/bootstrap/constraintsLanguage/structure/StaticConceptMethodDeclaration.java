@@ -12,7 +12,7 @@ public class StaticConceptMethodDeclaration extends BaseMethodDeclaration {
   public static final String concept = "jetbrains.mps.bootstrap.constraintsLanguage.structure.StaticConceptMethodDeclaration";
   public static String IS_PRIVATE = "isPrivate";
 
-  public  StaticConceptMethodDeclaration(SNode node) {
+  public StaticConceptMethodDeclaration(SNode node) {
     super(node);
   }
 

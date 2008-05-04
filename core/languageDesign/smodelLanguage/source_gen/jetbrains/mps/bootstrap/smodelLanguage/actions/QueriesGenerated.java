@@ -5,15 +5,13 @@ package jetbrains.mps.bootstrap.smodelLanguage.actions;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.RTransformPreconditionContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import java.util.List;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
@@ -44,7 +42,7 @@ public class QueriesGenerated {
     if (alreadyHasParms) {
       return false;
     }
-    return SequenceOperations.getSize(SLinkOperations.getConceptLinkTargets(_context.getSourceNode(), "applicableParameter")) > 0;
+    return ListSequence.fromList(SLinkOperations.getConceptLinkTargets(_context.getSourceNode(), "applicableParameter")).count() > 0;
   }
 
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1179535189126(final IOperationContext operationContext, final RTransformPreconditionContext _context) {
@@ -73,20 +71,12 @@ public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_Node_GetAncestorOperation_1171415364778(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation")) {
       List<SNode> parms = SLinkOperations.getTargets(_context.getSampleNode(), "parameter", true);
-      {
-        ICursor<SNode> _zCursor = CursorFactory.createCursor(parms);
-        try {
-          while(_zCursor.moveToNext()) {
-            SNode parm = _zCursor.getCurrent();
-            SLinkOperations.addChild(_context.getNewNode(), "parameter", parm);
-          }
-        } finally {
-          _zCursor.release();
-        }
+      for(SNode parm : parms) {
+        SLinkOperations.addChild(_context.getNewNode(), "parameter", parm);
       }
     }
     // init default parms
-    if (SequenceOperations.isEmpty(SLinkOperations.getTargets(_context.getNewNode(), "parameter", true))) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "parameter", true)).isEmpty()) {
       SLinkOperations.addNewChild(_context.getNewNode(), "parameter", "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept");
     }
   }
@@ -127,20 +117,12 @@ public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_Node_GetDescendantsOperation_1207248813875(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation")) {
       List<SNode> parms = SLinkOperations.getTargets(_context.getSampleNode(), "parameter", true);
-      {
-        ICursor<SNode> _zCursor1 = CursorFactory.createCursor(parms);
-        try {
-          while(_zCursor1.moveToNext()) {
-            SNode parm = _zCursor1.getCurrent();
-            SLinkOperations.addChild(_context.getNewNode(), "parameter", parm);
-          }
-        } finally {
-          _zCursor1.release();
-        }
+      for(SNode parm : parms) {
+        SLinkOperations.addChild(_context.getNewNode(), "parameter", parm);
       }
     }
     // init default parms
-    if (SequenceOperations.isEmpty(SLinkOperations.getTargets(_context.getNewNode(), "parameter", true))) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "parameter", true)).isEmpty()) {
       SLinkOperations.addNewChild(_context.getNewNode(), "parameter", "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept");
     }
   }

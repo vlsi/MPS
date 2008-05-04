@@ -13,7 +13,7 @@ public class TypeOfExpression extends Expression {
   public static String SKIP_DEPENDENCY_ON_CURRENT = "skipDependencyOnCurrent";
   public static String TERM = "term";
 
-  public  TypeOfExpression(SNode node) {
+  public TypeOfExpression(SNode node) {
     super(node);
   }
 

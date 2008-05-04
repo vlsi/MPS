@@ -19,7 +19,7 @@ public class SNodeTypeCastExpression_Concept_Actions {
 
     /* package */SNode myNode;
 
-    public  SNodeTypeCastExpression_Concept_Actions_DELETE(SNode node) {
+    public SNodeTypeCastExpression_Concept_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
 

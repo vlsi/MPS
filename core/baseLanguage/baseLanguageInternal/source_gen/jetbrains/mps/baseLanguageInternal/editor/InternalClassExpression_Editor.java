@@ -67,7 +67,7 @@ public class InternalClassExpression_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     InternalClassExpression_Editor.setupBasic_TypeCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      InternalClassExpression_Editor.setupLabel_TypeCell((EditorCell_Label) editorCell, node, context);
+      InternalClassExpression_Editor.setupLabel_TypeCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -87,7 +87,7 @@ public class InternalClassExpression_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
 }

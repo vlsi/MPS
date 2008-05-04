@@ -6,7 +6,7 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
@@ -27,16 +27,16 @@ public class AddOperationParameter_Intention extends BaseIntention implements In
   }
 
   public boolean isApplicable(SNode node, EditorContext editorContext) {
-    if (SequenceOperations.isEmpty(SLinkOperations.getTargets(node, "parameter", true))) {
-      return !(SequenceOperations.isEmpty(SLinkOperations.getConceptLinkTargets(node, "applicableParameter")));
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isEmpty()) {
+      return ListSequence.fromList(SLinkOperations.getConceptLinkTargets(node, "applicableParameter")).isNotEmpty();
     }
     return false;
   }
 
   public void execute(SNode node, EditorContext editorContext) {
     List<SNode> applicableParms = SLinkOperations.getConceptLinkTargets(node, "applicableParameter");
-    if (SequenceOperations.getSize(applicableParms) == 1) {
-      SLinkOperations.addChild(node, "parameter", SConceptOperations.createNewNode(NameUtil.nodeFQName(((SNode)SequenceOperations.getFirst(applicableParms))), null));
+    if (ListSequence.fromList(applicableParms).count() == 1) {
+      SLinkOperations.addChild(node, "parameter", SConceptOperations.createNewNode(NameUtil.nodeFQName(((SNode)ListSequence.fromList(applicableParms).first())), null));
     } else
     {
       SLinkOperations.addNewChild(node, "parameter", "jetbrains.mps.bootstrap.smodelLanguage.structure.AbstractOperationParameter");

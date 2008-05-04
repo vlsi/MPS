@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class CreateComparableEquationStatementStrong extends AbstractEquationStatement {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.CreateComparableEquationStatementStrong";
 
-  public  CreateComparableEquationStatementStrong(SNode node) {
+  public CreateComparableEquationStatementStrong(SNode node) {
     super(node);
   }
 

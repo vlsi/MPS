@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_RTransformHintSubstitutePreconditionParm_sourceNode_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_RTransformHintSubstitutePreconditionParm_sourceNode_InferenceRule() {
+  public typeof_RTransformHintSubstitutePreconditionParm_sourceNode_InferenceRule() {
   }
 
   public void applyRule(final SNode node) {

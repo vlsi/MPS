@@ -11,7 +11,7 @@ public class CreateEquationStatement extends AbstractEquationStatement {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.CreateEquationStatement";
   public static String DIRECTION = "direction";
 
-  public  CreateEquationStatement(SNode node) {
+  public CreateEquationStatement(SNode node) {
     super(node);
   }
 

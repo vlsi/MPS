@@ -11,7 +11,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import java.util.List;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.BaseAdapter;
@@ -107,10 +107,10 @@ public class QueriesUtil {
   }
 
   public static List<SNode> conceptAndItsInterfaces(SNode concept) {
-    List<SNode> result = ListOperations.<SNode>createList(concept);
+    List<SNode> result = ListSequence.<SNode>fromArray(concept);
     List<AbstractConceptDeclaration> list = SModelUtil_new.getDirectSuperInterfacesAndTheySupers(((ConceptDeclaration)SNodeOperations.getAdapter(concept)));
     List<SNode> interfaces = BaseAdapter.toNodes(list);
-    ListOperations.addAllElements(result, interfaces);
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(interfaces));
     return result;
   }
 

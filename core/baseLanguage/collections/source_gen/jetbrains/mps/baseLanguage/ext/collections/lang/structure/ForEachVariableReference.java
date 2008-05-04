@@ -12,7 +12,7 @@ public class ForEachVariableReference extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference";
   public static String VARIABLE = "variable";
 
-  public  ForEachVariableReference(SNode node) {
+  public ForEachVariableReference(SNode node) {
     super(node);
   }
 

@@ -14,14 +14,14 @@ public class DFAActions_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.bootstrap.dataFlow.plugin.DFAActions";
 
   public DFAActions_ActionGroup(MPSProject project) {
-    super("", DFAActions_ActionGroup.ID, project);
+    super("", ID, project);
     this.setInternal(false);
     try {
       this.add(new PrintDFAResult_Action(project), this);
       this.add(new PrintInitializationInformation_Action(project), this);
       this.add(new ShowDFA_Action(project), this);
     } catch (Throwable t) {
-      DFAActions_ActionGroup.LOG.error("User group error", t);
+      LOG.error("User group error", t);
     }
   }
 

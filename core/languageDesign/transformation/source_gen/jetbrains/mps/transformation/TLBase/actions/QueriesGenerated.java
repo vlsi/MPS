@@ -8,7 +8,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
@@ -37,7 +37,7 @@ public class QueriesGenerated {
 
   public static void nodeFactory_NodeSetup_Node_FindOutputNode_1205663677153(final IOperationContext operationContext, final NodeSetupContext _context) {
     SNode cf = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.ConceptFunction", true, false);
-    if (cf != null && SequenceOperations.contains(SLinkOperations.getConceptLinkTargets(cf, "applicableConceptFunctionParameter"), SConceptOperations.findConceptDeclaration("jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_generator"))) {
+    if (cf != null && ListSequence.fromList(SLinkOperations.getConceptLinkTargets(cf, "applicableConceptFunctionParameter")).contains(SConceptOperations.findConceptDeclaration("jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_generator"))) {
       SLinkOperations.setNewChild(_context.getNewNode(), "templateGenerator", "jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_generator");
     }
   }

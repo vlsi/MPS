@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class QueryFunction_ParameterizedSubstitute_String extends ConceptFunction {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_ParameterizedSubstitute_String";
 
-  public  QueryFunction_ParameterizedSubstitute_String(SNode node) {
+  public QueryFunction_ParameterizedSubstitute_String(SNode node) {
     super(node);
   }
 

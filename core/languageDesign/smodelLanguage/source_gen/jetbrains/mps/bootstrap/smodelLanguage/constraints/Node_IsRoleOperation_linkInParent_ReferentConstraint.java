@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.INodeAdapter;
 
 public class Node_IsRoleOperation_linkInParent_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  Node_IsRoleOperation_linkInParent_ReferentConstraint() {
+  public Node_IsRoleOperation_linkInParent_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

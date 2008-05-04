@@ -13,7 +13,7 @@ public class Concept_IsExactlyOperation extends SNodeOperation {
   public static String CONCEPT_DECLARATION = "conceptDeclaration";
   public static String CONCEPT_ARGUMENT = "conceptArgument";
 
-  public  Concept_IsExactlyOperation(SNode node) {
+  public Concept_IsExactlyOperation(SNode node) {
     super(node);
   }
 

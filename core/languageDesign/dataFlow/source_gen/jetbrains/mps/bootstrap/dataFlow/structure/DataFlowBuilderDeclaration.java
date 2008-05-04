@@ -19,7 +19,7 @@ public class DataFlowBuilderDeclaration extends BaseConcept implements INamedCon
   public static String CONCEPT_DECLARATION = "conceptDeclaration";
   public static String BUILDER_BLOCK = "builderBlock";
 
-  public  DataFlowBuilderDeclaration(SNode node) {
+  public DataFlowBuilderDeclaration(SNode node) {
     super(node);
   }
 

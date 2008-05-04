@@ -5,13 +5,11 @@ package jetbrains.mps.baseLanguage.findUsages;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import org.jetbrains.annotations.Nullable;
 
@@ -35,31 +33,15 @@ public class InterfaceAncestors_Finder extends GeneratedFinder {
   }
 
   public boolean isApplicable(SNode node) {
-    return !(SequenceOperations.isEmpty(SLinkOperations.getTargets(node, "extendedInterface", true)));
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "extendedInterface", true)).isNotEmpty();
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, IAdaptiveProgressMonitor monitor) {
     SNode current = node;
-    {
-      ICursor<SNode> _zCursor22 = CursorFactory.createCursor(SLinkOperations.getTargets(current, "extendedInterface", true));
-      try {
-        while(_zCursor22.moveToNext()) {
-          SNode ancestor = _zCursor22.getCurrent();
-          ListOperations.addElement(_results, ancestor);
-          {
-            ICursor<SNode> _zCursor23 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder", ancestor, scope, monitor));
-            try {
-              while(_zCursor23.moveToNext()) {
-                SNode ancestorAncestor = _zCursor23.getCurrent();
-                ListOperations.addElement(_results, ancestorAncestor);
-              }
-            } finally {
-              _zCursor23.release();
-            }
-          }
-        }
-      } finally {
-        _zCursor22.release();
+    for(SNode ancestor : SLinkOperations.getTargets(current, "extendedInterface", true)) {
+      ListOperations.addElement(_results, ancestor);
+      for(SNode ancestorAncestor : this.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder", ancestor, scope, monitor)) {
+        ListOperations.addElement(_results, ancestorAncestor);
       }
     }
   }

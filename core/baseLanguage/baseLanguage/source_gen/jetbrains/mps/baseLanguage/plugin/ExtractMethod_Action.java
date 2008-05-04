@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.refactoring.extractMethod.ExtractMethodKind;
 import jetbrains.mps.baseLanguage.refactoring.extractMethod.ExtractMethodDialog;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ExtractMethod_Action extends CurrentProjectMPSAction {
   public static final Logger LOG = Logger.getLogger(ExtractMethod_Action.class);
@@ -105,7 +105,7 @@ public class ExtractMethod_Action extends CurrentProjectMPSAction {
   }
 
   /* package */boolean isExpression(List<SNode> nodes) {
-    return SequenceOperations.getSize(nodes) == 1 && SNodeOperations.isInstanceOf(SequenceOperations.getFirst(nodes), "jetbrains.mps.baseLanguage.structure.Expression");
+    return ListSequence.fromList(nodes).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(nodes).first(), "jetbrains.mps.baseLanguage.structure.Expression");
   }
 
 }

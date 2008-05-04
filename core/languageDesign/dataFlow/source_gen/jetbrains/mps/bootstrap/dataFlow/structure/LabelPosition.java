@@ -11,7 +11,7 @@ public class LabelPosition extends Position {
   public static final String concept = "jetbrains.mps.bootstrap.dataFlow.structure.LabelPosition";
   public static String LABEL = "label";
 
-  public  LabelPosition(SNode node) {
+  public LabelPosition(SNode node) {
     super(node);
   }
 

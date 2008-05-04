@@ -12,7 +12,7 @@ public class VisitNodesStatement extends Statement {
   public static final String concept = "jetbrains.mps.ypath.structure.VisitNodesStatement";
   public static String VISIT_BLOCK = "visitBlock";
 
-  public  VisitNodesStatement(SNode node) {
+  public VisitNodesStatement(SNode node) {
     super(node);
   }
 

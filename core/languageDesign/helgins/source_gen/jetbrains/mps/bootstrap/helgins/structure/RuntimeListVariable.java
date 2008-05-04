@@ -16,7 +16,7 @@ public class RuntimeListVariable extends BaseConcept implements INamedConcept {
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  RuntimeListVariable(SNode node) {
+  public RuntimeListVariable(SNode node) {
     super(node);
   }
 

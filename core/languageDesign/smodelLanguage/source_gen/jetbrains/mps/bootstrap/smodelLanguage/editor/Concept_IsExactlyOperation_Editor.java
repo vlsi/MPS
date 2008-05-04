@@ -211,7 +211,7 @@ public class Concept_IsExactlyOperation_Editor extends DefaultNodeEditor {
 
   public static class _Inline38 extends AbstractCellProvider {
 
-    public  _Inline38() {
+    public _Inline38() {
       super();
     }
 

@@ -13,7 +13,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 
 public class ConceptReference_concept_ReferentConstraint implements IModelConstraints, INodeReferentSetEventHandler {
 
-  public  ConceptReference_concept_ReferentConstraint() {
+  public ConceptReference_concept_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

@@ -9,7 +9,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class ComparisonRule_DataFlow extends DataFlowBuilder {
 
-  public  ComparisonRule_DataFlow() {
+  public ComparisonRule_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

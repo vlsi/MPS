@@ -13,7 +13,7 @@ public class Concept_GetAllSubConcepts extends SNodeOperation {
   public static String SMODEL = "smodel";
   public static String SCOPE = "scope";
 
-  public  Concept_GetAllSubConcepts(SNode node) {
+  public Concept_GetAllSubConcepts(SNode node) {
     super(node);
   }
 

@@ -14,7 +14,7 @@ public class MapEntry extends BaseConcept {
   public static String KEY = "key";
   public static String VALUE = "value";
 
-  public  MapEntry(SNode node) {
+  public MapEntry(SNode node) {
     super(node);
   }
 

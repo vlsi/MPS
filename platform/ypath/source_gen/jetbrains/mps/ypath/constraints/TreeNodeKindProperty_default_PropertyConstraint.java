@@ -12,7 +12,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 
 public class TreeNodeKindProperty_default_PropertyConstraint implements IModelConstraints, INodePropertySetter {
 
-  public  TreeNodeKindProperty_default_PropertyConstraint() {
+  public TreeNodeKindProperty_default_PropertyConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
@@ -24,10 +24,10 @@ public class TreeNodeKindProperty_default_PropertyConstraint implements IModelCo
   }
 
   public void execPropertySet(SNode node, String propertyName, String propertyValue, IScope scope) {
-    if(Boolean.valueOf((SPropertyOperations.getBoolean(propertyValue)))) {
+    if (Boolean.valueOf((SPropertyOperations.getBoolean(propertyValue)))) {
       SNode treepath = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathAspect", false, false);
       for(SNode desc : SNodeOperations.getDescendants(treepath, null, false)) {
-        if(SNodeOperations.isInstanceOf(desc, "jetbrains.mps.ypath.structure.TreeNodeKindProperty")) {
+        if (SNodeOperations.isInstanceOf(desc, "jetbrains.mps.ypath.structure.TreeNodeKindProperty")) {
           SPropertyOperations.set(desc, "default", "" + (false));
         }
       }

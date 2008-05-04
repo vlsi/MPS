@@ -539,7 +539,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
 
   public static class _Inline2 extends AbstractCellProvider {
 
-    public  _Inline2() {
+    public _Inline2() {
       super();
     }
 
@@ -593,7 +593,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
 }
   public static class _Inline3 extends AbstractCellProvider {
 
-    public  _Inline3() {
+    public _Inline3() {
       super();
     }
 

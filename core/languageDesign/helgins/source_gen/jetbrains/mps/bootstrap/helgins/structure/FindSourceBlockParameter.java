@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class FindSourceBlockParameter extends ConceptFunctionParameter {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.FindSourceBlockParameter";
 
-  public  FindSourceBlockParameter(SNode node) {
+  public FindSourceBlockParameter(SNode node) {
     super(node);
   }
 

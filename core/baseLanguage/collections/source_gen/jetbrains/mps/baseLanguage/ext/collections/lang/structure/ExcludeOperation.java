@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ExcludeOperation extends BinaryOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ExcludeOperation";
 
-  public  ExcludeOperation(SNode node) {
+  public ExcludeOperation(SNode node) {
     super(node);
   }
 

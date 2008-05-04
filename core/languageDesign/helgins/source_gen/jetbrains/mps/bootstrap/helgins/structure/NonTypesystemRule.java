@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class NonTypesystemRule extends AbstractCheckingRule {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.NonTypesystemRule";
 
-  public  NonTypesystemRule(SNode node) {
+  public NonTypesystemRule(SNode node) {
     super(node);
   }
 

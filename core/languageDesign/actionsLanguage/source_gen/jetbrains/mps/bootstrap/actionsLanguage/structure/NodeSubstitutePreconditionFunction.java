@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class NodeSubstitutePreconditionFunction extends ConceptFunction {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction";
 
-  public  NodeSubstitutePreconditionFunction(SNode node) {
+  public NodeSubstitutePreconditionFunction(SNode node) {
     super(node);
   }
 

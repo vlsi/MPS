@@ -19,7 +19,7 @@ public class InternalVariableReference extends Expression {
   }
 
   public static InternalVariableReference newInstance(SModel sm, boolean init) {
-    return (InternalVariableReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InternalVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InternalVariableReference newInstance(SModel sm) {
@@ -36,7 +36,7 @@ public class InternalVariableReference extends Expression {
   }
 
   public Type getType() {
-    return (Type) this.getChild(InternalVariableReference.TYPE);
+    return (Type)this.getChild(InternalVariableReference.TYPE);
   }
 
   public void setType(Type node) {

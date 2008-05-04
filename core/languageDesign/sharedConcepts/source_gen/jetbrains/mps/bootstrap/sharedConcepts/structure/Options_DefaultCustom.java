@@ -9,10 +9,10 @@ public enum Options_DefaultCustom {
   default_("<default>", null),
   custom_("custom", "custom");
 
-  /* package */ String myName;
-  /* package */ String myValue;
+  /* package */String myName;
+  /* package */String myValue;
 
-  Options_DefaultCustom(String name, String value) {
+Options_DefaultCustom(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }

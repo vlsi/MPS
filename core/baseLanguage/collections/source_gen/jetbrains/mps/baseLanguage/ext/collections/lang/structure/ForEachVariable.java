@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ForEachVariable extends NamedConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariable";
 
-  public  ForEachVariable(SNode node) {
+  public ForEachVariable(SNode node) {
     super(node);
   }
 

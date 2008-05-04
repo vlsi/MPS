@@ -24,7 +24,7 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
   public static String TO_STRING_FUNCTION = "toStringFunction";
   public static String CARDINAL = "cardinal";
 
-  public  ParamListFeature(SNode node) {
+  public ParamListFeature(SNode node) {
     super(node);
   }
 

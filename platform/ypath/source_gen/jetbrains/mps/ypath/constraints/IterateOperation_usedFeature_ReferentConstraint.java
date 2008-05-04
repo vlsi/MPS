@@ -11,13 +11,13 @@ import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 
 public class IterateOperation_usedFeature_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  IterateOperation_usedFeature_ReferentConstraint() {
+  public IterateOperation_usedFeature_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
@@ -34,13 +34,13 @@ public class IterateOperation_usedFeature_ReferentConstraint implements IModelCo
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode tpoe;
-    if(SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression")) {
+    if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression")) {
       tpoe = _context.getEnclosingNode();
     } else
     {
       tpoe = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
     }
-    return new SimpleSearchScope(SequenceOperations.toList(TreePath_Behavior.call_getFeature_1184591220431(ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe), SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(tpoe), "nodeType", true))));
+    return new SimpleSearchScope(Sequence.fromIterable(TreePath_Behavior.call_getFeature_1184591220431(ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe), SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(tpoe), "nodeType", true))).toListSequence());
   }
 
   public String getNodeReferentSearchScopeDescription() {

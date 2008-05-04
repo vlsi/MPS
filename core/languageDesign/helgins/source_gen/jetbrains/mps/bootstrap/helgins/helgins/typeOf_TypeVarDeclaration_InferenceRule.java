@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_TypeVarDeclaration_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeOf_TypeVarDeclaration_InferenceRule() {
+  public typeOf_TypeVarDeclaration_InferenceRule() {
   }
 
   public void applyRule(final SNode typeVarDeclaration) {

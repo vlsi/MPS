@@ -13,7 +13,7 @@ public class TreePathAdapterExpression extends Expression {
   public static String TREEPATH_ASPECT = "treepathAspect";
   public static String EXPRESSION = "expression";
 
-  public  TreePathAdapterExpression(SNode node) {
+  public TreePathAdapterExpression(SNode node) {
     super(node);
   }
 

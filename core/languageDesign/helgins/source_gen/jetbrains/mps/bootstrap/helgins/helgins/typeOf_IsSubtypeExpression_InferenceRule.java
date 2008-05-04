@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_IsSubtypeExpression_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeOf_IsSubtypeExpression_InferenceRule() {
+  public typeOf_IsSubtypeExpression_InferenceRule() {
   }
 
   public void applyRule(final SNode expr) {

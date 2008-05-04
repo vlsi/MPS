@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Type;
-
 import java.util.Iterator;
 import java.util.List;
 
@@ -24,7 +23,7 @@ public class InternalStaticMethodCall extends BaseMethodCall {
   }
 
   public static InternalStaticMethodCall newInstance(SModel sm, boolean init) {
-    return (InternalStaticMethodCall) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InternalStaticMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InternalStaticMethodCall newInstance(SModel sm) {
@@ -49,7 +48,7 @@ public class InternalStaticMethodCall extends BaseMethodCall {
   }
 
   public Type getReturnType() {
-    return (Type) this.getChild(InternalStaticMethodCall.RETURN_TYPE);
+    return (Type)this.getChild(InternalStaticMethodCall.RETURN_TYPE);
   }
 
   public void setReturnType(Type node) {

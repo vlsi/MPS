@@ -19,7 +19,7 @@ public class SemanticDowncastExpression_Symbol_Actions {
 
     /* package */SNode myNode;
 
-    public  SemanticDowncastExpression_Symbol_Actions_DELETE(SNode node) {
+    public SemanticDowncastExpression_Symbol_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
 

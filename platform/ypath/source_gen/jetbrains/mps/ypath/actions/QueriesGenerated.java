@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.RTransformPreconditionContext;
 import java.util.List;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
@@ -33,13 +33,11 @@ import jetbrains.mps.ypath.constraints.FeatureTargetTypeUtil;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.ypath.structure.FragmentTypeEnum;
 import jetbrains.mps.smodel.action.RTActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
 import jetbrains.mps.ypath.constraints.ITreePathExpression_Behavior;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.ypath.constraints.IFeature_Behavior;
 import jetbrains.mps.util.Triplet;
@@ -98,7 +96,7 @@ public class QueriesGenerated {
       return false;
     }
     List<SNode> aspects = TreePathAspectUtil.getTreePathAspects(_context.getSourceNode(), operationContext.getScope());
-    return SequenceOperations.getSize(aspects) > 0;
+    return ListSequence.fromList(aspects).count() > 0;
   }
 
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_TreeNodeKindOccurrence_1175170178382(final IOperationContext operationContext, final RTransformPreconditionContext _context) {
@@ -123,7 +121,7 @@ public class QueriesGenerated {
       return false;
     }
     List<SNode> aspects = TreePathAspectUtil.getTreePathAspects(_context.getSourceNode(), operationContext.getScope());
-    return SequenceOperations.getSize(aspects) > 0;
+    return ListSequence.fromList(aspects).count() > 0;
   }
 
   public static void nodeFactory_NodeSetup_GenericParamFeature_1196870541068(final IOperationContext operationContext, final NodeSetupContext _context) {
@@ -343,25 +341,17 @@ public class QueriesGenerated {
       Calculable calc = new Calculable() {
 
         public Object calculate() {
-          List<SNode> res = ListOperations.<SNode>createList(SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFReplaceFunWrapper"), SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFRemoveFunWrapper"), SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFInsertFunWrapper"));
+          List<SNode> res = ListSequence.<SNode>fromArray(SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFReplaceFunWrapper"), SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFRemoveFunWrapper"), SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFInsertFunWrapper"));
           if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.ypath.structure.GenericFeatureFunHolder")) {
-            {
-              ICursor<SNode> _zCursor = CursorFactory.createCursor(SLinkOperations.getTargets(_context.getParentNode(), "functions", true));
-              try {
-                while(_zCursor.moveToNext()) {
-                  SNode foo = _zCursor.getCurrent();
-                  if (SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureReplaceFun")) {
-                    ListOperations.removeElement(res, SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFReplaceFunWrapper"));
-                  } else
-                  if (SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureRemoveFun")) {
-                    ListOperations.removeElement(res, SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFRemoveFunWrapper"));
-                  } else
-                  if (SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureInsertFun")) {
-                    ListOperations.removeElement(res, SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFInsertFunWrapper"));
-                  }
-                }
-              } finally {
-                _zCursor.release();
+            for(SNode foo : SLinkOperations.getTargets(_context.getParentNode(), "functions", true)) {
+              if (SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureReplaceFun")) {
+                ListSequence.fromList(res).removeElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFReplaceFunWrapper"));
+              } else
+              if (SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureRemoveFun")) {
+                ListSequence.fromList(res).removeElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFRemoveFunWrapper"));
+              } else
+              if (SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureInsertFun")) {
+                ListSequence.fromList(res).removeElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFInsertFunWrapper"));
               }
             }
           }
@@ -383,35 +373,27 @@ public class QueriesGenerated {
         Calculable calc = new Calculable() {
 
           public Object calculate() {
-            List<FragmentTypeEnum> types = ListOperations.<FragmentTypeEnum>createList(FragmentTypeEnum.replace_single, FragmentTypeEnum.replace_selection, FragmentTypeEnum.replace_all, FragmentTypeEnum.remove_single, FragmentTypeEnum.remove_selection, FragmentTypeEnum.remove_all, FragmentTypeEnum.insert_at_start, FragmentTypeEnum.insert_at_end, FragmentTypeEnum.insert_before, FragmentTypeEnum.insert_after);
+            List<FragmentTypeEnum> types = ListSequence.<FragmentTypeEnum>fromArray(FragmentTypeEnum.replace_single, FragmentTypeEnum.replace_selection, FragmentTypeEnum.replace_all, FragmentTypeEnum.remove_single, FragmentTypeEnum.remove_selection, FragmentTypeEnum.remove_all, FragmentTypeEnum.insert_at_start, FragmentTypeEnum.insert_at_end, FragmentTypeEnum.insert_before, FragmentTypeEnum.insert_after);
             if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.ypath.structure.GenericFeatureFunHolder")) {
-              {
-                ICursor<SNode> _zCursor1 = CursorFactory.createCursor(SLinkOperations.getTargets(_context.getParentNode(), "functions", true));
-                try {
-                  while(_zCursor1.moveToNext()) {
-                    SNode foo = _zCursor1.getCurrent();
-                    if (SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment")) {
-                      ListOperations.removeElement(types, FragmentTypeEnum.parseValue(SPropertyOperations.getString_def(foo, "fragmentType", "REPLACE_SINGLE")));
-                    } else
-                    if (SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureReplaceFun")) {
-                      ListOperations.removeElement(types, FragmentTypeEnum.replace_single);
-                      ListOperations.removeElement(types, FragmentTypeEnum.replace_selection);
-                      ListOperations.removeElement(types, FragmentTypeEnum.replace_all);
-                    } else
-                    if (SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureRemoveFun")) {
-                      ListOperations.removeElement(types, FragmentTypeEnum.remove_single);
-                      ListOperations.removeElement(types, FragmentTypeEnum.remove_selection);
-                      ListOperations.removeElement(types, FragmentTypeEnum.remove_all);
-                    } else
-                    if (SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureInsertFun")) {
-                      ListOperations.removeElement(types, FragmentTypeEnum.insert_at_start);
-                      ListOperations.removeElement(types, FragmentTypeEnum.insert_at_end);
-                      ListOperations.removeElement(types, FragmentTypeEnum.insert_before);
-                      ListOperations.removeElement(types, FragmentTypeEnum.insert_after);
-                    }
-                  }
-                } finally {
-                  _zCursor1.release();
+              for(SNode foo : SLinkOperations.getTargets(_context.getParentNode(), "functions", true)) {
+                if (SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment")) {
+                  ListSequence.fromList(types).removeElement(FragmentTypeEnum.parseValue(SPropertyOperations.getString_def(foo, "fragmentType", "REPLACE_SINGLE")));
+                } else
+                if (SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureReplaceFun")) {
+                  ListSequence.fromList(types).removeElement(FragmentTypeEnum.replace_single);
+                  ListSequence.fromList(types).removeElement(FragmentTypeEnum.replace_selection);
+                  ListSequence.fromList(types).removeElement(FragmentTypeEnum.replace_all);
+                } else
+                if (SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureRemoveFun")) {
+                  ListSequence.fromList(types).removeElement(FragmentTypeEnum.remove_single);
+                  ListSequence.fromList(types).removeElement(FragmentTypeEnum.remove_selection);
+                  ListSequence.fromList(types).removeElement(FragmentTypeEnum.remove_all);
+                } else
+                if (SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureInsertFun")) {
+                  ListSequence.fromList(types).removeElement(FragmentTypeEnum.insert_at_start);
+                  ListSequence.fromList(types).removeElement(FragmentTypeEnum.insert_at_end);
+                  ListSequence.fromList(types).removeElement(FragmentTypeEnum.insert_before);
+                  ListSequence.fromList(types).removeElement(FragmentTypeEnum.insert_after);
                 }
               }
             }
@@ -584,7 +566,13 @@ public class QueriesGenerated {
 
         public Object calculate() {
           SNode tpoe = SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression", true, false);
-          return SequenceOperations.toList(SequenceOperations.where(SNodeOperations.getDescendants(ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe), null, false), new zPredicate1(null, null)));
+          return ListSequence.fromList(SNodeOperations.getDescendants(ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe), null, false)).where(new IWhereFilter <SNode>() {
+
+            public boolean accept(SNode it) {
+              return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.TreeNodeKindProperty");
+            }
+
+          }).toListSequence();
         }
 
       };
@@ -693,21 +681,21 @@ public class QueriesGenerated {
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
-          final zClosureContext1 _zClosureContext1 = new zClosureContext1();
-          List<Pair> res = ListOperations.<Pair>createList();
-          _zClosureContext1.srcNode = _context.getSourceNode();
-          _zClosureContext1.isGeneric = SNodeOperations.isInstanceOf(_zClosureContext1.srcNode, "jetbrains.mps.ypath.structure.IGenericFeature");
-          {
-            ICursor<SNode> _zCursor2 = CursorFactory.createCursor(SequenceOperations.where(SLinkOperations.getTargets(SNodeOperations.getParent(_zClosureContext1.srcNode, null, false, false), "features", true), new zPredicate2(null, _zClosureContext1)));
-            try {
-              while(_zCursor2.moveToNext()) {
-                SNode fe = _zCursor2.getCurrent();
-                ListOperations.addElement(res, new Pair(fe, Boolean.TRUE));
-                ListOperations.addElement(res, new Pair(fe, Boolean.FALSE));
-              }
-            } finally {
-              _zCursor2.release();
+          List<Pair> res = ListSequence.<Pair>fromArray();
+          final SNode srcNode = _context.getSourceNode();
+          final boolean isGeneric = SNodeOperations.isInstanceOf(srcNode, "jetbrains.mps.ypath.structure.IGenericFeature");
+          for(SNode fe : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getParent(srcNode, null, false, false), "features", true)).where(new IWhereFilter <SNode>() {
+
+            public boolean accept(SNode it) {
+              return it != srcNode && ((isGeneric ?
+                SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeature") :
+                !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeature"))
+              ));
             }
+
+          })) {
+            ListSequence.fromList(res).addElement(new Pair(fe, Boolean.TRUE));
+            ListSequence.fromList(res).addElement(new Pair(fe, Boolean.FALSE));
           }
           return res;
         }
@@ -760,52 +748,28 @@ public class QueriesGenerated {
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
-          List<Triplet> res = ListOperations.<Triplet>createList();
+          List<Triplet> res = ListSequence.<Triplet>fromArray();
           SNode tpoe = SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression", true, false);
           if ((tpoe == null)) {
             return res;
           }
           SNode nodeType = SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), "nodeType", true);
-          {
-            ICursor<TraversalAxis> _zCursor3 = CursorFactory.createCursor(TraversalAxis.getConstants());
-            try {
-              while(_zCursor3.moveToNext()) {
-                TraversalAxis axis = _zCursor3.getCurrent();
-                ListOperations.addElement(res, new Triplet(axis, null, null));
-                {
-                  ICursor<SNode> _zCursor4 = CursorFactory.createCursor(TreePath_Behavior.call_getFeature_1184591220431(ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe), nodeType));
-                  try {
-                    while(_zCursor4.moveToNext()) {
-                      SNode feat = _zCursor4.getCurrent();
-                      if (TraversalAxisUtil.isAcceptableFeatureForAxis(feat, axis)) {
-                        if (SPropertyOperations.getBoolean(feat, "default")) {
-                          ListOperations.addElement(res, new Triplet(axis, feat, null));
-                        } else
-                        if (SNodeOperations.isInstanceOf(feat, "jetbrains.mps.ypath.structure.IParamFeature")) {
-                          {
-                            ICursor<SNode> _zCursor5 = CursorFactory.createCursor(IParamFeature_Behavior.call_getParameterObjects_1197461148674(feat, nodeType));
-                            try {
-                              while(_zCursor5.moveToNext()) {
-                                SNode pw = _zCursor5.getCurrent();
-                                ListOperations.addElement(res, new Triplet(axis, feat, pw));
-                              }
-                            } finally {
-                              _zCursor5.release();
-                            }
-                          }
-                        } else
-                        {
-                          ListOperations.addElement(res, new Triplet(axis, feat, null));
-                        }
-                      }
-                    }
-                  } finally {
-                    _zCursor4.release();
+          for(TraversalAxis axis : TraversalAxis.getConstants()) {
+            ListSequence.fromList(res).addElement(new Triplet(axis, null, null));
+            for(SNode feat : TreePath_Behavior.call_getFeature_1184591220431(ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe), nodeType)) {
+              if (TraversalAxisUtil.isAcceptableFeatureForAxis(feat, axis)) {
+                if (SPropertyOperations.getBoolean(feat, "default")) {
+                  ListSequence.fromList(res).addElement(new Triplet(axis, feat, null));
+                } else
+                if (SNodeOperations.isInstanceOf(feat, "jetbrains.mps.ypath.structure.IParamFeature")) {
+                  for(SNode pw : IParamFeature_Behavior.call_getParameterObjects_1197461148674(feat, nodeType)) {
+                    ListSequence.fromList(res).addElement(new Triplet(axis, feat, pw));
                   }
+                } else
+                {
+                  ListSequence.fromList(res).addElement(new Triplet(axis, feat, null));
                 }
               }
-            } finally {
-              _zCursor3.release();
             }
           }
           return res;
@@ -917,7 +881,13 @@ public class QueriesGenerated {
 
         public Object calculate() {
           SNode tpoe = SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression", true, false);
-          return SequenceOperations.toList(SequenceOperations.where(SNodeOperations.getDescendants(ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe), null, false), new zPredicate3(null, null)));
+          return ListSequence.fromList(SNodeOperations.getDescendants(ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe), null, false)).where(new IWhereFilter <SNode>() {
+
+            public boolean accept(SNode it) {
+              return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.TreeNodeKind");
+            }
+
+          }).toListSequence();
         }
 
       };
@@ -955,7 +925,13 @@ public class QueriesGenerated {
 
         public Object calculate() {
           SNode tpoe = SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression", true, false);
-          return SequenceOperations.toList(SequenceOperations.where(SNodeOperations.getDescendants(ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe), null, false), new zPredicate4(null, null)));
+          return ListSequence.fromList(SNodeOperations.getDescendants(ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe), null, false)).where(new IWhereFilter <SNode>() {
+
+            public boolean accept(SNode it) {
+              return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.TreeNodeKindProperty") && SPropertyOperations.getBoolean(it, "default");
+            }
+
+          }).toListSequence();
         }
 
       };
@@ -1044,58 +1020,26 @@ public class QueriesGenerated {
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
-          List<Quadruplet> res = ListOperations.<Quadruplet>createList();
+          List<Quadruplet> res = ListSequence.<Quadruplet>fromArray();
           SNode nodeType = (SNode)TypeChecker.getInstance().getTypeOf(_context.getSourceNode());
-          {
-            ICursor<SNode> _zCursor6 = CursorFactory.createCursor(TreePathAspectUtil.getTreePathAspects(_context.getSourceNode(), operationContext.getScope()));
-            try {
-              while(_zCursor6.moveToNext()) {
-                SNode aspect = _zCursor6.getCurrent();
-                {
-                  ICursor<TraversalAxis> _zCursor7 = CursorFactory.createCursor(TraversalAxis.getConstants());
-                  try {
-                    while(_zCursor7.moveToNext()) {
-                      TraversalAxis axis = _zCursor7.getCurrent();
-                      ListOperations.addElement(res, new Quadruplet(aspect, axis, null, null));
-                      {
-                        ICursor<SNode> _zCursor8 = CursorFactory.createCursor(TreePath_Behavior.call_getFeature_1184591220431(aspect, nodeType));
-                        try {
-                          while(_zCursor8.moveToNext()) {
-                            SNode feat = _zCursor8.getCurrent();
-                            if (TraversalAxisUtil.isAcceptableFeatureForAxis(feat, axis)) {
-                              if (SPropertyOperations.getBoolean(feat, "default")) {
-                                ListOperations.addElement(res, new Quadruplet(aspect, axis, feat, null));
-                              } else
-                              if (SNodeOperations.isInstanceOf(feat, "jetbrains.mps.ypath.structure.IParamFeature")) {
-                                {
-                                  ICursor<SNode> _zCursor9 = CursorFactory.createCursor(IParamFeature_Behavior.call_getParameterObjects_1197461148674(feat, nodeType));
-                                  try {
-                                    while(_zCursor9.moveToNext()) {
-                                      SNode pw = _zCursor9.getCurrent();
-                                      ListOperations.addElement(res, new Quadruplet(aspect, axis, feat, pw));
-                                    }
-                                  } finally {
-                                    _zCursor9.release();
-                                  }
-                                }
-                              } else
-                              {
-                                ListOperations.addElement(res, new Quadruplet(aspect, axis, feat, null));
-                              }
-                            }
-                          }
-                        } finally {
-                          _zCursor8.release();
-                        }
-                      }
+          for(SNode aspect : TreePathAspectUtil.getTreePathAspects(_context.getSourceNode(), operationContext.getScope())) {
+            for(TraversalAxis axis : TraversalAxis.getConstants()) {
+              ListSequence.fromList(res).addElement(new Quadruplet(aspect, axis, null, null));
+              for(SNode feat : TreePath_Behavior.call_getFeature_1184591220431(aspect, nodeType)) {
+                if (TraversalAxisUtil.isAcceptableFeatureForAxis(feat, axis)) {
+                  if (SPropertyOperations.getBoolean(feat, "default")) {
+                    ListSequence.fromList(res).addElement(new Quadruplet(aspect, axis, feat, null));
+                  } else
+                  if (SNodeOperations.isInstanceOf(feat, "jetbrains.mps.ypath.structure.IParamFeature")) {
+                    for(SNode pw : IParamFeature_Behavior.call_getParameterObjects_1197461148674(feat, nodeType)) {
+                      ListSequence.fromList(res).addElement(new Quadruplet(aspect, axis, feat, pw));
                     }
-                  } finally {
-                    _zCursor7.release();
+                  } else
+                  {
+                    ListSequence.fromList(res).addElement(new Quadruplet(aspect, axis, feat, null));
                   }
                 }
               }
-            } finally {
-              _zCursor6.release();
             }
           }
           return res;

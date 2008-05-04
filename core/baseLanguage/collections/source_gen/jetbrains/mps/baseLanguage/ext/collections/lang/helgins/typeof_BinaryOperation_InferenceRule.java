@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_BinaryOperation_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_BinaryOperation_InferenceRule() {
+  public typeof_BinaryOperation_InferenceRule() {
   }
 
   public void applyRule(final SNode op) {

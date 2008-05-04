@@ -9,8 +9,6 @@ import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 
 public class CellModel_Collection_Actions {
 
@@ -38,16 +36,8 @@ public class CellModel_Collection_Actions {
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node, null, false, false), "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection")) {
         SNode p = SNodeOperations.getParent(node, null, false, false);
         List<SNode> children = SLinkOperations.getTargets(node, "childCellModel", true);
-        {
-          ICursor<SNode> _zCursor = CursorFactory.createCursor(children);
-          try {
-            while(_zCursor.moveToNext()) {
-              SNode child = _zCursor.getCurrent();
-              SNodeOperations.insertPrevSiblingChild(node, child);
-            }
-          } finally {
-            _zCursor.release();
-          }
+        for(SNode child : children) {
+          SNodeOperations.insertPrevSiblingChild(node, child);
         }
       }
       SNodeOperations.deleteNode(node);

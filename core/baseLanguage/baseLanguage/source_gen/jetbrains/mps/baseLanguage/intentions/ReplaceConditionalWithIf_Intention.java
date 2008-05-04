@@ -9,8 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 
 public class ReplaceConditionalWithIf_Intention extends BaseIntention implements Intention {
@@ -50,13 +49,13 @@ public class ReplaceConditionalWithIf_Intention extends BaseIntention implements
     }
     // Get used nodes
     SNode nodeParent = SNodeOperations.getParent(node, null, false, false);
-    int nodeIndex = SequenceOperations.indexOf(SNodeOperations.getChildren(nodeParent), node);
+    int nodeIndex = ListSequence.fromList(SNodeOperations.getChildren(nodeParent)).indexOf(node);
     SNode nodeCopy = SNodeOperations.copyNode(node);
     // make + node
-    SNodeOperations.replaceWithAnother(ListOperations.getElement(SNodeOperations.getChildren(nodeParent), nodeIndex), SLinkOperations.getTarget(nodeCopy, "ifTrue", true));
+    SNodeOperations.replaceWithAnother(ListSequence.fromList(SNodeOperations.getChildren(nodeParent)).getElement(nodeIndex), SLinkOperations.getTarget(nodeCopy, "ifTrue", true));
     SNode trueStmt = SNodeOperations.copyNode(stmtNode);
     // make - node
-    SNodeOperations.replaceWithAnother(ListOperations.getElement(SNodeOperations.getChildren(nodeParent), nodeIndex), SLinkOperations.getTarget(nodeCopy, "ifFalse", true));
+    SNodeOperations.replaceWithAnother(ListSequence.fromList(SNodeOperations.getChildren(nodeParent)).getElement(nodeIndex), SLinkOperations.getTarget(nodeCopy, "ifFalse", true));
     SNode falseStmt = SNodeOperations.copyNode(stmtNode);
     // make the best - block ever
     SNode falseBlockStmt = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BlockStatement", null);

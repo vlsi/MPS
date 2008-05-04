@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_SConceptPropertyAccess_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_SConceptPropertyAccess_InferenceRule() {
+  public typeof_SConceptPropertyAccess_InferenceRule() {
   }
 
   public void applyRule(final SNode op) {

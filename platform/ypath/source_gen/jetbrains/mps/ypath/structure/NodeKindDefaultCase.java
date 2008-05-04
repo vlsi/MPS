@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class NodeKindDefaultCase extends NodeKindCase {
   public static final String concept = "jetbrains.mps.ypath.structure.NodeKindDefaultCase";
 
-  public  NodeKindDefaultCase(SNode node) {
+  public NodeKindDefaultCase(SNode node) {
     super(node);
   }
 

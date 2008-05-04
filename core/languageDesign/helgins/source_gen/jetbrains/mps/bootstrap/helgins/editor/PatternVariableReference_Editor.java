@@ -62,7 +62,7 @@ public class PatternVariableReference_Editor extends DefaultNodeEditor {
 
   public static class _Inline5 extends AbstractCellProvider {
 
-    public  _Inline5() {
+    public _Inline5() {
       super();
     }
 

@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
-  public  supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule() {
+  public supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode type) {

@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class FeatureSequenceFun extends ConceptFunction {
   public static final String concept = "jetbrains.mps.ypath.structure.FeatureSequenceFun";
 
-  public  FeatureSequenceFun(SNode node) {
+  public FeatureSequenceFun(SNode node) {
     super(node);
   }
 

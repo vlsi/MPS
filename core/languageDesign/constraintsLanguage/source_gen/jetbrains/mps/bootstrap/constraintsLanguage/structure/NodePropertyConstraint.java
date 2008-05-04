@@ -17,7 +17,7 @@ public class NodePropertyConstraint extends BaseConcept {
   public static String PROPERTY_GETTER = "propertyGetter";
   public static String PROPERTY_SETTER = "propertySetter";
 
-  public  NodePropertyConstraint(SNode node) {
+  public NodePropertyConstraint(SNode node) {
     super(node);
   }
 

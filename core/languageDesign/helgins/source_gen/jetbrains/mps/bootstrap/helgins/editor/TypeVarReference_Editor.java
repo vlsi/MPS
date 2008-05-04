@@ -60,7 +60,7 @@ public class TypeVarReference_Editor extends DefaultNodeEditor {
 
   public static class _Inline2 extends AbstractCellProvider {
 
-    public  _Inline2() {
+    public _Inline2() {
       super();
     }
 

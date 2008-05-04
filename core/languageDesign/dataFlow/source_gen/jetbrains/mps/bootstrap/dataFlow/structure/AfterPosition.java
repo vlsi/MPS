@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class AfterPosition extends RelativePosition {
   public static final String concept = "jetbrains.mps.bootstrap.dataFlow.structure.AfterPosition";
 
-  public  AfterPosition(SNode node) {
+  public AfterPosition(SNode node) {
     super(node);
   }
 

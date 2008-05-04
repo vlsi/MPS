@@ -8,7 +8,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 
 public class ExpandBoolean_Intention extends BaseIntention implements Intention {
 
@@ -35,7 +39,6 @@ public class ExpandBoolean_Intention extends BaseIntention implements Intention 
   }
 
   public void execute(SNode node, EditorContext editorContext) {
-    final zClosureContext1 _zClosureContext1 = new zClosureContext1();
     SNode statementNode = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
     // 
     SNode ifNode = SNodeOperations.insertNewPrevSiblingChild(statementNode, "jetbrains.mps.baseLanguage.structure.IfStatement");
@@ -47,12 +50,38 @@ public class ExpandBoolean_Intention extends BaseIntention implements Intention 
     SLinkOperations.insertChildFirst(ifTrue, "statement", SNodeOperations.copyNode(statementNode));
     SLinkOperations.insertChildFirst(ifFalse, "statement", SNodeOperations.copyNode(statementNode));
     // 
-    _zClosureContext1.fake_node = node;
+    final SNode fake_node = node;
     Iterable<SNode> refs;
-    refs = SequenceOperations.where(SNodeOperations.getDescendants(SequenceOperations.getFirst(SLinkOperations.getTargets(ifTrue, "statement", true)), null, false), new zPredicate1(ExpandBoolean_Intention.this, _zClosureContext1));
-    SequenceOperations.forEach(refs, new zForEach1(ExpandBoolean_Intention.this, _zClosureContext1));
-    refs = SequenceOperations.where(SNodeOperations.getDescendants(SequenceOperations.getFirst(SLinkOperations.getTargets(ifFalse, "statement", true)), null, false), new zPredicate2(ExpandBoolean_Intention.this, _zClosureContext1));
-    SequenceOperations.forEach(refs, new zForEach2(ExpandBoolean_Intention.this, _zClosureContext1));
+    refs = ListSequence.fromList(SNodeOperations.getDescendants(ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).first(), null, false)).where(new IWhereFilter <SNode>() {
+
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.VariableReference") && SLinkOperations.getTarget(it, "variableDeclaration", false) == SLinkOperations.getTarget(fake_node, "variableDeclaration", false);
+      }
+
+    });
+    Sequence.fromIterable(refs).visitAll(new IVisitor <SNode>() {
+
+      public void visit(SNode it) {
+        SNode booleanConstant = SNodeOperations.replaceWithNewChild(it, "jetbrains.mps.baseLanguage.structure.BooleanConstant");
+        SPropertyOperations.set(booleanConstant, "value", "" + (true));
+      }
+
+    });
+    refs = ListSequence.fromList(SNodeOperations.getDescendants(ListSequence.fromList(SLinkOperations.getTargets(ifFalse, "statement", true)).first(), null, false)).where(new IWhereFilter <SNode>() {
+
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.VariableReference") && SLinkOperations.getTarget(it, "variableDeclaration", false) == SLinkOperations.getTarget(fake_node, "variableDeclaration", false);
+      }
+
+    });
+    Sequence.fromIterable(refs).visitAll(new IVisitor <SNode>() {
+
+      public void visit(SNode it) {
+        SNode booleanConstant = SNodeOperations.replaceWithNewChild(it, "jetbrains.mps.baseLanguage.structure.BooleanConstant");
+        SPropertyOperations.set(booleanConstant, "value", "" + (false));
+      }
+
+    });
     // 
     SNodeOperations.deleteNode(statementNode);
   }

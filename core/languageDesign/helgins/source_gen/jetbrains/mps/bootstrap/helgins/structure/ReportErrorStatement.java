@@ -14,7 +14,7 @@ public class ReportErrorStatement extends Statement {
   public static String ERROR_STRING = "errorString";
   public static String NODE_TO_REPORT = "nodeToReport";
 
-  public  ReportErrorStatement(SNode node) {
+  public ReportErrorStatement(SNode node) {
     super(node);
   }
 

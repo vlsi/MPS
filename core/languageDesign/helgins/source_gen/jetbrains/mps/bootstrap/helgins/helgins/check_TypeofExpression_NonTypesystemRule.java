@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_TypeofExpression_NonTypesystemRule implements NonTypesystemRule_Runtime {
 
-  public  check_TypeofExpression_NonTypesystemRule() {
+  public check_TypeofExpression_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode typeOfExpression) {

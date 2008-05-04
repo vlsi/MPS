@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ReverseOperation extends AbstractListOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ReverseOperation";
 
-  public  ReverseOperation(SNode node) {
+  public ReverseOperation(SNode node) {
     super(node);
   }
 

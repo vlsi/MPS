@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_NodeTypeOperation_NonTypesystemRule implements NonTypesystemRule_Runtime {
 
-  public  check_NodeTypeOperation_NonTypesystemRule() {
+  public check_NodeTypeOperation_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode node_TypeOperation) {

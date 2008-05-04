@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ConceptFunctionParameter_editorContext extends ConceptFunctionParameter {
   public static final String concept = "jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_editorContext";
 
-  public  ConceptFunctionParameter_editorContext(SNode node) {
+  public ConceptFunctionParameter_editorContext(SNode node) {
     super(node);
   }
 

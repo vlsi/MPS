@@ -114,7 +114,7 @@ public class SkipOperation_Editor extends DefaultNodeEditor {
 
   public static class SkipOperation_replaceWith_SequenceOperation_cellMenu extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
 
-    public  SkipOperation_replaceWith_SequenceOperation_cellMenu() {
+    public SkipOperation_replaceWith_SequenceOperation_cellMenu() {
     }
 
     public String getReplacementConceptName() {

@@ -11,7 +11,8 @@ import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.baseLanguage.constraints.ClassConcept_Behavior;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class AddRuntimeExceptionToMethodSignature_Intention extends BaseIntention implements Intention {
 
@@ -28,18 +29,17 @@ public class AddRuntimeExceptionToMethodSignature_Intention extends BaseIntentio
   }
 
   public boolean isApplicable(SNode node, EditorContext editorContext) {
-    final zClosureContext2 _zClosureContext2 = new zClosureContext2();
     // check that this is done in a method
     SNode methodDecl = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
     if (methodDecl == null) {
       return false;
     }
     // get exception type
-    _zClosureContext2.exceptionType = (TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "throwable", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true));
-    if (_zClosureContext2.exceptionType == null) {
+    final SNode exceptionType = (TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "throwable", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true));
+    if (exceptionType == null) {
       return false;
     }
-    SNode exceptionJavaType = (SNode)SLinkOperations.getTarget(_zClosureContext2.exceptionType, "classifier", false);
+    SNode exceptionJavaType = (SNode)SLinkOperations.getTarget(exceptionType, "classifier", false);
     if (exceptionJavaType == null) {
       return false;
     }
@@ -48,7 +48,13 @@ public class AddRuntimeExceptionToMethodSignature_Intention extends BaseIntentio
       return false;
     }
     // check if it's not thrown by a method yet
-    if (!(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(methodDecl, "throwsItem", true), new zPredicate3(AddRuntimeExceptionToMethodSignature_Intention.this, _zClosureContext2))))) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(methodDecl, "throwsItem", true)).where(new IWhereFilter <SNode>() {
+
+      public boolean accept(SNode it) {
+        return SLinkOperations.getTarget(it, "classifier", false) == SLinkOperations.getTarget(exceptionType, "classifier", false);
+      }
+
+    }).isNotEmpty()) {
       return false;
     }
     return true;

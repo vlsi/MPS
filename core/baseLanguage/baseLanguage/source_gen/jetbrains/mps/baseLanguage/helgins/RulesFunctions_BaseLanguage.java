@@ -6,13 +6,16 @@ import jetbrains.mps.bootstrap.helgins.dependencies.InferenceMethod;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ITranslator;
+import jetbrains.mps.internal.collections.runtime.ISequence;
+import jetbrains.mps.internal.collections.runtime.ISequenceIterableAdapter;
+import java.util.Iterator;
+import jetbrains.mps.closures.runtime.YieldingIterator;
 import java.util.List;
 import java.util.Map;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.core.constraints.BaseConcept_Behavior;
-import java.util.Iterator;
 import jetbrains.mps.util.Pair;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -57,7 +60,101 @@ public class RulesFunctions_BaseLanguage {
   }
 
   public static Iterable<SNode> collectReturnStatements(SNode node) {
-    Iterable<SNode> returnStatements = SequenceOperations.map(SNodeOperations.getChildren(node), new zMapper(null, null));
+    Iterable<SNode> returnStatements = ListSequence.fromList(SNodeOperations.getChildren(node)).translate(new ITranslator <SNode, SNode>() {
+
+      public ISequence<SNode> translate(final SNode it) {
+        return new ISequenceIterableAdapter <SNode>() {
+
+          public Iterator<SNode> iterator() {
+            return new YieldingIterator <SNode>() {
+
+              private int __CP__ = 0;
+              private SNode _12_returnStmt;
+              private Iterator<SNode> _12_returnStmt_it;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 12:
+                      this._12_returnStmt_it = RulesFunctions_BaseLanguage.collectReturnStatements(it).iterator();
+                    case 13:
+                      if (!(this._12_returnStmt_it.hasNext())) {
+                        this.__CP__ = 9;
+                        break;
+                      }
+                      this._12_returnStmt = this._12_returnStmt_it.next();
+                      this.__CP__ = 14;
+                      break;
+                    case 4:
+                      if (SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ReturnStatement")) {
+                        this.__CP__ = 5;
+                        break;
+                      }
+                      this.__CP__ = 7;
+                      break;
+                    case 7:
+                      if (SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ConceptFunction") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.IStatementListContainer") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
+                        this.__CP__ = 8;
+                        break;
+                      }
+                      this.__CP__ = 11;
+                      break;
+                    case 3:
+                      if (false) {
+                        this.__CP__ = 2;
+                        break;
+                      }
+                      this.__CP__ = 1;
+                      break;
+                    case 6:
+                      this.__CP__ = 3;
+                      this.yield(it);
+                      return true;
+                    case 15:
+                      this.__CP__ = 13;
+                      this.yield(this._12_returnStmt);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    case 2:
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      this.__CP__ = 6;
+                      break;
+                    case 8:
+                      // don't look inside closures and other code-blocks
+                      // don't look inside commented statements
+                      // don't look inside anything that implements IStatementListContainer (for extensibility)
+                      // don't look inside anonymous classes
+                      this.__CP__ = 1;
+                      break;
+                    case 11:
+                      this.__CP__ = 12;
+                      break;
+                    case 14:
+                      this.__CP__ = 15;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    });
     return returnStatements;
   }
 
@@ -75,7 +172,7 @@ public class RulesFunctions_BaseLanguage {
           if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
             SNode tvr = child;
             SNode tvd = SLinkOperations.getTarget(tvr, "typeVariableDeclaration", false);
-            int index = SequenceOperations.indexOf(SLinkOperations.getTargets(genericClassifier, "typeVariableDeclaration", true), tvd);
+            int index = ListSequence.fromList(SLinkOperations.getTargets(genericClassifier, "typeVariableDeclaration", true)).indexOf(tvd);
             SNode actualParam = (index < actualParams.size() && index >= 0 ?
               actualParams.get(index) :
               new QuotationClass_29().createNode()
@@ -110,9 +207,9 @@ public class RulesFunctions_BaseLanguage {
             if (idx < actualParams.size()) {
               List<SNode> nodes = mmap.get(tvd);
               if (nodes != null) {
-                SNode tvar = ListOperations.getElement(nodes, 0);
+                SNode tvar = ListSequence.fromList(nodes).getElement(0);
                 if (TRACE_METHOD_TYPES) {
-                  System.out.println("-2- " + BaseConcept_Behavior.call_getPresentation_1180102203531(tvar) + " :==: " + BaseConcept_Behavior.call_getPresentation_1180102203531(ListOperations.getElement(nodes, 0)));
+                  System.out.println("-2- " + BaseConcept_Behavior.call_getPresentation_1180102203531(tvar) + " :==: " + BaseConcept_Behavior.call_getPresentation_1180102203531(ListSequence.fromList(nodes).getElement(0)));
                 }
                 TypeChecker.getInstance().getRuntimeSupport().createEquation(tvar, actualParams.get(idx), null, null, "jetbrains.mps.baseLanguage.helgins", "1203433378489");
               }
@@ -234,7 +331,7 @@ public class RulesFunctions_BaseLanguage {
       nodes = new ArrayList<SNode>();
       mmap.put(tvd, nodes);
     }
-    ListOperations.addElement(nodes, tvar);
+    ListSequence.fromList(nodes).addElement(tvar);
   }
 
   public static boolean isWithinStatic(SNode node) {

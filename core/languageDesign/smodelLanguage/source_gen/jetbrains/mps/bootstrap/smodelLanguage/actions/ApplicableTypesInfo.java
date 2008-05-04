@@ -12,6 +12,6 @@ public class ApplicableTypesInfo {
   public SNode myLinkAccessT = null;
   public boolean myLinkToConcept = false;
 
-  public  ApplicableTypesInfo() {
+  public ApplicableTypesInfo() {
   }
 }

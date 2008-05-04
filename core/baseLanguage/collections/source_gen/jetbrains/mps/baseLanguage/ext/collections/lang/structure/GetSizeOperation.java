@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class GetSizeOperation extends SequenceOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetSizeOperation";
 
-  public  GetSizeOperation(SNode node) {
+  public GetSizeOperation(SNode node) {
     super(node);
   }
 

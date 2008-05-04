@@ -14,7 +14,7 @@ public class GFGetterFun extends ConceptFunction implements IDesignFunction {
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  GFGetterFun(SNode node) {
+  public GFGetterFun(SNode node) {
     super(node);
   }
 

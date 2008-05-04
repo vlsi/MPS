@@ -10,11 +10,10 @@ import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
 public class CommentStatements_Action extends CurrentProjectMPSAction {
@@ -33,7 +32,7 @@ public class CommentStatements_Action extends CurrentProjectMPSAction {
   }
 
   public boolean isApplicable(ActionContext context) {
-    return (SNodeOperations.getAncestor(ListOperations.getElement(this.nodes, 0), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", false, false) == null);
+    return (SNodeOperations.getAncestor(ListSequence.fromList(this.nodes).getElement(0), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", false, false) == null);
   }
 
   public void doUpdate(@NotNull() ActionContext context) {
@@ -63,17 +62,17 @@ public class CommentStatements_Action extends CurrentProjectMPSAction {
         boolean error = false;
         if (nodes != null) {
           {
-            ICursor<SNode> _zCursor15 = CursorFactory.createCursor(nodes);
+            ICursor<SNode> _zCursor = CursorFactory.createCursor(nodes);
             try {
-              while(_zCursor15.moveToNext()) {
-                SNode node = _zCursor15.getCurrent();
+              while(_zCursor.moveToNext()) {
+                SNode node = _zCursor.getCurrent();
                 if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Statement"))) {
                   error = true;
                   break;
                 }
               }
             } finally {
-              _zCursor15.release();
+              _zCursor.release();
             }
           }
         }
@@ -99,7 +98,7 @@ public class CommentStatements_Action extends CurrentProjectMPSAction {
         return;
       }
       {
-        SNode commentedStatementsBlock = SNodeOperations.insertNewPrevSiblingChild(SequenceOperations.getFirst(this.nodes), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock");
+        SNode commentedStatementsBlock = SNodeOperations.insertNewPrevSiblingChild(ListSequence.fromList(this.nodes).first(), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock");
         SLinkOperations.addAll(commentedStatementsBlock, "statement", this.nodes);
       }
     } catch (Throwable t) {

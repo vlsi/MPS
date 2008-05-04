@@ -132,7 +132,7 @@ public class Model_NodesOperation_Editor extends DefaultNodeEditor {
 
   public static class _Inline20 extends AbstractCellProvider {
 
-    public  _Inline20() {
+    public _Inline20() {
       super();
     }
 

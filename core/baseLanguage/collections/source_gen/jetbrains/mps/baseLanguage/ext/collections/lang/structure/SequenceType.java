@@ -12,7 +12,7 @@ public class SequenceType extends Type {
   public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType";
   public static String ELEMENT_TYPE = "elementType";
 
-  public  SequenceType(SNode node) {
+  public SequenceType(SNode node) {
     super(node);
   }
 

@@ -10,14 +10,12 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ypath.runtime.TraversalAxis;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.ypath.constraints.TreePath_Behavior;
 import jetbrains.mps.ypath.constraints.ITreePathExpression_Behavior;
 import jetbrains.mps.ypath.actions.TraversalAxisUtil;
@@ -26,47 +24,31 @@ import jetbrains.mps.smodel.SModel;
 
 public class menu_SubstituteFeatureAndParameter extends AbstractCellMenuComponent {
 
-  public  menu_SubstituteFeatureAndParameter() {
+  public menu_SubstituteFeatureAndParameter() {
     super(new ISubstituteInfoPart[]{new menu_SubstituteFeatureAndParameter.IterateOperation_generic_cellMenu()});
   }
   public static class IterateOperation_generic_cellMenu extends AbstractCellMenuPart_Generic_Group {
 
-    public  IterateOperation_generic_cellMenu() {
+    public IterateOperation_generic_cellMenu() {
     }
 
     public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      List<Pair> res = ListOperations.<Pair>createList();
-      ListOperations.addElement(res, new Pair(null, null));
+      List<Pair> res = ListSequence.<Pair>fromArray();
+      ListSequence.fromList(res).addElement(new Pair(null, null));
       TraversalAxis axis = TraversalAxis.parseValue(SPropertyOperations.getString_def(node, "axis", "DESCENDANTS"));
       SNode tpoe = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
-      if(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true)), "jetbrains.mps.ypath.structure.TreePathType")) {
+      if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true)), "jetbrains.mps.ypath.structure.TreePathType")) {
         SNode nodeType = SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true)), "nodeType", true);
-        {
-          ICursor<SNode> _zCursor = CursorFactory.createCursor(TreePath_Behavior.call_getFeature_1184591220431(ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe), nodeType));
-          try {
-            while(_zCursor.moveToNext()) {
-              SNode feat = _zCursor.getCurrent();
-              if(TraversalAxisUtil.isAcceptableFeatureForAxis(feat, axis)) {
-                if(SNodeOperations.isInstanceOf(feat, "jetbrains.mps.ypath.structure.IParamFeature")) {
-                  {
-                    ICursor<SNode> _zCursor1 = CursorFactory.createCursor(IParamFeature_Behavior.call_getParameterObjects_1197461148674(feat, nodeType));
-                    try {
-                      while(_zCursor1.moveToNext()) {
-                        SNode pw = _zCursor1.getCurrent();
-                        ListOperations.addElement(res, new Pair(feat, pw));
-                      }
-                    } finally {
-                      _zCursor1.release();
-                    }
-                  }
-                } else
-                {
-                  ListOperations.addElement(res, new Pair(feat, null));
-                }
+        for(SNode feat : TreePath_Behavior.call_getFeature_1184591220431(ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe), nodeType)) {
+          if (TraversalAxisUtil.isAcceptableFeatureForAxis(feat, axis)) {
+            if (SNodeOperations.isInstanceOf(feat, "jetbrains.mps.ypath.structure.IParamFeature")) {
+              for(SNode pw : IParamFeature_Behavior.call_getParameterObjects_1197461148674(feat, nodeType)) {
+                ListSequence.fromList(res).addElement(new Pair(feat, pw));
               }
+            } else
+            {
+              ListSequence.fromList(res).addElement(new Pair(feat, null));
             }
-          } finally {
-            _zCursor.release();
           }
         }
       }
@@ -95,10 +77,10 @@ public class menu_SubstituteFeatureAndParameter extends AbstractCellMenuComponen
     public String getMatchingText_internal(Pair parameterObject) {
       SNode fe = (SNode)parameterObject.o1;
       SNode pw = (SNode)parameterObject.o2;
-      if((fe == null)) {
+      if ((fe == null)) {
         return "*";
       } else
-      if((pw != null)) {
+      if ((pw != null)) {
         return SPropertyOperations.getString(pw, "name") + " | " + SPropertyOperations.getString(fe, "name");
       } else
       {
@@ -112,10 +94,10 @@ public class menu_SubstituteFeatureAndParameter extends AbstractCellMenuComponen
 
     public String getDescriptionText_internal(Pair parameterObject) {
       SNode fe = (SNode)parameterObject.o1;
-      if((fe == null)) {
+      if ((fe == null)) {
         return "all features";
       } else
-      if(SNodeOperations.isInstanceOf(fe, "jetbrains.mps.ypath.structure.IParamFeature")) {
+      if (SNodeOperations.isInstanceOf(fe, "jetbrains.mps.ypath.structure.IParamFeature")) {
         return "parameterized feature in " + SPropertyOperations.getString(SNodeOperations.getParent(fe, null, false, false), "name");
       } else
       {

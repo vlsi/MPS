@@ -10,10 +10,10 @@ public enum NodePresentationOptions {
   referent_("<referent node>", "default_referent"),
   custom_("<custom>", "custom");
 
-  /* package */ String myName;
-  /* package */ String myValue;
+  /* package */String myName;
+  /* package */String myValue;
 
-  NodePresentationOptions(String name, String value) {
+NodePresentationOptions(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }

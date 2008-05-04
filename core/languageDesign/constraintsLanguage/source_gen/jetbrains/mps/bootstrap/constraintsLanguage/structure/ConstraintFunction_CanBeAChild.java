@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ConstraintFunction_CanBeAChild extends ConceptFunction {
   public static final String concept = "jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_CanBeAChild";
 
-  public  ConstraintFunction_CanBeAChild(SNode node) {
+  public ConstraintFunction_CanBeAChild(SNode node) {
     super(node);
   }
 

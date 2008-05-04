@@ -20,8 +20,13 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ITranslator;
+import jetbrains.mps.internal.collections.runtime.ISequence;
+import jetbrains.mps.internal.collections.runtime.ISequenceIterableAdapter;
+import java.util.Iterator;
+import jetbrains.mps.closures.runtime.YieldingIterator;
 import jetbrains.mps.smodel.SModel;
 
 public class ContinueStatement_Editor extends DefaultNodeEditor {
@@ -149,7 +154,55 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
     }
 
     public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      return SequenceOperations.toList(SequenceOperations.map(SNodeOperations.getAncestors(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false), new zMapper1(ContinueStatement_generic_cellMenu.this, null)));
+      return ListSequence.fromList(SNodeOperations.getAncestors(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).translate(new ITranslator <SNode, String>() {
+
+        public ISequence<String> translate(final SNode it) {
+          return new ISequenceIterableAdapter <String>() {
+
+            public Iterator<String> iterator() {
+              return new YieldingIterator <String>() {
+
+                private int __CP__ = 0;
+
+                protected boolean moveToNext() {
+__loop__:
+                  do {
+__switch__:
+                    switch (this.__CP__) {
+                      case -1:
+                        assert false : "Internal error";
+                        return false;
+                      case 2:
+                        if (!(SPropertyOperations.hasValue(it, "label", null))) {
+                          this.__CP__ = 3;
+                          break;
+                        }
+                        this.__CP__ = 1;
+                        break;
+                      case 4:
+                        this.__CP__ = 1;
+                        this.yield(SPropertyOperations.getString(it, "label"));
+                        return true;
+                      case 0:
+                        this.__CP__ = 2;
+                        break;
+                      case 3:
+                        this.__CP__ = 4;
+                        break;
+                      default:
+                        break __loop__;
+                    }
+                  } while(true);
+                  return false;
+                }
+
+              };
+            }
+
+          };
+        }
+
+      }).toListSequence();
     }
 
     public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {

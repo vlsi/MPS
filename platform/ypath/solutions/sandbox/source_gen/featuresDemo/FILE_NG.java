@@ -7,7 +7,7 @@ import java.io.File;
 import jetbrains.mps.ypath.runtime.IFilter;
 import java.util.AbstractList;
 import java.util.AbstractCollection;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Iterator;
 import jetbrains.mps.ypath.runtime.IFeatureDescriptor;
 
@@ -31,10 +31,10 @@ public class FILE_NG extends TreePath<File> {
     }
 
     public static IFilter<File> getInstance() {
-      if (FILE_NG.DIR_NodeKindTrigger.instance == null) {
-        FILE_NG.DIR_NodeKindTrigger.instance = new FILE_NG.DIR_NodeKindTrigger();
+      if (instance == null) {
+        instance = new FILE_NG.DIR_NodeKindTrigger();
       }
-      return FILE_NG.DIR_NodeKindTrigger.instance;
+      return instance;
     }
 
 
@@ -75,7 +75,7 @@ public class FILE_NG extends TreePath<File> {
     }
 
     public Iterable<File> sequence() {
-      return ListOperations.<File>createList(this.thisNode.getParentFile());
+      return ListSequence.<File>fromArray(this.thisNode.getParentFile());
     }
 
     public Iterator<File> iterator() {

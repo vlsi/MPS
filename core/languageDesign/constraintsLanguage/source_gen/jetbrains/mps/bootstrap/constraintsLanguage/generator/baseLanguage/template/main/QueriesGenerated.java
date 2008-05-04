@@ -21,13 +21,14 @@ import jetbrains.mps.smodel.behaviour.BehaviorConstants;
 import jetbrains.mps.core.constraints.INamedConcept_Behavior;
 import jetbrains.mps.bootstrap.constraintsLanguage.constraints.StaticConceptMethodDeclaration_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.structureLanguage.constraints.DataTypeDeclaration_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.baseLanguage.constraints.Type_Behavior;
 import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.TemplateFragmentContext;
 import jetbrains.mps.bootstrap.constraintsLanguage.generator.baseLanguage.template.util.QueriesUtil;
@@ -241,17 +242,17 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1194966901464(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode snode = _context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "class_for_concept");
-    return SequenceOperations.getFirst(SLinkOperations.getTargets(snode, "constructor", true));
+    return ListSequence.fromList(SLinkOperations.getTargets(snode, "constructor", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1194967347554(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode snode = _context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "class_for_concept");
-    return SequenceOperations.getFirst(SLinkOperations.getTargets(snode, "constructor", true));
+    return ListSequence.fromList(SLinkOperations.getTargets(snode, "constructor", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1194967351492(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode snode = _context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "class_for_concept");
-    return SequenceOperations.getFirst(SLinkOperations.getTargets(snode, "constructor", true));
+    return ListSequence.fromList(SLinkOperations.getTargets(snode, "constructor", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1198586190309(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -480,7 +481,13 @@ public class QueriesGenerated {
   }
 
   public static List sourceNodesQuery_1194605058164(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(_context.getNode(), "method", true), new zPredicate(null, null)));
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "method", true)).where(new IWhereFilter <SNode>() {
+
+      public boolean accept(SNode it) {
+        return SPropertyOperations.getBoolean(it, "isVirtual");
+      }
+
+    }).toListSequence();
   }
 
   public static List sourceNodesQuery_1194605209301(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

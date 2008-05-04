@@ -14,7 +14,7 @@ public class MatchStatementItem extends BaseConcept {
   public static String CONDITION = "condition";
   public static String IF_TRUE = "ifTrue";
 
-  public  MatchStatementItem(SNode node) {
+  public MatchStatementItem(SNode node) {
     super(node);
   }
 

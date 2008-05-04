@@ -15,7 +15,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class keymap_SequenceFeature extends EditorCellKeyMap {
 
-  public  keymap_SequenceFeature() {
+  public keymap_SequenceFeature() {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
     action = new keymap_SequenceFeature.keymap_SequenceFeature_Action0();
@@ -23,7 +23,7 @@ public class keymap_SequenceFeature extends EditorCellKeyMap {
   }
   public static class keymap_SequenceFeature_Action0 extends EditorCellKeyMapAction {
 
-    public  keymap_SequenceFeature_Action0() {
+    public keymap_SequenceFeature_Action0() {
       this.setShownInPopupMenu(false);
     }
 
@@ -37,14 +37,14 @@ public class keymap_SequenceFeature extends EditorCellKeyMap {
 
     public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
-      if((contextCell == null)) {
+      if ((contextCell == null)) {
         return false;
       }
       SNode contextNode = contextCell.getSNode();
-      if(contextNode == null) {
+      if (contextNode == null) {
         return false;
       }
-      if(contextNode.isInstanceOfConcept("jetbrains.mps.ypath.structure.SequenceFeature")) {
+      if (contextNode.isInstanceOfConcept("jetbrains.mps.ypath.structure.SequenceFeature")) {
         return true;
       }
       return false;

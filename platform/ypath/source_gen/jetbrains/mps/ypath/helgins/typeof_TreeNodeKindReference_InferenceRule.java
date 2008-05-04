@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_TreeNodeKindReference_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_TreeNodeKindReference_InferenceRule() {
+  public typeof_TreeNodeKindReference_InferenceRule() {
   }
 
   public void applyRule(final SNode treeNodeKindReference) {

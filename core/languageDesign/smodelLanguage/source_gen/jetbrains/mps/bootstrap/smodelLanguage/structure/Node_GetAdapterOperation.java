@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class Node_GetAdapterOperation extends SNodeOperation {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation";
 
-  public  Node_GetAdapterOperation(SNode node) {
+  public Node_GetAdapterOperation(SNode node) {
     super(node);
   }
 

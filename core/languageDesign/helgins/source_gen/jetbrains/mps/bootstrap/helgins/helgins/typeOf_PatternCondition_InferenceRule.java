@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_PatternCondition_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeOf_PatternCondition_InferenceRule() {
+  public typeOf_PatternCondition_InferenceRule() {
   }
 
   public void applyRule(final SNode pc) {

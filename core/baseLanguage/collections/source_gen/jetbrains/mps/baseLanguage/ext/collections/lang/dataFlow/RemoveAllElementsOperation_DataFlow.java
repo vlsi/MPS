@@ -9,7 +9,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class RemoveAllElementsOperation_DataFlow extends DataFlowBuilder {
 
-  public  RemoveAllElementsOperation_DataFlow() {
+  public RemoveAllElementsOperation_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

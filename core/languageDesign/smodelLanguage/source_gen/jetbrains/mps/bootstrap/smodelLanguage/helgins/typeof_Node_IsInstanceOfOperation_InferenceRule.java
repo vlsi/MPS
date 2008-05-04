@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_Node_IsInstanceOfOperation_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_Node_IsInstanceOfOperation_InferenceRule() {
+  public typeof_Node_IsInstanceOfOperation_InferenceRule() {
   }
 
   public void applyRule(final SNode op) {

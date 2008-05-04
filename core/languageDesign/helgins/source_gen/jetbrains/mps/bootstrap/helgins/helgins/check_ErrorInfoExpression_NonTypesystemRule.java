@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_ErrorInfoExpression_NonTypesystemRule implements NonTypesystemRule_Runtime {
 
-  public  check_ErrorInfoExpression_NonTypesystemRule() {
+  public check_ErrorInfoExpression_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode errorInfoExpression) {

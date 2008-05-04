@@ -19,7 +19,7 @@ public class NodeReferentConstraint extends BaseConcept {
   public static String SEARCH_SCOPE_FACTORY = "searchScopeFactory";
   public static String REFERENT_SET_HANDLER = "referentSetHandler";
 
-  public  NodeReferentConstraint(SNode node) {
+  public NodeReferentConstraint(SNode node) {
     super(node);
   }
 

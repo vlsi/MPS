@@ -13,7 +13,7 @@ public class EmitTryFinallyStatement extends EmitStatement {
   public static String TRY_PART = "tryPart";
   public static String FINALLY_PART = "finallyPart";
 
-  public  EmitTryFinallyStatement(SNode node) {
+  public EmitTryFinallyStatement(SNode node) {
     super(node);
   }
 

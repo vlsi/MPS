@@ -11,9 +11,7 @@ import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.dataFlow.framework.Program;
 import jetbrains.mps.dataFlow.DataFlowManager;
 import jetbrains.mps.dataFlow.framework.AnalysisResult;
-
 import java.util.Set;
-
 import jetbrains.mps.dataFlow.framework.analyzers.InitializedVariablesAnalyzer;
 
 public class PrintInitializationInformation_Action extends CurrentProjectMPSAction {
@@ -31,7 +29,7 @@ public class PrintInitializationInformation_Action extends CurrentProjectMPSActi
     return "";
   }
 
-  public void doUpdate(@NotNull()ActionContext context) {
+  public void doUpdate(@NotNull() ActionContext context) {
     try {
       super.doUpdate(context);
       if (!(this.fillFieldsIfNecessary(context))) {
@@ -42,7 +40,7 @@ public class PrintInitializationInformation_Action extends CurrentProjectMPSActi
       this.setEnabled(true);
       this.setVisible(true);
     } catch (Throwable t) {
-      PrintInitializationInformation_Action.LOG.error("User's action doUpdate method failed. Action:" + "PrintInitializationInformation", t);
+      LOG.error("User's action doUpdate method failed. Action:" + "PrintInitializationInformation", t);
       this.setEnabled(false);
       this.setVisible(this.isAlwaysVisible);
     }
@@ -70,7 +68,7 @@ public class PrintInitializationInformation_Action extends CurrentProjectMPSActi
     return true;
   }
 
-  public void doExecute(@NotNull()ActionContext context) {
+  public void doExecute(@NotNull() ActionContext context) {
     try {
       if (!(this.fillFieldsIfNecessary(context))) {
         return;
@@ -81,7 +79,7 @@ public class PrintInitializationInformation_Action extends CurrentProjectMPSActi
         System.out.println(result.toString());
       }
     } catch (Throwable t) {
-      PrintInitializationInformation_Action.LOG.error("User's action execute method failed. Action:" + "PrintInitializationInformation", t);
+      LOG.error("User's action execute method failed. Action:" + "PrintInitializationInformation", t);
     }
   }
 

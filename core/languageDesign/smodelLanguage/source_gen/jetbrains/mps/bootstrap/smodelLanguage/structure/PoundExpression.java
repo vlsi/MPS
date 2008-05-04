@@ -16,7 +16,7 @@ public class PoundExpression extends BaseConcept implements IPropertyAccessQuali
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String EXPRESSION = "expression";
 
-  public  PoundExpression(SNode node) {
+  public PoundExpression(SNode node) {
     super(node);
   }
 

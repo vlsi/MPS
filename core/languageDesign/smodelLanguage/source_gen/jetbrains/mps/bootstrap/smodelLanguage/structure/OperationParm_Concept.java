@@ -13,7 +13,7 @@ public class OperationParm_Concept extends AbstractOperationParameter {
   public static String CONCEPT = "concept";
   public static String CONCEPT_ARGUMENT = "conceptArgument";
 
-  public  OperationParm_Concept(SNode node) {
+  public OperationParm_Concept(SNode node) {
     super(node);
   }
 

@@ -17,7 +17,7 @@ public class NodeFactories extends BaseConcept implements INamedConcept {
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String NODE_FACTORY = "nodeFactory";
 
-  public  NodeFactories(SNode node) {
+  public NodeFactories(SNode node) {
     super(node);
   }
 

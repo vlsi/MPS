@@ -9,7 +9,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class TypeVarReference_DataFlow extends DataFlowBuilder {
 
-  public  TypeVarReference_DataFlow() {
+  public TypeVarReference_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

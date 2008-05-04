@@ -11,7 +11,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
 
   private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
 
-  public  ConstraintsDescriptor() {
+  public ConstraintsDescriptor() {
     this.myConstraints.add(new Node_IsRoleOperation_linkInParent_ReferentConstraint());
     this.myConstraints.add(new EnumMemberReference_enumMember_ReferentConstraint());
     this.myConstraints.add(new Node_ConceptMethodCall_conceptMethodDeclaration_ReferentConstraint());

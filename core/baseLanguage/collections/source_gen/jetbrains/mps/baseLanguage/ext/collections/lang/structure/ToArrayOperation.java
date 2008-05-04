@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ToArrayOperation extends SequenceOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ToArrayOperation";
 
-  public  ToArrayOperation(SNode node) {
+  public ToArrayOperation(SNode node) {
     super(node);
   }
 

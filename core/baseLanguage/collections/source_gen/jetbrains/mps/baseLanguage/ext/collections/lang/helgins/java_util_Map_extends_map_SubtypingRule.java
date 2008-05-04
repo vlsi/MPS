@@ -10,7 +10,7 @@ public class java_util_Map_extends_map_SubtypingRule extends SubtypingRule_Runti
 
   /* package */Pattern_2 myMatchingPattern;
 
-  public  java_util_Map_extends_map_SubtypingRule() {
+  public java_util_Map_extends_map_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode mapType) {

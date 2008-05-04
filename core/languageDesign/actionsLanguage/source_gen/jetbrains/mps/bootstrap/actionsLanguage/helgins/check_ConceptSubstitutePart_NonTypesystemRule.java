@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_ConceptSubstitutePart_NonTypesystemRule implements NonTypesystemRule_Runtime {
 
-  public  check_ConceptSubstitutePart_NonTypesystemRule() {
+  public check_ConceptSubstitutePart_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode nodeToCheck) {

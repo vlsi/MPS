@@ -18,7 +18,7 @@ public class TreeNodeKindProperty extends BaseConcept implements INamedConcept {
   public static String DEFAULT = "default";
   public static String GETTER = "getter";
 
-  public  TreeNodeKindProperty(SNode node) {
+  public TreeNodeKindProperty(SNode node) {
     super(node);
   }
 

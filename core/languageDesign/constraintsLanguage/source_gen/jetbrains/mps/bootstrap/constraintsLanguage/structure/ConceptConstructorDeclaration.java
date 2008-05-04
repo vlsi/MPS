@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ConceptConstructorDeclaration extends ConceptFunction {
   public static final String concept = "jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration";
 
-  public  ConceptConstructorDeclaration(SNode node) {
+  public ConceptConstructorDeclaration(SNode node) {
     super(node);
   }
 

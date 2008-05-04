@@ -12,7 +12,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class DataFlowBuilderDeclaration_name_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
 
-  public  DataFlowBuilderDeclaration_name_PropertyConstraint() {
+  public DataFlowBuilderDeclaration_name_PropertyConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

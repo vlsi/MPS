@@ -132,7 +132,7 @@ public class Link_SetNewChildOperation_Editor extends DefaultNodeEditor {
 
   public static class _Inline7 extends AbstractCellProvider {
 
-    public  _Inline7() {
+    public _Inline7() {
       super();
     }
 

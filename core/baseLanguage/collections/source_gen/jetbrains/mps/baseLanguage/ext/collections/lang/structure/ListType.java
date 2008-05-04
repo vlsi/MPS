@@ -12,7 +12,7 @@ public class ListType extends Type {
   public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType";
   public static String ELEMENT_TYPE = "elementType";
 
-  public  ListType(SNode node) {
+  public ListType(SNode node) {
     super(node);
   }
 

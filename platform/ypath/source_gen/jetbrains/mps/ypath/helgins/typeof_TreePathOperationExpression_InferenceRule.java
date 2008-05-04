@@ -15,37 +15,40 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_TreePathOperationExpression_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_TreePathOperationExpression_InferenceRule() {
+  public typeof_TreePathOperationExpression_InferenceRule() {
   }
 
   public void applyRule(final SNode tpoe) {
-    if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(tpoe, "operation", true), "jetbrains.mps.ypath.structure.IterateOperation")) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(tpoe, "operation", true), "jetbrains.mps.ypath.structure.IterateOperation")) {
       final SNode op = SLinkOperations.getTarget(tpoe, "operation", true);
-      if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(op, "usedFeature", false), "jetbrains.mps.ypath.structure.IParamFeature")) {
-        if(SPropertyOperations.getString(SLinkOperations.getTarget(op, "paramObject", true), "name") != null) {
+      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(op, "usedFeature", false), "jetbrains.mps.ypath.structure.IParamFeature")) {
+        if (SPropertyOperations.getString(SLinkOperations.getTarget(op, "paramObject", true), "name") != null) {
           final SNode SourceType_typevar_1186145333005 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
           TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(SourceType_typevar_1186145333005), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(tpoe, "expression", true), "jetbrains.mps.ypath.helgins", "1186145352982", true), SLinkOperations.getTarget(tpoe, "expression", true), null, "jetbrains.mps.ypath.helgins", "1186145347351");
-          TypeChecker.getInstance().getRuntimeSupport().whenConcrete(TypeChecker.getInstance().getEquationManager().getRepresentator(SourceType_typevar_1186145333005), new Runnable() {
+          {
+            final SNode _representatorVar1 = TypeChecker.getInstance().getEquationManager().getRepresentator(SourceType_typevar_1186145333005);
+            TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar1, new Runnable() {
 
-            public void run() {
-              SNode targetType = FeatureTargetTypeUtil.getTargetType(SLinkOperations.getTarget(op, "usedFeature", false), SLinkOperations.getTarget(TypeChecker.getInstance().getEquationManager().getRepresentator(SourceType_typevar_1186145333005), "nodeType", true), ParameterWrapper_Behavior.call_getParameterValue_1194378161915(SLinkOperations.getTarget(op, "paramObject", true)));
-              if(!((targetType != null))) {
-                TypeChecker.getInstance().reportTypeError(tpoe, "Received null target type", "jetbrains.mps.ypath.helgins", "1196269826366");
+              public void run() {
+                SNode targetType = FeatureTargetTypeUtil.getTargetType(SLinkOperations.getTarget(op, "usedFeature", false), SLinkOperations.getTarget(TypeChecker.getInstance().getEquationManager().getRepresentator(SourceType_typevar_1186145333005), "nodeType", true), ParameterWrapper_Behavior.call_getParameterValue_1194378161915(SLinkOperations.getTarget(op, "paramObject", true)));
+                if (!((targetType != null))) {
+                  TypeChecker.getInstance().reportTypeError(tpoe, "Received null target type", "jetbrains.mps.ypath.helgins", "1196269826366");
+                }
+                if ((targetType != null)) {
+                  TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_1().createNode(targetType), tpoe, "jetbrains.mps.ypath.helgins", "1196269933858");
+                }
               }
-              if((targetType != null)) {
-                TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_1().createNode(targetType), tpoe, "jetbrains.mps.ypath.helgins", "1196269933858");
-              }
-            }
 
-          }, "jetbrains.mps.ypath.helgins", "1186145326892");
+            }, "jetbrains.mps.ypath.helgins", "1186145326892");
+          }
         }
       } else
       {
         SNode treePath = ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe);
-        if(treePath != null) {
+        if (treePath != null) {
           TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(treePath, "treePathType", true), tpoe, "jetbrains.mps.ypath.helgins", "1196942474384");
         } else
-        if(!(false)) {
+        if (!(false)) {
           TypeChecker.getInstance().reportTypeError(tpoe, "No treepath found", "jetbrains.mps.ypath.helgins", "1196942498551");
         }
       }

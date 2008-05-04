@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class TypeClause extends BaseConcept {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.TypeClause";
 
-  public  TypeClause(SNode node) {
+  public TypeClause(SNode node) {
     super(node);
   }
 

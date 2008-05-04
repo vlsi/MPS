@@ -429,7 +429,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
 
   public static class CreateEquationStatement_replaceWith_AbstractEquationStatement_cellMenu extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
 
-    public  CreateEquationStatement_replaceWith_AbstractEquationStatement_cellMenu() {
+    public CreateEquationStatement_replaceWith_AbstractEquationStatement_cellMenu() {
     }
 
     public String getReplacementConceptName() {

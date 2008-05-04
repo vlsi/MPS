@@ -17,7 +17,7 @@ public class LinkAttributeAccessQualifier extends BaseConcept implements IAttrib
   public static String ANNOTATION_LINK = "annotationLink";
   public static String LINK_QUALIFIER = "linkQualifier";
 
-  public  LinkAttributeAccessQualifier(SNode node) {
+  public LinkAttributeAccessQualifier(SNode node) {
     super(node);
   }
 

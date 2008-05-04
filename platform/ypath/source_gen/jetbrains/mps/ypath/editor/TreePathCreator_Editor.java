@@ -88,7 +88,7 @@ public class TreePathCreator_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createTreePath_componentCell(EditorContext context, SNode node) {
-    if(this.myTreePath_component == null) {
+    if (this.myTreePath_component == null) {
       this.myTreePath_component = new TreePath_component(node);
     }
     EditorCell editorCell = this.myTreePath_component.createEditorCell(context);
@@ -125,7 +125,7 @@ public class TreePathCreator_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     TreePathCreator_Editor.setupBasic_ParentBlockCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       TreePathCreator_Editor.setupLabel_ParentBlockCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -141,7 +141,7 @@ public class TreePathCreator_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createParentBlockCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -154,7 +154,7 @@ public class TreePathCreator_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     TreePathCreator_Editor.setupBasic_ChildrenBlockCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       TreePathCreator_Editor.setupLabel_ChildrenBlockCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -170,7 +170,7 @@ public class TreePathCreator_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createChildrenBlockCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);

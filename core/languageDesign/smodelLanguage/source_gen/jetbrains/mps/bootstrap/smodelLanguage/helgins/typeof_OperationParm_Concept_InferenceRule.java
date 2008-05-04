@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_OperationParm_Concept_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_OperationParm_Concept_InferenceRule() {
+  public typeof_OperationParm_Concept_InferenceRule() {
   }
 
   public void applyRule(final SNode opp) {

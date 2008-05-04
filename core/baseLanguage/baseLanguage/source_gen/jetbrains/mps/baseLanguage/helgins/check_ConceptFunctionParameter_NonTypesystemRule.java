@@ -6,8 +6,12 @@ import jetbrains.mps.bootstrap.helgins.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.constraints.ConceptFunction_Behavior;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_ConceptFunctionParameter_NonTypesystemRule implements NonTypesystemRule_Runtime {
@@ -16,15 +20,20 @@ public class check_ConceptFunctionParameter_NonTypesystemRule implements NonType
   }
 
   public void applyRule(final SNode parameter) {
-    final zClosureContext _zClosureContext = new zClosureContext();
     SNode conceptFunction = SNodeOperations.getAncestor(parameter, "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
     if (SNodeOperations.isInstanceOf(conceptFunction, "jetbrains.mps.baseLanguage.structure.Closure")) {
       TypeChecker.getInstance().reportTypeError(parameter, "concept function parameter can not be used in closure", "jetbrains.mps.baseLanguage.helgins", "1197313614703");
     } else
     {
-      _zClosureContext.parameterConcept = SNodeOperations.getConceptDeclaration(parameter);
-      Iterable<SNode> seq = SequenceOperations.where(ConceptFunction_Behavior.call_getParameters_1197312191473(conceptFunction), new zPredicate(check_ConceptFunctionParameter_NonTypesystemRule.this, _zClosureContext));
-      if (SequenceOperations.isEmpty(seq)) {
+      final SNode parameterConcept = SNodeOperations.getConceptDeclaration(parameter);
+      Iterable<SNode> seq = ListSequence.fromList(ConceptFunction_Behavior.call_getParameters_1197312191473(conceptFunction)).where(new IWhereFilter <SNode>() {
+
+        public boolean accept(SNode it) {
+          return SConceptOperations.isSubConceptOf(parameterConcept, NameUtil.nodeFQName(it));
+        }
+
+      });
+      if (Sequence.fromIterable(seq).isEmpty()) {
         TypeChecker.getInstance().reportTypeError(parameter, "not applicable in this context", "jetbrains.mps.baseLanguage.helgins", "1197313958459");
       }
     }

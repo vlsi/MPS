@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_CoerceExpression_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeOf_CoerceExpression_InferenceRule() {
+  public typeOf_CoerceExpression_InferenceRule() {
   }
 
   public void applyRule(final SNode coerceExpression) {

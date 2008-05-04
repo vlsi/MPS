@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_ImmediateSupertypes_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeOf_ImmediateSupertypes_InferenceRule() {
+  public typeOf_ImmediateSupertypes_InferenceRule() {
   }
 
   public void applyRule(final SNode immediateSupertypesExpr) {

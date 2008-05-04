@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_AssertStatement_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeOf_AssertStatement_InferenceRule() {
+  public typeOf_AssertStatement_InferenceRule() {
   }
 
   public void applyRule(final SNode assertStatement) {

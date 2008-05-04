@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_NodeSetupFunction_NewNode_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_NodeSetupFunction_NewNode_InferenceRule() {
+  public typeof_NodeSetupFunction_NewNode_InferenceRule() {
   }
 
   public void applyRule(final SNode node) {

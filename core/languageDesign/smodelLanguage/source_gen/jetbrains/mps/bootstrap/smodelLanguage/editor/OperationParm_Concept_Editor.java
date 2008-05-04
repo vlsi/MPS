@@ -175,7 +175,7 @@ public class OperationParm_Concept_Editor extends DefaultNodeEditor {
 
   public static class _Inline39 extends AbstractCellProvider {
 
-    public  _Inline39() {
+    public _Inline39() {
       super();
     }
 

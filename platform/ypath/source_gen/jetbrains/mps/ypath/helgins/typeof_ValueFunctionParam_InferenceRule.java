@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ValueFunctionParam_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_ValueFunctionParam_InferenceRule() {
+  public typeof_ValueFunctionParam_InferenceRule() {
   }
 
   public void applyRule(final SNode value) {

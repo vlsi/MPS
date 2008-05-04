@@ -12,7 +12,7 @@ public class MatchKindOperation extends TreePathOperation {
   public static String NODE_KIND = "nodeKind";
   public static String NODE_KIND_OCCURRENCE = "nodeKindOccurrence";
 
-  public  MatchKindOperation(SNode node) {
+  public MatchKindOperation(SNode node) {
     super(node);
   }
 

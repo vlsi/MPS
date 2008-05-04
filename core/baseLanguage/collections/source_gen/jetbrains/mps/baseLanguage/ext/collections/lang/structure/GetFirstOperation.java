@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class GetFirstOperation extends SequenceOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation";
 
-  public  GetFirstOperation(SNode node) {
+  public GetFirstOperation(SNode node) {
     super(node);
   }
 

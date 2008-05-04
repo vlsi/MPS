@@ -15,7 +15,7 @@ public class ConceptMethodDeclaration extends BaseMethodDeclaration {
   public static String IS_ABSTRACT = "isAbstract";
   public static String OVERRIDDEN_METHOD = "overriddenMethod";
 
-  public  ConceptMethodDeclaration(SNode node) {
+  public ConceptMethodDeclaration(SNode node) {
     super(node);
   }
 

@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class QueryFunction_CanSubstitute extends ConceptFunction {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_CanSubstitute";
 
-  public  QueryFunction_CanSubstitute(SNode node) {
+  public QueryFunction_CanSubstitute(SNode node) {
     super(node);
   }
 

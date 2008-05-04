@@ -14,7 +14,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 
 public class keymap_TreeNodeKindProperty extends EditorCellKeyMap {
 
-  public  keymap_TreeNodeKindProperty() {
+  public keymap_TreeNodeKindProperty() {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
     action = new keymap_TreeNodeKindProperty.keymap_TreeNodeKindProperty_Action0();
@@ -22,7 +22,7 @@ public class keymap_TreeNodeKindProperty extends EditorCellKeyMap {
   }
   public static class keymap_TreeNodeKindProperty_Action0 extends EditorCellKeyMapAction {
 
-    public  keymap_TreeNodeKindProperty_Action0() {
+    public keymap_TreeNodeKindProperty_Action0() {
       this.setShownInPopupMenu(true);
     }
 
@@ -36,14 +36,14 @@ public class keymap_TreeNodeKindProperty extends EditorCellKeyMap {
 
     public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
-      if((contextCell == null)) {
+      if ((contextCell == null)) {
         return false;
       }
       SNode contextNode = contextCell.getSNode();
-      if(contextNode == null) {
+      if (contextNode == null) {
         return false;
       }
-      if(contextNode.isInstanceOfConcept("jetbrains.mps.ypath.structure.TreeNodeKindProperty")) {
+      if (contextNode.isInstanceOfConcept("jetbrains.mps.ypath.structure.TreeNodeKindProperty")) {
         return true;
       }
       return false;
@@ -57,7 +57,7 @@ public class keymap_TreeNodeKindProperty extends EditorCellKeyMap {
     private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
       SNode treepath = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathAspect", false, false);
       for(SNode desc : SNodeOperations.getDescendants(treepath, null, false)) {
-        if(SNodeOperations.isInstanceOf(desc, "jetbrains.mps.ypath.structure.TreeNodeKindProperty")) {
+        if (SNodeOperations.isInstanceOf(desc, "jetbrains.mps.ypath.structure.TreeNodeKindProperty")) {
           SPropertyOperations.set(desc, "default", "" + (false));
         }
       }

@@ -14,7 +14,7 @@ public class Model_CreateNewNodeOperation extends SNodeOperation {
   public static String CONCEPT = "concept";
   public static String PROTOTYPE_NODE = "prototypeNode";
 
-  public  Model_CreateNewNodeOperation(SNode node) {
+  public Model_CreateNewNodeOperation(SNode node) {
     super(node);
   }
 

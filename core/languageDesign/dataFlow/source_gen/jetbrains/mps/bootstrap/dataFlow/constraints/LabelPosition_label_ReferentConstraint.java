@@ -12,12 +12,12 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class LabelPosition_label_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  LabelPosition_label_ReferentConstraint() {
+  public LabelPosition_label_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
@@ -35,7 +35,7 @@ public class LabelPosition_label_ReferentConstraint implements IModelConstraints
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     List<SNode> labels = new ArrayList<SNode>();
     SNode builder = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration", true, false);
-    ListOperations.addAllElements(labels, SNodeOperations.getDescendants(builder, "jetbrains.mps.bootstrap.dataFlow.structure.EmitLabelStatement", true));
+    ListSequence.fromList(labels).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(builder, "jetbrains.mps.bootstrap.dataFlow.structure.EmitLabelStatement", true)));
     return new SimpleSearchScope(labels);
   }
 

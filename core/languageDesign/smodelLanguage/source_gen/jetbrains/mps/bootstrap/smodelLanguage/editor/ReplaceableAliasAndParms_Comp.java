@@ -11,7 +11,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
@@ -36,7 +36,7 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
 
   /* package */AbstractCellListHandler myParameterListHandler_parameterList_;
 
-  public  ReplaceableAliasAndParms_Comp(SNode node) {
+  public ReplaceableAliasAndParms_Comp(SNode node) {
     super(node);
   }
 
@@ -88,7 +88,7 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
   }
 
   public static boolean _QueryFunction_NodeCondition_1206995967611(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SequenceOperations.isEmpty(SLinkOperations.getTargets(node, "parameter", true)));
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty();
   }
 
 
@@ -186,7 +186,7 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
 
   public static class _RefNodeListHandler3 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler3(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler3(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -260,7 +260,7 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
 }
   public static class SNodeOperation_replaceWith_SNodeOperation_cellMenu1 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
 
-    public  SNodeOperation_replaceWith_SNodeOperation_cellMenu1() {
+    public SNodeOperation_replaceWith_SNodeOperation_cellMenu1() {
     }
 
     public String getReplacementConceptName() {

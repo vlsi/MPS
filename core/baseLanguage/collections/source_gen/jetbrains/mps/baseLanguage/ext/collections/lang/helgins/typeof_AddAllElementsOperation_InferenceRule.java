@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_AddAllElementsOperation_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_AddAllElementsOperation_InferenceRule() {
+  public typeof_AddAllElementsOperation_InferenceRule() {
   }
 
   public void applyRule(final SNode op) {

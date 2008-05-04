@@ -13,7 +13,7 @@ public class GFCardinalParamFun extends GFCardinalFun implements IParamFeatureFu
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  GFCardinalParamFun(SNode node) {
+  public GFCardinalParamFun(SNode node) {
     super(node);
   }
 

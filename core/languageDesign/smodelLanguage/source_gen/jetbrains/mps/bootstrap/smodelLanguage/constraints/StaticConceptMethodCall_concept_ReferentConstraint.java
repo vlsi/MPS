@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class StaticConceptMethodCall_concept_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  StaticConceptMethodCall_concept_ReferentConstraint() {
+  public StaticConceptMethodCall_concept_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

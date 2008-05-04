@@ -9,7 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 
 public class ReplaceEqualsWithEquality_Intention extends BaseIntention implements Intention {
@@ -38,7 +38,7 @@ public class ReplaceEqualsWithEquality_Intention extends BaseIntention implement
 
   public void execute(SNode node, EditorContext editorContext) {
     SNode leftExpr = SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.DotExpression", false, false), "operand", true);
-    SNode rightExpression = SequenceOperations.getFirst(SLinkOperations.getTargets(node, "actualArgument", true));
+    SNode rightExpression = ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first();
     SNode equalsExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EqualsExpression", null);
     SLinkOperations.setTarget(equalsExpression, "leftExpression", leftExpr, true);
     SLinkOperations.setTarget(equalsExpression, "rightExpression", rightExpression, true);

@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class NodeParameter extends ConceptFunctionParameter {
   public static final String concept = "jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter";
 
-  public  NodeParameter(SNode node) {
+  public NodeParameter(SNode node) {
     super(node);
   }
 

@@ -16,7 +16,7 @@ public class Node_ConceptMethodCall extends SNodeOperation {
   public static String CONCEPT_METHOD_DECLARATION = "conceptMethodDeclaration";
   public static String ACTUAL_ARGUMENT = "actualArgument";
 
-  public  Node_ConceptMethodCall(SNode node) {
+  public Node_ConceptMethodCall(SNode node) {
     super(node);
   }
 

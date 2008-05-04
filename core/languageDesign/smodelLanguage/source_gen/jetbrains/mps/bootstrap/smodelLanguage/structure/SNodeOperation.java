@@ -28,7 +28,7 @@ public class SNodeOperation extends BaseConcept implements IOperation {
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String PARAMETER = "parameter";
 
-  public  SNodeOperation(SNode node) {
+  public SNodeOperation(SNode node) {
     super(node);
   }
 

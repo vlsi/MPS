@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class LambdaMethodParameter extends ClosureParameter {
   public static final String concept = "jetbrains.mps.ypath.structure.LambdaMethodParameter";
 
-  public  LambdaMethodParameter(SNode node) {
+  public LambdaMethodParameter(SNode node) {
     super(node);
   }
 

@@ -12,7 +12,7 @@ public class ContainsKeyOperation extends MapOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ContainsKeyOperation";
   public static String KEY = "key";
 
-  public  ContainsKeyOperation(SNode node) {
+  public ContainsKeyOperation(SNode node) {
     super(node);
   }
 

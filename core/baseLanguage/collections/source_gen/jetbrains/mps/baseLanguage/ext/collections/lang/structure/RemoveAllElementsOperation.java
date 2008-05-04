@@ -12,7 +12,7 @@ public class RemoveAllElementsOperation extends AbstractListOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.RemoveAllElementsOperation";
   public static String ARGUMENT = "argument";
 
-  public  RemoveAllElementsOperation(SNode node) {
+  public RemoveAllElementsOperation(SNode node) {
     super(node);
   }
 

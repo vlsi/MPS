@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class VisitParameterDeclaration extends VariableDeclaration {
   public static final String concept = "jetbrains.mps.ypath.structure.VisitParameterDeclaration";
 
-  public  VisitParameterDeclaration(SNode node) {
+  public VisitParameterDeclaration(SNode node) {
     super(node);
   }
 

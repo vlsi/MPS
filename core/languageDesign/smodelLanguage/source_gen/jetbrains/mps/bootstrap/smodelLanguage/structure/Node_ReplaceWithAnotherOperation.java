@@ -12,7 +12,7 @@ public class Node_ReplaceWithAnotherOperation extends SNodeOperation {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithAnotherOperation";
   public static String PARAMETER = "parameter";
 
-  public  Node_ReplaceWithAnotherOperation(SNode node) {
+  public Node_ReplaceWithAnotherOperation(SNode node) {
     super(node);
   }
 

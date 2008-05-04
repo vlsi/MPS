@@ -10,7 +10,7 @@ public class supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule extends 
 
   /* package */Pattern_1 myMatchingPattern;
 
-  public  supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule() {
+  public supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode type) {

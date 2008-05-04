@@ -27,7 +27,7 @@ public class ShowDFA_Action extends CurrentProjectMPSAction {
     return "";
   }
 
-  public void doUpdate(@NotNull()ActionContext context) {
+  public void doUpdate(@NotNull() ActionContext context) {
     try {
       super.doUpdate(context);
       if (!(this.fillFieldsIfNecessary(context))) {
@@ -38,7 +38,7 @@ public class ShowDFA_Action extends CurrentProjectMPSAction {
       this.setEnabled(true);
       this.setVisible(true);
     } catch (Throwable t) {
-      ShowDFA_Action.LOG.error("User's action doUpdate method failed. Action:" + "ShowDFA", t);
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowDFA", t);
       this.setEnabled(false);
       this.setVisible(this.isAlwaysVisible);
     }
@@ -66,7 +66,7 @@ public class ShowDFA_Action extends CurrentProjectMPSAction {
     return true;
   }
 
-  public void doExecute(@NotNull()ActionContext context) {
+  public void doExecute(@NotNull() ActionContext context) {
     try {
       if (!(this.fillFieldsIfNecessary(context))) {
         return;
@@ -76,7 +76,7 @@ public class ShowDFA_Action extends CurrentProjectMPSAction {
         new ShowCFGDialog(program, context.getOperationContext());
       }
     } catch (Throwable t) {
-      ShowDFA_Action.LOG.error("User's action execute method failed. Action:" + "ShowDFA", t);
+      LOG.error("User's action execute method failed. Action:" + "ShowDFA", t);
     }
   }
 

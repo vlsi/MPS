@@ -13,7 +13,7 @@ public class EnumMemberReference extends Expression {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference";
   public static String ENUM_MEMBER = "enumMember";
 
-  public  EnumMemberReference(SNode node) {
+  public EnumMemberReference(SNode node) {
     super(node);
   }
 

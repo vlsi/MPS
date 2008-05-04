@@ -7,10 +7,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.dataFlow.DataFlowBuilderContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.LastStatementUtil;
 import jetbrains.mps.project.GlobalScope;
 
@@ -22,24 +20,16 @@ public class StatementList_DataFlow extends DataFlowBuilder {
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode(), null, false, false), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
       SNode bmd = SNodeOperations.getParent(_context.getNode(), null, false, false);
-      {
-        ICursor<SNode> _zCursor = CursorFactory.createCursor(SLinkOperations.getTargets(bmd, "parameter", true));
-        try {
-          while(_zCursor.moveToNext()) {
-            SNode parm = _zCursor.getCurrent();
-            _context.getBuilder().emitWrite(parm);
-          }
-        } finally {
-          _zCursor.release();
-        }
+      for(SNode parm : SLinkOperations.getTargets(bmd, "parameter", true)) {
+        _context.getBuilder().emitWrite(parm);
       }
     }
     _context.getBuilder().emitNop();
     for(SNode s : SLinkOperations.getTargets(_context.getNode(), "statement", true)) {
       _context.getBuilder().build(s);
     }
-    if (!(SequenceOperations.isEmpty(SLinkOperations.getTargets(_context.getNode(), "statement", true)))) {
-      SNode lastStatement = SequenceOperations.getLast(SLinkOperations.getTargets(_context.getNode(), "statement", true));
+    if (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).isNotEmpty()) {
+      SNode lastStatement = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).last();
       if (LastStatementUtil.canMakeReturnStatement(lastStatement, GlobalScope.getInstance())) {
         _context.getBuilder().emitRet();
       }

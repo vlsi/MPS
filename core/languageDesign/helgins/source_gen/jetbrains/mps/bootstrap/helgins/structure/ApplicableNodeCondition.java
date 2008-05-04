@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ApplicableNodeCondition extends NamedConcept {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition";
 
-  public  ApplicableNodeCondition(SNode node) {
+  public ApplicableNodeCondition(SNode node) {
     super(node);
   }
 

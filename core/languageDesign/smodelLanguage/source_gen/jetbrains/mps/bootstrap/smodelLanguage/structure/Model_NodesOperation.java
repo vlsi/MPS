@@ -12,7 +12,7 @@ public class Model_NodesOperation extends SNodeOperation {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.Model_NodesOperation";
   public static String CONCEPT = "concept";
 
-  public  Model_NodesOperation(SNode node) {
+  public Model_NodesOperation(SNode node) {
     super(node);
   }
 

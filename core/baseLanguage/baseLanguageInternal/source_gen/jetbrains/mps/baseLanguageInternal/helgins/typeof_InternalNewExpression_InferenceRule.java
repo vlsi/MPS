@@ -17,7 +17,8 @@ public class typeof_InternalNewExpression_InferenceRule implements InferenceRule
     SNode type;
     if ((SLinkOperations.getTarget(internalNewExpression, "type", true) != null)) {
       type = SLinkOperations.getTarget(internalNewExpression, "type", true);
-    } else {
+    } else
+    {
       type = new QuotationClass_().createNode();
     }
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(internalNewExpression, "jetbrains.mps.baseLanguageInternal.helgins", "1196525371898", true), type, internalNewExpression, null, "jetbrains.mps.baseLanguageInternal.helgins", "1196525371896");

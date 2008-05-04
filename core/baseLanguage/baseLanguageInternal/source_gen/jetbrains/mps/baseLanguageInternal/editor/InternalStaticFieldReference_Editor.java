@@ -79,7 +79,7 @@ public class InternalStaticFieldReference_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     InternalStaticFieldReference_Editor.setupBasic_FqClassNameCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      InternalStaticFieldReference_Editor.setupLabel_FqClassNameCell((EditorCell_Label) editorCell, node, context);
+      InternalStaticFieldReference_Editor.setupLabel_FqClassNameCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -99,7 +99,7 @@ public class InternalStaticFieldReference_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
   public EditorCell createFieldNameCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -108,7 +108,7 @@ public class InternalStaticFieldReference_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     InternalStaticFieldReference_Editor.setupBasic_FieldNameCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      InternalStaticFieldReference_Editor.setupLabel_FieldNameCell((EditorCell_Label) editorCell, node, context);
+      InternalStaticFieldReference_Editor.setupLabel_FieldNameCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -128,7 +128,7 @@ public class InternalStaticFieldReference_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
 }

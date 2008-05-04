@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class BeforePosition extends RelativePosition {
   public static final String concept = "jetbrains.mps.bootstrap.dataFlow.structure.BeforePosition";
 
-  public  BeforePosition(SNode node) {
+  public BeforePosition(SNode node) {
     super(node);
   }
 

@@ -11,7 +11,7 @@ public class GenericSubstituteMenuPart extends SubstituteMenuPart {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.GenericSubstituteMenuPart";
   public static String QUERY = "query";
 
-  public  GenericSubstituteMenuPart(SNode node) {
+  public GenericSubstituteMenuPart(SNode node) {
     super(node);
   }
 

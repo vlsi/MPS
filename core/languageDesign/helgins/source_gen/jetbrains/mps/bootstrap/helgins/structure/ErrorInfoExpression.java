@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ErrorInfoExpression extends Expression {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.ErrorInfoExpression";
 
-  public  ErrorInfoExpression(SNode node) {
+  public ErrorInfoExpression(SNode node) {
     super(node);
   }
 

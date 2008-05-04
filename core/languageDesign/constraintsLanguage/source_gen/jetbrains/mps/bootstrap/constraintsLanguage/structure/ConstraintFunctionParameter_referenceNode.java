@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ConstraintFunctionParameter_referenceNode extends ConceptFunctionParameter {
   public static final String concept = "jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_referenceNode";
 
-  public  ConstraintFunctionParameter_referenceNode(SNode node) {
+  public ConstraintFunctionParameter_referenceNode(SNode node) {
     super(node);
   }
 

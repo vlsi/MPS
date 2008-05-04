@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class Node_IsAttributeOperation extends SNodeOperation {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsAttributeOperation";
 
-  public  Node_IsAttributeOperation(SNode node) {
+  public Node_IsAttributeOperation(SNode node) {
     super(node);
   }
 

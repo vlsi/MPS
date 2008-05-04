@@ -17,7 +17,7 @@ public class AbstractEquationStatement extends Statement {
   public static String NODE_TO_CHECK = "nodeToCheck";
   public static String ERROR_STRING = "errorString";
 
-  public  AbstractEquationStatement(SNode node) {
+  public AbstractEquationStatement(SNode node) {
     super(node);
   }
 

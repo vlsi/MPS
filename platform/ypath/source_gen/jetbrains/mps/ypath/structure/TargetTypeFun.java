@@ -14,7 +14,7 @@ public class TargetTypeFun extends ConceptFunction implements IDesignFunction {
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  TargetTypeFun(SNode node) {
+  public TargetTypeFun(SNode node) {
     super(node);
   }
 

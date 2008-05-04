@@ -26,7 +26,7 @@ public class PrintDFAResult_Action extends CurrentProjectMPSAction {
     return "";
   }
 
-  public void doUpdate(@NotNull()ActionContext context) {
+  public void doUpdate(@NotNull() ActionContext context) {
     try {
       super.doUpdate(context);
       if (!(this.fillFieldsIfNecessary(context))) {
@@ -37,7 +37,7 @@ public class PrintDFAResult_Action extends CurrentProjectMPSAction {
       this.setEnabled(true);
       this.setVisible(true);
     } catch (Throwable t) {
-      PrintDFAResult_Action.LOG.error("User's action doUpdate method failed. Action:" + "PrintDFAResult", t);
+      LOG.error("User's action doUpdate method failed. Action:" + "PrintDFAResult", t);
       this.setEnabled(false);
       this.setVisible(this.isAlwaysVisible);
     }
@@ -65,7 +65,7 @@ public class PrintDFAResult_Action extends CurrentProjectMPSAction {
     return true;
   }
 
-  public void doExecute(@NotNull()ActionContext context) {
+  public void doExecute(@NotNull() ActionContext context) {
     try {
       if (!(this.fillFieldsIfNecessary(context))) {
         return;
@@ -75,7 +75,7 @@ public class PrintDFAResult_Action extends CurrentProjectMPSAction {
         System.out.println(program.toString(true));
       }
     } catch (Throwable t) {
-      PrintDFAResult_Action.LOG.error("User's action execute method failed. Action:" + "PrintDFAResult", t);
+      LOG.error("User's action execute method failed. Action:" + "PrintDFAResult", t);
     }
   }
 

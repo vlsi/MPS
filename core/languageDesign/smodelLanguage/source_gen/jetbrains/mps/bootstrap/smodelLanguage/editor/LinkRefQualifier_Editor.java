@@ -59,7 +59,7 @@ public class LinkRefQualifier_Editor extends DefaultNodeEditor {
 
   public static class _Inline34 extends AbstractCellProvider {
 
-    public  _Inline34() {
+    public _Inline34() {
       super();
     }
 

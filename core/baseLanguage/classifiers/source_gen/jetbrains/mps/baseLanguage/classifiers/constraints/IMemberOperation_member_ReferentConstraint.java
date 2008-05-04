@@ -17,12 +17,12 @@ import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class IMemberOperation_member_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  IMemberOperation_member_ReferentConstraint() {
+  public IMemberOperation_member_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
@@ -46,7 +46,7 @@ public class IMemberOperation_member_ReferentConstraint implements IModelConstra
       if (coercedNode_1205765117789 != null) {
         for(SNode member : BaseClassifierType_Behavior.call_getMembers_1205837324654(coercedNode_1205765117789, _context.getEnclosingNode())) {
           if (SNodeOperations.isInstanceOf(member, NameUtil.nodeFQName(_context.getLinkTarget()))) {
-            ListOperations.addElement(applicableMembers, member);
+            ListSequence.fromList(applicableMembers).addElement(member);
           }
         }
       }

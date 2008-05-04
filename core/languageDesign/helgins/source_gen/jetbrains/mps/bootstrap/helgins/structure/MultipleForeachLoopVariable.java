@@ -15,7 +15,7 @@ public class MultipleForeachLoopVariable extends BaseConcept {
   public static String VARIABLE = "variable";
   public static String ITERABLE = "iterable";
 
-  public  MultipleForeachLoopVariable(SNode node) {
+  public MultipleForeachLoopVariable(SNode node) {
     super(node);
   }
 

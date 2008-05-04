@@ -18,17 +18,17 @@ public class SharedStyles_StyleSheet {
     }
 
     public void apply(EditorCell cell, boolean recurive) {
-      if(cell instanceof EditorCell_Label) {
+      if (cell instanceof EditorCell_Label) {
         EditorCell_Label labelCell = (EditorCell_Label)cell;
         Color color = SharedStyles_StyleSheet.calculateColor(cell);
         labelCell.getTextLine().setTextColor(color);
       }
       cell.setFontType(MPSFonts.ITALIC);
-      if(recurive) {
-        if(cell instanceof EditorCell_Collection) {
+      if (recurive) {
+        if (cell instanceof EditorCell_Collection) {
           EditorCell_Collection collection = (EditorCell_Collection)cell;
           for(EditorCell child : collection) {
-            if(child.getSNode().isAttribute()) {
+            if (child.getSNode().isAttribute()) {
               this.skipAttributePart(child);
             } else
             {
@@ -40,10 +40,10 @@ public class SharedStyles_StyleSheet {
     }
 
     private void skipAttributePart(EditorCell current) {
-      if(current instanceof EditorCell_Collection) {
+      if (current instanceof EditorCell_Collection) {
         EditorCell_Collection collection = (EditorCell_Collection)current;
         for(EditorCell child : collection) {
-          if(child.getSNode() == current.getSNode().getParent()) {
+          if (child.getSNode() == current.getSNode().getParent()) {
             this.apply(child, true);
           }
         }
@@ -58,16 +58,16 @@ public class SharedStyles_StyleSheet {
     }
 
     public void apply(EditorCell cell, boolean recurive) {
-      if(cell instanceof EditorCell_Label) {
+      if (cell instanceof EditorCell_Label) {
         EditorCell_Label labelCell = (EditorCell_Label)cell;
         Color color = SharedStyles_StyleSheet.calculateColor1(cell);
         labelCell.getTextLine().setTextColor(color);
       }
-      if(recurive) {
-        if(cell instanceof EditorCell_Collection) {
+      if (recurive) {
+        if (cell instanceof EditorCell_Collection) {
           EditorCell_Collection collection = (EditorCell_Collection)cell;
           for(EditorCell child : collection) {
-            if(child.getSNode().isAttribute()) {
+            if (child.getSNode().isAttribute()) {
               this.skipAttributePart(child);
             } else
             {
@@ -79,10 +79,10 @@ public class SharedStyles_StyleSheet {
     }
 
     private void skipAttributePart(EditorCell current) {
-      if(current instanceof EditorCell_Collection) {
+      if (current instanceof EditorCell_Collection) {
         EditorCell_Collection collection = (EditorCell_Collection)current;
         for(EditorCell child : collection) {
-          if(child.getSNode() == current.getSNode().getParent()) {
+          if (child.getSNode() == current.getSNode().getParent()) {
             this.apply(child, true);
           }
         }

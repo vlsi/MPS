@@ -12,7 +12,7 @@ public class ConceptReference extends ApplicableNodeCondition {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.ConceptReference";
   public static String CONCEPT = "concept";
 
-  public  ConceptReference(SNode node) {
+  public ConceptReference(SNode node) {
     super(node);
   }
 

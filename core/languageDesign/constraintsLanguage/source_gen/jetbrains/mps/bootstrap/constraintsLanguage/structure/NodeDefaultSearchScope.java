@@ -16,7 +16,7 @@ public class NodeDefaultSearchScope extends BaseConcept {
   public static String SEARCH_SCOPE_CAN_CREATE = "searchScopeCanCreate";
   public static String SEARCH_SCOPE_FACTORY = "searchScopeFactory";
 
-  public  NodeDefaultSearchScope(SNode node) {
+  public NodeDefaultSearchScope(SNode node) {
     super(node);
   }
 

@@ -11,7 +11,7 @@ public class NodeKindSpecificCase extends NodeKindCase {
   public static final String concept = "jetbrains.mps.ypath.structure.NodeKindSpecificCase";
   public static String TREE_NODE_KIND = "treeNodeKind";
 
-  public  NodeKindSpecificCase(SNode node) {
+  public NodeKindSpecificCase(SNode node) {
     super(node);
   }
 

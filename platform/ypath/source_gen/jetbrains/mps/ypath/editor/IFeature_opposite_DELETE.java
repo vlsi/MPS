@@ -18,7 +18,7 @@ public class IFeature_opposite_DELETE {
 
     /* package */SNode myNode;
 
-    public  IFeature_opposite_DELETE_DELETE(SNode node) {
+    public IFeature_opposite_DELETE_DELETE(SNode node) {
       this.myNode = node;
     }
 

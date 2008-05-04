@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class SubstituteNodeBuilderVariableReference extends VariableReference {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.SubstituteNodeBuilderVariableReference";
 
-  public  SubstituteNodeBuilderVariableReference(SNode node) {
+  public SubstituteNodeBuilderVariableReference(SNode node) {
     super(node);
   }
 

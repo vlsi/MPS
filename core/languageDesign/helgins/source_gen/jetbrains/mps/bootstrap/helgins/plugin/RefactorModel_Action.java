@@ -32,7 +32,7 @@ public class RefactorModel_Action extends CurrentProjectMPSAction {
     return languageAspect == LanguageAspect.HELGINS_TYPESYSTEM;
   }
 
-  public void doUpdate(@NotNull()ActionContext context) {
+  public void doUpdate(@NotNull() ActionContext context) {
     try {
       super.doUpdate(context);
       if (!(this.fillFieldsIfNecessary(context))) {
@@ -46,7 +46,7 @@ public class RefactorModel_Action extends CurrentProjectMPSAction {
         this.setVisible(enabled || this.isAlwaysVisible);
       }
     } catch (Throwable t) {
-      RefactorModel_Action.LOG.error("User's action doUpdate method failed. Action:" + "RefactorModel", t);
+      LOG.error("User's action doUpdate method failed. Action:" + "RefactorModel", t);
       this.setEnabled(false);
       this.setVisible(this.isAlwaysVisible);
     }
@@ -64,14 +64,14 @@ public class RefactorModel_Action extends CurrentProjectMPSAction {
     return true;
   }
 
-  public void doExecute(@NotNull()ActionContext context) {
+  public void doExecute(@NotNull() ActionContext context) {
     try {
       if (!(this.fillFieldsIfNecessary(context))) {
         return;
       }
       RefactorModelUtil.refactorModel(this.model);
     } catch (Throwable t) {
-      RefactorModel_Action.LOG.error("User's action execute method failed. Action:" + "RefactorModel", t);
+      LOG.error("User's action execute method failed. Action:" + "RefactorModel", t);
     }
   }
 

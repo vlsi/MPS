@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class BuilderBlock extends ConceptFunction {
   public static final String concept = "jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock";
 
-  public  BuilderBlock(SNode node) {
+  public BuilderBlock(SNode node) {
     super(node);
   }
 

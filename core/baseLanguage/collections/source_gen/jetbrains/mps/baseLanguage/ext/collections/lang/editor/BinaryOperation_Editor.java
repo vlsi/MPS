@@ -147,7 +147,7 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
 
   public static class BinaryOperation_replaceWith_SequenceOperation_cellMenu extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
 
-    public  BinaryOperation_replaceWith_SequenceOperation_cellMenu() {
+    public BinaryOperation_replaceWith_SequenceOperation_cellMenu() {
     }
 
     public String getReplacementConceptName() {

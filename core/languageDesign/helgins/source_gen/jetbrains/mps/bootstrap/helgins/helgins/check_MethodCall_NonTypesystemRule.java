@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_MethodCall_NonTypesystemRule implements NonTypesystemRule_Runtime {
 
-  public  check_MethodCall_NonTypesystemRule() {
+  public check_MethodCall_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode baseMethodCall) {

@@ -19,7 +19,7 @@ public class DataFlowEditorAction_DeleteMayBeUnreachable {
 
     /* package */SNode myNode;
 
-    public  DataFlowEditorAction_DeleteMayBeUnreachable_DELETE(SNode node) {
+    public DataFlowEditorAction_DeleteMayBeUnreachable_DELETE(SNode node) {
       this.myNode = node;
     }
 

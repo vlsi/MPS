@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class Position extends BaseConcept {
   public static final String concept = "jetbrains.mps.bootstrap.dataFlow.structure.Position";
 
-  public  Position(SNode node) {
+  public Position(SNode node) {
     super(node);
   }
 

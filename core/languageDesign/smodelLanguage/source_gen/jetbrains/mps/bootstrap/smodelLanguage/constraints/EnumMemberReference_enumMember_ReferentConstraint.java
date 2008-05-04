@@ -19,7 +19,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class EnumMemberReference_enumMember_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  EnumMemberReference_enumMember_ReferentConstraint() {
+  public EnumMemberReference_enumMember_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

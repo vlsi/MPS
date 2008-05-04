@@ -12,7 +12,7 @@ public class SLinkAccess extends SNodeOperation {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess";
   public static String LINK = "link";
 
-  public  SLinkAccess(SNode node) {
+  public SLinkAccess(SNode node) {
     super(node);
   }
 

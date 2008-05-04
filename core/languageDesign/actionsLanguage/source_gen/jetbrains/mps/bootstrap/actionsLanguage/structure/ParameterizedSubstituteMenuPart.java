@@ -17,7 +17,7 @@ public class ParameterizedSubstituteMenuPart extends SubstituteMenuPart {
   public static String ICON = "icon";
   public static String HANDLER = "handler";
 
-  public  ParameterizedSubstituteMenuPart(SNode node) {
+  public ParameterizedSubstituteMenuPart(SNode node) {
     super(node);
   }
 

@@ -858,7 +858,7 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
 
   public static class _Inline5 extends AbstractCellProvider {
 
-    public  _Inline5() {
+    public _Inline5() {
       super();
     }
 
@@ -911,7 +911,7 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
 }
   public static class _Inline8 extends AbstractCellProvider {
 
-    public  _Inline8() {
+    public _Inline8() {
       super();
     }
 
@@ -963,7 +963,7 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler3 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler3(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler3(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -1027,7 +1027,7 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler5 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler5(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler5(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -1091,7 +1091,7 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler6 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler6(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler6(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -1155,7 +1155,7 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
 }
   public static class _RefNodeListHandler8 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler8(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler8(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

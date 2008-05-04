@@ -14,7 +14,7 @@ public class GFCardinalFun extends ConceptFunction implements IDesignFunction {
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  GFCardinalFun(SNode node) {
+  public GFCardinalFun(SNode node) {
     super(node);
   }
 

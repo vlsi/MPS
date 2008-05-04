@@ -40,7 +40,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_PropertyReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175169875861");
     editorCell.setDrawBorder(false);
-    if(true) {
+    if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
   }
@@ -147,7 +147,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     MatchPropertyOperation_Editor.setupBasic_NodeKindOccurrenceCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       MatchPropertyOperation_Editor.setupLabel_NodeKindOccurrenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -163,7 +163,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createNodeKindOccurrenceCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -176,7 +176,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new MatchPropertyOperation_Editor._Inline1());
     EditorCell editorCell = provider.createEditorCell(context);
     MatchPropertyOperation_Editor.setupBasic_PropertyReferenceCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       MatchPropertyOperation_Editor.setupLabel_PropertyReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -192,7 +192,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createPropertyReferenceCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -205,7 +205,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     MatchPropertyOperation_Editor.setupBasic_MatchExpressionCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       MatchPropertyOperation_Editor.setupLabel_MatchExpressionCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -221,7 +221,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createMatchExpressionCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -231,7 +231,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
 
   public static class _Inline1 extends AbstractCellProvider {
 
-    public  _Inline1() {
+    public _Inline1() {
       super();
     }
 
@@ -256,7 +256,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       MatchPropertyOperation_Editor._Inline1.setupBasic_NameCell(editorCell, node, context);
-      if(editorCell instanceof EditorCell_Label) {
+      if (editorCell instanceof EditorCell_Label) {
         MatchPropertyOperation_Editor._Inline1.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -272,7 +272,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
       EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
-      if(attributeConcept != null) {
+      if (attributeConcept != null) {
         IOperationContext opContext = context.getOperationContext();
         EditorManager manager = EditorManager.getInstanceFromContext(opContext);
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);

@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class CreateGreaterThanInequationStatement extends AbstractEquationStatement {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.CreateGreaterThanInequationStatement";
 
-  public  CreateGreaterThanInequationStatement(SNode node) {
+  public CreateGreaterThanInequationStatement(SNode node) {
     super(node);
   }
 

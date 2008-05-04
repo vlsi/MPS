@@ -88,7 +88,7 @@ public class TypeHintExpression_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     TypeHintExpression_Editor.setupBasic_TypeHintCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      TypeHintExpression_Editor.setupLabel_TypeHintCell((EditorCell_Label) editorCell, node, context);
+      TypeHintExpression_Editor.setupLabel_TypeHintCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -108,7 +108,7 @@ public class TypeHintExpression_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
   public EditorCell createExpressionCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -117,7 +117,7 @@ public class TypeHintExpression_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     TypeHintExpression_Editor.setupBasic_ExpressionCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      TypeHintExpression_Editor.setupLabel_ExpressionCell((EditorCell_Label) editorCell, node, context);
+      TypeHintExpression_Editor.setupLabel_ExpressionCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -137,7 +137,7 @@ public class TypeHintExpression_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
 }

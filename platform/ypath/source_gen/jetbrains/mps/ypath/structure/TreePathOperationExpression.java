@@ -16,7 +16,7 @@ public class TreePathOperationExpression extends Expression implements ITreePath
   public static String EXPRESSION = "expression";
   public static String OPERATION = "operation";
 
-  public  TreePathOperationExpression(SNode node) {
+  public TreePathOperationExpression(SNode node) {
     super(node);
   }
 

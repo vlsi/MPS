@@ -19,7 +19,7 @@ public enum TraversalAxis {
   /* package */String myName;
   /* package */String myValue;
 
- TraversalAxis(String name, String value) {
+TraversalAxis(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
@@ -43,34 +43,34 @@ public enum TraversalAxis {
   }
 
   public static TraversalAxis parseValue(String value) {
-    if(value == null) {
+    if (value == null) {
       return TraversalAxis.getDefault();
     }
-    if(value.equals(TraversalAxis.descendants.getValueAsString())) {
+    if (value.equals(TraversalAxis.descendants.getValueAsString())) {
       return TraversalAxis.descendants;
     }
-    if(value.equals(TraversalAxis.self_and_descendants.getValueAsString())) {
+    if (value.equals(TraversalAxis.self_and_descendants.getValueAsString())) {
       return TraversalAxis.self_and_descendants;
     }
-    if(value.equals(TraversalAxis.children.getValueAsString())) {
+    if (value.equals(TraversalAxis.children.getValueAsString())) {
       return TraversalAxis.children;
     }
-    if(value.equals(TraversalAxis.ancestors.getValueAsString())) {
+    if (value.equals(TraversalAxis.ancestors.getValueAsString())) {
       return TraversalAxis.ancestors;
     }
-    if(value.equals(TraversalAxis.self_and_ancestors.getValueAsString())) {
+    if (value.equals(TraversalAxis.self_and_ancestors.getValueAsString())) {
       return TraversalAxis.self_and_ancestors;
     }
-    if(value.equals(TraversalAxis.following_siblings.getValueAsString())) {
+    if (value.equals(TraversalAxis.following_siblings.getValueAsString())) {
       return TraversalAxis.following_siblings;
     }
-    if(value.equals(TraversalAxis.self_and_following_siblings.getValueAsString())) {
+    if (value.equals(TraversalAxis.self_and_following_siblings.getValueAsString())) {
       return TraversalAxis.self_and_following_siblings;
     }
-    if(value.equals(TraversalAxis.preceding_siblings.getValueAsString())) {
+    if (value.equals(TraversalAxis.preceding_siblings.getValueAsString())) {
       return TraversalAxis.preceding_siblings;
     }
-    if(value.equals(TraversalAxis.preceding_siblings_and_self.getValueAsString())) {
+    if (value.equals(TraversalAxis.preceding_siblings_and_self.getValueAsString())) {
       return TraversalAxis.preceding_siblings_and_self;
     }
     return TraversalAxis.getDefault();

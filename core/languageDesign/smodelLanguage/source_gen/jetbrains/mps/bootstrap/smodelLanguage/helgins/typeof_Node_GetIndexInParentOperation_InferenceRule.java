@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_Node_GetIndexInParentOperation_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_Node_GetIndexInParentOperation_InferenceRule() {
+  public typeof_Node_GetIndexInParentOperation_InferenceRule() {
   }
 
   public void applyRule(final SNode node) {

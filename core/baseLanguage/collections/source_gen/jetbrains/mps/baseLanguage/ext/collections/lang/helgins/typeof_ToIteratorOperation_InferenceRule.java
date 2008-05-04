@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ToIteratorOperation_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_ToIteratorOperation_InferenceRule() {
+  public typeof_ToIteratorOperation_InferenceRule() {
   }
 
   public void applyRule(final SNode toIteratorOperation) {

@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class VisitParameterReference extends VariableReference {
   public static final String concept = "jetbrains.mps.ypath.structure.VisitParameterReference";
 
-  public  VisitParameterReference(SNode node) {
+  public VisitParameterReference(SNode node) {
     super(node);
   }
 

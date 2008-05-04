@@ -8,6 +8,6 @@ public class ApplicableTypesInfo {
   public boolean myApplicableToList = false;
   public boolean myApplicableToSequence = false;
 
-  public  ApplicableTypesInfo() {
+  public ApplicableTypesInfo() {
   }
 }

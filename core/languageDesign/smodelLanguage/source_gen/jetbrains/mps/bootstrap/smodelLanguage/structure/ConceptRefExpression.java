@@ -13,7 +13,7 @@ public class ConceptRefExpression extends Expression {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptRefExpression";
   public static String CONCEPT_DECLARATION = "conceptDeclaration";
 
-  public  ConceptRefExpression(SNode node) {
+  public ConceptRefExpression(SNode node) {
     super(node);
   }
 

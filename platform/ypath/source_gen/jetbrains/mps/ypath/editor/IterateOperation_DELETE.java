@@ -19,7 +19,7 @@ public class IterateOperation_DELETE {
 
     /* package */SNode myNode;
 
-    public  IterateOperation_DELETE_DELETE(SNode node) {
+    public IterateOperation_DELETE_DELETE(SNode node) {
       this.myNode = node;
     }
 
@@ -29,10 +29,10 @@ public class IterateOperation_DELETE {
 
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode expr = SNodeOperations.getParent(node, null, false, false);
-      if(SNodeOperations.isInstanceOf(expr, "jetbrains.mps.ypath.structure.TreePathOperationExpression")) {
+      if (SNodeOperations.isInstanceOf(expr, "jetbrains.mps.ypath.structure.TreePathOperationExpression")) {
         SNode newExpr = SLinkOperations.getTarget(expr, "expression", true);
         SNodeOperations.replaceWithAnother(expr, newExpr);
-        if(SNodeOperations.isInstanceOf(newExpr, "jetbrains.mps.ypath.structure.TreePathAdapterExpression") && (SNodeOperations.getAncestor(newExpr, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false) == null)) {
+        if (SNodeOperations.isInstanceOf(newExpr, "jetbrains.mps.ypath.structure.TreePathAdapterExpression") && (SNodeOperations.getAncestor(newExpr, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false) == null)) {
           SNodeOperations.replaceWithAnother(newExpr, SLinkOperations.getTarget(newExpr, "expression", true));
         }
       }

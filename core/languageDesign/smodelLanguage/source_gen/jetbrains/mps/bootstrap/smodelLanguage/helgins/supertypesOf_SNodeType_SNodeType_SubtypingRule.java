@@ -6,37 +6,27 @@ import jetbrains.mps.bootstrap.helgins.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.ISubtypingRule_Runtime;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class supertypesOf_SNodeType_SNodeType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
-  public  supertypesOf_SNodeType_SNodeType_SubtypingRule() {
+  public supertypesOf_SNodeType_SNodeType_SubtypingRule() {
   }
 
   public List<SNode> getSubOrSuperTypes(SNode type) {
-    List<SNode> list = ListOperations.<SNode>createList();
+    List<SNode> list = ListSequence.<SNode>fromArray();
     SNode concept = SLinkOperations.getTarget(type, "concept", false);
     // DO NOT TOUCH THIS. CONCEPT MIGHT BE A TYPE VARIABLE
     if (concept != null && SNodeOperations.isInstanceOf(concept, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration")) {
       List<SNode> superConcepts = SConceptOperations.getDirectSuperConcepts(concept, false);
-      {
-        ICursor<SNode> _zCursor1 = CursorFactory.createCursor(superConcepts);
-        try {
-          while(_zCursor1.moveToNext()) {
-            SNode superConcept = _zCursor1.getCurrent();
-            ListOperations.addElement(list, new QuotationClass_29().createNode(superConcept));
-          }
-        } finally {
-          _zCursor1.release();
-        }
+      for(SNode superConcept : superConcepts) {
+        ListSequence.fromList(list).addElement(new QuotationClass_29().createNode(superConcept));
       }
-      ListOperations.addElement(list, new QuotationClass_30().createNode());
+      ListSequence.fromList(list).addElement(new QuotationClass_30().createNode());
     }
     return list;
   }

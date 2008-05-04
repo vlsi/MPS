@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_MethodDeclaration_NonTypesystemRule implements NonTypesystemRule_Runtime {
 
-  public  check_MethodDeclaration_NonTypesystemRule() {
+  public check_MethodDeclaration_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode baseMethodDeclaration) {

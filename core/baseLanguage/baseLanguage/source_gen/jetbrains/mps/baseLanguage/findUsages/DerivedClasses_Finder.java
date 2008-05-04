@@ -9,8 +9,8 @@ import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import org.jetbrains.annotations.Nullable;
 
 public class DerivedClasses_Finder extends GeneratedFinder {
@@ -38,13 +38,13 @@ public class DerivedClasses_Finder extends GeneratedFinder {
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, IAdaptiveProgressMonitor monitor) {
     List<SNode> derived = new ArrayList<SNode>();
-    ListOperations.addElement(derived, (SNode)node);
+    ListSequence.fromList(derived).addElement((SNode)node);
     // 
     int passed = 0;
-    while(SequenceOperations.getSize(derived) != passed) {
-      SNode passingNode = ListOperations.getElement(derived, passed);
+    while(ListSequence.fromList(derived).count() != passed) {
+      SNode passingNode = ListSequence.fromList(derived).getElement(passed);
       for(SNode classNode : this.executeFinder("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder", passingNode, scope, monitor)) {
-        ListOperations.addElement(derived, classNode);
+        ListSequence.fromList(derived).addElement(classNode);
       }
       if (passingNode != node) {
         ListOperations.addElement(_results, passingNode);

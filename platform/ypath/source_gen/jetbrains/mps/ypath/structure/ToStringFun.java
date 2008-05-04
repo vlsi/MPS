@@ -14,7 +14,7 @@ public class ToStringFun extends ConceptFunction implements IDesignFunction {
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  ToStringFun(SNode node) {
+  public ToStringFun(SNode node) {
     super(node);
   }
 

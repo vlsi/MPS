@@ -13,7 +13,7 @@ public class MapElement extends Expression {
   public static String MAP = "map";
   public static String KEY = "key";
 
-  public  MapElement(SNode node) {
+  public MapElement(SNode node) {
     super(node);
   }
 

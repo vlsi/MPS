@@ -12,7 +12,7 @@ public class BinaryOperation extends SequenceOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.BinaryOperation";
   public static String RIGHT_EXPRESSION = "rightExpression";
 
-  public  BinaryOperation(SNode node) {
+  public BinaryOperation(SNode node) {
     super(node);
   }
 

@@ -9,7 +9,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class AbstractSubtypingRule_DataFlow extends DataFlowBuilder {
 
-  public  AbstractSubtypingRule_DataFlow() {
+  public AbstractSubtypingRule_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

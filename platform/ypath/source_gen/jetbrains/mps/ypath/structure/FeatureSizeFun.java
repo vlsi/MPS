@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class FeatureSizeFun extends ConceptFunction {
   public static final String concept = "jetbrains.mps.ypath.structure.FeatureSizeFun";
 
-  public  FeatureSizeFun(SNode node) {
+  public FeatureSizeFun(SNode node) {
     super(node);
   }
 

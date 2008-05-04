@@ -15,7 +15,7 @@ public class SwitchNodeKindStatement extends Statement {
   public static String NODE_EXPRESSION = "nodeExpression";
   public static String NODE_KIND_CASE = "nodeKindCase";
 
-  public  SwitchNodeKindStatement(SNode node) {
+  public SwitchNodeKindStatement(SNode node) {
     super(node);
   }
 

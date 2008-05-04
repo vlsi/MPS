@@ -6,8 +6,6 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 
@@ -34,16 +32,8 @@ public class CommentedStatementsBlock_Actions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      {
-        ICursor<SNode> _zCursor13 = CursorFactory.createCursor(SLinkOperations.getTargets(node, "statement", true));
-        try {
-          while(_zCursor13.moveToNext()) {
-            SNode statement = _zCursor13.getCurrent();
-            SNodeOperations.insertPrevSiblingChild(node, statement);
-          }
-        } finally {
-          _zCursor13.release();
-        }
+      for(SNode statement : SLinkOperations.getTargets(node, "statement", true)) {
+        SNodeOperations.insertPrevSiblingChild(node, statement);
       }
       SNodeOperations.deleteNode(node);
     }

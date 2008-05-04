@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class EmitIfJumpStatement extends BaseEmitJumpStatement {
   public static final String concept = "jetbrains.mps.bootstrap.dataFlow.structure.EmitIfJumpStatement";
 
-  public  EmitIfJumpStatement(SNode node) {
+  public EmitIfJumpStatement(SNode node) {
     super(node);
   }
 

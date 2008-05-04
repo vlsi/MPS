@@ -15,7 +15,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class TreePathAdapterExpression_treepathAspect_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  TreePathAdapterExpression_treepathAspect_ReferentConstraint() {
+  public TreePathAdapterExpression_treepathAspect_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

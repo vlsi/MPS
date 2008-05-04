@@ -10,7 +10,7 @@ import jetbrains.mps.helgins.inference.TypeChecker;
 
 public class typeof_ContainsOperation_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_ContainsOperation_InferenceRule() {
+  public typeof_ContainsOperation_InferenceRule() {
   }
 
   public void applyRule(final SNode op) {

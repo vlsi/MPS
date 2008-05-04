@@ -60,7 +60,7 @@ public class RefConcept_Reference_Editor extends DefaultNodeEditor {
 
   public static class _Inline25 extends AbstractCellProvider {
 
-    public  _Inline25() {
+    public _Inline25() {
       super();
     }
 

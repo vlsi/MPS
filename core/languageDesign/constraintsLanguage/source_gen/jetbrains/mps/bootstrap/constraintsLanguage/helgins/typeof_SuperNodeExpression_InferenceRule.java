@@ -6,13 +6,13 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_SuperNodeExpression_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_SuperNodeExpression_InferenceRule() {
+  public typeof_SuperNodeExpression_InferenceRule() {
   }
 
   public void applyRule(final SNode nodeToCheck) {
@@ -25,7 +25,7 @@ public class typeof_SuperNodeExpression_InferenceRule implements InferenceRule_R
     } else
     {
       SNode icd = concept;
-      result = SequenceOperations.getFirst(SLinkOperations.getTargets(icd, "extends", true));
+      result = ListSequence.fromList(SLinkOperations.getTargets(icd, "extends", true)).first();
     }
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_11().createNode(result), nodeToCheck, "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1193400817254");
   }

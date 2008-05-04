@@ -9,7 +9,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class GivetypeStatement_DataFlow extends DataFlowBuilder {
 
-  public  GivetypeStatement_DataFlow() {
+  public GivetypeStatement_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

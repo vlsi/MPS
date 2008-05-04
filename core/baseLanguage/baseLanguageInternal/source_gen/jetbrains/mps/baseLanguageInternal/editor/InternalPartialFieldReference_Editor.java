@@ -210,7 +210,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     InternalPartialFieldReference_Editor.setupBasic_FieldTypeCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      InternalPartialFieldReference_Editor.setupLabel_FieldTypeCell((EditorCell_Label) editorCell, node, context);
+      InternalPartialFieldReference_Editor.setupLabel_FieldTypeCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -230,7 +230,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
   public EditorCell createInstanceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -239,7 +239,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     InternalPartialFieldReference_Editor.setupBasic_InstanceCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      InternalPartialFieldReference_Editor.setupLabel_InstanceCell((EditorCell_Label) editorCell, node, context);
+      InternalPartialFieldReference_Editor.setupLabel_InstanceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -259,7 +259,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
   public EditorCell createFieldNameCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -268,7 +268,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     InternalPartialFieldReference_Editor.setupBasic_FieldNameCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      InternalPartialFieldReference_Editor.setupLabel_FieldNameCell((EditorCell_Label) editorCell, node, context);
+      InternalPartialFieldReference_Editor.setupLabel_FieldNameCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -288,7 +288,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
   public EditorCell createInstanceTypeCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -297,7 +297,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     InternalPartialFieldReference_Editor.setupBasic_InstanceTypeCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      InternalPartialFieldReference_Editor.setupLabel_InstanceTypeCell((EditorCell_Label) editorCell, node, context);
+      InternalPartialFieldReference_Editor.setupLabel_InstanceTypeCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -317,7 +317,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
 }

@@ -12,7 +12,7 @@ public class SConceptPropertyAccess extends SNodeOperation {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess";
   public static String CONCEPT_PROPERTY = "conceptProperty";
 
-  public  SConceptPropertyAccess(SNode node) {
+  public SConceptPropertyAccess(SNode node) {
     super(node);
   }
 

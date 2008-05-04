@@ -135,7 +135,7 @@ public class SConceptType_Editor extends DefaultNodeEditor {
 
   public static class _Inline28 extends AbstractCellProvider {
 
-    public  _Inline28() {
+    public _Inline28() {
       super();
     }
 

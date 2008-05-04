@@ -15,7 +15,7 @@ public class Dependency extends BaseConcept {
   public static String SOURCE_CONCEPT = "sourceConcept";
   public static String FIND_SOURCE_BLOCK = "findSourceBlock";
 
-  public  Dependency(SNode node) {
+  public Dependency(SNode node) {
     super(node);
   }
 

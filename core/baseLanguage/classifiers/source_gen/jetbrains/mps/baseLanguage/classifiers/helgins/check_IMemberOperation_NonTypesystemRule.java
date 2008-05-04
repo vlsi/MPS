@@ -8,14 +8,14 @@ import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.constraints.IOperation_Behavior;
 import jetbrains.mps.patterns.IMatchingPattern;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.classifiers.constraints.BaseClassifierType_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_IMemberOperation_NonTypesystemRule implements NonTypesystemRule_Runtime {
 
-  public  check_IMemberOperation_NonTypesystemRule() {
+  public check_IMemberOperation_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode nodeToCheck) {
@@ -28,7 +28,7 @@ public class check_IMemberOperation_NonTypesystemRule implements NonTypesystemRu
             IMatchingPattern pattern_1205921883369 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType");
             SNode coercedNode_1205921883368 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(operandType), pattern_1205921883369);
             if (coercedNode_1205921883368 != null) {
-              if (!(SequenceOperations.contains(BaseClassifierType_Behavior.call_getMembers_1205837324654(coercedNode_1205921883368, nodeToCheck), SLinkOperations.getTarget(nodeToCheck, "member", false)))) {
+              if (!(ListSequence.fromList(BaseClassifierType_Behavior.call_getMembers_1205837324654(coercedNode_1205921883368, nodeToCheck)).contains(SLinkOperations.getTarget(nodeToCheck, "member", false)))) {
                 TypeChecker.getInstance().reportTypeError(nodeToCheck, "Declaration is out of scope", "jetbrains.mps.baseLanguage.classifiers.helgins", "1205921883388");
               }
             }

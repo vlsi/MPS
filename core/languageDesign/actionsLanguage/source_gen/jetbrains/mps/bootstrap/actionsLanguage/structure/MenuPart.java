@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class MenuPart extends BaseConcept {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.MenuPart";
 
-  public  MenuPart(SNode node) {
+  public MenuPart(SNode node) {
     super(node);
   }
 

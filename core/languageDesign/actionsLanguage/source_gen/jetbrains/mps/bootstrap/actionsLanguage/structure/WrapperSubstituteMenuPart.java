@@ -14,7 +14,7 @@ public class WrapperSubstituteMenuPart extends SubstituteMenuPart {
   public static String WRAPPER_BLOCK = "wrapperBlock";
   public static String RETURN_SMALL_PART = "returnSmallPart";
 
-  public  WrapperSubstituteMenuPart(SNode node) {
+  public WrapperSubstituteMenuPart(SNode node) {
     super(node);
   }
 

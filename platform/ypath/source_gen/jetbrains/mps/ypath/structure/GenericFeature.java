@@ -24,7 +24,7 @@ public class GenericFeature extends BaseConcept implements IGenericFeature, INam
   public static String GETTER = "getter";
   public static String FUN_HOLDERS = "funHolders";
 
-  public  GenericFeature(SNode node) {
+  public GenericFeature(SNode node) {
     super(node);
   }
 

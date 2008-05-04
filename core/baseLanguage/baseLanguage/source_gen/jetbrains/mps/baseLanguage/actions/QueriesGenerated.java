@@ -13,12 +13,16 @@ import jetbrains.mps.baseLanguage.structure.ArrayType;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.constraints.VariableDeclaration_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ITranslator;
+import jetbrains.mps.internal.collections.runtime.ISequence;
+import jetbrains.mps.internal.collections.runtime.ISequenceIterableAdapter;
+import java.util.Iterator;
+import jetbrains.mps.closures.runtime.YieldingIterator;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.baseLanguage.constraints.Type_Behavior;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
@@ -31,7 +35,6 @@ import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.util.Calculable;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
@@ -51,6 +54,8 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPr
 import jetbrains.mps.baseLanguage.constraints.QueriesUtil;
 import jetbrains.mps.generator.JavaModelUtil_new;
 import jetbrains.mps.smodel.action.RTActionsBuilderContext;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
 import jetbrains.mps.baseLanguage.editor.ParenthesisUtil;
 
@@ -115,15 +120,75 @@ public class QueriesGenerated {
 
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_BreakStatement_1199466283835(final IOperationContext operationContext, final RTransformPreconditionContext _context) {
     if (SPropertyOperations.hasValue(_context.getSourceNode(), "label", null)) {
-      boolean loopsWithLabels = !(SequenceOperations.isEmpty(SequenceOperations.where(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false), new zPredicate(null, null))));
-      boolean sstmtsWithLabels = !(SequenceOperations.isEmpty(SequenceOperations.where(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.SwitchStatement", false), new zPredicate1(null, null))));
+      boolean loopsWithLabels = ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).where(new IWhereFilter <SNode>() {
+
+        public boolean accept(SNode it) {
+          return !(SPropertyOperations.hasValue(it, "label", null));
+        }
+
+      }).isNotEmpty();
+      boolean sstmtsWithLabels = ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.SwitchStatement", false)).where(new IWhereFilter <SNode>() {
+
+        public boolean accept(SNode it) {
+          return !(SPropertyOperations.hasValue(it, "label", null));
+        }
+
+      }).isNotEmpty();
       return loopsWithLabels || sstmtsWithLabels;
     }
     return false;
   }
 
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_ContinueStatement_1199470413669(final IOperationContext operationContext, final RTransformPreconditionContext _context) {
-    return SPropertyOperations.hasValue(_context.getSourceNode(), "label", null) && !(SequenceOperations.isEmpty(SequenceOperations.map(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false), new zMapper(null, null))));
+    return SPropertyOperations.hasValue(_context.getSourceNode(), "label", null) && ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).translate(new ITranslator <SNode, String>() {
+
+      public ISequence<String> translate(final SNode it) {
+        return new ISequenceIterableAdapter <String>() {
+
+          public Iterator<String> iterator() {
+            return new YieldingIterator <String>() {
+
+              private int __CP__ = 0;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      if (!(SPropertyOperations.hasValue(it, "label", null))) {
+                        this.__CP__ = 3;
+                        break;
+                      }
+                      this.__CP__ = 1;
+                      break;
+                    case 4:
+                      this.__CP__ = 1;
+                      this.yield(SPropertyOperations.getString(it, "label"));
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    case 3:
+                      this.__CP__ = 4;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    }).isNotEmpty();
   }
 
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1203976965118(final IOperationContext operationContext, final RTransformPreconditionContext _context) {
@@ -253,19 +318,11 @@ public class QueriesGenerated {
           if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(classifierType, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
             SNode classConcept = SLinkOperations.getTarget(classifierType, "classifier", false);
             if (!(SPropertyOperations.getBoolean(classConcept, "abstractClass"))) {
-              SNode constructorDeclaration = SequenceOperations.getFirst(SLinkOperations.getTargets(classConcept, "constructor", true));
+              SNode constructorDeclaration = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "constructor", true)).first();
               if (constructorDeclaration != null) {
                 SLinkOperations.setTarget(_context.getNewNode(), "baseMethodDeclaration", constructorDeclaration, false);
-                {
-                  ICursor<SNode> _zCursor1 = CursorFactory.createCursor(SLinkOperations.getTargets(classifierType, "parameter", true));
-                  try {
-                    while(_zCursor1.moveToNext()) {
-                      SNode type = _zCursor1.getCurrent();
-                      SLinkOperations.addChild(_context.getNewNode(), "typeParameter", SNodeOperations.copyNode(type));
-                    }
-                  } finally {
-                    _zCursor1.release();
-                  }
+                for(SNode type : SLinkOperations.getTargets(classifierType, "parameter", true)) {
+                  SLinkOperations.addChild(_context.getNewNode(), "typeParameter", SNodeOperations.copyNode(type));
                 }
               }
             }
@@ -322,7 +379,7 @@ public class QueriesGenerated {
         Calculable calc = new Calculable() {
 
           public Object calculate() {
-            return ListOperations.<Boolean>createList(Boolean.TRUE, Boolean.FALSE);
+            return ListSequence.<Boolean>fromArray(Boolean.TRUE, Boolean.FALSE);
           }
 
         };
@@ -456,15 +513,15 @@ public class QueriesGenerated {
             List<SNode> classifiers = new ArrayList<SNode>();
             for(SNode cls : visibleClassifiers) {
               if (SLinkOperations.getCount(cls, "staticField") > 0) {
-                ListOperations.addElement(classifiers, cls);
+                ListSequence.fromList(classifiers).addElement(cls);
                 continue;
               }
               if (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept") && SLinkOperations.getCount(cls, "staticMethod") > 0) {
-                ListOperations.addElement(classifiers, cls);
+                ListSequence.fromList(classifiers).addElement(cls);
                 continue;
               }
               if (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.EnumClass") && SLinkOperations.getCount(cls, "enumConstant") > 0) {
-                ListOperations.addElement(classifiers, cls);
+                ListSequence.fromList(classifiers).addElement(cls);
                 continue;
               }
             }
@@ -507,12 +564,18 @@ public class QueriesGenerated {
         public Object calculate() {
           List<SNode> functions = SNodeOperations.getAncestors(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ConceptFunction", false);
           // skip Closure
-          SNode parentFunction = SequenceOperations.getFirst(SequenceOperations.where(functions, new zPredicate2(null, null)));
+          SNode parentFunction = ListSequence.fromList(functions).where(new IWhereFilter <SNode>() {
+
+            public boolean accept(SNode it) {
+              return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Closure"));
+            }
+
+          }).first();
           if (parentFunction != null) {
             return ConceptFunction_Behavior.call_getParameters_1197312191473(parentFunction);
           } else
           {
-            return ListOperations.<SNode>createList();
+            return ListSequence.<SNode>fromArray();
           }
         }
 
@@ -534,7 +597,7 @@ public class QueriesGenerated {
       Calculable calc = new Calculable() {
 
         public Object calculate() {
-          List<SNode> concepts = ListOperations.<SNode>createList(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BreakStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ContinueStatement"));
+          List<SNode> concepts = ListSequence.<SNode>fromArray(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BreakStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ContinueStatement"));
           return concepts;
         }
 
@@ -716,16 +779,8 @@ public class QueriesGenerated {
               SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation", _context.getCurrentTargetNode());
               SLinkOperations.setTarget(newNode, "constructorDeclaration", (item), false);
               if (SNodeOperations.isInstanceOf(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation")) {
-                {
-                  ICursor<SNode> _zCursor2 = CursorFactory.createCursor(SLinkOperations.getTargets(_context.getCurrentTargetNode(), "actualArgument", true));
-                  try {
-                    while(_zCursor2.moveToNext()) {
-                      SNode argument = _zCursor2.getCurrent();
-                      SLinkOperations.addChild(newNode, "actualArgument", argument);
-                    }
-                  } finally {
-                    _zCursor2.release();
-                  }
+                for(SNode argument : SLinkOperations.getTargets(_context.getCurrentTargetNode(), "actualArgument", true)) {
+                  SLinkOperations.addChild(newNode, "actualArgument", argument);
                 }
               }
               return newNode;
@@ -774,16 +829,8 @@ public class QueriesGenerated {
               SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation", _context.getCurrentTargetNode());
               SLinkOperations.setTarget(newNode, "constructorDeclaration", (item), false);
               if (SNodeOperations.isInstanceOf(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation")) {
-                {
-                  ICursor<SNode> _zCursor3 = CursorFactory.createCursor(SLinkOperations.getTargets(_context.getCurrentTargetNode(), "actualArgument", true));
-                  try {
-                    while(_zCursor3.moveToNext()) {
-                      SNode argument = _zCursor3.getCurrent();
-                      SLinkOperations.addChild(newNode, "actualArgument", argument);
-                    }
-                  } finally {
-                    _zCursor3.release();
-                  }
+                for(SNode argument : SLinkOperations.getTargets(_context.getCurrentTargetNode(), "actualArgument", true)) {
+                  SLinkOperations.addChild(newNode, "actualArgument", argument);
                 }
               }
               return newNode;
@@ -1079,7 +1126,7 @@ public class QueriesGenerated {
 
         public SNode doSubstitute(String pattern) {
           SLinkOperations.addNewChild(_context.getSourceNode(), "parameter", "jetbrains.mps.baseLanguage.structure.Type");
-          return SequenceOperations.getFirst(SLinkOperations.getTargets(_context.getSourceNode(), "parameter", true));
+          return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "parameter", true)).first();
         }
 
         public String getMatchingText(String pattern) {
@@ -1103,7 +1150,7 @@ public class QueriesGenerated {
 
         public SNode doSubstitute(String pattern) {
           SLinkOperations.addNewChild(_context.getSourceNode(), "typeVariableDeclaration", "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration");
-          return SequenceOperations.getFirst(SLinkOperations.getTargets(_context.getSourceNode(), "typeVariableDeclaration", true));
+          return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "typeVariableDeclaration", true)).first();
         }
 
         public String getMatchingText(String pattern) {
@@ -1127,7 +1174,7 @@ public class QueriesGenerated {
 
         public SNode doSubstitute(String pattern) {
           SLinkOperations.addNewChild(_context.getSourceNode(), "typeParameter", "jetbrains.mps.baseLanguage.structure.Type");
-          return SequenceOperations.getFirst(SLinkOperations.getTargets(_context.getSourceNode(), "typeParameter", true));
+          return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "typeParameter", true)).first();
         }
 
         public String getMatchingText(String pattern) {
@@ -1151,7 +1198,7 @@ public class QueriesGenerated {
 
         public SNode doSubstitute(String pattern) {
           SLinkOperations.addNewChild(_context.getSourceNode(), "catchClause", "jetbrains.mps.baseLanguage.structure.CatchClause");
-          return SequenceOperations.getFirst(SLinkOperations.getTargets(_context.getSourceNode(), "catchClause", true));
+          return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "catchClause", true)).first();
         }
 
         public String getMatchingText(String pattern) {
@@ -1307,9 +1354,105 @@ public class QueriesGenerated {
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
-          List<String> labels = ListOperations.<String>createList();
-          ListOperations.addAllElements(labels, SequenceOperations.map(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false), new zMapper2(null, null)));
-          ListOperations.addAllElements(labels, SequenceOperations.map(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.SwitchStatement", false), new zMapper3(null, null)));
+          List<String> labels = ListSequence.<String>fromArray();
+          ListSequence.fromList(labels).addSequence(ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).translate(new ITranslator <SNode, String>() {
+
+            public ISequence<String> translate(final SNode it) {
+              return new ISequenceIterableAdapter <String>() {
+
+                public Iterator<String> iterator() {
+                  return new YieldingIterator <String>() {
+
+                    private int __CP__ = 0;
+
+                    protected boolean moveToNext() {
+__loop__:
+                      do {
+__switch__:
+                        switch (this.__CP__) {
+                          case -1:
+                            assert false : "Internal error";
+                            return false;
+                          case 2:
+                            if (!(SPropertyOperations.hasValue(it, "label", null))) {
+                              this.__CP__ = 3;
+                              break;
+                            }
+                            this.__CP__ = 1;
+                            break;
+                          case 4:
+                            this.__CP__ = 1;
+                            this.yield(SPropertyOperations.getString(it, "label"));
+                            return true;
+                          case 0:
+                            this.__CP__ = 2;
+                            break;
+                          case 3:
+                            this.__CP__ = 4;
+                            break;
+                          default:
+                            break __loop__;
+                        }
+                      } while(true);
+                      return false;
+                    }
+
+                  };
+                }
+
+              };
+            }
+
+          }));
+          ListSequence.fromList(labels).addSequence(ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.SwitchStatement", false)).translate(new ITranslator <SNode, String>() {
+
+            public ISequence<String> translate(final SNode it) {
+              return new ISequenceIterableAdapter <String>() {
+
+                public Iterator<String> iterator() {
+                  return new YieldingIterator <String>() {
+
+                    private int __CP__ = 0;
+
+                    protected boolean moveToNext() {
+__loop__:
+                      do {
+__switch__:
+                        switch (this.__CP__) {
+                          case -1:
+                            assert false : "Internal error";
+                            return false;
+                          case 2:
+                            if (!(SPropertyOperations.hasValue(it, "label", null))) {
+                              this.__CP__ = 3;
+                              break;
+                            }
+                            this.__CP__ = 1;
+                            break;
+                          case 4:
+                            this.__CP__ = 1;
+                            this.yield(SPropertyOperations.getString(it, "label"));
+                            return true;
+                          case 0:
+                            this.__CP__ = 2;
+                            break;
+                          case 3:
+                            this.__CP__ = 4;
+                            break;
+                          default:
+                            break __loop__;
+                        }
+                      } while(true);
+                      return false;
+                    }
+
+                  };
+                }
+
+              };
+            }
+
+          }));
           return labels;
         }
 
@@ -1349,7 +1492,55 @@ public class QueriesGenerated {
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
-          return SequenceOperations.toList(SequenceOperations.map(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false), new zMapper1(null, null)));
+          return ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).translate(new ITranslator <SNode, String>() {
+
+            public ISequence<String> translate(final SNode it) {
+              return new ISequenceIterableAdapter <String>() {
+
+                public Iterator<String> iterator() {
+                  return new YieldingIterator <String>() {
+
+                    private int __CP__ = 0;
+
+                    protected boolean moveToNext() {
+__loop__:
+                      do {
+__switch__:
+                        switch (this.__CP__) {
+                          case -1:
+                            assert false : "Internal error";
+                            return false;
+                          case 2:
+                            if (!(SPropertyOperations.hasValue(it, "label", null))) {
+                              this.__CP__ = 3;
+                              break;
+                            }
+                            this.__CP__ = 1;
+                            break;
+                          case 4:
+                            this.__CP__ = 1;
+                            this.yield(SPropertyOperations.getString(it, "label"));
+                            return true;
+                          case 0:
+                            this.__CP__ = 2;
+                            break;
+                          case 3:
+                            this.__CP__ = 4;
+                            break;
+                          default:
+                            break __loop__;
+                        }
+                      } while(true);
+                      return false;
+                    }
+
+                  };
+                }
+
+              };
+            }
+
+          }).toListSequence();
         }
 
       };

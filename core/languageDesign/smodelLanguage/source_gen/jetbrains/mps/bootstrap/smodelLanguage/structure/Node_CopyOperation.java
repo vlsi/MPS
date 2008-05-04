@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class Node_CopyOperation extends SNodeOperation {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_CopyOperation";
 
-  public  Node_CopyOperation(SNode node) {
+  public Node_CopyOperation(SNode node) {
     super(node);
   }
 

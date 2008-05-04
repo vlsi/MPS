@@ -62,7 +62,7 @@ public class ApplicableNodeReference_Editor extends DefaultNodeEditor {
 
   public static class _Inline1 extends AbstractCellProvider {
 
-    public  _Inline1() {
+    public _Inline1() {
       super();
     }
 

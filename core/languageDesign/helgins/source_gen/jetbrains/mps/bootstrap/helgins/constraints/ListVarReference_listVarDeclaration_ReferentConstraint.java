@@ -12,7 +12,7 @@ import jetbrains.mps.bootstrap.helgins.search.ListVarScope;
 
 public class ListVarReference_listVarDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  ListVarReference_listVarDeclaration_ReferentConstraint() {
+  public ListVarReference_listVarDeclaration_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

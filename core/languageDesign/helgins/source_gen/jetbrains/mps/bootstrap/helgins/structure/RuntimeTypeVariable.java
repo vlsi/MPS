@@ -17,7 +17,7 @@ public class RuntimeTypeVariable extends BaseConcept implements INamedConcept {
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String NULLABLE = "nullable";
 
-  public  RuntimeTypeVariable(SNode node) {
+  public RuntimeTypeVariable(SNode node) {
     super(node);
   }
 

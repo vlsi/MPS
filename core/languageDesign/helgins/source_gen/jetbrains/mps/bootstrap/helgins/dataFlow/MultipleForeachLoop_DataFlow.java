@@ -10,7 +10,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class MultipleForeachLoop_DataFlow extends DataFlowBuilder {
 
-  public  MultipleForeachLoop_DataFlow() {
+  public MultipleForeachLoop_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

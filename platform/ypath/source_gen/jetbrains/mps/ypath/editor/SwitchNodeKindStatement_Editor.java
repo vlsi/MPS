@@ -174,7 +174,7 @@ public class SwitchNodeKindStatement_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createNodeKindCaseList(EditorContext context, SNode node) {
-    if(this.myNodeKindCaseListHandler_nodeKindCaseList_ == null) {
+    if (this.myNodeKindCaseListHandler_nodeKindCaseList_ == null) {
       this.myNodeKindCaseListHandler_nodeKindCaseList_ = new SwitchNodeKindStatement_Editor._RefNodeListHandler3(node, "nodeKindCase", context);
     }
     EditorCell_Collection editorCell = this.myNodeKindCaseListHandler_nodeKindCaseList_.createCells(context, new CellLayout_Vertical(), false);
@@ -191,7 +191,7 @@ public class SwitchNodeKindStatement_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     SwitchNodeKindStatement_Editor.setupBasic_NodeExpressionCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       SwitchNodeKindStatement_Editor.setupLabel_NodeExpressionCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -207,7 +207,7 @@ public class SwitchNodeKindStatement_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createNodeExpressionCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -217,7 +217,7 @@ public class SwitchNodeKindStatement_Editor extends DefaultNodeEditor {
 
   public static class _RefNodeListHandler3 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler3(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler3(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -253,14 +253,14 @@ public class SwitchNodeKindStatement_Editor extends DefaultNodeEditor {
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
-      if(elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         SNode substituteInfoNode = listOwner;
-        if(elementNode != null) {
+        if (elementNode != null) {
           substituteInfoNode = elementNode;
           elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
         }
-        if(elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
         }
       }

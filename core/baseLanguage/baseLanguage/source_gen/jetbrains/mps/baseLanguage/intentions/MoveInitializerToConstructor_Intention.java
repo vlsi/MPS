@@ -9,8 +9,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 
 public class MoveInitializerToConstructor_Intention extends BaseIntention implements Intention {
 
@@ -46,16 +44,8 @@ public class MoveInitializerToConstructor_Intention extends BaseIntention implem
     SLinkOperations.setTarget(fieldReference, "variableDeclaration", node, false);
     SLinkOperations.setNewChild(fieldReference, "instance", "jetbrains.mps.baseLanguage.structure.ThisExpression");
     // 
-    {
-      ICursor<SNode> _zCursor1 = CursorFactory.createCursor(SLinkOperations.getTargets(classNode, "constructor", true));
-      try {
-        while(_zCursor1.moveToNext()) {
-          SNode constr = _zCursor1.getCurrent();
-          SLinkOperations.insertChildFirst(SLinkOperations.getTarget(constr, "body", true), "statement", SNodeOperations.copyNode(assignmentStmt));
-        }
-      } finally {
-        _zCursor1.release();
-      }
+    for(SNode constr : SLinkOperations.getTargets(classNode, "constructor", true)) {
+      SLinkOperations.insertChildFirst(SLinkOperations.getTarget(constr, "body", true), "statement", SNodeOperations.copyNode(assignmentStmt));
     }
     // 
     SLinkOperations.deleteChild(node, "initializer");

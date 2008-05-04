@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class supertypesOf_ListType_ListType_withWildcard_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
-  public  supertypesOf_ListType_ListType_withWildcard_SubtypingRule() {
+  public supertypesOf_ListType_ListType_withWildcard_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode type) {

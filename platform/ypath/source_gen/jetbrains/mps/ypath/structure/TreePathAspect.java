@@ -27,7 +27,7 @@ public class TreePathAspect extends BaseConcept implements INamedConcept, Visibl
   public static String NODE_KINDS = "nodeKinds";
   public static String FEATURES = "features";
 
-  public  TreePathAspect(SNode node) {
+  public TreePathAspect(SNode node) {
     super(node);
   }
 

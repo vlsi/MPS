@@ -12,7 +12,7 @@ public class SNodeListCreator extends AbstractCreator {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListCreator";
   public static String CREATED_TYPE = "createdType";
 
-  public  SNodeListCreator(SNode node) {
+  public SNodeListCreator(SNode node) {
     super(node);
   }
 

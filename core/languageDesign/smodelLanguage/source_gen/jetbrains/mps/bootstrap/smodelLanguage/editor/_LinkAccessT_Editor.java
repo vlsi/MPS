@@ -213,7 +213,7 @@ public class _LinkAccessT_Editor extends DefaultNodeEditor {
 
   public static class _Inline35 extends AbstractCellProvider {
 
-    public  _Inline35() {
+    public _Inline35() {
       super();
     }
 

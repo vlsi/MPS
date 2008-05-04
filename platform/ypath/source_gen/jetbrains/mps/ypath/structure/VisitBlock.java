@@ -13,7 +13,7 @@ public class VisitBlock extends LambdaMethod {
   public static String EXPRESSION = "expression";
   public static String VISIT_PARAMETER_DECLARATION_LIST = "visitParameterDeclarationList";
 
-  public  VisitBlock(SNode node) {
+  public VisitBlock(SNode node) {
     super(node);
   }
 

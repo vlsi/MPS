@@ -10,13 +10,12 @@ import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.constraints.BaseMethodDeclaration_Behavior;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import org.jetbrains.annotations.Nullable;
 
 public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
@@ -44,53 +43,21 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, IAdaptiveProgressMonitor monitor) {
     List<SNode> implementorsAndAncestorsList = new ArrayList<SNode>();
-    {
-      ICursor<SNode> _zCursor10 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder", SNodeOperations.getParent(node, null, false, false), scope, monitor));
-      try {
-        while(_zCursor10.moveToNext()) {
-          SNode implementor = _zCursor10.getCurrent();
-          ListOperations.addElement(implementorsAndAncestorsList, implementor);
-          ListOperations.addAllElements(implementorsAndAncestorsList, this.executeFinder("jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder", implementor, scope, monitor));
-        }
-      } finally {
-        _zCursor10.release();
-      }
+    for(SNode implementor : this.executeFinder("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder", SNodeOperations.getParent(node, null, false, false), scope, monitor)) {
+      ListSequence.fromList(implementorsAndAncestorsList).addElement(implementor);
+      ListSequence.fromList(implementorsAndAncestorsList).addSequence(ListSequence.fromList(this.executeFinder("jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder", implementor, scope, monitor)));
     }
     // 
     Set<SNode> implementorsAndAncestorsNodes = new HashSet<SNode>();
-    {
-      ICursor<SNode> _zCursor11 = CursorFactory.createCursor(implementorsAndAncestorsList);
-      try {
-        while(_zCursor11.moveToNext()) {
-          SNode implementorOrAncestor = _zCursor11.getCurrent();
-          implementorsAndAncestorsNodes.add(implementorOrAncestor);
-        }
-      } finally {
-        _zCursor11.release();
-      }
+    for(SNode implementorOrAncestor : implementorsAndAncestorsList) {
+      implementorsAndAncestorsNodes.add(implementorOrAncestor);
     }
     // 
-    {
-      ICursor<SNode> _zCursor12 = CursorFactory.createCursor(implementorsAndAncestorsNodes);
-      try {
-        while(_zCursor12.moveToNext()) {
-          SNode classNode = _zCursor12.getCurrent();
-          {
-            ICursor<SNode> _zCursor13 = CursorFactory.createCursor(SLinkOperations.getTargets(classNode, "method", true));
-            try {
-              while(_zCursor13.moveToNext()) {
-                SNode sMethod = _zCursor13.getCurrent();
-                if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1204901126405(sMethod, node)) {
-                  ListOperations.addElement(_results, sMethod);
-                }
-              }
-            } finally {
-              _zCursor13.release();
-            }
-          }
+    for(SNode classNode : implementorsAndAncestorsNodes) {
+      for(SNode sMethod : SLinkOperations.getTargets(classNode, "method", true)) {
+        if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1204901126405(sMethod, node)) {
+          ListOperations.addElement(_results, sMethod);
         }
-      } finally {
-        _zCursor12.release();
       }
     }
   }

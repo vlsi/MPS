@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_AllAttributesQualifier_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_AllAttributesQualifier_InferenceRule() {
+  public typeof_AllAttributesQualifier_InferenceRule() {
   }
 
   public void applyRule(final SNode nodeToCheck) {

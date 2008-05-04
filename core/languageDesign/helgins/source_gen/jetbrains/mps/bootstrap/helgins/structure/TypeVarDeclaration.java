@@ -17,7 +17,7 @@ public class TypeVarDeclaration extends Statement implements INamedConcept {
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String NULLABLE = "nullable";
 
-  public  TypeVarDeclaration(SNode node) {
+  public TypeVarDeclaration(SNode node) {
     super(node);
   }
 

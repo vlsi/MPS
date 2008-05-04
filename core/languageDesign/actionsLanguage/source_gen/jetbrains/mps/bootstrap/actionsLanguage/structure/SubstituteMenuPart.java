@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class SubstituteMenuPart extends MenuPart {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.SubstituteMenuPart";
 
-  public  SubstituteMenuPart(SNode node) {
+  public SubstituteMenuPart(SNode node) {
     super(node);
   }
 

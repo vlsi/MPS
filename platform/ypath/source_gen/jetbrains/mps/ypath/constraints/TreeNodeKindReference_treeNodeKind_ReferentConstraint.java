@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.search.EmptySearchScope;
 
 public class TreeNodeKindReference_treeNodeKind_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  TreeNodeKindReference_treeNodeKind_ReferentConstraint() {
+  public TreeNodeKindReference_treeNodeKind_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
@@ -31,7 +31,7 @@ public class TreeNodeKindReference_treeNodeKind_ReferentConstraint implements IM
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     ISearchScope searchScope;
-    if((_context.getReferenceNode() != null) && (SLinkOperations.getTarget(_context.getReferenceNode(), "treePathAspect", false) != null)) {
+    if ((_context.getReferenceNode() != null) && (SLinkOperations.getTarget(_context.getReferenceNode(), "treePathAspect", false) != null)) {
       searchScope = new SimpleSearchScope(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getReferenceNode(), "treePathAspect", false), "nodeKinds", true));
     } else
     {

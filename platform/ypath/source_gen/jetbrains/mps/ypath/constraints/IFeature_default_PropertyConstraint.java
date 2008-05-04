@@ -8,14 +8,12 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 
 public class IFeature_default_PropertyConstraint implements IModelConstraints, INodePropertySetter {
 
-  public  IFeature_default_PropertyConstraint() {
+  public IFeature_default_PropertyConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
@@ -27,18 +25,10 @@ public class IFeature_default_PropertyConstraint implements IModelConstraints, I
   }
 
   public void execPropertySet(SNode node, String propertyName, String propertyValue, IScope scope) {
-    if((SPropertyOperations.getBoolean(propertyValue))) {
-      {
-        ICursor<SNode> _zCursor1 = CursorFactory.createCursor(SLinkOperations.getTargets(SNodeOperations.getParent(node, null, false, false), "features", true));
-        try {
-          while(_zCursor1.moveToNext()) {
-            SNode foo = _zCursor1.getCurrent();
-            if(foo != node) {
-              SPropertyOperations.set(foo, "default", "" + (false));
-            }
-          }
-        } finally {
-          _zCursor1.release();
+    if ((SPropertyOperations.getBoolean(propertyValue))) {
+      for(SNode foo : SLinkOperations.getTargets(SNodeOperations.getParent(node, null, false, false), "features", true)) {
+        if (foo != node) {
+          SPropertyOperations.set(foo, "default", "" + (false));
         }
       }
     }

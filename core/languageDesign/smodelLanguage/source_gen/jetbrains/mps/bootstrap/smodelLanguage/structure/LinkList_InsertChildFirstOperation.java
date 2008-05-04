@@ -12,7 +12,7 @@ public class LinkList_InsertChildFirstOperation extends SNodeOperation {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_InsertChildFirstOperation";
   public static String PARAMETER = "parameter";
 
-  public  LinkList_InsertChildFirstOperation(SNode node) {
+  public LinkList_InsertChildFirstOperation(SNode node) {
     super(node);
   }
 

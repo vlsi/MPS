@@ -61,7 +61,7 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
 
   public static class _Inline16 extends AbstractCellProvider {
 
-    public  _Inline16() {
+    public _Inline16() {
       super();
     }
 

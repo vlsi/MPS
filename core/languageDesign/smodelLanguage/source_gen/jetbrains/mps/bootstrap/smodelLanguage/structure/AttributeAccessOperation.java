@@ -15,7 +15,7 @@ public class AttributeAccessOperation extends SNodeOperation implements IOperati
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String ATTRIBUTE_QUALIFIER = "attributeQualifier";
 
-  public  AttributeAccessOperation(SNode node) {
+  public AttributeAccessOperation(SNode node) {
     super(node);
   }
 

@@ -9,7 +9,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class AbstractEquationStatement_DataFlow extends DataFlowBuilder {
 
-  public  AbstractEquationStatement_DataFlow() {
+  public AbstractEquationStatement_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

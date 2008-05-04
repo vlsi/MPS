@@ -29,7 +29,7 @@ import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 
@@ -486,10 +486,10 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
-      List<String> prefixes = ListOperations.<String>createList();
-      ListOperations.addElement(prefixes, "_KeyMap");
+      List<String> prefixes = ListSequence.<String>fromArray();
+      ListSequence.fromList(prefixes).addElement("_KeyMap");
       if (SLinkOperations.getTarget(node, "applicableConcept", false) != null) {
-        ListOperations.addElement(prefixes, SPropertyOperations.getString(SLinkOperations.getTarget(node, "applicableConcept", false), "name") + "_KeyMap");
+        ListSequence.fromList(prefixes).addElement(SPropertyOperations.getString(SLinkOperations.getTarget(node, "applicableConcept", false), "name") + "_KeyMap");
       }
       return prefixes;
     }

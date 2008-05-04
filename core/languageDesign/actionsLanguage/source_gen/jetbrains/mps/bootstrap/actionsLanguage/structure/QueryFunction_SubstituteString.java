@@ -14,7 +14,7 @@ public class QueryFunction_SubstituteString extends ConceptFunction implements I
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  QueryFunction_SubstituteString(SNode node) {
+  public QueryFunction_SubstituteString(SNode node) {
     super(node);
   }
 

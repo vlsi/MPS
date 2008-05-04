@@ -59,7 +59,7 @@ public class NodeAttributeAccessQualifier_Editor extends DefaultNodeEditor {
 
   public static class _Inline30 extends AbstractCellProvider {
 
-    public  _Inline30() {
+    public _Inline30() {
       super();
     }
 

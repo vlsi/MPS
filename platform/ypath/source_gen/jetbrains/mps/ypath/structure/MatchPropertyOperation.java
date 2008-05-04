@@ -13,7 +13,7 @@ public class MatchPropertyOperation extends MatchKindOperation {
   public static String PROPERTY = "property";
   public static String MATCH_EXPRESSION = "matchExpression";
 
-  public  MatchPropertyOperation(SNode node) {
+  public MatchPropertyOperation(SNode node) {
     super(node);
   }
 

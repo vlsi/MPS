@@ -8,13 +8,13 @@ import java.util.Iterator;
 public class FragmentTypeEnum_PropertySupport extends PropertySupport {
 
   public boolean canSetValue(String value) {
-    if(value == null) {
+    if (value == null) {
       return true;
     }
     Iterator<FragmentTypeEnum> constants = FragmentTypeEnum.getConstants().iterator();
     while(constants.hasNext()) {
       FragmentTypeEnum constant = constants.next();
-      if(value.equals(constant.getName())) {
+      if (value.equals(constant.getName())) {
         return true;
       }
     }
@@ -22,13 +22,13 @@ public class FragmentTypeEnum_PropertySupport extends PropertySupport {
   }
 
   public String toInternalValue(String value) {
-    if(value == null) {
+    if (value == null) {
       return null;
     }
     Iterator<FragmentTypeEnum> constants = FragmentTypeEnum.getConstants().iterator();
     while(constants.hasNext()) {
       FragmentTypeEnum constant = constants.next();
-      if(value.equals(constant.getName())) {
+      if (value.equals(constant.getName())) {
         return constant.getValueAsString();
       }
     }
@@ -37,7 +37,7 @@ public class FragmentTypeEnum_PropertySupport extends PropertySupport {
 
   public String fromInternalValue(String value) {
     FragmentTypeEnum constant = FragmentTypeEnum.parseValue(value);
-    if(constant != null) {
+    if (constant != null) {
       return constant.getName();
     }
     return null;

@@ -14,7 +14,7 @@ import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDecl
 
 public class SPropertyAccess_property_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  SPropertyAccess_property_ReferentConstraint() {
+  public SPropertyAccess_property_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

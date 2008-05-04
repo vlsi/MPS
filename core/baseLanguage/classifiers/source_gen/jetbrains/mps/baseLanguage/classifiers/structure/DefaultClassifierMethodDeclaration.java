@@ -17,7 +17,7 @@ public class DefaultClassifierMethodDeclaration extends BaseMethodDeclaration im
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String VISIBILITY = "visibility";
 
-  public  DefaultClassifierMethodDeclaration(SNode node) {
+  public DefaultClassifierMethodDeclaration(SNode node) {
     super(node);
   }
 

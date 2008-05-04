@@ -15,7 +15,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class TreePath_component extends AbstractCellProvider {
 
-  public  TreePath_component(SNode node) {
+  public TreePath_component(SNode node) {
     super(node);
   }
 
@@ -54,7 +54,7 @@ public class TreePath_component extends AbstractCellProvider {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     TreePath_component.setupBasic_TreePathTypeCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       TreePath_component.setupLabel_TreePathTypeCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -70,7 +70,7 @@ public class TreePath_component extends AbstractCellProvider {
     EditorCell cellWithRole = this.createTreePathTypeCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);

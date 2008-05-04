@@ -18,7 +18,7 @@ public class TreeNodeKindProperty_default_DELETE {
 
     /* package */SNode myNode;
 
-    public  TreeNodeKindProperty_default_DELETE_DELETE(SNode node) {
+    public TreeNodeKindProperty_default_DELETE_DELETE(SNode node) {
       this.myNode = node;
     }
 

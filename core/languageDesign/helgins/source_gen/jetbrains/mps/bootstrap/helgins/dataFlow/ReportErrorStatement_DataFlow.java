@@ -9,7 +9,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class ReportErrorStatement_DataFlow extends DataFlowBuilder {
 
-  public  ReportErrorStatement_DataFlow() {
+  public ReportErrorStatement_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

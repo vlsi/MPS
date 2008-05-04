@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class RemoveDefaultsPart extends MenuBuilderPart {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.RemoveDefaultsPart";
 
-  public  RemoveDefaultsPart(SNode node) {
+  public RemoveDefaultsPart(SNode node) {
     super(node);
   }
 

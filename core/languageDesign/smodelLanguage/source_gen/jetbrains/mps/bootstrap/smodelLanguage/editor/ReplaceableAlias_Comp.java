@@ -18,7 +18,7 @@ import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMen
 
 public class ReplaceableAlias_Comp extends AbstractCellProvider {
 
-  public  ReplaceableAlias_Comp(SNode node) {
+  public ReplaceableAlias_Comp(SNode node) {
     super(node);
   }
 
@@ -71,7 +71,7 @@ public class ReplaceableAlias_Comp extends AbstractCellProvider {
 
   public static class SNodeOperation_replaceWith_SNodeOperation_cellMenu extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
 
-    public  SNodeOperation_replaceWith_SNodeOperation_cellMenu() {
+    public SNodeOperation_replaceWith_SNodeOperation_cellMenu() {
     }
 
     public String getReplacementConceptName() {

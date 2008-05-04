@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class erasure_SNodeType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
-  public  erasure_SNodeType_SubtypingRule() {
+  public erasure_SNodeType_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode snodeType) {

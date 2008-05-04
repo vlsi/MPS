@@ -82,7 +82,7 @@ public class VisitParameterDeclarationList_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createVisitParameterDeclarationList(EditorContext context, SNode node) {
-    if(this.myVisitParameterDeclarationListHandler_visitParameterDeclarationList_ == null) {
+    if (this.myVisitParameterDeclarationListHandler_visitParameterDeclarationList_ == null) {
       this.myVisitParameterDeclarationListHandler_visitParameterDeclarationList_ = new VisitParameterDeclarationList_Editor._RefNodeListHandler4(node, "visitParameterDeclaration", context);
     }
     EditorCell_Collection editorCell = this.myVisitParameterDeclarationListHandler_visitParameterDeclarationList_.createCells(context, new CellLayout_Horizontal(), false);
@@ -96,7 +96,7 @@ public class VisitParameterDeclarationList_Editor extends DefaultNodeEditor {
 
   public static class _RefNodeListHandler4 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler4(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler4(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -132,14 +132,14 @@ public class VisitParameterDeclarationList_Editor extends DefaultNodeEditor {
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
-      if(elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         SNode substituteInfoNode = listOwner;
-        if(elementNode != null) {
+        if (elementNode != null) {
           substituteInfoNode = elementNode;
           elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
         }
-        if(elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
         }
       }

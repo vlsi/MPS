@@ -26,7 +26,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ConceptReference_Editor extends DefaultNodeEditor {
 
@@ -182,7 +182,7 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
 
   public static class _Inline extends AbstractCellProvider {
 
-    public  _Inline() {
+    public _Inline() {
       super();
     }
 
@@ -236,7 +236,7 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
 }
   public static class ConceptReference_name_postfixCellMenu extends AbstractCellMenuPart_PropertyPostfixHints {
 
-    public  ConceptReference_name_postfixCellMenu() {
+    public ConceptReference_name_postfixCellMenu() {
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
@@ -246,7 +246,7 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
         result = NameUtil.splitByCamels(name);
       } else
       {
-        result = ListOperations.<String>createList();
+        result = ListSequence.<String>fromArray();
       }
       return result;
     }

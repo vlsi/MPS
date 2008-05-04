@@ -9,9 +9,12 @@ import org.w3c.dom.Element;
 import featuresDemo.DOM_NG.ELEMENT_tag_Property;
 import java.util.AbstractList;
 import java.util.AbstractCollection;
-import jetbrains.mps.baseLanguage.ext.collections.internal.SequenceWithSupplier;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.closures.runtime.YieldingIterator;
+import org.w3c.dom.NamedNodeMap;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ypath.runtime.IFeatureDescriptor;
 
 public class DOM_NG extends TreePath<Node> {
@@ -35,10 +38,10 @@ public class DOM_NG extends TreePath<Node> {
     }
 
     public static IFilter<Node> getInstance() {
-      if (DOM_NG.ELEMENT_NodeKindTrigger.instance == null) {
-        DOM_NG.ELEMENT_NodeKindTrigger.instance = new DOM_NG.ELEMENT_NodeKindTrigger();
+      if (instance == null) {
+        instance = new DOM_NG.ELEMENT_NodeKindTrigger();
       }
-      return DOM_NG.ELEMENT_NodeKindTrigger.instance;
+      return instance;
     }
 
 
@@ -152,9 +155,77 @@ public class DOM_NG extends TreePath<Node> {
     }
 
     public Iterable<Node> sequence() {
-      final zClosureContext _zClosureContext = new zClosureContext();
-      _zClosureContext._node = this.thisNode;
-      return new SequenceWithSupplier<Node>(new zValueSupplier(null, _zClosureContext));
+      final Node _node = this.thisNode;
+      return Sequence.fromClosure(new ISequenceClosure <Node>() {
+
+        public Iterable<Node> iterable() {
+          return new Iterable <Node>() {
+
+            public Iterator<Node> iterator() {
+              return new YieldingIterator <Node>() {
+
+                private int __CP__ = 0;
+                private NamedNodeMap _3_attributes;
+                private int _7_count;
+                private int _8_idx;
+
+                protected boolean moveToNext() {
+__loop__:
+                  do {
+__switch__:
+                    switch (this.__CP__) {
+                      case -1:
+                        assert false : "Internal error";
+                        return false;
+                      case 8:
+                        this._8_idx = 0;
+                      case 9:
+                        if (!(this._8_idx < this._7_count)) {
+                          this.__CP__ = 1;
+                          break;
+                        }
+                        this.__CP__ = 10;
+                        break;
+                      case 11:
+                        this._8_idx = this._8_idx + 1;
+                        this.__CP__ = 9;
+                        break;
+                      case 4:
+                        if (this._3_attributes != null) {
+                          this.__CP__ = 5;
+                          break;
+                        }
+                        this.__CP__ = 1;
+                        break;
+                      case 12:
+                        this.__CP__ = 11;
+                        this.yield(_node.getAttributes().item(this._8_idx));
+                        return true;
+                      case 0:
+                        this._3_attributes = _node.getAttributes();
+                        this.__CP__ = 4;
+                        break;
+                      case 5:
+                        this._7_count = this._3_attributes.getLength();
+                        this.__CP__ = 8;
+                        break;
+                      case 10:
+                        this.__CP__ = 12;
+                        break;
+                      default:
+                        break __loop__;
+                    }
+                  } while(true);
+                  return false;
+                }
+
+              };
+            }
+
+          };
+        }
+
+      });
     }
 
     public Iterator<Node> iterator() {
@@ -183,8 +254,8 @@ public class DOM_NG extends TreePath<Node> {
     public Iterable<Node> sequence() {
       Node parentNode = this.thisNode.getParentNode();
       return (parentNode != null ?
-        ListOperations.<Node>createList(parentNode) :
-        ListOperations.<Node>createList()
+        ListSequence.<Node>fromArray(parentNode) :
+        ListSequence.<Node>fromArray()
       );
     }
 

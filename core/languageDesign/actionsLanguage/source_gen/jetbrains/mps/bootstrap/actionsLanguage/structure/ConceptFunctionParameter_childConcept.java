@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ConceptFunctionParameter_childConcept extends ConceptFunctionParameter {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_childConcept";
 
-  public  ConceptFunctionParameter_childConcept(SNode node) {
+  public ConceptFunctionParameter_childConcept(SNode node) {
     super(node);
   }
 

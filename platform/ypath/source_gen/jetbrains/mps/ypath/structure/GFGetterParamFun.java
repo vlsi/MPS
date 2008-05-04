@@ -13,7 +13,7 @@ public class GFGetterParamFun extends GFGetterFun implements IParamFeatureFun, I
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  GFGetterParamFun(SNode node) {
+  public GFGetterParamFun(SNode node) {
     super(node);
   }
 

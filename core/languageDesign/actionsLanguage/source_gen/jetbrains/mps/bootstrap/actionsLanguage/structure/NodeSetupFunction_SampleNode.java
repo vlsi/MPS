@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class NodeSetupFunction_SampleNode extends ConceptFunctionParameter {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction_SampleNode";
 
-  public  NodeSetupFunction_SampleNode(SNode node) {
+  public NodeSetupFunction_SampleNode(SNode node) {
     super(node);
   }
 

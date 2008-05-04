@@ -180,7 +180,7 @@ public class CoerceExpression_Editor extends DefaultNodeEditor {
 
   public static class CoerceExpression_replaceWith_CoerceExpression_cellMenu extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
 
-    public  CoerceExpression_replaceWith_CoerceExpression_cellMenu() {
+    public CoerceExpression_replaceWith_CoerceExpression_cellMenu() {
     }
 
     public String getReplacementConceptName() {

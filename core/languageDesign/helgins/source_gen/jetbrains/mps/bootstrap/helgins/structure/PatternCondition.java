@@ -12,7 +12,7 @@ public class PatternCondition extends ApplicableNodeCondition {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.PatternCondition";
   public static String PATTERN = "pattern";
 
-  public  PatternCondition(SNode node) {
+  public PatternCondition(SNode node) {
     super(node);
   }
 

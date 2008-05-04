@@ -12,7 +12,7 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class AnnotationInstanceValue_key_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
@@ -36,7 +36,7 @@ public class AnnotationInstanceValue_key_ReferentConstraint implements IModelCon
     List<SNode> result = new ArrayList<SNode>();
     SNode parent = _context.getEnclosingNode();
     if (SLinkOperations.getTarget(parent, "annotation", false) != null) {
-      ListOperations.addAllElements(result, SLinkOperations.getTargets(SLinkOperations.getTarget(parent, "annotation", false), "method", true));
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(parent, "annotation", false), "method", true)));
     }
     return new SimpleSearchScope(result);
   }

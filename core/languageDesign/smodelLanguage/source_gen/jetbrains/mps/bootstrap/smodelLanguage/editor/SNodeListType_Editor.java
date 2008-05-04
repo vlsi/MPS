@@ -135,7 +135,7 @@ public class SNodeListType_Editor extends DefaultNodeEditor {
 
   public static class _Inline13 extends AbstractCellProvider {
 
-    public  _Inline13() {
+    public _Inline13() {
       super();
     }
 

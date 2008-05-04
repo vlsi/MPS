@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_GetSizeOperation_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_GetSizeOperation_InferenceRule() {
+  public typeof_GetSizeOperation_InferenceRule() {
   }
 
   public void applyRule(final SNode op) {

@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class Model_CreateNewRootNodeOperation extends Model_CreateNewNodeOperation {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.Model_CreateNewRootNodeOperation";
 
-  public  Model_CreateNewRootNodeOperation(SNode node) {
+  public Model_CreateNewRootNodeOperation(SNode node) {
     super(node);
   }
 

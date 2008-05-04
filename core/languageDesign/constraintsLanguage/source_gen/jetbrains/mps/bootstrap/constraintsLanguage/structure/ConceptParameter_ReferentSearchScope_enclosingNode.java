@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ConceptParameter_ReferentSearchScope_enclosingNode extends ConceptFunctionParameter {
   public static final String concept = "jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptParameter_ReferentSearchScope_enclosingNode";
 
-  public  ConceptParameter_ReferentSearchScope_enclosingNode(SNode node) {
+  public ConceptParameter_ReferentSearchScope_enclosingNode(SNode node) {
     super(node);
   }
 

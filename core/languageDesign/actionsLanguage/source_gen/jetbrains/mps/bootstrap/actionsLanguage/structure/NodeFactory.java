@@ -15,7 +15,7 @@ public class NodeFactory extends BaseConcept {
   public static String APPLICABLE_CONCEPT = "applicableConcept";
   public static String SETUP_FUNCTION = "setupFunction";
 
-  public  NodeFactory(SNode node) {
+  public NodeFactory(SNode node) {
     super(node);
   }
 

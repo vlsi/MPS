@@ -5,12 +5,10 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.output.OutputPane;
 import java.util.List;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.awt.Color;
 import javax.swing.JScrollPane;
 import org.apache.commons.lang.ObjectUtils;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 
 public class TestOutputComponent {
 
@@ -23,7 +21,7 @@ public class TestOutputComponent {
   private String filterMethod;
 
   public TestOutputComponent(JComponent parentComponent) {
-    this.messages = ListOperations.<TestOutputComponent.Message>createList();
+    this.messages = ListSequence.<TestOutputComponent.Message>fromArray();
     this.output = new OutputPane(parentComponent);
     this.output.setEditable(false);
     this.output.setBackground(Color.WHITE);
@@ -39,16 +37,8 @@ public class TestOutputComponent {
       this.filterClass = filterClass;
       this.filterMethod = filterMethod;
       this.output.clear();
-      {
-        ICursor<TestOutputComponent.Message> _zCursor7 = CursorFactory.createCursor(this.messages);
-        try {
-          while(_zCursor7.moveToNext()) {
-            TestOutputComponent.Message message = _zCursor7.getCurrent();
-            this.append(message);
-          }
-        } finally {
-          _zCursor7.release();
-        }
+      for(TestOutputComponent.Message message : this.messages) {
+        this.append(message);
       }
     }
   }
@@ -65,12 +55,12 @@ public class TestOutputComponent {
 
   public void append(String message, boolean error, boolean internal) {
     TestOutputComponent.Message newMessage = new TestOutputComponent.Message(this.curClass, this.curMethod, message, error, internal);
-    ListOperations.addElement(this.messages, newMessage);
+    ListSequence.fromList(this.messages).addElement(newMessage);
     this.append(newMessage);
   }
 
   public void clear() {
-    this.messages = ListOperations.<TestOutputComponent.Message>createList();
+    this.messages = ListSequence.<TestOutputComponent.Message>fromArray();
     this.output.clear();
   }
 

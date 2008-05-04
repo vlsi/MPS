@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_AbstractSubtypingRule_NonTypesystemRule implements NonTypesystemRule_Runtime {
 
-  public  check_AbstractSubtypingRule_NonTypesystemRule() {
+  public check_AbstractSubtypingRule_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode abstractSubtypingRule) {

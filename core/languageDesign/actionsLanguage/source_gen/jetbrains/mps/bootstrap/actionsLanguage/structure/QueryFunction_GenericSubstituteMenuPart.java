@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class QueryFunction_GenericSubstituteMenuPart extends ConceptFunction {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_GenericSubstituteMenuPart";
 
-  public  QueryFunction_GenericSubstituteMenuPart(SNode node) {
+  public QueryFunction_GenericSubstituteMenuPart(SNode node) {
     super(node);
   }
 

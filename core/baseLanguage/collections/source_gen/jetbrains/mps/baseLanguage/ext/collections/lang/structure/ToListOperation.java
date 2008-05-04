@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ToListOperation extends SequenceOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ToListOperation";
 
-  public  ToListOperation(SNode node) {
+  public ToListOperation(SNode node) {
     super(node);
   }
 

@@ -13,7 +13,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class NodeKindSpecificCase_treeNodeKind_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  NodeKindSpecificCase_treeNodeKind_ReferentConstraint() {
+  public NodeKindSpecificCase_treeNodeKind_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

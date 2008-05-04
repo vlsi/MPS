@@ -13,7 +13,7 @@ public class TreeNodeKindReference extends Expression {
   public static String TREE_PATH_ASPECT = "treePathAspect";
   public static String TREE_NODE_KIND = "treeNodeKind";
 
-  public  TreeNodeKindReference(SNode node) {
+  public TreeNodeKindReference(SNode node) {
     super(node);
   }
 

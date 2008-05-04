@@ -8,7 +8,7 @@ import jetbrains.mps.dataFlow.DataFlowBuilderContext;
 
 public class TypeVarDeclaration_DataFlow extends DataFlowBuilder {
 
-  public  TypeVarDeclaration_DataFlow() {
+  public TypeVarDeclaration_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

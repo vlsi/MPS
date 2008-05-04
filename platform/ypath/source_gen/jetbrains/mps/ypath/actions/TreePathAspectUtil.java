@@ -6,29 +6,42 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import java.util.ArrayList;
+import jetbrains.mps.closures.runtime.Wrappers;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.TypeUtil_Collections;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.ypath.constraints.TreePath_Behavior;
 
 public class TreePathAspectUtil {
 
   public static List<SNode> getTreePathAspects(SNode expression, IScope scope) {
-    final zClosureContext _zClosureContext = new zClosureContext();
     List<SNode> treePathAspects = new ArrayList<SNode>();
-    _zClosureContext.expType = TypeChecker.getInstance().getTypeOf(expression);
-    if ((_zClosureContext.expType != null)) {
-      SNode sequencetype = TypeUtil_Collections.coerceTo_SequenceType(_zClosureContext.expType);
-      if (sequencetype != null && !(SNodeOperations.isInstanceOf(_zClosureContext.expType, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"))) {
-        _zClosureContext.expType = SLinkOperations.getTarget(sequencetype, "elementType", true);
+    final Wrappers._T<SNode> expType = new Wrappers._T<SNode>(TypeChecker.getInstance().getTypeOf(expression));
+    if ((expType.value != null)) {
+      SNode sequencetype = TypeUtil_Collections.coerceTo_SequenceType(expType.value);
+      if (sequencetype != null && !(SNodeOperations.isInstanceOf(expType.value, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"))) {
+        expType.value = SLinkOperations.getTarget(sequencetype, "elementType", true);
       }
       SNode concept = (SNode)SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.TreePathAspect");
       Iterable<SNode> instances = SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(expression), scope, "jetbrains.mps.ypath.structure.TreePathAspect");
-      ListOperations.addAllElements(treePathAspects, SequenceOperations.where(instances, new zPredicate(null, _zClosureContext)));
+      ListSequence.fromList(treePathAspects).addSequence(Sequence.fromIterable(instances).where(new IWhereFilter <SNode>() {
+
+        public boolean accept(SNode it) {
+          SNode type = TreePath_Behavior.call_getNodeType_1179306333014(it);
+          boolean result = false;
+          if ((type != null)) {
+            result = TypeChecker.getInstance().getSubtypingManager().isSubtype(expType.value, type, false, false);
+          }
+          return result;
+        }
+
+      }));
     }
     return treePathAspects;
   }

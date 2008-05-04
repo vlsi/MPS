@@ -8,24 +8,24 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.ypath.constraints.VisitChildrenExpression_Behavior;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import java.util.List;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Iterator;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_VisitChildrenExpression_InferenceRule implements InferenceRule_Runtime {
 
-  public  check_VisitChildrenExpression_InferenceRule() {
+  public check_VisitChildrenExpression_InferenceRule() {
   }
 
   public void applyRule(final SNode visitChildrenExpression) {
     int actualCount = SLinkOperations.getCount(visitChildrenExpression, "actualArgument");
     SNode visitBlock = VisitChildrenExpression_Behavior.call_getEnclosingVisitNodesStatement_1180014794484(visitChildrenExpression);
-    if(!((visitBlock != null))) {
+    if (!((visitBlock != null))) {
       TypeChecker.getInstance().reportTypeError(visitChildrenExpression, "visit children is unexpected here", "jetbrains.mps.ypath.helgins", "1180014856089");
     }
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(visitBlock, "visitParameterDeclarationList", true), "visitParameterDeclaration", true);
-    int expectedCount = SequenceOperations.getSize(parameters);
-    if(!(actualCount == expectedCount)) {
+    int expectedCount = ListSequence.fromList(parameters).count();
+    if (!(actualCount == expectedCount)) {
       TypeChecker.getInstance().reportTypeError(visitChildrenExpression, "wrong parameters number: expected " + expectedCount + " , actual " + actualCount, "jetbrains.mps.ypath.helgins", "1180014444793");
     }
     {
@@ -34,15 +34,15 @@ public class check_VisitChildrenExpression_InferenceRule implements InferenceRul
       Iterator<SNode> arg_iterator = SLinkOperations.getTargets(visitChildrenExpression, "actualArgument", true).iterator();
       Iterator<SNode> param_iterator = parameters.iterator();
       while(true) {
-        if(!(arg_iterator.hasNext())) {
+        if (!(arg_iterator.hasNext())) {
           break;
         }
-        if(!(param_iterator.hasNext())) {
+        if (!(param_iterator.hasNext())) {
           break;
         }
         arg = arg_iterator.next();
         param = param_iterator.next();
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(arg, "jetbrains.mps.ypath.helgins", "1180014730654", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(param, "jetbrains.mps.ypath.helgins", "1180014739452", true), arg, null, "jetbrains.mps.ypath.helgins", "1180014737422");
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(arg, "jetbrains.mps.ypath.helgins", "1180014730654", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(param, "jetbrains.mps.ypath.helgins", "1180014739452", true), arg, null, "jetbrains.mps.ypath.helgins", "1180014737422", false);
       }
     }
   }

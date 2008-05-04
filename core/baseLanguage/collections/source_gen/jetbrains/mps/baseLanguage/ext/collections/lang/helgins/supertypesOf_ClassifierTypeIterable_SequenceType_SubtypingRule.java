@@ -10,7 +10,7 @@ public class supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule exte
 
   /* package */Pattern_1 myMatchingPattern;
 
-  public  supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule() {
+  public supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode iterableClassifierType) {

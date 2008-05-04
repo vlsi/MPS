@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class UnionOperation extends BinaryOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.UnionOperation";
 
-  public  UnionOperation(SNode node) {
+  public UnionOperation(SNode node) {
     super(node);
   }
 

@@ -10,7 +10,7 @@ public class supertypesOf_SNodeType_SConceptType_SubtypingRule extends Subtyping
 
   /* package */Pattern_2 myMatchingPattern;
 
-  public  supertypesOf_SNodeType_SConceptType_SubtypingRule() {
+  public supertypesOf_SNodeType_SConceptType_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode node) {

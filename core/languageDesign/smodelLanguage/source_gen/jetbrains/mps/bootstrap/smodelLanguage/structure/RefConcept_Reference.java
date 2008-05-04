@@ -16,7 +16,7 @@ public class RefConcept_Reference extends BaseConcept implements IRefConceptArg 
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String CONCEPT_DECLARATION = "conceptDeclaration";
 
-  public  RefConcept_Reference(SNode node) {
+  public RefConcept_Reference(SNode node) {
     super(node);
   }
 

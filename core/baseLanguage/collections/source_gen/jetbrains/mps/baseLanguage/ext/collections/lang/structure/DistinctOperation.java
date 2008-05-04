@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class DistinctOperation extends SequenceOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.DistinctOperation";
 
-  public  DistinctOperation(SNode node) {
+  public DistinctOperation(SNode node) {
     super(node);
   }
 

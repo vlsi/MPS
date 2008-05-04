@@ -12,7 +12,7 @@ public class ListVarReference extends Expression {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.ListVarReference";
   public static String LIST_VAR_DECLARATION = "listVarDeclaration";
 
-  public  ListVarReference(SNode node) {
+  public ListVarReference(SNode node) {
     super(node);
   }
 
