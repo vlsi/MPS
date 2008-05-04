@@ -623,6 +623,21 @@ public abstract class AbstractModule implements IModule {
     if (!classpath.contains(classesGen)) {
       classpath.add(classesGen);
     }
+
+
+    //remove bad items
+    Iterator<String> it = classpath.iterator();
+    while (it.hasNext()) {
+      String s = it.next();
+      if (FileSystem.getFile(s).isDirectory()) {
+        s += "/";
+      }
+
+      if (getPathRelativeTo(s, basePath) == null) {
+        it.remove();
+      }
+    }
+
     for (int i = 0; i < classpath.size(); i++) {
       String s = classpath.get(i);
 
@@ -631,8 +646,6 @@ public abstract class AbstractModule implements IModule {
       }
 
       String relativePath = getPathRelativeTo(s, basePath);
-
-      if (relativePath == null) continue;
 
       relativePath = relativePath.replace(File.separatorChar, '/');
 
