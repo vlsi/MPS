@@ -21,7 +21,8 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <maxImportIndex value="41" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <maxImportIndex value="42" />
   <import index="1" modelUID="jetbrains.mps.ide.actions.nodes@java_stub" version="-1" />
   <import index="2" modelUID="jetbrains.mps.ide.modelchecker@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.ide.actions.model@java_stub" version="-1" />
@@ -56,6 +57,7 @@
   <import index="39" modelUID="javax.swing@java_stub" version="-1" />
   <import index="40" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <import index="41" modelUID="jetbrains.mps.ide.projectPane@java_stub" version="-1" />
+  <import index="42" modelUID="jetbrains.mps.ide.classpath@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991215587">
     <property name="name" value="ProjectPaneNodeActions" />
     <property name="id" value="ProjectPaneNodeActions" />
@@ -261,6 +263,9 @@
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204911334932">
         <link role="javaClass" targetNodeId="8.~OptimizeLanguageImportsAction" resolveInfo="OptimizeLanguageImportsAction" />
       </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1209890410679">
+        <link role="javaClass" targetNodeId="42.~AnalyzeClassPathAction" resolveInfo="AnalyzeClassPathAction" />
+      </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204911338527" />
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204911344576">
         <link role="javaClass" targetNodeId="8.~LanguagePropertiesAction" resolveInfo="LanguagePropertiesAction" />
@@ -344,6 +349,9 @@
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204912230212">
         <link role="javaClass" targetNodeId="11.~OptimizeSolutionImportsAction" resolveInfo="OptimizeSolutionImportsAction" />
       </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1209890420728">
+        <link role="javaClass" targetNodeId="42.~AnalyzeClassPathAction" resolveInfo="AnalyzeClassPathAction" />
+      </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204912232777" />
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204912235154">
         <link role="javaClass" targetNodeId="6.~MakeModuleAction" resolveInfo="MakeModuleAction" />
@@ -395,6 +403,9 @@
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980437818">
         <link role="javaClass" targetNodeId="5.~RemoveModuleFromProjectAction" resolveInfo="RemoveModuleFromProjectAction" />
+      </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1209890403662">
+        <link role="javaClass" targetNodeId="42.~AnalyzeClassPathAction" resolveInfo="AnalyzeClassPathAction" />
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204980440117" />
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980460700">

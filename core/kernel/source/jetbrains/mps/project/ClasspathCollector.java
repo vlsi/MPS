@@ -5,66 +5,96 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.logging.Logger;
 
-import java.util.Set;
-import java.util.HashSet;
+import java.util.*;
 import java.io.File;
 import java.io.IOException;
 
-class ClasspathCollector {
+public class ClasspathCollector {
   private static final Logger LOG = Logger.getLogger(ClasspathCollector.class);
 
   private Set<IModule> myStart;
-  private CompositeClassPathItem myResult = new CompositeClassPathItem();
   private Set<IModule> myVisited = new HashSet<IModule>();
+  private Set<IClassPathItem> myResult = new LinkedHashSet<IClassPathItem>();
+  private Map<IClassPathItem, List<IModule>> myPaths = new HashMap<IClassPathItem, List<IModule>>();
+  private Stack<IModule> myStack = new Stack<IModule>();
 
-  ClasspathCollector(Set<IModule> start) {
+  public ClasspathCollector(Set<IModule> start) {
     myStart = new HashSet<IModule>(start);
   }
 
-  IClassPathItem collect() {
+  public IClassPathItem collect() {
     return collect(false, false);
   }
 
-  IClassPathItem collect(boolean includeJDK, boolean includeMPS) {
+  public IClassPathItem collect(boolean includeJDK, boolean includeMPS) {
+    CompositeClassPathItem result = new CompositeClassPathItem();
+
     for (IModule m : myStart) {
       doCollect(m);
     }
 
     if (includeJDK) {
-      myResult.add(ClassLoaderManager.getInstance().getJDK());
+      result.add(ClassLoaderManager.getInstance().getJDK());
     }
 
     if (includeMPS) {
-      myResult.add(ClassLoaderManager.getInstance().getMPSPath());
+      result.add(ClassLoaderManager.getInstance().getMPSPath());
     }
 
-    return myResult.optimize();
+    for (IClassPathItem item : myResult) {
+      result.add(item);
+    }
+
+    return result.optimize();
+  }
+
+  public List<IClassPathItem> getResult() {
+    return new ArrayList<IClassPathItem>(myResult);
+  }
+
+  public List<IModule> getPathFor(IClassPathItem item) {
+    return myPaths.get(item);
   }
 
   private void doCollect(IModule current) {
-    if (myVisited.contains(current)) {
-      return;
-    }
+    try {
+      myStack.push(current);
 
-    myVisited.add(current);
-    myResult.add(current.getClassPathItem());
-
-    for (IModule dep : current.getAllDependOnModules()) {
-      doCollect(dep);
-    }
-
-    for (Language l : current.getAllUsedLanguages()) {
-      myResult.add(l.getLanguageRuntimeClasspath());
-      for (IModule runtimeModule : l.getRuntimeDependOnModules()) {
-        doCollect(runtimeModule);        
+      if (myVisited.contains(current)) {
+        return;
       }
-    }
 
-    if (current instanceof Language) {
-      Language l = (Language) current;
-      for (Language extended : l.getExtendedLanguages()) {
-        doCollect(extended);
+      myVisited.add(current);
+      addPart(current.getClassPathItem());
+
+      for (IModule dep : current.getAllDependOnModules()) {
+        doCollect(dep);
       }
+
+      for (Language l : current.getAllUsedLanguages()) {
+        myStack.push(l);
+        addPart(l.getLanguageRuntimeClasspath());
+        for (IModule runtimeModule : l.getRuntimeDependOnModules()) {
+          doCollect(runtimeModule);
+        }        
+        myStack.pop();
+      }
+
+      if (current instanceof Language) {
+        Language l = (Language) current;
+        for (Language extended : l.getExtendedLanguages()) {
+          doCollect(extended);
+        }
+      }
+    } finally {
+      myStack.pop();
+    }
+  }
+
+  private void addPart(IClassPathItem item) {
+    for (IClassPathItem leaf : item.flatten()) {
+      myResult.add(leaf);
+      myPaths.put(leaf, new ArrayList<IModule>(myStack));
     }
   }
 }

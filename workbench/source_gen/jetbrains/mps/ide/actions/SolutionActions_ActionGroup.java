@@ -13,6 +13,7 @@ import jetbrains.mps.ide.actions.module.GenerateAllModelsInModuleAction_false;
 import jetbrains.mps.ide.actions.solution.GenerateTextFromAllModelsInSolutionAction;
 import jetbrains.mps.ide.modelchecker.CheckSolutionAction;
 import jetbrains.mps.ide.actions.solution.OptimizeSolutionImportsAction;
+import jetbrains.mps.ide.classpath.AnalyzeClassPathAction;
 import jetbrains.mps.ide.actions.make.MakeModuleAction;
 import jetbrains.mps.ide.actions.make.RebuildModuleAction;
 import jetbrains.mps.ide.actions.make.CleanModuleAction;
@@ -40,6 +41,7 @@ public class SolutionActions_ActionGroup extends BaseActionGroup {
       this.add(new GenerateTextFromAllModelsInSolutionAction(), this);
       this.add(new CheckSolutionAction(), this);
       this.add(new OptimizeSolutionImportsAction(), this);
+      this.add(new AnalyzeClassPathAction(), this);
       this.addSeparator();
       this.add(new MakeModuleAction(), this);
       this.add(new RebuildModuleAction(), this);

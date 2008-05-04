@@ -8,6 +8,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.module.SetModuleFolderAction;
 import jetbrains.mps.ide.actions.project.AddModuleToProjectAction;
 import jetbrains.mps.ide.actions.project.RemoveModuleFromProjectAction;
+import jetbrains.mps.ide.classpath.AnalyzeClassPathAction;
 import jetbrains.mps.ide.actions.devkit.DevKitPropertiesAction;
 import jetbrains.mps.ide.action.Label;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
@@ -25,6 +26,7 @@ public class DevkitActions_ActionGroup extends BaseActionGroup {
       this.addSeparator();
       this.add(new AddModuleToProjectAction(), this);
       this.add(new RemoveModuleFromProjectAction(), this);
+      this.add(new AnalyzeClassPathAction(), this);
       this.addSeparator();
       this.add(new DevKitPropertiesAction(), this);
       this.add(new Label(DevkitActions_ActionGroup.LABEL_ID_VCS), this);
