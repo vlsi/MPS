@@ -116,7 +116,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
         e.printStackTrace();
       }
     } else {
-      myRuntimeEnvironment.add(new RBundle(moduleUID, new BytecodeLocator() {
+      RBundle bundle = new RBundle(moduleUID, new BytecodeLocator() {
         public byte[] find(String fqName) {
           return null;
         }
@@ -124,7 +124,9 @@ public class ClassLoaderManager implements IComponentLifecycle {
         public URL findResource(String name) {
           return null;
         }
-      }));
+      });
+      myRuntimeEnvironment.add(bundle);
+      myRuntimeEnvironment.init(bundle);
     }
   }
 
@@ -191,7 +193,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
 
   public void updateClassPath() {
     for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
-      if (!myOSGIBundles.containsKey(m.getModuleUID())) {
+      if (!containsBundle(m.getModuleUID())) {
         addModule(m.getModuleUID());
       }
     }
@@ -217,6 +219,14 @@ public class ClassLoaderManager implements IComponentLifecycle {
 
     for (IModule m : myModuleRepository.getAllModules()) {
       m.updateClassPath();
+    }
+  }
+
+  private boolean containsBundle(String uid) {
+    if (myUseOSGI) {
+      return myOSGIBundles.containsKey(uid);
+    } else {
+      return myRuntimeEnvironment.get(uid) != null;
     }
   }
 
