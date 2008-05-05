@@ -15,6 +15,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="6" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.actionsLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
@@ -186,6 +187,7 @@
       <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1196434661488" resolveInfo="ISubstitute_String" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1196932722385">
+        <link role="concept" targetNodeId="1.1196434649611" resolveInfo="Substitute_SimpleString" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SimpleItemSubstitutePart" id="1196932735667">
           <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_Substitute_Handler" id="1196932735668">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196932735669">
@@ -241,6 +243,7 @@
       <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1196433731217" resolveInfo="IRightTransform_String" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1196932886682">
+        <link role="concept" targetNodeId="1.1196433923911" resolveInfo="RightTransform_SimpleString" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SimpleItemSubstitutePart" id="1196932890027">
           <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_Substitute_Handler" id="1196932890028">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196932890029">
