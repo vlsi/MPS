@@ -9,6 +9,8 @@ import jetbrains.mps.ide.findusages.model.holders.ModuleHolder;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.DevKit;
@@ -25,6 +27,7 @@ public class LanguageUsagesFinder extends BaseFinder {
   private static final String DEPENDENT_MODULES = "dependent modules";
   private static final String EXTENDING_LANGUAGES = "extending languages";
   private static final String EXPORTED_BY = "exported by";
+  private static final String MODELS_WRITTEN_IN_LANGUAGE = "models written in language";
 
   public SearchResults find(SearchQuery query, IAdaptiveProgressMonitor monitor) {
     SearchResults searchResults = new SearchResults();
@@ -39,6 +42,9 @@ public class LanguageUsagesFinder extends BaseFinder {
     }
     Language language = (Language) searchedModule;
     for (IModule module : MPSModuleRepository.getInstance().getAllModules()) {
+      if (monitor.isCanceled()) {
+        return searchResults;
+      }
       if (module instanceof Solution) {
         collectUsagesInSolution(language, (Solution)module, searchResults);
       }
@@ -58,6 +64,7 @@ public class LanguageUsagesFinder extends BaseFinder {
     }
     if (solution.getAllUsedLanguages().contains(searchedLanguage)) {
       searchResults.getSearchResults().add(new SearchResult<Solution>(solution, USED_BY));
+      collectUsagesInModels(searchedLanguage, solution, searchResults);
     }
   }
 
@@ -67,6 +74,7 @@ public class LanguageUsagesFinder extends BaseFinder {
     }
     if (language.getUsedLanguages().contains(searchedLanguage)) {
       searchResults.getSearchResults().add(new SearchResult<Language>(language, USED_BY));
+      collectUsagesInModels(searchedLanguage, language, searchResults);
     }
     if (language.getDependOnModules().contains(searchedLanguage)) {
       searchResults.getSearchResults().add(new SearchResult<Language>(language, DEPENDENT_MODULES));
@@ -79,6 +87,15 @@ public class LanguageUsagesFinder extends BaseFinder {
     }
     if (devKit.getDependOnModules().contains(searchedLanguage)) {
       searchResults.getSearchResults().add(new SearchResult<DevKit>(devKit, DEPENDENT_MODULES));
+    }
+  }
+
+  private void collectUsagesInModels(Language searchedLanguage, IModule owner, SearchResults searchResults) {
+    for (SModelDescriptor modelDescriptor : owner.getOwnModelDescriptors()) {
+      if (modelDescriptor.getSModel().hasLanguage(searchedLanguage.getNamespace())) {
+        SModel model = modelDescriptor.getSModel();
+        searchResults.getSearchResults().add(new SearchResult<SModel>(model, MODELS_WRITTEN_IN_LANGUAGE));
+      }
     }
   }
 }
