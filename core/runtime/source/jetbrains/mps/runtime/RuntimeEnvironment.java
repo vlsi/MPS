@@ -49,6 +49,10 @@ public class RuntimeEnvironment {
     return myBundles.get(name);
   }
 
+  public Set<RBundle> getBundles() {
+    return new HashSet<RBundle>(myBundles.values());
+  }
+
   public RuntimeEnvironment add(RBundle... bundles) {
     for (RBundle bundle : bundles) {
       assert !myBundles.containsKey(bundle.getName());
