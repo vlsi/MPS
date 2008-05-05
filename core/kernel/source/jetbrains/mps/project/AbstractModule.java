@@ -54,6 +54,7 @@ public abstract class AbstractModule implements IModule {
     updateClassPath();
   }
 
+
   public void onModelLoad() {
     boolean save = false;
 
@@ -67,15 +68,24 @@ public abstract class AbstractModule implements IModule {
       visited.add(e.getPath());
     }
 
-    boolean setModuleDescriptor = false;
+    boolean setModuleDescriptor = convertRenamedDependencies();
 
+    if (setModuleDescriptor && !isPackaged()) {
+      setModuleDescriptor(getModuleDescriptor());
+    }
+    if ((save || setModuleDescriptor) && !isPackaged()) {
+      save();
+    }
+  }
+
+  protected boolean convertRenamedDependencies() {
+    boolean setModuleDescriptor = false;
     for (Dependency dependency : getDependOn()) {
       String moduleUID = dependency.getModuleUID();
       IModule m = MPSModuleRepository.getInstance().getModuleByUID(moduleUID);
       if (m == null) {
         ModuleStub moduleStub = MPSModuleRepository.getInstance().getModuleStubByUID(moduleUID);
         if (moduleStub != null) {
-          save = true;
           setModuleDescriptor = true;
           renameModuleImport(moduleUID, moduleStub.getActualModuleId(), false);
         }
@@ -87,19 +97,12 @@ public abstract class AbstractModule implements IModule {
       if (language == null) {
         ModuleStub moduleStub = MPSModuleRepository.getInstance().getModuleStubByUID(languageNamespace);
         if (moduleStub != null) {
-          save = true;
           setModuleDescriptor = true;
           renameUsedLanguage(languageNamespace, moduleStub.getActualModuleId(), false);
         }
       }
     }
-
-    if (setModuleDescriptor && !isPackaged()) {
-      setModuleDescriptor(getModuleDescriptor());
-    }
-    if (save && !isPackaged()) {
-      save();
-    }
+    return setModuleDescriptor;
   }
 
   public boolean isPackaged() {

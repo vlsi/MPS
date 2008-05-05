@@ -5,12 +5,10 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
 import jetbrains.mps.ide.BootstrapLanguagesManager;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.logging.refactoring.structure.Refactoring;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.Dependency;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.*;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
@@ -310,6 +308,47 @@ public class Language extends AbstractModule implements Marshallable<Language> {
         fireModuleInitialized();
       }
     }
+  }
+
+  protected boolean convertRenamedDependencies() {
+    boolean setModuleDescriptor = super.convertRenamedDependencies();
+
+    for (String languageNamespace : getExtendedLanguageNamespaces()) {
+      Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
+      if (language == null) {
+        ModuleStub moduleStub = MPSModuleRepository.getInstance().getModuleStubByUID(languageNamespace);
+        if (moduleStub != null) {
+          setModuleDescriptor = true;
+          renameExtendedLanguage(languageNamespace, moduleStub.getActualModuleId(), false);
+        }
+      }
+    }
+    return setModuleDescriptor;
+  }
+
+  private ModuleDescriptor renameExtendedLanguage(final String oldLanguageNamespace, final String newLanguageNamespace, final boolean setModuleDescriptor) {
+    return CommandProcessor.instance().executeCommand(new Calculable<ModuleDescriptor>() {
+      public ModuleDescriptor calculate() {
+        LanguageDescriptor ld = getLanguageDescriptor();
+        if (ld == null) return null;
+
+        for (LanguageReference r : ld.getExtendedLanguages()) {
+          if (oldLanguageNamespace.equals(r.getName())) {
+            ld.removeChild(r);
+          }
+        }
+
+        LanguageReference ref = LanguageReference.newInstance(ld.getModel());
+        ref.setName(newLanguageNamespace);
+        ld.addExtendedLanguage(ref);
+
+        if (setModuleDescriptor) {
+          setModuleDescriptor(ld);
+          save();
+        }
+        return ld;
+      }
+    });
   }
 
   public List<Dependency> getDependOn() {
