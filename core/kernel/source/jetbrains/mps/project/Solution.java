@@ -7,7 +7,6 @@ import jetbrains.mps.projectLanguage.structure.SolutionDescriptor;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
@@ -48,8 +47,8 @@ public class Solution extends AbstractModule {
     SModelRepository.getInstance().registerModelDescriptor(mySolutionDescriptor.getModel().getModelDescriptor(), this);
   }
 
-  public void convert() {
-    super.convert();
+  public void onModelLoad() {
+    super.onModelLoad();
   }
 
 

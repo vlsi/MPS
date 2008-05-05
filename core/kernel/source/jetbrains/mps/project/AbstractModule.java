@@ -54,7 +54,7 @@ public abstract class AbstractModule implements IModule {
     updateClassPath();
   }
 
-  public void convert() {
+  public void onModelLoad() {
     boolean save = false;
 
     Set<String> visited = new HashSet<String>();
@@ -67,6 +67,36 @@ public abstract class AbstractModule implements IModule {
       visited.add(e.getPath());
     }
 
+    boolean setModuleDescriptor = false;
+
+    for (Dependency dependency : getDependOn()) {
+      String moduleUID = dependency.getModuleUID();
+      IModule m = MPSModuleRepository.getInstance().getModuleByUID(moduleUID);
+      if (m == null) {
+        ModuleStub moduleStub = MPSModuleRepository.getInstance().getModuleStubByUID(moduleUID);
+        if (moduleStub != null) {
+          save = true;
+          setModuleDescriptor = true;
+          renameModuleImport(moduleUID, moduleStub.getActualModuleId(), false);
+        }
+      }
+    }
+
+    for (String languageNamespace : getUsedLanguagesNamespaces()) {
+      Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
+      if (language == null) {
+        ModuleStub moduleStub = MPSModuleRepository.getInstance().getModuleStubByUID(languageNamespace);
+        if (moduleStub != null) {
+          save = true;
+          setModuleDescriptor = true;
+          renameUsedLanguage(languageNamespace, moduleStub.getActualModuleId(), false);
+        }
+      }
+    }
+
+    if (setModuleDescriptor && !isPackaged()) {
+      setModuleDescriptor(getModuleDescriptor());
+    }
     if (save && !isPackaged()) {
       save();
     }
@@ -647,7 +677,7 @@ public abstract class AbstractModule implements IModule {
     });
   }
 
-  private ModuleDescriptor addUsedLanguage(final String oldLanguageNamespace, final String newLanguageNamespace, final boolean setModuleDescriptor) {
+  private ModuleDescriptor renameUsedLanguage(final String oldLanguageNamespace, final String newLanguageNamespace, final boolean setModuleDescriptor) {
     return CommandProcessor.instance().executeCommand(new Calculable<ModuleDescriptor>() {
       public ModuleDescriptor calculate() {
         ModuleDescriptor md = getModuleDescriptor();

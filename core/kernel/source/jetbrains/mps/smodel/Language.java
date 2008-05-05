@@ -20,7 +20,6 @@ import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.runtime.BytecodeLocator;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -28,7 +27,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.*;
 import java.lang.reflect.Constructor;
-import java.net.URL;
 
 
 public class Language extends AbstractModule implements Marshallable<Language> {
@@ -294,13 +292,13 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     }
   }
 
-  public void convert() {
-    super.convert();
+  public void onModelLoad() {
+    super.onModelLoad();
 
     validateExtends();
 
     for (Generator g : getGenerators()) {
-      g.convert();
+      g.onModelLoad();
     }
   }
 

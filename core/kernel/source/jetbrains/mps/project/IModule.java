@@ -71,7 +71,7 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   void invalidateCaches();
   void updateClassPath();
   void save();
-  void convert();
+  void onModelLoad();
   boolean isPackaged();
 
   void dispose();

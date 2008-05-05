@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Mapper;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -181,8 +180,8 @@ public class DevKit extends AbstractModule {
     DescriptorsPersistence.saveDevKitDescriptor(getModuleDescriptor(), myDescriptorFile);
   }
 
-  public void convert() {
-    super.convert();
+  public void onModelLoad() {
+    super.onModelLoad();
   }
 
   public String getName() {

@@ -174,6 +174,11 @@ public class MPSModuleRepository implements IComponentLifecycle {
     return modules.get(0);
   }
 
+  public ModuleStub getModuleStubByUID(String moduleUID) {
+    return null;
+    //todo implement
+  }
+
   public <TM extends IModule> TM registerModule(IFile file, MPSModuleOwner owner, Class<TM> cls) {
     myDirtyFlag = true;
     String canonicalPath = file.getCanonicalPath();

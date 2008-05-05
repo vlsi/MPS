@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import org.jdom.Element;
 
 import java.util.*;
@@ -149,7 +148,7 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
 
   private void convert(final MPSModuleOwner owner) {
     for (IModule m : MPSModuleRepository.getInstance().getModules(owner)) {
-      m.convert();
+      m.onModelLoad();
     }
   }
 
