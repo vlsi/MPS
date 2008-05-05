@@ -26,9 +26,13 @@ public class MPSModuleRepository implements IComponentLifecycle {
   private Map<String, IModule> myFileToModuleMap = new HashMap<String, IModule>();
   private Map<String, List<IModule>> myUIDToModulesMap = new HashMap<String, List<IModule>>();
 
+  private Map<String, ModuleStub> myFileToModuleStubMap = new HashMap<String, ModuleStub>();
+  private Map<String, List<ModuleStub>> myUIDToModuleStubsMap = new HashMap<String, List<ModuleStub>>();
+  private ManyToManyMap<ModuleStub, MPSModuleOwner> myModuleStubToOwners = new ManyToManyMap<ModuleStub, MPSModuleOwner>();
+
   private Set<IModule> myModules = new HashSet<IModule>();
 
-  private ManyToManyMap<IModule, MPSModuleOwner> myModuleToOwners = new ManyToManyMap<IModule, MPSModuleOwner>();    
+  private ManyToManyMap<IModule, MPSModuleOwner> myModuleToOwners = new ManyToManyMap<IModule, MPSModuleOwner>();
 
   private List<ModuleRepositoryListener> myModuleListeners = new ArrayList<ModuleRepositoryListener>();
   private List<RepositoryListener> myListeners = new ArrayList<RepositoryListener>();
@@ -175,8 +179,62 @@ public class MPSModuleRepository implements IComponentLifecycle {
   }
 
   public ModuleStub getModuleStubByUID(String moduleUID) {
-    return null;
-    //todo implement
+    List<ModuleStub> modules = myUIDToModuleStubsMap.get(moduleUID);
+    if (modules == null || modules.isEmpty()) return null;
+    return modules.get(0);
+  }
+
+  public ModuleStub registerModuleStub(IFile file, MPSModuleOwner owner) {
+    myDirtyFlag = true;
+    String canonicalPath = file.getCanonicalPath();
+    ModuleStub moduleStub = myFileToModuleStubMap.get(canonicalPath);
+    if (moduleStub == null) {
+      moduleStub = ModuleStub.newInstance(file, owner);
+    } else {
+      //todo
+      myModuleStubToOwners.addLink(moduleStub, owner);
+    }
+    //fireRepositoryChanged();
+    return moduleStub;
+  }
+
+  public void addModuleStub(ModuleStub moduleStub, MPSModuleOwner owner) {
+    myDirtyFlag = true;
+    if (myModuleStubToOwners.contains(moduleStub, owner)) {
+      throw new RuntimeException("Couldn't add module stub\"" + moduleStub.getOldModuleId() + "\" : this module stub is already registered with this very owner: " + owner);
+    }
+    IFile descriptorFile = moduleStub.getDescriptorFile();
+
+    String canonicalDescriptorPath;
+    if (descriptorFile == null) {
+      canonicalDescriptorPath = null;
+    } else {
+      canonicalDescriptorPath = descriptorFile.getCanonicalPath();
+    }
+    if (canonicalDescriptorPath != null && !myFileToModuleStubMap.containsKey(canonicalDescriptorPath)) {
+      myFileToModuleStubMap.put(canonicalDescriptorPath, moduleStub);
+    }
+
+    putModuleStubWithUID(moduleStub.getOldModuleId(), moduleStub);
+
+    myModuleStubToOwners.addLink(moduleStub, owner);
+
+    //fireModuleAdded(moduleStub);
+  }
+
+  private void putModuleStubWithUID(String moduleUID, ModuleStub moduleStub) {
+    List<ModuleStub> moduleStubsWithUID = myUIDToModuleStubsMap.get(moduleUID);
+    if (moduleStubsWithUID == null) {
+      moduleStubsWithUID = new ArrayList<ModuleStub>(1);
+      myUIDToModuleStubsMap.put(moduleUID, moduleStubsWithUID);
+    }
+    if (moduleStubsWithUID.size() > 1) {
+      LOG.error("can't add module " + moduleUID + " : module with the same UID exists", moduleStubsWithUID.get(0));
+    }
+    if (moduleStubsWithUID.size() == 1 && moduleStubsWithUID.get(0) != moduleStub) {
+      LOG.error("can't add module " + moduleUID + " : module with the same UID exists", moduleStubsWithUID.get(0));
+    }
+    moduleStubsWithUID.add(moduleStub);
   }
 
   public <TM extends IModule> TM registerModule(IFile file, MPSModuleOwner owner, Class<TM> cls) {
@@ -261,14 +319,15 @@ public class MPSModuleRepository implements IComponentLifecycle {
     if (!myDirtyFlag) return;
 
     myDirtyFlag = false;
-    for (IModule m : getModelsToBeRemoved(new HashSet<MPSModuleOwner>())) {
+    for (IModule m : getModulesToBeRemoved(new HashSet<MPSModuleOwner>())) {
       fireBeforeModuleRemoved(m);
       m.dispose();
       removeModule(m);
     }
+    //todo: do the similar thing with module stubs
   }
 
-  public Set<IModule> getModelsToBeRemoved(Set<MPSModuleOwner> willBeReleased) {
+  public Set<IModule> getModulesToBeRemoved(Set<MPSModuleOwner> willBeReleased) {
     Set<MPSModuleOwner> rootOwners = new HashSet<MPSModuleOwner>();
     for (IModule m : myModules) {
       for (MPSModuleOwner owner : myModuleToOwners.getByFirst(m)) {
@@ -342,7 +401,7 @@ public class MPSModuleRepository implements IComponentLifecycle {
         readModuleDescriptors(moduleRoot, owner);
       } else {
         String error = "Couldn't load modules from " + moduleRoot.getAbsolutePath() + " for owner " + owner +
-                "\nDirectory doesn't exist: ";
+          "\nDirectory doesn't exist: ";
         LOG.error(error);
       }
     }
@@ -368,7 +427,7 @@ public class MPSModuleRepository implements IComponentLifecycle {
     }
     List<IFile> dirs = files;
     for (IFile childDir : dirs) {
-      if (childDir.getName().endsWith(".svn")) continue;      
+      if (childDir.getName().endsWith(".svn")) continue;
       readModuleDescriptors(childDir, owner);
     }
   }
@@ -408,7 +467,7 @@ public class MPSModuleRepository implements IComponentLifecycle {
     }
     modules.add(l);
     myFileToModuleMap.put(l.newDescriptorFileByNewName(newUID).getCanonicalPath(), l);
-  }                 
+  }
 
   public Language getLanguageSafe(String namespace) {
     Language result = getLanguage(namespace);
