@@ -31,9 +31,6 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-/**
- * @author Kostik
- */
 public class ClassLoaderManager implements IComponentLifecycle {
   private static Logger LOG = Logger.getLogger(ClassLoaderManager.class);
 
@@ -243,11 +240,13 @@ public class ClassLoaderManager implements IComponentLifecycle {
 
   private RuntimeEnvironment createRuntimeEnvironment() {
     final Set<String> excludedPackages = new HashSet<String>();
+    final Set<String> generatorPrefixes = new HashSet<String>();
     for (Language l : BootstrapLanguagesManager.getInstance().getLanguagesUsedInCore()) {
       for (LanguageAspect aspect : LanguageAspect.values()) {
         if (aspect == LanguageAspect.STRUCTURE) continue;
         excludedPackages.add(l.getNamespace() + "." + aspect.getName());
       }
+      generatorPrefixes.add(l.getNamespace() + ".generator");
     }
 
     return new RuntimeEnvironment() {
@@ -256,6 +255,13 @@ public class ClassLoaderManager implements IComponentLifecycle {
         if (excludedPackages.contains(pack)) {
           return null;
         }
+
+        for (String prefix : generatorPrefixes) {
+          if (cls.startsWith(prefix)) {
+            return null;
+          }
+        }
+
         return getFromParent(cls);
       }
     };

@@ -99,5 +99,6 @@ public class ClasspathCollector {
       myResult.add(leaf);
       myPaths.put(leaf, new ArrayList<IModule>(myStack));
     }
+    
   }
-}
+}                                             
