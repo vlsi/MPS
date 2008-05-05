@@ -90,7 +90,7 @@ public class NameUtil {
     for (int i = source.length() - 1; i >= 0; i--) {
       char c = source.charAt(i);
       current.insert(0, c);
-      if (i>0 && Character.isUpperCase(c)) {
+      if (i > 0 && Character.isUpperCase(c)) {
         result.add(decapitalize(current.toString()));
         //current = new StringBuffer();
       }
@@ -146,23 +146,15 @@ public class NameUtil {
   }
 
   public static String namespaceFromConceptFQName(String fqName) {
-    if (fqName == null) {
-      return fqName;
+    int offset = fqName.lastIndexOf(".structure.");
+    if (offset > 0) {
+      return fqName.substring(0, offset);
     }
-    int offset = fqName.lastIndexOf('.');
-    if (offset < 0) {
-      return "";
-    }
-    String namespace = fqName.substring(0, offset);
-    int i = namespace.lastIndexOf(".structure");
-    if (i >= 0 && namespace.endsWith(".structure")) {
-      namespace = namespace.substring(0, i);
-    }
-    return namespace;
+    return "";
   }
 
   public static String conceptFQNameFromNamespaceAndShortName(String namespace, String shortName) {
-    return namespace+".structure."+shortName;
+    return namespace + ".structure." + shortName;
   }
 
   public static String longNameFromNamespaceAndShortName(String namespace, String name) {
@@ -192,7 +184,7 @@ public class NameUtil {
     return compactNamespace(node.getModel().getLongName()) + "." + name;
   }
 
-  public static String compactNodeFQName(INodeAdapter a) {        
+  public static String compactNodeFQName(INodeAdapter a) {
     return compactNodeFQName(BaseAdapter.fromAdapter(a));
   }
 
@@ -205,7 +197,7 @@ public class NameUtil {
   public static String convertToMetaString(String s) {
     if (s == null) return null;
     return s.replace("\\", "\\\\").replace("\"", "\\\"");
-  }                            
+  }
 
   public static String toValidIdentifier(String s) {
     if (VALID_IDENTIFIER_PATTERN.matcher(s).matches()) {
@@ -256,8 +248,9 @@ public class NameUtil {
 
   /**
    * Strips optional quotes from the beggining and ending of the quotedString.
-   * @param quotedString string to strip quotes.
-   * @param optionalOpenQuote optional open quote. If quotedString starts with it then it will be stripped.
+   *
+   * @param quotedString       string to strip quotes.
+   * @param optionalOpenQuote  optional open quote. If quotedString starts with it then it will be stripped.
    * @param optionalCloseQuote optional close quote. If quotedString ends with it then it will be stripped.
    * @return quotedString with stripped quotes.
    */
