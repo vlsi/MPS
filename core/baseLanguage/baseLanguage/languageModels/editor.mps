@@ -24,6 +24,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="72" />
   <import index="17" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="18" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -13756,7 +13757,7 @@
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198519535919">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" id="1198519626925">
-          <link role="constructorDeclaration" targetNodeId="61.~ChooseItemWindow.&lt;init&gt;(java.awt.Frame,java.lang.String,java.lang.Object[])" resolveInfo="ChooseItemWindow" />
+          <link role="constructorDeclaration" targetNodeId="61.~ChooseItemWindow.&lt;init&gt;(java.awt.Frame,java.lang.Object[],jetbrains.mps.ide.ChooseItemComponent)" resolveInfo="ChooseItemWindow" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1198519630318">
             <link role="variableDeclaration" targetNodeId="1198519543764" resolveInfo="frame" />
           </node>
