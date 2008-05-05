@@ -1443,13 +1443,6 @@
         <root url="jar://$PROJECT_DIR$/lib/log4j/log4j-1.2.14-src.zip!/" />
       </SOURCES>
     </library>
-    <library name="Servlet-API">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/servlet-api/servlet-api.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
     <library name="Eclipse-compiler">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/eclipse-compiler/ecj.jar!/" />
@@ -1457,15 +1450,6 @@
       <JAVADOC />
       <SOURCES>
         <root url="jar://$PROJECT_DIR$/lib/eclipse-compiler/ecjsrc.zip!/" />
-      </SOURCES>
-    </library>
-    <library name="freemarker">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/freemarker/freemarker-2.3.11.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/freemarker/freemarker-2.3.11-src.zip!/" />
       </SOURCES>
     </library>
     <library name="Annotations">
@@ -1493,14 +1477,6 @@
         <root url="jar://$PROJECT_DIR$/lib/commons-logging/commons-logging-1.1-src.jar!/" />
       </SOURCES>
     </library>
-    <library name="commons-email">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/commons-email/mail.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/commons-email/activation.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
     <library name="spring">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/spring/spring-support.jar!/" />
@@ -1525,28 +1501,6 @@
         <root url="jar://$PROJECT_DIR$/lib/joda-time/joda-time-1.4-src-ide.zip!/" />
       </SOURCES>
     </library>
-    <library name="commons-io">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/commons-io/commons-io-1.3.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/commons-io/commons-io-1.3-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="httpunit">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/httpunit/httpunit-1.6.2.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/httpunit/nekohtml.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/httpunit/js.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/httpunit/xmlParserAPIs.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/httpunit/xercesImpl.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/httpunit/httpunit-1.6.2-src.zip!/" />
-      </SOURCES>
-    </library>
     <library name="stax">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/stax/stax-api-1.0.jar!/" />
@@ -1566,15 +1520,6 @@
         <root url="jar://$PROJECT_DIR$/lib/httpclient/httpclient-src.zip!/" />
       </SOURCES>
     </library>
-    <library name="smack">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/smack/smack.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/smack/smackx-debug.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/smack/smackx.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
     <library name="htmlparser">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/htmlparser/filterbuilder.jar!/" />
@@ -1586,51 +1531,6 @@
       <SOURCES>
         <root url="jar://$PROJECT_DIR$/lib/htmlparser/src.zip!/src" />
       </SOURCES>
-    </library>
-    <library name="quartz">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/quartz/commons-collections-3.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/quartz/jta.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/quartz/quartz-1.6.0-src.zip!/" />
-        <root url="jar://$PROJECT_DIR$/lib/quartz/quartz-1.6.0.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
-    <library name="commons-fileupload">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/commons-fileupload/commons-fileupload-1.2.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/commons-fileupload/commons-fileupload-1.2-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="jetty">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/jetty/jetty-6.1.5.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/jetty/jetty-util-6.1.5.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/servlet-api/servlet-api.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/jetty/jetty-util-6.1.5-src.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/jetty/jetty-6.1.5-src.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Commons Codecs">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/commons-codecs/commons-codec-1.3.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
-    <library name="BerkeleyDB JE">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/platform/dnq/runtime/lib/je-3.2.44.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
     </library>
     <library name="Equinox">
       <CLASSES>
@@ -1750,22 +1650,6 @@
       <SOURCES />
       <jarDirectory url="file://$PROJECT_DIR$/lib/ant-1.7.0/lib" recursive="false" />
     </library>
-    <library name="Trove">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/platform/dnq/runtime/lib/trove4j.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
-    <library name="Lucene">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/platform/dnq/runtime/lib/lucene-analyzers-2.1.0.jar!/" />
-        <root url="jar://$PROJECT_DIR$/platform/dnq/runtime/lib/lucene-core-2.1.0.jar!/" />
-        <root url="jar://$PROJECT_DIR$/platform/dnq/runtime/lib/lucene-snowball-2.1.0.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
     <library name="Beansbinding">
       <CLASSES>
         <root url="file://$PROJECT_DIR$/lib/beansbinding" />
@@ -1775,15 +1659,6 @@
         <root url="jar://$PROJECT_DIR$/lib/beansbinding/beansbinding-1.2.1-src.zip!/src" />
       </SOURCES>
       <jarDirectory url="file://$PROJECT_DIR$/lib/beansbinding" recursive="false" />
-    </library>
-    <library name="mime-util">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/mime-util/mime-util.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/mime-util/mime-util-src.jar!/" />
-      </SOURCES>
     </library>
     <library name="SVNKit">
       <CLASSES>
