@@ -23,14 +23,13 @@ public class ModelScope implements IScope {
     return myModelDescriptor;
   }
 
-  public SModelDescriptor getModelDescriptor(@NotNull SModelUID modelUID) {
+  public SModelDescriptor getModelDescriptor(SModelUID modelUID) {
     if (myScope.getModelDescriptor(modelUID) != myModelDescriptor) {
       return null;
     }
     return myModelDescriptor;
   }
 
-  @NotNull
   public List<SModelDescriptor> getModelDescriptors() {
     List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
     if (myScope.getModelDescriptors().contains(myModelDescriptor)) {
@@ -39,29 +38,27 @@ public class ModelScope implements IScope {
     return result;
   }
 
-  public Language getLanguage(@NotNull String languageNamespace) {
+  public Language getLanguage(String languageNamespace) {
     return myScope.getLanguage(languageNamespace);
   }
 
-  public boolean isVisibleLanguage(@NotNull String languageNamespace) {
+  public boolean isVisibleLanguage(String languageNamespace) {
     return myScope.isVisibleLanguage(languageNamespace);
   }
 
-  @NotNull
   public List<Language> getVisibleLanguages() {
     return myScope.getVisibleLanguages();
   }
 
-  @NotNull
   public List<DevKit> getVisibleDevkits() {
     return myScope.getVisibleDevkits();
   }
 
-  public DevKit getDevKit(@NotNull String devKitNamespace) {
+  public DevKit getDevKit(String devKitNamespace) {
     return myScope.getDevKit(devKitNamespace);
   }
 
-  public boolean isVisibleDevKit(@NotNull String devKitNamespace) {
+  public boolean isVisibleDevKit(String devKitNamespace) {
     return myScope.isVisibleDevKit(devKitNamespace);
   }
 

@@ -8,13 +8,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Sep 9, 2005
- * Time: 2:41:47 PM
- * To change this template use File | Settings | File Templates.
- */
 public class GlobalScope implements IScope {
   private static GlobalScope myInstance;
 
@@ -32,69 +25,61 @@ public class GlobalScope implements IScope {
     return "global scope";
   }
 
-  public Language getLanguage(@NotNull String languageNamespace) {
+  public Language getLanguage(String languageNamespace) {
     Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
     return language;
   }
 
-  public boolean isVisibleLanguage(@NotNull String languageNamespace) {
+  public boolean isVisibleLanguage(String languageNamespace) {
     return getLanguage(languageNamespace) != null;
   }
 
-  @NotNull
   public List<Language> getVisibleLanguages() {
     return MPSModuleRepository.getInstance().getAllLanguages();
   }
 
-  @NotNull
   public List<DevKit> getVisibleDevkits() {
     return MPSModuleRepository.getInstance().getAllModules(DevKit.class); 
   }
 
-  @NotNull
   public List<Solution> getVisibleSolutions() {
     return MPSModuleRepository.getInstance().getAllModules(Solution.class);
   }
 
-  @NotNull
   public Set<IModule> getVisibleModules() {
     return new HashSet<IModule>(MPSModuleRepository.getInstance().getAllModules());
   }
 
-  @Nullable
-  public DevKit getDevKit(@NotNull String devKitNamespace) {
+  public DevKit getDevKit(String devKitNamespace) {
     for (DevKit dk : getVisibleDevkits()) {
       if (devKitNamespace.equals(dk.getName())) return dk;
     }
     return null;
   }
 
-  @Nullable
-  public Solution getSolution(@NotNull String solutionNamespace) {
+  public Solution getSolution(String solutionNamespace) {
     for (Solution s : getVisibleSolutions()) {
       if (solutionNamespace.equals(s.getSolutionDescriptor().getName())) return s;
     }
     return null;
   }
 
-  public boolean isVisibleDevKit(@NotNull String devKitNamespace) {
+  public boolean isVisibleDevKit(String devKitNamespace) {
     for (DevKit dk : getVisibleDevkits()) {
       if (dk.getName().equals(devKitNamespace)) return true;
     }
     return false;
   }
 
-  public SModelDescriptor getModelDescriptor(@NotNull SModelUID modelUID) {
+  public SModelDescriptor getModelDescriptor(SModelUID modelUID) {
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
     return modelDescriptor;
   }
 
-  @NotNull
-  public List<SModelDescriptor> getModelDescriptors(@NotNull String modelName) {
+  public List<SModelDescriptor> getModelDescriptors(String modelName) {
     return SModelRepository.getInstance().getModelDescriptorsByModelName(modelName);
   }
 
-  @NotNull
   public List<SModelDescriptor> getModelDescriptors() {
     return SModelRepository.getInstance().getAllModelDescriptors();
   }
