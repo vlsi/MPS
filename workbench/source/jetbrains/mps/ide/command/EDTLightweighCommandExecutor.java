@@ -11,7 +11,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 class EDTLightweighCommandExecutor extends Thread {
-  private static final int CHUNK_SIZE = 100;
+  private static final long MAX_TIME = 100;
 
   private static final Logger LOG = Logger.getLogger(EDTLightweighCommandExecutor.class); 
 
@@ -40,14 +40,10 @@ class EDTLightweighCommandExecutor extends Thread {
     }
   }
 
-  private List<Runnable> getToExecute() {
+  private Runnable getToExecute() {
     synchronized (myLock) {
-      List<Runnable> result = new ArrayList<Runnable>();
-      for (int i = 0; i < CHUNK_SIZE; i++) {
-        if (myToExecute.isEmpty()) break;
-        result.add(myToExecute.remove());
-      }
-      return result;
+      if (myToExecute.isEmpty()) return null;
+      return myToExecute.remove();
     }
   }
 
@@ -62,12 +58,12 @@ class EDTLightweighCommandExecutor extends Thread {
       public void run() {
         CommandProcessor.instance().tryToExecuteLightweightCommand(new Runnable() {
           public void run() {
-            for (Runnable r : getToExecute()) {
-              try {
-                r.run();
-              } catch (Throwable t) {
-                LOG.error(t);
-              }
+            long start = System.currentTimeMillis();
+            while (true) {
+              if (System.currentTimeMillis() - start > MAX_TIME) break;
+              Runnable command = getToExecute();
+              if (command == null) break;
+              command.run();
             }
           }
         });
