@@ -19,16 +19,7 @@
     <orderEntry type="library" exported="" name="asm" level="project" />
     <orderEntry type="library" name="commons-logging" level="project" />
     <orderEntry type="library" name="stax" level="project" />
-    <orderEntry type="library" exported="" name="Equinox" level="project" />
-    <orderEntry type="library" name="Eclipse FS" level="project" />
     <orderEntry type="library" name="Eclipse Configurator" level="project" />
-    <orderEntry type="library" name="Eclipse Registry" level="project" />
-    <orderEntry type="library" name="Eclipse Team" level="project" />
-    <orderEntry type="library" name="Eclipse Resources" level="project" />
-    <orderEntry type="library" name="Eclipse Runtime" level="project" />
-    <orderEntry type="library" name="Eclipse Jobs" level="project" />
-    <orderEntry type="library" name="Tigris SVN" level="project" />
-    <orderEntry type="library" name="Eclipse JDT" level="project" />
     <orderEntry type="library" exported="" name="Alloy" level="project" />
     <orderEntry type="module" module-name="baseLanguage" exported="" />
     <orderEntry type="module" module-name="collections-runtime" exported="" />

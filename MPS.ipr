@@ -1045,7 +1045,7 @@
         <option name="LOCAL" value="true" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Profile ">
-        <option name="myExternalizedOptions" value="&#10;additional-options=&#10;snapshots-dir=&#10;" />
+        <option name="myExternalizedOptions" value="&#13;&#10;additional-options=&#13;&#10;snapshots-dir=&#13;&#10;" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
@@ -1503,15 +1503,6 @@
       <JAVADOC />
       <SOURCES>
         <root url="jar://$PROJECT_DIR$/lib/htmlparser/src.zip!/src" />
-      </SOURCES>
-    </library>
-    <library name="Eclipse Configurator">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/equinox/org.eclipse.update.configurator_3.2.100.v20070615.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/equinox/org.eclipse.core.update.configurator-src.zip!/" />
       </SOURCES>
     </library>
     <library name="commons-lang">
