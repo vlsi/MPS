@@ -13,7 +13,6 @@
       <external-templates />
       <dependencies>
         <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
-        <dependency reexport="false">jetbrains.mps.webr.runtime</dependency>
       </dependencies>
       <usedLanguages>
         <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
