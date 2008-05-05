@@ -345,22 +345,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "elementsToTake", true);
   }
 
-  public static SNode sourceNodeQuery_1172668127591(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
-  }
-
-  public static SNode sourceNodeQuery_1172668158982(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "fromElement", true);
-  }
-
-  public static SNode sourceNodeQuery_1172668207797(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "toElement", true);
-  }
-
-  public static SNode sourceNodeQuery_1172668211097(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "fromElement", true);
-  }
-
   public static SNode sourceNodeQuery_1173950824211(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
   }
@@ -528,6 +512,22 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1208542076200(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return IOperation_Behavior.call_getOperand_1197028596169(_context.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1210015273035(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
+  }
+
+  public static SNode sourceNodeQuery_1210015273047(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "fromElement", true);
+  }
+
+  public static SNode sourceNodeQuery_1210015273057(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "fromElement", true);
+  }
+
+  public static SNode sourceNodeQuery_1210015273065(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "toElement", true);
   }
 
   public static List sourceNodesQuery_1200500184872(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
