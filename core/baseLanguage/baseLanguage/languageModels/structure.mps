@@ -184,6 +184,10 @@
       <property name="value" value="freestanding method" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1210015744002">
+      <property name="value" value="freestanding method is deprecated" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1209144793113" resolveInfo="deprecated_next_after_578" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068498886292">
     <property name="name" value="ParameterDeclaration" />

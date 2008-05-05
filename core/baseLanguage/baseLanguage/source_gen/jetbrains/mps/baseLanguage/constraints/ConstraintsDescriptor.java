@@ -18,7 +18,6 @@ public class ConstraintsDescriptor implements IModelConstraints {
     this.myConstraints.add(new VariableDeclaration_shortDescription_PropertyConstraint());
     this.myConstraints.add(new AnonymousClass_name_PropertyConstraint());
     this.myConstraints.add(new LocalVariableDeclaration_shortDescription_PropertyConstraint());
-    this.myConstraints.add(new MethodDeclaration_shortDescription_PropertyConstraint());
     this.myConstraints.add(new EnumConstantDeclaration_shortDescription_PropertyConstraint());
     this.myConstraints.add(new ConstructorDeclaration_name_PropertyConstraint());
     this.myConstraints.add(new Property_alias_PropertyConstraint());

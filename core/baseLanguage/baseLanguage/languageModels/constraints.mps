@@ -30,6 +30,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="48" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -3236,50 +3237,6 @@
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1159222148432" />
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1159222141788">
                 <link role="variableDeclaration" targetNodeId="1159222133715" resolveInfo="genericDeclaration" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178181705035">
-    <property name="package" value="method" />
-    <link role="concept" targetNodeId="1.1068390468204" />
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178181705036">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178181705037" />
-    </node>
-    <node role="properties" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint" id="1156242355492">
-      <link role="applicableProperty" targetNodeId="2.1156234966388" />
-      <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertyGetter" id="1156242404399">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1156242404400">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1156242418245">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1156245576982">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1156245827129">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332469549">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332444631">
-                    <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1170384239697">
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977964484">
-                        <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintsFunctionParameter_node" id="1170384222366" />
-                        <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetModelOperation" id="1170384228180" />
-                      </node>
-                    </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332444632">
-                      <link role="baseMethodDeclaration" targetNodeId="7.~SModel.getUID():jetbrains.mps.smodel.SModelUID" resolveInfo="getUID" />
-                    </node>
-                  </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332469550">
-                    <link role="baseMethodDeclaration" targetNodeId="7.~SModelUID.getLongName():java.lang.String" resolveInfo="getLongName" />
-                  </node>
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1156245588188">
-                  <property name="value" value=" in " />
-                </node>
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1156242499940">
-                <link role="classConcept" targetNodeId="11.~NodePresentationUtil" resolveInfo="NodePresentationUtil" />
-                <link role="baseMethodDeclaration" targetNodeId="11.~NodePresentationUtil.getAliasOrConceptName(jetbrains.mps.smodel.SNode):java.lang.String" resolveInfo="getAliasOrConceptName" />
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintsFunctionParameter_node" id="1156242522367" />
               </node>
             </node>
           </node>
