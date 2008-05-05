@@ -146,33 +146,41 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
       } else if (descriptorFile.exists()) {
         mySolutions.add((Solution) MPSModuleRepository.getInstance().registerSolution(descriptorFile, this));
       } else {
-        LOG.error("Couldn't load solution from: " + descriptorFile.getAbsolutePath() + " : file doesn't exist");
+        if (!tryToReadStub(path)) {
+          LOG.error("Couldn't load solution from: " + descriptorFile.getAbsolutePath() + " : file doesn't exist");
+        }
       }
     }
 
     // load languages
     myLanguages = new LinkedList<Language>();
     for (LanguagePath languagePath : CollectionUtil.iteratorAsIterable(myProjectDescriptor.projectLanguages())) {
-      IFile descriptorFile = FileSystem.getFile(languagePath.getPath());
+      String path = languagePath.getPath();
+      IFile descriptorFile = FileSystem.getFile(path);
       if (!descriptorFile.getName().endsWith(".mpl")) {
         LOG.error("Couldn't load language from: " + descriptorFile.getAbsolutePath() + " : '*.mpl' file expected");
       } else if (descriptorFile.exists()) {
         myLanguages.add(MPSModuleRepository.getInstance().registerLanguage(descriptorFile, this));
       } else {
-        LOG.error("Couldn't load language from: " + descriptorFile.getAbsolutePath() + " : file doesn't exist");
+        if (!tryToReadStub(path)) {
+          LOG.error("Couldn't load language from: " + descriptorFile.getAbsolutePath() + " : file doesn't exist");
+        }
       }
     }
 
     //load devkits
     myDevKits = new LinkedList<DevKit>();
     for (DevKitPath dk : myProjectDescriptor.getProjectDevkits()) {
-      IFile devKit = FileSystem.getFile(dk.getPath());
+      String path = dk.getPath();
+      IFile devKit = FileSystem.getFile(path);
       if (!devKit.getName().endsWith(".devkit")) {
         LOG.error("Couldn't load devkit from: " + devKit.getAbsolutePath() + " : '*.devkit' file expected");
       } else if (devKit.exists()) {
         myDevKits.add(MPSModuleRepository.getInstance().registerDevKit(devKit, this));
       } else {
-        LOG.error("Couldn't load devkit from: " + devKit.getAbsolutePath() + " : file doesn't exist");
+        if (!tryToReadStub(path)) {
+          LOG.error("Couldn't load devkit from: " + devKit.getAbsolutePath() + " : file doesn't exist");
+        }
       }
     }
 
@@ -185,6 +193,19 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
       } else {
         LOG.error("Can't find a global library " + name);
       }
+    }
+  }
+
+  private boolean tryToReadStub(String path) {
+    int index = path.lastIndexOf('.');
+    if (index < 0) return false;
+    String stubPath = path.substring(0, index) + ModuleStub.MODULE_STUB_EXTENSION;
+    IFile stubDescriptorFile = FileSystem.getFile(stubPath);
+    if (stubDescriptorFile.exists()) {
+      MPSModuleRepository.getInstance().registerModuleStub(stubDescriptorFile, this);
+      return true;
+    } else {
+      return false;
     }
   }
 
