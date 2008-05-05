@@ -14,7 +14,7 @@ public class Element extends ElementPart {
   public static String ATTRIBUTE = "attribute";
   public static String CONTENT = "content";
 
-  public  Element(SNode node) {
+  public Element(SNode node) {
     super(node);
   }
 

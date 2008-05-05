@@ -16,7 +16,7 @@ public class ElementPart extends BaseConcept implements INamedConcept {
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  ElementPart(SNode node) {
+  public ElementPart(SNode node) {
     super(node);
   }
 

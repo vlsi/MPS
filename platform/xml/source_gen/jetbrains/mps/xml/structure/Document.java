@@ -11,13 +11,13 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Document extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.xml.structure.Document";
-  public static String ROOT_ELEMENT = "rootElement";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String ROOT_ELEMENT = "rootElement";
 
-  public  Document(SNode node) {
+  public Document(SNode node) {
     super(node);
   }
 
@@ -29,14 +29,6 @@ public class Document extends BaseConcept implements INamedConcept {
     return Document.newInstance(sm, false);
   }
 
-
-  public Element getRootElement() {
-    return (Element)this.getChild(Document.ROOT_ELEMENT);
-  }
-
-  public void setRootElement(Element node) {
-    super.setChild(Document.ROOT_ELEMENT, node);
-  }
 
   public String getName() {
     return this.getProperty(Document.NAME);
@@ -68,6 +60,14 @@ public class Document extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(Document.VIRTUAL_PACKAGE, value);
+  }
+
+  public Element getRootElement() {
+    return (Element)this.getChild(Document.ROOT_ELEMENT);
+  }
+
+  public void setRootElement(Element node) {
+    super.setChild(Document.ROOT_ELEMENT, node);
   }
 
 }

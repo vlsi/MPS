@@ -17,7 +17,7 @@ public class Attribute extends BaseConcept implements INamedConcept {
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  Attribute(SNode node) {
+  public Attribute(SNode node) {
     super(node);
   }
 

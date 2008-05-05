@@ -11,7 +11,7 @@ public class Text extends ElementPart {
   public static final String concept = "jetbrains.mps.xml.structure.Text";
   public static String TEXT = "text";
 
-  public  Text(SNode node) {
+  public Text(SNode node) {
     super(node);
   }
 
