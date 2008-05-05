@@ -3,6 +3,7 @@ package jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.view.treeholder.path.PathItemRole;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
@@ -45,6 +46,10 @@ public class ModelNodeData extends BaseNodeData {
   }
 
   public Icon getIcon() {
+    SModelDescriptor modelDescriptor = getModelDescriptor();
+    if (modelDescriptor != null) {
+      return IconManager.getIconFor(modelDescriptor);
+    }
     return jetbrains.mps.ide.projectPane.Icons.MODEL_ICON;
   }
 
