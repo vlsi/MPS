@@ -14,8 +14,6 @@
   <language namespace="jetbrains.mps.baseLanguage">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
-  <language namespace="jetbrains.mps.quotation" />
-  <language namespace="jetbrains.mps.core" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
@@ -23,14 +21,10 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="14" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <import index="2" modelUID="jetbrains.mps.findUsages@java_stub" version="-1" />
-  <import index="4" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <import index="5" modelUID="jetbrains.mps.bootstrap.structureLanguage.findUsages" version="-1" />
   <import index="7" modelUID="java.util@java_stub" version="-1" />
-  <import index="8" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <import index="9" modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
   <import index="10" modelUID="java.lang@java_stub" version="-1" />
-  <import index="11" modelUID="jetbrains.mps.baseLanguage.helgins" version="-1" />
   <import index="14" modelUID="jetbrains.mps.ide.findusages.model@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.FinderDeclaration" id="1200309609796">
     <property name="name" value="OverridingMethods" />
@@ -1153,7 +1147,6 @@
                     </node>
                     <node role="expression" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ExecuteFinderExpression" id="1206453739323">
                       <link role="finder" targetNodeId="1200420731716" resolveInfo="OverridingFields" />
-                      <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType" id="1206453739324" />
                       <node role="queryNode" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ConceptFunctionParameter_node" id="1206453739325" />
                     </node>
                   </node>
