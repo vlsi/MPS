@@ -8,10 +8,6 @@
       <sourceFolder url="file://$MODULE_DIR$/solutions/samples/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source_gen" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/solutions/samples/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/solutions/sandbox/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/solutions/typetest/META-INF" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
