@@ -70,10 +70,6 @@ public class ClassLoaderManager implements IComponentLifecycle {
     myRuntimeEnvironment.add(bundle);
   }
 
-  private void removeBundle(String moduleUID) {
-    myRuntimeEnvironment.unload(moduleUID);
-  }
-
   public Class getClassFor(IModule module, String classFqName) {
     RBundle bundle = myRuntimeEnvironment.get(module.getModuleUID());
 
@@ -126,15 +122,14 @@ public class ClassLoaderManager implements IComponentLifecycle {
       myRuntimeEnvironment.init(bundle);
     }
 
+    List<RBundle> toRemove = new ArrayList<RBundle>();
     for (RBundle b : myRuntimeEnvironment.getBundles()) {
       if (MPSModuleRepository.getInstance().getModuleByUID(b.getName()) == null) {
-        try {
-          removeBundle(b.getName());
-        } catch (Throwable t) {
-          LOG.error(t);
-        }
+        toRemove.add(b);
       }
-    }
+    }    
+    myRuntimeEnvironment.unload(toRemove.toArray(new RBundle[0]));
+
 
     myRuntimeEnvironment.reloadAll();
 
