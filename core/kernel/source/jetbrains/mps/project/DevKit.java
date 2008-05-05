@@ -196,12 +196,4 @@ public class DevKit extends AbstractModule {
   public String getDevKitPluginClass() {
     return myDescriptor.getDevKitPlugin();
   }
-
-  protected List<String> getExportedPackages() {
-    List<String> result = new ArrayList<String>(super.getExportedPackages());
-    if (getDevKitPluginClass() != null) {
-      result.add(NameUtil.namespaceFromLongName(getDevKitPluginClass()));
-    }
-    return result;
-  }
 }

@@ -111,9 +111,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     updateClassPath();
     revalidateGenerators();
 
-    SModelRepository.getInstance().registerModelDescriptor(myLanguageDescriptor.getModel().getModelDescriptor(), this);
-
-    createManifest();
+    SModelRepository.getInstance().registerModelDescriptor(myLanguageDescriptor.getModel().getModelDescriptor(), this);   
   }
 
   public List<String> getLanguageRuntimeClassPathItems() {
@@ -372,36 +370,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
   public boolean isBootstrap() {
     return BootstrapLanguagesManager.getInstance().getLanguagesUsedInCore().contains(this);
-  }
-
-  protected List<String> getExportedPackages() {
-    List<String> result = new ArrayList<String>(super.getExportedPackages());
-    List<String> aspects = new ArrayList<String>();
-    if (!BootstrapLanguagesManager.getInstance().getLanguagesUsedInCore().contains(this)) {
-      aspects.add(".structure");
-    }
-
-    aspects.addAll(CollectionUtil.asList(
-      ".editor", ".actions", ".constraints",
-      ".intentions", ".findUsages", ".plugins", ".builder", ".scripts",
-      ".helgins", ".plugin", ".textGen",
-      ".textPresentation", ".design", ".util", ".runtime", ".cfa"
-    ));
-    result.add(getModuleUID());
-    for (String aspect : aspects) {
-      result.add(getModuleUID() + aspect);
-    }
-
-    for (Model m : getLanguageDescriptor().getAccessoryModels()) {
-      result.add(m.getName());
-    }
-
-    //todo tmp fix
-    result.add(getModuleUID() + ".generator.baseLanguage.template.main");
-
-    result.addAll(getGeneratorsPacks());
-
-    return result;
   }
 
   private List<String> getGeneratorsPacks() {

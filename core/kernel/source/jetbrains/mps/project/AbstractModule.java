@@ -51,8 +51,6 @@ public abstract class AbstractModule implements IModule {
     rereadModels();
 
     updateClassPath();
-
-    createManifest();
   }
 
   public void convert() {
@@ -548,28 +546,6 @@ public abstract class AbstractModule implements IModule {
     return null;
   }
 
-  protected String generateManifest() {
-    StringBuilder result = new StringBuilder();
-    result.append("Manifest-Version: 1.0\n");
-    result.append("Bundle-ManifestVersion: 2\n");
-    result.append("Bundle-SymbolicName: ").append(getModuleUID()).append("\n");
-    result.append("Eclipse-LazyStart: true\n");
-    result.append("Require-Bundle: \n").append(getRequiredBundlesString());
-    if (getClassPathString().length() > 0) {
-      result.append("Bundle-Classpath: \n").append(getClassPathString());
-    }
-    String exportedPackages = getExportedPackagesString();
-    if (exportedPackages.length() > 0) {
-      result.append("Export-Package:\n").append(exportedPackages);
-    }
-
-    if (getDescriptorFile() != null) {
-      result.append("MPS-Module-File:").append(getDescriptorFile().getName()).append("\n");
-    }
-
-    return result.toString();
-  }
-
   public boolean isCompileInMPS() {
     ModuleDescriptor descriptor = getModuleDescriptor();
     return descriptor != null && descriptor.getCompileInMPS();
@@ -577,138 +553,6 @@ public abstract class AbstractModule implements IModule {
 
   public boolean reloadClassesAfterGeneration() {
     return true;
-  }
-
-  protected String getRequiredBundlesString() {
-    StringBuilder result = new StringBuilder();
-
-    Map<String, Boolean> requiredBundles = new LinkedHashMap<String, Boolean>();
-    for (Dependency dep : getRequiredBundles()) {
-      if (!requiredBundles.containsKey(dep.getModuleUID())) {
-        requiredBundles.put(dep.getModuleUID(), dep.isREExport());
-      } else {
-        boolean oldValue = requiredBundles.get(dep.getModuleUID());
-        requiredBundles.put(dep.getModuleUID(), dep.isREExport() || oldValue);
-      }
-    }
-
-    List<String> bundleUids = new ArrayList<String>(requiredBundles.keySet());
-    for (int i = 0; i < bundleUids.size(); i++) {
-      String uid = bundleUids.get(i);
-      boolean reexport = requiredBundles.get(uid);
-      result.append("  ").append(uid);
-      if (reexport) {
-        result.append(";visibility:=reexport");
-      }
-      result.append(";resolution:=optional");
-      if (i != bundleUids.size() - 1) {
-        result.append(",");
-      }
-      result.append("\n");
-    }
-
-    return result.toString();
-  }
-
-  private List<Dependency> getRequiredBundles() {
-    List<Dependency> result = new ArrayList<Dependency>();
-    result.add(new Dependency("jetbrains.mps", false));
-
-    for (String s : BootstrapLanguagesManager.getInstance().getLanguagesUIDsUsedInCore()) {
-      result.add(new Dependency(s, false));
-    }
-
-    result.addAll(getDependOn());
-
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor != null) {
-      OSGiOptions osgiOptions = descriptor.getOsgiOptions();
-      if (osgiOptions != null) {
-        for (BundleReference br : osgiOptions.getRequiredBundles()) {
-          result.add(new Dependency(br.getName(), false));
-        }
-      }
-    }
-
-    return result;
-  }
-
-  private String getClassPathString() {
-    StringBuilder result = new StringBuilder();
-
-    IFile descriptor = getDescriptorFile();
-    if (descriptor == null) {
-      return "";
-    }
-
-    String basePath = descriptor.getParent().getCanonicalPath();
-    List<String> classpath = getClassPath();
-    String classesGen = getClassesGen().getCanonicalPath();
-    if (!classpath.contains(classesGen)) {
-      classpath.add(classesGen);
-    }
-
-
-    //remove bad items
-    Iterator<String> it = classpath.iterator();
-    while (it.hasNext()) {
-      String s = it.next();
-      if (FileSystem.getFile(s).isDirectory()) {
-        s += "/";
-      }
-
-      if (getPathRelativeTo(s, basePath) == null) {
-        it.remove();
-      }
-    }
-
-    for (int i = 0; i < classpath.size(); i++) {
-      String s = classpath.get(i);
-
-      if (FileSystem.getFile(s).isDirectory()) {
-        s += "/";
-      }
-
-      String relativePath = getPathRelativeTo(s, basePath);
-
-      relativePath = relativePath.replace(File.separatorChar, '/');
-
-      result.append("  ").append(relativePath);
-      if (i != classpath.size() - 1) {
-        result.append(",");
-      }
-      result.append("\n");
-    }
-    return result.toString();
-  }
-
-  private String getExportedPackagesString() {
-    StringBuilder result = new StringBuilder();
-    List<String> exportedPackages = getExportedPackages();
-    List<String> packs = exportedPackages;
-    for (int i = 0; i < packs.size(); i++) {
-      String s = exportedPackages.get(i);
-      result.append("  ").append(s);
-      if (i != packs.size() - 1) {
-        result.append(",");
-      }
-      result.append("\n");
-    }
-    return result.toString();
-  }
-
-  protected List<String> getExportedPackages() {
-    List<String> result = new ArrayList<String>();
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor != null) {
-      OSGiOptions osgiOptions = descriptor.getOsgiOptions();
-      if (osgiOptions != null) {
-        for (PackageReference pr : osgiOptions.getExportedPackages()) {
-          result.add(pr.getName());
-        }
-      }
-    }
-    return result;
   }
 
   private String getPathRelativeTo(String path, String base) {
@@ -775,23 +619,6 @@ public abstract class AbstractModule implements IModule {
         save();
       }
     });
-  }
-
-  protected void createManifest() {
-    String manifestContents = generateManifest();
-
-    File bundleHome = getBundleHome();
-
-    assert bundleHome != null;
-    if (bundleHome.isFile()) { //i.e. packaged
-      return;
-    }
-
-    File metaInfDir = new File(bundleHome, "META-INF");
-    metaInfDir.mkdir();
-
-    File manifest = new File(metaInfDir, "MANIFEST.MF");
-    FileUtil.write(manifest, manifestContents);
   }
 
   public void invalidateCaches() {

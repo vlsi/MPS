@@ -132,23 +132,6 @@ public class Solution extends AbstractModule {
     setSolutionDescriptor(descriptor);
   }
 
-  protected List<String> getExportedPackages() {
-    Set<String> result = new LinkedHashSet<String>(super.getExportedPackages());
-    for (SModelDescriptor sm : getOwnModelDescriptors()) {
-      if (SModelStereotype.JAVA_STUB.equals(sm.getStereotype())) continue;
-      result.add(sm.getLongName());
-    }
-
-    collectRuntimePackages(result, "");
-
-    for (String source : getSourcePaths()) {
-      IFile file = FileSystem.getFile(source);
-      collectSourcePackages(result, "", file);
-    }
-
-    return new ArrayList<String>(result);
-  }
-
   protected void collectRuntimePackages(Set<String> result, String current) {
     if (!"".equals(current) && !getClassPathItem().getAvailableClasses(current).isEmpty()) {
       result.add(current);

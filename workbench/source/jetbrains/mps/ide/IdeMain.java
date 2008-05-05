@@ -20,15 +20,7 @@ import java.util.GregorianCalendar;
 public class IdeMain {
   private static boolean ourTestMode = false;
 
-  private static void installFocusKiller() {
-    if (SystemInfo.isWindows) {
-      System.loadLibrary("focuskiller");
-    }
-  }
-                                                                          
   public static void openProjectWindow(final boolean loadOldProject) {
-    installFocusKiller();
-
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         System.setProperty("alloy.licenseCode", "4#JetBrains_s.r.o.#nvxvi9#2i0t28");
