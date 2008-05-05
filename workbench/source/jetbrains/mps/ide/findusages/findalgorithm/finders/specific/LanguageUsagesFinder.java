@@ -1,0 +1,84 @@
+package jetbrains.mps.ide.findusages.findalgorithm.finders.specific;
+
+import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
+import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.ide.findusages.model.holders.IHolder;
+import jetbrains.mps.ide.findusages.model.holders.ModuleHolder;
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.DevKit;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: Cyril.Konopko
+ * Date: 05.05.2008
+ * Time: 13:35:27
+ * To change this template use File | Settings | File Templates.
+ */
+public class LanguageUsagesFinder extends BaseFinder {
+  private static final String USED_BY = "used by";
+  private static final String DEPENDENT_MODULES = "dependent modules";
+  private static final String EXTENDING_LANGUAGES = "extending languages";
+  private static final String EXPORTED_BY = "exported by";
+
+  public SearchResults find(SearchQuery query, IAdaptiveProgressMonitor monitor) {
+    SearchResults searchResults = new SearchResults();
+    IHolder objectHolder = query.getObjectHolder();
+    if (!(objectHolder instanceof ModuleHolder)) {
+      return searchResults;
+    }
+    ModuleHolder moduleHolder = (ModuleHolder) objectHolder;
+    IModule searchedModule = moduleHolder.getObject();
+    if (!(searchedModule instanceof Language)) {
+      return searchResults;
+    }
+    Language language = (Language) searchedModule;
+    for (IModule module : MPSModuleRepository.getInstance().getAllModules()) {
+      if (module instanceof Solution) {
+        collectUsagesInSolution(language, (Solution)module, searchResults);
+      }
+      if (module instanceof Language) {
+        collectUsagesInLanguage(language, (Language) module, searchResults);
+      }
+      if (module instanceof DevKit) {
+        collectUsagesInDevKit(language, (DevKit) module, searchResults);
+      }
+    }
+    return searchResults;
+  }
+
+  private void collectUsagesInSolution(Language searchedLanguage, Solution solution, SearchResults searchResults) {
+    if (solution.getDependOnModules().contains(searchedLanguage)) {
+      searchResults.getSearchResults().add(new SearchResult<Solution>(solution, DEPENDENT_MODULES));
+    }
+    if (solution.getAllUsedLanguages().contains(searchedLanguage)) {
+      searchResults.getSearchResults().add(new SearchResult<Solution>(solution, USED_BY));
+    }
+  }
+
+  private void collectUsagesInLanguage(Language searchedLanguage, Language language, SearchResults searchResults) {
+    if (language.getExtendedLanguages().contains(searchedLanguage)) {
+      searchResults.getSearchResults().add(new SearchResult<Language>(language, EXTENDING_LANGUAGES));
+    }
+    if (language.getUsedLanguages().contains(searchedLanguage)) {
+      searchResults.getSearchResults().add(new SearchResult<Language>(language, USED_BY));
+    }
+    if (language.getDependOnModules().contains(searchedLanguage)) {
+      searchResults.getSearchResults().add(new SearchResult<Language>(language, DEPENDENT_MODULES));
+    }
+  }
+
+  private void collectUsagesInDevKit(Language searchedLanguage, DevKit devKit, SearchResults searchResults) {
+    if (devKit.getExportedLanguages().contains(searchedLanguage)) {
+      searchResults.getSearchResults().add(new SearchResult<DevKit>(devKit, EXPORTED_BY));
+    }
+    if (devKit.getDependOnModules().contains(searchedLanguage)) {
+      searchResults.getSearchResults().add(new SearchResult<DevKit>(devKit, DEPENDENT_MODULES));
+    }
+  }
+}

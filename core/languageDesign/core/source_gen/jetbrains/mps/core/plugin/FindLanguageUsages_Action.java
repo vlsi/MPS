@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
-import jetbrains.mps.refactoring.languages.LanguageUsagesFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.LanguageUsagesFinder;
 
 public class FindLanguageUsages_Action extends CurrentProjectMPSAction {
   public static final Logger LOG = Logger.getLogger(FindLanguageUsages_Action.class);
@@ -35,7 +35,7 @@ public class FindLanguageUsages_Action extends CurrentProjectMPSAction {
     return this.module instanceof Language;
   }
 
-  public void doUpdate(@NotNull()ActionContext context) {
+  public void doUpdate(@NotNull() ActionContext context) {
     try {
       super.doUpdate(context);
       if (!(this.fillFieldsIfNecessary(context))) {
@@ -71,7 +71,7 @@ public class FindLanguageUsages_Action extends CurrentProjectMPSAction {
     return true;
   }
 
-  public void doExecute(@NotNull()ActionContext context) {
+  public void doExecute(@NotNull() ActionContext context) {
     try {
       if (!(this.fillFieldsIfNecessary(context))) {
         return;
