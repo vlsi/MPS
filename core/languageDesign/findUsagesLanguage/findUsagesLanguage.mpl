@@ -6,13 +6,14 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator generatorUID="jetbrains.mps.bootstrap.findUsagesLanguage#1197044805809" targetLanguage="jetbrains.mps.baseLanguage">
+    <generator generatorUID="jetbrains.mps.bootstrap.findUsagesLanguage#1197044805809">
       <models>
         <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.bootstrap.findUsagesLanguage.generator.baseLanguage.template" />
       </models>
       <external-templates />
       <dependencies>
         <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
+        <dependency reexport="false">jetbrains.mps.webr.runtime</dependency>
       </dependencies>
       <usedLanguages>
         <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
@@ -22,15 +23,10 @@
   </generators>
   <classPath>
     <entry path="${mps_home}\lib\jdom\jdom-1.0.jar" />
-  </classPath>
-  <runtimeClassPath>
     <entry path="${language_descriptor}\classes" />
-  </runtimeClassPath>
+  </classPath>
+  <languageRuntimeClassPath />
   <sourcePath />
-  <osgiOptions>
-    <requiredBundles />
-    <exportedPackage />
-  </osgiOptions>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>
     <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>

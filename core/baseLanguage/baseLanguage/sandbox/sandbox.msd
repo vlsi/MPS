@@ -16,6 +16,7 @@
     <dependency reexport="false">jetbrains.mps.bootstrap.smodelLanguage</dependency>
     <dependency reexport="false">jetbrains.mps.bootstrap.helgins</dependency>
     <dependency reexport="false">jetbrains.mps.quotation</dependency>
+    <dependency reexport="false">jetbrains.mps.webr.runtime</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
@@ -25,9 +26,5 @@
     <usedLanguages>jetbrains.mps.baseLanguage.strings</usedLanguages>
     <usedLanguages>jetbrains.mps.baseLanguage.blTypes</usedLanguages>
   </usedLanguages>
-  <osgiOptions>
-    <requiredBundles />
-    <exportedPackage />
-  </osgiOptions>
 </solution>
 
