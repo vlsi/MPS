@@ -262,9 +262,13 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
 
 
   public void rebuild() {
-    mySelectedConceptContainer = null;
-    myRoots = createHierarchyForest();
-    relayout();
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        mySelectedConceptContainer = null;
+        myRoots = createHierarchyForest();
+        relayout();
+      }
+    });
   }
 
   public Dimension getPreferredSize() {
