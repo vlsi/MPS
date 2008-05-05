@@ -4,6 +4,8 @@ import jetbrains.mps.reloading.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.ide.BootstrapModule;
+import jetbrains.mps.ide.BootstrapLanguagesManager;
 
 import java.util.*;
 import java.io.File;
@@ -82,6 +84,7 @@ public class ClasspathCollector {
 
       if (current instanceof Language) {
         Language l = (Language) current;
+        doCollect(BootstrapLanguagesManager.getInstance().getCoreLanguage());
         for (Language extended : l.getExtendedLanguages()) {
           doCollect(extended);
         }
