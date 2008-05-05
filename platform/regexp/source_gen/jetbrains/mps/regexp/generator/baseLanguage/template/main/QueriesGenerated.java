@@ -5,7 +5,7 @@ package jetbrains.mps.regexp.generator.baseLanguage.template.main;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
@@ -29,7 +29,7 @@ public class QueriesGenerated {
 
   public static boolean createRootRule_Condition_1194610104145(final IOperationContext operationContext, final CreateRootRuleContext _context) {
     SModel smodel = _context.getGenerator().getSourceModel();
-    return SequenceOperations.getSize(SModelOperations.getNodes(smodel, "jetbrains.mps.regexp.structure.InlineRegexpExpression")) > 0;
+    return ListSequence.fromList(SModelOperations.getNodes(smodel, "jetbrains.mps.regexp.structure.InlineRegexpExpression")).count() > 0;
   }
 
   public static boolean baseMappingRule_Condition_1174659423207(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -58,12 +58,12 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1174655168104(final IOperationContext operationContext, final PropertyMacroContext _context) {
     List<SNode> nodes = SNodeOperations.getAncestors(_context.getNode(), "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false);
-    return "_matcher_" + SequenceOperations.getSize(nodes);
+    return "_matcher_" + ListSequence.fromList(nodes).count();
   }
 
   public static Object propertyMacro_GetPropertyValue_1174655313358(final IOperationContext operationContext, final PropertyMacroContext _context) {
     List<SNode> nodes = SNodeOperations.getAncestors(_context.getNode(), "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false);
-    return "_pattern_" + SequenceOperations.getSize(nodes);
+    return "_pattern_" + ListSequence.fromList(nodes).count();
   }
 
   public static Object propertyMacro_GetPropertyValue_1174658262046(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -80,12 +80,12 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1175155526348(final IOperationContext operationContext, final PropertyMacroContext _context) {
     List<SNode> nodes = SNodeOperations.getAncestors(_context.getNode(), "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false);
-    return "_pattern_" + SequenceOperations.getSize(nodes);
+    return "_pattern_" + ListSequence.fromList(nodes).count();
   }
 
   public static Object propertyMacro_GetPropertyValue_1175155558088(final IOperationContext operationContext, final PropertyMacroContext _context) {
     List<SNode> nodes = SNodeOperations.getAncestors(_context.getNode(), "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false);
-    return "_matcher_" + SequenceOperations.getSize(nodes);
+    return "_matcher_" + ListSequence.fromList(nodes).count();
   }
 
   public static Object propertyMacro_GetPropertyValue_1175155997050(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -98,12 +98,12 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1175169642723(final IOperationContext operationContext, final PropertyMacroContext _context) {
     List<SNode> nodes = SNodeOperations.getAncestors(_context.getNode(), "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false);
-    return "_pattern_" + SequenceOperations.getSize(nodes);
+    return "_pattern_" + ListSequence.fromList(nodes).count();
   }
 
   public static Object propertyMacro_GetPropertyValue_1175169648262(final IOperationContext operationContext, final PropertyMacroContext _context) {
     List<SNode> nodes = SNodeOperations.getAncestors(_context.getNode(), "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false);
-    return "_matcher_" + SequenceOperations.getSize(nodes);
+    return "_matcher_" + ListSequence.fromList(nodes).count();
   }
 
   public static Object propertyMacro_GetPropertyValue_1175170026397(final IOperationContext operationContext, final PropertyMacroContext _context) {

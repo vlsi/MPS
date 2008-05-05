@@ -14,6 +14,7 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="3" />
   <import index="1" modelUID="jetbrains.mps.regexp.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.generator.template@java_stub" version="-1" />
@@ -54,7 +55,9 @@
               </node>
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1174923539426">
                 <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1174923539427">
-                  <link role="concept" targetNodeId="1.1174653354106" />
+                  <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1210020438441">
+                    <link role="conceptDeclaration" targetNodeId="1.1174653354106" resolveInfo="RegexpUsingConstruction" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -88,7 +91,9 @@
                     </node>
                     <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1174923539445">
                       <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1174923539446">
-                        <link role="concept" targetNodeId="1.1174483125581" />
+                        <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1210020438433">
+                          <link role="conceptDeclaration" targetNodeId="1.1174483125581" resolveInfo="RegexpDeclaration" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -101,7 +106,9 @@
                   </node>
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorsOperation" id="1174923539450">
                     <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1174923539451">
-                      <link role="concept" targetNodeId="1.1174653354106" />
+                      <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1210020438444">
+                        <link role="conceptDeclaration" targetNodeId="1.1174653354106" resolveInfo="RegexpUsingConstruction" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -149,7 +156,9 @@
                       </node>
                       <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetDescendantsOperation" id="1174923539473">
                         <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1174923539474">
-                          <link role="concept" targetNodeId="1.1174662605354" />
+                          <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1210020438434">
+                            <link role="conceptDeclaration" targetNodeId="1.1174662605354" resolveInfo="RegexpDeclarationReferenceRegexp" />
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -189,19 +198,21 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1187209089333" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1187209089334">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1187209144582">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1187209195157">
-            <link role="baseMethodDeclaration" targetNodeId="2.~ITemplateGenerator.findOutputNodeByInputNodeAndMappingName(jetbrains.mps.smodel.SNode,java.lang.String):jetbrains.mps.smodel.SNode" resolveInfo="findOutputNodeByInputNodeAndMappingName" />
-            <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1187209195158">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210020424847">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1187209195158">
               <link role="variableDeclaration" targetNodeId="1187209136585" resolveInfo="generator" />
             </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1187209195159">
-              <link role="baseMethodDeclaration" targetNodeId="1174923515098" resolveInfo="findRegexpUsingConstructionFor" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1187209195160">
-                <link role="variableDeclaration" targetNodeId="1187209136603" resolveInfo="ref" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1210020424848">
+              <link role="baseMethodDeclaration" targetNodeId="2.~ITemplateGenerator.findOutputNodeByInputNodeAndMappingName(jetbrains.mps.smodel.SNode,java.lang.String):jetbrains.mps.smodel.SNode" resolveInfo="findOutputNodeByInputNodeAndMappingName" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1187209195159">
+                <link role="baseMethodDeclaration" targetNodeId="1174923515098" resolveInfo="findRegexpUsingConstructionFor" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1187209195160">
+                  <link role="variableDeclaration" targetNodeId="1187209136603" resolveInfo="ref" />
+                </node>
               </node>
-            </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1187209195161">
-              <property name="value" value="matcher" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1187209195161">
+                <property name="value" value="matcher" />
+              </node>
             </node>
           </node>
         </node>
