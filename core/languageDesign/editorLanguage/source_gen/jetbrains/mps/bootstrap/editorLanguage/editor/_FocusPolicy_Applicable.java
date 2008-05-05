@@ -23,25 +23,25 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
   }
 
   private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1209858538754");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1210009612732");
     editorCell.setSelectable(false);
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1209858538756");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1210009612734");
   }
 
   private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1209858538758");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1210009612736");
     editorCell.setSelectable(false);
   }
 
   private static void setupBasic_FocusPolicyApplicableCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1209858538760");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1210009612738");
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1209858538781");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1210009612759");
     editorCell.setSelectable(false);
   }
 
@@ -51,7 +51,7 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
   private static void setupLabel_FocusPolicyApplicableCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean _QueryFunction_NodeCondition_1209858538762(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean _QueryFunction_NodeCondition_1210009612740(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "attractsFocus", "0", "0"));
   }
 
@@ -91,7 +91,7 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if (_FocusPolicy_Applicable._QueryFunction_NodeCondition_1209858538762(node, context, context.getOperationContext().getScope())) {
+    if (_FocusPolicy_Applicable._QueryFunction_NodeCondition_1210009612740(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createColumnCell(context, node));
     }
     return editorCell;
