@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.persistence.ModelRootsUtil;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.Calculable;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.JarFileEntryFile;
@@ -34,7 +35,7 @@ public abstract class AbstractModule implements IModule {
   public static IClassPathItem getDependenciesClasspath(Set<IModule> modules, boolean includeJDK, boolean includeMPS) {
     return new ClasspathCollector(modules).collect(includeJDK, includeMPS);
   }
-  
+
   private boolean myModelsRead = false;
   private boolean myInitialized = false;
   protected IFile myDescriptorFile;
@@ -215,7 +216,7 @@ public abstract class AbstractModule implements IModule {
 
   public List<IModule> getDesignTimeDependOnModules() {
     Set<IModule> result = new LinkedHashSet<IModule>();
-    result.addAll(getAllDependOnModules());    
+    result.addAll(getAllDependOnModules());
 //    for (Language l : getAllUsedLanguages()) {
 //      result.addAll(l.getRuntimeDependOnModules());
 //    }
@@ -265,7 +266,7 @@ public abstract class AbstractModule implements IModule {
         LOG.error("Can't load language " + namespace + " from " + this);
       }
     }
-    
+
     result.add(BootstrapLanguagesManager.getInstance().getBaseLanguage());
     result.add(BootstrapLanguagesManager.getInstance().getProjectLanguage());
     result.add(BootstrapLanguagesManager.getInstance().getCollectionsLanguage());
@@ -599,6 +600,31 @@ public abstract class AbstractModule implements IModule {
     });
   }
 
+  private ModuleDescriptor renameModuleImport(final String oldModuleUID, final String newModuleUID, final boolean setModuleDescriptor) {
+    return CommandProcessor.instance().executeCommand(new Calculable<ModuleDescriptor>() {
+      public ModuleDescriptor calculate() {
+        ModuleDescriptor md = getModuleDescriptor();
+        if (md == null) return null;
+
+        for (ModuleReference r : md.getDependencys()) {
+          if (oldModuleUID.equals(r.getName())) {
+            md.removeChild(r);
+          }
+        }
+
+        ModuleReference ref = ModuleReference.newInstance(md.getModel());
+        ref.setName(newModuleUID);
+        md.addDependency(ref);
+
+        if (setModuleDescriptor) {
+          setModuleDescriptor(md);
+          save();
+        }
+        return md;
+      }
+    });
+  }
+
   public void addUsedLanguage(final String languageNamespace) {
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
@@ -617,6 +643,31 @@ public abstract class AbstractModule implements IModule {
 
         setModuleDescriptor(md);
         save();
+      }
+    });
+  }
+
+  private ModuleDescriptor addUsedLanguage(final String oldLanguageNamespace, final String newLanguageNamespace, final boolean setModuleDescriptor) {
+    return CommandProcessor.instance().executeCommand(new Calculable<ModuleDescriptor>() {
+      public ModuleDescriptor calculate() {
+        ModuleDescriptor md = getModuleDescriptor();
+        if (md == null) return null;
+
+        for (LanguageReference r : md.getUsedLanguages()) {
+          if (oldLanguageNamespace.equals(r.getName())) {
+            md.removeChild(r);
+          }
+        }
+
+        LanguageReference ref = LanguageReference.newInstance(md.getModel());
+        ref.setName(newLanguageNamespace);
+        md.addUsedLanguage(ref);
+
+        if (setModuleDescriptor) {
+          setModuleDescriptor(md);
+          save();
+        }
+        return md;
       }
     });
   }
