@@ -7,13 +7,17 @@ import jetbrains.mps.runtime.RuntimeEnvironment;
 import jetbrains.mps.runtime.RBundle;
 import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.ide.SystemInfo;
+import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.util.NameUtil;
 import org.osgi.framework.*;
 import org.osgi.service.packageadmin.PackageAdmin;
 import sun.misc.Launcher;
@@ -38,7 +42,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
 
   public static boolean ourUseOSGI = true;
 
-  private RuntimeEnvironment myRuntimeEnvironment = createRuntimeEnvironment();
+  private RuntimeEnvironment myRuntimeEnvironment;
 
   //OSGi stuff: to remove
   private Map<String, Bundle> myOSGIBundles = new HashMap<String, Bundle>();
@@ -83,6 +87,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
 
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
+        myRuntimeEnvironment = createRuntimeEnvironment();
         updateClassPath();
       }
     });
@@ -237,8 +242,20 @@ public class ClassLoaderManager implements IComponentLifecycle {
   }
 
   private RuntimeEnvironment createRuntimeEnvironment() {
+    final Set<String> excludedPackages = new HashSet<String>();
+    for (Language l : BootstrapLanguagesManager.getInstance().getLanguagesUsedInCore()) {
+      for (LanguageAspect aspect : LanguageAspect.values()) {
+        if (aspect == LanguageAspect.STRUCTURE) continue;
+        excludedPackages.add(l.getNamespace() + "." + aspect.getName());
+      }
+    }
+
     return new RuntimeEnvironment() {
       public Class loadFromParent(String cls) {
+        String pack = NameUtil.namespaceFromLongName(cls);
+        if (excludedPackages.contains(pack)) {
+          return null;
+        }
         return getFromParent(cls);
       }
     };
