@@ -2,7 +2,6 @@ package jetbrains.mps.reloading;
 
 import jetbrains.mps.component.Dependency;
 import jetbrains.mps.component.IComponentLifecycle;
-import jetbrains.mps.MPSActivator;
 import jetbrains.mps.runtime.RuntimeEnvironment;
 import jetbrains.mps.runtime.RBundle;
 import jetbrains.mps.vfs.FileSystemFile;

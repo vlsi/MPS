@@ -1532,28 +1532,6 @@
         <root url="jar://$PROJECT_DIR$/lib/htmlparser/src.zip!/src" />
       </SOURCES>
     </library>
-    <library name="Equinox">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/equinox/org.eclipse.osgi_3.3.1.R33x_v20070828.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/equinox/org.eclipse.equinox.launcher_1.0.1.R33x_v20070828.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/equinox/org.eclipse.equinox.common_3.3.0.v20070426.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/equinox/org.eclipse.update.configurator_3.2.100.v20070615.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/equinox/src.zip!/" />
-        <root url="jar://$PROJECT_DIR$/lib/equinox/launcher-src.zip!/" />
-      </SOURCES>
-    </library>
-    <library name="Eclipse FS">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/org.eclipse.core.filesystem_1.1.0.v20070606.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/org.eclipse.core.filesystem-src.zip!/" />
-      </SOURCES>
-    </library>
     <library name="Eclipse Configurator">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/equinox/org.eclipse.update.configurator_3.2.100.v20070615.jar!/" />
@@ -1561,71 +1539,6 @@
       <JAVADOC />
       <SOURCES>
         <root url="jar://$PROJECT_DIR$/lib/equinox/org.eclipse.core.update.configurator-src.zip!/" />
-      </SOURCES>
-    </library>
-    <library name="Eclipse Registry">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/org.eclipse.equinox.registry_3.3.0.v20070522.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/org.eclipse.equinox.registry-src.zip!/" />
-      </SOURCES>
-    </library>
-    <library name="Eclipse Team">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/org.eclipse.team.core_3.3.0.I20070607.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/org.eclipse.team.core-src.zip!/" />
-      </SOURCES>
-    </library>
-    <library name="Eclipse Resources">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/org.eclipse.core.resources_3.3.0.v20070604.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/org.eclipse.core.resources-src.zip!/" />
-      </SOURCES>
-    </library>
-    <library name="Eclipse Runtime">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/org.eclipse.core.runtime_3.3.100.v20070530.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/org.eclipse.core.runtime-src.zip!/" />
-      </SOURCES>
-    </library>
-    <library name="Eclipse Jobs">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/org.eclipse.core.jobs_3.3.0.v20070423.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/org.eclipse.core.jobs-src.zip!/" />
-      </SOURCES>
-    </library>
-    <library name="Tigris SVN">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/org.tigris.subversion.subclipse.core_1.2.4.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/svnClientAdapter.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/org.tigris.subversion.subclipse.zip-src.zip!/" />
-        <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/svnClientAdapter-src.zip!/" />
-      </SOURCES>
-    </library>
-    <library name="Eclipse JDT">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/org.eclipse.jdt.core_3.3.0.v_771.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/org.eclipse.team.core-src.zip!/" />
       </SOURCES>
     </library>
     <library name="commons-lang">

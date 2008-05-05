@@ -41,7 +41,6 @@ import jetbrains.mps.vcs.ProjectVCSManager;
 import jetbrains.mps.nodeEditor.Highlighter;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
-import org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -595,17 +594,17 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
                 Element componentElement = new Element(COMPONENT);
                 componentElement.setAttribute(CLASS, cls.getName());
 
-                if (component.getClass().getClassLoader() instanceof DefaultClassLoader) {
-                  DefaultClassLoader bcl = (DefaultClassLoader) component.getClass().getClassLoader();
-
-                  //todo this is definitely a hack but I found no other way to
-                  //todo find a name of a bundle by its class loader
-                  String repr = bcl.getDelegate().toString();
-                  int indexOfUnderscore = repr.lastIndexOf('_');
-                  assert indexOfUnderscore != -1;
-                  String name = repr.substring(0, indexOfUnderscore);
-                  componentElement.setAttribute(BUNDLE, name);
-                }
+//                if (component.getClass().getClassLoader() instanceof DefaultClassLoader) {
+//                  DefaultClassLoader bcl = (DefaultClassLoader) component.getClass().getClassLoader();
+//
+//                  todo this is definitely a hack but I found no other way to
+//                  todo find a name of a bundle by its class loader
+//                  String repr = bcl.getDelegate().toString();
+//                  int indexOfUnderscore = repr.lastIndexOf('_');
+//                  assert indexOfUnderscore != -1;
+//                  String name = repr.substring(0, indexOfUnderscore);
+//                  componentElement.setAttribute(BUNDLE, name);
+//                }
 
                 try {
                   ((IExternalizableComponent) component).write(componentElement, MPSProject.this);

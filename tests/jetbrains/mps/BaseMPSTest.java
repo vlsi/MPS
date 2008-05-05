@@ -1,7 +1,6 @@
 package jetbrains.mps;
 
 import junit.framework.TestCase;
-import org.osgi.framework.Bundle;
 
 import java.io.File;
 import java.lang.reflect.Method;
