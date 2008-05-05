@@ -12,7 +12,6 @@ import jetbrains.mps.refactoring.framework.tests.IRefactoringTester;
 public class BaseMPSTest extends TestCase {
   protected void setUp() throws Exception {
     super.setUp();
-    MPSLauncher.startMPS();
   }
 
   protected void tearDown() throws Exception {
