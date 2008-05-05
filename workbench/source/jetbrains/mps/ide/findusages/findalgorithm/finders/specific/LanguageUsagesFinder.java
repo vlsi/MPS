@@ -7,13 +7,13 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModuleHolder;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.DevKit;
+
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -91,7 +91,11 @@ public class LanguageUsagesFinder extends BaseFinder {
   }
 
   private void collectUsagesInModels(Language searchedLanguage, IModule owner, SearchResults searchResults) {
+    List<String> kosherStereotypes = Arrays.asList(SModelStereotype.values);
     for (SModelDescriptor modelDescriptor : owner.getOwnModelDescriptors()) {
+      if (!kosherStereotypes.contains(modelDescriptor.getStereotype())) {
+        continue;
+      }
       if (modelDescriptor.getSModel().hasLanguage(searchedLanguage.getNamespace())) {
         SModel model = modelDescriptor.getSModel();
         searchResults.getSearchResults().add(new SearchResult<SModel>(model, MODELS_WRITTEN_IN_LANGUAGE));
