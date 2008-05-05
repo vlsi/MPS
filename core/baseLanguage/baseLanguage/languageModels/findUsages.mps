@@ -1221,7 +1221,6 @@
               </node>
               <node role="inputSequence" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ExecuteFinderExpression" id="1206537116604">
                 <link role="finder" targetNodeId="1200420731716" resolveInfo="OverridingFields" />
-                <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType" id="1206537116605" />
                 <node role="queryNode" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ConceptFunctionParameter_node" id="1206537116606" />
               </node>
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206537111493">
