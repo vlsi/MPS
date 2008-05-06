@@ -2,7 +2,6 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.CollectionUtil;
@@ -18,7 +17,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.plugin.CompilationResult;
 import jetbrains.mps.generator.template.Statistics;
-import jetbrains.mps.generator.generationTypes.GenerateFilesGenerationType;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.helgins.inference.TypeCheckingMode;
@@ -26,10 +24,7 @@ import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.reloading.ClassLoaderManager;
 
 import javax.swing.JFrame;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.ArrayList;
+import java.util.*;
 import java.io.File;
 import java.rmi.RemoteException;
 
@@ -116,6 +111,7 @@ public class GenerationController {
       if (isIDEAPresent() && !myGenerationType.requiresCompilationInIDEAfterGeneration()) {
         getProjectHandler().refreshFS();
       }
+      fireModelsGenerated();
     } catch (GenerationCanceledException gce) {
       warning("generation canceled");
       myProgress.finishAnyway();
@@ -130,6 +126,14 @@ public class GenerationController {
       myProgress.finishAnyway();
     }
     return true;
+  }
+
+  private void fireModelsGenerated() {
+    List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
+    for (Pair<SModelDescriptor, IOperationContext>  input : myInputModels) {
+      models.add(input.o1);
+    }
+    myManager.fireModelsGenerated(Collections.unmodifiableList(models));
   }
 
   private long estimateGenerationTime() {
@@ -157,7 +161,6 @@ public class GenerationController {
     String outputFolder = module != null ? module.getGeneratorOutputPath() : null;
     if (outputFolder != null && !new File(outputFolder).exists()) {
       new File(outputFolder).mkdirs();
-
       try {
         getProjectHandler().addSourceRoot(outputFolder);
       } catch (Exception e) {

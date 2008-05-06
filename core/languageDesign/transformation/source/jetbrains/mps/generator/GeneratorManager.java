@@ -5,7 +5,6 @@ import jetbrains.mps.components.Externalizable;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
 import jetbrains.mps.ide.AbstractProjectFrame;
 import jetbrains.mps.ide.IDEProjectFrame;
-import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.messages.*;
 import jetbrains.mps.ide.preferences.IComponentWithPreferences;
@@ -32,16 +31,11 @@ public class GeneratorManager extends DefaultExternalizableComponent implements 
 
   public static final Logger LOG = Logger.getLogger(GeneratorManager.class);
 
-  private
-  @Externalizable
-  boolean mySaveTransientModels;
-  private
-  @Externalizable
-  boolean myDumpStatistics = false;
-  private
-  @Externalizable
-  boolean myShowErrorsOnly;
+  private @Externalizable boolean mySaveTransientModels;
+  private @Externalizable boolean myDumpStatistics = false;
+  private @Externalizable boolean myShowErrorsOnly;
   private List<IFileGenerator> myFileGenerators = new LinkedList<IFileGenerator>();
+  private List<GenerationListener> myGenerationListeners = new ArrayList<GenerationListener>();
 
   private ExecutorService myExecutorService = Executors.newCachedThreadPool();
 
@@ -262,5 +256,23 @@ public class GeneratorManager extends DefaultExternalizableComponent implements 
 
   public boolean willCompile(boolean ideaPresent, IGenerationType generationType) {
     return ideaPresent && generationType.requiresCompilationInIDEABeforeGeneration();
+  }
+
+  void fireModelsGenerated(List<SModelDescriptor> models) {
+    for (GenerationListener l : myGenerationListeners) {
+      try {
+        l.modelsGenerated(models);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
+  public void addGenerationListener(GenerationListener l) {
+    myGenerationListeners.add(l);
+  }
+
+  public void removeGenerationListener(GenerationListener l) {
+    myGenerationListeners.remove(l);
   }
 }
