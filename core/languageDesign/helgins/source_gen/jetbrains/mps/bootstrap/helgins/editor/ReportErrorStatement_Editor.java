@@ -74,7 +74,7 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "REPORT_ERROR"));
+    editorCell.addEditorCell(this.createConstantCell(context, node, "ERROR"));
     editorCell.addEditorCell(this.createErrorStringCell(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, "->"));
     editorCell.addEditorCell(this.createNodeToReportCell(context, node));
