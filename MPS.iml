@@ -53,7 +53,7 @@
     <orderEntry type="library" exported="" name="commons-lang" level="project" />
     <orderEntry type="module" module-name="Closures" exported="" />
     <orderEntry type="module" module-name="Closures-runtime" exported="" />
-    <orderEntry type="library" exported="" name="IDEA-plaform" level="project" />
+    <orderEntry type="library" exported="" name="JDOM" level="project" />
     <orderEntryProperties />
   </component>
   <component name="copyright">
