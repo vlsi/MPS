@@ -4,6 +4,9 @@ import com.intellij.openapi.vfs.DeprecatedVirtualFile;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.util.Calculable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
@@ -14,9 +17,19 @@ import java.io.OutputStream;
 
 public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
   private SNode myNode;
+  private IOperationContext myContext;
 
-  public MPSNodeVirtualFile(SNode node) {
+  public MPSNodeVirtualFile(SNode node, IOperationContext context) {
     myNode = node;
+    myContext = context;
+  }
+
+  public SNode getNode() {
+    return myNode;
+  }
+
+  public IOperationContext getContext() {
+    return myContext;
   }
 
   public String getPath() {
@@ -30,7 +43,11 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
 
   @NotNull @NonNls
   public String getName() {
-    return myNode.getModel().getUID() + "/" + myNode.getId();
+    return CommandProcessor.instance().executeLightweightCommand(new Calculable<String>() {
+      public String calculate() {
+        return myNode.getModel().getUID() + "/" + myNode.getId();
+      }
+    });
   }
 
   public boolean isDirectory() {
@@ -77,6 +94,14 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
   }
 
   public long getTimeStamp() {
-    return myNode.getModel().getModelDescriptor().lastChangeTime();
+    return CommandProcessor.instance().executeLightweightCommand(new Calculable<Long>() {
+      public Long calculate() {
+        return myNode.getModel().getModelDescriptor().lastChangeTime();
+      }
+    });
+  }
+
+  public long getModificationStamp() {
+    return getTimeStamp();
   }
 }

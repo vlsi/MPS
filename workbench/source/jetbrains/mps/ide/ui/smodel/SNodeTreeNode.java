@@ -178,8 +178,12 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   }
 
   public void doubleClick() {
-    IDEProjectFrame projectFrame = (IDEProjectFrame) getOperationContext().getComponent(AbstractProjectFrame.class);
-    projectFrame.openNode(myNode, getOperationContext());
+    if (getTree() instanceof ProjectPane.MyTree) {      
+      ((ProjectPane.MyTree) getTree()).editNode(myNode, getOperationContext());
+    } else {
+      IDEProjectFrame projectFrame = (IDEProjectFrame) getOperationContext().getComponent(AbstractProjectFrame.class);
+      projectFrame.openNode(myNode, getOperationContext());
+    }
   }
 
   private String caclulateNodeTextPresentation() {

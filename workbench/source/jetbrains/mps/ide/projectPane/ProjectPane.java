@@ -2,6 +2,7 @@ package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.MPSToolBar;
+import jetbrains.mps.ide.AbstractProjectFrame;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.IActionDataProvider;
@@ -566,12 +567,21 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     element.setAttribute(AUTOSCROLL_FROM_SOURCE, "" + myAutoscrollFromSource.getModel().isSelected());
   }
 
+  protected void editNode(SNode node, IOperationContext context) {
+    IDEProjectFrame projectFrame = (IDEProjectFrame) context.getComponent(AbstractProjectFrame.class);
+    projectFrame.openNode(node, context);
+  }
+
   public class MyTree extends MPSTree {
     public MyTree() {
       super();
       scrollsOnExpand = false;
 
       registerActions();
+    }
+
+    public void editNode(SNode node, IOperationContext context) {
+      ProjectPane.this.editNode(node, context);
     }
 
     private void registerActions() {
