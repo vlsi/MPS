@@ -19,6 +19,7 @@ import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.annotation.ForDebug;
+import jetbrains.mps.util.annotation.UseCarefully;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jdom.Element;
@@ -995,6 +996,7 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
+  @UseCarefully
   public void changeImportedModelUID(SModelUID oldImportedModelUID, SModelUID newImportedModelUID) {
     for (ImportElement importElement : myImports) {
       if (importElement.getModelUID().equals(oldImportedModelUID)) {
@@ -1093,7 +1095,8 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  /*package*/ void renameLanguageImport(String languageNamespace, String newModuleUID) {
+  @UseCarefully
+  public void changeImportedLanguageNamespace(String languageNamespace, String newModuleUID) {
     myLanguages.remove(languageNamespace);
     myLanguages.add(newModuleUID);
     fireLanguageRemovedEvent(languageNamespace);

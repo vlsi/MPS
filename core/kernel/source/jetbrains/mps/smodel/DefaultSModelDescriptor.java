@@ -7,7 +7,6 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptRefer
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleStub;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
@@ -184,7 +183,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
             newModuleUID = newModuleStub.getActualModuleId();
             newModuleStub = MPSModuleRepository.getInstance().getModuleStubByUID(newModuleUID);
           }
-          mySModel.renameLanguageImport(languageNamespace, newModuleUID);
+          mySModel.changeImportedLanguageNamespace(languageNamespace, newModuleUID);
         }
       }
     }
