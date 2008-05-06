@@ -2,6 +2,7 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactory;
 import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction;
+import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactories;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
@@ -88,11 +89,14 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
       final ConceptDeclaration conceptF = concept;
       SModelDescriptor actionsModelDescriptor = language.getActionsModelDescriptor();
       if (actionsModelDescriptor != null) {
-        nodeFactories = actionsModelDescriptor.getSModel().allAdapters(NodeFactory.class, new Condition<NodeFactory>() {
-          public boolean met(NodeFactory object) {
-            return object.getApplicableConcept() == conceptF;
+        List<NodeFactories> nodeFactoriesList = actionsModelDescriptor.getSModel().getRootsAdapters(NodeFactories.class);
+        for (NodeFactories nodeFactoriesContainer : nodeFactoriesList) {
+          for (NodeFactory nodeFactory : nodeFactoriesContainer.getNodeFactorys()) {
+             if (nodeFactory.getApplicableConcept() == conceptF) {
+               nodeFactories.add(nodeFactory);
+             }
           }
-        });
+        }
       }
       concept = concept.getExtends();
     }

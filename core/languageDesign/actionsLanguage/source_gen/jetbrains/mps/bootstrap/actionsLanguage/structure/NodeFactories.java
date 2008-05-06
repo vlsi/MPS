@@ -8,6 +8,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import java.util.Iterator;
+import java.util.List;
 
 public class NodeFactories extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactories";
@@ -62,12 +64,24 @@ public class NodeFactories extends BaseConcept implements INamedConcept {
     this.setProperty(NodeFactories.VIRTUAL_PACKAGE, value);
   }
 
-  public NodeFactory getNodeFactory() {
-    return (NodeFactory)this.getChild(NodeFactories.NODE_FACTORY);
+  public int getNodeFactorysCount() {
+    return this.getChildCount(NodeFactories.NODE_FACTORY);
   }
 
-  public void setNodeFactory(NodeFactory node) {
-    super.setChild(NodeFactories.NODE_FACTORY, node);
+  public Iterator<NodeFactory> nodeFactorys() {
+    return this.children(NodeFactories.NODE_FACTORY);
+  }
+
+  public List<NodeFactory> getNodeFactorys() {
+    return this.getChildren(NodeFactories.NODE_FACTORY);
+  }
+
+  public void addNodeFactory(NodeFactory node) {
+    this.addChild(NodeFactories.NODE_FACTORY, node);
+  }
+
+  public void insertNodeFactory(NodeFactory prev, NodeFactory node) {
+    this.insertChild(prev, NodeFactories.NODE_FACTORY, node);
   }
 
 }
