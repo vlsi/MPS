@@ -17,8 +17,6 @@ import java.io.File;
 import java.awt.Frame;
 
 public class OpenMPSProjectAction extends AnAction {
-  private static final String MPS_SUFFIX = ".mpr";
-
   public void actionPerformed(AnActionEvent e) {
     final ProjectManagerEx projectManager = ProjectManagerEx.getInstanceEx();
 
