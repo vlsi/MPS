@@ -22,9 +22,6 @@ import java.util.List;
 
 import org.jdom.Element;
 
-/**
- * @author Kostik
- */
 public class OutputView extends DefaultTool implements IExternalizableComponent, IComponentWithPreferences {
   public static final String FONT_SIZE = "fontSize";
 
@@ -149,7 +146,9 @@ public class OutputView extends DefaultTool implements IExternalizableComponent,
   }
 
   public void activate() {
-    myIde.showOutputView();
+    if (myIde != null) {
+      myIde.showOutputView();
+    }
   }
 
   public JComponent getComponent() {

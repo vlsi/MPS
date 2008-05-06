@@ -166,7 +166,7 @@ public class GeneratorManager extends DefaultExternalizableComponent implements 
     }
 
     final IOperationContext invocationContext = inputModels.get(0).o2;
-    final IAdaptiveProgressMonitor progress = new AdaptiveProgressMonitor(invocationContext.getComponent(IDEProjectFrame.class), closeOnExit);
+    final IAdaptiveProgressMonitor progress = new AdaptiveProgressMonitor(invocationContext.getMainFrame(), closeOnExit);
     final DefaultMessageHandler messages = new DefaultMessageHandler(invocationContext.getProject());
 
     // confirm saving transient models
