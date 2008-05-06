@@ -19,16 +19,27 @@ import java.beans.PropertyChangeListener;
 import jetbrains.mps.idea.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.NodeEditor;
+import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 
 public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor {
   private MPSNodeVirtualFile myFile;  
-  private NodeEditor myNodeEditor;
+  private IEditor myNodeEditor;
 
-  public MPSFileNodeEditor(MPSNodeVirtualFile file) {
-    myFile = file;
-    myNodeEditor = new NodeEditor(file.getContext(), file.getNode());
+  public MPSFileNodeEditor(final MPSNodeVirtualFile file) {
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        myFile = file;
+        EditorsPane pane = file.getContext().getComponent(EditorsPane.class);
+        myNodeEditor = pane.createEditorFor(file.getContext(), file.getNode());
+      }
+    });
+  }
+
+  public IEditor getNodeEditor() {
+    return myNodeEditor;
   }
 
   @NotNull
