@@ -5,7 +5,13 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.Pair;
 
 import java.util.List;
+import java.util.Collection;
+import java.io.File;
 
 public interface GenerationListener {
-  void modelsGenerated(List<Pair<SModelDescriptor,IOperationContext>> models, boolean success); 
+  void beforeGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels);
+
+  void filesGenerated(Collection<File> generatedFiles, GenerationStatus status);
+
+  void modelsGenerated(List<Pair<SModelDescriptor,IOperationContext>> models, boolean success);
 }

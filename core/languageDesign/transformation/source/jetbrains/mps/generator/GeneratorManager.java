@@ -3,8 +3,6 @@ package jetbrains.mps.generator;
 import jetbrains.mps.components.DefaultExternalizableComponent;
 import jetbrains.mps.components.Externalizable;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
-import jetbrains.mps.ide.AbstractProjectFrame;
-import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.messages.*;
 import jetbrains.mps.ide.preferences.IComponentWithPreferences;
@@ -23,6 +21,7 @@ import jetbrains.mps.util.Pair;
 import javax.swing.JOptionPane;
 import java.util.*;
 import java.util.concurrent.*;
+import java.io.File;
 
 
 public class GeneratorManager extends DefaultExternalizableComponent implements IComponentWithPreferences {
@@ -250,6 +249,7 @@ public class GeneratorManager extends DefaultExternalizableComponent implements 
         if (saveTransientModels) {
           project.getComponentSafe(GenerationTracer.class).startTracing();
         }
+        fireBeforeGeneration(inputModels);
         GenerationController gc = new GenerationController(GeneratorManager.this, inputModels, generationType, progress, messages, saveTransientModels);
         result[0] = gc.generate();
         project.getComponentSafe(GenerationTracer.class).finishTracing();
@@ -266,6 +266,26 @@ public class GeneratorManager extends DefaultExternalizableComponent implements 
     for (GenerationListener l : myGenerationListeners) {
       try {
         l.modelsGenerated(models, success);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
+  public void fireFilesGenerated(Collection<File> generatedFiles, GenerationStatus status) {
+    for (GenerationListener l : myGenerationListeners) {
+      try {
+        l.filesGenerated(generatedFiles, status);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
+  private void fireBeforeGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
+    for (GenerationListener l : myGenerationListeners) {
+      try {
+        l.beforeGeneration(inputModels);
       } catch (Throwable t) {
         LOG.error(t);
       }

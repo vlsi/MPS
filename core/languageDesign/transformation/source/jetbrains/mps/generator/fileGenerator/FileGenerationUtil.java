@@ -64,6 +64,8 @@ public class FileGenerationUtil {
     directories.add(getDefaultOutputDir(status.getInputModel(), outputRootDirectory));
     cleanUp(context, generatedFiles, directories);
 
+    gm.fireFilesGenerated(generatedFiles, status);
+
     return ok; 
   }
 
