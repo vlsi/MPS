@@ -133,6 +133,10 @@
       <property name="metaClass" value="aggregation"/>
       <link role="target" targetNodeId="2.1068431790191"/>
     </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference"
+          id="1210095519003">
+      <link role="intfc" targetNodeId="2.1197027803184" resolveInfo="IOperation"/>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1174478619261">
     <property name="name" value="InternalClassExpression"/>
@@ -227,6 +231,10 @@
           id="1177590164816">
       <property name="value" value="_field reference"/>
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462"/>
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference"
+          id="1210095541481">
+      <link role="intfc" targetNodeId="2.1197027803184" resolveInfo="IOperation"/>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1199964756070">
