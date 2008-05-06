@@ -88,6 +88,10 @@
       <implementation-class>jetbrains.mps.idea.editors.MPSEditorOpener</implementation-class>
     </component>
 
+    <component>
+      <implementation-class>jetbrains.mps.idea.tools.OutputViewTool</implementation-class>
+    </component>
+
   </project-components>
 
 </components>
