@@ -1093,6 +1093,13 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
+  /*package*/ void renameLanguageImport(String languageNamespace, String newModuleUID) {
+    myLanguages.remove(languageNamespace);
+    myLanguages.add(newModuleUID);
+    fireLanguageRemovedEvent(languageNamespace);
+    fireLanguageAddedEvent(newModuleUID);
+  }
+
   /*package*/
   public static class ImportElement {
     private SModelUID myModelDescriptor;

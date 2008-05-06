@@ -7,6 +7,8 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptRefer
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleStub;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
@@ -157,6 +159,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     }
     try {
       mySModel.setLoading(true);
+      convertRenamedLanguageImports();
       for (SModelDescriptor modelDescriptor : mySModel.getDependenciesModels()) {
         playUsedModelDescriptorsRefactoring(modelDescriptor);
       }
@@ -167,6 +170,24 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
   public void setTestRefactoringMode(boolean isTestRefactoringMode) {
     myIsTestRefactoringMode = isTestRefactoringMode;
+  }
+
+  private void convertRenamedLanguageImports() {
+    for (String languageNamespace : mySModel.getExplicitlyImportedLanguages()) {
+      Language l = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
+      if (l == null) {
+        ModuleStub moduleStub = MPSModuleRepository.getInstance().getModuleStubByUID(languageNamespace);
+        if (moduleStub != null) {
+          String newModuleUID = languageNamespace;
+          ModuleStub newModuleStub = moduleStub;
+          while (newModuleStub != null) {
+            newModuleUID = newModuleStub.getActualModuleId();
+            newModuleStub = MPSModuleRepository.getInstance().getModuleStubByUID(newModuleUID);
+          }
+          mySModel.renameLanguageImport(languageNamespace, newModuleUID);
+        }
+      }
+    }
   }
 
   private void playUsedModelDescriptorsRefactoring(SModelDescriptor modelDescriptor) {
