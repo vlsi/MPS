@@ -83,6 +83,11 @@
     <component>
       <implementation-class>jetbrains.mps.idea.projectPane.ProjectPaneToolWindowOpener</implementation-class>
     </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.idea.editors.MPSEditorOpener</implementation-class>
+    </component>
+
   </project-components>
 
 </components>
