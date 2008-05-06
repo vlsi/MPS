@@ -174,7 +174,6 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
 
   private boolean showPropertiesAndReferences() {
     return getTree() instanceof ProjectPane.MyTree &&
-            getOperationContext().getComponent(ProjectPane.class) != null &&       
             getOperationContext().getComponent(ProjectPane.class).isShowPropertiesAndReferences();
   }
 
