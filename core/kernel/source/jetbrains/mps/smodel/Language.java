@@ -318,8 +318,14 @@ public class Language extends AbstractModule implements Marshallable<Language> {
       if (language == null) {
         ModuleStub moduleStub = MPSModuleRepository.getInstance().getModuleStubByUID(languageNamespace);
         if (moduleStub != null) {
+          String newModuleUID = languageNamespace;
+          ModuleStub newModuleStub = moduleStub;
+          while (newModuleStub != null) {
+            newModuleUID = newModuleStub.getActualModuleId();
+            newModuleStub = MPSModuleRepository.getInstance().getModuleStubByUID(newModuleUID);
+          }
           setModuleDescriptor = true;
-          renameExtendedLanguage(languageNamespace, moduleStub.getActualModuleId(), false);
+          renameExtendedLanguage(languageNamespace, newModuleUID, false);
         }
       }
     }

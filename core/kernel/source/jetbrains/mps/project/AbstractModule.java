@@ -86,8 +86,14 @@ public abstract class AbstractModule implements IModule {
       if (m == null) {
         ModuleStub moduleStub = MPSModuleRepository.getInstance().getModuleStubByUID(moduleUID);
         if (moduleStub != null) {
+          String newModuleUID = moduleUID;
+          ModuleStub newModuleStub = moduleStub;
+          while (newModuleStub != null) {
+            newModuleUID = newModuleStub.getActualModuleId();
+            newModuleStub = MPSModuleRepository.getInstance().getModuleStubByUID(newModuleUID);
+          }
           setModuleDescriptor = true;
-          renameModuleImport(moduleUID, moduleStub.getActualModuleId(), false);
+          renameModuleImport(moduleUID, newModuleUID, false);
         }
       }
     }
@@ -97,8 +103,14 @@ public abstract class AbstractModule implements IModule {
       if (language == null) {
         ModuleStub moduleStub = MPSModuleRepository.getInstance().getModuleStubByUID(languageNamespace);
         if (moduleStub != null) {
+          String newModuleUID = languageNamespace;
+          ModuleStub newModuleStub = moduleStub;
+          while (newModuleStub != null) {
+            newModuleUID = newModuleStub.getActualModuleId();
+            newModuleStub = MPSModuleRepository.getInstance().getModuleStubByUID(newModuleUID);
+          }
           setModuleDescriptor = true;
-          renameUsedLanguage(languageNamespace, moduleStub.getActualModuleId(), false);
+          renameUsedLanguage(languageNamespace, newModuleUID, false);
         }
       }
     }
