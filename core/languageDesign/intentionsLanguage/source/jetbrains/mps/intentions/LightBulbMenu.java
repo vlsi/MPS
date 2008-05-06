@@ -6,6 +6,7 @@ import javax.swing.Icon;
 import javax.swing.JLabel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -21,7 +22,8 @@ public abstract class LightBulbMenu extends JLabel {
     setToolTipText("press alt+enter to view intentions list");
 
     myIcon = Icons.INTENTION_ICON;
-    setSize(getWidth(), myIcon.getIconHeight());
+    setPreferredSize(new Dimension(getWidth(), getHeight()));
+    setSize(getWidth(), getHeight());
 
     addMouseListener(new MouseAdapter() {
       public void mousePressed(MouseEvent e) {
@@ -40,7 +42,7 @@ public abstract class LightBulbMenu extends JLabel {
   }
 
   public int getHeight() {
-    return myIcon.getIconHeight() + 3;
+    return myIcon.getIconHeight();
   }
 
   public abstract void activate();

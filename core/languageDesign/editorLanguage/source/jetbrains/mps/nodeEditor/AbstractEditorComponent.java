@@ -1763,34 +1763,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
   }
 
-  private void adjustLightBulbLocation() {
-    EditorCell selectedCell = getSelectedCell();
-    if (selectedCell == null) return;
-
-    EditorCell bigCell = getBigCellForNode(selectedCell.getSNode());
-    if (bigCell != null) {
-      selectedCell = bigCell;
-    }
-
-    int x = getRootCell().getX() - ADDITIONAL_SHIFT_X - myLightBulb.getWidth() - 6;
-    int y = selectedCell.getY();
-    myLightBulbLocation.x = Math.max(x, myScrollPane.getViewport().getViewPosition().x + 2);
-    myLightBulbLocation.y = Math.max(y, myScrollPane.getViewport().getViewPosition().y + 2);
-
-    myLightBulb.setLocation(myLightBulbLocation);
-  }
-
-  private void showLightBulb(boolean showError) {
-    myLightBulb.setError(showError);
-    add(myLightBulb);
-    myLightBulb.setLocation(myLightBulbLocation);
-    repaint();
-  }
-
-  private void hideLightBulb() {
-    remove(myLightBulb);
-  }
-
   protected void paintChildren(Graphics g) {
     super.paintChildren(g);
     if (mySelectedCell instanceof EditorCell_Component) ((EditorCell_Component) mySelectedCell).paintSelection(g);
@@ -2261,7 +2233,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     EditorCell bigCell = getBigCellForNode(cell.getSNode());
     assert bigCell != null : "selected cell mustn't be null";
 
-    intentionsMenu.show(this, getRootCell().getX(), bigCell.getY() + myLightBulb.getHeight());
+    Point loc = getIntentionsMenuLocation(bigCell, intentionsMenu);
+    intentionsMenu.show(this, loc.x, loc.y);
   }
 
   private void setLightBulbVisibility(final boolean value) {
@@ -2283,6 +2256,62 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         }
       }
     });
+  }
+
+  private void adjustLightBulbLocation() {
+    EditorCell selectedCell = getSelectedCell();
+    if (selectedCell == null) return;
+
+    Point p = getLightBulbLocation(selectedCell);
+
+    myLightBulbLocation.setLocation(p);
+
+    myLightBulb.setLocation(myLightBulbLocation);
+  }
+
+  private void showLightBulb(boolean showError) {
+    myLightBulb.setError(showError);
+    add(myLightBulb);
+    myLightBulb.setLocation(myLightBulbLocation);
+    repaint();
+  }
+
+  private void hideLightBulb() {
+    remove(myLightBulb);
+  }
+
+  @NotNull
+  private Point getInsertedPosition(@NotNull Rectangle parentView, @NotNull Dimension childDim, @NotNull Point preferredLoc) {
+    Point p = new Point(preferredLoc);
+
+    p.x = Math.max(p.x, parentView.x + 2);
+    p.y = Math.max(p.y, parentView.y + 2);
+
+    p.x = Math.min(p.x, parentView.x + parentView.width - 2 - childDim.width);
+    p.y = Math.min(p.y, parentView.y + parentView.height - 2 - childDim.height);
+
+    return p;
+  }
+
+  @NotNull
+  private Point getLightBulbLocation(@NotNull EditorCell selectedCell) {
+    EditorCell bigCell = getBigCellForNode(selectedCell.getSNode());
+    if (bigCell != null) selectedCell = bigCell;
+
+    int x = getRootCell().getX() - ADDITIONAL_SHIFT_X - myLightBulb.getWidth() - 6;
+    int y = selectedCell.getY();
+
+    Rectangle viewRect = myScrollPane.getViewport().getViewRect();
+    return getInsertedPosition(viewRect, myLightBulb.getPreferredSize(), new Point(x, y));
+  }
+
+  @NotNull
+  private Point getIntentionsMenuLocation(@NotNull EditorCell selectedCell, @NotNull IntentionsMenu menu) {
+    Point point = getLightBulbLocation(selectedCell);
+    point.x = selectedCell.getX();
+    point.y += myLightBulb.getHeight();
+    Rectangle viewRect = myScrollPane.getViewport().getViewRect();
+    return getInsertedPosition(viewRect, menu.getPreferredSize(), point);
   }
 
   private class MyModelListener implements SModelCommandListener {
