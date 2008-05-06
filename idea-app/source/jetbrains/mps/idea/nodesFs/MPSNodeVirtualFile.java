@@ -33,7 +33,11 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
   }
 
   public String getPath() {
-    return getFileSystem().getProtocol() + "://" + getName();
+    return CommandProcessor.instance().executeLightweightCommand(new Calculable<String>() {
+      public String calculate() {
+        return "mps://" + myNode.getModel().getUID() + "/" + myNode.getId();
+      }
+    });
   }
 
   @NotNull
@@ -45,7 +49,7 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
   public String getName() {
     return CommandProcessor.instance().executeLightweightCommand(new Calculable<String>() {
       public String calculate() {
-        return myNode.getModel().getUID() + "/" + myNode.getId();
+        return myNode.getName();
       }
     });
   }

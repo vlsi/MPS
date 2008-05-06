@@ -11,11 +11,19 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
+import java.util.List;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.GlobalSModelEventsManager;
+import jetbrains.mps.smodel.event.SModelCommandListener;
+import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.smodel.event.SModelEventVisitorAdapter;
+import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.util.Calculable;
+import jetbrains.mps.core.structure.INamedConcept;
 
 public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem implements ApplicationComponent {
   private static String VIRTUAL_FILE = "virtualFile";
@@ -23,6 +31,8 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
   public static MPSNodesVirtualFileSystem getInstance() {
     return ApplicationManager.getApplication().getComponent(MPSNodesVirtualFileSystem.class);
   }
+
+  private SModelCommandListener myListener = new MyCommandListener();
 
   public MPSNodeVirtualFile getFileFor(final SNode node, final IOperationContext context) {
     return CommandProcessor.instance().executeLightweightCommand(new Calculable<MPSNodeVirtualFile>() {
@@ -43,11 +53,11 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
   }
 
   public void initComponent() {
-
+    GlobalSModelEventsManager.getInstance().addGlobalCommandListener(myListener);
   }
 
   public void disposeComponent() {
-
+    GlobalSModelEventsManager.getInstance().removeGlobalCommandListener(myListener);
   }
 
   @NonNls
@@ -62,7 +72,6 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
   }
 
   public void refresh(boolean asynchronous) {
-
   }
 
   @Nullable
@@ -92,5 +101,24 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
 
   protected VirtualFile copyFile(Object requestor, VirtualFile virtualFile, VirtualFile newParent, String copyName) throws IOException {
     throw new UnsupportedOperationException();
+  }
+
+  private class MyCommandListener implements SModelCommandListener {
+    public void eventsHappenedInCommand(List<SModelEvent> events) {
+      for (SModelEvent e : events) {
+        e.accept(new SModelEventVisitorAdapter() {
+          public void visitPropertyEvent(SModelPropertyEvent event) {
+            VirtualFile vf = (VirtualFile) event.getNode().getUserObject(VIRTUAL_FILE);
+            if (event.getNode().isRoot() &&
+              INamedConcept.NAME.equals(event.getPropertyName()) &&
+              vf != null) {
+
+              fireBeforePropertyChange(this, vf, VirtualFile.PROP_NAME, event.getOldPropertyValue(), event.getNewPropertyValue());
+              firePropertyChanged(this, vf, VirtualFile.PROP_NAME, event.getOldPropertyValue(), event.getNewPropertyValue());
+            }
+          }
+        });
+      }
+    }
   }
 }
