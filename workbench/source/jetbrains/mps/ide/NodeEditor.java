@@ -2,6 +2,7 @@ package jetbrains.mps.ide;
 
 import jetbrains.mps.ide.navigation.EditorInfo;
 import jetbrains.mps.ide.navigation.IHistoryItem;
+import jetbrains.mps.ide.action.IActionDataProvider;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
@@ -10,15 +11,20 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
+import javax.swing.JPanel;
 import javax.swing.event.ChangeListener;
+import java.awt.BorderLayout;
 
 public class NodeEditor implements IEditor {
 
   protected AbstractEditorComponent myEditorComponent;
+  private JPanel myComponent = new MyPanel();
 
   public NodeEditor(IOperationContext context, SNode node) {
     myEditorComponent = new NodeEditorComponent(context);
     myEditorComponent.editNode(node, context);
+
+    myComponent.add(myEditorComponent, BorderLayout.CENTER);
   }
 
   protected NodeEditor() {
@@ -26,7 +32,7 @@ public class NodeEditor implements IEditor {
   }
 
   public JComponent getComponent() {
-    return myEditorComponent.getExternalComponent();
+    return myComponent;
   }
 
   public void rebuildEditorContent() {
@@ -110,5 +116,16 @@ public class NodeEditor implements IEditor {
     myEditorComponent.requestFocus();
   }
 
+  private class MyPanel extends JPanel implements IActionDataProvider {
+    private MyPanel() {
+      setLayout(new BorderLayout());
+    }
 
+    public <T> T get(Class<T> cls) {
+      if (cls == IEditor.class) {
+        return (T) NodeEditor.this;
+      }
+      return null;
+    }
+  }
 }

@@ -108,13 +108,12 @@ public class GeneratorManager extends DefaultExternalizableComponent implements 
   public void generateModelsFromDifferentModules(final IOperationContext operationContext, final List<SModelDescriptor> inputModels, final IGenerationType generationType) {
     new Thread() {
       public void run() {
-        AbstractProjectFrame projectFrame = operationContext.getComponent(AbstractProjectFrame.class);
         try {
           GeneratorManager generatorManager = operationContext.getComponent(GeneratorManager.class);
           List<Pair<SModelDescriptor, IOperationContext>> modelsWithContext = new ArrayList<Pair<SModelDescriptor, IOperationContext>>();
           for (SModelDescriptor model : inputModels) {
             assert model != null;
-            ModuleContext moduleContext = ModuleContext.create(model, projectFrame, false);
+            ModuleContext moduleContext = ModuleContext.create(model, operationContext.getProject(), false);
             modelsWithContext.add(new Pair<SModelDescriptor, IOperationContext>(model, moduleContext));
           }
 

@@ -24,11 +24,7 @@ import java.util.Set;
 import java.util.Iterator;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Sep 9, 2005
- * Time: 7:55:20 PM
- * To change this template use File | Settings | File Templates.
+
  */
 public class ModuleContext extends StandaloneMPSContext {
   private static final Logger LOG = Logger.getLogger(ModuleContext.class);
@@ -70,16 +66,15 @@ public class ModuleContext extends StandaloneMPSContext {
     return "module context: " + myModuleUID;
   }
 
-  public static ModuleContext create(SNode node, AbstractProjectFrame frame) {
-    return create(node.getModel(), frame, true);
+  public static ModuleContext create(SNode node, MPSProject project) {
+    return create(node.getModel(), project, true);
   }
 
-  public static ModuleContext create(SModel model, AbstractProjectFrame frame, boolean askIfMany) {
-    return create(model.getModelDescriptor(), frame, askIfMany);
+  public static ModuleContext create(SModel model, MPSProject project, boolean askIfMany) {
+    return create(model.getModelDescriptor(), project, askIfMany);
   }
 
-  public static ModuleContext create(@NotNull SModelDescriptor model, AbstractProjectFrame frame, boolean askIfMany) {
-    MPSProject project = frame.getProject();
+  public static ModuleContext create(@NotNull SModelDescriptor model, MPSProject project, boolean askIfMany) {
     Set<IModule> owningModules = SModelRepository.getInstance().getOwners(model, IModule.class);
     if (owningModules.isEmpty()) {
       LOG.error("couldn't create module context for node:" +
@@ -91,7 +86,13 @@ public class ModuleContext extends StandaloneMPSContext {
     if (owningModules.size() == 1 || !askIfMany) {
       module = owningModules.iterator().next();
     } else {
-      ChooseModuleDialog md = new ChooseModuleDialog(frame.getMainFrame(), owningModules);
+      Frame frame = null;
+      AbstractProjectFrame projectFrame = project.getComponent(AbstractProjectFrame.class);
+      if (projectFrame != null) {
+        frame = projectFrame.getMainFrame();
+      }
+
+      ChooseModuleDialog md = new ChooseModuleDialog(frame, owningModules);
       md.showDialog();
       module = md.getResult();
     }
