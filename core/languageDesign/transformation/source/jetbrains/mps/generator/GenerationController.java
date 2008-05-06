@@ -111,7 +111,7 @@ public class GenerationController {
       if (isIDEAPresent() && !myGenerationType.requiresCompilationInIDEAfterGeneration()) {
         getProjectHandler().refreshFS();
       }
-      fireModelsGenerated();
+      fireModelsGenerated(generationOK);
     } catch (GenerationCanceledException gce) {
       warning("generation canceled");
       myProgress.finishAnyway();
@@ -128,12 +128,12 @@ public class GenerationController {
     return true;
   }
 
-  private void fireModelsGenerated() {
+  private void fireModelsGenerated(boolean success) {
     List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
     for (Pair<SModelDescriptor, IOperationContext>  input : myInputModels) {
       models.add(input.o1);
     }
-    myManager.fireModelsGenerated(Collections.unmodifiableList(models));
+    myManager.fireModelsGenerated(Collections.unmodifiableList(models), success);
   }
 
   private long estimateGenerationTime() {

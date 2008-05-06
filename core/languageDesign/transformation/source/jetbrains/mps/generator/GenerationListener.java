@@ -5,5 +5,5 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.List;
 
 public interface GenerationListener {
-  void modelsGenerated(List<SModelDescriptor> models); 
+  void modelsGenerated(List<SModelDescriptor> models, boolean success); 
 }
