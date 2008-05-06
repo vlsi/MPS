@@ -1,6 +1,7 @@
 package jetbrains.mps.idea.recent;
 
 import com.intellij.ide.RecentProjectsManagerBase;
+import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -34,7 +35,7 @@ public class RecentMPSProjectsManager extends RecentProjectsManagerBase {
   protected void doOpenProject(String projectPath, Project projectToClose) {
     final VirtualFile projectFile = LocalFileSystem.getInstance().findFileByPath(FileUtil.toSystemIndependentName(projectPath));
     if (projectFile != null) {
-      PlatformProjectOpenProcessor.getInstance().doOpenProject(projectFile, projectToClose, false);
+      ProjectUtil.openProject(projectPath, projectToClose, false);
     }
   }
 }
