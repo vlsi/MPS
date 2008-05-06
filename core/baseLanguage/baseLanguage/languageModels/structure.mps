@@ -1033,6 +1033,9 @@
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1178289092936">
       <link role="intfc" targetNodeId="1178285077437" resolveInfo="ClassifierMember" />
     </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1210110243243">
+      <link role="intfc" targetNodeId="4.1196978630214" resolveInfo="IResolveInfo" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1081256982272">
     <property name="name" value="InstanceOfExpression" />
