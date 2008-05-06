@@ -80,7 +80,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
   public MPSProject(final @NotNull File projectFile) {
     myContext.register(MPSProject.class, this);
-    myContext.register(GeneratorManager.class);
+    myContext.register(GeneratorManager.class, createGeneratorManager());
     myContext.register(ProjectVCSManager.class);
 
     CommandProcessor.instance().executeCommand(new Runnable() {
@@ -113,6 +113,12 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     Highlighter hilghlighter = new Highlighter();
     myContext.register(Highlighter.class, hilghlighter);
     hilghlighter.setProjects(ApplicationComponents.getInstance().getComponent(MPSProjects.class));
+  }
+
+
+  //todo IDEA platform hack
+  protected GeneratorManager createGeneratorManager() {
+    return new GeneratorManager();
   }
 
   public IScope getScope() {
