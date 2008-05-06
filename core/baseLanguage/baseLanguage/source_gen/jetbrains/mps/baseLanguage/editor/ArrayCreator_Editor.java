@@ -50,7 +50,7 @@ public class ArrayCreator_Editor extends DefaultNodeEditor {
 
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    ArrayCreator_Editor.setupBasic_RowCell(editorCell, node, context);
+    setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -64,7 +64,7 @@ public class ArrayCreator_Editor extends DefaultNodeEditor {
       this.myDimensionExpressionListHandler_dimensionExpressionList_ = new ArrayCreator_Editor._RefNodeListHandler69(node, "dimensionExpression", context);
     }
     EditorCell_Collection editorCell = this.myDimensionExpressionListHandler_dimensionExpressionList_.createCells(context, new CellLayout_Horizontal(), false);
-    ArrayCreator_Editor.setupBasic_DimensionExpressionList(editorCell, node, context);
+    setupBasic_DimensionExpressionList(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -76,9 +76,9 @@ public class ArrayCreator_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    ArrayCreator_Editor.setupBasic_ComponentTypeCell(editorCell, node, context);
+    setupBasic_ComponentTypeCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      ArrayCreator_Editor.setupLabel_ComponentTypeCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_ComponentTypeCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

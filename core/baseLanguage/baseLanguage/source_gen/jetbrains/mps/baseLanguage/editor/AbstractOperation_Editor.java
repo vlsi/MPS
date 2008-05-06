@@ -27,7 +27,7 @@ public class AbstractOperation_Editor extends DefaultNodeEditor {
       this.myCellProvider1 = this._cellProviderFactory_1208623526502(node, context);
     }
     EditorCell editorCell = this.myCellProvider1.createEditorCell(context);
-    AbstractOperation_Editor.setupBasic_CellModel_Custom(editorCell, node, context);
+    setupBasic_CellModel_Custom(editorCell, node, context);
     return editorCell;
   }
 

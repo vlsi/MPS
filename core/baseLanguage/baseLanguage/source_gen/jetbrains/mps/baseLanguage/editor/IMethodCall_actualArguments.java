@@ -52,7 +52,7 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173990956441");
     editorCell.setSelectable(true);
     editorCell.setFontType(MPSFonts.PLAIN);
-    if (IMethodCall_actualArguments._QueryFunction_NodeCondition_1198529046862(node, context, context.getScope())) {
+    if (_QueryFunction_NodeCondition_1198529046862(node, context, context.getScope())) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
   }
@@ -85,7 +85,7 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
 
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    IMethodCall_actualArguments.setupBasic_RowCell(editorCell, node, context);
+    setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -97,16 +97,16 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
 
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    IMethodCall_actualArguments.setupBasic_ConstantCell(editorCell, node, context);
-    IMethodCall_actualArguments.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell(editorCell, node, context);
+    setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    IMethodCall_actualArguments.setupBasic_ConstantCell2(editorCell, node, context);
-    IMethodCall_actualArguments.setupLabel_ConstantCell2(editorCell, node, context);
+    setupBasic_ConstantCell2(editorCell, node, context);
+    setupLabel_ConstantCell2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -116,7 +116,7 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
       this.myActualArgumentListHandler_actualArgumentList_ = new IMethodCall_actualArguments._RefNodeListHandler37(node, "actualArgument", context);
     }
     EditorCell_Collection editorCell = this.myActualArgumentListHandler_actualArgumentList_.createCells(context, new CellLayout_Horizontal(), false);
-    IMethodCall_actualArguments.setupBasic_ActualArgumentList(editorCell, node, context);
+    setupBasic_ActualArgumentList(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -189,8 +189,8 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
 
     public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      IMethodCall_actualArguments._RefNodeListHandler37.setupBasic_ConstantCell1(editorCell, node, context);
-      IMethodCall_actualArguments._RefNodeListHandler37.setupLabel_ConstantCell1(editorCell, node, context);
+      setupBasic_ConstantCell1(editorCell, node, context);
+      setupLabel_ConstantCell1(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }

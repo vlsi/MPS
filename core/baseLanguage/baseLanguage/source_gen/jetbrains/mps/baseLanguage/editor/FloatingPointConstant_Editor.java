@@ -33,9 +33,9 @@ public class FloatingPointConstant_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    FloatingPointConstant_Editor.setupBasic_ValueCell(editorCell, node, context);
+    setupBasic_ValueCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      FloatingPointConstant_Editor.setupLabel_ValueCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_ValueCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

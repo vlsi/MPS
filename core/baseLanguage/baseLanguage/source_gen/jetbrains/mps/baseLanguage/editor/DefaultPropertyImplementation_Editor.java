@@ -40,7 +40,7 @@ public class DefaultPropertyImplementation_Editor extends DefaultNodeEditor {
 
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    DefaultPropertyImplementation_Editor.setupBasic_RowCell(editorCell, node, context);
+    setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -53,9 +53,9 @@ public class DefaultPropertyImplementation_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    DefaultPropertyImplementation_Editor.setupBasic_DefaultGetAccessorCell(editorCell, node, context);
+    setupBasic_DefaultGetAccessorCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      DefaultPropertyImplementation_Editor.setupLabel_DefaultGetAccessorCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_DefaultGetAccessorCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -82,9 +82,9 @@ public class DefaultPropertyImplementation_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    DefaultPropertyImplementation_Editor.setupBasic_DefaultSetAccessorCell(editorCell, node, context);
+    setupBasic_DefaultSetAccessorCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      DefaultPropertyImplementation_Editor.setupLabel_DefaultSetAccessorCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_DefaultSetAccessorCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

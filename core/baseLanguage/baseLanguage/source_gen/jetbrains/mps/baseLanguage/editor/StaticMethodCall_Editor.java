@@ -70,7 +70,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
 
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    StaticMethodCall_Editor.setupBasic_RowCell(editorCell, node, context);
+    setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -86,14 +86,14 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
       this.myIMethodCall_actualArguments = new IMethodCall_actualArguments(node);
     }
     EditorCell editorCell = this.myIMethodCall_actualArguments.createEditorCell(context);
-    StaticMethodCall_Editor.setupBasic_IMethodCall_actualArgumentsCell(editorCell, node, context);
+    setupBasic_IMethodCall_actualArgumentsCell(editorCell, node, context);
     return editorCell;
   }
 
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    StaticMethodCall_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    StaticMethodCall_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell(editorCell, node, context);
+    setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -102,9 +102,9 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new StaticMethodCall_Editor._Inline3());
     EditorCell editorCell = provider.createEditorCell(context);
-    StaticMethodCall_Editor.setupBasic_StaticMethodDeclarationReferenceCell(editorCell, node, context);
+    setupBasic_StaticMethodDeclarationReferenceCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      StaticMethodCall_Editor.setupLabel_StaticMethodDeclarationReferenceCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_StaticMethodDeclarationReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new StaticMethodCall_Editor.StaticMethodCall_staticMethodDeclaration_cellMenu(),new StaticMethodCall_Editor.StaticMethodCall_customReplace_cellMenu()}));
@@ -132,9 +132,9 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new StaticMethodCall_Editor._Inline13());
     EditorCell editorCell = provider.createEditorCell(context);
-    StaticMethodCall_Editor.setupBasic_ClassConceptReferenceCell(editorCell, node, context);
+    setupBasic_ClassConceptReferenceCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      StaticMethodCall_Editor.setupLabel_ClassConceptReferenceCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_ClassConceptReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -185,9 +185,9 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      StaticMethodCall_Editor._Inline3.setupBasic_NameCell(editorCell, node, context);
+      setupBasic_NameCell(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        StaticMethodCall_Editor._Inline3.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -238,9 +238,9 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      StaticMethodCall_Editor._Inline13.setupBasic_NameCell(editorCell, node, context);
+      setupBasic_NameCell(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        StaticMethodCall_Editor._Inline13.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

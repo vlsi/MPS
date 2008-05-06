@@ -26,8 +26,8 @@ public class Statement_Editor extends DefaultNodeEditor {
 
   public EditorCell createNodeBox(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "<statement>");
-    Statement_Editor.setupBasic_NodeBox(editorCell, node, context);
-    Statement_Editor.setupLabel_NodeBox(editorCell, node, context);
+    setupBasic_NodeBox(editorCell, node, context);
+    setupLabel_NodeBox(editorCell, node, context);
     return editorCell;
   }
 

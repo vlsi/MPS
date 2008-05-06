@@ -46,7 +46,7 @@ public class CustomPropertyImplementation_Editor extends DefaultNodeEditor {
 
   public EditorCell createColumnCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    CustomPropertyImplementation_Editor.setupBasic_ColumnCell(editorCell, node, context);
+    setupBasic_ColumnCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -61,9 +61,9 @@ public class CustomPropertyImplementation_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    CustomPropertyImplementation_Editor.setupBasic_GetAccessorCell(editorCell, node, context);
+    setupBasic_GetAccessorCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      CustomPropertyImplementation_Editor.setupLabel_GetAccessorCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_GetAccessorCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -90,9 +90,9 @@ public class CustomPropertyImplementation_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    CustomPropertyImplementation_Editor.setupBasic_SetAccessorCell(editorCell, node, context);
+    setupBasic_SetAccessorCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      CustomPropertyImplementation_Editor.setupLabel_SetAccessorCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_SetAccessorCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

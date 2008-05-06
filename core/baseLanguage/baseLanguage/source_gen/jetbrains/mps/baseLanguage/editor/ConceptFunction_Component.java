@@ -38,7 +38,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
   private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1196975453804");
     editorCell.setSelectable(false);
-    editorCell.setCellBackgroundColor(ConceptFunction_Component._QueryFunction_Color_1196975453904(node, context));
+    editorCell.setCellBackgroundColor(_QueryFunction_Color_1196975453904(node, context));
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
@@ -66,7 +66,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1196975453898");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
-    editorCell.setCellBackgroundColor(ConceptFunction_Component._QueryFunction_Color_1196975453900(node, context));
+    editorCell.setCellBackgroundColor(_QueryFunction_Color_1196975453900(node, context));
   }
 
   private static void setupBasic_BodyCell(EditorCell editorCell, SNode node, EditorContext context) {
@@ -104,7 +104,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
 
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    ConceptFunction_Component.setupBasic_RowCell(editorCell, node, context);
+    setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -114,7 +114,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
 
   public EditorCell createRowCell1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    ConceptFunction_Component.setupBasic_RowCell1(editorCell, node, context);
+    setupBasic_RowCell1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -125,7 +125,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
 
   public EditorCell createColumnCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    ConceptFunction_Component.setupBasic_ColumnCell(editorCell, node, context);
+    setupBasic_ColumnCell(editorCell, node, context);
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -136,7 +136,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
 
   public EditorCell createRowCell2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    ConceptFunction_Component.setupBasic_RowCell2(editorCell, node, context);
+    setupBasic_RowCell2(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -146,7 +146,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
 
   public EditorCell createRowCell3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    ConceptFunction_Component.setupBasic_RowCell3(editorCell, node, context);
+    setupBasic_RowCell3(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -156,8 +156,8 @@ public class ConceptFunction_Component extends AbstractCellProvider {
 
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    ConceptFunction_Component.setupBasic_ConstantCell(editorCell, node, context);
-    ConceptFunction_Component.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell(editorCell, node, context);
+    setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -166,8 +166,8 @@ public class ConceptFunction_Component extends AbstractCellProvider {
     ModelAccessor modelAccessor = this._modelAcessorFactory_1196975453808(context, node);
     EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-    ConceptFunction_Component.setupBasic_CellModel_ModelAccess(editorCell, node, context);
-    ConceptFunction_Component.setupLabel_CellModel_ModelAccess(editorCell, node, context);
+    setupBasic_CellModel_ModelAccess(editorCell, node, context);
+    setupLabel_CellModel_ModelAccess(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -215,9 +215,9 @@ public class ConceptFunction_Component extends AbstractCellProvider {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    ConceptFunction_Component.setupBasic_BodyCell(editorCell, node, context);
+    setupBasic_BodyCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      ConceptFunction_Component.setupLabel_BodyCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_BodyCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

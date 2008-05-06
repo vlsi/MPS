@@ -33,7 +33,7 @@ public class AnnotationInstanceExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    AnnotationInstanceExpression_Editor.setupBasic_RowCell(editorCell, node, context);
+    setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -45,9 +45,9 @@ public class AnnotationInstanceExpression_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    AnnotationInstanceExpression_Editor.setupBasic_AnnotationInstanceCell(editorCell, node, context);
+    setupBasic_AnnotationInstanceCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      AnnotationInstanceExpression_Editor.setupLabel_AnnotationInstanceCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_AnnotationInstanceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

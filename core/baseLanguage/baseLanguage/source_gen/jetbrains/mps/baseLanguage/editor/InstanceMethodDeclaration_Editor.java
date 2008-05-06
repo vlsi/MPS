@@ -295,7 +295,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createMethodBox(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    InstanceMethodDeclaration_Editor.setupBasic_MethodBox(editorCell, node, context);
+    setupBasic_MethodBox(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -317,7 +317,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createHeaderRow(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    InstanceMethodDeclaration_Editor.setupBasic_HeaderRow(editorCell, node, context);
+    setupBasic_HeaderRow(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -347,7 +347,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createBodyArea(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    InstanceMethodDeclaration_Editor.setupBasic_BodyArea(editorCell, node, context);
+    setupBasic_BodyArea(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -358,7 +358,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    InstanceMethodDeclaration_Editor.setupBasic_RowCell(editorCell, node, context);
+    setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -369,7 +369,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createColumnCell1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    InstanceMethodDeclaration_Editor.setupBasic_ColumnCell1(editorCell, node, context);
+    setupBasic_ColumnCell1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -381,7 +381,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createRowCell1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    InstanceMethodDeclaration_Editor.setupBasic_RowCell1(editorCell, node, context);
+    setupBasic_RowCell1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -392,7 +392,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createRowCell2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    InstanceMethodDeclaration_Editor.setupBasic_RowCell2(editorCell, node, context);
+    setupBasic_RowCell2(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -402,7 +402,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createColumnCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    InstanceMethodDeclaration_Editor.setupBasic_ColumnCell(editorCell, node, context);
+    setupBasic_ColumnCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -415,7 +415,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
       this.my_Component_Visibility = new _Component_Visibility(node);
     }
     EditorCell editorCell = this.my_Component_Visibility.createEditorCell(context);
-    InstanceMethodDeclaration_Editor.setupBasic__Component_VisibilityCell(editorCell, node, context);
+    setupBasic__Component_VisibilityCell(editorCell, node, context);
     return editorCell;
   }
 
@@ -424,7 +424,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
       this.myBaseMethodDeclaration_NameCellComponent = new BaseMethodDeclaration_NameCellComponent(node);
     }
     EditorCell editorCell = this.myBaseMethodDeclaration_NameCellComponent.createEditorCell(context);
-    InstanceMethodDeclaration_Editor.setupBasic_BaseMethodDeclaration_NameCellComponentCell(editorCell, node, context);
+    setupBasic_BaseMethodDeclaration_NameCellComponentCell(editorCell, node, context);
     return editorCell;
   }
 
@@ -433,94 +433,94 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
       this.my_GenericDeclaration_TypeVariables_Component4 = new _GenericDeclaration_TypeVariables_Component(node);
     }
     EditorCell editorCell = this.my_GenericDeclaration_TypeVariables_Component4.createEditorCell(context);
-    InstanceMethodDeclaration_Editor.setupBasic__GenericDeclaration_TypeVariables_ComponentCell(editorCell, node, context);
+    setupBasic__GenericDeclaration_TypeVariables_ComponentCell(editorCell, node, context);
     return editorCell;
   }
 
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    InstanceMethodDeclaration_Editor.setupBasic_ConstantCell1(editorCell, node, context);
-    InstanceMethodDeclaration_Editor.setupLabel_ConstantCell1(editorCell, node, context);
+    setupBasic_ConstantCell1(editorCell, node, context);
+    setupLabel_ConstantCell1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    InstanceMethodDeclaration_Editor.setupBasic_ConstantCell3(editorCell, node, context);
-    InstanceMethodDeclaration_Editor.setupLabel_ConstantCell3(editorCell, node, context);
+    setupBasic_ConstantCell3(editorCell, node, context);
+    setupLabel_ConstantCell3(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createIndentCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    InstanceMethodDeclaration_Editor.setupBasic_IndentCell(editorCell, node, context);
-    InstanceMethodDeclaration_Editor.setupLabel_IndentCell(editorCell, node, context);
+    setupBasic_IndentCell(editorCell, node, context);
+    setupLabel_IndentCell(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    InstanceMethodDeclaration_Editor.setupBasic_ConstantCell7(editorCell, node, context);
-    InstanceMethodDeclaration_Editor.setupLabel_ConstantCell7(editorCell, node, context);
+    setupBasic_ConstantCell7(editorCell, node, context);
+    setupLabel_ConstantCell7(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    InstanceMethodDeclaration_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    InstanceMethodDeclaration_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell(editorCell, node, context);
+    setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    InstanceMethodDeclaration_Editor.setupBasic_ConstantCell6(editorCell, node, context);
-    InstanceMethodDeclaration_Editor.setupLabel_ConstantCell6(editorCell, node, context);
+    setupBasic_ConstantCell6(editorCell, node, context);
+    setupLabel_ConstantCell6(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    InstanceMethodDeclaration_Editor.setupBasic_ConstantCell4(editorCell, node, context);
-    InstanceMethodDeclaration_Editor.setupLabel_ConstantCell4(editorCell, node, context);
+    setupBasic_ConstantCell4(editorCell, node, context);
+    setupLabel_ConstantCell4(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    InstanceMethodDeclaration_Editor.setupBasic_ConstantCell5(editorCell, node, context);
-    InstanceMethodDeclaration_Editor.setupLabel_ConstantCell5(editorCell, node, context);
+    setupBasic_ConstantCell5(editorCell, node, context);
+    setupLabel_ConstantCell5(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell9(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    InstanceMethodDeclaration_Editor.setupBasic_ConstantCell9(editorCell, node, context);
-    InstanceMethodDeclaration_Editor.setupLabel_ConstantCell9(editorCell, node, context);
+    setupBasic_ConstantCell9(editorCell, node, context);
+    setupLabel_ConstantCell9(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell10(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    InstanceMethodDeclaration_Editor.setupBasic_ConstantCell10(editorCell, node, context);
-    InstanceMethodDeclaration_Editor.setupLabel_ConstantCell10(editorCell, node, context);
+    setupBasic_ConstantCell10(editorCell, node, context);
+    setupLabel_ConstantCell10(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell8(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    InstanceMethodDeclaration_Editor.setupBasic_ConstantCell8(editorCell, node, context);
-    InstanceMethodDeclaration_Editor.setupLabel_ConstantCell8(editorCell, node, context);
+    setupBasic_ConstantCell8(editorCell, node, context);
+    setupLabel_ConstantCell8(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -530,7 +530,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
       this.myParameterListHandler_parameterList_ = new InstanceMethodDeclaration_Editor._RefNodeListHandler19(node, "parameter", context);
     }
     EditorCell_Collection editorCell = this.myParameterListHandler_parameterList_.createCells(context, new CellLayout_Horizontal(), false);
-    InstanceMethodDeclaration_Editor.setupBasic_ParameterList(editorCell, node, context);
+    setupBasic_ParameterList(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -543,7 +543,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
       this.myThrowsItemListHandler_throwsItemList_ = new InstanceMethodDeclaration_Editor._RefNodeListHandler39(node, "throwsItem", context);
     }
     EditorCell_Collection editorCell = this.myThrowsItemListHandler_throwsItemList_.createCells(context, new CellLayout_Horizontal(), false);
-    InstanceMethodDeclaration_Editor.setupBasic_ThrowsItemList(editorCell, node, context);
+    setupBasic_ThrowsItemList(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -556,7 +556,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
       this.myAnnotationListHandler_annotationList1_ = new InstanceMethodDeclaration_Editor._RefNodeListHandler51(node, "annotation", context);
     }
     EditorCell_Collection editorCell = this.myAnnotationListHandler_annotationList1_.createCells(context, new CellLayout_Vertical(), false);
-    InstanceMethodDeclaration_Editor.setupBasic_AnnotationList1(editorCell, node, context);
+    setupBasic_AnnotationList1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -569,7 +569,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
       this.myAnnotationListHandler_annotationList_ = new InstanceMethodDeclaration_Editor._RefNodeListHandler52(node, "annotation", context);
     }
     EditorCell_Collection editorCell = this.myAnnotationListHandler_annotationList_.createCells(context, new CellLayout_Vertical(), false);
-    InstanceMethodDeclaration_Editor.setupBasic_AnnotationList(editorCell, node, context);
+    setupBasic_AnnotationList(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -581,9 +581,9 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    InstanceMethodDeclaration_Editor.setupBasic_BodyCell(editorCell, node, context);
+    setupBasic_BodyCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      InstanceMethodDeclaration_Editor.setupLabel_BodyCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_BodyCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -610,9 +610,9 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    InstanceMethodDeclaration_Editor.setupBasic_ReturnType(editorCell, node, context);
+    setupBasic_ReturnType(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      InstanceMethodDeclaration_Editor.setupLabel_ReturnType((EditorCell_Label)editorCell, node, context);
+      setupLabel_ReturnType((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -639,9 +639,9 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    InstanceMethodDeclaration_Editor.setupBasic_IsAbstractCell(editorCell, node, context);
+    setupBasic_IsAbstractCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      InstanceMethodDeclaration_Editor.setupLabel_IsAbstractCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_IsAbstractCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -729,8 +729,8 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      InstanceMethodDeclaration_Editor._RefNodeListHandler19.setupBasic_ConstantCell2(editorCell, node, context);
-      InstanceMethodDeclaration_Editor._RefNodeListHandler19.setupLabel_ConstantCell2(editorCell, node, context);
+      setupBasic_ConstantCell2(editorCell, node, context);
+      setupLabel_ConstantCell2(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }

@@ -43,7 +43,7 @@ public class StatementList_Editor extends DefaultNodeEditor {
       this.myStatementListHandler_statementList_ = new StatementList_Editor._RefNodeListHandler(node, "statement", context);
     }
     EditorCell_Collection editorCell = this.myStatementListHandler_statementList_.createCells(context, new CellLayout_Vertical(), false);
-    StatementList_Editor.setupBasic_StatementList(editorCell, node, context);
+    setupBasic_StatementList(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(true);
@@ -112,8 +112,8 @@ public class StatementList_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      StatementList_Editor._RefNodeListHandler.setupBasic_ConstantCell(editorCell, node, context);
-      StatementList_Editor._RefNodeListHandler.setupLabel_ConstantCell(editorCell, node, context);
+      setupBasic_ConstantCell(editorCell, node, context);
+      setupLabel_ConstantCell(editorCell, node, context);
       editorCell.setDefaultText("<no statements>");
       return editorCell;
     }

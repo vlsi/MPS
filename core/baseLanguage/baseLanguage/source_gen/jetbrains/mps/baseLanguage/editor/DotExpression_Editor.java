@@ -52,7 +52,7 @@ public class DotExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    DotExpression_Editor.setupBasic_RowCell(editorCell, node, context);
+    setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -64,8 +64,8 @@ public class DotExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    DotExpression_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    DotExpression_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell(editorCell, node, context);
+    setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -74,9 +74,9 @@ public class DotExpression_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    DotExpression_Editor.setupBasic_OperandCell(editorCell, node, context);
+    setupBasic_OperandCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      DotExpression_Editor.setupLabel_OperandCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_OperandCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -103,9 +103,9 @@ public class DotExpression_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    DotExpression_Editor.setupBasic_OperationCell(editorCell, node, context);
+    setupBasic_OperationCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      DotExpression_Editor.setupLabel_OperationCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_OperationCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

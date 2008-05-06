@@ -76,13 +76,13 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
     {
       editorCell = this.createValueCell1(context, node);
     }
-    RemarkStatement_Editor.setupBasic_CellAlternation(editorCell, node, context);
+    setupBasic_CellAlternation(editorCell, node, context);
     return editorCell;
   }
 
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    RemarkStatement_Editor.setupBasic_RowCell(editorCell, node, context);
+    setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -93,8 +93,8 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    RemarkStatement_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    RemarkStatement_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell(editorCell, node, context);
+    setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -103,9 +103,9 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    RemarkStatement_Editor.setupBasic_ValueCell(editorCell, node, context);
+    setupBasic_ValueCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      RemarkStatement_Editor.setupLabel_ValueCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_ValueCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -132,9 +132,9 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    RemarkStatement_Editor.setupBasic_ValueCell1(editorCell, node, context);
+    setupBasic_ValueCell1(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      RemarkStatement_Editor.setupLabel_ValueCell1((EditorCell_Label)editorCell, node, context);
+      setupLabel_ValueCell1((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

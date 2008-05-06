@@ -54,7 +54,7 @@ public class Expression_Editor extends DefaultNodeEditor {
     {
       editorCell = this.createCellModel_ConceptProperty(context, node);
     }
-    Expression_Editor.setupBasic_CellAlternation(editorCell, node, context);
+    setupBasic_CellAlternation(editorCell, node, context);
     return editorCell;
   }
 
@@ -63,7 +63,7 @@ public class Expression_Editor extends DefaultNodeEditor {
       this.myCellProvider2 = this._cellProviderFactory_1209147315298(node, context);
     }
     EditorCell editorCell = this.myCellProvider2.createEditorCell(context);
-    Expression_Editor.setupBasic_CellModel_Custom(editorCell, node, context);
+    setupBasic_CellModel_Custom(editorCell, node, context);
     return editorCell;
   }
 
@@ -81,9 +81,9 @@ public class Expression_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    Expression_Editor.setupBasic_CellModel_ConceptProperty(editorCell, node, context);
+    setupBasic_CellModel_ConceptProperty(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      Expression_Editor.setupLabel_CellModel_ConceptProperty((EditorCell_Label)editorCell, node, context);
+      setupLabel_CellModel_ConceptProperty((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

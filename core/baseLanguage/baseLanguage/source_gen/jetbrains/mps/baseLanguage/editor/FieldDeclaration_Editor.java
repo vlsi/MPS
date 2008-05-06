@@ -144,7 +144,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createColumnCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    FieldDeclaration_Editor.setupBasic_ColumnCell(editorCell, node, context);
+    setupBasic_ColumnCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -157,7 +157,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createDeclarationBox(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    FieldDeclaration_Editor.setupBasic_DeclarationBox(editorCell, node, context);
+    setupBasic_DeclarationBox(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -173,7 +173,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createInitializerArea(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    FieldDeclaration_Editor.setupBasic_InitializerArea(editorCell, node, context);
+    setupBasic_InitializerArea(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -184,7 +184,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createColumnCell2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    FieldDeclaration_Editor.setupBasic_ColumnCell2(editorCell, node, context);
+    setupBasic_ColumnCell2(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -195,7 +195,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    FieldDeclaration_Editor.setupBasic_RowCell(editorCell, node, context);
+    setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -205,7 +205,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createColumnCell1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    FieldDeclaration_Editor.setupBasic_ColumnCell1(editorCell, node, context);
+    setupBasic_ColumnCell1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -218,7 +218,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
       this.my_Component_Visibility6 = new _Component_Visibility(node);
     }
     EditorCell editorCell = this.my_Component_Visibility6.createEditorCell(context);
-    FieldDeclaration_Editor.setupBasic__Component_VisibilityCell(editorCell, node, context);
+    setupBasic__Component_VisibilityCell(editorCell, node, context);
     return editorCell;
   }
 
@@ -227,30 +227,30 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
       this.myVariableDeclaration_NameCellComponent = new VariableDeclaration_NameCellComponent(node);
     }
     EditorCell editorCell = this.myVariableDeclaration_NameCellComponent.createEditorCell(context);
-    FieldDeclaration_Editor.setupBasic_VariableDeclaration_NameCellComponentCell(editorCell, node, context);
+    setupBasic_VariableDeclaration_NameCellComponentCell(editorCell, node, context);
     return editorCell;
   }
 
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    FieldDeclaration_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    FieldDeclaration_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell(editorCell, node, context);
+    setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    FieldDeclaration_Editor.setupBasic_ConstantCell1(editorCell, node, context);
-    FieldDeclaration_Editor.setupLabel_ConstantCell1(editorCell, node, context);
+    setupBasic_ConstantCell1(editorCell, node, context);
+    setupLabel_ConstantCell1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    FieldDeclaration_Editor.setupBasic_ConstantCell2(editorCell, node, context);
-    FieldDeclaration_Editor.setupLabel_ConstantCell2(editorCell, node, context);
+    setupBasic_ConstantCell2(editorCell, node, context);
+    setupLabel_ConstantCell2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -260,7 +260,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
       this.myAnnotationListHandler_annotationList1_ = new FieldDeclaration_Editor._RefNodeListHandler55(node, "annotation", context);
     }
     EditorCell_Collection editorCell = this.myAnnotationListHandler_annotationList1_.createCells(context, new CellLayout_Vertical(), false);
-    FieldDeclaration_Editor.setupBasic_AnnotationList1(editorCell, node, context);
+    setupBasic_AnnotationList1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -273,7 +273,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
       this.myAnnotationListHandler_annotationList_ = new FieldDeclaration_Editor._RefNodeListHandler56(node, "annotation", context);
     }
     EditorCell_Collection editorCell = this.myAnnotationListHandler_annotationList_.createCells(context, new CellLayout_Vertical(), false);
-    FieldDeclaration_Editor.setupBasic_AnnotationList(editorCell, node, context);
+    setupBasic_AnnotationList(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -285,9 +285,9 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    FieldDeclaration_Editor.setupBasic_TypeCell(editorCell, node, context);
+    setupBasic_TypeCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      FieldDeclaration_Editor.setupLabel_TypeCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_TypeCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -314,9 +314,9 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    FieldDeclaration_Editor.setupBasic_InitializerCell(editorCell, node, context);
+    setupBasic_InitializerCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      FieldDeclaration_Editor.setupLabel_InitializerCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_InitializerCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

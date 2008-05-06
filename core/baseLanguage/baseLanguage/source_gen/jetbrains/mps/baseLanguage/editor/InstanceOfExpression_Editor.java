@@ -56,7 +56,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createExpressionBox(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    InstanceOfExpression_Editor.setupBasic_ExpressionBox(editorCell, node, context);
+    setupBasic_ExpressionBox(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -68,8 +68,8 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    InstanceOfExpression_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    InstanceOfExpression_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell(editorCell, node, context);
+    setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -78,9 +78,9 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    InstanceOfExpression_Editor.setupBasic_LeftExpressionCell(editorCell, node, context);
+    setupBasic_LeftExpressionCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      InstanceOfExpression_Editor.setupLabel_LeftExpressionCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_LeftExpressionCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -107,9 +107,9 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    InstanceOfExpression_Editor.setupBasic_ClassTypeCell(editorCell, node, context);
+    setupBasic_ClassTypeCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      InstanceOfExpression_Editor.setupLabel_ClassTypeCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_ClassTypeCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

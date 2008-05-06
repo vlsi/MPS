@@ -34,9 +34,9 @@ public class ConceptFunctionParameter_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    ConceptFunctionParameter_Editor.setupBasic_CellModel_ConceptProperty(editorCell, node, context);
+    setupBasic_CellModel_ConceptProperty(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      ConceptFunctionParameter_Editor.setupLabel_CellModel_ConceptProperty((EditorCell_Label)editorCell, node, context);
+      setupLabel_CellModel_ConceptProperty((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

@@ -60,7 +60,7 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    BinaryOperation_Editor.setupBasic_RowCell(editorCell, node, context);
+    setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -74,9 +74,9 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    BinaryOperation_Editor.setupBasic_LeftExpressionCell(editorCell, node, context);
+    setupBasic_LeftExpressionCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      BinaryOperation_Editor.setupLabel_LeftExpressionCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_LeftExpressionCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -103,9 +103,9 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    BinaryOperation_Editor.setupBasic_RightExpressionCell(editorCell, node, context);
+    setupBasic_RightExpressionCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      BinaryOperation_Editor.setupLabel_RightExpressionCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_RightExpressionCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -132,9 +132,9 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    BinaryOperation_Editor.setupBasic_CellModel_ConceptProperty(editorCell, node, context);
+    setupBasic_CellModel_ConceptProperty(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      BinaryOperation_Editor.setupLabel_CellModel_ConceptProperty((EditorCell_Label)editorCell, node, context);
+      setupLabel_CellModel_ConceptProperty((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new BinaryOperation_Editor.BinaryOperation_replaceWith_BinaryOperation_cellMenu()}));

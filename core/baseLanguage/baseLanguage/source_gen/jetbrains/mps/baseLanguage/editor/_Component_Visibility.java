@@ -38,9 +38,9 @@ public class _Component_Visibility extends AbstractCellProvider {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    _Component_Visibility.setupBasic_VisibilityCell(editorCell, node, context);
+    setupBasic_VisibilityCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      _Component_Visibility.setupLabel_VisibilityCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_VisibilityCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

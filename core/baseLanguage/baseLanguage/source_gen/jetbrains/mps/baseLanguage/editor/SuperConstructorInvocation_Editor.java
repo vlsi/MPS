@@ -75,7 +75,7 @@ public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
 
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    SuperConstructorInvocation_Editor.setupBasic_RowCell(editorCell, node, context);
+    setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -89,32 +89,32 @@ public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    SuperConstructorInvocation_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    SuperConstructorInvocation_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell(editorCell, node, context);
+    setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    SuperConstructorInvocation_Editor.setupBasic_ConstantCell3(editorCell, node, context);
-    SuperConstructorInvocation_Editor.setupLabel_ConstantCell3(editorCell, node, context);
+    setupBasic_ConstantCell3(editorCell, node, context);
+    setupLabel_ConstantCell3(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    SuperConstructorInvocation_Editor.setupBasic_ConstantCell1(editorCell, node, context);
-    SuperConstructorInvocation_Editor.setupLabel_ConstantCell1(editorCell, node, context);
+    setupBasic_ConstantCell1(editorCell, node, context);
+    setupLabel_ConstantCell1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    SuperConstructorInvocation_Editor.setupBasic_ConstantCell4(editorCell, node, context);
-    SuperConstructorInvocation_Editor.setupLabel_ConstantCell4(editorCell, node, context);
+    setupBasic_ConstantCell4(editorCell, node, context);
+    setupLabel_ConstantCell4(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -124,7 +124,7 @@ public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
       this.myActualArgumentListHandler_actualArgumentList_ = new SuperConstructorInvocation_Editor._RefNodeListHandler5(node, "actualArgument", context);
     }
     EditorCell_Collection editorCell = this.myActualArgumentListHandler_actualArgumentList_.createCells(context, new CellLayout_Horizontal(), false);
-    SuperConstructorInvocation_Editor.setupBasic_ActualArgumentList(editorCell, node, context);
+    setupBasic_ActualArgumentList(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -197,8 +197,8 @@ public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      SuperConstructorInvocation_Editor._RefNodeListHandler5.setupBasic_ConstantCell2(editorCell, node, context);
-      SuperConstructorInvocation_Editor._RefNodeListHandler5.setupLabel_ConstantCell2(editorCell, node, context);
+      setupBasic_ConstantCell2(editorCell, node, context);
+      setupLabel_ConstantCell2(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }

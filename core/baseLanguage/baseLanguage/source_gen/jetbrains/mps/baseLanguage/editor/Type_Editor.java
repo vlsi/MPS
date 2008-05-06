@@ -59,14 +59,14 @@ public class Type_Editor extends DefaultNodeEditor {
     {
       editorCell = this.createCellModel_ConceptProperty(context, node);
     }
-    Type_Editor.setupBasic_CellAlternation(editorCell, node, context);
+    setupBasic_CellAlternation(editorCell, node, context);
     return editorCell;
   }
 
   public EditorCell createErrorCell(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "<type>");
-    Type_Editor.setupBasic_ErrorCell(editorCell, node, context);
-    Type_Editor.setupLabel_ErrorCell(editorCell, node, context);
+    setupBasic_ErrorCell(editorCell, node, context);
+    setupLabel_ErrorCell(editorCell, node, context);
     return editorCell;
   }
 
@@ -74,9 +74,9 @@ public class Type_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    Type_Editor.setupBasic_CellModel_ConceptProperty(editorCell, node, context);
+    setupBasic_CellModel_ConceptProperty(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      Type_Editor.setupLabel_CellModel_ConceptProperty((EditorCell_Label)editorCell, node, context);
+      setupLabel_CellModel_ConceptProperty((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

@@ -70,7 +70,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
 
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    _GenericDeclaration_TypeVariables_Component.setupBasic_RowCell(editorCell, node, context);
+    setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -82,16 +82,16 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
 
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    _GenericDeclaration_TypeVariables_Component.setupBasic_ConstantCell(editorCell, node, context);
-    _GenericDeclaration_TypeVariables_Component.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell(editorCell, node, context);
+    setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    _GenericDeclaration_TypeVariables_Component.setupBasic_ConstantCell1(editorCell, node, context);
-    _GenericDeclaration_TypeVariables_Component.setupLabel_ConstantCell1(editorCell, node, context);
+    setupBasic_ConstantCell1(editorCell, node, context);
+    setupLabel_ConstantCell1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -101,7 +101,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
       this.myTypeVariableDeclarationListHandler_typeVariableDeclarationList_ = new _GenericDeclaration_TypeVariables_Component._RefNodeListHandler24(node, "typeVariableDeclaration", context);
     }
     EditorCell_Collection editorCell = this.myTypeVariableDeclarationListHandler_typeVariableDeclarationList_.createCells(context, new CellLayout_Horizontal(), false);
-    _GenericDeclaration_TypeVariables_Component.setupBasic_TypeVariableDeclarationList(editorCell, node, context);
+    setupBasic_TypeVariableDeclarationList(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);

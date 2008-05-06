@@ -51,7 +51,7 @@ public class AnnotationInstanceValue_Editor extends DefaultNodeEditor {
 
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    AnnotationInstanceValue_Editor.setupBasic_RowCell(editorCell, node, context);
+    setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -63,8 +63,8 @@ public class AnnotationInstanceValue_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    AnnotationInstanceValue_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    AnnotationInstanceValue_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell(editorCell, node, context);
+    setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -73,9 +73,9 @@ public class AnnotationInstanceValue_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new AnnotationInstanceValue_Editor._Inline22());
     EditorCell editorCell = provider.createEditorCell(context);
-    AnnotationInstanceValue_Editor.setupBasic_KeyReferenceCell(editorCell, node, context);
+    setupBasic_KeyReferenceCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      AnnotationInstanceValue_Editor.setupLabel_KeyReferenceCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_KeyReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -102,9 +102,9 @@ public class AnnotationInstanceValue_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    AnnotationInstanceValue_Editor.setupBasic_ValueCell(editorCell, node, context);
+    setupBasic_ValueCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      AnnotationInstanceValue_Editor.setupLabel_ValueCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_ValueCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -153,9 +153,9 @@ public class AnnotationInstanceValue_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      AnnotationInstanceValue_Editor._Inline22.setupBasic_NameCell(editorCell, node, context);
+      setupBasic_NameCell(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        AnnotationInstanceValue_Editor._Inline22.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

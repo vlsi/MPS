@@ -49,7 +49,7 @@ public class GenericNewExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createExpressionBox(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    GenericNewExpression_Editor.setupBasic_ExpressionBox(editorCell, node, context);
+    setupBasic_ExpressionBox(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -60,8 +60,8 @@ public class GenericNewExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    GenericNewExpression_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    GenericNewExpression_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell(editorCell, node, context);
+    setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -70,9 +70,9 @@ public class GenericNewExpression_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    GenericNewExpression_Editor.setupBasic_CreatorCell(editorCell, node, context);
+    setupBasic_CreatorCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      GenericNewExpression_Editor.setupLabel_CreatorCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_CreatorCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

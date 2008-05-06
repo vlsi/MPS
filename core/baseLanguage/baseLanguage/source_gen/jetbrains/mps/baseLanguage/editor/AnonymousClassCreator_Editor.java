@@ -33,7 +33,7 @@ public class AnonymousClassCreator_Editor extends DefaultNodeEditor {
 
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    AnonymousClassCreator_Editor.setupBasic_RowCell(editorCell, node, context);
+    setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -45,9 +45,9 @@ public class AnonymousClassCreator_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    AnonymousClassCreator_Editor.setupBasic_ClsCell(editorCell, node, context);
+    setupBasic_ClsCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      AnonymousClassCreator_Editor.setupLabel_ClsCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_ClsCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

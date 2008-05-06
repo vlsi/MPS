@@ -57,7 +57,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1091709481305");
     editorCell.setDrawBorder(false);
-    if (SuperMethodCall_Editor._QueryFunction_NodeCondition_1198529264929(node, context, context.getScope())) {
+    if (_QueryFunction_NodeCondition_1198529264929(node, context, context.getScope())) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
   }
@@ -105,7 +105,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
 
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    SuperMethodCall_Editor.setupBasic_RowCell(editorCell, node, context);
+    setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -120,32 +120,32 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    SuperMethodCall_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    SuperMethodCall_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell(editorCell, node, context);
+    setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    SuperMethodCall_Editor.setupBasic_ConstantCell2(editorCell, node, context);
-    SuperMethodCall_Editor.setupLabel_ConstantCell2(editorCell, node, context);
+    setupBasic_ConstantCell2(editorCell, node, context);
+    setupLabel_ConstantCell2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    SuperMethodCall_Editor.setupBasic_ConstantCell4(editorCell, node, context);
-    SuperMethodCall_Editor.setupLabel_ConstantCell4(editorCell, node, context);
+    setupBasic_ConstantCell4(editorCell, node, context);
+    setupLabel_ConstantCell4(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    SuperMethodCall_Editor.setupBasic_ConstantCell1(editorCell, node, context);
-    SuperMethodCall_Editor.setupLabel_ConstantCell1(editorCell, node, context);
+    setupBasic_ConstantCell1(editorCell, node, context);
+    setupLabel_ConstantCell1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -155,7 +155,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
       this.myActualArgumentListHandler_actualArgumentList_ = new SuperMethodCall_Editor._RefNodeListHandler21(node, "actualArgument", context);
     }
     EditorCell_Collection editorCell = this.myActualArgumentListHandler_actualArgumentList_.createCells(context, new CellLayout_Horizontal(), false);
-    SuperMethodCall_Editor.setupBasic_ActualArgumentList(editorCell, node, context);
+    setupBasic_ActualArgumentList(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -167,9 +167,9 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new SuperMethodCall_Editor._Inline5());
     EditorCell editorCell = provider.createEditorCell(context);
-    SuperMethodCall_Editor.setupBasic_InstanceMethodDeclarationReferenceCell(editorCell, node, context);
+    setupBasic_InstanceMethodDeclarationReferenceCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      SuperMethodCall_Editor.setupLabel_InstanceMethodDeclarationReferenceCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_InstanceMethodDeclarationReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -219,9 +219,9 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      SuperMethodCall_Editor._Inline5.setupBasic_NameCell(editorCell, node, context);
+      setupBasic_NameCell(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        SuperMethodCall_Editor._Inline5.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -310,8 +310,8 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      SuperMethodCall_Editor._RefNodeListHandler21.setupBasic_ConstantCell3(editorCell, node, context);
-      SuperMethodCall_Editor._RefNodeListHandler21.setupLabel_ConstantCell3(editorCell, node, context);
+      setupBasic_ConstantCell3(editorCell, node, context);
+      setupLabel_ConstantCell3(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }
