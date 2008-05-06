@@ -5,6 +5,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.project.GlobalScope;
 
 import java.util.Set;
 import java.util.HashSet;
@@ -62,6 +63,17 @@ public class RulesManager {
     myModelsWithLoadedRules.add(model);
   }
 
+  public boolean loadLanguage(String languageNamespace) {
+    if (myLoadedLanguages.contains(languageNamespace)) {
+      return true;
+    }
+    Language l = GlobalScope.getInstance().getLanguage(languageNamespace);
+    if (l == null) {
+      return false;
+    }
+    return loadLanguage(l);
+  }
+
   public boolean loadLanguage(Language l) {
     if (myLoadedLanguages.contains(l.getNamespace())) {
       return true;
@@ -93,7 +105,7 @@ public class RulesManager {
         return false;
       }
     } catch(Throwable t) {
- //     LOG.error("fail to instantiate HelginsDescriptor for language " + l.getNamespace());
+      //     LOG.error("fail to instantiate HelginsDescriptor for language " + l.getNamespace());
       return false;
     } finally {
       myLoadedLanguages.add(l.getNamespace());
@@ -125,7 +137,8 @@ public class RulesManager {
   }
 
   public Set<SubtypingRule_Runtime> getSubtypingRules(final SNode node, final boolean isWeak) {
-     return CollectionUtil.filter(mySubtypingRules.getRules(node), new Condition<SubtypingRule_Runtime>() {
+    loadLanguage(node.getLanguageNamespace());
+    return CollectionUtil.filter(mySubtypingRules.getRules(node), new Condition<SubtypingRule_Runtime>() {
       public boolean met(SubtypingRule_Runtime object) {
         return (isWeak || !object.isWeak()) && object.isApplicable(node);
       }
@@ -133,30 +146,32 @@ public class RulesManager {
   }
 
   public Set<ComparisonRule_Runtime> getComparisonRules(final SNode node1, final SNode node2, final boolean isWeak) {
+    loadLanguage(node1.getLanguageNamespace());
+    loadLanguage(node2.getLanguageNamespace());
     Set<ComparisonRule_Runtime> result = new HashSet<ComparisonRule_Runtime>();
     result.addAll(
-     CollectionUtil.filter(myComparisonRules.getRules(node1, node2), new Condition<ComparisonRule_Runtime>() {
-      public boolean met(ComparisonRule_Runtime object) {
-        return (isWeak || !object.isWeak()) && object.isApplicable(node1, node2);
-      }
-    }));
+      CollectionUtil.filter(myComparisonRules.getRules(node1, node2), new Condition<ComparisonRule_Runtime>() {
+        public boolean met(ComparisonRule_Runtime object) {
+          return (isWeak || !object.isWeak()) && object.isApplicable(node1, node2);
+        }
+      }));
     result.addAll(
-     CollectionUtil.filter(myComparisonRules.getRules(node2, node1), new Condition<ComparisonRule_Runtime>() {
-      public boolean met(ComparisonRule_Runtime object) {
-        return (isWeak || !object.isWeak()) && object.isApplicable(node2, node1);
-      }
-    }));
+      CollectionUtil.filter(myComparisonRules.getRules(node2, node1), new Condition<ComparisonRule_Runtime>() {
+        public boolean met(ComparisonRule_Runtime object) {
+          return (isWeak || !object.isWeak()) && object.isApplicable(node2, node1);
+        }
+      }));
     return result;
   }
 
   public Set<InequationReplacementRule_Runtime> getReplacementRules(final SNode node1, final SNode node2) {
     Set<InequationReplacementRule_Runtime> result = new HashSet<InequationReplacementRule_Runtime>();
     result.addAll(
-     CollectionUtil.filter(myReplacementRules.getRules(node1, node2), new Condition<InequationReplacementRule_Runtime>() {
-      public boolean met(InequationReplacementRule_Runtime object) {
-        return object.isApplicable(node1, node2);
-      }
-    }));
+      CollectionUtil.filter(myReplacementRules.getRules(node1, node2), new Condition<InequationReplacementRule_Runtime>() {
+        public boolean met(InequationReplacementRule_Runtime object) {
+          return object.isApplicable(node1, node2);
+        }
+      }));
     return result;
   }
 
