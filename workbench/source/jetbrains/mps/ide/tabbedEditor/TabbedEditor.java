@@ -4,6 +4,7 @@ import jetbrains.mps.ide.navigation.EditorInfo;
 import jetbrains.mps.ide.navigation.IHistoryItem;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.ConceptDeclarationEditor;
+import jetbrains.mps.ide.action.IActionDataProvider;
 import jetbrains.mps.ide.tabbedEditor.tabs.BaseMultitabbedTab;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.*;
@@ -21,7 +22,7 @@ import java.util.*;
 public class TabbedEditor implements IEditor {
   public static final Logger LOG = Logger.getLogger(ConceptDeclarationEditor.class);
 
-  private LazyTabbedPane myTabbedPane = new LazyTabbedPane(this);
+  private LazyTabbedPane myTabbedPane = new MyLazyTabbedPane(this);
   protected IOperationContext myOperationContext;
   private SNodePointer myNodePointer;
   List<ICellSelectionListener> mySelectionListeners = new ArrayList<ICellSelectionListener>();
@@ -251,6 +252,19 @@ public class TabbedEditor implements IEditor {
 
   public LazyTabbedPane getTabbedPane() {
     return myTabbedPane;
+  }
+
+  private class MyLazyTabbedPane extends LazyTabbedPane implements IActionDataProvider {
+    private MyLazyTabbedPane(TabbedEditor tabbedEditor) {
+      super(tabbedEditor);
+    }
+
+    public <T> T get(Class<T> cls) {
+      if (cls == IEditor.class) {
+        return (T) TabbedEditor.this;
+      }
+      return null;
+    }
   }
 
 }

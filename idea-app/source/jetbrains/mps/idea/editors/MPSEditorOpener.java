@@ -8,10 +8,12 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.idea.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.idea.nodesFs.MPSNodesVirtualFileSystem;
+import jetbrains.mps.util.Calculable;
 
 public class MPSEditorOpener implements ProjectComponent {
   private Project myProject;
@@ -42,20 +44,24 @@ public class MPSEditorOpener implements ProjectComponent {
 
   }
 
-  public IEditor openNode(SNode node, IOperationContext context) {
-    EditorsPane editorsPane = context.getProject().getComponentSafe(EditorsPane.class);
-    SNode baseNode = editorsPane.getBaseNode(context, node);
-    if (baseNode == null) {
-      baseNode = node;
-    }
+  public IEditor openNode(final SNode node, final IOperationContext context) {
+    return CommandProcessor.instance().executeLightweightCommand(new Calculable<IEditor>() {
+      public IEditor calculate() {
+        EditorsPane editorsPane = context.getProject().getComponentSafe(EditorsPane.class);
+        SNode baseNode = editorsPane.getBaseNode(context, node);
+        if (baseNode == null) {
+          baseNode = node;
+        }
 
-    MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(baseNode, context);
-    FileEditorManager editorManager = FileEditorManager.getInstance(myProject);
-    FileEditor[] result = editorManager.openFile(file, true);
+        MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(baseNode, context);
+        FileEditorManager editorManager = FileEditorManager.getInstance(myProject);
+        FileEditor[] result = editorManager.openFile(file, true);
 
-    MPSFileNodeEditor nodeEditor = (MPSFileNodeEditor) result[0];
-    nodeEditor.getNodeEditor().selectNode(node);
+        MPSFileNodeEditor nodeEditor = (MPSFileNodeEditor) result[0];
+        nodeEditor.getNodeEditor().selectNode(node);
 
-    return nodeEditor.getNodeEditor();
+        return nodeEditor.getNodeEditor();
+      }
+    });
   }
 }
