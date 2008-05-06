@@ -166,7 +166,7 @@ public class GeneratorManager extends DefaultExternalizableComponent implements 
     }
 
     final IOperationContext invocationContext = inputModels.get(0).o2;
-    final IAdaptiveProgressMonitor progress = new AdaptiveProgressMonitor(invocationContext.getMainFrame(), closeOnExit);
+    final IAdaptiveProgressMonitor progress = createAdaptriveProgressMonitor(closeOnExit, invocationContext);
     final DefaultMessageHandler messages = new DefaultMessageHandler(invocationContext.getProject());
 
     // confirm saving transient models
@@ -201,6 +201,11 @@ public class GeneratorManager extends DefaultExternalizableComponent implements 
         return generateModels(inputModels, generationType, progress, messages, saveTransientModels);
       }
     });
+  }
+
+  //todo IDEA platform hack
+  protected AdaptiveProgressMonitor createAdaptriveProgressMonitor(boolean closeOnExit, IOperationContext invocationContext) {
+    return new AdaptiveProgressMonitor(invocationContext.getMainFrame(), closeOnExit);
   }
 
   /**
