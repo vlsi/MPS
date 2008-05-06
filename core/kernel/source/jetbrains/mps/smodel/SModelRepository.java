@@ -352,15 +352,19 @@ public class SModelRepository implements IComponentLifecycle {
   }
 
   public void saveAll() {
-    List<SModelDescriptor> descriptors = new ArrayList(myChangedModels.keySet());
-    for (SModelDescriptor modelDescriptor : descriptors) {
-      try {
-        modelDescriptor.save();
-      } catch (Throwable t) {
-        LOG.error(t);
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        List<SModelDescriptor> descriptors = new ArrayList(myChangedModels.keySet());
+        for (SModelDescriptor modelDescriptor : descriptors) {
+          try {
+            modelDescriptor.save();
+          } catch (Throwable t) {
+            LOG.error(t);
+          }
+        }
+        myChangedModels.clear();
       }
-    }
-    myChangedModels.clear();
+    });
   }
 
   public void reloadAll() {
