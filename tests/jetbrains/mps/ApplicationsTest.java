@@ -10,7 +10,7 @@ public class ApplicationsTest extends BaseMPSTest {
   }
 
   public void testClosures() {
-      String res = testProject(new File("core/baseLanguage/closures/Closures.mpr"));
+      String res = testProject(new File("core/baseLanguage/closures/closures.mpr"));
       assertTrue(res, res == null);
   }
  

@@ -9,8 +9,10 @@ import treepathFeatures.TryFeatures.foo_BAR_Property;
 import treepathFeatures.TryFeatures.foo_BAZ_Property;
 import java.util.AbstractList;
 import java.util.AbstractCollection;
-import jetbrains.mps.baseLanguage.ext.collections.internal.SequenceWithSupplier;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
+import jetbrains.mps.closures.runtime.YieldingIterator;
 import jetbrains.mps.ypath.runtime.IFeatureDescriptor;
 
 public class TryFeatures extends TreePath<Node> {
@@ -63,10 +65,10 @@ public class TryFeatures extends TreePath<Node> {
     }
 
     public static IFilter<Node> getInstance() {
-      if (TryFeatures.foo_NodeKindTrigger.instance == null) {
-        TryFeatures.foo_NodeKindTrigger.instance = new TryFeatures.foo_NodeKindTrigger();
+      if (instance == null) {
+        instance = new TryFeatures.foo_NodeKindTrigger();
       }
-      return TryFeatures.foo_NodeKindTrigger.instance;
+      return instance;
     }
 
 
@@ -226,9 +228,65 @@ public class TryFeatures extends TreePath<Node> {
     }
 
     public Iterable<Node> sequence() {
-      final zClosureContext1 _zClosureContext = new zClosureContext1();
-      _zClosureContext._node = this.thisNode;
-      return new SequenceWithSupplier<Node>(new zValueSupplier(null, _zClosureContext));
+      final Node _node = this.thisNode;
+      return Sequence.fromClosure(new ISequenceClosure <Node>() {
+
+        public Iterable<Node> iterable() {
+          return new Iterable <Node>() {
+
+            public Iterator<Node> iterator() {
+              return new YieldingIterator <Node>() {
+
+                private int __CP__ = 0;
+                private int _3_count;
+                private int _4_idx;
+
+                protected boolean moveToNext() {
+__loop__:
+                  do {
+__switch__:
+                    switch (this.__CP__) {
+                      case -1:
+                        assert false : "Internal error";
+                        return false;
+                      case 4:
+                        this._4_idx = 0;
+                      case 5:
+                        if (!(this._4_idx < this._3_count)) {
+                          this.__CP__ = 1;
+                          break;
+                        }
+                        this.__CP__ = 6;
+                        break;
+                      case 7:
+                        this._4_idx = this._4_idx + 1;
+                        this.__CP__ = 5;
+                        break;
+                      case 8:
+                        this.__CP__ = 7;
+                        this.yield(_node.getAttributes().item(this._4_idx));
+                        return true;
+                      case 0:
+                        this._3_count = _node.getAttributes().getLength();
+                        this.__CP__ = 4;
+                        break;
+                      case 6:
+                        this.__CP__ = 8;
+                        break;
+                      default:
+                        break __loop__;
+                    }
+                  } while(true);
+                  return false;
+                }
+
+              };
+            }
+
+          };
+        }
+
+      });
     }
 
     public Iterator<Node> iterator() {

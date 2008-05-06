@@ -4,8 +4,9 @@ package treepathFeatures;
 
 import jetbrains.mps.ypath.design.IGenericParameterizedFeatureDesign;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
@@ -16,7 +17,13 @@ public class SNODE_GEN_Design {
   public static class Design_Feature_child extends IGenericParameterizedFeatureDesign.Stub<SNode> implements IGenericParameterizedFeatureDesign<SNode> {
 
     public Iterable<SNode> getParameters(SNode nodeType) {
-      return SequenceOperations.where(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true), new zPredicate4(null, null));
+      return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true)).where(new IWhereFilter <SNode>() {
+
+        public boolean accept(SNode it) {
+          return "aggregation".equals(SPropertyOperations.getString_def(it, "metaClass", null));
+        }
+
+      });
     }
 
     public SNode getTargetType(SNode param, SNode nodeType) {
@@ -55,7 +62,13 @@ public class SNODE_GEN_Design {
   public static class Design_Feature_link extends IGenericParameterizedFeatureDesign.Stub<SNode> implements IGenericParameterizedFeatureDesign<SNode> {
 
     public Iterable<SNode> getParameters(SNode nodeType) {
-      return SequenceOperations.where(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true), new zPredicate5(null, null));
+      return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true)).where(new IWhereFilter <SNode>() {
+
+        public boolean accept(SNode it) {
+          return SPropertyOperations.getString_def(it, "metaClass", null) == null || "reference".equals(SPropertyOperations.getString_def(it, "metaClass", null));
+        }
+
+      });
     }
 
     public SNode getTargetType(SNode param, SNode nodeType) {
