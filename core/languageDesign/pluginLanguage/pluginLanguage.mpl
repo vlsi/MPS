@@ -23,7 +23,6 @@
         <dependency reexport="false">jetbrains.mps.baseLanguage</dependency>
         <dependency reexport="false">jetbrains.mps.baseLanguage.classifiers</dependency>
         <dependency reexport="false">jetbrains.mps.transformation.TLBase</dependency>
-        <dependency reexport="false">jetbrains.mps.webr.runtime</dependency>
       </dependencies>
       <usedLanguages>
         <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
