@@ -45,7 +45,7 @@ public class RulesFunctions_Collections {
     // 1. Take input expression
     // 2. Assert that it is coerceable to sequence
     // 3. Assign the sequence type to the target
-    SNode input = RulesFunctions_Collections.getInput(op);
+    SNode input = getInput(op);
     if ((input != null)) {
       final SNode elementType_typevar_1184784638219 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
       TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(input, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184843134901", true), new QuotationClass_().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184784638219)), input, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184843140648", false);
@@ -58,7 +58,7 @@ public class RulesFunctions_Collections {
     // 1. Take input expression
     // 2. Assert that it is coerceable to sequence
     // 3. Assign the sequence element type to the target
-    SNode input = RulesFunctions_Collections.getInput(op);
+    SNode input = getInput(op);
     if ((input != null)) {
       final SNode elementType_typevar_1184844804662 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
       TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(input, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184844804669", true), new QuotationClass_2().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184844804662)), input, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184844804663", false);
@@ -71,7 +71,7 @@ public class RulesFunctions_Collections {
     // 1. Take input expression
     // 2. Assert that it is coerceable to sequence
     // 3. Assert that target has sequence element type
-    SNode input = RulesFunctions_Collections.getInput(op);
+    SNode input = getInput(op);
     if ((input != null)) {
       final SNode elementType_typevar_1184850451264 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
       TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(input, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184850451271", true), new QuotationClass_3().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184850451264)), input, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184850451265", false);
@@ -101,7 +101,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 12:
-                      this._12_yieldStmt_it = RulesFunctions_Collections.collectYieldStatements(it).iterator();
+                      this._12_yieldStmt_it = collectYieldStatements(it).iterator();
                     case 13:
                       if (!(this._12_yieldStmt_it.hasNext())) {
                         this.__CP__ = 9;
