@@ -217,6 +217,10 @@ public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
     return myCheckedOnceEditors.contains(editorComponent);
   }
 
+  public void resetCheckedState(IEditorComponent editorComponent) {
+    myCheckedOnceEditors.remove(editorComponent);
+  }
+
   protected boolean updateEditor(final IEditorComponent editor, Set<IEditorChecker> checkersToRecheck, Set<IEditorChecker> checkersToRemove) {
     if (editor == null || editor.getRootCell() == null) {
       return false;

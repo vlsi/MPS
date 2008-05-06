@@ -1904,6 +1904,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           if (sNode == null) {
             return;
           }
+          Highlighter highlighter = getOperationContext().getComponent(Highlighter.class);
+          if (highlighter != null) {
+            highlighter.resetCheckedState(AbstractEditorComponent.this);
+          }
           TypeChecker.getInstance().checkRoot(sNode.getContainingRoot(), true);
           rebuildEditorContent();
         }
