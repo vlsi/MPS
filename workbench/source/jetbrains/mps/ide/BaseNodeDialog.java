@@ -21,9 +21,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JSplitPane;
 import java.awt.HeadlessException;
 
-/**
- * @author Kostik
- */
 public abstract class BaseNodeDialog extends BaseDialog {
   private static Logger LOG = Logger.getLogger(BaseNodeDialog.class);
 
