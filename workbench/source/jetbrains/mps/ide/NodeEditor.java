@@ -24,7 +24,7 @@ public class NodeEditor implements IEditor {
     myEditorComponent = new NodeEditorComponent(context);
     myEditorComponent.editNode(node, context);
 
-    myComponent.add(myEditorComponent, BorderLayout.CENTER);
+    myComponent.add(myEditorComponent.getExternalComponent(), BorderLayout.CENTER);
   }
 
   protected NodeEditor() {
