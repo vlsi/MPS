@@ -7,7 +7,10 @@ import java.util.LinkedList;
 
 public enum RefactoringTargetKind_Enum {
   node("node", null),
-  model("model", "model");
+  model("model", "model"),
+  language("language", "language"),
+  solution("solution", "solution"),
+  devkit("devkit", "devkit");
 
   /* package */String myName;
   /* package */String myValue;
@@ -21,6 +24,9 @@ RefactoringTargetKind_Enum(String name, String value) {
     List<RefactoringTargetKind_Enum> list = new LinkedList<RefactoringTargetKind_Enum>();
     list.add(RefactoringTargetKind_Enum.node);
     list.add(RefactoringTargetKind_Enum.model);
+    list.add(RefactoringTargetKind_Enum.language);
+    list.add(RefactoringTargetKind_Enum.solution);
+    list.add(RefactoringTargetKind_Enum.devkit);
     return list;
   }
 
@@ -37,6 +43,15 @@ RefactoringTargetKind_Enum(String name, String value) {
     }
     if (value.equals(RefactoringTargetKind_Enum.model.getValueAsString())) {
       return RefactoringTargetKind_Enum.model;
+    }
+    if (value.equals(RefactoringTargetKind_Enum.language.getValueAsString())) {
+      return RefactoringTargetKind_Enum.language;
+    }
+    if (value.equals(RefactoringTargetKind_Enum.solution.getValueAsString())) {
+      return RefactoringTargetKind_Enum.solution;
+    }
+    if (value.equals(RefactoringTargetKind_Enum.devkit.getValueAsString())) {
+      return RefactoringTargetKind_Enum.devkit;
     }
     return RefactoringTargetKind_Enum.getDefault();
   }

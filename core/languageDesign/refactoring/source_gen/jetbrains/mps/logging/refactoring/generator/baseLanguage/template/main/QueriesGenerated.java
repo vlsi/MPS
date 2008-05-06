@@ -12,10 +12,9 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 import jetbrains.mps.bootstrap.editorLanguage.constraints.CellKeyMapKeystroke_Behavior;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.generator.template.IfMacroContext;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -127,10 +126,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1200668668194(final IOperationContext operationContext, final PropertyMacroContext _context) {
     {
-      Pattern_ pattern_1209561019808 = new Pattern_();
-      SNode coercedNode_1209561019807 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(_context.getNode(), "argumentType", true), pattern_1209561019808);
-      if (coercedNode_1209561019807 != null) {
-        SNode abstractConceptDeclaration = (SNode)pattern_1209561019808.PatternVar;
+      Pattern_ pattern_1210085730748 = new Pattern_();
+      SNode coercedNode_1210085730747 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(_context.getNode(), "argumentType", true), pattern_1210085730748);
+      if (coercedNode_1210085730747 != null) {
+        SNode abstractConceptDeclaration = (SNode)pattern_1210085730748.PatternVar;
         return SNodeOperations.getModel(abstractConceptDeclaration).toString() + "." + SPropertyOperations.getString(abstractConceptDeclaration, "name");
       }
     }
@@ -169,20 +168,16 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1209560834157(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.hasValue(_context.getNode(), "refactoringTargetKind", "model", null);
-  }
-
   public static Object referenceMacro_GetReferent_1189764427569(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode conceptFunction = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
     SNode method = (SNode)_context.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(conceptFunction, "body", true), "methodBody").getParent().getParent().getParent();
-    return ListOperations.getElement(SLinkOperations.getTargets(method, "parameter", true), 1);
+    return ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).getElement(1);
   }
 
   public static Object referenceMacro_GetReferent_1198175268220(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode conceptFunction = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
     SNode method = (SNode)_context.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(conceptFunction, "body", true), "methodBody").getParent().getParent().getParent();
-    return ListOperations.getElement(SLinkOperations.getTargets(method, "parameter", true), 1);
+    return ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).getElement(1);
   }
 
   public static Object referenceMacro_GetReferent_1200668668323(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -295,11 +290,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1200668711127(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(SequenceOperations.isEmpty(SLinkOperations.getTargets(_context.getNode(), "arguments", true)));
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "arguments", true)).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1200668775327(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SequenceOperations.isEmpty(SLinkOperations.getTargets(_context.getNode(), "arguments", true));
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "arguments", true)).isEmpty();
   }
 
   public static boolean ifMacro_Condition_1200933057671(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -316,6 +311,26 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1209560974488(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "isApplicableToModelClause", true) == null);
+  }
+
+  public static boolean ifMacro_Condition_1210084889430(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SPropertyOperations.hasValue(_context.getNode(), "refactoringTargetKind", "devkit", null);
+  }
+
+  public static boolean ifMacro_Condition_1210084897687(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SPropertyOperations.hasValue(_context.getNode(), "refactoringTargetKind", null, null);
+  }
+
+  public static boolean ifMacro_Condition_1210084899878(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SPropertyOperations.hasValue(_context.getNode(), "refactoringTargetKind", "model", null);
+  }
+
+  public static boolean ifMacro_Condition_1210084902709(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SPropertyOperations.hasValue(_context.getNode(), "refactoringTargetKind", "language", null);
+  }
+
+  public static boolean ifMacro_Condition_1210084904853(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SPropertyOperations.hasValue(_context.getNode(), "refactoringTargetKind", "solution", null);
   }
 
   public static SNode sourceNodeQuery_1190724923720(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -467,7 +482,7 @@ public class QueriesGenerated {
     List<SNode> requiredUserEnteredArguments = SLinkOperations.getTargets(_context.getNode(), "arguments", true);
     for(SNode argument : requiredUserEnteredArguments) {
       if ((SLinkOperations.getTarget(argument, "chooseComponentClause", true) != null)) {
-        ListOperations.addElement(result, argument);
+        ListSequence.fromList(result).addElement(argument);
       }
     }
     return result;
@@ -478,7 +493,7 @@ public class QueriesGenerated {
     List<SNode> requiredUserEnteredArguments = SLinkOperations.getTargets(_context.getNode(), "arguments", true);
     for(SNode argument : requiredUserEnteredArguments) {
       if ((SLinkOperations.getTarget(argument, "initialValue", true) != null)) {
-        ListOperations.addElement(result, argument);
+        ListSequence.fromList(result).addElement(argument);
       }
     }
     return result;
@@ -489,7 +504,7 @@ public class QueriesGenerated {
     List<SNode> requiredUserEnteredArguments = SLinkOperations.getTargets(_context.getNode(), "arguments", true);
     for(SNode argument : requiredUserEnteredArguments) {
       if ((SLinkOperations.getTarget(argument, "filterClause", true) != null)) {
-        ListOperations.addElement(result, argument);
+        ListSequence.fromList(result).addElement(argument);
       }
     }
     return result;
@@ -503,12 +518,12 @@ public class QueriesGenerated {
     List<SNode> result = new ArrayList<SNode>();
     for(SNode argument : SLinkOperations.getTargets(_context.getNode(), "arguments", true)) {
       if (RequiredAdditionalArgument_Behavior.call_isTransient_1201174675696(argument)) {
-        ListOperations.addElement(result, argument);
+        ListSequence.fromList(result).addElement(argument);
       }
     }
     for(SNode argument : SLinkOperations.getTargets(_context.getNode(), "internalArguments", true)) {
       if (RequiredAdditionalArgument_Behavior.call_isTransient_1201174675696(argument)) {
-        ListOperations.addElement(result, argument);
+        ListSequence.fromList(result).addElement(argument);
       }
     }
     return result;

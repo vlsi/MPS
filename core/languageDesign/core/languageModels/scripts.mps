@@ -50,6 +50,8 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <maxImportIndex value="30" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.ide.action@java_stub" version="-1" />
@@ -1694,6 +1696,20 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1209896662627">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1209896770723">
             <link role="variableDeclaration" targetNodeId="1209896686147" resolveInfo="models" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="isApplicableToModelClause" type="jetbrains.mps.logging.refactoring.structure.IsApplicableToModelClause" id="1210086072359">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210086072360">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1210086081444">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1210086214913">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1210086216869" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1210086100892">
+              <link role="baseMethodDeclaration" targetNodeId="5.~Language.getModelAspect(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.LanguageAspect" resolveInfo="getModelAspect" />
+              <link role="classConcept" targetNodeId="5.~Language" resolveInfo="Language" />
+              <node role="actualArgument" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_SModelDescriptor" id="1210086127315" />
+            </node>
           </node>
         </node>
       </node>

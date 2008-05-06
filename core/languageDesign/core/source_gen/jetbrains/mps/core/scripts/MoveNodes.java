@@ -23,6 +23,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOp
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.refactoring.framework.RefactoringTarget;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.project.GlobalScope;
@@ -151,12 +152,12 @@ public class MoveNodes extends AbstractLoggableRefactoring {
     return false;
   }
 
-  public boolean isApplicableToModel() {
-    return false;
-  }
-
   public boolean isApplicableToModel(SModelDescriptor modelDescriptor) {
     return true;
+  }
+
+  public RefactoringTarget getRefactoringTarget() {
+    return RefactoringTarget.NODE;
   }
 
   public boolean showsAffectedNodes() {

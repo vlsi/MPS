@@ -34,7 +34,7 @@ public class GenericRefactoringAction extends CurrentProjectMPSAction {
 
   public void doUpdate(@NotNull ActionContext context) {
     boolean enabled = false;
-    if (myRefactoring.isApplicableToModel()) {
+    if (myRefactoring.getRefactoringTarget() == RefactoringTarget.MODEL) {
       SModelDescriptor modelDescriptor = context.getModel();
       if (modelDescriptor != null) {
         enabled = myRefactoring.isApplicableToModel(modelDescriptor);

@@ -65,6 +65,10 @@ public abstract class AbstractLoggableRefactoring implements ILoggableRefactorin
     return null;
   }
 
+  public RefactoringTarget getRefactoringTarget() {
+    return RefactoringTarget.NODE;
+  }
+
   public boolean doesUpdateModel() {
     return true;
   }

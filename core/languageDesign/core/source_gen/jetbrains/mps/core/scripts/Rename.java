@@ -12,6 +12,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.refactoring.framework.RefactoringTarget;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.project.GlobalScope;
@@ -85,12 +86,12 @@ public class Rename extends AbstractLoggableRefactoring {
     return actionContext.getNode() != null;
   }
 
-  public boolean isApplicableToModel() {
-    return false;
-  }
-
   public boolean isApplicableToModel(SModelDescriptor modelDescriptor) {
     return true;
+  }
+
+  public RefactoringTarget getRefactoringTarget() {
+    return RefactoringTarget.NODE;
   }
 
   public boolean showsAffectedNodes() {

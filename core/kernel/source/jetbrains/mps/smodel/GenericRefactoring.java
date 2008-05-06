@@ -17,6 +17,7 @@ import jetbrains.mps.refactoring.NewRefactoringView;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
+import jetbrains.mps.refactoring.framework.RefactoringTarget;
 import jetbrains.mps.util.Calculable;
 import org.jetbrains.annotations.NotNull;
 
@@ -245,8 +246,8 @@ public class GenericRefactoring {
     return myRefactoring.getKeyStroke();
   }
 
-  public boolean isApplicableToModel() {
-    return myRefactoring.isApplicableToModel();
+  public RefactoringTarget getRefactoringTarget() {
+    return myRefactoring.getRefactoringTarget();
   }
 
   public boolean isApplicableToModel(SModelDescriptor modelDescriptor) {
