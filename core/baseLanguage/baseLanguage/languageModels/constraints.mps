@@ -31,6 +31,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="48" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -3502,7 +3503,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178192141104">
-    <property name="package" value="staticMethod" />
+    <property name="package" value="method.static" />
     <link role="concept" targetNodeId="1.1172058436953" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178192141105">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178192141106" />
@@ -3911,7 +3912,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178192141301">
-    <property name="package" value="staticMethod" />
+    <property name="package" value="method.static" />
     <link role="concept" targetNodeId="1.1081236700937" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1184945458101">
       <property name="name" value="eval" />
@@ -7861,7 +7862,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1199560612324">
-    <property name="package" value="method" />
+    <property name="package" value="method.instance" />
     <link role="concept" targetNodeId="1.1068580123165" resolveInfo="InstanceMethodDeclaration" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1199560612325">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199560612326" />
@@ -9004,7 +9005,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1202949801225">
-    <property name="package" value="method" />
+    <property name="package" value="method.instance" />
     <link role="concept" targetNodeId="1.1202948039474" resolveInfo="InstanceMethodCallOperation" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1202949801226">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202949801227" />
@@ -9089,7 +9090,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1205839397631">
-    <property name="package" value="staticMethod" />
+    <property name="package" value="method.static" />
     <link role="concept" targetNodeId="1.1081236700938" resolveInfo="StaticMethodDeclaration" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1205839397632">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205839397633" />

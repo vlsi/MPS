@@ -501,7 +501,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068580123165">
     <property name="name" value="InstanceMethodDeclaration" />
-    <property name="package" value="method" />
+    <property name="package" value="method.instance" />
     <link role="extends" targetNodeId="1068580123132" resolveInfo="BaseMethodDeclaration" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1178608670077">
       <property name="name" value="isAbstract" />
@@ -1003,7 +1003,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1081236700937">
     <property name="name" value="StaticMethodCall" />
-    <property name="package" value="staticMethod" />
+    <property name="package" value="method.static" />
     <link role="extends" targetNodeId="1068499141036" resolveInfo="BaseMethodCall" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1107217617707">
       <property name="value" value=".&lt;static method&gt;" />
@@ -1028,7 +1028,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1081236700938">
     <property name="name" value="StaticMethodDeclaration" />
-    <property name="package" value="staticMethod" />
+    <property name="package" value="method.static" />
     <link role="extends" targetNodeId="1068580123132" resolveInfo="BaseMethodDeclaration" />
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1178289092936">
       <link role="intfc" targetNodeId="1178285077437" resolveInfo="ClassifierMember" />
@@ -2100,7 +2100,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1172058436953">
     <property name="name" value="LocalStaticMethodCall" />
-    <property name="package" value="staticMethod" />
+    <property name="package" value="method.static" />
     <link role="extends" targetNodeId="1068499141036" resolveInfo="BaseMethodCall" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1172058436955">
       <property name="value" value="local static method invocation" />
@@ -2628,7 +2628,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1202948039474">
-    <property name="package" value="method" />
+    <property name="package" value="method.instance" />
     <property name="name" value="InstanceMethodCallOperation" />
     <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1202948091038">

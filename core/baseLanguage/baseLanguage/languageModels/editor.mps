@@ -26,6 +26,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="72" />
   <import index="17" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="18" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -848,7 +849,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1075233459437">
     <property name="name" value="InstanceMethodDeclaration_Editor" />
-    <property name="package" value="method" />
+    <property name="package" value="method.instance" />
     <link role="conceptDeclaration" targetNodeId="17.1068580123165" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1075233459438">
       <property name="name" value="methodBox" />
@@ -1132,7 +1133,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1075287750850">
     <property name="name" value="StaticMethodDeclaration_Editor" />
-    <property name="package" value="staticMethod" />
+    <property name="package" value="method.static" />
     <link role="conceptDeclaration" targetNodeId="17.1081236700938" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1075287750849">
       <property name="name" value="methodBox" />
@@ -1744,7 +1745,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1075308772515">
     <property name="name" value="StaticMethodCall_Editor" />
-    <property name="package" value="staticMethod" />
+    <property name="package" value="method.static" />
     <link role="conceptDeclaration" targetNodeId="17.1081236700937" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1081149310028">
       <property name="vertical" value="false" />
@@ -8214,7 +8215,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1172058463645">
-    <property name="package" value="staticMethod" />
+    <property name="package" value="method.static" />
     <link role="conceptDeclaration" targetNodeId="17.1172058436953" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1172058688093">
       <property name="drawBorder" value="false" />
@@ -14692,7 +14693,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1202948896126">
-    <property name="package" value="method" />
+    <property name="package" value="method.instance" />
     <link role="conceptDeclaration" targetNodeId="17.1202948039474" resolveInfo="InstanceMethodCallOperation" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1202948902315">
       <property name="vertical" value="false" />
