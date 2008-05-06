@@ -5,7 +5,6 @@ import jetbrains.mps.ide.hierarchy.AbstractHierarchyTree;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyView;
 import jetbrains.mps.ide.hierarchy.HierarchyTreeNode;
 import jetbrains.mps.ide.BaseNodeDialog;
-import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.INodeAdapter;
@@ -69,7 +68,7 @@ public class SupertypesTree extends AbstractHierarchyTree<INodeAdapter> {
     private final HierarchyTreeNode<INodeAdapter> myHierarchyTreeNode;
 
     public MyBaseNodeDialog(HierarchyTreeNode<INodeAdapter> hierarchyTreeNode) throws HeadlessException {
-      super(SupertypesTree.this.myOperationContext.getComponent(IDEProjectFrame.class), "", SupertypesTree.this.myOperationContext);
+      super("", SupertypesTree.this.myOperationContext);
       myHierarchyTreeNode = hierarchyTreeNode;
     }
 

@@ -39,7 +39,7 @@ public class CloneModelDialog extends BaseNodeDialog {
 
 
   public CloneModelDialog(AbstractProjectFrame ide, SModelDescriptor modelDescriptor, IOperationContext operationContext) {
-    super(ide, "Clone Model", operationContext);
+    super("Clone Model", operationContext);
     myIde = ide;
     IModule module = operationContext.getModule();
     assert module != null;
