@@ -41,7 +41,10 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <maxImportIndex value="18" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <maxImportIndex value="20" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="6" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="8" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
@@ -52,6 +55,8 @@
   <import index="16" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <import index="17" modelUID="jetbrains.mps.generator.fileGenerator@java_stub" version="-1" />
   <import index="18" modelUID="jetbrains.mps.util@java_stub" version="-1" />
+  <import index="19" modelUID="java.io@java_stub" version="-1" />
+  <import index="20" modelUID="jetbrains.mps.generator@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203071646776">
     <property name="name" value="ActionDeclaration" />
     <property name="rootable" value="true" />
@@ -1335,6 +1340,18 @@
     <property name="rootable" value="true" />
     <property name="package" value="GenerationListener" />
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1210094435173">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="beforeGenerationBlock" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1210094300689" resolveInfo="BeforeGenerationBlock" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1210093324517">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="filesGeneratedBlock" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1210093102728" resolveInfo="OnFilesGeneratedBlock" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1210070670675">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="modelsGeneratedBlock" />
@@ -1353,30 +1370,9 @@
       <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1210070639620" />
     </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1210070701480">
-      <link role="conceptLinkDeclaration" targetNodeId="2.1137546998352" resolveInfo="conceptFunctionParameter" />
-      <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1210070702562">
-        <property name="name" value="OnModelsGeneratedBlock_models" />
-        <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter" />
-        <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1210070789428">
-          <link role="conceptLinkDeclaration" targetNodeId="2.1137545963098" resolveInfo="conceptFunctionParameterType" />
-          <node role="target" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType" id="1210070794575">
-            <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210084535435">
-              <link role="classifier" targetNodeId="18.~Pair" resolveInfo="Pair" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210084538579">
-                <link role="classifier" targetNodeId="16.~SModelDescriptor" resolveInfo="SModelDescriptor" />
-              </node>
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210084544822">
-                <link role="classifier" targetNodeId="16.~IOperationContext" resolveInfo="IOperationContext" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1210070782614">
-          <property name="value" value="models" />
-          <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
-        </node>
-      </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1210094417447">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1210094339163" resolveInfo="GenerationListener_models" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1210070802387">
       <link role="conceptLinkDeclaration" targetNodeId="2.1137546998352" resolveInfo="conceptFunctionParameter" />
@@ -1396,6 +1392,98 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1210070603299">
       <property name="value" value="on models generated" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1201882037552" resolveInfo="conceptFunctionName" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1210093102728">
+    <property name="package" value="GenerationListener" />
+    <property name="name" value="OnFilesGeneratedBlock" />
+    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1210093102729">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1210093102730" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1210093102731">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1137546998352" resolveInfo="conceptFunctionParameter" />
+      <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1210093102732">
+        <property name="name" value="OnFilesGeneratedBlock_files" />
+        <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter" />
+        <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1210093102733">
+          <link role="conceptLinkDeclaration" targetNodeId="2.1137545963098" resolveInfo="conceptFunctionParameterType" />
+          <node role="target" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType" id="1210093263607">
+            <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210093271592">
+              <link role="classifier" targetNodeId="19.~File" resolveInfo="File" />
+            </node>
+          </node>
+        </node>
+        <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1210093102738">
+          <property name="value" value="files" />
+          <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+        </node>
+      </node>
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1210093102739">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1137546998352" resolveInfo="conceptFunctionParameter" />
+      <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1210093102740">
+        <property name="name" value="OnFilesGeneratedBlock_status" />
+        <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter" />
+        <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1210093102741">
+          <link role="conceptLinkDeclaration" targetNodeId="2.1137545963098" resolveInfo="conceptFunctionParameterType" />
+          <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210093313606">
+            <link role="classifier" targetNodeId="20.~GenerationStatus" resolveInfo="GenerationStatus" />
+          </node>
+        </node>
+        <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1210093102743">
+          <property name="value" value="status" />
+          <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+        </node>
+      </node>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1210093102744">
+      <property name="value" value="on files generated" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1201882037552" resolveInfo="conceptFunctionName" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1210094300689">
+    <property name="package" value="GenerationListener" />
+    <property name="name" value="BeforeGenerationBlock" />
+    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1210094300690">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1210094300691" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1210094377272">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1210094339163" resolveInfo="GenerationListener_models" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1210094300705">
+      <property name="value" value="before generation" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1201882037552" resolveInfo="conceptFunctionName" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1210094339163">
+    <property name="name" value="GenerationListener_models" />
+    <property name="package" value="GenerationListener" />
+    <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1210094339164">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1137545963098" resolveInfo="conceptFunctionParameterType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType" id="1210094339165">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210094339166">
+          <link role="classifier" targetNodeId="18.~Pair" resolveInfo="Pair" />
+          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210094339167">
+            <link role="classifier" targetNodeId="16.~SModelDescriptor" resolveInfo="SModelDescriptor" />
+          </node>
+          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210094339168">
+            <link role="classifier" targetNodeId="16.~IOperationContext" resolveInfo="IOperationContext" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1210094339169">
+      <property name="value" value="models" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1210095204065">
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
   </node>
 </model>
