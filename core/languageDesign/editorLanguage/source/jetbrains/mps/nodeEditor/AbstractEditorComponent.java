@@ -2211,6 +2211,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public <T> T get(Class<T> cls) {
+    if (getEditorContext() == null) {
+      return null; //i.e editor is disposed
+    }
+
+
     if (cls == SNode.class) return (T) getRootCell().getSNode();
     if (cls == SModelDescriptor.class && get(SNode.class) != null)
       return (T) get(SNode.class).getModel().getModelDescriptor();
