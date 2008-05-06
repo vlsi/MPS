@@ -12,9 +12,29 @@ import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
 
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.util.Calculable;
+
 public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem implements ApplicationComponent {
+  private static String VIRTUAL_FILE = "virtualFile";
+
   public static MPSNodesVirtualFileSystem getInstance() {
     return ApplicationManager.getApplication().getComponent(MPSNodesVirtualFileSystem.class);
+  }
+
+  public MPSNodeVirtualFile getFileFor(final SNode node, final IOperationContext context) {
+    return CommandProcessor.instance().executeLightweightCommand(new Calculable<MPSNodeVirtualFile>() {
+      public MPSNodeVirtualFile calculate() {
+        if (node.getUserObject(VIRTUAL_FILE) != null) {
+          return (MPSNodeVirtualFile) node.getUserObject(VIRTUAL_FILE);
+        }
+        MPSNodeVirtualFile vf = new MPSNodeVirtualFile(node, context);
+        node.putUserObject(VIRTUAL_FILE, vf);
+        return vf;
+      }
+    });
   }
 
   @NonNls @NotNull
