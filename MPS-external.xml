@@ -379,9 +379,6 @@
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\docs">
       <fileset dir="docs" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
-    <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\META-INF">
-      <fileset dir="META-INF" excludes="**/*.iml, **/*.ipr" includes="" />
-    </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\plugin">
       <fileset dir="plugin" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
