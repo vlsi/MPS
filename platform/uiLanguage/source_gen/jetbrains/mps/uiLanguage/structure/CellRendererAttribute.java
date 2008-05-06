@@ -14,6 +14,7 @@ public class CellRendererAttribute extends BaseConcept implements IComponentPart
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String RENDERER = "renderer";
+  public static String BINDING = "binding";
 
   public CellRendererAttribute(SNode node) {
     super(node);
@@ -52,12 +53,20 @@ public class CellRendererAttribute extends BaseConcept implements IComponentPart
     this.setProperty(CellRendererAttribute.VIRTUAL_PACKAGE, value);
   }
 
-  public ComponentInstance getRenderer() {
-    return (ComponentInstance) this.getChild(CellRendererAttribute.RENDERER);
+  public ComponentDeclaration getRenderer() {
+    return (ComponentDeclaration) this.getChild(CellRendererAttribute.RENDERER);
   }
 
-  public void setRenderer(ComponentInstance node) {
+  public void setRenderer(ComponentDeclaration node) {
     super.setChild(CellRendererAttribute.RENDERER, node);
+  }
+
+  public BindExpression getBinding() {
+    return (BindExpression) this.getChild(CellRendererAttribute.BINDING);
+  }
+
+  public void setBinding(BindExpression node) {
+    super.setChild(CellRendererAttribute.BINDING, node);
   }
 
 }
