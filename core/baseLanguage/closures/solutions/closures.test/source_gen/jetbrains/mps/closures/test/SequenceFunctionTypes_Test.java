@@ -66,9 +66,9 @@ __switch__:
     };
     // TODO: fix the test
     /*
-      fun1 = new FunctionTypes._R <Type>() {
+      fun1 = new FunctionTypes._R <ListSequence<Integer>>() {
 
-        public Type invoke() {
+        public ListSequence<Integer> invoke() {
           return ListSequence.<Integer>fromArray(Integer.valueOf(1));
         }
 

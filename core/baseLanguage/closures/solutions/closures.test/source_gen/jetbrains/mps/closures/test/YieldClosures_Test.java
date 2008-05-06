@@ -512,7 +512,7 @@ __switch__:
                       this._6_j_it = data2.iterator();
                     case 7:
                       if (!(this._6_j_it.hasNext())) {
-                        this.__CP__ = 11;
+                        this.__CP__ = 9;
                         break;
                       }
                       this._6_j = this._6_j_it.next();
@@ -522,15 +522,15 @@ __switch__:
                       this.__CP__ = 6;
                       this.yield(this._2_i);
                       return true;
-                    case 9:
-                      this.__CP__ = 10;
+                    case 10:
+                      this.__CP__ = 11;
                       this.yield(this._6_j);
                       return true;
-                    case 10:
+                    case 11:
                       this.__CP__ = 7;
                       this.yield(this._2_i + this._6_j);
                       return true;
-                    case 11:
+                    case 9:
                       this.__CP__ = 3;
                       this.yield(this._2_i * this._2_i);
                       return true;
@@ -541,7 +541,7 @@ __switch__:
                       this.__CP__ = 5;
                       break;
                     case 8:
-                      this.__CP__ = 9;
+                      this.__CP__ = 10;
                       break;
                     default:
                       break __loop__;
