@@ -1506,40 +1506,56 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     processCoordSelection(mouseEvent);
 
     if (mouseEvent.isControlDown()) {
-      if (getSelectedCell() != null) {
-        CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-          public void run() {
-            SNode selectedNode = getSelectedCell().getSNode();
-            while (selectedNode != null) {
-              final IErrorReporter herror = TypeChecker.getInstance().getTypeErrorDontCheck(selectedNode);
-              if (herror != null) {
-                SwingUtilities.invokeLater(new Runnable() {
-                  public void run() {
-                    String s = herror.reportError();
-                    final MPSErrorDialog dialog = new MPSErrorDialog(myOperationContext.getMainFrame(), s, "TYPESYSTEM ERROR", false);
-                    JButton button = new JButton(new AbstractAction("Go To Rule") {
-                      public void actionPerformed(ActionEvent e) {
-                        CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-                          public void run() {
-                            GoToTypeErrorRuleUtil.goToTypeErrorRule(myOperationContext, herror, GoToTypeErrorRule_Action.LOG);
-                            dialog.dispose();
-                          }
-                        });
-                      }
-                    });
-                    dialog.addButton(button);
-                    dialog.initializeUI();
-                    dialog.setVisible(true);
-                  }
-                });
-                return;
-              }
-              selectedNode = selectedNode.getParent();
-            }
-          }
-        });
-
+      if (mouseEvent.isAltDown()) {
+        showCellError();
+      } else {
+        goByFirstReference();
       }
+    }
+  }
+
+  private void goByFirstReference() {
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        new GoByFirstReferenceAction().doExecute(createActionContext());
+      }
+    });
+  }
+
+  private void showCellError() {
+    if (getSelectedCell() != null) {
+      CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+        public void run() {
+          SNode selectedNode = getSelectedCell().getSNode();
+          while (selectedNode != null) {
+            final IErrorReporter herror = TypeChecker.getInstance().getTypeErrorDontCheck(selectedNode);
+            if (herror != null) {
+              SwingUtilities.invokeLater(new Runnable() {
+                public void run() {
+                  String s = herror.reportError();
+                  final MPSErrorDialog dialog = new MPSErrorDialog(myOperationContext.getMainFrame(), s, "TYPESYSTEM ERROR", false);
+                  JButton button = new JButton(new AbstractAction("Go To Rule") {
+                    public void actionPerformed(ActionEvent e) {
+                      CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+                        public void run() {
+                          GoToTypeErrorRuleUtil.goToTypeErrorRule(myOperationContext, herror, GoToTypeErrorRule_Action.LOG);
+                          dialog.dispose();
+                        }
+                      });
+                    }
+                  });
+                  dialog.addButton(button);
+                  dialog.initializeUI();
+                  dialog.setVisible(true);
+                }
+              });
+              return;
+            }
+            selectedNode = selectedNode.getParent();
+          }
+        }
+      });
+
     }
   }
 
@@ -1553,10 +1569,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       changeSelection(newSelectedCell, true, false);
       mySelectedCell.processMousePressed(mouseEvent);
       revalidateAndRepaint(false);
-    }
-
-    if (mouseEvent.getButton() == MouseEvent.BUTTON2) {
-      new GoByFirstReferenceAction().execute(createActionContext());
     }
   }
 
