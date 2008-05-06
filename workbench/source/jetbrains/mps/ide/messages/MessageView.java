@@ -332,7 +332,7 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
         if (myModel.size() > 0) {
           myList.setSelectedValue(myModel.getElementAt(myModel.size() - 1), true);
         }
-        if (activate) {
+        if (activate && myToolsPane != null) {
           myToolsPane.selectTool(MessageView.this, false);
         }
       }
