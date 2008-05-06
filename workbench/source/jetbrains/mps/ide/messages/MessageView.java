@@ -103,7 +103,7 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
 
     myList.setFixedCellHeight(Toolkit.getDefaultToolkit().getFontMetrics(myList.getFont()).getHeight() + 5);
 
-    ToolTipManager.sharedInstance().registerComponent(myList);
+//    ToolTipManager.sharedInstance().registerComponent(myList);
     
 
     myList.registerKeyboardAction(new AbstractAction() {
