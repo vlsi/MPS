@@ -40,7 +40,8 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <maxImportIndex value="17" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <maxImportIndex value="18" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="6" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="8" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
@@ -50,6 +51,7 @@
   <import index="15" modelUID="jetbrains.mps.project@java_stub" version="-1" />
   <import index="16" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <import index="17" modelUID="jetbrains.mps.generator.fileGenerator@java_stub" version="-1" />
+  <import index="18" modelUID="jetbrains.mps.util@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203071646776">
     <property name="name" value="ActionDeclaration" />
     <property name="rootable" value="true" />
@@ -1359,8 +1361,14 @@
         <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1210070789428">
           <link role="conceptLinkDeclaration" targetNodeId="2.1137545963098" resolveInfo="conceptFunctionParameterType" />
           <node role="target" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType" id="1210070794575">
-            <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210071127824">
-              <link role="classifier" targetNodeId="16.~SModelDescriptor" resolveInfo="SModelDescriptor" />
+            <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210084535435">
+              <link role="classifier" targetNodeId="18.~Pair" resolveInfo="Pair" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210084538579">
+                <link role="classifier" targetNodeId="16.~SModelDescriptor" resolveInfo="SModelDescriptor" />
+              </node>
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210084544822">
+                <link role="classifier" targetNodeId="16.~IOperationContext" resolveInfo="IOperationContext" />
+              </node>
             </node>
           </node>
         </node>

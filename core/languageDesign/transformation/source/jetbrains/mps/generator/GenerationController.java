@@ -129,11 +129,7 @@ public class GenerationController {
   }
 
   private void fireModelsGenerated(boolean success) {
-    List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
-    for (Pair<SModelDescriptor, IOperationContext>  input : myInputModels) {
-      models.add(input.o1);
-    }
-    myManager.fireModelsGenerated(Collections.unmodifiableList(models), success);
+    myManager.fireModelsGenerated(Collections.unmodifiableList(myInputModels), success);
   }
 
   private long estimateGenerationTime() {

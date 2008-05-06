@@ -257,7 +257,7 @@ public class GeneratorManager extends DefaultExternalizableComponent implements 
     return ideaPresent && generationType.requiresCompilationInIDEABeforeGeneration();
   }
 
-  void fireModelsGenerated(List<SModelDescriptor> models, boolean success) {
+  void fireModelsGenerated(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
     for (GenerationListener l : myGenerationListeners) {
       try {
         l.modelsGenerated(models, success);
