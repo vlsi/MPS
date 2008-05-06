@@ -81,7 +81,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 12:
-                      this._12_returnStmt_it = RulesFunctions_BaseLanguage.collectReturnStatements(it).iterator();
+                      this._12_returnStmt_it = collectReturnStatements(it).iterator();
                     case 13:
                       if (!(this._12_returnStmt_it.hasNext())) {
                         this.__CP__ = 9;
@@ -238,7 +238,7 @@ __switch__:
         arg = arg_iterator.next();
         param = param_iterator.next();
         {
-          SNode matchedType = RulesFunctions_BaseLanguage.inference_matchTypeWithTypeVariables(SLinkOperations.getTarget(param, "type", true), mmap);
+          SNode matchedType = inference_matchTypeWithTypeVariables(SLinkOperations.getTarget(param, "type", true), mmap);
           if (TRACE_METHOD_TYPES) {
             System.out.println("-1- TYPEOF(" + BaseConcept_Behavior.call_getPresentation_1180102203531(arg) + ") :<=: " + BaseConcept_Behavior.call_getPresentation_1180102203531(matchedType));
           }
@@ -248,7 +248,7 @@ __switch__:
     }
     if (returnType != null) {
       Pair<SNode, Map<SNode, List<SNode>>> pair;
-      SNode matchedType = RulesFunctions_BaseLanguage.inference_matchTypeWithTypeVariables(returnType, mmap);
+      SNode matchedType = inference_matchTypeWithTypeVariables(returnType, mmap);
       if (TRACE_METHOD_TYPES) {
         System.out.println("-1- TYPEOF(" + BaseConcept_Behavior.call_getPresentation_1180102203531(mc) + ") :==: " + BaseConcept_Behavior.call_getPresentation_1180102203531(matchedType));
       }
@@ -297,11 +297,11 @@ __switch__:
     if (SNodeOperations.isInstanceOf(resType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       final SNode tvar_typevar_1203439588896 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
       SNode tvd = SLinkOperations.getTarget(resType, "typeVariableDeclaration", false);
-      RulesFunctions_BaseLanguage.inference_mapTypeVariable(tvd, TypeChecker.getInstance().getEquationManager().getRepresentator(tvar_typevar_1203439588896), mmap);
+      inference_mapTypeVariable(tvd, TypeChecker.getInstance().getEquationManager().getRepresentator(tvar_typevar_1203439588896), mmap);
       resType = TypeChecker.getInstance().getEquationManager().getRepresentator(tvar_typevar_1203439588896);
     } else
     {
-      RulesFunctions_BaseLanguage.inference_mapTypeVariables(resType, mmap);
+      inference_mapTypeVariables(resType, mmap);
     }
     return resType;
   }
@@ -310,19 +310,19 @@ __switch__:
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       final SNode tvar_typevar_1203431658168 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
       SNode tvd = SLinkOperations.getTarget(type, "typeVariableDeclaration", false);
-      RulesFunctions_BaseLanguage.inference_mapTypeVariable(tvd, TypeChecker.getInstance().getEquationManager().getRepresentator(tvar_typevar_1203431658168), mmap);
+      inference_mapTypeVariable(tvd, TypeChecker.getInstance().getEquationManager().getRepresentator(tvar_typevar_1203431658168), mmap);
       SNodeOperations.replaceWithAnother(type, TypeChecker.getInstance().getEquationManager().getRepresentator(tvar_typevar_1203431658168));
     } else
     {
       List<SNode> children = new ArrayList<SNode>(SNodeOperations.getChildren(type));
       for(SNode chld : children) {
-        RulesFunctions_BaseLanguage.inference_mapTypeVariables(chld, mmap);
+        inference_mapTypeVariables(chld, mmap);
       }
     }
   }
 
   private static void inference_mapTypeVariable(SNode tvd, SNode tvar, Map<SNode, List<SNode>> mmap) {
-    RulesFunctions_BaseLanguage.putTypeVariable(tvd, tvar, mmap);
+    putTypeVariable(tvd, tvar, mmap);
   }
 
   private static void putTypeVariable(SNode tvd, SNode tvar, Map<SNode, List<SNode>> mmap) {
