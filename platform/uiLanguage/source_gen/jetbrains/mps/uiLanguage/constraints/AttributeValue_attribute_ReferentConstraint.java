@@ -14,7 +14,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import java.util.List;
 import java.util.ArrayList;
 
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 
@@ -39,7 +39,7 @@ public class AttributeValue_attribute_ReferentConstraint implements IModelConstr
     SNode instance = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.uiLanguage.structure.ComponentInstance", true, false);
     List<SNode> result = new ArrayList<SNode>();
     if (instance != null) {
-      ListOperations.addAllElements(result, ComponentDeclaration_Behavior.call_getAttributes_1202392603201(SLinkOperations.getTarget(instance, "componentDeclaration", false)));
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(ComponentDeclaration_Behavior.call_getAttributes_1202392603201(SLinkOperations.getTarget(instance, "componentDeclaration", false))));
     }
     return new SimpleSearchScope(result);
   }

@@ -15,8 +15,9 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import java.util.List;
 import java.util.ArrayList;
 
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class ComponentReference_component_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
@@ -47,7 +48,13 @@ public class ComponentReference_component_ReferentConstraint implements IModelCo
     }
     List<SNode> result = new ArrayList<SNode>();
     if (componentDeclaration != null) {
-      ListOperations.addAllElements(result, SequenceOperations.where(SNodeOperations.getDescendants(componentDeclaration, "jetbrains.mps.uiLanguage.structure.ComponentInstance", false), new zPredicate2(null, null)));
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(componentDeclaration, "jetbrains.mps.uiLanguage.structure.ComponentInstance", false)).where(new IWhereFilter<SNode>() {
+
+        public boolean accept(SNode it) {
+          return SPropertyOperations.getString(it, "name") != null;
+        }
+
+      }));
     }
     return new SimpleSearchScope(result);
   }

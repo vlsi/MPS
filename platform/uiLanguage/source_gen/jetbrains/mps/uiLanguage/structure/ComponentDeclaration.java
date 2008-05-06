@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 
 public class ComponentDeclaration extends BaseConcept implements IClassifier {
@@ -19,6 +20,7 @@ public class ComponentDeclaration extends BaseConcept implements IClassifier {
   public static String STUB = "stub";
   public static String ABSTRACT = "abstract";
   public static String ACTION_COMPONENT = "actionComponent";
+  public static String CELL_RENDERER_SETTER = "cellRendererSetter";
   public static String EXTENDED_COMPONENT = "extendedComponent";
   public static String MAP_TO = "mapTo";
   public static String ROOT = "root";
@@ -90,6 +92,14 @@ public class ComponentDeclaration extends BaseConcept implements IClassifier {
 
   public void setActionComponent(boolean value) {
     this.setBooleanProperty(ComponentDeclaration.ACTION_COMPONENT, value);
+  }
+
+  public InstanceMethodDeclaration getCellRendererSetter() {
+    return (InstanceMethodDeclaration) this.getReferent(ComponentDeclaration.CELL_RENDERER_SETTER);
+  }
+
+  public void setCellRendererSetter(InstanceMethodDeclaration node) {
+    super.setReferent(ComponentDeclaration.CELL_RENDERER_SETTER, node);
   }
 
   public ComponentDeclaration getExtendedComponent() {
