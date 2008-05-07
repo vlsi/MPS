@@ -9,7 +9,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
-import java.util.ArrayList;
 
 /**
  * Igor Alshannikov
@@ -22,7 +21,7 @@ public abstract class AbstractSearchScope implements ISearchScope {
     }
   };
 
-  public IReferenceInfoResolver getReferenceInfoResolver(AbstractConceptDeclaration targetConcept) {
+  public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, AbstractConceptDeclaration targetConcept) {
     // not supported by default
     return null;
   }

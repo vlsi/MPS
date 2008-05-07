@@ -32,5 +32,5 @@ public interface ISearchScope {
   @NotNull
   List<SNode> getNodes();
 
-  IReferenceInfoResolver getReferenceInfoResolver(AbstractConceptDeclaration concept);
+  IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, AbstractConceptDeclaration targetConcept);
 }

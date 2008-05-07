@@ -2,6 +2,7 @@ package jetbrains.mps.baseLanguage.constraints;
 
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.search.VisibleClassifierMembersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.baseLanguage.structure.*;
@@ -36,10 +37,10 @@ public class InstanceMethodCall_InstanceMethodScope extends VisibleClassifierMem
     }
   }
 
-  public IReferenceInfoResolver getReferenceInfoResolver(AbstractConceptDeclaration concept) {
-    if (SModelUtil_new.isAssignableConcept(concept, InstanceMethodDeclaration.concept) && myMethodCall != null) {
+  public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, AbstractConceptDeclaration targetConcept) {
+    if (SModelUtil_new.isAssignableConcept(targetConcept, InstanceMethodDeclaration.concept) && myMethodCall != null) {
       return createInstanceMethodReferenceInfoResolver(myInstanceType, myMethodCall.getActualArguments());
     }
-    return super.getReferenceInfoResolver(concept);
+    return super.getReferenceInfoResolver(referenceNode, targetConcept);
   }
 }

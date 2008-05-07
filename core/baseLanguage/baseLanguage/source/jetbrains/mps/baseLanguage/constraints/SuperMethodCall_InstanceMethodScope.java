@@ -43,8 +43,8 @@ public class SuperMethodCall_InstanceMethodScope extends VisibleClassifierMember
     return result;
   }
 
-  public IReferenceInfoResolver getReferenceInfoResolver(AbstractConceptDeclaration concept) {
-    if (SModelUtil_new.isAssignableConcept(concept, InstanceMethodDeclaration.concept)) {
+  public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, AbstractConceptDeclaration targetConcept) {
+    if (SModelUtil_new.isAssignableConcept(targetConcept, InstanceMethodDeclaration.concept)) {
       // create fake type
       ClassifierType thisClassType = ClassifierType.newInstance(null);
       Classifier thisClass = mySuperMethodCall.getParent(Classifier.class, false);
@@ -58,6 +58,6 @@ public class SuperMethodCall_InstanceMethodScope extends VisibleClassifierMember
       }
       return createInstanceMethodReferenceInfoResolver(thisClassType, mySuperMethodCall.getActualArguments());
     }
-    return super.getReferenceInfoResolver(concept);
+    return super.getReferenceInfoResolver(referenceNode, targetConcept);
   }
 }

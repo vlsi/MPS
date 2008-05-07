@@ -45,7 +45,7 @@ public class SimpleSearchScope extends AbstractSearchScope {
     return result;
   }
 
-  public IReferenceInfoResolver getReferenceInfoResolver(AbstractConceptDeclaration concept) {
+  public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, AbstractConceptDeclaration targetConcept) {
     return new IReferenceInfoResolver() {
       public SNode resolve(String referenceInfo) {
         if (referenceInfo == null) return null;
