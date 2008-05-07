@@ -1051,7 +1051,7 @@
     </configuration>
     <configuration default="false" name="MPSInIDEA" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="com.intellij.idea.Main" />
-      <option name="VM_PARAMETERS" value=" -ea -Xbootclasspath/p:../out/classes/production/boot  -Xmx192m -Didea.is.internal=true -XX:MaxPermSize=92m -Didea.load.plugins=false -Didea.no.jre.check=true -Didea.platform.prefix=MPS" />
+      <option name="VM_PARAMETERS" value=" -ea -Xbootclasspath/p:../out/classes/production/boot  -Xmx1200m -Didea.is.internal=true -XX:MaxPermSize=92m -Didea.load.plugins=false -Didea.no.jre.check=true -Didea.platform.prefix=MPS" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/bin" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />

@@ -2,6 +2,7 @@ package jetbrains.mps.ide.findusages.view.treeholder.treeview;
 
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.view.treeholder.path.PathItemRole;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.TextOptions;
@@ -18,6 +19,7 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.TextMPSTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Calculable;
@@ -535,15 +537,17 @@ public abstract class UsagesTree extends MPSTree {
 
   public void navigateToNode(SNode node) {
     NavigationActionProcessor.executeNavigationAction(
-      new EditorNavigationCommand(node, getProjectFrame().getEditorsPane().getCurrentEditor(), getProjectFrame().getEditorsPane()),
-      getProjectFrame().getProject(), true);
+      new EditorNavigationCommand(node, null, getProject().getComponent(EditorsPane.class)),
+        getProject(), true);
   }
 
   private void navigateInTree(Object o) {
-    ProjectPane projectPane = getProjectFrame().getProjectPane();
-    getProjectFrame().showMainProjectPane();
+    ProjectPane projectPane = getProject().getComponentSafe(ProjectPane.class);
+    if (getProjectFrame() != null) {
+      getProjectFrame().showMainProjectPane();
+    }
     if (o instanceof SNode) {
-      projectPane.selectNode((SNode) o, new ProjectOperationContext(getProjectFrame().getProject()));
+      projectPane.selectNode((SNode) o, new ProjectOperationContext(getProject()));
     } else if (o instanceof SModel) {
       projectPane.selectModel(((SModel) o).getModelDescriptor());
     } else if (o instanceof IModule) {
@@ -554,7 +558,13 @@ public abstract class UsagesTree extends MPSTree {
     projectPane.getTree().requestFocus();
   }
 
-  public abstract IDEProjectFrame getProjectFrame();
+  public MPSProject getProject() {
+    return getProjectFrame().getProject();
+  }
+
+  public IDEProjectFrame getProjectFrame() {
+    return getProject().getComponent(IDEProjectFrame.class);
+  }
 
   private UsagesTreeNode getResultsNode() {
     int index = myShowSearchedNodes ? 1 : 0;

@@ -66,8 +66,8 @@ public abstract class UsageView implements IExternalizeable {
     myPanel = new JPanel(new BorderLayout());
 
     myTreeHolder = new UsagesTreeHolder(defaultOptions) {
-      public IDEProjectFrame getProjectFrame() {
-        return myProjectFrame;
+      public MPSProject getProject() {
+        return myProjectFrame.getProject();
       }
     };
     myTreeHolder.setEmptyContents();

@@ -54,8 +54,8 @@ public abstract class UsagesTreeHolder extends JPanel implements IChangeListener
     super(new BorderLayout());
 
     myTree = new UsagesTree() {
-      public IDEProjectFrame getProjectFrame() {
-        return UsagesTreeHolder.this.getProjectFrame();
+      public MPSProject getProject() {
+        return UsagesTreeHolder.this.getProject();
       }
     };
     myTree.setBorder(new EmptyBorder(3, 5, 3, 5));
@@ -205,7 +205,7 @@ public abstract class UsagesTreeHolder extends JPanel implements IChangeListener
     return myViewToolbar;
   }
 
-  public abstract IDEProjectFrame getProjectFrame();
+  public abstract MPSProject getProject();
 
   class ViewToolbar extends MPSToolBar {
     private PathOptionsToolbar myPathOptionsToolbar;
