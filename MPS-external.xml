@@ -63,9 +63,7 @@
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\kernel\vcs\generic" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\docs" />
-    <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\META-INF" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\plugin" />
-    <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\.configuration" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\workbench" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\log" />
   </target>
@@ -381,9 +379,6 @@
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\plugin">
       <fileset dir="plugin" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
-    </copy>
-    <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\.configuration">
-      <fileset dir=".configuration" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <antcall target="pack.jetbrains.mps.ide.uiLanguage" />
     <antcall target="pack.jetbrains.mps.monitorLanguage" />
