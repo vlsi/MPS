@@ -104,6 +104,10 @@
     <component>
       <implementation-class>jetbrains.mps.idea.tools.UsageViewTool</implementation-class>
     </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.idea.tools.ConceptHierarchyViewTool</implementation-class>
+    </component>
   </project-components>
 
 </components>

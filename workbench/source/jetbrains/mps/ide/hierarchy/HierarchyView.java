@@ -23,13 +23,6 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 15.08.2005
- * Time: 19:26:52
- * To change this template use File | Settings | File Templates.
- */
 public class HierarchyView extends AbstractHierarchyView<AbstractConceptDeclaration> {
 
   public HierarchyView(IDEProjectFrame ide) {
@@ -41,7 +34,9 @@ public class HierarchyView extends AbstractHierarchyView<AbstractConceptDeclarat
   }
 
   public void activate() {
-    myIde.showHierarchyView();
+    if (myIde != null) { //todo IDEA platform hack
+      myIde.showHierarchyView();
+    }
   }
 
   private class ConceptHierarchyTree extends AbstractHierarchyTree<AbstractConceptDeclaration> {
