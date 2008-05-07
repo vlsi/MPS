@@ -26,6 +26,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="38" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.plugin.uiActions@java_stub" version="-1" />
@@ -91,13 +92,6 @@
       <link role="modifiedGroup" targetNodeId="3.1204991232446" resolveInfo="EditorInternal" />
     </node>
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1207148321744">
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator" id="1205676319245">
-        <link role="constructorDeclaration" targetNodeId="2.~TestReferenceResolvingPerformance.&lt;init&gt;(int)" resolveInfo="TestReferenceResolvingPerformance" />
-        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1205676335974">
-          <link role="classifier" targetNodeId="2.~TestReferenceResolvingPerformance" resolveInfo="TestReferenceResolvingPerformance" />
-          <link role="variableDeclaration" targetNodeId="2.~TestReferenceResolvingPerformance.EDITOR" resolveInfo="EDITOR" />
-        </node>
-      </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1207053383184">
         <link role="action" targetNodeId="1207052992292" resolveInfo="ShowInternalExtractMethodStuff" />
       </node>
@@ -108,30 +102,14 @@
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement" id="1205247768364">
       <link role="modifiedGroup" targetNodeId="3.1205163054135" resolveInfo="ProjectPaneModelActionsInternal" />
     </node>
-    <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1207148324042">
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator" id="1205676391925">
-        <link role="constructorDeclaration" targetNodeId="2.~TestReferenceResolvingPerformance.&lt;init&gt;(int)" resolveInfo="TestReferenceResolvingPerformance" />
-        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1205676398539">
-          <link role="classifier" targetNodeId="2.~TestReferenceResolvingPerformance" resolveInfo="TestReferenceResolvingPerformance" />
-          <link role="variableDeclaration" targetNodeId="2.~TestReferenceResolvingPerformance.MODEL" resolveInfo="MODEL" />
-        </node>
-      </node>
-    </node>
+    <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1207148324042" />
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1205247740394">
     <property name="name" value="BaseLanguageNodeActionsInternal" />
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement" id="1205247793147">
       <link role="modifiedGroup" targetNodeId="3.1204991217354" resolveInfo="ProjectPaneNodeActionsInternal" />
     </node>
-    <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1207148244981">
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator" id="1205676408265">
-        <link role="constructorDeclaration" targetNodeId="2.~TestReferenceResolvingPerformance.&lt;init&gt;(int)" resolveInfo="TestReferenceResolvingPerformance" />
-        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1205676413754">
-          <link role="classifier" targetNodeId="2.~TestReferenceResolvingPerformance" resolveInfo="TestReferenceResolvingPerformance" />
-          <link role="variableDeclaration" targetNodeId="2.~TestReferenceResolvingPerformance.NODE" resolveInfo="NODE" />
-        </node>
-      </node>
-    </node>
+    <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1207148244981" />
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1205248417575">
     <property name="name" value="CommentStatements" />
