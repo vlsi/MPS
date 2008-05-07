@@ -100,7 +100,7 @@ public class typeof_ClosureLiteral_InferenceRule implements InferenceRule_Runtim
           }
         }
       */
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(closure, "jetbrains.mps.closures.helgins", "1200829007706", true), new QuotationClass_1().createNode(paramTypes, TypeChecker.getInstance().getEquationManager().getRepresentator(RLCS_typevar_1199621958531)), closure, null, "jetbrains.mps.closures.helgins", "1200829005839");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(closure, "jetbrains.mps.closures.helgins", "1200829007706", true), new QuotationClass_().createNode(paramTypes, TypeChecker.getInstance().getEquationManager().getRepresentator(RLCS_typevar_1199621958531)), closure, null, "jetbrains.mps.closures.helgins", "1200829005839");
     } else
     if (yieldsValue) {
       /*
@@ -114,10 +114,10 @@ public class typeof_ClosureLiteral_InferenceRule implements InferenceRule_Runtim
       */
       SNode st = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType", null);
       SLinkOperations.setTarget(st, "elementType", TypeChecker.getInstance().getEquationManager().getRepresentator(YLCS_typevar_1200831610156), true);
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(closure, "jetbrains.mps.closures.helgins", "1201866101391", true), new QuotationClass_3().createNode(paramTypes, st), closure, null, "jetbrains.mps.closures.helgins", "1201866101389");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(closure, "jetbrains.mps.closures.helgins", "1201866101391", true), new QuotationClass_2().createNode(paramTypes, st), closure, null, "jetbrains.mps.closures.helgins", "1201866101389");
     } else
     {
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(closure, "jetbrains.mps.closures.helgins", "1200831808767", true), new QuotationClass_2().createNode(paramTypes), closure, null, "jetbrains.mps.closures.helgins", "1200831808765");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(closure, "jetbrains.mps.closures.helgins", "1200831808767", true), new QuotationClass_1().createNode(paramTypes), closure, null, "jetbrains.mps.closures.helgins", "1200831808765");
     }
   }
 

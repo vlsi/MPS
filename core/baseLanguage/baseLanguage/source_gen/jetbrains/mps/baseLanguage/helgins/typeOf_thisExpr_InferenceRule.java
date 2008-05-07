@@ -5,8 +5,11 @@ package jetbrains.mps.baseLanguage.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import java.util.List;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_thisExpr_InferenceRule implements InferenceRule_Runtime {
@@ -15,12 +18,18 @@ public class typeOf_thisExpr_InferenceRule implements InferenceRule_Runtime {
   }
 
   public void applyRule(final SNode thisExpr) {
+    SNode classConcept;
     if ((SLinkOperations.getTarget(thisExpr, "classConcept", false) != null)) {
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(thisExpr, "jetbrains.mps.baseLanguage.helgins", "1208466580607", true), new QuotationClass_17().createNode(SLinkOperations.getTarget(thisExpr, "classConcept", false)), thisExpr, null, "jetbrains.mps.baseLanguage.helgins", "1208466580605");
+      classConcept = SLinkOperations.getTarget(thisExpr, "classConcept", false);
     } else
     {
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(thisExpr, "jetbrains.mps.baseLanguage.helgins", "1208466584314", true), new QuotationClass_18().createNode(SNodeOperations.getAncestor(thisExpr, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false)), thisExpr, null, "jetbrains.mps.baseLanguage.helgins", "1208466584312");
+      classConcept = SNodeOperations.getAncestor(thisExpr, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     }
+    List<SNode> typeVarRefs = new ArrayList<SNode>();
+    for(SNode typeVariableDeclaration : SLinkOperations.getTargets(classConcept, "typeVariableDeclaration", true)) {
+      ListSequence.fromList(typeVarRefs).addElement(new QuotationClass_96().createNode(typeVariableDeclaration));
+    }
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(thisExpr, "jetbrains.mps.baseLanguage.helgins", "1208466580607", true), new QuotationClass_17().createNode(typeVarRefs, classConcept), thisExpr, null, "jetbrains.mps.baseLanguage.helgins", "1208466580605");
   }
 
   public String getApplicableConceptFQName() {

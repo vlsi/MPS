@@ -13,7 +13,7 @@ public class typeof_CharConstant_InferenceRule implements InferenceRule_Runtime 
   }
 
   public void applyRule(final SNode nodeToCheck) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.baseLanguage.helgins", "1200398561412", true), new QuotationClass_76().createNode(), nodeToCheck, null, "jetbrains.mps.baseLanguage.helgins", "1200398564540");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.baseLanguage.helgins", "1200398561412", true), new QuotationClass_75().createNode(), nodeToCheck, null, "jetbrains.mps.baseLanguage.helgins", "1200398564540");
   }
 
   public String getApplicableConceptFQName() {
