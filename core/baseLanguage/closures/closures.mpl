@@ -43,12 +43,10 @@
     <entry path="${language_descriptor}\runtime\classes" />
     <entry path="${language_descriptor}\classes" />
   </classPath>
-  <languageRuntimeClassPath />
+  <languageRuntimeClassPath>
+    <entry path="${language_descriptor}\runtime\classes" />
+  </languageRuntimeClassPath>
   <sourcePath />
-  <osgiOptions>
-    <requiredBundles />
-    <exportedPackage />
-  </osgiOptions>
   <dependencies>
     <dependency reexport="false">jetbrains.mps.closures#1199623535494</dependency>
 	  </dependencies>
