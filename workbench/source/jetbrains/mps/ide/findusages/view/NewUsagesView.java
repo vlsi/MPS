@@ -3,12 +3,10 @@ package jetbrains.mps.ide.findusages.view;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.ConceptInstances_Finder;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder;
 import jetbrains.mps.components.IExternalizableComponent;
-import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
-import jetbrains.mps.ide.HintDialog;
-import jetbrains.mps.ide.IDEProjectFrame;
-import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.*;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.AdaptiveProgressMonitor;
+import jetbrains.mps.ide.progress.AdaptiveProgressMonitorFactory;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
@@ -204,10 +202,7 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     });
   }
 
-  protected IAdaptiveProgressMonitor createProgressMonitor() {
-    return new AdaptiveProgressMonitor(getFrame());
-  }
-
+  //todo IDEA platform hack
   protected Frame getFrame() {
     return myProjectFrame.getMainFrame();
   }
@@ -221,7 +216,9 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
       public void run() {
         CommandProcessor.instance().executeLightweightCommand(new Runnable() {
           public void run() {
-            SearchResults searchResults = provider.getResults(query, createProgressMonitor());
+            SearchResults searchResults = provider.getResults(
+              query,
+              getProject().getComponentSafe(AdaptiveProgressMonitorFactory.class).createMonitor());
             showResults(searchResults, showOne, newTab, provider, query, isRerunnable);
           }
         });
@@ -255,8 +252,8 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
           SNode node = ((SearchResult<SNode>) searchResults.getSearchResults().get(0)).getObject();
           if (node != null) {
             NavigationActionProcessor.executeNavigationAction(
-              new EditorNavigationCommand(node, myProjectFrame.getEditorsPane().getCurrentEditor(), myProjectFrame.getEditorsPane()),
-              myProjectFrame.getProject(), true);
+              new EditorNavigationCommand(node, null, getProject().getComponent(EditorsPane.class)),
+              getProject(), true);
           }
         }
       });
@@ -397,6 +394,11 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     }
   }
 
+  //todo IDEA platform hack
+  protected MPSProject getProject() {
+    return myProjectFrame.getProject();
+  }
+
   public class UsageViewData {
     private static final String USAGE_VIEW = "usage_view";
     private static final String USAGE_VIEW_OPTIONS = "usage_view_options";
@@ -406,7 +408,7 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     private FindUsagesOptions myOptions = new FindUsagesOptions();
 
     public void createUsageView() {
-      myUsageView = new UsageView(myProjectFrame, myDefaultViewOptions) {
+      myUsageView = new UsageView(getProject(), myDefaultViewOptions) {
         public void close() {
           NewUsagesView.this.closeTab(myUsageViewsData.indexOf(UsageViewData.this));
         }

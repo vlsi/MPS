@@ -5,6 +5,7 @@ import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.MPSToolBar;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.progress.AdaptiveProgressMonitorFactory;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
@@ -45,8 +46,7 @@ public abstract class UsageView implements IExternalizeable {
   private static final String BUTTONS = "buttons";
   private static final String TREE_WRAPPER = "tree_wrapper";
 
-  //connection with other components
-  private IDEProjectFrame myProjectFrame;
+  private MPSProject myProject;
 
   //my components
   private JPanel myPanel;
@@ -60,14 +60,14 @@ public abstract class UsageView implements IExternalizeable {
   //for assertions - check invariant - constructor -> read|setRunOpts
   private boolean myIsInitialized = false;
 
-  public UsageView(IDEProjectFrame projectFrame, ViewOptions defaultOptions) {
-    myProjectFrame = projectFrame;
+  public UsageView(MPSProject project, ViewOptions defaultOptions) {
+    myProject = project;
 
     myPanel = new JPanel(new BorderLayout());
 
     myTreeHolder = new UsagesTreeHolder(defaultOptions) {
       public MPSProject getProject() {
-        return myProjectFrame.getProject();
+        return myProject;
       }
     };
     myTreeHolder.setEmptyContents();
@@ -108,7 +108,7 @@ public abstract class UsageView implements IExternalizeable {
     assert !ThreadUtils.isEventDispatchThread();
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
-        SearchResults myLastResults = myResultProvider.getResults(mySearchQuery, myProjectFrame.createAdaptiveProgressMonitor());
+        SearchResults myLastResults = myResultProvider.getResults(mySearchQuery, myProject.getComponentSafe(AdaptiveProgressMonitorFactory.class).createMonitor());
         myLastResults.removeDuplicates();
         myTreeHolder.setContents(myLastResults);
       }
@@ -126,7 +126,7 @@ public abstract class UsageView implements IExternalizeable {
   }
 
   public void regenerate() {
-    final MPSProject project = myProjectFrame.getProject();
+    final MPSProject project = myProject;
     if (project == null) {
       return;
     }

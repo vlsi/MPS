@@ -40,7 +40,7 @@ public class TodoViewer extends JPanel {
 
     ViewOptions viewOptions = new ViewOptions(true, false, false, false, false);
 
-    myUsageView = new UsageView(myProjectFrame, viewOptions) {
+    myUsageView = new UsageView(myProjectFrame.getProject(), viewOptions) {
       public void close() {
         //hideTool();
       }

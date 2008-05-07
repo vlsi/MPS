@@ -81,7 +81,7 @@ public class NewRefactoringView extends DefaultTool {
     myName = myRefactoring.getUserFriendlyName();
 
     myPanel = new JPanel(new BorderLayout());
-    myUsageView = new UsageView(myProjectFrame, new ViewOptions()) {
+    myUsageView = new UsageView(myProjectFrame.getProject(), new ViewOptions()) {
       public void close() {
         cancel();
       }
