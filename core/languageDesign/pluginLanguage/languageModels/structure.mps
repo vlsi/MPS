@@ -46,6 +46,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="20" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="6" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -1530,10 +1531,7 @@
       <property name="role" value="propertyDeclaration" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1210179190070" resolveInfo="PersistentPropertyDeclaration" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1210186891927">
-      <property name="value" value="&lt;{propertyDeclaration}&gt;" />
-      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+      <link role="specializedLink" targetNodeId="14.1205756909548" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1210181003572">
       <property name="value" value="reference to externalizable property" />

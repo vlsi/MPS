@@ -31,6 +31,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="28" />
   <import index="3" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="4" modelUID="java.lang@java_stub" version="-1" />
@@ -2393,15 +2394,26 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1210186952371">
     <property name="package" value="Preference" />
     <link role="concept" targetNodeId="7.1210179190070" resolveInfo="PersistentPropertyDeclaration" />
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1210186952372">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210186952373">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1210186967123">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210186969433">
-            <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1210186967124" />
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.AbstractOperation" id="1210186969436" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1210187280769">
+      <property name="name" value="getVisiblity" />
+      <link role="overriddenMethod" targetNodeId="25.1205836775660" resolveInfo="getVisiblity" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210187280771">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1210187321578">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1210187338534">
+            <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1210187338535">
+              <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1210187338536">
+                <link role="concept" targetNodeId="10.1146644602865" resolveInfo="PublicVisibility" />
+              </node>
+            </node>
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1210187288797">
+        <link role="concept" targetNodeId="10.1146644584814" resolveInfo="Visibility" />
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1210187284040">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210187284041" />
     </node>
   </node>
 </model>
