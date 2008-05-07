@@ -33,7 +33,6 @@ public class EditorManager {
   private boolean myCreatingInspectedCell = false;
 
   private Map<Class, Stack<EditorCell>> myAttributedClassesToAttributedCellStacksMap = new HashMap<Class, Stack<EditorCell>>();
-
   private Stack<SNode> myAttributesStack = new Stack<SNode>();
 
   public static EditorManager getInstanceFromContext(IOperationContext operationContext) {

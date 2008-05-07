@@ -51,7 +51,7 @@ public class CaretBlinker extends DefaultExternalizableComponent {
   public void setCaretBlinkingRateTimeMillis(int timeMillis) {
     myCaretBlinkingRateMillis = timeMillis;
   }
-
+                                                                  
   public void registerEditor(AbstractEditorComponent editorComponent) {
     synchronized(myRegistrationLock) {
       myEditors.add(editorComponent);
