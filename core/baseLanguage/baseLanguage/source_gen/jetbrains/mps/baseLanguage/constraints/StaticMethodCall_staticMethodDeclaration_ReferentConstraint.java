@@ -8,11 +8,9 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.search.EmptySearchScope;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.structure.StaticMethodCall;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
 public class StaticMethodCall_staticMethodDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -32,14 +30,11 @@ public class StaticMethodCall_staticMethodDeclaration_ReferentConstraint impleme
   }
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    if (SLinkOperations.getTarget(_context.getReferenceNode(), "classConcept", false) == null) {
-      return new EmptySearchScope();
-    }
-    return new StaticMethodCall_StaticMethodScope(((ClassConcept)SNodeOperations.getAdapter(SLinkOperations.getTarget(_context.getReferenceNode(), "classConcept", false))), ((StaticMethodCall)SNodeOperations.getAdapter(_context.getReferenceNode())));
+    return new StaticMethodCall_StaticMethodScope(((ClassConcept)SNodeOperations.getAdapter(SLinkOperations.getTarget(_context.getReferenceNode(), "classConcept", false))), _context.getEnclosingNode());
   }
 
   public String getNodeReferentSearchScopeDescription() {
-    return "static methods from hierarchy of specified class";
+    return "<no description>";
   }
 
 }
