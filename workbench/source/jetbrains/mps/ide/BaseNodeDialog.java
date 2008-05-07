@@ -5,6 +5,7 @@ import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.TaskProgressSettings;
+import jetbrains.mps.ide.progress.AdaptiveProgressMonitorFactory;
 import jetbrains.mps.nodeEditor.UIEditorComponent;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponentFactory;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
@@ -126,7 +127,7 @@ public abstract class BaseNodeDialog extends BaseDialog {
     if (!validateNode()) return true;
     new Thread() {
       public void run() {
-        IAdaptiveProgressMonitor monitor = getOperationContext().getComponent(AbstractProjectFrame.class).createAdaptiveProgressMonitor();
+        IAdaptiveProgressMonitor monitor = getOperationContext().getComponent(AdaptiveProgressMonitorFactory.class).createMonitor();
         try {
           String taskname = "Applying changes...";
           monitor.start("Applying changes", TaskProgressSettings.getInstance().getEstimatedTimeMillis(taskname));

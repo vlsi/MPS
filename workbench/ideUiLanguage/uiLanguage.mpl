@@ -6,7 +6,7 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator generatorUID="jetbrains.mps.ide.uiLanguage#1203519930689" targetLanguage="jetbrains.mps.baseLanguage">
+    <generator generatorUID="jetbrains.mps.ide.uiLanguage#1203519930689">
       <models>
         <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.ide.uiLanguage.generator.baseLanguage.template" />
       </models>
@@ -34,15 +34,11 @@
       </mapping-priorities>
     </generator>
   </generators>
-  <classPath />
-  <runtimeClassPath>
+  <classPath>
     <entry path="${language_descriptor}\classes" />
-  </runtimeClassPath>
+  </classPath>
+  <languageRuntimeClassPath />
   <sourcePath />
-  <osgiOptions>
-    <requiredBundles />
-    <exportedPackage />
-  </osgiOptions>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>
     <extendedLanguage>jetbrains.mps.uiLanguage</extendedLanguage>
