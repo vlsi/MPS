@@ -1,13 +1,13 @@
 <component>
   <!-- <version name="IntelliJ IDEA" major="6" minor="0.2 Beta"/> -->
-  <version codename="Diana" major="8" minor="0M1" eap="true"/>
+  <version codename="Yellow Fox" major="8" minor="0M1" eap="true"/>
   <build number="__BUILD_NUMBER__" date="__BUILD_DATE__"/>
-  <logo url="/idea_logo.png"/>
+  <logo url="/jetbrains/mps/ide/projectPane/splash2.png"/>
   <about url="/idea_about.png"/>
   <package code="__PACKAGE_CODE__"/>
   <names product="MPS" fullname="JetBrains MPS"/>
 
-  <welcome-screen caption-url="/general/welcomeCaption.png" slogan-url="/general/developSlogan.png"/>
+  <welcome-screen caption-url="/jetbrains/mps/ide/projectPane/mpsWelcomeCaption.png" slogan-url="/jetbrains/mps/ide/projectPane/mpsSlogan.png"/>
 
   <update-urls check="http://www.jetbrains.com/updates/update.xml" download="http://www.jetbrains.com/idea/download/"/>
   <eap-update-urls check="http://www.jetbrains.com/updates/eap-update.xml" download="http://www.intellij.net/eap/products/idea/download.jsp"/>
