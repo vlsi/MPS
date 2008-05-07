@@ -15,10 +15,10 @@ public class ConstraintsDescriptor implements IModelConstraints {
 
   public ConstraintsDescriptor() {
     this.myConstraints.add(new ComponentController_name_PropertyConstraint());
-    this.myConstraints.add(new ComponentDeclaration_cellRendererSetter_ReferentConstraint());
     this.myConstraints.add(new AttributeValue_attribute_ReferentConstraint());
     this.myConstraints.add(new ComponentInstance_componentDeclaration_ReferentConstraint());
     this.myConstraints.add(new ComponentReference_component_ReferentConstraint());
+    this.myConstraints.add(new StubCellRendererInfo_cellRendererSetter_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

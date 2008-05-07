@@ -54,11 +54,11 @@ public class CellRendererAttribute extends BaseConcept implements IComponentPart
   }
 
   public ComponentDeclaration getRenderer() {
-    return (ComponentDeclaration) this.getChild(CellRendererAttribute.RENDERER);
+    return (ComponentDeclaration) this.getReferent(CellRendererAttribute.RENDERER);
   }
 
   public void setRenderer(ComponentDeclaration node) {
-    super.setChild(CellRendererAttribute.RENDERER, node);
+    super.setReferent(CellRendererAttribute.RENDERER, node);
   }
 
   public BindExpression getBinding() {
