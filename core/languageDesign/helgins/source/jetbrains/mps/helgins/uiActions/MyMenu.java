@@ -33,7 +33,8 @@ public class MyMenu extends JPopupMenu {
       if (node == null) continue;
       String nodeName = node.getName();
       if (nodeName == null || nodeName.equals("")) nodeName = node.getConceptShortName();
-      add(new AbstractAction(nodeName + " (" + node.getModel() + ")") {
+      SNode root = node.getContainingRoot();
+      add(new AbstractAction(nodeName + " (" + root.getName() + " in " + node.getModel() + ")") {
         {
           putValue(Action.SMALL_ICON, IconManager.getIconFor(node));
         }
