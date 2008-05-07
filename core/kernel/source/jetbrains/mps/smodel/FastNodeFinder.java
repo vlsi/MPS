@@ -1,28 +1,33 @@
 package jetbrains.mps.smodel;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.WeakHashMap;
+
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
-import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.smodel.event.SModelChildEvent;
+import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.WeakSet;
-
-import java.lang.ref.WeakReference;
-import java.util.*;
 
 
 public class FastNodeFinder {
   private SModelDescriptor myModelDescriptor;
   private long myStructuralState;
   private boolean myInitialized;
-  private SModelListener myListener;
 
   private WeakHashMap<AbstractConceptDeclaration, WeakSet<SNode>> myNodesAll = new WeakHashMap<AbstractConceptDeclaration, WeakSet<SNode>>();
   private WeakHashMap<AbstractConceptDeclaration, WeakSet<SNode>> myNodesNoInheritance = new WeakHashMap<AbstractConceptDeclaration, WeakSet<SNode>>();
 
   public FastNodeFinder(SModelDescriptor modelDescriptor) {
     myModelDescriptor = modelDescriptor;
-    modelDescriptor.addWeakModelListener(myListener = new SModelAdapter() {
+    modelDescriptor.addWeakModelListener(new SModelAdapter() {
       public void childAdded(SModelChildEvent event) {
         buildCache(event.getChild(), new HashSet<AbstractConceptDeclaration>());
       }
