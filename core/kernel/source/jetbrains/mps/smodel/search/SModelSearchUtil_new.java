@@ -13,7 +13,6 @@ import java.util.*;
  * Jan 19, 2006
  */
 public class SModelSearchUtil_new {
-  private static final Logger LOG = Logger.getLogger(SModelSearchUtil_new.class);
 
   public static ISearchScope createModelAndImportedModelsScope(SModel model, IScope scope) {
     return createModelAndImportedModelsScope(model, false, scope);
