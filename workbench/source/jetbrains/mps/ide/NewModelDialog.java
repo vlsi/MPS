@@ -2,19 +2,18 @@ package jetbrains.mps.ide;
 
 import jetbrains.mps.ide.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.modelProperties.ModelPropertiesDialog;
+import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelUID;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.projectLanguage.structure.ModelRoot;
 
 import javax.swing.*;
-import java.awt.Frame;
-import java.awt.HeadlessException;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
-import java.awt.event.ItemListener;
+import java.awt.HeadlessException;
 import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 public class NewModelDialog extends BaseDialog {
   private IOperationContext myContext;
@@ -43,7 +42,7 @@ public class NewModelDialog extends BaseDialog {
     mainPanel.add(new JLabel("Stereotype:"));
 
     myModelStereotype.setEditable(true);
-    myModelStereotype.setModel(new DefaultComboBoxModel(new Object[] {
+    myModelStereotype.setModel(new DefaultComboBoxModel(new Object[]{
       "",
       "templates"
     }));
@@ -57,7 +56,7 @@ public class NewModelDialog extends BaseDialog {
     for (ModelRoot root : myContext.getModule().getModelRoots()) {
       model.addElement(new ModelRootWrapper(root));
     }
-    
+
     myModelRoots.addItemListener(new ItemListener() {
       public void itemStateChanged(ItemEvent e) {
         completePrefix();
@@ -102,7 +101,7 @@ public class NewModelDialog extends BaseDialog {
 
     dispose();
   }
-    
+
   @BaseDialog.Button(position = 1, name = "Cancel")
   public void buttonCancel() {
     dispose();
