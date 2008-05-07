@@ -901,7 +901,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1073063089578">
     <property name="name" value="SuperMethodCall" />
-    <property name="package" value="method" />
+    <property name="package" value="method.instance" />
     <link role="extends" targetNodeId="1068499141036" resolveInfo="BaseMethodCall" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1107217829098">
       <property name="value" value="super" />

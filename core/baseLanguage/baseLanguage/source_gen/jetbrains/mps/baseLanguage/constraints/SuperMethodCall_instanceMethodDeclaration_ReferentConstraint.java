@@ -10,10 +10,8 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.structure.ClassifierType;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.search.EmptySearchScope;
-import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.baseLanguage.structure.SuperMethodCall;
 
 public class SuperMethodCall_instanceMethodDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -34,15 +32,11 @@ public class SuperMethodCall_instanceMethodDeclaration_ReferentConstraint implem
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode enclosingClass = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
-    SNode superclass = SLinkOperations.getTarget(SLinkOperations.getTarget(enclosingClass, "superclass", true), "classifier", false);
-    if (superclass == null) {
-      return new EmptySearchScope();
-    }
-    return new SuperMethodCall_InstanceMethodScope(((Classifier)SNodeOperations.getAdapter(superclass)), ((SuperMethodCall)SNodeOperations.getAdapter(_context.getReferenceNode())));
+    return new SuperMethodCall_InstanceMethodScope(((ClassifierType)SNodeOperations.getAdapter(SLinkOperations.getTarget(enclosingClass, "superclass", true))), _context.getEnclosingNode());
   }
 
   public String getNodeReferentSearchScopeDescription() {
-    return "methods from hierarchy of super-class of enclosing class";
+    return "<no description>";
   }
 
 }
