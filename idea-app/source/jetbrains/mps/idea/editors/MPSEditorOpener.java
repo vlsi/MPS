@@ -57,7 +57,7 @@ public class MPSEditorOpener implements ProjectComponent {
           baseNode = containingRoot;
         }
 
-        MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(baseNode, context);
+        MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(baseNode);
         FileEditorManager editorManager = FileEditorManager.getInstance(myProject);
         FileEditor[] result = editorManager.openFile(file, true);
 

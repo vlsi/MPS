@@ -15,7 +15,7 @@ public class MPSFileNodeEditorProvider implements FileEditorProvider {
 
   @NotNull
   public FileEditor createEditor(@NotNull Project project, @NotNull VirtualFile file) {
-    return new MPSFileNodeEditor((MPSNodeVirtualFile) file);
+    return new MPSFileNodeEditor(project, (MPSNodeVirtualFile) file);
   }
 
   public void disposeEditor(@NotNull FileEditor editor) {

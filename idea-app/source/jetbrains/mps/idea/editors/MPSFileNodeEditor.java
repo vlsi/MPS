@@ -6,6 +6,7 @@ import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorState;
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import com.intellij.openapi.fileEditor.FileEditorLocation;
+import com.intellij.openapi.project.Project;
 import com.intellij.codeHighlighting.BackgroundEditorHighlighter;
 import com.intellij.ide.structureView.StructureViewBuilder;
 import org.jetbrains.annotations.NotNull;
@@ -17,23 +18,29 @@ import javax.swing.JLabel;
 import java.beans.PropertyChangeListener;
 
 import jetbrains.mps.idea.nodesFs.MPSNodeVirtualFile;
+import jetbrains.mps.idea.MPSProjectHolder;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.NodeEditor;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.smodel.SModelDescriptor;
 
 public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor {
   private MPSNodeVirtualFile myFile;  
   private IEditor myNodeEditor;
 
-  public MPSFileNodeEditor(final MPSNodeVirtualFile file) {
+  public MPSFileNodeEditor(final Project project, final MPSNodeVirtualFile file) {
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
         myFile = file;
-        EditorsPane pane = file.getContext().getComponent(EditorsPane.class);
-        myNodeEditor = pane.createEditorFor(file.getContext(), file.getNode());
+        MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
+        EditorsPane pane = mpsProject.getComponentSafe(EditorsPane.class);
+        SModelDescriptor sm = file.getNode().getModel().getModelDescriptor();
+        myNodeEditor = pane.createEditorFor(new ModuleContext(sm.getModule(), mpsProject), file.getNode());
       }
     });
   }

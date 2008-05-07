@@ -17,25 +17,19 @@ import java.io.OutputStream;
 
 public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
   private SNode myNode;
-  private IOperationContext myContext;
 
-  public MPSNodeVirtualFile(SNode node, IOperationContext context) {
+  public MPSNodeVirtualFile(SNode node) {
     myNode = node;
-    myContext = context;
   }
 
   public SNode getNode() {
     return myNode;
   }
 
-  public IOperationContext getContext() {
-    return myContext;
-  }
-
   public String getPath() {
     return CommandProcessor.instance().executeLightweightCommand(new Calculable<String>() {
       public String calculate() {
-        return "mps://" + myNode.getModel().getUID() + "/" + myNode.getId();
+        return myNode.getModel().getUID() + "/" + myNode.getId();
       }
     });
   }

@@ -12,11 +12,10 @@ import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.GlobalSModelEventsManager;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelEventVisitorAdapter;
@@ -24,6 +23,7 @@ import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.core.structure.INamedConcept;
+import jetbrains.mps.project.GlobalScope;
 
 public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem implements ApplicationComponent {
   private static String VIRTUAL_FILE = "virtualFile";
@@ -34,13 +34,13 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
 
   private SModelCommandListener myListener = new MyCommandListener();
 
-  public MPSNodeVirtualFile getFileFor(final SNode node, final IOperationContext context) {
+  public MPSNodeVirtualFile getFileFor(final SNode node) {
     return CommandProcessor.instance().executeLightweightCommand(new Calculable<MPSNodeVirtualFile>() {
       public MPSNodeVirtualFile calculate() {
         if (node.getUserObject(VIRTUAL_FILE) != null) {
           return (MPSNodeVirtualFile) node.getUserObject(VIRTUAL_FILE);
         }
-        MPSNodeVirtualFile vf = new MPSNodeVirtualFile(node, context);
+        MPSNodeVirtualFile vf = new MPSNodeVirtualFile(node);
         node.putUserObject(VIRTUAL_FILE, vf);
         return vf;
       }
@@ -66,9 +66,24 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
   }
 
   @Nullable
-  public VirtualFile findFileByPath(@NotNull @NonNls String path) {
-    //todo implement
-    return null;
+  public VirtualFile findFileByPath(final @NotNull @NonNls String path) {
+    return CommandProcessor.instance().executeLightweightCommand(new Calculable<VirtualFile>() {
+      public VirtualFile calculate() {
+        Pattern p = Pattern.compile("(.*)\\/(.*)");
+        Matcher m = p.matcher(path);
+        if (m.matches()) {
+          SModelUID uid = SModelUID.fromString(m.group(1));
+          String id = m.group(2);
+          SModelDescriptor sm = GlobalScope.getInstance().getModelDescriptor(uid);
+          if (sm == null) return null;
+          SNode node = sm.getSModel().getNodeById(id);
+          if (node == null) return null;
+          return getFileFor(node);
+        } else {
+          return null;
+        }
+      }
+    });
   }
 
   public void refresh(boolean asynchronous) {
