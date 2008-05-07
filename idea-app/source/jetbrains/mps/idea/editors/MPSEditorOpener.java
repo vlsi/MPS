@@ -8,6 +8,7 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
@@ -47,20 +48,29 @@ public class MPSEditorOpener implements ProjectComponent {
   public IEditor openNode(final SNode node, final IOperationContext context) {
     return CommandProcessor.instance().executeLightweightCommand(new Calculable<IEditor>() {
       public IEditor calculate() {
+
+        SNode containingRoot = node.getContainingRoot();
+
         EditorsPane editorsPane = context.getProject().getComponentSafe(EditorsPane.class);
-        SNode baseNode = editorsPane.getBaseNode(context, node);
+        SNode baseNode = editorsPane.getBaseNode(context, containingRoot);
         if (baseNode == null) {
-          baseNode = node;
+          baseNode = containingRoot;
         }
 
         MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(baseNode, context);
         FileEditorManager editorManager = FileEditorManager.getInstance(myProject);
         FileEditor[] result = editorManager.openFile(file, true);
 
-        MPSFileNodeEditor nodeEditor = (MPSFileNodeEditor) result[0];
-        nodeEditor.getNodeEditor().selectNode(node);
+        MPSFileNodeEditor fileNodeEditor = (MPSFileNodeEditor) result[0];
 
-        return nodeEditor.getNodeEditor();
+
+        IEditor nodeEditor = fileNodeEditor.getNodeEditor();
+        if (nodeEditor instanceof TabbedEditor) {
+          ((TabbedEditor) nodeEditor).selectLinkedEditor(containingRoot);
+        }
+        nodeEditor.selectNode(node);
+
+        return nodeEditor;
       }
     });
   }

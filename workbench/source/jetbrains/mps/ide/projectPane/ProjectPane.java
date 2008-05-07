@@ -230,7 +230,7 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
         getTree().runWithoutExpansion(new Runnable() {
-          public void run() {
+          public void run() {                         
             if (myIDE != null) { //todo IDEA platform hack
               myIDE.showProjectPane();
             }
