@@ -7,6 +7,8 @@ import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.HintDialog;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+import jetbrains.mps.ide.progress.AdaptiveProgressMonitor;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
@@ -35,6 +37,7 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
+import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -89,14 +92,18 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
   //----TOOL STUFF----
 
   public void hideTool() {
-    myProjectFrame.getToolsPane().closeTool(this);
+    if (myProjectFrame != null) {
+      myProjectFrame.getToolsPane().closeTool(this);
+    }
   }
 
   public void showTool() {
     if (myUsageViewsData.size() > 0) {
       ThreadUtils.runInUIThreadNoWait(new Runnable() {
         public void run() {
-          myProjectFrame.showNewUsagesView();
+          if (myProjectFrame != null) {
+            myProjectFrame.showNewUsagesView();
+          }
         }
       });
     }
@@ -197,6 +204,14 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     });
   }
 
+  protected IAdaptiveProgressMonitor createProgressMonitor() {
+    return new AdaptiveProgressMonitor(getFrame());
+  }
+
+  protected Frame getFrame() {
+    return myProjectFrame.getMainFrame();
+  }
+
   public void findUsages(final SearchQuery query, final boolean isRerunnable, final boolean showOne, final boolean newTab, BaseFinder... finders) {
     findUsages(TreeBuilder.forFinders(finders), query, isRerunnable, showOne, newTab);
   }
@@ -206,7 +221,7 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
       public void run() {
         CommandProcessor.instance().executeLightweightCommand(new Runnable() {
           public void run() {
-            SearchResults searchResults = provider.getResults(query, myProjectFrame.createAdaptiveProgressMonitor());
+            SearchResults searchResults = provider.getResults(query, createProgressMonitor());
             showResults(searchResults, showOne, newTab, provider, query, isRerunnable);
           }
         });
@@ -231,7 +246,7 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     if (resCount == 0) {
       ThreadUtils.runInUIThreadNoWait(new Runnable() {
         public void run() {
-          new HintDialog(myProjectFrame.getMainFrame(), "Not found", "No usages for that node").showDialog();
+          new HintDialog(getFrame(), "Not found", "No usages for that node").showDialog();
         }
       });
     } else if (resCount == 1 && !showOne) {

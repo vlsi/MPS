@@ -7,6 +7,7 @@ import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
@@ -56,7 +57,11 @@ public class FindersOptions extends BaseOptions<IResultProvider> {
       String languageNamespacePlusFindUsages = NameUtil.namespaceFromLongName(finderClassName);
       assert languageNamespacePlusFindUsages.endsWith(".findUsages");
       String languageNamespace = languageNamespacePlusFindUsages.substring(0, languageNamespacePlusFindUsages.length() - ".findUsages".length());
-      Language l = context.getScope().getLanguage(languageNamespace);
+
+      //we should show finders for all the available langauges not only langauges available in a scope
+      //for example we have finders in structure language which is visible only in languages and solution
+      //which have imported it explicitly
+      Language l = GlobalScope.getInstance().getLanguage(languageNamespace);
 
       if (l == null) {
         LOG.error("Can't find a language " + l);

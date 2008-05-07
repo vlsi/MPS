@@ -101,6 +101,9 @@
       <implementation-class>jetbrains.mps.idea.tools.MessageViewTool</implementation-class>
     </component>
 
+    <component>
+      <implementation-class>jetbrains.mps.idea.tools.UsageViewTool</implementation-class>
+    </component>
   </project-components>
 
 </components>
