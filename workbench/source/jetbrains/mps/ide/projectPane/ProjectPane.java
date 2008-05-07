@@ -3,6 +3,7 @@ package jetbrains.mps.ide.projectPane;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.MPSToolBar;
 import jetbrains.mps.ide.AbstractProjectFrame;
+import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.IActionDataProvider;
@@ -187,7 +188,7 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     if (selectionPath == null) return;
     if (!(selectionPath.getLastPathComponent() instanceof SNodeTreeNode)) return;
     SNodeTreeNode selectedTreeNode = (SNodeTreeNode) selectionPath.getLastPathComponent();
-    myIDE.openNode(selectedTreeNode.getSNode(), selectedTreeNode.getOperationContext());
+    getProject().getComponentSafe(EditorsPane.class).openEditor(selectedTreeNode.getSNode(), selectedTreeNode.getOperationContext());
   }
 
 
