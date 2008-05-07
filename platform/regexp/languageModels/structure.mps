@@ -720,9 +720,5 @@
     <property name="name" value="FourDigits" />
     <property name="constraint" value="\\d\\d\\d\\d" />
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1210150516013">
-    <property name="name" value="aaaaaaaa" />
-    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
-  </node>
 </model>
 

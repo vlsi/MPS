@@ -74,7 +74,7 @@ public class AtLeastNTimesRegexp_Editor extends DefaultNodeEditor {
 
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    AtLeastNTimesRegexp_Editor.setupBasic_RowCell(editorCell, node, context);
+    setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -88,24 +88,24 @@ public class AtLeastNTimesRegexp_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    AtLeastNTimesRegexp_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    AtLeastNTimesRegexp_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell(editorCell, node, context);
+    setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    AtLeastNTimesRegexp_Editor.setupBasic_ConstantCell2(editorCell, node, context);
-    AtLeastNTimesRegexp_Editor.setupLabel_ConstantCell2(editorCell, node, context);
+    setupBasic_ConstantCell2(editorCell, node, context);
+    setupLabel_ConstantCell2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    AtLeastNTimesRegexp_Editor.setupBasic_ConstantCell1(editorCell, node, context);
-    AtLeastNTimesRegexp_Editor.setupLabel_ConstantCell1(editorCell, node, context);
+    setupBasic_ConstantCell1(editorCell, node, context);
+    setupLabel_ConstantCell1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -114,9 +114,9 @@ public class AtLeastNTimesRegexp_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    AtLeastNTimesRegexp_Editor.setupBasic_RegexpCell(editorCell, node, context);
+    setupBasic_RegexpCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      AtLeastNTimesRegexp_Editor.setupLabel_RegexpCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_RegexpCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -143,9 +143,9 @@ public class AtLeastNTimesRegexp_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    AtLeastNTimesRegexp_Editor.setupBasic_NCell(editorCell, node, context);
+    setupBasic_NCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      AtLeastNTimesRegexp_Editor.setupLabel_NCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_NCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

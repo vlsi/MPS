@@ -50,7 +50,7 @@ public class MatchRegexpExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    MatchRegexpExpression_Editor.setupBasic_RowCell(editorCell, node, context);
+    setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -62,8 +62,8 @@ public class MatchRegexpExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    MatchRegexpExpression_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    MatchRegexpExpression_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell(editorCell, node, context);
+    setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -72,9 +72,9 @@ public class MatchRegexpExpression_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    MatchRegexpExpression_Editor.setupBasic_InputExpressionCell(editorCell, node, context);
+    setupBasic_InputExpressionCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      MatchRegexpExpression_Editor.setupLabel_InputExpressionCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_InputExpressionCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -101,9 +101,9 @@ public class MatchRegexpExpression_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    MatchRegexpExpression_Editor.setupBasic_RegexpCell(editorCell, node, context);
+    setupBasic_RegexpCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      MatchRegexpExpression_Editor.setupLabel_RegexpCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_RegexpCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

@@ -39,7 +39,7 @@ public class MatchVariableReference_Editor extends DefaultNodeEditor {
 
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    MatchVariableReference_Editor.setupBasic_RowCell(editorCell, node, context);
+    setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -51,9 +51,9 @@ public class MatchVariableReference_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new MatchVariableReference_Editor._Inline2());
     EditorCell editorCell = provider.createEditorCell(context);
-    MatchVariableReference_Editor.setupBasic_MatchReferenceCell(editorCell, node, context);
+    setupBasic_MatchReferenceCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      MatchVariableReference_Editor.setupLabel_MatchReferenceCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_MatchReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -105,9 +105,9 @@ public class MatchVariableReference_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      MatchVariableReference_Editor._Inline2.setupBasic_NameCell(editorCell, node, context);
+      setupBasic_NameCell(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        MatchVariableReference_Editor._Inline2.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

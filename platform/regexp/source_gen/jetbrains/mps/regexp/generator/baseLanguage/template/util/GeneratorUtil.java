@@ -29,7 +29,7 @@ public class GeneratorUtil {
   }
 
   public static SNode findOutputMatcher(ITemplateGenerator generator, SNode ref) {
-    return generator.findOutputNodeByInputNodeAndMappingName(GeneratorUtil.findRegexpUsingConstructionFor(ref), "matcher");
+    return generator.findOutputNodeByInputNodeAndMappingName(findRegexpUsingConstructionFor(ref), "matcher");
   }
 
 }

@@ -39,7 +39,7 @@ public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEdit
 
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    PredefinedSymbolClassSymbolClassPart_Editor.setupBasic_RowCell(editorCell, node, context);
+    setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -51,9 +51,9 @@ public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEdit
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new PredefinedSymbolClassSymbolClassPart_Editor._Inline1());
     EditorCell editorCell = provider.createEditorCell(context);
-    PredefinedSymbolClassSymbolClassPart_Editor.setupBasic_DeclarationReferenceCell(editorCell, node, context);
+    setupBasic_DeclarationReferenceCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      PredefinedSymbolClassSymbolClassPart_Editor.setupLabel_DeclarationReferenceCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_DeclarationReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -105,9 +105,9 @@ public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEdit
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      PredefinedSymbolClassSymbolClassPart_Editor._Inline1.setupBasic_NameCell(editorCell, node, context);
+      setupBasic_NameCell(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        PredefinedSymbolClassSymbolClassPart_Editor._Inline1.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

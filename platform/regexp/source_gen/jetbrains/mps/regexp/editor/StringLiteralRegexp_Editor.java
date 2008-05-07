@@ -39,7 +39,7 @@ public class StringLiteralRegexp_Editor extends DefaultNodeEditor {
 
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    StringLiteralRegexp_Editor.setupBasic_RowCell(editorCell, node, context);
+    setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -51,9 +51,9 @@ public class StringLiteralRegexp_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    StringLiteralRegexp_Editor.setupBasic_TextCell(editorCell, node, context);
+    setupBasic_TextCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      StringLiteralRegexp_Editor.setupLabel_TextCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_TextCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

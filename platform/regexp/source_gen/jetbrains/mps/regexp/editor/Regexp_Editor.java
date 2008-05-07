@@ -25,8 +25,8 @@ public class Regexp_Editor extends DefaultNodeEditor {
 
   public EditorCell createErrorCell(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "regexp");
-    Regexp_Editor.setupBasic_ErrorCell(editorCell, node, context);
-    Regexp_Editor.setupLabel_ErrorCell(editorCell, node, context);
+    setupBasic_ErrorCell(editorCell, node, context);
+    setupLabel_ErrorCell(editorCell, node, context);
     return editorCell;
   }
 

@@ -61,7 +61,7 @@ public class PositiveSymbolClassRegexp_Editor extends DefaultNodeEditor {
 
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    PositiveSymbolClassRegexp_Editor.setupBasic_RowCell(editorCell, node, context);
+    setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -73,16 +73,16 @@ public class PositiveSymbolClassRegexp_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    PositiveSymbolClassRegexp_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    PositiveSymbolClassRegexp_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell(editorCell, node, context);
+    setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    PositiveSymbolClassRegexp_Editor.setupBasic_ConstantCell1(editorCell, node, context);
-    PositiveSymbolClassRegexp_Editor.setupLabel_ConstantCell1(editorCell, node, context);
+    setupBasic_ConstantCell1(editorCell, node, context);
+    setupLabel_ConstantCell1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -92,7 +92,7 @@ public class PositiveSymbolClassRegexp_Editor extends DefaultNodeEditor {
       this.myPartListHandler_partList_ = new PositiveSymbolClassRegexp_Editor._RefNodeListHandler1(node, "part", context);
     }
     EditorCell_Collection editorCell = this.myPartListHandler_partList_.createCells(context, new CellLayout_Horizontal(), false);
-    PositiveSymbolClassRegexp_Editor.setupBasic_PartList(editorCell, node, context);
+    setupBasic_PartList(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);

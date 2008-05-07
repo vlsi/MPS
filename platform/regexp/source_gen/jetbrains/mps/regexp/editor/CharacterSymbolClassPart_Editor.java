@@ -35,7 +35,7 @@ public class CharacterSymbolClassPart_Editor extends DefaultNodeEditor {
 
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    CharacterSymbolClassPart_Editor.setupBasic_RowCell(editorCell, node, context);
+    setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -47,9 +47,9 @@ public class CharacterSymbolClassPart_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    CharacterSymbolClassPart_Editor.setupBasic_CharacterCell(editorCell, node, context);
+    setupBasic_CharacterCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      CharacterSymbolClassPart_Editor.setupLabel_CharacterCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_CharacterCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
