@@ -14,6 +14,11 @@ import org.jetbrains.annotations.Nullable;
 
 public abstract class StandaloneMPSContext implements IOperationContext {
   public Frame getMainFrame() {
+    //todo IDEA platform hack
+    if (getComponent(Frame.class) != null) {
+      return getComponent(Frame.class);
+    }
+
     AbstractProjectFrame projectFrame = getComponent(AbstractProjectFrame.class);
     if (projectFrame == null) {
       return null;
