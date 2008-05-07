@@ -116,6 +116,9 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
   }
 
 
+  protected void addInitialComponents() {
+  }
+
   //todo IDEA platform hack
   protected GeneratorManager createGeneratorManager() {
     return new GeneratorManager();
