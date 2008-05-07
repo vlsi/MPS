@@ -49,7 +49,7 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
   public String getName() {
     return CommandProcessor.instance().executeLightweightCommand(new Calculable<String>() {
       public String calculate() {
-        return myNode.getName();
+        return myNode.getPresentation();
       }
     });
   }

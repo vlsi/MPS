@@ -2,6 +2,7 @@ package jetbrains.mps.ide.actions.model;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionGroup;
@@ -46,7 +47,6 @@ public class CreateRootNodeGroup extends ActionGroup {
   public void doUpdate(ActionContext context) {
     clear();
     SModelDescriptor modelDescriptor = context.get(SModelDescriptor.class);
-    IDEProjectFrame ide = context.get(IDEProjectFrame.class);
     IOperationContext operationContext = context.get(IOperationContext.class);
 
     List<Language> modelLanguages = modelDescriptor == null ? new ArrayList<Language>() : modelDescriptor.getSModel().getLanguages(operationContext.getScope());
@@ -74,7 +74,7 @@ public class CreateRootNodeGroup extends ActionGroup {
 
       for (ConceptDeclaration conceptDeclaration : language.getConceptDeclarations()) {
         if (conceptDeclaration.getRootable()) {
-          langRootsGroup.add(newRootNodeAction(new SNodePointer(conceptDeclaration), modelDescriptor, ide));
+          langRootsGroup.add(newRootNodeAction(new SNodePointer(conceptDeclaration), modelDescriptor));
         }
       }
       if (langRootsGroup.getElements().size() > 0) {
@@ -85,7 +85,7 @@ public class CreateRootNodeGroup extends ActionGroup {
     setVisible(context.hasOneSelectedItem());
   }
 
-  private MPSAction newRootNodeAction(final SNodePointer nodeConcept, final SModelDescriptor modelDescriptor, final IDEProjectFrame ide) {
+  private MPSAction newRootNodeAction(final SNodePointer nodeConcept, final SModelDescriptor modelDescriptor) {
     return new MPSAction(NodePresentationUtil.matchingText(nodeConcept.getNode())) {
       public Icon getIcon() {
         return CommandProcessor.instance().executeLightweightCommand(new Calculable<Icon>() {
@@ -109,8 +109,8 @@ public class CreateRootNodeGroup extends ActionGroup {
           }
         });
 
-        ide.getProjectPane().selectNode(node, context.get(IOperationContext.class));
-        ide.getProjectPane().openEditor();
+        context.get(ProjectPane.class).selectNode(node, context.get(IOperationContext.class));
+        context.get(ProjectPane.class).openEditor();
       }
     };
   }
