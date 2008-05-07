@@ -6,7 +6,6 @@ import jetbrains.mps.buildlanguage.tasksfromjar.ClassInfo.Attribute;
 import jetbrains.mps.buildlanguage.tasksfromjar.ClassInfo.Nested;
 import jetbrains.mps.buildlanguage.tasksfromjar.Importer.IBuilder;
 import jetbrains.mps.buildlanguage.tasksfromjar.Importer.IClassInfoProvider;
-import jetbrains.mps.buildlanguage.structure.GenericDeclaration;
 import junit.framework.Assert;
 import junit.framework.TestCase;
 import org.apache.tools.ant.Task;
