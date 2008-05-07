@@ -20,9 +20,6 @@ import java.util.List;
 
 import org.jdom.Element;
 
-/**
- * @author Kostik
- */
 public class MessageView extends DefaultTool implements IExternalizableComponent {
   private static final int MAX_MESSAGES_SIZE = 30000;
 

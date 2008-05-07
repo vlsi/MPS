@@ -73,7 +73,7 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
   public byte[] contentsToByteArray() throws IOException {
     throw new UnsupportedOperationException();
   }
-
+  
   @Nullable
   public VirtualFile getParent() {
     return null;
