@@ -104,21 +104,25 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
   }
 
   private class MyCommandListener implements SModelCommandListener {
-    public void eventsHappenedInCommand(List<SModelEvent> events) {
-      for (SModelEvent e : events) {
-        e.accept(new SModelEventVisitorAdapter() {
-          public void visitPropertyEvent(SModelPropertyEvent event) {
-            VirtualFile vf = (VirtualFile) event.getNode().getUserObject(VIRTUAL_FILE);
-            if (event.getNode().isRoot() &&
-              INamedConcept.NAME.equals(event.getPropertyName()) &&
-              vf != null) {
+    public void eventsHappenedInCommand(final List<SModelEvent> events) {
+      ApplicationManager.getApplication().runWriteAction(new Runnable() {
+        public void run() {
+          for (SModelEvent e : events) {
+            e.accept(new SModelEventVisitorAdapter() {
+              public void visitPropertyEvent(SModelPropertyEvent event) {
+                VirtualFile vf = (VirtualFile) event.getNode().getUserObject(VIRTUAL_FILE);
+                if (event.getNode().isRoot() &&
+                  INamedConcept.NAME.equals(event.getPropertyName()) &&
+                  vf != null) {
 
-              fireBeforePropertyChange(this, vf, VirtualFile.PROP_NAME, event.getOldPropertyValue(), event.getNewPropertyValue());
-              firePropertyChanged(this, vf, VirtualFile.PROP_NAME, event.getOldPropertyValue(), event.getNewPropertyValue());
-            }
+                  fireBeforePropertyChange(this, vf, VirtualFile.PROP_NAME, event.getOldPropertyValue(), event.getNewPropertyValue());
+                  firePropertyChanged(this, vf, VirtualFile.PROP_NAME, event.getOldPropertyValue(), event.getNewPropertyValue());
+                }
+              }
+            });
           }
-        });
-      }
+        }
+      });
     }
   }
 }
