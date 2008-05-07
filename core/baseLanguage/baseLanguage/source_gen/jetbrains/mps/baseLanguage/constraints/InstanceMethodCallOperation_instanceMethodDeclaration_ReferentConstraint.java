@@ -14,8 +14,6 @@ import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.structure.DotExpression;
-import jetbrains.mps.smodel.search.EmptySearchScope;
 
 public class InstanceMethodCallOperation_instanceMethodDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -37,14 +35,11 @@ public class InstanceMethodCallOperation_instanceMethodDeclaration_ReferentConst
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode instance = SLinkOperations.getTarget(_context.getEnclosingNode(), "operand", true);
     SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(instance), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
-    if (classifierType != null) {
-      return new InstanceMethodCall_InstanceMethodScope(((ClassifierType)SNodeOperations.getAdapter(classifierType)), ((DotExpression)SNodeOperations.getAdapter(_context.getEnclosingNode())));
-    }
-    return new EmptySearchScope();
+    return new InstanceMethodCall_InstanceMethodScope(((ClassifierType)SNodeOperations.getAdapter(classifierType)), _context.getEnclosingNode());
   }
 
   public String getNodeReferentSearchScopeDescription() {
-    return "methods declared in hierarhy of class specified by left expression. only applicable to expressions of classifier-type";
+    return "<no description>";
   }
 
 }

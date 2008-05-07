@@ -13,34 +13,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
  * Sep 18, 2007
  */
 public class InstanceMethodCall_InstanceMethodScope extends VisibleClassifierMembersScope {
-//  private ClassifierType myInstanceType;
-//  private IMethodCall myMethodCall;
-
-  /**
-   * @todo this scope doesn't need 2nd parm
-   */
-  public InstanceMethodCall_InstanceMethodScope(ClassifierType instanceType, InstanceMethodCall methodCall) {
-    super(instanceType, methodCall.getNode(), IClassifiersSearchScope.INSTANCE_METHOD);
-//    myInstanceType = instanceType;
-//    myMethodCall = methodCall;
+  public InstanceMethodCall_InstanceMethodScope(ClassifierType instanceType, SNode contextNode) {
+    super(instanceType, contextNode, IClassifiersSearchScope.INSTANCE_METHOD);
   }
-
-  /**
-   * @todo this scope doesn't need 2nd parm
-   */
-  public InstanceMethodCall_InstanceMethodScope(ClassifierType instanceType, DotExpression methodCallDotExpression) {
-    super(instanceType, methodCallDotExpression.getNode(), IClassifiersSearchScope.INSTANCE_METHOD);
-//    myInstanceType = instanceType;
-//    IOperation operation = methodCallDotExpression.getOperation();
-//    if (operation instanceof IMethodCall) {
-//      myMethodCall = (IMethodCall) operation;
-//    }
-  }
-
-//  public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, AbstractConceptDeclaration targetConcept) {
-//    if (SModelUtil_new.isAssignableConcept(targetConcept, InstanceMethodDeclaration.concept) && myMethodCall != null) {
-//      return createInstanceMethodReferenceInfoResolver(myInstanceType, myMethodCall.getActualArguments());
-//    }
-//    return super.getReferenceInfoResolver(referenceNode, targetConcept);
-//  }
 }
