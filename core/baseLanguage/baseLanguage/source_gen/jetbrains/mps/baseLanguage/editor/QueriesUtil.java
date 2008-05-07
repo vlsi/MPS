@@ -16,6 +16,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
+import jetbrains.mps.baseLanguage.structure.ClassifierType;
 
 public class QueriesUtil {
 
@@ -127,7 +128,7 @@ public class QueriesUtil {
     if (instanceType == null) {
       return new ArrayList<SNode>();
     }
-    ISearchScope searchScope = new VisibleClassifierMembersScope(((Classifier)SNodeOperations.getAdapter(SLinkOperations.getTarget(instanceType, "classifier", false))), node, IClassifiersSearchScope.INSTANCE_METHOD);
+    ISearchScope searchScope = new VisibleClassifierMembersScope(((ClassifierType)SNodeOperations.getAdapter(instanceType)), node, IClassifiersSearchScope.INSTANCE_METHOD);
     return (List<SNode>)searchScope.getNodes();
   }
 
@@ -147,7 +148,7 @@ public class QueriesUtil {
     if (instanceType == null) {
       return new ArrayList<SNode>();
     }
-    ISearchScope searchScope = new VisibleClassifierMembersScope(((Classifier)SNodeOperations.getAdapter(SLinkOperations.getTarget(instanceType, "classifier", false))), referenceNode, IClassifiersSearchScope.INSTANCE_FIELD);
+    ISearchScope searchScope = new VisibleClassifierMembersScope(((ClassifierType)SNodeOperations.getAdapter(instanceType)), referenceNode, IClassifiersSearchScope.INSTANCE_FIELD);
     return (List<SNode>)searchScope.getNodes();
   }
 
