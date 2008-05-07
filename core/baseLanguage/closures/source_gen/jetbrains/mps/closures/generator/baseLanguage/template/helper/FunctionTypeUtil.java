@@ -81,7 +81,7 @@ public class FunctionTypeUtil {
   }
 
   public static void addAdaptableClassifierTypeTarget(SNode adaptable, SNode target, ITemplateGenerator generator) {
-    List<SNode> allAdaptable = FunctionTypeUtil.getAllAdaptableClassifierTypes(generator);
+    List<SNode> allAdaptable = getAllAdaptableClassifierTypes(generator);
     if (allAdaptable == null) {
       allAdaptable = new ArrayList<SNode>();
       generator.getGeneratorSessionContext().putStepObject("all_needs_adapted", allAdaptable);

@@ -55,20 +55,20 @@ with_decls:
   }
 
   public static void copyPrepData(SNode from, SNode to, ITemplateGenerator generator) {
-    WrappersUtils.copyPrepDataNoRecursion(from, to, generator);
+    copyPrepDataNoRecursion(from, to, generator);
     List<SNode> toDescendants = new ArrayList<SNode>(SNodeOperations.getDescendants(to, null, false));
     List<SNode> fromDescendats = new ArrayList<SNode>(SNodeOperations.getDescendants(from, null, false));
     int idx = 0;
     for(SNode fromDesc : SNodeOperations.getDescendants(from, null, false)) {
-      WrappersUtils.copyPrepDataNoRecursion(fromDesc, toDescendants.get(idx), generator);
+      copyPrepDataNoRecursion(fromDesc, toDescendants.get(idx), generator);
       idx = idx + 1;
     }
   }
 
   private static void copyPrepDataNoRecursion(SNode from, SNode to, ITemplateGenerator generator) {
-    Object data = WrappersUtils.getPrepData(from, generator);
+    Object data = getPrepData(from, generator);
     if (data != null) {
-      WrappersUtils.putPrepData(to, data, generator);
+      putPrepData(to, data, generator);
     }
   }
 

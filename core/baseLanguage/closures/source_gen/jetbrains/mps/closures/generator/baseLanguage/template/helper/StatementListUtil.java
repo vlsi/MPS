@@ -13,7 +13,7 @@ public class StatementListUtil {
 
   public static List<SNode> selectStatementsUntilControlStatement(SNode slist) {
     if (SLinkOperations.getCount(slist, "statement") > 0) {
-      return StatementListUtil.selectStatementsUntilControlStatement(slist, ((List<SNode>)SLinkOperations.getTargets(slist, "statement", true)).get(0));
+      return selectStatementsUntilControlStatement(slist, ((List<SNode>)SLinkOperations.getTargets(slist, "statement", true)).get(0));
     }
     return Collections.emptyList();
   }
@@ -26,10 +26,10 @@ public class StatementListUtil {
         foundStart = true;
       }
       if (foundStart) {
-        if (StatementListUtil.isControlStatement(stmt)) {
+        if (isControlStatement(stmt)) {
           break;
         }
-        if (!(StatementListUtil.isIgnoredStatement(stmt))) {
+        if (!(isIgnoredStatement(stmt))) {
           res.add(stmt);
         }
       }
@@ -39,7 +39,7 @@ public class StatementListUtil {
 
   public static SNode nextSibling(SNode stmt) {
     SNode nextSibling = SNodeOperations.getNextSibling(stmt);
-    while((nextSibling != null) && StatementListUtil.isIgnoredStatement(nextSibling)) {
+    while((nextSibling != null) && isIgnoredStatement(nextSibling)) {
       nextSibling = SNodeOperations.getNextSibling(nextSibling);
     }
     return nextSibling;

@@ -52,7 +52,7 @@ public class ClosureLiteralUtil {
   public static void addAdaptableClosureLiteralTarget(SNode literal, SNode target, ITemplateGenerator generator) {
     SNode trgCopy = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(trgCopy, "classifier", SLinkOperations.getTarget(target, "classifier", false), false);
-    ClosureLiteralUtil.matchParameters(target, trgCopy, TypeChecker.getInstance().getTypeOf(literal), literal, generator);
+    matchParameters(target, trgCopy, TypeChecker.getInstance().getTypeOf(literal), literal, generator);
     generator.getGeneratorSessionContext().putStepObject("literal_target_" + ((SNode)literal).getId(), trgCopy);
     ((SNode)trgCopy).putUserObject("literal", literal);
   }
@@ -69,9 +69,9 @@ public class ClosureLiteralUtil {
       SNode method = imds.get(0);
       if ((SLinkOperations.getTarget(method, "returnType", true) != null) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
         /*
-          map = ClosureLiteralUtil.matchType(SLinkOperations.getTarget(method, "returnType", true), FunctionType_Behavior.call_getNormalizedReturnType_1201526153722(ft), map);
+          map = matchType(SLinkOperations.getTarget(method, "returnType", true), FunctionType_Behavior.call_getNormalizedReturnType_1201526153722(ft), map);
         */
-        map = ClosureLiteralUtil.matchReturnType(SLinkOperations.getTarget(method, "returnType", true), FunctionType_Behavior.call_getNormalizedReturnType_1201526153722(ft), map);
+        map = matchReturnType(SLinkOperations.getTarget(method, "returnType", true), FunctionType_Behavior.call_getNormalizedReturnType_1201526153722(ft), map);
         if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
           absRetCT = SNodeOperations.copyNode(SLinkOperations.getTarget(method, "returnType", true));
         }
@@ -83,7 +83,7 @@ public class ClosureLiteralUtil {
           generator.showErrorMessage(literal, "Closure parameters count doesn't match method '" + SPropertyOperations.getString(method, "name") + "' in " + JavaNameUtil.fqClassName(SLinkOperations.getTarget(ctNoParams, "classifier", false), SPropertyOperations.getString(SLinkOperations.getTarget(ctNoParams, "classifier", false), "name")));
           return;
         }
-        map = ClosureLiteralUtil.matchType(SLinkOperations.getTarget(pd, "type", true), ptypes.get(idx), map);
+        map = matchType(SLinkOperations.getTarget(pd, "type", true), ptypes.get(idx), map);
         idx = idx + 1;
       }
     }
@@ -143,7 +143,7 @@ public class ClosureLiteralUtil {
       SNode candidate = queue.removeFirst();
       if (!(visited.contains(BaseConcept_Behavior.call_getPresentation_1180102203531(candidate)))) {
         if (SNodeOperations.isInstanceOf(candidate, "jetbrains.mps.baseLanguage.structure.TypeVariableReference") || (SNodeOperations.getConceptDeclaration(realType) == SNodeOperations.getConceptDeclaration(candidate) && (!(SNodeOperations.isInstanceOf(realType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) || (SLinkOperations.getTarget(realType, "classifier", false) == SLinkOperations.getTarget(candidate, "classifier", false) && SLinkOperations.getCount(realType, "parameter") == SLinkOperations.getCount(candidate, "parameter"))))) {
-          map = ClosureLiteralUtil.matchType(candidate, realType, map);
+          map = matchType(candidate, realType, map);
           return map;
         }
         visited.add(BaseConcept_Behavior.call_getPresentation_1180102203531(candidate));
@@ -157,14 +157,14 @@ public class ClosureLiteralUtil {
 
   private static Map<String, SNode> matchType(SNode absType, SNode realType, Map<String, SNode> map) {
     if (SNodeOperations.isInstanceOf(absType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
-      (map = ClosureLiteralUtil.getMap(map)).put(SPropertyOperations.getString(SLinkOperations.getTarget(absType, "typeVariableDeclaration", false), "name"), SNodeOperations.copyNode(realType));
+      (map = getMap(map)).put(SPropertyOperations.getString(SLinkOperations.getTarget(absType, "typeVariableDeclaration", false), "name"), SNodeOperations.copyNode(realType));
     } else
     if (SNodeOperations.isInstanceOf(absType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SNodeOperations.isInstanceOf(realType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(absType, "classifier", false) == SLinkOperations.getTarget(realType, "classifier", false)) {
       int idx = 0;
       List<SNode> mptypes = SLinkOperations.getTargets(absType, "parameter", true);
       List<SNode> rptypes = SLinkOperations.getTargets(realType, "parameter", true);
       for(int i = 0 ; i < mptypes.size() && i < rptypes.size() ; i = i + 1) {
-        map = ClosureLiteralUtil.matchType(mptypes.get(i), rptypes.get(i), ClosureLiteralUtil.getMap(map));
+        map = matchType(mptypes.get(i), rptypes.get(i), getMap(map));
       }
     }
     return map;
