@@ -4,10 +4,16 @@
 
   <actions>
     <action id="OpenProject" class="jetbrains.mps.idea.actions.OpenMPSProjectAction" text="Open MPS Project" />
+    <action id="SaveTransientModels" class="jetbrains.mps.idea.actions.SaveTransientModelsAction" text="Save Transient Models" />
 
     <group>
       <reference id="OpenProject" />
       <add-to-group anchor="first" group-id="FileMenu" />
+    </group>
+
+    <group>
+      <reference id="SaveTransientModels" />
+      <add-to-group anchor="last" group-id="ToolsMenu" />
     </group>
   </actions>
 </component>
