@@ -58,7 +58,11 @@
       <interface-class>com.intellij.ide.RecentProjectsManagerBase</interface-class>
       <implementation-class>jetbrains.mps.idea.recent.RecentMPSProjectsManager</implementation-class>
     </component>
-
+        
+    <component>
+      <interface-class>com.intellij.ide.IconProvider</interface-class>
+      <implementation-class>jetbrains.mps.idea.editors.MPSIconProvider</implementation-class>
+    </component>
   </application-components>
 
   <project-components>
