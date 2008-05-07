@@ -20,6 +20,7 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
   public static String DEFAULT = "default";
   public static String BASEDIR = "basedir";
   public static String TARGET = "target";
+  public static String LIBRARY = "library";
   public static String IMPORT_PROJECT = "importProject";
   public static String PATHS = "paths";
   public static String IMPORT_PROPERTIES = "importProperties";
@@ -104,6 +105,26 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
 
   public void insertTarget(TargetDeclaration prev, TargetDeclaration node) {
     this.insertChild(prev, Project.TARGET, node);
+  }
+
+  public int getLibrarysCount() {
+    return this.getChildCount(Project.LIBRARY);
+  }
+
+  public Iterator<TaskLibraryReference> librarys() {
+    return this.children(Project.LIBRARY);
+  }
+
+  public List<TaskLibraryReference> getLibrarys() {
+    return this.getChildren(Project.LIBRARY);
+  }
+
+  public void addLibrary(TaskLibraryReference node) {
+    this.addChild(Project.LIBRARY, node);
+  }
+
+  public void insertLibrary(TaskLibraryReference prev, TaskLibraryReference node) {
+    this.insertChild(prev, Project.LIBRARY, node);
   }
 
   public int getImportProjectsCount() {

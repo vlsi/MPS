@@ -21,6 +21,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="16" />
   <import index="1" modelUID="jetbrains.mps.buildlanguage.structure" version="16" />
   <import index="2" modelUID="jetbrains.mps.mpsLayoutLanguage@java_stub" version="-1" />
@@ -384,17 +385,6 @@
     </node>
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement" id="1207488356232">
       <link role="modifiedGroup" targetNodeId="3.1204991224874" resolveInfo="LanguageActions" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1207488490270">
-    <property name="name" value="ProjectPaneProjectAddition" />
-    <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1207488505397">
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1207488518226">
-        <link role="javaClass" targetNodeId="13.~GenerateProjectBuildFileAction" resolveInfo="GenerateProjectBuildFileAction" />
-      </node>
-    </node>
-    <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement" id="1207488520102">
-      <link role="modifiedGroup" targetNodeId="3.1204991220529" resolveInfo="ProjectActions" />
     </node>
   </node>
 </model>
