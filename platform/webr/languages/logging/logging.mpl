@@ -24,14 +24,12 @@
     <entry path="${mps_home}\lib\commons-logging\commons-logging-1.1.jar" />
     <entry path="${language_descriptor}\classes_gen" />
   </classPath>
-  <languageRuntimeClassPath />
+  <languageRuntimeClassPath>
+    <entry path="${mps_home}\lib\commons-logging\commons-logging-1.1.jar" />
+  </languageRuntimeClassPath>
   <sourcePath>
     <source path="${language_descriptor}\source" />
   </sourcePath>
-  <osgiOptions>
-    <requiredBundles />
-    <exportedPackage />
-  </osgiOptions>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>
     <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>
