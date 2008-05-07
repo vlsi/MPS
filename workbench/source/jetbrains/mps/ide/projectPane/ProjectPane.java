@@ -575,6 +575,12 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     projectFrame.openNode(node, context);
   }
 
+  public void showProjectPane() {
+    if (myIDE != null) {
+      myIDE.showMainProjectPane();
+    }
+  }
+
   public class MyTree extends MPSTree {
     public MyTree() {
       super();
