@@ -45,6 +45,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="20" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="6" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -1489,6 +1490,88 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1210095204065">
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1210179134063">
+    <property name="name" value="PreferencesComponentDeclaration" />
+    <property name="rootable" value="true" />
+    <property name="package" value="Preference" />
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1210179829398">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="persistenPropertyDeclaration" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1210179190070" resolveInfo="PersistenPropertyDeclaration" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1210179851734">
+      <property name="value" value="Preferences Component" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1210183990669">
+      <link role="intfc" targetNodeId="14.1205751982837" resolveInfo="IClassifier" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1210179190070">
+    <property name="package" value="Preference" />
+    <property name="name" value="PersistentPropertyDeclaration" />
+    <link role="extends" targetNodeId="2.1068431474542" resolveInfo="VariableDeclaration" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1210186252947">
+      <link role="intfc" targetNodeId="14.1205752032448" resolveInfo="IMember" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1210186285509">
+      <link role="conceptLinkDeclaration" targetNodeId="14.1205921683134" resolveInfo="operationConcept" />
+      <link role="target" targetNodeId="1210180874794" resolveInfo="PersistentPropertyReference" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1210180874794">
+    <property name="package" value="Preference" />
+    <property name="name" value="PersistentPropertyReference" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1210180958412">
+      <property name="role" value="propertyDeclaration" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1210179190070" resolveInfo="PersistentPropertyDeclaration" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1210186891927">
+      <property name="value" value="&lt;{propertyDeclaration}&gt;" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1210181003572">
+      <property name="value" value="reference to externalizable property" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473914776" resolveInfo="short_description" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1210181031527">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1146528679895" resolveInfo="lvalue" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1210186191761">
+      <link role="intfc" targetNodeId="14.1205756064662" resolveInfo="IMemberOperation" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1210184105060">
+    <property name="package" value="Preference" />
+    <property name="name" value="PreferencesComponentType" />
+    <link role="extends" targetNodeId="14.1205752813637" resolveInfo="BaseClassifierType" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1210184138184">
+      <property name="role" value="componentDeclaration" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1210179134063" resolveInfo="PreferencesComponentDeclaration" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1210184148866">
+      <property name="value" value="preferenceComponent&lt;&lt;{componentDeclaration}&gt;&gt;" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1210184823336">
+    <property name="package" value="Preference" />
+    <property name="name" value="GetPreferencesComponentOperation" />
+    <link role="extends" targetNodeId="1209909558075" resolveInfo="ProjectOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1210184858209">
+      <property name="role" value="componentDeclaration" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1210179134063" resolveInfo="PreferencesComponentDeclaration" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1210184869311">
+      <property name="value" value="preferenceComponent&lt;&lt;{componentDeclaration}&gt;&gt;" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
     </node>
   </node>
 </model>
