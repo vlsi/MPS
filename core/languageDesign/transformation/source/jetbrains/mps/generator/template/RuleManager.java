@@ -7,11 +7,9 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.transformation.TLBase.structure.*;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.transformation.TLBase.structure.*;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -123,19 +121,21 @@ public class RuleManager {
   }
 
   private void applyReductionRules_internal(SNode inputNode, SNode clonedOutputNode) {
-    List<SNode> outputNodes = tryToReduce(inputNode, null);
-    if (outputNodes != null) {
-      SNode parent = clonedOutputNode.getParent();
-      String childRole = parent.getRoleOf(clonedOutputNode);
-      // check new children
-      for (SNode outputNode : outputNodes) {
-        if (!GeneratorUtil.checkChild(parent, childRole, outputNode)) {
-          LOG.warning(" -- was input: " + inputNode.getDebugText(), inputNode);
+    if (clonedOutputNode.getParent() != null) { // don't try to reduce copied roots
+      List<SNode> outputNodes = tryToReduce(inputNode, null);
+      if (outputNodes != null) {
+        SNode parent = clonedOutputNode.getParent();
+        String childRole = parent.getRoleOf(clonedOutputNode);
+        // check new children
+        for (SNode outputNode : outputNodes) {
+          if (!GeneratorUtil.checkChild(parent, childRole, outputNode)) {
+            LOG.warning(" -- was input: " + inputNode.getDebugText(), inputNode);
+          }
         }
-      }
 
-      parent.replaceChild(clonedOutputNode, outputNodes);
-      return;
+        parent.replaceChild(clonedOutputNode, outputNodes);
+        return;
+      }
     }
 
     // no reduction rule found - keep the cloned node in output model and proceed with its children.
