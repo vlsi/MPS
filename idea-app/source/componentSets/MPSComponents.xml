@@ -86,7 +86,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.idea.tools.ProjectPaneToolWindowOpener</implementation-class>
+      <implementation-class>jetbrains.mps.idea.tools.ProjectPaneToolWindow</implementation-class>
     </component>
 
     <component>
