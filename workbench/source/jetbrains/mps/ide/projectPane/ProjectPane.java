@@ -1,9 +1,6 @@
 package jetbrains.mps.ide.projectPane;
 
-import jetbrains.mps.ide.IDEProjectFrame;
-import jetbrains.mps.ide.MPSToolBar;
-import jetbrains.mps.ide.AbstractProjectFrame;
-import jetbrains.mps.ide.EditorsPane;
+import jetbrains.mps.ide.*;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.IActionDataProvider;
@@ -18,6 +15,9 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.reloading.ReloadListener;
+import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import org.jdom.Element;
 
 import javax.swing.*;
@@ -72,6 +72,24 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
   private JToggleButton myPAndRToggle;
   private JToggleButton myAutoscrollToSource;
   private JToggleButton myAutoscrollFromSource;
+
+  private ReloadListener myReloadListener = new ReloadListener() {
+    public void onBeforeReload() {
+
+    }
+
+    public void onReload() {
+
+    }
+
+    public void onAfterReload() {
+      CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
+        public void run() {
+          rebuild();          
+        }
+      });
+    }
+  };
 
   public ProjectPane(IDEProjectFrame ide) {
     myIDE = ide;
@@ -164,6 +182,18 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
 
     rebuildTree();
   }
+
+  public void addNotify() {
+    super.addNotify();
+    myReloadListener.onAfterReload();
+    ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
+  }
+
+  public void removeNotify() {
+    ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
+    super.removeNotify();
+  }
+
 
   protected void onBeforeModelWillBeDeleted(SModelDescriptor sm) {
     selectNextTreeModel(sm);

@@ -2,6 +2,8 @@ package jetbrains.mps.ide.hierarchy;
 
 import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.ide.*;
+import jetbrains.mps.ide.navigation.NavigationActionProcessor;
+import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.GoToNodeWindow.GoToNodeComponent;
 import jetbrains.mps.smodel.*;
@@ -42,6 +44,11 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Defa
   }
 
   protected abstract AbstractHierarchyTree<T> createHierarchyTree(boolean isParentHierarchy);
+
+  public void openNode(SNode node, IOperationContext context) {
+    final EditorsPane editorsPane = myIde.getEditorsPane();
+    NavigationActionProcessor.executeNavigationAction(new EditorNavigationCommand(node, null, editorsPane), context.getProject());
+  }
 
   protected void init() {
     myHierarchyTree = createHierarchyTree(false);

@@ -104,9 +104,7 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
 
         AbstractHierarchyView<T> hierarchyView = myHierarchyTree.getHierarchyView();
         if (hierarchyView != null) {
-          final EditorsPane editorsPane = hierarchyView.myIde.getEditorsPane();
-          final IEditor currentEditor = editorsPane.getCurrentEditor();
-          NavigationActionProcessor.executeNavigationAction(new EditorNavigationCommand(node, currentEditor, editorsPane), getOperationContext().getProject());
+          hierarchyView.openNode(node, getOperationContext());
         }
       }
     });

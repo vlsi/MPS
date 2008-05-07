@@ -8,6 +8,7 @@ import jetbrains.mps.ide.ui.TreeTextUtil;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Calculable;
