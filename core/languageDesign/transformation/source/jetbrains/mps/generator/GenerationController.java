@@ -236,16 +236,14 @@ public class GenerationController {
         info("compiling in IntelliJ IDEA...");
         myProgress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_IDEA);
         compilationResult = getProjectHandler().buildModule(module.getGeneratorOutputPath());
-        assert compilationResult != null;
         myProgress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_IDEA);
       } else {
         myProgress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_MPS);
         info("compiling in JetBrains MPS...");
         compilationResult = new ModuleMaker().make(CollectionUtil.asSet(module), new MessagesOnlyAdaptiveProgressMonitorWrapper(myProgress));
-        assert compilationResult != null;
         myProgress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_MPS);
       }
-      if (compilationResult.getErrors() > 0) {
+      if (compilationResult == null || compilationResult.getErrors() > 0) {
         compiledSuccessfully = false;
       }
       info("" + compilationResult);
