@@ -16,10 +16,7 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.event.SModelCommandListener;
-import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.smodel.event.SModelEventVisitorAdapter;
-import jetbrains.mps.smodel.event.SModelPropertyEvent;
+import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.core.structure.INamedConcept;
@@ -124,6 +121,17 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
         public void run() {
           for (SModelEvent e : events) {
             e.accept(new SModelEventVisitorAdapter() {
+              public void visitRootEvent(SModelRootEvent event) {
+                if (event.isRemoved()) {
+                  VirtualFile vf = (VirtualFile) event.getRoot().getUserObject(VIRTUAL_FILE);
+                  if (vf != null) {
+                    fireBeforeFileDeletion(this ,vf);
+                    fireFileDeleted(this, vf, vf.getName(), null);
+                  }
+
+                }
+              }
+
               public void visitPropertyEvent(SModelPropertyEvent event) {
                 VirtualFile vf = (VirtualFile) event.getNode().getUserObject(VIRTUAL_FILE);
                 if (event.getNode().isRoot() &&
