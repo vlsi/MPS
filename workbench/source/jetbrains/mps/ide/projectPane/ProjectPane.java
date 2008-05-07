@@ -231,7 +231,9 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
       public void run() {
         getTree().runWithoutExpansion(new Runnable() {
           public void run() {
-            myIDE.showProjectPane();
+            if (myIDE != null) { //todo IDEA platform hack
+              myIDE.showProjectPane();
+            }
 
             IModule module = context.getModule();
             if (module == null) {
