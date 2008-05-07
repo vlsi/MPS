@@ -19,6 +19,8 @@ import jetbrains.mps.core.constraints.BaseConcept_Behavior;
 import jetbrains.mps.util.Pair;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelUtil_new;
+import java.util.Set;
+import java.util.HashSet;
 
 public class RulesFunctions_BaseLanguage {
   public static boolean TRACE_METHOD_TYPES = false;
@@ -358,6 +360,67 @@ __switch__:
       } while(false);
     }
     return false;
+  }
+
+  /* package */static void check(Set<SNode> throwables, SNode mainNode) {
+    for(SNode livingThrowable : new HashSet<SNode>(throwables)) {
+      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, new QuotationClass_98().createNode()) || TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, new QuotationClass_97().createNode())) {
+        throwables.remove(livingThrowable);
+      }
+    }
+    if (throwables.isEmpty()) {
+      return;
+    }
+    List<SNode> statementLists = SNodeOperations.getAncestors(mainNode, "jetbrains.mps.baseLanguage.structure.StatementList", false);
+    for(SNode statementList : statementLists) {
+      SNode parent = SNodeOperations.getParent(statementList, null, false, false);
+      if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.TryStatement") && SLinkOperations.getTarget(parent, "body", true) == statementList) {
+        SNode tryStatement = parent;
+        for(SNode catchClause : SLinkOperations.getTargets(tryStatement, "catchClause", true)) {
+          SNode throwableType = SLinkOperations.getTarget(SLinkOperations.getTarget(catchClause, "throwable", true), "type", true);
+          for(SNode livingThrowable : new HashSet<SNode>(throwables)) {
+            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, throwableType)) {
+              throwables.remove(livingThrowable);
+            }
+          }
+        }
+      }
+      if (throwables.isEmpty()) {
+        return;
+      }
+      if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.TryCatchStatement") && SLinkOperations.getTarget(parent, "body", true) == statementList) {
+        SNode tryCatchStatement = parent;
+        for(SNode catchClause : SLinkOperations.getTargets(tryCatchStatement, "catchClause", true)) {
+          SNode throwableType = SLinkOperations.getTarget(SLinkOperations.getTarget(catchClause, "throwable", true), "type", true);
+          for(SNode livingThrowable : new HashSet<SNode>(throwables)) {
+            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, throwableType)) {
+              throwables.remove(livingThrowable);
+            }
+          }
+        }
+      }
+      if (throwables.isEmpty()) {
+        return;
+      }
+      if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration") && SLinkOperations.getTarget(parent, "body", true) == statementList) {
+        SNode baseMethodDeclaration = parent;
+        for(SNode throwableType : SLinkOperations.getTargets(baseMethodDeclaration, "throwsItem", true)) {
+          for(SNode livingThrowable : new HashSet<SNode>(throwables)) {
+            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, throwableType)) {
+              throwables.remove(livingThrowable);
+            }
+          }
+        }
+        if (!(throwables.isEmpty())) {
+          String errorString = "uncaught exceptions:";
+          for(SNode exc : throwables) {
+            errorString = errorString + " " + exc;
+          }
+          TypeChecker.getInstance().reportTypeError(mainNode, errorString, "jetbrains.mps.baseLanguage.helgins", "1210182111558");
+        }
+        return;
+      }
+    }
   }
 
 }
