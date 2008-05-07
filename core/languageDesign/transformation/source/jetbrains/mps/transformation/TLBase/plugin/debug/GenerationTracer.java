@@ -94,7 +94,10 @@ public class GenerationTracer {
     myCurrentTracingData = null;
     myCurrentTraceNode = null;
 
-    myGenerationTracerViewTool.setTracingDataIsAvailable(false);
+    //todo IDEA platform hack    
+    if (myGenerationTracerViewTool != null) {
+      myGenerationTracerViewTool.setTracingDataIsAvailable(false);
+    }
   }
 
   public void finishTracing() {
