@@ -240,11 +240,16 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
     if (selectedMessage == null || selectedMessage.getHintObject() == null) return;
 
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-      public void run() {
+      public void run() {                        
         ApplicationComponents.getInstance().getComponentSafe(NavigationManager.class)
-          .navigateTo(myToolsPane.getFrame(), selectedMessage.getHintObject());
+          .navigateTo(getProject(), selectedMessage.getHintObject());
       }
     });
+  }
+
+  //todo IDEA platform hack
+  protected MPSProject getProject() {
+    return myToolsPane.getFrame().getProject();
   }
 
   private boolean isVisible(Message m) {
