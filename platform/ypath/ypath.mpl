@@ -90,9 +90,6 @@
     <entry path="${language_descriptor}\runtime\classes" />
   </languageRuntimeClassPath>
   <sourcePath />
-  <dependencies>
-    <dependency reexport="false">jetbrains.mps.webquery.common</dependency>
-  </dependencies>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>
     <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>

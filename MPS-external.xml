@@ -371,9 +371,6 @@
     <antcall target="pack.webr.xmlInternal" />
     <antcall target="pack.webr.xmlSchema" />
     <antcall target="pack.jetbrains.mps.gtext.runtime" />
-    <antcall target="pack.web-query" />
-    <antcall target="pack.jetbrains.mps.webquery.common" />
-    <antcall target="pack.jetbrains.mps.webquery" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\docs">
       <fileset dir="docs" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
