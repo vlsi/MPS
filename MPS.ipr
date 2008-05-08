@@ -2,20 +2,6 @@
 <project relativePaths="false" version="4">
   <component name="AntConfiguration">
     <defaultAnt bundledAnt="true" />
-    <buildFile url="file://$CHARISMA_HOME$/charisma-custom.xml">
-      <additionalClassPath />
-      <antReference projectDefault="true" />
-      <customJdkName value="" />
-      <maximumHeapSize value="128" />
-      <properties />
-    </buildFile>
-    <buildFile url="file://$CHARISMA_HOME$/charisma.xml">
-      <additionalClassPath />
-      <antReference projectDefault="true" />
-      <customJdkName value="" />
-      <maximumHeapSize value="128" />
-      <properties />
-    </buildFile>
     <buildFile url="file://$PROJECT_DIR$/MPS-external.xml">
       <additionalClassPath />
       <antReference projectDefault="true" />
@@ -211,7 +197,7 @@
           </module>
           <module name="charisma">
             <files>
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/web.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/web.xml" />
             </files>
           </module>
           <module name="PubMedDB">
@@ -268,56 +254,56 @@
           <module name="webr_userManagement" />
           <module name="charisma">
             <files>
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/com/jetbrains/teamsys/core/spring/persistentStore.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/com/jetbrains/teamsys/core/spring/testPersistentStore.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/com/jetbrains/teamsys/core/spring/transientStore.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/activity/actionFactoriesConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/admin/actionFactoriesConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/entityBrowser/actionFactoriesConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/errors/actionFactoriesConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/flex/actionFactoriesConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/main/SecurityRequestProcessorImplConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/main/actionFactoriesConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/main/datetimeConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/main/notificationsConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/main/userManagementConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/main/webConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/persistent/businessRulesConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/persistent/charismaTextIndexConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/persistent/entityMetaDataConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/persistent/modelMetadataConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/persistent/storeConfigurationDatabase.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/project/actionFactoriesConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/rss/actionFactoriesConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/security/actionFactoriesConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/security/editRoles/converterConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/security/roles/converterConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/tests/actionFactoriesConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/user/actionFactoriesConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/webtests/webUnitConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/wiki/wikiLinkHandlersConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/workspace/issue/actionFactoriesConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/workspace/linkIssue/converterConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/workspace/tagIssue/converterConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/workspace/workspace/actionFactoriesConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/mps/webr/notifications/runtime/spring/email.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/converter/converterConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/converter/converterManagerConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/error/actionFactoriesConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/requestProcessor/ActionRequestProcessorConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/requestProcessor/ClasspathRequestProcessorConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/requestProcessor/EventRequestProcessorConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/requestProcessor/FileUploadRequestProcessorConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/requestProcessor/HtmlTemplateRequestProcessorConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/requestProcessor/PersistentFileRequestProcessorConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/requestProcessor/TextRequestProcessorConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/requestProcessor/actionConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/rest/RESTConfigConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/rest/RESTRequestProcessorConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/wiki/wikiLinkHandlersConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/wiki/wikiManagerConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/mps/wiki/runtime/higlighter/java/higlighterBeansConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/teamsys/dnq/runtime/files/entityMetaDataConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/com/jetbrains/teamsys/core/spring/persistentStore.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/com/jetbrains/teamsys/core/spring/testPersistentStore.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/com/jetbrains/teamsys/core/spring/transientStore.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/activity/actionFactoriesConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/admin/actionFactoriesConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/entityBrowser/actionFactoriesConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/errors/actionFactoriesConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/flex/actionFactoriesConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/main/SecurityRequestProcessorImplConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/main/actionFactoriesConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/main/datetimeConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/main/notificationsConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/main/userManagementConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/main/webConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/persistent/businessRulesConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/persistent/charismaTextIndexConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/persistent/entityMetaDataConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/persistent/modelMetadataConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/persistent/storeConfigurationDatabase.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/project/actionFactoriesConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/rss/actionFactoriesConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/security/actionFactoriesConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/security/editRoles/converterConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/security/roles/converterConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/tests/actionFactoriesConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/user/actionFactoriesConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/webtests/webUnitConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/wiki/wikiLinkHandlersConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/workspace/issue/actionFactoriesConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/workspace/linkIssue/converterConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/workspace/tagIssue/converterConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/workspace/workspace/actionFactoriesConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/mps/webr/notifications/runtime/spring/email.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/converter/converterConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/converter/converterManagerConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/error/actionFactoriesConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/requestProcessor/ActionRequestProcessorConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/requestProcessor/ClasspathRequestProcessorConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/requestProcessor/EventRequestProcessorConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/requestProcessor/FileUploadRequestProcessorConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/requestProcessor/HtmlTemplateRequestProcessorConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/requestProcessor/PersistentFileRequestProcessorConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/requestProcessor/TextRequestProcessorConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/requestProcessor/actionConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/rest/RESTConfigConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/rest/RESTRequestProcessorConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/wiki/wikiLinkHandlersConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/wiki/wikiManagerConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/mps/wiki/runtime/higlighter/java/higlighterBeansConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/teamsys/dnq/runtime/files/entityMetaDataConfiguration.xml" />
             </files>
           </module>
           <module name="dates">
@@ -327,8 +313,8 @@
           </module>
           <module name="charisma-agent">
             <files>
-              <file url="file://$CHARISMA_HOME$/charisma-agent/solutions/classes_gen/jetbrains/charisma/desktopagent/ResourceFactoriesConfiguration.xml" />
-              <file url="file://$CHARISMA_HOME$/charisma-agent/solutions/source_gen/jetbrains/charisma/desktopagent/ResourceFactoriesConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/charisma-agent/solutions/classes_gen/jetbrains/charisma/desktopagent/ResourceFactoriesConfiguration.xml" />
+              <file url="file://$PROJECT_DIR$/charisma-agent/solutions/source_gen/jetbrains/charisma/desktopagent/ResourceFactoriesConfiguration.xml" />
             </files>
           </module>
         </modules>
@@ -973,6 +959,7 @@
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/core/jetbrains.mps.core.iml" filepath="$PROJECT_DIR$/core/languageDesign/core/jetbrains.mps.core.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/kernel/kernel.iml" filepath="$PROJECT_DIR$/core/kernel/kernel.iml" group="core/kernel" />
       <module fileurl="file://$PROJECT_DIR$/app/mf/lair1/lair1.iml" filepath="$PROJECT_DIR$/app/mf/lair1/lair1.iml" group="app/mf" />
+      <module fileurl="file://$PROJECT_DIR$/app/matrixLanguage/matrixLanguage.iml" filepath="$PROJECT_DIR$/app/matrixLanguage/matrixLanguage.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/money/money.iml" filepath="$PROJECT_DIR$/core/baseLanguage/money/money.iml" group="core/baseLanguage/money" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/money/runtime/moneyRuntime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/money/runtime/moneyRuntime.iml" group="core/baseLanguage/money" />
       <module fileurl="file://$PROJECT_DIR$/workbench/monitorLanguage/monitorLanguage.iml" filepath="$PROJECT_DIR$/workbench/monitorLanguage/monitorLanguage.iml" group="workbench" />
@@ -1017,7 +1004,7 @@
       <module fileurl="file://$PROJECT_DIR$/platform/xml/xml.iml" filepath="$PROJECT_DIR$/platform/xml/xml.iml" group="platform" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="jdk 1.5" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="1.5" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/classes" />
   </component>
   <component name="ProjectRunConfigurationManager">
@@ -1613,7 +1600,6 @@
     <option name="INSTRUMENT_CLASSES" value="false" />
   </component>
   <UsedPathMacros>
-    <macro name="CHARISMA_HOME" />
     <macro name="MPS_HOME" />
   </UsedPathMacros>
 </project>
