@@ -671,16 +671,6 @@ public abstract class MPSTree extends JTree {
     return result;
   }
 
-  public int getToggleClickCount() {
-    TreePath selection = getSelectionPath();
-    if (selection == null) return -1;
-    if (selection.getLastPathComponent() instanceof MPSTreeNode) {
-      MPSTreeNode node = (MPSTreeNode) selection.getLastPathComponent();
-      return node.getToggleClickCount();
-    }
-    return -1;
-  }
-
   public void fromXML(Element element) {
     Element selectionElement = element.getChild(SELECTION);
     if (selectionElement != null) {
@@ -700,6 +690,29 @@ public abstract class MPSTree extends JTree {
       expandPaths(expansionPaths);
     }
   }
+  
+  public TreeState saveState() {
+    TreeState result = new TreeState();
+    result.myExpansion.addAll(getExpandedPaths());
+    result.mySelection.addAll(getSelectedPaths());
+    return result;
+  }
+
+  public void loadState(TreeState state) {
+    selectPaths(state.mySelection);
+    expandPaths(state.myExpansion);
+  }
+
+  public int getToggleClickCount() {
+    TreePath selection = getSelectionPath();
+    if (selection == null) return -1;
+    if (selection.getLastPathComponent() instanceof MPSTreeNode) {
+      MPSTreeNode node = (MPSTreeNode) selection.getLastPathComponent();
+      return node.getToggleClickCount();
+    }
+    return -1;
+  }
+
 
   protected static class NewMPSTreeCellRenderer extends JPanel implements TreeCellRenderer {
     private JLabel myMainTextLabel = new JLabel();
@@ -815,5 +828,10 @@ public abstract class MPSTree extends JTree {
         ColorAndGraphicsUtil.drawWave(g, imageOffset, getWidth(), getHeight() - ColorAndGraphicsUtil.WAVE_HEIGHT - 1);
       }
     }
+  }
+
+  public static class TreeState {
+    private List<String> myExpansion = new ArrayList<String>();
+    private List<String> mySelection = new ArrayList<String>();
   }
 }

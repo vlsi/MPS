@@ -9,11 +9,18 @@
     </group>
 
     <group id="GenerateMenu" popup="true" text="Generate">
-      <action id="SaveTransientModels" class="jetbrains.mps.idea.actions.SaveTransientModelsAction" text="Save Transient Models" />
-      <action id="GenerateCurrentModule" class="jetbrains.mps.idea.actions.GenerateCurrentModuleAction" text="Generate Current Module">
+      <action id="SaveTransientModels" class="jetbrains.mps.idea.actions.generate.SaveTransientModelsAction" text="Save Transient Models" />
+      <action id="GenerateCurrentModule" class="jetbrains.mps.idea.actions.generate.GenerateCurrentModuleAction" text="Generate Current Module">
         <keyboard-shortcut first-keystroke="control F9" keymap="$default"/>
       </action>
       <add-to-group group-id="MainMenu" anchor="after" relative-to-action="GoToMenu" />
+    </group>
+
+    <group>      
+      <action id="GoToMPSRootAction" class="jetbrains.mps.idea.actions.goTo.GoToRootNodeAction" text="Go To Root Node">
+        <keyboard-shortcut first-keystroke="control N" keymap="$default"/>
+      </action>
+      <add-to-group anchor="last" group-id="GoToMenu" />
     </group>
   </actions>
 </component>

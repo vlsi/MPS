@@ -106,7 +106,7 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Defa
           }
         }
 
-        new ChooseItemWindow(myIde.getMainFrame(), nodes.toArray(new SNode[0]), new GoToNodeComponent(myIde) {
+        new ChooseItemWindow(myIde.getMainFrame(), nodes.toArray(new SNode[0]), new GoToNodeComponent(myContext) {
           public void doChoose(final SNode node) {
             MPSProject project = myIde.getProject();
             if (project != null) {
