@@ -959,7 +959,6 @@
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/core/jetbrains.mps.core.iml" filepath="$PROJECT_DIR$/core/languageDesign/core/jetbrains.mps.core.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/kernel/kernel.iml" filepath="$PROJECT_DIR$/core/kernel/kernel.iml" group="core/kernel" />
       <module fileurl="file://$PROJECT_DIR$/app/mf/lair1/lair1.iml" filepath="$PROJECT_DIR$/app/mf/lair1/lair1.iml" group="app/mf" />
-      <module fileurl="file://$PROJECT_DIR$/app/matrixLanguage/matrixLanguage.iml" filepath="$PROJECT_DIR$/app/matrixLanguage/matrixLanguage.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/money/money.iml" filepath="$PROJECT_DIR$/core/baseLanguage/money/money.iml" group="core/baseLanguage/money" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/money/runtime/moneyRuntime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/money/runtime/moneyRuntime.iml" group="core/baseLanguage/money" />
       <module fileurl="file://$PROJECT_DIR$/workbench/monitorLanguage/monitorLanguage.iml" filepath="$PROJECT_DIR$/workbench/monitorLanguage/monitorLanguage.iml" group="workbench" />
@@ -989,6 +988,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/testRefactoring/testRefactoring.iml" filepath="$PROJECT_DIR$/app/testRefactoring/testRefactoring.iml" group="core/languageDesign/refactoring" />
       <module fileurl="file://$PROJECT_DIR$/platform/textLanguage/textLanguage.iml" filepath="$PROJECT_DIR$/platform/textLanguage/textLanguage.iml" group="platform" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/transformation/transformation.iml" filepath="$PROJECT_DIR$/core/languageDesign/transformation/transformation.iml" group="core/languageDesign" />
+      <module fileurl="file://$PROJECT_DIR$/platform/transformationTest/transformationTest.iml" filepath="$PROJECT_DIR$/platform/transformationTest/transformationTest.iml" group="platform" />
       <module fileurl="file://$PROJECT_DIR$/platform/uiLanguage/uiLanguage.iml" filepath="$PROJECT_DIR$/platform/uiLanguage/uiLanguage.iml" group="platform/uiLanguage" />
       <module fileurl="file://$PROJECT_DIR$/platform/uiLanguage/runtime/uiLanguage-runtime.iml" filepath="$PROJECT_DIR$/platform/uiLanguage/runtime/uiLanguage-runtime.iml" group="platform/uiLanguage" />
       <module fileurl="file://$PROJECT_DIR$/platform/unitTest/unitTest.iml" filepath="$PROJECT_DIR$/platform/unitTest/unitTest.iml" group="platform" />
