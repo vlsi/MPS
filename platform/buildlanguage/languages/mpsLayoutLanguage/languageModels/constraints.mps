@@ -41,6 +41,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="15" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.strings.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.buildlanguage.constraints" version="6" />
@@ -1338,8 +1339,8 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1210072625604">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1210097555147">
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1210097559512">
-                <link role="classifier" targetNodeId="10.~PackagedModuleLayout" resolveInfo="PackagedModuleLayout" />
-                <link role="variableDeclaration" targetNodeId="10.~PackagedModuleLayout.MODULE_DIR" resolveInfo="MODULE_DIR" />
+                <link role="classifier" targetNodeId="10.~AbstractModule" resolveInfo="AbstractModule" />
+                <link role="variableDeclaration" targetNodeId="10.~AbstractModule.MODULE_DIR" resolveInfo="MODULE_DIR" />
               </node>
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1210072629620">
                 <link role="classifier" targetNodeId="4.~File" resolveInfo="File" />
@@ -2130,8 +2131,8 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1210097513064">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1210097519041">
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1210097536593">
-                <link role="classifier" targetNodeId="10.~PackagedModuleLayout" resolveInfo="PackagedModuleLayout" />
-                <link role="variableDeclaration" targetNodeId="10.~PackagedModuleLayout.RUNTIME_JAR_SUFFIX" resolveInfo="RUNTIME_JAR_SUFFIX" />
+                <link role="classifier" targetNodeId="10.~AbstractModule" resolveInfo="AbstractModule" />
+                <link role="variableDeclaration" targetNodeId="10.~AbstractModule.RUNTIME_JAR_SUFFIX" resolveInfo="RUNTIME_JAR_SUFFIX" />
               </node>
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1210097516913">
                 <property name="value" value="." />
@@ -2155,8 +2156,8 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1210098207000">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1210098209742">
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1210098217549">
-                <link role="classifier" targetNodeId="10.~PackagedModuleLayout" resolveInfo="PackagedModuleLayout" />
-                <link role="variableDeclaration" targetNodeId="10.~PackagedModuleLayout.PACKAGE_SUFFIX" resolveInfo="PACKAGE_SUFFIX" />
+                <link role="classifier" targetNodeId="10.~AbstractModule" resolveInfo="AbstractModule" />
+                <link role="variableDeclaration" targetNodeId="10.~AbstractModule.PACKAGE_SUFFIX" resolveInfo="PACKAGE_SUFFIX" />
               </node>
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1210098207817">
                 <property name="value" value="." />
