@@ -94,6 +94,10 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.idea.tools.FilePaneToolWindow</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.idea.editors.MPSEditorOpener</implementation-class>
     </component>
 
