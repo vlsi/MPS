@@ -30,6 +30,9 @@
       <action id="GoToMPSModelAction" class="jetbrains.mps.idea.actions.goTo.GoToMPSModelAction" text="Go To Model">
         <keyboard-shortcut first-keystroke="control alt shift M" keymap="$default"/>
       </action>
+      <action id="GoToMPSLanguageAction" class="jetbrains.mps.idea.actions.goTo.GoToMPSLanguageAction" text="Go To Language">
+        <keyboard-shortcut first-keystroke="control alt shift L" keymap="$default"/>
+      </action>
 
       <add-to-group anchor="last" group-id="GoToMenu" />
     </group>
