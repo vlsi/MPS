@@ -40,6 +40,7 @@ import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.w3c.dom.events.*;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
@@ -48,7 +49,9 @@ import javax.swing.event.ChangeListener;
 import javax.swing.event.PopupMenuEvent;
 import javax.swing.event.PopupMenuListener;
 import java.awt.*;
+import java.awt.Event;
 import java.awt.event.*;
+import java.awt.event.MouseEvent;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.lang.ref.WeakReference;
@@ -1504,6 +1507,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private void processMousePressed(MouseEvent mouseEvent) {
     requestFocus();
     processCoordSelection(mouseEvent);
+
+
+    if (mouseEvent.getButton() == MouseEvent.BUTTON2) {
+      goByFirstReference();
+    }
 
     if (mouseEvent.isControlDown()) {
       if (mouseEvent.isAltDown()) {
