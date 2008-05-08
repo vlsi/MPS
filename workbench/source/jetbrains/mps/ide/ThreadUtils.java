@@ -4,9 +4,6 @@ import jetbrains.mps.logging.Logger;
 
 import javax.swing.*;
 
-/**
- * @author Kostik
- */
 public class ThreadUtils {
   private static final Logger LOG = Logger.getLogger(ThreadUtils.class);
 

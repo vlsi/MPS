@@ -833,5 +833,21 @@ public abstract class MPSTree extends JTree {
   public static class TreeState {
     private List<String> myExpansion = new ArrayList<String>();
     private List<String> mySelection = new ArrayList<String>();
+
+    public List<String> getExpansion() {
+      return myExpansion;
+    }
+
+    public void setExpansion(List<String> expansion) {
+      myExpansion = expansion;
+    }
+
+    public List<String> getSelection() {
+      return mySelection;
+    }
+
+    public void setSelection(List<String> selection) {
+      mySelection = selection;
+    }
   }
 }
