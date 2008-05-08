@@ -53,6 +53,7 @@
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\app\fibonacci" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\app\fixedLengthReader" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\app\formulaLanguage" />
+    <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\app\jetbrains.mps.matrixLanguage" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign" />
@@ -297,6 +298,9 @@
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\app\formulaLanguage">
       <fileset dir="app\formulaLanguage" excludes="**/*.iml, **/*.ipr" includes="" />
+    </copy>
+    <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\app\jetbrains.mps.matrixLanguage">
+      <fileset dir="app\jetbrains.mps.matrixLanguage" excludes="**/*.iml, **/*.ipr" includes="" />
     </copy>
     <antcall target="pack.jetbrains.mps.baseLanguageInternal" />
     <antcall target="pack.jetbrains.mps.closures" />
