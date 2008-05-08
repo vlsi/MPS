@@ -22,6 +22,12 @@ public class NewMPSProjectAction extends AnAction {
 
     MPSProject result = dialog.getResult();
 
+    if (result == null) {
+      return;
+    }
+
+    result.save();
+
     String path = result.getProjectFile().getPath();
     result.dispose();
 
