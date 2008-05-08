@@ -4,6 +4,8 @@
   <target name="pack.jetbrains.mps.baseLanguageInternal">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguageInternal.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguageInternal.tmp\module" />
+    <mkdir dir="core\baseLanguage\baseLanguageInternal\classes_gen" />
+    <mkdir dir="core\baseLanguage\baseLanguageInternal\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguageInternal.tmp\module">
       <fileset file="core\baseLanguage\baseLanguageInternal\baseLanguageInternal.mpl" />
     </copy>
@@ -22,6 +24,9 @@
   <target name="pack.jetbrains.mps.closures">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.closures.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.closures.tmp\module" />
+    <mkdir dir="core\baseLanguage\closures\classes_gen" />
+    <mkdir dir="core\baseLanguage\closures\runtime\classes" />
+    <mkdir dir="core\baseLanguage\closures\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.closures.tmp\module">
       <fileset file="core\baseLanguage\closures\closures.mpl" />
     </copy>
@@ -44,6 +49,9 @@
   <target name="pack.jetbrains.mps.baseLanguage.ext.collections.lang">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.collections.lang.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.collections.lang.tmp\module" />
+    <mkdir dir="core\baseLanguage\collections\classes_gen" />
+    <mkdir dir="core\baseLanguage\collections\classes" />
+    <mkdir dir="core\baseLanguage\collections\runtime\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.collections.lang.tmp\module">
       <fileset file="core\baseLanguage\collections\collections.mpl" />
     </copy>
@@ -66,6 +74,8 @@
   <target name="pack.collections_samples">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\collections_samples.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\collections_samples.tmp\module" />
+    <mkdir dir="core\baseLanguage\collections\solutions\collections\samples\classes_gen" />
+    <mkdir dir="core\baseLanguage\collections\solutions\collections\samples\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\collections_samples.tmp\module">
       <fileset file="core\baseLanguage\collections\solutions\collections\samples\collections_samples.msd" />
     </copy>
@@ -84,6 +94,9 @@
   <target name="pack.jetbrains.mps.baseLanguage.ext.csharp">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.csharp.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.csharp.tmp\module" />
+    <mkdir dir="core\baseLanguage\csharp\classes_gen" />
+    <mkdir dir="core\baseLanguage\csharp\classes" />
+    <mkdir dir="core\baseLanguage\csharp\runtime\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.csharp.tmp\module">
       <fileset file="core\baseLanguage\csharp\csharp.mpl" />
     </copy>
@@ -103,6 +116,7 @@
   <target name="pack.jetbrains.mps.baseLanguage.ext.dates.lang">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.lang.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.lang.tmp\module" />
+    <mkdir dir="core\baseLanguage\dates\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.lang.tmp\module">
       <fileset file="core\baseLanguage\dates\dates.mpl" />
     </copy>
@@ -120,6 +134,7 @@
   <target name="pack.jetbrains.mps.baseLanguage.ext.dates.internal">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.internal.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.internal.tmp\module" />
+    <mkdir dir="core\baseLanguage\dates\internal\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.internal.tmp\module">
       <fileset file="core\baseLanguage\dates\internal\internal.mpl" />
     </copy>
@@ -137,6 +152,9 @@
   <target name="pack.jetbrains.mps.baseLanguage.dates.runtime">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.dates.runtime.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.dates.runtime.tmp\module" />
+    <mkdir dir="core\baseLanguage\dates\runtime\classes_gen" />
+    <mkdir dir="core\baseLanguage\dates\runtime\classes_gen" />
+    <mkdir dir="core\baseLanguage\dates\runtime\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.dates.runtime.tmp\module">
       <fileset file="core\baseLanguage\dates\runtime\jetbrains.mps.baseLanguage.dates.runtime.msd" />
     </copy>
@@ -156,6 +174,9 @@
   <target name="pack.jetbrains.mps.internal.collections">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.internal.collections.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.internal.collections.tmp\module" />
+    <mkdir dir="core\baseLanguage\internalCollections\languages\collections\classes_gen" />
+    <mkdir dir="core\baseLanguage\internalCollections\languages\collections\runtime\classes" />
+    <mkdir dir="core\baseLanguage\internalCollections\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.internal.collections.tmp\module">
       <fileset file="core\baseLanguage\internalCollections\languages\collections\collections.mpl" />
     </copy>
@@ -175,6 +196,9 @@
   <target name="pack.jetbrains.accounting.money">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.accounting.money.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.accounting.money.tmp\module" />
+    <mkdir dir="core\baseLanguage\money\classes_gen" />
+    <mkdir dir="core\baseLanguage\money\classes" />
+    <mkdir dir="core\baseLanguage\money\runtime\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.accounting.money.tmp\module">
       <fileset file="core\baseLanguage\money\money.mpl" />
     </copy>
@@ -194,6 +218,8 @@
   <target name="pack.JDK">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\JDK.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\JDK.tmp\module" />
+    <mkdir dir="core\baseLanguage\baseLanguage\solutions\JDK\classes_gen" />
+    <mkdir dir="core\baseLanguage\baseLanguage\solutions\JDK\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\JDK.tmp\module">
       <fileset file="core\baseLanguage\baseLanguage\solutions\JDK\JDK.msd" />
     </copy>
@@ -212,6 +238,8 @@
   <target name="pack.jetbrains.mps.baseLanguage.blTypes">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.blTypes.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.blTypes.tmp\module" />
+    <mkdir dir="core\baseLanguage\baseLanguage\languages\blTypes\classes_gen" />
+    <mkdir dir="core\baseLanguage\baseLanguage\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.blTypes.tmp\module">
       <fileset file="core\baseLanguage\baseLanguage\languages\blTypes\blTypes.mpl" />
     </copy>
@@ -230,6 +258,8 @@
   <target name="pack.jetbrains.mps.baseLanguage">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.tmp\module" />
+    <mkdir dir="core\baseLanguage\baseLanguage\classes_gen" />
+    <mkdir dir="core\baseLanguage\baseLanguage\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.tmp\module">
       <fileset file="core\baseLanguage\baseLanguage\baseLanguage.mpl" />
     </copy>
@@ -248,6 +278,8 @@
   <target name="pack.jetbrains.mps.baseLanguage.strings">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.strings.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.strings.tmp\module" />
+    <mkdir dir="core\baseLanguage\strings\classes_gen" />
+    <mkdir dir="core\baseLanguage\strings\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.strings.tmp\module">
       <fileset file="core\baseLanguage\strings\strings.mpl" />
     </copy>
@@ -266,6 +298,8 @@
   <target name="pack.MPS.Classpath">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\MPS.Classpath.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\MPS.Classpath.tmp\module" />
+    <mkdir dir="core\baseLanguage\baseLanguage\solutions\MPS.Classpath\classes_gen" />
+    <mkdir dir="core\baseLanguage\baseLanguage\solutions\MPS.Classpath\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\MPS.Classpath.tmp\module">
       <fileset file="core\baseLanguage\baseLanguage\solutions\MPS.Classpath\MPS.Classpath.msd" />
     </copy>
@@ -284,6 +318,8 @@
   <target name="pack.refactoring">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\refactoring.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\refactoring.tmp\module" />
+    <mkdir dir="core\baseLanguage\baseLanguage\refactoring\classes_gen" />
+    <mkdir dir="core\baseLanguage\baseLanguage\refactoring\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\refactoring.tmp\module">
       <fileset file="core\baseLanguage\baseLanguage\refactoring\refactoring.msd" />
     </copy>
@@ -302,6 +338,8 @@
   <target name="pack.jetbrains.mps.baseLanguage.classifiers">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.classifiers.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.classifiers.tmp\module" />
+    <mkdir dir="core\baseLanguage\classifiers\classes_gen" />
+    <mkdir dir="core\baseLanguage\classifiers\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.classifiers.tmp\module">
       <fileset file="core\baseLanguage\classifiers\classifiers.mpl" />
     </copy>
@@ -320,6 +358,8 @@
   <target name="pack.jetbrains.mps.bootstrap.actionsLanguage">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.actionsLanguage.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.actionsLanguage.tmp\module" />
+    <mkdir dir="core\languageDesign\actionsLanguage\classes_gen" />
+    <mkdir dir="core\languageDesign\actionsLanguage\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.actionsLanguage.tmp\module">
       <fileset file="core\languageDesign\actionsLanguage\languageDescriptor.mpl" />
     </copy>
@@ -338,6 +378,8 @@
   <target name="pack.jetbrains.mps.annotations">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.annotations.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.annotations.tmp\module" />
+    <mkdir dir="core\languageDesign\annotations\languages\annotations\classes_gen" />
+    <mkdir dir="core\languageDesign\annotations\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.annotations.tmp\module">
       <fileset file="core\languageDesign\annotations\languages\annotations\annotations.mpl" />
     </copy>
@@ -356,6 +398,8 @@
   <target name="pack.jetbrains.mps.bootstrap.constraintsLanguage">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.constraintsLanguage.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.constraintsLanguage.tmp\module" />
+    <mkdir dir="core\languageDesign\constraintsLanguage\classes_gen" />
+    <mkdir dir="core\languageDesign\constraintsLanguage\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.constraintsLanguage.tmp\module">
       <fileset file="core\languageDesign\constraintsLanguage\constraintsLanguage.mpl" />
     </copy>
@@ -374,6 +418,8 @@
   <target name="pack.jetbrains.mps.bootstrap.editorLanguage">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.editorLanguage.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.editorLanguage.tmp\module" />
+    <mkdir dir="core\languageDesign\editorLanguage\classes_gen" />
+    <mkdir dir="core\languageDesign\editorLanguage\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.editorLanguage.tmp\module">
       <fileset file="core\languageDesign\editorLanguage\editorLanguage.mpl" />
     </copy>
@@ -395,6 +441,8 @@
   <target name="pack.jetbrains.mps.bootstrap.findUsagesLanguage">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.findUsagesLanguage.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.findUsagesLanguage.tmp\module" />
+    <mkdir dir="core\languageDesign\findUsagesLanguage\classes_gen" />
+    <mkdir dir="core\languageDesign\findUsagesLanguage\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.findUsagesLanguage.tmp\module">
       <fileset file="core\languageDesign\findUsagesLanguage\findUsagesLanguage.mpl" />
     </copy>
@@ -413,6 +461,8 @@
   <target name="pack.jetbrains.mps.bootstrap.helgins">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.helgins.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.helgins.tmp\module" />
+    <mkdir dir="core\languageDesign\helgins\classes_gen" />
+    <mkdir dir="core\languageDesign\helgins\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.helgins.tmp\module">
       <fileset file="core\languageDesign\helgins\helgins.mpl" />
     </copy>
@@ -434,6 +484,8 @@
   <target name="pack.jetbrains.mps.bootstrap.intentionsLanguage">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.intentionsLanguage.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.intentionsLanguage.tmp\module" />
+    <mkdir dir="core\languageDesign\intentionsLanguage\classes_gen" />
+    <mkdir dir="core\languageDesign\intentionsLanguage\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.intentionsLanguage.tmp\module">
       <fileset file="core\languageDesign\intentionsLanguage\intentionsLanguage.mpl" />
     </copy>
@@ -455,6 +507,9 @@
   <target name="pack.jetbrains.mps.bootstrap.dataFlow">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.dataFlow.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.dataFlow.tmp\module" />
+    <mkdir dir="core\languageDesign\dataFlow\classes_gen" />
+    <mkdir dir="core\languageDesign\dataFlow\classes" />
+    <mkdir dir="core\languageDesign\dataFlow\runtime\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.dataFlow.tmp\module">
       <fileset file="core\languageDesign\dataFlow\dataFlow.mpl" />
     </copy>
@@ -478,6 +533,8 @@
   <target name="pack.jetbrains.mpslite">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mpslite.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mpslite.tmp\module" />
+    <mkdir dir="core\languageDesign\mps-lite\languages\mpslite\classes_gen" />
+    <mkdir dir="core\languageDesign\mps-lite\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mpslite.tmp\module">
       <fileset file="core\languageDesign\mps-lite\languages\mpslite\mpslite.mpl" />
     </copy>
@@ -496,6 +553,8 @@
   <target name="pack.jetbrains.mps.nanoj">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.nanoj.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.nanoj.tmp\module" />
+    <mkdir dir="core\languageDesign\mps-lite\languages\nanoj\classes_gen" />
+    <mkdir dir="core\languageDesign\mps-lite\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.nanoj.tmp\module">
       <fileset file="core\languageDesign\mps-lite\languages\nanoj\nanoj.mpl" />
     </copy>
@@ -514,6 +573,8 @@
   <target name="pack.jetbrains.mps.patterns">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.patterns.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.patterns.tmp\module" />
+    <mkdir dir="core\languageDesign\patternLanguage\classes_gen" />
+    <mkdir dir="core\languageDesign\patternLanguage\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.patterns.tmp\module">
       <fileset file="core\languageDesign\patternLanguage\patterns.mpl" />
     </copy>
@@ -535,6 +596,8 @@
   <target name="pack.jetbrains.mps.quotation">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.quotation.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.quotation.tmp\module" />
+    <mkdir dir="core\languageDesign\quotation\classes_gen" />
+    <mkdir dir="core\languageDesign\quotation\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.quotation.tmp\module">
       <fileset file="core\languageDesign\quotation\quotation.mpl" />
     </copy>
@@ -553,6 +616,8 @@
   <target name="pack.jetbrains.mps.bootstrap.pluginLanguage">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.pluginLanguage.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.pluginLanguage.tmp\module" />
+    <mkdir dir="core\languageDesign\pluginLanguage\classes_gen" />
+    <mkdir dir="core\languageDesign\pluginLanguage\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.pluginLanguage.tmp\module">
       <fileset file="core\languageDesign\pluginLanguage\pluginLanguage.mpl" />
     </copy>
@@ -574,6 +639,8 @@
   <target name="pack.jetbrains.mps.bootstrap.sharedConcepts">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.sharedConcepts.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.sharedConcepts.tmp\module" />
+    <mkdir dir="core\languageDesign\sharedConcepts\classes_gen" />
+    <mkdir dir="core\languageDesign\sharedConcepts\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.sharedConcepts.tmp\module">
       <fileset file="core\languageDesign\sharedConcepts\sharedConcepts.mpl" />
     </copy>
@@ -592,6 +659,8 @@
   <target name="pack.jetbrains.mps.bootstrap.smodelLanguage">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.smodelLanguage.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.smodelLanguage.tmp\module" />
+    <mkdir dir="core\languageDesign\smodelLanguage\classes_gen" />
+    <mkdir dir="core\languageDesign\smodelLanguage\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.smodelLanguage.tmp\module">
       <fileset file="core\languageDesign\smodelLanguage\smodelLanguage.mpl" />
     </copy>
@@ -613,6 +682,9 @@
   <target name="pack.jetbrains.mps.ide.scriptLanguage">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.ide.scriptLanguage.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.ide.scriptLanguage.tmp\module" />
+    <mkdir dir="core\languageDesign\scriptLanguage\classes_gen" />
+    <mkdir dir="core\languageDesign\scriptLanguage\classes" />
+    <mkdir dir="core\languageDesign\scriptLanguage\runtime\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.ide.scriptLanguage.tmp\module">
       <fileset file="core\languageDesign\scriptLanguage\scriptLanguage.mpl" />
     </copy>
@@ -635,6 +707,8 @@
   <target name="pack.jetbrains.mps.ide.scriptLanguageInternal">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.ide.scriptLanguageInternal.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.ide.scriptLanguageInternal.tmp\module" />
+    <mkdir dir="core\languageDesign\scriptLanguageInternal\classes_gen" />
+    <mkdir dir="core\languageDesign\scriptLanguageInternal\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.ide.scriptLanguageInternal.tmp\module">
       <fileset file="core\languageDesign\scriptLanguageInternal\scriptLanguageInternal.mpl" />
     </copy>
@@ -653,6 +727,8 @@
   <target name="pack.jetbrains.mps.bootstrap.structureLanguage">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.structureLanguage.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.structureLanguage.tmp\module" />
+    <mkdir dir="core\languageDesign\structureLanguage\classes_gen" />
+    <mkdir dir="core\languageDesign\structureLanguage\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.structureLanguage.tmp\module">
       <fileset file="core\languageDesign\structureLanguage\languageDescriptor.mpl" />
     </copy>
@@ -671,6 +747,8 @@
   <target name="pack.jetbrains.mps.core">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.core.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.core.tmp\module" />
+    <mkdir dir="core\languageDesign\core\classes_gen" />
+    <mkdir dir="core\languageDesign\core\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.core.tmp\module">
       <fileset file="core\languageDesign\core\languageDescriptor.mpl" />
     </copy>
@@ -689,6 +767,8 @@
   <target name="pack.jetbrains.mps.logging.refactoring">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.logging.refactoring.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.logging.refactoring.tmp\module" />
+    <mkdir dir="core\languageDesign\refactoring\classes_gen" />
+    <mkdir dir="core\languageDesign\refactoring\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.logging.refactoring.tmp\module">
       <fileset file="core\languageDesign\refactoring\refactoring.mpl" />
     </copy>
@@ -710,6 +790,8 @@
   <target name="pack.jetbrains.mps.transformation.TLBase">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.TLBase.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.TLBase.tmp\module" />
+    <mkdir dir="core\languageDesign\transformation\classes_gen" />
+    <mkdir dir="core\languageDesign\transformation\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.TLBase.tmp\module">
       <fileset file="core\languageDesign\transformation\languageDescriptor.mpl" />
     </copy>
@@ -728,6 +810,8 @@
   <target name="pack.jetbrains.mps.vcs">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\kernel\vcs\generic\jetbrains.mps.vcs.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\kernel\vcs\generic\jetbrains.mps.vcs.tmp\module" />
+    <mkdir dir="core\kernel\vcs\generic\solutions\jetbrains.mps.vcs\classes_gen" />
+    <mkdir dir="core\kernel\vcs\generic\solutions\jetbrains.mps.vcs\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\kernel\vcs\generic\jetbrains.mps.vcs.tmp\module">
       <fileset file="core\kernel\vcs\generic\solutions\jetbrains.mps.vcs\jetbrains.mps.vcs.msd" />
     </copy>
@@ -746,6 +830,8 @@
   <target name="pack.jetbrains.mps.projectLanguage">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\jetbrains.mps.projectLanguage.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\jetbrains.mps.projectLanguage.tmp\module" />
+    <mkdir dir="core\projectLanguage\classes_gen" />
+    <mkdir dir="core\projectLanguage\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\jetbrains.mps.projectLanguage.tmp\module">
       <fileset file="core\projectLanguage\languageDescriptor.mpl" />
     </copy>
@@ -764,6 +850,8 @@
   <target name="pack.transform">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\transform.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\transform.tmp\module" />
+    <mkdir dir="platform\panacea\languages\transform\classes_gen" />
+    <mkdir dir="platform\panacea\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\transform.tmp\module">
       <fileset file="platform\panacea\languages\transform\transform.mpl" />
     </copy>
@@ -782,6 +870,9 @@
   <target name="pack.ypath.main">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\ypath.main.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\ypath.main.tmp\module" />
+    <mkdir dir="platform\ypath\solutions\main\classes_gen" />
+    <mkdir dir="platform\ypath\solutions\main\classes_gen" />
+    <mkdir dir="platform\ypath\solutions\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\ypath.main.tmp\module">
       <fileset file="platform\ypath\solutions\main\main.msd" />
     </copy>
@@ -801,6 +892,10 @@
   <target name="pack.ypath.test">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\ypath.test.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\ypath.test.tmp\module" />
+    <mkdir dir="platform\ypath\solutions\test\classes_gen" />
+    <mkdir dir="platform\ypath\solutions\test\classes_gen" />
+    <mkdir dir="platform\ypath\classes" />
+    <mkdir dir="platform\ypath\solutions\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\ypath.test.tmp\module">
       <fileset file="platform\ypath\solutions\test\test.msd" />
     </copy>
@@ -821,6 +916,9 @@
   <target name="pack.jetbrains.mps.ypath">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.ypath.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.ypath.tmp\module" />
+    <mkdir dir="platform\ypath\classes_gen" />
+    <mkdir dir="platform\ypath\classes" />
+    <mkdir dir="platform\ypath\runtime\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.ypath.tmp\module">
       <fileset file="platform\ypath\ypath.mpl" />
     </copy>
@@ -843,6 +941,8 @@
   <target name="pack.jetbrains.mps.buildlanguage">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.buildlanguage.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.buildlanguage.tmp\module" />
+    <mkdir dir="platform\buildlanguage\languages\buildlanguage\classes_gen" />
+    <mkdir dir="platform\buildlanguage\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.buildlanguage.tmp\module">
       <fileset file="platform\buildlanguage\languages\buildlanguage\buildlanguage.mpl" />
     </copy>
@@ -861,6 +961,8 @@
   <target name="pack.jetbrains.mps.mpsLayoutLanguage">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.mpsLayoutLanguage.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.mpsLayoutLanguage.tmp\module" />
+    <mkdir dir="platform\buildlanguage\languages\mpsLayoutLanguage\classes_gen" />
+    <mkdir dir="platform\buildlanguage\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.mpsLayoutLanguage.tmp\module">
       <fileset file="platform\buildlanguage\languages\mpsLayoutLanguage\mpsLayoutLanguage.mpl" />
     </copy>
@@ -879,6 +981,8 @@
   <target name="pack.jetbrains.mps.mpsProjectLanguage">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.mpsProjectLanguage.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.mpsProjectLanguage.tmp\module" />
+    <mkdir dir="platform\buildlanguage\languages\mpsProjectLanguage\classes_gen" />
+    <mkdir dir="platform\buildlanguage\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.mpsProjectLanguage.tmp\module">
       <fileset file="platform\buildlanguage\languages\mpsProjectLanguage\mpsProjectLanguage.mpl" />
     </copy>
@@ -897,6 +1001,8 @@
   <target name="pack.jetbrains.mps.propertylanguage">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.propertylanguage.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.propertylanguage.tmp\module" />
+    <mkdir dir="platform\buildlanguage\languages\propertylanguage\classes_gen" />
+    <mkdir dir="platform\buildlanguage\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.propertylanguage.tmp\module">
       <fileset file="platform\buildlanguage\languages\propertylanguage\propertylanguage.mpl" />
     </copy>
@@ -915,6 +1021,8 @@
   <target name="pack.jetbrains.mps.bookLanguage">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.bookLanguage.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.bookLanguage.tmp\module" />
+    <mkdir dir="platform\textLanguage\languages\bookLanguage\classes_gen" />
+    <mkdir dir="platform\textLanguage\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.bookLanguage.tmp\module">
       <fileset file="platform\textLanguage\languages\bookLanguage\bookLanguage.mpl" />
     </copy>
@@ -933,6 +1041,9 @@
   <target name="pack.jetbrains.mps.regexp">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.regexp.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.regexp.tmp\module" />
+    <mkdir dir="platform\regexp\classes_gen" />
+    <mkdir dir="platform\regexp\classes" />
+    <mkdir dir="platform\regexp\runtime\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.regexp.tmp\module">
       <fileset file="platform\regexp\regexp.mpl" />
     </copy>
@@ -955,6 +1066,8 @@
   <target name="pack.jetbrains.mps.regexp.examples">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.regexp.examples.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.regexp.examples.tmp\module" />
+    <mkdir dir="platform\regexp\solutions\jetbrains.mps.regexp.examples\classes_gen" />
+    <mkdir dir="platform\regexp\solutions\jetbrains.mps.regexp.examples\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.regexp.examples.tmp\module">
       <fileset file="platform\regexp\solutions\jetbrains.mps.regexp.examples\jetbrains.mps.regexp.examples.msd" />
     </copy>
@@ -973,6 +1086,8 @@
   <target name="pack.jetbrains.mps.textLanguage">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.tmp\module" />
+    <mkdir dir="platform\textLanguage\languages\textLanguage\classes_gen" />
+    <mkdir dir="platform\textLanguage\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.tmp\module">
       <fileset file="platform\textLanguage\languages\textLanguage\textLanguage.mpl" />
     </copy>
@@ -991,6 +1106,8 @@
   <target name="pack.jetbrains.mps.textLanguage.formula">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.formula.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.formula.tmp\module" />
+    <mkdir dir="platform\textLanguage\languages\formula\classes_gen" />
+    <mkdir dir="platform\textLanguage\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.formula.tmp\module">
       <fileset file="platform\textLanguage\languages\formula\formula.mpl" />
     </copy>
@@ -1009,6 +1126,8 @@
   <target name="pack.jetbrains.mps.textLanguage.table">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.table.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.table.tmp\module" />
+    <mkdir dir="platform\textLanguage\languages\table\classes_gen" />
+    <mkdir dir="platform\textLanguage\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.table.tmp\module">
       <fileset file="platform\textLanguage\languages\table\table.mpl" />
     </copy>
@@ -1027,6 +1146,9 @@
   <target name="pack.jetbrains.mps.uiLanguage">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.uiLanguage.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.uiLanguage.tmp\module" />
+    <mkdir dir="platform\uiLanguage\classes_gen" />
+    <mkdir dir="platform\uiLanguage\classes" />
+    <mkdir dir="platform\uiLanguage\runtime\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.uiLanguage.tmp\module">
       <fileset file="platform\uiLanguage\uiLanguage.mpl" />
     </copy>
@@ -1049,6 +1171,7 @@
   <target name="pack.jetbrains.mps.baseLanguage.unitTest">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.baseLanguage.unitTest.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.baseLanguage.unitTest.tmp\module" />
+    <mkdir dir="platform\unitTest\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.baseLanguage.unitTest.tmp\module">
       <fileset file="platform\unitTest\unitTest.mpl" />
     </copy>
@@ -1066,6 +1189,8 @@
   <target name="pack.jetbrains.mps.baseLanguage.unitTest.runtime">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.baseLanguage.unitTest.runtime.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.baseLanguage.unitTest.runtime.tmp\module" />
+    <mkdir dir="platform\unitTest\solutions\runtime\classes_gen" />
+    <mkdir dir="platform\unitTest\solutions\runtime\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.baseLanguage.unitTest.runtime.tmp\module">
       <fileset file="platform\unitTest\solutions\runtime\jetbrains.mps.baseLanguage.unitTest.runtime.msd" />
     </copy>
@@ -1085,6 +1210,8 @@
   <target name="pack.jetbrains.mps.xml">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.xml.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.xml.tmp\module" />
+    <mkdir dir="platform\xml\classes_gen" />
+    <mkdir dir="platform\xml\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.xml.tmp\module">
       <fileset file="platform\xml\languageDescriptor.mpl" />
     </copy>
@@ -1103,6 +1230,7 @@
   <target name="pack.jetbrains.springframework.configuration">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.springframework.configuration.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.springframework.configuration.tmp\module" />
+    <mkdir dir="platform\springframework\languages\configuration\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.springframework.configuration.tmp\module">
       <fileset file="platform\springframework\languages\configuration\configuration.mpl" />
     </copy>
@@ -1120,6 +1248,7 @@
   <target name="pack.jetbrains.springframework.configurationInternal">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.springframework.configurationInternal.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.springframework.configurationInternal.tmp\module" />
+    <mkdir dir="platform\springframework\languages\configurationInternal\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.springframework.configurationInternal.tmp\module">
       <fileset file="platform\springframework\languages\configurationInternal\configurationInternal.mpl" />
     </copy>
@@ -1137,6 +1266,8 @@
   <target name="pack.jetbrains.mps.springframework.configuration.runtime">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.springframework.configuration.runtime.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.springframework.configuration.runtime.tmp\module" />
+    <mkdir dir="platform\springframework\runtime\classes_gen" />
+    <mkdir dir="platform\springframework\runtime\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.springframework.configuration.runtime.tmp\module">
       <fileset file="platform\springframework\runtime\jetbrains.mps.springframework.configuration.runtime.msd" />
     </copy>
@@ -1155,6 +1286,8 @@
   <target name="pack.webr.logging">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.logging.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.logging.tmp\module" />
+    <mkdir dir="platform\webr\languages\logging\classes_gen" />
+    <mkdir dir="platform\webr\languages\logging\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.logging.tmp\module">
       <fileset file="platform\webr\languages\logging\logging.mpl" />
     </copy>
@@ -1173,6 +1306,7 @@
   <target name="pack.webr.xml">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.xml.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.xml.tmp\module" />
+    <mkdir dir="platform\webr\languages\xml\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.xml.tmp\module">
       <fileset file="platform\webr\languages\xml\xml.mpl" />
     </copy>
@@ -1190,6 +1324,8 @@
   <target name="pack.webr.gtext">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.gtext.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.gtext.tmp\module" />
+    <mkdir dir="platform\webr\languages\gtext\classes_gen" />
+    <mkdir dir="platform\webr\languages\gtext\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.gtext.tmp\module">
       <fileset file="platform\webr\languages\gtext\gtext.mpl" />
     </copy>
@@ -1208,6 +1344,7 @@
   <target name="pack.webr.xmlInternal">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.xmlInternal.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.xmlInternal.tmp\module" />
+    <mkdir dir="platform\webr\languages\xmlInternal\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.xmlInternal.tmp\module">
       <fileset file="platform\webr\languages\xmlInternal\xmlInternal.mpl" />
     </copy>
@@ -1225,6 +1362,7 @@
   <target name="pack.webr.xmlSchema">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.xmlSchema.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.xmlSchema.tmp\module" />
+    <mkdir dir="platform\webr\languages\xmlSchema\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.xmlSchema.tmp\module">
       <fileset file="platform\webr\languages\xmlSchema\xmlSchema.mpl" />
     </copy>
@@ -1242,6 +1380,9 @@
   <target name="pack.jetbrains.mps.gtext.runtime">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.gtext.runtime.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.gtext.runtime.tmp\module" />
+    <mkdir dir="platform\webr\languages\gtext\runtime\classes_gen" />
+    <mkdir dir="platform\webr\languages\gtext\runtime\classes_gen" />
+    <mkdir dir="platform\webr\languages\gtext\runtime\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.gtext.runtime.tmp\module">
       <fileset file="platform\webr\languages\gtext\runtime\jetbrains.mps.gtext.runtime.msd" />
     </copy>
@@ -1261,6 +1402,8 @@
   <target name="pack.jetbrains.mps.ide.uiLanguage">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\workbench\jetbrains.mps.ide.uiLanguage.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\workbench\jetbrains.mps.ide.uiLanguage.tmp\module" />
+    <mkdir dir="workbench\ideUiLanguage\classes_gen" />
+    <mkdir dir="workbench\ideUiLanguage\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\workbench\jetbrains.mps.ide.uiLanguage.tmp\module">
       <fileset file="workbench\ideUiLanguage\uiLanguage.mpl" />
     </copy>
@@ -1279,6 +1422,8 @@
   <target name="pack.jetbrains.mps.monitorLanguage">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\workbench\jetbrains.mps.monitorLanguage.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\workbench\jetbrains.mps.monitorLanguage.tmp\module" />
+    <mkdir dir="workbench\monitorLanguage\languages\monitorLanguage\classes_gen" />
+    <mkdir dir="workbench\monitorLanguage\classes" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\workbench\jetbrains.mps.monitorLanguage.tmp\module">
       <fileset file="workbench\monitorLanguage\languages\monitorLanguage\monitorLanguage.mpl" />
     </copy>
@@ -1297,6 +1442,8 @@
   <target name="pack.jetbrains.mps.ide">
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\workbench\jetbrains.mps.ide.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\workbench\jetbrains.mps.ide.tmp\module" />
+    <mkdir dir="workbench\ideSolution\classes_gen" />
+    <mkdir dir="workbench\ideSolution\classes_gen" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\workbench\jetbrains.mps.ide.tmp\module">
       <fileset file="workbench\ideSolution\jetbrains.mps.ide.msd" />
     </copy>
