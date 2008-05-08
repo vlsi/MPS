@@ -4,6 +4,7 @@
 
   <actions>
     <group>
+      <action id="NewProject" class="jetbrains.mps.idea.actions.NewMPSProjectAction" text="New MPS Project" />
       <action id="OpenProject" class="jetbrains.mps.idea.actions.OpenMPSProjectAction" text="Open MPS Project" />
       <add-to-group anchor="first" group-id="FileMenu" />
     </group>

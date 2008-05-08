@@ -1600,7 +1600,6 @@
     <option name="INSTRUMENT_CLASSES" value="false" />
   </component>
   <UsedPathMacros>
-    <macro name="CHARISMA_HOME" />
     <macro name="MPS_HOME" />
   </UsedPathMacros>
 </project>
