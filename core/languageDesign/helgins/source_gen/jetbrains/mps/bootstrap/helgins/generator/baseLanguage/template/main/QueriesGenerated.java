@@ -207,11 +207,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1176815544545(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "pattern_" + SLinkOperations.getTarget(_context.getNode(), "pattern", true).getId();
+    return _context.getGenerator().getGeneratorSessionContext().createUniqueName("pattern_");
   }
 
   public static Object propertyMacro_GetPropertyValue_1176817383122(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "coercedNode_" + _context.getNode().getId();
+    return _context.getGenerator().getGeneratorSessionContext().createUniqueName("coercedNode_");
   }
 
   public static Object propertyMacro_GetPropertyValue_1177670027441(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -228,11 +228,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1178874415131(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "pattern_" + SLinkOperations.getTarget(_context.getNode(), "pattern", true).getId();
+    return _context.getGenerator().getGeneratorSessionContext().createUniqueName("pattern_");
   }
 
   public static Object propertyMacro_GetPropertyValue_1178874415161(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "coercedNode_" + _context.getNode().getId();
+    return _context.getGenerator().getGeneratorSessionContext().createUniqueName("coercedNode_");
   }
 
   public static Object propertyMacro_GetPropertyValue_1178874523174(final IOperationContext operationContext, final PropertyMacroContext _context) {
