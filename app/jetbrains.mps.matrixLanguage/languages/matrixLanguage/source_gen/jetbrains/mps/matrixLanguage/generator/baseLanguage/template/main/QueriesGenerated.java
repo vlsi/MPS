@@ -33,7 +33,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1210184675751(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode() + "Type";
+    return _context.getNode() + "Operations";
   }
 
   public static Object propertyMacro_GetPropertyValue_1210244688257(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -174,7 +174,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1210251796165(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TypeChecker.getInstance().getTypeOf(_context.getNode());
+    return SLinkOperations.getTarget(_context.getNode(), "scalarType", true);
   }
 
   public static SNode sourceNodeQuery_1210252600163(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
