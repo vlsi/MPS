@@ -22,6 +22,8 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="jetbrains.mps.mpsLayoutLanguage.structure" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.core.structure" />
@@ -306,18 +308,6 @@
       <property name="name" value="fullPath" />
       <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1208952083984">
-      <property name="name" value="pathRelativeToBase" />
-      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1208952107870">
-      <property name="name" value="pathInDescriptor" />
-      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1208953683660">
-      <property name="name" value="base" />
-      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1204737268634">
       <property name="role" value="module" />
       <property name="sourceCardinality" value="1" />
@@ -429,11 +419,6 @@
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1205342825595">
       <link role="intfc" targetNodeId="1205339194346" resolveInfo="IStringExpression" />
     </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1209540230325">
-    <property name="package" value="projectComponents" />
-    <property name="name" value="Chmod" />
-    <link role="extends" targetNodeId="1204123091967" resolveInfo="PostProcessingTask" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConstrainedDataTypeDeclaration" id="1209888860604">
     <property name="package" value="sources" />

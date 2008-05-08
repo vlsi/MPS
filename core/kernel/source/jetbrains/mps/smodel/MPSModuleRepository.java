@@ -421,8 +421,9 @@ public class MPSModuleRepository implements IComponentLifecycle {
     for (IFile file : files) {
       if (hasModuleExtension(file.getName())) {
         readModuleDescriptor_internal(file, owner, getModuleExtension(file.getName()));
-      } else if (file.getName().endsWith(MPS_ARCHIVE)) {
-        readModuleDescriptors(FileSystem.getJarFileRoot(file.toFile()), owner);
+      } else if (file.getName().endsWith(PackagedModuleLayout.PACKAGE_SUFFIX)) {
+        IFile dirInJar = FileSystem.getFile(file.getAbsolutePath() + "!/" + PackagedModuleLayout.MODULE_DIR);
+        readModuleDescriptors(dirInJar, owner);
       }
     }
     List<IFile> dirs = files;

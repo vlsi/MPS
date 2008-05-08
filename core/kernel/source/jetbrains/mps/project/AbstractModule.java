@@ -415,6 +415,20 @@ public abstract class AbstractModule implements IModule {
   public List<String> getClassPath() {
     ArrayList<String> result = new ArrayList<String>();
 
+    if (isPackaged()) {
+      result.add(getBundleHome().getPath());
+      ModuleDescriptor descriptor = getModuleDescriptor();
+      if (descriptor != null) {
+        for (ClassPathEntry entry : descriptor.getClassPathEntrys()) {
+          IFile cp = FileSystem.getFile(entry.getPath());
+          if (cp.exists() && !cp.isDirectory()) {
+            result.add(entry.getPath());
+          }
+        }
+      }
+      return result;
+    }
+
     if (getClassesGen() != null && getClassesGen().exists()) {
       result.add(getClassesGen().getCanonicalPath());
     }
@@ -493,20 +507,6 @@ public abstract class AbstractModule implements IModule {
         }
       } catch (IOException e) {
         LOG.error(e);
-      }
-    }
-
-    if (isPackaged()) {
-      File parent = getBundleHome().getParentFile();
-      String name = getModuleUID() + ".lib.jar";
-      File file = new File(parent, name);
-
-      if (file.exists()) {
-        try {
-          result.add(new JarFileClassPathItem(file.getPath()));
-        } catch (IOException e) {
-          LOG.error(e);
-        }
       }
     }
 
