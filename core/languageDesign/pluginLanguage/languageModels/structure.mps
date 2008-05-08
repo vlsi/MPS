@@ -47,6 +47,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="20" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="6" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -1497,6 +1498,7 @@
     <property name="name" value="PreferencesComponentDeclaration" />
     <property name="rootable" value="true" />
     <property name="package" value="Preference" />
+    <property name="iconPath" value="${language_descriptor}\icons\preferences.png" />
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1210179829398">
       <property name="metaClass" value="aggregation" />
