@@ -27,6 +27,9 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="133" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="java.util@java_stub" version="-1" />
@@ -322,8 +325,8 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1209388158629">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1209388158630">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1209388158631">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1209388158632">
-              <property name="value" value="3" />
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1210263714798">
+              <property name="value" value="2" />
             </node>
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1209388158633">
               <property name="value" value="2" />

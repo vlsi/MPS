@@ -33,8 +33,13 @@ public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
   private Set<IEditorChecker> myCheckersToRemove = new LinkedHashSet<IEditorChecker>();
   private List<SModelEvent> myLastEvents = new ArrayList<SModelEvent>();
   private Set<IEditorComponent> myCheckedOnceEditors = new WeakSet<IEditorComponent>();
+  private IEditorsProvider myEditorsProvider = new MPSEditorsProvider();
 
   public Highlighter() {
+  }
+
+  public void setEditorsProvider(IEditorsProvider editorsProvider) {
+    myEditorsProvider = editorsProvider;
   }
 
   @Dependency
@@ -148,13 +153,10 @@ public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
     }
 
     for (MPSProject project : projects.getProjects()) {
-      IDEProjectFrame projectFrame = project.getComponent(IDEProjectFrame.class);
-      if (projectFrame == null) continue;
-
-      EditorsPane editorsPane = project.getComponentSafe(AbstractProjectFrame.class).getEditorsPane();
       boolean isUpdated = false;
+      List<IEditor> allEditors = getAllEditors(project);
 
-      for (IEditor editor : editorsPane.getEditors()) {
+      for (IEditor editor : allEditors) {
         AbstractEditorComponent component = editor.getCurrentEditorComponent();
         if (component != null) {
           if (updateEditorComponent(component, events, checkers, checkersToRemove)) {
@@ -168,7 +170,7 @@ public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
       }
 
       if (isUpdated) { //why do we need this code? it's looks like a hack.
-        IEditor currentEditor = editorsPane.getCurrentEditor();
+        IEditor currentEditor = getCurrentEditor(project);
         if (currentEditor != null) {
           currentEditor.repaint();
           AbstractEditorComponent component = currentEditor.getCurrentEditorComponent();
@@ -180,6 +182,14 @@ public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
     }
     //    }
     //  });
+  }
+
+  protected List<IEditor> getAllEditors(MPSProject project) {
+    return myEditorsProvider.getAllEditors(project);
+  }
+
+  protected IEditor getCurrentEditor(MPSProject project) {
+    return myEditorsProvider.getCurrentEditor(project);
   }
 
   private boolean updateEditorComponent(IEditorComponent component, final List<SModelEvent> events, final Set<IEditorChecker> checkers, Set<IEditorChecker> checkersToRemove) {
