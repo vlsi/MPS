@@ -98,19 +98,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.idea.tools.OutputViewTool</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.idea.tools.MessageViewTool</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.idea.tools.UsageViewTool</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.idea.tools.ConceptHierarchyViewTool</implementation-class>
+      <implementation-class>jetbrains.mps.idea.tools.IDEAToolsPaneAdapter</implementation-class>
     </component>
   </project-components>
 
