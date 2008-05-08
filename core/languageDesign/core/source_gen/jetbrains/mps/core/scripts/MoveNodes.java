@@ -193,7 +193,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
         IModule module = targetModel.getModelDescriptor().getModule();
         IOperationContext operationContext = new ModuleContext(module, actionContext.getOperationContext().getProject());
         if (operationContext != null) {
-          NavigationActionProcessor.navigateToNode(ListSequence.fromList(movedNodes).first(), operationContext, true);
+          NavigationActionProcessor.getInstance().navigateToNode(ListSequence.fromList(movedNodes).first(), operationContext, true);
         }
       }
     }

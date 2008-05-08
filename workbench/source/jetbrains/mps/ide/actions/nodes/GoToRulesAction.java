@@ -63,7 +63,7 @@ public class GoToRulesAction extends MPSAction {
     IEditor currentEditor = editorsPane.getCurrentEditor();
     
     if (rules.size() == 1) {// single rule
-      NavigationActionProcessor.executeNavigationAction(new EditorNavigationCommand(rules.get(0), currentEditor, editorsPane), operationContext.getProject());
+      NavigationActionProcessor.getInstance().executeNavigationAction(new EditorNavigationCommand(rules.get(0), currentEditor, editorsPane), operationContext.getProject());
       return;
     }
 
@@ -141,7 +141,7 @@ public class GoToRulesAction extends MPSAction {
           }
 
           public void actionPerformed(ActionEvent e) {
-            NavigationActionProcessor.executeNavigationAction(new EditorNavigationCommand(node, currentEditor, editorsPane), operationContext.getProject());
+            NavigationActionProcessor.getInstance().executeNavigationAction(new EditorNavigationCommand(node, currentEditor, editorsPane), operationContext.getProject());
           }
         }).setBackground(Color.WHITE);
       }

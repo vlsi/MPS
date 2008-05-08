@@ -40,7 +40,7 @@ public class MyMenu extends JPopupMenu {
         }
 
         public void actionPerformed(ActionEvent e) {
-          NavigationActionProcessor.executeNavigationAction(new EditorNavigationCommand(node, currentEditor, editorsPane), operationContext.getProject(), true);
+          NavigationActionProcessor.getInstance().executeNavigationAction(new EditorNavigationCommand(node, currentEditor, editorsPane), operationContext.getProject(), true);
         }
       }).setBackground(Color.WHITE);
     }

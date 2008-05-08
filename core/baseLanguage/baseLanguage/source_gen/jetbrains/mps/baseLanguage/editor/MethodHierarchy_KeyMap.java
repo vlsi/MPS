@@ -74,7 +74,7 @@ public class MethodHierarchy_KeyMap extends EditorCellKeyMap {
         List<BaseMethodDeclaration> list = scope.getOverriddenMethods(((InstanceMethodDeclaration)SNodeOperations.getAdapter(method)));
         if (list.size() > 0) {
           SNode overriden = ((SNode)list.get(0).getNode());
-          NavigationActionProcessor.navigateToNode(overriden, editorContext, true);
+          NavigationActionProcessor.getInstance().navigateToNode(overriden, editorContext, true);
         }
       }
     }

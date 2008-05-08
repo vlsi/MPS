@@ -49,7 +49,7 @@ public class FindUsagesDialog extends BaseDialog {
             FindUsagesDialog.this.onCancel();
 
             IDEProjectFrame frame = context.getOperationContext().getComponent(IDEProjectFrame.class);
-            NavigationActionProcessor.executeNavigationAction(
+            NavigationActionProcessor.getInstance().executeNavigationAction(
               new EditorNavigationCommand(finderNode[0], frame.getEditorsPane().getCurrentEditor(), frame.getEditorsPane()),
               frame.getProject(), true);
           }

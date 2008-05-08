@@ -536,7 +536,7 @@ public abstract class UsagesTree extends MPSTree {
   }
 
   public void navigateToNode(SNode node) {
-    NavigationActionProcessor.executeNavigationAction(
+    NavigationActionProcessor.getInstance().executeNavigationAction(
       new EditorNavigationCommand(node, null, getProject().getComponent(EditorsPane.class)),
         getProject(), true);
   }

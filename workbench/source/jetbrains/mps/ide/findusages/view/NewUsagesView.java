@@ -251,7 +251,7 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
         public void run() {
           SNode node = ((SearchResult<SNode>) searchResults.getSearchResults().get(0)).getObject();
           if (node != null) {
-            NavigationActionProcessor.executeNavigationAction(
+            NavigationActionProcessor.getInstance().executeNavigationAction(
               new EditorNavigationCommand(node, null, getProject().getComponent(EditorsPane.class)),
               getProject(), true);
           }

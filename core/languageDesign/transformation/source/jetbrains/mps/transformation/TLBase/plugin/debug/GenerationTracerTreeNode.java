@@ -133,7 +133,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
       LOG.info("clicked node was deleted");
 
     }
-    NavigationActionProcessor.executeNavigationAction(
+    NavigationActionProcessor.getInstance().executeNavigationAction(
       new EditorNavigationCommand(node,
         myProjectFrame.getEditorsPane().getCurrentEditor(),
         myProjectFrame.getEditorsPane()),

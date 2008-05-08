@@ -48,7 +48,7 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Defa
   //todo IDEA platform hack
   public void openNode(SNode node, IOperationContext context) {
     final EditorsPane editorsPane = myIde.getEditorsPane();
-    NavigationActionProcessor.executeNavigationAction(new EditorNavigationCommand(node, null, editorsPane), context.getProject());
+    NavigationActionProcessor.getInstance().executeNavigationAction(new EditorNavigationCommand(node, null, editorsPane), context.getProject());
   }
 
   protected void init() {

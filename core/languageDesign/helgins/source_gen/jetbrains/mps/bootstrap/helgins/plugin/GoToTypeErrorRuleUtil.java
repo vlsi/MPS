@@ -29,7 +29,7 @@ public class GoToTypeErrorRuleUtil {
     if (rule == null) {
       LOG.error("can't find rule with id " + ruleID + " in the model " + modelDescriptor);
     }
-    NavigationActionProcessor.executeNavigationAction(new EditorNavigationCommand(rule, currentEditor, context.getComponent(EditorsPane.class)), context.getProject(), true);
+    NavigationActionProcessor.getInstance().executeNavigationAction(new EditorNavigationCommand(rule, currentEditor, context.getComponent(EditorsPane.class)), context.getProject(), true);
   }
 
 }
