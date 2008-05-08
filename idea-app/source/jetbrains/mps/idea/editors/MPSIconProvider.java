@@ -24,7 +24,6 @@ public class MPSIconProvider implements FileIconProvider, ApplicationComponent {
   }
 
   public void initComponent() {
-    System.out.println("we have initialized");
   }
 
   public void disposeComponent() {
