@@ -3,17 +3,17 @@
   <xi:include href="/idea/VcsActions.xml" xpointer="xpointer(/component/*)"/>
 
   <actions>
-    <action id="OpenProject" class="jetbrains.mps.idea.actions.OpenMPSProjectAction" text="Open MPS Project" />
-    <action id="SaveTransientModels" class="jetbrains.mps.idea.actions.SaveTransientModelsAction" text="Save Transient Models" />
-
     <group>
-      <reference id="OpenProject" />
+      <action id="OpenProject" class="jetbrains.mps.idea.actions.OpenMPSProjectAction" text="Open MPS Project" />
       <add-to-group anchor="first" group-id="FileMenu" />
     </group>
 
-    <group>
-      <reference id="SaveTransientModels" />
-      <add-to-group anchor="last" group-id="ToolsMenu" />
+    <group id="GenerateMenu" popup="true" text="Generate">
+      <action id="SaveTransientModels" class="jetbrains.mps.idea.actions.SaveTransientModelsAction" text="Save Transient Models" />
+      <action id="GenerateCurrentModule" class="jetbrains.mps.idea.actions.GenerateCurrentModuleAction" text="Generate Current Module">
+        <keyboard-shortcut first-keystroke="control F9" keymap="$default"/>
+      </action>
+      <add-to-group group-id="MainMenu" anchor="after" relative-to-action="GoToMenu" />
     </group>
   </actions>
 </component>
