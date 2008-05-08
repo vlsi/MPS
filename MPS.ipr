@@ -1004,7 +1004,7 @@
       <module fileurl="file://$PROJECT_DIR$/platform/xml/xml.iml" filepath="$PROJECT_DIR$/platform/xml/xml.iml" group="platform" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="1.5" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="jdk 1.5" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/classes" />
   </component>
   <component name="ProjectRunConfigurationManager">
@@ -1600,6 +1600,7 @@
     <option name="INSTRUMENT_CLASSES" value="false" />
   </component>
   <UsedPathMacros>
+    <macro name="CHARISMA_HOME" />
     <macro name="MPS_HOME" />
   </UsedPathMacros>
 </project>
