@@ -144,7 +144,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
     if (isPackaged()) {
       File parent = getBundleHome().getParentFile();
-      String name = getModuleUID() + "." + PackagedModuleLayout.RUNTIME_JAR_SUFFIX;
+      String name = getModuleUID() + "." + RUNTIME_JAR_SUFFIX;
       File file = new File(parent, name);
 
       if (file.exists()) {
