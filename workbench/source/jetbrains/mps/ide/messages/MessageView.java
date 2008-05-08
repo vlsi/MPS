@@ -249,7 +249,7 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
 
   //todo IDEA platform hack
   protected MPSProject getProject() {
-    return myToolsPane.getFrame().getProject();
+    return myToolsPane.getProject();
   }
 
   private boolean isVisible(Message m) {
