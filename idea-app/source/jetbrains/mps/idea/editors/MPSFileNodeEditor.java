@@ -23,6 +23,8 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.NodeEditor;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.EditorsPane;
+import jetbrains.mps.ide.navigation.IHistoryItem;
+import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.project.MPSProject;
@@ -70,14 +72,15 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor 
 
   @NotNull
   public FileEditorState getState(@NotNull FileEditorStateLevel level) {
-    return new FileEditorState() {
-      public boolean canBeMergedWith(FileEditorState otherState, FileEditorStateLevel level) {
-        return false;
-      }
-    };
+    MyFileEditorState state = new MyFileEditorState();
+    state.myHistoryItem = myNodeEditor.getHistoryItemFromEditor();
+    return state;
   }
 
-  public void setState(@NotNull FileEditorState state) {
+  public void setState(final @NotNull FileEditorState state) {
+    if (!(state instanceof MyFileEditorState)) return;
+    MyFileEditorState currentState = (MyFileEditorState) state;
+    currentState.myHistoryItem.applyToEditor(myNodeEditor);
   }
 
   public boolean isModified() {
@@ -116,5 +119,21 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor 
   }
 
   public void dispose() {
+  }
+  
+  private class MyFileEditorState implements FileEditorState {
+    private IHistoryItem myHistoryItem;
+
+    public boolean canBeMergedWith(FileEditorState otherState, FileEditorStateLevel level) {
+      return false;
+    }
+
+    public boolean equals(Object obj) {
+      if (!(obj instanceof MyFileEditorState)) {
+        return false;
+      }
+      MyFileEditorState state = (MyFileEditorState) obj;
+      return state.myHistoryItem.equals(myHistoryItem);
+    }
   }
 }
