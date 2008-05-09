@@ -72,7 +72,7 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
     }
 
     private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell_021");
+      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell7380_0");
       editorCell.setDrawBorder(true);
     }
 
@@ -85,10 +85,10 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
     }
 
     public EditorCell createEditorCell(EditorContext context, SNode node) {
-      return this.create_namePropertyCell_021(context, node);
+      return this.create_namePropertyCell7380_0(context, node);
     }
 
-    public EditorCell create_namePropertyCell_021_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    public EditorCell create_namePropertyCell7380_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
@@ -100,13 +100,13 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
       return editorCell;
     }
 
-    public EditorCell create_namePropertyCell_021(EditorContext context, SNode node) {
+    public EditorCell create_namePropertyCell7380_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
-      EditorCell cellWithRole = this.create_namePropertyCell_021_internal(context, node, provider);
+      EditorCell cellWithRole = this.create_namePropertyCell7380_0_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {

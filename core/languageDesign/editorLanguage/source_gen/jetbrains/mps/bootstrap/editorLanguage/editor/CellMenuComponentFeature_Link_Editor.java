@@ -66,7 +66,7 @@ public class CellMenuComponentFeature_Link_Editor extends DefaultNodeEditor {
     }
 
     private static void setupBasic_RoleCell(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_rolePropertyCell_04");
+      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_rolePropertyCell6801_0");
     }
 
     private static void setupLabel_RoleCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -79,10 +79,10 @@ public class CellMenuComponentFeature_Link_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext context, SNode node) {
-      return this.create_rolePropertyCell_04(context, node);
+      return this.create_rolePropertyCell6801_0(context, node);
     }
 
-    public EditorCell create_rolePropertyCell_04_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    public EditorCell create_rolePropertyCell6801_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
@@ -94,13 +94,13 @@ public class CellMenuComponentFeature_Link_Editor extends DefaultNodeEditor {
       return editorCell;
     }
 
-    public EditorCell create_rolePropertyCell_04(EditorContext context, SNode node) {
+    public EditorCell create_rolePropertyCell6801_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("role");
       provider.setNoTargetText("");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
-      EditorCell cellWithRole = this.create_rolePropertyCell_04_internal(context, node, provider);
+      EditorCell cellWithRole = this.create_rolePropertyCell6801_0_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {
