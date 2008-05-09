@@ -288,7 +288,7 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
 
   public EditorCell createColumnCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    CellModel_BlockEnd_Editor.setupBasic_ColumnCell(editorCell, node, context);
+    setupBasic_ColumnCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -299,7 +299,7 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
 
   public EditorCell createColumnCell1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    CellModel_BlockEnd_Editor.setupBasic_ColumnCell1(editorCell, node, context);
+    setupBasic_ColumnCell1(editorCell, node, context);
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -322,7 +322,7 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
 
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    CellModel_BlockEnd_Editor.setupBasic_RowCell(editorCell, node, context);
+    setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -333,7 +333,7 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
 
   public EditorCell createRowCell1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    CellModel_BlockEnd_Editor.setupBasic_RowCell1(editorCell, node, context);
+    setupBasic_RowCell1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -344,7 +344,7 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
 
   public EditorCell createRowCell2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    CellModel_BlockEnd_Editor.setupBasic_RowCell2(editorCell, node, context);
+    setupBasic_RowCell2(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -355,7 +355,7 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
 
   public EditorCell createRowCell3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    CellModel_BlockEnd_Editor.setupBasic_RowCell3(editorCell, node, context);
+    setupBasic_RowCell3(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -366,7 +366,7 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
 
   public EditorCell createRowCell4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    CellModel_BlockEnd_Editor.setupBasic_RowCell4(editorCell, node, context);
+    setupBasic_RowCell4(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -377,7 +377,7 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
 
   public EditorCell createRowCell5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    CellModel_BlockEnd_Editor.setupBasic_RowCell5(editorCell, node, context);
+    setupBasic_RowCell5(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -388,7 +388,7 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
 
   public EditorCell createRowCell6(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    CellModel_BlockEnd_Editor.setupBasic_RowCell6(editorCell, node, context);
+    setupBasic_RowCell6(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -399,7 +399,7 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
 
   public EditorCell createRowCell7(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    CellModel_BlockEnd_Editor.setupBasic_RowCell7(editorCell, node, context);
+    setupBasic_RowCell7(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -413,7 +413,7 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
       this.my_CellKeyMapLnk_Component15 = new _CellKeyMapLnk_Component(node);
     }
     EditorCell editorCell = this.my_CellKeyMapLnk_Component15.createEditorCell(context);
-    CellModel_BlockEnd_Editor.setupBasic__CellKeyMapLnk_ComponentCell(editorCell, node, context);
+    setupBasic__CellKeyMapLnk_ComponentCell(editorCell, node, context);
     return editorCell;
   }
 
@@ -422,7 +422,7 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
       this.my_FocusPolicy_Applicable2 = new _FocusPolicy_Applicable(node);
     }
     EditorCell editorCell = this.my_FocusPolicy_Applicable2.createEditorCell(context);
-    CellModel_BlockEnd_Editor.setupBasic__FocusPolicy_ApplicableCell(editorCell, node, context);
+    setupBasic__FocusPolicy_ApplicableCell(editorCell, node, context);
     return editorCell;
   }
 
@@ -431,110 +431,110 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
       this.my_EditorCellModel_RTAnchor_Component2 = new _EditorCellModel_RTAnchor_Component(node);
     }
     EditorCell editorCell = this.my_EditorCellModel_RTAnchor_Component2.createEditorCell(context);
-    CellModel_BlockEnd_Editor.setupBasic__EditorCellModel_RTAnchor_ComponentCell(editorCell, node, context);
+    setupBasic__EditorCellModel_RTAnchor_ComponentCell(editorCell, node, context);
     return editorCell;
   }
 
   public EditorCell createHeaderCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    CellModel_BlockEnd_Editor.setupBasic_HeaderCell(editorCell, node, context);
-    CellModel_BlockEnd_Editor.setupLabel_HeaderCell(editorCell, node, context);
+    setupBasic_HeaderCell(editorCell, node, context);
+    setupLabel_HeaderCell(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    CellModel_BlockEnd_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    CellModel_BlockEnd_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell(editorCell, node, context);
+    setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    CellModel_BlockEnd_Editor.setupBasic_ConstantCell1(editorCell, node, context);
-    CellModel_BlockEnd_Editor.setupLabel_ConstantCell1(editorCell, node, context);
+    setupBasic_ConstantCell1(editorCell, node, context);
+    setupLabel_ConstantCell1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    CellModel_BlockEnd_Editor.setupBasic_ConstantCell2(editorCell, node, context);
-    CellModel_BlockEnd_Editor.setupLabel_ConstantCell2(editorCell, node, context);
+    setupBasic_ConstantCell2(editorCell, node, context);
+    setupLabel_ConstantCell2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createSeparator(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    CellModel_BlockEnd_Editor.setupBasic_Separator(editorCell, node, context);
-    CellModel_BlockEnd_Editor.setupLabel_Separator(editorCell, node, context);
+    setupBasic_Separator(editorCell, node, context);
+    setupLabel_Separator(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    CellModel_BlockEnd_Editor.setupBasic_ConstantCell3(editorCell, node, context);
-    CellModel_BlockEnd_Editor.setupLabel_ConstantCell3(editorCell, node, context);
+    setupBasic_ConstantCell3(editorCell, node, context);
+    setupLabel_ConstantCell3(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createSeparator1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    CellModel_BlockEnd_Editor.setupBasic_Separator1(editorCell, node, context);
-    CellModel_BlockEnd_Editor.setupLabel_Separator1(editorCell, node, context);
+    setupBasic_Separator1(editorCell, node, context);
+    setupLabel_Separator1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    CellModel_BlockEnd_Editor.setupBasic_ConstantCell4(editorCell, node, context);
-    CellModel_BlockEnd_Editor.setupLabel_ConstantCell4(editorCell, node, context);
+    setupBasic_ConstantCell4(editorCell, node, context);
+    setupLabel_ConstantCell4(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    CellModel_BlockEnd_Editor.setupBasic_ConstantCell5(editorCell, node, context);
-    CellModel_BlockEnd_Editor.setupLabel_ConstantCell5(editorCell, node, context);
+    setupBasic_ConstantCell5(editorCell, node, context);
+    setupLabel_ConstantCell5(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    CellModel_BlockEnd_Editor.setupBasic_ConstantCell6(editorCell, node, context);
-    CellModel_BlockEnd_Editor.setupLabel_ConstantCell6(editorCell, node, context);
+    setupBasic_ConstantCell6(editorCell, node, context);
+    setupLabel_ConstantCell6(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createSeparator2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    CellModel_BlockEnd_Editor.setupBasic_Separator2(editorCell, node, context);
-    CellModel_BlockEnd_Editor.setupLabel_Separator2(editorCell, node, context);
+    setupBasic_Separator2(editorCell, node, context);
+    setupLabel_Separator2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    CellModel_BlockEnd_Editor.setupBasic_ConstantCell7(editorCell, node, context);
-    CellModel_BlockEnd_Editor.setupLabel_ConstantCell7(editorCell, node, context);
+    setupBasic_ConstantCell7(editorCell, node, context);
+    setupLabel_ConstantCell7(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell8(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    CellModel_BlockEnd_Editor.setupBasic_ConstantCell8(editorCell, node, context);
-    CellModel_BlockEnd_Editor.setupLabel_ConstantCell8(editorCell, node, context);
+    setupBasic_ConstantCell8(editorCell, node, context);
+    setupLabel_ConstantCell8(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -543,9 +543,9 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    CellModel_BlockEnd_Editor.setupBasic_NameCell(editorCell, node, context);
+    setupBasic_NameCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      CellModel_BlockEnd_Editor.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -572,9 +572,9 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    CellModel_BlockEnd_Editor.setupBasic_SelectableCell(editorCell, node, context);
+    setupBasic_SelectableCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      CellModel_BlockEnd_Editor.setupLabel_SelectableCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_SelectableCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -601,9 +601,9 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    CellModel_BlockEnd_Editor.setupBasic_AttractsFocusCell(editorCell, node, context);
+    setupBasic_AttractsFocusCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      CellModel_BlockEnd_Editor.setupLabel_AttractsFocusCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_AttractsFocusCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -630,9 +630,9 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    CellModel_BlockEnd_Editor.setupBasic_LayoutConstraintCell(editorCell, node, context);
+    setupBasic_LayoutConstraintCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      CellModel_BlockEnd_Editor.setupLabel_LayoutConstraintCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_LayoutConstraintCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -659,9 +659,9 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new CellModel_BlockEnd_Editor._Inline57());
     EditorCell editorCell = provider.createEditorCell(context);
-    CellModel_BlockEnd_Editor.setupBasic_ActionMapReferenceCell(editorCell, node, context);
+    setupBasic_ActionMapReferenceCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      CellModel_BlockEnd_Editor.setupLabel_ActionMapReferenceCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_ActionMapReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -688,9 +688,9 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    CellModel_BlockEnd_Editor.setupBasic_MenuDescriptorCell(editorCell, node, context);
+    setupBasic_MenuDescriptorCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      CellModel_BlockEnd_Editor.setupLabel_MenuDescriptorCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_MenuDescriptorCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -717,9 +717,9 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new CellModel_BlockEnd_Editor._Inline58());
     EditorCell editorCell = provider.createEditorCell(context);
-    CellModel_BlockEnd_Editor.setupBasic_StyleClassReferenceCell(editorCell, node, context);
+    setupBasic_StyleClassReferenceCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      CellModel_BlockEnd_Editor.setupLabel_StyleClassReferenceCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_StyleClassReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -746,9 +746,9 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    CellModel_BlockEnd_Editor.setupBasic_CloseBraceCell(editorCell, node, context);
+    setupBasic_CloseBraceCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      CellModel_BlockEnd_Editor.setupLabel_CloseBraceCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_CloseBraceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -798,9 +798,9 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      CellModel_BlockEnd_Editor._Inline57.setupBasic_NameCell(editorCell, node, context);
+      setupBasic_NameCell(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        CellModel_BlockEnd_Editor._Inline57.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -852,9 +852,9 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      CellModel_BlockEnd_Editor._Inline58.setupBasic_NameCell(editorCell, node, context);
+      setupBasic_NameCell(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        CellModel_BlockEnd_Editor._Inline58.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

@@ -172,7 +172,7 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createNodeBox(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    ConceptEditorDeclaration_Editor.setupBasic_NodeBox(editorCell, node, context);
+    setupBasic_NodeBox(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -184,7 +184,7 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createHeaderRow(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    ConceptEditorDeclaration_Editor.setupBasic_HeaderRow(editorCell, node, context);
+    setupBasic_HeaderRow(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -195,7 +195,7 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createNodeCellArea(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    ConceptEditorDeclaration_Editor.setupBasic_NodeCellArea(editorCell, node, context);
+    setupBasic_NodeCellArea(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -206,7 +206,7 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createNodeCellPanel(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    ConceptEditorDeclaration_Editor.setupBasic_NodeCellPanel(editorCell, node, context);
+    setupBasic_NodeCellPanel(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -217,7 +217,7 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createCellsLayoutPanel(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    ConceptEditorDeclaration_Editor.setupBasic_CellsLayoutPanel(editorCell, node, context);
+    setupBasic_CellsLayoutPanel(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -228,7 +228,7 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createInspectedCellArea(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    ConceptEditorDeclaration_Editor.setupBasic_InspectedCellArea(editorCell, node, context);
+    setupBasic_InspectedCellArea(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -239,7 +239,7 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createInspectedCellPanel(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    ConceptEditorDeclaration_Editor.setupBasic_InspectedCellPanel(editorCell, node, context);
+    setupBasic_InspectedCellPanel(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -251,7 +251,7 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createCellsLayoutPanel1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    ConceptEditorDeclaration_Editor.setupBasic_CellsLayoutPanel1(editorCell, node, context);
+    setupBasic_CellsLayoutPanel1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -262,64 +262,64 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    ConceptEditorDeclaration_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    ConceptEditorDeclaration_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell(editorCell, node, context);
+    setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createIndentCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    ConceptEditorDeclaration_Editor.setupBasic_IndentCell(editorCell, node, context);
-    ConceptEditorDeclaration_Editor.setupLabel_IndentCell(editorCell, node, context);
+    setupBasic_IndentCell(editorCell, node, context);
+    setupLabel_IndentCell(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    ConceptEditorDeclaration_Editor.setupBasic_ConstantCell1(editorCell, node, context);
-    ConceptEditorDeclaration_Editor.setupLabel_ConstantCell1(editorCell, node, context);
+    setupBasic_ConstantCell1(editorCell, node, context);
+    setupLabel_ConstantCell1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createIndentCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    ConceptEditorDeclaration_Editor.setupBasic_IndentCell1(editorCell, node, context);
-    ConceptEditorDeclaration_Editor.setupLabel_IndentCell1(editorCell, node, context);
+    setupBasic_IndentCell1(editorCell, node, context);
+    setupLabel_IndentCell1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createIndentCell2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    ConceptEditorDeclaration_Editor.setupBasic_IndentCell2(editorCell, node, context);
-    ConceptEditorDeclaration_Editor.setupLabel_IndentCell2(editorCell, node, context);
+    setupBasic_IndentCell2(editorCell, node, context);
+    setupLabel_IndentCell2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createHeaderIndentCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    ConceptEditorDeclaration_Editor.setupBasic_HeaderIndentCell(editorCell, node, context);
-    ConceptEditorDeclaration_Editor.setupLabel_HeaderIndentCell(editorCell, node, context);
+    setupBasic_HeaderIndentCell(editorCell, node, context);
+    setupLabel_HeaderIndentCell(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    ConceptEditorDeclaration_Editor.setupBasic_ConstantCell2(editorCell, node, context);
-    ConceptEditorDeclaration_Editor.setupLabel_ConstantCell2(editorCell, node, context);
+    setupBasic_ConstantCell2(editorCell, node, context);
+    setupLabel_ConstantCell2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createIndentCell3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    ConceptEditorDeclaration_Editor.setupBasic_IndentCell3(editorCell, node, context);
-    ConceptEditorDeclaration_Editor.setupLabel_IndentCell3(editorCell, node, context);
+    setupBasic_IndentCell3(editorCell, node, context);
+    setupLabel_IndentCell3(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -328,9 +328,9 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    ConceptEditorDeclaration_Editor.setupBasic_InspectedCellModelCell(editorCell, node, context);
+    setupBasic_InspectedCellModelCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      ConceptEditorDeclaration_Editor.setupLabel_InspectedCellModelCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_InspectedCellModelCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -357,9 +357,9 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new ConceptEditorDeclaration_Editor._Inline1());
     EditorCell editorCell = provider.createEditorCell(context);
-    ConceptEditorDeclaration_Editor.setupBasic_ConceptDeclarationReferenceCell(editorCell, node, context);
+    setupBasic_ConceptDeclarationReferenceCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      ConceptEditorDeclaration_Editor.setupLabel_ConceptDeclarationReferenceCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_ConceptDeclarationReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -386,9 +386,9 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    ConceptEditorDeclaration_Editor.setupBasic_CellModelCell(editorCell, node, context);
+    setupBasic_CellModelCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      ConceptEditorDeclaration_Editor.setupLabel_CellModelCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_CellModelCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -439,9 +439,9 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      ConceptEditorDeclaration_Editor._Inline1.setupBasic_NameCell(editorCell, node, context);
+      setupBasic_NameCell(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        ConceptEditorDeclaration_Editor._Inline1.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

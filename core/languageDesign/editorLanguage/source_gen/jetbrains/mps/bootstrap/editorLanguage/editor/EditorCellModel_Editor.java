@@ -47,7 +47,7 @@ public class EditorCellModel_Editor extends DefaultNodeEditor {
 
   public EditorCell createColumnCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    EditorCellModel_Editor.setupBasic_ColumnCell(editorCell, node, context);
+    setupBasic_ColumnCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -57,16 +57,16 @@ public class EditorCellModel_Editor extends DefaultNodeEditor {
 
   public EditorCell createHeaderCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    EditorCellModel_Editor.setupBasic_HeaderCell(editorCell, node, context);
-    EditorCellModel_Editor.setupLabel_HeaderCell(editorCell, node, context);
+    setupBasic_HeaderCell(editorCell, node, context);
+    setupLabel_HeaderCell(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createErrorCell(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "<choose cell model>");
-    EditorCellModel_Editor.setupBasic_ErrorCell(editorCell, node, context);
-    EditorCellModel_Editor.setupLabel_ErrorCell(editorCell, node, context);
+    setupBasic_ErrorCell(editorCell, node, context);
+    setupLabel_ErrorCell(editorCell, node, context);
     return editorCell;
   }
 

@@ -28,8 +28,8 @@ public class CellMenuPart_Abstract_Editor extends DefaultNodeEditor {
 
   public EditorCell createErrorCell(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "<choose menu part>");
-    CellMenuPart_Abstract_Editor.setupBasic_ErrorCell(editorCell, node, context);
-    CellMenuPart_Abstract_Editor.setupLabel_ErrorCell(editorCell, node, context);
+    setupBasic_ErrorCell(editorCell, node, context);
+    setupLabel_ErrorCell(editorCell, node, context);
     return editorCell;
   }
 

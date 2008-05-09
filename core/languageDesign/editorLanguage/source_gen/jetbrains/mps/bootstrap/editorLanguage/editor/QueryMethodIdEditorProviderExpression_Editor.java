@@ -161,7 +161,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
 
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    QueryMethodIdEditorProviderExpression_Editor.setupBasic_RowCell(editorCell, node, context);
+    setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -173,7 +173,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
 
   public EditorCell createColumnCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    QueryMethodIdEditorProviderExpression_Editor.setupBasic_ColumnCell(editorCell, node, context);
+    setupBasic_ColumnCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -186,7 +186,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
 
   public EditorCell createRowCell1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    QueryMethodIdEditorProviderExpression_Editor.setupBasic_RowCell1(editorCell, node, context);
+    setupBasic_RowCell1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -200,7 +200,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
 
   public EditorCell createRowCell4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    QueryMethodIdEditorProviderExpression_Editor.setupBasic_RowCell4(editorCell, node, context);
+    setupBasic_RowCell4(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -211,7 +211,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
 
   public EditorCell createRowCell3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    QueryMethodIdEditorProviderExpression_Editor.setupBasic_RowCell3(editorCell, node, context);
+    setupBasic_RowCell3(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -222,7 +222,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
 
   public EditorCell createRowCell2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    QueryMethodIdEditorProviderExpression_Editor.setupBasic_RowCell2(editorCell, node, context);
+    setupBasic_RowCell2(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -233,56 +233,56 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
 
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    QueryMethodIdEditorProviderExpression_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    QueryMethodIdEditorProviderExpression_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell(editorCell, node, context);
+    setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    QueryMethodIdEditorProviderExpression_Editor.setupBasic_ConstantCell1(editorCell, node, context);
-    QueryMethodIdEditorProviderExpression_Editor.setupLabel_ConstantCell1(editorCell, node, context);
+    setupBasic_ConstantCell1(editorCell, node, context);
+    setupLabel_ConstantCell1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    QueryMethodIdEditorProviderExpression_Editor.setupBasic_ConstantCell2(editorCell, node, context);
-    QueryMethodIdEditorProviderExpression_Editor.setupLabel_ConstantCell2(editorCell, node, context);
+    setupBasic_ConstantCell2(editorCell, node, context);
+    setupLabel_ConstantCell2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    QueryMethodIdEditorProviderExpression_Editor.setupBasic_ConstantCell5(editorCell, node, context);
-    QueryMethodIdEditorProviderExpression_Editor.setupLabel_ConstantCell5(editorCell, node, context);
+    setupBasic_ConstantCell5(editorCell, node, context);
+    setupLabel_ConstantCell5(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    QueryMethodIdEditorProviderExpression_Editor.setupBasic_ConstantCell6(editorCell, node, context);
-    QueryMethodIdEditorProviderExpression_Editor.setupLabel_ConstantCell6(editorCell, node, context);
+    setupBasic_ConstantCell6(editorCell, node, context);
+    setupLabel_ConstantCell6(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    QueryMethodIdEditorProviderExpression_Editor.setupBasic_ConstantCell4(editorCell, node, context);
-    QueryMethodIdEditorProviderExpression_Editor.setupLabel_ConstantCell4(editorCell, node, context);
+    setupBasic_ConstantCell4(editorCell, node, context);
+    setupLabel_ConstantCell4(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    QueryMethodIdEditorProviderExpression_Editor.setupBasic_ConstantCell3(editorCell, node, context);
-    QueryMethodIdEditorProviderExpression_Editor.setupLabel_ConstantCell3(editorCell, node, context);
+    setupBasic_ConstantCell3(editorCell, node, context);
+    setupLabel_ConstantCell3(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -292,7 +292,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
       this.myParameterListHandler_parameterList_ = new QueryMethodIdEditorProviderExpression_Editor._RefNodeListHandler6(node, "parameter", context);
     }
     EditorCell_Collection editorCell = this.myParameterListHandler_parameterList_.createCells(context, new CellLayout_Horizontal(), false);
-    QueryMethodIdEditorProviderExpression_Editor.setupBasic_ParameterList(editorCell, node, context);
+    setupBasic_ParameterList(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -305,7 +305,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
       this.myAdditionalImportListHandler_additionalImportList_ = new QueryMethodIdEditorProviderExpression_Editor._RefNodeListHandler7(node, "additionalImport", context);
     }
     EditorCell_Collection editorCell = this.myAdditionalImportListHandler_additionalImportList_.createCells(context, new CellLayout_Vertical(), false);
-    QueryMethodIdEditorProviderExpression_Editor.setupBasic_AdditionalImportList(editorCell, node, context);
+    setupBasic_AdditionalImportList(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -317,9 +317,9 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    QueryMethodIdEditorProviderExpression_Editor.setupBasic_ReturnTypeCell(editorCell, node, context);
+    setupBasic_ReturnTypeCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      QueryMethodIdEditorProviderExpression_Editor.setupLabel_ReturnTypeCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_ReturnTypeCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -346,9 +346,9 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    QueryMethodIdEditorProviderExpression_Editor.setupBasic_PrefixCell(editorCell, node, context);
+    setupBasic_PrefixCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      QueryMethodIdEditorProviderExpression_Editor.setupLabel_PrefixCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_PrefixCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -375,9 +375,9 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    QueryMethodIdEditorProviderExpression_Editor.setupBasic_NotSetStringCell(editorCell, node, context);
+    setupBasic_NotSetStringCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      QueryMethodIdEditorProviderExpression_Editor.setupLabel_NotSetStringCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_NotSetStringCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -404,9 +404,9 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new QueryMethodIdEditorProviderExpression_Editor._Inline33());
     EditorCell editorCell = provider.createEditorCell(context);
-    QueryMethodIdEditorProviderExpression_Editor.setupBasic_QueryIdPropertyReferenceCell(editorCell, node, context);
+    setupBasic_QueryIdPropertyReferenceCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      QueryMethodIdEditorProviderExpression_Editor.setupLabel_QueryIdPropertyReferenceCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_QueryIdPropertyReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -455,9 +455,9 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      QueryMethodIdEditorProviderExpression_Editor._Inline33.setupBasic_NameCell(editorCell, node, context);
+      setupBasic_NameCell(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        QueryMethodIdEditorProviderExpression_Editor._Inline33.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

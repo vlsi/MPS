@@ -52,7 +52,7 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
 
   public EditorCell createColumnCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    CellMenuDescriptor_Editor.setupBasic_ColumnCell(editorCell, node, context);
+    setupBasic_ColumnCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -63,8 +63,8 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    CellMenuDescriptor_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    CellMenuDescriptor_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell(editorCell, node, context);
+    setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -74,7 +74,7 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
       this.myCellMenuPartListHandler_cellMenuPartList_ = new CellMenuDescriptor_Editor._RefNodeListHandler5(node, "cellMenuPart", context);
     }
     EditorCell_Collection editorCell = this.myCellMenuPartListHandler_cellMenuPartList_.createCells(context, new CellLayout_Vertical(), false);
-    CellMenuDescriptor_Editor.setupBasic_CellMenuPartList(editorCell, node, context);
+    setupBasic_CellMenuPartList(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -142,8 +142,8 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      CellMenuDescriptor_Editor._RefNodeListHandler5.setupBasic_ConstantCell1(editorCell, node, context);
-      CellMenuDescriptor_Editor._RefNodeListHandler5.setupLabel_ConstantCell1(editorCell, node, context);
+      setupBasic_ConstantCell1(editorCell, node, context);
+      setupLabel_ConstantCell1(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }

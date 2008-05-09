@@ -23,7 +23,7 @@ public class _CloseTag extends AbstractCellProvider {
 
   private static void setupBasic_CellModel_ModelAccess(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176716918272");
-    editorCell.setCellBackgroundColor(_CloseTag._QueryFunction_Color_1177490767138(node, context));
+    editorCell.setCellBackgroundColor(_QueryFunction_Color_1177490767138(node, context));
   }
 
   private static void setupLabel_CellModel_ModelAccess(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -47,8 +47,8 @@ public class _CloseTag extends AbstractCellProvider {
     ModelAccessor modelAccessor = this._modelAcessorFactory_1176716918272(context, node);
     EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-    _CloseTag.setupBasic_CellModel_ModelAccess(editorCell, node, context);
-    _CloseTag.setupLabel_CellModel_ModelAccess(editorCell, node, context);
+    setupBasic_CellModel_ModelAccess(editorCell, node, context);
+    setupLabel_CellModel_ModelAccess(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }

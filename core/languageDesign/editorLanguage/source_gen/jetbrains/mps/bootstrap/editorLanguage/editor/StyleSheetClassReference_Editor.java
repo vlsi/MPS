@@ -32,9 +32,9 @@ public class StyleSheetClassReference_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new StyleSheetClassReference_Editor._Inline52());
     EditorCell editorCell = provider.createEditorCell(context);
-    StyleSheetClassReference_Editor.setupBasic_StyleSheetClassReferenceCell(editorCell, node, context);
+    setupBasic_StyleSheetClassReferenceCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      StyleSheetClassReference_Editor.setupLabel_StyleSheetClassReferenceCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_StyleSheetClassReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -83,9 +83,9 @@ public class StyleSheetClassReference_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      StyleSheetClassReference_Editor._Inline52.setupBasic_NameCell(editorCell, node, context);
+      setupBasic_NameCell(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        StyleSheetClassReference_Editor._Inline52.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

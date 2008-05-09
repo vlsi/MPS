@@ -131,7 +131,7 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
 
   public EditorCell createColumnCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    CellMenuPart_Generic_Item_Editor.setupBasic_ColumnCell(editorCell, node, context);
+    setupBasic_ColumnCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -142,7 +142,7 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
 
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    CellMenuPart_Generic_Item_Editor.setupBasic_RowCell(editorCell, node, context);
+    setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -152,7 +152,7 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
 
   public EditorCell createRowCell1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    CellMenuPart_Generic_Item_Editor.setupBasic_RowCell1(editorCell, node, context);
+    setupBasic_RowCell1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -163,7 +163,7 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
 
   public EditorCell createColumnCell1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    CellMenuPart_Generic_Item_Editor.setupBasic_ColumnCell1(editorCell, node, context);
+    setupBasic_ColumnCell1(editorCell, node, context);
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(true);
@@ -174,7 +174,7 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
 
   public EditorCell createRowCell2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    CellMenuPart_Generic_Item_Editor.setupBasic_RowCell2(editorCell, node, context);
+    setupBasic_RowCell2(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -186,7 +186,7 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
 
   public EditorCell createRowCell3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    CellMenuPart_Generic_Item_Editor.setupBasic_RowCell3(editorCell, node, context);
+    setupBasic_RowCell3(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -198,48 +198,48 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    CellMenuPart_Generic_Item_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    CellMenuPart_Generic_Item_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell(editorCell, node, context);
+    setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    CellMenuPart_Generic_Item_Editor.setupBasic_ConstantCell1(editorCell, node, context);
-    CellMenuPart_Generic_Item_Editor.setupLabel_ConstantCell1(editorCell, node, context);
+    setupBasic_ConstantCell1(editorCell, node, context);
+    setupLabel_ConstantCell1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    CellMenuPart_Generic_Item_Editor.setupBasic_ConstantCell2(editorCell, node, context);
-    CellMenuPart_Generic_Item_Editor.setupLabel_ConstantCell2(editorCell, node, context);
+    setupBasic_ConstantCell2(editorCell, node, context);
+    setupLabel_ConstantCell2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    CellMenuPart_Generic_Item_Editor.setupBasic_ConstantCell3(editorCell, node, context);
-    CellMenuPart_Generic_Item_Editor.setupLabel_ConstantCell3(editorCell, node, context);
+    setupBasic_ConstantCell3(editorCell, node, context);
+    setupLabel_ConstantCell3(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    CellMenuPart_Generic_Item_Editor.setupBasic_ConstantCell4(editorCell, node, context);
-    CellMenuPart_Generic_Item_Editor.setupLabel_ConstantCell4(editorCell, node, context);
+    setupBasic_ConstantCell4(editorCell, node, context);
+    setupLabel_ConstantCell4(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    CellMenuPart_Generic_Item_Editor.setupBasic_ConstantCell5(editorCell, node, context);
-    CellMenuPart_Generic_Item_Editor.setupLabel_ConstantCell5(editorCell, node, context);
+    setupBasic_ConstantCell5(editorCell, node, context);
+    setupLabel_ConstantCell5(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -248,9 +248,9 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    CellMenuPart_Generic_Item_Editor.setupBasic_MatchingTextCell(editorCell, node, context);
+    setupBasic_MatchingTextCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      CellMenuPart_Generic_Item_Editor.setupLabel_MatchingTextCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_MatchingTextCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -277,9 +277,9 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    CellMenuPart_Generic_Item_Editor.setupBasic_HandlerFunctionCell(editorCell, node, context);
+    setupBasic_HandlerFunctionCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      CellMenuPart_Generic_Item_Editor.setupLabel_HandlerFunctionCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_HandlerFunctionCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
