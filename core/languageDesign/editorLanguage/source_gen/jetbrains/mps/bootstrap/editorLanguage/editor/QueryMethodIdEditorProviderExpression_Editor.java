@@ -30,8 +30,8 @@ import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myParameterListHandler_parameterList_;
-  /* package */AbstractCellListHandler myAdditionalImportListHandler_additionalImportList_;
+  /* package */AbstractCellListHandler myListHandler_18242_0;
+  /* package */AbstractCellListHandler myListHandler_18242_01;
 
   private static void setupBasic_CollectionCell18242_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell18242_0");
@@ -288,28 +288,28 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
   }
 
   public EditorCell create_parameterRefNodeListCell18242_0(EditorContext context, SNode node) {
-    if (this.myParameterListHandler_parameterList_ == null) {
-      this.myParameterListHandler_parameterList_ = new QueryMethodIdEditorProviderExpression_Editor._RefNodeListHandler6(node, "parameter", context);
+    if (this.myListHandler_18242_0 == null) {
+      this.myListHandler_18242_0 = new QueryMethodIdEditorProviderExpression_Editor.parameterListHandler_18242_0(node, "parameter", context);
     }
-    EditorCell_Collection editorCell = this.myParameterListHandler_parameterList_.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myListHandler_18242_0.createCells(context, new CellLayout_Horizontal(), false);
     setupBasic_parameterRefNodeListCell18242_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myParameterListHandler_parameterList_.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_18242_0.getElementRole());
     return editorCell;
   }
 
   public EditorCell create_additionalImportRefNodeListCell18242_0(EditorContext context, SNode node) {
-    if (this.myAdditionalImportListHandler_additionalImportList_ == null) {
-      this.myAdditionalImportListHandler_additionalImportList_ = new QueryMethodIdEditorProviderExpression_Editor._RefNodeListHandler7(node, "additionalImport", context);
+    if (this.myListHandler_18242_01 == null) {
+      this.myListHandler_18242_01 = new QueryMethodIdEditorProviderExpression_Editor.additionalImportListHandler_18242_0(node, "additionalImport", context);
     }
-    EditorCell_Collection editorCell = this.myAdditionalImportListHandler_additionalImportList_.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_18242_01.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_additionalImportRefNodeListCell18242_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myAdditionalImportListHandler_additionalImportList_.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_18242_01.getElementRole());
     return editorCell;
   }
 
@@ -481,9 +481,9 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     }
 
 }
-  public static class _RefNodeListHandler6 extends RefNodeListHandler {
+  public static class parameterListHandler_18242_0 extends RefNodeListHandler {
 
-    public _RefNodeListHandler6(SNode ownerNode, String childRole, EditorContext context) {
+    public parameterListHandler_18242_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -530,9 +530,9 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     }
 
 }
-  public static class _RefNodeListHandler7 extends RefNodeListHandler {
+  public static class additionalImportListHandler_18242_0 extends RefNodeListHandler {
 
-    public _RefNodeListHandler7(SNode ownerNode, String childRole, EditorContext context) {
+    public additionalImportListHandler_18242_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

@@ -39,8 +39,8 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   /* package */AbstractCellProvider my_CloseTag2;
   /* package */AbstractCellProvider my_FocusPolicy_Applicable4;
   /* package */AbstractCellProvider my_EditorCellModel_RTAnchor_Component5;
-  /* package */AbstractCellListHandler myChildCellModelListHandler_ver_;
-  /* package */AbstractCellListHandler myChildCellModelListHandler_hor_;
+  /* package */AbstractCellListHandler myListHandler_15568_0;
+  /* package */AbstractCellListHandler myListHandler_15568_01;
 
   private static void setupBasic_CollectionCell15568_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell15568_0");
@@ -1272,28 +1272,28 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell create_childCellModelRefNodeListCell15568_0(EditorContext context, SNode node) {
-    if (this.myChildCellModelListHandler_ver_ == null) {
-      this.myChildCellModelListHandler_ver_ = new CellModel_Collection_Editor._RefNodeListHandler(node, "childCellModel", context);
+    if (this.myListHandler_15568_0 == null) {
+      this.myListHandler_15568_0 = new CellModel_Collection_Editor.childCellModelListHandler_15568_0(node, "childCellModel", context);
     }
-    EditorCell_Collection editorCell = this.myChildCellModelListHandler_ver_.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_15568_0.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_childCellModelRefNodeListCell15568_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myChildCellModelListHandler_ver_.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_15568_0.getElementRole());
     return editorCell;
   }
 
   public EditorCell create_childCellModelRefNodeListCell15568_01(EditorContext context, SNode node) {
-    if (this.myChildCellModelListHandler_hor_ == null) {
-      this.myChildCellModelListHandler_hor_ = new CellModel_Collection_Editor._RefNodeListHandler1(node, "childCellModel", context);
+    if (this.myListHandler_15568_01 == null) {
+      this.myListHandler_15568_01 = new CellModel_Collection_Editor.childCellModelListHandler_15568_01(node, "childCellModel", context);
     }
-    EditorCell_Collection editorCell = this.myChildCellModelListHandler_hor_.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myListHandler_15568_01.createCells(context, new CellLayout_Horizontal(), false);
     setupBasic_childCellModelRefNodeListCell15568_01(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myChildCellModelListHandler_hor_.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_15568_01.getElementRole());
     return editorCell;
   }
 
@@ -1926,9 +1926,9 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _RefNodeListHandler extends RefNodeListHandler {
+  public static class childCellModelListHandler_15568_0 extends RefNodeListHandler {
 
-    public _RefNodeListHandler(SNode ownerNode, String childRole, EditorContext context) {
+    public childCellModelListHandler_15568_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -1969,9 +1969,9 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _RefNodeListHandler1 extends RefNodeListHandler {
+  public static class childCellModelListHandler_15568_01 extends RefNodeListHandler {
 
-    public _RefNodeListHandler1(SNode ownerNode, String childRole, EditorContext context) {
+    public childCellModelListHandler_15568_01(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

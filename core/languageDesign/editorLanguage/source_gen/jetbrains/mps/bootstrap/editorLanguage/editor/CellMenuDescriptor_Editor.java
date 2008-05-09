@@ -22,7 +22,7 @@ import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myCellMenuPartListHandler_cellMenuPartList_;
+  /* package */AbstractCellListHandler myListHandler_19413_0;
 
   private static void setupBasic_CollectionCell19413_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell19413_0");
@@ -70,21 +70,21 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell create_cellMenuPartRefNodeListCell19413_0(EditorContext context, SNode node) {
-    if (this.myCellMenuPartListHandler_cellMenuPartList_ == null) {
-      this.myCellMenuPartListHandler_cellMenuPartList_ = new CellMenuDescriptor_Editor._RefNodeListHandler5(node, "cellMenuPart", context);
+    if (this.myListHandler_19413_0 == null) {
+      this.myListHandler_19413_0 = new CellMenuDescriptor_Editor.cellMenuPartListHandler_19413_0(node, "cellMenuPart", context);
     }
-    EditorCell_Collection editorCell = this.myCellMenuPartListHandler_cellMenuPartList_.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_19413_0.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_cellMenuPartRefNodeListCell19413_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myCellMenuPartListHandler_cellMenuPartList_.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_19413_0.getElementRole());
     return editorCell;
   }
 
-  public static class _RefNodeListHandler5 extends RefNodeListHandler {
+  public static class cellMenuPartListHandler_19413_0 extends RefNodeListHandler {
 
-    public _RefNodeListHandler5(SNode ownerNode, String childRole, EditorContext context) {
+    public cellMenuPartListHandler_19413_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

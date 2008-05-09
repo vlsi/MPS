@@ -27,7 +27,7 @@ import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 public class CellKeyMapItem_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myKeystrokeListHandler_keystrokeList_;
+  /* package */AbstractCellListHandler myListHandler_5981_0;
 
   private static void setupBasic_CollectionCell5981_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell5981_0");
@@ -521,15 +521,15 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell create_keystrokeRefNodeListCell5981_0(EditorContext context, SNode node) {
-    if (this.myKeystrokeListHandler_keystrokeList_ == null) {
-      this.myKeystrokeListHandler_keystrokeList_ = new CellKeyMapItem_Editor._RefNodeListHandler2(node, "keystroke", context);
+    if (this.myListHandler_5981_0 == null) {
+      this.myListHandler_5981_0 = new CellKeyMapItem_Editor.keystrokeListHandler_5981_0(node, "keystroke", context);
     }
-    EditorCell_Collection editorCell = this.myKeystrokeListHandler_keystrokeList_.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_5981_0.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_keystrokeRefNodeListCell5981_0(editorCell, node, context);
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myKeystrokeListHandler_keystrokeList_.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_5981_0.getElementRole());
     return editorCell;
   }
 
@@ -707,9 +707,9 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _RefNodeListHandler2 extends RefNodeListHandler {
+  public static class keystrokeListHandler_5981_0 extends RefNodeListHandler {
 
-    public _RefNodeListHandler2(SNode ownerNode, String childRole, EditorContext context) {
+    public keystrokeListHandler_5981_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

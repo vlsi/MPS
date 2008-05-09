@@ -35,7 +35,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 
 public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myItemListHandler_itemList_;
+  /* package */AbstractCellListHandler myListHandler_16512_0;
 
   private static void setupBasic_CollectionCell16512_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell16512_0");
@@ -223,15 +223,15 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell create_itemRefNodeListCell16512_0(EditorContext context, SNode node) {
-    if (this.myItemListHandler_itemList_ == null) {
-      this.myItemListHandler_itemList_ = new CellActionMapDeclaration_Editor._RefNodeListHandler4(node, "item", context);
+    if (this.myListHandler_16512_0 == null) {
+      this.myListHandler_16512_0 = new CellActionMapDeclaration_Editor.itemListHandler_16512_0(node, "item", context);
     }
-    EditorCell_Collection editorCell = this.myItemListHandler_itemList_.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_16512_0.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_itemRefNodeListCell16512_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myItemListHandler_itemList_.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_16512_0.getElementRole());
     return editorCell;
   }
 
@@ -348,9 +348,9 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _RefNodeListHandler4 extends RefNodeListHandler {
+  public static class itemListHandler_16512_0 extends RefNodeListHandler {
 
-    public _RefNodeListHandler4(SNode ownerNode, String childRole, EditorContext context) {
+    public itemListHandler_16512_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

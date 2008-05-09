@@ -28,7 +28,7 @@ import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 public class StyleSheetClass_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myItemListHandler_itemList_;
+  /* package */AbstractCellListHandler myListHandler_13915_0;
 
   private static void setupBasic_CollectionCell13915_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell13915_0");
@@ -191,15 +191,15 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell create_itemRefNodeListCell13915_0(EditorContext context, SNode node) {
-    if (this.myItemListHandler_itemList_ == null) {
-      this.myItemListHandler_itemList_ = new StyleSheetClass_Editor._RefNodeListHandler9(node, "item", context);
+    if (this.myListHandler_13915_0 == null) {
+      this.myListHandler_13915_0 = new StyleSheetClass_Editor.itemListHandler_13915_0(node, "item", context);
     }
-    EditorCell_Collection editorCell = this.myItemListHandler_itemList_.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_13915_0.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_itemRefNodeListCell13915_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myItemListHandler_itemList_.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_13915_0.getElementRole());
     return editorCell;
   }
 
@@ -261,9 +261,9 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _RefNodeListHandler9 extends RefNodeListHandler {
+  public static class itemListHandler_13915_0 extends RefNodeListHandler {
 
-    public _RefNodeListHandler9(SNode ownerNode, String childRole, EditorContext context) {
+    public itemListHandler_13915_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

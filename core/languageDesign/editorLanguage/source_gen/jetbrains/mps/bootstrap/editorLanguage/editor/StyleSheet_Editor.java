@@ -25,7 +25,7 @@ import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 public class StyleSheet_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myStyleClassListHandler_styleClassList_;
+  /* package */AbstractCellListHandler myListHandler_11329_0;
 
   private static void setupBasic_CollectionCell11329_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11329_0");
@@ -158,15 +158,15 @@ public class StyleSheet_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell create_styleClassRefNodeListCell11329_0(EditorContext context, SNode node) {
-    if (this.myStyleClassListHandler_styleClassList_ == null) {
-      this.myStyleClassListHandler_styleClassList_ = new StyleSheet_Editor._RefNodeListHandler8(node, "styleClass", context);
+    if (this.myListHandler_11329_0 == null) {
+      this.myListHandler_11329_0 = new StyleSheet_Editor.styleClassListHandler_11329_0(node, "styleClass", context);
     }
-    EditorCell_Collection editorCell = this.myStyleClassListHandler_styleClassList_.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_11329_0.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_styleClassRefNodeListCell11329_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myStyleClassListHandler_styleClassList_.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_11329_0.getElementRole());
     return editorCell;
   }
 
@@ -199,9 +199,9 @@ public class StyleSheet_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _RefNodeListHandler8 extends RefNodeListHandler {
+  public static class styleClassListHandler_11329_0 extends RefNodeListHandler {
 
-    public _RefNodeListHandler8(SNode ownerNode, String childRole, EditorContext context) {
+    public styleClassListHandler_11329_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
