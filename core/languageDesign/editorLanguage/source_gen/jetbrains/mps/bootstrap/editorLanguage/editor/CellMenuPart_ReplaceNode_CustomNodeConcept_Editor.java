@@ -84,21 +84,21 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createColumnCell(context, node);
+    return this.create_CollectionCell12892_0(context, node);
   }
 
-  public EditorCell createColumnCell(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell12892_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_ColumnCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createRowCell(context, node));
-    editorCell.addEditorCell(this.createRowCell1(context, node));
+    editorCell.addEditorCell(this.create_CollectionCell12892_02(context, node));
+    editorCell.addEditorCell(this.create_CollectionCell12892_01(context, node));
     return editorCell;
   }
 
-  public EditorCell createRowCell1(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell12892_01(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_RowCell1(editorCell, node, context);
     editorCell.setGridLayout(false);
@@ -107,11 +107,11 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
     editorCell.addEditorCell(this.createConstantCell1(context, node, "  "));
     editorCell.addEditorCell(this.createConstantCell2(context, node, "replace with"));
     editorCell.addEditorCell(this.createConstantCell3(context, node, ":"));
-    editorCell.addEditorCell(this.createReplacementConceptReferenceCell(context, node));
+    editorCell.addEditorCell(this.create_replacementConceptRefCell12892_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createRowCell(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell12892_02(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
@@ -165,7 +165,7 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
     return editorCell;
   }
 
-  public EditorCell createReplacementConceptReferenceCell(EditorContext context, SNode node) {
+  public EditorCell create_replacementConceptRefCell12892_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("replacementConcept");
     provider.setNoTargetText("<choose concept>");
@@ -202,7 +202,7 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
     }
 
     public EditorCell createEditorCell(EditorContext context, SNode node) {
-      return this.createNameCell(context, node);
+      return this.create_namePropertyCell_023(context, node);
     }
 
     public EditorCell create_namePropertyCell_023_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -217,7 +217,7 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
       return editorCell;
     }
 
-    public EditorCell createNameCell(EditorContext context, SNode node) {
+    public EditorCell create_namePropertyCell_023(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("");

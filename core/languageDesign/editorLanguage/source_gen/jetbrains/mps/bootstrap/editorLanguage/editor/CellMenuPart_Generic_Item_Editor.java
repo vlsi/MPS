@@ -126,21 +126,21 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createColumnCell(context, node);
+    return this.create_CollectionCell11977_0(context, node);
   }
 
-  public EditorCell createColumnCell(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell11977_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_ColumnCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createRowCell(context, node));
-    editorCell.addEditorCell(this.createRowCell1(context, node));
+    editorCell.addEditorCell(this.create_CollectionCell11977_01(context, node));
+    editorCell.addEditorCell(this.create_CollectionCell11977_02(context, node));
     return editorCell;
   }
 
-  public EditorCell createRowCell(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell11977_01(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
@@ -150,29 +150,29 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRowCell1(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell11977_02(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_RowCell1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell1(context, node, "  "));
-    editorCell.addEditorCell(this.createColumnCell1(context, node));
+    editorCell.addEditorCell(this.create_CollectionCell11977_03(context, node));
     return editorCell;
   }
 
-  public EditorCell createColumnCell1(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell11977_03(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_ColumnCell1(editorCell, node, context);
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(true);
-    editorCell.addEditorCell(this.createRowCell2(context, node));
-    editorCell.addEditorCell(this.createRowCell3(context, node));
+    editorCell.addEditorCell(this.create_CollectionCell11977_04(context, node));
+    editorCell.addEditorCell(this.create_CollectionCell11977_05(context, node));
     return editorCell;
   }
 
-  public EditorCell createRowCell2(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell11977_04(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_RowCell2(editorCell, node, context);
     editorCell.setGridLayout(false);
@@ -180,11 +180,11 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell2(context, node, "matching text"));
     editorCell.addEditorCell(this.createConstantCell3(context, node, ":"));
-    editorCell.addEditorCell(this.createMatchingTextCell(context, node));
+    editorCell.addEditorCell(this.create_matchingTextPropertyCell11977_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createRowCell3(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell11977_05(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_RowCell3(editorCell, node, context);
     editorCell.setGridLayout(false);
@@ -192,7 +192,7 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell4(context, node, "handler"));
     editorCell.addEditorCell(this.createConstantCell5(context, node, ":"));
-    editorCell.addEditorCell(this.createHandlerFunctionCell(context, node));
+    editorCell.addEditorCell(this.create_handlerFunctionRefNodeCell11977_0(context, node));
     return editorCell;
   }
 
@@ -256,7 +256,7 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createMatchingTextCell(EditorContext context, SNode node) {
+  public EditorCell create_matchingTextPropertyCell11977_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("matchingText");
     provider.setNoTargetText("<none>");
@@ -285,7 +285,7 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createHandlerFunctionCell(EditorContext context, SNode node) {
+  public EditorCell create_handlerFunctionRefNodeCell11977_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("handlerFunction");
     provider.setNoTargetText("<default>");

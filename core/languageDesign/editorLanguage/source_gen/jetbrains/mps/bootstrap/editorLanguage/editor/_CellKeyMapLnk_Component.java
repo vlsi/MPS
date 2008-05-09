@@ -33,7 +33,7 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createKeyMapReferenceCell(context, node);
+    return this.create_keyMapRefCell7380_0(context, node);
   }
 
   public EditorCell create_keyMapRefCell7380_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -48,7 +48,7 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createKeyMapReferenceCell(EditorContext context, SNode node) {
+  public EditorCell create_keyMapRefCell7380_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("keyMap");
     provider.setNoTargetText("<default>");
@@ -85,7 +85,7 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
     }
 
     public EditorCell createEditorCell(EditorContext context, SNode node) {
-      return this.createNameCell(context, node);
+      return this.create_namePropertyCell_021(context, node);
     }
 
     public EditorCell create_namePropertyCell_021_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -100,7 +100,7 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
       return editorCell;
     }
 
-    public EditorCell createNameCell(EditorContext context, SNode node) {
+    public EditorCell create_namePropertyCell_021(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

@@ -82,21 +82,21 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createColumnCell(context, node);
+    return this.create_CollectionCell20847_0(context, node);
   }
 
-  public EditorCell createColumnCell(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell20847_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_ColumnCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createRowCell(context, node));
-    editorCell.addEditorCell(this.createRowCell1(context, node));
+    editorCell.addEditorCell(this.create_CollectionCell20847_01(context, node));
+    editorCell.addEditorCell(this.create_CollectionCell20847_02(context, node));
     return editorCell;
   }
 
-  public EditorCell createRowCell(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell20847_01(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
@@ -106,7 +106,7 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
     return editorCell;
   }
 
-  public EditorCell createRowCell1(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell20847_02(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_RowCell1(editorCell, node, context);
     editorCell.setGridLayout(false);
@@ -115,7 +115,7 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
     editorCell.addEditorCell(this.createConstantCell1(context, node, "  "));
     editorCell.addEditorCell(this.createConstantCell2(context, node, "concept of child"));
     editorCell.addEditorCell(this.createConstantCell3(context, node, ":"));
-    editorCell.addEditorCell(this.createChildConceptFunctionCell(context, node));
+    editorCell.addEditorCell(this.create_childConceptFunctionRefNodeCell20847_0(context, node));
     return editorCell;
   }
 
@@ -163,7 +163,7 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
     return editorCell;
   }
 
-  public EditorCell createChildConceptFunctionCell(EditorContext context, SNode node) {
+  public EditorCell create_childConceptFunctionRefNodeCell20847_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("childConceptFunction");
     provider.setNoTargetText("");

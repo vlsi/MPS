@@ -107,36 +107,36 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createColumnCell(context, node);
+    return this.create_CollectionCell13915_0(context, node);
   }
 
-  public EditorCell createColumnCell(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell13915_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_ColumnCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createRowCell(context, node));
-    editorCell.addEditorCell(this.createRowCell2(context, node));
+    editorCell.addEditorCell(this.create_CollectionCell13915_01(context, node));
+    editorCell.addEditorCell(this.create_CollectionCell13915_02(context, node));
     editorCell.addEditorCell(this.createConstantCell3(context, node, "}"));
     return editorCell;
   }
 
-  public EditorCell createRowCell(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell13915_01(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createNameCell(context, node));
+    editorCell.addEditorCell(this.create_namePropertyCell13915_0(context, node));
     if (StyleSheetClass_Editor.checkRenderingCondition18(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createRowCell1(context, node));
+      editorCell.addEditorCell(this.create_CollectionCell13915_03(context, node));
     }
     editorCell.addEditorCell(this.createConstantCell1(context, node, "{"));
     return editorCell;
   }
 
-  public EditorCell createRowCell2(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell13915_02(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_RowCell2(editorCell, node, context);
     editorCell.setGridLayout(false);
@@ -147,14 +147,14 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRowCell1(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell13915_03(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_RowCell1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell(context, node, "extends"));
-    editorCell.addEditorCell(this.createExtendedClassCell(context, node));
+    editorCell.addEditorCell(this.create_extendedClassRefNodeCell13915_0(context, node));
     return editorCell;
   }
 
@@ -215,7 +215,7 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createNameCell(EditorContext context, SNode node) {
+  public EditorCell create_namePropertyCell13915_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("");
@@ -244,7 +244,7 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createExtendedClassCell(EditorContext context, SNode node) {
+  public EditorCell create_extendedClassRefNodeCell13915_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("extendedClass");
     provider.setNoTargetText("");

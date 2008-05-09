@@ -43,10 +43,10 @@ public class CaretPositionParameter_Editor extends DefaultNodeEditor {
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createRowCell(context, node);
+    return this.create_CollectionCell256_0(context, node);
   }
 
-  public EditorCell createRowCell(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell256_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
@@ -54,7 +54,7 @@ public class CaretPositionParameter_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell(context, node, "caret position"));
     editorCell.addEditorCell(this.createConstantCell1(context, node, "="));
-    editorCell.addEditorCell(this.createPositionCell(context, node));
+    editorCell.addEditorCell(this.create_positionRefNodeCell256_0(context, node));
     return editorCell;
   }
 
@@ -86,7 +86,7 @@ public class CaretPositionParameter_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createPositionCell(EditorContext context, SNode node) {
+  public EditorCell create_positionRefNodeCell256_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("position");
     provider.setNoTargetText("");

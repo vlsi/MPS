@@ -41,17 +41,17 @@ public class InlineEditorComponent_Editor extends DefaultNodeEditor {
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createRowCell(context, node);
+    return this.create_CollectionCell20653_0(context, node);
   }
 
-  public EditorCell createRowCell(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell20653_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell(context, node, "->"));
-    editorCell.addEditorCell(this.createCellModelCell(context, node));
+    editorCell.addEditorCell(this.create_cellModelRefNodeCell20653_0(context, node));
     return editorCell;
   }
 
@@ -75,7 +75,7 @@ public class InlineEditorComponent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCellModelCell(EditorContext context, SNode node) {
+  public EditorCell create_cellModelRefNodeCell20653_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("cellModel");
     provider.setNoTargetText("");

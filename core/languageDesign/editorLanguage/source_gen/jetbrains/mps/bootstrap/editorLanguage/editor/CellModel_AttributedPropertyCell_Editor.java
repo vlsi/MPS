@@ -115,14 +115,14 @@ public class CellModel_AttributedPropertyCell_Editor extends DefaultNodeEditor {
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createRowCell(context, node);
+    return this.create_CollectionCell8144_0(context, node);
   }
 
   public EditorCell createInspectedCell(EditorContext context, SNode node) {
-    return this.createColumnCell(context, node);
+    return this.create_CollectionCell8144_01(context, node);
   }
 
-  public EditorCell createRowCell(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell8144_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
@@ -134,47 +134,47 @@ public class CellModel_AttributedPropertyCell_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createColumnCell(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell8144_01(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_ColumnCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell3(context, node, "<attributed property cell>"));
-    editorCell.addEditorCell(this.createColumnCell1(context, node));
+    editorCell.addEditorCell(this.create_CollectionCell8144_02(context, node));
     return editorCell;
   }
 
-  public EditorCell createColumnCell1(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell8144_02(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_ColumnCell1(editorCell, node, context);
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createRowCell1(context, node));
-    editorCell.addEditorCell(this.createRowCell2(context, node));
+    editorCell.addEditorCell(this.create_CollectionCell8144_03(context, node));
+    editorCell.addEditorCell(this.create_CollectionCell8144_04(context, node));
     return editorCell;
   }
 
-  public EditorCell createRowCell1(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell8144_03(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_RowCell1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell4(context, node, "draw brackets"));
-    editorCell.addEditorCell(this.createDrawBracketsCell(context, node));
+    editorCell.addEditorCell(this.create_drawBracketsPropertyCell8144_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createRowCell2(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell8144_04(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_RowCell2(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell5(context, node, "brackets color"));
-    editorCell.addEditorCell(this.createBracketsColorCell(context, node));
+    editorCell.addEditorCell(this.create_bracketsColorPropertyCell8144_0(context, node));
     return editorCell;
   }
 
@@ -238,7 +238,7 @@ public class CellModel_AttributedPropertyCell_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createDrawBracketsCell(EditorContext context, SNode node) {
+  public EditorCell create_drawBracketsPropertyCell8144_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("drawBrackets");
     provider.setNoTargetText("");
@@ -267,7 +267,7 @@ public class CellModel_AttributedPropertyCell_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createBracketsColorCell(EditorContext context, SNode node) {
+  public EditorCell create_bracketsColorPropertyCell8144_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("bracketsColor");
     provider.setNoTargetText("");

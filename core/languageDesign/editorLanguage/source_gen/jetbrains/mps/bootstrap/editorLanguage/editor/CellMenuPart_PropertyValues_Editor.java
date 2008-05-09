@@ -82,21 +82,21 @@ public class CellMenuPart_PropertyValues_Editor extends DefaultNodeEditor {
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createColumnCell(context, node);
+    return this.create_CollectionCell13005_0(context, node);
   }
 
-  public EditorCell createColumnCell(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell13005_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_ColumnCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createRowCell(context, node));
-    editorCell.addEditorCell(this.createRowCell1(context, node));
+    editorCell.addEditorCell(this.create_CollectionCell13005_02(context, node));
+    editorCell.addEditorCell(this.create_CollectionCell13005_01(context, node));
     return editorCell;
   }
 
-  public EditorCell createRowCell1(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell13005_01(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_RowCell1(editorCell, node, context);
     editorCell.setGridLayout(false);
@@ -105,11 +105,11 @@ public class CellMenuPart_PropertyValues_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell1(context, node, "  "));
     editorCell.addEditorCell(this.createConstantCell2(context, node, "values"));
     editorCell.addEditorCell(this.createConstantCell3(context, node, ":"));
-    editorCell.addEditorCell(this.createValuesFunctionCell(context, node));
+    editorCell.addEditorCell(this.create_valuesFunctionRefNodeCell13005_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createRowCell(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell13005_02(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
@@ -163,7 +163,7 @@ public class CellMenuPart_PropertyValues_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createValuesFunctionCell(EditorContext context, SNode node) {
+  public EditorCell create_valuesFunctionRefNodeCell13005_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("valuesFunction");
     provider.setNoTargetText("");

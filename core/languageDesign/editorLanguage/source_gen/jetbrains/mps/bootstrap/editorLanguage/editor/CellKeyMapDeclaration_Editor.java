@@ -164,20 +164,20 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createNodeBox(context, node);
+    return this.create_CollectionCell276_0(context, node);
   }
 
-  public EditorCell createNodeBox(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell276_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_NodeBox(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createRowCell(context, node));
+    editorCell.addEditorCell(this.create_CollectionCell276_01(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, ""));
-    editorCell.addEditorCell(this.createRowCell1(context, node));
+    editorCell.addEditorCell(this.create_CollectionCell276_03(context, node));
     editorCell.addEditorCell(this.createConstantCell3(context, node, ""));
-    editorCell.addEditorCell(this.createCellsLayoutPanel(context, node));
+    editorCell.addEditorCell(this.create_CollectionCell276_02(context, node));
     editorCell.addEditorCell(this.createConstantCell5(context, node, ""));
     editorCell.addEditorCell(this.createConstantCell6(context, node, "keymap items:"));
     editorCell.addEditorCell(this.createConstantCell7(context, node, ""));
@@ -185,36 +185,36 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRowCell(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell276_01(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell(context, node, "keymap"));
-    editorCell.addEditorCell(this.createNameCell(context, node));
+    editorCell.addEditorCell(this.create_namePropertyCell276_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createCellsLayoutPanel(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell276_02(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_CellsLayoutPanel(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell4(context, node, "applicable concept:"));
-    editorCell.addEditorCell(this.createApplicableConceptReferenceCell(context, node));
+    editorCell.addEditorCell(this.create_applicableConceptRefCell276_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createRowCell1(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell276_03(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_RowCell1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell2(context, node, "everyModel"));
-    editorCell.addEditorCell(this.createEveryModelCell(context, node));
+    editorCell.addEditorCell(this.create_everyModelPropertyCell276_0(context, node));
     return editorCell;
   }
 
@@ -308,7 +308,7 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createNameCell(EditorContext context, SNode node) {
+  public EditorCell create_namePropertyCell276_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -337,7 +337,7 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createApplicableConceptReferenceCell(EditorContext context, SNode node) {
+  public EditorCell create_applicableConceptRefCell276_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("applicableConcept");
     provider.setNoTargetText("<any>");
@@ -366,7 +366,7 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createEveryModelCell(EditorContext context, SNode node) {
+  public EditorCell create_everyModelPropertyCell276_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("everyModel");
     provider.setNoTargetText("");
@@ -404,7 +404,7 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext context, SNode node) {
-      return this.createNameCell(context, node);
+      return this.create_namePropertyCell_04(context, node);
     }
 
     public EditorCell create_namePropertyCell_04_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -419,7 +419,7 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
       return editorCell;
     }
 
-    public EditorCell createNameCell(EditorContext context, SNode node) {
+    public EditorCell create_namePropertyCell_04(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

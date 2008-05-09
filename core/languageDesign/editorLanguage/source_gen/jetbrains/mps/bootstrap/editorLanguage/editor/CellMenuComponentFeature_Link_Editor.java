@@ -27,7 +27,7 @@ public class CellMenuComponentFeature_Link_Editor extends DefaultNodeEditor {
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createLinkDeclarationReferenceCell(context, node);
+    return this.create_linkDeclarationRefCell6801_0(context, node);
   }
 
   public EditorCell create_linkDeclarationRefCell6801_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -42,7 +42,7 @@ public class CellMenuComponentFeature_Link_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createLinkDeclarationReferenceCell(EditorContext context, SNode node) {
+  public EditorCell create_linkDeclarationRefCell6801_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("linkDeclaration");
     provider.setNoTargetText("<choose property>");
@@ -79,7 +79,7 @@ public class CellMenuComponentFeature_Link_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext context, SNode node) {
-      return this.createRoleCell(context, node);
+      return this.create_rolePropertyCell_04(context, node);
     }
 
     public EditorCell create_rolePropertyCell_04_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -94,7 +94,7 @@ public class CellMenuComponentFeature_Link_Editor extends DefaultNodeEditor {
       return editorCell;
     }
 
-    public EditorCell createRoleCell(EditorContext context, SNode node) {
+    public EditorCell create_rolePropertyCell_04(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("role");
       provider.setNoTargetText("");

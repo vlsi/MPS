@@ -446,6 +446,43 @@
         </node>
       </node>
     </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1210363626293">
+      <property name="name" value="getCellFactoryMethodName" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210363635110">
+        <link role="classifier" targetNodeId="5.~String" resolveInfo="String" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1210363626295" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210363626296">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1210363661615">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1210363668477">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1210363672886">
+              <link role="baseMethodDeclaration" targetNodeId="1210358430919" resolveInfo="getCellReadableId" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1210363676262">
+                <link role="variableDeclaration" targetNodeId="1210363654111" resolveInfo="cellModel" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1210363678999">
+                <link role="variableDeclaration" targetNodeId="1210363654113" resolveInfo="generator" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1210363663492">
+              <property name="value" value="create_" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1210363654111">
+        <property name="name" value="cellModel" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1210363654112">
+          <link role="concept" targetNodeId="3.1073389214265" resolveInfo="EditorCellModel" />
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1210363654113">
+        <property name="name" value="generator" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210363654114">
+          <link role="classifier" targetNodeId="1.~ITemplateGenerator" resolveInfo="ITemplateGenerator" />
+        </node>
+      </node>
+    </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1210358430919">
       <property name="name" value="getCellReadableId" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210358439439">

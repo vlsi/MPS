@@ -45,18 +45,18 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createRowCell(context, node);
+    return this.create_CollectionCell7533_0(context, node);
   }
 
-  public EditorCell createRowCell(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell7533_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createCellModel_ConceptProperty(context, node));
+    editorCell.addEditorCell(this.create_ConceptPropertyCell7533_0(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, ":"));
-    editorCell.addEditorCell(this.createFlagCell(context, node));
+    editorCell.addEditorCell(this.create_flagPropertyCell7533_0(context, node));
     return editorCell;
   }
 
@@ -80,7 +80,7 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCellModel_ConceptProperty(EditorContext context, SNode node) {
+  public EditorCell create_ConceptPropertyCell7533_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("");
@@ -109,7 +109,7 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createFlagCell(EditorContext context, SNode node) {
+  public EditorCell create_flagPropertyCell7533_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("flag");
     provider.setNoTargetText("");

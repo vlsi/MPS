@@ -78,19 +78,19 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createNodeBox(context, node);
+    return this.create_CollectionCell1532_0(context, node);
   }
 
-  public EditorCell createNodeBox(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell1532_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_NodeBox(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(true);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell(context, node, "<"));
-    editorCell.addEditorCell(this.createModifiersCell(context, node));
+    editorCell.addEditorCell(this.create_modifiersPropertyCell1532_0(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, " > + <"));
-    editorCell.addEditorCell(this.createKeycodeCell(context, node));
+    editorCell.addEditorCell(this.create_keycodePropertyCell1532_0(context, node));
     editorCell.addEditorCell(this.createConstantCell2(context, node, " >"));
     return editorCell;
   }
@@ -132,7 +132,7 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createModifiersCell(EditorContext context, SNode node) {
+  public EditorCell create_modifiersPropertyCell1532_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("modifiers");
     provider.setNoTargetText("any");
@@ -162,7 +162,7 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createKeycodeCell(EditorContext context, SNode node) {
+  public EditorCell create_keycodePropertyCell1532_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("keycode");
     provider.setNoTargetText("<keycode>");

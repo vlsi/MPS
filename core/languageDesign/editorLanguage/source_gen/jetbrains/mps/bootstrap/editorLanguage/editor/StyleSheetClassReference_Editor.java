@@ -25,7 +25,7 @@ public class StyleSheetClassReference_Editor extends DefaultNodeEditor {
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createStyleSheetClassReferenceCell(context, node);
+    return this.create_styleSheetClassRefCell16166_0(context, node);
   }
 
   public EditorCell create_styleSheetClassRefCell16166_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -40,7 +40,7 @@ public class StyleSheetClassReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createStyleSheetClassReferenceCell(EditorContext context, SNode node) {
+  public EditorCell create_styleSheetClassRefCell16166_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("styleSheetClass");
     provider.setNoTargetText("");
@@ -76,7 +76,7 @@ public class StyleSheetClassReference_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext context, SNode node) {
-      return this.createNameCell(context, node);
+      return this.create_namePropertyCell_043(context, node);
     }
 
     public EditorCell create_namePropertyCell_043_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -91,7 +91,7 @@ public class StyleSheetClassReference_Editor extends DefaultNodeEditor {
       return editorCell;
     }
 
-    public EditorCell createNameCell(EditorContext context, SNode node) {
+    public EditorCell create_namePropertyCell_043(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("");

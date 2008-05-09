@@ -27,7 +27,7 @@ public class CellMenuComponentFeature_Property_Editor extends DefaultNodeEditor 
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createPropertyDeclarationReferenceCell(context, node);
+    return this.create_propertyDeclarationRefCell5546_0(context, node);
   }
 
   public EditorCell create_propertyDeclarationRefCell5546_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -42,7 +42,7 @@ public class CellMenuComponentFeature_Property_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createPropertyDeclarationReferenceCell(EditorContext context, SNode node) {
+  public EditorCell create_propertyDeclarationRefCell5546_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("propertyDeclaration");
     provider.setNoTargetText("<choose property>");
@@ -79,7 +79,7 @@ public class CellMenuComponentFeature_Property_Editor extends DefaultNodeEditor 
     }
 
     public EditorCell createEditorCell(EditorContext context, SNode node) {
-      return this.createNameCell(context, node);
+      return this.create_namePropertyCell_025(context, node);
     }
 
     public EditorCell create_namePropertyCell_025_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -94,7 +94,7 @@ public class CellMenuComponentFeature_Property_Editor extends DefaultNodeEditor 
       return editorCell;
     }
 
-    public EditorCell createNameCell(EditorContext context, SNode node) {
+    public EditorCell create_namePropertyCell_025(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("");

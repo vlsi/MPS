@@ -61,28 +61,28 @@ public class CellModel_JComponent_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createInspectedCell(EditorContext context, SNode node) {
-    return this.createColumnCell(context, node);
+    return this.create_CollectionCell4652_0(context, node);
   }
 
-  public EditorCell createColumnCell(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell4652_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_ColumnCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell1(context, node, "component provider:"));
-    editorCell.addEditorCell(this.createRowCell(context, node));
+    editorCell.addEditorCell(this.create_CollectionCell4652_01(context, node));
     return editorCell;
   }
 
-  public EditorCell createRowCell(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell4652_01(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell2(context, node, "  "));
-    editorCell.addEditorCell(this.createComponentProviderCell(context, node));
+    editorCell.addEditorCell(this.create_componentProviderRefNodeCell4652_0(context, node));
     return editorCell;
   }
 
@@ -122,7 +122,7 @@ public class CellModel_JComponent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponentProviderCell(EditorContext context, SNode node) {
+  public EditorCell create_componentProviderRefNodeCell4652_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("componentProvider");
     provider.setNoTargetText("");
