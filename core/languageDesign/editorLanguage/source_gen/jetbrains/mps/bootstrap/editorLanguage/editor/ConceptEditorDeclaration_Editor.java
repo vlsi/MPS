@@ -122,12 +122,12 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_ConceptDeclarationReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0254");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0234");
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CellModelCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0262");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0242");
     editorCell.setDrawBorder(false);
     editorCell.addKeyMap(new EditorCellModel_KeyMap());
   }
@@ -418,7 +418,7 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
     }
 
     private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0255");
+      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0235");
       SharedStyles_StyleSheet.REFERENCE_ON_CONCEPT.apply(editorCell);
       editorCell.setDrawBorder(true);
     }

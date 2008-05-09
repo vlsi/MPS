@@ -16,6 +16,7 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="40" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -52,9 +53,6 @@
     <property name="name" value="EditorCellModel" />
     <property name="package" value="CellModel" />
     <link role="extends" targetNodeId="3.1133920641626" resolveInfo="BaseConcept" />
-    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1173470701199">
-      <link role="intfc" targetNodeId="3.1169194658468" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1119645550923">
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" />
     </node>

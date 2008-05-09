@@ -23,25 +23,25 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
   }
 
   private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01775");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01727");
     editorCell.setSelectable(false);
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01776");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01728");
   }
 
   private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01777");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01729");
     editorCell.setSelectable(false);
   }
 
   private static void setupBasic_FocusPolicyApplicableCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01778");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01730");
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01779");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01731");
     editorCell.setSelectable(false);
   }
 

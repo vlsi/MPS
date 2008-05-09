@@ -25,17 +25,17 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
   /* package */AbstractCellListHandler myCellMenuPartListHandler_cellMenuPartList_;
 
   private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0877");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0841");
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0878");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0842");
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CellMenuPartList(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0879");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0843");
     editorCell.setDrawBorder(false);
   }
 
@@ -89,7 +89,7 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
     }
 
     private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0880");
+      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0844");
       editorCell.setDrawBorder(false);
       editorCell.setFontType(MPSFonts.ITALIC);
     }

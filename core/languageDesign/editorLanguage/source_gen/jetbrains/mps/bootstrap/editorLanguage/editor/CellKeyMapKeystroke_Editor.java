@@ -25,34 +25,34 @@ import jetbrains.mps.nodeEditor.EditorCellKeyMap;
 public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_NodeBox(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0307");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0287");
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0308");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0288");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ModifiersCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0309");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0289");
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0310");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0290");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_KeycodeCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0311");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0291");
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0312");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0292");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }

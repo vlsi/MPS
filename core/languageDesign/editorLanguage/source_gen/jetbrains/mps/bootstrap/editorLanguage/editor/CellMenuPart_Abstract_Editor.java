@@ -13,7 +13,7 @@ import jetbrains.mps.nodeEditor.EditorCell_Error;
 public class CellMenuPart_Abstract_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ErrorCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0914");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0878");
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.ITALIC);
   }

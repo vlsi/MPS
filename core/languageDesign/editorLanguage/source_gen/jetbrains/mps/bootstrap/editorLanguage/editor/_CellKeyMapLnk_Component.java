@@ -20,7 +20,7 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
   }
 
   private static void setupBasic_KeyMapReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0547");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0511");
     editorCell.setDrawBorder(true);
   }
 
@@ -72,7 +72,7 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
     }
 
     private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0548");
+      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0512");
       editorCell.setDrawBorder(true);
     }
 

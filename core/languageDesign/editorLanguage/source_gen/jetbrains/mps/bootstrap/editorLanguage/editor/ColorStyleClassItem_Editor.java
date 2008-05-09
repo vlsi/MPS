@@ -22,24 +22,24 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01345");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01306");
   }
 
   private static void setupBasic_CellModel_ConceptProperty(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01346");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01307");
     Styles_StyleSheet.ITEM.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01347");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01308");
   }
 
   private static void setupBasic_ColorCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01404");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01365");
   }
 
   private static void setupBasic_QueryCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01405");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01366");
   }
 
   private static void setupLabel_CellModel_ConceptProperty(EditorCell_Label editorCell, SNode node, EditorContext context) {

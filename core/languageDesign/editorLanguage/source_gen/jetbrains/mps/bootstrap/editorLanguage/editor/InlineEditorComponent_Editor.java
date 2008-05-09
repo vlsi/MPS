@@ -17,18 +17,18 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class InlineEditorComponent_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0212");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0194");
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0216");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0198");
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_CellModelCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0519");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0495");
     editorCell.setDrawBorder(true);
     editorCell.addKeyMap(new EditorCellModel_KeyMap());
   }
