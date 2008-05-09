@@ -129,7 +129,7 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.create_namePropertyCell13915_0(context, node));
-    if (StyleSheetClass_Editor.renderingCondition13915_0(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition13915_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell13915_03(context, node));
     }
     editorCell.addEditorCell(this.create_ConstantCell13915_0(context, node, "{"));

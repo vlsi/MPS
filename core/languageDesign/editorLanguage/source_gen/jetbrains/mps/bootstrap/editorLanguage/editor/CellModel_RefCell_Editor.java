@@ -568,7 +568,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.create_ConstantCell17023_07(context, node, "%"));
     editorCell.addEditorCell(this.create_linkDeclarationRefCell17023_0(context, node));
     editorCell.addEditorCell(this.create_ConstantCell17023_08(context, node, "%"));
-    if (CellModel_RefCell_Editor.renderingCondition17023_0(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition17023_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_editorComponentRefNodeCell17023_0(context, node));
     }
     editorCell.addEditorCell(this.create__CloseTagComponentCell17023_0(context, node));

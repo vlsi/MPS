@@ -75,10 +75,10 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.create_ConceptPropertyCell13294_0(context, node));
     editorCell.addEditorCell(this.create_ConstantCell13294_0(context, node, ":"));
-    if (ColorStyleClassItem_Editor.renderingCondition13294_0(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition13294_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_colorPropertyCell13294_0(context, node));
     }
-    if (ColorStyleClassItem_Editor.renderingCondition13294_01(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition13294_01(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_queryRefNodeCell13294_0(context, node));
     }
     return editorCell;

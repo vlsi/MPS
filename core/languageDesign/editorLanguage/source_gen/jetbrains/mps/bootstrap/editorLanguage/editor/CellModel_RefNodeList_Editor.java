@@ -874,7 +874,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.create__OpenTagComponentCell3462_0(context, node));
-    if (CellModel_RefNodeList_Editor.renderingCondition3462_02(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition3462_02(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_verticalPropertyCell3462_01(context, node));
     }
     editorCell.addEditorCell(this.create_CollectionCell3462_01(context, node));
@@ -888,10 +888,10 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if (CellModel_RefNodeList_Editor.renderingCondition3462_0(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition3462_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell3462_02(context, node));
     }
-    if (CellModel_RefNodeList_Editor.renderingCondition3462_01(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition3462_01(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell3462_05(context, node));
     }
     return editorCell;

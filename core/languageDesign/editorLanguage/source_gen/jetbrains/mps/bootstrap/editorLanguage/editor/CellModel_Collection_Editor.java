@@ -662,10 +662,10 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if (CellModel_Collection_Editor.renderingCondition15568_0(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition15568_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell15568_01(context, node));
     }
-    if (CellModel_Collection_Editor.renderingCondition15568_01(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition15568_01(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell15568_03(context, node));
     }
     return editorCell;

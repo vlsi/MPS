@@ -91,7 +91,7 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if (_FocusPolicy_Applicable.renderingCondition11964_0(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition11964_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell11964_0(context, node));
     }
     return editorCell;

@@ -819,19 +819,19 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.create_CollectionCell9917_015(context, node));
     editorCell.addEditorCell(this.create_CollectionCell9917_016(context, node));
     editorCell.addEditorCell(this.create_CollectionCell9917_020(context, node));
-    if (CellModel_ConceptProperty_Editor.renderingCondition9917_0(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition9917_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell9917_021(context, node));
     }
     editorCell.addEditorCell(this.create_CollectionCell9917_023(context, node));
-    if (CellModel_ConceptProperty_Editor.renderingCondition9917_01(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition9917_01(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell9917_024(context, node));
     }
     editorCell.addEditorCell(this.create_CollectionCell9917_026(context, node));
-    if (CellModel_ConceptProperty_Editor.renderingCondition9917_02(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition9917_02(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell9917_027(context, node));
     }
     editorCell.addEditorCell(this.create_CollectionCell9917_029(context, node));
-    if (CellModel_ConceptProperty_Editor.renderingCondition9917_03(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition9917_03(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell9917_030(context, node));
     }
     editorCell.addEditorCell(this.create_ConstantCell9917_011(context, node, ""));

@@ -303,10 +303,10 @@ public class CellMenuPart_ReplaceNode_Group_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.create_CollectionCell18550_04(context, node));
     editorCell.addEditorCell(this.create_CollectionCell18550_08(context, node));
     editorCell.addEditorCell(this.create_CollectionCell18550_05(context, node));
-    if (CellMenuPart_ReplaceNode_Group_Editor.renderingCondition18550_0(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition18550_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell18550_06(context, node));
     }
-    if (CellMenuPart_ReplaceNode_Group_Editor.renderingCondition18550_01(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition18550_01(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell18550_07(context, node));
     }
     editorCell.addEditorCell(this.create_CollectionCell18550_09(context, node));

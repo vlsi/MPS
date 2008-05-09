@@ -531,10 +531,10 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.create__OpenTagComponentCell65_0(context, node));
-    if (CellModel_Alternation_Editor.renderingCondition65_0(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition65_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell65_02(context, node));
     }
-    if (CellModel_Alternation_Editor.renderingCondition65_01(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition65_01(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell65_04(context, node));
     }
     editorCell.addEditorCell(this.create__CloseTagComponentCell65_0(context, node));
