@@ -20,67 +20,67 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 public class CellActionMapItem_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139533175437");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0418");
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139533175438");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0419");
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139533175439");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0420");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_RowCell2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139533175452");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0421");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139533175453");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0422");
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell4(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139533175454");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0423");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ExecuteFunctionCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139533175455");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0424");
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ActionIdCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139533204020");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0425");
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139537337310");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0426");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139537337311");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0427");
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139537337312");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0428");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_DescriptionCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139537337313");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0429");
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
   }

@@ -14,19 +14,19 @@ import jetbrains.mps.nodeEditor.EditorCell_Error;
 public class EditorCellModel_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1080925357596");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0139");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_HeaderCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1080925357597");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0140");
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ErrorCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1080925357598");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0141");
     editorCell.setDrawBorder(true);
   }
 

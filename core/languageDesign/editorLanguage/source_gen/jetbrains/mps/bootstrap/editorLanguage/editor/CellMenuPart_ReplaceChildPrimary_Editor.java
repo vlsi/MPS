@@ -16,35 +16,35 @@ import jetbrains.mps.nodeEditor.EditorCell_Constant;
 public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174088130953");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01095");
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174088130954");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01096");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174088130955");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01097");
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174088130956");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01098");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174088130957");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01099");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174088130958");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01100");
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.ITALIC);
   }

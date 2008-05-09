@@ -17,7 +17,7 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 public class StyleSheetClassReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_StyleSheetClassReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198252344955");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01414");
   }
 
   private static void setupLabel_StyleSheetClassReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -64,7 +64,7 @@ public class StyleSheetClassReference_Editor extends DefaultNodeEditor {
     }
 
     private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198252346521");
+      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01415");
     }
 
     private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

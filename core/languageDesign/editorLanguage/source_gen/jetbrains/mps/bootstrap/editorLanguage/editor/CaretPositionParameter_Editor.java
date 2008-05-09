@@ -17,19 +17,19 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class CaretPositionParameter_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1201270917284");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01563");
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1201270918661");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01564");
   }
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1201270927258");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01565");
   }
 
   private static void setupBasic_PositionCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1201270928979");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01566");
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

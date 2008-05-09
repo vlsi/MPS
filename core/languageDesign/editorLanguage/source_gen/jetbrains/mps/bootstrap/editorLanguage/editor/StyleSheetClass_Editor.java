@@ -31,53 +31,53 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
   /* package */AbstractCellListHandler myItemListHandler_itemList_;
 
   private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1186402439414");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01337");
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1186402441291");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01338");
     editorCell.setSelectable(false);
   }
 
   private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1186402447779");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01339");
     StyleSheetClass_RT.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1186402449906");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01340");
   }
 
   private static void setupBasic_ConstantCell3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1186402455065");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01341");
   }
 
   private static void setupBasic_RowCell2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1186402460176");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01342");
     editorCell.setSelectable(false);
   }
 
   private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1186402462303");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01343");
     editorCell.setSelectable(false);
   }
 
   private static void setupBasic_ItemList(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1186402497606");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01344");
   }
 
   private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198252386649");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01416");
     editorCell.setSelectable(false);
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198252387401");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01417");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
   }
 
   private static void setupBasic_ExtendedClassCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198252436848");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01418");
   }
 
   private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

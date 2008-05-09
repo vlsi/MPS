@@ -28,372 +28,372 @@ public class CellModel_RefNode_Editor extends DefaultNodeEditor {
   /* package */AbstractCellProvider my_EditorCellModel_RTAnchor_Component13;
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1080832307620");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0126");
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1080832307624");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0127");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_HeaderCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1080832307625");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0128");
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ColumnCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1080832307626");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0129");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1080832307627");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0130");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1080832307628");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0131");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_RowCell3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1080832307631");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0132");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1080832307632");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0133");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_RowCell4(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1080832307639");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0134");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ConstantCell3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1080832307640");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0135");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ConstantCell9(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1080832307661");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0136");
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_RowCell8(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081341154859");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0166");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ConstantCell7(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081341154860");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0167");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic__CellKeyMapLnk_ComponentCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081341154861");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0168");
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_SelectableCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083935157116");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0185");
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_Separator3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1088162265431");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0210");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ConstantCell17(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1088162265432");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0211");
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_Separator2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138332005658");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0352");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_Separator1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138332008130");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0353");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_Separator(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138332010336");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0354");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_RowCell2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138332171058");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0359");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138332171059");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0360");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_NoTargetTextCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138332171060");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0361");
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic__EditorCellModel_CellBackground_ComponentCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139313567410");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0394");
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_RowCell7(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140037110920");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0507");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ConstantCell6(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140037110921");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0508");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ActionMapReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140037110922");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0509");
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140213349414");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0525");
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_LinkDeclarationReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140223719665");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0543");
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_LinkDeclarationReferenceCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140223814274");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0545");
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_RowCell5(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145903112426");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0797");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ConstantCell4(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145903112427");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0798");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_AttractsFocusCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145903112428");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0799");
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_RowCell6(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145903121498");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0800");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ConstantCell5(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145903121499");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0801");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_LayoutConstraintCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145903121500");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0802");
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_RowCell11(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145903133896");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0803");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ConstantCell11(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145903133897");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0804");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_DrawBorderCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145903133898");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0805");
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_RowCell12(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145903133899");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0806");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ConstantCell12(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145903133900");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0807");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_DrawBracketsCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145903133901");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0808");
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_RowCell13(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145903133902");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0809");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ConstantCell13(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145903133903");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0810");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_BracketsColorCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145903133904");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0811");
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_RowCell14(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145903133905");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0812");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ConstantCell14(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145903133906");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0813");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_FontStyleCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145903133907");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0814");
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_RowCell15(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145903133908");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0815");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ConstantCell15(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145903133909");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0816");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_FontSizeCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145903133910");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0817");
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_RowCell16(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145903133911");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0818");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ConstantCell16(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145903133912");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0819");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_UnderlinedCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145903133913");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0820");
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_RowCell17(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145903147156");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0821");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ConstantCell18(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145903147157");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0822");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_RenderingConditionCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145903147158");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0823");
   }
 
   private static void setupBasic_RowCell9(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164827045451");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0911");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell8(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164827045452");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0912");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_MenuDescriptorCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164827045453");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0913");
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic__OpenTagCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176717163182");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01127");
   }
 
   private static void setupBasic__CloseTagCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176717169105");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01128");
   }
 
   private static void setupBasic_RowCell10(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1186408308342");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01388");
     editorCell.setSelectable(false);
   }
 
   private static void setupBasic_ConstantCell10(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1186408308343");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01389");
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_StyleClassReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1186408308344");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01390");
     editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic__FocusPolicy_ApplicableCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198590458091");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01550");
   }
 
   private static void setupBasic__EditorCellModel_RTAnchor_ComponentCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1204799844417");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01593");
   }
 
   private static void setupLabel_HeaderCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -1521,7 +1521,7 @@ public class CellModel_RefNode_Editor extends DefaultNodeEditor {
     }
 
     private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140037110924");
+      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0510");
       editorCell.setDrawBorder(true);
     }
 
@@ -1574,7 +1574,7 @@ public class CellModel_RefNode_Editor extends DefaultNodeEditor {
     }
 
     private static void setupBasic_RoleCell(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140223741229");
+      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0544");
       editorCell.setDrawBorder(true);
     }
 
@@ -1627,7 +1627,7 @@ public class CellModel_RefNode_Editor extends DefaultNodeEditor {
     }
 
     private static void setupBasic_RoleCell(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140223814276");
+      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0546");
       editorCell.setDrawBorder(true);
     }
 
@@ -1680,7 +1680,7 @@ public class CellModel_RefNode_Editor extends DefaultNodeEditor {
     }
 
     private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1186408308346");
+      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01391");
       Styles_StyleSheet.REFERENCE.apply(editorCell);
       editorCell.setDrawBorder(true);
     }
