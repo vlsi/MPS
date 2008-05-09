@@ -118,7 +118,7 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.create_CollectionCell13915_01(context, node));
     editorCell.addEditorCell(this.create_CollectionCell13915_02(context, node));
-    editorCell.addEditorCell(this.createConstantCell3(context, node, "}"));
+    editorCell.addEditorCell(this.create_ConstantCell13915_01(context, node, "}"));
     return editorCell;
   }
 
@@ -132,7 +132,7 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
     if (StyleSheetClass_Editor.checkRenderingCondition18(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell13915_03(context, node));
     }
-    editorCell.addEditorCell(this.createConstantCell1(context, node, "{"));
+    editorCell.addEditorCell(this.create_ConstantCell13915_0(context, node, "{"));
     return editorCell;
   }
 
@@ -142,8 +142,8 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell2(context, node, "  "));
-    editorCell.addEditorCell(this.createItemList(context, node));
+    editorCell.addEditorCell(this.create_ConstantCell13915_02(context, node, "  "));
+    editorCell.addEditorCell(this.create_itemRefNodeListCell13915_0(context, node));
     return editorCell;
   }
 
@@ -153,12 +153,12 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "extends"));
+    editorCell.addEditorCell(this.create_ConstantCell13915_03(context, node, "extends"));
     editorCell.addEditorCell(this.create_extendedClassRefNodeCell13915_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell13915_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell1(editorCell, node, context);
     setupLabel_ConstantCell1(editorCell, node, context);
@@ -166,7 +166,7 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell13915_01(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell3(editorCell, node, context);
     setupLabel_ConstantCell3(editorCell, node, context);
@@ -174,7 +174,7 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell13915_02(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell2(editorCell, node, context);
     setupLabel_ConstantCell2(editorCell, node, context);
@@ -182,7 +182,7 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell13915_03(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell(editorCell, node, context);
     setupLabel_ConstantCell(editorCell, node, context);
@@ -190,7 +190,7 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createItemList(EditorContext context, SNode node) {
+  public EditorCell create_itemRefNodeListCell13915_0(EditorContext context, SNode node) {
     if (this.myItemListHandler_itemList_ == null) {
       this.myItemListHandler_itemList_ = new StyleSheetClass_Editor._RefNodeListHandler9(node, "item", context);
     }

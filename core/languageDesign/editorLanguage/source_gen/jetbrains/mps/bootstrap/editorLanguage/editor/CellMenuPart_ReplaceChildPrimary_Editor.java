@@ -83,7 +83,7 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "primary replace child menu"));
+    editorCell.addEditorCell(this.create_ConstantCell743_0(context, node, "primary replace child menu"));
     return editorCell;
   }
 
@@ -93,12 +93,12 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell1(context, node, "  "));
-    editorCell.addEditorCell(this.createConstantCell2(context, node, "no customization needed"));
+    editorCell.addEditorCell(this.create_ConstantCell743_01(context, node, "  "));
+    editorCell.addEditorCell(this.create_ConstantCell743_02(context, node, "no customization needed"));
     return editorCell;
   }
 
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell743_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell(editorCell, node, context);
     setupLabel_ConstantCell(editorCell, node, context);
@@ -106,7 +106,7 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell743_01(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell1(editorCell, node, context);
     setupLabel_ConstantCell1(editorCell, node, context);
@@ -114,7 +114,7 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell743_02(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell2(editorCell, node, context);
     setupLabel_ConstantCell2(editorCell, node, context);

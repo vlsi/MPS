@@ -279,7 +279,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "generic group"));
+    editorCell.addEditorCell(this.create_ConstantCell14578_0(context, node, "generic group"));
     return editorCell;
   }
 
@@ -289,7 +289,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell1(context, node, "  "));
+    editorCell.addEditorCell(this.create_ConstantCell14578_01(context, node, "  "));
     editorCell.addEditorCell(this.create_CollectionCell14578_03(context, node));
     return editorCell;
   }
@@ -319,8 +319,8 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell2(context, node, "parameter object type"));
-    editorCell.addEditorCell(this.createConstantCell3(context, node, ":"));
+    editorCell.addEditorCell(this.create_ConstantCell14578_02(context, node, "parameter object type"));
+    editorCell.addEditorCell(this.create_ConstantCell14578_03(context, node, ":"));
     editorCell.addEditorCell(this.create_parameterObjectTypeRefNodeCell14578_0(context, node));
     return editorCell;
   }
@@ -331,8 +331,8 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell4(context, node, "parameter objects"));
-    editorCell.addEditorCell(this.createConstantCell5(context, node, ":"));
+    editorCell.addEditorCell(this.create_ConstantCell14578_04(context, node, "parameter objects"));
+    editorCell.addEditorCell(this.create_ConstantCell14578_05(context, node, ":"));
     editorCell.addEditorCell(this.create_parametersFunctionRefNodeCell14578_0(context, node));
     return editorCell;
   }
@@ -343,8 +343,8 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell6(context, node, "presentation"));
-    editorCell.addEditorCell(this.createConstantCell7(context, node, ":"));
+    editorCell.addEditorCell(this.create_ConstantCell14578_06(context, node, "presentation"));
+    editorCell.addEditorCell(this.create_ConstantCell14578_07(context, node, ":"));
     editorCell.addEditorCell(this.create_presentationPropertyCell14578_0(context, node));
     return editorCell;
   }
@@ -355,8 +355,8 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell8(context, node, "matching text"));
-    editorCell.addEditorCell(this.createConstantCell9(context, node, ":"));
+    editorCell.addEditorCell(this.create_ConstantCell14578_08(context, node, "matching text"));
+    editorCell.addEditorCell(this.create_ConstantCell14578_09(context, node, ":"));
     editorCell.addEditorCell(this.create_matchingTextFunctionRefNodeCell14578_0(context, node));
     return editorCell;
   }
@@ -367,8 +367,8 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell10(context, node, "description text"));
-    editorCell.addEditorCell(this.createConstantCell11(context, node, ":"));
+    editorCell.addEditorCell(this.create_ConstantCell14578_010(context, node, "description text"));
+    editorCell.addEditorCell(this.create_ConstantCell14578_011(context, node, ":"));
     editorCell.addEditorCell(this.create_descriptionTextFunctionRefNodeCell14578_0(context, node));
     return editorCell;
   }
@@ -379,13 +379,13 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell12(context, node, "handler"));
-    editorCell.addEditorCell(this.createConstantCell13(context, node, ":"));
+    editorCell.addEditorCell(this.create_ConstantCell14578_012(context, node, "handler"));
+    editorCell.addEditorCell(this.create_ConstantCell14578_013(context, node, ":"));
     editorCell.addEditorCell(this.create_handlerFunctionRefNodeCell14578_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell14578_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell(editorCell, node, context);
     setupLabel_ConstantCell(editorCell, node, context);
@@ -393,7 +393,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell14578_01(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell1(editorCell, node, context);
     setupLabel_ConstantCell1(editorCell, node, context);
@@ -401,7 +401,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell14578_02(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell2(editorCell, node, context);
     setupLabel_ConstantCell2(editorCell, node, context);
@@ -409,7 +409,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell14578_03(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell3(editorCell, node, context);
     setupLabel_ConstantCell3(editorCell, node, context);
@@ -417,7 +417,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell4(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell14578_04(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell4(editorCell, node, context);
     setupLabel_ConstantCell4(editorCell, node, context);
@@ -425,7 +425,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell5(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell14578_05(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell5(editorCell, node, context);
     setupLabel_ConstantCell5(editorCell, node, context);
@@ -433,7 +433,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell6(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell14578_06(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell6(editorCell, node, context);
     setupLabel_ConstantCell6(editorCell, node, context);
@@ -441,7 +441,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell7(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell14578_07(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell7(editorCell, node, context);
     setupLabel_ConstantCell7(editorCell, node, context);
@@ -449,7 +449,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell8(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell14578_08(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell8(editorCell, node, context);
     setupLabel_ConstantCell8(editorCell, node, context);
@@ -457,7 +457,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell9(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell14578_09(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell9(editorCell, node, context);
     setupLabel_ConstantCell9(editorCell, node, context);
@@ -465,7 +465,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell10(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell14578_010(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell10(editorCell, node, context);
     setupLabel_ConstantCell10(editorCell, node, context);
@@ -473,7 +473,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell11(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell14578_011(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell11(editorCell, node, context);
     setupLabel_ConstantCell11(editorCell, node, context);
@@ -481,7 +481,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell12(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell14578_012(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell12(editorCell, node, context);
     setupLabel_ConstantCell12(editorCell, node, context);
@@ -489,7 +489,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell13(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell14578_013(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell13(editorCell, node, context);
     setupLabel_ConstantCell13(editorCell, node, context);

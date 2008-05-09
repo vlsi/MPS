@@ -56,12 +56,12 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "menu parts:"));
-    editorCell.addEditorCell(this.createCellMenuPartList(context, node));
+    editorCell.addEditorCell(this.create_ConstantCell19413_0(context, node, "menu parts:"));
+    editorCell.addEditorCell(this.create_cellMenuPartRefNodeListCell19413_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell19413_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell(editorCell, node, context);
     setupLabel_ConstantCell(editorCell, node, context);
@@ -69,7 +69,7 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCellMenuPartList(EditorContext context, SNode node) {
+  public EditorCell create_cellMenuPartRefNodeListCell19413_0(EditorContext context, SNode node) {
     if (this.myCellMenuPartListHandler_cellMenuPartList_ == null) {
       this.myCellMenuPartListHandler_cellMenuPartList_ = new CellMenuDescriptor_Editor._RefNodeListHandler5(node, "cellMenuPart", context);
     }
@@ -119,7 +119,7 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext context, SNode node) {
-      return this.createConstantCell1(context, node, "<choose menu part>");
+      return this.create_ConstantCell19413_01(context, node, "<choose menu part>");
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
@@ -140,7 +140,7 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(context);
     }
 
-    public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+    public EditorCell create_ConstantCell19413_01(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       setupBasic_ConstantCell1(editorCell, node, context);
       setupLabel_ConstantCell1(editorCell, node, context);

@@ -38,7 +38,7 @@ public class EditorCellModel_Editor extends DefaultNodeEditor {
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createErrorCell(context, node);
+    return this.create_ErrorCell14761_0(context, node);
   }
 
   public EditorCell createInspectedCell(EditorContext context, SNode node) {
@@ -51,11 +51,11 @@ public class EditorCellModel_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createHeaderCell(context, node, "< abstract cell >"));
+    editorCell.addEditorCell(this.create_ConstantCell14761_0(context, node, "< abstract cell >"));
     return editorCell;
   }
 
-  public EditorCell createHeaderCell(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell14761_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_HeaderCell(editorCell, node, context);
     setupLabel_HeaderCell(editorCell, node, context);
@@ -63,7 +63,7 @@ public class EditorCellModel_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createErrorCell(EditorContext context, SNode node) {
+  public EditorCell create_ErrorCell14761_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "<choose cell model>");
     setupBasic_ErrorCell(editorCell, node, context);
     setupLabel_ErrorCell(editorCell, node, context);

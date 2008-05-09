@@ -178,7 +178,7 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "replace child (custom action)"));
+    editorCell.addEditorCell(this.create_ConstantCell19337_0(context, node, "replace child (custom action)"));
     return editorCell;
   }
 
@@ -188,7 +188,7 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell1(context, node, "  "));
+    editorCell.addEditorCell(this.create_ConstantCell19337_01(context, node, "  "));
     editorCell.addEditorCell(this.create_CollectionCell19337_03(context, node));
     return editorCell;
   }
@@ -211,8 +211,8 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell6(context, node, "create new child"));
-    editorCell.addEditorCell(this.createConstantCell7(context, node, ":"));
+    editorCell.addEditorCell(this.create_ConstantCell19337_02(context, node, "create new child"));
+    editorCell.addEditorCell(this.create_ConstantCell19337_03(context, node, ":"));
     editorCell.addEditorCell(this.create_createFunctionRefNodeCell19337_0(context, node));
     return editorCell;
   }
@@ -223,8 +223,8 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell2(context, node, "matching text"));
-    editorCell.addEditorCell(this.createConstantCell3(context, node, ":"));
+    editorCell.addEditorCell(this.create_ConstantCell19337_04(context, node, "matching text"));
+    editorCell.addEditorCell(this.create_ConstantCell19337_05(context, node, ":"));
     editorCell.addEditorCell(this.create_matchingTextPropertyCell19337_0(context, node));
     return editorCell;
   }
@@ -235,13 +235,13 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell4(context, node, "description text"));
-    editorCell.addEditorCell(this.createConstantCell5(context, node, ":"));
+    editorCell.addEditorCell(this.create_ConstantCell19337_06(context, node, "description text"));
+    editorCell.addEditorCell(this.create_ConstantCell19337_07(context, node, ":"));
     editorCell.addEditorCell(this.create_descriptionTextPropertyCell19337_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell19337_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell(editorCell, node, context);
     setupLabel_ConstantCell(editorCell, node, context);
@@ -249,7 +249,7 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell19337_01(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell1(editorCell, node, context);
     setupLabel_ConstantCell1(editorCell, node, context);
@@ -257,7 +257,7 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell6(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell19337_02(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell6(editorCell, node, context);
     setupLabel_ConstantCell6(editorCell, node, context);
@@ -265,7 +265,7 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell7(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell19337_03(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell7(editorCell, node, context);
     setupLabel_ConstantCell7(editorCell, node, context);
@@ -273,7 +273,7 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell19337_04(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell2(editorCell, node, context);
     setupLabel_ConstantCell2(editorCell, node, context);
@@ -281,7 +281,7 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell19337_05(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell3(editorCell, node, context);
     setupLabel_ConstantCell3(editorCell, node, context);
@@ -289,7 +289,7 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell4(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell19337_06(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell4(editorCell, node, context);
     setupLabel_ConstantCell4(editorCell, node, context);
@@ -297,7 +297,7 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell5(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell19337_07(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell5(editorCell, node, context);
     setupLabel_ConstantCell5(editorCell, node, context);

@@ -174,14 +174,14 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.create_CollectionCell276_01(context, node));
-    editorCell.addEditorCell(this.createConstantCell1(context, node, ""));
+    editorCell.addEditorCell(this.create_ConstantCell276_06(context, node, ""));
     editorCell.addEditorCell(this.create_CollectionCell276_03(context, node));
-    editorCell.addEditorCell(this.createConstantCell3(context, node, ""));
+    editorCell.addEditorCell(this.create_ConstantCell276_01(context, node, ""));
     editorCell.addEditorCell(this.create_CollectionCell276_02(context, node));
-    editorCell.addEditorCell(this.createConstantCell5(context, node, ""));
-    editorCell.addEditorCell(this.createConstantCell6(context, node, "keymap items:"));
-    editorCell.addEditorCell(this.createConstantCell7(context, node, ""));
-    editorCell.addEditorCell(this.createItemList(context, node));
+    editorCell.addEditorCell(this.create_ConstantCell276_05(context, node, ""));
+    editorCell.addEditorCell(this.create_ConstantCell276_02(context, node, "keymap items:"));
+    editorCell.addEditorCell(this.create_ConstantCell276_03(context, node, ""));
+    editorCell.addEditorCell(this.create_itemRefNodeListCell276_0(context, node));
     return editorCell;
   }
 
@@ -191,7 +191,7 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "keymap"));
+    editorCell.addEditorCell(this.create_ConstantCell276_0(context, node, "keymap"));
     editorCell.addEditorCell(this.create_namePropertyCell276_0(context, node));
     return editorCell;
   }
@@ -202,7 +202,7 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell4(context, node, "applicable concept:"));
+    editorCell.addEditorCell(this.create_ConstantCell276_04(context, node, "applicable concept:"));
     editorCell.addEditorCell(this.create_applicableConceptRefCell276_0(context, node));
     return editorCell;
   }
@@ -213,12 +213,12 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell2(context, node, "everyModel"));
+    editorCell.addEditorCell(this.create_ConstantCell276_07(context, node, "everyModel"));
     editorCell.addEditorCell(this.create_everyModelPropertyCell276_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell276_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell(editorCell, node, context);
     setupLabel_ConstantCell(editorCell, node, context);
@@ -226,7 +226,7 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell276_01(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell3(editorCell, node, context);
     setupLabel_ConstantCell3(editorCell, node, context);
@@ -234,7 +234,7 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell6(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell276_02(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell6(editorCell, node, context);
     setupLabel_ConstantCell6(editorCell, node, context);
@@ -242,7 +242,7 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell7(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell276_03(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell7(editorCell, node, context);
     setupLabel_ConstantCell7(editorCell, node, context);
@@ -250,7 +250,7 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell4(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell276_04(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell4(editorCell, node, context);
     setupLabel_ConstantCell4(editorCell, node, context);
@@ -258,7 +258,7 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell5(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell276_05(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell5(editorCell, node, context);
     setupLabel_ConstantCell5(editorCell, node, context);
@@ -266,7 +266,7 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell276_06(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell1(editorCell, node, context);
     setupLabel_ConstantCell1(editorCell, node, context);
@@ -274,7 +274,7 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell276_07(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell2(editorCell, node, context);
     setupLabel_ConstantCell2(editorCell, node, context);
@@ -282,7 +282,7 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createItemList(EditorContext context, SNode node) {
+  public EditorCell create_itemRefNodeListCell276_0(EditorContext context, SNode node) {
     if (this.myItemListHandler_itemList_ == null) {
       this.myItemListHandler_itemList_ = new CellKeyMapDeclaration_Editor._RefNodeListHandler3(node, "item", context);
     }

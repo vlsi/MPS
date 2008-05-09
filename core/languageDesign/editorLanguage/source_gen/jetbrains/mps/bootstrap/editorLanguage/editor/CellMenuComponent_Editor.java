@@ -145,7 +145,7 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "cell-menu component"));
+    editorCell.addEditorCell(this.create_ConstantCell19999_0(context, node, "cell-menu component"));
     editorCell.addEditorCell(this.create_namePropertyCell19999_0(context, node));
     return editorCell;
   }
@@ -156,7 +156,7 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell(context, node, "    "));
+    editorCell.addEditorCell(this.create_ConstantCell19999_01(context, node, "    "));
     editorCell.addEditorCell(this.create_CollectionCell19999_03(context, node));
     return editorCell;
   }
@@ -168,7 +168,7 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.create_CollectionCell19999_04(context, node));
-    editorCell.addEditorCell(this.createConstantCell3(context, node, ""));
+    editorCell.addEditorCell(this.create_ConstantCell19999_03(context, node, ""));
     editorCell.addEditorCell(this.create_menuDescriptorRefNodeCell19999_0(context, node));
     return editorCell;
   }
@@ -179,14 +179,14 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell1(context, node, "applicable to:"));
+    editorCell.addEditorCell(this.create_ConstantCell19999_02(context, node, "applicable to:"));
     editorCell.addEditorCell(this.create_conceptDeclarationRefCell19999_0(context, node));
-    editorCell.addEditorCell(this.createConstantCell2(context, node, ":"));
+    editorCell.addEditorCell(this.create_ConstantCell19999_04(context, node, ":"));
     editorCell.addEditorCell(this.create_applicableFeatureRefNodeCell19999_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell19999_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell(editorCell, node, context);
     setupLabel_ConstantCell(editorCell, node, context);
@@ -194,7 +194,7 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell19999_01(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_IndentCell(editorCell, node, context);
     setupLabel_IndentCell(editorCell, node, context);
@@ -202,7 +202,7 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell19999_02(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell1(editorCell, node, context);
     setupLabel_ConstantCell1(editorCell, node, context);
@@ -210,7 +210,7 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell19999_03(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell3(editorCell, node, context);
     setupLabel_ConstantCell3(editorCell, node, context);
@@ -218,7 +218,7 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell19999_04(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell2(editorCell, node, context);
     setupLabel_ConstantCell2(editorCell, node, context);

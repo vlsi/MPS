@@ -188,7 +188,7 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "editor for concept"));
+    editorCell.addEditorCell(this.create_ConstantCell15502_0(context, node, "editor for concept"));
     editorCell.addEditorCell(this.create_conceptDeclarationRefCell15502_0(context, node));
     return editorCell;
   }
@@ -199,7 +199,7 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell(context, node, "    "));
+    editorCell.addEditorCell(this.create_ConstantCell15502_01(context, node, "    "));
     editorCell.addEditorCell(this.create_CollectionCell15502_03(context, node));
     return editorCell;
   }
@@ -210,7 +210,7 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell1(context, node, "node cell layout:"));
+    editorCell.addEditorCell(this.create_ConstantCell15502_02(context, node, "node cell layout:"));
     editorCell.addEditorCell(this.create_CollectionCell15502_04(context, node));
     return editorCell;
   }
@@ -221,7 +221,7 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell1(context, node, "    "));
+    editorCell.addEditorCell(this.create_ConstantCell15502_03(context, node, "    "));
     editorCell.addEditorCell(this.create_cellModelRefNodeCell15502_0(context, node));
     return editorCell;
   }
@@ -232,7 +232,7 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell2(context, node, "    "));
+    editorCell.addEditorCell(this.create_ConstantCell15502_04(context, node, "    "));
     editorCell.addEditorCell(this.create_CollectionCell15502_06(context, node));
     return editorCell;
   }
@@ -243,8 +243,8 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createHeaderIndentCell(context, node, ""));
-    editorCell.addEditorCell(this.createConstantCell2(context, node, "inspected cell layout:"));
+    editorCell.addEditorCell(this.create_ConstantCell15502_05(context, node, ""));
+    editorCell.addEditorCell(this.create_ConstantCell15502_06(context, node, "inspected cell layout:"));
     editorCell.addEditorCell(this.create_CollectionCell15502_07(context, node));
     return editorCell;
   }
@@ -255,12 +255,12 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell3(context, node, "    "));
+    editorCell.addEditorCell(this.create_ConstantCell15502_07(context, node, "    "));
     editorCell.addEditorCell(this.create_inspectedCellModelRefNodeCell15502_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell15502_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell(editorCell, node, context);
     setupLabel_ConstantCell(editorCell, node, context);
@@ -268,7 +268,7 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell15502_01(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_IndentCell(editorCell, node, context);
     setupLabel_IndentCell(editorCell, node, context);
@@ -276,7 +276,7 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell15502_02(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell1(editorCell, node, context);
     setupLabel_ConstantCell1(editorCell, node, context);
@@ -284,7 +284,7 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell1(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell15502_03(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_IndentCell1(editorCell, node, context);
     setupLabel_IndentCell1(editorCell, node, context);
@@ -292,7 +292,7 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell2(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell15502_04(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_IndentCell2(editorCell, node, context);
     setupLabel_IndentCell2(editorCell, node, context);
@@ -300,7 +300,7 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createHeaderIndentCell(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell15502_05(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_HeaderIndentCell(editorCell, node, context);
     setupLabel_HeaderIndentCell(editorCell, node, context);
@@ -308,7 +308,7 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell15502_06(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell2(editorCell, node, context);
     setupLabel_ConstantCell2(editorCell, node, context);
@@ -316,7 +316,7 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell3(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell15502_07(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_IndentCell3(editorCell, node, context);
     setupLabel_IndentCell3(editorCell, node, context);

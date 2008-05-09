@@ -41,10 +41,10 @@ public class _OpenTag extends AbstractCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCellModel_ModelAccess(context, node);
+    return this.create_ModelAccessCell15352_0(context, node);
   }
 
-  public EditorCell createCellModel_ModelAccess(EditorContext context, SNode node) {
+  public EditorCell create_ModelAccessCell15352_0(EditorContext context, SNode node) {
     ModelAccessor modelAccessor = this._modelAcessorFactory_1176716878596(context, node);
     EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());

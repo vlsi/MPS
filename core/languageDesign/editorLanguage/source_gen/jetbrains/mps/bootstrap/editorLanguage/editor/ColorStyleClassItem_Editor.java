@@ -74,7 +74,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.create_ConceptPropertyCell13294_0(context, node));
-    editorCell.addEditorCell(this.createConstantCell(context, node, ":"));
+    editorCell.addEditorCell(this.create_ConstantCell13294_0(context, node, ":"));
     if (ColorStyleClassItem_Editor.checkRenderingCondition16(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_colorPropertyCell13294_0(context, node));
     }
@@ -84,7 +84,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell13294_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell(editorCell, node, context);
     setupLabel_ConstantCell(editorCell, node, context);

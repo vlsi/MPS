@@ -87,15 +87,15 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(true);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "<"));
+    editorCell.addEditorCell(this.create_ConstantCell1532_0(context, node, "<"));
     editorCell.addEditorCell(this.create_modifiersPropertyCell1532_0(context, node));
-    editorCell.addEditorCell(this.createConstantCell1(context, node, " > + <"));
+    editorCell.addEditorCell(this.create_ConstantCell1532_01(context, node, " > + <"));
     editorCell.addEditorCell(this.create_keycodePropertyCell1532_0(context, node));
-    editorCell.addEditorCell(this.createConstantCell2(context, node, " >"));
+    editorCell.addEditorCell(this.create_ConstantCell1532_02(context, node, " >"));
     return editorCell;
   }
 
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell1532_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell(editorCell, node, context);
     setupLabel_ConstantCell(editorCell, node, context);
@@ -103,7 +103,7 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell1532_01(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell1(editorCell, node, context);
     setupLabel_ConstantCell1(editorCell, node, context);
@@ -111,7 +111,7 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell1532_02(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell2(editorCell, node, context);
     setupLabel_ConstantCell2(editorCell, node, context);
