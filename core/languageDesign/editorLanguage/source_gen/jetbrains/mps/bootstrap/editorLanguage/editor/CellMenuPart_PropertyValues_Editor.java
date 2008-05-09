@@ -151,7 +151,7 @@ public class CellMenuPart_PropertyValues_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createValuesFunctionCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_valuesFunctionRefNodeCell13005_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -169,7 +169,7 @@ public class CellMenuPart_PropertyValues_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createValuesFunctionCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_valuesFunctionRefNodeCell13005_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

@@ -226,7 +226,7 @@ public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createDrawBracketsCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_drawBracketsPropertyCell15341_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -244,7 +244,7 @@ public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createDrawBracketsCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_drawBracketsPropertyCell15341_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -255,7 +255,7 @@ public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createBracketsColorCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_bracketsColorPropertyCell15341_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -273,7 +273,7 @@ public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createBracketsColorCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_bracketsColorPropertyCell15341_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

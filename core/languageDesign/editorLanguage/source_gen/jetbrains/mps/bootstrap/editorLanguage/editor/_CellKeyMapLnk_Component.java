@@ -36,7 +36,7 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
     return this.createKeyMapReferenceCell(context, node);
   }
 
-  public EditorCell createKeyMapReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_keyMapRefCell7380_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new _CellKeyMapLnk_Component._Inline25());
     EditorCell editorCell = provider.createEditorCell(context);
@@ -54,7 +54,7 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
     provider.setNoTargetText("<default>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createKeyMapReferenceCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_keyMapRefCell7380_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -88,7 +88,7 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
       return this.createNameCell(context, node);
     }
 
-    public EditorCell createNameCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    public EditorCell create_namePropertyCell_021_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
@@ -106,7 +106,7 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
       provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
-      EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
+      EditorCell cellWithRole = this.create_namePropertyCell_021_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {

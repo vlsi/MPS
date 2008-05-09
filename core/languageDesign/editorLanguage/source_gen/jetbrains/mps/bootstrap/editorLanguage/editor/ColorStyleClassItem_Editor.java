@@ -54,11 +54,11 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
   private static void setupLabel_QueryCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean checkRenderCondition16(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean checkRenderingCondition16(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "query", true) == null;
   }
 
-  public static boolean checkRenderCondition17(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean checkRenderingCondition17(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(node, "color", "query", null) || SLinkOperations.getTarget(node, "query", true) != null;
   }
 
@@ -75,10 +75,10 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCellModel_ConceptProperty(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, ":"));
-    if (ColorStyleClassItem_Editor.checkRenderCondition16(node, context, context.getOperationContext().getScope())) {
+    if (ColorStyleClassItem_Editor.checkRenderingCondition16(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createColorCell(context, node));
     }
-    if (ColorStyleClassItem_Editor.checkRenderCondition17(node, context, context.getOperationContext().getScope())) {
+    if (ColorStyleClassItem_Editor.checkRenderingCondition17(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createQueryCell(context, node));
     }
     return editorCell;
@@ -92,7 +92,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCellModel_ConceptPropertyinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_ConceptPropertyCell13294_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -110,7 +110,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createCellModel_ConceptPropertyinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_ConceptPropertyCell13294_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -121,7 +121,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createColorCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_colorPropertyCell13294_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -139,7 +139,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createColorCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_colorPropertyCell13294_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -150,7 +150,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createQueryCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_queryRefNodeCell13294_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -168,7 +168,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no query>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createQueryCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_queryRefNodeCell13294_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

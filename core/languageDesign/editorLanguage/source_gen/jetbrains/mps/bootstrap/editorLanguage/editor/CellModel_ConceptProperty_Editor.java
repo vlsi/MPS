@@ -737,19 +737,19 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
   private static void setupLabel_TextBgColorSelectedFunctionCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean checkRenderCondition24(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean checkRenderingCondition24(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(node, "textFgColor", "query", null);
   }
 
-  public static boolean checkRenderCondition25(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean checkRenderingCondition25(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(node, "textFgColor", "query", null);
   }
 
-  public static boolean checkRenderCondition26(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean checkRenderingCondition26(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(node, "textBgColor", "query", null);
   }
 
-  public static boolean checkRenderCondition27(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean checkRenderingCondition27(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(node, "textBgColorSelected", "query", null);
   }
 
@@ -819,19 +819,19 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRowCell15(context, node));
     editorCell.addEditorCell(this.createRowCell16(context, node));
     editorCell.addEditorCell(this.createRowCell17(context, node));
-    if (CellModel_ConceptProperty_Editor.checkRenderCondition24(node, context, context.getOperationContext().getScope())) {
+    if (CellModel_ConceptProperty_Editor.checkRenderingCondition24(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createColumnCell2(context, node));
     }
     editorCell.addEditorCell(this.createRowCell19(context, node));
-    if (CellModel_ConceptProperty_Editor.checkRenderCondition25(node, context, context.getOperationContext().getScope())) {
+    if (CellModel_ConceptProperty_Editor.checkRenderingCondition25(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createColumnCell3(context, node));
     }
     editorCell.addEditorCell(this.createRowCell21(context, node));
-    if (CellModel_ConceptProperty_Editor.checkRenderCondition26(node, context, context.getOperationContext().getScope())) {
+    if (CellModel_ConceptProperty_Editor.checkRenderingCondition26(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createColumnCell4(context, node));
     }
     editorCell.addEditorCell(this.createRowCell23(context, node));
-    if (CellModel_ConceptProperty_Editor.checkRenderCondition27(node, context, context.getOperationContext().getScope())) {
+    if (CellModel_ConceptProperty_Editor.checkRenderingCondition27(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createColumnCell5(context, node));
     }
     editorCell.addEditorCell(this.createSeparator1(context, node, ""));
@@ -1501,7 +1501,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createPropertyDeclarationReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_propertyDeclarationRefCell9917_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new CellModel_ConceptProperty_Editor._Inline2());
     EditorCell editorCell = provider.createEditorCell(context);
@@ -1519,7 +1519,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<choose property declaration>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createPropertyDeclarationReferenceCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_propertyDeclarationRefCell9917_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -1530,7 +1530,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createNoTargetTextCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_noTargetTextPropertyCell9917_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -1548,7 +1548,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<none>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(true);
-    EditorCell cellWithRole = this.createNoTargetTextCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_noTargetTextPropertyCell9917_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -1559,7 +1559,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createSelectableCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_selectablePropertyCell9917_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -1577,7 +1577,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createSelectableCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_selectablePropertyCell9917_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -1588,7 +1588,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createEditableCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_editablePropertyCell9917_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -1606,7 +1606,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createEditableCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_editablePropertyCell9917_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -1617,7 +1617,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createPropertyDeclarationReferenceCell1internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_propertyDeclarationRefCell9917_01_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new CellModel_ConceptProperty_Editor._Inline3());
     EditorCell editorCell = provider.createEditorCell(context);
@@ -1635,7 +1635,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<choose property declaration>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createPropertyDeclarationReferenceCell1internal(context, node, provider);
+    EditorCell cellWithRole = this.create_propertyDeclarationRefCell9917_01_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -1646,7 +1646,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createActionMapReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_actionMapRefCell9917_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new CellModel_ConceptProperty_Editor._Inline7());
     EditorCell editorCell = provider.createEditorCell(context);
@@ -1664,7 +1664,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<default>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createActionMapReferenceCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_actionMapRefCell9917_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -1675,7 +1675,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createAttractsFocusCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_attractsFocusPropertyCell9917_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -1693,7 +1693,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createAttractsFocusCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_attractsFocusPropertyCell9917_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -1704,7 +1704,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createLayoutConstraintCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_layoutConstraintPropertyCell9917_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -1722,7 +1722,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createLayoutConstraintCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_layoutConstraintPropertyCell9917_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -1733,7 +1733,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createDrawBorderCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_drawBorderPropertyCell9917_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -1751,7 +1751,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createDrawBorderCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_drawBorderPropertyCell9917_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -1762,7 +1762,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createDrawBracketsCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_drawBracketsPropertyCell9917_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -1780,7 +1780,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createDrawBracketsCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_drawBracketsPropertyCell9917_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -1791,7 +1791,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createBracketsColorCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_bracketsColorPropertyCell9917_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -1809,7 +1809,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createBracketsColorCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_bracketsColorPropertyCell9917_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -1820,7 +1820,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createFontStyleCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_fontStylePropertyCell9917_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -1838,7 +1838,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createFontStyleCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_fontStylePropertyCell9917_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -1849,7 +1849,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createFontSizeCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_fontSizePropertyCell9917_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -1867,7 +1867,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createFontSizeCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_fontSizePropertyCell9917_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -1878,7 +1878,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createUnderlinedCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_underlinedPropertyCell9917_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -1896,7 +1896,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createUnderlinedCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_underlinedPropertyCell9917_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -1907,7 +1907,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createRenderingConditionCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_renderingConditionRefNodeCell9917_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -1925,7 +1925,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<none>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRenderingConditionCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_renderingConditionRefNodeCell9917_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -1936,7 +1936,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createMenuDescriptorCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_menuDescriptorRefNodeCell9917_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -1954,7 +1954,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<none>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createMenuDescriptorCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_menuDescriptorRefNodeCell9917_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -1965,7 +1965,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createStyleClassReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_styleClassRefCell9917_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new CellModel_ConceptProperty_Editor._Inline45());
     EditorCell editorCell = provider.createEditorCell(context);
@@ -1983,7 +1983,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no style>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createStyleClassReferenceCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_styleClassRefCell9917_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -1994,7 +1994,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createTextFgColorCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_textFgColorPropertyCell9917_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -2012,7 +2012,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createTextFgColorCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_textFgColorPropertyCell9917_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -2023,7 +2023,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createCellForegroundFunctionCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_cellForegroundFunctionRefNodeCell9917_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -2041,7 +2041,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no query>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createCellForegroundFunctionCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_cellForegroundFunctionRefNodeCell9917_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -2052,7 +2052,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createTextFgColorEmptyCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_textFgColorEmptyPropertyCell9917_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -2070,7 +2070,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createTextFgColorEmptyCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_textFgColorEmptyPropertyCell9917_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -2081,7 +2081,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createTextForegroundEmptyFunctionCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_textForegroundEmptyFunctionRefNodeCell9917_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -2099,7 +2099,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no query>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createTextForegroundEmptyFunctionCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_textForegroundEmptyFunctionRefNodeCell9917_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -2110,7 +2110,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createTextBgColorCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_textBgColorPropertyCell9917_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -2128,7 +2128,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createTextBgColorCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_textBgColorPropertyCell9917_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -2139,7 +2139,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createTextBackgroundFunctionCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_textBackgroundFunctionRefNodeCell9917_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -2157,7 +2157,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no query>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createTextBackgroundFunctionCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_textBackgroundFunctionRefNodeCell9917_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -2168,7 +2168,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createTextBgColorSelectedCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_textBgColorSelectedPropertyCell9917_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -2186,7 +2186,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createTextBgColorSelectedCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_textBgColorSelectedPropertyCell9917_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -2197,7 +2197,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createTextBgColorSelectedFunctionCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_textBgColorSelectedFunctionRefNodeCell9917_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -2215,7 +2215,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createTextBgColorSelectedFunctionCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_textBgColorSelectedFunctionRefNodeCell9917_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -2249,7 +2249,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
       return this.createNameCell(context, node);
     }
 
-    public EditorCell createNameCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    public EditorCell create_namePropertyCell_02_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
@@ -2267,7 +2267,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
       provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
-      EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
+      EditorCell cellWithRole = this.create_namePropertyCell_02_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {
@@ -2302,7 +2302,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
       return this.createNameCell(context, node);
     }
 
-    public EditorCell createNameCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    public EditorCell create_namePropertyCell_03_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
@@ -2320,7 +2320,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
       provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
-      EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
+      EditorCell cellWithRole = this.create_namePropertyCell_03_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {
@@ -2355,7 +2355,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
       return this.createNameCell(context, node);
     }
 
-    public EditorCell createNameCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    public EditorCell create_namePropertyCell_07_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
@@ -2373,7 +2373,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
       provider.setNoTargetText("");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
-      EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
+      EditorCell cellWithRole = this.create_namePropertyCell_07_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {
@@ -2409,7 +2409,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
       return this.createNameCell(context, node);
     }
 
-    public EditorCell createNameCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    public EditorCell create_namePropertyCell_036_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
@@ -2427,7 +2427,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
       provider.setNoTargetText("");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
-      EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
+      EditorCell cellWithRole = this.create_namePropertyCell_036_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {

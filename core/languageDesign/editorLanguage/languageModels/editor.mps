@@ -20,7 +20,6 @@
   <import index="2" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="8" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
-  <import index="12" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="13" modelUID="jetbrains.mps.bootstrap.editorLanguage.editor@java_stub" version="-1" />
   <import index="14" modelUID="java.lang@java_stub" version="-1" />
   <import index="16" modelUID="jetbrains.mps.nodeEditor@java_stub" version="-1" />
@@ -28,10 +27,8 @@
   <import index="19" modelUID="jetbrains.mps.bootstrap.sharedConcepts.structure" version="-1" />
   <import index="20" modelUID="java.awt@java_stub" version="-1" />
   <import index="22" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure@java_stub" version="-1" />
-  <import index="24" modelUID="jetbrains.mps.core.editor" version="0" />
   <import index="25" modelUID="javax.swing@java_stub" version="-1" />
   <import index="26" modelUID="jetbrains.mps.baseLanguage.editor" version="-1" />
-  <import index="27" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <visible index="2" modelUID="jetbrains.mps.bootstrap.sharedConcepts.editor" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1078153915535">
     <property name="name" value="ConceptEditorDeclaration_Editor" />

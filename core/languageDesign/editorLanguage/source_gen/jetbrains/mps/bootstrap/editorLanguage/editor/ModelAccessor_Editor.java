@@ -458,7 +458,7 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createSetterCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_setterRefNodeCell14408_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -476,7 +476,7 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createSetterCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_setterRefNodeCell14408_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -487,7 +487,7 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createGetterCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_getterRefNodeCell14408_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -505,7 +505,7 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createGetterCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_getterRefNodeCell14408_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -516,7 +516,7 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createValidatorCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_validatorRefNodeCell14408_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -534,7 +534,7 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createValidatorCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_validatorRefNodeCell14408_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

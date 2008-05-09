@@ -244,7 +244,7 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createMatchingTextCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_matchingTextPropertyCell11977_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -262,7 +262,7 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<none>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createMatchingTextCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_matchingTextPropertyCell11977_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -273,7 +273,7 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createHandlerFunctionCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_handlerFunctionRefNodeCell11977_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -291,7 +291,7 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<default>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createHandlerFunctionCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_handlerFunctionRefNodeCell11977_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

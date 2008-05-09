@@ -68,7 +68,7 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCellModel_ConceptPropertyinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_ConceptPropertyCell7533_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -86,7 +86,7 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createCellModel_ConceptPropertyinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_ConceptPropertyCell7533_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -97,7 +97,7 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createFlagCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_flagPropertyCell7533_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -115,7 +115,7 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createFlagCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_flagPropertyCell7533_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

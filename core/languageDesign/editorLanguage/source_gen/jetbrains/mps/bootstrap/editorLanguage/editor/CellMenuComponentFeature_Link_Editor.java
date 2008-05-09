@@ -30,7 +30,7 @@ public class CellMenuComponentFeature_Link_Editor extends DefaultNodeEditor {
     return this.createLinkDeclarationReferenceCell(context, node);
   }
 
-  public EditorCell createLinkDeclarationReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_linkDeclarationRefCell6801_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new CellMenuComponentFeature_Link_Editor._Inline31());
     EditorCell editorCell = provider.createEditorCell(context);
@@ -48,7 +48,7 @@ public class CellMenuComponentFeature_Link_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<choose property>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createLinkDeclarationReferenceCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_linkDeclarationRefCell6801_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -82,7 +82,7 @@ public class CellMenuComponentFeature_Link_Editor extends DefaultNodeEditor {
       return this.createRoleCell(context, node);
     }
 
-    public EditorCell createRoleCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    public EditorCell create_rolePropertyCell_04_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
@@ -100,7 +100,7 @@ public class CellMenuComponentFeature_Link_Editor extends DefaultNodeEditor {
       provider.setNoTargetText("");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
-      EditorCell cellWithRole = this.createRoleCellinternal(context, node, provider);
+      EditorCell cellWithRole = this.create_rolePropertyCell_04_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {

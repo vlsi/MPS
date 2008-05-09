@@ -313,7 +313,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  public EditorCell createReturnTypeCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_returnTypeRefNodeCell18242_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -331,7 +331,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     provider.setNoTargetText("<return type>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createReturnTypeCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_returnTypeRefNodeCell18242_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -342,7 +342,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     return cellWithRole;
   }
 
-  public EditorCell createPrefixCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_prefixPropertyCell18242_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -360,7 +360,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     provider.setNoTargetText("<prefix>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createPrefixCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_prefixPropertyCell18242_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -371,7 +371,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     return cellWithRole;
   }
 
-  public EditorCell createNotSetStringCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_notSetStringPropertyCell18242_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -389,7 +389,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createNotSetStringCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_notSetStringPropertyCell18242_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -400,7 +400,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     return cellWithRole;
   }
 
-  public EditorCell createQueryIdPropertyReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_queryIdPropertyRefCell18242_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new QueryMethodIdEditorProviderExpression_Editor._Inline33());
     EditorCell editorCell = provider.createEditorCell(context);
@@ -418,7 +418,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createQueryIdPropertyReferenceCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_queryIdPropertyRefCell18242_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -451,7 +451,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
       return this.createNameCell(context, node);
     }
 
-    public EditorCell createNameCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    public EditorCell create_namePropertyCell_027_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
@@ -469,7 +469,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
       provider.setNoTargetText("");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
-      EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
+      EditorCell cellWithRole = this.create_namePropertyCell_027_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {

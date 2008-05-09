@@ -51,7 +51,7 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
   private static void setupLabel_FocusPolicyApplicableCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean checkRenderCondition44(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean checkRenderingCondition44(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "attractsFocus", "0", "0"));
   }
 
@@ -91,7 +91,7 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if (_FocusPolicy_Applicable.checkRenderCondition44(node, context, context.getOperationContext().getScope())) {
+    if (_FocusPolicy_Applicable.checkRenderingCondition44(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createColumnCell(context, node));
     }
     return editorCell;
@@ -105,7 +105,7 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createFocusPolicyApplicableCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_focusPolicyApplicableRefNodeCell11964_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -123,7 +123,7 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
     provider.setNoTargetText("<no focus policy condition>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createFocusPolicyApplicableCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_focusPolicyApplicableRefNodeCell11964_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

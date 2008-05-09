@@ -63,7 +63,7 @@ public class InlineEditorComponent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCellModelCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_cellModelRefNodeCell20653_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -81,7 +81,7 @@ public class InlineEditorComponent_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createCellModelCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_cellModelRefNodeCell20653_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

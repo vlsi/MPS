@@ -119,7 +119,7 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createModifiersCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_modifiersPropertyCell1532_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -138,7 +138,7 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("any");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(true);
-    EditorCell cellWithRole = this.createModifiersCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_modifiersPropertyCell1532_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -149,7 +149,7 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createKeycodeCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_keycodePropertyCell1532_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -168,7 +168,7 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<keycode>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createKeycodeCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_keycodePropertyCell1532_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
