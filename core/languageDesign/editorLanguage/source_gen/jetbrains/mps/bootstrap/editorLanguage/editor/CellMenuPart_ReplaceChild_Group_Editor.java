@@ -249,11 +249,11 @@ public class CellMenuPart_ReplaceChild_Group_Editor extends DefaultNodeEditor {
   private static void setupLabel_CreateFunctionCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean checkRenderingCondition7(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition2493_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(node, "presentation", "custom", null);
   }
 
-  public static boolean checkRenderingCondition8(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition2493_01(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(node, "presentation", "custom", null);
   }
 
@@ -303,10 +303,10 @@ public class CellMenuPart_ReplaceChild_Group_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.create_CollectionCell2493_04(context, node));
     editorCell.addEditorCell(this.create_CollectionCell2493_08(context, node));
     editorCell.addEditorCell(this.create_CollectionCell2493_05(context, node));
-    if (CellMenuPart_ReplaceChild_Group_Editor.checkRenderingCondition7(node, context, context.getOperationContext().getScope())) {
+    if (CellMenuPart_ReplaceChild_Group_Editor.renderingCondition2493_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell2493_06(context, node));
     }
-    if (CellMenuPart_ReplaceChild_Group_Editor.checkRenderingCondition8(node, context, context.getOperationContext().getScope())) {
+    if (CellMenuPart_ReplaceChild_Group_Editor.renderingCondition2493_01(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell2493_07(context, node));
     }
     editorCell.addEditorCell(this.create_CollectionCell2493_09(context, node));

@@ -249,11 +249,11 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
   private static void setupLabel_HandlerFunctionCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean checkRenderingCondition9(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition14578_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(node, "presentation", "custom", null);
   }
 
-  public static boolean checkRenderingCondition10(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition14578_01(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(node, "presentation", "custom", null);
   }
 
@@ -303,10 +303,10 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.create_CollectionCell14578_04(context, node));
     editorCell.addEditorCell(this.create_CollectionCell14578_05(context, node));
     editorCell.addEditorCell(this.create_CollectionCell14578_06(context, node));
-    if (CellMenuPart_Generic_Group_Editor.checkRenderingCondition9(node, context, context.getOperationContext().getScope())) {
+    if (CellMenuPart_Generic_Group_Editor.renderingCondition14578_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell14578_07(context, node));
     }
-    if (CellMenuPart_Generic_Group_Editor.checkRenderingCondition10(node, context, context.getOperationContext().getScope())) {
+    if (CellMenuPart_Generic_Group_Editor.renderingCondition14578_01(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell14578_08(context, node));
     }
     editorCell.addEditorCell(this.create_CollectionCell14578_09(context, node));

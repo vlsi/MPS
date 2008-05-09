@@ -499,11 +499,11 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
   private static void setupLabel_StyleClassReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean checkRenderingCondition1(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition65_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "vertical");
   }
 
-  public static boolean checkRenderingCondition3(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition65_01(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.getBoolean(node, "vertical"));
   }
 
@@ -531,10 +531,10 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.create__OpenTagComponentCell65_0(context, node));
-    if (CellModel_Alternation_Editor.checkRenderingCondition1(node, context, context.getOperationContext().getScope())) {
+    if (CellModel_Alternation_Editor.renderingCondition65_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell65_02(context, node));
     }
-    if (CellModel_Alternation_Editor.checkRenderingCondition3(node, context, context.getOperationContext().getScope())) {
+    if (CellModel_Alternation_Editor.renderingCondition65_01(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell65_04(context, node));
     }
     editorCell.addEditorCell(this.create__CloseTagComponentCell65_0(context, node));

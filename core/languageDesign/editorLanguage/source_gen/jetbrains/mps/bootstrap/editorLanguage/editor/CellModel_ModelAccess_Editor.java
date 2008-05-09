@@ -710,19 +710,19 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
   private static void setupLabel_TextBgColorSelectedFunctionCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean checkRenderingCondition36(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition19694_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(node, "textFgColor", "query", null);
   }
 
-  public static boolean checkRenderingCondition37(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition19694_01(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(node, "textFgColor", "query", null);
   }
 
-  public static boolean checkRenderingCondition38(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition19694_02(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(node, "textBgColor", "query", null);
   }
 
-  public static boolean checkRenderingCondition39(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition19694_03(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(node, "textBgColorSelected", "query", null);
   }
 
@@ -788,19 +788,19 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.create_CollectionCell19694_013(context, node));
     editorCell.addEditorCell(this.create_CollectionCell19694_014(context, node));
     editorCell.addEditorCell(this.create_CollectionCell19694_020(context, node));
-    if (CellModel_ModelAccess_Editor.checkRenderingCondition36(node, context, context.getOperationContext().getScope())) {
+    if (CellModel_ModelAccess_Editor.renderingCondition19694_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell19694_021(context, node));
     }
     editorCell.addEditorCell(this.create_CollectionCell19694_023(context, node));
-    if (CellModel_ModelAccess_Editor.checkRenderingCondition37(node, context, context.getOperationContext().getScope())) {
+    if (CellModel_ModelAccess_Editor.renderingCondition19694_01(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell19694_024(context, node));
     }
     editorCell.addEditorCell(this.create_CollectionCell19694_026(context, node));
-    if (CellModel_ModelAccess_Editor.checkRenderingCondition38(node, context, context.getOperationContext().getScope())) {
+    if (CellModel_ModelAccess_Editor.renderingCondition19694_02(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell19694_027(context, node));
     }
     editorCell.addEditorCell(this.create_CollectionCell19694_029(context, node));
-    if (CellModel_ModelAccess_Editor.checkRenderingCondition39(node, context, context.getOperationContext().getScope())) {
+    if (CellModel_ModelAccess_Editor.renderingCondition19694_03(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell19694_030(context, node));
     }
     editorCell.addEditorCell(this.create_ConstantCell19694_08(context, node, ""));

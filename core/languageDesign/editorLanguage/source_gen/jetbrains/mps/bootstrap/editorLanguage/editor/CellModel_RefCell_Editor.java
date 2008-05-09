@@ -545,7 +545,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
   private static void setupLabel_StyleClassReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean checkRenderingCondition4(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition17023_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "relationDeclaration", false) != null;
   }
 
@@ -568,7 +568,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.create_ConstantCell17023_07(context, node, "%"));
     editorCell.addEditorCell(this.create_linkDeclarationRefCell17023_0(context, node));
     editorCell.addEditorCell(this.create_ConstantCell17023_08(context, node, "%"));
-    if (CellModel_RefCell_Editor.checkRenderingCondition4(node, context, context.getOperationContext().getScope())) {
+    if (CellModel_RefCell_Editor.renderingCondition17023_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_editorComponentRefNodeCell17023_0(context, node));
     }
     editorCell.addEditorCell(this.create__CloseTagComponentCell17023_0(context, node));

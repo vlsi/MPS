@@ -101,7 +101,7 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
   private static void setupLabel_ExtendedClassCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean checkRenderingCondition18(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition13915_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "extendedClass", true) != null;
   }
 
@@ -129,7 +129,7 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.create_namePropertyCell13915_0(context, node));
-    if (StyleSheetClass_Editor.checkRenderingCondition18(node, context, context.getOperationContext().getScope())) {
+    if (StyleSheetClass_Editor.renderingCondition13915_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell13915_03(context, node));
     }
     editorCell.addEditorCell(this.create_ConstantCell13915_0(context, node, "{"));

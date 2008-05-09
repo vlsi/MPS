@@ -51,7 +51,7 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
   private static void setupLabel_FocusPolicyApplicableCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean checkRenderingCondition44(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition11964_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "attractsFocus", "0", "0"));
   }
 
@@ -91,7 +91,7 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if (_FocusPolicy_Applicable.checkRenderingCondition44(node, context, context.getOperationContext().getScope())) {
+    if (_FocusPolicy_Applicable.renderingCondition11964_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell11964_0(context, node));
     }
     return editorCell;

@@ -846,15 +846,15 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   private static void setupLabel_StyleClassReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean checkRenderingCondition13(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition3462_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "vertical");
   }
 
-  public static boolean checkRenderingCondition14(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition3462_01(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.getBoolean(node, "vertical"));
   }
 
-  public static boolean checkRenderingCondition15(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition3462_02(SNode node, EditorContext editorContext, IScope scope) {
     return "templates".equals(SNodeOperations.getModel(node).getStereotype());
   }
 
@@ -874,7 +874,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.create__OpenTagComponentCell3462_0(context, node));
-    if (CellModel_RefNodeList_Editor.checkRenderingCondition15(node, context, context.getOperationContext().getScope())) {
+    if (CellModel_RefNodeList_Editor.renderingCondition3462_02(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_verticalPropertyCell3462_01(context, node));
     }
     editorCell.addEditorCell(this.create_CollectionCell3462_01(context, node));
@@ -888,10 +888,10 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if (CellModel_RefNodeList_Editor.checkRenderingCondition13(node, context, context.getOperationContext().getScope())) {
+    if (CellModel_RefNodeList_Editor.renderingCondition3462_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell3462_02(context, node));
     }
-    if (CellModel_RefNodeList_Editor.checkRenderingCondition14(node, context, context.getOperationContext().getScope())) {
+    if (CellModel_RefNodeList_Editor.renderingCondition3462_01(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell3462_05(context, node));
     }
     return editorCell;
