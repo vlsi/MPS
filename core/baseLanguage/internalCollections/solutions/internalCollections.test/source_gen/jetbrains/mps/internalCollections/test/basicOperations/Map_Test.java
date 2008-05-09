@@ -11,6 +11,7 @@ import junit.framework.Assert;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class Map_Test extends Util_Test {
 
@@ -56,6 +57,14 @@ public class Map_Test extends Util_Test {
       Assert.assertEquals(values.get(i - 1), MapSequence.fromMap(map).get(i));
     }
     this.assertIterableEqualsIgnoreOrder(Arrays.asList(1, 2, 3), MapSequence.fromMap(map).keySet());
+  }
+
+  @Test()
+  public void test_clear() throws Exception {
+    Map<Integer, String> map1 = MapSequence.<Integer, String>fromKeysArray(1, 2, 3).withValues("a", "b", "c");
+    Assert.assertFalse(Sequence.fromIterable(MapSequence.fromMap(map1).keySet()).isEmpty());
+    MapSequence.fromMap(map1).clear();
+    Assert.assertTrue(Sequence.fromIterable(MapSequence.fromMap(map1).keySet()).isEmpty());
   }
 
 }
