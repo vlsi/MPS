@@ -12,12 +12,12 @@ import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class CellModel_Indent_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConstantCell17256_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell17256_0");
     editorCell.setDrawBorder(true);
   }
 
-  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell17256_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(Color.lightGray);
   }
 
@@ -28,8 +28,8 @@ public class CellModel_Indent_Editor extends DefaultNodeEditor {
 
   public EditorCell create_ConstantCell17256_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_ConstantCell(editorCell, node, context);
-    setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell17256_0(editorCell, node, context);
+    setupLabel_ConstantCell17256_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }

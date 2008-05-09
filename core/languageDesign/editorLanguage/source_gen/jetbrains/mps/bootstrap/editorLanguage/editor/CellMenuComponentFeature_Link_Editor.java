@@ -17,12 +17,12 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 
 public class CellMenuComponentFeature_Link_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_LinkDeclarationReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_linkDeclarationRefCell6801_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_linkDeclarationRefCell6801_0");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupLabel_LinkDeclarationReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_linkDeclarationRefCell6801_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -34,9 +34,9 @@ public class CellMenuComponentFeature_Link_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new CellMenuComponentFeature_Link_Editor._Inline31());
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_LinkDeclarationReferenceCell(editorCell, node, context);
+    setupBasic_linkDeclarationRefCell6801_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_LinkDeclarationReferenceCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_linkDeclarationRefCell6801_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -65,11 +65,11 @@ public class CellMenuComponentFeature_Link_Editor extends DefaultNodeEditor {
       super();
     }
 
-    private static void setupBasic_RoleCell(EditorCell editorCell, SNode node, EditorContext context) {
+    private static void setupBasic_rolePropertyCell6801_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_rolePropertyCell6801_0");
     }
 
-    private static void setupLabel_RoleCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    private static void setupLabel_rolePropertyCell6801_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
       editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
     }
 
@@ -86,9 +86,9 @@ public class CellMenuComponentFeature_Link_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      setupBasic_RoleCell(editorCell, node, context);
+      setupBasic_rolePropertyCell6801_0(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        setupLabel_RoleCell((EditorCell_Label)editorCell, node, context);
+        setupLabel_rolePropertyCell6801_0((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

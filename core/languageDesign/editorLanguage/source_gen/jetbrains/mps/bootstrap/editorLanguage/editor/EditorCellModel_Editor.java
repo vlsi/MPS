@@ -13,27 +13,27 @@ import jetbrains.mps.nodeEditor.EditorCell_Error;
 
 public class EditorCellModel_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_CollectionCell14761_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell14761_0");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
 
-  private static void setupBasic_HeaderCell(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConstantCell14761_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14761_0");
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
   }
 
-  private static void setupBasic_ErrorCell(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ErrorCell14761_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ErrorCell14761_0");
     editorCell.setDrawBorder(true);
   }
 
-  private static void setupLabel_HeaderCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell14761_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ErrorCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ErrorCell14761_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -47,7 +47,7 @@ public class EditorCellModel_Editor extends DefaultNodeEditor {
 
   public EditorCell create_CollectionCell14761_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    setupBasic_ColumnCell(editorCell, node, context);
+    setupBasic_CollectionCell14761_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -57,16 +57,16 @@ public class EditorCellModel_Editor extends DefaultNodeEditor {
 
   public EditorCell create_ConstantCell14761_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_HeaderCell(editorCell, node, context);
-    setupLabel_HeaderCell(editorCell, node, context);
+    setupBasic_ConstantCell14761_0(editorCell, node, context);
+    setupLabel_ConstantCell14761_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell create_ErrorCell14761_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "<choose cell model>");
-    setupBasic_ErrorCell(editorCell, node, context);
-    setupLabel_ErrorCell(editorCell, node, context);
+    setupBasic_ErrorCell14761_0(editorCell, node, context);
+    setupLabel_ErrorCell14761_0(editorCell, node, context);
     return editorCell;
   }
 

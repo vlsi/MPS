@@ -16,29 +16,29 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class SelectPositionParameter_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_CollectionCell5753_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell5753_0");
   }
 
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConstantCell5753_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5753_0");
   }
 
-  private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConstantCell5753_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5753_01");
   }
 
-  private static void setupBasic_PositionCell(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_positionPropertyCell5753_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_positionPropertyCell5753_0");
   }
 
-  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell5753_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell5753_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_PositionCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_positionPropertyCell5753_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -48,7 +48,7 @@ public class SelectPositionParameter_Editor extends DefaultNodeEditor {
 
   public EditorCell create_CollectionCell5753_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_RowCell(editorCell, node, context);
+    setupBasic_CollectionCell5753_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -60,16 +60,16 @@ public class SelectPositionParameter_Editor extends DefaultNodeEditor {
 
   public EditorCell create_ConstantCell5753_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_ConstantCell(editorCell, node, context);
-    setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell5753_0(editorCell, node, context);
+    setupLabel_ConstantCell5753_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell create_ConstantCell5753_01(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_ConstantCell1(editorCell, node, context);
-    setupLabel_ConstantCell1(editorCell, node, context);
+    setupBasic_ConstantCell5753_01(editorCell, node, context);
+    setupLabel_ConstantCell5753_01(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -78,9 +78,9 @@ public class SelectPositionParameter_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_PositionCell(editorCell, node, context);
+    setupBasic_positionPropertyCell5753_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_PositionCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_positionPropertyCell5753_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

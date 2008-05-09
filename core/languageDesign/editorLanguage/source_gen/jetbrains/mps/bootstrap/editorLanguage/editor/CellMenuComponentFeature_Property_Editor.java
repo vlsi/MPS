@@ -17,12 +17,12 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 
 public class CellMenuComponentFeature_Property_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_PropertyDeclarationReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_propertyDeclarationRefCell5546_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_propertyDeclarationRefCell5546_0");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupLabel_PropertyDeclarationReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_propertyDeclarationRefCell5546_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -34,9 +34,9 @@ public class CellMenuComponentFeature_Property_Editor extends DefaultNodeEditor 
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new CellMenuComponentFeature_Property_Editor._Inline30());
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_PropertyDeclarationReferenceCell(editorCell, node, context);
+    setupBasic_propertyDeclarationRefCell5546_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_PropertyDeclarationReferenceCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_propertyDeclarationRefCell5546_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -65,11 +65,11 @@ public class CellMenuComponentFeature_Property_Editor extends DefaultNodeEditor 
       super();
     }
 
-    private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
+    private static void setupBasic_namePropertyCell5546_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell5546_0");
     }
 
-    private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    private static void setupLabel_namePropertyCell5546_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
       editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
     }
 
@@ -86,9 +86,9 @@ public class CellMenuComponentFeature_Property_Editor extends DefaultNodeEditor 
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      setupBasic_NameCell(editorCell, node, context);
+      setupBasic_namePropertyCell5546_0(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        setupLabel_namePropertyCell5546_0((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

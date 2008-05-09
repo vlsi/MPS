@@ -12,13 +12,13 @@ import jetbrains.mps.nodeEditor.EditorCell_Error;
 
 public class CellMenuPart_Abstract_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_ErrorCell(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ErrorCell9457_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ErrorCell9457_0");
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.ITALIC);
   }
 
-  private static void setupLabel_ErrorCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ErrorCell9457_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -28,8 +28,8 @@ public class CellMenuPart_Abstract_Editor extends DefaultNodeEditor {
 
   public EditorCell create_ErrorCell9457_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "<choose menu part>");
-    setupBasic_ErrorCell(editorCell, node, context);
-    setupLabel_ErrorCell(editorCell, node, context);
+    setupBasic_ErrorCell9457_0(editorCell, node, context);
+    setupLabel_ErrorCell9457_0(editorCell, node, context);
     return editorCell;
   }
 

@@ -19,12 +19,12 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
     super(node);
   }
 
-  private static void setupBasic_KeyMapReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_keyMapRefCell7380_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_keyMapRefCell7380_0");
     editorCell.setDrawBorder(true);
   }
 
-  private static void setupLabel_KeyMapReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_keyMapRefCell7380_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -40,9 +40,9 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new _CellKeyMapLnk_Component._Inline25());
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_KeyMapReferenceCell(editorCell, node, context);
+    setupBasic_keyMapRefCell7380_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_KeyMapReferenceCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_keyMapRefCell7380_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -71,12 +71,12 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
       super();
     }
 
-    private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
+    private static void setupBasic_namePropertyCell7380_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell7380_0");
       editorCell.setDrawBorder(true);
     }
 
-    private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    private static void setupLabel_namePropertyCell7380_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 
@@ -92,9 +92,9 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      setupBasic_NameCell(editorCell, node, context);
+      setupBasic_namePropertyCell7380_0(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        setupLabel_namePropertyCell7380_0((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

@@ -24,25 +24,25 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myCellMenuPartListHandler_cellMenuPartList_;
 
-  private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_CollectionCell19413_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell19413_0");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConstantCell19413_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19413_0");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_CellMenuPartList(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_cellMenuPartRefNodeListCell19413_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_cellMenuPartRefNodeListCell19413_0");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell19413_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_CellMenuPartList(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_cellMenuPartRefNodeListCell19413_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -52,7 +52,7 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
 
   public EditorCell create_CollectionCell19413_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    setupBasic_ColumnCell(editorCell, node, context);
+    setupBasic_CollectionCell19413_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -63,8 +63,8 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
 
   public EditorCell create_ConstantCell19413_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_ConstantCell(editorCell, node, context);
-    setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell19413_0(editorCell, node, context);
+    setupLabel_ConstantCell19413_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -74,7 +74,7 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
       this.myCellMenuPartListHandler_cellMenuPartList_ = new CellMenuDescriptor_Editor._RefNodeListHandler5(node, "cellMenuPart", context);
     }
     EditorCell_Collection editorCell = this.myCellMenuPartListHandler_cellMenuPartList_.createCells(context, new CellLayout_Vertical(), false);
-    setupBasic_CellMenuPartList(editorCell, node, context);
+    setupBasic_cellMenuPartRefNodeListCell19413_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -88,13 +88,13 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
       super(ownerNode, childRole, context, false);
     }
 
-    private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    private static void setupBasic_ConstantCell19413_01(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19413_01");
       editorCell.setDrawBorder(false);
       editorCell.setFontType(MPSFonts.ITALIC);
     }
 
-    private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    private static void setupLabel_ConstantCell19413_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
       editorCell.setEditable(true);
       editorCell.getTextLine().setTextColor(Color.darkGray);
     }
@@ -142,8 +142,8 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
 
     public EditorCell create_ConstantCell19413_01(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      setupBasic_ConstantCell1(editorCell, node, context);
-      setupLabel_ConstantCell1(editorCell, node, context);
+      setupBasic_ConstantCell19413_01(editorCell, node, context);
+      setupLabel_ConstantCell19413_01(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }

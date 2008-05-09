@@ -21,13 +21,13 @@ public class _OpenTag extends AbstractCellProvider {
     super(node);
   }
 
-  private static void setupBasic_CellModel_ModelAccess(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ModelAccessCell15352_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ModelAccessCell15352_0");
     editorCell.setDrawBorder(true);
     editorCell.setCellBackgroundColor(_QueryFunction_Color_1177490702142(node, context));
   }
 
-  private static void setupLabel_CellModel_ModelAccess(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ModelAccessCell15352_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(false);
   }
 
@@ -48,8 +48,8 @@ public class _OpenTag extends AbstractCellProvider {
     ModelAccessor modelAccessor = this._modelAcessorFactory_1176716878596(context, node);
     EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-    setupBasic_CellModel_ModelAccess(editorCell, node, context);
-    setupLabel_CellModel_ModelAccess(editorCell, node, context);
+    setupBasic_ModelAccessCell15352_0(editorCell, node, context);
+    setupLabel_ModelAccessCell15352_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }

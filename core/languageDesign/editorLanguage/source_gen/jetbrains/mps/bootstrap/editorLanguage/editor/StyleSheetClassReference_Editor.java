@@ -16,11 +16,11 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 
 public class StyleSheetClassReference_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_StyleSheetClassReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_styleSheetClassRefCell16166_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_styleSheetClassRefCell16166_0");
   }
 
-  private static void setupLabel_StyleSheetClassReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_styleSheetClassRefCell16166_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -32,9 +32,9 @@ public class StyleSheetClassReference_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new StyleSheetClassReference_Editor._Inline52());
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_StyleSheetClassReferenceCell(editorCell, node, context);
+    setupBasic_styleSheetClassRefCell16166_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_StyleSheetClassReferenceCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_styleSheetClassRefCell16166_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -63,11 +63,11 @@ public class StyleSheetClassReference_Editor extends DefaultNodeEditor {
       super();
     }
 
-    private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
+    private static void setupBasic_namePropertyCell16166_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell16166_0");
     }
 
-    private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    private static void setupLabel_namePropertyCell16166_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 
@@ -83,9 +83,9 @@ public class StyleSheetClassReference_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      setupBasic_NameCell(editorCell, node, context);
+      setupBasic_namePropertyCell16166_0(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        setupLabel_namePropertyCell16166_0((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
