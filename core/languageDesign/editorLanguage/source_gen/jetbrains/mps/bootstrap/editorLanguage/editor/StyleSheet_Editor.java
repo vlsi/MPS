@@ -28,42 +28,42 @@ public class StyleSheet_Editor extends DefaultNodeEditor {
   /* package */AbstractCellListHandler myStyleClassListHandler_styleClassList_;
 
   private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01289");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11329_0");
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01290");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11329_01");
     editorCell.setSelectable(false);
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01291");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11329_0");
   }
 
   private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01292");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell11329_0");
   }
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01293");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11329_01");
   }
 
   private static void setupBasic_ConstantCell3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01294");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11329_02");
   }
 
   private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01295");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11329_02");
     editorCell.setSelectable(false);
   }
 
   private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01296");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11329_03");
     editorCell.setSelectable(false);
   }
 
   private static void setupBasic_StyleClassList(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01297");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_styleClassRefNodeListCell11329_0");
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -13,7 +13,7 @@ import jetbrains.mps.nodeEditor.EditorCell_Constant;
 public class CellModel_Indent_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01380");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell17256_0");
     editorCell.setDrawBorder(true);
   }
 

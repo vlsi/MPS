@@ -19,47 +19,47 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01162");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell14374_0");
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01163");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell14374_01");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01164");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14374_0");
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01165");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell14374_02");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01166");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14374_01");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01167");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14374_02");
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01168");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14374_03");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_PostfixesFunctionCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01169");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_postfixesFunctionRefNodeCell14374_0");
     editorCell.setDrawBorder(false);
   }
 

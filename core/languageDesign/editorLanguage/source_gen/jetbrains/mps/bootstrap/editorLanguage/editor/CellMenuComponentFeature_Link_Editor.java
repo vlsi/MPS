@@ -18,7 +18,7 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 public class CellMenuComponentFeature_Link_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_LinkDeclarationReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01046");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_linkDeclarationRefCell6801_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -66,7 +66,7 @@ public class CellMenuComponentFeature_Link_Editor extends DefaultNodeEditor {
     }
 
     private static void setupBasic_RoleCell(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01047");
+      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_rolePropertyCell_04");
     }
 
     private static void setupLabel_RoleCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

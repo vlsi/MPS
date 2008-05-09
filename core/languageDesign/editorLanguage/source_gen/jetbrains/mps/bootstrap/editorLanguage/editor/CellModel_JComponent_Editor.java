@@ -17,30 +17,30 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class CellModel_JComponent_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0230");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell4652_0");
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0231");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell4652_0");
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01069");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell4652_01");
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01070");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell4652_01");
     editorCell.setSelectable(false);
   }
 
   private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01071");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell4652_02");
   }
 
   private static void setupBasic_ComponentProviderCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01072");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_componentProviderRefNodeCell4652_0");
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

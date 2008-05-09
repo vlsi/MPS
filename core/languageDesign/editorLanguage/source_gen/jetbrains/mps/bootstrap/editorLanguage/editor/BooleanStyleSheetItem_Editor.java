@@ -18,20 +18,20 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01367");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7533_0");
   }
 
   private static void setupBasic_CellModel_ConceptProperty(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01368");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConceptPropertyCell7533_0");
     Styles_StyleSheet.ITEM.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01369");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7533_0");
   }
 
   private static void setupBasic_FlagCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01370");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_flagPropertyCell7533_0");
   }
 
   private static void setupLabel_CellModel_ConceptProperty(EditorCell_Label editorCell, SNode node, EditorContext context) {

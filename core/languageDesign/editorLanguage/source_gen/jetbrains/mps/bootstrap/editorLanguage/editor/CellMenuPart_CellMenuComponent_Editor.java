@@ -21,47 +21,47 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 public class CellMenuPart_CellMenuComponent_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01048");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7052_0");
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01049");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7052_01");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01050");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7052_0");
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01051");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7052_02");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01052");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7052_01");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01053");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7052_02");
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01054");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7052_03");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CellMenuComponentReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01055");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_cellMenuComponentRefCell7052_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -189,7 +189,7 @@ public class CellMenuPart_CellMenuComponent_Editor extends DefaultNodeEditor {
     }
 
     private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01056");
+      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell_026");
     }
 
     private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

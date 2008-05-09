@@ -17,19 +17,19 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class SelectPositionParameter_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01511");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell5753_0");
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01512");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5753_0");
   }
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01513");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5753_01");
   }
 
   private static void setupBasic_PositionCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01514");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_positionPropertyCell5753_0");
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

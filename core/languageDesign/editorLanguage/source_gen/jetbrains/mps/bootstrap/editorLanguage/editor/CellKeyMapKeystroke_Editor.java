@@ -25,34 +25,34 @@ import jetbrains.mps.nodeEditor.EditorCellKeyMap;
 public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_NodeBox(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0287");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell1532_0");
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0288");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell1532_0");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ModifiersCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0289");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_modifiersPropertyCell1532_0");
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0290");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell1532_01");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_KeycodeCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0291");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_keycodePropertyCell1532_0");
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_0292");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell1532_02");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }

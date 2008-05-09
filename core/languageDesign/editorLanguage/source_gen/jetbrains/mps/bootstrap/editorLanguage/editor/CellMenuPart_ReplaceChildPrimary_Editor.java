@@ -16,35 +16,35 @@ import jetbrains.mps.nodeEditor.EditorCell_Constant;
 public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01059");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell743_0");
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01060");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell743_01");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01061");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell743_0");
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01062");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell743_02");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01063");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell743_01");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_01064");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell743_02");
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.ITALIC);
   }
