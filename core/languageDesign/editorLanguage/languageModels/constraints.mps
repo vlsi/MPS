@@ -19,6 +19,7 @@
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="21" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -45,48 +46,22 @@
       <link role="applicableProperty" targetNodeId="2.1169194664001" />
       <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertyGetter" id="1147474122159">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1147474122160">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1147474917363">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1147474917364">
-              <property name="name" value="editedConcept" />
-              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1147474917366">
-                <link role="concept" targetNodeId="4.1071489090640" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1210368929068">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1210368940081">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1210368944131">
+                <property name="value" value="_Editor" />
               </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227946077">
-                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintsFunctionParameter_node" id="1147474159061" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1147474893019">
-                  <link role="link" targetNodeId="1.1166049300910" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1147474933868">
-            <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1147474938279">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1147474940813" />
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1147474935731">
-                <link role="variableDeclaration" targetNodeId="1147474917364" resolveInfo="editedConcept" />
-              </node>
-            </node>
-            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1147474933870">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1147474945251">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1147474959381">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1147474976900">
-                    <property name="value" value="_Editor" />
-                  </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227927056">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1147474949644">
-                      <link role="variableDeclaration" targetNodeId="1147474917364" resolveInfo="editedConcept" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1173471014906">
-                      <link role="property" targetNodeId="2.1169194664001" />
-                    </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210368934699">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210368929273">
+                  <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintsFunctionParameter_node" id="1210368929069" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1210368933307">
+                    <link role="link" targetNodeId="1.1166049300910" />
                   </node>
                 </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1210368935374">
+                  <link role="property" targetNodeId="2.1169194664001" resolveInfo="name" />
+                </node>
               </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1147475374218">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1147475376361">
-              <property name="value" value="?_Editor" />
             </node>
           </node>
         </node>

@@ -7,8 +7,8 @@ import jetbrains.mps.smodel.constraints.INodePropertyGetter;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
 public class ConceptEditorDeclaration_name_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
 
@@ -24,11 +24,7 @@ public class ConceptEditorDeclaration_name_PropertyConstraint implements IModelC
   }
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
-    SNode editedConcept = SLinkOperations.getTarget(node, "conceptDeclaration", false);
-    if (editedConcept != null) {
-      return SPropertyOperations.getString(editedConcept, "name") + "_Editor";
-    }
-    return "?_Editor";
+    return SPropertyOperations.getString(SLinkOperations.getTarget(node, "conceptDeclaration", false), "name") + "_Editor";
   }
 
 }
