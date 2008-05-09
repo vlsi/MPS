@@ -600,29 +600,29 @@
                 </node>
               </node>
             </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1210360247455">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210360254321">
+                <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1210360253335">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1210360247456">
+                    <link role="variableDeclaration" targetNodeId="1210358727338" resolveInfo="cellModel" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1210360265371">
+                  <link role="baseMethodDeclaration" targetNodeId="7.~SNode.putUserObject(java.lang.Object,java.lang.Object):void" resolveInfo="putUserObject" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1210360268169">
+                    <link role="variableDeclaration" targetNodeId="1210358696034" resolveInfo="CELL_READABLE_ID" />
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1210360273296">
+                    <link role="variableDeclaration" targetNodeId="1210358774635" resolveInfo="readableId" />
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1210358831039">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1210358832464" />
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1210358828944">
               <link role="variableDeclaration" targetNodeId="1210358774635" resolveInfo="readableId" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1210360247455">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210360254321">
-            <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1210360253335">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1210360247456">
-                <link role="variableDeclaration" targetNodeId="1210358727338" resolveInfo="cellModel" />
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1210360265371">
-              <link role="baseMethodDeclaration" targetNodeId="7.~SNode.putUserObject(java.lang.Object,java.lang.Object):void" resolveInfo="putUserObject" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1210360268169">
-                <link role="variableDeclaration" targetNodeId="1210358696034" resolveInfo="CELL_READABLE_ID" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1210360273296">
-                <link role="variableDeclaration" targetNodeId="1210358774635" resolveInfo="readableId" />
-              </node>
             </node>
           </node>
         </node>
