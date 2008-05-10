@@ -22,49 +22,49 @@ import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class StatementList_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myStatementListHandler_statementList_;
+  /* package */AbstractCellListHandler myListHandler_6566_0;
 
-  private static void setupBasic_StatementList(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1073416106126");
+  private static void setupBasic_statementRefNodeListCell6566_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_statementRefNodeListCell6566_0");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupLabel_StatementList(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_statementRefNodeListCell6566_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createStatementList(context, node);
+    return this.create_statementRefNodeListCell6566_0(context, node);
   }
 
-  public EditorCell createStatementList(EditorContext context, SNode node) {
-    if (this.myStatementListHandler_statementList_ == null) {
-      this.myStatementListHandler_statementList_ = new StatementList_Editor._RefNodeListHandler(node, "statement", context);
+  public EditorCell create_statementRefNodeListCell6566_0(EditorContext context, SNode node) {
+    if (this.myListHandler_6566_0 == null) {
+      this.myListHandler_6566_0 = new StatementList_Editor.statementListHandler_6566_0(node, "statement", context);
     }
-    EditorCell_Collection editorCell = this.myStatementListHandler_statementList_.createCells(context, new CellLayout_Vertical(), false);
-    setupBasic_StatementList(editorCell, node, context);
+    EditorCell_Collection editorCell = this.myListHandler_6566_0.createCells(context, new CellLayout_Vertical(), false);
+    setupBasic_statementRefNodeListCell6566_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(true);
-    editorCell.putUserObject(EditorCell.ROLE, this.myStatementListHandler_statementList_.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_6566_0.getElementRole());
     return editorCell;
   }
 
-  public static class _RefNodeListHandler extends RefNodeListHandler {
+  public static class statementListHandler_6566_0 extends RefNodeListHandler {
 
-    public _RefNodeListHandler(SNode ownerNode, String childRole, EditorContext context) {
+    public statementListHandler_6566_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
-    private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1079958242049");
+    private static void setupBasic_ConstantCell6566_0(EditorCell editorCell, SNode node, EditorContext context) {
+      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6566_0");
       editorCell.setSelectable(true);
       editorCell.setDrawBorder(false);
       editorCell.setFontType(MPSFonts.ITALIC);
     }
 
-    private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    private static void setupLabel_ConstantCell6566_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
       editorCell.setEditable(true);
       editorCell.getTextLine().setTextColor(Color.darkGray);
     }
@@ -89,7 +89,7 @@ public class StatementList_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext context, SNode node) {
-      return this.createConstantCell(context, node, "");
+      return this.create_ConstantCell6566_0(context, node, "");
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
@@ -110,10 +110,10 @@ public class StatementList_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(context);
     }
 
-    public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+    public EditorCell create_ConstantCell6566_0(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      setupBasic_ConstantCell(editorCell, node, context);
-      setupLabel_ConstantCell(editorCell, node, context);
+      setupBasic_ConstantCell6566_0(editorCell, node, context);
+      setupLabel_ConstantCell6566_0(editorCell, node, context);
       editorCell.setDefaultText("<no statements>");
       return editorCell;
     }

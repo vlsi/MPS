@@ -11,23 +11,23 @@ import jetbrains.mps.nodeEditor.EditorCell_Error;
 
 public class AbstractCreator_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_ErrorCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145552947529");
+  private static void setupBasic_ErrorCell17248_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ErrorCell17248_0");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupLabel_ErrorCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ErrorCell17248_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createErrorCell(context, node);
+    return this.create_ErrorCell17248_0(context, node);
   }
 
-  public EditorCell createErrorCell(EditorContext context, SNode node) {
+  public EditorCell create_ErrorCell17248_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "what?");
-    setupBasic_ErrorCell(editorCell, node, context);
-    setupLabel_ErrorCell(editorCell, node, context);
+    setupBasic_ErrorCell17248_0(editorCell, node, context);
+    setupLabel_ErrorCell17248_0(editorCell, node, context);
     return editorCell;
   }
 

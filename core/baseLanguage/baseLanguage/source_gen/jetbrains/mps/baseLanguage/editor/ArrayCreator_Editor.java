@@ -23,74 +23,74 @@ import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 public class ArrayCreator_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myDimensionExpressionListHandler_dimensionExpressionList_;
+  /* package */AbstractCellListHandler myListHandler_10890_0;
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1184951038630");
+  private static void setupBasic_CollectionCell10890_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell10890_0");
   }
 
-  private static void setupBasic_ComponentTypeCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1184951056679");
+  private static void setupBasic_componentTypeRefNodeCell10890_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_componentTypeRefNodeCell10890_0");
   }
 
-  private static void setupBasic_DimensionExpressionList(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1209401468678");
+  private static void setupBasic_dimensionExpressionRefNodeListCell10890_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_dimensionExpressionRefNodeListCell10890_0");
   }
 
-  private static void setupLabel_ComponentTypeCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_componentTypeRefNodeCell10890_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_DimensionExpressionList(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_dimensionExpressionRefNodeListCell10890_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createRowCell(context, node);
+    return this.create_CollectionCell10890_0(context, node);
   }
 
-  public EditorCell createRowCell(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell10890_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_RowCell(editorCell, node, context);
+    setupBasic_CollectionCell10890_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createComponentTypeCell(context, node));
-    editorCell.addEditorCell(this.createDimensionExpressionList(context, node));
+    editorCell.addEditorCell(this.create_componentTypeRefNodeCell10890_0(context, node));
+    editorCell.addEditorCell(this.create_dimensionExpressionRefNodeListCell10890_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createDimensionExpressionList(EditorContext context, SNode node) {
-    if (this.myDimensionExpressionListHandler_dimensionExpressionList_ == null) {
-      this.myDimensionExpressionListHandler_dimensionExpressionList_ = new ArrayCreator_Editor._RefNodeListHandler69(node, "dimensionExpression", context);
+  public EditorCell create_dimensionExpressionRefNodeListCell10890_0(EditorContext context, SNode node) {
+    if (this.myListHandler_10890_0 == null) {
+      this.myListHandler_10890_0 = new ArrayCreator_Editor.dimensionExpressionListHandler_10890_0(node, "dimensionExpression", context);
     }
-    EditorCell_Collection editorCell = this.myDimensionExpressionListHandler_dimensionExpressionList_.createCells(context, new CellLayout_Horizontal(), false);
-    setupBasic_DimensionExpressionList(editorCell, node, context);
+    EditorCell_Collection editorCell = this.myListHandler_10890_0.createCells(context, new CellLayout_Horizontal(), false);
+    setupBasic_dimensionExpressionRefNodeListCell10890_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myDimensionExpressionListHandler_dimensionExpressionList_.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_10890_0.getElementRole());
     return editorCell;
   }
 
-  public EditorCell createComponentTypeCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_componentTypeRefNodeCell10890_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_ComponentTypeCell(editorCell, node, context);
+    setupBasic_componentTypeRefNodeCell10890_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_ComponentTypeCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_componentTypeRefNodeCell10890_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createComponentTypeCell(EditorContext context, SNode node) {
+  public EditorCell create_componentTypeRefNodeCell10890_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("componentType");
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createComponentTypeCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_componentTypeRefNodeCell10890_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -101,9 +101,9 @@ public class ArrayCreator_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _RefNodeListHandler69 extends RefNodeListHandler {
+  public static class dimensionExpressionListHandler_10890_0 extends RefNodeListHandler {
 
-    public _RefNodeListHandler69(SNode ownerNode, String childRole, EditorContext context) {
+    public dimensionExpressionListHandler_10890_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
