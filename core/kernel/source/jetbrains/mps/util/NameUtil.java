@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Arrays;
 import java.util.regex.Pattern;
+import java.io.File;
 
 
 /**
@@ -197,6 +198,12 @@ public class NameUtil {
   public static String convertToMetaString(String s) {
     if (s == null) return null;
     return s.replace("\\", "\\\\").replace("\"", "\\\"");
+  }
+
+  public static String toSystemDependentPath(String path) {
+    path = path.replace('\\', File.separatorChar);
+    path = path.replace('/', File.separatorChar);
+    return path;
   }
 
   public static String toValidIdentifier(String s) {
