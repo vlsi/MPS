@@ -3,9 +3,9 @@ package jetbrains.mps.ide.findusages.findalgorithm.finders.specific;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
+import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModel;
@@ -81,8 +81,8 @@ public class AspectMethodsFinder extends BaseFinder {
 
     Element modelsXML = new Element(MODELS);
     for (SModel model : myModels) {
-      //model can be transient - workaround
-      if (model.getModelDescriptor() == null) continue;
+      if (model.getModelDescriptor() == null)
+        throw new CantSaveSomethingException("one of the models is transient - can't save");
       Element modelXML = new Element(MODEL);
       modelXML.setAttribute(MODEL_UID, model.getModelDescriptor().getModelUID().toString());
       modelsXML.addContent(modelXML);
