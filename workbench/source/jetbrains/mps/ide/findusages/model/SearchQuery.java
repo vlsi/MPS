@@ -142,7 +142,7 @@ public class SearchQuery implements IExternalizeable {
     Element holderXML = element.getChild(HOLDER);
     String holderClass = holderXML.getAttributeValue(HOLDER_CLASS);
     try {
-      myObjectHolder = (IHolder) Class.forName(holderClass).getConstructor(Element.class, MPSProject.class).newInstance(element, project);
+      myObjectHolder = (IHolder) Class.forName(holderClass).getConstructor(Element.class, MPSProject.class).newInstance(holderXML, project);
     } catch (Exception e) {
       throw new CantLoadSomethingException(e);
     }
