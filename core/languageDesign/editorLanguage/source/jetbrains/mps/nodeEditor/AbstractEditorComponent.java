@@ -40,7 +40,6 @@ import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.w3c.dom.events.*;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
@@ -49,9 +48,7 @@ import javax.swing.event.ChangeListener;
 import javax.swing.event.PopupMenuEvent;
 import javax.swing.event.PopupMenuListener;
 import java.awt.*;
-import java.awt.Event;
 import java.awt.event.*;
-import java.awt.event.MouseEvent;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.lang.ref.WeakReference;
@@ -68,6 +65,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private static final Logger LOG = Logger.getLogger(AbstractEditorComponent.class);
   public static final String EDITOR_POPUP_MENU_ACTIONS = EditorPopup_ActionGroup.ID;
   public static final String EDITOR_POPUP_MENU_ACTIONS_INTERNAL = EditorInternal_ActionGroup.ID;
+  private static final long INTENTION_SHOW_DELAY = 500;
 
   static void turnOnAliasingIfPossible(Graphics2D g) {
     if (EditorSettings.getInstance().isUseAntialiasing()) {
@@ -149,6 +147,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private AbstractAction myShowIntentionsAction;
   private Point myLightBulbLocation = new Point();
   private LightBulbMenu myLightBulb;
+  private Thread myShowIntentionsThread = new Thread();
 
   public AbstractEditorComponent(IOperationContext operationContext) {
     this(operationContext, false);
@@ -342,6 +341,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     myShowIntentionsAction = new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
+        setEnabled(false);
         CommandProcessor.instance().executeLightweightCommand(new Runnable() {
           public void run() {
             if (!getEditedNode().getModel().isNotEditable()) {
@@ -418,21 +418,53 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     });
 
-
     addCellSelectionListener(new ICellSelectionListener() {
       public void selectionChanged(AbstractEditorComponent editor, EditorCell oldSelection, EditorCell newSelection) {
-        CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
+        myShowIntentionsThread.interrupt();
+
+        hideLightBulb();
+        myShowIntentionsAction.setEnabled(false);
+
+        myShowIntentionsThread = new Thread("Intentions") {
           public void run() {
-            if (getSelectedCell() != null) {
-              adjustLightBulbLocation();
-              setLightBulbVisibility(!getEnabledIntentions().isEmpty());
-              myShowIntentionsAction.setEnabled(!getAvailableIntentions().isEmpty());
-            } else {
-              hideLightBulb();
-              myShowIntentionsAction.setEnabled(false);
+            try {
+              final boolean[] enabledPresent = new boolean[1];
+              final boolean[] availablePresent = new boolean[1];
+              CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+                public void run() {
+                  enabledPresent[0] = !getEnabledIntentions().isEmpty();
+                  availablePresent[0] = !getAvailableIntentions().isEmpty();
+                }
+              });
+
+              CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
+                public void run() {
+                  if (getSelectedCell() != null) {
+                    adjustLightBulbLocation();
+                    myShowIntentionsAction.setEnabled(availablePresent[0]);
+                  } else {
+                    myShowIntentionsAction.setEnabled(false);
+                  }
+                }
+              });
+
+              Thread.sleep(INTENTION_SHOW_DELAY);
+
+              CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
+                public void run() {
+                  if (getSelectedCell() != null) {
+                    setLightBulbVisibility(enabledPresent[0]);
+                  } else {
+                    hideLightBulb();
+                  }
+                }
+              });
+            } catch (InterruptedException e) {
+
             }
           }
-        });
+        };
+        myShowIntentionsThread.start();
       }
     });
 
