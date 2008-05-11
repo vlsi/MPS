@@ -65,7 +65,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private static final Logger LOG = Logger.getLogger(AbstractEditorComponent.class);
   public static final String EDITOR_POPUP_MENU_ACTIONS = EditorPopup_ActionGroup.ID;
   public static final String EDITOR_POPUP_MENU_ACTIONS_INTERNAL = EditorInternal_ActionGroup.ID;
-  private static final long INTENTION_SHOW_DELAY = 500;
+  private static final long INTENTION_SHOW_DELAY = 700;
 
   static void turnOnAliasingIfPossible(Graphics2D g) {
     if (EditorSettings.getInstance().isUseAntialiasing()) {
@@ -341,7 +341,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     myShowIntentionsAction = new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        setEnabled(false);
+        //setEnabled(false);
         CommandProcessor.instance().executeLightweightCommand(new Runnable() {
           public void run() {
             if (!getEditedNode().getModel().isNotEditable()) {
@@ -2266,7 +2266,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     intentionsMenu.addPopupMenuListener(new PopupMenuListener() {
       public void popupMenuWillBecomeVisible(PopupMenuEvent e) {
-        setLightBulbVisibility(false);
+        //setLightBulbVisibility(false);
       }
 
       public void popupMenuWillBecomeInvisible(PopupMenuEvent e) {
