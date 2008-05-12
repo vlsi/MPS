@@ -17,7 +17,6 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.DataTypeDeclaration;
 import jetbrains.mps.util.NameUtil;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.patterns.IMatchingPattern;
 
 public class RulesUtil {
 
@@ -219,7 +218,7 @@ public class RulesUtil {
   @InferenceMethod()
   public static void equate_inputNodeType(SNode op, SNode TypeToEquate) {
     final SNode Concept_typevar_1206099042246 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-    RulesUtil.equate_inputNodeConcept(op, TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1206099042246));
+    equate_inputNodeConcept(op, TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1206099042246));
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, new QuotationClass_75().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1206099042246)), null, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206099071408");
   }
 
@@ -236,18 +235,17 @@ public class RulesUtil {
       TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, SLinkOperations.getTarget(SLinkOperations.getTarget(opParm, "conceptArgument", true), "conceptDeclaration", false), null, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207352483830");
     } else
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(opParm, "conceptArgument", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression")) {
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(opParm, "conceptArgument", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207351413582", true), SLinkOperations.getTarget(opParm, "conceptArgument", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207351398406");
       {
         final SNode poundExpressionType = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(opParm, "conceptArgument", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207351580597", false);
         TypeChecker.getInstance().getRuntimeSupport().whenConcrete(poundExpressionType, new Runnable() {
 
           public void run() {
+            SNode conceptType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(poundExpressionType), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType"), true);
+            if (SLinkOperations.getTarget(conceptType, "conceptDeclaraton", false) != null) {
+              TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, SLinkOperations.getTarget(conceptType, "conceptDeclaraton", false), null, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1210624466615");
+            } else
             {
-              IMatchingPattern pattern_1207351747614 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType");
-              SNode coercedNode_1207351739547 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(poundExpressionType), pattern_1207351747614);
-              if (coercedNode_1207351739547 != null) {
-                TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, SLinkOperations.getTarget(coercedNode_1207351739547, "conceptDeclaraton", false), null, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207351882024");
-              }
+              TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept"), null, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1210624867499");
             }
           }
 

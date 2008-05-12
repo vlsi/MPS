@@ -15,7 +15,9 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <maxImportIndex value="29" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <maxImportIndex value="30" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="3" modelUID="java.lang@java_stub" version="-1" />
   <import index="4" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
@@ -27,6 +29,7 @@
   <import index="25" modelUID="jetbrains.mps.core.constraints" version="-1" />
   <import index="27" modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
   <import index="29" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" version="-1" />
+  <import index="30" modelUID="typesModel@$runtimeTypes$" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1145576838780">
     <property name="name" value="SemanticDowncast" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1145576838781">
@@ -1703,19 +1706,27 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207346967625">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207346967626">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1207346967627">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1210624525169">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210624527437">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1210624525170">
               <link role="variableDeclaration" targetNodeId="1171306220390" resolveInfo="statement" />
             </node>
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetDescendantsOperation" id="1207346967628">
-              <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1207346967629">
-                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression" id="1207346972553">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207346987493">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1207346975602">
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetDescendantsOperation" id="1210624528440" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1210624602239">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210624609557">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1210624609558">
+              <link role="variableDeclaration" targetNodeId="1171306220390" resolveInfo="statement" />
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetDescendantsOperation" id="1210624609559">
+              <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1210624609560">
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression" id="1210624609561">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210624609562">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1210624609563">
                       <link role="variableDeclaration" targetNodeId="1171306220390" resolveInfo="statement" />
                     </node>
-                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetConceptOperation" id="1207346988964" />
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetConceptOperation" id="1210624609564" />
                   </node>
                 </node>
               </node>
@@ -1731,6 +1742,22 @@
               <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1207346908979">
                 <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1207346914651">
                   <link role="conceptDeclaration" targetNodeId="1.1068580123137" resolveInfo="BooleanConstant" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1210624999770">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210625001412">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1210624999771">
+              <link role="variableDeclaration" targetNodeId="1171306220390" resolveInfo="statement" />
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetDescendantsOperation" id="1210625002025">
+              <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1210625002026">
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression" id="1210625005809">
+                  <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptRefExpression" id="1210625009390">
+                    <link role="conceptDeclaration" targetNodeId="1.1068580123137" resolveInfo="BooleanConstant" />
+                  </node>
                 </node>
               </node>
             </node>
