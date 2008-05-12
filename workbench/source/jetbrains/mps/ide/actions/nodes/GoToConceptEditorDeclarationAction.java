@@ -4,6 +4,7 @@ import jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.command.CommandProcessor;
@@ -53,13 +54,10 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     final SNode node = context.get(SNode.class);
     if (!(BaseAdapter.fromNode(node) instanceof ConceptDeclaration)) return;
 
-    final IDEProjectFrame ide = context.get(IDEProjectFrame.class);
     IOperationContext invocationContext = context.get(IOperationContext.class);
     final IScope scope = invocationContext.getScope();
-    IEditor currentEditor = ide.getEditorsPane().getCurrentEditor();
+    IEditor currentEditor = context.get(IEditor.class);
     if (currentEditor == null) return;
-    AbstractEditorComponent editorComponent = currentEditor.getCurrentEditorComponent();
-    if (editorComponent == null) return;
 
     Language language = null;
     IModule module = invocationContext.getModule();
@@ -84,7 +82,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     if (languageEditor != null) {
       editorDeclaration = SModelUtil_new.findEditorDeclaration(languageEditor.getSModel(), (ConceptDeclaration) node.getAdapter());
       if (editorDeclaration != null) {
-        navigateToEditorDeclaration(editorDeclaration.getNode(), languageContext, currentEditor, ide);
+        navigateToEditorDeclaration(editorDeclaration.getNode(), languageContext, currentEditor);
         return;
       }
     }
@@ -121,13 +119,13 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     SModelDescriptor editorModelDescriptor = language.getEditorModelDescriptor();
     assert editorModelDescriptor != null;
     editorDeclaration = SModelUtil_new.findEditorDeclaration(editorModelDescriptor.getSModel(), (ConceptDeclaration) node.getAdapter());
-    navigateToEditorDeclaration(editorDeclaration.getNode(), languageContext, currentEditor, ide);
+    navigateToEditorDeclaration(editorDeclaration.getNode(), languageContext, currentEditor);
   }
 
-  private void navigateToEditorDeclaration(final SNode editorDeclaration, final IOperationContext operationContext, final IEditor currentEditor, final IDEProjectFrame ide) {
+  private void navigateToEditorDeclaration(final SNode editorDeclaration, final IOperationContext operationContext, final IEditor currentEditor) {
     operationContext.getComponent(ProjectPane.class).selectNode(editorDeclaration, operationContext);
 
-    NavigationActionProcessor.getInstance().executeNavigationAction(new EditorNavigationCommand(editorDeclaration, currentEditor, ide.getEditorsPane()), operationContext.getProject());
+    NavigationActionProcessor.getInstance().executeNavigationAction(new EditorNavigationCommand(editorDeclaration, currentEditor, operationContext.getComponent(EditorsPane.class)), operationContext.getProject());
   }
 
   public static ConceptEditorDeclaration createEditorDeclaration(ConceptDeclaration conceptDeclaration, SModelDescriptor editorModelDescriptor, IScope scope) {
