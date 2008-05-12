@@ -94,6 +94,11 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
    */
   protected String getReferentResolveInfoOrName(String role, SNode sourceNode) {
     SReference reference = sourceNode.getReference(role);
+    if(reference == null) {
+      foundError();
+      return "<err:noref for role '" + role + "'>";
+    }
+
     if (reference instanceof DynamicReference) {
       return reference.getResolveInfo();
     }
