@@ -18,6 +18,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="28" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.helgins.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.helgins.uiActions@java_stub" version="-1" />
@@ -1285,15 +1286,13 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206184574645">
               <link role="classifier" targetNodeId="13.~IEditor" resolveInfo="IEditor" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206184586353">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206184584413">
-                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1206184584414" />
-                <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterReferenceOperation" id="1206184584415">
-                  <link role="member" targetNodeId="1206184143494" resolveInfo="editorsPane" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210598772503">
+              <node role="operand" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ConceptFunctionParameter_ActionContext" id="1210598771612" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1210598774615">
+                <link role="baseMethodDeclaration" targetNodeId="5.~ActionContext.get(java.lang.Class):java.lang.Object" resolveInfo="get" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1210598780850">
+                  <link role="classifier" targetNodeId="13.~IEditor" resolveInfo="IEditor" />
                 </node>
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206184590683">
-                <link role="baseMethodDeclaration" targetNodeId="13.~EditorsPane.getCurrentEditor():jetbrains.mps.ide.IEditor" resolveInfo="getCurrentEditor" />
               </node>
             </node>
           </node>
@@ -1329,8 +1328,8 @@
                     </node>
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210262899105">
                       <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1210262899106" />
-                      <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterReferenceOperation" id="1210262899107">
-                        <link role="member" targetNodeId="1206184143494" resolveInfo="editorsPane" />
+                      <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterReferenceOperation" id="1210598837791">
+                        <link role="member" targetNodeId="1210598830818" resolveInfo="editorsPane" />
                       </node>
                     </node>
                   </node>
@@ -1540,10 +1539,10 @@
         <link role="classifier" targetNodeId="8.~IOperationContext" resolveInfo="IOperationContext" />
       </node>
     </node>
-    <node role="parameterDeclaration" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterDeclaration" id="1206184143494">
+    <node role="parameterDeclaration" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterDeclaration" id="1210598830818">
       <property name="name" value="editorsPane" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206184143495" />
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206184557642">
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1210598830819" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210598832790">
         <link role="classifier" targetNodeId="13.~EditorsPane" resolveInfo="EditorsPane" />
       </node>
     </node>

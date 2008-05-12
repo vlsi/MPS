@@ -127,7 +127,7 @@ public class ShowRulesWhichAffectNodeType_Action extends CurrentProjectMPSAction
             rules.add(rule);
           }
         }
-        IEditor currentEditor = this.editorsPane.getCurrentEditor();
+        IEditor currentEditor = context.get(IEditor.class);
         // single rule
         if (rules.size() == 1) {
           NavigationActionProcessor.getInstance().executeNavigationAction(new EditorNavigationCommand(rules.get(0), currentEditor, this.editorsPane), this.project);
