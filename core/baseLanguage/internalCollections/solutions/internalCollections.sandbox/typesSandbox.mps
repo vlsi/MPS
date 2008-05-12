@@ -26,49 +26,32 @@
         <property name="methodName" value="legacySort" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1210602261851" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210602261852">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1210602261853">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1210602261854">
-              <property name="name" value="input" />
-              <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType" id="1210602261855">
-                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210602261856">
-                  <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
-                </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1210608533655">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1210608533656">
+              <link role="baseMethodDeclaration" targetNodeId="6.~CaseInsensitiveStringComparison.compare(java.lang.Object,java.lang.Object,jetbrains.mps.internal.collections.runtime.ISelector):int" resolveInfo="compare" />
+              <link role="classConcept" targetNodeId="6.~CaseInsensitiveStringComparison" resolveInfo="CaseInsensitiveStringComparison" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1210608533657">
+                <property name="value" value="a" />
               </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1210602261862">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1210602261863">
-              <property name="name" value="test" />
-              <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType" id="1210602261864">
-                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210602261865">
-                  <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
-                </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1210608533658">
+                <property name="value" value="b" />
               </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210602261866">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1210602261867">
-                  <link role="variableDeclaration" targetNodeId="1210602261854" resolveInfo="input" />
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortOperation" id="1210602261868">
-                  <node role="order" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortDirection" id="1210602261869">
-                    <property name="value" value="false" />
-                  </node>
-                  <node role="comparable" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortBlock" id="1210602261870">
-                    <node role="defaultInputElement" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.DefaultInputElement" id="1210602261871">
-                      <property name="name" value="it" />
-                    </node>
-                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210602261872">
-                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1210602261873">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210602261874">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1210602261875">
-                            <link role="closureParameter" targetNodeId="1210602261871" resolveInfo="it" />
-                          </node>
-                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1210602261876">
-                            <link role="baseMethodDeclaration" targetNodeId="3.~String.length():int" resolveInfo="length" />
-                          </node>
-                        </node>
+              <node role="actualArgument" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1210608533659">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210608533660">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1210608533661">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210608533662">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1210608533663">
+                        <link role="variableDeclaration" targetNodeId="1210608533665" resolveInfo="it" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1210608533664">
+                        <link role="baseMethodDeclaration" targetNodeId="3.~String.length():int" resolveInfo="length" />
                       </node>
                     </node>
                   </node>
+                </node>
+                <node role="parameter" type="jetbrains.mps.internal.collections.structure.SmartClosureParameterDeclaration" id="1210608533665">
+                  <property name="name" value="it" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1210608533666" />
                 </node>
               </node>
             </node>

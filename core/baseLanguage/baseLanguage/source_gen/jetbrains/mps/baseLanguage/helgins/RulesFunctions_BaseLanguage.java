@@ -166,10 +166,10 @@ __switch__:
       return returnType;
     }
     {
-      Pattern_8 pattern_1181217694220 = new Pattern_8(genericClassifier);
-      SNode coercedNode_1181217694219 = TypeChecker.getInstance().getRuntimeSupport().coerce(instanceType, pattern_1181217694220);
-      if (coercedNode_1181217694219 != null) {
-        List<SNode> actualParams = pattern_1181217694220.PatternVar;
+      Pattern_8 pattern_ = new Pattern_8(genericClassifier);
+      SNode coercedNode_ = TypeChecker.getInstance().getRuntimeSupport().coerce(instanceType, pattern_);
+      if (coercedNode_ != null) {
+        List<SNode> actualParams = pattern_.PatternVar;
         for(SNode child : SNodeOperations.getDescendants(returnType, null, true)) {
           if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
             SNode tvr = child;
@@ -200,10 +200,10 @@ __switch__:
   public static void inference_matchConcreteTypesWithTypeVariables(SNode genericClassifier, SNode instanceType, Map<SNode, List<SNode>> mmap) {
     if ((genericClassifier != null) && mmap != null && !(mmap.isEmpty())) {
       {
-        Pattern_9 pattern_1203433053192 = new Pattern_9(genericClassifier);
-        SNode coercedNode_1203433035924 = TypeChecker.getInstance().getRuntimeSupport().coerce(instanceType, pattern_1203433053192);
-        if (coercedNode_1203433035924 != null) {
-          List<SNode> actualParams = pattern_1203433053192.PatternVar3;
+        Pattern_9 pattern_1 = new Pattern_9(genericClassifier);
+        SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce(instanceType, pattern_1);
+        if (coercedNode_1 != null) {
+          List<SNode> actualParams = pattern_1.PatternVar3;
           int idx = 0;
           for(SNode tvd : SLinkOperations.getTargets(genericClassifier, "typeVariableDeclaration", true)) {
             if (idx < actualParams.size()) {
