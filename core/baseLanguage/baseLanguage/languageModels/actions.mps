@@ -1810,16 +1810,23 @@
                 </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197031199086">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210617013479">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1210617011993">
-                    <link role="variableDeclaration" targetNodeId="1197031199072" resolveInfo="classConcept" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1210617016450">
-                    <link role="conceptMethodDeclaration" targetNodeId="35.1210616725718" resolveInfo="getVisibleMembers" />
-                    <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1210617020123" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1210617074516">
-                      <link role="classifier" targetNodeId="28.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
-                      <link role="variableDeclaration" targetNodeId="28.~IClassifiersSearchScope.INSTANCE_FIELD" resolveInfo="INSTANCE_FIELD" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1210617602799">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1210617602800">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210617602801">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1210617602802">
+                        <link role="variableDeclaration" targetNodeId="1197031199072" resolveInfo="classConcept" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1210617602803">
+                        <link role="conceptMethodDeclaration" targetNodeId="35.1210616725718" resolveInfo="getVisibleMembers" />
+                        <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1210617602804" />
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1210617602805">
+                          <link role="classifier" targetNodeId="28.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
+                          <link role="variableDeclaration" targetNodeId="28.~IClassifiersSearchScope.INSTANCE_FIELD" resolveInfo="INSTANCE_FIELD" />
+                        </node>
+                      </node>
+                    </node>
+                    <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType" id="1210617607027">
+                      <link role="elementConcept" targetNodeId="1.1068390468200" resolveInfo="FieldDeclaration" />
                     </node>
                   </node>
                 </node>
@@ -1944,16 +1951,23 @@
                 </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1210617196736">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210617196737">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1210617196738">
-                    <link role="variableDeclaration" targetNodeId="1177362994576" resolveInfo="classConcept" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1210617196739">
-                    <link role="conceptMethodDeclaration" targetNodeId="35.1210616725718" resolveInfo="getVisibleMembers" />
-                    <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1210617196740" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1210617196741">
-                      <link role="classifier" targetNodeId="28.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
-                      <link role="variableDeclaration" targetNodeId="28.~IClassifiersSearchScope.INSTANCE_METHOD" resolveInfo="INSTANCE_METHOD" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1210617541617">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1210617541618">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210617541619">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1210617541620">
+                        <link role="variableDeclaration" targetNodeId="1177362994576" resolveInfo="classConcept" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1210617541621">
+                        <link role="conceptMethodDeclaration" targetNodeId="35.1210616725718" resolveInfo="getVisibleMembers" />
+                        <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1210617541622" />
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1210617541623">
+                          <link role="classifier" targetNodeId="28.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
+                          <link role="variableDeclaration" targetNodeId="28.~IClassifiersSearchScope.INSTANCE_METHOD" resolveInfo="INSTANCE_METHOD" />
+                        </node>
+                      </node>
+                    </node>
+                    <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType" id="1210617550485">
+                      <link role="elementConcept" targetNodeId="1.1068580123165" resolveInfo="InstanceMethodDeclaration" />
                     </node>
                   </node>
                 </node>
