@@ -4,38 +4,35 @@ package jetbrains.mps.baseLanguage.editor;
 
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import java.util.ArrayList;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.baseLanguage.search.VisibleClassifierMembersScope;
+import jetbrains.mps.baseLanguage.search.ClassifierVisibleStaticMembersScope;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.baseLanguage.structure.ClassConcept;
+import jetbrains.mps.baseLanguage.structure.EnumClass;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
+import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.search.VisibleClassifierMembersScope;
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
 
 public class QueriesUtil {
 
   public static List<SNode> replaceNodeMenu_StaticFieldReference_getParameterObjects(SNode node) {
-    List<SNode> result = new ArrayList<SNode>();
-    SNode classifier = SLinkOperations.getTarget(node, "classifier", false);
-    if (classifier == null) {
-      return result;
-    }
-    ISearchScope searchScope = new VisibleClassifierMembersScope(((Classifier)SNodeOperations.getAdapter(classifier)), node, IClassifiersSearchScope.STATIC_MEMBER);
+    ISearchScope searchScope = new ClassifierVisibleStaticMembersScope(((Classifier)SNodeOperations.getAdapter(SLinkOperations.getTarget(node, "classifier", false))), node, IClassifiersSearchScope.STATIC_MEMBER);
     List<SNode> members = (List<SNode>)searchScope.getNodes();
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(members).where(new IWhereFilter <SNode>() {
+    return ListSequence.fromList(members).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration");
       }
 
-    }));
-    return result;
+    }).toListSequence();
   }
 
   public static SNode replaceNodeMenu_StaticFieldReference_createReplacementNode(SNode node, SNode parameterObject) {
@@ -55,21 +52,15 @@ public class QueriesUtil {
   }
 
   public static List<SNode> replaceNodeMenu_StaticMethodCall_getParameterObjects(SNode node) {
-    List<SNode> result = new ArrayList<SNode>();
-    SNode classifier = SLinkOperations.getTarget(node, "classConcept", false);
-    if (classifier == null) {
-      return result;
-    }
-    ISearchScope searchScope = new VisibleClassifierMembersScope(((Classifier)SNodeOperations.getAdapter(classifier)), node, IClassifiersSearchScope.STATIC_MEMBER);
+    ISearchScope searchScope = new ClassifierVisibleStaticMembersScope(((ClassConcept)SNodeOperations.getAdapter(SLinkOperations.getTarget(node, "classConcept", false))), node, IClassifiersSearchScope.STATIC_MEMBER);
     List<SNode> members = (List<SNode>)searchScope.getNodes();
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(members).where(new IWhereFilter <SNode>() {
+    return ListSequence.fromList(members).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration");
       }
 
-    }));
-    return result;
+    }).toListSequence();
   }
 
   public static SNode replaceNodeMenu_StaticMethodCall_createReplacementNode(SNode node, SNode parameterObject) {
@@ -89,21 +80,15 @@ public class QueriesUtil {
   }
 
   public static List<SNode> replaceNodeMenu_EnumConstantReference_getParameterObjects(SNode node) {
-    List<SNode> result = new ArrayList<SNode>();
-    SNode classifier = SLinkOperations.getTarget(node, "enumClass", false);
-    if (classifier == null) {
-      return result;
-    }
-    ISearchScope searchScope = new VisibleClassifierMembersScope(((Classifier)SNodeOperations.getAdapter(classifier)), node, IClassifiersSearchScope.STATIC_MEMBER);
+    ISearchScope searchScope = new ClassifierVisibleStaticMembersScope(((EnumClass)SNodeOperations.getAdapter(SLinkOperations.getTarget(node, "enumClass", false))), node, IClassifiersSearchScope.STATIC_MEMBER);
     List<SNode> members = (List<SNode>)searchScope.getNodes();
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(members).where(new IWhereFilter <SNode>() {
+    return ListSequence.fromList(members).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
       }
 
-    }));
-    return result;
+    }).toListSequence();
   }
 
   public static SNode replaceNodeMenu_EnumConstantReference_createReplacementNode(SNode node, SNode parameterObject) {
