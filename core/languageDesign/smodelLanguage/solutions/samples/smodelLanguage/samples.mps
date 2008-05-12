@@ -1763,6 +1763,31 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1210625417015">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1210625417016">
+            <property name="name" value="aConcept" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType" id="1210625417017">
+              <link role="conceptDeclaraton" targetNodeId="1.1068580123137" resolveInfo="BooleanConstant" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1210625445019" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1210625449021">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210625450851">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1210625449022">
+              <link role="variableDeclaration" targetNodeId="1171306220390" resolveInfo="statement" />
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetDescendantsOperation" id="1210625451479">
+              <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1210625451480">
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression" id="1210625456013">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1210625461268">
+                    <link role="variableDeclaration" targetNodeId="1210625417016" resolveInfo="aConcept" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1171306220390">
         <property name="name" value="statement" />
