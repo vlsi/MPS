@@ -71,7 +71,6 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
   }
 
   private SNode expandReferenceMacro(ITemplateGenerator generator) {
-//    String linkRole = myReferenceMacro.getLink().getRole();
     String linkRole = getReferenceRole();
 
     // try new query
