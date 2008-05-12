@@ -4,19 +4,26 @@ package smodelLanguage.samples;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 
 public class ListOfNodes {
 
   public void newList(SNode e1, SNode e2) {
-    List<SNode> list = ListOperations.<SNode>createList(e1, e2);
+    List<SNode> list = ListSequence.<SNode>fromArray(e1, e2);
   }
 
   public void first(SNode sl) {
-    SequenceOperations.getFirst(SLinkOperations.getTargets(sl, "statement", true));
-    Iterable<SNode> nodes = SequenceOperations.where(SLinkOperations.getTargets(sl, "statement", true), new zPredicate3(ListOfNodes.this, null));
+    ListSequence.fromList(SLinkOperations.getTargets(sl, "statement", true)).first();
+    Iterable<SNode> nodes = ListSequence.fromList(SLinkOperations.getTargets(sl, "statement", true)).where(new IWhereFilter <SNode>() {
+
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.IfStatement");
+      }
+
+    });
   }
 
 }

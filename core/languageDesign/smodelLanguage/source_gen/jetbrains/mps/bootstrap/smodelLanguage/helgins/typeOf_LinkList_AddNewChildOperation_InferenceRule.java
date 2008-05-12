@@ -25,7 +25,7 @@ public class typeOf_LinkList_AddNewChildOperation_InferenceRule implements Infer
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(concreteConcept, new Runnable() {
 
         public void run() {
-          SNode resultConcept = null;
+          SNode resultConcept;
           SNode parameterConcept = SLinkOperations.getTarget(op, "concept", false);
           if (parameterConcept == null) {
             resultConcept = TypeChecker.getInstance().getEquationManager().getRepresentator(concreteConcept);

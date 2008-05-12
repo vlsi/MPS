@@ -21,6 +21,7 @@
   <language namespace="jetbrains.mps.core" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="20" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
@@ -67,7 +68,7 @@
               </node>
             </node>
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198893648784">
-              <property name="value" value="snodes&lt; &gt;" />
+              <property name="value" value="nlist&lt; &gt;" />
             </node>
             <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1198893648785">
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1198893648786">
@@ -84,7 +85,7 @@
                 </node>
               </node>
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198893648791">
-                <property name="value" value="snodes&lt;" />
+                <property name="value" value="nlist&lt;" />
               </node>
             </node>
           </node>

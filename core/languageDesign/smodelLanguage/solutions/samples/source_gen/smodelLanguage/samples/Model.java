@@ -8,7 +8,9 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOper
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import java.util.List;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.IScope;
 
 public class Model {
@@ -23,7 +25,13 @@ public class Model {
   public void roots_access_1(SModel model) {
     List<SNode> roots1 = SModelOperations.getRoots(model, null);
     List<SNode> roots2 = SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    Iterable<SNode> roots3 = SequenceOperations.where(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept"), new zPredicate1(Model.this, null));
+    Iterable<SNode> roots3 = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).where(new IWhereFilter <SNode>() {
+
+      public boolean accept(SNode c) {
+        return SPropertyOperations.hasValue(c, "name", "Utils");
+      }
+
+    });
   }
 
   public void roots_access_2(SModel model, IScope scope) {
@@ -33,7 +41,13 @@ public class Model {
   public void nodes_access_1(SModel model) {
     List<SNode> nodes1 = SModelOperations.getNodes(model, null);
     List<SNode> nodes2 = SModelOperations.getNodes(model, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    Iterable<SNode> nodes3 = SequenceOperations.where(SModelOperations.getNodes(model, "jetbrains.mps.baseLanguage.structure.ClassConcept"), new zPredicate2(Model.this, null));
+    Iterable<SNode> nodes3 = ListSequence.fromList(SModelOperations.getNodes(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).where(new IWhereFilter <SNode>() {
+
+      public boolean accept(SNode c) {
+        return SPropertyOperations.hasValue(c, "name", "Utils");
+      }
+
+    });
   }
 
 }

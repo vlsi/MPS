@@ -17,6 +17,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="30" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="3" modelUID="java.lang@java_stub" version="-1" />
@@ -29,7 +30,6 @@
   <import index="25" modelUID="jetbrains.mps.core.constraints" version="-1" />
   <import index="27" modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
   <import index="29" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" version="-1" />
-  <import index="30" modelUID="typesModel@$runtimeTypes$" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1145576838780">
     <property name="name" value="SemanticDowncast" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1145576838781">
@@ -963,7 +963,7 @@
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1145579089043">
     <property name="name" value="TypeCast" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1145579400031">
-      <property name="name" value="cast_snode_to_SNode" />
+      <property name="name" value="cast_node_to_SNode" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1145579402252" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1145579400033">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1145579487693">
@@ -1038,12 +1038,12 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206472679251" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1145579627401">
-      <property name="name" value="cast_SNode_to_snode" />
+      <property name="name" value="cast_SNode_to_node" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1145579627402" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1145579627403">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1145579768617">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1145579768618">
-            <property name="name" value="snode1" />
+            <property name="name" value="node1" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1145579768619" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1145579784340">
               <link role="variableDeclaration" targetNodeId="1145579627416" />
@@ -1052,7 +1052,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1145579796826">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1145579796827">
-            <property name="name" value="snode2" />
+            <property name="name" value="node2" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1145579796828">
               <link role="concept" targetNodeId="1.1068580123159" />
             </node>
@@ -1117,7 +1117,7 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206472679228" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1145584821369">
-      <property name="name" value="cast_children_to_snodes" />
+      <property name="name" value="cast_children_to_nlist" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1145584821370" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1145584821371">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1145584821372">
@@ -1146,7 +1146,7 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206472679255" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1145584542698">
-      <property name="name" value="cast_snodes_to_List" />
+      <property name="name" value="cast_nlist_to_List" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1145584552779" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1145584542700">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1145584644470">

@@ -8,16 +8,16 @@ import java.util.List;
 
 public class TypeCast {
 
-  public void cast_snode_to_SNode(SNode ifStatement) {
+  public void cast_node_to_SNode(SNode ifStatement) {
     SNode nodeObject1 = ifStatement;
     SNode nodeObject2 = (SNode)SLinkOperations.getTarget(ifStatement, "condition", true);
     SNode nodeObject3 = SLinkOperations.getTarget(ifStatement, "condition", true);
     SNode expression = nodeObject3;
   }
 
-  public void cast_SNode_to_snode(SNode node) {
-    SNode snode1 = node;
-    SNode snode2 = (SNode)node;
+  public void cast_SNode_to_node(SNode node) {
+    SNode node1 = node;
+    SNode node2 = (SNode)node;
   }
 
   public void upcast_snode(SNode snode) {
@@ -25,11 +25,11 @@ public class TypeCast {
     SNode ifStatement1 = snode;
   }
 
-  public void cast_children_to_snodes(SNode statementList) {
+  public void cast_children_to_nlist(SNode statementList) {
     List<SNode> statements = SLinkOperations.getTargets(statementList, "statement", true);
   }
 
-  public void cast_snodes_to_List(List<SNode> statements) {
+  public void cast_nlist_to_List(List<SNode> statements) {
     List list1 = statements;
     List<SNode> list2 = statements;
   }

@@ -6,14 +6,14 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 
 public class Attributes {
 
   public void accessToNodeAttribute_1(SNode node) {
     List<SNode> macros = SLinkOperations.getTargets(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), true);
-    SNode firstMacro = SequenceOperations.getFirst(SLinkOperations.getTargets(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), true));
+    SNode firstMacro = ListSequence.fromList(SLinkOperations.getTargets(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), true)).first();
   }
 
   public void accessToPropertyAttribute_1(SNode node) {
@@ -44,7 +44,7 @@ public class Attributes {
   public void other(SNode node) {
     SNodeOperations.isAttribute(node);
     List<SNode> nodes = SNodeOperations.getAllAttributes(node);
-    SNode firstNode = SequenceOperations.getFirst(SNodeOperations.getAllAttributes(node));
+    SNode firstNode = ListSequence.fromList(SNodeOperations.getAllAttributes(node)).first();
   }
 
 }
