@@ -1986,6 +1986,58 @@
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178181704931">
     <link role="concept" targetNodeId="1.1107461130800" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1210616725718">
+      <property name="name" value="getVisibleMembers" />
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType" id="1210616745147">
+        <link role="elementConcept" targetNodeId="1.1178285077437" resolveInfo="ClassifierMember" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210616725720">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1210616919237">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1210616919238">
+            <property name="name" value="ss" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210616919239">
+              <link role="classifier" targetNodeId="5.~ISearchScope" resolveInfo="ISearchScope" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1210616937499">
+              <link role="baseMethodDeclaration" targetNodeId="10.~VisibleClassifierMembersScope.&lt;init&gt;(jetbrains.mps.baseLanguage.structure.Classifier,jetbrains.mps.smodel.SNode,int)" resolveInfo="VisibleClassifierMembersScope" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210616937500">
+                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1210616937501" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1210616937502" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1210616937503">
+                <link role="variableDeclaration" targetNodeId="1210616902370" resolveInfo="contextNode" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1210616937504">
+                <link role="variableDeclaration" targetNodeId="1210616902388" resolveInfo="constraint" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1210616955202">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1210616974780">
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType" id="1210616974781">
+              <link role="elementConcept" targetNodeId="1.1178285077437" resolveInfo="ClassifierMember" />
+            </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210616974782">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1210616974783">
+                <link role="variableDeclaration" targetNodeId="1210616919238" resolveInfo="ss" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1210616974784">
+                <link role="baseMethodDeclaration" targetNodeId="5.~ISearchScope.getNodes():java.util.List" resolveInfo="getNodes" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1210616902370">
+        <property name="name" value="contextNode" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1210616902371" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1210616902388">
+        <property name="name" value="constraint" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1210616902389" />
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1189552517057">
       <property name="name" value="getVisibleMembersSearchScope" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1189552517058">
