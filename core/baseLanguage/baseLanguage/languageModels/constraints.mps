@@ -33,6 +33,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="48" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -3591,21 +3592,6 @@
           </node>
         </node>
       </node>
-      <node role="searchScopeCanCreate" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_CanCreate" id="1159221685532">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1159221685533">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1188435439827">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977966209">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977952317">
-                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_referenceNode" id="1159221697371" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1159221697388">
-                  <link role="link" targetNodeId="1.1144433057691" />
-                </node>
-              </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNotNullOperation" id="1172010363955" />
-            </node>
-          </node>
-        </node>
-      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178192141241">
@@ -4062,21 +4048,6 @@
           </node>
         </node>
       </node>
-      <node role="searchScopeCanCreate" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_CanCreate" id="1159221831726">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1159221831727">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1189552953995">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1159221839783">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977965231">
-                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_referenceNode" id="1159221837794" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1159221837795">
-                  <link role="link" targetNodeId="1.1144432896254" />
-                </node>
-              </node>
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1159221837792" />
-            </node>
-          </node>
-        </node>
-      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178192141358">
@@ -4119,25 +4090,6 @@
                   <link role="variableDeclaration" targetNodeId="10.~IClassifiersSearchScope.STATIC_FIELD" resolveInfo="STATIC_FIELD" />
                 </node>
               </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="searchScopeCanCreate" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_CanCreate" id="1172009372647">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1172009372648">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1189556690435">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977954324">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977955682">
-                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="1172010525020" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1172009464085">
-                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1172009464086">
-                    <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1207781905989">
-                      <link role="conceptDeclaration" targetNodeId="1.1107461130800" resolveInfo="Classifier" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNotNullOperation" id="1172009452769" />
             </node>
           </node>
         </node>
