@@ -1,6 +1,7 @@
 package jetbrains.mps.transformation.TLBase.plugin.debug;
 
 import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.ide.toolsPane.ToolsPane;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
@@ -56,13 +57,15 @@ public class GenerationTracer {
     ourLastTracingProject = null;
 
     myProject = project;
-    IDEProjectFrame projectFrame = project.getComponent(IDEProjectFrame.class);
-    if (projectFrame == null) return;
+
+    if (myProject.getComponent(ToolsPane.class) == null) {
+      return;
+    }
 
     // init
-    myGenerationTracerViewTool = new GenerationTracerViewTool(projectFrame);
+    myGenerationTracerViewTool = new GenerationTracerViewTool(myProject);
     myGenerationTracerViewTool.setTracingDataIsAvailable(hasTracingData());
-    projectFrame.getToolsPane().add(myGenerationTracerViewTool, false);
+    myProject.getComponentSafe(ToolsPane.class).add(myGenerationTracerViewTool, false);
     myGenerationTracerActions = new GenerationTracerActions();
     myGenerationTracerActions.addActions();
   }

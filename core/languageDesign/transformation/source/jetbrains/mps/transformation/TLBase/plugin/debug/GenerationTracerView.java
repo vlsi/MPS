@@ -3,6 +3,7 @@ package jetbrains.mps.transformation.TLBase.plugin.debug;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.MPSToolBar;
 import jetbrains.mps.transformation.TLBase.plugin.debug.icons.Icons;
+import jetbrains.mps.project.MPSProject;
 
 import javax.swing.*;
 import javax.swing.JToggleButton.ToggleButtonModel;
@@ -11,22 +12,17 @@ import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 
-/**
- * Igor Alshannikov
- * Jan 17, 2008
- */
 public abstract class GenerationTracerView {
-
   private JPanel myPanel;
   private GenerationTracerTree myTree;
   JToggleButton myAutoscrollToSourceButton;
 
   private TracerNode myRootTracerNode;
 
-  public GenerationTracerView(TracerNode tracerNode, IDEProjectFrame projectFrame) {
+  public GenerationTracerView(TracerNode tracerNode, MPSProject project) {
     myRootTracerNode = tracerNode;
     myPanel = new JPanel(new BorderLayout());
-    myTree = new GenerationTracerTree(tracerNode, projectFrame);
+    myTree = new GenerationTracerTree(tracerNode, project);
     myPanel.add(new JScrollPane(myTree), BorderLayout.CENTER);
     myPanel.add(new ActionsToolbar(), BorderLayout.WEST);
 

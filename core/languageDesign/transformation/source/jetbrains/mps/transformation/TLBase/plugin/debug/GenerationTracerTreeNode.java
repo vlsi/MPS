@@ -5,6 +5,7 @@ import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
+import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNode;
@@ -16,23 +17,19 @@ import jetbrains.mps.project.MPSProject;
 import javax.swing.JPopupMenu;
 import java.awt.event.ActionEvent;
 
-/**
- * Igor Alshannikov
- * Jan 17, 2008
- */
 public class GenerationTracerTreeNode extends MPSTreeNode {
   private static final Logger LOG = Logger.getLogger(GenerationTracerTreeNode.class);
 
   private TracerNode myTracerNode;
-  private IDEProjectFrame myProjectFrame;
+  private MPSProject myProject;
 
-  public GenerationTracerTreeNode(TracerNode tracerNode, IDEProjectFrame projectFrame) {
+  public GenerationTracerTreeNode(TracerNode tracerNode, MPSProject project) {
     super(null);
-    myProjectFrame = projectFrame;
+    myProject = project;
     myTracerNode = tracerNode;
     if (myTracerNode.getDepth() < 1000) {
       for (TracerNode childTracerNode : myTracerNode.getChildren()) {
-        add(new GenerationTracerTreeNode(childTracerNode, myProjectFrame));
+        add(new GenerationTracerTreeNode(childTracerNode, project));
       }
     }
     updatePresentation();
@@ -59,9 +56,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
   }
 
   private JPopupMenu createPopupMenuForInputNode() {
-    MPSProject project = myProjectFrame.getProject();
-    assert project != null;
-    final GenerationTracer tracer = project.getComponentSafe(GenerationTracer.class);
+    final GenerationTracer tracer = myProject.getComponentSafe(GenerationTracer.class);
 
     JPopupMenu result = new JPopupMenu();
 
@@ -92,9 +87,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
   }
 
   private JPopupMenu createPopupMenuForOutputNode() {
-    MPSProject project = myProjectFrame.getProject();
-    assert project != null;
-    final GenerationTracer tracer = project.getComponentSafe(GenerationTracer.class);
+    final GenerationTracer tracer = myProject.getComponentSafe(GenerationTracer.class);
 
     JPopupMenu result = new JPopupMenu();
 
@@ -133,11 +126,12 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
       LOG.info("clicked node was deleted");
 
     }
+    EditorsPane editorsPane = myProject.getComponentSafe(EditorsPane.class);
     NavigationActionProcessor.getInstance().executeNavigationAction(
       new EditorNavigationCommand(node,
-        myProjectFrame.getEditorsPane().getCurrentEditor(),
-        myProjectFrame.getEditorsPane()),
-      myProjectFrame.getProject(), true);
+        editorsPane.getCurrentEditor(),
+        editorsPane),
+      myProject, true);
   }
 
   public boolean isLeaf() {

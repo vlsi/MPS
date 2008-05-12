@@ -2,24 +2,20 @@ package jetbrains.mps.transformation.TLBase.plugin.debug;
 
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.project.MPSProject;
 
-/**
- * Igor Alshannikov
- * Jan 17, 2008
- */
 public class GenerationTracerTree extends MPSTree {
   private TracerNode myRootTracerNode;
-  private IDEProjectFrame myProjectFrame;
+  private MPSProject myProject;
   private boolean myAutoscrollToSource;
 
-  public GenerationTracerTree(TracerNode root, IDEProjectFrame projectFrame) {
+  public GenerationTracerTree(TracerNode root, MPSProject project) {
     myRootTracerNode = root;
-    myProjectFrame = projectFrame;
-
+    myProject = project;
   }
 
   protected GenerationTracerTreeNode rebuild() {
-    return new GenerationTracerTreeNode(myRootTracerNode, myProjectFrame);
+    return new GenerationTracerTreeNode(myRootTracerNode, myProject);
   }
 
   public boolean isAutoscrollToSource() {
