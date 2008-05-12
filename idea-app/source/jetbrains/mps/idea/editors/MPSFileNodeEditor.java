@@ -8,6 +8,7 @@ import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import com.intellij.openapi.fileEditor.FileEditorLocation;
 import com.intellij.openapi.project.Project;
 import com.intellij.codeHighlighting.BackgroundEditorHighlighter;
+import com.intellij.codeHighlighting.HighlightingPass;
 import com.intellij.ide.structureView.StructureViewBuilder;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

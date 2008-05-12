@@ -11,7 +11,12 @@ import java.util.ArrayList;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.FileEditor;
+import com.intellij.openapi.fileEditor.FileEditorManagerListener;
+import com.intellij.openapi.fileEditor.FileEditorManagerEvent;
 import com.intellij.openapi.command.CommandProcessor;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.vfs.VirtualFile;
 
 /**
  * Created by IntelliJ IDEA.
@@ -23,9 +28,8 @@ import com.intellij.openapi.command.CommandProcessor;
 public class MPSIDEAEditorsProvider implements IEditorsProvider {
   public List<IEditor> getAllEditors(final MPSProject mpsProject) {
     final List<IEditor> editors = new ArrayList<IEditor>();
-    Project project = mpsProject.getComponent(Project.class);
-    CommandProcessor.getInstance().executeCommand(project, new Runnable() {
-      public void run() {
+    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+      public void run() { //todo this about deadlocks
         FileEditorManager fileEditorManager = getFileEditorManager(mpsProject);
         for (FileEditor fileEditor : fileEditorManager.getAllEditors()) {
           if (fileEditor instanceof MPSFileNodeEditor) {
@@ -37,15 +41,14 @@ public class MPSIDEAEditorsProvider implements IEditorsProvider {
           }
         }
       }
-    }, "getAllEditors", "");
+    }, ModalityState.defaultModalityState());
     return editors;
   }
 
   public IEditor getCurrentEditor(final MPSProject mpsProject) {
-    Project project = mpsProject.getComponent(Project.class);
     final IEditor[] result = new IEditor[1];
     result[0] = null;
-    CommandProcessor.getInstance().executeCommand(project, new Runnable() {
+    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() {
         FileEditorManager fileEditorManager = getFileEditorManager(mpsProject);
         FileEditor[] selectedEditors = fileEditorManager.getSelectedEditors();
@@ -58,7 +61,7 @@ public class MPSIDEAEditorsProvider implements IEditorsProvider {
           }
         }
       }
-    }, "getAllEditors", "");
+    }, ModalityState.defaultModalityState());
 
     return result[0];
   }
