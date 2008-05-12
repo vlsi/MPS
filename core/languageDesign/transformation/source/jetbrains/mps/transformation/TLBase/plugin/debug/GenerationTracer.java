@@ -80,10 +80,8 @@ public class GenerationTracer {
 
     if (myGenerationTracerViewTool != null) {
       myGenerationTracerActions.removeActions();
-      IDEProjectFrame projectFrame = myProject.getComponent(IDEProjectFrame.class);
-      if (projectFrame == null) return;
       myGenerationTracerViewTool.closeAll();
-      projectFrame.getToolsPane().removeTool(myGenerationTracerViewTool);
+      myProject.getComponentSafe(ToolsPane.class).removeTool(myGenerationTracerViewTool);
       myGenerationTracerViewTool = null;
     }
   }
