@@ -19,6 +19,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="28" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.helgins.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.helgins.uiActions@java_stub" version="-1" />
@@ -1552,6 +1553,10 @@
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206184713392">
         <link role="classifier" targetNodeId="14.~MPSProject" resolveInfo="MPSProject" />
       </node>
+    </node>
+    <node role="keystroke" type="jetbrains.mps.bootstrap.pluginLanguage.structure.KeyMapKeystroke" id="1210607292040">
+      <property name="modifiers" value="ctrl+shift" />
+      <property name="keycode" value="VK_T" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.CustomPluginDeclaration" id="1206189513856">

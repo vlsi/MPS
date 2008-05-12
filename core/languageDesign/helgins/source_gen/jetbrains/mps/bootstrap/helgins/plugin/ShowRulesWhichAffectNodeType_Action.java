@@ -42,7 +42,7 @@ public class ShowRulesWhichAffectNodeType_Action extends CurrentProjectMPSAction
 
   @NotNull()
   public String getKeyStroke() {
-    return "";
+    return "ctrl shift T";
   }
 
   public void doUpdate(@NotNull() ActionContext context) {
