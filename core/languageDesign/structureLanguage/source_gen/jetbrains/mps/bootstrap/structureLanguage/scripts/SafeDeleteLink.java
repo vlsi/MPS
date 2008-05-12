@@ -13,6 +13,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.refactoring.framework.RefactoringTarget;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.project.GlobalScope;
@@ -20,7 +21,6 @@ import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.LinkExamples_Finder;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeAndDescendantsUsages_Finder;
-import jetbrains.mps.ide.IDEProjectFrame;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
 import java.util.List;
@@ -63,11 +63,11 @@ public class SafeDeleteLink extends AbstractLoggableRefactoring {
   }
 
   public String getKeyStroke() {
-    return SafeDeleteLink.getKeyStroke_static();
+    return getKeyStroke_static();
   }
 
   public boolean isApplicableWRTConcept(SNode node) {
-    return SafeDeleteLink.isApplicableWRTConcept_static(node);
+    return isApplicableWRTConcept_static(node);
   }
 
   public String getApplicableConceptFQName() {
@@ -82,12 +82,12 @@ public class SafeDeleteLink extends AbstractLoggableRefactoring {
     return true;
   }
 
-  public boolean isApplicableToModel() {
-    return false;
-  }
-
   public boolean isApplicableToModel(SModelDescriptor modelDescriptor) {
     return true;
+  }
+
+  public RefactoringTarget getRefactoringTarget() {
+    return RefactoringTarget.NODE;
   }
 
   public boolean showsAffectedNodes() {
@@ -99,8 +99,7 @@ public class SafeDeleteLink extends AbstractLoggableRefactoring {
       SNode node = actionContext.getNode();
       SearchQuery searchQuery = new SearchQuery(node, GlobalScope.getInstance());
       IResultProvider resultProvider = TreeBuilder.forFinders(new LinkExamples_Finder(), new NodeAndDescendantsUsages_Finder());
-      IDEProjectFrame projectFrame = (IDEProjectFrame)actionContext.get(IDEProjectFrame.class);
-      SearchResults searchResults = resultProvider.getResults(searchQuery, projectFrame.createAdaptiveProgressMonitor());
+      SearchResults searchResults = resultProvider.getResults(searchQuery, actionContext.createProgressMonitor());
       if (!(searchResults.getAliveResults().isEmpty())) {
         return searchResults;
       }

@@ -16,7 +16,6 @@ import jetbrains.mps.refactoring.framework.RefactoringTarget;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeAndDescendantsUsages_Finder;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
@@ -67,11 +66,11 @@ public class Rename extends AbstractLoggableRefactoring {
   }
 
   public String getKeyStroke() {
-    return Rename.getKeyStroke_static();
+    return getKeyStroke_static();
   }
 
   public boolean isApplicableWRTConcept(SNode node) {
-    return Rename.isApplicableWRTConcept_static(node);
+    return isApplicableWRTConcept_static(node);
   }
 
   public String getApplicableConceptFQName() {
@@ -101,8 +100,7 @@ public class Rename extends AbstractLoggableRefactoring {
   public SearchResults getAffectedNodes(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
       SearchQuery searchQuery = new SearchQuery(actionContext.getNode(), GlobalScope.getInstance());
-      IDEProjectFrame projectFrame = (IDEProjectFrame)actionContext.get(IDEProjectFrame.class);
-      IAdaptiveProgressMonitor monitor = projectFrame.createAdaptiveProgressMonitor();
+      IAdaptiveProgressMonitor monitor = actionContext.createProgressMonitor();
       NodeAndDescendantsUsages_Finder finder = new NodeAndDescendantsUsages_Finder();
       IResultProvider resultProvider = TreeBuilder.forFinder(finder);
       SearchResults searchResults = resultProvider.getResults(searchQuery, monitor);

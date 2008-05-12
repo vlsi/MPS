@@ -15,6 +15,7 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.refactoring.framework.RefactoringTarget;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import java.util.Map;
@@ -67,11 +68,11 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
   }
 
   public String getKeyStroke() {
-    return MovePropertyUp.getKeyStroke_static();
+    return getKeyStroke_static();
   }
 
   public boolean isApplicableWRTConcept(SNode node) {
-    return MovePropertyUp.isApplicableWRTConcept_static(node);
+    return isApplicableWRTConcept_static(node);
   }
 
   public String getApplicableConceptFQName() {
@@ -96,12 +97,12 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
     }
   }
 
-  public boolean isApplicableToModel() {
-    return false;
-  }
-
   public boolean isApplicableToModel(SModelDescriptor modelDescriptor) {
     return true;
+  }
+
+  public RefactoringTarget getRefactoringTarget() {
+    return RefactoringTarget.NODE;
   }
 
   public boolean showsAffectedNodes() {

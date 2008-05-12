@@ -11,6 +11,7 @@ import jetbrains.mps.ide.findusages.view.UsageView.ButtonConfiguration;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
+import jetbrains.mps.ide.toolsPane.ToolsPane;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
@@ -33,7 +34,7 @@ import java.util.WeakHashMap;
  * To change this template use File | Settings | File Templates.
  */
 public class NewRefactoringView extends DefaultTool {
-  private static Map<IDEProjectFrame, NewRefactoringView> ourRefactoringViews = new WeakHashMap<IDEProjectFrame, NewRefactoringView>();
+  private static Map<MPSProject, NewRefactoringView> ourRefactoringViews = new WeakHashMap<MPSProject, NewRefactoringView>();
   private static final Logger LOG = Logger.getLogger(NewRefactoringView.class);
 
   private String myName;
@@ -44,7 +45,7 @@ public class NewRefactoringView extends DefaultTool {
   private UsageView myUsageView;
   private JPanel myPanel;
   private JPanel myButtonsPanel;
-  private IDEProjectFrame myProjectFrame;
+  private MPSProject myProject;
   private JButton myDoRefactorButton;
   private JButton myCancelButton;
 
@@ -53,17 +54,16 @@ public class NewRefactoringView extends DefaultTool {
                                          @NotNull ActionContext actionContext,
                                          @NotNull RefactoringContext refactoringContext) {
     NewRefactoringView refactoringView = new NewRefactoringView(refactoring, actionContext, refactoringContext);
-    IDEProjectFrame projectFrame = actionContext.get(IDEProjectFrame.class);
-    ourRefactoringViews.put(projectFrame, refactoringView);
-    projectFrame.getToolsPane().add(refactoringView, false);
-    projectFrame.getToolsPane().selectTool(refactoringView);
+    ourRefactoringViews.put(actionContext.get(MPSProject.class), refactoringView);
+    actionContext.get(ToolsPane.class).add(refactoringView, false);
+    actionContext.get(ToolsPane.class).selectTool(refactoringView);
   }
 
-  private static void closeRefactoringView(IDEProjectFrame ideProjectFrame) {
-    NewRefactoringView refactoringView = ourRefactoringViews.get(ideProjectFrame);
+  private static void closeRefactoringView(MPSProject project) {
+    NewRefactoringView refactoringView = ourRefactoringViews.get(project);
     if (refactoringView != null) {
-      ideProjectFrame.getToolsPane().removeTool(refactoringView);
-      ourRefactoringViews.remove(ideProjectFrame);
+      project.getComponentSafe(ToolsPane.class).removeTool(refactoringView);
+      ourRefactoringViews.remove(project);
     }
   }
 
@@ -76,12 +76,12 @@ public class NewRefactoringView extends DefaultTool {
     }
     myActionContext = actionContext;
     myRefactoringContext = refactoringContext;
-    myProjectFrame = actionContext.get(IDEProjectFrame.class);
+    myProject = actionContext.get(MPSProject.class);
     myRefactoring = refactoring;
     myName = myRefactoring.getUserFriendlyName();
 
     myPanel = new JPanel(new BorderLayout());
-    myUsageView = new UsageView(myProjectFrame.getProject(), new ViewOptions()) {
+    myUsageView = new UsageView(actionContext.get(MPSProject.class), new ViewOptions()) {
       public void close() {
         cancel();
       }
@@ -145,7 +145,7 @@ public class NewRefactoringView extends DefaultTool {
   }
 
   private void cancel() {
-    closeRefactoringView(myProjectFrame);
+    closeRefactoringView(myProject);
   }
 
   private void doRefactor() {
@@ -154,7 +154,7 @@ public class NewRefactoringView extends DefaultTool {
         CommandProcessor.instance().executeCommand(new Runnable() {
           public void run() {
             myRefactoring.doExecuteInThread(myActionContext, myRefactoringContext);
-            closeRefactoringView(myProjectFrame);
+            closeRefactoringView(myProject);
           }
         });
       }

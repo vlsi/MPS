@@ -15,13 +15,13 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.refactoring.framework.RefactoringTarget;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeAndDescendantsUsages_Finder;
-import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -73,11 +73,11 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
   }
 
   public String getKeyStroke() {
-    return MoveLinkUp.getKeyStroke_static();
+    return getKeyStroke_static();
   }
 
   public boolean isApplicableWRTConcept(SNode node) {
-    return MoveLinkUp.isApplicableWRTConcept_static(node);
+    return isApplicableWRTConcept_static(node);
   }
 
   public String getApplicableConceptFQName() {
@@ -102,12 +102,12 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
     }
   }
 
-  public boolean isApplicableToModel() {
-    return false;
-  }
-
   public boolean isApplicableToModel(SModelDescriptor modelDescriptor) {
     return true;
+  }
+
+  public RefactoringTarget getRefactoringTarget() {
+    return RefactoringTarget.NODE;
   }
 
   public boolean showsAffectedNodes() {
@@ -119,8 +119,7 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
       SNode node = actionContext.getNode();
       SearchQuery searchQuery = new SearchQuery(node, GlobalScope.getInstance());
       IResultProvider resultProvider = TreeBuilder.forFinders(new NodeAndDescendantsUsages_Finder());
-      IDEProjectFrame projectFrame = (IDEProjectFrame)actionContext.get(IDEProjectFrame.class);
-      SearchResults searchResults = resultProvider.getResults(searchQuery, projectFrame.createAdaptiveProgressMonitor());
+      SearchResults searchResults = resultProvider.getResults(searchQuery, actionContext.createProgressMonitor());
       return searchResults;
     }
   }

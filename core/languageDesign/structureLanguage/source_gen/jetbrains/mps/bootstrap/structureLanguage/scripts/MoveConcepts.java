@@ -15,6 +15,7 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.refactoring.framework.RefactoringTarget;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.project.GlobalScope;
@@ -22,7 +23,6 @@ import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.ConceptInstances_Finder;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeAndDescendantsUsages_Finder;
-import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.Language;
 import java.util.ArrayList;
@@ -77,11 +77,11 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
   }
 
   public String getKeyStroke() {
-    return MoveConcepts.getKeyStroke_static();
+    return getKeyStroke_static();
   }
 
   public boolean isApplicableWRTConcept(SNode node) {
-    return MoveConcepts.isApplicableWRTConcept_static(node);
+    return isApplicableWRTConcept_static(node);
   }
 
   public String getApplicableConceptFQName() {
@@ -107,12 +107,12 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
     }
   }
 
-  public boolean isApplicableToModel() {
-    return false;
-  }
-
   public boolean isApplicableToModel(SModelDescriptor modelDescriptor) {
     return true;
+  }
+
+  public RefactoringTarget getRefactoringTarget() {
+    return RefactoringTarget.NODE;
   }
 
   public boolean showsAffectedNodes() {
@@ -124,8 +124,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
       SNode node = actionContext.getNode();
       SearchQuery searchQuery = new SearchQuery(node, GlobalScope.getInstance());
       IResultProvider resultProvider = TreeBuilder.forFinders(new ConceptInstances_Finder(), new NodeAndDescendantsUsages_Finder());
-      IDEProjectFrame projectFrame = (IDEProjectFrame)actionContext.get(IDEProjectFrame.class);
-      SearchResults searchResults = resultProvider.getResults(searchQuery, projectFrame.createAdaptiveProgressMonitor());
+      SearchResults searchResults = resultProvider.getResults(searchQuery, actionContext.createProgressMonitor());
       return searchResults;
     }
   }

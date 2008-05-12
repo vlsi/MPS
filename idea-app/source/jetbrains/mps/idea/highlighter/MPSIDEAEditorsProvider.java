@@ -28,7 +28,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 public class MPSIDEAEditorsProvider implements IEditorsProvider {
   public List<IEditor> getAllEditors(final MPSProject mpsProject) {
     final List<IEditor> editors = new ArrayList<IEditor>();
-    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+/*    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() { //todo this about deadlocks
         FileEditorManager fileEditorManager = getFileEditorManager(mpsProject);
         for (FileEditor fileEditor : fileEditorManager.getAllEditors()) {
@@ -41,14 +41,14 @@ public class MPSIDEAEditorsProvider implements IEditorsProvider {
           }
         }
       }
-    }, ModalityState.defaultModalityState());
+    }, ModalityState.defaultModalityState()); */
     return editors;
   }
 
   public IEditor getCurrentEditor(final MPSProject mpsProject) {
     final IEditor[] result = new IEditor[1];
     result[0] = null;
-    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+/*    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() {
         FileEditorManager fileEditorManager = getFileEditorManager(mpsProject);
         FileEditor[] selectedEditors = fileEditorManager.getSelectedEditors();
@@ -61,7 +61,7 @@ public class MPSIDEAEditorsProvider implements IEditorsProvider {
           }
         }
       }
-    }, ModalityState.defaultModalityState());
+    }, ModalityState.defaultModalityState()); */
 
     return result[0];
   }
