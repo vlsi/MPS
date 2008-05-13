@@ -18,7 +18,7 @@ import jetbrains.mps.baseLanguage.structure.EnumClass;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.search.VisibleClassifierMembersScope;
+import jetbrains.mps.baseLanguage.search.ClassifierVisibleMembersScope;
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
 
 public class QueriesUtil {
@@ -113,7 +113,7 @@ public class QueriesUtil {
     if (instanceType == null) {
       return new ArrayList<SNode>();
     }
-    ISearchScope searchScope = new VisibleClassifierMembersScope(((ClassifierType)SNodeOperations.getAdapter(instanceType)), node, IClassifiersSearchScope.INSTANCE_METHOD);
+    ISearchScope searchScope = new ClassifierVisibleMembersScope(((ClassifierType)SNodeOperations.getAdapter(instanceType)), node, IClassifiersSearchScope.INSTANCE_METHOD);
     return (List<SNode>)searchScope.getNodes();
   }
 
@@ -133,7 +133,7 @@ public class QueriesUtil {
     if (instanceType == null) {
       return new ArrayList<SNode>();
     }
-    ISearchScope searchScope = new VisibleClassifierMembersScope(((ClassifierType)SNodeOperations.getAdapter(instanceType)), referenceNode, IClassifiersSearchScope.INSTANCE_FIELD);
+    ISearchScope searchScope = new ClassifierVisibleMembersScope(((ClassifierType)SNodeOperations.getAdapter(instanceType)), referenceNode, IClassifiersSearchScope.INSTANCE_FIELD);
     return (List<SNode>)searchScope.getNodes();
   }
 

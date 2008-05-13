@@ -6814,7 +6814,7 @@
               <link role="classifier" targetNodeId="45.~ISearchScope" resolveInfo="ISearchScope" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1189458398321">
-              <link role="baseMethodDeclaration" targetNodeId="46.~VisibleClassifierMembersScope.&lt;init&gt;(jetbrains.mps.baseLanguage.structure.ClassifierType,jetbrains.mps.smodel.SNode,int)" resolveInfo="VisibleClassifierMembersScope" />
+              <link role="baseMethodDeclaration" targetNodeId="46.~ClassifierVisibleMembersScope.&lt;init&gt;(jetbrains.mps.baseLanguage.structure.ClassifierType,jetbrains.mps.smodel.SNode,int)" resolveInfo="ClassifierVisibleMembersScope" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721482">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1189549809119">
                   <link role="variableDeclaration" targetNodeId="1179967136586" resolveInfo="instanceType" />
@@ -7019,7 +7019,7 @@
               <link role="classifier" targetNodeId="45.~ISearchScope" resolveInfo="ISearchScope" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1189537428363">
-              <link role="baseMethodDeclaration" targetNodeId="46.~VisibleClassifierMembersScope.&lt;init&gt;(jetbrains.mps.baseLanguage.structure.ClassifierType,jetbrains.mps.smodel.SNode,int)" resolveInfo="VisibleClassifierMembersScope" />
+              <link role="baseMethodDeclaration" targetNodeId="46.~ClassifierVisibleMembersScope.&lt;init&gt;(jetbrains.mps.baseLanguage.structure.ClassifierType,jetbrains.mps.smodel.SNode,int)" resolveInfo="ClassifierVisibleMembersScope" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721510">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1189549865328">
                   <link role="variableDeclaration" targetNodeId="1179967239091" resolveInfo="instanceType" />

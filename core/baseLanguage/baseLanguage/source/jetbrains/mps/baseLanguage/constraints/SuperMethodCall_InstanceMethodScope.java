@@ -1,7 +1,7 @@
 package jetbrains.mps.baseLanguage.constraints;
 
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import jetbrains.mps.baseLanguage.search.VisibleClassifierMembersScope;
+import jetbrains.mps.baseLanguage.search.ClassifierVisibleMembersScope;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
 import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
@@ -18,7 +18,7 @@ import java.util.List;
  * Igor Alshannikov
  * Sep 11, 2007
  */
-public class SuperMethodCall_InstanceMethodScope extends VisibleClassifierMembersScope {
+public class SuperMethodCall_InstanceMethodScope extends ClassifierVisibleMembersScope {
 
   public SuperMethodCall_InstanceMethodScope(@Nullable ClassifierType superclassType, @Nullable SNode contextNode) {
     super(superclassType, contextNode, IClassifiersSearchScope.INSTANCE_METHOD);
