@@ -39,6 +39,8 @@ public class GenerationSession implements IGenerationSession {
 
   private GenerationSessionContext mySessionContext;
 
+  private SModelDescriptor myCurrentSourceModel;
+
   private int myInvocationCount = 0;
   private int myTransientModelsCount = 0;
   private boolean myIgnoreConflictsInMappingPriorityRules;
@@ -90,37 +92,45 @@ public class GenerationSession implements IGenerationSession {
       throw new GenerationCanceledException();
     }
 
-    GenerationStatus status;
-    boolean wasErrors = false;
-    boolean wasWarnings = false;
-    int stepCount = 1;
-    SModelDescriptor currInputModel = inputModel;
-    while (true) {
-      addMessage(new Message(MessageKind.INFORMATION, "execute step " + (stepCount++)));
-      status = generateModel_step(currInputModel.getSModel(), stepController);
-      wasErrors |= status.isError();
-      wasWarnings |= status.hasWarnings();
-      if (status.isCanceled()) {
-        break;
-      }
+    myCurrentSourceModel = inputModel;
+    try {
+      GenerationStatus status;
+      boolean wasErrors = false;
+      boolean wasWarnings = false;
+      int stepCount = 1;
+      SModelDescriptor currInputModel = inputModel;
+      while (true) {
+        addMessage(new Message(MessageKind.INFORMATION, "execute step " + (stepCount++)));
+        status = generateModel_step(currInputModel.getSModel(), stepController);
+        wasErrors |= status.isError();
+        wasWarnings |= status.hasWarnings();
+        if (status.isCanceled()) {
+          break;
+        }
 
-      // need more steps?
-      if (!stepController.advanceStep()) {
-        // generation complete
-        break;
+        // need more steps?
+        if (!stepController.advanceStep()) {
+          // generation complete
+          break;
+        }
+        if (stepController.getCurrentMappings().isEmpty()) {
+          break;
+        }
+        if (status.getOutputModel() == null) {
+          break;
+        }
+        currInputModel = status.getOutputModel().getModelDescriptor();
       }
-      if (stepController.getCurrentMappings().isEmpty()) {
-        break;
-      }
-      if (status.getOutputModel() == null) {
-        break;
-      }
-      currInputModel = status.getOutputModel().getModelDescriptor();
+      return new GenerationStatus(status.getInputModel(), status.getOutputModel(), status.getTraceMap(), wasErrors, wasWarnings, status.isCanceled());
+    } finally {
+      myCurrentSourceModel = null;
     }
-
-    return new GenerationStatus(status.getInputModel(), status.getOutputModel(), status.getTraceMap(), wasErrors, wasWarnings, status.isCanceled());
   }
 
+  //todo hack find another way to do it
+  public SModelDescriptor getCurrentSourceModel() {
+    return myCurrentSourceModel;
+  }
 
   private GenerationStatus generateModel_step(SModel inputModel,
                                               AbstractGenerationStepController stepController)
