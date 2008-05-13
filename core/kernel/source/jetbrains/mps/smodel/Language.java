@@ -295,7 +295,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     String name = getModuleUID() + "." + RUNTIME_JAR_SUFFIX;
     File file = new File(parent, name);
 
-    if (file.exists()) {
+    if (file.exists() && !visited.contains(file.getPath())) {
       ClassPathEntry runtimeJar = ClassPathEntry.newInstance(myLanguageDescriptor.getModel(), true);
       myLanguageDescriptor.addLanguageRuntimeClassPathEntry(runtimeJar);
       runtimeJar.setPath(file.getPath());
