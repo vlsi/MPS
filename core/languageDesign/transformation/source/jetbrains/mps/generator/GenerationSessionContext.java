@@ -22,7 +22,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   private static final Object COPYED_ROOTS = new Object();
 
-  private List<Generator> myGeneratorModules;
   private List<SModelDescriptor> myTemplateModels;
   private IOperationContext myInvocationContext;
   private AbstractGenerationStepController myGenerationStepController;
@@ -50,9 +49,8 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
     myInvocationContext = invocationContext;
     myGenerationStepController = generationStepController;
-    myGeneratorModules = myGenerationStepController.getGenerators();
-    myTemplateModels = myGenerationStepController.getTemplateModels();
-    myMappingConfigurations = new LinkedHashSet<MappingConfiguration>(myGenerationStepController.getCurrentMappings());
+    myTemplateModels = generationStepController.getTemplateModels();
+    myMappingConfigurations = new LinkedHashSet<MappingConfiguration>(generationStepController.getCurrentMappings());
 
     getModule().setInvocationContext(invocationContext.getModule());
 
@@ -121,10 +119,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   @NotNull
   public IScope getScope() {
     return getModule().getScope();
-  }
-
-  public List<Generator> getGeneratorModules() {
-    return myGeneratorModules;
   }
 
   public List<SModelDescriptor> getTemplateModels() {
