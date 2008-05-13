@@ -141,7 +141,7 @@ public class GenerationSession implements IGenerationSession {
     printGenerationStepData(stepController, inputModel);
 
     // -- replace context
-    mySessionContext = new GenerationSessionContext(myInvocationContext, stepController, mySessionContext);
+    mySessionContext = new GenerationSessionContext(myInvocationContext, inputModel, stepController, mySessionContext);
 
     // -- replace generator
     ITemplateGenerator generator = new TemplateGenerator(mySessionContext, myProgressMonitor);

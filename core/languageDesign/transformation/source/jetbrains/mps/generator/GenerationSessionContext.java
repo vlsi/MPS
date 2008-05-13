@@ -39,9 +39,12 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private TraceMap myTraceMap = new TraceMap();
   private Set<String> myUsedNames = new HashSet<String>();
 
+  private SModel myOriginalInputModel;
+
 
   public GenerationSessionContext(
     IOperationContext invocationContext,
+    SModel inputModel,
     AbstractGenerationStepController generationStepController,
     GenerationSessionContext prevContext) {
 
@@ -57,10 +60,22 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       mySessionObjects = prevContext.mySessionObjects;
       myUsedNames = prevContext.myUsedNames;
     }
+
+    if(!inputModel.getModelDescriptor().isTransient()) {
+      // new original input model
+      myOriginalInputModel = inputModel;
+      // forget history
+      mySessionObjects.clear();
+      myUsedNames.clear();
+    }
   }
 
   public void clearTransientObjects() {
     myTransientObjects.clear();
+  }
+
+  public SModel getOriginalInputModel() {
+    return myOriginalInputModel;
   }
 
   public Set<MappingConfiguration> getMappingConfigurations() {
