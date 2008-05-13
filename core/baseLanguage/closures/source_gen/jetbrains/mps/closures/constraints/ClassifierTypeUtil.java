@@ -12,6 +12,9 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.closures.generator.baseLanguage.template.helper.FunctionTypeUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import jetbrains.mps.patterns.IMatchingPattern;
 
 public class ClassifierTypeUtil {
 
@@ -23,7 +26,7 @@ public class ClassifierTypeUtil {
         SNode res = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
         SLinkOperations.setTarget(res, "classifier", SLinkOperations.getTarget(ct, "classifier", false), false);
         for(SNode p : params) {
-          SLinkOperations.addChild(res, "parameter", SNodeOperations.copyNode(ClassifierTypeUtil.getTypeCoercedToClassifierType(p)));
+          SLinkOperations.addChild(res, "parameter", SNodeOperations.copyNode(getTypeCoercedToClassifierType(p)));
         }
         return res;
       }
@@ -38,10 +41,10 @@ public class ClassifierTypeUtil {
       if (rtSig.equals(SPropertyOperations.getString(ice, "name"))) {
         SNode ct = new QuotationClass_1().createNode(ice);
         if ((SLinkOperations.getTarget(ft, "resultType", true) != null) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ft, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
-          SLinkOperations.addChild(ct, "parameter", ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(ft, "resultType", true)), true));
+          SLinkOperations.addChild(ct, "parameter", copyTypeRecursively(getTypeCoercedToClassifierType(SLinkOperations.getTarget(ft, "resultType", true)), true));
         }
         for(SNode pt : SLinkOperations.getTargets(ft, "parameterType", true)) {
-          SLinkOperations.addChild(ct, "parameter", ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(pt), false));
+          SLinkOperations.addChild(ct, "parameter", copyTypeRecursively(getTypeCoercedToClassifierType(pt), false));
         }
         return ct;
       }
@@ -73,10 +76,38 @@ public class ClassifierTypeUtil {
     return false;
   }
 
-  public static SNode resolveType(SNode type, SNode ct) {
-    List<SNode> ptypes = SLinkOperations.getTargets(ct, "parameter", true);
-    List<SNode> vars = SLinkOperations.getTargets(SLinkOperations.getTarget(ct, "classifier", false), "typeVariableDeclaration", true);
-    return ClassifierTypeUtil.resolveType(SNodeOperations.copyNode(type), ptypes, vars);
+  public static SNode resolveTypeUsingSupertypes(SNode type, SNode concrete) {
+    List<SNode> visited = new ArrayList<SNode>();
+    LinkedList<SNode> concretes = new LinkedList<SNode>();
+    concretes.addLast(concrete);
+    SNode resType = type;
+    while(!(concretes.isEmpty())) {
+      SNode ct = concretes.removeFirst();
+      if (visited.contains(ct)) {
+        continue;
+      }
+      visited.add(ct);
+      for(SNode sup : TypeChecker.getInstance().getSubtypingManager().collectImmediateSupertypes(ct)) {
+        {
+          IMatchingPattern pattern_1 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
+          SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce(sup, pattern_1);
+          if (coercedNode_1 != null) {
+            concretes.addLast(coercedNode_1);
+          }
+        }
+      }
+      resType = resolveType(resType, ct);
+      if (((List)SNodeOperations.getDescendants(resType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false)).isEmpty()) {
+        break;
+      }
+    }
+    return resType;
+  }
+
+  public static SNode resolveType(SNode type, SNode concrete) {
+    List<SNode> ptypes = SLinkOperations.getTargets(concrete, "parameter", true);
+    List<SNode> vars = SLinkOperations.getTargets(SLinkOperations.getTarget(concrete, "classifier", false), "typeVariableDeclaration", true);
+    return resolveType(SNodeOperations.copyNode(type), ptypes, vars);
   }
 
   private static SNode resolveType(SNode type, List<SNode> actTypes, List<SNode> vars) {
@@ -84,14 +115,14 @@ public class ClassifierTypeUtil {
       int idx = 0;
       for(SNode tvd : vars) {
         if (tvd == SLinkOperations.getTarget(type, "typeVariableDeclaration", false) && idx < actTypes.size()) {
-          return SNodeOperations.copyNode(ClassifierTypeUtil.getTypeCoercedToClassifierType(actTypes.get(idx)));
+          return SNodeOperations.copyNode(getTypeCoercedToClassifierType(actTypes.get(idx)));
         }
         idx = idx + 1;
       }
     } else
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
       for(SNode pt : SLinkOperations.getTargets(type, "parameter", true)) {
-        SNode rt = ClassifierTypeUtil.resolveType(pt, actTypes, vars);
+        SNode rt = resolveType(pt, actTypes, vars);
         if (pt != rt) {
           SNodeOperations.replaceWithAnother(pt, rt);
         }
@@ -104,15 +135,15 @@ public class ClassifierTypeUtil {
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
       SNode copy = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
       SLinkOperations.setTarget(copy, "classifier", SLinkOperations.getTarget(type, "classifier", false), false);
-      boolean covariantParam = ClassifierTypeUtil.isFunctionTypeClassifierReturningValue(SLinkOperations.getTarget(type, "classifier", false));
+      boolean covariantParam = isFunctionTypeClassifierReturningValue(SLinkOperations.getTarget(type, "classifier", false));
       for(SNode pt : SLinkOperations.getTargets(type, "parameter", true)) {
-        SLinkOperations.addChild(copy, "parameter", (ClassifierTypeUtil.isFunctionTypeClassifier(SLinkOperations.getTarget(type, "classifier", false)) ?
-          ClassifierTypeUtil.copyTypeRecursively(pt, covariantParam) :
-          ClassifierTypeUtil.copyTypeRecursively(pt)
+        SLinkOperations.addChild(copy, "parameter", (isFunctionTypeClassifier(SLinkOperations.getTarget(type, "classifier", false)) ?
+          copyTypeRecursively(pt, covariantParam) :
+          copyTypeRecursively(pt)
         ));
         covariantParam = false;
       }
-      return (covariant || ClassifierTypeUtil.isFunctionTypeClassifier(SLinkOperations.getTarget(type, "classifier", false)) ?
+      return (covariant || isFunctionTypeClassifier(SLinkOperations.getTarget(type, "classifier", false)) ?
         new QuotationClass_3().createNode(copy) :
         new QuotationClass_4().createNode(copy)
       );
@@ -138,7 +169,7 @@ public class ClassifierTypeUtil {
       SNode copy = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
       SLinkOperations.setTarget(copy, "classifier", SLinkOperations.getTarget(type, "classifier", false), false);
       for(SNode pt : SLinkOperations.getTargets(type, "parameter", true)) {
-        SLinkOperations.addChild(copy, "parameter", ClassifierTypeUtil.copyTypeRecursively(pt));
+        SLinkOperations.addChild(copy, "parameter", copyTypeRecursively(pt));
       }
       return copy;
     } else
