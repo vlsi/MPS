@@ -14,7 +14,9 @@ import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.refactoring.logging.Marshallable;
 import jetbrains.mps.reloading.*;
-import jetbrains.mps.util.*;
+import jetbrains.mps.util.Calculable;
+import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -23,8 +25,8 @@ import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.*;
 import java.lang.reflect.Constructor;
+import java.util.*;
 
 
 public class Language extends AbstractModule implements Marshallable<Language> {
@@ -682,36 +684,41 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
       if (declaration instanceof ConceptDeclaration) {
         ConceptDeclaration cd = (ConceptDeclaration) declaration;
-        if (cd.getExtends() != null) {
-          String fqName = NameUtil.nodeFQName(cd.getExtends());
-          parents.add(fqName);
-          result.addAll(SModelUtil_new.getDeclaringLanguage(
-            cd.getExtends(), GlobalScope.getInstance()).getAncestorsNames(
-            fqName));
+        ConceptDeclaration extendedConcept = cd.getExtends();
+        if (extendedConcept != null) {
+          String fqName = NameUtil.nodeFQName(extendedConcept);
+          Language declaringLanguage = SModelUtil_new.getDeclaringLanguage(fqName, GlobalScope.getInstance());
+          if (declaringLanguage != null) {
+            parents.add(fqName);
+            result.addAll(declaringLanguage.getAncestorsNames(fqName));
+          }
         }
 
         for (InterfaceConceptReference icr : cd.getImplementses()) {
-          String fqName = NameUtil.nodeFQName(icr.getIntfc());
+          InterfaceConceptDeclaration interfaceConcept = icr.getIntfc();
+          if (interfaceConcept == null) continue;
+          String fqName = NameUtil.nodeFQName(interfaceConcept);
+          Language declaringLanguage = SModelUtil_new.getDeclaringLanguage(fqName, GlobalScope.getInstance());
+          if (declaringLanguage == null) continue;
           parents.add(fqName);
-          result.addAll(SModelUtil_new.getDeclaringLanguage(
-            icr.getIntfc(), GlobalScope.getInstance()).getAncestorsNames(
-            fqName));
+          result.addAll(declaringLanguage.getAncestorsNames(fqName));
         }
       }
 
       if (declaration instanceof InterfaceConceptDeclaration) {
         InterfaceConceptDeclaration icd = (InterfaceConceptDeclaration) declaration;
         for (InterfaceConceptReference icr : icd.getExtendses()) {
-          String fqName = NameUtil.nodeFQName(icr.getIntfc());
+          InterfaceConceptDeclaration interfaceConcept = icr.getIntfc();
+          if (interfaceConcept == null) continue;
+          String fqName = NameUtil.nodeFQName(interfaceConcept);
+          Language declaringLanguage = SModelUtil_new.getDeclaringLanguage(fqName, GlobalScope.getInstance());
+          if (declaringLanguage == null) continue;
           parents.add(fqName);
-          result.addAll(SModelUtil_new.getDeclaringLanguage(
-            icr.getIntfc(), GlobalScope.getInstance()).getAncestorsNames(
-            fqName));
+          result.addAll(declaringLanguage.getAncestorsNames(fqName));
         }
       }
       myParentsNamesMap.put(conceptFqName, parents);
       myAncestorsNamesMap.put(conceptFqName, result);
-      //return new HashSet<String>(result);
       return result;
     }
   }
