@@ -8,6 +8,7 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.AbstractModelRootManager;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -16,10 +17,8 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-/**
- * @author Kostik
- */
 public abstract class ClassPathModelRootManager extends AbstractModelRootManager {
+  private static Logger LOG = Logger.getLogger(ClassPathModelRootManager.class);
 
   private static Map<SModelUID, Long> ourTimestamps = new HashMap<SModelUID, Long>();
   private ModelOwner myOwner;
@@ -109,6 +108,10 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
           SModelDescriptor modelDescriptor = new DefaultSModelDescriptor(this, null, modelUID);
           SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, myOwner);
           descriptors.add(modelDescriptor);
+
+          if (SModelRepository.getInstance().getOwners(modelDescriptor).size() > 1) {
+            LOG.warning("Loading the same java_stub package twice : " + pack + " from " + SModelRepository.getInstance().getOwners(modelDescriptor));
+          }
         }
       }
 
