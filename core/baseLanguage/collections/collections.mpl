@@ -51,6 +51,9 @@
   <usedLanguages>
     <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
   </usedLanguages>
+  <runtime>
+    <dependency reexport="true">jetbrains.mps.internal.collections</dependency>
+  </runtime>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>
     <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>
