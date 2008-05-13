@@ -18,23 +18,13 @@
     <orderEntry type="library" name="Beansbinding" level="project" />
     <orderEntry type="module" module-name="classifiers" exported="" />
     <orderEntry type="module-library">
-      <library>
+      <library name="junit4">
         <CLASSES>
-          <root url="jar://$APPLICATION_HOME_DIR$/lib/junit.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="library" name="JUnit" level="project" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MPS_HOME$/platform/unitTest/solutions/runtime/lib/junit-4.1.jar!/" />
+          <root url="jar://$MPS_HOME$/lib/junit4/junit-4.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>
-          <root url="jar://$MPS_HOME$/platform/unitTest/solutions/runtime/lib/junit-4.1-src.jar!/" />
+          <root url="jar://$MPS_HOME$/lib/junit4/junit-4.1-src.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
