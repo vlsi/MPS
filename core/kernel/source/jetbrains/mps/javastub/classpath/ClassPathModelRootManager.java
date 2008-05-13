@@ -98,12 +98,20 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
       if (!getClassPathItem().getAvailableClasses(subpackage).isEmpty()) {
         SModelUID modelUID = SModelUID.fromString(subpackage + "@" + SModelStereotype.JAVA_STUB);
         if (SModelRepository.getInstance().getModelDescriptor(modelUID) != null) {
-          SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(subpackage + "@" + SModelStereotype.JAVA_STUB));
+          final SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(subpackage + "@" + SModelStereotype.JAVA_STUB));
 
           assert descriptor != null;
           
           SModelRepository.getInstance().addOwnerForDescriptor(descriptor, myOwner);
           descriptors.add(descriptor);
+
+          //todo hack we need it to alleviate problems like MPS-1472
+          descriptor.addModelListener(new SModelAdapter() {
+            public void modelInitialized(SModelDescriptor sm) {
+              updateAfterLoad(sm);
+              descriptor.removeModelListener(this);
+            }
+          });
         } else {
           SModelDescriptor modelDescriptor = new DefaultSModelDescriptor(this, null, modelUID);
           SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, myOwner);
