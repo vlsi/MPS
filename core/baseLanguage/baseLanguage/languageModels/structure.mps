@@ -510,6 +510,9 @@
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1178289079552">
       <link role="intfc" targetNodeId="1178285077437" resolveInfo="ClassifierMember" />
     </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1210720584589">
+      <link role="intfc" targetNodeId="4.1196978630214" resolveInfo="IResolveInfo" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068580320020">
     <property name="name" value="IntegerConstant" />
