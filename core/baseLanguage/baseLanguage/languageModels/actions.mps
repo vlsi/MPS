@@ -15,7 +15,6 @@
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
   <language namespace="jetbrains.mps.regexp" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
-  <language namespace="" />
   <language namespace="jetbrains.mps.quotation" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />

@@ -44,16 +44,7 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
 
   private Queue<Message> myMessages = new LinkedList<Message>();
   private DefaultListModel myModel = new DefaultListModel();
-  private JList myList = new JList(myModel) {
-    public String getToolTipText(MouseEvent event) {
-      int index = myList.locationToIndex(event.getPoint());
-      if (index == -1) {
-        return null;
-      }
-      Message message = (Message) myModel.get(index);
-      return "<html><p>" + message.getText() + "</p>";
-    }
-  };
+  private JList myList = new JList(myModel);
   private ToolsPane myToolsPane;
 
   public MessageView(ToolsPane toolsPane) {
