@@ -54,6 +54,7 @@ public abstract class AbstractModule implements IModule {
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
     rereadModels();
 
+    updateDescriptorClasspath();
     updateClassPath();
   }
 
@@ -61,14 +62,18 @@ public abstract class AbstractModule implements IModule {
   public void onModuleLoad() {
     boolean save = false;
 
-    Set<String> visited = new HashSet<String>();
-    for (ClassPathEntry e : getModuleDescriptor().getClassPathEntrys()) {
-      if (visited.contains(e.getPath())) {
-        e.delete();
-        save = true;
-      }
+    if (isPackaged()) {
+      updateDescriptorClasspath();
+    } else {
+      Set<String> visited = new HashSet<String>();
+      for (ClassPathEntry e : getModuleDescriptor().getClassPathEntrys()) {
+        if (visited.contains(e.getPath())) {
+          e.delete();
+          save = true;
+        }
 
-      visited.add(e.getPath());
+        visited.add(e.getPath());
+      }
     }
 
     boolean setModuleDescriptor = convertRenamedDependencies();
@@ -78,6 +83,28 @@ public abstract class AbstractModule implements IModule {
     }
     if ((save || setModuleDescriptor) && !isPackaged()) {
       save();
+    }
+  }
+
+  protected void updateDescriptorClasspath() {
+    if (!isPackaged()) return;
+
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor != null) {
+      Set<String> visited = new HashSet<String>();
+      for (ClassPathEntry entry : descriptor.getClassPathEntrys()) {
+        IFile cp = FileSystem.getFile(entry.getPath());
+        if ((!cp.exists()) || cp.isDirectory() || visited.contains(cp.getAbsolutePath())) {
+          entry.delete();
+        }
+        visited.add(entry.getPath());
+      }
+      String bundleHomePath = getBundleHome().getPath();
+      if (!visited.contains(bundleHomePath)) {
+        ClassPathEntry bundleHome = ClassPathEntry.newInstance(descriptor.getModel(), true);
+        descriptor.addClassPathEntry(bundleHome);
+        bundleHome.setPath(bundleHomePath);
+      }
     }
   }
 
@@ -417,20 +444,6 @@ public abstract class AbstractModule implements IModule {
 
   public List<String> getClassPath() {
     ArrayList<String> result = new ArrayList<String>();
-
-    if (isPackaged()) {
-      result.add(getBundleHome().getPath());
-      ModuleDescriptor descriptor = getModuleDescriptor();
-      if (descriptor != null) {
-        for (ClassPathEntry entry : descriptor.getClassPathEntrys()) {
-          IFile cp = FileSystem.getFile(entry.getPath());
-          if (cp.exists() && !cp.isDirectory()) {
-            result.add(entry.getPath());
-          }
-        }
-      }
-      return result;
-    }
 
     if (getClassesGen() != null && getClassesGen().exists()) {
       result.add(getClassesGen().getCanonicalPath());

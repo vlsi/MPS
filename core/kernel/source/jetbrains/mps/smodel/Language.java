@@ -103,11 +103,12 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     }
 
     rereadModels();
+    updateDescriptorClasspath();
     updateLanguageRuntimeClassPathItem();
     updateClassPath();
     revalidateGenerators();
 
-    SModelRepository.getInstance().registerModelDescriptor(myLanguageDescriptor.getModel().getModelDescriptor(), this);   
+    SModelRepository.getInstance().registerModelDescriptor(myLanguageDescriptor.getModel().getModelDescriptor(), this);
   }
 
   public List<String> getLanguageRuntimeClassPathItems() {
@@ -139,20 +140,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
         }
       } catch (IOException e) {
         LOG.error(e);
-      }
-    }
-
-    if (isPackaged()) {
-      File parent = getBundleHome().getParentFile();
-      String name = getModuleUID() + "." + RUNTIME_JAR_SUFFIX;
-      File file = new File(parent, name);
-
-      if (file.exists()) {
-        try {
-          result.add(new JarFileClassPathItem(file.getPath()));
-        } catch (IOException e) {
-          LOG.error(e);
-        }
       }
     }
 
@@ -287,6 +274,31 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
     if (changed && !getDescriptorFile().isReadOnly()) {
       save();
+    }
+  }
+
+  @Override
+  protected void updateDescriptorClasspath() {
+    super.updateDescriptorClasspath();
+
+    if (!isPackaged()) return;
+    Set<String> visited = new HashSet<String>();
+    for (ClassPathEntry e : myLanguageDescriptor.getLanguageRuntimeClassPathEntrys()) {
+      IFile file = FileSystem.getFile(e.getPath());
+      if (!file.exists() || file.isDirectory() || (visited.contains(e.getPath()))) {
+        e.delete();
+      }
+      visited.add(e.getPath());
+    }
+
+    File parent = getBundleHome().getParentFile();
+    String name = getModuleUID() + "." + RUNTIME_JAR_SUFFIX;
+    File file = new File(parent, name);
+
+    if (file.exists()) {
+      ClassPathEntry runtimeJar = ClassPathEntry.newInstance(myLanguageDescriptor.getModel(), true);
+      myLanguageDescriptor.addLanguageRuntimeClassPathEntry(runtimeJar);
+      runtimeJar.setPath(file.getPath());
     }
   }
 
@@ -705,7 +717,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   }
 
   public void save() {
-    if (isPackaged()){
+    if (isPackaged()) {
       LOG.warning("Trying to save packaged language " + getModuleUID());
       return;
     }
