@@ -47,8 +47,8 @@ public class Solution extends AbstractModule {
     SModelRepository.getInstance().registerModelDescriptor(mySolutionDescriptor.getModel().getModelDescriptor(), this);
   }
 
-  public void onModelLoad() {
-    super.onModelLoad();
+  public void onModuleLoad() {
+    super.onModuleLoad();
   }
 
 

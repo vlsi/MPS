@@ -58,7 +58,7 @@ public abstract class AbstractModule implements IModule {
   }
 
 
-  public void onModelLoad() {
+  public void onModuleLoad() {
     boolean save = false;
 
     Set<String> visited = new HashSet<String>();

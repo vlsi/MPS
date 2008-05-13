@@ -180,8 +180,8 @@ public class DevKit extends AbstractModule {
     DescriptorsPersistence.saveDevKitDescriptor(getModuleDescriptor(), myDescriptorFile);
   }
 
-  public void onModelLoad() {
-    super.onModelLoad();
+  public void onModuleLoad() {
+    super.onModuleLoad();
   }
 
   public String getName() {

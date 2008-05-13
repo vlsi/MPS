@@ -189,7 +189,7 @@ public class Generator extends AbstractModule {
     return result;
   }
 
-  public void onModelLoad() {
+  public void onModuleLoad() {
   }
 
   public String getGeneratorOutputPath() {

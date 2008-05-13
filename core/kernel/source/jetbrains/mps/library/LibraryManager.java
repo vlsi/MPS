@@ -148,7 +148,7 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
 
   private void convert(final MPSModuleOwner owner) {
     for (IModule m : MPSModuleRepository.getInstance().getModules(owner)) {
-      m.onModelLoad();
+      m.onModuleLoad();
     }
   }
 

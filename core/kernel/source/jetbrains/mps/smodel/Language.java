@@ -290,13 +290,13 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     }
   }
 
-  public void onModelLoad() {
-    super.onModelLoad();
+  public void onModuleLoad() {
+    super.onModuleLoad();
 
     validateExtends();
 
     for (Generator g : getGenerators()) {
-      g.onModelLoad();
+      g.onModuleLoad();
     }
   }
 
