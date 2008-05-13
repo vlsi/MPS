@@ -21,6 +21,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="19" />
   <import index="1" modelUID="jetbrains.mps.closures.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.core.constraints" version="-1" />
@@ -1975,18 +1976,36 @@
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210666992352">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ContinueStatement" id="1210666992353" />
               </node>
-              <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210666992354">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1210666992355">
-                  <link role="variableDeclaration" targetNodeId="1210666992317" resolveInfo="visited" />
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1210666992356">
-                  <link role="baseMethodDeclaration" targetNodeId="11.~List.contains(java.lang.Object):boolean" resolveInfo="contains" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210668200916">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1210666992357">
-                      <link role="variableDeclaration" targetNodeId="1210666992346" resolveInfo="ct" />
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1210671317099">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1210671331421">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1210671333493">
+                    <property name="value" value="0" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210671323950">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210671319764">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1210671319214">
+                        <link role="variableDeclaration" targetNodeId="1210666992346" resolveInfo="ct" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1210671320704">
+                        <link role="link" targetNodeId="6.1109201940907" />
+                      </node>
                     </node>
-                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1210668202079">
-                      <link role="link" targetNodeId="6.1107535924139" />
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_GetCountOperation" id="1210671329733" />
+                  </node>
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210666992354">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1210666992355">
+                    <link role="variableDeclaration" targetNodeId="1210666992317" resolveInfo="visited" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1210666992356">
+                    <link role="baseMethodDeclaration" targetNodeId="11.~List.contains(java.lang.Object):boolean" resolveInfo="contains" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210668200916">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1210666992357">
+                        <link role="variableDeclaration" targetNodeId="1210666992346" resolveInfo="ct" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1210668202079">
+                        <link role="link" targetNodeId="6.1107535924139" />
+                      </node>
                     </node>
                   </node>
                 </node>
