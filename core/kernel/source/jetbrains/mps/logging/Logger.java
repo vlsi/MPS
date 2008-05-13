@@ -9,9 +9,6 @@ import java.util.Map;
 
 import org.apache.log4j.Level;
 
-/**
- * @author Kostik
- */
 public class Logger {
   private static Map<String, Logger> ourLoggers = new HashMap<String, Logger>();
   private static List<ILoggingHandler> ourLoggingHandlers = new ArrayList<ILoggingHandler>();
