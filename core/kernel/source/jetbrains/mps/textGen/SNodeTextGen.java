@@ -96,7 +96,7 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
     SReference reference = sourceNode.getReference(role);
     if(reference == null) {
       foundError();
-      return "<err:noref for role '" + role + "'>";
+      return "<err:no ref for role '" + role + "'>";
     }
 
     if (reference instanceof DynamicReference) {
