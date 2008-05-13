@@ -45,9 +45,8 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Defa
 
   protected abstract AbstractHierarchyTree<T> createHierarchyTree(boolean isParentHierarchy);
   
-  //todo IDEA platform hack
   public void openNode(SNode node, IOperationContext context) {
-    final EditorsPane editorsPane = myIde.getEditorsPane();
+    final EditorsPane editorsPane = context.getComponent(EditorsPane.class);
     NavigationActionProcessor.getInstance().executeNavigationAction(new EditorNavigationCommand(node, null, editorsPane), context.getProject());
   }
 
