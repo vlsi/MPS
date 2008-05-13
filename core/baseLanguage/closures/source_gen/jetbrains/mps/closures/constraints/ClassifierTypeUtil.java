@@ -77,16 +77,16 @@ public class ClassifierTypeUtil {
   }
 
   public static SNode resolveTypeUsingSupertypes(SNode type, SNode concrete) {
-    List<SNode> visited = new ArrayList<SNode>();
+    List<SNode> visitedClassifiers = new ArrayList<SNode>();
     LinkedList<SNode> concretes = new LinkedList<SNode>();
     concretes.addLast(concrete);
     SNode resType = type;
     while(!(concretes.isEmpty())) {
       SNode ct = concretes.removeFirst();
-      if (visited.contains(ct)) {
+      if (visitedClassifiers.contains(SLinkOperations.getTarget(ct, "classifier", false))) {
         continue;
       }
-      visited.add(ct);
+      visitedClassifiers.add(SLinkOperations.getTarget(ct, "classifier", false));
       for(SNode sup : TypeChecker.getInstance().getSubtypingManager().collectImmediateSupertypes(ct)) {
         {
           IMatchingPattern pattern_1 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
