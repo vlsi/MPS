@@ -35,35 +35,11 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
 
   private BlameDialog myBlameDialog;
 
-  private JCheckBox myErrorsCheckbox = new JCheckBox(new AbstractAction("Errors") {
-    public void actionPerformed(ActionEvent e) {
-      rebuildModel();
-    }
-  }) {
-    {
-      setSelected(true);
-    }
-  };
+  private JToggleButton myErrorsCheckbox = createToggleButton("Show Error Messages", ERROR_ICON);
 
-  private JCheckBox myWarningsCheckbox = new JCheckBox(new AbstractAction("Warnings") {
-    public void actionPerformed(ActionEvent e) {
-      rebuildModel();
-    }
-  }) {
-    {
-      setSelected(true);
-    }
-  };
+  private JToggleButton myWarningsCheckbox = createToggleButton("Show Warnings Messages", WARNING_ICON);
 
-  private JCheckBox myInfoCheckbox = new JCheckBox(new AbstractAction("Information") {
-    public void actionPerformed(ActionEvent e) {
-      rebuildModel();
-    }
-  }) {
-    {
-      setSelected(true);
-    }
-  };
+  private JToggleButton myInfoCheckbox = createToggleButton("Show Information Messages", INFORMATION_ICON);
 
 
   private Queue<Message> myMessages = new LinkedList<Message>();
@@ -88,14 +64,14 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
     JPanel panel = new JPanel(new BorderLayout());
     panel.add(new JPanel(), BorderLayout.CENTER);
 
-    JPanel checkboxPanel = new JPanel(new GridLayout(1, 3));
+    JPanel checkboxPanel = new JPanel(new GridLayout(3, 1));
     checkboxPanel.add(myErrorsCheckbox);
     checkboxPanel.add(myWarningsCheckbox);
     checkboxPanel.add(myInfoCheckbox);
 
-    panel.add(checkboxPanel, BorderLayout.WEST);
+    panel.add(checkboxPanel, BorderLayout.NORTH);
 
-    myComponent.add(panel, BorderLayout.NORTH);
+    myComponent.add(panel, BorderLayout.WEST);
     myComponent.add(new JScrollPane(myList), BorderLayout.CENTER);
 
     myList.setFixedCellHeight(Toolkit.getDefaultToolkit().getFontMetrics(myList.getFont()).getHeight() + 5);
@@ -367,5 +343,17 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
 
   public int getNumber() {
     return 0;
+  }
+
+  private JToggleButton createToggleButton(String tooltip, Icon icon) {
+    JToggleButton button = new JToggleButton(icon);
+    button.setToolTipText(tooltip);
+    button.setSelected(true);
+    button.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent event) {
+        rebuildModel();
+      }
+    });
+    return button;
   }
 }
