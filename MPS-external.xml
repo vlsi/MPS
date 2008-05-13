@@ -179,7 +179,7 @@
       <fileset dir="classes" excludes="production/, **/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
-      <fileset dir="classes\production" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
+      <fileset dir="classes\production\idea-app" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
       <fileset dir="core\kernel\classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
@@ -402,6 +402,7 @@
     <copy file="mps.bat" tofile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\mps.bat" />
     <copy file="mps.sh" tofile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\mps.sh" />
     <copy file="mpsOnIDEA.bat" tofile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\mpsOnIDEA.bat" />
+    <copy file="mpsOnIDEA.sh" tofile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\mpsOnIDEA.sh" />
     <zip destfile="${deploy.dir}\MPS-${build.number}.zip" duplicate="preserve" filesonly="true">
       <zipfileset dir="${deploy.dir}\MPS-${build.number}.zip.tmp" excludes="**/*.iml, **/*.ipr" includes="" filemode="755" />
     </zip>
