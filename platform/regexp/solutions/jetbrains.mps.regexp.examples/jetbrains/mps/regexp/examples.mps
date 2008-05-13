@@ -13,7 +13,7 @@
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1178529045424">
     <property name="name" value="EmailExample" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1178529072362">
-      <property name="name" value="main" />
+      <property name="name" value="msain" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1178529113481">
         <property name="name" value="emailToAnalyse" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1178529121037">
