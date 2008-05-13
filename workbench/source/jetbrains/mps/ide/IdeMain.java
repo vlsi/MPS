@@ -18,6 +18,8 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class IdeMain {
+
+
   private static boolean ourTestMode = false;
 
   public static void openProjectWindow(final boolean loadOldProject) {
@@ -30,6 +32,11 @@ public class IdeMain {
 
         SplashScreen.getInstance().showSplashScreen();
         MPSPlugin.getInstance();
+
+        if (System.getProperty("mps.obsolete") == null) {
+          JOptionPane.showMessageDialog(SplashScreen.getInstance(), "This mode of running MPS is disabled. Use IDEA based runner instead");
+          System.exit(0);
+        }
 
         if (expirationDate().compareTo(new Date()) == -1) {
           JOptionPane.showMessageDialog(SplashScreen.getInstance(), "Program is expired. You can download latest version from www.jetbrains.com");
