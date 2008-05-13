@@ -257,8 +257,8 @@
               <link role="concept" targetNodeId="2.1068581242863" resolveInfo="LocalVariableDeclaration" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204218604966">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1193745326644">
-                <link role="variableDeclaration" targetNodeId="1193745326616" resolveInfo="castedVariable" />
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1210717128220">
+                <link role="variableDeclaration" targetNodeId="1193745326616" resolveInfo="castVariable" />
               </node>
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1193745326643">
                 <link role="link" targetNodeId="2.1068581242865" />
@@ -494,8 +494,8 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_InsertChildFirstOperation" id="1193745326708">
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1193745326709">
-                <link role="variableDeclaration" targetNodeId="1193745326616" resolveInfo="castedVariable" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1210717283438">
+                <link role="variableDeclaration" targetNodeId="1193745326616" resolveInfo="castVariable" />
               </node>
             </node>
           </node>
