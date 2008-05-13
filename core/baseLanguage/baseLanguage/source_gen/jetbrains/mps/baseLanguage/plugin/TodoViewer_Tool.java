@@ -6,14 +6,14 @@ import jetbrains.mps.plugins.tool.BaseTool;
 import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
-import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.project.MPSProject;
 import javax.swing.JComponent;
+import jetbrains.mps.ide.IDEProjectFrame;
 
 public class TodoViewer_Tool extends BaseTool {
   public static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}\\source\\jetbrains\\mps\\baseLanguage\\plugin\\todo.png", "jetbrains.mps.baseLanguage"), true);
 
-  public TodoViewer component = new TodoViewer(this.getProject().getComponent(IDEProjectFrame.class));
+  private TodoViewer component = null;
 
   public TodoViewer_Tool(MPSProject project) {
     super(project);
@@ -36,6 +36,9 @@ public class TodoViewer_Tool extends BaseTool {
   }
 
   public JComponent getComponent() {
+    if (this.component == null) {
+      this.component = new TodoViewer(this.getProject().getComponent(IDEProjectFrame.class));
+    }
     return this.component;
   }
 
