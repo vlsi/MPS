@@ -131,7 +131,7 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
   }
 
   private void fireEditorSettingsChanged() {
-    for (EditorSettingsListener l : myListeners) {
+    for (EditorSettingsListener l : new ArrayList<EditorSettingsListener>(myListeners)) {
       try {
         l.settingsChanged();
       } catch (Throwable t) {
