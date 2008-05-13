@@ -614,7 +614,8 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     private void updateChangedPresentations(Set<SNode> nodesWithChangedProperties) {
       DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
       for (SNode node : nodesWithChangedProperties) {
-        SNodeTreeNode treeNode = (SNodeTreeNode) findRootSNodeTreeNode(node);
+        SNodeTreeNode treeNode = (SNodeTreeNode) findDescendantWith(node);
+
         if (treeNode == null) continue;
         if (node.isRoot()) {
           MPSTreeNode parentTreeNode = (MPSTreeNode) treeNode.getParent();
