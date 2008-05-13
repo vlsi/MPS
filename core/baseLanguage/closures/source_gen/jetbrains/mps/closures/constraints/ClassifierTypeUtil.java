@@ -110,7 +110,7 @@ public class ClassifierTypeUtil {
     return resolveType(SNodeOperations.copyNode(type), ptypes, vars);
   }
 
-  private static SNode resolveType(SNode type, List<SNode> actTypes, List<SNode> vars) {
+  public static SNode resolveType(SNode type, List<SNode> actTypes, List<SNode> vars) {
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference") && actTypes.size() > 0) {
       int idx = 0;
       for(SNode tvd : vars) {

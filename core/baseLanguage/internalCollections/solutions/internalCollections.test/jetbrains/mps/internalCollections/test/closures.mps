@@ -2630,7 +2630,7 @@
                 <link role="variableDeclaration" targetNodeId="1204981149254" resolveInfo="seq" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204981230371">
-                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.visitAll(jetbrains.mps.internal.collections.runtime.IVisitor):void" resolveInfo="visitAll" />
+                <link role="baseMethodDeclaration" targetNodeId="3.~ISequence.visitAll(jetbrains.mps.internal.collections.runtime.IVisitor):void" resolveInfo="visitAll" />
                 <node role="actualArgument" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1204981231857">
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204981231858">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204981243634">

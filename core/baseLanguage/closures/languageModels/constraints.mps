@@ -22,6 +22,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="19" />
   <import index="1" modelUID="jetbrains.mps.closures.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.core.constraints" version="-1" />
@@ -2218,7 +2219,7 @@
       <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1203272086300">
         <link role="concept" targetNodeId="6.1068431790189" resolveInfo="Type" />
       </node>
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1203272081861" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1210676555515" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203272075554">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1203272152474">
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1203276442467">
