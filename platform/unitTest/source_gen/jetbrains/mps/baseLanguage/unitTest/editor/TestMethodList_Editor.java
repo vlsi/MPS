@@ -20,46 +20,46 @@ import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class TestMethodList_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myTestMethodListHandler_testMethodList_;
+  /* package */AbstractCellListHandler myListHandler_13710_0;
 
-  private static void setupBasic_TestMethodList(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171931858964");
+  private static void setupBasic_testMethodRefNodeListCell13710_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_testMethodRefNodeListCell13710_0");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupLabel_TestMethodList(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_testMethodRefNodeListCell13710_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createTestMethodList(context, node);
+    return this.create_testMethodRefNodeListCell13710_0(context, node);
   }
 
-  public EditorCell createTestMethodList(EditorContext context, SNode node) {
-    if (this.myTestMethodListHandler_testMethodList_ == null) {
-      this.myTestMethodListHandler_testMethodList_ = new TestMethodList_Editor._RefNodeListHandler(node, "testMethod", context);
+  public EditorCell create_testMethodRefNodeListCell13710_0(EditorContext context, SNode node) {
+    if (this.myListHandler_13710_0 == null) {
+      this.myListHandler_13710_0 = new TestMethodList_Editor.testMethodListHandler_13710_0(node, "testMethod", context);
     }
-    EditorCell_Collection editorCell = this.myTestMethodListHandler_testMethodList_.createCells(context, new CellLayout_Vertical(), false);
-    TestMethodList_Editor.setupBasic_TestMethodList(editorCell, node, context);
+    EditorCell_Collection editorCell = this.myListHandler_13710_0.createCells(context, new CellLayout_Vertical(), false);
+    setupBasic_testMethodRefNodeListCell13710_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myTestMethodListHandler_testMethodList_.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_13710_0.getElementRole());
     return editorCell;
   }
 
-  public static class _RefNodeListHandler extends RefNodeListHandler {
+  public static class testMethodListHandler_13710_0 extends RefNodeListHandler {
 
-    public _RefNodeListHandler(SNode ownerNode, String childRole, EditorContext context) {
+    public testMethodListHandler_13710_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
-    private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171931858965");
+    private static void setupBasic_ConstantCell13710_0(EditorCell editorCell, SNode node, EditorContext context) {
+      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell13710_0");
       editorCell.setDrawBorder(false);
     }
 
-    private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    private static void setupLabel_ConstantCell13710_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 
@@ -82,7 +82,7 @@ public class TestMethodList_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext context, SNode node) {
-      return this.createConstantCell(context, node, "<< test methods >>");
+      return this.create_ConstantCell13710_0(context, node, "<< test methods >>");
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
@@ -103,10 +103,10 @@ public class TestMethodList_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(context);
     }
 
-    public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+    public EditorCell create_ConstantCell13710_0(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      TestMethodList_Editor._RefNodeListHandler.setupBasic_ConstantCell(editorCell, node, context);
-      TestMethodList_Editor._RefNodeListHandler.setupLabel_ConstantCell(editorCell, node, context);
+      setupBasic_ConstantCell13710_0(editorCell, node, context);
+      setupLabel_ConstantCell13710_0(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }

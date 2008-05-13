@@ -30,6 +30,9 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="30" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.unitTest.structure" version="-1" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />
@@ -250,7 +253,7 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.Tool" id="1208269069496">
     <property name="name" value="JUnit Test" />
     <property name="package" value="tool" />
-    <property name="icon" value="${language_descriptor}\icons\run.png" />
+    <property name="icon" value="${language_descriptor}\icons\junit.png" />
     <node role="component" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1208368574828">
       <link role="baseMethodDeclaration" targetNodeId="1208271155269" resolveInfo="JUnitTestViewComponent" />
       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210182927835">
@@ -10480,6 +10483,16 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+    <node role="preferencePage" type="jetbrains.mps.bootstrap.pluginLanguage.structure.PreferencePage" id="1210688256061">
+      <property name="name" value="Test Runner" />
+      <property name="icon" value="${language_descriptor}\icons\junit.png" />
+      <node role="component" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1210688844285">
+        <link role="baseMethodDeclaration" targetNodeId="7.~JPanel.&lt;init&gt;()" resolveInfo="JPanel" />
+      </node>
+      <node role="commitBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.PreferencePageCommitBlock" id="1210688256063">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210688256064" />
       </node>
     </node>
   </node>

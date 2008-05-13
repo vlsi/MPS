@@ -17,115 +17,115 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class AssertSame_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171985778966");
+  private static void setupBasic_CollectionCell2080_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell2080_0");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171985780515");
+  private static void setupBasic_ConstantCell2080_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell2080_0");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171985784267");
+  private static void setupBasic_ConstantCell2080_01(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell2080_01");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171985788519");
+  private static void setupBasic_ConstantCell2080_02(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell2080_02");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ExpectedCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171985795802");
+  private static void setupBasic_expectedRefNodeCell2080_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_expectedRefNodeCell2080_0");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ActualCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171985802727");
+  private static void setupBasic_actualRefNodeCell2080_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_actualRefNodeCell2080_0");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell2080_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(Color.blue);
   }
 
-  private static void setupLabel_ConstantCell2(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell2080_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell2080_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(Color.blue);
   }
 
-  private static void setupLabel_ExpectedCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_expectedRefNodeCell2080_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ActualCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_actualRefNodeCell2080_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createRowCell(context, node);
+    return this.create_CollectionCell2080_0(context, node);
   }
 
-  public EditorCell createRowCell(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell2080_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    AssertSame_Editor.setupBasic_RowCell(editorCell, node, context);
+    setupBasic_CollectionCell2080_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "assert"));
-    editorCell.addEditorCell(this.createExpectedCell(context, node));
-    editorCell.addEditorCell(this.createConstantCell1(context, node, "=="));
-    editorCell.addEditorCell(this.createActualCell(context, node));
-    editorCell.addEditorCell(this.createConstantCell2(context, node, ";"));
+    editorCell.addEditorCell(this.create_ConstantCell2080_0(context, node, "assert"));
+    editorCell.addEditorCell(this.create_expectedRefNodeCell2080_0(context, node));
+    editorCell.addEditorCell(this.create_ConstantCell2080_02(context, node, "=="));
+    editorCell.addEditorCell(this.create_actualRefNodeCell2080_0(context, node));
+    editorCell.addEditorCell(this.create_ConstantCell2080_01(context, node, ";"));
     return editorCell;
   }
 
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell2080_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    AssertSame_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    AssertSame_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell2080_0(editorCell, node, context);
+    setupLabel_ConstantCell2080_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell2080_01(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    AssertSame_Editor.setupBasic_ConstantCell2(editorCell, node, context);
-    AssertSame_Editor.setupLabel_ConstantCell2(editorCell, node, context);
+    setupBasic_ConstantCell2080_01(editorCell, node, context);
+    setupLabel_ConstantCell2080_01(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell2080_02(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    AssertSame_Editor.setupBasic_ConstantCell1(editorCell, node, context);
-    AssertSame_Editor.setupLabel_ConstantCell1(editorCell, node, context);
+    setupBasic_ConstantCell2080_02(editorCell, node, context);
+    setupLabel_ConstantCell2080_02(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createExpectedCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_expectedRefNodeCell2080_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    AssertSame_Editor.setupBasic_ExpectedCell(editorCell, node, context);
+    setupBasic_expectedRefNodeCell2080_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      AssertSame_Editor.setupLabel_ExpectedCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_expectedRefNodeCell2080_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createExpectedCell(EditorContext context, SNode node) {
+  public EditorCell create_expectedRefNodeCell2080_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("expected");
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createExpectedCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_expectedRefNodeCell2080_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -136,25 +136,25 @@ public class AssertSame_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createActualCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_actualRefNodeCell2080_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    AssertSame_Editor.setupBasic_ActualCell(editorCell, node, context);
+    setupBasic_actualRefNodeCell2080_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      AssertSame_Editor.setupLabel_ActualCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_actualRefNodeCell2080_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createActualCell(EditorContext context, SNode node) {
+  public EditorCell create_actualRefNodeCell2080_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("actual");
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createActualCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_actualRefNodeCell2080_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
