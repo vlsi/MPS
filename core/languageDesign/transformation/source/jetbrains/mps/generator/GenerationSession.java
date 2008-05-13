@@ -313,7 +313,7 @@ public class GenerationSession implements IGenerationSession {
     }
     SModelDescriptor transientModel = mySessionContext.getModule().createTransientModel(longName, stereotype);
     myTransientModelsCount++;
-    transientModel.getSModel().setLoading(true); // we dont need any events to be casted
+    transientModel.getSModel().setLoading(true); // we dont need any events to be cast
     return transientModel.getSModel();
   }
 

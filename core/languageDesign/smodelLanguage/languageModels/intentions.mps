@@ -16,6 +16,7 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="8" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
@@ -26,13 +27,13 @@
   <import index="7" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="8" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1193745200272">
-    <property name="name" value="AddSNodeCastStatetment" />
+    <property name="name" value="AddSNodeCastStatement" />
     <link role="forConcept" targetNodeId="2.1068580123159" resolveInfo="IfStatement" />
     <node role="descriptionFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.DescriptionBlock" id="1193745200273">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1193745200274">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1193745250982">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1193745250983">
-            <property name="value" value="Insert casted variable declaration" />
+            <property name="value" value="Insert cast variable declaration" />
           </node>
         </node>
       </node>
@@ -187,7 +188,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1193745200278">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1193745326615">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1193745326616">
-            <property name="name" value="castedVariable" />
+            <property name="name" value="castVariable" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1193745326617">
               <link role="concept" targetNodeId="2.1068581242864" resolveInfo="LocalVariableDeclarationStatement" />
             </node>
