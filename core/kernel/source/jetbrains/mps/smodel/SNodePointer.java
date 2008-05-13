@@ -35,7 +35,7 @@ public class SNodePointer {
     myTimestamp = createPointerTimestamp();
   }
 
-  public SNode getNode() {
+  public SNode getNode() {    
     if (myNodeId == null) return null;
     SModelDescriptor model = getModel();
     if (model != null) {

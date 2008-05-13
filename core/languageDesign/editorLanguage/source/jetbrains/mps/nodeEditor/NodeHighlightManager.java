@@ -34,7 +34,7 @@ public class NodeHighlightManager implements IEditorMessageOwner {
     synchronized (myMessagesLock) {
       myMessages.remove(owner);
     }
-    myEditor.getExternalComponent().repaint();
+    myEditor.getRootCell().updateMessages();
     return result;
   }
 
@@ -68,7 +68,7 @@ public class NodeHighlightManager implements IEditorMessageOwner {
     }
     messages.add(message);
     myEditor.getMessagesGutter().add(message);
-    myEditor.getExternalComponent().repaint();
+    myEditor.updateMessages();
   }
 
   public Set<IEditorMessage> getMessages() {

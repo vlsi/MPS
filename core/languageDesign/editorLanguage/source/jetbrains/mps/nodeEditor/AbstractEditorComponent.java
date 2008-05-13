@@ -707,6 +707,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return myLeftHighlighter;
   }
 
+  public void updateMessages() {
+    myRootCell.updateMessages();
+    getExternalComponent().repaint();
+  }
+
   public JToolTip createToolTip() {
     JMultiLineToolTip toolTip = new JMultiLineToolTip();
     toolTip.setFont(new TextLine("aaa", this).getFont());
