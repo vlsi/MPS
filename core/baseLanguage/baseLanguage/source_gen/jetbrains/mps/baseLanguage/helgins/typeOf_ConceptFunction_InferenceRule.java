@@ -34,7 +34,7 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
       // shouldn't return any values
       for(SNode returnStatement : returnStatements) {
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
-          TypeChecker.getInstance().reportTypeError(returnStatement, "no return value expected", "jetbrains.mps.baseLanguage.helgins", "1186053278842");
+          TypeChecker.getInstance().reportTypeError(returnStatement, "no return value expected", "jetbrains.mps.baseLanguage.helgins", "1186053278842", "");
         }
       }
       TypeChecker.getInstance().getRuntimeSupport().givetype(null, func, "jetbrains.mps.baseLanguage.helgins", "1179436909754");
@@ -44,7 +44,7 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
       // if 'expected type' is null - should still return some value (of any type)
       for(SNode returnStatement : returnStatements) {
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
-          TypeChecker.getInstance().reportTypeError(returnStatement, "should return value", "jetbrains.mps.baseLanguage.helgins", "1186053304501");
+          TypeChecker.getInstance().reportTypeError(returnStatement, "should return value", "jetbrains.mps.baseLanguage.helgins", "1186053304501", "");
         } else
         {
           TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(LCS_typevar_1186052624152), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(returnStatement, "expression", true), "jetbrains.mps.baseLanguage.helgins", "1186053304515", true), SLinkOperations.getTarget(returnStatement, "expression", true), null, "jetbrains.mps.baseLanguage.helgins", "1186053304511", false);
@@ -62,7 +62,7 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
           "some value" :
           "" + expectedRetType
         );
-        TypeChecker.getInstance().reportTypeError(func, "function should return " + whatExpected, "jetbrains.mps.baseLanguage.helgins", "1179436928064");
+        TypeChecker.getInstance().reportTypeError(func, "function should return " + whatExpected, "jetbrains.mps.baseLanguage.helgins", "1179436928064", "");
       }
       TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(func, "jetbrains.mps.baseLanguage.helgins", "1186053169643", true), TypeChecker.getInstance().getEquationManager().getRepresentator(LCS_typevar_1186052624152), func, null, "jetbrains.mps.baseLanguage.helgins", "1186053174208");
       if ((expectedRetType != null)) {

@@ -509,6 +509,16 @@ public class QueriesGenerated {
     return _context.getNode().getId();
   }
 
+  public static Object propertyMacro_GetPropertyValue_1210774655481(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode intentionDeclaration = SLinkOperations.getTarget(_context.getNode(), "errorIntention", false);
+    if ((intentionDeclaration == null)) {
+      return null;
+    } else
+    {
+      return SNodeOperations.getModel(intentionDeclaration) + "." + SPropertyOperations.getString(intentionDeclaration, "name") + "_Intention";
+    }
+  }
+
   public static Object referenceMacro_GetReferent_1174655195413(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode rule = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.AbstractRule", false, false);
     SNode method = _context.getGenerator().findOutputNodeByInputNodeAndMappingName(rule, "mainMethodForRule");

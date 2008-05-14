@@ -22,7 +22,7 @@ public class check_ConceptFunctionParameter_NonTypesystemRule implements NonType
   public void applyRule(final SNode parameter) {
     SNode conceptFunction = SNodeOperations.getAncestor(parameter, "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
     if (SNodeOperations.isInstanceOf(conceptFunction, "jetbrains.mps.baseLanguage.structure.Closure")) {
-      TypeChecker.getInstance().reportTypeError(parameter, "concept function parameter can not be used in closure", "jetbrains.mps.baseLanguage.helgins", "1197313614703");
+      TypeChecker.getInstance().reportTypeError(parameter, "concept function parameter can not be used in closure", "jetbrains.mps.baseLanguage.helgins", "1197313614703", "");
     } else
     {
       final SNode parameterConcept = SNodeOperations.getConceptDeclaration(parameter);
@@ -34,7 +34,7 @@ public class check_ConceptFunctionParameter_NonTypesystemRule implements NonType
 
       });
       if (Sequence.fromIterable(seq).isEmpty()) {
-        TypeChecker.getInstance().reportTypeError(parameter, "not applicable in this context", "jetbrains.mps.baseLanguage.helgins", "1197313958459");
+        TypeChecker.getInstance().reportTypeError(parameter, "not applicable in this context", "jetbrains.mps.baseLanguage.helgins", "1197313958459", "");
       }
     }
   }
