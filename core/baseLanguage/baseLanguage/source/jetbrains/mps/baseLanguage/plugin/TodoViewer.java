@@ -1,6 +1,5 @@
 package jetbrains.mps.baseLanguage.plugin;
 
-import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -10,7 +9,6 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -20,16 +18,18 @@ import java.awt.event.MouseEvent;
 
 public class TodoViewer extends JPanel {
   private UsageView myUsageView;
-  private IDEProjectFrame myProjectFrame;
+  private MPSProject myProject;
 
-  public TodoViewer(final IDEProjectFrame projectFrame) {
-    myProjectFrame = projectFrame;
+  public TodoViewer(final MPSProject project) {
+    myProject = project;
     setLayout(new BorderLayout());
 
-    add(new JLabel("Click to find TODOs", JLabel.CENTER), BorderLayout.CENTER);
+    final JLabel label = new JLabel("Click to find TODOs", JLabel.CENTER);
+    add(label, BorderLayout.CENTER);
 
     addMouseListener(new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
+        remove(label);
         refresh();
       }
     });
@@ -40,7 +40,7 @@ public class TodoViewer extends JPanel {
 
     ViewOptions viewOptions = new ViewOptions(true, false, false, false, false);
 
-    myUsageView = new UsageView(myProjectFrame.getProject(), viewOptions) {
+    myUsageView = new UsageView(myProject, viewOptions) {
       public void close() {
         //hideTool();
       }
@@ -49,7 +49,7 @@ public class TodoViewer extends JPanel {
 
     new Thread(new Runnable() {
       public void run() {
-        MPSProject project = myProjectFrame.getProject();
+        MPSProject project = myProject;
 
         if (project == null) return;
 
