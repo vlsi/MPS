@@ -27,6 +27,7 @@ import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.navigation.IHistoryItem;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.util.Calculable;
+import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
@@ -134,7 +135,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor 
         return false;
       }
       MyFileEditorState state = (MyFileEditorState) obj;
-      return state.myHistoryItem.equals(myHistoryItem);
+      return EqualUtil.equals(state.myHistoryItem, myHistoryItem);
     }
   }
 }
