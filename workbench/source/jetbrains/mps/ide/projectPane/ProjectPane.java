@@ -646,7 +646,7 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     }
 
     protected MPSTreeNode rebuild() {
-      if (getProject() == null) {
+      if (getProject() == null || getProject().isDisposed()) {
         return new TextTreeNode("Empty");
       }
       ProjectTreeNode root = new ProjectTreeNode(getProject());

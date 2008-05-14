@@ -77,6 +77,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
   private IContext myContext = new ContextImpl(ApplicationComponents.getInstance().getContext());
 
   private PluginManager myPluginManager = new PluginManager(this);
+  private boolean myDisposed;
 
   public MPSProject(final @NotNull File projectFile) {
     myContext.register(MPSProject.class, this);
@@ -690,10 +691,15 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
         if (reloadAll) {
           ClassLoaderManager.getInstance().reloadAll();
         }
+
+        myDisposed = true;
       }
     });
   }
 
+  public boolean isDisposed() {
+    return myDisposed;
+  }
 
   @Nullable
   public Solution getSolutionForModel(@NotNull SModelDescriptor md) {
