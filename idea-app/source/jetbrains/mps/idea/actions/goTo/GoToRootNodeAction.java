@@ -39,7 +39,7 @@ public class GoToRootNodeAction extends AnAction {
 
       public void elementChosen(Object element) {
         //((NavigationItem)element).navigate(true);
-        ((NodeNavigationItem) element).navigate();
+        ((NodeNavigationItem) element).navigate(true);
       }
     }, ModalityState.current(), true);
 

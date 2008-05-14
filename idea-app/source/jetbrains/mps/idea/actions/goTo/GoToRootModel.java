@@ -31,6 +31,7 @@
  */
 package jetbrains.mps.idea.actions.goTo;
 
+import com.intellij.ide.util.NavigationItemListCellRenderer;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.progress.ProcessCanceledException;
@@ -46,10 +47,7 @@ import jetbrains.mps.util.Calculable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.JLabel;
-import javax.swing.JList;
 import javax.swing.ListCellRenderer;
-import java.awt.Component;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -126,8 +124,12 @@ public class GoToRootModel implements ChooseByNameModel {
     return items.toArray();
   }
 
-  public String getElementName(Object element) {
-    return ((NodeNavigationItem) element).getName();
+  public String getElementName(final Object element) {
+    return CommandProcessor.instance().executeLightweightCommand(new Calculable<String>() {
+      public String calculate() {
+        return ((NodeNavigationItem) element).getName();
+      }
+    });
   }
 
   public char getCheckBoxMnemonic() {
@@ -194,7 +196,7 @@ public class GoToRootModel implements ChooseByNameModel {
   }
 
   public ListCellRenderer getListCellRenderer() {
-    return new ListCellRenderer() {
+    /*return new ListCellRenderer() {
       public Component getListCellRendererComponent(JList list, final Object value, int index, boolean isSelected, boolean cellHasFocus) {
         String name = CommandProcessor.instance().executeLightweightCommand(new Calculable<String>() {
           public String calculate() {
@@ -205,6 +207,7 @@ public class GoToRootModel implements ChooseByNameModel {
         return new JLabel(name);
       }
     };
-    //return new NavigationItemListCellRenderer();
+    */
+    return new NavigationItemListCellRenderer();
   }
 }
