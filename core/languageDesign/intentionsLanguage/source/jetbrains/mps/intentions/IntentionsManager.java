@@ -5,6 +5,7 @@ import jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.IEditorMessage;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
@@ -81,6 +82,16 @@ public class IntentionsManager implements IExternalizableComponent, IComponentLi
           } catch (Throwable t) {
             LOG.error("Intention's isApplicable method failed " + t.getMessage(), t);
           }
+        }
+      }
+    }
+    List<IEditorMessage> messages = context.getNodeEditorComponent().getHighlightManager().getMessagesFor(node);
+    for (IEditorMessage message : messages) {
+      IntentionProvider intentionProvider = message.getIntentionProvider();
+      if (intentionProvider != null) {
+        Intention intention = intentionProvider.getIntention(node, context);
+        if (intention != null) {
+          result.add(intention);
         }
       }
     }

@@ -230,7 +230,9 @@ public class NodeTypesComponent implements IEditorMessageOwner, Cloneable {
       for (SNode node : new HashSet<SNode>(myNodesToErrorsMap.keySet())) {
         IErrorReporter iErrorReporter = myNodesToErrorsMap.get(node);
         String errorString = iErrorReporter.reportError();
-        myNodesToErrorsMap.put(node, new SimpleErrorReporter(errorString, iErrorReporter.getRuleModel(), iErrorReporter.getRuleId(), iErrorReporter.isWarning()));
+        SimpleErrorReporter reporter = new SimpleErrorReporter(errorString, iErrorReporter.getRuleModel(), iErrorReporter.getRuleId(), iErrorReporter.isWarning());
+        reporter.setIntentionProvider(iErrorReporter.getIntentionProvider());
+        myNodesToErrorsMap.put(node, reporter);
       }
 
       //write access listeners
