@@ -193,6 +193,7 @@ public class PrepStatementUtil {
         ifFalseLabel = this.ctx.incrementLabel();
       }
     }
+    putPrepData(ifstmt, new Integer[]{beginLabel,ifTrueLabel,ifFalseLabel,nextLabel}, this.generator);
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
       putPrepData(SLinkOperations.getTarget(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true), "statements", true), new Integer[]{ifFalseLabel,nextLabel}, this.generator);
       this.prepStatementList(SLinkOperations.getTarget(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true), "statements", true));
@@ -200,7 +201,6 @@ public class PrepStatementUtil {
     if ((SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true) != null)) {
       this.prepStatement(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true), ifFalseLabel);
     }
-    putPrepData(ifstmt, new Integer[]{beginLabel,ifTrueLabel,ifFalseLabel,nextLabel}, this.generator);
     return nextLabel;
   }
 
@@ -290,7 +290,16 @@ public class PrepStatementUtil {
   }
 
   private int calcNextLabel(SNode cstmt) {
-    if ((SNodeOperations.getNextSibling(cstmt) == null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(cstmt, null, false, false), "jetbrains.mps.baseLanguage.structure.StatementList")) {
+    if (SNodeOperations.isInstanceOf(cstmt, "jetbrains.mps.baseLanguage.structure.IfStatement") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(cstmt, null, false, false), "jetbrains.mps.baseLanguage.structure.IfStatement")) {
+      SNode topIfStmt = SNodeOperations.getParent(cstmt, null, false, false);
+      while(SNodeOperations.isInstanceOf(SNodeOperations.getParent(topIfStmt, null, false, false), "jetbrains.mps.baseLanguage.structure.IfStatement")) {
+        topIfStmt = SNodeOperations.getParent(topIfStmt, null, false, false);
+      }
+      Integer[] parentLabels = (Integer[])PrepStatementUtil.getPrepData(topIfStmt, this.generator);
+      if (parentLabels != null) {
+        return parentLabels[parentLabels.length - 1];
+      }
+    } else if ((SNodeOperations.getNextSibling(cstmt) == null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(cstmt, null, false, false), "jetbrains.mps.baseLanguage.structure.StatementList")) {
       Integer[] parentLabels = (Integer[])PrepStatementUtil.getPrepData(SNodeOperations.getParent(cstmt, null, false, false), this.generator);
       if (parentLabels != null) {
         return parentLabels[parentLabels.length - 1];

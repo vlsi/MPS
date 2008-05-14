@@ -930,4 +930,99 @@ __switch__:
     });
   }
 
+  @Test()
+  public void test_mps_1503() throws Exception {
+    this.assertResultsEqual(new FunctionTypes._void_from_T <List<Integer>>() {
+
+      public void invoke(List<Integer> exp) {
+        int val = 0;
+        if (false) {
+          val = 42;
+        } else
+        if (true) {
+          int foo = -1;
+          val = 24;
+        }
+        if (val != 0) {
+          exp.add(val);
+        }
+      }
+
+    }, new FunctionTypes._R <Iterable<Integer>>() {
+
+      public Iterable<Integer> invoke() {
+        return new Iterable <Integer>() {
+
+          public Iterator<Integer> iterator() {
+            return new YieldingIterator <Integer>() {
+
+              private int __CP__ = 0;
+              private int _3_val;
+              private int _11_foo;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 4:
+                      if (false) {
+                        this.__CP__ = 5;
+                        break;
+                      }
+                      this.__CP__ = 8;
+                      break;
+                    case 6:
+                      if (this._3_val != 0) {
+                        this.__CP__ = 12;
+                        break;
+                      }
+                      this.__CP__ = 1;
+                      break;
+                    case 8:
+                      if (true) {
+                        this.__CP__ = 9;
+                        break;
+                      }
+                      this.__CP__ = 6;
+                      break;
+                    case 13:
+                      this.__CP__ = 1;
+                      this.yield(this._3_val);
+                      return true;
+                    case 0:
+                      this._3_val = 0;
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      this._3_val = 42;
+                      this.__CP__ = 6;
+                      break;
+                    case 12:
+                      this.__CP__ = 13;
+                      break;
+                    case 9:
+                      this._11_foo = -1;
+                      this._3_val = 24;
+                      this.__CP__ = 6;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    });
+  }
+
 }
