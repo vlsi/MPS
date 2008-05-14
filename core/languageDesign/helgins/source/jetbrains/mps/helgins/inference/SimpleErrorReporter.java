@@ -1,5 +1,7 @@
 package jetbrains.mps.helgins.inference;
 
+import jetbrains.mps.intentions.IntentionProvider;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
@@ -11,6 +13,7 @@ public class SimpleErrorReporter implements IErrorReporter {
   private String myErrorString;
   private String myRuleModel;
   private String myRuleId;
+  private IntentionProvider myIntentionProvider;
   private boolean myIsWarning = false;
 
   public SimpleErrorReporter(String s, String ruleModel, String ruleId) {
@@ -38,5 +41,13 @@ public class SimpleErrorReporter implements IErrorReporter {
 
   public boolean isWarning() {
     return myIsWarning;
+  }
+
+  public void setIntentionProvider(IntentionProvider intentionProvider) {
+    myIntentionProvider = intentionProvider;
+  }
+
+  public IntentionProvider getIntentionProvider() {
+    return myIntentionProvider;
   }
 }

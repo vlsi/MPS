@@ -2,6 +2,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.intentions.IntentionProvider;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -18,6 +19,7 @@ public class DefaultEditorMessage implements IEditorMessage {
   private String myMessage;
   private IEditorMessageOwner myOwner;
   private SNodePointer myNodePointer;
+  private IntentionProvider myIntentionProvider;
   private MessageStatus myStatus = MessageStatus.OK;
 
 
@@ -91,5 +93,13 @@ public class DefaultEditorMessage implements IEditorMessage {
 
   public boolean isBackGround() {
     return false;
+  }
+
+  public IntentionProvider getIntentionProvider() {
+    return myIntentionProvider;
+  }
+
+  public void setIntentionProvider(IntentionProvider intentionProvider) {
+    myIntentionProvider = intentionProvider;
   }
 }

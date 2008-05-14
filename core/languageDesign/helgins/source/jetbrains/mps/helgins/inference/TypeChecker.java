@@ -4,12 +4,14 @@ import jetbrains.mps.bootstrap.helgins.runtime.RuntimeSupport;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.WeakSet;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.helgins.integration.HelginsPreferencesComponent;
@@ -18,6 +20,8 @@ import jetbrains.mps.component.Dependency;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.intentions.IntentionProvider;
+import jetbrains.mps.intentions.Intention;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
@@ -163,6 +167,32 @@ public class TypeChecker implements IComponentLifecycle {
 
   public void reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId) {
     reportTypeError(nodeWithError, new SimpleErrorReporter(errorString, ruleModel, ruleId));
+  }
+
+  public void reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId, final String classFQName) {
+    SimpleErrorReporter reporter = new SimpleErrorReporter(errorString, ruleModel, ruleId);
+    reporter.setIntentionProvider(new IntentionProvider() {
+      private Intention myIntention = null;
+      private boolean myIntentionTaken = false;
+      public Intention getIntention(SNode node, EditorContext editorContext) {
+        if (myIntentionTaken) {
+          return myIntention;
+        }
+        try {
+          String languageNamespace = NameUtil.namespaceFromLongName(NameUtil.namespaceFromLongName(classFQName));
+          Class aClass = ClassLoaderManager.getInstance().getClassFor(MPSModuleRepository.getInstance().getLanguage(languageNamespace), classFQName);
+          Intention intention = (Intention) aClass.getConstructor().newInstance();
+          myIntention = intention;
+          myIntentionTaken = true;
+          return intention;
+        } catch (Throwable t) {
+          LOG.error(t);
+          myIntentionTaken = true;
+          return null;
+        }
+      }
+    });
+    reportTypeError(nodeWithError, reporter);
   }
 
   public void reportWarning(SNode nodeWithError, String errorString, String ruleModel, String ruleId) {

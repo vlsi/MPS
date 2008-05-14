@@ -2,6 +2,7 @@ package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.helgins.uiActions.PresentationManager;
 import jetbrains.mps.helgins.inference.IWrapper;
+import jetbrains.mps.intentions.IntentionProvider;
 
 /**
  * Created by IntelliJ IDEA.
@@ -63,5 +64,9 @@ public class EquationErrorReporter implements IErrorReporter {
 
   public boolean isWarning() {
     return myIsWarning;
+  }
+
+  public IntentionProvider getIntentionProvider() {
+    return null;
   }
 }

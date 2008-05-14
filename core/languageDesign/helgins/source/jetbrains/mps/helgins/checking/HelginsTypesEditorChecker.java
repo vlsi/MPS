@@ -48,6 +48,7 @@ public class HelginsTypesEditorChecker extends EditorCheckerAdapter {
       }
       DefaultEditorMessage message =
         new HighlighterMessage(errorNode.o1, status, color, "TYPE ERROR: " + errorNode.o2.reportError(), typesComponent);
+      message.setIntentionProvider(errorNode.o2.getIntentionProvider());
       messages.add(message);
     }
 

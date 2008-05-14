@@ -1,6 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.intentions.IntentionProvider;
 
 import java.awt.*;
 
@@ -28,4 +29,6 @@ public interface IEditorMessage {
   void paint(Graphics g, IEditorComponent editorComponent);
 
   boolean isBackGround();
+
+  IntentionProvider getIntentionProvider();
 }
