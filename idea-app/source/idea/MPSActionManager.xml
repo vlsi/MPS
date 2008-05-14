@@ -4,56 +4,66 @@
 
   <actions>
     <group>
-      <action id="NewProject" class="jetbrains.mps.idea.actions.NewMPSProjectAction" text="New MPS Project" />
-      <action id="OpenProject" class="jetbrains.mps.idea.actions.OpenMPSProjectAction" text="Open MPS Project" />
-      <add-to-group anchor="first" group-id="FileMenu" />
+      <action id="NewProject" class="jetbrains.mps.idea.actions.NewMPSProjectAction" text="New MPS Project"/>
+      <action id="OpenProject" class="jetbrains.mps.idea.actions.OpenMPSProjectAction" text="Open MPS Project"/>
+      <add-to-group anchor="first" group-id="FileMenu"/>
     </group>
 
     <group id="GenerateMenu" popup="true" text="Generate">
-      <action id="SaveTransientModels" class="jetbrains.mps.idea.actions.generate.SaveTransientModelsAction" text="Save Transient Models" />
-      <action id="GenerateCurrentModule" class="jetbrains.mps.idea.actions.generate.GenerateCurrentModuleAction" text="Generate Current Module">
+      <action id="SaveTransientModels" class="jetbrains.mps.idea.actions.generate.SaveTransientModelsAction"
+              text="Save Transient Models"/>
+      <action id="GenerateCurrentModule" class="jetbrains.mps.idea.actions.generate.GenerateCurrentModuleAction"
+              text="Generate Current Module">
         <keyboard-shortcut first-keystroke="control F9" keymap="$default"/>
       </action>
-      <add-to-group group-id="MainMenu" anchor="after" relative-to-action="GoToMenu" />
+      <add-to-group group-id="MainMenu" anchor="after" relative-to-action="GoToMenu"/>
     </group>
 
     <group>
       <separator/>
-      <action id="GoToRootAction" class="jetbrains.mps.idea.actions.goTo.GoToRootNodeAction" text="Go To Root Node">
+      <action id="GoToRootAction" class="jetbrains.mps.idea.actions.goTo.GoToRootNodeAction"
+              text="Go To Root Node(new)">
+        <keyboard-shortcut first-keystroke="control alt N" keymap="$default"/>
+      </action>
+      <action id="OldGoToRootAction" class="jetbrains.mps.idea.actions.goTo.OldGoToRootAction" text="Go To Root Node">
         <keyboard-shortcut first-keystroke="control N" keymap="$default"/>
       </action>
       <action id="GoToNamedNodeAction" class="jetbrains.mps.idea.actions.goTo.GoToNamedNodeAction" text="Go To Symbol">
         <keyboard-shortcut first-keystroke="control alt shift N" keymap="$default"/>
       </action>
-      <action id="GoToMPSConceptAction" class="jetbrains.mps.idea.actions.goTo.GoToMPSConceptAction" text="Go To Concept">
+      <action id="GoToMPSConceptAction" class="jetbrains.mps.idea.actions.goTo.GoToMPSConceptAction"
+              text="Go To Concept">
         <keyboard-shortcut first-keystroke="control alt shift C" keymap="$default"/>
       </action>
       <action id="GoToMPSModelAction" class="jetbrains.mps.idea.actions.goTo.GoToMPSModelAction" text="Go To Model">
         <keyboard-shortcut first-keystroke="control alt shift M" keymap="$default"/>
       </action>
-      <action id="GoToMPSLanguageAction" class="jetbrains.mps.idea.actions.goTo.GoToMPSLanguageAction" text="Go To Language">
+      <action id="GoToMPSLanguageAction" class="jetbrains.mps.idea.actions.goTo.GoToMPSLanguageAction"
+              text="Go To Language">
         <keyboard-shortcut first-keystroke="control alt shift L" keymap="$default"/>
       </action>
 
-      <add-to-group anchor="last" group-id="GoToMenu" />
+      <add-to-group anchor="last" group-id="GoToMenu"/>
     </group>
 
     <group>
-      <action id="ReloadAllAction" class="jetbrains.mps.idea.actions.ReloadAllAction" text="Reload All Classes" />
+      <action id="ReloadAllAction" class="jetbrains.mps.idea.actions.ReloadAllAction" text="Reload All Classes"/>
 
-      <add-to-group anchor="last" group-id="ToolsMenu" />
+      <add-to-group anchor="last" group-id="ToolsMenu"/>
     </group>
 
     <group>
-      <separator />
-      <action id="AddMPSModelImportAction" class="jetbrains.mps.idea.actions.edit.AddMPSModelImportAction" text="Add Model Import">
+      <separator/>
+      <action id="AddMPSModelImportAction" class="jetbrains.mps.idea.actions.edit.AddMPSModelImportAction"
+              text="Add Model Import">
         <keyboard-shortcut first-keystroke="control M" keymap="$default"/>
       </action>
-      <action id="AddMPSLanguageImportAction" class="jetbrains.mps.idea.actions.edit.AddMPSLanguageImportAction" text="Add Language Import">
+      <action id="AddMPSLanguageImportAction" class="jetbrains.mps.idea.actions.edit.AddMPSLanguageImportAction"
+              text="Add Language Import">
         <keyboard-shortcut first-keystroke="control L" keymap="$default"/>
       </action>
 
-      <add-to-group anchor="last" group-id="EditMenu" />
+      <add-to-group anchor="last" group-id="EditMenu"/>
     </group>
   </actions>
 </component>
