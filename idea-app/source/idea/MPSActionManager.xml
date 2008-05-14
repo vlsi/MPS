@@ -23,10 +23,10 @@
       <separator/>
       <action id="GoToRootAction" class="jetbrains.mps.idea.actions.goTo.GoToRootNodeAction"
               text="Go To Root Node(new)">
-        <keyboard-shortcut first-keystroke="control alt N" keymap="$default"/>
+        <keyboard-shortcut first-keystroke="control N" keymap="$default"/>
       </action>
       <action id="OldGoToRootAction" class="jetbrains.mps.idea.actions.goTo.OldGoToRootAction" text="Go To Root Node">
-        <keyboard-shortcut first-keystroke="control N" keymap="$default"/>
+        <keyboard-shortcut first-keystroke="control alt N" keymap="$default"/>
       </action>
       <action id="GoToNamedNodeAction" class="jetbrains.mps.idea.actions.goTo.GoToNamedNodeAction" text="Go To Symbol">
         <keyboard-shortcut first-keystroke="control alt shift N" keymap="$default"/>
