@@ -7,6 +7,7 @@ import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.wm.WindowManager;
+import com.intellij.ide.impl.ProjectUtil;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.IFileFilter;
 import jetbrains.mps.ide.IdeSettings;
@@ -37,6 +38,9 @@ public class OpenMPSProjectAction extends AnAction {
     String iprfilePath = filePath.replaceAll("(.*)(\\.mpr)", "$1.ipr");
 
     Project ideaProject = projectManager.newProject(iprfilePath, true, false);
-    projectManager.openProject(ideaProject);
+    assert ideaProject != null;
+    ideaProject.save();
+
+    ProjectUtil.openProject(iprfilePath, e.getData(PlatformDataKeys.PROJECT), false);
   }
 }
