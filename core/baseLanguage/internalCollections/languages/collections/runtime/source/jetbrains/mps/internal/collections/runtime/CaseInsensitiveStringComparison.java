@@ -20,6 +20,12 @@ public class CaseInsensitiveStringComparison {
         // everything should be an Object, right?
         Object selA = selector.select(a);
         Object selB = selector.select(b);
+        if (selA == selB) {
+            return 0;
+        }
+        if (selA == null || selB == null) {
+            return selA == null ? -1 : 1; 
+        }
         // a hack implemented by popular demand
         if ((selA instanceof String) && (selB instanceof String)) {
             return String.CASE_INSENSITIVE_ORDER.compare((String)selA, (String)selB);
