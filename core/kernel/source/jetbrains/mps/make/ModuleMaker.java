@@ -177,8 +177,10 @@ public class ModuleMaker {
           File classesGen = m.getClassesGen().toFile();
           String packageName = NameUtil.namespaceFromLongName(name);
           File outputDir = new File(classesGen + File.separator + packageName.replace('.', File.separatorChar));
-          if (!outputDir.mkdirs()) {
-            throw new RuntimeException("Can't create " + outputDir.getPath() + " directory");
+          if (!outputDir.exists()) {
+            if (!outputDir.mkdirs()) {
+              throw new RuntimeException("Can't create " + outputDir.getPath() + " directory");
+            }
           }
           String className = NameUtil.shortNameFromLongName(name);
           File output = new File(outputDir, className + ".class");
