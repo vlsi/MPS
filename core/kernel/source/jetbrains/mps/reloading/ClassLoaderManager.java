@@ -57,7 +57,6 @@ public class ClassLoaderManager implements IComponentLifecycle {
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
         myRuntimeEnvironment = createRuntimeEnvironment();
-        updateClassPath();
       }
     });
 
