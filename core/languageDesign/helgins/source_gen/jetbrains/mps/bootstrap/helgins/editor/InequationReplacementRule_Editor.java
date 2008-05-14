@@ -18,301 +18,301 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 
 public class InequationReplacementRule_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1201608009612");
+  private static void setupBasic_CollectionCell19999_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell19999_0");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1201608009613");
+  private static void setupBasic_CollectionCell19999_01(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell19999_01");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1201608009614");
+  private static void setupBasic_ConstantCell19999_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19999_0");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1201608009615");
+  private static void setupBasic_namePropertyCell19999_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell19999_0");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1201608009616");
+  private static void setupBasic_ConstantCell19999_01(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19999_01");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1201608009617");
+  private static void setupBasic_CollectionCell19999_02(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell19999_02");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1201608009618");
+  private static void setupBasic_ConstantCell19999_02(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19999_02");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ApplicableNodeCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1201608009619");
+  private static void setupBasic_applicableNodeRefNodeCell19999_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_applicableNodeRefNodeCell19999_0");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1201608009620");
+  private static void setupBasic_ConstantCell19999_03(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19999_03");
   }
 
-  private static void setupBasic_SupertypeNodeCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1201608009621");
+  private static void setupBasic_supertypeNodeRefNodeCell19999_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_supertypeNodeRefNodeCell19999_0");
   }
 
-  private static void setupBasic_ConstantCell4(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1201608009622");
+  private static void setupBasic_ConstantCell19999_04(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19999_04");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_RowCell2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1201608009623");
+  private static void setupBasic_CollectionCell19999_03(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell19999_03");
   }
 
-  private static void setupBasic_ConstantCell5(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1201608009625");
+  private static void setupBasic_ConstantCell19999_05(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19999_05");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell6(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1201608009626");
+  private static void setupBasic_ConstantCell19999_06(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19999_06");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_RowCell3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1201608009627");
+  private static void setupBasic_CollectionCell19999_04(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell19999_04");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell7(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1201608009628");
+  private static void setupBasic_ConstantCell19999_07(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19999_07");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_BodyCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1201608009629");
+  private static void setupBasic_bodyRefNodeCell19999_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_bodyRefNodeCell19999_0");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell8(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1201608009630");
+  private static void setupBasic_ConstantCell19999_08(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19999_08");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell19999_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(false);
   }
 
-  private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_namePropertyCell19999_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell19999_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell2(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell19999_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(false);
   }
 
-  private static void setupLabel_ApplicableNodeCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_applicableNodeRefNodeCell19999_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell3(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell19999_03(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_SupertypeNodeCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_supertypeNodeRefNodeCell19999_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell4(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell19999_04(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell5(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell19999_05(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(false);
   }
 
-  private static void setupLabel_ConstantCell6(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell19999_06(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(false);
   }
 
-  private static void setupLabel_ConstantCell7(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell19999_07(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_BodyCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_bodyRefNodeCell19999_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell8(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell19999_08(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(false);
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createColumnCell(context, node);
+    return this.create_CollectionCell19999_0(context, node);
   }
 
-  public EditorCell createColumnCell(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell19999_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    InequationReplacementRule_Editor.setupBasic_ColumnCell(editorCell, node, context);
+    setupBasic_CollectionCell19999_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createRowCell(context, node));
-    editorCell.addEditorCell(this.createConstantCell1(context, node, " "));
-    editorCell.addEditorCell(this.createRowCell1(context, node));
-    editorCell.addEditorCell(this.createConstantCell4(context, node, " "));
-    editorCell.addEditorCell(this.createRowCell2(context, node));
-    editorCell.addEditorCell(this.createRowCell3(context, node));
-    editorCell.addEditorCell(this.createConstantCell8(context, node, "}"));
+    editorCell.addEditorCell(this.create_CollectionCell19999_01(context, node));
+    editorCell.addEditorCell(this.create_ConstantCell19999_01(context, node, " "));
+    editorCell.addEditorCell(this.create_CollectionCell19999_02(context, node));
+    editorCell.addEditorCell(this.create_ConstantCell19999_04(context, node, " "));
+    editorCell.addEditorCell(this.create_CollectionCell19999_03(context, node));
+    editorCell.addEditorCell(this.create_CollectionCell19999_04(context, node));
+    editorCell.addEditorCell(this.create_ConstantCell19999_08(context, node, "}"));
     return editorCell;
   }
 
-  public EditorCell createRowCell(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell19999_01(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    InequationReplacementRule_Editor.setupBasic_RowCell(editorCell, node, context);
+    setupBasic_CollectionCell19999_01(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "replacement rule "));
-    editorCell.addEditorCell(this.createNameCell(context, node));
+    editorCell.addEditorCell(this.create_ConstantCell19999_0(context, node, "replacement rule "));
+    editorCell.addEditorCell(this.create_namePropertyCell19999_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createRowCell1(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell19999_02(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    InequationReplacementRule_Editor.setupBasic_RowCell1(editorCell, node, context);
+    setupBasic_CollectionCell19999_02(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell2(context, node, "applicable for "));
-    editorCell.addEditorCell(this.createApplicableNodeCell(context, node));
-    editorCell.addEditorCell(this.createConstantCell3(context, node, "<:"));
-    editorCell.addEditorCell(this.createSupertypeNodeCell(context, node));
+    editorCell.addEditorCell(this.create_ConstantCell19999_02(context, node, "applicable for "));
+    editorCell.addEditorCell(this.create_applicableNodeRefNodeCell19999_0(context, node));
+    editorCell.addEditorCell(this.create_ConstantCell19999_03(context, node, "<:"));
+    editorCell.addEditorCell(this.create_supertypeNodeRefNodeCell19999_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createRowCell2(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell19999_03(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createFlow(context, node);
-    InequationReplacementRule_Editor.setupBasic_RowCell2(editorCell, node, context);
+    setupBasic_CollectionCell19999_03(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell5(context, node, "rule"));
-    editorCell.addEditorCell(this.createConstantCell6(context, node, "{"));
+    editorCell.addEditorCell(this.create_ConstantCell19999_05(context, node, "rule"));
+    editorCell.addEditorCell(this.create_ConstantCell19999_06(context, node, "{"));
     return editorCell;
   }
 
-  public EditorCell createRowCell3(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell19999_04(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    InequationReplacementRule_Editor.setupBasic_RowCell3(editorCell, node, context);
+    setupBasic_CollectionCell19999_04(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell7(context, node, "  "));
-    editorCell.addEditorCell(this.createBodyCell(context, node));
+    editorCell.addEditorCell(this.create_ConstantCell19999_07(context, node, "  "));
+    editorCell.addEditorCell(this.create_bodyRefNodeCell19999_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell19999_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    InequationReplacementRule_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    InequationReplacementRule_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell19999_0(editorCell, node, context);
+    setupLabel_ConstantCell19999_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell19999_01(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    InequationReplacementRule_Editor.setupBasic_ConstantCell1(editorCell, node, context);
-    InequationReplacementRule_Editor.setupLabel_ConstantCell1(editorCell, node, context);
+    setupBasic_ConstantCell19999_01(editorCell, node, context);
+    setupLabel_ConstantCell19999_01(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell19999_02(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    InequationReplacementRule_Editor.setupBasic_ConstantCell2(editorCell, node, context);
-    InequationReplacementRule_Editor.setupLabel_ConstantCell2(editorCell, node, context);
+    setupBasic_ConstantCell19999_02(editorCell, node, context);
+    setupLabel_ConstantCell19999_02(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell19999_03(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    InequationReplacementRule_Editor.setupBasic_ConstantCell3(editorCell, node, context);
-    InequationReplacementRule_Editor.setupLabel_ConstantCell3(editorCell, node, context);
+    setupBasic_ConstantCell19999_03(editorCell, node, context);
+    setupLabel_ConstantCell19999_03(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstantCell4(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell19999_04(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    InequationReplacementRule_Editor.setupBasic_ConstantCell4(editorCell, node, context);
-    InequationReplacementRule_Editor.setupLabel_ConstantCell4(editorCell, node, context);
+    setupBasic_ConstantCell19999_04(editorCell, node, context);
+    setupLabel_ConstantCell19999_04(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstantCell5(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell19999_05(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    InequationReplacementRule_Editor.setupBasic_ConstantCell5(editorCell, node, context);
-    InequationReplacementRule_Editor.setupLabel_ConstantCell5(editorCell, node, context);
+    setupBasic_ConstantCell19999_05(editorCell, node, context);
+    setupLabel_ConstantCell19999_05(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstantCell6(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell19999_06(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    InequationReplacementRule_Editor.setupBasic_ConstantCell6(editorCell, node, context);
-    InequationReplacementRule_Editor.setupLabel_ConstantCell6(editorCell, node, context);
+    setupBasic_ConstantCell19999_06(editorCell, node, context);
+    setupLabel_ConstantCell19999_06(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstantCell7(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell19999_07(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    InequationReplacementRule_Editor.setupBasic_ConstantCell7(editorCell, node, context);
-    InequationReplacementRule_Editor.setupLabel_ConstantCell7(editorCell, node, context);
+    setupBasic_ConstantCell19999_07(editorCell, node, context);
+    setupLabel_ConstantCell19999_07(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstantCell8(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell19999_08(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    InequationReplacementRule_Editor.setupBasic_ConstantCell8(editorCell, node, context);
-    InequationReplacementRule_Editor.setupLabel_ConstantCell8(editorCell, node, context);
+    setupBasic_ConstantCell19999_08(editorCell, node, context);
+    setupLabel_ConstantCell19999_08(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createNameCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_namePropertyCell19999_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    InequationReplacementRule_Editor.setupBasic_NameCell(editorCell, node, context);
+    setupBasic_namePropertyCell19999_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      InequationReplacementRule_Editor.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_namePropertyCell19999_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createNameCell(EditorContext context, SNode node) {
+  public EditorCell create_namePropertyCell19999_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_namePropertyCell19999_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -323,25 +323,25 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createApplicableNodeCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_applicableNodeRefNodeCell19999_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    InequationReplacementRule_Editor.setupBasic_ApplicableNodeCell(editorCell, node, context);
+    setupBasic_applicableNodeRefNodeCell19999_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      InequationReplacementRule_Editor.setupLabel_ApplicableNodeCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_applicableNodeRefNodeCell19999_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createApplicableNodeCell(EditorContext context, SNode node) {
+  public EditorCell create_applicableNodeRefNodeCell19999_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("applicableNode");
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createApplicableNodeCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_applicableNodeRefNodeCell19999_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -352,25 +352,25 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createSupertypeNodeCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_supertypeNodeRefNodeCell19999_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    InequationReplacementRule_Editor.setupBasic_SupertypeNodeCell(editorCell, node, context);
+    setupBasic_supertypeNodeRefNodeCell19999_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      InequationReplacementRule_Editor.setupLabel_SupertypeNodeCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_supertypeNodeRefNodeCell19999_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createSupertypeNodeCell(EditorContext context, SNode node) {
+  public EditorCell create_supertypeNodeRefNodeCell19999_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("supertypeNode");
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createSupertypeNodeCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_supertypeNodeRefNodeCell19999_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -381,25 +381,25 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createBodyCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_bodyRefNodeCell19999_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    InequationReplacementRule_Editor.setupBasic_BodyCell(editorCell, node, context);
+    setupBasic_bodyRefNodeCell19999_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      InequationReplacementRule_Editor.setupLabel_BodyCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_bodyRefNodeCell19999_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createBodyCell(EditorContext context, SNode node) {
+  public EditorCell create_bodyRefNodeCell19999_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createBodyCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_bodyRefNodeCell19999_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

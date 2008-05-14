@@ -21,82 +21,82 @@ import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 public class MeetType_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myArgumentListHandler_argumentList_;
+  /* package */AbstractCellListHandler myListHandler_352_0;
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188473560034");
+  private static void setupBasic_CollectionCell352_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell352_0");
   }
 
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188473560035");
+  private static void setupBasic_ConstantCell352_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell352_0");
   }
 
-  private static void setupBasic_ArgumentList(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188473560036");
+  private static void setupBasic_argumentRefNodeListCell352_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_argumentRefNodeListCell352_0");
   }
 
-  private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1202228508657");
+  private static void setupBasic_ConstantCell352_01(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell352_01");
   }
 
-  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell352_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ArgumentList(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_argumentRefNodeListCell352_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell352_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createRowCell(context, node);
+    return this.create_CollectionCell352_0(context, node);
   }
 
-  public EditorCell createRowCell(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell352_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    MeetType_Editor.setupBasic_RowCell(editorCell, node, context);
+    setupBasic_CollectionCell352_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "MEET ("));
-    editorCell.addEditorCell(this.createArgumentList(context, node));
-    editorCell.addEditorCell(this.createConstantCell1(context, node, ")"));
+    editorCell.addEditorCell(this.create_ConstantCell352_0(context, node, "MEET ("));
+    editorCell.addEditorCell(this.create_argumentRefNodeListCell352_0(context, node));
+    editorCell.addEditorCell(this.create_ConstantCell352_01(context, node, ")"));
     return editorCell;
   }
 
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell352_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    MeetType_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    MeetType_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell352_0(editorCell, node, context);
+    setupLabel_ConstantCell352_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell352_01(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    MeetType_Editor.setupBasic_ConstantCell1(editorCell, node, context);
-    MeetType_Editor.setupLabel_ConstantCell1(editorCell, node, context);
+    setupBasic_ConstantCell352_01(editorCell, node, context);
+    setupLabel_ConstantCell352_01(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createArgumentList(EditorContext context, SNode node) {
-    if (this.myArgumentListHandler_argumentList_ == null) {
-      this.myArgumentListHandler_argumentList_ = new MeetType_Editor._RefNodeListHandler5(node, "argument", context);
+  public EditorCell create_argumentRefNodeListCell352_0(EditorContext context, SNode node) {
+    if (this.myListHandler_352_0 == null) {
+      this.myListHandler_352_0 = new MeetType_Editor.argumentListHandler_352_0(node, "argument", context);
     }
-    EditorCell_Collection editorCell = this.myArgumentListHandler_argumentList_.createCells(context, new CellLayout_Horizontal(), false);
-    MeetType_Editor.setupBasic_ArgumentList(editorCell, node, context);
+    EditorCell_Collection editorCell = this.myListHandler_352_0.createCells(context, new CellLayout_Horizontal(), false);
+    setupBasic_argumentRefNodeListCell352_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myArgumentListHandler_argumentList_.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_352_0.getElementRole());
     return editorCell;
   }
 
-  public static class _RefNodeListHandler5 extends RefNodeListHandler {
+  public static class argumentListHandler_352_0 extends RefNodeListHandler {
 
-    public _RefNodeListHandler5(SNode ownerNode, String childRole, EditorContext context) {
+    public argumentListHandler_352_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

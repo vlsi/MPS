@@ -14,39 +14,39 @@ public class Node_TypeOperation_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellProvider my_NotInRules_Component;
 
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176544322411");
+  private static void setupBasic_ConstantCell7380_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7380_0");
   }
 
-  private static void setupBasic__NotInRules_ComponentCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176544407635");
+  private static void setupBasic__NotInRules_ComponentComponentCell7380_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "__NotInRules_ComponentComponentCell7380_0");
   }
 
-  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell7380_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstantCell(context, node, "type");
+    return this.create_ConstantCell7380_0(context, node, "type");
   }
 
   public EditorCell createInspectedCell(EditorContext context, SNode node) {
-    return this.create_NotInRules_ComponentCell(context, node);
+    return this.create__NotInRules_ComponentComponentCell7380_0(context, node);
   }
 
-  public EditorCell create_NotInRules_ComponentCell(EditorContext context, SNode node) {
+  public EditorCell create__NotInRules_ComponentComponentCell7380_0(EditorContext context, SNode node) {
     if (this.my_NotInRules_Component == null) {
       this.my_NotInRules_Component = new _NotInRules_Component(node);
     }
     EditorCell editorCell = this.my_NotInRules_Component.createEditorCell(context);
-    Node_TypeOperation_Editor.setupBasic__NotInRules_ComponentCell(editorCell, node, context);
+    setupBasic__NotInRules_ComponentComponentCell7380_0(editorCell, node, context);
     return editorCell;
   }
 
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell7380_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    Node_TypeOperation_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    Node_TypeOperation_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell7380_0(editorCell, node, context);
+    setupLabel_ConstantCell7380_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }

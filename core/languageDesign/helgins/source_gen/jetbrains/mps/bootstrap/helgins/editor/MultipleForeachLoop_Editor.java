@@ -26,186 +26,186 @@ import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 public class MultipleForeachLoop_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myLoopVariableListHandler_loopVariableList_;
+  /* package */AbstractCellListHandler myListHandler_237_0;
 
-  private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176547986555");
+  private static void setupBasic_CollectionCell237_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell237_0");
   }
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176548000091");
+  private static void setupBasic_CollectionCell237_01(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell237_01");
     editorCell.setSelectable(false);
   }
 
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176548000092");
+  private static void setupBasic_ConstantCell237_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell237_0");
   }
 
-  private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176548004531");
+  private static void setupBasic_ConstantCell237_01(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell237_01");
   }
 
-  private static void setupBasic_LoopVariableList(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176548009689");
+  private static void setupBasic_loopVariableRefNodeListCell237_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_loopVariableRefNodeListCell237_0");
   }
 
-  private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176548017457");
+  private static void setupBasic_ConstantCell237_02(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell237_02");
   }
 
-  private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176548036430");
+  private static void setupBasic_CollectionCell237_02(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell237_02");
     editorCell.setSelectable(false);
   }
 
-  private static void setupBasic_ConstantCell3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176548036431");
+  private static void setupBasic_ConstantCell237_03(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell237_03");
     editorCell.setSelectable(false);
   }
 
-  private static void setupBasic_BodyCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176548041823");
+  private static void setupBasic_bodyRefNodeCell237_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_bodyRefNodeCell237_0");
   }
 
-  private static void setupBasic_ConstantCell4(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176548046138");
+  private static void setupBasic_ConstantCell237_04(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell237_04");
   }
 
-  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell237_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
   }
 
-  private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell237_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_LoopVariableList(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_loopVariableRefNodeListCell237_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell2(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell237_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell3(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell237_03(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_BodyCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_bodyRefNodeCell237_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell4(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell237_04(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createColumnCell(context, node);
+    return this.create_CollectionCell237_0(context, node);
   }
 
-  public EditorCell createColumnCell(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell237_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    MultipleForeachLoop_Editor.setupBasic_ColumnCell(editorCell, node, context);
+    setupBasic_CollectionCell237_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createRowCell(context, node));
-    editorCell.addEditorCell(this.createRowCell1(context, node));
-    editorCell.addEditorCell(this.createConstantCell4(context, node, "}"));
+    editorCell.addEditorCell(this.create_CollectionCell237_01(context, node));
+    editorCell.addEditorCell(this.create_CollectionCell237_02(context, node));
+    editorCell.addEditorCell(this.create_ConstantCell237_04(context, node, "}"));
     return editorCell;
   }
 
-  public EditorCell createRowCell(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell237_01(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    MultipleForeachLoop_Editor.setupBasic_RowCell(editorCell, node, context);
+    setupBasic_CollectionCell237_01(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "foreach"));
-    editorCell.addEditorCell(this.createConstantCell1(context, node, "("));
-    editorCell.addEditorCell(this.createLoopVariableList(context, node));
-    editorCell.addEditorCell(this.createConstantCell2(context, node, ") {"));
+    editorCell.addEditorCell(this.create_ConstantCell237_0(context, node, "foreach"));
+    editorCell.addEditorCell(this.create_ConstantCell237_01(context, node, "("));
+    editorCell.addEditorCell(this.create_loopVariableRefNodeListCell237_0(context, node));
+    editorCell.addEditorCell(this.create_ConstantCell237_02(context, node, ") {"));
     return editorCell;
   }
 
-  public EditorCell createRowCell1(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell237_02(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    MultipleForeachLoop_Editor.setupBasic_RowCell1(editorCell, node, context);
+    setupBasic_CollectionCell237_02(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell3(context, node, "  "));
-    editorCell.addEditorCell(this.createBodyCell(context, node));
+    editorCell.addEditorCell(this.create_ConstantCell237_03(context, node, "  "));
+    editorCell.addEditorCell(this.create_bodyRefNodeCell237_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell237_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    MultipleForeachLoop_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    MultipleForeachLoop_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell237_0(editorCell, node, context);
+    setupLabel_ConstantCell237_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell237_01(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    MultipleForeachLoop_Editor.setupBasic_ConstantCell1(editorCell, node, context);
-    MultipleForeachLoop_Editor.setupLabel_ConstantCell1(editorCell, node, context);
+    setupBasic_ConstantCell237_01(editorCell, node, context);
+    setupLabel_ConstantCell237_01(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell237_02(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    MultipleForeachLoop_Editor.setupBasic_ConstantCell2(editorCell, node, context);
-    MultipleForeachLoop_Editor.setupLabel_ConstantCell2(editorCell, node, context);
+    setupBasic_ConstantCell237_02(editorCell, node, context);
+    setupLabel_ConstantCell237_02(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell237_03(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    MultipleForeachLoop_Editor.setupBasic_ConstantCell3(editorCell, node, context);
-    MultipleForeachLoop_Editor.setupLabel_ConstantCell3(editorCell, node, context);
+    setupBasic_ConstantCell237_03(editorCell, node, context);
+    setupLabel_ConstantCell237_03(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstantCell4(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell237_04(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    MultipleForeachLoop_Editor.setupBasic_ConstantCell4(editorCell, node, context);
-    MultipleForeachLoop_Editor.setupLabel_ConstantCell4(editorCell, node, context);
+    setupBasic_ConstantCell237_04(editorCell, node, context);
+    setupLabel_ConstantCell237_04(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createLoopVariableList(EditorContext context, SNode node) {
-    if (this.myLoopVariableListHandler_loopVariableList_ == null) {
-      this.myLoopVariableListHandler_loopVariableList_ = new MultipleForeachLoop_Editor._RefNodeListHandler1(node, "loopVariable", context);
+  public EditorCell create_loopVariableRefNodeListCell237_0(EditorContext context, SNode node) {
+    if (this.myListHandler_237_0 == null) {
+      this.myListHandler_237_0 = new MultipleForeachLoop_Editor.loopVariableListHandler_237_0(node, "loopVariable", context);
     }
-    EditorCell_Collection editorCell = this.myLoopVariableListHandler_loopVariableList_.createCells(context, new CellLayout_Horizontal(), false);
-    MultipleForeachLoop_Editor.setupBasic_LoopVariableList(editorCell, node, context);
+    EditorCell_Collection editorCell = this.myListHandler_237_0.createCells(context, new CellLayout_Horizontal(), false);
+    setupBasic_loopVariableRefNodeListCell237_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myLoopVariableListHandler_loopVariableList_.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_237_0.getElementRole());
     return editorCell;
   }
 
-  public EditorCell createBodyCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_bodyRefNodeCell237_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    MultipleForeachLoop_Editor.setupBasic_BodyCell(editorCell, node, context);
+    setupBasic_bodyRefNodeCell237_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      MultipleForeachLoop_Editor.setupLabel_BodyCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_bodyRefNodeCell237_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createBodyCell(EditorContext context, SNode node) {
+  public EditorCell create_bodyRefNodeCell237_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createBodyCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_bodyRefNodeCell237_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -216,9 +216,9 @@ public class MultipleForeachLoop_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _RefNodeListHandler1 extends RefNodeListHandler {
+  public static class loopVariableListHandler_237_0 extends RefNodeListHandler {
 
-    public _RefNodeListHandler1(SNode ownerNode, String childRole, EditorContext context) {
+    public loopVariableListHandler_237_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

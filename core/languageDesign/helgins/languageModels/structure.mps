@@ -17,12 +17,15 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <maxImportIndex value="5" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <maxImportIndex value="6" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="4" modelUID="jetbrains.mps.patterns.structure" version="-1" />
   <import index="5" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+  <import index="6" modelUID="jetbrains.mps.bootstrap.intentionsLanguage.structure" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1174642743670">
     <property name="name" value="ApplicableNodeCondition" />
     <link role="extends" targetNodeId="1.1078489098625" />
@@ -337,6 +340,10 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1175517767210">
     <property name="name" value="ReportErrorStatement" />
     <link role="extends" targetNodeId="2.1068580123157" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1210773111363">
+      <property name="role" value="errorIntention" />
+      <link role="target" targetNodeId="6.1192794744107" resolveInfo="IntentionDeclaration" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1175517851849">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="1" />

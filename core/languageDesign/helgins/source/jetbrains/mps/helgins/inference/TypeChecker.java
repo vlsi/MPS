@@ -171,27 +171,29 @@ public class TypeChecker implements IComponentLifecycle {
 
   public void reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId, final String classFQName) {
     SimpleErrorReporter reporter = new SimpleErrorReporter(errorString, ruleModel, ruleId);
-    reporter.setIntentionProvider(new IntentionProvider() {
-      private Intention myIntention = null;
-      private boolean myIntentionTaken = false;
-      public Intention getIntention(SNode node, EditorContext editorContext) {
-        if (myIntentionTaken) {
-          return myIntention;
+    if (classFQName != null && !(classFQName.equals(""))) {
+      reporter.setIntentionProvider(new IntentionProvider() {
+        private Intention myIntention = null;
+        private boolean myIntentionTaken = false;
+        public Intention getIntention(SNode node, EditorContext editorContext) {
+          if (myIntentionTaken) {
+            return myIntention;
+          }
+          try {
+            String languageNamespace = NameUtil.namespaceFromLongName(NameUtil.namespaceFromLongName(classFQName));
+            Class aClass = ClassLoaderManager.getInstance().getClassFor(MPSModuleRepository.getInstance().getLanguage(languageNamespace), classFQName);
+            Intention intention = (Intention) aClass.getConstructor().newInstance();
+            myIntention = intention;
+            myIntentionTaken = true;
+            return intention;
+          } catch (Throwable t) {
+            LOG.error(t);
+            myIntentionTaken = true;
+            return null;
+          }
         }
-        try {
-          String languageNamespace = NameUtil.namespaceFromLongName(NameUtil.namespaceFromLongName(classFQName));
-          Class aClass = ClassLoaderManager.getInstance().getClassFor(MPSModuleRepository.getInstance().getLanguage(languageNamespace), classFQName);
-          Intention intention = (Intention) aClass.getConstructor().newInstance();
-          myIntention = intention;
-          myIntentionTaken = true;
-          return intention;
-        } catch (Throwable t) {
-          LOG.error(t);
-          myIntentionTaken = true;
-          return null;
-        }
-      }
-    });
+      });
+    }
     reportTypeError(nodeWithError, reporter);
   }
 

@@ -16,22 +16,22 @@ public class _NotInRules_Component extends AbstractCellProvider {
     super(node);
   }
 
-  private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176544384333");
+  private static void setupBasic_CollectionCell9869_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell9869_0");
   }
 
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176544388226");
+  private static void setupBasic_ConstantCell9869_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell9869_0");
   }
 
-  private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176544395384");
+  private static void setupBasic_ConstantCell9869_01(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell9869_01");
   }
 
-  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell9869_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell9869_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -40,32 +40,32 @@ public class _NotInRules_Component extends AbstractCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createColumnCell(context, node);
+    return this.create_CollectionCell9869_0(context, node);
   }
 
-  public EditorCell createColumnCell(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell9869_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    _NotInRules_Component.setupBasic_ColumnCell(editorCell, node, context);
+    setupBasic_CollectionCell9869_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "do not use in rules"));
-    editorCell.addEditorCell(this.createConstantCell1(context, node, "use in queries only"));
+    editorCell.addEditorCell(this.create_ConstantCell9869_0(context, node, "do not use in rules"));
+    editorCell.addEditorCell(this.create_ConstantCell9869_01(context, node, "use in queries only"));
     return editorCell;
   }
 
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell9869_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    _NotInRules_Component.setupBasic_ConstantCell(editorCell, node, context);
-    _NotInRules_Component.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell9869_0(editorCell, node, context);
+    setupLabel_ConstantCell9869_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell9869_01(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    _NotInRules_Component.setupBasic_ConstantCell1(editorCell, node, context);
-    _NotInRules_Component.setupLabel_ConstantCell1(editorCell, node, context);
+    setupBasic_ConstantCell9869_01(editorCell, node, context);
+    setupLabel_ConstantCell9869_01(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }

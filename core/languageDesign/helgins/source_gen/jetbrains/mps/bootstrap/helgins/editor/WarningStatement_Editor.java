@@ -17,114 +17,114 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class WarningStatement_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1207055587763");
+  private static void setupBasic_CollectionCell8225_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell8225_0");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1207055587764");
+  private static void setupBasic_ConstantCell8225_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell8225_0");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_WarningTextCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1207055587765");
+  private static void setupBasic_warningTextRefNodeCell8225_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_warningTextRefNodeCell8225_0");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1207055587766");
+  private static void setupBasic_ConstantCell8225_01(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell8225_01");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_NodeToReportCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1207055587767");
+  private static void setupBasic_nodeToReportRefNodeCell8225_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_nodeToReportRefNodeCell8225_0");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1207055587768");
+  private static void setupBasic_ConstantCell8225_02(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell8225_02");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell8225_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
   }
 
-  private static void setupLabel_WarningTextCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_warningTextRefNodeCell8225_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell8225_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_NodeToReportCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_nodeToReportRefNodeCell8225_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell2(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell8225_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createRowCell(context, node);
+    return this.create_CollectionCell8225_0(context, node);
   }
 
-  public EditorCell createRowCell(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell8225_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    WarningStatement_Editor.setupBasic_RowCell(editorCell, node, context);
+    setupBasic_CollectionCell8225_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "WARNING"));
-    editorCell.addEditorCell(this.createWarningTextCell(context, node));
-    editorCell.addEditorCell(this.createConstantCell1(context, node, "->"));
-    editorCell.addEditorCell(this.createNodeToReportCell(context, node));
-    editorCell.addEditorCell(this.createConstantCell2(context, node, ";"));
+    editorCell.addEditorCell(this.create_ConstantCell8225_0(context, node, "WARNING"));
+    editorCell.addEditorCell(this.create_warningTextRefNodeCell8225_0(context, node));
+    editorCell.addEditorCell(this.create_ConstantCell8225_01(context, node, "->"));
+    editorCell.addEditorCell(this.create_nodeToReportRefNodeCell8225_0(context, node));
+    editorCell.addEditorCell(this.create_ConstantCell8225_02(context, node, ";"));
     return editorCell;
   }
 
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell8225_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    WarningStatement_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    WarningStatement_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell8225_0(editorCell, node, context);
+    setupLabel_ConstantCell8225_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell8225_01(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    WarningStatement_Editor.setupBasic_ConstantCell1(editorCell, node, context);
-    WarningStatement_Editor.setupLabel_ConstantCell1(editorCell, node, context);
+    setupBasic_ConstantCell8225_01(editorCell, node, context);
+    setupLabel_ConstantCell8225_01(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell8225_02(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    WarningStatement_Editor.setupBasic_ConstantCell2(editorCell, node, context);
-    WarningStatement_Editor.setupLabel_ConstantCell2(editorCell, node, context);
+    setupBasic_ConstantCell8225_02(editorCell, node, context);
+    setupLabel_ConstantCell8225_02(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createWarningTextCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_warningTextRefNodeCell8225_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    WarningStatement_Editor.setupBasic_WarningTextCell(editorCell, node, context);
+    setupBasic_warningTextRefNodeCell8225_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      WarningStatement_Editor.setupLabel_WarningTextCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_warningTextRefNodeCell8225_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createWarningTextCell(EditorContext context, SNode node) {
+  public EditorCell create_warningTextRefNodeCell8225_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("warningText");
     provider.setNoTargetText("<error string>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createWarningTextCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_warningTextRefNodeCell8225_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -135,25 +135,25 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createNodeToReportCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_nodeToReportRefNodeCell8225_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    WarningStatement_Editor.setupBasic_NodeToReportCell(editorCell, node, context);
+    setupBasic_nodeToReportRefNodeCell8225_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      WarningStatement_Editor.setupLabel_NodeToReportCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_nodeToReportRefNodeCell8225_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createNodeToReportCell(EditorContext context, SNode node) {
+  public EditorCell create_nodeToReportRefNodeCell8225_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("nodeToReport");
     provider.setNoTargetText("<node to highlight>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createNodeToReportCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_nodeToReportRefNodeCell8225_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
