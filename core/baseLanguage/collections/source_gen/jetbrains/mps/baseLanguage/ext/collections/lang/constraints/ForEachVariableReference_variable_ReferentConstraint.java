@@ -11,8 +11,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.smodel.search.ISearchScope;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.search.SubnodesSearchScope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.search.NodeListChildrenSearchScope;
 
 public class ForEachVariableReference_variable_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -33,7 +32,7 @@ public class ForEachVariableReference_variable_ReferentConstraint implements IMo
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     List<SNode> forEachStatements = SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachStatement", false);
-    return new SubnodesSearchScope(ListSequence.fromList(forEachStatements).last());
+    return new NodeListChildrenSearchScope(forEachStatements);
   }
 
   public String getNodeReferentSearchScopeDescription() {

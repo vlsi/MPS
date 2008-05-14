@@ -20,6 +20,8 @@
   <language namespace="jetbrains.mps.core" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="9" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   <import index="2" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />
@@ -368,14 +370,11 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1182460136717">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1182460136718">
-              <link role="baseMethodDeclaration" targetNodeId="2.~SubnodesSearchScope.&lt;init&gt;(jetbrains.mps.smodel.SNode)" resolveInfo="SubnodesSearchScope" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207844116142">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1182460194439">
-                  <link role="variableDeclaration" targetNodeId="1182460178600" resolveInfo="forEachStatements" />
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetLastOperation" id="1182460228555" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1210777421332">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1210777421333">
+              <link role="baseMethodDeclaration" targetNodeId="2.~NodeListChildrenSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="NodeListChildrenSearchScope" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1210777449175">
+                <link role="variableDeclaration" targetNodeId="1182460178600" resolveInfo="forEachStatements" />
               </node>
             </node>
           </node>
