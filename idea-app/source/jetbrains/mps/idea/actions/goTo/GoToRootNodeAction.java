@@ -2,6 +2,7 @@ package jetbrains.mps.idea.actions.goTo;
 
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
+import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -34,17 +35,12 @@ public class GoToRootNodeAction extends AnAction {
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
-        //if (GoToConceptAction.class.equals(myInAction)) myInAction = null;
+        //if (GoToRootNodeAction.class.equals(myInAction)) myInAction = null;
       }
 
       public void elementChosen(Object element) {
-        //((NavigationItem)element).navigate(true);
-        ((NodeNavigationItem) element).navigate(true);
+        ((NavigationItem) element).navigate(true);
       }
     }, ModalityState.current(), true);
-
-    //new GoToNodeWindow(context.getOperationContext(), loader);
-
-    //new GoToRootAction().execute(context);
   }
 }

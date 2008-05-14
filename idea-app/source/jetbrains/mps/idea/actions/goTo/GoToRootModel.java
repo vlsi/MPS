@@ -33,16 +33,15 @@ package jetbrains.mps.idea.actions.goTo;
 
 import com.intellij.ide.util.NavigationItemListCellRenderer;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
+import com.intellij.navigation.ItemPresentation;
+import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.openapi.util.SystemInfo;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Calculable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -59,18 +58,20 @@ public class GoToRootModel implements ChooseByNameModel {
   private MPSProject myProject;
   private IOperationContext myContext;
   private SNode[] myNodes;
+  private SNode[] myProjectNodes;
 
   public GoToRootModel(MPSProject project, IOperationContext context) {
     myProject = project;
     myContext = context;
-    myNodes = loadItems();
+    myNodes = loadItems(GlobalScope.getInstance());
+    myProjectNodes = loadItems(myProject.getScope());
   }
 
-  public SNode[] loadItems() {
+  public SNode[] loadItems(final IScope scope) {
     final List<SNode> nodes = new ArrayList<SNode>();
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
-        List<SModelDescriptor> modelDescriptors = GlobalScope.getInstance().getModelDescriptors();
+        List<SModelDescriptor> modelDescriptors = scope.getModelDescriptors();
 
         for (SModelDescriptor modelDescriptor : modelDescriptors) {
           if (SModelStereotype.JAVA_STUB.equals(modelDescriptor.getStereotype())) continue;
@@ -83,12 +84,12 @@ public class GoToRootModel implements ChooseByNameModel {
     return nodes.toArray(new SNode[0]);
   }
 
-  public String[] getNames(boolean checkBoxState) {
+  public String[] getNames(final boolean checkBoxState) {
     final Set<String> names = new HashSet<String>();
 
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
-        for (SNode node : myNodes) {
+        for (SNode node : checkBoxState ? myNodes : myProjectNodes) {
           try {
             names.add(node.getName());
           } catch (ProcessCanceledException ex) {
@@ -103,12 +104,12 @@ public class GoToRootModel implements ChooseByNameModel {
     return names.toArray(new String[names.size()]);
   }
 
-  public Object[] getElementsByName(final String name, boolean checkBoxState, final String pattern) {
+  public Object[] getElementsByName(final String name, final boolean checkBoxState, final String pattern) {
     final List<NodeNavigationItem> items = new ArrayList<NodeNavigationItem>();
 
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
-        for (SNode node : myNodes) {
+        for (SNode node : checkBoxState ? myNodes : myProjectNodes) {
           try {
             if (node.getName() != null && node.getName().equals(name)) {
               items.add(new NodeNavigationItem(myContext, node));
@@ -127,7 +128,7 @@ public class GoToRootModel implements ChooseByNameModel {
   public String getElementName(final Object element) {
     return CommandProcessor.instance().executeLightweightCommand(new Calculable<String>() {
       public String calculate() {
-        return ((NodeNavigationItem) element).getName();
+        return ((NavigationItem) element).getName();
       }
     });
   }
@@ -142,7 +143,7 @@ public class GoToRootModel implements ChooseByNameModel {
     //PropertiesComponent propertiesComponent = PropertiesComponent.getInstance(myProject);
     //return Boolean.TRUE.toString().equals(propertiesComponent.getValue("GoToClass.toSaveIncludeLibraries")) &&
     //  Boolean.TRUE.toString().equals(propertiesComponent.getValue("GoToClass.includeLibraries"));
-    return false;
+    return true;
   }
 
   public void saveInitialCheckBoxState(boolean state) {
@@ -153,18 +154,11 @@ public class GoToRootModel implements ChooseByNameModel {
   }
 
   public String getFullName(final Object element) {
-    /*for (ChooseByNameContributor c : getContributors()) {
-      if (c instanceof GotoClassContributor) {
-        String result = ((GotoClassContributor) c).getQualifiedName((NavigationItem) element);
-        if (result != null) return result;
-      }
-    }
-
-    return getElementName(element);
-    */
     return CommandProcessor.instance().executeLightweightCommand(new Calculable<String>() {
       public String calculate() {
-        return ((NodeNavigationItem) element).getName();
+        ItemPresentation presentation = ((NavigationItem) element).getPresentation();
+        assert presentation != null;
+        return presentation.getLocationString() + "." + presentation.getPresentableText();
       }
     });
   }
@@ -177,37 +171,25 @@ public class GoToRootModel implements ChooseByNameModel {
   @Nullable
   public String getPromptText() {
     //return IdeBundle.message("prompt.gotoclass.enter.class.name");
-    return "prompt";
+    return "Root node name:";
   }
 
   public String getCheckBoxName() {
     //return IdeBundle.message("checkbox.include.non.project.classes");
-    return "temp trash";
+    return "Include non-project files";
   }
 
   public String getNotInMessage() {
     //return IdeBundle.message("label.no.matches.found.in.project");
-    return "not in message";
+    return "-";
   }
 
   public String getNotFoundMessage() {
     //return IdeBundle.message("label.no.matches.found");
-    return "not found";
+    return "no mathches found";
   }
 
   public ListCellRenderer getListCellRenderer() {
-    /*return new ListCellRenderer() {
-      public Component getListCellRendererComponent(JList list, final Object value, int index, boolean isSelected, boolean cellHasFocus) {
-        String name = CommandProcessor.instance().executeLightweightCommand(new Calculable<String>() {
-          public String calculate() {
-            String name1 = ((NodeNavigationItem) value).getName();
-            return (name1 == null) ? "" : name1;
-          }
-        });
-        return new JLabel(name);
-      }
-    };
-    */
     return new NavigationItemListCellRenderer();
   }
 }
