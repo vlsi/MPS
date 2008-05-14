@@ -588,7 +588,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
             if (containsComponent(cls) && getComponent(cls) instanceof IExternalizableComponent) {
               try {
                 ((IExternalizableComponent) getComponentSafe(cls)).read(component, this);
-              } catch (Exception e) {
+              } catch (Throwable e) {
                 LOG.error(e);
               }
             }
@@ -597,7 +597,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
           }
         }
       }
-    } catch (Exception e) {
+    } catch (Throwable e) {
       LOG.error(e);
     }
   }
