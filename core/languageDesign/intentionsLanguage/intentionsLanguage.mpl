@@ -16,6 +16,9 @@
       <dependencies>
         <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
       </dependencies>
+      <usedLanguages>
+        <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
+      </usedLanguages>
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_together">
           <greater-priority-mapping>
@@ -38,10 +41,6 @@
     <entry path="${language_descriptor}\classes" />
   </languageRuntimeClassPath>
   <sourcePath />
-  <osgiOptions>
-    <requiredBundles />
-    <exportedPackage />
-  </osgiOptions>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>
     <extendedLanguage>jetbrains.mps.bootstrap.sharedConcepts</extendedLanguage>
