@@ -40,6 +40,7 @@ public class OpenMPSProjectAction extends AnAction {
     Project ideaProject = projectManager.newProject(iprfilePath, true, false);
     assert ideaProject != null;
     ideaProject.save();
+    ideaProject.dispose();
 
     ProjectUtil.openProject(iprfilePath, e.getData(PlatformDataKeys.PROJECT), false);
   }
