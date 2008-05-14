@@ -15,15 +15,8 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.idea.MPSProjectHolder;
 
-public class GoToRootNodeAction extends AnAction {
+public class GoToRootNodeAction extends BaseGoToAction {
   public void actionPerformed(AnActionEvent e) {
-    ActionContext context = new ActionContext();
-
-    Project project = e.getData(PlatformDataKeys.PROJECT);    
-    assert project != null;
-
-    MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
-    context.put(IOperationContext.class, new ProjectOperationContext(mpsProject));
-    new GoToRootAction().execute(context);
+    new GoToRootAction().execute(createContext(e));
   }
 }
