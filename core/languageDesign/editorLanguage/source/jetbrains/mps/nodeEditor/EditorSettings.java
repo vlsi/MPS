@@ -5,8 +5,6 @@ import jetbrains.mps.components.Externalizable;
 import jetbrains.mps.ide.preferences.IComponentWithPreferences;
 import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.IntegerValueDocumentFilter;
@@ -41,7 +39,10 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
 
   private @Externalizable int myTextWidth = 500;
   private @Externalizable boolean myUseAntialiasing = true;
-  private @Externalizable Color mySelectionColor = null;
+
+  private @Externalizable Color mySelectionForeground = getDefaultSelectionForegroundColor();
+  private @Externalizable Color mySelectionBackground = getDefaultSelectionBackgroundColor();
+  
   private @Externalizable boolean myUseLegacyTypesystem = true;
   private @Externalizable boolean myUseBraces = true;
   private int myIndentSize = 2;
@@ -91,19 +92,19 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
   }
 
   public Color getSelectionBackgroundColor() {
-    if (mySelectionColor != null) {
-      return mySelectionColor;
-    }
-    Color baseColor = getDefaultSelectionBackgroundColor();
-    return baseColor;
+    return mySelectionBackground;
   }
 
   public Color getSelectionForegroundColor() {
-    return UIManager.getColor("TextArea.selectionForeground");
+    return mySelectionForeground;
   }
 
   private Color getDefaultSelectionBackgroundColor() {
-    return UIManager.getColor("TextArea.selectionBackground");
+    return new Color(82, 109, 165);
+  }
+
+  private Color getDefaultSelectionForegroundColor() {
+    return Color.WHITE;
   }
 
   public Color getRangeSelectionForegroundColor() {
@@ -231,9 +232,14 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
     private JComboBox myFontsComboBox = createFontsComboBox();
     private JComboBox myFontSizesComboBox = createSizeComboBox();
     private JComboBox myTextWidthComboBox = createTextWidthComboBox();
-    private MyColorComponent mySelectedColorComponent = new MyColorComponent(getSelectionBackgroundColor()) {
+    private MyColorComponent mySelectionBackgroundColorComponent = new MyColorComponent(getSelectionBackgroundColor()) {
       protected Color getDefaultColor() {
         return getDefaultSelectionBackgroundColor();
+      }
+    };
+    private MyColorComponent mySelectionForegroundColorComponent = new MyColorComponent(getSelectionForegroundColor()) {
+      protected Color getDefaultColor() {
+        return getDefaultSelectionForegroundColor();
       }
     };
     private JCheckBox myAntialiasingCheckBox = createAntialiasinbCheckBox();
@@ -276,8 +282,11 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
 
 
       JPanel colorSettingsPanel = new JPanel(new GridLayout(0, 1));
-      colorSettingsPanel.add(new JLabel("Selection Color : "));
-      colorSettingsPanel.add(mySelectedColorComponent);
+      colorSettingsPanel.add(new JLabel("Selection Background:"));
+      colorSettingsPanel.add(mySelectionBackgroundColorComponent);
+
+      colorSettingsPanel.add(new JLabel("Selection Foreground:"));
+      colorSettingsPanel.add(mySelectionForegroundColorComponent);
 
       colorSettingsPanel.add(new JLabel(" "));
       colorSettingsPanel.add(new JLabel("Cursor Blinking Rate : "));
@@ -406,7 +415,8 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
       setUseLegacyTypesystem(myLegacyTypesystemCheckBox.isSelected());
       setUseBraces(myUseBraces.isSelected());
 
-      mySelectionColor = mySelectedColorComponent.getColor();
+      mySelectionBackground = mySelectionBackgroundColorComponent.getColor();
+      mySelectionForeground = mySelectionForegroundColorComponent.getColor();
 
       fireEditorSettingsChanged();
     }
