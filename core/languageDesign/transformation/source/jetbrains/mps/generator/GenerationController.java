@@ -28,6 +28,8 @@ import java.util.*;
 import java.io.File;
 import java.rmi.RemoteException;
 
+import com.intellij.openapi.progress.EmptyProgressIndicator;
+
 public class GenerationController {
   private static Logger LOG = Logger.getLogger(GenerationController.class);
 
@@ -240,7 +242,7 @@ public class GenerationController {
       } else {
         myProgress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_MPS);
         info("compiling in JetBrains MPS...");
-        compilationResult = new ModuleMaker().make(CollectionUtil.asSet(module), new MessagesOnlyAdaptiveProgressMonitorWrapper(myProgress));
+        compilationResult = new ModuleMaker().make(CollectionUtil.asSet(module), new EmptyProgressIndicator());
         myProgress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_MPS);
       }
       if (compilationResult == null || compilationResult.getErrors() > 0) {

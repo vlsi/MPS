@@ -19,6 +19,8 @@ import jetbrains.mps.make.ModuleMaker;
 import java.io.File;
 import java.util.LinkedHashSet;
 
+import com.intellij.openapi.progress.EmptyProgressIndicator;
+
 public class TestMain {
   private static boolean ourTestMode;
 
@@ -55,7 +57,7 @@ public class TestMain {
       public void run() {
         new ModuleMaker().make(
           new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()),
-          new NullAdaptiveProgressMonitor());
+          new EmptyProgressIndicator());
       }
     });
 

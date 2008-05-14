@@ -16,11 +16,15 @@ import jetbrains.mps.vfs.IFile;
 import org.eclipse.jdt.internal.compiler.ClassFile;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.*;
+
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.ProgressIndicator;
 
 public class ModuleMaker {
   private static Logger LOG = Logger.getLogger(ModuleMaker.class);
@@ -31,27 +35,29 @@ public class ModuleMaker {
   public ModuleMaker() {
   }
 
-  public void clean(final Set<IModule> modules, final IAdaptiveProgressMonitor monitor) {
+  public void clean(final Set<IModule> modules, @NotNull final ProgressIndicator indicator) {
+    indicator.pushState();
     try {
-      monitor.start("Clean", 2000);
+      indicator.setIndeterminate(true);
+      indicator.setText("Cleaning...");
       for (IModule m : modules) {
         if (isExcluded(m)) continue;
-        if (monitor.isCanceled()) {
-          monitor.addText("Canceled");
+        if (indicator.isCanceled()) {
           break;
         }
-        monitor.addText("Cleaning " + m.getModuleUID() + "...");
+        indicator.setText2("Cleaning " + m.getModuleUID() + "...");
         FileUtil.delete(m.getClassesGen().toFile());
       }
-      monitor.addText("Done");
     } finally {
-      monitor.finish();
+      indicator.popState();
     }
   }
 
-  public jetbrains.mps.plugin.CompilationResult make(Set<IModule> modules, final IAdaptiveProgressMonitor monitor) {
+  public jetbrains.mps.plugin.CompilationResult make(Set<IModule> modules, @NotNull final ProgressIndicator indicator) {
+    indicator.pushState();
     try {
-      monitor.start("Compiling...", 1000 * modules.size());
+      indicator.setText("Compiling...");
+      indicator.setIndeterminate(true);
 
       Set<IModule> toCompile = getModulesToCompile(modules);
 
@@ -63,22 +69,18 @@ public class ModuleMaker {
       }.buildSchedule(toCompile);
 
       for (Set<IModule> cycle : schedule) {
-        if (monitor.isCanceled()) {
-          monitor.addText("Canceled");
+        if (indicator.isCanceled()) {
           break;
         }
 
-        monitor.addText("Compiling modules: " + cycle + "...");
-        int currentErrorsCount = compile(cycle, monitor).getErrors();
-        if (currentErrorsCount != 0) {
-          monitor.addText("There were compilation errors in these modules. See messages view for more information.");
-        }
+        indicator.setText2("Compiling modules " + cycle + "...");
+        int currentErrorsCount = compile(cycle).getErrors();
         errorCount += currentErrorsCount;
       }
 
       return new jetbrains.mps.plugin.CompilationResult(errorCount, 0, false);
     } finally {
-      monitor.finish();
+      indicator.popState();
     }
   }
 
@@ -99,7 +101,7 @@ public class ModuleMaker {
     return toCompile;
   }
 
-  private jetbrains.mps.plugin.CompilationResult compile(Set<IModule> modules, IAdaptiveProgressMonitor monitor) {
+  private jetbrains.mps.plugin.CompilationResult compile(Set<IModule> modules) {
     boolean hasAnythingToCompile = false;
     for (IModule m : modules) {
       if (m.isCompileInMPS()) {
@@ -112,16 +114,6 @@ public class ModuleMaker {
     }   
 
     IClassPathItem classPathItems = computeDependenciesClassPath(modules);
-
-    if (GlobalMakeSettings.getInstance().isPrintClassPath()) {
-      CompositeClassPathItem classPath = (CompositeClassPathItem) classPathItems;
-      monitor.addText("compiling " + modules + " with classpath:");
-      for (IClassPathItem item : classPath.getChildren()) {
-        monitor.addText(item.toString());
-      }
-      monitor.addText("----");
-      monitor.addText("");
-    }
 
     JavaCompiler compiler = new JavaCompiler(classPathItems);
 
