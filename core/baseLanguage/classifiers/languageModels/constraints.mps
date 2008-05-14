@@ -18,6 +18,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <maxImportIndex value="6"/>
   <import index="1" modelUID="jetbrains.mps.baseLanguage.classifiers.structure" version="-1"/>
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0"/>
@@ -235,7 +236,10 @@
                     id="1206022525536">
                 <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept"
                       id="1206022525537">
-                  <link role="concept" targetNodeId="1.1205751982837" resolveInfo="IClassifier"/>
+                  <node role="conceptArgument"
+                        type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1210765947575">
+                    <link role="conceptDeclaration" targetNodeId="1.1205751982837" resolveInfo="IClassifier"/>
+                  </node>
                 </node>
                 <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion"
                       id="1206022525538"/>
@@ -270,7 +274,10 @@
                     id="1206022525550">
                 <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept"
                       id="1206022525551">
-                  <link role="concept" targetNodeId="1.1205752174734" resolveInfo="IClassifierPart"/>
+                  <node role="conceptArgument"
+                        type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1210765950484">
+                    <link role="conceptDeclaration" targetNodeId="1.1205752174734" resolveInfo="IClassifierPart"/>
+                  </node>
                 </node>
                 <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion"
                       id="1206022525552"/>

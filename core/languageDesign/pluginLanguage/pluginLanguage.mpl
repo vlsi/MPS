@@ -1,27 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.bootstrap.pluginLanguage" compileInMPS="false">
   <models>
-    <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.bootstrap.pluginLanguage" />
-    <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.bootstrap.pluginLanguage" />
+    <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.bootstrap.pluginLanguage"/>
+    <modelRoot path="${language_descriptor}\languageAccessories"
+               namespacePrefix="jetbrains.mps.bootstrap.pluginLanguage"/>
   </models>
   <accessoryModels>
-    <model modelUID="jetbrains.mps.ide.actions" />
-    <model modelUID="jetbrains.mps.plugin@java_stub" />
-    <model modelUID="jetbrains.mps.plugins@java_stub" />
+    <model modelUID="jetbrains.mps.ide.actions"/>
+    <model modelUID="jetbrains.mps.plugin@java_stub"/>
+    <model modelUID="jetbrains.mps.plugins@java_stub"/>
   </accessoryModels>
   <generators>
     <generator generatorUID="jetbrains.mps.bootstrap.pluginLanguage#1203080439937">
       <models>
-        <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.bootstrap.pluginLanguage.generator.baseLanguage.template" />
+        <modelRoot path="${language_descriptor}\generator\baseLanguage\template"
+                   namespacePrefix="jetbrains.mps.bootstrap.pluginLanguage.generator.baseLanguage.template"/>
       </models>
       <external-templates>
-        <generator generatorUID="jetbrains.mps.baseLanguage.classifiers#1205839057922" />
-        <generator generatorUID="jetbrains.mps.uiLanguage#1202393863737" />
+        <generator generatorUID="jetbrains.mps.baseLanguage.classifiers#1205839057922"/>
+        <generator generatorUID="jetbrains.mps.uiLanguage#1202393863737"/>
       </external-templates>
       <dependencies>
         <dependency reexport="false">jetbrains.mps.baseLanguage</dependency>
         <dependency reexport="false">jetbrains.mps.baseLanguage.classifiers</dependency>
         <dependency reexport="false">jetbrains.mps.transformation.TLBase</dependency>
+        <dependency reexport="false">jetbrains.mps.webr.runtime</dependency>
       </dependencies>
       <usedLanguages>
         <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
@@ -30,12 +33,13 @@
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
-            <all-local-mappings />
+            <all-local-mappings/>
           </greater-priority-mapping>
           <lesser-priority-mapping>
-            <generator generatorUID="jetbrains.mps.uiLanguage#1202393863737" />
+            <generator generatorUID="jetbrains.mps.uiLanguage#1202393863737"/>
             <external-mapping>
-              <mapping-node modelUID="jetbrains.mps.uiLanguage.generator.baseLanguage.template.main@templates" nodeID="1202393865414" />
+              <mapping-node modelUID="jetbrains.mps.uiLanguage.generator.baseLanguage.template.main@templates"
+                            nodeID="1202393865414"/>
             </external-mapping>
           </lesser-priority-mapping>
         </mapping-priority-rule>
@@ -43,12 +47,12 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="${language_descriptor}\classes" />
+    <entry path="${language_descriptor}\classes"/>
   </classPath>
   <languageRuntimeClassPath>
-    <entry path="${language_descriptor}\classes" />
+    <entry path="${language_descriptor}\classes"/>
   </languageRuntimeClassPath>
-  <sourcePath />
+  <sourcePath/>
   <dependencies>
     <dependency reexport="false">jetbrains.mps.baseLanguage.strings</dependency>
     <dependency reexport="false">jetbrains.mps.ide</dependency>
