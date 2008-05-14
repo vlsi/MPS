@@ -62,7 +62,11 @@ public final class SConceptOperations {
 
   public static List<SNode> getDirectSuperConcepts(SNode conceptDeclarationNode, boolean inclusion) {
     if (conceptDeclarationNode == null) return new ArrayList<SNode>();
-    List<AbstractConceptDeclaration> list = SModelUtil_new.getDirectSuperConcepts((AbstractConceptDeclaration) conceptDeclarationNode.getAdapter());
+    BaseAdapter adapter = conceptDeclarationNode.getAdapter();
+    if (!(adapter instanceof AbstractConceptDeclaration)) {
+      return new ArrayList<SNode>();
+    }
+    List<AbstractConceptDeclaration> list = SModelUtil_new.getDirectSuperConcepts((AbstractConceptDeclaration) adapter);
     List<SNode> result = BaseAdapter.toNodes(list);
     if (inclusion) {
       result.add(0, conceptDeclarationNode);
