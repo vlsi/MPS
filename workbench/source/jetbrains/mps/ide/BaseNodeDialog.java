@@ -22,6 +22,12 @@ import javax.swing.JOptionPane;
 import javax.swing.JSplitPane;
 import java.awt.HeadlessException;
 
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.Task.Modal;
+import com.intellij.openapi.project.Project;
+import org.jetbrains.annotations.NotNull;
+
 public abstract class BaseNodeDialog extends BaseDialog {
   private static Logger LOG = Logger.getLogger(BaseNodeDialog.class);
 
@@ -125,28 +131,21 @@ public abstract class BaseNodeDialog extends BaseDialog {
 
   private boolean saveChanges_internal() {
     if (!validateNode()) return true;
-    new Thread() {
-      public void run() {
-        IAdaptiveProgressMonitor monitor = getOperationContext().getComponent(AdaptiveProgressMonitorFactory.class).createMonitor();
+    ProgressManager.getInstance().run(new Modal(getOperationContext().getProject().getComponent(Project.class), "Applying changes", false) {
+      public void run(@NotNull ProgressIndicator indicator) {
+        indicator.setIndeterminate(true);
         try {
-          String taskname = "Applying changes...";
-          monitor.start("Applying changes", TaskProgressSettings.getInstance().getEstimatedTimeMillis(taskname));
-          monitor.startLeafTask(taskname);
-          try {
-            CommandProcessor.instance().executeCommand(new Runnable() {
-              public void run() {
-                saveChanges();
-              }
-            });
-          } catch (Throwable t) {
-            LOG.error(t);
-          }
-        } finally {
-          monitor.finishTask();
-          monitor.finish();
+          CommandProcessor.instance().executeCommand(new Runnable() {
+            public void run() {
+              saveChanges();
+            }
+          });
+        } catch (Throwable t) {
+          LOG.error(t);
         }
       }
-    }.start();
+    });
+
     return false;
   }
 
