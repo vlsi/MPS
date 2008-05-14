@@ -20,16 +20,13 @@
   <classPath />
   <languageRuntimeClassPath />
   <sourcePath />
-  <osgiOptions>
-    <requiredBundles />
-    <exportedPackage />
-  </osgiOptions>
   <dependencies>
     <dependency reexport="false">jetbrains.mps.baseLanguage.unitTest.runtime</dependency>
     <dependency reexport="false">jetbrains.mps.bootstrap.pluginLanguage</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.baseLanguage.strings</usedLanguages>
+    <usedLanguages>jetbrains.mps.uiLanguage</usedLanguages>
   </usedLanguages>
   <runtime>
     <dependency reexport="true">jetbrains.mps.baseLanguage.unitTest.runtime</dependency>
