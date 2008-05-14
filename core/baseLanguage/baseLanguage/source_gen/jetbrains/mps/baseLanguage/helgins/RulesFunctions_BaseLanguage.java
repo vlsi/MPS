@@ -416,7 +416,7 @@ __switch__:
           for(SNode exc : throwables) {
             errorString = errorString + " " + exc;
           }
-          TypeChecker.getInstance().reportTypeError(mainNode, errorString, "jetbrains.mps.baseLanguage.helgins", "1210182111558", "jetbrains.mps.baseLanguage.helgins.AddExceptionToMethodSignature_Intention");
+          TypeChecker.getInstance().reportTypeError(mainNode, errorString, "jetbrains.mps.baseLanguage.helgins", "1210182111558");
         }
         return;
       }

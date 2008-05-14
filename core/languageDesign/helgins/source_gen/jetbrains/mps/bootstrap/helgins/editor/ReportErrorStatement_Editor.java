@@ -14,9 +14,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 
 public class ReportErrorStatement_Editor extends DefaultNodeEditor {
 
@@ -54,12 +51,12 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell13901_01");
   }
 
-  private static void setupBasic_errorIntentionRefCell13901_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_errorIntentionRefCell13901_0");
-  }
-
   private static void setupBasic_ConstantCell13901_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell13901_03");
+  }
+
+  private static void setupBasic_helginsIntentionRefNodeCell13901_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_helginsIntentionRefNodeCell13901_0");
   }
 
   private static void setupLabel_ConstantCell13901_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -78,10 +75,10 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell13901_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_errorIntentionRefCell13901_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell13901_03(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell13901_03(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_helginsIntentionRefNodeCell13901_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -114,7 +111,7 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.create_ConstantCell13901_03(context, node, "intention to fix an error(optional)"));
-    editorCell.addEditorCell(this.create_errorIntentionRefCell13901_0(context, node));
+    editorCell.addEditorCell(this.create_helginsIntentionRefNodeCell13901_0(context, node));
     return editorCell;
   }
 
@@ -208,25 +205,25 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell create_errorIntentionRefCell13901_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_helginsIntentionRefNodeCell13901_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new ReportErrorStatement_Editor._Inline11());
+    provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_errorIntentionRefCell13901_0(editorCell, node, context);
+    setupBasic_helginsIntentionRefNodeCell13901_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_errorIntentionRefCell13901_0((EditorCell_Label)editorCell, node, context);
+      setupLabel_helginsIntentionRefNodeCell13901_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell create_errorIntentionRefCell13901_0(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, context);
-    provider.setRole("errorIntention");
+  public EditorCell create_helginsIntentionRefNodeCell13901_0(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+    provider.setRole("helginsIntention");
     provider.setNoTargetText("<no intention>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.create_errorIntentionRefCell13901_0_internal(context, node, provider);
+    EditorCell cellWithRole = this.create_helginsIntentionRefNodeCell13901_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -236,58 +233,5 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
-
-  public static class _Inline11 extends AbstractCellProvider {
-
-    public _Inline11() {
-      super();
-    }
-
-    private static void setupBasic_namePropertyCell13901_0(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell13901_0");
-    }
-
-    private static void setupLabel_namePropertyCell13901_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    }
-
-
-    public EditorCell createEditorCell(EditorContext context) {
-      return this.createEditorCell(context, this.getSNode());
-    }
-
-    public EditorCell createEditorCell(EditorContext context, SNode node) {
-      return this.create_namePropertyCell13901_0(context, node);
-    }
-
-    public EditorCell create_namePropertyCell13901_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-      CellProviderWithRole provider = aProvider;
-      provider.setAuxiliaryCellProvider(null);
-      EditorCell editorCell = provider.createEditorCell(context);
-      setupBasic_namePropertyCell13901_0(editorCell, node, context);
-      if (editorCell instanceof EditorCell_Label) {
-        setupLabel_namePropertyCell13901_0((EditorCell_Label)editorCell, node, context);
-      }
-      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-      return editorCell;
-    }
-
-    public EditorCell create_namePropertyCell13901_0(EditorContext context, SNode node) {
-      CellProviderWithRole provider = new PropertyCellProvider(node, context);
-      provider.setRole("name");
-      provider.setNoTargetText("");
-      provider.setReadOnly(true);
-      provider.setAllowsEmptyTarget(false);
-      EditorCell cellWithRole = this.create_namePropertyCell13901_0_internal(context, node, provider);
-      SNode attributeConcept = provider.getRoleAttribute();
-      Class attributeKind = provider.getRoleAttributeClass();
-      if (attributeConcept != null) {
-        IOperationContext opContext = context.getOperationContext();
-        EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-        return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-      } else
-      return cellWithRole;
-    }
-
-}
 
 }

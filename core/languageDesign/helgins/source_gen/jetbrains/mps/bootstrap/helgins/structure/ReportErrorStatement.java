@@ -7,14 +7,13 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration;
 import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class ReportErrorStatement extends Statement {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.ReportErrorStatement";
-  public static String ERROR_INTENTION = "errorIntention";
   public static String ERROR_STRING = "errorString";
   public static String NODE_TO_REPORT = "nodeToReport";
+  public static String HELGINS_INTENTION = "helginsIntention";
 
   public ReportErrorStatement(SNode node) {
     super(node);
@@ -28,14 +27,6 @@ public class ReportErrorStatement extends Statement {
     return ReportErrorStatement.newInstance(sm, false);
   }
 
-
-  public IntentionDeclaration getErrorIntention() {
-    return (IntentionDeclaration)this.getReferent(ReportErrorStatement.ERROR_INTENTION);
-  }
-
-  public void setErrorIntention(IntentionDeclaration node) {
-    super.setReferent(ReportErrorStatement.ERROR_INTENTION, node);
-  }
 
   public Expression getErrorString() {
     return (Expression)this.getChild(ReportErrorStatement.ERROR_STRING);
@@ -51,6 +42,14 @@ public class ReportErrorStatement extends Statement {
 
   public void setNodeToReport(Expression node) {
     super.setChild(ReportErrorStatement.NODE_TO_REPORT, node);
+  }
+
+  public HelginsIntention getHelginsIntention() {
+    return (HelginsIntention)this.getChild(ReportErrorStatement.HELGINS_INTENTION);
+  }
+
+  public void setHelginsIntention(HelginsIntention node) {
+    super.setChild(ReportErrorStatement.HELGINS_INTENTION, node);
   }
 
 }
