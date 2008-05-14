@@ -17,33 +17,18 @@
                    namespacePrefix="jetbrains.mps.bootstrap.pluginLanguage.generator.baseLanguage.template"/>
       </models>
       <external-templates>
-        <generator generatorUID="jetbrains.mps.baseLanguage.classifiers#1205839057922"/>
-        <generator generatorUID="jetbrains.mps.uiLanguage#1202393863737"/>
+        <generator generatorUID="jetbrains.mps.baseLanguage.classifiers#1205839057922" />
       </external-templates>
       <dependencies>
         <dependency reexport="false">jetbrains.mps.baseLanguage</dependency>
         <dependency reexport="false">jetbrains.mps.baseLanguage.classifiers</dependency>
         <dependency reexport="false">jetbrains.mps.transformation.TLBase</dependency>
-        <dependency reexport="false">jetbrains.mps.webr.runtime</dependency>
       </dependencies>
       <usedLanguages>
         <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
         <usedLanguages>jetbrains.mps.baseLanguage.classifiers</usedLanguages>
       </usedLanguages>
-      <mapping-priorities>
-        <mapping-priority-rule kind="strictly_before">
-          <greater-priority-mapping>
-            <all-local-mappings/>
-          </greater-priority-mapping>
-          <lesser-priority-mapping>
-            <generator generatorUID="jetbrains.mps.uiLanguage#1202393863737"/>
-            <external-mapping>
-              <mapping-node modelUID="jetbrains.mps.uiLanguage.generator.baseLanguage.template.main@templates"
-                            nodeID="1202393865414"/>
-            </external-mapping>
-          </lesser-priority-mapping>
-        </mapping-priority-rule>
-      </mapping-priorities>
+      <mapping-priorities />
     </generator>
   </generators>
   <classPath>
