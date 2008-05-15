@@ -44,6 +44,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="16" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.strings.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.buildlanguage.constraints" version="6" />
@@ -3857,7 +3858,27 @@
     <property name="package" value="projectComponents" />
     <link role="concept" targetNodeId="15.1210777529562" resolveInfo="Convert" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1210778708532">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210778708533" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210778708533">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1210852563115">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210852563116">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210852563117">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1210852563118" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1210852573716">
+                <link role="link" targetNodeId="15.1210852534988" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1210852563120">
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1210852563121">
+                <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1210852563122">
+                  <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1210852563123">
+                    <link role="concept" targetNodeId="15.1204122781510" resolveInfo="Delete" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1210778757413">
       <property name="name" value="getChildrenTargetDir" />
@@ -4005,6 +4026,32 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1210780166752">
             <property name="value" value="" />
           </node>
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1210852590363">
+      <property name="name" value="getPostProcessingTasks" />
+      <link role="overriddenMethod" targetNodeId="1204123311786" resolveInfo="getPostProcessingTasks" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210852590364">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1210852590365">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1210852590366">
+            <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListCreatorWithInit" id="1210852590367">
+              <node role="initValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210852590368">
+                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1210852590369" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1210852595894">
+                  <link role="link" targetNodeId="15.1210852534988" />
+                </node>
+              </node>
+              <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1210852590371">
+                <link role="concept" targetNodeId="15.1204123091967" resolveInfo="PostProcessingTask" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType" id="1210852590562">
+        <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1210852590563">
+          <link role="concept" targetNodeId="15.1204123091967" resolveInfo="PostProcessingTask" />
         </node>
       </node>
     </node>

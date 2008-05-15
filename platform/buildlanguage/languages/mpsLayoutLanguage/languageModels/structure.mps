@@ -26,6 +26,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="jetbrains.mps.mpsLayoutLanguage.structure" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.core.structure" />
@@ -449,6 +450,12 @@
       <property name="role" value="targetReference" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1210777902405" resolveInfo="BuildLanguageTargetReference" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1210852534988">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="delete" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1204122781510" resolveInfo="Delete" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1210777902405">
