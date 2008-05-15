@@ -112,7 +112,7 @@ public class GoToRootModel implements ChooseByNameModel {
         for (SNode node : checkBoxState ? myNodes : myProjectNodes) {
           try {
             if (node.getName() != null && node.getName().equals(name)) {
-              items.add(new NodeNavigationItem(myContext, node));
+              items.add(new NodeNavigationItem(myProject, node));
             }
           } catch (ProcessCanceledException ex) {
             // index corruption detected, ignore

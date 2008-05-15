@@ -15,7 +15,8 @@ import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.project.MPSProject;
 
 public class GoToRootNodeAction extends AnAction {
-  public void actionPerformed(AnActionEvent e) {
+  public void actionPerformed(AnActionEvent e) {    
+    //todo NEVER DO THIS IN IDEA PLATFORM
     ActionContext context = new ActionContext();
 
     final Project project = e.getData(PlatformDataKeys.PROJECT);
