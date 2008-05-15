@@ -21,12 +21,13 @@ import java.lang.reflect.Method;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.application.ApplicationManager;
 
 public class SModelRepository implements IComponentLifecycle, ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(SModelRepository.class);
 
   public static SModelRepository getInstance() {
-    return ApplicationComponents.getInstance().getComponent(SModelRepository.class);
+    return ApplicationManager.getApplication().getComponent(SModelRepository.class);
   }
 
   private Set<SModelDescriptor> myModelDescriptors = new HashSet<SModelDescriptor>();

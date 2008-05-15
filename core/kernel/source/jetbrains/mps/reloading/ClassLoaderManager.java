@@ -26,11 +26,16 @@ import java.util.*;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
 
 public class ClassLoaderManager implements IComponentLifecycle, ApplicationComponent {
   private static Logger LOG = Logger.getLogger(ClassLoaderManager.class);
+
+  public static ClassLoaderManager getInstance() {
+    return ApplicationManager.getApplication().getComponent(ClassLoaderManager.class);
+  }
 
   private List<ReloadListener> myReloadHandlers = new ArrayList<ReloadListener>();
 
@@ -38,20 +43,11 @@ public class ClassLoaderManager implements IComponentLifecycle, ApplicationCompo
 
   private RuntimeEnvironment myRuntimeEnvironment;
 
-  public static ClassLoaderManager getInstance() {
-    return ApplicationComponents.getInstance().getComponent(ClassLoaderManager.class);
-  }
-
 
   public ClassLoaderManager() {
   }
 
   public void initComponent() {
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-      public void run() {
-        myRuntimeEnvironment = createRuntimeEnvironment();
-      }
-    });
   }
 
   @NonNls
@@ -116,6 +112,10 @@ public class ClassLoaderManager implements IComponentLifecycle, ApplicationCompo
   }
 
   public void updateClassPath() {
+    if (myRuntimeEnvironment == null) {
+      myRuntimeEnvironment = createRuntimeEnvironment();
+    }
+
     Set<String> added = new HashSet<String>();
     for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
       if (!containsBundle(m.getModuleUID())) {

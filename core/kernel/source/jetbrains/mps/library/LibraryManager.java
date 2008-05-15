@@ -18,15 +18,19 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import org.jdom.Element;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.application.ApplicationManager;
 
-public class LibraryManager extends DefaultExternalizableComponent implements IComponentWithPreferences, IComponentLifecycle {
+public class LibraryManager extends DefaultExternalizableComponent implements IComponentWithPreferences, IComponentLifecycle, ApplicationComponent {
 
   public static LibraryManager getInstance() {
-    return ApplicationComponents.getInstance().getComponent(LibraryManager.class);
+    return ApplicationManager.getApplication().getComponent(LibraryManager.class);
   }
 
   private @Externalizable Map<String, Library> myLibraries = new HashMap<String, Library>();
@@ -34,7 +38,10 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
   private MPSModuleOwner myOwner;
   private MPSModuleOwner myPredefinedLibrariesOwner;
 
-  public LibraryManager() {
+  private MPSModuleRepository myRepository;
+
+  public LibraryManager(MPSModuleRepository repo) {
+    myRepository = repo;
   }
 
   public void initComponent() {
@@ -44,6 +51,16 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
         update();
       }
     });
+  }
+
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "Library Manager";
+  }
+
+  public void disposeComponent() {
+
   }
 
   public Library newLibrary(String name) {
@@ -114,7 +131,7 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
   }
 
   public boolean isOwns(IModule m) {
-    return MPSModuleRepository.getInstance().getOwners(m).contains(myOwner);
+    return myRepository.getOwners(m).contains(myOwner);
   }
 
   public void read(Element element, MPSProject project) {
@@ -126,7 +143,7 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
     myPredefinedLibrariesOwner = new MPSModuleOwner() { };
     for (Library l : getLibraries()) {
       if (l.isPredefined()) {
-        MPSModuleRepository.getInstance().readModuleDescriptors(FileSystem.getFile(l.getPath()), myPredefinedLibrariesOwner);
+        myRepository.readModuleDescriptors(FileSystem.getFile(l.getPath()), myPredefinedLibrariesOwner);
       }
     }
     convert(myPredefinedLibrariesOwner);
@@ -134,14 +151,14 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
 
   public void update() {
     if (myOwner != null) {
-      MPSModuleRepository.getInstance().unRegisterModules(myOwner);
+      myRepository.unRegisterModules(myOwner);
     }
     myOwner = new MPSModuleOwner() { };
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
         for (Library l : getLibraries()) {
           if (!l.isPredefined()) {
-            MPSModuleRepository.getInstance().readModuleDescriptors(FileSystem.getFile(l.getPath()), myOwner);
+            myRepository.readModuleDescriptors(FileSystem.getFile(l.getPath()), myOwner);
           }
         }
         ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
@@ -151,14 +168,14 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
   }
 
   private void convert(final MPSModuleOwner owner) {
-    for (IModule m : MPSModuleRepository.getInstance().getModules(owner)) {
+    for (IModule m : myRepository.getModules(owner)) {
       m.onModuleLoad();
     }
   }
 
   public <M extends IModule> Set<M> getGlobalModules(Class<M> cls) {
-    List<M> result = MPSModuleRepository.getInstance().getModules(myOwner, cls);
-    result.addAll(MPSModuleRepository.getInstance().getModules(myPredefinedLibrariesOwner, cls));
+    List<M> result = myRepository.getModules(myOwner, cls);
+    result.addAll(myRepository.getModules(myPredefinedLibrariesOwner, cls));
 
     for (M m : new ArrayList<M>(result)) {
       if (m instanceof Language) {

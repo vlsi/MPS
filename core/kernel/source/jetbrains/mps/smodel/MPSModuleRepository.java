@@ -16,8 +16,14 @@ import jetbrains.mps.component.Dependency;
 import java.io.File;
 import java.util.*;
 
+import com.intellij.openapi.application.ApplicationManager;
+
 public class MPSModuleRepository implements IComponentLifecycle {
   private static final Logger LOG = Logger.getLogger(MPSModuleRepository.class);
+
+  public static MPSModuleRepository getInstance() {
+    return ApplicationManager.getApplication().getComponent(MPSModuleRepository.class);
+  }
 
   private Map<String, IModule> myFileToModuleMap = new HashMap<String, IModule>();
   private Map<String, List<IModule>> myUIDToModulesMap = new HashMap<String, List<IModule>>();
@@ -40,10 +46,6 @@ public class MPSModuleRepository implements IComponentLifecycle {
   public static final String SOLUTION_EXT = ".msd";
   public static final String DEVKIT_EXT = ".devkit";
   public static final String MPS_ARCHIVE = ".mpsarch";
-
-  public static MPSModuleRepository getInstance() {
-    return ApplicationComponents.getInstance().getComponent(MPSModuleRepository.class);
-  }
 
   public MPSModuleRepository() {
     initializeExtensionsToModuleTypesMap();
@@ -88,8 +90,11 @@ public class MPSModuleRepository implements IComponentLifecycle {
   }
 
   public void invalidateCaches() {
-    for (MPSProject p : ApplicationComponents.getInstance().getComponentSafe(MPSProjects.class).getProjects()) {
-      p.invalidateCaches();
+    MPSProjects projects = ApplicationComponents.getInstance().getComponent(MPSProjects.class);
+    if (projects != null) {
+      for (MPSProject p : projects.getProjects()) {
+        p.invalidateCaches();
+      }
     }
 
     for (IModule m : getAllModules()) {

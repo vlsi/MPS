@@ -34,14 +34,6 @@
   <xi:include href="/componentSets/VCS.xml" xpointer="xpointer(/components/*)"/>
 
   <application-components>
-<!--
-    <component>
-      <implementation-class>jetbrains.mps.ide.BootstrapLanguagesManager</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.pathVariables.PathVariableManager</implementation-class>
-    </component>
 
     <component>
       <implementation-class>jetbrains.mps.smodel.SModelRepository</implementation-class>
@@ -49,6 +41,14 @@
 
     <component>
       <implementation-class>jetbrains.mps.smodel.MPSModuleRepository</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.smodel.constraints.ModelConstraintsManager</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.ide.BootstrapLanguagesManager</implementation-class>
     </component>
 
     <component>
@@ -60,9 +60,9 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.smodel.constraints.ModelConstraintsManager</implementation-class>
+      <implementation-class>jetbrains.mps.pathVariables.PathVariableManager</implementation-class>
     </component>
--->
+
     <component>
       <interface-class>com.intellij.openapi.fileEditor.impl.text.TextEditorProvider</interface-class>
       <implementation-class>com.intellij.openapi.fileEditor.impl.text.TextEditorProvider</implementation-class>

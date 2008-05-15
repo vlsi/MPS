@@ -18,15 +18,19 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
 import jetbrains.mps.ide.BootstrapLanguagesManager;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.NonNls;
 
 import java.util.*;
 
-/**
- * Igor Alshannikov
- * May 11, 2006
- */
-public class ModelConstraintsManager implements IComponentLifecycle {
+import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.application.ApplicationManager;
+
+public class ModelConstraintsManager implements IComponentLifecycle, ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(ModelConstraintsManager.class);
+
+  public static ModelConstraintsManager getInstance() {
+    return ApplicationManager.getApplication().getComponent(ModelConstraintsManager.class);
+  }
 
   private Map<String, List<IModelConstraints>> myAddedLanguageNamespaces = new HashMap<String, List<IModelConstraints>>();
   private Map<String, INodePropertyGetter> myNodePropertyGettersMap = new HashMap<String, INodePropertyGetter>();
@@ -37,7 +41,7 @@ public class ModelConstraintsManager implements IComponentLifecycle {
   private Map<String, INodeReferentSearchScopeProvider> myNodeReferentSearchScopeProvidersMap = new HashMap<String, INodeReferentSearchScopeProvider>();
   private Map<String, INodeReferentSearchScopeProvider> myNodeDefaultSearchScopeProvidersMap = new HashMap<String, INodeReferentSearchScopeProvider>();
 
-  public ModelConstraintsManager() {
+  public ModelConstraintsManager(ClassLoaderManager cm) {
   }
 
   public void initComponent() {
@@ -66,8 +70,14 @@ public class ModelConstraintsManager implements IComponentLifecycle {
     });
   }
 
-  public static ModelConstraintsManager getInstance() {
-    return ApplicationComponents.getInstance().getComponent(ModelConstraintsManager.class);
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "Model Constraints Manager";
+  }
+
+  public void disposeComponent() {
+
   }
 
   public void registerNodePropertyGetter(String conceptFqName, String propertyName, INodePropertyGetter getter) {
