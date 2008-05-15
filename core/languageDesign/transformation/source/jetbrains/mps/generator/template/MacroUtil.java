@@ -144,7 +144,7 @@ public class MacroUtil {
       }
     }
 
-    throw new GenerationFailedException(new GenerationFailueInfo("couldn't evaluate if-macro condition", inputNode, BaseAdapter.fromAdapter(ifMacro), null, generator.getGeneratorSessionContext()));
+    throw new GenerationFailedException("couldn't evaluate if-macro condition", inputNode, BaseAdapter.fromAdapter(ifMacro), null);
   }
 
   public static List<SNode> getNewInputNodes(NodeMacro nodeMacro, SNode currentInputNode, ITemplateGenerator generator) throws GenerationFailedException {
@@ -174,9 +174,9 @@ public class MacroUtil {
       }
 
       if (nodeMacro instanceof SwitchMacro) {
-        throw new GenerationFailedException(new GenerationFailueInfo("The SwitchMacro is not supported by getNewInputNodes", currentInputNode, nodeMacro.getNode(), null, generator.getGeneratorSessionContext()));
+        throw new GenerationFailedException("SwitchMacro is not supported by getNewInputNodes", currentInputNode, nodeMacro.getNode(), null);
       } else if (nodeMacro instanceof IncludeMacro) {
-        throw new GenerationFailedException(new GenerationFailueInfo("The IncludeMacro is not supported by getNewInputNodes", currentInputNode, nodeMacro.getNode(), null, generator.getGeneratorSessionContext()));
+        throw new GenerationFailedException("IncludeMacro is not supported by getNewInputNodes", currentInputNode, nodeMacro.getNode(), null);
       }
 
       // old
@@ -192,10 +192,8 @@ public class MacroUtil {
       list.add(currentInputNode);
       return list;
 
-    } catch (GenerationFailedException gfe) {
-      throw gfe;
     } catch (Throwable t) {
-      throw new GenerationFailedException(new GenerationFailueInfo("couldn't get input nodes", currentInputNode, nodeMacro.getNode(), null, generator.getGeneratorSessionContext()), t);
+      throw new GenerationFailedException("couldn't get input nodes", currentInputNode, nodeMacro.getNode(), null, t);
     }
   }
 
@@ -209,12 +207,10 @@ public class MacroUtil {
       } else if (nodeMacro instanceof IncludeMacro) {
         return getNewInputNode(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((IncludeMacro) nodeMacro).getSourceNodeQuery(), true, generator);
       }
-    } catch (GenerationFailedException gfe) {
-      throw gfe;
     } catch (Throwable t) {
-      throw new GenerationFailedException(new GenerationFailueInfo("couldn't get new input node", currentInputNode, nodeMacro.getNode(), null, generator.getGeneratorSessionContext()), t);
+      throw new GenerationFailedException("couldn't get new input node", currentInputNode, nodeMacro.getNode(), null, t);
     }
-    throw new GenerationFailedException(new GenerationFailueInfo("couldn't get new input node", currentInputNode, nodeMacro.getNode(), null, generator.getGeneratorSessionContext()));
+    throw new GenerationFailedException("couldn't get new input node", currentInputNode, nodeMacro.getNode(), null);
   }
 
   private static SNode getNewInputNode(SNode currentInputNode, SourceSubstituteMacro macro, SourceSubstituteMacro_SourceNodeQuery query, boolean optionalQuery, ITemplateGenerator generator) throws GenerationFailedException {
@@ -223,7 +219,7 @@ public class MacroUtil {
         // continue with current source node
         return currentInputNode;
       }
-      throw new GenerationFailedException(new GenerationFailueInfo("couldn't evaluate macro query", currentInputNode, BaseAdapter.fromAdapter(macro), null, generator.getGeneratorSessionContext()));
+      throw new GenerationFailedException("couldn't evaluate macro query", currentInputNode, BaseAdapter.fromAdapter(macro), null);
     }
 
     SNode resultNode = GeneratorUtil.evaluateSourceNodeQuery(currentInputNode, query, generator);
@@ -257,7 +253,7 @@ public class MacroUtil {
       }
     }
 
-    throw new GenerationFailedException(new GenerationFailueInfo("couldn't evaluate macro query", currentInputNode, BaseAdapter.fromAdapter(macro), null, generator.getGeneratorSessionContext()));
+    throw new GenerationFailedException("couldn't evaluate macro query", currentInputNode, BaseAdapter.fromAdapter(macro), null);
   }
 
   private static SNode getNewInputNodeForSwitchMacro(SNode currentInputNode, SwitchMacro macro, ITemplateGenerator generator) {

@@ -139,16 +139,12 @@ public class GeneratorUtil {
     } /*catch (GenerationFailedException gfe) {
       generator.showErrorMessage(codeBlock.getNode(), "error executing script '" + mappingScript.getName() + "'");
       throw gfe;
-    } */catch (IllegalModelChangeError imce) {
+    } *//*catch (IllegalModelChangeError imce) {
       generator.showErrorMessage(codeBlock.getNode(), "error executing script '" + mappingScript.getName() + "'");
       throw imce;
-    } catch (Throwable t) {
-      generator.showErrorMessage(codeBlock.getNode(), "error executing script '" + mappingScript.getName() + "'");
-      GenerationFailueInfo failueInfo = new GenerationFailueInfo("?", null, null, mappingScript.getNode(), generator.getGeneratorSessionContext());
-      throw new GenerationFailedException(failueInfo, t);
-    }
-
-    finally {
+    } */ catch (Throwable t) {
+      throw new GenerationFailedException("error executing script '" + mappingScript.getName() + "'", codeBlock.getNode(), t);
+    } finally {
       Statistics.getStatistic(Statistics.TPL).add(mappingScript.getModel(), methodName, startTime);
     }
   }
@@ -204,7 +200,7 @@ public class GeneratorUtil {
             getMappingName(createRootRule, null),
             BaseAdapter.fromAdapter(templateNode), null, generator);
         } catch (GenerationFailedException e) {
-          if (e.getFailueInfo() != null) e.getFailueInfo().setRuleNode(createRootRule.getNode());
+          LOG.error("-- was rule: " + createRootRule.getNode().getDebugText(), createRootRule.getNode());
           throw e;
         } catch (DismissTopMappingRuleException e) {
           // it's ok, just continue
@@ -269,7 +265,7 @@ public class GeneratorUtil {
           // it's ok, just continue
           generator.setChanged(wasChanged);
         } catch (GenerationFailedException e) {
-          if (e.getFailueInfo() != null) e.getFailueInfo().setRuleNode(rule.getNode());
+          LOG.error("-- was rule: " + rule.getNode().getDebugText(), rule.getNode());
           throw e;
         } finally {
           generator.getGeneratorSessionContext().getGenerationTracer().closeInputNode(inputNode);
@@ -378,7 +374,7 @@ public class GeneratorUtil {
         } catch (DismissTopMappingRuleException e) {
           generator.showErrorMessage(inputNode, templateFragment.getNode(), rule.getNode(), "dismission of weaving rule is not supported");
         } catch (GenerationFailedException e) {
-          if (e.getFailueInfo() != null) e.getFailueInfo().setRuleNode(rule.getNode());
+          LOG.error("-- was rule: " + rule.getNode().getDebugText(), rule.getNode());
           throw e;
         } catch (TemplateProcessingFailureException e) {
           generator.showErrorMessage(inputNode, templateFragment.getNode(), rule.getNode(), "error pocessing template fragment");
@@ -625,7 +621,7 @@ public class GeneratorUtil {
     } catch (TemplateProcessingFailureException e) {
       generator.showErrorMessage(inputNode, reductionTemplateNode, rule.getNode(), "error processing reduction rule");
     } catch (GenerationFailedException e) {
-      if (e.getFailueInfo() != null) e.getFailueInfo().setRuleNode(rule.getNode());
+      LOG.error("-- was rule: " + rule.getNode().getDebugText(), rule.getNode());
       throw e;
     } catch (Throwable t) {
       LOG.error(t, BaseAdapter.fromNode(reductionTemplateNode));

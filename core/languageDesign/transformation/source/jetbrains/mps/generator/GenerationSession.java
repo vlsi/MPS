@@ -157,12 +157,6 @@ public class GenerationSession implements IGenerationSession {
     } catch (GenerationFailedException gfe) {
       LOG.error(gfe);
       myProgressMonitor.addText(gfe.toString());
-      GenerationFailueInfo failueInfo = gfe.getFailueInfo();
-      if (failueInfo != null) {
-        for (Message message : failueInfo.createMessages()) {
-          addMessage(message);
-        }
-      }
       addMessage(MessageKind.ERROR, "model \"" + inputModel.getUID() + "\" generation failed : " + gfe);
       status = new GenerationStatus.ERROR(inputModel);
     } catch (Throwable e) {

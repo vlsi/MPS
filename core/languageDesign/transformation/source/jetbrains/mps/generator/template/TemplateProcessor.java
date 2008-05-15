@@ -47,7 +47,7 @@ public class TemplateProcessor {
       return outputNodels;
     } catch (StackOverflowError e) {
       // this is critical
-      throw new GenerationFailedException(new GenerationFailueInfo("couldn't process template", inputNode, templateNode, null, generator.getOperationContext()), e);
+      throw new GenerationFailedException("couldn't process template", inputNode, templateNode, null, e);
     } finally {
       generator.setPreviousInputNodesByMappingName(old);
     }
