@@ -13,6 +13,7 @@ public class WarningStatement extends Statement {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.WarningStatement";
   public static String WARNING_TEXT = "warningText";
   public static String NODE_TO_REPORT = "nodeToReport";
+  public static String HELGINS_INTENTION = "helginsIntention";
 
   public WarningStatement(SNode node) {
     super(node);
@@ -41,6 +42,14 @@ public class WarningStatement extends Statement {
 
   public void setNodeToReport(Expression node) {
     super.setChild(WarningStatement.NODE_TO_REPORT, node);
+  }
+
+  public HelginsIntention getHelginsIntention() {
+    return (HelginsIntention)this.getChild(WarningStatement.HELGINS_INTENTION);
+  }
+
+  public void setHelginsIntention(HelginsIntention node) {
+    super.setChild(WarningStatement.HELGINS_INTENTION, node);
   }
 
 }
