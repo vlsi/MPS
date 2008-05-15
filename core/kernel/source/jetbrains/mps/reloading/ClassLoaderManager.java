@@ -34,7 +34,6 @@ import org.jetbrains.annotations.NotNull;
 public class ClassLoaderManager implements IComponentLifecycle {
   private static Logger LOG = Logger.getLogger(ClassLoaderManager.class);
 
-  private MPSModuleRepository myModuleRepository;
   private List<ReloadListener> myReloadHandlers = new ArrayList<ReloadListener>();
 
   public static boolean ourUseOSGI = true;
@@ -49,11 +48,6 @@ public class ClassLoaderManager implements IComponentLifecycle {
   private IClassPathItem myMPSJar = null;
 
   public ClassLoaderManager() {
-  }
-
-  @Dependency
-  public void setModuleRepository(MPSModuleRepository moduleRepository) {
-    myModuleRepository = moduleRepository;
   }
 
   public void initComponent() {
@@ -151,7 +145,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
 
     myRuntimeEnvironment.reloadAll();
 
-    for (IModule m : myModuleRepository.getAllModules()) {
+    for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
       m.updateClassPath();
     }
   }

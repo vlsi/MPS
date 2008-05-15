@@ -19,8 +19,10 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.NonNls;
+import com.intellij.openapi.components.ApplicationComponent;
 
-public class SModelRepository implements IComponentLifecycle {
+public class SModelRepository implements IComponentLifecycle, ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(SModelRepository.class);
 
   public static SModelRepository getInstance() {
@@ -36,7 +38,6 @@ public class SModelRepository implements IComponentLifecycle {
 
   private ManyToManyMap<SModelDescriptor, ModelOwner> myModelsToOwners = new ManyToManyMap<SModelDescriptor, ModelOwner>();
 
-  private MPSModuleRepository myModuleRepository;
   private boolean myInChangedModelsReloading = false;
   
   private SModelListener myModelsListener = new ModelChangeListener();
@@ -44,12 +45,17 @@ public class SModelRepository implements IComponentLifecycle {
   public SModelRepository() {
   }
 
-  @Dependency
-  public void setModuleRepository(MPSModuleRepository moduleRepository) {
-    myModuleRepository = moduleRepository;
+  public void initComponent() {
   }
 
-  public void initComponent() {
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "SModel Repository";
+  }
+
+  public void disposeComponent() {
+
   }
 
   public void refreshModels() {

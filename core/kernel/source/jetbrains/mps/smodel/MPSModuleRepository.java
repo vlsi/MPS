@@ -16,10 +16,6 @@ import jetbrains.mps.component.Dependency;
 import java.io.File;
 import java.util.*;
 
-/**
- * User: Sergey Dmitriev
- * Date: Apr 11, 2005
- */
 public class MPSModuleRepository implements IComponentLifecycle {
   private static final Logger LOG = Logger.getLogger(MPSModuleRepository.class);
 
@@ -36,7 +32,6 @@ public class MPSModuleRepository implements IComponentLifecycle {
 
   private List<ModuleRepositoryListener> myModuleListeners = new ArrayList<ModuleRepositoryListener>();
   private List<RepositoryListener> myListeners = new ArrayList<RepositoryListener>();
-  private ClassLoaderManager myClassLoaderManager;
 
   private boolean myDirtyFlag = false;
 
@@ -54,13 +49,8 @@ public class MPSModuleRepository implements IComponentLifecycle {
     initializeExtensionsToModuleTypesMap();
   }
 
-  @Dependency
-  public void setClassLoaderManager(ClassLoaderManager manager) {
-    myClassLoaderManager = manager;
-  }
-
   public void initComponent() {
-    myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
+    ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
       public void onReload() {
         invalidateCaches();
       }

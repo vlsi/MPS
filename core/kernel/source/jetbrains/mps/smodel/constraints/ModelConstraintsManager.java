@@ -37,31 +37,11 @@ public class ModelConstraintsManager implements IComponentLifecycle {
   private Map<String, INodeReferentSearchScopeProvider> myNodeReferentSearchScopeProvidersMap = new HashMap<String, INodeReferentSearchScopeProvider>();
   private Map<String, INodeReferentSearchScopeProvider> myNodeDefaultSearchScopeProvidersMap = new HashMap<String, INodeReferentSearchScopeProvider>();
 
-
-  private ClassLoaderManager myClassLoaderManager;
-  private BootstrapLanguagesManager myBootstrapLanguages;
-  private MPSModuleRepository myModuleRepository;
-
   public ModelConstraintsManager() {
   }
 
-  @Dependency
-  public void setClassLoaderManager(ClassLoaderManager classLoaderManager) {
-    myClassLoaderManager = classLoaderManager;
-  }
-
-  @Dependency
-  public void setBootstrapLanguages(BootstrapLanguagesManager langs) {
-    myBootstrapLanguages = langs;
-  }
-
-  @Dependency
-  public void setModuleRepository(MPSModuleRepository r) {
-    myModuleRepository = r;
-  }
-
   public void initComponent() {
-    myModuleRepository.addModuleRepositoryListener(new ModuleRepositoryListener() {
+    MPSModuleRepository.getInstance().addModuleRepositoryListener(new ModuleRepositoryListener() {
       public void moduleAdded(IModule module) {
       }
 
@@ -79,7 +59,7 @@ public class ModelConstraintsManager implements IComponentLifecycle {
       }
     });
 
-    myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
+    ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
       public void onReload() {
         reloadAll();
       }
