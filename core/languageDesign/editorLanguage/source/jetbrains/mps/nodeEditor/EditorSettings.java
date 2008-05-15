@@ -23,14 +23,13 @@ import java.awt.event.ActionEvent;
 import java.util.*;
 import java.util.List;
 
-/**
- * @author Kostik
- */
+import com.intellij.openapi.application.ApplicationManager;
+
 public class EditorSettings extends DefaultExternalizableComponent implements IComponentWithPreferences {
   private static Logger LOG = Logger.getLogger(EditorSettings.class);
 
   public static EditorSettings getInstance() {
-    return ApplicationComponents.getInstance().getComponent(EditorSettings.class);
+    return ApplicationManager.getApplication().getComponent(EditorSettings.class);
   }
 
   private List<EditorSettingsListener> myListeners = new ArrayList<EditorSettingsListener>();
@@ -50,11 +49,10 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
 
   private CaretBlinker myCaretBlinker;
 
-  @Dependency
-  public void setCaretBlinker(CaretBlinker caretBlinker) {
+  public EditorSettings(CaretBlinker caretBlinker) {
     myCaretBlinker = caretBlinker;
   }
-                                         
+
   public Font getDefaultEditorFont() {
     return new Font(myFontFamily, 0, myFontSize);
   }

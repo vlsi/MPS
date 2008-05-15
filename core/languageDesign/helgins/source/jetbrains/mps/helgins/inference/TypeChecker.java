@@ -23,17 +23,15 @@ import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.intentions.Intention;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 06.03.2006
- * Time: 16:47:20
- * To change this template use File | Settings | File Templates.
- */
-public class TypeChecker implements IComponentLifecycle {
+import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.application.ApplicationManager;
+
+public class TypeChecker implements IComponentLifecycle, ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(TypeChecker.class);
 
   private static final String RUNTIME_TYPES = "$runtimeTypes$";
@@ -64,7 +62,9 @@ public class TypeChecker implements IComponentLifecycle {
 
   private TypeCheckingMode myTypeCheckingMode = null;
 
-  public TypeChecker() {
+  public TypeChecker(ClassLoaderManager manager) {
+    myClassLoaderManager = manager;
+
     mySubtypingManager = new SubtypingManager(this);
     myRuntimeSupport = new RuntimeSupport(this);
     myRulesManager = new RulesManager(this);
@@ -78,10 +78,15 @@ public class TypeChecker implements IComponentLifecycle {
     });
   }
 
-  @Dependency
-  public void setClassLoaderManager(ClassLoaderManager manager) {
-    myClassLoaderManager = manager;
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "Type Checker";
   }
+
+  public void disposeComponent() {
+  }
+
 
   @Hack
   @Deprecated
@@ -94,7 +99,7 @@ public class TypeChecker implements IComponentLifecycle {
   }
 
   public static TypeChecker getInstance() {
-    return ApplicationComponents.getInstance().getComponent(TypeChecker.class);
+    return ApplicationManager.getApplication().getComponent(TypeChecker.class);
   }
 
   public Map<SNode, SNode> getMainContext() {

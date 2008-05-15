@@ -173,6 +173,36 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.nodeEditor.EditorSettings</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.nodeEditor.EditorsFinderManager</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.generator.ModelGenerationStatusManager</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.smodel.BackgroundModelLoader</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.make.GlobalMakeSettings</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.helgins.inference.TypeChecker</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.helgins.inference.NodeTypesComponentsRepository</implementation-class>
+    </component>
+
+
+
+    <component>
       <implementation-class>jetbrains.mps.MPSAdapter</implementation-class>
     </component>
 

@@ -13,21 +13,37 @@ import java.util.*;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
-public class EditorsFinderManager implements IComponentLifecycle {
+import com.intellij.openapi.components.ApplicationComponent;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
+
+public class EditorsFinderManager implements IComponentLifecycle, ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(EditorsFinderManager.class);
 
   private static Map<String, IGeneralizingEntityEditorFinder> ourLanguageNamespacesToGEEditorFinders = new HashMap<String, IGeneralizingEntityEditorFinder>();  
   private static Map<String, Constructor> ourCachedEditors = new HashMap<String, Constructor>();
 
-  public EditorsFinderManager() {
+  private ClassLoaderManager myClassLoaderManager;
+
+  public EditorsFinderManager(ClassLoaderManager manager) {
+    myClassLoaderManager = manager;
   }
 
   public void initComponent() {
-    ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
+    myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
       public void onReload() {
         clear();
       }
     });
+  }
+
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "Editors Finder Manager";
+  }
+
+  public void disposeComponent() {
   }
 
   public static INodeEditor loadEditor(EditorContext context, SNode node) {

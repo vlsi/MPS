@@ -11,11 +11,13 @@ import jetbrains.mps.logging.Logger;
 import java.util.*;
 import java.io.File;
 
+import com.intellij.openapi.application.ApplicationManager;
+
 public class ModelGenerationStatusManager {
   private static final Logger LOG = Logger.getLogger(ModelGenerationStatusManager.class);
 
   public static ModelGenerationStatusManager getInstance() {
-    return ApplicationComponents.getInstance().getComponent(ModelGenerationStatusManager.class);
+    return ApplicationManager.getApplication().getComponent(ModelGenerationStatusManager.class);
   }
 
   private Map<SModelDescriptor, Long> myLastGenerationTime = new HashMap<SModelDescriptor, Long>();

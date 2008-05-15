@@ -13,13 +13,8 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.HashMap;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 08.05.2007
- * Time: 15:40:35
- * To change this template use File | Settings | File Templates.
- */
+import com.intellij.openapi.application.ApplicationManager;
+
 public class NodeTypesComponentsRepository implements IComponentLifecycle {
   private Map<SNode, NodeTypesComponent> myNodesToComponents = new HashMap<SNode, NodeTypesComponent>();
   private Set<TypesComponentRepositoryListener> myListeners = new HashSet<TypesComponentRepositoryListener>();
@@ -27,7 +22,7 @@ public class NodeTypesComponentsRepository implements IComponentLifecycle {
   private ClassLoaderManager myClassLoaderManager;
 
   public static NodeTypesComponentsRepository getInstance() {
-    return ApplicationComponents.getInstance().getComponent(NodeTypesComponentsRepository.class);
+    return ApplicationManager.getApplication().getComponent(NodeTypesComponentsRepository.class);
   }
 
   private SModelRepositoryAdapter myModelRepositoryListener = new SModelRepositoryAdapter() {
@@ -43,14 +38,9 @@ public class NodeTypesComponentsRepository implements IComponentLifecycle {
     }
   };
 
-  public NodeTypesComponentsRepository() {
-
-  }
-
-  public
-  @Dependency
-  void setTypeChecker(TypeChecker typeChecker) {
+  public NodeTypesComponentsRepository(TypeChecker typeChecker, ClassLoaderManager manager) {
     myTypeChecker = typeChecker;
+    myClassLoaderManager = manager;
   }
 
   public void initComponent() {
@@ -61,11 +51,6 @@ public class NodeTypesComponentsRepository implements IComponentLifecycle {
     });
   }
   
-  @Dependency
-  public void setClassLoaderManager(ClassLoaderManager manager) {
-    myClassLoaderManager = manager;
-  }
-
   public NodeTypesComponent getNodeTypesComponent(SNode node) {
     if (node == null) return null;
     return myNodesToComponents.get(node.getContainingRoot());
