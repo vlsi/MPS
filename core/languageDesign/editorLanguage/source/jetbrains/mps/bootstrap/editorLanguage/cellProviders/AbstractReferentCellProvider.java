@@ -13,13 +13,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.logging.Logger;
 
-/**
- * Created by IntelliJ IDEA.
- * User: User
- * Date: 20.02.2006
- * Time: 19:28:12
- * To change this template use File | Settings | File Templates.
- */
 public abstract class AbstractReferentCellProvider extends CellProviderWithRole {
 
   public static final Logger LOG = Logger.getLogger(AbstractReferentCellProvider.class);
@@ -32,6 +25,8 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
   protected boolean myIsCardinality0;
   protected boolean myIsCardinality1;
 
+  private String myErrorText = null;
+
   //it is important for descendants to have a unique constructor and with the same parameters as this one
   public AbstractReferentCellProvider(SNode node, EditorContext context) {
     super(node, context);
@@ -40,21 +35,14 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
 
   public void setRole(Object role) {
     myLinkDeclaration = getSNode().getLinkDeclaration(role.toString());
-
     if (myLinkDeclaration == null) {
-      LOG.error("Can't find a link declaration " + role.toString() + " in " + getSNode());
-      getSNode().getLinkDeclaration(role.toString());
+      myErrorText = "?" + role.toString() + "?";
+      LOG.error("can't find a link declaration " + role.toString() + " in " + getSNode(), getSNode());
+      return;
     }
 
     myGenuineLinkDeclaration = SModelUtil_new.getGenuineLinkDeclaration(myLinkDeclaration);
-
-    if (myGenuineLinkDeclaration == null) {
-      LOG.error("Can't find a link declaration for " + myLinkDeclaration);
-      SModelUtil_new.getGenuineLinkDeclaration(myLinkDeclaration);
-    }
-
     myGenuineRole = myGenuineLinkDeclaration.getRole();
-
     myIsAggregation = myGenuineLinkDeclaration.getMetaClass() == LinkMetaclass.aggregation;
     Cardinality sourceCardinality = myGenuineLinkDeclaration.getSourceCardinality();
     myIsCardinality0 = (sourceCardinality == Cardinality._0__1 || sourceCardinality == Cardinality._0__n);
@@ -75,7 +63,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
     EditorCell result = createCell_internal(myEditorContext);
     // do not override role/link-declaration if they are already set
     if (result.getUserObject(EditorCell.ROLE) == null &&
-            result.getUserObject(EditorCell.METAINFO_LINK_DECLARATION) == null) {
+      result.getUserObject(EditorCell.METAINFO_LINK_DECLARATION) == null) {
       result.putUserObject(EditorCell.ROLE, myGenuineRole);
       result.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, myGenuineLinkDeclaration.getNode());
     }
@@ -84,22 +72,28 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
 
   protected EditorCell createCell_internal(EditorContext context) {
     SNode node = getSNode();
-    SNode referencedNode = myIsAggregation ? node.getChild(myGenuineRole) : node.getReferent(myGenuineRole);
-    SReference reference = node.getReference(myGenuineRole);
-
-    if (!myIsAggregation) {
-      if (reference != null && (reference.getTargetNode() == null || context.getScope().getModelDescriptor(reference.getTargetModelUID()) == null)) {
-        EditorCell_Error noRefCell = new EditorCell_Error(context, node, null);
-        noRefCell.setText(reference.getResolveInfo());
-        noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-        return noRefCell;
+    if (myErrorText != null) {
+      return createErrorCell(myErrorText, node, context);
+    }
+    SNode referentNode = null;
+    if (myIsAggregation) {
+      referentNode = node.getChild(myGenuineRole);
+    } else {
+      SReference reference = node.getReference(myGenuineRole);
+      if (reference != null) {
+        referentNode = reference.getTargetNode();
+        if (referentNode == null) {
+          String rinfo = reference.getResolveInfo();
+          myErrorText = rinfo != null ? rinfo : "?" + myLinkDeclaration.getRole() + "?";
+          return createErrorCell(myErrorText, node, context);
+        }
       }
     }
 
-    if (referencedNode == null) {
+    if (referentNode == null) {
       EditorCell_Label noRefCell = myIsCardinality1 ?
-              new EditorCell_Error(context, node, myNoTargetText) :
-              new EditorCell_Constant(context, node, "");
+        new EditorCell_Error(context, node, myNoTargetText) :
+        new EditorCell_Constant(context, node, "");
       noRefCell.setText("");
       noRefCell.setEditable(true);
       noRefCell.setDefaultText(myNoTargetText);
@@ -107,7 +101,14 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
       return noRefCell;
     }
 
-    return createRefCell(context, referencedNode, node);
+    return createRefCell(context, referentNode, node);
+  }
+
+  private EditorCell createErrorCell(String error, SNode node, EditorContext context) {
+    EditorCell_Error errorCell = new EditorCell_Error(context, node, null);
+    errorCell.setText(error);
+    errorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+    return errorCell;
   }
 
   protected abstract EditorCell createRefCell(EditorContext context, SNode referencedNode, SNode node);
