@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="MPS-external" default="main">
   <import file="MPS-languages.xml" />
+  <import file="build-helpers.xml" />
   <property file=".\MPS.properties" />
   <target name="main" depends="clean.before,folders.create,do.the.job,clean.after" />
   <target name="clean.before">
@@ -47,6 +48,7 @@
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/servlet-api" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/smack" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp" />
+    <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/app" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/app/agreement" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/app/complexLanguage" />
@@ -175,117 +177,120 @@
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/smack">
       <fileset dir="lib/smack" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
       <fileset dir="classes" excludes="production/, test/, **/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
-      <fileset dir="classes/production/idea-app" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
-    </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
-      <fileset dir="core/kernel/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
-    </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
       <fileset dir="workbench/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
+      <fileset dir="core/kernel/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
+    </copy>
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
       <fileset dir="core/languageDesign/core/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
       <fileset dir="core/languageDesign/actionsLanguage/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
       <fileset dir="core/languageDesign/editorLanguage/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
       <fileset dir="core/languageDesign/annotations/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
       <fileset dir="core/languageDesign/constraintsLanguage/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
       <fileset dir="core/languageDesign/editorLanguage/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
       <fileset dir="core/languageDesign/findUsagesLanguage/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
       <fileset dir="core/languageDesign/helgins/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
       <fileset dir="core/languageDesign/intentionsLanguage/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
       <fileset dir="core/languageDesign/patternLanguage/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
       <fileset dir="core/languageDesign/pluginLanguage/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
       <fileset dir="core/languageDesign/quotation/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
       <fileset dir="core/languageDesign/refactoring/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
       <fileset dir="core/languageDesign/scriptLanguage/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
       <fileset dir="core/languageDesign/scriptLanguage/runtime/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
       <fileset dir="core/languageDesign/sharedConcepts/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
       <fileset dir="core/languageDesign/smodelLanguage/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
       <fileset dir="core/languageDesign/structureLanguage/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
       <fileset dir="core/languageDesign/transformation/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
       <fileset dir="core/languageDesign/dataFlow/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
       <fileset dir="core/languageDesign/dataFlow/runtime/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
       <fileset dir="core/projectLanguage/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
       <fileset dir="core/baseLanguage/baseLanguage/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
       <fileset dir="core/baseLanguage/collections/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
       <fileset dir="core/baseLanguage/collections/runtime/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
       <fileset dir="core/baseLanguage/closures/runtime/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
       <fileset dir="core/baseLanguage/closures/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
       <fileset dir="core/baseLanguage/internalCollections/languages/collections/runtime/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
       <fileset dir="core/baseLanguage/internalCollections/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
       <fileset dir="core/baseLanguage/classifiers/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
       <fileset dir="core/runtime/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
       <fileset dir="platform/uiLanguage/runtime/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
       <fileset dir="MPSPlugin/MPSSupport/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
+    <antcall target="zkm" inheritall="false">
+      <param name="deploy.dir" value="${deploy.dir}" />
+      <param name="input.dir" value="./${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm" />
+      <param name="output.dir" value="./${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp" />
+    </antcall>
+    <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm" />
     <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </jar>
