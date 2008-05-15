@@ -285,7 +285,7 @@
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm">
       <fileset dir="MPSPlugin/MPSSupport/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
-    <antcall target="zkm" inheritall="false">
+    <antcall target="zkm" inheritall="true">
       <param name="deploy.dir" value="${deploy.dir}" />
       <param name="input.dir" value="./${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/build-helpers.zkm" />
       <param name="output.dir" value="./${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp" />
