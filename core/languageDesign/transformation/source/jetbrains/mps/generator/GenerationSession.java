@@ -100,7 +100,7 @@ public class GenerationSession implements IGenerationSession {
       status = generateModel_step(currInputModel.getSModel(), stepController);
       wasErrors |= status.isError();
       wasWarnings |= status.hasWarnings();
-      if (status.isCanceled()) {
+      if (status.isError() || status.isCanceled()) {
         break;
       }
 
