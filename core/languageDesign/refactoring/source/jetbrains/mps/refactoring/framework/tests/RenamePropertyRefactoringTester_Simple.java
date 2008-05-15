@@ -21,13 +21,12 @@ public class RenamePropertyRefactoringTester_Simple implements IRefactoringTeste
     SNode property = concept.getPropertyDeclarations().get(0).getNode();
     actionContext.put(SNode.class, property);
     actionContext.put(SModelDescriptor.class, structureModelDescriptor);
-    RefactoringContext refactoringContext = new RefactoringContext();
+    RenameProperty renameProperty = new RenameProperty();
+    RefactoringContext refactoringContext = new RefactoringContext(renameProperty);
     String newPropertyName = "niceProperty";
     refactoringContext.setParameter(RenameProperty.newName, newPropertyName);
-    GenericRefactoring refactoring_renameLink = new GenericRefactoring(new RenameProperty());
-
     System.err.println("executing a refactoring");
-    refactoring_renameLink.doExecuteInTest(actionContext, refactoringContext);
+    new RefactoringProcessor().doExecuteInTest(actionContext, refactoringContext);
 
     try {
       System.err.println("checking a model");

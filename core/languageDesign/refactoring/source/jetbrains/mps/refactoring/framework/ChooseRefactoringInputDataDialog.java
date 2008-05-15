@@ -1,7 +1,6 @@
 package jetbrains.mps.refactoring.framework;
 
 import jetbrains.mps.ide.BaseDialog;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.DialogDimensionsSettings.DialogDimensions;
 
@@ -9,7 +8,6 @@ import javax.swing.*;
 import java.util.*;
 import java.util.List;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 
 public class ChooseRefactoringInputDataDialog extends BaseDialog {
 
@@ -116,7 +114,7 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
         dispose();
       } else {
         myResult = false;
-        myRefactoringContext.clearAdditionalParemeters();
+        myRefactoringContext.clearParameters();
         JOptionPane.showMessageDialog(this, "refactoring is not applicable");
       }
     } catch (InvalidInputValueException ex) {

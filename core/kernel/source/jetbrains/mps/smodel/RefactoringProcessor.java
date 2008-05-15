@@ -17,7 +17,6 @@ import jetbrains.mps.refactoring.NewRefactoringView;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
-import jetbrains.mps.refactoring.framework.RefactoringTarget;
 import jetbrains.mps.util.Calculable;
 import org.jetbrains.annotations.NotNull;
 
@@ -31,32 +30,25 @@ import java.util.*;
  * Time: 17:55:17
  * To change this template use File | Settings | File Templates.
  */
-public class GenericRefactoring {
+public class RefactoringProcessor {
 
-  private static final Logger LOG = Logger.getLogger(GenericRefactoring.class);
+  private static final Logger LOG = Logger.getLogger(RefactoringProcessor.class);
 
-  private ILoggableRefactoring myRefactoring;
-
-  public GenericRefactoring(ILoggableRefactoring refactoring) {
-    myRefactoring = refactoring;
-  }
-
-  public void execute(final @NotNull ActionContext context) {
-    final RefactoringContext refactoringContext = new RefactoringContext();
-    boolean success = myRefactoring.askForInfo(context, refactoringContext);
+  public void execute(final @NotNull ActionContext context, final ILoggableRefactoring refactoring) {
+    final RefactoringContext refactoringContext = new RefactoringContext(refactoring);
+    boolean success = refactoring.askForInfo(context, refactoringContext);
     if (!success) return;
-    if (myRefactoring.showsAffectedNodes()) {
-      final SearchResults[] usagesContainer = new SearchResults[]{null};
-
+    if (refactoring.showsAffectedNodes()) {
       Thread thread = new Thread() {
         public void run() {
+          final SearchResults[] usagesContainer = new SearchResults[]{null};
           final boolean toReturn[] = new boolean[]{false};
           CommandProcessor.instance().executeLightweightCommand(new Runnable() {
             public void run() {
               try {
                 ActionContext newContext = new ActionContext(context);
                 newContext.put(IOperationContext.class, new ProjectOperationContext(context.getOperationContext().getProject()));
-                usagesContainer[0] = myRefactoring.getAffectedNodes(newContext, refactoringContext);
+                usagesContainer[0] = refactoring.getAffectedNodes(newContext, refactoringContext);
               } catch (Throwable t) {
                 LOG.error(t);
                 ThreadUtils.runInUIThreadAndWait(new Runnable() {
@@ -70,23 +62,21 @@ public class GenericRefactoring {
             }
           });
           if (toReturn[0]) return;
-          ThreadUtils.runInUIThreadAndWait(new Runnable() {
-            public void run() {
-              SearchResults u = CommandProcessor.instance().executeLightweightCommand(new Calculable<SearchResults>() {
-                public SearchResults calculate() {
-                  SearchResults usages = usagesContainer[0];
-                  if (usages != null) {
+          if (usagesContainer[0] == null) {
+            doExecuteInThread(context, refactoringContext);
+          } else {
+            ThreadUtils.runInUIThreadNoWait(new Runnable() {
+              public void run() {
+                CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+                  public void run() {
+                    SearchResults usages = usagesContainer[0];
                     refactoringContext.setUsages(usages);
-                    NewRefactoringView.showRefactoringView(GenericRefactoring.this, context, refactoringContext);
+                    NewRefactoringView.showRefactoringView(context, refactoringContext);
                   }
-                  return usages;
-                }
-              });
-              if (u == null) {
-                doExecuteInThread(context, refactoringContext);
+                });
               }
-            }
-          });
+            });
+          }
         }
       };
       thread.start();
@@ -116,8 +106,6 @@ public class GenericRefactoring {
       }
     });
 
-    refactoringContext.setRefactoring(myRefactoring);
-
     AbstractProjectFrame projectFrame = context.get(AbstractProjectFrame.class);
     IAdaptiveProgressMonitor monitor_ = new NullAdaptiveProgressMonitor();
     boolean hasMonitor = projectFrame != null;
@@ -125,7 +113,8 @@ public class GenericRefactoring {
       monitor_ = projectFrame.createAdaptiveProgressMonitor();
     }
     final IAdaptiveProgressMonitor monitor = monitor_;
-    final String refactoringTaskName = "refactoring_" + myRefactoring.getClass().getName();
+    final ILoggableRefactoring refactoring = refactoringContext.getRefactoring();
+    final String refactoringTaskName = "refactoring_" + refactoring.getClass().getName();
     final long estimatedTime = monitor.getEstimatedTime(refactoringTaskName);
     try {
       monitor.start("refactoring", estimatedTime);
@@ -135,15 +124,15 @@ public class GenericRefactoring {
         public Map<IModule, List<SModel>> calculate() {
           SModelDescriptor modelDescriptor = context.getModel();
           SModelUID initialModelUID = modelDescriptor.getModelUID();
-          myRefactoring.doRefactor(context, refactoringContext);
+          refactoring.doRefactor(context, refactoringContext);
 
           SModel model = modelDescriptor.getSModel();
 
           refactoringContext.computeCaches();
           SearchResults usages = refactoringContext.getUsages();
-          Map<IModule, List<SModel>> sourceModels = myRefactoring.getModelsToGenerate(context, refactoringContext);
+          Map<IModule, List<SModel>> sourceModels = refactoring.getModelsToGenerate(context, refactoringContext);
           if (!refactoringContext.isLocal() || usages == null) {
-            if (myRefactoring.doesUpdateModel()) {
+            if (refactoring.doesUpdateModel()) {
               writeIntoLog(model, refactoringContext);
               for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getAllModelDescriptors()) {
                 String stereotype = anotherDescriptor.getStereotype();
@@ -165,7 +154,7 @@ public class GenericRefactoring {
               }
             }
           } else {
-            if (myRefactoring.doesUpdateModel()) {
+            if (refactoring.doesUpdateModel()) {
               Set<SModel> modelsToProcess = usages.getModelsWithResults();
 
               for (List<SModel> sModels : sourceModels.values()) {
@@ -228,7 +217,7 @@ public class GenericRefactoring {
   }
 
   private void processModel(SModel model, SModel usedModel, RefactoringContext refactoringContext) {
-    myRefactoring.updateModel(model, refactoringContext);
+    refactoringContext.getRefactoring().updateModel(model, refactoringContext);
     model.updateImportedModelUsedVersion(usedModel.getUID(), usedModel.getVersion());
     SModelRepository.getInstance().markChanged(model);
   }
@@ -239,26 +228,5 @@ public class GenericRefactoring {
     refactoringHistory.addRefactoringContext(refactoringContext);
     model.increaseVersion();
     refactoringContext.setModelVersion(model.getVersion());
-  }
-
-
-  public String getKeyStroke() {
-    return myRefactoring.getKeyStroke();
-  }
-
-  public RefactoringTarget getRefactoringTarget() {
-    return myRefactoring.getRefactoringTarget();
-  }
-
-  public boolean isApplicableToModel(SModelDescriptor modelDescriptor) {
-    return myRefactoring.isApplicableToModel(modelDescriptor);
-  }
-
-  public boolean isApplicable(SNode node) {
-    return myRefactoring.isApplicableWRTConcept(node);
-  }
-
-  public String getUserFriendlyName() {
-    return myRefactoring.getUserFriendlyName();
   }
 }

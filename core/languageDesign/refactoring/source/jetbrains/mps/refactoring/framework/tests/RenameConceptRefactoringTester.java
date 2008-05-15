@@ -25,13 +25,12 @@ public class RenameConceptRefactoringTester implements IRefactoringTester {
     SNode concept = structureModelDescriptor.getSModel().getRootByName("MyVeryGoodConcept1");
     actionContext.put(SNode.class, concept);
     actionContext.put(SModelDescriptor.class, structureModelDescriptor);
-    RefactoringContext refactoringContext = new RefactoringContext();
+    RenameConcept renameConcept = new RenameConcept();
+    RefactoringContext refactoringContext = new RefactoringContext(renameConcept);
     String newConceptName = "MyVeryGoodConcept2";
     refactoringContext.setParameter("newName", newConceptName);
-    GenericRefactoring refactoring_renameConcept = new GenericRefactoring(new RenameConcept());
-
     System.err.println("executing a refactoring");
-    refactoring_renameConcept.doExecuteInTest(actionContext, refactoringContext);
+    new RefactoringProcessor().doExecuteInTest(actionContext, refactoringContext);
 
     try {
       System.err.println("checking a model");

@@ -24,13 +24,11 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
     actionContext.put(SNode.class, concept);
     actionContext.put(List.class, CollectionUtil.asList(concept)); 
     actionContext.put(SModelDescriptor.class, structureModelDescriptor);
-    RefactoringContext refactoringContext = new RefactoringContext();
-    refactoringContext.setParameter(MoveConcepts.targetModel, targetStructureModelDescriptor);
-
-    GenericRefactoring refactoring_moveConcepts = new GenericRefactoring(new MoveConcepts());
-
-    System.err.println("executing a refactoring");
-    refactoring_moveConcepts.doExecuteInTest(actionContext, refactoringContext);
+     MoveConcepts moveConcepts = new MoveConcepts();
+     RefactoringContext refactoringContext = new RefactoringContext(moveConcepts);
+     refactoringContext.setParameter(MoveConcepts.targetModel, targetStructureModelDescriptor);
+     System.err.println("executing a refactoring");
+    new RefactoringProcessor().doExecuteInTest(actionContext, refactoringContext);
 
     try {
       System.err.println("checking a model");

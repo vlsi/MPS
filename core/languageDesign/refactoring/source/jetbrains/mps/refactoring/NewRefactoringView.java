@@ -1,6 +1,5 @@
 package jetbrains.mps.refactoring;
 
-import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder;
@@ -15,7 +14,7 @@ import jetbrains.mps.ide.toolsPane.ToolsPane;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.smodel.GenericRefactoring;
+import jetbrains.mps.smodel.RefactoringProcessor;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
@@ -38,7 +37,6 @@ public class NewRefactoringView extends DefaultTool {
   private static final Logger LOG = Logger.getLogger(NewRefactoringView.class);
 
   private String myName;
-  private GenericRefactoring myRefactoring;
   private RefactoringContext myRefactoringContext;
   private ActionContext myActionContext;
   private SearchResults mySearchResults;
@@ -50,10 +48,9 @@ public class NewRefactoringView extends DefaultTool {
   private JButton myCancelButton;
 
 
-  public static void showRefactoringView(@NotNull GenericRefactoring refactoring,
-                                         @NotNull ActionContext actionContext,
+  public static void showRefactoringView(@NotNull ActionContext actionContext,
                                          @NotNull RefactoringContext refactoringContext) {
-    NewRefactoringView refactoringView = new NewRefactoringView(refactoring, actionContext, refactoringContext);
+    NewRefactoringView refactoringView = new NewRefactoringView(actionContext, refactoringContext);
     ourRefactoringViews.put(actionContext.get(MPSProject.class), refactoringView);
     actionContext.get(ToolsPane.class).add(refactoringView, false);
     actionContext.get(ToolsPane.class).selectTool(refactoringView);
@@ -67,8 +64,7 @@ public class NewRefactoringView extends DefaultTool {
     }
   }
 
-  public NewRefactoringView(@NotNull GenericRefactoring refactoring,
-                            @NotNull ActionContext actionContext,
+  public NewRefactoringView(@NotNull ActionContext actionContext,
                             @NotNull RefactoringContext refactoringContext) {
     mySearchResults = refactoringContext.getUsages();
     if (mySearchResults == null) {
@@ -77,8 +73,7 @@ public class NewRefactoringView extends DefaultTool {
     myActionContext = actionContext;
     myRefactoringContext = refactoringContext;
     myProject = actionContext.get(MPSProject.class);
-    myRefactoring = refactoring;
-    myName = myRefactoring.getUserFriendlyName();
+    myName = myRefactoringContext.getRefactoring().getUserFriendlyName();
 
     myPanel = new JPanel(new BorderLayout());
     myUsageView = new UsageView(actionContext.get(MPSProject.class), new ViewOptions()) {
@@ -153,7 +148,7 @@ public class NewRefactoringView extends DefaultTool {
       public void run() {
         CommandProcessor.instance().executeCommand(new Runnable() {
           public void run() {
-            myRefactoring.doExecuteInThread(myActionContext, myRefactoringContext);
+            new RefactoringProcessor().doExecuteInThread(myActionContext, myRefactoringContext);
             closeRefactoringView(myProject);
           }
         });

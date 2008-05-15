@@ -3,7 +3,7 @@ package jetbrains.mps.refactoring.framework;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.plugins.CurrentProjectMPSAction;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.GenericRefactoring;
+import jetbrains.mps.smodel.RefactoringProcessor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
@@ -16,11 +16,11 @@ import org.jetbrains.annotations.NotNull;
  * To change this template use File | Settings | File Templates.
  */
 public class GenericRefactoringAction extends CurrentProjectMPSAction {
-  private GenericRefactoring myRefactoring;
+  private ILoggableRefactoring myRefactoring;
 
   public GenericRefactoringAction(ILoggableRefactoring refactoring, MPSProject project) {
     super(project, "".equals(refactoring.getUserFriendlyName()) ? refactoring.getClass().getName() : refactoring.getUserFriendlyName());
-    myRefactoring = new GenericRefactoring(refactoring);
+    myRefactoring = refactoring;
   }
 
   @NotNull
@@ -29,7 +29,7 @@ public class GenericRefactoringAction extends CurrentProjectMPSAction {
   }
 
   public void doExecute(@NotNull ActionContext context) {
-    myRefactoring.execute(context);
+    new RefactoringProcessor().execute(context, myRefactoring);
   }
 
   public void doUpdate(@NotNull ActionContext context) {
@@ -42,7 +42,7 @@ public class GenericRefactoringAction extends CurrentProjectMPSAction {
     } else {
       SNode node = context.getNode();
       if (node != null) {
-        enabled = myRefactoring.isApplicable(node);
+        enabled = myRefactoring.isApplicableWRTConcept(node);
       }
     }
     setEnabled(enabled);

@@ -4,7 +4,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.scripts.RenameLink;
 import jetbrains.mps.bootstrap.structureLanguage.scripts.SafeDeleteLink;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 
@@ -30,10 +29,10 @@ public class DeleteLinkRefactoringTester_Simple implements IRefactoringTester {
     String linkName = link.getProperty("role");
     actionContext.put(SNode.class, link);
     actionContext.put(SModelDescriptor.class, structureModelDescriptor);
-    RefactoringContext refactoringContext = new RefactoringContext();
-    GenericRefactoring refactoring_deleteLink = new GenericRefactoring(new SafeDeleteLink());
+    SafeDeleteLink safeDeleteLink = new SafeDeleteLink();
+    RefactoringContext refactoringContext = new RefactoringContext(safeDeleteLink);
     System.err.println("executing a refactoring");
-    refactoring_deleteLink.doExecuteInTest(actionContext, refactoringContext);
+    new RefactoringProcessor().doExecuteInTest(actionContext, refactoringContext);
 
     try {
       System.err.println("checking a model");

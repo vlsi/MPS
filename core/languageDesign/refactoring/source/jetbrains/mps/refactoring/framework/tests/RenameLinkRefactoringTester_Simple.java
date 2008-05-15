@@ -21,13 +21,13 @@ public class RenameLinkRefactoringTester_Simple implements IRefactoringTester {
     SNode link = concept.getLinkDeclarations().get(0).getNode();
     actionContext.put(SNode.class, link);
     actionContext.put(SModelDescriptor.class, structureModelDescriptor);
-    RefactoringContext refactoringContext = new RefactoringContext();
+    RenameLink renameLink = new RenameLink();
+    RefactoringContext refactoringContext = new RefactoringContext(renameLink);
     String newLinkName = "sister";
     refactoringContext.setParameter(RenameLink.newName, newLinkName);
-    GenericRefactoring refactoring_renameLink = new GenericRefactoring(new RenameLink());
 
     System.err.println("executing a refactoring");
-    refactoring_renameLink.doExecuteInTest(actionContext, refactoringContext);
+    new RefactoringProcessor().doExecuteInTest(actionContext, refactoringContext);
 
     try {
       System.err.println("checking a model");

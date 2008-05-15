@@ -39,7 +39,7 @@ public class RefactoringContext {
   public static final String REFACTORING_CLASS = "refactoringClass";
 
   //persistent fields
-  private Map<String, Object> myAdditionalParametersMap = new HashMap<String, Object>();
+  private Map<String, Object> myParametersMap = new HashMap<String, Object>();
   private Map<FullNodeId, FullNodeId> myMoveMap = new HashMap<FullNodeId, FullNodeId>();
   private Map<ConceptFeature, ConceptFeature> myConceptFeatureMap = new HashMap<ConceptFeature, ConceptFeature>();
   private int myModelVersion = -1;
@@ -60,8 +60,8 @@ public class RefactoringContext {
   private boolean myIsLocal = false;
   //-----------------
 
-  public RefactoringContext() {
-
+  public RefactoringContext(ILoggableRefactoring refactoring) {
+    myRefactoring = refactoring;
   }
 
   public RefactoringContext(Element e) {
@@ -97,12 +97,12 @@ public class RefactoringContext {
   }
 
   public void addAdditionalParameters(Map<String, Object> parameters) {
-    myAdditionalParametersMap.putAll(parameters);
+    myParametersMap.putAll(parameters);
     myCachesAreUpToDate = false;
   }
 
   public Map<String, Object> getAdditionalParameters() {
-    return new HashMap<String, Object>(myAdditionalParametersMap);
+    return new HashMap<String, Object>(myParametersMap);
   }
 
   public void markTransient(String parameterName) {
@@ -118,16 +118,16 @@ public class RefactoringContext {
   }
 
   public Object getParameter(String parameterName) {
-    return myAdditionalParametersMap.get(parameterName);
+    return myParametersMap.get(parameterName);
   }
 
   public void setParameter(String parameterName, Object parameter) {
-    myAdditionalParametersMap.put(parameterName, parameter);
+    myParametersMap.put(parameterName, parameter);
     myCachesAreUpToDate = false;
   }
 
-  public void clearAdditionalParemeters() {
-    myAdditionalParametersMap.clear();
+  public void clearParameters() {
+    myParametersMap.clear();
     myCachesAreUpToDate = false;
   }
 
@@ -506,7 +506,7 @@ public class RefactoringContext {
     }
     {
       Element parametersMapElement = new Element(PARAMETERS_MAP);
-      for (Entry<String, Object> entry : myAdditionalParametersMap.entrySet()) {
+      for (Entry<String, Object> entry : myParametersMap.entrySet()) {
         String parameterName = entry.getKey();
         if (isTransient(parameterName)) {
           continue;
@@ -591,7 +591,7 @@ public class RefactoringContext {
           Element keyElement = entryElement.getChild(KEY);
           Element valueElement = entryElement.getChild(VALUE);
           String parameterName = keyElement.getAttributeValue(PARAMETER_NAME);
-          myAdditionalParametersMap.put(parameterName, deserialize(valueElement));
+          myParametersMap.put(parameterName, deserialize(valueElement));
         }
       }
     }
