@@ -214,7 +214,7 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
 
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
-        ApplicationComponents.getInstance().getComponentSafe(NavigationManager.class)
+        NavigationManager.getInstance()
           .navigateTo(getProject(), selectedMessage.getHintObject());
       }
     });

@@ -140,6 +140,14 @@
       <implementation-class>jetbrains.mps.ide.findusages.FindersManager</implementation-class>
     </component>
 
+    <component>
+      <implementation-class>jetbrains.mps.ide.settings.GlobalIdeSettings</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.ide.messages.NavigationManager</implementation-class>
+    </component>
+
 
     <component>
       <implementation-class>jetbrains.mps.MPSAdapter</implementation-class>
