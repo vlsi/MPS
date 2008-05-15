@@ -18,4 +18,6 @@ public interface Intention {
   boolean isErrorIntention();
 
   void putArgument(String key, Object argument);
+
+  String getSourceModelUID();
 }

@@ -19,4 +19,8 @@ public abstract class BaseIntention implements Intention {
 
   public void putArgument(String key, Object argument) {
   }
+
+  public String getSourceModelUID() {
+    return "";
+  }
 }
