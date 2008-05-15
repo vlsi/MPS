@@ -26,7 +26,7 @@ public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
 
   private boolean myStopThread = false;
   private MPSProjects myProjects;
-  private GlobalSModelEventsManager myGlobalSModelEventsManager = new GlobalSModelEventsManager();
+  private GlobalSModelEventsManager myGlobalSModelEventsManager;
   private ClassLoaderManager myClassLoaderManager;
   protected Thread myThread;
   private HashSet<IEditorChecker> myCheckers = new LinkedHashSet<IEditorChecker>(3);

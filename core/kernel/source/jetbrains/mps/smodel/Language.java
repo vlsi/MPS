@@ -60,6 +60,10 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
     language.reload();
 
+    if (language.getNamespace().equals("jetbrains.mps.core")) {
+      System.out.println("!!!");
+    }
+
     MPSModuleRepository.getInstance().addModule(language, moduleOwner);
 
     return language;

@@ -10,15 +10,15 @@ import java.util.*;
 public class CommandEventsManager implements IComponentLifecycle {
 
   private SModelRepository mySModelRepository;
+  private GlobalSModelEventsManager myGlobalSModelEventsManager;
 
-  @Dependency
-  public void setSModelRepository(SModelRepository repo) {
-    mySModelRepository = repo;
+  public CommandEventsManager(SModelRepository SModelRepository, GlobalSModelEventsManager eventsManager) {
+    mySModelRepository = SModelRepository;
+    myGlobalSModelEventsManager = eventsManager;
   }
 
-
   public void initComponent() {
-    GlobalSModelEventsManager.getInstance().addGlobalCommandListener(new SModelCommandListener() {
+    myGlobalSModelEventsManager.addGlobalCommandListener(new SModelCommandListener() {
       public void eventsHappenedInCommand(List<SModelEvent> events) {
         fireEvents(events);
       }

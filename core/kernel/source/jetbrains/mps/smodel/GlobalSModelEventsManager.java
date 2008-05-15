@@ -20,12 +20,13 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
 import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.application.ApplicationManager;
 
 public class GlobalSModelEventsManager implements IComponentLifecycle {
   private static Logger LOG = Logger.getLogger(GlobalSModelEventsManager.class);
 
   public static GlobalSModelEventsManager getInstance() {
-    return ApplicationComponents.getInstance().getComponent(GlobalSModelEventsManager.class);
+    return ApplicationManager.getApplication().getComponent(GlobalSModelEventsManager.class);
   }
 
   private SModelRepository mySModelRepository;
@@ -38,9 +39,8 @@ public class GlobalSModelEventsManager implements IComponentLifecycle {
   private ICommandListener myCommandListener = new MyCommandListener();
   private List<SModelEvent> myCommandEvents = new ArrayList<SModelEvent>();
 
-  @Dependency
-  public void setModelRepository(SModelRepository repo) {
-    mySModelRepository = repo;
+  public GlobalSModelEventsManager(SModelRepository SModelRepository) {
+    mySModelRepository = SModelRepository;
   }
 
   public void initComponent() {

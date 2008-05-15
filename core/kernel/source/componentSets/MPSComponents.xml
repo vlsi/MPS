@@ -89,6 +89,15 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.smodel.GlobalSModelEventsManager</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.smodel.CommandEventsManager</implementation-class>
+    </component>
+
+
+    <component>
       <implementation-class>jetbrains.mps.MPSAdapter</implementation-class>
     </component>
 

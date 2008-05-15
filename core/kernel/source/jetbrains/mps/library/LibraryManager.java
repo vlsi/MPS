@@ -6,7 +6,7 @@ import jetbrains.mps.components.Externalizable;
 import jetbrains.mps.ide.preferences.IComponentWithPreferences;
 import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.project.ApplicationComponents;
+import jetbrains.mps.ide.BootstrapModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.MPSModuleOwner;
@@ -47,7 +47,15 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
   public void initComponent() {
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
+        //todo hack
+        //since bootstrap manager can't do this in its constructor we do it here
+        for (BootstrapModule bm : BootstrapModule.values()) {
+          bm.get().onModuleLoad();
+        }
+
+
         updatePredefinedLibraries();
+
         update();
       }
     });
@@ -146,7 +154,7 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
         myRepository.readModuleDescriptors(FileSystem.getFile(l.getPath()), myPredefinedLibrariesOwner);
       }
     }
-    convert(myPredefinedLibrariesOwner);
+    fireOnLoad(myPredefinedLibrariesOwner);
   }
 
   public void update() {
@@ -162,12 +170,13 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
           }
         }
         ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
-        convert(myOwner);
+
+        fireOnLoad(myOwner);
       }
     });
   }
 
-  private void convert(final MPSModuleOwner owner) {
+  private void fireOnLoad(final MPSModuleOwner owner) {
     for (IModule m : myRepository.getModules(owner)) {
       m.onModuleLoad();
     }
