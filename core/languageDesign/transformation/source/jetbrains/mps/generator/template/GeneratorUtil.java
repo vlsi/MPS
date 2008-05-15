@@ -121,7 +121,7 @@ public class GeneratorUtil {
     }
   }
 
-  public static void executeMappingScript(MappingScript mappingScript, SModel model, ITemplateGenerator generator) {
+  public static void executeMappingScript(MappingScript mappingScript, SModel model, ITemplateGenerator generator) throws GenerationFailedException {
     MappingScript_CodeBlock codeBlock = mappingScript.getCodeBlock();
     if (codeBlock == null) {
       generator.showWarningMessage(mappingScript.getNode(), "couldn't run script '" + mappingScript.getName() + "' : no code-block");
@@ -136,10 +136,10 @@ public class GeneratorUtil {
         generator.getGeneratorSessionContext(),
         new MappingScriptContext(model, generator),
         mappingScript.getModel());
-    } catch (GenerationFailedException gfe) {
+    } /*catch (GenerationFailedException gfe) {
       generator.showErrorMessage(codeBlock.getNode(), "error executing script '" + mappingScript.getName() + "'");
       throw gfe;
-    } catch (IllegalModelChangeError imce) {
+    } */catch (IllegalModelChangeError imce) {
       generator.showErrorMessage(codeBlock.getNode(), "error executing script '" + mappingScript.getName() + "'");
       throw imce;
     } catch (Throwable t) {
@@ -191,7 +191,7 @@ public class GeneratorUtil {
   }
 
 
-  public static void applyCreateRootRule(CreateRootRule createRootRule, TemplateGenerator generator) {
+  public static void applyCreateRootRule(CreateRootRule createRootRule, TemplateGenerator generator) throws GenerationFailedException {
     if (checkCondition(createRootRule, generator)) {
       INamedConcept templateNode = createRootRule.getTemplateNode();
       if (templateNode == null) {
@@ -203,6 +203,9 @@ public class GeneratorUtil {
           createRootNodeFromTemplate(
             getMappingName(createRootRule, null),
             BaseAdapter.fromAdapter(templateNode), null, generator);
+        } catch (GenerationFailedException e) {
+          if (e.getFailueInfo() != null) e.getFailueInfo().setRuleNode(createRootRule.getNode());
+          throw e;
         } catch (DismissTopMappingRuleException e) {
           // it's ok, just continue
           generator.setChanged(wasChanged);
@@ -232,7 +235,7 @@ public class GeneratorUtil {
     }
   }
 
-  public static void applyRoot_MappingRule(Root_MappingRule rule, TemplateGenerator generator) {
+  public static void applyRoot_MappingRule(Root_MappingRule rule, TemplateGenerator generator) throws GenerationFailedException {
     AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
     if (applicableConcept == null) {
       generator.showErrorMessage(null, null, BaseAdapter.fromAdapter(rule), "rule has no applicable concept defined");
@@ -265,6 +268,9 @@ public class GeneratorUtil {
         } catch (DismissTopMappingRuleException e) {
           // it's ok, just continue
           generator.setChanged(wasChanged);
+        } catch (GenerationFailedException e) {
+          if (e.getFailueInfo() != null) e.getFailueInfo().setRuleNode(rule.getNode());
+          throw e;
         } finally {
           generator.getGeneratorSessionContext().getGenerationTracer().closeInputNode(inputNode);
         }
@@ -272,7 +278,7 @@ public class GeneratorUtil {
     }
   }
 
-  private static void createRootNodeFromTemplate(String mappingName, SNode templateNode, SNode inputNode, TemplateGenerator generator) throws DismissTopMappingRuleException {
+  private static void createRootNodeFromTemplate(String mappingName, SNode templateNode, SNode inputNode, TemplateGenerator generator) throws DismissTopMappingRuleException, GenerationFailedException {
     try {
       List<SNode> outputNodes = TemplateProcessor.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, generator);
       for (SNode outputNode : outputNodes) {
@@ -301,7 +307,7 @@ public class GeneratorUtil {
     return null;
   }
 
-  private static void weaveTemplateDeclaration(SNode inputNode, TemplateDeclaration template, SNode outputContextNode, Weaving_MappingRule rule, TemplateGenerator generator) {
+  private static void weaveTemplateDeclaration(SNode inputNode, TemplateDeclaration template, SNode outputContextNode, Weaving_MappingRule rule, TemplateGenerator generator) throws GenerationFailedException {
     generator.getGeneratorSessionContext().getGenerationTracer().pushInputNode(inputNode);
     try {
       weaveTemplateDeclaration_intern(inputNode, template, outputContextNode, rule, generator);
@@ -310,7 +316,7 @@ public class GeneratorUtil {
     }
   }
 
-  private static void weaveTemplateDeclaration_intern(SNode inputNode, TemplateDeclaration template, SNode outputContextNode, Weaving_MappingRule rule, TemplateGenerator generator) {
+  private static void weaveTemplateDeclaration_intern(SNode inputNode, TemplateDeclaration template, SNode outputContextNode, Weaving_MappingRule rule, TemplateGenerator generator) throws GenerationFailedException {
     if (template == null) {
       generator.showErrorMessage(inputNode, null, rule.getNode(), "couldn't evaluate weaving rule: no template");
       return;
@@ -371,6 +377,9 @@ public class GeneratorUtil {
           }
         } catch (DismissTopMappingRuleException e) {
           generator.showErrorMessage(inputNode, templateFragment.getNode(), rule.getNode(), "dismission of weaving rule is not supported");
+        } catch (GenerationFailedException e) {
+          if (e.getFailueInfo() != null) e.getFailueInfo().setRuleNode(rule.getNode());
+          throw e;
         } catch (TemplateProcessingFailureException e) {
           generator.showErrorMessage(inputNode, templateFragment.getNode(), rule.getNode(), "error pocessing template fragment");
           generator.showInformationMessage(contextParentNode, " -- was output context node:");
@@ -428,7 +437,7 @@ public class GeneratorUtil {
     return mainContextNode;
   }
 
-  public static void applyWeaving_MappingRule(Weaving_MappingRule rule, TemplateGenerator generator) {
+  public static void applyWeaving_MappingRule(Weaving_MappingRule rule, TemplateGenerator generator) throws GenerationFailedException {
     AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
     if (applicableConcept == null) {
       generator.showErrorMessage(null, rule.getNode(), "rule has no applicable concept defined");
@@ -559,7 +568,8 @@ public class GeneratorUtil {
     return null;
   }
 
-  public static List<SNode> applyReductionRule(SNode inputNode, Reduction_MappingRule rule, TemplateGenerator generator) throws DismissTopMappingRuleException {
+  /*package*/
+  static List<SNode> applyReductionRule(SNode inputNode, Reduction_MappingRule rule, TemplateGenerator generator) throws DismissTopMappingRuleException, GenerationFailedException {
     generator.getGeneratorSessionContext().getGenerationTracer().pushRule(rule.getNode());
     try {
       return applyReductionRule_internal(inputNode, rule, generator);
@@ -570,7 +580,12 @@ public class GeneratorUtil {
     }
   }
 
-  private static List<SNode> applyReductionRule_internal(SNode inputNode, Reduction_MappingRule rule, TemplateGenerator generator) throws DismissTopMappingRuleException, AbandonRuleInputException {
+  private static List<SNode> applyReductionRule_internal(SNode inputNode, Reduction_MappingRule rule, TemplateGenerator generator)
+    throws
+    DismissTopMappingRuleException,
+    AbandonRuleInputException,
+    GenerationFailedException {
+
     SNode reductionTemplateNode = null;
     String ruleMappingName = getMappingName(rule, null);
     String mappingName = null;
@@ -609,6 +624,9 @@ public class GeneratorUtil {
       throw e;
     } catch (TemplateProcessingFailureException e) {
       generator.showErrorMessage(inputNode, reductionTemplateNode, rule.getNode(), "error processing reduction rule");
+    } catch (GenerationFailedException e) {
+      if (e.getFailueInfo() != null) e.getFailueInfo().setRuleNode(rule.getNode());
+      throw e;
     } catch (Throwable t) {
       LOG.error(t, BaseAdapter.fromNode(reductionTemplateNode));
       generator.showErrorMessage(inputNode, reductionTemplateNode, rule.getNode(), "error processing reduction rule");

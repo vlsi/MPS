@@ -75,7 +75,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myRuleManager = null;
   }
 
-  private void doMapping(boolean isPrimary) {
+  private void doMapping(boolean isPrimary) throws GenerationFailedException {
     checkMonitorCanceled();
     int oldErrorCount = getErrorCount();
 

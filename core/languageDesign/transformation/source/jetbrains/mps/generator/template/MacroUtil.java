@@ -104,7 +104,7 @@ public class MacroUtil {
     return targetNode;
   }
 
-  public static boolean checkConditionForIfMacro(SNode inputNode, IfMacro ifMacro, ITemplateGenerator generator) {
+  public static boolean checkConditionForIfMacro(SNode inputNode, IfMacro ifMacro, ITemplateGenerator generator) throws GenerationFailedException {
     // new
     IfMacro_Condition function = ifMacro.getConditionFunction();
     long startTime = System.currentTimeMillis();
@@ -147,7 +147,7 @@ public class MacroUtil {
     throw new GenerationFailedException(new GenerationFailueInfo("couldn't evaluate if-macro condition", inputNode, BaseAdapter.fromAdapter(ifMacro), null, generator.getGeneratorSessionContext()));
   }
 
-  public static List<SNode> getNewInputNodes(NodeMacro nodeMacro, SNode currentInputNode, ITemplateGenerator generator) {
+  public static List<SNode> getNewInputNodes(NodeMacro nodeMacro, SNode currentInputNode, ITemplateGenerator generator) throws GenerationFailedException {
     try {
       if (nodeMacro instanceof LoopMacro) {
         return getNewInputNodes(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((LoopMacro) nodeMacro).getSourceNodesQuery(), generator);
@@ -195,14 +195,14 @@ public class MacroUtil {
     } catch (GenerationFailedException gfe) {
       throw gfe;
     } catch (Throwable t) {
-      throw new GenerationFailedException(new GenerationFailueInfo(t.toString(), currentInputNode, nodeMacro.getNode(), null, generator.getGeneratorSessionContext()), t);
+      throw new GenerationFailedException(new GenerationFailueInfo("couldn't get input nodes", currentInputNode, nodeMacro.getNode(), null, generator.getGeneratorSessionContext()), t);
     }
   }
 
   /**
    * only applicable to macros, which can yield 1 new output node
    */
-  public static SNode getNewInputNode(NodeMacro nodeMacro, SNode currentInputNode, ITemplateGenerator generator) {
+  public static SNode getNewInputNode(NodeMacro nodeMacro, SNode currentInputNode, ITemplateGenerator generator) throws GenerationFailedException {
     try {
       if (nodeMacro instanceof SwitchMacro) {
         return getNewInputNodeForSwitchMacro(currentInputNode, (SwitchMacro) nodeMacro, generator);
@@ -212,12 +212,12 @@ public class MacroUtil {
     } catch (GenerationFailedException gfe) {
       throw gfe;
     } catch (Throwable t) {
-      throw new GenerationFailedException(new GenerationFailueInfo(t.toString(), currentInputNode, nodeMacro.getNode(), null, generator.getGeneratorSessionContext()), t);
+      throw new GenerationFailedException(new GenerationFailueInfo("couldn't get new input node", currentInputNode, nodeMacro.getNode(), null, generator.getGeneratorSessionContext()), t);
     }
     throw new GenerationFailedException(new GenerationFailueInfo("couldn't get new input node", currentInputNode, nodeMacro.getNode(), null, generator.getGeneratorSessionContext()));
   }
 
-  private static SNode getNewInputNode(SNode currentInputNode, SourceSubstituteMacro macro, SourceSubstituteMacro_SourceNodeQuery query, boolean optionalQuery, ITemplateGenerator generator) {
+  private static SNode getNewInputNode(SNode currentInputNode, SourceSubstituteMacro macro, SourceSubstituteMacro_SourceNodeQuery query, boolean optionalQuery, ITemplateGenerator generator) throws GenerationFailedException {
     if (query == null) {
       if (optionalQuery) {
         // continue with current source node
@@ -230,7 +230,7 @@ public class MacroUtil {
     return resultNode;
   }
 
-  private static List<SNode> getNewInputNodes(SNode currentInputNode, SourceSubstituteMacro macro, SourceSubstituteMacro_SourceNodesQuery query, ITemplateGenerator generator) {
+  private static List<SNode> getNewInputNodes(SNode currentInputNode, SourceSubstituteMacro macro, SourceSubstituteMacro_SourceNodesQuery query, ITemplateGenerator generator) throws GenerationFailedException {
     // new
     if (query != null) {
       List<SNode> list = GeneratorUtil.evaluateSourceNodesQuery(currentInputNode, query, generator);
@@ -251,10 +251,6 @@ public class MacroUtil {
         if (sourceNodes != null) {
           return sourceNodes;
         }
-        return new LinkedList<SNode>();
-      } catch (Exception e) {
-        generator.showErrorMessage(currentInputNode, null, BaseAdapter.fromAdapter(macro), "couldn't evaluate macro query: " + NameUtil.shortNameFromLongName(e.getClass().getName()) + " : " + e.getMessage());
-        LOG.error(e);
         return new LinkedList<SNode>();
       } finally {
         Statistics.getStatistic(Statistics.TPL).add(macro.getModel(), methodName, startTime);

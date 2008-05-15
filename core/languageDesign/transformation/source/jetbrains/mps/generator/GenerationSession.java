@@ -175,7 +175,7 @@ public class GenerationSession implements IGenerationSession {
     return status;
   }
 
-  private SModel generateModel_stepIntern(SModel inputModel, ITemplateGenerator generator) {
+  private SModel generateModel_stepIntern(SModel inputModel, ITemplateGenerator generator) throws GenerationFailedException {
     String modelsLongName = inputModel.getLongName();
     SModel currentInputModel = inputModel;
 

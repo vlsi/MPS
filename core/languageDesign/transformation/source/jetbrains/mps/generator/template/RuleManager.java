@@ -10,6 +10,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.transformation.TLBase.structure.*;
+import jetbrains.mps.generator.GenerationFailedException;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -86,21 +87,21 @@ public class RuleManager {
   }
 
 
-  public void applyCreateRootRules() {
+  public void applyCreateRootRules() throws GenerationFailedException {
     for (CreateRootRule rule : myCreateRootRules) {
       myGenerator.checkMonitorCanceled();
       GeneratorUtil.applyCreateRootRule(rule, myGenerator);
     }
   }
 
-  public void applyRoot_MappingRules() {
+  public void applyRoot_MappingRules() throws GenerationFailedException {
     for (Root_MappingRule rule : myRoot_MappingRules) {
       myGenerator.checkMonitorCanceled();
       GeneratorUtil.applyRoot_MappingRule(rule, myGenerator);
     }
   }
 
-  public void applyWeaving_MappingRules() {
+  public void applyWeaving_MappingRules() throws GenerationFailedException {
     for (Weaving_MappingRule rule : myWeaving_MappingRules) {
       myGenerator.checkMonitorCanceled();
       GeneratorUtil.applyWeaving_MappingRule(rule, myGenerator);
@@ -111,7 +112,7 @@ public class RuleManager {
     return myAbandonedRootConcepts;
   }
 
-  public void applyReductionRules(SNode inputNode, SNode clonedOutputNode) {
+  public void applyReductionRules(SNode inputNode, SNode clonedOutputNode) throws GenerationFailedException {
     myGenerator.getGeneratorSessionContext().getGenerationTracer().pushInputNode(inputNode);
     try {
       applyReductionRules_internal(inputNode, clonedOutputNode);
@@ -120,7 +121,7 @@ public class RuleManager {
     }
   }
 
-  private void applyReductionRules_internal(SNode inputNode, SNode clonedOutputNode) {
+  private void applyReductionRules_internal(SNode inputNode, SNode clonedOutputNode) throws GenerationFailedException {
     if (clonedOutputNode.getParent() != null) { // don't try to reduce copied roots
       List<SNode> outputNodes = tryToReduce(inputNode, null);
       if (outputNodes != null) {
@@ -147,7 +148,7 @@ public class RuleManager {
     myGenerator.getGeneratorSessionContext().getGenerationTracer().pushOutputNode(clonedOutputNode);
   }
 
-  /*package*/ List<SNode> tryToReduce(SNode inputNode, String mappingName) {
+  /*package*/ List<SNode> tryToReduce(SNode inputNode, String mappingName) throws GenerationFailedException {
     boolean needStopReductionBlocking = false;
     boolean wasChanged = myGenerator.isChanged();
     try {

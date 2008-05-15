@@ -3,7 +3,7 @@ package jetbrains.mps.generator;
 /**
  * @author Kostik
  */
-public class GenerationFailedException extends RuntimeException {
+public class GenerationFailedException extends Exception {
   private GenerationFailueInfo myFailueInfo;
 
   public GenerationFailedException() {
