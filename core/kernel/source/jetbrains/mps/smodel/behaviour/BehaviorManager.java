@@ -22,6 +22,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.intellij.openapi.application.ApplicationManager;
+
 public final class BehaviorManager implements IComponentLifecycle {
   private static final Logger LOG = Logger.getLogger(BehaviorManager.class);
   private static Map<Class, Object> ourDefaultValue = new HashMap<Class, Object>();
@@ -38,7 +40,7 @@ public final class BehaviorManager implements IComponentLifecycle {
   }
 
   public static BehaviorManager getInstance() {
-    return ApplicationComponents.getInstance().getComponent(BehaviorManager.class);
+    return ApplicationManager.getApplication().getComponent(BehaviorManager.class);
   }
 
   private Map<String, Method> myCanBeChildMethods = new HashMap<String, Method>();
@@ -50,9 +52,8 @@ public final class BehaviorManager implements IComponentLifecycle {
 
   private ClassLoaderManager myClassLoaderManager;
 
-  @Dependency
-  public void setClassLoaderManager(ClassLoaderManager manager) {
-    myClassLoaderManager = manager;
+  public BehaviorManager(ClassLoaderManager classLoaderManager) {
+    myClassLoaderManager = classLoaderManager;
   }
 
   public void initComponent() {

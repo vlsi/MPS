@@ -100,7 +100,17 @@
       <implementation-class>jetbrains.mps.project.MPSProjects</implementation-class>
     </component>
 
+    <component>
+      <implementation-class>jetbrains.mps.smodel.behaviour.BehaviorManager</implementation-class>
+    </component>
 
+    <component>
+      <implementation-class>jetbrains.mps.project.AuxilaryRuntimeModel</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.nodeEditor.LanguagesKeymapManager</implementation-class>
+    </component>
 
     <component>
       <implementation-class>jetbrains.mps.MPSAdapter</implementation-class>

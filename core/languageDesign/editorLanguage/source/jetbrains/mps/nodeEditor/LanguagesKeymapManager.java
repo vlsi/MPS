@@ -13,11 +13,13 @@ import jetbrains.mps.reloading.ReloadAdapter;
 
 import java.util.*;
 
+import com.intellij.openapi.application.ApplicationManager;
+
 public class LanguagesKeymapManager implements IComponentLifecycle {
   private static final Logger LOG = Logger.getLogger(LanguagesKeymapManager.class);
 
   public static LanguagesKeymapManager getInstance() {
-    return ApplicationComponents.getInstance().getComponent(LanguagesKeymapManager.class);
+    return ApplicationManager.getApplication().getComponent(LanguagesKeymapManager.class);
   }
 
   private Map<String, List<EditorCellKeyMap>> myLanguagesToKeyMaps = new HashMap<String, List<EditorCellKeyMap>>();
@@ -28,18 +30,8 @@ public class LanguagesKeymapManager implements IComponentLifecycle {
 
   private ClassLoaderManager myClassLoaderManager;
 
-
-  public LanguagesKeymapManager() {
-  }
-  
-  @Dependency
-  public void addMyListener(MPSModuleRepository repository) {
-   // CommandProcessor.instance().addWeakCommandListener(myListener);
+  public LanguagesKeymapManager(MPSModuleRepository repository, ClassLoaderManager manager) {
     repository.addModuleRepositoryListener(myListener);
-  }
-
-  @Dependency
-  public void setClassLoaderManager(ClassLoaderManager manager) {
     myClassLoaderManager = manager;
   }
 

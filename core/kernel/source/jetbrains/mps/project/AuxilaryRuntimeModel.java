@@ -2,6 +2,7 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
+import com.intellij.openapi.application.ApplicationManager;
 
 /**
  * Igor Alshannikov
@@ -19,7 +20,7 @@ public class AuxilaryRuntimeModel implements ModelOwner {
   }
 
   private static AuxilaryRuntimeModel getInstance() {
-    return ApplicationComponents.getInstance().getComponent(AuxilaryRuntimeModel.class);
+    return ApplicationManager.getApplication().getComponent(AuxilaryRuntimeModel.class);
   }
 
   private SModelDescriptor getDescriptor_internal() {

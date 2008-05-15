@@ -20,9 +20,11 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.NonNls;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.ApplicationComponent;
 
-public class GlobalSModelEventsManager implements IComponentLifecycle {
+public class GlobalSModelEventsManager implements IComponentLifecycle, ApplicationComponent {
   private static Logger LOG = Logger.getLogger(GlobalSModelEventsManager.class);
 
   public static GlobalSModelEventsManager getInstance() {
@@ -65,13 +67,22 @@ public class GlobalSModelEventsManager implements IComponentLifecycle {
     CommandProcessor.instance().addCommandListener(myCommandListener);
   }
 
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "Global SModel Events Manager";
+  }
+
+  public void disposeComponent() {
+  }
+
   private void addListeners(SModelDescriptor sm) {
     sm.addModelListener(myRelayListener);
     sm.addModelListener(myCommandEventsCollector);
   }
 
   private void removeListeners(SModelDescriptor sm) {
-    sm.removeModelListener(myRelayListener);
+    sm.removeModelListener(myRelayListener);;
     sm.removeModelListener(myCommandEventsCollector);
   }
 

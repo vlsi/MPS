@@ -7,7 +7,11 @@ import jetbrains.mps.smodel.event.SModelEvent;
 
 import java.util.*;
 
-public class CommandEventsManager implements IComponentLifecycle {
+import com.intellij.openapi.components.ApplicationComponent;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
+
+public class CommandEventsManager implements IComponentLifecycle, ApplicationComponent {
 
   private SModelRepository mySModelRepository;
   private GlobalSModelEventsManager myGlobalSModelEventsManager;
@@ -23,6 +27,16 @@ public class CommandEventsManager implements IComponentLifecycle {
         fireEvents(events);
       }
     });
+  }
+
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "Command Events Manager";
+  }
+
+  public void disposeComponent() {
+
   }
 
   private void fireEvents(List<SModelEvent> events) {
