@@ -6,13 +6,6 @@ import jetbrains.mps.components.Externalizable;
 import java.util.HashMap;
 import java.awt.Dimension;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 22.09.2005
- * Time: 19:06:56
- * To change this template use File | Settings | File Templates.
- */
 public class DialogDimensionsSettings extends DefaultExternalizableComponent {
   private
   @Externalizable

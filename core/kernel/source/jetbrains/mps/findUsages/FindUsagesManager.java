@@ -14,24 +14,24 @@ import jetbrains.mps.util.CollectionUtil;
 
 import java.util.*;
 
-public class FindUsagesManager implements IComponentLifecycle {
+import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.application.ApplicationManager;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
+
+public class FindUsagesManager implements IComponentLifecycle, ApplicationComponent {
   private static Logger LOG = Logger.getLogger(FindUsagesManager.class);
 
   public static FindUsagesManager getInstance() {
-    return ApplicationComponents.getInstance().getComponent(FindUsagesManager.class);
+    return ApplicationManager.getApplication().getComponent(FindUsagesManager.class);
   }
 
   private HashMap<AbstractConceptDeclaration, HashMap<SModelDescriptor, HashSet<AbstractConceptDeclaration>>> myConceptsToKnownDescendantsInModelDescriptors = new HashMap<AbstractConceptDeclaration, HashMap<SModelDescriptor, HashSet<AbstractConceptDeclaration>>>();
   private ClassLoaderManager myClassLoaderManager;
 
-  public FindUsagesManager() {
-  }
-
-  @Dependency
-  public void setClassLoaderManager(ClassLoaderManager manager) {
+  public FindUsagesManager(ClassLoaderManager manager) {
     myClassLoaderManager = manager;
   }
-
 
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
@@ -39,6 +39,16 @@ public class FindUsagesManager implements IComponentLifecycle {
         invalidateCaches();
       }
     });
+  }
+
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "MPS Find Usages Manager";
+  }
+
+  public void disposeComponent() {
+
   }
 
   public Set<AbstractConceptDeclaration> findDescendants(AbstractConceptDeclaration node, IScope scope) {

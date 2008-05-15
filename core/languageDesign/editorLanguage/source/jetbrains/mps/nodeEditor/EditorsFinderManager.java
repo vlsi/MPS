@@ -20,12 +20,6 @@ public class EditorsFinderManager implements IComponentLifecycle {
   private static Map<String, Constructor> ourCachedEditors = new HashMap<String, Constructor>();
 
   public EditorsFinderManager() {
-
-  }
-
-  @Dependency
-  public void setClassLoaderManager(ClassLoaderManager manager) {
-
   }
 
   public void initComponent() {
