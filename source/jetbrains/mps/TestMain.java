@@ -20,6 +20,9 @@ import java.io.File;
 import java.util.LinkedHashSet;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ex.ProjectManagerEx;
+import com.intellij.idea.IdeaTestApplication;
 
 public class TestMain {
   private static boolean ourTestMode;
@@ -48,10 +51,19 @@ public class TestMain {
     pr.execute(project);
   }
 
-  private static MPSProject loadProject(File projectFile) {
+  public static MPSProject loadProject(File projectFile) {
     if (!projectFile.exists()) {
       throw new RuntimeException("Can't find a project in file " + projectFile.getAbsolutePath());
     }
+
+    final ProjectManagerEx projectManager = ProjectManagerEx.getInstanceEx();
+
+    String filePath = projectFile.getAbsolutePath();
+    String iprfilePath = filePath.replaceAll("(.*)(\\.mpr)", "$1.ipr");
+
+    Project ideaProject = projectManager.newProject(iprfilePath, true, false);
+
+    assert ideaProject != null;
 
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
@@ -61,9 +73,9 @@ public class TestMain {
       }
     });
 
-
-    MPSProject project = new MPSProject(projectFile);
-    return project;
+    projectManager.openProject(ideaProject);
+    MPSProjectHolder holder = ideaProject.getComponent(MPSProjectHolder.class);
+    return holder.getMPSProject();
   }
 
   public static boolean testProjectGenerationForLeaks(File projectFile) {
@@ -324,6 +336,17 @@ public class TestMain {
   }
 
   public static void configureMPS() {
+    System.setProperty("idea.is.internal", "true");
+    System.setProperty("idea.no.jre.check", "true");
+    System.setProperty("idea.load.plugins", "false");
+    System.setProperty("idea.platform.prefix", "MPS");
+
+    try {
+      IdeaTestApplication.getInstance();
+    } catch (Exception e) {
+      throw new RuntimeException(e);
+    }
+
     LoggerUtil.configureLogger();
     ApplicationComponents.getInstance();
   }

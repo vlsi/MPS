@@ -52,6 +52,7 @@ import java.rmi.RemoteException;
 import java.util.*;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import com.intellij.openapi.project.Project;
 
 /**
  * Author: Sergey Dmitriev
@@ -695,6 +696,10 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
         }
 
         myDisposed = true;
+
+        if (getComponent(Project.class) != null) {
+          getComponentSafe(Project.class).dispose();
+        }
       }
     });
   }
