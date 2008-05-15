@@ -200,6 +200,11 @@
       <implementation-class>jetbrains.mps.helgins.inference.NodeTypesComponentsRepository</implementation-class>
     </component>
 
+    <component>
+      <implementation-class>jetbrains.mps.helgins.integration.HelginsPreferencesComponent</implementation-class>
+    </component>
+
+
 
 
     <component>

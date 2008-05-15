@@ -17,6 +17,8 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.util.List;
 
+import com.intellij.openapi.application.ApplicationManager;
+
 public class HelginsPreferencesComponent extends DefaultExternalizableComponent implements IComponentWithPreferences {
 
   //private @Externalizable boolean myUsesIncrementalAlgorithm = false;
@@ -29,7 +31,7 @@ public class HelginsPreferencesComponent extends DefaultExternalizableComponent 
   boolean myGenerationOptimizationEnabled = true;
 
   public static HelginsPreferencesComponent getInstance() {
-    return ApplicationComponents.getInstance().getComponent(HelginsPreferencesComponent.class);
+    return ApplicationManager.getApplication().getComponent(HelginsPreferencesComponent.class);
   }
 
   public List<IPreferencesPage> createPreferencesPages() {
