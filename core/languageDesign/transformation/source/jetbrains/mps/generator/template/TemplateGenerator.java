@@ -1,7 +1,7 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.generator.GenerationFailedException;
+import jetbrains.mps.generator.GenerationFailueException;
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.template.GeneratorUtil;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
@@ -46,13 +46,13 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return myRuleManager;
   }
 
-  public boolean doPrimaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailedException {
+  public boolean doPrimaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailueException {
     reset(inputModel, outputModel);
     doMapping(true);
     return isChanged();
   }
 
-  public boolean doSecondaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailedException {
+  public boolean doSecondaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailueException {
     reset(inputModel, outputModel);
     doMapping(false);
     return isChanged();
@@ -75,7 +75,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myRuleManager = null;
   }
 
-  private void doMapping(boolean isPrimary) throws GenerationFailedException {
+  private void doMapping(boolean isPrimary) throws GenerationFailueException {
     checkMonitorCanceled();
     int oldErrorCount = getErrorCount();
 

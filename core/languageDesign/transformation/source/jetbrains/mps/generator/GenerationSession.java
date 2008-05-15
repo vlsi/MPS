@@ -13,7 +13,6 @@ import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.logging.LoggingHandlerAdapter;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.structure.MappingScript;
 import jetbrains.mps.transformation.TLBase.structure.MappingScriptKind;
@@ -154,7 +153,7 @@ public class GenerationSession implements IGenerationSession {
       addMessage(status.isError() ? MessageKind.WARNING : MessageKind.INFORMATION, "model \"" + inputModel.getUID() + "\" has been generated " + (status.isError() ? "with errors" : "successfully"));
     } catch (GenerationCanceledException gce) {
       throw gce;//rethrow it for not to be caught in the last catch block
-    } catch (GenerationFailedException gfe) {
+    } catch (GenerationFailueException gfe) {
       LOG.error(gfe);
       myProgressMonitor.addText(gfe.toString());
       addMessage(MessageKind.ERROR, "model \"" + inputModel.getUID() + "\" generation failed : " + gfe);
@@ -169,7 +168,7 @@ public class GenerationSession implements IGenerationSession {
     return status;
   }
 
-  private SModel generateModel_stepIntern(SModel inputModel, ITemplateGenerator generator) throws GenerationFailedException {
+  private SModel generateModel_stepIntern(SModel inputModel, ITemplateGenerator generator) throws GenerationFailueException {
     String modelsLongName = inputModel.getLongName();
     SModel currentInputModel = inputModel;
 
@@ -265,7 +264,7 @@ public class GenerationSession implements IGenerationSession {
         } else {
           generator.showErrorMessage(null, "to get more diagnostic generate model with the 'save transient models' option");
         }
-        throw new GenerationFailedException("failed to generate output after 10 repeated mappings");
+        throw new GenerationFailueException("failed to generate output after 10 repeated mappings");
       }
 
       // next iteration ...

@@ -6,18 +6,15 @@
  */
 package jetbrains.mps.generator.template;
 
-import jetbrains.mps.generator.GenerationFailedException;
+import jetbrains.mps.generator.GenerationFailueException;
 import jetbrains.mps.generator.GenerationSessionContext;
-import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.transformation.TLBase.structure.RuleConsequence;
 import jetbrains.mps.transformation.TLBase.structure.TemplateDeclaration;
 import jetbrains.mps.transformation.TLBase.structure.TemplateSwitch;
-import jetbrains.mps.util.Condition;
 
 import java.util.List;
 
@@ -39,9 +36,9 @@ public interface ITemplateGenerator {
    */
   SModel getTargetModel();
 
-  boolean doPrimaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailedException;
+  boolean doPrimaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailueException;
 
-  boolean doSecondaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailedException;
+  boolean doSecondaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailueException;
 
   SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName);
 

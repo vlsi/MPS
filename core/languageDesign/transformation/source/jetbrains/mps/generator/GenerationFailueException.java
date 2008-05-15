@@ -2,45 +2,39 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.ide.messages.Message;
-import jetbrains.mps.ide.messages.MessageKind;
-import jetbrains.mps.ide.messages.NodeWithContext;
 
-/**
- * @author Kostik
- */
-public class GenerationFailedException extends Exception {
-  private static final Logger LOG = Logger.getLogger(GenerationFailedException.class);
+public class GenerationFailueException extends Exception {
+  private static final Logger LOG = Logger.getLogger(GenerationFailueException.class);
 
-  public GenerationFailedException(String message) {
+  public GenerationFailueException(String message) {
     super(message);
     logError(message, null, null, null);
   }
 
-  public GenerationFailedException(String message, SNode hintNode, Throwable cause) {
+  public GenerationFailueException(String message, SNode hintNode, Throwable cause) {
     super(toBetterMessage(message, cause), toBetterCause(cause));
     LOG.error(message, hintNode);
   }
 
-  public GenerationFailedException(String message, SNode inputNode, SNode templateNode, SNode ruleNode) {
+  public GenerationFailueException(String message, SNode inputNode, SNode templateNode, SNode ruleNode) {
     super(message);
     logError(message, inputNode, templateNode, ruleNode);
   }
 
-  public GenerationFailedException(String message, SNode inputNode, SNode templateNode, SNode ruleNode, Throwable cause) {
+  public GenerationFailueException(String message, SNode inputNode, SNode templateNode, SNode ruleNode, Throwable cause) {
     super(toBetterMessage(message, cause), toBetterCause(cause));
     logError(getMessage(), inputNode, templateNode, ruleNode);
   }
 
   private static String toBetterMessage(String message, Throwable cause) {
-    if(cause instanceof GenerationFailedException) {
+    if(cause instanceof GenerationFailueException) {
       return message + cause.getMessage();
     }
     return message + " : " + cause.toString();
   }
 
   private static Throwable toBetterCause(Throwable cause) {
-    if(cause instanceof GenerationFailedException) {
+    if(cause instanceof GenerationFailueException) {
       return cause.getCause();
     }
     return cause;

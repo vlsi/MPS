@@ -6,8 +6,7 @@ import jetbrains.mps.transformation.TLBase.structure.*;
 import jetbrains.mps.transformation.TemplateLanguageUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.generator.GenerationFailedException;
-import jetbrains.mps.generator.GenerationFailueInfo;
+import jetbrains.mps.generator.GenerationFailueException;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -36,7 +35,7 @@ public class TemplateProcessor {
     throws
     DismissTopMappingRuleException,
     TemplateProcessingFailureException,
-    GenerationFailedException {
+    GenerationFailueException {
     TemplateProcessor templateProcessor = new TemplateProcessor(generator);
     Map<String, SNode> old = generator.setPreviousInputNodesByMappingName(templateProcessor.myInputNodesByMappingName);
     try {
@@ -47,7 +46,7 @@ public class TemplateProcessor {
       return outputNodels;
     } catch (StackOverflowError e) {
       // this is critical
-      throw new GenerationFailedException("couldn't process template", inputNode, templateNode, null, e);
+      throw new GenerationFailueException("couldn't process template", inputNode, templateNode, null, e);
     } finally {
       generator.setPreviousInputNodesByMappingName(old);
     }
@@ -60,7 +59,7 @@ public class TemplateProcessor {
                                                        boolean registerTopOutput)
     throws
     DismissTopMappingRuleException,
-    GenerationFailedException {
+    GenerationFailueException {
 
     GenerationTracer generationTracer = myGenerator.getGeneratorSessionContext().getGenerationTracer();
     putInputNodeByMappingName(mappingName, inputNode);
@@ -173,7 +172,7 @@ public class TemplateProcessor {
     return outputNodes;
   }
 
-  private List<SNode> createOutputNodesForTemplateNodeWithMacro(NodeMacro nodeMacro, SNode templateNode, SNode inputNode, int nodeMacrosToSkip, boolean registerTopOutput) throws DismissTopMappingRuleException, GenerationFailedException {
+  private List<SNode> createOutputNodesForTemplateNodeWithMacro(NodeMacro nodeMacro, SNode templateNode, SNode inputNode, int nodeMacrosToSkip, boolean registerTopOutput) throws DismissTopMappingRuleException, GenerationFailueException {
     GenerationTracer generationTracer = myGenerator.getGeneratorSessionContext().getGenerationTracer();
     List<SNode> outputNodes = new ArrayList<SNode>();
     String mappingName = GeneratorUtil.getMappingName(nodeMacro, null);
@@ -424,7 +423,7 @@ public class TemplateProcessor {
     return outputNodes;
   }
 
-  private List<SNode> copyNodeFromInputNode(String mappingName, SNode templateNode, SNode inputNode) throws GenerationFailedException {
+  private List<SNode> copyNodeFromInputNode(String mappingName, SNode templateNode, SNode inputNode) throws GenerationFailueException {
     putInputNodeByMappingName(mappingName, inputNode);
     myGenerator.getGeneratorSessionContext().getGenerationTracer().pushInputNode(inputNode);
     try {
@@ -434,7 +433,7 @@ public class TemplateProcessor {
     }
   }
 
-  private List<SNode> copyNodeFromInputNode_internal(String mappingName, SNode templateNode, SNode inputNode) throws GenerationFailedException {
+  private List<SNode> copyNodeFromInputNode_internal(String mappingName, SNode templateNode, SNode inputNode) throws GenerationFailueException {
     List<SNode> outputNodes = myGenerator.getRuleManager().tryToReduce(inputNode, mappingName);
     if (outputNodes != null) {
       return outputNodes;
@@ -506,7 +505,7 @@ public class TemplateProcessor {
                                                                boolean registerTopOutput)
     throws
     DismissTopMappingRuleException,
-    GenerationFailedException {
+    GenerationFailueException {
 
     TemplateProcessor templateProcessor = new TemplateProcessor(myGenerator);
     Map<String, SNode> old = myGenerator.setPreviousInputNodesByMappingName(templateProcessor.myInputNodesByMappingName);

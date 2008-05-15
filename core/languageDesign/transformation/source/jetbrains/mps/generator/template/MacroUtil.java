@@ -1,7 +1,6 @@
 package jetbrains.mps.generator.template;
 
-import jetbrains.mps.generator.GenerationFailedException;
-import jetbrains.mps.generator.GenerationFailueInfo;
+import jetbrains.mps.generator.GenerationFailueException;
 import jetbrains.mps.generator.template.GeneratorUtil;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.Statistics;
@@ -104,7 +103,7 @@ public class MacroUtil {
     return targetNode;
   }
 
-  public static boolean checkConditionForIfMacro(SNode inputNode, IfMacro ifMacro, ITemplateGenerator generator) throws GenerationFailedException {
+  public static boolean checkConditionForIfMacro(SNode inputNode, IfMacro ifMacro, ITemplateGenerator generator) throws GenerationFailueException {
     // new
     IfMacro_Condition function = ifMacro.getConditionFunction();
     long startTime = System.currentTimeMillis();
@@ -144,10 +143,10 @@ public class MacroUtil {
       }
     }
 
-    throw new GenerationFailedException("couldn't evaluate if-macro condition", inputNode, BaseAdapter.fromAdapter(ifMacro), null);
+    throw new GenerationFailueException("couldn't evaluate if-macro condition", inputNode, BaseAdapter.fromAdapter(ifMacro), null);
   }
 
-  public static List<SNode> getNewInputNodes(NodeMacro nodeMacro, SNode currentInputNode, ITemplateGenerator generator) throws GenerationFailedException {
+  public static List<SNode> getNewInputNodes(NodeMacro nodeMacro, SNode currentInputNode, ITemplateGenerator generator) throws GenerationFailueException {
     try {
       if (nodeMacro instanceof LoopMacro) {
         return getNewInputNodes(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((LoopMacro) nodeMacro).getSourceNodesQuery(), generator);
@@ -174,9 +173,9 @@ public class MacroUtil {
       }
 
       if (nodeMacro instanceof SwitchMacro) {
-        throw new GenerationFailedException("SwitchMacro is not supported by getNewInputNodes", currentInputNode, nodeMacro.getNode(), null);
+        throw new GenerationFailueException("SwitchMacro is not supported by getNewInputNodes", currentInputNode, nodeMacro.getNode(), null);
       } else if (nodeMacro instanceof IncludeMacro) {
-        throw new GenerationFailedException("IncludeMacro is not supported by getNewInputNodes", currentInputNode, nodeMacro.getNode(), null);
+        throw new GenerationFailueException("IncludeMacro is not supported by getNewInputNodes", currentInputNode, nodeMacro.getNode(), null);
       }
 
       // old
@@ -193,14 +192,14 @@ public class MacroUtil {
       return list;
 
     } catch (Throwable t) {
-      throw new GenerationFailedException("couldn't get input nodes", currentInputNode, nodeMacro.getNode(), null, t);
+      throw new GenerationFailueException("couldn't get input nodes", currentInputNode, nodeMacro.getNode(), null, t);
     }
   }
 
   /**
    * only applicable to macros, which can yield 1 new output node
    */
-  public static SNode getNewInputNode(NodeMacro nodeMacro, SNode currentInputNode, ITemplateGenerator generator) throws GenerationFailedException {
+  public static SNode getNewInputNode(NodeMacro nodeMacro, SNode currentInputNode, ITemplateGenerator generator) throws GenerationFailueException {
     try {
       if (nodeMacro instanceof SwitchMacro) {
         return getNewInputNodeForSwitchMacro(currentInputNode, (SwitchMacro) nodeMacro, generator);
@@ -208,25 +207,25 @@ public class MacroUtil {
         return getNewInputNode(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((IncludeMacro) nodeMacro).getSourceNodeQuery(), true, generator);
       }
     } catch (Throwable t) {
-      throw new GenerationFailedException("couldn't get new input node", currentInputNode, nodeMacro.getNode(), null, t);
+      throw new GenerationFailueException("couldn't get new input node", currentInputNode, nodeMacro.getNode(), null, t);
     }
-    throw new GenerationFailedException("couldn't get new input node", currentInputNode, nodeMacro.getNode(), null);
+    throw new GenerationFailueException("couldn't get new input node", currentInputNode, nodeMacro.getNode(), null);
   }
 
-  private static SNode getNewInputNode(SNode currentInputNode, SourceSubstituteMacro macro, SourceSubstituteMacro_SourceNodeQuery query, boolean optionalQuery, ITemplateGenerator generator) throws GenerationFailedException {
+  private static SNode getNewInputNode(SNode currentInputNode, SourceSubstituteMacro macro, SourceSubstituteMacro_SourceNodeQuery query, boolean optionalQuery, ITemplateGenerator generator) throws GenerationFailueException {
     if (query == null) {
       if (optionalQuery) {
         // continue with current source node
         return currentInputNode;
       }
-      throw new GenerationFailedException("couldn't evaluate macro query", currentInputNode, BaseAdapter.fromAdapter(macro), null);
+      throw new GenerationFailueException("couldn't evaluate macro query", currentInputNode, BaseAdapter.fromAdapter(macro), null);
     }
 
     SNode resultNode = GeneratorUtil.evaluateSourceNodeQuery(currentInputNode, query, generator);
     return resultNode;
   }
 
-  private static List<SNode> getNewInputNodes(SNode currentInputNode, SourceSubstituteMacro macro, SourceSubstituteMacro_SourceNodesQuery query, ITemplateGenerator generator) throws GenerationFailedException {
+  private static List<SNode> getNewInputNodes(SNode currentInputNode, SourceSubstituteMacro macro, SourceSubstituteMacro_SourceNodesQuery query, ITemplateGenerator generator) throws GenerationFailueException {
     // new
     if (query != null) {
       List<SNode> list = GeneratorUtil.evaluateSourceNodesQuery(currentInputNode, query, generator);
@@ -253,7 +252,7 @@ public class MacroUtil {
       }
     }
 
-    throw new GenerationFailedException("couldn't evaluate macro query", currentInputNode, BaseAdapter.fromAdapter(macro), null);
+    throw new GenerationFailueException("couldn't evaluate macro query", currentInputNode, BaseAdapter.fromAdapter(macro), null);
   }
 
   private static SNode getNewInputNodeForSwitchMacro(SNode currentInputNode, SwitchMacro macro, ITemplateGenerator generator) {
