@@ -10,6 +10,7 @@ import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.Interface;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.CommonPaths;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 
 public class TextGenerationUtil {
@@ -29,8 +30,8 @@ public class TextGenerationUtil {
   public static JavaCompiler compile(IOperationContext context, SModel targetModel, IAdaptiveProgressMonitor progress) {
     CompositeClassPathItem item = new CompositeClassPathItem();
     item.add(context.getModule().getModuleWithDependenciesClassPathItem());
-    item.add(ClassLoaderManager.getInstance().getMPSPath());
-    item.add(ClassLoaderManager.getInstance().getJDK());
+    item.add(CommonPaths.getMPSPath());
+    item.add(CommonPaths.getJDK());
 
     JavaCompiler compiler = new JavaCompiler(item);
 
