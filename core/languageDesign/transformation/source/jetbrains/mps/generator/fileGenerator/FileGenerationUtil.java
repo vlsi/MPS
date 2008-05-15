@@ -15,6 +15,8 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.vcs.ProjectVCSManager;
 
 import javax.swing.JOptionPane;
 import java.io.File;
@@ -28,8 +30,8 @@ public class FileGenerationUtil {
   public static final Logger LOG = Logger.getLogger(FileGenerationUtil.class);
 
   public static boolean handleOutput(IOperationContext context,
-                                  GenerationStatus status,
-                                  String outputDir) {
+                                     GenerationStatus status,
+                                     String outputDir) {
     if (outputDir == null) throw new RuntimeException("unspecified output path for file generation.");
 
     if (!status.isOk()) {
@@ -51,14 +53,9 @@ public class FileGenerationUtil {
 
     generateFiles(status, outputRootDirectory, gm, outputNodeContents, generatedFiles, directories);
 
-    IProjectHandler handler = context.getProject().getProjectHandler();
-    if (handler != null) {
-      try {
-        handler.addFilesToVCS(new ArrayList<File>(generatedFiles));
-      } catch (RemoteException e) {
-        GenerateFilesGenerationType.LOG.error(e);
-      }
-    }
+    ProjectVCSManager projectVCSManager = context.getProject().getComponent(ProjectVCSManager.class);
+    assert projectVCSManager != null;
+    projectVCSManager.getController().addFilesToVCS(new ArrayList<File>(generatedFiles));
 
     // always clean-up default output dir.
     directories.add(getDefaultOutputDir(status.getInputModel(), outputRootDirectory));
@@ -66,7 +63,7 @@ public class FileGenerationUtil {
 
     gm.fireFilesGenerated(generatedFiles, status);
 
-    return ok; 
+    return ok;
   }
 
   public static File getDefaultOutputDir(SModel inputModel, File outputRootDir) {
@@ -104,18 +101,9 @@ public class FileGenerationUtil {
         }
       }
     }
-    IProjectHandler projectHandler = context.getProject().getProjectHandler();
-    if (projectHandler != null) {
-      try {
-        projectHandler.deleteFilesAndRemoveFromVCS(filesToDelete);
-      } catch (RemoteException ex) {
-        LOG.error(ex);
-      }
-    } else {
-      for (File file : filesToDelete) {
-        file.delete();
-      }
-    }
+    ProjectVCSManager projectVCSManager = context.getProject().getComponent(ProjectVCSManager.class);
+    assert projectVCSManager != null;
+    projectVCSManager.getController().deleteFilesAndRemoveFromVCS(filesToDelete);
   }
 
   public static void cleanUpDefaultOutputDir(GenerationStatus status, String outputDir, IOperationContext context) {

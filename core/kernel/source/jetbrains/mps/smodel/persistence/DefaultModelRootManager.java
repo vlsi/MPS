@@ -14,6 +14,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vcs.Merger;
+import jetbrains.mps.vcs.ProjectVCSManager;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -192,14 +193,9 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     SModelDescriptor result = DefaultModelRootManager.createModel(this, root, modelFile.getCanonicalPath(), uid, owner);
     IOperationContext operationContext = result.getOperationContext();
     if (operationContext != null) {
-      IProjectHandler projectHandler = operationContext.getProject().getProjectHandler();
-      if (projectHandler != null) {
-        try {
-          projectHandler.addFilesToVCS(CollectionUtil.asList(modelFile.toFile()));
-        } catch (RemoteException e) {
-          LOG.error(e);
-        }
-      }
+      ProjectVCSManager projectVCSManager = operationContext.getProject().getComponent(ProjectVCSManager.class);
+      assert projectVCSManager != null;
+      projectVCSManager.getController().addFilesToVCS(Collections.singletonList(modelFile.toFile()));
     } else {
       LOG.warning("can't find an operation context for a model " + result);
     }
@@ -300,7 +296,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     SNodePointer.changeModelUID(oldModelUID, newModelUID);
 
     //set model file
-    ((DefaultSModelDescriptor)modelDescriptor).setModelFile(dest);
+    ((DefaultSModelDescriptor) modelDescriptor).setModelFile(dest);
 
     //create stub for an old UID
     String stubFileName = oldFileName.substring(0, oldFileName.lastIndexOf(MODEL_EXTENSION)) + STUB_EXTENSION;
@@ -310,21 +306,14 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     IFile stubDescriptorModelFile = stubDescriptor.getModelFile();
 
     //vcs
-    IProjectHandler projectHandler = project.getProjectHandler();
-    if (projectHandler != null) {
-      try {
-        projectHandler.deleteFilesAndRemoveFromVCS(CollectionUtil.asList(FileSystem.toFile(oldModelFile)));
-        projectHandler.addFilesToVCS(CollectionUtil.asList(FileSystem.toFile(dest)));
-        projectHandler.addFilesToVCS(CollectionUtil.asList(FileSystem.toFile(stubDescriptorModelFile)));
-      } catch(RemoteException ex) {
-        LOG.error(ex);
-        return false;
-      }
-    } else {
-      oldModelFile.delete();
-    }
+    ProjectVCSManager projectVCSManager = project.getComponent(ProjectVCSManager.class);
+    assert projectVCSManager != null;
+    boolean result = projectVCSManager.getController().deleteFilesAndRemoveFromVCS(CollectionUtil.asList(FileSystem.toFile(oldModelFile)));
+    result &= projectVCSManager.getController().addFilesToVCS(CollectionUtil.asList(FileSystem.toFile(dest)));
+    result &= projectVCSManager.getController().addFilesToVCS(CollectionUtil.asList(FileSystem.toFile(stubDescriptorModelFile)));
+
     MPSModuleRepository.getInstance().invalidateCaches();
-    return true;
+    return result;
   }
 
   public void saveMetadata(@NotNull SModelDescriptor modelDescriptor) {
@@ -336,14 +325,9 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       metadataFile.createNewFile();
       IOperationContext operationContext = modelDescriptor.getOperationContext();
       if (operationContext != null) {
-        IProjectHandler projectHandler = operationContext.getProject().getProjectHandler();
-        if (projectHandler != null) {
-          try {
-            projectHandler.addFilesToVCS(CollectionUtil.asList(metadataFile.toFile()));
-          } catch (RemoteException e) {
-            LOG.error(e);
-          }
-        }
+        ProjectVCSManager projectVCSManager = operationContext.getProject().getComponent(ProjectVCSManager.class);
+        assert projectVCSManager != null;
+        projectVCSManager.getController().addFilesToVCS(CollectionUtil.asList(metadataFile.toFile()));
       } else {
         LOG.warning("can't find an operation context for a model " + modelDescriptor);
       }
