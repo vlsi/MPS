@@ -1,4 +1,4 @@
-package jetbrains.mps.idea.nodesFs;
+package jetbrains.mps.workbench.nodesFs;
 
 import com.intellij.openapi.vfs.DeprecatedVirtualFile;
 import com.intellij.openapi.vfs.VirtualFile;

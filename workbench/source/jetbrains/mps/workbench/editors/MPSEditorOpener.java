@@ -1,4 +1,4 @@
-package jetbrains.mps.idea.editors;
+package jetbrains.mps.workbench.editors;
 
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.fileEditor.FileEditorManager;
@@ -12,8 +12,8 @@ import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.idea.nodesFs.MPSNodeVirtualFile;
-import jetbrains.mps.idea.nodesFs.MPSNodesVirtualFileSystem;
+import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
+import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import jetbrains.mps.util.Calculable;
 
 public class MPSEditorOpener implements ProjectComponent {

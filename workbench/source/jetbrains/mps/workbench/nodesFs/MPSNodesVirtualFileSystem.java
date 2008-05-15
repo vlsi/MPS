@@ -1,4 +1,4 @@
-package jetbrains.mps.idea.nodesFs;
+package jetbrains.mps.workbench.nodesFs;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vfs.VirtualFileSystem;

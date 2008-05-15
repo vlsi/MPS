@@ -1,4 +1,4 @@
-package jetbrains.mps.idea.editors;
+package jetbrains.mps.workbench.editors;
 
 import com.intellij.openapi.fileEditor.*;
 import com.intellij.openapi.project.Project;
@@ -6,7 +6,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
 import org.jdom.Element;
-import jetbrains.mps.idea.nodesFs.MPSNodeVirtualFile;
+import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 
 public class MPSFileNodeEditorProvider implements FileEditorProvider {
   public boolean accept(@NotNull Project project, @NotNull VirtualFile file) {

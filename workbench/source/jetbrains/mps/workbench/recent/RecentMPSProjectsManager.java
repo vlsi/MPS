@@ -1,4 +1,4 @@
-package jetbrains.mps.idea.recent;
+package jetbrains.mps.workbench.recent;
 
 import com.intellij.ide.RecentProjectsManagerBase;
 import com.intellij.ide.impl.ProjectUtil;

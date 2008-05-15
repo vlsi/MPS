@@ -1,4 +1,4 @@
-package jetbrains.mps.idea.editors;
+package jetbrains.mps.workbench.editors;
 
 import com.intellij.ide.IconProvider;
 import com.intellij.ide.FileIconProvider;
@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NonNls;
 
 import javax.swing.Icon;
 
-import jetbrains.mps.idea.nodesFs.MPSNodeVirtualFile;
+import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.ide.icons.IconManager;
 
 public class MPSIconProvider implements FileIconProvider, ApplicationComponent {

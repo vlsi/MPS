@@ -1,4 +1,4 @@
-package jetbrains.mps.idea.actions;
+package jetbrains.mps.workbench.actions;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;

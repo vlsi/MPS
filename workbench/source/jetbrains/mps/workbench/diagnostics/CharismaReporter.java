@@ -1,4 +1,4 @@
-package jetbrains.mps.idea.diagnostics;
+package jetbrains.mps.workbench.diagnostics;
 
 import com.intellij.openapi.diagnostic.ErrorReportSubmitter;
 import com.intellij.openapi.diagnostic.SubmittedReportInfo;

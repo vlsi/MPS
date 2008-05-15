@@ -1,9 +1,9 @@
-package jetbrains.mps.idea.highlighter;
+package jetbrains.mps.workbench.highlighter;
 
 import jetbrains.mps.nodeEditor.IEditorsProvider;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.idea.editors.MPSFileNodeEditor;
+import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
 
 import java.util.List;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package jetbrains.mps.idea.license;
+package jetbrains.mps.workbench.license;
 
 import com.intellij.ide.license.LicenseManager;
 import com.intellij.ide.license.LicenseFactory;

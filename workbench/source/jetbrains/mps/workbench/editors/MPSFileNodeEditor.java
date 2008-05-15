@@ -1,4 +1,4 @@
-package jetbrains.mps.idea.editors;
+package jetbrains.mps.workbench.editors;
 
 import com.intellij.openapi.util.UserDataHolder;
 import com.intellij.openapi.util.UserDataHolderBase;
@@ -18,8 +18,8 @@ import javax.swing.JComponent;
 import javax.swing.JLabel;
 import java.beans.PropertyChangeListener;
 
-import jetbrains.mps.idea.nodesFs.MPSNodeVirtualFile;
-import jetbrains.mps.idea.MPSProjectHolder;
+import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
+import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.NodeEditor;
 import jetbrains.mps.ide.IEditor;

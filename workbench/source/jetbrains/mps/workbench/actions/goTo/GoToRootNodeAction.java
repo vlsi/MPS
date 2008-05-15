@@ -1,4 +1,4 @@
-package jetbrains.mps.idea.actions.goTo;
+package jetbrains.mps.workbench.actions.goTo;
 
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
@@ -11,7 +11,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.impl.FakePsiElement;
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.idea.MPSProjectHolder;
+import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.project.MPSProject;
 
 public class GoToRootNodeAction extends AnAction {
