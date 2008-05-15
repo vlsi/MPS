@@ -24,6 +24,8 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="jetbrains.mps.mpsLayoutLanguage.structure" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.core.structure" />
@@ -424,6 +426,40 @@
     <property name="package" value="sources" />
     <property name="name" value="_Path_String" />
     <property name="constraint" value="[^\\s]*" />
+  </node>
+  <visible index="3" modelUID="jetbrains.mps.buildlanguage.structure" />
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1210777529562">
+    <property name="package" value="projectComponents" />
+    <property name="name" value="Antcall" />
+    <link role="extends" targetNodeId="1203598300291" resolveInfo="AbstractProjectComponent" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1210778516491">
+      <property name="value" value="antcall" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1210777679837">
+      <link role="intfc" targetNodeId="1203617883391" resolveInfo="ICompositeComponent" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1210777812278">
+      <property name="role" value="project" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3v.1196851066733" resolveInfo="Project" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1210777854685">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="targetReference" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1210777902405" resolveInfo="BuildLanguageTargetReference" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1210777902405">
+    <property name="package" value="projectComponents" />
+    <property name="name" value="BuildLanguageTargetReference" />
+    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1210777931344">
+      <property name="role" value="targetDeclaration" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3v.1196851099544" resolveInfo="TargetDeclaration" />
+    </node>
   </node>
 </model>
 
