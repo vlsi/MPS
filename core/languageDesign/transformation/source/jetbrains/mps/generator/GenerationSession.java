@@ -254,15 +254,15 @@ public class GenerationSession implements IGenerationSession {
 
       if (++secondaryMappingRepeatCount > 10) {
         generator.showErrorMessage(null, "failed to generate output after 10 repeated mappings");
-        if (mySessionContext.getGenerationTracer().hasTracebackData(transientModel.getUID())) {
-          generator.showErrorMessage(null, "last rules applied:");
+        if (mySessionContext.getGenerationTracer().isTracing()) {
+          LOG.error("last rules applied:");
           List<Pair<SNode, SNode>> pairs = mySessionContext.getGenerationTracer().getAllAppiedRulesWithInputNodes(transientModel.getUID());
           for (Pair<SNode, SNode> pair : pairs) {
-            generator.showErrorMessage(pair.o1, "rule: " + pair.o1.getDebugText());
-            generator.showErrorMessage(pair.o2, "-- input: " + (pair.o2 != null ? pair.o2.getDebugText() : "n/a"));
+            LOG.error("rule: " + pair.o1.getDebugText(), pair.o1);
+            LOG.error("-- input: " + (pair.o2 != null ? pair.o2.getDebugText() : "n/a"), pair.o2);
           }
         } else {
-          generator.showErrorMessage(null, "to get more diagnostic generate model with the 'save transient models' option");
+          LOG.error("to get more diagnostic generate model with the 'save transient models' option");
         }
         throw new GenerationFailueException("failed to generate output after 10 repeated mappings");
       }

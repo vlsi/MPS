@@ -36,6 +36,7 @@ public class TemplateProcessor {
     DismissTopMappingRuleException,
     TemplateProcessingFailureException,
     GenerationFailueException {
+
     TemplateProcessor templateProcessor = new TemplateProcessor(generator);
     Map<String, SNode> old = generator.setPreviousInputNodesByMappingName(templateProcessor.myInputNodesByMappingName);
     try {
@@ -46,6 +47,29 @@ public class TemplateProcessor {
       return outputNodels;
     } catch (StackOverflowError e) {
       // this is critical
+      LOG.error("generation cycled :(");
+      if (generator.getGeneratorSessionContext().getGenerationTracer().isTracing()) {
+        LOG.error("failed branch was:");
+        List<Pair<SNode, String>> pairs = generator.getGeneratorSessionContext().getGenerationTracer().getNodesWithTextFromCurrentBranch();
+        StringBuilder indent = new StringBuilder("");
+        boolean indentInc = true;
+        for (Pair<SNode, String> pair : pairs) {
+          LOG.error(indent + pair.o2 + (pair.o1 != null ? ": " + pair.o1.getDebugText() : ""), pair.o1);
+          if (indentInc && indent.length() >= 80) {
+            indentInc = false;
+          } else if (indent.length() == 0) {
+            indentInc = true;
+          }
+
+          if (indentInc) {
+            indent.append(".");
+          } else {
+            indent.deleteCharAt(indent.length() - 1);
+          }
+        }
+      } else {
+        LOG.error("to get more diagnostic generate model with the 'save transient models' option");
+      }
       throw new GenerationFailueException("couldn't process template", inputNode, templateNode, null, e);
     } finally {
       generator.setPreviousInputNodesByMappingName(old);

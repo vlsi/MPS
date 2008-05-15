@@ -198,9 +198,6 @@ public class GeneratorUtil {
           createRootNodeFromTemplate(
             getMappingName(createRootRule, null),
             BaseAdapter.fromAdapter(templateNode), null, generator);
-        } catch (GenerationFailueException e) {
-          LOG.error("-- was rule: " + createRootRule.getNode().getDebugText(), createRootRule.getNode());
-          throw e;
         } catch (DismissTopMappingRuleException e) {
           // it's ok, just continue
           generator.setChanged(wasChanged);
@@ -263,9 +260,6 @@ public class GeneratorUtil {
         } catch (DismissTopMappingRuleException e) {
           // it's ok, just continue
           generator.setChanged(wasChanged);
-        } catch (GenerationFailueException e) {
-          LOG.error("-- was rule: " + rule.getNode().getDebugText(), rule.getNode());
-          throw e;
         } finally {
           generator.getGeneratorSessionContext().getGenerationTracer().closeInputNode(inputNode);
         }
@@ -372,9 +366,6 @@ public class GeneratorUtil {
           }
         } catch (DismissTopMappingRuleException e) {
           generator.showErrorMessage(inputNode, templateFragment.getNode(), rule.getNode(), "dismission of weaving rule is not supported");
-        } catch (GenerationFailueException e) {
-          LOG.error("-- was rule: " + rule.getNode().getDebugText(), rule.getNode());
-          throw e;
         } catch (TemplateProcessingFailureException e) {
           generator.showErrorMessage(inputNode, templateFragment.getNode(), rule.getNode(), "error pocessing template fragment");
           generator.showInformationMessage(contextParentNode, " -- was output context node:");
@@ -620,7 +611,6 @@ public class GeneratorUtil {
     } catch (TemplateProcessingFailureException e) {
       generator.showErrorMessage(inputNode, reductionTemplateNode, rule.getNode(), "error processing reduction rule");
     } catch (GenerationFailueException e) {
-      LOG.error("-- was rule: " + rule.getNode().getDebugText(), rule.getNode());
       throw e;
     } catch (Throwable t) {
       LOG.error(t, BaseAdapter.fromNode(reductionTemplateNode));

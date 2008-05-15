@@ -108,6 +108,10 @@ public class GenerationTracer {
     }
   }
 
+  public boolean isTracing() {
+    return myActive;
+  }
+
   public void startTracing(SModel inputModel, SModel outputModel) {
     if (!myActive) return;
     myCurrentTracingData = new ArrayList<TracerNode>();
@@ -477,12 +481,30 @@ public class GenerationTracer {
     for (TracerNode ruleNode : ruleNodes) {
       // find input for rule
       TracerNode inputNode = ruleNode.getParent();
-      while(inputNode != null && inputNode.getKind() != Kind.INPUT) {
+      while (inputNode != null && inputNode.getKind() != Kind.INPUT) {
         inputNode = inputNode.getParent();
       }
       result.add(new Pair<SNode, SNode>(ruleNode.getNodePointer().getNode(), inputNode != null ? inputNode.getNodePointer().getNode() : null));
     }
 
+    return result;
+  }
+
+  /**
+   * util
+   */
+  public List<Pair<SNode, String>> getNodesWithTextFromCurrentBranch() {
+    List<Pair<SNode, String>> result = new ArrayList<Pair<SNode, String>>();
+    TracerNode currNode = myCurrentTraceNode;
+    while (currNode != null) {
+      SNodePointer pointer = currNode.getNodePointer();
+      if (pointer != null) {
+        result.add(new Pair<SNode, String>(pointer.getNode(), currNode.getKind().toString()));
+      } else {
+        result.add(new Pair<SNode, String>(null, currNode.getKind().toString()));
+      }
+      currNode = currNode.getParent();
+    }
     return result;
   }
 
