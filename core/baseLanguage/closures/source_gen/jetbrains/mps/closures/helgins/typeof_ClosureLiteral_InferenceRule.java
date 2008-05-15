@@ -93,10 +93,10 @@ public class typeof_ClosureLiteral_InferenceRule implements InferenceRule_Runtim
     if (returnsValue) {
       /*
         {
-          IMatchingPattern pattern_1201519259737 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
-          SNode coercedNode_1201519251382 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(RLCS_typevar_1199621958531), pattern_1201519259737);
-          if (coercedNode_1201519251382 != null) {
-            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(RLCS_typevar_1199621958531), coercedNode_1201519251382, closure, null, "jetbrains.mps.closures.helgins", "1201519323502");
+          IMatchingPattern pattern_ = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
+          SNode coercedNode_ = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(RLCS_typevar_1199621958531), pattern_);
+          if (coercedNode_ != null) {
+            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(RLCS_typevar_1199621958531), coercedNode_, closure, null, "jetbrains.mps.closures.helgins", "1201519323502");
           }
         }
       */
@@ -105,10 +105,10 @@ public class typeof_ClosureLiteral_InferenceRule implements InferenceRule_Runtim
     if (yieldsValue) {
       /*
         {
-          IMatchingPattern pattern_1201519344629 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
-          SNode coercedNode_1201519339952 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(YLCS_typevar_1200831610156), pattern_1201519344629);
-          if (coercedNode_1201519339952 != null) {
-            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(YLCS_typevar_1200831610156), coercedNode_1201519339952, closure, null, "jetbrains.mps.closures.helgins", "1201519354283");
+          IMatchingPattern pattern_1 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
+          SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(YLCS_typevar_1200831610156), pattern_1);
+          if (coercedNode_1 != null) {
+            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(YLCS_typevar_1200831610156), coercedNode_1, closure, null, "jetbrains.mps.closures.helgins", "1201519354283");
           }
         }
       */

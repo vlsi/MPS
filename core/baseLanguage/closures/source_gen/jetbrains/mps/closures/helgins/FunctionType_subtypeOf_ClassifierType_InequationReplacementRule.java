@@ -11,6 +11,7 @@ import java.util.List;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.closures.constraints.ClassifierTypeUtil;
 import java.util.Iterator;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.core.constraints.BaseConcept_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -58,7 +59,10 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
     {
       errorMsg = ": not an interface";
     }
-    TypeChecker.getInstance().reportTypeError(equationInfo.getNodeWithError(), BaseConcept_Behavior.call_getPresentation_1180102203531(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1180102203531(supertype) + errorMsg, "jetbrains.mps.closures.helgins", "1202742336483");
+    {
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().reportTypeError(equationInfo.getNodeWithError(), BaseConcept_Behavior.call_getPresentation_1180102203531(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1180102203531(supertype) + errorMsg, "jetbrains.mps.closures.helgins", "1202742336483", intentionProvider);
+    }
   }
 
   public boolean isWeak() {

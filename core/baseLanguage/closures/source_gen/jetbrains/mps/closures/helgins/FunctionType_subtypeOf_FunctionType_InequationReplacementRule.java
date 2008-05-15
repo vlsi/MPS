@@ -6,6 +6,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.InequationReplacementRule_Runtime
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.EquationInfo;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import java.util.Iterator;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -17,7 +18,10 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
 
   public void processInequation(SNode subtype, SNode supertype, EquationInfo equationInfo) {
     if (SLinkOperations.getCount(subtype, "parameterType") != SLinkOperations.getCount(supertype, "parameterType")) {
-      TypeChecker.getInstance().reportTypeError(equationInfo.getNodeWithError(), "different parameter numbers", "jetbrains.mps.closures.helgins", "1201618945543");
+      {
+        BaseIntentionProvider intentionProvider = null;
+        TypeChecker.getInstance().reportTypeError(equationInfo.getNodeWithError(), "different parameter numbers", "jetbrains.mps.closures.helgins", "1201618945543", intentionProvider);
+      }
       return;
     }
     TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(SLinkOperations.getTarget(subtype, "resultType", true), SLinkOperations.getTarget(supertype, "resultType", true), equationInfo.getNodeWithError(), null, "jetbrains.mps.closures.helgins", "1201614892741", false);
