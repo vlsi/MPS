@@ -117,7 +117,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
 
   private class MyCommandListener implements SModelCommandListener {
     public void eventsHappenedInCommand(final List<SModelEvent> events) {
-      ApplicationManager.getApplication().runWriteAction(new Runnable() {
+      ApplicationManager.getApplication().runWriteAction(new Runnable() {        
         public void run() {
           for (SModelEvent e : events) {
             e.accept(new SModelEventVisitorAdapter() {
