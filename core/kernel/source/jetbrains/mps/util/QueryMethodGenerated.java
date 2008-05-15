@@ -17,7 +17,11 @@ import java.util.Map;
 import java.util.Set;
 import java.util.HashSet;
 
-public class QueryMethodGenerated implements IComponentLifecycle {
+import com.intellij.openapi.components.ApplicationComponent;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
+
+public class QueryMethodGenerated implements IComponentLifecycle, ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(QueryMethodGenerated.class);
 
   private static Map<Pair<SModelUID, String>, Method> ourMethods = new HashMap<Pair<SModelUID, String>, Method>();
@@ -119,18 +123,26 @@ public class QueryMethodGenerated implements IComponentLifecycle {
     }
   }
 
-  public QueryMethodGenerated() {
-  }
+  private ClassLoaderManager myClassLoaderManager;
 
-  @Dependency
-  public void setClassLoaderManager(ClassLoaderManager manager) {
+  public QueryMethodGenerated(ClassLoaderManager manager) {
+    myClassLoaderManager = manager;
   }
 
   public void initComponent() {
-    ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
+    myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
       public void onBeforeReload() {
         clearCaches();
       }
     });
+  }
+
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "Query Methods Generated";
+  }
+
+  public void disposeComponent() {
   }
 }

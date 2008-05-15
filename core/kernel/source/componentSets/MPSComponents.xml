@@ -148,6 +148,13 @@
       <implementation-class>jetbrains.mps.ide.messages.NavigationManager</implementation-class>
     </component>
 
+    <component>
+      <implementation-class>jetbrains.mps.util.QueryMethod</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.util.QueryMethodGenerated</implementation-class>
+    </component>
 
     <component>
       <implementation-class>jetbrains.mps.MPSAdapter</implementation-class>
