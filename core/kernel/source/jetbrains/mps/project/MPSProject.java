@@ -699,7 +699,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
         if (getComponent(Project.class) != null) {
           Project project = getComponentSafe(Project.class);
-          if (!project.isDisposed()) {
+          if (IdeMain.isTestMode()) {
             project.dispose();
           }
         }
