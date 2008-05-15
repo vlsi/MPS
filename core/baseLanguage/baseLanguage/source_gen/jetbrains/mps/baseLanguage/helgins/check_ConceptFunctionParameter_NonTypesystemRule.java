@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.constraints.ConceptFunction_Behavior;
@@ -22,7 +23,10 @@ public class check_ConceptFunctionParameter_NonTypesystemRule implements NonType
   public void applyRule(final SNode parameter) {
     SNode conceptFunction = SNodeOperations.getAncestor(parameter, "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
     if (SNodeOperations.isInstanceOf(conceptFunction, "jetbrains.mps.baseLanguage.structure.Closure")) {
-      TypeChecker.getInstance().reportTypeError(parameter, "concept function parameter can not be used in closure", "jetbrains.mps.baseLanguage.helgins", "1197313614703");
+      {
+        BaseIntentionProvider intentionProvider = null;
+        TypeChecker.getInstance().reportTypeError(parameter, "concept function parameter can not be used in closure", "jetbrains.mps.baseLanguage.helgins", "1197313614703", intentionProvider);
+      }
     } else
     {
       final SNode parameterConcept = SNodeOperations.getConceptDeclaration(parameter);
@@ -34,7 +38,10 @@ public class check_ConceptFunctionParameter_NonTypesystemRule implements NonType
 
       });
       if (Sequence.fromIterable(seq).isEmpty()) {
-        TypeChecker.getInstance().reportTypeError(parameter, "not applicable in this context", "jetbrains.mps.baseLanguage.helgins", "1197313958459");
+        {
+          BaseIntentionProvider intentionProvider = null;
+          TypeChecker.getInstance().reportTypeError(parameter, "not applicable in this context", "jetbrains.mps.baseLanguage.helgins", "1197313958459", intentionProvider);
+        }
       }
     }
   }

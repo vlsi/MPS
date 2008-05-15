@@ -10,6 +10,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPr
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -44,7 +45,10 @@ public class typeOf_BaseMethodDeclaration_InferenceRule implements InferenceRule
       // shouldn't return any values
       for(SNode returnStatement : returnStatements) {
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
-          TypeChecker.getInstance().reportTypeError(returnStatement, "no return value expected", "jetbrains.mps.baseLanguage.helgins", "1178765152925");
+          {
+            BaseIntentionProvider intentionProvider = null;
+            TypeChecker.getInstance().reportTypeError(returnStatement, "no return value expected", "jetbrains.mps.baseLanguage.helgins", "1178765152925", intentionProvider);
+          }
         }
       }
     } else
@@ -52,7 +56,10 @@ public class typeOf_BaseMethodDeclaration_InferenceRule implements InferenceRule
       // should return subtypes of the 'expected type'
       for(SNode returnStatement : returnStatements) {
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
-          TypeChecker.getInstance().reportTypeError(returnStatement, "should return value", "jetbrains.mps.baseLanguage.helgins", "1178765314800");
+          {
+            BaseIntentionProvider intentionProvider = null;
+            TypeChecker.getInstance().reportTypeError(returnStatement, "should return value", "jetbrains.mps.baseLanguage.helgins", "1178765314800", intentionProvider);
+          }
         } else
         {
           SNode returnType = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(returnStatement, "expression", true), "jetbrains.mps.baseLanguage.helgins", "1178765405776", true);

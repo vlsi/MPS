@@ -309,14 +309,6 @@ public class QueriesGenerated {
     return _context.getNode().getId();
   }
 
-  public static Object propertyMacro_GetPropertyValue_1185010979939(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeOperations.getModel(_context.getNode()).toString();
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1185010987879(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getId();
-  }
-
   public static Object propertyMacro_GetPropertyValue_1185024196506(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SNodeOperations.getModel(_context.getNode()).toString();
   }
@@ -507,6 +499,23 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1207055706999(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return _context.getNode().getId();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1210837852080(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SNodeOperations.getModel(_context.getNode()).toString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1210837852090(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getNode().getId();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1210838058221(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode intentionDeclaration = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true), "intentionDeclaration", false);
+    return SNodeOperations.getModel(intentionDeclaration) + "." + SPropertyOperations.getString(intentionDeclaration, "name") + "_Intention";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1210838268824(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "intentionArgument", false), "name");
   }
 
   public static Object referenceMacro_GetReferent_1174655195413(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -1010,6 +1019,14 @@ public class QueriesGenerated {
     return FindSourceBlock_Behavior.call_isSet_1207651579255(SLinkOperations.getTarget(_context.getNode(), "findSourceBlock", true));
   }
 
+  public static boolean ifMacro_Condition_1210838003222(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1210838217720(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true) != null);
+  }
+
   public static SNode sourceNodeQuery_1174654997817(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
@@ -1093,14 +1110,6 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1175518604952(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "errorString", true);
-  }
-
-  public static SNode sourceNodeQuery_1175518655902(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "nodeToReport", true);
-  }
-
-  public static SNode sourceNodeQuery_1175518655910(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "errorString", true);
   }
 
@@ -1288,6 +1297,18 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "findSourceBlock", true), "body", true);
   }
 
+  public static SNode sourceNodeQuery_1210837852064(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "nodeToReport", true);
+  }
+
+  public static SNode sourceNodeQuery_1210837852072(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "errorString", true);
+  }
+
+  public static SNode sourceNodeQuery_1210838328778(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "value", true);
+  }
+
   public static List sourceNodesQuery_1174916595463(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "judgement", true);
   }
@@ -1401,6 +1422,10 @@ public class QueriesGenerated {
       }
     }
     return result;
+  }
+
+  public static List sourceNodesQuery_1210838222317(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true), "actualArgument", true);
   }
 
 }

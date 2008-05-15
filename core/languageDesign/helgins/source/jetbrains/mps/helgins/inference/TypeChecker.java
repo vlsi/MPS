@@ -169,31 +169,9 @@ public class TypeChecker implements IComponentLifecycle {
     reportTypeError(nodeWithError, new SimpleErrorReporter(errorString, ruleModel, ruleId));
   }
 
-  public void reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId, final String classFQName) {
+  public void reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId, IntentionProvider intentionProvider) {
     SimpleErrorReporter reporter = new SimpleErrorReporter(errorString, ruleModel, ruleId);
-    if (classFQName != null && !(classFQName.equals(""))) {
-      reporter.setIntentionProvider(new IntentionProvider() {
-        private Intention myIntention = null;
-        private boolean myIntentionTaken = false;
-        public Intention getIntention(SNode node, EditorContext editorContext) {
-          if (myIntentionTaken) {
-            return myIntention;
-          }
-          try {
-            String languageNamespace = NameUtil.namespaceFromLongName(NameUtil.namespaceFromLongName(classFQName));
-            Class aClass = ClassLoaderManager.getInstance().getClassFor(MPSModuleRepository.getInstance().getLanguage(languageNamespace), classFQName);
-            Intention intention = (Intention) aClass.getConstructor().newInstance();
-            myIntention = intention;
-            myIntentionTaken = true;
-            return intention;
-          } catch (Throwable t) {
-            LOG.error(t);
-            myIntentionTaken = true;
-            return null;
-          }
-        }
-      });
-    }
+    reporter.setIntentionProvider(intentionProvider);
     reportTypeError(nodeWithError, reporter);
   }
 

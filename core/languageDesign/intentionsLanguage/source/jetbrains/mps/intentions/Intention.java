@@ -16,4 +16,6 @@ public interface Intention {
   void execute(SNode node, EditorContext editorContext);
 
   boolean isErrorIntention();
+
+  void putArgument(String key, Object argument);
 }

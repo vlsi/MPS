@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
 import java.util.HashSet;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 
 public class RulesFunctions_BaseLanguage {
   public static boolean TRACE_METHOD_TYPES = false;
@@ -416,7 +417,12 @@ __switch__:
           for(SNode exc : throwables) {
             errorString = errorString + " " + exc;
           }
-          TypeChecker.getInstance().reportTypeError(mainNode, errorString, "jetbrains.mps.baseLanguage.helgins", "1210182111558");
+          {
+            BaseIntentionProvider intentionProvider = null;
+            intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.helgins.AddExceptionToMethodSignature_Intention");
+            intentionProvider.putArgument("throwableType", throwables.iterator().next());
+            TypeChecker.getInstance().reportTypeError(mainNode, errorString, "jetbrains.mps.baseLanguage.helgins", "1210182111558", intentionProvider);
+          }
         }
         return;
       }

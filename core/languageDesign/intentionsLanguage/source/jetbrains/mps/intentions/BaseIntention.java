@@ -16,4 +16,7 @@ public abstract class BaseIntention implements Intention {
   public abstract void execute(SNode node, EditorContext editorContext);
 
   public abstract boolean isErrorIntention();
+
+  public void putArgument(String key, Object argument) {
+  }
 }
