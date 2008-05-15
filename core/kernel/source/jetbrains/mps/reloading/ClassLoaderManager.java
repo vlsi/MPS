@@ -1,6 +1,5 @@
 package jetbrains.mps.reloading;
 
-import jetbrains.mps.component.Dependency;
 import jetbrains.mps.component.IComponentLifecycle;
 import jetbrains.mps.runtime.RuntimeEnvironment;
 import jetbrains.mps.runtime.RBundle;
@@ -24,14 +23,13 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.*;
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 
 import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.components.ApplicationComponent;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.NonNls;
 
-public class ClassLoaderManager implements IComponentLifecycle {
+public class ClassLoaderManager implements IComponentLifecycle, ApplicationComponent {
   private static Logger LOG = Logger.getLogger(ClassLoaderManager.class);
 
   private List<ReloadListener> myReloadHandlers = new ArrayList<ReloadListener>();
@@ -44,8 +42,6 @@ public class ClassLoaderManager implements IComponentLifecycle {
     return ApplicationComponents.getInstance().getComponent(ClassLoaderManager.class);
   }
 
-  private IClassPathItem myRTJar = null;
-  private IClassPathItem myMPSJar = null;
 
   public ClassLoaderManager() {
   }
@@ -56,7 +52,15 @@ public class ClassLoaderManager implements IComponentLifecycle {
         myRuntimeEnvironment = createRuntimeEnvironment();
       }
     });
+  }
 
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "Class Loader Manager";
+  }
+
+  public void disposeComponent() {
   }
 
   private void addModule(String moduleUID) {
@@ -181,173 +185,6 @@ public class ClassLoaderManager implements IComponentLifecycle {
         return getFromParent(cls);
       }
     };
-  }
-
-  public IClassPathItem getJDK() {
-    if (myRTJar == null) {
-      if (! SystemInfo.isMac) {
-        myRTJar = findBootstrapJarByName("rt.jar");
-        if (myRTJar == null) {
-          LOG.error("Can't find rt.jar. Make sure you are using JDK 5.0");
-        }
-      } else {
-        CompositeClassPathItem composite = new CompositeClassPathItem();
-        IClassPathItem item = findBootstrapJarByName("classes.jar");
-        if (item == null) {
-          LOG.error("Can't find classes.jar. Make sure you are using JDK 5.0");
-        } else {
-          composite.add(item);
-        }
-        myRTJar = composite;
-      }
-    }
-    return myRTJar;
-  }
-
-  public String getBaseMPSPath() {
-    String classesPath = PathManager.getHomePath() + File.separator + "classes";
-    if (new File(classesPath).exists()) {
-      return classesPath;
-    }
-    String mpsJarPath = PathManager.getHomePath() + File.separator + "lib" + File.separatorChar + "mps.jar";
-    if (new File(mpsJarPath).exists()) {
-      return mpsJarPath;
-    }
-    return null;
-  }
-
-  public IClassPathItem getMPSPath() {
-    CompositeClassPathItem result = new CompositeClassPathItem();
-    result.add(getBaseMPSClassPath());
-
-    IClassPathItem kernelClassPath = getMPSKernelClassPath();
-    if (kernelClassPath != null) {
-      result.add(kernelClassPath);
-    }
-
-    IClassPathItem supportClassPath = getMPSSupportClassPath();
-    if (supportClassPath != null) {
-      result.add(supportClassPath);
-    }
-
-    IClassPathItem workbenchClassPath = getWorkbenchClassPath();
-    if (workbenchClassPath != null) {
-      result.add(getWorkbenchClassPath());
-    }
-
-    IClassPathItem svnClassPath = getSVNSupportClasspath();
-    if (svnClassPath != null) {
-      result.add(svnClassPath);
-    }
-
-    addIfExists(result, "/lib/annotations/annotations.jar");
-    
-    return result;
-  }
-
-  private void addIfExists(CompositeClassPathItem item, String path) {
-    path = PathManager.getHomePath() + path.replace('/', File.separatorChar);
-    File file = new File(path);
-    if (file.exists()) {
-      try {
-        if (file.isDirectory()) {
-          item.add(new FileClassPathItem(path));
-        } else {
-          item.add(new JarFileClassPathItem(path));
-        }
-      } catch (IOException e) {
-        LOG.error(e);
-      }
-    }
-  }
-
-  private IClassPathItem getBaseMPSClassPath() {
-    String path = getBaseMPSPath();
-
-    if (path != null) {
-      if (path.endsWith(".jar")) {
-        if (myMPSJar == null) {
-          try {
-            myMPSJar = new JarFileClassPathItem(path);
-          } catch (IOException e) {
-            LOG.error(e);
-          }
-        }
-        return myMPSJar;
-      } else {
-        return new FileClassPathItem(path);
-      }
-    }
-
-    File file = new File(PathManager.getResourceRoot(ClassLoaderManager.class, "/" + ClassLoaderManager.class.getName().replace('.', '/') + ".class"));
-    if (file.exists()) {
-      return new FileClassPathItem(file.getAbsolutePath());
-    }
-
-    LOG.error("Can't find mps classpath");                      
-    return null;
-  }
-
-  private IClassPathItem getMPSKernelClassPath() {
-    String supportClasses = PathManager.getHomePath() + File.separator + "core"
-            + File.separator + "kernel" + File.separator + "classes";
-    if (new File(supportClasses).exists()) {
-      return new FileClassPathItem(supportClasses);
-    }
-
-    return null;
-  }
-
-  private IClassPathItem getMPSSupportClassPath() {
-    String supportClasses = PathManager.getHomePath() + File.separator + "MPSPlugin"
-            + File.separator + "MPSSupport" + File.separator + "classes";
-    if (new File(supportClasses).exists()) {
-      return new FileClassPathItem(supportClasses);
-    }
-
-    return null;
-  }
-
-  private IClassPathItem getWorkbenchClassPath() {
-    String workbenchClasses = PathManager.getHomePath() + File.separator + "workbench"
-            + File.separator + "classes";
-    if (new File(workbenchClasses).exists()) {
-      return new FileClassPathItem(workbenchClasses);
-    }
-
-    return null;
-  }
-
-  private IClassPathItem getSVNSupportClasspath() {
-    String workbenchClasses = PathManager.getHomePath() + File.separator + "core"
-            + File.separator + "kernel"
-            + File.separator + "vcs"
-            + File.separator + "svn"
-            + File.separator + "classes";
-    if (new File(workbenchClasses).exists()) {
-      return new FileClassPathItem(workbenchClasses);
-    }
-
-    return null;
-  }
-
-  private JarFileClassPathItem findBootstrapJarByName(String name) {
-    for (URL url : Launcher.getBootstrapClassPath().getURLs()) {
-      try {
-        File file = new File(url.toURI());
-
-        if (!file.exists()) continue;
-
-        if (file.getPath().endsWith(name)) {
-          return new JarFileClassPathItem(new FileSystemFile(file));
-        }
-      } catch (URISyntaxException e) {
-        LOG.error(e);
-      } catch (IOException e) {
-        LOG.error(e);
-      }
-    }
-    return null;
   }
 
   public void addReloadHandler(ReloadListener handler) {
