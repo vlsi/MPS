@@ -81,6 +81,10 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.smodel.SModelUtil_new</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.MPSAdapter</implementation-class>
     </component>
 
