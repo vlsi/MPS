@@ -99,7 +99,7 @@ public abstract class BaseDialog extends JDialog {
   }
 
   protected static DialogDimensionsSettings.DialogDimensions getDimensionSettings(Class<? extends BaseDialog> cls) {
-    return ApplicationComponents.getInstance().getComponentSafe(DialogDimensionsSettings.class).getDimensionSettings(cls);
+    return DialogDimensionsSettings.getInstance().getDimensionSettings(cls);
   }
 
   protected void updateDimensionSettings() {

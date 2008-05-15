@@ -6,10 +6,14 @@ import jetbrains.mps.components.Externalizable;
 import java.util.HashMap;
 import java.awt.Dimension;
 
+import com.intellij.openapi.application.ApplicationManager;
+
 public class DialogDimensionsSettings extends DefaultExternalizableComponent {
-  private
-  @Externalizable
-  HashMap<String, DialogDimensions> myDialogsDimensions = new HashMap<String, DialogDimensions>();
+  public static DialogDimensionsSettings getInstance() {
+    return ApplicationManager.getApplication().getComponent(DialogDimensionsSettings.class);
+  }
+
+  private @Externalizable HashMap<String, DialogDimensions> myDialogsDimensions = new HashMap<String, DialogDimensions>();
 
   protected DialogDimensions getDimensionSettings(Class<? extends BaseDialog> cls) {
     return myDialogsDimensions.get(cls.getName());

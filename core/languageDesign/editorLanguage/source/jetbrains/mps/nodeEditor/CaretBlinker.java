@@ -5,16 +5,14 @@ import jetbrains.mps.components.Externalizable;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.util.WeakSet;
+import com.intellij.openapi.application.ApplicationManager;
 
-/**
- * Created by IntelliJ IDEA.
- * User: User
- * Date: 18.01.2006
- * Time: 19:01:05
- * To change this template use File | Settings | File Templates.
- */
 public class CaretBlinker extends DefaultExternalizableComponent {
   private static final Logger LOG = Logger.getLogger(CaretBlinker.class);
+
+  public static CaretBlinker getInstance() {
+    return ApplicationManager.getApplication().getComponent(CaretBlinker.class);
+  }
 
   public static final int MIN_BLINKING_PERIOD = 100; //millis
   public static final int MAX_BLINKING_PERIOD = 1000;
@@ -29,10 +27,6 @@ public class CaretBlinker extends DefaultExternalizableComponent {
 
 
   public CaretBlinker() {
-  }
-
-  public static CaretBlinker getInstance() {
-    return ApplicationComponents.getInstance().getComponent(CaretBlinker.class);
   }
 
   public void launch() {

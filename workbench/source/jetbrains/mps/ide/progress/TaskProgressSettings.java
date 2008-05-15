@@ -7,38 +7,25 @@ import jetbrains.mps.logging.Logger;
 
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 15.12.2005
- * Time: 14:50:37
- * To change this template use File | Settings | File Templates.
- */
+import com.intellij.openapi.application.ApplicationManager;
+
 public class TaskProgressSettings extends DefaultExternalizableComponent {
+  public static TaskProgressSettings getInstance() {
+    return ApplicationManager.getApplication().getComponent(TaskProgressSettings.class);
+  }
 
   private static Logger LOG = Logger.getLogger(TaskProgressSettings.class);
 
-  private
-  @Externalizable
-  Map<String, Long> myTasksToEstimatedTime = new HashMap<String, Long>();
+  private @Externalizable Map<String, Long> myTasksToEstimatedTime = new HashMap<String, Long>();
+  private @Externalizable Map<String, String> myTasksToTaskKinds = new HashMap<String, String>();
 
-  private
-  @Externalizable
-  Map<String, String> myTasksToTaskKinds = new HashMap<String, String>();
-
-  private
-  @Externalizable
-  Map<String, Long> myTaskKindsToEstimatedTime = new HashMap<String, Long>();
+  private @Externalizable Map<String, Long> myTaskKindsToEstimatedTime = new HashMap<String, Long>();
 
   private Map<IAdaptiveProgressMonitor, Map<String, Long>> myTransientTasksToEstimatedTime = new HashMap<IAdaptiveProgressMonitor, Map<String, Long>>();
   private Map<IAdaptiveProgressMonitor, Map<String, Long>> myTransientTaskKindsToEstimatedTime = new HashMap<IAdaptiveProgressMonitor, Map<String, Long>>();
 
   private Set<IAdaptiveProgressMonitor> myMeasurementsInProgress = new HashSet<IAdaptiveProgressMonitor>();
   private long myDefaultTimeMillis = 150;
-
-  public static TaskProgressSettings getInstance() {
-    return ApplicationComponents.getInstance().getComponent(TaskProgressSettings.class);
-  }
 
   public TaskProgressSettings() {
 
