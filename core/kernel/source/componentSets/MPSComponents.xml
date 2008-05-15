@@ -49,25 +49,25 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.idea.MPSAdapter</implementation-class>
+      <implementation-class>jetbrains.mps.MPSAdapter</implementation-class>
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.idea.nodesFs.MPSNodesVirtualFileSystem</implementation-class>
+      <implementation-class>jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem</implementation-class>
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.idea.editors.MPSFileNodeEditorProvider</implementation-class>
+      <implementation-class>jetbrains.mps.workbench.editors.MPSFileNodeEditorProvider</implementation-class>
     </component>
 
     <component>
       <interface-class>com.intellij.ide.RecentProjectsManagerBase</interface-class>
-      <implementation-class>jetbrains.mps.idea.recent.RecentMPSProjectsManager</implementation-class>
+      <implementation-class>jetbrains.mps.workbench.recent.RecentMPSProjectsManager</implementation-class>
     </component>
 
     <component>
       <interface-class>com.intellij.ide.IconProvider</interface-class>
-      <implementation-class>jetbrains.mps.idea.editors.MPSIconProvider</implementation-class>
+      <implementation-class>jetbrains.mps.workbench.editors.MPSIconProvider</implementation-class>
     </component>
   </application-components>
 
@@ -92,23 +92,23 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.idea.MPSProjectHolder</implementation-class>
+      <implementation-class>jetbrains.mps.MPSProjectHolder</implementation-class>
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.idea.tools.ProjectPaneToolWindow</implementation-class>
+      <implementation-class>jetbrains.mps.workbench.tools.ProjectPaneToolWindow</implementation-class>
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.idea.tools.FilePaneToolWindow</implementation-class>
+      <implementation-class>jetbrains.mps.workbench.tools.FilePaneToolWindow</implementation-class>
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.idea.editors.MPSEditorOpener</implementation-class>
+      <implementation-class>jetbrains.mps.workbench.editors.MPSEditorOpener</implementation-class>
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.idea.tools.IDEAToolsPaneAdapter</implementation-class>
+      <implementation-class>jetbrains.mps.workbench.tools.IDEAToolsPaneAdapter</implementation-class>
     </component>
   </project-components>
 
