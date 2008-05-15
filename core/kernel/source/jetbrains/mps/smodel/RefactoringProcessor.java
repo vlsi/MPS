@@ -41,14 +41,13 @@ public class RefactoringProcessor {
     if (refactoring.showsAffectedNodes()) {
       Thread thread = new Thread() {
         public void run() {
-          final SearchResults[] usagesContainer = new SearchResults[]{null};
           final boolean toReturn[] = new boolean[]{false};
           CommandProcessor.instance().executeLightweightCommand(new Runnable() {
             public void run() {
               try {
                 ActionContext newContext = new ActionContext(context);
                 newContext.put(IOperationContext.class, new ProjectOperationContext(context.getOperationContext().getProject()));
-                usagesContainer[0] = refactoring.getAffectedNodes(newContext, refactoringContext);
+                refactoringContext.setUsages(refactoring.getAffectedNodes(newContext, refactoringContext));
               } catch (Throwable t) {
                 LOG.error(t);
                 ThreadUtils.runInUIThreadAndWait(new Runnable() {
@@ -62,15 +61,13 @@ public class RefactoringProcessor {
             }
           });
           if (toReturn[0]) return;
-          if (usagesContainer[0] == null) {
+          if (refactoringContext.getUsages() == null) {
             doExecuteInThread(context, refactoringContext);
           } else {
             ThreadUtils.runInUIThreadNoWait(new Runnable() {
               public void run() {
                 CommandProcessor.instance().executeLightweightCommand(new Runnable() {
                   public void run() {
-                    SearchResults usages = usagesContainer[0];
-                    refactoringContext.setUsages(usages);
                     NewRefactoringView.showRefactoringView(context, refactoringContext);
                   }
                 });
@@ -120,7 +117,7 @@ public class RefactoringProcessor {
       monitor.start("refactoring", estimatedTime);
       monitor.startLeafTask(refactoringTaskName, "refactoring", estimatedTime);
 
-      Map<IModule, List<SModel>> calculatedSourceModels = CommandProcessor.instance().executeCommand(new Calculable<Map<IModule, List<SModel>>>() {
+      Map<IModule, List<SModel>> moduleToModelsMap = CommandProcessor.instance().executeCommand(new Calculable<Map<IModule, List<SModel>>>() {
         public Map<IModule, List<SModel>> calculate() {
           SModelDescriptor modelDescriptor = context.getModel();
           SModelUID initialModelUID = modelDescriptor.getModelUID();
@@ -130,8 +127,8 @@ public class RefactoringProcessor {
 
           refactoringContext.computeCaches();
           SearchResults usages = refactoringContext.getUsages();
-          Map<IModule, List<SModel>> sourceModels = refactoring.getModelsToGenerate(context, refactoringContext);
-          if (!refactoringContext.isLocal() || usages == null) {
+          Map<IModule, List<SModel>> moduleToModelsMap = refactoring.getModelsToGenerate(context, refactoringContext);
+          if (!refactoringContext.isLocal()) {
             if (refactoring.doesUpdateModel()) {
               writeIntoLog(model, refactoringContext);
               for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getAllModelDescriptors()) {
@@ -142,11 +139,6 @@ public class RefactoringProcessor {
                 if (!anotherDescriptor.isInitialized()) continue;
                 SModel anotherModel = anotherDescriptor.getSModel();
 
-                //debug
-                if ("importsRenamedModel".equals(anotherModel.getShortName())) {
-                  System.err.println("oy vey!");
-                }
-
                 Set<SModelUID> dependenciesModels = anotherModel.getDependenciesModelUIDs();
                 if (model != anotherModel
                   && !dependenciesModels.contains(initialModelUID)) continue;
@@ -154,10 +146,10 @@ public class RefactoringProcessor {
               }
             }
           } else {
-            if (refactoring.doesUpdateModel()) {
+            if (refactoring.doesUpdateModel() && usages != null) {
               Set<SModel> modelsToProcess = usages.getModelsWithResults();
 
-              for (List<SModel> sModels : sourceModels.values()) {
+              for (List<SModel> sModels : moduleToModelsMap.values()) {
                 modelsToProcess.addAll(sModels);
               }
 
@@ -166,12 +158,12 @@ public class RefactoringProcessor {
               }
             }
           }
-          return sourceModels;
+          return moduleToModelsMap;
         }
       });
 
-      if (calculatedSourceModels != null && !calculatedSourceModels.isEmpty()) {
-        generateModels(context, calculatedSourceModels, refactoringContext);
+      if (moduleToModelsMap != null && !moduleToModelsMap.isEmpty()) {
+        generateModels(context, moduleToModelsMap, refactoringContext);
       }
     } finally {
       monitor.finishTask();

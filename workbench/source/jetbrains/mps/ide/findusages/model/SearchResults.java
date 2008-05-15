@@ -3,10 +3,7 @@ package jetbrains.mps.ide.findusages.model;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class SearchResults<T> {
   private Set<T> mySearchedNodes = new HashSet<T>();
@@ -30,7 +27,7 @@ public class SearchResults<T> {
   }
 
   public Set<SModel> getModelsWithResults() {
-    Set<SModel> result = new HashSet<SModel>();
+    LinkedHashSet<SModel> result = new LinkedHashSet<SModel>();
     for (SearchResult searchResult : mySearchResults) {
       Object resultObject = searchResult.getObject();
       if (resultObject instanceof SNode) {
