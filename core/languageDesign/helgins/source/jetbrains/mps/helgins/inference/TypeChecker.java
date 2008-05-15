@@ -179,6 +179,12 @@ public class TypeChecker implements IComponentLifecycle {
     reportTypeError(nodeWithError, new SimpleErrorReporter(errorString, ruleModel, ruleId, true));
   }
 
+   public void reportWarning(SNode nodeWithError, String errorString, String ruleModel, String ruleId, IntentionProvider intentionProvider) {
+     SimpleErrorReporter reporter = new SimpleErrorReporter(errorString, ruleModel, ruleId, true);
+     reporter.setIntentionProvider(intentionProvider);
+     reportTypeError(nodeWithError, reporter);
+  }
+
   public void reportTypeError(SNode nodeWithError, IErrorReporter errorReporter) {
     myCurrentTypesComponent.reportTypeError(nodeWithError, errorReporter);
     myCurrentTypesComponent.addDependcyOnCurrent(nodeWithError);
