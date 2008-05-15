@@ -5,6 +5,7 @@ import jetbrains.mps.components.Externalizable;
 import jetbrains.mps.ide.preferences.IComponentWithPreferences;
 import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.IntegerValueDocumentFilter;
@@ -400,25 +401,29 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
     }
 
     public void commit() {
-      String fontName = myFontsComboBox.getSelectedItem().toString();
-      int fontSize = Integer.parseInt(myFontSizesComboBox.getSelectedItem().toString());
+      CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+        public void run() {
+          String fontName = myFontsComboBox.getSelectedItem().toString();
+          int fontSize = Integer.parseInt(myFontSizesComboBox.getSelectedItem().toString());
 
-      Font newFont = new Font(fontName, Font.PLAIN, fontSize);
-      setDefaultEditorFont(newFont);
+          Font newFont = new Font(fontName, Font.PLAIN, fontSize);
+          setDefaultEditorFont(newFont);
 
-      setTextWidth(Integer.parseInt(myTextWidthComboBox.getSelectedItem().toString()));
+          setTextWidth(Integer.parseInt(myTextWidthComboBox.getSelectedItem().toString()));
 
-      int blinkingPeriod = getBlinkingPeriod();
-      CaretBlinker.getInstance().setCaretBlinkingRateTimeMillis(blinkingPeriod);
+          int blinkingPeriod = getBlinkingPeriod();
+          CaretBlinker.getInstance().setCaretBlinkingRateTimeMillis(blinkingPeriod);
 
-      setUseAntialiasing(myAntialiasingCheckBox.isSelected());
-      setUseLegacyTypesystem(myLegacyTypesystemCheckBox.isSelected());
-      setUseBraces(myUseBraces.isSelected());
+          setUseAntialiasing(myAntialiasingCheckBox.isSelected());
+          setUseLegacyTypesystem(myLegacyTypesystemCheckBox.isSelected());
+          setUseBraces(myUseBraces.isSelected());
 
-      mySelectionBackground = mySelectionBackgroundColorComponent.getColor();
-      mySelectionForeground = mySelectionForegroundColorComponent.getColor();
+          mySelectionBackground = mySelectionBackgroundColorComponent.getColor();
+          mySelectionForeground = mySelectionForegroundColorComponent.getColor();
 
-      fireEditorSettingsChanged();
+          fireEditorSettingsChanged();          
+        }
+      });
     }
 
     private int getBlinkingPeriod() {
