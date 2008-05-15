@@ -105,13 +105,16 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
           SModelRepository.getInstance().addOwnerForDescriptor(descriptor, myOwner);
           descriptors.add(descriptor);
 
-          //todo hack we need it to alleviate problems like MPS-1472
-          descriptor.addModelListener(new SModelAdapter() {
-            public void modelInitialized(SModelDescriptor sm) {
-              updateAfterLoad(sm);
-              descriptor.removeModelListener(this);
-            }
-          });
+          if (!descriptor.isInitialized()) {
+            descriptor.addModelListener(new SModelAdapter() {
+              public void modelInitialized(SModelDescriptor sm) {
+                updateAfterLoad(sm);
+                descriptor.removeModelListener(this);
+              }
+            });
+          } else {
+            updateAfterLoad(descriptor);
+          }
         } else {
           SModelDescriptor modelDescriptor = new DefaultSModelDescriptor(this, null, modelUID);
           SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, myOwner);
