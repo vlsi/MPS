@@ -19,6 +19,13 @@
       <add-to-group group-id="MainMenu" anchor="after" relative-to-action="GoToMenu"/>
     </group>
 
+    <group id="BuildMenu" popup="true" text="Build">
+      <action id="MakeAllAction" text="Make All" class="jetbrains.mps.workbench.actions.build.MakeAllAction"/>
+      <action id="CleanAllAction" text="Clean All" class="jetbrains.mps.workbench.actions.build.CleanAllAction" />
+      <action id="RebuildAllAction" text="Rebuild All" class="jetbrains.mps.workbench.actions.build.RebuildAllAction" />
+      <add-to-group group-id="MainMenu" anchor="after" relative-to-action="GenerateMenu"/>
+    </group>
+
     <group>
       <separator/>
       <action id="GoToRootAction" class="jetbrains.mps.workbench.actions.goTo.GoToRootNodeAction"
