@@ -49,6 +49,7 @@
               text="Go To Language">
         <keyboard-shortcut first-keystroke="control alt shift L" keymap="$default"/>
       </action>
+      <action id="GoToNodeById" class="jetbrains.mps.workbench.actions.goTo.GoToNodeByIdAction" text="Go To Node by ID" />
 
       <add-to-group anchor="last" group-id="GoToMenu"/>
     </group>
