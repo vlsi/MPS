@@ -12,6 +12,8 @@ import jetbrains.mps.vfs.IFile;
 import java.io.File;
 import java.util.*;
 
+import com.intellij.openapi.progress.EmptyProgressIndicator;
+
 /**
  * Igor Alshannikov
  * Aug 26, 2005
@@ -75,7 +77,7 @@ public class Solution extends AbstractModule {
 
     reload();
 
-    ClassLoaderManager.getInstance().reloadAll();
+    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
   }
 
   public void dispose() {

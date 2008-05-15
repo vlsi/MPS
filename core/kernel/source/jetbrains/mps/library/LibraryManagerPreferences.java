@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import com.intellij.openapi.progress.EmptyProgressIndicator;
+
 public class LibraryManagerPreferences implements IPreferencesPage {
   private LibraryManager myManager;
   private JPanel myMainPanel = new JPanel(new BorderLayout());
@@ -158,7 +160,7 @@ public class LibraryManagerPreferences implements IPreferencesPage {
 
   public void commit() {
     if (myChanged) {
-      ClassLoaderManager.getInstance().reloadAll();
+      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
     }
   }
 }

@@ -28,6 +28,9 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+import com.intellij.openapi.progress.ProgressIndicator;
+import org.jetbrains.annotations.NotNull;
+
 public class ClassLoaderManager implements IComponentLifecycle {
   private static Logger LOG = Logger.getLogger(ClassLoaderManager.class);
 
@@ -85,17 +88,33 @@ public class ClassLoaderManager implements IComponentLifecycle {
     }
   }
 
-  public void reloadAll() {
-    LOG.assertInCommand();
-    callBeforeReloadHandlers();
-    updateClassPath();
+  public void reloadAll(@NotNull ProgressIndicator indicator) {
+    indicator.pushState();
+    try {
+      indicator.setIndeterminate(true);
+      indicator.setText("Reloading classes...");
+      LOG.assertInCommand();
 
-    SModelRepository.getInstance().refreshModels();
+      indicator.setText2("Disposing old classes...");
+      callBeforeReloadHandlers();
 
-    callReloadHandlers();
-    callAfterReloadHandlers();
-    
-    System.gc();
+      indicator.setText2("Updating classpath...");
+      updateClassPath();
+
+      indicator.setText2("Refreshing models...");
+      SModelRepository.getInstance().refreshModels();
+
+      indicator.setText2("Reloading classes...");
+      callReloadHandlers();
+
+      indicator.setText2("Rebuilding ui...");
+      callAfterReloadHandlers();
+
+      indicator.setText2("Collecting garbage...");
+      System.gc();
+    } finally {
+      indicator.popState();
+    }
   }
 
   public void updateClassPath() {

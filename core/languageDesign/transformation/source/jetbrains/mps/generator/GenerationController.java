@@ -259,7 +259,7 @@ public class GenerationController {
     info("");
     info("reloading MPS classes...");
     myProgress.startLeafTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
-    ClassLoaderManager.getInstance().reloadAll();
+    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
     myProgress.finishTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
   }
 

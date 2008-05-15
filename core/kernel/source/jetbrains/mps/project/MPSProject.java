@@ -51,6 +51,8 @@ import java.io.PrintStream;
 import java.rmi.RemoteException;
 import java.util.*;
 
+import com.intellij.openapi.progress.EmptyProgressIndicator;
+
 /**
  * Author: Sergey Dmitriev
  * Created Apr 29, 2004
@@ -107,7 +109,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
         myContext.init();
         addComponent(TransientModelsModule.class, new TransientModelsModule(MPSProject.this));
 
-        ClassLoaderManager.getInstance().reloadAll();
+        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
       }
     });
 
@@ -249,7 +251,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     LOG.assertLog(myProjectDescriptor.isRoot(), "Project descriptor has to be root");
 
     readModules();
-    ClassLoaderManager.getInstance().reloadAll();
+    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
   }
 
   public void addProjectLanguage(@NotNull Language language) {
@@ -689,7 +691,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
         MPSModuleRepository.getInstance().removeUnusedModules();
         SModelRepository.getInstance().removeUnusedDescriptors();
         if (reloadAll) {
-          ClassLoaderManager.getInstance().reloadAll();
+          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
         }
 
         myDisposed = true;

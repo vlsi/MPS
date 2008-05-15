@@ -28,6 +28,8 @@ import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.util.*;
 
+import com.intellij.openapi.progress.EmptyProgressIndicator;
+
 
 public class Language extends AbstractModule implements Marshallable<Language> {
   private static final Logger LOG = Logger.getLogger(Language.class);
@@ -420,7 +422,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
     reload();
 
-    ClassLoaderManager.getInstance().reloadAll();
+    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
 
     MPSModuleRepository.getInstance().invalidateCaches();
   }

@@ -21,6 +21,8 @@ import org.jdom.Element;
 
 import java.util.*;
 
+import com.intellij.openapi.progress.EmptyProgressIndicator;
+
 public class LibraryManager extends DefaultExternalizableComponent implements IComponentWithPreferences, IComponentLifecycle {
 
   public static LibraryManager getInstance() {
@@ -142,7 +144,7 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
             MPSModuleRepository.getInstance().readModuleDescriptors(FileSystem.getFile(l.getPath()), myOwner);
           }
         }
-        ClassLoaderManager.getInstance().reloadAll();
+        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
         convert(myOwner);
       }
     });

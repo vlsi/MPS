@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import com.intellij.openapi.progress.EmptyProgressIndicator;
+
 public class DevKit extends AbstractModule {
   private static Logger LOG = Logger.getLogger(DevKit.class);
 
@@ -80,7 +82,7 @@ public class DevKit extends AbstractModule {
 
     reload();
     
-    ClassLoaderManager.getInstance().reloadAll();    
+    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
   }
 
 
