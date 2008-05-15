@@ -17,10 +17,14 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.reloading.ReloadAdapter;
 import org.jdom.Element;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
-public class FindersManager implements IExternalizableComponent, IComponentLifecycle {
+import com.intellij.openapi.components.ApplicationComponent;
+
+public class FindersManager implements IExternalizableComponent, IComponentLifecycle, ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(FindersManager.class);
 
   private Map<String, Set<GeneratedFinder>> myFinders = new HashMap<String, Set<GeneratedFinder>>();
@@ -32,13 +36,9 @@ public class FindersManager implements IExternalizableComponent, IComponentLifec
     return ApplicationComponents.getInstance().getComponent(FindersManager.class);
   }
 
-  public FindersManager() {
-
-  }
-
-  @Dependency
-  public void setClassLoaderManager(ClassLoaderManager manager) {
+  public FindersManager(ClassLoaderManager manager) {
     myClassLoaderManager = manager;
+
   }
 
   public void initComponent() {
@@ -47,6 +47,15 @@ public class FindersManager implements IExternalizableComponent, IComponentLifec
         refresh();
       }
     });
+  }
+
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "Finders Manager";
+  }
+
+  public void disposeComponent() {
   }
 
   public Set<GeneratedFinder> getAvailableFinders(final SNode node) {

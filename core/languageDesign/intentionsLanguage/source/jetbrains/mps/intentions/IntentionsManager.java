@@ -19,10 +19,15 @@ import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.reloading.ReloadAdapter;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
-public class IntentionsManager implements IExternalizableComponent, IComponentLifecycle {
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.ApplicationComponent;
+
+public class IntentionsManager implements IExternalizableComponent, IComponentLifecycle, ApplicationComponent {
   private static final String VERSION = "version";
   private static final String ID = "id";
   private static final String VERSION_NUMBER = "0.1";
@@ -31,6 +36,10 @@ public class IntentionsManager implements IExternalizableComponent, IComponentLi
   private static final String CLASS_NAME = "class_name";
 
   private static final Logger LOG = Logger.getLogger(IntentionsManager.class);
+
+  public static IntentionsManager getInstance() {
+    return ApplicationManager.getApplication().getComponent(IntentionsManager.class);
+  }
 
   private Map<Intention, SNode> myNodesByIntentions = new HashMap<Intention, SNode>();
   private Map<String, Set<Intention>> myIntentions = new HashMap<String, Set<Intention>>();
@@ -41,16 +50,7 @@ public class IntentionsManager implements IExternalizableComponent, IComponentLi
 
   private ClassLoaderManager myClassLoaderManager;
 
-  public static IntentionsManager getInstance() {
-    return ApplicationComponents.getInstance().getComponent(IntentionsManager.class);
-  }
-
-  public IntentionsManager() {
-
-  }
-
-  @Dependency
-  public void setClassLoaderManager(ClassLoaderManager manager) {
+  public IntentionsManager(ClassLoaderManager manager) {
     myClassLoaderManager = manager;
   }
 
@@ -60,6 +60,15 @@ public class IntentionsManager implements IExternalizableComponent, IComponentLi
         refresh();
       }
     });
+  }
+
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "MPS Intention Manager";
+  }
+
+  public void disposeComponent() {
   }
 
   public Set<Intention> getAvailableIntentions(final SNode node, final EditorContext context) {

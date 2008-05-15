@@ -129,6 +129,19 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.intentions.IntentionsManager</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.dataFlow.DataFlowManager</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.ide.findusages.FindersManager</implementation-class>
+    </component>
+
+
+    <component>
       <implementation-class>jetbrains.mps.MPSAdapter</implementation-class>
     </component>
 
