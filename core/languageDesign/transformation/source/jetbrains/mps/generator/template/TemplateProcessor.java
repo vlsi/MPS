@@ -47,7 +47,7 @@ public class TemplateProcessor {
       return outputNodels;
     } catch (StackOverflowError e) {
       // this is critical
-      LOG.error("generation cycled :(");
+      LOG.error("generation thread run out of stack space :(");
       if (generator.getGeneratorSessionContext().getGenerationTracer().isTracing()) {
         LOG.error("failed branch was:");
         List<Pair<SNode, String>> pairs = generator.getGeneratorSessionContext().getGenerationTracer().getNodesWithTextFromCurrentBranch();
@@ -68,6 +68,7 @@ public class TemplateProcessor {
           }
         }
       } else {
+        LOG.error("try to increase JVM stack size (-Xss option)");
         LOG.error("to get more diagnostic generate model with the 'save transient models' option");
       }
       throw new GenerationFailueException("couldn't process template", inputNode, templateNode, null, e);
