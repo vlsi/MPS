@@ -6,7 +6,6 @@ import jetbrains.mps.ide.preferences.IComponentWithPreferences;
 import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.IntegerValueDocumentFilter;
 import jetbrains.mps.util.CollectionUtil;

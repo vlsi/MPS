@@ -53,6 +53,7 @@ import java.util.*;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.application.ApplicationManager;
 
 /**
  * Author: Sergey Dmitriev
@@ -77,7 +78,16 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
   private ProjectScope myScope = new ProjectScope();
 
-  private IContext myContext = new ContextImpl(ApplicationComponents.getInstance().getContext());
+  private IContext myContext = new ContextImpl() {
+    public <T> T get(Class<T> cls) {
+      T result = super.get(cls);
+      if (result != null) {
+        return result;
+      } else {
+        return ApplicationManager.getApplication().getComponent(cls);
+      }
+    }
+  };
 
   private PluginManager myPluginManager = new PluginManager(this);
   private boolean myDisposed;
@@ -116,7 +126,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
     Highlighter hilghlighter = new Highlighter();
     myContext.register(Highlighter.class, hilghlighter);
-    hilghlighter.setProjects(ApplicationComponents.getInstance().getComponent(MPSProjects.class));
+    hilghlighter.setProjects(MPSProjects.instance());
   }
 
 
@@ -200,7 +210,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
     for (Library l : myProjectDescriptor.getLibrarys()) {
       String name = l.getName();
-      jetbrains.mps.library.Library lib = ApplicationComponents.getInstance().getComponentSafe(LibraryManager.class).get(name);
+      jetbrains.mps.library.Library lib = LibraryManager.getInstance().get(name);
       if (lib != null) {
         MPSModuleRepository.getInstance().readModuleDescriptors(FileSystem.getFile(lib.getPath()), this);
       } else {
@@ -606,7 +616,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
   }
 
   public void saveModels() {
-    ApplicationComponents.getInstance().getComponentSafe(SModelRepository.class).saveAll();
+    SModelRepository.getInstance().saveAll();
   }
 
   public void save() {
@@ -665,7 +675,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
   public void dispose(final boolean reloadAll) {
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
-        MPSProjects projects = ApplicationComponents.getInstance().getComponentSafe(MPSProjects.class);
+        MPSProjects projects = MPSProjects.instance();
         projects.removeProject(MPSProject.this);
 
         myContext.get(Highlighter.class).stopUpdater();

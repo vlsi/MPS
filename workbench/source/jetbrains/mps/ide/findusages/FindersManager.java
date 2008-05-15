@@ -6,7 +6,6 @@ import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Calculable;
@@ -23,6 +22,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.application.ApplicationManager;
 
 public class FindersManager implements IExternalizableComponent, IComponentLifecycle, ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(FindersManager.class);
@@ -33,7 +33,7 @@ public class FindersManager implements IExternalizableComponent, IComponentLifec
   private ClassLoaderManager myClassLoaderManager;
 
   public static FindersManager getInstance() {
-    return ApplicationComponents.getInstance().getComponent(FindersManager.class);
+    return ApplicationManager.getApplication().getComponent(FindersManager.class);
   }
 
   public FindersManager(ClassLoaderManager manager) {

@@ -11,6 +11,7 @@ import java.awt.*;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import com.intellij.openapi.application.ApplicationManager;
 
 public abstract class StandaloneMPSContext implements IOperationContext {
   public Frame getMainFrame() {
@@ -31,7 +32,7 @@ public abstract class StandaloneMPSContext implements IOperationContext {
   }
 
   public <T> T getComponent(Class<T> clazz) {
-    T component = ApplicationComponents.getInstance().getComponent(clazz);
+    T component = ApplicationManager.getApplication().getComponent(clazz);
     if (component != null) return component;
     if (clazz != ToolsPane.class) {
       ToolsPane toolsPane = getComponent(ToolsPane.class);

@@ -2,7 +2,6 @@ package jetbrains.mps;
 
 import jetbrains.mps.helgins.integration.HelginsPreferencesComponent;
 import jetbrains.mps.logging.LoggerUtil;
-import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.ide.progress.NullAdaptiveProgressMonitor;
@@ -348,7 +347,6 @@ public class TestMain {
     }
 
     LoggerUtil.configureLogger();
-    ApplicationComponents.getInstance();
   }
 
   public static interface ProjectRunnable {

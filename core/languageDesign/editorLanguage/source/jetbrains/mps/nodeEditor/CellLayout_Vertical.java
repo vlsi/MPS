@@ -1,7 +1,6 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.nodeEditor.text.TextBuilder;
-import jetbrains.mps.project.ApplicationComponents;
 
 import java.awt.Font;
 import java.awt.FontMetrics;
@@ -24,7 +23,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
 
   public void doLayout(EditorCell_Collection editorCells) {
     if (editorCells.isFolded()) {
-      Font font = ApplicationComponents.getInstance().getComponentSafe(EditorSettings.class).getDefaultEditorFont();
+      Font font = EditorSettings.getInstance().getDefaultEditorFont();
       FontMetrics metrics = editorCells.getEditor().getFontMetrics(font);
       editorCells.setHeight(metrics.getHeight());
       editorCells.setWidth(metrics.stringWidth(EditorCell_Collection.FOLDED_TEXT));

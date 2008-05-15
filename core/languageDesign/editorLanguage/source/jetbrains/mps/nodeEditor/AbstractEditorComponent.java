@@ -32,7 +32,6 @@ import jetbrains.mps.nodeEditor.folding.CellAction_FoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
-import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.event.*;
@@ -1778,7 +1777,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private Rectangle expandRectangleOneLine(Rectangle r) {
-    Font defaultFont = ApplicationComponents.getInstance().getComponentSafe(EditorSettings.class).getDefaultEditorFont();
+    Font defaultFont = EditorSettings.getInstance().getDefaultEditorFont();
     FontMetrics fontMetrics = getFontMetrics(defaultFont);
     int height = fontMetrics.getHeight();
     Rectangle rectangle = new Rectangle(r.x, r.y - height, r.width, r.height + 2 * height);

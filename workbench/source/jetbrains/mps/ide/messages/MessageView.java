@@ -7,7 +7,6 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.ide.toolsPane.ToolsPane;
-import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.components.IExternalizableComponent;
 

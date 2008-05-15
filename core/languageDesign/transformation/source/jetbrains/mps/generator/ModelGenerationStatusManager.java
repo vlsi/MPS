@@ -3,7 +3,6 @@ package jetbrains.mps.generator;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.logging.Logger;

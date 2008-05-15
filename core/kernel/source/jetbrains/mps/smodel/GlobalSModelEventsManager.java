@@ -10,7 +10,6 @@ import jetbrains.mps.ide.command.CommandAdapter;
 import jetbrains.mps.ide.command.CommandEvent;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.ApplicationComponents;
 
 import java.util.List;
 import java.util.ArrayList;

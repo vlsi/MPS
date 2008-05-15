@@ -3,7 +3,6 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.components.DefaultExternalizableComponent;
 import jetbrains.mps.components.Externalizable;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.util.WeakSet;
 import com.intellij.openapi.application.ApplicationManager;
 

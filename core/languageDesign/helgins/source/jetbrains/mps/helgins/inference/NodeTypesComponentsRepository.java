@@ -1,7 +1,6 @@
 package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.component.Dependency;
 import jetbrains.mps.component.IComponentLifecycle;
 import jetbrains.mps.reloading.ClassLoaderManager;

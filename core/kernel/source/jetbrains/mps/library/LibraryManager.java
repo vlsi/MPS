@@ -17,6 +17,7 @@ import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.pathVariables.PathVariableManager;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -40,7 +41,7 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
 
   private MPSModuleRepository myRepository;
 
-  public LibraryManager(MPSModuleRepository repo) {
+  public LibraryManager(MPSModuleRepository repo, PathVariableManager pathManager) {
     myRepository = repo;
   }
 

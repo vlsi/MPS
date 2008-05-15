@@ -1,7 +1,6 @@
 package jetbrains.mps.ide;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.ide.DialogDimensionsSettings.DialogDimensions;
 
 import javax.swing.*;
@@ -80,7 +79,7 @@ public abstract class BaseDialog extends JDialog {
   protected DialogDimensionsSettings.DialogDimensions myDialogDimensions;
 
   protected static void saveDimensionSettings(int left, int top, int width, int height, Class<? extends BaseDialog> cls) {
-    ApplicationComponents.getInstance().getComponentSafe(DialogDimensionsSettings.class).saveDimensionSettings(left, top, width, height, cls);
+    DialogDimensionsSettings.getInstance().saveDimensionSettings(left, top, width, height, cls);
   }
 
   protected void saveMyDimensionSettings() {

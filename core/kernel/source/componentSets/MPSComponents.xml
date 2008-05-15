@@ -69,11 +69,11 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.library.LibraryManager</implementation-class>
+      <implementation-class>jetbrains.mps.pathVariables.PathVariableManager</implementation-class>
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.pathVariables.PathVariableManager</implementation-class>
+      <implementation-class>jetbrains.mps.library.LibraryManager</implementation-class>
     </component>
 
     <component>
@@ -203,9 +203,6 @@
     <component>
       <implementation-class>jetbrains.mps.helgins.integration.HelginsPreferencesComponent</implementation-class>
     </component>
-
-
-
 
     <component>
       <implementation-class>jetbrains.mps.MPSAdapter</implementation-class>

@@ -8,7 +8,6 @@ import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelRepository;

@@ -11,7 +11,6 @@ import jetbrains.mps.ide.action.IActionDataProvider;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.IEditorOpener;
-import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
@@ -343,9 +342,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     private int mySubtreeWidth = 0;
     private java.util.List<ConceptContainer> myChildren = new ArrayList<ConceptContainer>();
     private ConceptContainer myParent;
-    private Font myFont =
-      ApplicationComponents.getInstance().getComponentSafe(EditorSettings.class).
-        getDefaultEditorFont().deriveFont(Font.PLAIN, 12f);
+    private Font myFont = EditorSettings.getInstance().getDefaultEditorFont().deriveFont(Font.PLAIN, 12f);
     private LanguageHierarchiesComponent myComponent;
     private java.util.List<MouseListener> myMouseListeners = new ArrayList<MouseListener>();
     private IOperationContext myOperationContext;

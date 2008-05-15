@@ -2,7 +2,6 @@ package jetbrains.mps.ide;
 
 import jetbrains.mps.logging.LoggerUtil;
 import jetbrains.mps.plugin.MPSPlugin;
-import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.ide.settings.GlobalIdeSettings;
 import jetbrains.mps.ide.actions.tools.MakeAllModulesAction;
 import jetbrains.mps.ide.action.ActionContext;
@@ -44,7 +43,6 @@ public class IdeMain {
 
         LoggerUtil.configureLogger();
 
-        ApplicationComponents.getInstance();
 
         IdeSettings.getInstance();
 

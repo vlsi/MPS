@@ -2,7 +2,6 @@ package jetbrains.mps.cache;
 
 import jetbrains.mps.component.IComponentLifecycle;
 import jetbrains.mps.component.Dependency;
-import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.reloading.ClassLoaderManager;

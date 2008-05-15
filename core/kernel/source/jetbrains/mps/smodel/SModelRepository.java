@@ -3,7 +3,6 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.component.Dependency;
 import jetbrains.mps.component.IComponentLifecycle;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CollectionUtil;

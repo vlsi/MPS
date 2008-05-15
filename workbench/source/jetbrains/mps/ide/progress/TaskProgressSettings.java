@@ -2,7 +2,6 @@ package jetbrains.mps.ide.progress;
 
 import jetbrains.mps.components.DefaultExternalizableComponent;
 import jetbrains.mps.components.Externalizable;
-import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.logging.Logger;
 
 import java.util.*;
