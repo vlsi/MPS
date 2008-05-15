@@ -90,7 +90,7 @@ public class MPSModuleRepository implements IComponentLifecycle {
   }
 
   public void invalidateCaches() {
-    MPSProjects projects = ApplicationComponents.getInstance().getComponent(MPSProjects.class);
+    MPSProjects projects = MPSProjects.instance();
     if (projects != null) {
       for (MPSProject p : projects.getProjects()) {
         p.invalidateCaches();
