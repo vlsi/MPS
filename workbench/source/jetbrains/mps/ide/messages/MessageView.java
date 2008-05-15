@@ -68,7 +68,7 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
     myList.setFixedCellHeight(Toolkit.getDefaultToolkit().getFontMetrics(myList.getFont()).getHeight() + 5);
 
 //    ToolTipManager.sharedInstance().registerComponent(myList);
-    
+
 
     myList.registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
@@ -184,7 +184,7 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
       }
     });
 
-    if (((Message)myList.getSelectedValue()).getKind() == MessageKind.ERROR) {
+    if (((Message) myList.getSelectedValue()).getKind() == MessageKind.ERROR) {
       menu.addSeparator();
       menu.add(new AbstractActionWithEmptyIcon("Submit to Issue tracker") {
         public void actionPerformed(ActionEvent e) {
@@ -197,9 +197,15 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
   }
 
   private void submitToTracker() {
-    myBlameDialog.setEx(((Message) myList.getSelectedValue()).getException());
     myBlameDialog.setMessage(((Message) myList.getSelectedValue()).getText());
-    myBlameDialog.showDialog();
+    myBlameDialog.setEx(((Message) myList.getSelectedValue()).getException());
+    if (myBlameDialog.showAuthDialog()) {
+      if (myBlameDialog.getStatusCode() == 200) {
+        JOptionPane.showMessageDialog(null, myBlameDialog.getResponseString(), "Submit OK", JOptionPane.INFORMATION_MESSAGE);
+      } else {
+        JOptionPane.showMessageDialog(null, myBlameDialog.getResponseString(), "Submit Failed", JOptionPane.ERROR_MESSAGE);
+      }
+    }
   }
 
   private void openCurrentMessageNodeIfPossible() {
@@ -207,7 +213,7 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
     if (selectedMessage == null || selectedMessage.getHintObject() == null) return;
 
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-      public void run() {                        
+      public void run() {
         ApplicationComponents.getInstance().getComponentSafe(NavigationManager.class)
           .navigateTo(getProject(), selectedMessage.getHintObject());
       }
@@ -271,7 +277,7 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
 
         if (isVisible(message)) {
           myModel.addElement(message);
-        }                        
+        }
         myMessages.add(message);
 
         int width = getMessageWidth(message);

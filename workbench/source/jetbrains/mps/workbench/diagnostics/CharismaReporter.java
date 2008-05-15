@@ -1,16 +1,14 @@
 package jetbrains.mps.workbench.diagnostics;
 
 import com.intellij.openapi.diagnostic.ErrorReportSubmitter;
-import com.intellij.openapi.diagnostic.SubmittedReportInfo;
 import com.intellij.openapi.diagnostic.IdeaLoggingEvent;
+import com.intellij.openapi.diagnostic.SubmittedReportInfo;
 import com.intellij.openapi.diagnostic.SubmittedReportInfo.SubmissionStatus;
-
-import java.awt.Component;
-import java.awt.Frame;
-
 import jetbrains.mps.ide.blame.BlameDialog;
 
-import javax.swing.SwingUtilities;
+import java.awt.Component;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
 public class CharismaReporter extends ErrorReportSubmitter {
   public String getReportActionText() {
@@ -25,8 +23,26 @@ public class CharismaReporter extends ErrorReportSubmitter {
     BlameDialog blameDialog = new BlameDialog(null);
     blameDialog.setEx(events[0].getThrowable());
     blameDialog.setMessage(events[0].getMessage());
-    blameDialog.showDialog();
 
-    return new SubmittedReportInfo("http://teamsys.intellij.net", "Charisma", SubmissionStatus.NEW_ISSUE);
+    SubmittedReportInfo reportInfo;
+    if (!blameDialog.showAuthDialog()) {
+      reportInfo = new SubmittedReportInfo(null, "Canceled issue submit", SubmissionStatus.FAILED);
+    } else if (blameDialog.getStatusCode() == 200) {
+      String responseString = blameDialog.getResponseString();
+      Pattern pattern = Pattern.compile("<id><!\\[CDATA\\[(.*?)\\]\\]></id>");
+      Matcher matcher = pattern.matcher(responseString);
+      String url = null;
+      String issueId = responseString;
+      if (matcher.find()) {
+        issueId = matcher.group(1);
+        url = BlameDialog.teamsys + "/issue/" + issueId;
+      }
+
+      reportInfo = new SubmittedReportInfo(url, issueId, SubmissionStatus.NEW_ISSUE);
+    } else {
+      reportInfo = new SubmittedReportInfo(null, blameDialog.getResponseString(), SubmissionStatus.FAILED);
+    }
+
+    return reportInfo;
   }
 }
