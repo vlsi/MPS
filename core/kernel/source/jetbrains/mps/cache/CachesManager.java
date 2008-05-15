@@ -11,29 +11,29 @@ import jetbrains.mps.reloading.ReloadAdapter;
 
 import java.util.*;
 
-/**
- * Igor Alshannikov
- * Aug 28, 2007
- */
+import com.intellij.openapi.application.ApplicationManager;
+
 public class CachesManager implements IComponentLifecycle {
 
   private ClassLoaderManager myClassLoaderManager;
+  private SModelRepository mySModelRepository;
 
   private Map<Object, AbstractCache> myCaches = new HashMap<Object, AbstractCache>();
   private Map<AbstractCache, ModelEventRouter> myModelEventRouters = new HashMap<AbstractCache, ModelEventRouter>();
   private Map<Object, List<SModelDescriptor>> myDependsOnModels = new HashMap<Object, List<SModelDescriptor>>();
 
   public static CachesManager getInstance() {
-    return ApplicationComponents.getInstance().getComponent(CachesManager.class);
+    return ApplicationManager.getApplication().getComponent(CachesManager.class);
   }
 
-  @Dependency
-  public void setClassLoaderManager(ClassLoaderManager manager) {
-    myClassLoaderManager = manager;
+  public CachesManager(ClassLoaderManager classLoaderManager, SModelRepository repo) {
+    myClassLoaderManager = classLoaderManager;
+    mySModelRepository = repo;
   }
+
 
   public void initComponent() {
-    SModelRepository.getInstance().addModelRepositoryListener(new SModelRepositoryAdapter() {
+    mySModelRepository.addModelRepositoryListener(new SModelRepositoryAdapter() {
       public void modelRemoved(SModelDescriptor modelDescriptor) {
         List keysToRemove = new ArrayList();
         SModelUID uid = modelDescriptor.getModelUID();

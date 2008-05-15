@@ -85,6 +85,10 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.cache.CachesManager</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.MPSAdapter</implementation-class>
     </component>
 
