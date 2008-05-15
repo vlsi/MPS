@@ -53,6 +53,7 @@ import java.util.*;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.application.ApplicationManager;
 
 /**
@@ -710,7 +711,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
         if (getComponent(Project.class) != null) {
           Project project = getComponentSafe(Project.class);
           if (IdeMain.isTestMode()) {
-            project.dispose();
+            ProjectManagerEx.getInstanceEx().closeProject(project);
           }
         }
       }
