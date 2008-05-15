@@ -954,7 +954,6 @@
       <module fileurl="file://$PROJECT_DIR$/app/mf/gothic/gothic.iml" filepath="$PROJECT_DIR$/app/mf/gothic/gothic.iml" group="app/mf" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/helgins/helgins.iml" filepath="$PROJECT_DIR$/core/languageDesign/helgins/helgins.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/workbench/ideUiLanguage/ideUiLanguage.iml" filepath="$PROJECT_DIR$/workbench/ideUiLanguage/ideUiLanguage.iml" group="workbench" />
-      <module fileurl="file://$PROJECT_DIR$/idea-app/idea-app.iml" filepath="$PROJECT_DIR$/idea-app/idea-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/intentionsLanguage/intentionsLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/intentionsLanguage/intentionsLanguage.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/core/jetbrains.mps.core.iml" filepath="$PROJECT_DIR$/core/languageDesign/core/jetbrains.mps.core.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/kernel/kernel.iml" filepath="$PROJECT_DIR$/core/kernel/kernel.iml" group="core/kernel" />
@@ -1009,7 +1008,7 @@
   </component>
   <component name="ProjectRunConfigurationManager">
     <configuration default="false" name="MPSLauncher" type="Application" factoryName="Application" enabled="false" merge="false">
-      <option name="MAIN_CLASS_NAME" value="jetbrains.mps.idea.Launcher" />
+      <option name="MAIN_CLASS_NAME" value="jetbrains.mps.Launcher" />
       <option name="VM_PARAMETERS" value="-ea -Xmx1200m -XX:MaxPermSize=92m" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/bin" />
@@ -1018,7 +1017,7 @@
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="idea-app" />
+      <module name="workbench" />
       <envs />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="4454" />
