@@ -8,8 +8,5 @@ import com.intellij.openapi.actionSystem.DataKey;
 public class MPSDataKeys {
   public static final DataKey<SModelDescriptor> SMODEL_DESCRIPTOR = DataKey.create("smodel descriptor");
   public static final DataKey<SNode> SNODE = DataKey.create("node");
-  public static final DataKey<IOperationContext> OPERATION_CONTEXT = DataKey.create("operation context");
-  
-
-
+  public static final DataKey<IOperationContext> OPERATION_CONTEXT = DataKey.create("operation context"); 
 }
