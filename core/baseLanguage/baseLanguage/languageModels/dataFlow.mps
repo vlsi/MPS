@@ -16,6 +16,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="3" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage@java_stub" version="-1" />
@@ -1759,6 +1760,21 @@
             <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1207559198514" />
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1207559204767">
               <link role="link" targetNodeId="1.1163670683720" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1210936137812">
+    <link role="conceptDeclaration" targetNodeId="1.1145552977093" resolveInfo="GenericNewExpression" />
+    <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1210936137813">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210936137814">
+        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1210936143671">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210936145112">
+            <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1210936144298" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1210936170590">
+              <link role="link" targetNodeId="1.1145553007750" />
             </node>
           </node>
         </node>
