@@ -22,8 +22,11 @@ import java.util.List;
 import java.util.Map;
 
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.ApplicationComponent;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 
-public final class BehaviorManager implements IComponentLifecycle {
+public final class BehaviorManager implements IComponentLifecycle, ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(BehaviorManager.class);
   private static Map<Class, Object> ourDefaultValue = new HashMap<Class, Object>();
 
@@ -61,6 +64,16 @@ public final class BehaviorManager implements IComponentLifecycle {
         clear();
       }
     });
+  }
+
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "Behavior Manager";
+  }
+
+  public void disposeComponent() {
+
   }
 
   public void clear() {

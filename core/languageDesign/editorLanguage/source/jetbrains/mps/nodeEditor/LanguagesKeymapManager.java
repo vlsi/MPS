@@ -13,8 +13,11 @@ import jetbrains.mps.reloading.ReloadAdapter;
 import java.util.*;
 
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.ApplicationComponent;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 
-public class LanguagesKeymapManager implements IComponentLifecycle {
+public class LanguagesKeymapManager implements IComponentLifecycle, ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(LanguagesKeymapManager.class);
 
   public static LanguagesKeymapManager getInstance() {
@@ -40,6 +43,16 @@ public class LanguagesKeymapManager implements IComponentLifecycle {
         clearCaches();
       }
     });
+  }
+
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "Language KeyMap Manager";
+  }
+
+  public void disposeComponent() {
+
   }
 
   private void clearCaches() {

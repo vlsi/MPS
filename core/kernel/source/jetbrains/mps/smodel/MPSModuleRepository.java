@@ -17,8 +17,11 @@ import java.io.File;
 import java.util.*;
 
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.ApplicationComponent;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 
-public class MPSModuleRepository implements IComponentLifecycle {
+public class MPSModuleRepository implements IComponentLifecycle, ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(MPSModuleRepository.class);
 
   public static MPSModuleRepository getInstance() {
@@ -57,6 +60,16 @@ public class MPSModuleRepository implements IComponentLifecycle {
         invalidateCaches();
       }
     });
+  }
+
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "MPS Module Repository";
+  }
+
+  public void disposeComponent() {
+
   }
 
   private void initializeExtensionsToModuleTypesMap() {

@@ -11,8 +11,11 @@ import jetbrains.mps.reloading.ReloadAdapter;
 import java.util.*;
 
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.ApplicationComponent;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 
-public class CachesManager implements IComponentLifecycle {
+public class CachesManager implements IComponentLifecycle, ApplicationComponent {
 
   private ClassLoaderManager myClassLoaderManager;
   private SModelRepository mySModelRepository;
@@ -56,6 +59,16 @@ public class CachesManager implements IComponentLifecycle {
         removeAllCaches();
       }
     });
+  }
+
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "Caches Manager";
+  }
+
+  public void disposeComponent() {
+
   }
 
   public void putCache(Object key, AbstractCache cache, SModelDescriptor dependsOnModel) {

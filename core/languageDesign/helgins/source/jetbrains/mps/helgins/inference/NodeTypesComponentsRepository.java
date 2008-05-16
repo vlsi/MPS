@@ -13,8 +13,11 @@ import java.util.Map;
 import java.util.HashMap;
 
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.ApplicationComponent;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 
-public class NodeTypesComponentsRepository implements IComponentLifecycle {
+public class NodeTypesComponentsRepository implements IComponentLifecycle, ApplicationComponent {
   private Map<SNode, NodeTypesComponent> myNodesToComponents = new HashMap<SNode, NodeTypesComponent>();
   private Set<TypesComponentRepositoryListener> myListeners = new HashSet<TypesComponentRepositoryListener>();
   private TypeChecker myTypeChecker;
@@ -49,7 +52,16 @@ public class NodeTypesComponentsRepository implements IComponentLifecycle {
       }
     });
   }
-  
+
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "Node Types Repository";
+  }
+
+  public void disposeComponent() {
+  }
+
   public NodeTypesComponent getNodeTypesComponent(SNode node) {
     if (node == null) return null;
     return myNodesToComponents.get(node.getContainingRoot());
