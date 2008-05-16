@@ -48,7 +48,11 @@
               text="Go To Model">
         <keyboard-shortcut first-keystroke="control alt shift M" keymap="$default"/>
       </action>
-      <action id="GoToMPSLanguageAction" class="jetbrains.mps.workbench.actions.goTo.GoToMPSLanguageAction"
+      <action id="GoToMPSLanguageAction" class="jetbrains.mps.workbench.actions.goTo.gotolanguage.GoToMPSLanguageAction"
+              text="Go To Language">
+        <keyboard-shortcut first-keystroke="control alt L" keymap="$default"/>
+      </action>
+      <action id="GoToLanguageAction" class="jetbrains.mps.workbench.actions.goTo.gotolanguage.GoToLanguageAction"
               text="Go To Language">
         <keyboard-shortcut first-keystroke="control alt shift L" keymap="$default"/>
       </action>

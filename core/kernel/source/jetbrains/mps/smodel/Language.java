@@ -1,5 +1,6 @@
 package jetbrains.mps.smodel;
 
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
@@ -27,8 +28,6 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.util.*;
-
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 
 
 public class Language extends AbstractModule implements Marshallable<Language> {
@@ -484,6 +483,10 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     String result = getLanguageDescriptor().getNamespace();
     assert result != null;
     return result;
+  }
+
+  public String getShortName() {
+    return NameUtil.shortNameFromLongName(getNamespace());
   }
 
   public File getSourceDir() {

@@ -29,29 +29,24 @@
  * IF JETBRAINS HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
  *
  */
-package jetbrains.mps.workbench.actions.goTo.framework;
+package jetbrains.mps.workbench.actions.goTo.framework.nodes;
 
-import com.intellij.ide.util.NavigationItemListCellRenderer;
-import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.diagnostic.Logger;
-import com.intellij.openapi.progress.ProcessCanceledException;
-import com.intellij.openapi.util.SystemInfo;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Calculable;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.workbench.actions.goTo.framework.GoToHierarchicalModel;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.ListCellRenderer;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class GoToNodeModel implements ChooseByNameModel {
-  private static final Logger LOG = Logger.getInstance("#com.intellij.ide.util.gotoByName.ContributorsBasedGotoByModel");
+public class GoToNodeModel extends GoToHierarchicalModel {
+  private static final Logger LOG = Logger.getInstance("#" + GoToNodeModel.class.getName());
 
   private MPSProject myProject;
   private INodesFinder myNodesFinder;
@@ -67,13 +62,7 @@ public class GoToNodeModel implements ChooseByNameModel {
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
         for (SNode node : myNodesFinder.getItems(checkBoxState)) {
-          try {
-            names.add(node.getName());
-          } catch (ProcessCanceledException ex) {
-            // index corruption detected, ignore
-          } catch (Exception ex) {
-            LOG.error(ex);
-          }
+          names.add(node.getName());
         }
       }
     });
@@ -87,48 +76,14 @@ public class GoToNodeModel implements ChooseByNameModel {
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
         for (SNode node : myNodesFinder.getItems(checkBoxState)) {
-          try {
-            String nodeName = node.getName();
-            if (nodeName != null && nodeName.equals(name)) {
-              items.add(new NodeNavigationItem(myProject, node));
-            }
-          } catch (ProcessCanceledException ex) {
-            // index corruption detected, ignore
-          } catch (Exception ex) {
-            LOG.error(ex);
+          String nodeName = node.getName();
+          if (nodeName != null && nodeName.equals(name)) {
+            items.add(new NodeNavigationItem(myProject, node));
           }
         }
       }
     });
     return items.toArray();
-  }
-
-  public String getElementName(final Object element) {
-    return CommandProcessor.instance().executeLightweightCommand(new Calculable<String>() {
-      public String calculate() {
-        return ((NavigationItem) element).getName();
-      }
-    });
-  }
-
-  public char getCheckBoxMnemonic() {
-    // Some combination like Alt+N, Ant+O, etc are a dead symbols, therefore
-    // we have to change mnemonics for Mac users.
-    return SystemInfo.isMac ? 'P' : 'n';
-  }
-
-  public boolean loadInitialCheckBoxState() {
-    //PropertiesComponent propertiesComponent = PropertiesComponent.getInstance(myProject);
-    //return Boolean.TRUE.toString().equals(propertiesComponent.getValue("GoToClass.toSaveIncludeLibraries")) &&
-    //  Boolean.TRUE.toString().equals(propertiesComponent.getValue("GoToClass.includeLibraries"));
-    return true;
-  }
-
-  public void saveInitialCheckBoxState(boolean state) {
-    //PropertiesComponent propertiesComponent = PropertiesComponent.getInstance(myProject);
-    //if (Boolean.TRUE.toString().equals(propertiesComponent.getValue("GoToClass.toSaveIncludeLibraries"))) {
-    //  propertiesComponent.setValue("GoToClass.includeLibraries", Boolean.toString(state));
-    //}
   }
 
   public String getFullName(final Object element) {
@@ -141,11 +96,6 @@ public class GoToNodeModel implements ChooseByNameModel {
     });
   }
 
-  @NotNull
-  public String[] getSeparators() {
-    return new String[]{"."};
-  }
-
   @Nullable
   public String getPromptText() {
     //return IdeBundle.message("prompt.gotoclass.enter.class.name");
@@ -154,7 +104,7 @@ public class GoToNodeModel implements ChooseByNameModel {
 
   public String getCheckBoxName() {
     //return IdeBundle.message("checkbox.include.non.project.classes");
-    return "Include non-project files";
+    return "Include non-project models";
   }
 
   public String getNotInMessage() {
@@ -165,9 +115,5 @@ public class GoToNodeModel implements ChooseByNameModel {
   public String getNotFoundMessage() {
     //return IdeBundle.message("label.no.matches.found");
     return "no mathches found";
-  }
-
-  public ListCellRenderer getListCellRenderer() {
-    return new NavigationItemListCellRenderer();
   }
 }

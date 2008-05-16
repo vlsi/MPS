@@ -1,37 +1,37 @@
-package jetbrains.mps.workbench.actions.goTo.framework;
+package jetbrains.mps.workbench.actions.goTo.framework.languages;
 
 import com.intellij.navigation.ItemPresentation;
-import com.intellij.openapi.editor.colors.CodeInsightColors;
 import com.intellij.openapi.editor.colors.TextAttributesKey;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.Calculable;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 
-public class NodePresentation implements ItemPresentation {
-  private SNode myNode;
-  private String myModelName;
+public class LanguagePresentation implements ItemPresentation {
+  private Language myLanguage;
+  private String myParentNamespace;
 
-  public NodePresentation(SNode node) {
-    myNode = node;
-    myModelName = CommandProcessor.instance().executeLightweightCommand(new Calculable<String>() {
+  public LanguagePresentation(Language language) {
+    myLanguage = language;
+    myParentNamespace = CommandProcessor.instance().executeLightweightCommand(new Calculable<String>() {
       public String calculate() {
-        return myNode.getModel().getModelDescriptor().getModelUID().toString();
+        String s = myLanguage.getNamespace();
+        return s.substring(0, s.lastIndexOf('.'));
       }
     });
   }
 
-  public String getModelName() {
-    return myModelName;
+  public String getParentNamespace() {
+    return myParentNamespace;
   }
 
   public String getPresentableText() {
     return CommandProcessor.instance().executeLightweightCommand(new Calculable<String>() {
       public String calculate() {
-        return myNode.getName();
+        return myLanguage.getShortName();
       }
     });
   }
@@ -40,7 +40,7 @@ public class NodePresentation implements ItemPresentation {
   public String getLocationString() {
     return CommandProcessor.instance().executeLightweightCommand(new Calculable<String>() {
       public String calculate() {
-        return "(" + myModelName + ")";
+        return "(" + myParentNamespace + ")";
       }
     });
   }
@@ -49,13 +49,17 @@ public class NodePresentation implements ItemPresentation {
   public Icon getIcon(boolean open) {
     return CommandProcessor.instance().executeLightweightCommand(new Calculable<Icon>() {
       public Icon calculate() {
-        return IconManager.getIconFor(myNode);
+        return IconManager.getIconFor(myLanguage);
       }
     });
   }
 
   @Nullable
   public TextAttributesKey getTextAttributesKey() {
-    return CodeInsightColors.CLASS_NAME_ATTRIBUTES;
+    return null;
+  }
+
+  public String getNamespace() {
+    return myLanguage.getNamespace();
   }
 }

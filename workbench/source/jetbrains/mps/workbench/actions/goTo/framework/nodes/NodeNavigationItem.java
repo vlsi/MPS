@@ -1,4 +1,4 @@
-package jetbrains.mps.workbench.actions.goTo.framework;
+package jetbrains.mps.workbench.actions.goTo.framework.nodes;
 
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.navigation.NavigationItem;

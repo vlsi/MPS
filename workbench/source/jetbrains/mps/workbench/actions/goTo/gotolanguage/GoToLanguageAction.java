@@ -1,4 +1,4 @@
-package jetbrains.mps.workbench.actions.goTo.gotoroot;
+package jetbrains.mps.workbench.actions.goTo.gotolanguage;
 
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
@@ -12,9 +12,9 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.impl.FakePsiElement;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.workbench.actions.goTo.framework.GoToNodeModel;
+import jetbrains.mps.workbench.actions.goTo.framework.languages.GoToLanguageModel;
 
-public class GoToRootNodeAction extends AnAction {
+public class GoToLanguageAction extends AnAction {
   public void actionPerformed(AnActionEvent e) {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;
@@ -29,8 +29,8 @@ public class GoToRootNodeAction extends AnAction {
       }
     };
 
-    GoToNodeModel goToNodeModel = new GoToNodeModel(mpsProject, new RootNodesFinder(mpsProject));
-    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToNodeModel, fakePsiContext);
+    GoToLanguageModel goToLanguageModel = new GoToLanguageModel(mpsProject, new LanguagesFinder(mpsProject));
+    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToLanguageModel, fakePsiContext);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
