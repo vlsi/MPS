@@ -50,7 +50,7 @@
     <entry path="${language_descriptor}\classes" />
   </classPath>
   <languageRuntimeClassPath>
-    <entry path="${language_descriptor}\classes\jetbrains\mps\transformationTest\matcher" />
+    <entry path="${language_descriptor}\classes" />
   </languageRuntimeClassPath>
   <sourcePath />
   <extendedLanguages>
