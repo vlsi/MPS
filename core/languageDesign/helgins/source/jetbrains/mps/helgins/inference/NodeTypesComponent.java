@@ -209,7 +209,7 @@ public class NodeTypesComponent implements IEditorMessageOwner, Cloneable {
         }
 
         if (component instanceof NodeEditorComponent) {
-          ((NodeEditorComponent) component).getInspector().getHighlightManager().clear();
+          ((NodeEditorComponent) component).getInspector().getHighlightManager().clearForOwner(this);
         }
 
         doInvalidate();

@@ -1,6 +1,8 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.ReloadAdapter;
 
 import java.util.*;
 import java.util.List;
@@ -17,6 +19,11 @@ public class NodeHighlightManager implements IEditorMessageOwner {
 
   public NodeHighlightManager(AbstractEditorComponent edtitor) {
     myEditor = edtitor;
+    ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
+      public void onReload() {
+        clear();
+      }
+    });
   }
 
   public void clear() {
