@@ -86,7 +86,7 @@ public class GoToNodeModel extends BaseMPSGoToModel {
   @Nullable
   public String getPromptText() {
     //return IdeBundle.message("prompt.gotoclass.enter.class.name");
-    return "Root node name:";
+    return "Node name:";
   }
 
   public String getCheckBoxName() {
