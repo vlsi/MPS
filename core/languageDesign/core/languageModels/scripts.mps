@@ -56,6 +56,10 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <maxImportIndex value="30" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.ide.action@java_stub" version="-1" />
@@ -1033,6 +1037,7 @@
   <node type="jetbrains.mps.logging.refactoring.structure.Refactoring" id="1200665013408">
     <property name="name" value="SafeDelete" />
     <property name="userFriendlyName" value="Safe Delete Node" />
+    <property name="refactorImmediatelyIfNoUsages" value="true" />
     <link role="applicableConcept" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="isApplicableClause" type="jetbrains.mps.logging.refactoring.structure.IsApplicableClause" id="1200666435294">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200666435295">
@@ -1183,33 +1188,9 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1201261469292">
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201261469293">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1201261469329">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1209485970693" />
-            </node>
-          </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207782886082">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209483941128">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1209483930871">
-                <link role="variableDeclaration" targetNodeId="1201261520815" resolveInfo="searchResults" />
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209483947490">
-                <link role="baseMethodDeclaration" targetNodeId="26.~SearchResults.getSearchResults():java.util.List" resolveInfo="getSearchResults" />
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207782886083">
-              <link role="baseMethodDeclaration" targetNodeId="7.~List.isEmpty():boolean" resolveInfo="isEmpty" />
-            </node>
-          </node>
-          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1201261631186">
-            <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201261631187">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1201261632376">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1209485974335">
-                  <link role="variableDeclaration" targetNodeId="1201261520815" resolveInfo="searchResults" />
-                </node>
-              </node>
-            </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1210943477712">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1210943480152">
+            <link role="variableDeclaration" targetNodeId="1201261520815" resolveInfo="searchResults" />
           </node>
         </node>
       </node>

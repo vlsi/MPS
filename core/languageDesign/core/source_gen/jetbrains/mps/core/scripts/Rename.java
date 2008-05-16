@@ -25,8 +25,8 @@ import jetbrains.mps.project.IModule;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import java.util.HashMap;
-import jetbrains.mps.refactoring.framework.IChooseComponent;
 import java.util.ArrayList;
+import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.refactoring.framework.ChooseStringComponent;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
 
@@ -89,6 +89,10 @@ public class Rename extends AbstractLoggableRefactoring {
     return true;
   }
 
+  public boolean refactorImmediatelyIfNoUsages() {
+    return false;
+  }
+
   public RefactoringTarget getRefactoringTarget() {
     return RefactoringTarget.NODE;
   }
@@ -117,6 +121,10 @@ public class Rename extends AbstractLoggableRefactoring {
 
   public Map<IModule, List<SModel>> getModelsToGenerate(ActionContext actionContext, RefactoringContext refactoringContext) {
     return new HashMap<IModule, List<SModel>>();
+  }
+
+  public List<SModel> getModelsToUpdate(ActionContext actionContext, RefactoringContext refactoringContext) {
+    return new ArrayList<SModel>();
   }
 
   public void updateModel(SModel model, RefactoringContext refactoringContext) {

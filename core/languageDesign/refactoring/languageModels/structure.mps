@@ -19,6 +19,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="14" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
@@ -52,6 +53,10 @@
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1209559372957">
       <property name="name" value="refactoringTargetKind" />
       <link role="dataType" targetNodeId="1209559274358" resolveInfo="RefactoringTargetKind" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1210941394948">
+      <property name="name" value="refactorImmediatelyIfNoUsages" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1199455308722">
       <property name="metaClass" value="aggregation" />
@@ -94,6 +99,11 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="getModelsToGenerateClause" />
       <link role="target" targetNodeId="1191591349007" resolveInfo="GetModelsToGenerateClause" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1210941681117">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="getModelsToUpdateClause" />
+      <link role="target" targetNodeId="1210941725884" resolveInfo="GetModelsToUpdateClause" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1189695176456">
       <property name="metaClass" value="aggregation" />
@@ -522,6 +532,21 @@
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1210084445238">
       <property name="internalValue" value="devkit" />
       <property name="externalValue" value="devkit" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1210941725884">
+    <property name="name" value="GetModelsToUpdateClause" />
+    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1210941761901">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210941767454">
+        <link role="classifier" targetNodeId="4.~List" resolveInfo="List" />
+        <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SModelType" id="1210941773457" />
+      </node>
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1210941761906">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1189694712372" resolveInfo="ConceptFunctionParameter_ActionContext" />
     </node>
   </node>
 </model>

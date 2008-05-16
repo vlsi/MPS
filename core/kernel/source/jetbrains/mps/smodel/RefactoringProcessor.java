@@ -61,7 +61,8 @@ public class RefactoringProcessor {
             }
           });
           if (toReturn[0]) return;
-          if (refactoringContext.getUsages() == null) {
+          SearchResults usages = refactoringContext.getUsages();
+          if (usages == null || (refactoring.refactorImmediatelyIfNoUsages() && usages.getSearchResults().isEmpty())) {
             doExecuteInThread(context, refactoringContext);
           } else {
             ThreadUtils.runInUIThreadNoWait(new Runnable() {
@@ -128,6 +129,7 @@ public class RefactoringProcessor {
           refactoringContext.computeCaches();
           SearchResults usages = refactoringContext.getUsages();
           Map<IModule, List<SModel>> moduleToModelsMap = refactoring.getModelsToGenerate(context, refactoringContext);
+          List<SModel> modelsToUpdate = refactoring.getModelsToUpdate(context, refactoringContext);
           if (!refactoringContext.isLocal()) {
             if (refactoring.doesUpdateModel()) {
               writeIntoLog(model, refactoringContext);
@@ -146,9 +148,14 @@ public class RefactoringProcessor {
               }
             }
           } else {
-            if (refactoring.doesUpdateModel() && usages != null) {
-              Set<SModel> modelsToProcess = usages.getModelsWithResults();
+            if (refactoring.doesUpdateModel()) {
+              Set<SModel> modelsToProcess = new LinkedHashSet<SModel>();
+              if (usages != null) {
+                modelsToProcess.addAll(usages.getModelsWithResults());
+              }
+              modelsToProcess.addAll(modelsToUpdate);
 
+              //todo remove hack
               for (List<SModel> sModels : moduleToModelsMap.values()) {
                 modelsToProcess.addAll(sModels);
               }

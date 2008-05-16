@@ -126,10 +126,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1200668668194(final IOperationContext operationContext, final PropertyMacroContext _context) {
     {
-      Pattern_ pattern_1210085730748 = new Pattern_();
-      SNode coercedNode_1210085730747 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(_context.getNode(), "argumentType", true), pattern_1210085730748);
-      if (coercedNode_1210085730747 != null) {
-        SNode abstractConceptDeclaration = (SNode)pattern_1210085730748.PatternVar;
+      Pattern_ pattern_ = new Pattern_();
+      SNode coercedNode_ = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(_context.getNode(), "argumentType", true), pattern_);
+      if (coercedNode_ != null) {
+        SNode abstractConceptDeclaration = (SNode)pattern_.PatternVar;
         return SNodeOperations.getModel(abstractConceptDeclaration).toString() + "." + SPropertyOperations.getString(abstractConceptDeclaration, "name");
       }
     }
@@ -166,6 +166,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1204633390715(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1210941980901(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "refactorImmediatelyIfNoUsages");
   }
 
   public static Object referenceMacro_GetReferent_1189764427569(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -333,6 +337,14 @@ public class QueriesGenerated {
     return SPropertyOperations.hasValue(_context.getNode(), "refactoringTargetKind", "solution", null);
   }
 
+  public static boolean ifMacro_Condition_1210942147593(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "getModelsToUpdateClause", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1210942147607(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "getModelsToUpdateClause", true) == null);
+  }
+
   public static SNode sourceNodeQuery_1190724923720(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "updateModelClause", true), "body", true);
   }
@@ -467,6 +479,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1209560967967(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "isApplicableToModelClause", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1210942147584(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "getModelsToUpdateClause", true), "body", true);
   }
 
   public static List sourceNodesQuery_1189698183859(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

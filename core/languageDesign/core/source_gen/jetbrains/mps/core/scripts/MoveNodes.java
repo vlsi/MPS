@@ -38,9 +38,9 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.ArrayList;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.refactoring.framework.ChooseNodeOrModelComponent;
-import java.util.ArrayList;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
 
 public class MoveNodes extends AbstractLoggableRefactoring {
@@ -155,6 +155,10 @@ public class MoveNodes extends AbstractLoggableRefactoring {
     return true;
   }
 
+  public boolean refactorImmediatelyIfNoUsages() {
+    return false;
+  }
+
   public RefactoringTarget getRefactoringTarget() {
     return RefactoringTarget.NODE;
   }
@@ -199,6 +203,10 @@ public class MoveNodes extends AbstractLoggableRefactoring {
 
   public Map<IModule, List<SModel>> getModelsToGenerate(ActionContext actionContext, RefactoringContext refactoringContext) {
     return new HashMap<IModule, List<SModel>>();
+  }
+
+  public List<SModel> getModelsToUpdate(ActionContext actionContext, RefactoringContext refactoringContext) {
+    return new ArrayList<SModel>();
   }
 
   public void updateModel(SModel model, RefactoringContext refactoringContext) {

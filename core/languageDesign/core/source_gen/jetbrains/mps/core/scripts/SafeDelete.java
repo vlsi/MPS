@@ -25,6 +25,7 @@ import jetbrains.mps.project.IModule;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import java.util.HashMap;
+import java.util.ArrayList;
 
 public class SafeDelete extends AbstractLoggableRefactoring {
 
@@ -89,6 +90,10 @@ public class SafeDelete extends AbstractLoggableRefactoring {
     return true;
   }
 
+  public boolean refactorImmediatelyIfNoUsages() {
+    return true;
+  }
+
   public RefactoringTarget getRefactoringTarget() {
     return RefactoringTarget.NODE;
   }
@@ -104,12 +109,7 @@ public class SafeDelete extends AbstractLoggableRefactoring {
       NodeAndDescendantsUsages_Finder finder = new NodeAndDescendantsUsages_Finder();
       IResultProvider resultProvider = TreeBuilder.forFinder(finder);
       SearchResults searchResults = resultProvider.getResults(searchQuery, monitor);
-      if (searchResults.getSearchResults().isEmpty()) {
-        return null;
-      } else
-      {
-        return searchResults;
-      }
+      return searchResults;
     }
   }
 
@@ -122,6 +122,10 @@ public class SafeDelete extends AbstractLoggableRefactoring {
 
   public Map<IModule, List<SModel>> getModelsToGenerate(ActionContext actionContext, RefactoringContext refactoringContext) {
     return new HashMap<IModule, List<SModel>>();
+  }
+
+  public List<SModel> getModelsToUpdate(ActionContext actionContext, RefactoringContext refactoringContext) {
+    return new ArrayList<SModel>();
   }
 
   public void updateModel(SModel model, RefactoringContext refactoringContext) {

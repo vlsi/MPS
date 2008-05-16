@@ -10,6 +10,7 @@ import jetbrains.mps.project.IModule;
 import java.util.Map;
 import java.util.List;
 import java.util.HashMap;
+import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
@@ -61,6 +62,10 @@ public abstract class AbstractLoggableRefactoring implements ILoggableRefactorin
     return new HashMap<IModule, List<SModel>>();
   }
 
+  public List<SModel> getModelsToUpdate(ActionContext actionContext, RefactoringContext refactoringContext) {
+    return new ArrayList<SModel>();
+  }
+
   public Class getOverridenRefactoringClass() {
     return null;
   }
@@ -71,6 +76,10 @@ public abstract class AbstractLoggableRefactoring implements ILoggableRefactorin
 
   public boolean doesUpdateModel() {
     return true;
+  }
+
+  public boolean refactorImmediatelyIfNoUsages() {
+    return false;
   }
 
   public boolean showsAffectedNodes() {
