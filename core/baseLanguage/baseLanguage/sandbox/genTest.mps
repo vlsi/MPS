@@ -72,6 +72,18 @@
           <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206627140522">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.TryStatement" id="1206627072054">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206627072055">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1210942672912">
+                  <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210942672913">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1210942675261">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1210942676497">
+                        <property name="value" value="false" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1210942673525">
+                    <property name="value" value="true" />
+                  </node>
+                </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1206627073902">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1206627074575">
                     <property name="value" value="239" />

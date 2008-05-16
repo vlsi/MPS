@@ -25,15 +25,20 @@ import java.util.*;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.components.PersistentStateComponent;
+import com.intellij.openapi.components.State;
+import com.intellij.openapi.components.Storage;
 
-public class IntentionsManager implements IExternalizableComponent, IComponentLifecycle, ApplicationComponent {
-  private static final String VERSION = "version";
-  private static final String ID = "id";
-  private static final String VERSION_NUMBER = "0.1";
-  private static final String DISABLED_INTENTIONS = "disables_intentions";
-  private static final String INTENTION = "intention";
-  private static final String CLASS_NAME = "class_name";
 
+@State(
+  name = "MPSIntentionsManager",
+  storages = {
+    @Storage(
+      id ="other",
+      file = "$APP_CONFIG$/other.xml"
+    )}
+)
+public class IntentionsManager implements IComponentLifecycle, ApplicationComponent, PersistentStateComponent<IntentionsManager.MyState> {
   private static final Logger LOG = Logger.getLogger(IntentionsManager.class);
 
   public static IntentionsManager getInstance() {
@@ -42,10 +47,11 @@ public class IntentionsManager implements IExternalizableComponent, IComponentLi
 
   private Map<Intention, SNode> myNodesByIntentions = new HashMap<Intention, SNode>();
   private Map<String, Set<Intention>> myIntentions = new HashMap<String, Set<Intention>>();
-  private Set<String> myDisabledIntentionsClassNames = new HashSet<String>();
   private Set<Intention> myDisabledIntentionsCache = new HashSet<Intention>();
   private HashMap<Class, Language> myIntentionsLanguages = new HashMap<Class, Language>();
   private boolean myCachesAreValid = false;
+
+  private MyState myState = new MyState();
 
   private ClassLoaderManager myClassLoaderManager;
 
@@ -123,7 +129,7 @@ public class IntentionsManager implements IExternalizableComponent, IComponentLi
       myDisabledIntentionsCache.clear();
       for (Set<Intention> conceptIntentions : myIntentions.values()) {
         for (Intention intention : conceptIntentions) {
-          if (myDisabledIntentionsClassNames.contains(intention.getClass().getName())) {
+          if (myState.myDisabledIntentions.contains(intention.getClass().getName())) {
             myDisabledIntentionsCache.add(intention);
           }
         }
@@ -154,12 +160,12 @@ public class IntentionsManager implements IExternalizableComponent, IComponentLi
   }
 
   public void disableIntention(Intention intention) {
-    myDisabledIntentionsClassNames.add(intention.getClass().getName());
+    myState.myDisabledIntentions.add(intention.getClass().getName());
     myDisabledIntentionsCache.add(intention);
   }
 
   public void enableIntention(Intention intention) {
-    myDisabledIntentionsClassNames.remove(intention.getClass().getName());
+    myState.myDisabledIntentions.remove(intention.getClass().getName());
     myDisabledIntentionsCache.remove(intention);
   }
 
@@ -203,37 +209,28 @@ public class IntentionsManager implements IExternalizableComponent, IComponentLi
     }
   }
 
-  public void read(Element element, MPSProject project) {
-    myDisabledIntentionsClassNames.clear();
-    invalidateCaches();
-    Element versionXML = element.getChild(VERSION);
-    if (versionXML == null) return;
-    String version = versionXML.getAttribute(ID).getValue();
-    if (!VERSION_NUMBER.equals(version)) return;
-
-    Element disabledXML = element.getChild(DISABLED_INTENTIONS);
-    for (Element intentionXML : (List<Element>) disabledXML.getChildren(INTENTION)) {
-      String className = intentionXML.getAttribute(CLASS_NAME).getValue();
-      myDisabledIntentionsClassNames.add(className);
-    }
-  }
-
-  public void write(Element element, MPSProject project) {
-    Element versionXML = new Element(VERSION);
-    versionXML.setAttribute(ID, VERSION_NUMBER);
-    element.addContent(versionXML);
-
-    Element disabledXML = new Element(DISABLED_INTENTIONS);
-    for (String intentionName : myDisabledIntentionsClassNames) {
-      Element intentionXML = new Element(INTENTION);
-      intentionXML.setAttribute(CLASS_NAME, intentionName);
-      disabledXML.addContent(intentionXML);
-    }
-    element.addContent(disabledXML);
-  }
-
   @Nullable
   public SNode getNodeByIntention(Intention intention) {
     return myNodesByIntentions.get(intention);
+  }
+
+  public MyState getState() {
+    return myState;
+  }
+
+  public void loadState(MyState state) {
+    myState = state;
+  }
+
+  public static class MyState {
+    private Set<String> myDisabledIntentions = new HashSet<String>();
+
+    public Set<String> getDisabledIntentions() {
+      return myDisabledIntentions;
+    }
+
+    public void setDisabledIntentions(Set<String> disabledIntentions) {
+      myDisabledIntentions = disabledIntentions;
+    }
   }
 }

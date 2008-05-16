@@ -24,7 +24,7 @@ import java.util.*;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.application.ApplicationManager;
 
-public class FindersManager implements IExternalizableComponent, IComponentLifecycle, ApplicationComponent {
+public class FindersManager implements IComponentLifecycle, ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(FindersManager.class);
 
   private Map<String, Set<GeneratedFinder>> myFinders = new HashMap<String, Set<GeneratedFinder>>();
@@ -130,13 +130,5 @@ public class FindersManager implements IExternalizableComponent, IComponentLifec
         }
       }
     }
-  }
-
-  public void read(Element element, MPSProject project) {
-
-  }
-
-  public void write(Element element, MPSProject project) {
-
   }
 }
