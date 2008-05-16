@@ -437,7 +437,7 @@ public class EditorSettings extends DefaultExternalizableComponent implements Co
     }
 
     public Icon getIcon() {
-      return Icons.EDITORS_ICON;
+      return null;
     }
 
     public JComponent getComponent() {

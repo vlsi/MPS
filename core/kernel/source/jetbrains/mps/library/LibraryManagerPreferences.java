@@ -17,7 +17,7 @@ import java.util.List;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 
-public class LibraryManagerPreferences implements IPreferencesPage {
+public class LibraryManagerPreferences {
   private LibraryManager myManager;
   private JPanel myMainPanel = new JPanel(new BorderLayout());
   private DefaultListModel myListModel = new DefaultListModel();

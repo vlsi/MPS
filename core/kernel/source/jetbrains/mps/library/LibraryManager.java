@@ -21,14 +21,21 @@ import jetbrains.mps.pathVariables.PathVariableManager;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nls;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.options.Configurable;
+import com.intellij.openapi.options.ConfigurationException;
 
-public class LibraryManager extends DefaultExternalizableComponent implements IComponentWithPreferences, IComponentLifecycle, ApplicationComponent {
+import javax.swing.Icon;
+import javax.swing.JComponent;
+
+public class LibraryManager extends DefaultExternalizableComponent implements IComponentLifecycle, ApplicationComponent, Configurable {
 
   public static LibraryManager getInstance() {
     return ApplicationManager.getApplication().getComponent(LibraryManager.class);
@@ -40,6 +47,8 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
   private MPSModuleOwner myPredefinedLibrariesOwner;
 
   private MPSModuleRepository myRepository;
+
+  private LibraryManagerPreferences myPreferences;
 
   public LibraryManager(MPSModuleRepository repo, PathVariableManager pathManager) {
     myRepository = repo;
@@ -198,7 +207,44 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
     return new HashSet<M>(result);
   }
 
-  public List<IPreferencesPage> createPreferencesPages() {
-    return CollectionUtil.asList((IPreferencesPage) new LibraryManagerPreferences(this));
+  private LibraryManagerPreferences getPreferences() {
+    if (myPreferences == null) {
+      myPreferences = new LibraryManagerPreferences(this);
+    }
+    return myPreferences;
+  }
+
+  @Nls
+  public String getDisplayName() {
+    return "MPS Library Manager";
+  }
+
+  @Nullable
+  public Icon getIcon() {
+    return getPreferences().getIcon();
+  }
+
+  @Nullable
+  @NonNls
+  public String getHelpTopic() {
+    return null;
+  }
+
+  public JComponent createComponent() {
+    return getPreferences().getComponent();
+  }
+
+  public boolean isModified() {
+    return true;
+  }
+
+  public void apply() throws ConfigurationException {
+    getPreferences().commit();
+  }
+
+  public void reset() {
+  }
+
+  public void disposeUIResources() {
   }
 }
