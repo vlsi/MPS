@@ -79,7 +79,7 @@ public class TemplateProcessor {
 
   private List<SNode> createOutputNodesForTemplateNode(String mappingName,
                                                        SNode templateNode,
-                                                       SNode inputNode,
+                                                       @Nullable SNode inputNode,
                                                        int nodeMacrosToSkip,
                                                        boolean registerTopOutput)
     throws

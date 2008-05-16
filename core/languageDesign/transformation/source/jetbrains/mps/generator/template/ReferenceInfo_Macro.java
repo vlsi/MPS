@@ -13,6 +13,8 @@ import jetbrains.mps.logging.Logger;
 import java.util.List;
 import java.util.Map;
 
+import org.jetbrains.annotations.Nullable;
+
 /**
  * Created by: Sergey Dmitriev
  * Date: Jan 25, 2007
@@ -23,7 +25,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
   private String myResolveInfoForDynamicResolve;
   private Map<String, SNode> myInputNodesByMappingName;
 
-  public ReferenceInfo_Macro(SNode outputSourceNode, ReferenceMacro macro, SNode inputNode, Map<String, SNode> inputNodesByMappingName, SNode templateReferenceNode) {
+  public ReferenceInfo_Macro(SNode outputSourceNode, ReferenceMacro macro, @Nullable SNode inputNode, Map<String, SNode> inputNodesByMappingName, SNode templateReferenceNode) {
     super(outputSourceNode, getReferenceRole(macro), inputNode);
     myInputNodesByMappingName = inputNodesByMappingName;
     myTemplateReferenceNode = templateReferenceNode;
@@ -125,6 +127,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
   public void showErrorMessage(ITemplateGenerator generator) {
     generator.showErrorMessage(getOutputSourceNode(), "couldn't resolve reference '" + getReferenceRole() + "' in output node " + getOutputSourceNode().getDebugText());
     generator.showErrorMessage(myReferenceMacro.getParent().getNode(), "-- original reference was " + myReferenceMacro.getParent().getNode().getDebugText());
-    generator.showErrorMessage(getInputNode(), "-- input node was " + getInputNode().getDebugText());
+    SNode inputNode = getInputNode();
+    generator.showErrorMessage(inputNode, "-- input node was " + (inputNode != null ? inputNode.getDebugText(): "NULL"));
   }
 }

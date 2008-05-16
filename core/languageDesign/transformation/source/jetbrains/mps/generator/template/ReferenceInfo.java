@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.helgins.inference.TypeCheckingMode;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Created by: Sergey Dmitriev
@@ -20,7 +21,7 @@ public abstract class ReferenceInfo {
   private String myReferenceRole;
   private SNode myInputNode;
 
-  protected ReferenceInfo(SNode outputSourceNode, String referenceRole, SNode inputNode) {
+  protected ReferenceInfo(SNode outputSourceNode, String referenceRole, @Nullable SNode inputNode) {
     myOutputSourceNode = outputSourceNode;
     myReferenceRole = referenceRole;
     myInputNode = inputNode;
@@ -34,6 +35,7 @@ public abstract class ReferenceInfo {
     return myReferenceRole;
   }
 
+  @Nullable
   public SNode getInputNode() {
     return myInputNode;
   }
