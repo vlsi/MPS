@@ -33,11 +33,10 @@ package jetbrains.mps.workbench.actions.goTo.framework.nodes;
 
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.diagnostic.Logger;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.Calculable;
-import jetbrains.mps.workbench.actions.goTo.framework.GoToHierarchicalModel;
+import jetbrains.mps.workbench.actions.goTo.framework.base.GoToMPSHierarchicalModel;
+import jetbrains.mps.workbench.actions.goTo.framework.base.IFinder;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -45,56 +44,44 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class GoToNodeModel extends GoToHierarchicalModel {
+public class GoToNodeModel extends GoToMPSHierarchicalModel {
   private static final Logger LOG = Logger.getInstance("#" + GoToNodeModel.class.getName());
 
-  private MPSProject myProject;
-  private INodesFinder myNodesFinder;
+  private IFinder<SNode> myNodesFinder;
 
-  public GoToNodeModel(MPSProject project, INodesFinder nodesFinder) {
-    myProject = project;
+  public GoToNodeModel(MPSProject project, IFinder<SNode> nodesFinder) {
+    super(project);
     myNodesFinder = nodesFinder;
   }
 
-  public String[] getNames(final boolean checkBoxState) {
+  //---------------------FIND STUFF------------------------
+
+  public String[] doGetNames(boolean checkBoxState) {
     final Set<String> names = new HashSet<String>();
-
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-      public void run() {
-        for (SNode node : myNodesFinder.getItems(checkBoxState)) {
-          names.add(node.getName());
-        }
-      }
-    });
-
+    for (SNode node : myNodesFinder.getItems(getScope(checkBoxState))) {
+      names.add(node.getName());
+    }
     return names.toArray(new String[names.size()]);
   }
 
-  public Object[] getElementsByName(final String name, final boolean checkBoxState, final String pattern) {
+  public Object[] doGetElementsByName(String name, boolean checkBoxState, String pattern) {
     final List<NodeNavigationItem> items = new ArrayList<NodeNavigationItem>();
-
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-      public void run() {
-        for (SNode node : myNodesFinder.getItems(checkBoxState)) {
-          String nodeName = node.getName();
-          if (nodeName != null && nodeName.equals(name)) {
-            items.add(new NodeNavigationItem(myProject, node));
-          }
-        }
+    for (SNode node : myNodesFinder.getItems(getScope(checkBoxState))) {
+      String nodeName = node.getName();
+      if (nodeName != null && nodeName.equals(name)) {
+        items.add(new NodeNavigationItem(getProject(), node));
       }
-    });
+    }
     return items.toArray();
   }
 
-  public String getFullName(final Object element) {
-    return CommandProcessor.instance().executeLightweightCommand(new Calculable<String>() {
-      public String calculate() {
-        NodePresentation presentation = (NodePresentation) ((NavigationItem) element).getPresentation();
-        assert presentation != null;
-        return presentation.getModelName() + "." + presentation.getPresentableText();
-      }
-    });
+  public String doGetFullName(Object element) {
+    NodePresentation presentation = (NodePresentation) ((NavigationItem) element).getPresentation();
+    assert presentation != null;
+    return presentation.getModelName() + "." + presentation.getPresentableText();
   }
+
+  //---------------------INTERFACE STUFF------------------------
 
   @Nullable
   public String getPromptText() {

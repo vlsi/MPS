@@ -29,7 +29,7 @@ public class GoToLanguageAction extends AnAction {
       }
     };
 
-    GoToLanguageModel goToLanguageModel = new GoToLanguageModel(mpsProject, new LanguagesFinder(mpsProject));
+    GoToLanguageModel goToLanguageModel = new GoToLanguageModel(mpsProject, new LanguagesFinder());
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToLanguageModel, fakePsiContext);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
