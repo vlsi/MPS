@@ -19,6 +19,10 @@ public final class NodeNavigationItem implements NavigationItem {
     myNode = node;
   }
 
+  public SNode getNode() {
+    return myNode;
+  }
+
   public String getName() {
     return myNode.getName();
   }

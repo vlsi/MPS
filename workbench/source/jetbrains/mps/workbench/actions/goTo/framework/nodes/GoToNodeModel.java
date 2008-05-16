@@ -35,7 +35,7 @@ import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.diagnostic.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.actions.goTo.framework.base.GoToMPSHierarchicalModel;
+import jetbrains.mps.workbench.actions.goTo.framework.base.BaseMPSGoToModel;
 import jetbrains.mps.workbench.actions.goTo.framework.base.IFinder;
 import org.jetbrains.annotations.Nullable;
 
@@ -44,7 +44,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class GoToNodeModel extends GoToMPSHierarchicalModel {
+public class GoToNodeModel extends BaseMPSGoToModel {
   private static final Logger LOG = Logger.getInstance("#" + GoToNodeModel.class.getName());
 
   private IFinder<SNode> myNodesFinder;

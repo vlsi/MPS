@@ -1,17 +1,14 @@
 package jetbrains.mps.workbench.actions.goTo.framework.nodes;
 
-import com.intellij.navigation.ItemPresentation;
-import com.intellij.openapi.editor.colors.CodeInsightColors;
-import com.intellij.openapi.editor.colors.TextAttributesKey;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Calculable;
-import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.workbench.actions.goTo.framework.base.BasePresentation;
 
 import javax.swing.Icon;
 
-public class NodePresentation implements ItemPresentation {
+public class NodePresentation extends BasePresentation {
   private SNode myNode;
   private String myModelName;
 
@@ -28,34 +25,15 @@ public class NodePresentation implements ItemPresentation {
     return myModelName;
   }
 
-  public String getPresentableText() {
-    return CommandProcessor.instance().executeLightweightCommand(new Calculable<String>() {
-      public String calculate() {
-        return myNode.getName();
-      }
-    });
+  public String doGetPresentableText() {
+    return myNode.getName();
   }
 
-  @Nullable
-  public String getLocationString() {
-    return CommandProcessor.instance().executeLightweightCommand(new Calculable<String>() {
-      public String calculate() {
-        return "(" + myModelName + ")";
-      }
-    });
+  public String doGetLocationString() {
+    return "(" + myModelName + ")";
   }
 
-  @Nullable
-  public Icon getIcon(boolean open) {
-    return CommandProcessor.instance().executeLightweightCommand(new Calculable<Icon>() {
-      public Icon calculate() {
-        return IconManager.getIconFor(myNode);
-      }
-    });
-  }
-
-  @Nullable
-  public TextAttributesKey getTextAttributesKey() {
-    return CodeInsightColors.CLASS_NAME_ATTRIBUTES;
+  public Icon doGetIcon() {
+    return IconManager.getIconFor(myNode);
   }
 }
