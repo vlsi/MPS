@@ -17,6 +17,10 @@ import java.util.Collections;
 import java.util.List;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.Task.Modal;
+import org.jetbrains.annotations.NotNull;
 
 public class LibraryManagerPreferences {
   private LibraryManager myManager;
@@ -160,12 +164,16 @@ public class LibraryManagerPreferences {
   }
 
   public void commit() {
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-      public void run() {
-        if (myChanged) {
-          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+    if (myChanged) {
+      ProgressManager.getInstance().run(new Modal(null, "Applying settings", false) {
+        public void run(@NotNull final ProgressIndicator indicator) {
+          CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+            public void run() {
+              ClassLoaderManager.getInstance().reloadAll(indicator);
+            }
+          });
         }
-      }
-    });
+      });
+    }
   }
 }

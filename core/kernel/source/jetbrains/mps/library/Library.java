@@ -1,5 +1,7 @@
 package jetbrains.mps.library;
 
+import com.intellij.util.xmlb.annotations.Transient;
+
 public class Library {
   private String myName;
   private String myPath;
@@ -28,6 +30,7 @@ public class Library {
     return myName;
   }
 
+  @Transient
   public boolean isPredefined() {
     return false;
   }
