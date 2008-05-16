@@ -14,14 +14,14 @@ public class CloneUtil {
    * Creates cloned model, each node in target model has the same nodeId that corresponding node in source model
    * it allows to resolve internal references much faster
    */
-  public static void cloneModel(SModel inputModel, SModel outputModel, IScope scope) {
+  public static void cloneModel(SModel inputModel, SModel outputModel) {
     for (SNode node : inputModel.getRoots()) {
-      SNode outputNode = clone(node, outputModel, scope);
+      SNode outputNode = clone(node, outputModel);
       outputModel.addRoot(outputNode);
     }
   }
 
-  public static SNode clone(SNode inputNode, SModel outputModel, IScope scope) {
+  public static SNode clone(SNode inputNode, SModel outputModel) {
     // new SNode() uses intern. It's a very expensive operation and we know that when we copy node, concept fq name
     // is already interned. So we don't intern anything. DO NOT replace this stuff with instantiateStuff
     SNode outputNode = new SNode(outputModel, inputNode.getConceptFqName(), false);
@@ -58,7 +58,7 @@ public class CloneUtil {
     for (SNode child : inputNode.getChildren()) {
       String role = child.getRole_();
       assert role != null;
-      outputNode.addChild(role, clone(child, outputModel, scope));
+      outputNode.addChild(role, clone(child, outputModel));
     }
     return outputNode;
   }

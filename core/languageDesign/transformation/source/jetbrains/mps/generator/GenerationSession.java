@@ -192,7 +192,7 @@ public class GenerationSession implements IGenerationSession {
       if (needToCloneInputMode) {
         SModel currentInputModel_clone = createTransientModel(modelsLongName);
         addMessage(MessageKind.INFORMATION, "clone model '" + currentInputModel.getUID() + "' --> '" + currentInputModel_clone.getUID() + "'");
-        CloneUtil.cloneModel(currentInputModel, currentInputModel_clone, generator.getScope());
+        CloneUtil.cloneModel(currentInputModel, currentInputModel_clone);
 
         if (!myDiscardTransients) { // tracing
           mySessionContext.getGenerationTracer().registerPreMappingScripts(currentInputModel, currentInputModel_clone, preMappingScripts);
@@ -280,7 +280,7 @@ public class GenerationSession implements IGenerationSession {
       !myDiscardTransients) {  // clone model - needed for tracing
       SModel currentOutputModel_clone = createTransientModel(modelsLongName);
       addMessage(MessageKind.INFORMATION, "clone model '" + currentOutputModel.getUID() + "' --> '" + currentOutputModel_clone.getUID() + "'");
-      CloneUtil.cloneModel(currentOutputModel, currentOutputModel_clone, generator.getScope());
+      CloneUtil.cloneModel(currentOutputModel, currentOutputModel_clone);
 
       mySessionContext.getGenerationTracer().registerPostMappingScripts(currentOutputModel, currentOutputModel_clone, postMappingScripts);
       currentOutputModel = currentOutputModel_clone;

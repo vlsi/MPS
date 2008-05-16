@@ -135,7 +135,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
     List<SNode> copiedRoots = new ArrayList<SNode>();
     for (SNode rootToCopy : rootsToCopy) {
-      copiedRoots.add(CloneUtil.clone(rootToCopy, myOutputModel, getScope()));
+      copiedRoots.add(CloneUtil.clone(rootToCopy, myOutputModel));
     }
     return copiedRoots;
   }
