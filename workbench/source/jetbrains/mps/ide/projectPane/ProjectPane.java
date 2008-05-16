@@ -210,7 +210,6 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
   public void setShowPropertiesAndReferences(boolean showProperties) {
     myShowProperties = showProperties;
     myPAndRToggle.getModel().setSelected(showProperties);
-    myIDE.getIProjectPane().rebuild();
   }
 
   public void openEditor() {
