@@ -48,7 +48,6 @@ public class MPSEditorOpener implements ProjectComponent {
   public IEditor openNode(final SNode node, final IOperationContext context) {
     return CommandProcessor.instance().executeLightweightCommand(new Calculable<IEditor>() {
       public IEditor calculate() {
-
         SNode containingRoot = node.getContainingRoot();
 
         EditorsPane editorsPane = context.getProject().getComponentSafe(EditorsPane.class);
@@ -67,8 +66,7 @@ public class MPSEditorOpener implements ProjectComponent {
         IEditor nodeEditor = fileNodeEditor.getNodeEditor();
         if (nodeEditor instanceof TabbedEditor) {
           ((TabbedEditor) nodeEditor).selectLinkedEditor(containingRoot);
-        }
-        nodeEditor.selectNode(node);
+        }        
 
         return nodeEditor;
       }
