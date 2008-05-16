@@ -37,8 +37,10 @@ import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
+import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NonNls;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
@@ -55,12 +57,14 @@ import java.lang.reflect.Field;
 import java.util.*;
 import java.util.List;
 
+import com.intellij.openapi.actionSystem.DataProvider;
+
 
 /**
  * Author: Sergey Dmitriev
  * Created Sep 14, 2003
  */
-public abstract class AbstractEditorComponent extends JComponent implements Scrollable, IActionDataProvider, IEditorComponent {
+public abstract class AbstractEditorComponent extends JComponent implements Scrollable, IActionDataProvider, IEditorComponent, DataProvider {
   private static final Logger LOG = Logger.getLogger(AbstractEditorComponent.class);
   public static final String EDITOR_POPUP_MENU_ACTIONS = EditorPopup_ActionGroup.ID;
   public static final String EDITOR_POPUP_MENU_ACTIONS_INTERNAL = EditorInternal_ActionGroup.ID;
@@ -2254,6 +2258,23 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (cls == IOperationContext.class) return (T) getOperationContext();
     if (cls == AbstractEditorComponent.class) return (T) this;
     if (cls == EditorContext.class) return (T) getEditorContext();
+    return null;
+  }
+
+  @Nullable
+  public Object getData(@NonNls String dataId) {
+    if (dataId.equals(MPSDataKeys.SNODE.getName())) {
+      return getRootCell().getSNode();
+    }
+
+    if (dataId.equals(MPSDataKeys.SMODEL_DESCRIPTOR.getName())) {
+      return getRootCell().getSNode().getModel().getModelDescriptor();
+    }
+
+    if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
+      return getOperationContext();
+    }
+    
     return null;
   }
 

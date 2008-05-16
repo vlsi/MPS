@@ -18,7 +18,10 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.workbench.MPSDataKeys;
 import org.jdom.Element;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NonNls;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -33,11 +36,13 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
+import com.intellij.openapi.actionSystem.DataProvider;
+
 /**
  * Author: Sergey Dmitriev
  * Created Oct 25, 2003
  */
-public class ProjectPane extends AbstractProjectTreeView implements IActionDataProvider {
+public class ProjectPane extends AbstractProjectTreeView implements IActionDataProvider, DataProvider {
   private static final Logger LOG = Logger.getLogger(ProjectPane.class);
 
   public static final String PROJECT_PANE_NODE_ACTIONS = ProjectPaneNodeActions_ActionGroup.ID;
@@ -210,6 +215,7 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
   public void setShowPropertiesAndReferences(boolean showProperties) {
     myShowProperties = showProperties;
     myPAndRToggle.getModel().setSelected(showProperties);
+    myIDE.getIProjectPane().rebuild();
   }
 
   public void openEditor() {
@@ -232,6 +238,23 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
       return (T) result;
     }
     if (cls == IOperationContext.class) return (T) getContextForSelection();
+    return null;
+  }
+
+  @Nullable
+  public Object getData(@NonNls String dataId) {
+    if (dataId.equals(MPSDataKeys.SNODE.getName())) {
+      return getSelectedNode();
+    }
+
+    if (dataId.equals(MPSDataKeys.SMODEL_DESCRIPTOR.getName())) {
+      return getSelectedModel();
+    }
+
+    if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
+      return getContextForSelection();
+    }
+
     return null;
   }
 
