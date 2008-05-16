@@ -47,10 +47,15 @@ public class FastNodeFinder {
 
   private void initCache() {
     myStructuralState = myModelDescriptor.structuralState();
-    for (SNode root : myModelDescriptor.getSModel().getRoots()) {
-      buildCache(root, new HashSet<AbstractConceptDeclaration>());
+    boolean wasLoading = myModelDescriptor.getSModel().setLoading(true); // don't fire events while building the cache
+    try {
+      for (SNode root : myModelDescriptor.getSModel().getRoots()) {
+        buildCache(root, new HashSet<AbstractConceptDeclaration>());
+      }
+    } finally {
+      myModelDescriptor.getSModel().setLoading(wasLoading);
+      myInitialized = true;
     }
-    myInitialized = true;
   }
 
   public long getStructuralState() {
