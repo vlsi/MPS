@@ -8,6 +8,7 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.project.GlobalScope;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
 
@@ -299,9 +300,9 @@ public class RefactoringContext {
         allConceptFeatures.addAll(exactConceptFeatures);
       }
       Language l;
-      l = node.getNodeLanguage();
+      l = SModelUtil_new.getDeclaringLanguage(node.getConceptFqName(), GlobalScope.getInstance());
       if (l == null) {
-        LOG.warning("language for node " + node + " is null; concept is " + node.getConceptFqName());
+        LOG.warning("language for node " + node.toString() + " is null; concept is " + node.getConceptFqName());
         continue;
       }
       for (String parentConceptFQName : l.getAncestorsNames(conceptFQName)) {

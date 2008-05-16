@@ -155,10 +155,10 @@ public class RefactoringProcessor {
               }
               modelsToProcess.addAll(modelsToUpdate);
 
-              //todo remove hack
+            /*  //todo remove hack
               for (List<SModel> sModels : moduleToModelsMap.values()) {
                 modelsToProcess.addAll(sModels);
-              }
+              }*/
 
               for (SModel anotherModel : modelsToProcess) {
                 processModel(anotherModel, model, refactoringContext);
