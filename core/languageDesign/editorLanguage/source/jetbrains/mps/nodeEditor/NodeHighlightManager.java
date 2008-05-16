@@ -16,14 +16,16 @@ public class NodeHighlightManager implements IEditorMessageOwner {
   private AbstractEditorComponent myEditor;
   private Map<IEditorMessageOwner, Set<IEditorMessage>> myMessages = new HashMap<IEditorMessageOwner, Set<IEditorMessage>>();
   private final Object myMessagesLock = new Object();
+  public ReloadAdapter myHandler;
 
   public NodeHighlightManager(AbstractEditorComponent edtitor) {
     myEditor = edtitor;
-    ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
+    myHandler = new ReloadAdapter() {
       public void onReload() {
         clear();
       }
-    });
+    };
+    ClassLoaderManager.getInstance().addReloadHandler(myHandler);
   }
 
   public void clear() {
@@ -136,4 +138,7 @@ public class NodeHighlightManager implements IEditorMessageOwner {
     return result;
   }
 
+  public void dispose() {
+    ClassLoaderManager.getInstance().removeReloadHandler(myHandler);
+  }
 }

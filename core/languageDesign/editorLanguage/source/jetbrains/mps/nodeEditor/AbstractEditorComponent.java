@@ -746,8 +746,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   public void removeNotify() {
     EditorSettings.getInstance().removeEditorSettingsListener(mySettingsListener);
     KeyboardFocusManager.getCurrentKeyboardFocusManager().removePropertyChangeListener("focusOwner", myFocusListener);
+    myHighlightManager.dispose();
     super.removeNotify();
-
   }
 
   protected void registerNodeAction(MPSAction action) {

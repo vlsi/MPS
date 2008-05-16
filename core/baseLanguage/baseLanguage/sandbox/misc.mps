@@ -37,6 +37,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="133" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="java.util@java_stub" version="-1" />
@@ -359,6 +360,7 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1210954170597" />
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1210841842268">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1210841842269">
             <property name="name" value="b" />
@@ -411,6 +413,9 @@
               <node role="throwable" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1210182940589">
                 <link role="baseMethodDeclaration" targetNodeId="124.~IOException.&lt;init&gt;()" resolveInfo="IOException" />
               </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1210954202376">
+              <property name="value" value="todo:" />
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ThrowStatement" id="1210183243381">
               <node role="throwable" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1210183243382">
