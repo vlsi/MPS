@@ -9,6 +9,7 @@ public class DFABuilders extends DataFlowBuilders {
 
   public void install(DataFlowManager manager) {
     manager.register("jetbrains.mps.logging.refactoring.structure.DeleteFeatureOperation", new DeleteFeatureOperation_DataFlow());
+    manager.register("jetbrains.mps.logging.refactoring.structure.AbstractMoveExpression", new AbstractMoveExpression_DataFlow());
   }
 
 }
