@@ -8,7 +8,6 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.ide.IdeSettings;
 
 public class SaveTransientModelsAction extends ToggleAction {
   public SaveTransientModelsAction() {

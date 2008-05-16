@@ -10,7 +10,6 @@ import com.intellij.openapi.wm.WindowManager;
 import com.intellij.ide.impl.ProjectUtil;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.IFileFilter;
-import jetbrains.mps.ide.IdeSettings;
 import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.vfs.IFile;
 

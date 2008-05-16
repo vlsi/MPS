@@ -43,8 +43,6 @@ public class IdeMain {
         LoggerUtil.configureLogger();
 
 
-        IdeSettings.getInstance();
-
         final IDEProjectFrame projectWindow = new IDEProjectFrame();
         if (loadOldProject) {
           projectWindow.loadLastProjectIfAny();
