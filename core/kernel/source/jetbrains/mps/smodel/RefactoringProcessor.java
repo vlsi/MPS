@@ -173,38 +173,33 @@ public class RefactoringProcessor {
 
   }
 
-  private void generateModels(ActionContext context, Map<IModule, List<SModel>> sourceModels, RefactoringContext refactoringContext) {
+  private void generateModels(final ActionContext context, final Map<IModule, List<SModel>> sourceModels, RefactoringContext refactoringContext) {
     final SNodeMembersAccessModifier modifier = SNodeMembersAccessModifier.getInstance();
     refactoringContext.setUpMembersAccessModifier(modifier);
-    for (IModule sourceModule : sourceModels.keySet()) {
-      try {
-        IOperationContext operationContext = new ModuleContext(sourceModule, context.getOperationContext().getProject());
-        final List<SModel> models = sourceModels.get(sourceModule);
-        CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-          public void run() {
+    for (final IModule sourceModule : sourceModels.keySet()) {
+      CommandProcessor.instance().executeGenerationCommand(new Runnable() {
+        public void run() {
+          try {
+            IOperationContext operationContext = new ModuleContext(sourceModule, context.getOperationContext().getProject());
+            final List<SModel> models = sourceModels.get(sourceModule);
             modifier.startModificationMode(models);
-          }
-        });
 
-        List<SModelDescriptor> descriptors = new ArrayList<SModelDescriptor>();
-        for (SModel model : models) {
-          descriptors.add(model.getModelDescriptor());
-        }
+            List<SModelDescriptor> descriptors = new ArrayList<SModelDescriptor>();
+            for (SModel model : models) {
+              descriptors.add(model.getModelDescriptor());
+            }
 
-        new GeneratorManager(operationContext.getProject()).generateModels(descriptors,
-          operationContext,
-          IGenerationType.FILES,
-          IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR,
-          new DefaultMessageHandler(operationContext.getProject())
-        );
-      } finally {
-        CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-          public void run() {
+            new GeneratorManager(operationContext.getProject()).generateModels(descriptors,
+              operationContext,
+              IGenerationType.FILES,
+              IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR,
+              new DefaultMessageHandler(operationContext.getProject())
+            );
+          } finally {
             modifier.clear();
           }
-        });
-
-      }
+        }
+      });
     }
   }
 
