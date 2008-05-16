@@ -2,7 +2,6 @@ package jetbrains.mps.ide;
 
 import jetbrains.mps.logging.LoggerUtil;
 import jetbrains.mps.plugin.MPSPlugin;
-import jetbrains.mps.ide.settings.GlobalIdeSettings;
 import jetbrains.mps.ide.actions.tools.MakeAllModulesAction;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.make.ModuleMaker;
@@ -47,7 +46,7 @@ public class IdeMain {
         IdeSettings.getInstance();
 
         final IDEProjectFrame projectWindow = new IDEProjectFrame();
-        if (loadOldProject && GlobalIdeSettings.getInstance().isReopenLastProject()) {
+        if (loadOldProject) {
           projectWindow.loadLastProjectIfAny();
         }
 

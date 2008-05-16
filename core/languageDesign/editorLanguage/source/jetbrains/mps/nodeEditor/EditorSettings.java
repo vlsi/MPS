@@ -23,8 +23,13 @@ import java.util.*;
 import java.util.List;
 
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.options.Configurable;
+import com.intellij.openapi.options.ConfigurationException;
+import org.jetbrains.annotations.Nls;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NonNls;
 
-public class EditorSettings extends DefaultExternalizableComponent implements IComponentWithPreferences {
+public class EditorSettings extends DefaultExternalizableComponent implements Configurable {
   private static Logger LOG = Logger.getLogger(EditorSettings.class);
 
   public static EditorSettings getInstance() {
@@ -45,6 +50,8 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
   private @Externalizable boolean myUseLegacyTypesystem = true;
   private @Externalizable boolean myUseBraces = true;
   private int myIndentSize = 2;
+
+  private MyPreferencesPage myPreferencesPage;
 
   private CaretBlinker myCaretBlinker;
 
@@ -139,6 +146,13 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
     }
   }
 
+  private MyPreferencesPage getPreferencesPage() {
+    if (myPreferencesPage == null) {
+      myPreferencesPage = new MyPreferencesPage();
+    }
+    return myPreferencesPage;
+  }
+
   private abstract static class MyColorComponent extends JPanel {
     private JTextField myRedTextField = new JTextField();
     private JTextField myGreenTextField = new JTextField();
@@ -224,7 +238,44 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
     }
   }
 
-  private class MyPreferencesPage implements IPreferencesPage {
+
+  @Nls
+  public String getDisplayName() {
+    return "MPS Editor Settings";
+  }
+
+  @Nullable
+  public Icon getIcon() {
+    return getPreferencesPage().getIcon();
+  }
+
+  @Nullable
+  @NonNls
+  public String getHelpTopic() {
+    return null;
+  }
+
+  public JComponent createComponent() {
+    return getPreferencesPage().getComponent();
+  }
+
+  public boolean isModified() {
+    return true;
+  }
+
+  public void apply() throws ConfigurationException {
+    getPreferencesPage().commit();
+  }
+
+  public void reset() {
+
+  }
+
+  public void disposeUIResources() {
+
+  }
+
+  private class MyPreferencesPage {
     private static final int SLIDER_RATIO = 10000;
     private JPanel myEditorSettingsPanel = new JPanel(new BorderLayout());
     private JComboBox myFontsComboBox = createFontsComboBox();
