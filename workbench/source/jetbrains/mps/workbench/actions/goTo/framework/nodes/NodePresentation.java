@@ -10,18 +10,20 @@ import javax.swing.Icon;
 
 public class NodePresentation extends BasePresentation {
   private SNode myNode;
-  private String myModelName;
+  private String myModelName = null;
 
   public NodePresentation(SNode node) {
     myNode = node;
-    myModelName = CommandProcessor.instance().executeLightweightCommand(new Calculable<String>() {
-      public String calculate() {
-        return myNode.getModel().getModelDescriptor().getModelUID().toString();
-      }
-    });
   }
 
   public String getModelName() {
+    if (myModelName == null) {
+      myModelName = CommandProcessor.instance().executeLightweightCommand(new Calculable<String>() {
+        public String calculate() {
+          return myNode.getModel().getModelDescriptor().getModelUID().toString();
+        }
+      });
+    }
     return myModelName;
   }
 
@@ -30,7 +32,7 @@ public class NodePresentation extends BasePresentation {
   }
 
   public String doGetLocationString() {
-    return "(" + myModelName + ")";
+    return "(" + getModelName() + ")";
   }
 
   public Icon doGetIcon() {

@@ -33,12 +33,16 @@
         <keyboard-shortcut first-keystroke="control N" keymap="$default"/>
       </action>
       <!--
-      <action id="OldGoToRootAction" class="jetbrains.mps.workbench.actions.goTo.gotonode.GoToMPSRootAction"
+      <action id="GoToMPSRootAction" class="jetbrains.mps.workbench.actions.goTo.gotonode.GoToMPSRootAction"
               text="Go To Root Node">
         <keyboard-shortcut first-keystroke="control alt N" keymap="$default"/>
       </action>
       -->
-      <action id="GoToNamedNodeAction" class="jetbrains.mps.workbench.actions.goTo.GoToNamedNodeAction"
+      <action id="GoToNamedNodeAction" class="jetbrains.mps.workbench.actions.goTo.gotonode.GoToNamedNodeAction"
+              text="Go To Symbol">
+        <keyboard-shortcut first-keystroke="control alt N" keymap="$default"/>
+      </action>
+      <action id="GoToMPSNamedNodeAction" class="jetbrains.mps.workbench.actions.goTo.gotonode.GoToMPSNamedNodeAction"
               text="Go To Symbol">
         <keyboard-shortcut first-keystroke="control alt shift N" keymap="$default"/>
       </action>
