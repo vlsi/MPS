@@ -567,20 +567,20 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
       myUseAntialiasing = useAntialiasing;
     }
 
-    public Color getSelectionForeground() {
-      return mySelectionForeground;
+    public int getSelectionForeground() {
+      return mySelectionForeground.getRGB();
     }
 
-    public void setSelectionForeground(Color selectionForeground) {
-      mySelectionForeground = selectionForeground;
+    public void setSelectionForeground(int rgb) {
+      mySelectionForeground = new Color(rgb);
     }
 
-    public Color getSelectionBackground() {
-      return mySelectionBackground;
+    public int getSelectionBackground() {
+      return mySelectionBackground.getRGB();
     }
 
-    public void setSelectionBackground(Color selectionBackground) {
-      mySelectionBackground = selectionBackground;
+    public void setSelectionBackground(int rgb) {
+      mySelectionBackground = new Color(rgb);
     }
 
     public boolean isUseLegacyTypesystem() {
