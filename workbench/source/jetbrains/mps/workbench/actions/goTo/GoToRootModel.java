@@ -58,13 +58,25 @@ public class GoToRootModel implements ChooseByNameModel {
   private static final Logger LOG = Logger.getInstance("#com.intellij.ide.util.gotoByName.ContributorsBasedGotoByModel");
 
   private MPSProject myProject;
-  private SNode[] myNodes;
-  private SNode[] myProjectNodes;
+  private SNode[] myNodes = null;
+  private SNode[] myProjectNodes = null;
 
   public GoToRootModel(MPSProject project) {
     myProject = project;
-    myNodes = loadItems(GlobalScope.getInstance());
-    myProjectNodes = loadItems(myProject.getScope());
+  }
+
+  public SNode[] getNodes() {
+    if (myNodes == null) {
+      myNodes = loadItems(GlobalScope.getInstance());
+    }
+    return myNodes;
+  }
+
+  public SNode[] getProjectNodes() {
+    if (myProjectNodes == null) {
+      myProjectNodes = loadItems(myProject.getScope());
+    }
+    return myProjectNodes;
   }
 
   public SNode[] loadItems(final IScope scope) {
@@ -89,7 +101,7 @@ public class GoToRootModel implements ChooseByNameModel {
 
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
-        for (SNode node : checkBoxState ? myNodes : myProjectNodes) {
+        for (SNode node : checkBoxState ? getNodes() : getProjectNodes()) {
           try {
             names.add(node.getName());
           } catch (ProcessCanceledException ex) {
@@ -109,7 +121,7 @@ public class GoToRootModel implements ChooseByNameModel {
 
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
-        for (SNode node : checkBoxState ? myNodes : myProjectNodes) {
+        for (SNode node : checkBoxState ? getNodes() : getProjectNodes()) {
           try {
             if (node.getName() != null && node.getName().equals(name)) {
               items.add(new NodeNavigationItem(myProject, node));
