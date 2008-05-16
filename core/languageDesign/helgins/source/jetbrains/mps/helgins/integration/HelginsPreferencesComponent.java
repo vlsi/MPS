@@ -17,17 +17,16 @@ import java.awt.GridLayout;
 import java.util.List;
 
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.options.Configurable;
+import com.intellij.openapi.options.ConfigurationException;
+import org.jetbrains.annotations.Nls;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NonNls;
 
-public class HelginsPreferencesComponent extends DefaultExternalizableComponent implements IComponentWithPreferences {
-
-  //private @Externalizable boolean myUsesIncrementalAlgorithm = false;
-
-  private
-  @Externalizable
-  boolean myUsesDebugHighlighting = false;
-  private
-  @Externalizable
-  boolean myGenerationOptimizationEnabled = true;
+public class HelginsPreferencesComponent extends DefaultExternalizableComponent implements Configurable {
+  private @Externalizable boolean myUsesDebugHighlighting = false;
+  private @Externalizable boolean myGenerationOptimizationEnabled = true;
+  private MyPreferencesPage myPreferencesPage = new MyPreferencesPage();
 
   public static HelginsPreferencesComponent getInstance() {
     return ApplicationManager.getApplication().getComponent(HelginsPreferencesComponent.class);
@@ -36,10 +35,6 @@ public class HelginsPreferencesComponent extends DefaultExternalizableComponent 
   public List<IPreferencesPage> createPreferencesPages() {
     return CollectionUtil.asList((IPreferencesPage) new MyPreferencesPage());
   }
-
-/*  public boolean isUsesIncrementalAlgorithm() {
-    return myUsesIncrementalAlgorithm;
-  }*/
 
   public boolean isUsesDebugHighlighting() {
     return myUsesDebugHighlighting;
@@ -53,7 +48,42 @@ public class HelginsPreferencesComponent extends DefaultExternalizableComponent 
     myGenerationOptimizationEnabled = generationOptimizationEnabled;
   }
 
-  private class MyPreferencesPage implements IPreferencesPage {
+
+  @Nls
+  public String getDisplayName() {
+    return "Helgins Preferences";
+  }
+
+  @Nullable
+  public Icon getIcon() {
+    return myPreferencesPage.getIcon();
+  }
+
+  @Nullable
+  @NonNls
+  public String getHelpTopic() {
+    return null;
+  }
+
+  public JComponent createComponent() {
+    return myPreferencesPage.getComponent();
+  }
+
+  public boolean isModified() {
+    return true;
+  }
+
+  public void apply() throws ConfigurationException {
+    myPreferencesPage.commit();
+  }
+
+  public void reset() {
+  }
+
+  public void disposeUIResources() {
+  }
+
+  private class MyPreferencesPage {
     //  private JCheckBox myIncrementalCheckBox = new JCheckBox("Use incremental algorithm");
     private JCheckBox myHighlightingCheckBox = new JCheckBox("Use debug highlighting");
     private JCheckBox myGeneratorOptimizationCheckBox = new JCheckBox("Use optimization for generation");
