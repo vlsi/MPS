@@ -6,6 +6,7 @@ import jetbrains.mps.components.DefaultExternalizableComponent;
 import jetbrains.mps.components.Externalizable;
 import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.helgins.integration.HelginsPreferencesComponent.MyState;
 import jetbrains.mps.util.CollectionUtil;
 
 import javax.swing.Icon;
@@ -19,13 +20,25 @@ import java.util.List;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.components.State;
+import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.components.PersistentStateComponent;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 
-public class HelginsPreferencesComponent extends DefaultExternalizableComponent implements Configurable {
-  private @Externalizable boolean myUsesDebugHighlighting = false;
-  private @Externalizable boolean myGenerationOptimizationEnabled = true;
+
+@State(
+  name = "MPSIntentionsManager",
+  storages = {
+    @Storage(
+      id ="other",
+      file = "$APP_CONFIG$/helgins.xml"
+    )}
+)
+public class HelginsPreferencesComponent extends DefaultExternalizableComponent implements Configurable, PersistentStateComponent<MyState> {
+  private MyState myState = new MyState();
+
   private MyPreferencesPage myPreferencesPage = new MyPreferencesPage();
 
   public static HelginsPreferencesComponent getInstance() {
@@ -37,15 +50,15 @@ public class HelginsPreferencesComponent extends DefaultExternalizableComponent 
   }
 
   public boolean isUsesDebugHighlighting() {
-    return myUsesDebugHighlighting;
+    return myState.isUsesDebugHighlighting();
   }
 
   public boolean isGenerationOptimizationEnabled() {
-    return myGenerationOptimizationEnabled;
+    return myState.isGenerationOptimizationEnabled();
   }
 
   public void setGenerationOptimizationEnabled(boolean generationOptimizationEnabled) {
-    myGenerationOptimizationEnabled = generationOptimizationEnabled;
+    myState.setGenerationOptimizationEnabled(generationOptimizationEnabled);
   }
 
 
@@ -92,8 +105,8 @@ public class HelginsPreferencesComponent extends DefaultExternalizableComponent 
     public MyPreferencesPage() {
       JPanel panel = new JPanel(new GridLayout(2, 1));
       //   myIncrementalCheckBox.setSelected(myUsesIncrementalAlgorithm);
-      myHighlightingCheckBox.setSelected(myUsesDebugHighlighting);
-      myGeneratorOptimizationCheckBox.setSelected(myGenerationOptimizationEnabled);
+      myHighlightingCheckBox.setSelected(myState.isUsesDebugHighlighting());
+      myGeneratorOptimizationCheckBox.setSelected(myState.isGenerationOptimizationEnabled());
       //   panel.add(myIncrementalCheckBox);
       panel.add(myHighlightingCheckBox);
       panel.add(myGeneratorOptimizationCheckBox);
@@ -116,14 +129,14 @@ public class HelginsPreferencesComponent extends DefaultExternalizableComponent 
       //    boolean selectedIncremental = myIncrementalCheckBox.isSelected();
       //    boolean changedIncremental = (myUsesIncrementalAlgorithm != selectedIncremental);
       boolean selectedHighlighting = myHighlightingCheckBox.isSelected();
-      boolean changedHighlighting = (myUsesDebugHighlighting != selectedHighlighting);
+      boolean changedHighlighting = (myState.isUsesDebugHighlighting() != selectedHighlighting);
       if (changedHighlighting) {
-        myUsesDebugHighlighting = selectedHighlighting;
+        myState.setUsesDebugHighlighting(selectedHighlighting);
       }
       boolean selectedOptimization = myGeneratorOptimizationCheckBox.isSelected();
-      boolean changedOptimization = (myGenerationOptimizationEnabled != selectedOptimization);
+      boolean changedOptimization = (myState.isGenerationOptimizationEnabled() != selectedOptimization);
       if (changedOptimization) {
-        myGenerationOptimizationEnabled = selectedOptimization;
+        myState.setGenerationOptimizationEnabled(selectedOptimization);
       }
       /* if (changedIncremental) {
         myUsesIncrementalAlgorithm = selectedIncremental;
@@ -134,6 +147,35 @@ public class HelginsPreferencesComponent extends DefaultExternalizableComponent 
 
     public JComponent getComponent() {
       return myComponent;
+    }
+  }
+
+  public MyState getState() {
+    return myState;
+  }
+
+  public void loadState(MyState state) {
+    myState = state;
+  }
+
+  public static class MyState {
+    private boolean myUsesDebugHighlighting = false;
+    private boolean myGenerationOptimizationEnabled = true;
+
+    public boolean isUsesDebugHighlighting() {
+      return myUsesDebugHighlighting;
+    }
+
+    public void setUsesDebugHighlighting(boolean usesDebugHighlighting) {
+      myUsesDebugHighlighting = usesDebugHighlighting;
+    }
+
+    public boolean isGenerationOptimizationEnabled() {
+      return myGenerationOptimizationEnabled;
+    }
+
+    public void setGenerationOptimizationEnabled(boolean generationOptimizationEnabled) {
+      myGenerationOptimizationEnabled = generationOptimizationEnabled;
     }
   }
 }

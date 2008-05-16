@@ -35,7 +35,7 @@ import com.intellij.openapi.components.Storage;
   storages = {
     @Storage(
       id ="other",
-      file = "$APP_CONFIG$/other.xml"
+      file = "$APP_CONFIG$/intentions.xml"
     )}
 )
 public class IntentionsManager implements IComponentLifecycle, ApplicationComponent, PersistentStateComponent<IntentionsManager.MyState> {
