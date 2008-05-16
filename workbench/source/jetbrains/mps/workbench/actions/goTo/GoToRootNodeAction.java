@@ -10,15 +10,11 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.impl.FakePsiElement;
-import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.project.MPSProject;
 
 public class GoToRootNodeAction extends AnAction {
-  public void actionPerformed(AnActionEvent e) {    
-    //todo NEVER DO THIS IN IDEA PLATFORM
-    ActionContext context = new ActionContext();
-
+  public void actionPerformed(AnActionEvent e) {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;
     final MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
@@ -32,7 +28,7 @@ public class GoToRootNodeAction extends AnAction {
       }
     };
 
-    final ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, new GoToRootModel(mpsProject, context.getOperationContext()), fakePsiContext);
+    final ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, new GoToRootModel(mpsProject), fakePsiContext);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {

@@ -41,7 +41,10 @@ import com.intellij.openapi.util.SystemInfo;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Calculable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -56,13 +59,11 @@ public class GoToRootModel implements ChooseByNameModel {
   private static final Logger LOG = Logger.getInstance("#com.intellij.ide.util.gotoByName.ContributorsBasedGotoByModel");
 
   private MPSProject myProject;
-  private IOperationContext myContext;
   private SNode[] myNodes;
   private SNode[] myProjectNodes;
 
-  public GoToRootModel(MPSProject project, IOperationContext context) {
+  public GoToRootModel(MPSProject project) {
     myProject = project;
-    myContext = context;
     myNodes = loadItems(GlobalScope.getInstance());
     myProjectNodes = loadItems(myProject.getScope());
   }
