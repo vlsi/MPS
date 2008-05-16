@@ -41,15 +41,29 @@ public class DataTree implements IExternalizeable, IChangeListener {
     setContents(DataTreeBuilder.build(results, nodeRepresentator));
   }
 
-  public void clearContents() {
-    setContents(DataTreeBuilder.buildEmpty());
+  protected void setContents(DataNode root) {
+    removeChangeListenersFromTree(myTreeRoot);
+    myTreeRoot = root;
+    addChangeListenersToTree(myTreeRoot);
+    notifyChangeListeners();
   }
 
-  protected void setContents(DataNode root) {
-    myTreeRoot.removeChangeListener(this);
-    myTreeRoot = root;
-    myTreeRoot.addChangeListener(this);
-    notifyChangeListeners();
+  private void addChangeListenersToTree(DataNode treeRoot) {
+    treeRoot.addChangeListener(this);
+    for (DataNode child : treeRoot.getChildren()) {
+      addChangeListenersToTree(child);
+    }
+  }
+
+  private void removeChangeListenersFromTree(DataNode treeRoot) {
+    treeRoot.removeChangeListener(this);
+    for (DataNode child : treeRoot.getChildren()) {
+      removeChangeListenersFromTree(child);
+    }
+  }
+
+  public void clearContents() {
+    setContents(DataTreeBuilder.buildEmpty());
   }
 
   public List<SModelDescriptor> getIncludedModels() {

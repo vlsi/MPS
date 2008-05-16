@@ -6,7 +6,6 @@ import jetbrains.mps.ide.findusages.IExternalizeable;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.BaseNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.ModelNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.NodeNodeData;
-import jetbrains.mps.ide.findusages.view.treeholder.path.PathItemRole;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModel;
@@ -20,7 +19,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Set;
 
 public class DataNode implements IExternalizeable, IChangeListener {
   private static Logger LOG = Logger.getLogger(DataNode.class);
@@ -46,12 +44,10 @@ public class DataNode implements IExternalizeable, IChangeListener {
 
   public void add(DataNode o) {
     myChildren.add(o);
-    o.addChangeListener(this);
     notifyChangeListeners();
   }
 
   public void remove(int index) {
-    myChildren.get(index).removeChangeListener(this);
     myChildren.remove(index);
     notifyChangeListeners();
   }
@@ -118,9 +114,7 @@ public class DataNode implements IExternalizeable, IChangeListener {
     myChildren.clear();
     Element childrenXML = element.getChild(CHILDREN);
     for (Element nodeXML : (List<Element>) childrenXML.getChildren(CHILD)) {
-      DataNode child = new DataNode(nodeXML, project);
-      child.addChangeListener(this);
-      myChildren.add(child);
+      myChildren.add(new DataNode(nodeXML, project));
     }
   }
 
