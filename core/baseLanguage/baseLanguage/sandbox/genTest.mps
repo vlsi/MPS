@@ -261,11 +261,14 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1205321105549">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205321105550">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1205321107506">
-              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205321107507" />
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205321107507">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1210941039449" />
+              </node>
               <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1205321121093">
                 <property name="value" value="true" />
               </node>
             </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1210941041247" />
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1205321123047">
             <property name="value" value="false" />

@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.ide.command.CommandProcessor;
 
 import java.util.*;
 
@@ -30,10 +31,11 @@ public class LanguagesKeymapManager implements IComponentLifecycle, ApplicationC
   private List<Language> myLanguagesToRegister = new LinkedList<Language>();
   private MyModuleRepositoryListener myListener = new MyModuleRepositoryListener();
 
+  private MPSModuleRepository myRepository;
   private ClassLoaderManager myClassLoaderManager;
 
   public LanguagesKeymapManager(MPSModuleRepository repository, ClassLoaderManager manager) {
-    repository.addModuleRepositoryListener(myListener);
+    myRepository = repository;
     myClassLoaderManager = manager;
   }
 
@@ -43,6 +45,17 @@ public class LanguagesKeymapManager implements IComponentLifecycle, ApplicationC
         clearCaches();
       }
     });
+
+    myRepository.addModuleRepositoryListener(myListener);
+
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        for (Language l : myRepository.getAllLanguages()) {
+          registerLanguageKeyMaps(l);
+        }
+      }
+    });
+
   }
 
   @NonNls
@@ -127,8 +140,6 @@ public class LanguagesKeymapManager implements IComponentLifecycle, ApplicationC
   }
 
   private class MyModuleRepositoryListener /*extends CommandAdapter*/ implements ModuleRepositoryListener {
-
-
     public void moduleInitialized(IModule module) {         
       if (module instanceof Language) {
         myLanguagesToRegister.add((Language) module);
