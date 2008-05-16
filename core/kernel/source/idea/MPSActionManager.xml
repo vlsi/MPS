@@ -21,35 +21,39 @@
 
     <group id="BuildMenu" popup="true" text="Build">
       <action id="MakeAllAction" text="Make All" class="jetbrains.mps.workbench.actions.build.MakeAllAction"/>
-      <action id="CleanAllAction" text="Clean All" class="jetbrains.mps.workbench.actions.build.CleanAllAction" />
-      <action id="RebuildAllAction" text="Rebuild All" class="jetbrains.mps.workbench.actions.build.RebuildAllAction" />
+      <action id="CleanAllAction" text="Clean All" class="jetbrains.mps.workbench.actions.build.CleanAllAction"/>
+      <action id="RebuildAllAction" text="Rebuild All" class="jetbrains.mps.workbench.actions.build.RebuildAllAction"/>
       <add-to-group group-id="MainMenu" anchor="after" relative-to-action="GenerateMenu"/>
     </group>
 
     <group>
       <separator/>
-      <action id="GoToRootAction" class="jetbrains.mps.workbench.actions.goTo.GoToRootNodeAction"
+      <action id="GoToRootAction" class="jetbrains.mps.workbench.actions.goTo.gotoroot.GoToRootNodeAction"
               text="Go To Root Node(new)">
         <keyboard-shortcut first-keystroke="control N" keymap="$default"/>
       </action>
-      <action id="OldGoToRootAction" class="jetbrains.mps.workbench.actions.goTo.OldGoToRootAction" text="Go To Root Node">
+      <action id="OldGoToRootAction" class="jetbrains.mps.workbench.actions.goTo.gotoroot.OldGoToRootAction"
+              text="Go To Root Node">
         <keyboard-shortcut first-keystroke="control alt N" keymap="$default"/>
       </action>
-      <action id="GoToNamedNodeAction" class="jetbrains.mps.workbench.actions.goTo.GoToNamedNodeAction" text="Go To Symbol">
+      <action id="GoToNamedNodeAction" class="jetbrains.mps.workbench.actions.goTo.GoToNamedNodeAction"
+              text="Go To Symbol">
         <keyboard-shortcut first-keystroke="control alt shift N" keymap="$default"/>
       </action>
       <action id="GoToMPSConceptAction" class="jetbrains.mps.workbench.actions.goTo.GoToMPSConceptAction"
               text="Go To Concept">
         <keyboard-shortcut first-keystroke="control alt shift C" keymap="$default"/>
       </action>
-      <action id="GoToMPSModelAction" class="jetbrains.mps.workbench.actions.goTo.GoToMPSModelAction" text="Go To Model">
+      <action id="GoToMPSModelAction" class="jetbrains.mps.workbench.actions.goTo.GoToMPSModelAction"
+              text="Go To Model">
         <keyboard-shortcut first-keystroke="control alt shift M" keymap="$default"/>
       </action>
       <action id="GoToMPSLanguageAction" class="jetbrains.mps.workbench.actions.goTo.GoToMPSLanguageAction"
               text="Go To Language">
         <keyboard-shortcut first-keystroke="control alt shift L" keymap="$default"/>
       </action>
-      <action id="GoToNodeById" class="jetbrains.mps.workbench.actions.goTo.GoToNodeByIdAction" text="Go To Node by ID" />
+      <action id="GoToNodeById" class="jetbrains.mps.workbench.actions.goTo.GoToNodeByIdAction"
+              text="Go To Node by ID"/>
 
       <add-to-group anchor="last" group-id="GoToMenu"/>
     </group>
