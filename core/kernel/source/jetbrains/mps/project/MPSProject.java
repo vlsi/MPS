@@ -55,6 +55,7 @@ import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.util.Disposer;
 
 /**
  * Author: Sergey Dmitriev
@@ -701,14 +702,17 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
           ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
         }
 
-        myDisposed = true;
 
+        //todo hack
         if (getComponent(Project.class) != null) {
           Project project = getComponentSafe(Project.class);
           if (IdeMain.isTestMode()) {
             ProjectManagerEx.getInstanceEx().closeProject(project);
+            Disposer.dispose(project);
           }
         }
+
+        myDisposed = true;
       }
     });
   }
