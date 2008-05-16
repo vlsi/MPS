@@ -111,6 +111,10 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
     return true;
   }
 
+  public boolean refactorImmediatelyIfNoUsages() {
+    return false;
+  }
+
   public RefactoringTarget getRefactoringTarget() {
     return RefactoringTarget.NODE;
   }
@@ -218,6 +222,10 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
       }
       return result;
     }
+  }
+
+  public List<SModel> getModelsToUpdate(ActionContext actionContext, RefactoringContext refactoringContext) {
+    return new ArrayList<SModel>();
   }
 
   public void updateModel(SModel model, RefactoringContext refactoringContext) {

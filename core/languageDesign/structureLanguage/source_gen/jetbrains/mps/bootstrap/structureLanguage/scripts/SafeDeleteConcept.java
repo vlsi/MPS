@@ -96,6 +96,10 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
     return true;
   }
 
+  public boolean refactorImmediatelyIfNoUsages() {
+    return true;
+  }
+
   public RefactoringTarget getRefactoringTarget() {
     return RefactoringTarget.NODE;
   }
@@ -138,11 +142,7 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
           }
         }
       }
-      List aliveResults = searchResults.getAliveResults();
-      if (!(aliveResults.isEmpty())) {
-        return searchResults;
-      }
-      return null;
+      return searchResults;
     }
   }
 
@@ -178,6 +178,10 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
       }
       return result;
     }
+  }
+
+  public List<SModel> getModelsToUpdate(ActionContext actionContext, RefactoringContext refactoringContext) {
+    return new ArrayList<SModel>();
   }
 
   public void updateModel(SModel model, RefactoringContext refactoringContext) {
