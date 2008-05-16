@@ -2,6 +2,7 @@ package jetbrains.mps.library;
 
 import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -159,8 +160,12 @@ public class LibraryManagerPreferences {
   }
 
   public void commit() {
-    if (myChanged) {
-      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
-    }
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        if (myChanged) {
+          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+        }
+      }
+    });
   }
 }

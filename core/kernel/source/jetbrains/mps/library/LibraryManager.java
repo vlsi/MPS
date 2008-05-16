@@ -18,6 +18,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.pathVariables.PathVariableManager;
+import jetbrains.mps.library.LibraryManager.MyState;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -28,6 +29,9 @@ import java.util.*;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.components.PersistentStateComponent;
+import com.intellij.openapi.components.State;
+import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
@@ -35,19 +39,27 @@ import com.intellij.openapi.options.ConfigurationException;
 import javax.swing.Icon;
 import javax.swing.JComponent;
 
-public class LibraryManager extends DefaultExternalizableComponent implements IComponentLifecycle, ApplicationComponent, Configurable {
+
+@State(
+  name = "LibraryManager",
+  storages = {
+    @Storage(
+      id ="other",
+      file = "$APP_CONFIG$/libraryManager.xml"
+    )}
+)
+public class LibraryManager implements IComponentLifecycle, ApplicationComponent, Configurable, PersistentStateComponent<MyState> {
 
   public static LibraryManager getInstance() {
     return ApplicationManager.getApplication().getComponent(LibraryManager.class);
   }
 
-  private @Externalizable Map<String, Library> myLibraries = new HashMap<String, Library>();
+  private MyState myState = new MyState();
 
   private MPSModuleOwner myOwner;
   private MPSModuleOwner myPredefinedLibrariesOwner;
 
   private MPSModuleRepository myRepository;
-
   private LibraryManagerPreferences myPreferences;
 
   public LibraryManager(MPSModuleRepository repo, PathVariableManager pathManager) {
@@ -83,7 +95,7 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
 
   public Library newLibrary(String name) {
     Library library = new Library(name);
-    myLibraries.put(library.getName(), library);
+    myState.myLibraries.put(library.getName(), library);
     return library;
   }
 
@@ -97,13 +109,13 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
   }
 
   public void remove(Library l) {
-    myLibraries.remove(l.getName());
+    myState.myLibraries.remove(l.getName());
   }
 
   public Set<Library> getLibraries() {
     Set<Library> result = new HashSet<Library>();
 
-    result.addAll(myLibraries.values());
+    result.addAll(myState.myLibraries.values());
 
     result.add(new PredefinedLibrary("mps.languages") {
       public String getPath() {
@@ -150,11 +162,6 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
 
   public boolean isOwns(IModule m) {
     return myRepository.getOwners(m).contains(myOwner);
-  }
-
-  public void read(Element element, MPSProject project) {
-    super.read(element, project);
-    update();
   }
 
   private void updatePredefinedLibraries() {
@@ -246,5 +253,25 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
   }
 
   public void disposeUIResources() {
+  }
+
+  public MyState getState() {
+    return myState;
+  }
+
+  public void loadState(MyState state) {
+    myState = state;
+  }
+
+  public static class MyState {
+    private Map<String, Library> myLibraries = new HashMap<String, Library>();
+
+    public Map<String, Library> getLibraries() {
+      return myLibraries;
+    }
+
+    public void setLibraries(Map<String, Library> libraries) {
+      myLibraries = libraries;
+    }
   }
 }
