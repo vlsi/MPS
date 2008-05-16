@@ -29,14 +29,14 @@ import org.jetbrains.annotations.NonNls;
 
 
 @State(
-  name = "MPSIntentionsManager",
+  name = "HelginsPreferences",
   storages = {
     @Storage(
       id ="other",
       file = "$APP_CONFIG$/helgins.xml"
     )}
 )
-public class HelginsPreferencesComponent extends DefaultExternalizableComponent implements Configurable, PersistentStateComponent<MyState> {
+public class HelginsPreferencesComponent implements Configurable, PersistentStateComponent<MyState> {
   private MyState myState = new MyState();
 
   private MyPreferencesPage myPreferencesPage = new MyPreferencesPage();

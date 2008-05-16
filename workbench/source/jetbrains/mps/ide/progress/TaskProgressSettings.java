@@ -3,22 +3,31 @@ package jetbrains.mps.ide.progress;
 import jetbrains.mps.components.DefaultExternalizableComponent;
 import jetbrains.mps.components.Externalizable;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.ide.progress.TaskProgressSettings.MyState;
 
 import java.util.*;
 
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.PersistentStateComponent;
+import com.intellij.openapi.components.State;
+import com.intellij.openapi.components.Storage;
 
-public class TaskProgressSettings extends DefaultExternalizableComponent {
+@State(
+  name = "TaskProgressSettings",
+  storages = {
+    @Storage(
+      id ="other",
+      file = "$APP_CONFIG$/taskProgressSettings.xml"
+    )}
+)
+public class TaskProgressSettings implements PersistentStateComponent<MyState> {
   public static TaskProgressSettings getInstance() {
     return ApplicationManager.getApplication().getComponent(TaskProgressSettings.class);
   }
 
   private static Logger LOG = Logger.getLogger(TaskProgressSettings.class);
 
-  private @Externalizable Map<String, Long> myTasksToEstimatedTime = new HashMap<String, Long>();
-  private @Externalizable Map<String, String> myTasksToTaskKinds = new HashMap<String, String>();
-
-  private @Externalizable Map<String, Long> myTaskKindsToEstimatedTime = new HashMap<String, Long>();
+  private MyState myState = new MyState();
 
   private Map<IAdaptiveProgressMonitor, Map<String, Long>> myTransientTasksToEstimatedTime = new HashMap<IAdaptiveProgressMonitor, Map<String, Long>>();
   private Map<IAdaptiveProgressMonitor, Map<String, Long>> myTransientTaskKindsToEstimatedTime = new HashMap<IAdaptiveProgressMonitor, Map<String, Long>>();
@@ -49,11 +58,11 @@ public class TaskProgressSettings extends DefaultExternalizableComponent {
     }
     Map<String, Long> trainsentTasks = myTransientTasksToEstimatedTime.remove(monitor);
     if (trainsentTasks != null) {
-      myTasksToEstimatedTime.putAll(trainsentTasks);
+      myState.myTasksToEstimatedTime.putAll(trainsentTasks);
     }
     Map<String, Long> transientTaskKinds = myTransientTaskKindsToEstimatedTime.remove(monitor);
     if (transientTaskKinds != null) {
-      myTaskKindsToEstimatedTime.putAll(transientTaskKinds);
+      myState.myTaskKindsToEstimatedTime.putAll(transientTaskKinds);
     }
     myMeasurementsInProgress.remove(monitor);
   }
@@ -73,13 +82,13 @@ public class TaskProgressSettings extends DefaultExternalizableComponent {
   }
 
   public long getEstimatedTimeMillis(String taskName) {
-    Long time = myTasksToEstimatedTime.get(taskName);
+    Long time = myState.myTasksToEstimatedTime.get(taskName);
     if (time != null) {
       return time;
     } else {
-      String taskKind = myTasksToTaskKinds.get(taskName);
+      String taskKind = myState.myTasksToTaskKinds.get(taskName);
       if (taskKind != null) {
-        Long kindTime = myTaskKindsToEstimatedTime.get(taskKind);
+        Long kindTime = myState.myTaskKindsToEstimatedTime.get(taskKind);
         if (kindTime != null) return kindTime;
       }
     }
@@ -87,7 +96,7 @@ public class TaskProgressSettings extends DefaultExternalizableComponent {
   }
 
   public void registerTaskKind(String taskName, String taskKind) {
-    myTasksToTaskKinds.put(taskName, taskKind);
+    myState.myTasksToTaskKinds.put(taskName, taskKind);
   }
 
 
@@ -97,10 +106,10 @@ public class TaskProgressSettings extends DefaultExternalizableComponent {
       return;
     }
 
-    String taskKind = myTasksToTaskKinds.get(taskName);
+    String taskKind = myState.myTasksToTaskKinds.get(taskName);
 
     long newTime = estimatedTimeMillis;
-    Long time = myTasksToEstimatedTime.get(taskName);
+    Long time = myState.myTasksToEstimatedTime.get(taskName);
     if (time != null) newTime = (time + newTime) / 2;
     Map<String, Long> transientTasks = myTransientTasksToEstimatedTime.get(monitor);
     if (transientTasks == null) {
@@ -111,7 +120,7 @@ public class TaskProgressSettings extends DefaultExternalizableComponent {
 
     if (taskKind != null) {
       long newKindTime = newTime;
-      Long kindTime = myTaskKindsToEstimatedTime.get(taskKind);
+      Long kindTime = myState.myTaskKindsToEstimatedTime.get(taskKind);
       if (kindTime != null) newKindTime = (kindTime + newKindTime) / 2;
       Map<String, Long> transientTaskKinds = myTransientTaskKindsToEstimatedTime.get(monitor);
       if (transientTaskKinds == null) {
@@ -119,6 +128,44 @@ public class TaskProgressSettings extends DefaultExternalizableComponent {
         myTransientTaskKindsToEstimatedTime.put(monitor, transientTaskKinds);
       }
       transientTaskKinds.put(taskKind, newKindTime);
+    }
+  }
+
+  public MyState getState() {
+    return myState;
+  }
+
+  public void loadState(MyState state) {
+    myState = state;
+  }
+
+  public static class MyState {
+    private Map<String, Long> myTasksToEstimatedTime = new HashMap<String, Long>();
+    private Map<String, String> myTasksToTaskKinds = new HashMap<String, String>();
+    private Map<String, Long> myTaskKindsToEstimatedTime = new HashMap<String, Long>();
+
+    public Map<String, Long> getTasksToEstimatedTime() {
+      return myTasksToEstimatedTime;
+    }
+
+    public void setTasksToEstimatedTime(Map<String, Long> tasksToEstimatedTime) {
+      myTasksToEstimatedTime = tasksToEstimatedTime;
+    }
+
+    public Map<String, String> getTasksToTaskKinds() {
+      return myTasksToTaskKinds;
+    }
+
+    public void setTasksToTaskKinds(Map<String, String> tasksToTaskKinds) {
+      myTasksToTaskKinds = tasksToTaskKinds;
+    }
+
+    public Map<String, Long> getTaskKindsToEstimatedTime() {
+      return myTaskKindsToEstimatedTime;
+    }
+
+    public void setTaskKindsToEstimatedTime(Map<String, Long> taskKindsToEstimatedTime) {
+      myTaskKindsToEstimatedTime = taskKindsToEstimatedTime;
     }
   }
 }
