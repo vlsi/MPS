@@ -2,7 +2,8 @@ package jetbrains.mps.library;
 
 public class PredefinedLibrary extends Library {
   public PredefinedLibrary(String name) {
-    super(name);
+    super();
+    setName(name);
   }
 
   public boolean canSetPath() {

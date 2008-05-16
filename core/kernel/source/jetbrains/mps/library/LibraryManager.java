@@ -94,7 +94,8 @@ public class LibraryManager implements IComponentLifecycle, ApplicationComponent
   }
 
   public Library newLibrary(String name) {
-    Library library = new Library(name);
+    Library library = new Library();
+    library.setName(name);
     myState.myLibraries.put(library.getName(), library);
     return library;
   }

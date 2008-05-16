@@ -6,7 +6,10 @@ public class Library {
   private String myName;
   private String myPath;
 
-  public Library(String name) {
+  public Library() {
+  }
+
+  public void setName(String name) {
     myName = name;
   }
 

@@ -51,6 +51,9 @@ public class DialogDimensionsSettings implements PersistentStateComponent<MyStat
     public int myWidth;
     public int myHeight;
 
+    public DialogDimensions() {
+    }
+
     public DialogDimensions(int left, int top, int width, int height) {
       myHeight = height;
       myWidth = width;
