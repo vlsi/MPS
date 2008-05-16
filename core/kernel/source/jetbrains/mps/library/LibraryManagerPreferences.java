@@ -67,11 +67,15 @@ public class LibraryManagerPreferences {
     }));
     myMainPanel.add(buttonsPanel, BorderLayout.SOUTH);
 
-    updateModel();
+    updateModel(false);
   }
 
 
   private void updateModel() {
+    updateModel(true);
+  }
+
+  private void updateModel(boolean updateManager) {
     Library oldSelection = (Library) myLibrariesList.getSelectedValue();
     List<Library> libraries = new ArrayList<Library>(myManager.getLibraries());
     Collections.sort(libraries, new ToStringComparator());
@@ -84,7 +88,9 @@ public class LibraryManagerPreferences {
       myLibrariesList.setSelectedValue(oldSelection, true);
     }
 
-    myManager.update();
+    if (updateManager) {
+      myManager.update();
+    }
   }
 
   private void remove() {
