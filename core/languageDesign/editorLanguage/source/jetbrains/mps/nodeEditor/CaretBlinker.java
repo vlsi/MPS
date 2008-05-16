@@ -4,9 +4,22 @@ import jetbrains.mps.components.DefaultExternalizableComponent;
 import jetbrains.mps.components.Externalizable;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.WeakSet;
+import jetbrains.mps.nodeEditor.CaretBlinker.MyState;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.PersistentStateComponent;
+import com.intellij.openapi.components.State;
+import com.intellij.openapi.components.Storage;
 
-public class CaretBlinker extends DefaultExternalizableComponent {
+
+@State(
+  name = "CaretBlinker",
+  storages = {
+    @Storage(
+      id ="other",
+      file = "$APP_CONFIG$/mpsEditor.xml"
+    )}
+)
+public class CaretBlinker implements PersistentStateComponent<MyState> {
   private static final Logger LOG = Logger.getLogger(CaretBlinker.class);
 
   public static CaretBlinker getInstance() {
@@ -17,8 +30,8 @@ public class CaretBlinker extends DefaultExternalizableComponent {
   public static final int MAX_BLINKING_PERIOD = 1000;
   public static final int DEFAULT_BLINKING_PERIOD = 500;
 
+  private MyState myState = new MyState();
   private boolean myStarted = false;
-  private @Externalizable int myCaretBlinkingRateMillis = -1;
 
   private final Object myRegistrationLock = new Object();
 
@@ -38,11 +51,11 @@ public class CaretBlinker extends DefaultExternalizableComponent {
   }
 
   public int getCaretBlinkingRateTimeMillis() {
-    return myCaretBlinkingRateMillis == -1 ? DEFAULT_BLINKING_PERIOD : myCaretBlinkingRateMillis;
+    return myState.myCaretBlinkingRateMillis == -1 ? DEFAULT_BLINKING_PERIOD : myState.myCaretBlinkingRateMillis;
   }
 
   public void setCaretBlinkingRateTimeMillis(int timeMillis) {
-    myCaretBlinkingRateMillis = timeMillis;
+    myState.myCaretBlinkingRateMillis = timeMillis;
   }
                                                                   
   public void registerEditor(AbstractEditorComponent editorComponent) {
@@ -57,6 +70,13 @@ public class CaretBlinker extends DefaultExternalizableComponent {
     }
   }
 
+  public MyState getState() {
+    return myState;
+  }
+
+  public void loadState(MyState state) {
+    myState = state;
+  }
 
   private class MyRunnable implements Runnable {
     @SuppressWarnings({"InfiniteLoopStatement"})
@@ -81,6 +101,18 @@ public class CaretBlinker extends DefaultExternalizableComponent {
           LOG.error(t);
         }
       }
+    }
+  }
+
+  public static class MyState {
+    private int myCaretBlinkingRateMillis = -1;
+
+    public int getCaretBlinkingRateMillis() {
+      return myCaretBlinkingRateMillis;
+    }
+
+    public void setCaretBlinkingRateMillis(int caretBlinkingRateMillis) {
+      myCaretBlinkingRateMillis = caretBlinkingRateMillis;
     }
   }
 }

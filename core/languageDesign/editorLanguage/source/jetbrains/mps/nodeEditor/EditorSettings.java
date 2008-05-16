@@ -11,6 +11,7 @@ import jetbrains.mps.util.IntegerValueDocumentFilter;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.component.Dependency;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.EditorSettings.MyState;
 
 import javax.swing.*;
 import javax.swing.Timer;
@@ -25,11 +26,23 @@ import java.util.List;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.components.PersistentStateComponent;
+import com.intellij.openapi.components.State;
+import com.intellij.openapi.components.Storage;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 
-public class EditorSettings extends DefaultExternalizableComponent implements Configurable {
+@State(
+  name = "EditorSettings",
+  storages = {
+    @Storage(
+      id ="other",
+      file = "$APP_CONFIG$/mpsEditor.xml"
+    )}
+)
+
+public class EditorSettings implements Configurable, PersistentStateComponent<MyState> {
   private static Logger LOG = Logger.getLogger(EditorSettings.class);
 
   public static EditorSettings getInstance() {
@@ -38,18 +51,9 @@ public class EditorSettings extends DefaultExternalizableComponent implements Co
 
   private List<EditorSettingsListener> myListeners = new ArrayList<EditorSettingsListener>();
 
-  private @Externalizable String myFontFamily = "Monospaced";
-  private @Externalizable int myFontSize = 12;
-
-  private @Externalizable int myTextWidth = 500;
-  private @Externalizable boolean myUseAntialiasing = true;
-
-  private @Externalizable Color mySelectionForeground = getDefaultSelectionForegroundColor();
-  private @Externalizable Color mySelectionBackground = getDefaultSelectionBackgroundColor();
-  
-  private @Externalizable boolean myUseLegacyTypesystem = true;
-  private @Externalizable boolean myUseBraces = true;
   private int myIndentSize = 2;
+
+  private MyState myState = new MyState();
 
   private MyPreferencesPage myPreferencesPage;
 
@@ -60,20 +64,20 @@ public class EditorSettings extends DefaultExternalizableComponent implements Co
   }
 
   public Font getDefaultEditorFont() {
-    return new Font(myFontFamily, 0, myFontSize);
+    return new Font(myState.myFontFamily, 0, myState.myFontSize);
   }
 
   public void setDefaultEditorFont(Font newFont) {
-    myFontFamily = newFont.getFamily();
-    myFontSize = newFont.getSize();
+    myState.myFontFamily = newFont.getFamily();
+    myState.myFontSize = newFont.getSize();
   }
 
   public boolean useBraces() {
-    return myUseBraces;
+    return myState.myUseBraces;
   }
 
   public void setUseBraces(boolean newUseBraces) {
-    myUseBraces = newUseBraces;
+    myState.myUseBraces = newUseBraces;
   }
   
   public int getIndentSize() {
@@ -81,34 +85,34 @@ public class EditorSettings extends DefaultExternalizableComponent implements Co
   }
 
   public boolean isUseAntialiasing() {
-    return myUseAntialiasing;
+    return myState.myUseAntialiasing;
   }
 
   public void setUseAntialiasing(boolean useAntialiasing) {
-    myUseAntialiasing = useAntialiasing;
+    myState.myUseAntialiasing = useAntialiasing;
   }
 
   public int getTextWidth() {
-    return myTextWidth;
+    return myState.myTextWidth;
   }
 
   public void setTextWidth(int textWidth) {
-    myTextWidth = textWidth;
+    myState.myTextWidth = textWidth;
   }
 
   public Color getSelectionBackgroundColor() {
-    return mySelectionBackground;
+    return myState.mySelectionBackground;
   }
 
   public Color getSelectionForegroundColor() {
-    return mySelectionForeground;
+    return myState.mySelectionForeground;
   }
 
-  private Color getDefaultSelectionBackgroundColor() {
+  private static Color getDefaultSelectionBackgroundColor() {
     return new Color(82, 109, 165);
   }
 
-  private Color getDefaultSelectionForegroundColor() {
+  private static Color getDefaultSelectionForegroundColor() {
     return Color.WHITE;
   }
 
@@ -117,11 +121,11 @@ public class EditorSettings extends DefaultExternalizableComponent implements Co
   }
 
   public boolean getUseLegacyTypesystem() {
-    return myUseLegacyTypesystem;
+    return myState.myUseLegacyTypesystem;
   }
 
   public void setUseLegacyTypesystem(boolean useLegacyTypesystem) {
-    myUseLegacyTypesystem = useLegacyTypesystem;
+    myState.myUseLegacyTypesystem = useLegacyTypesystem;
   }
 
   public List<IPreferencesPage> createPreferencesPages() {
@@ -275,6 +279,14 @@ public class EditorSettings extends DefaultExternalizableComponent implements Co
 
   }
 
+  public MyState getState() {
+    return myState;
+  }
+
+  public void loadState(MyState state) {
+    myState = state;
+  }
+
   private class MyPreferencesPage {
     private static final int SLIDER_RATIO = 10000;
     private JPanel myEditorSettingsPanel = new JPanel(new BorderLayout());
@@ -397,13 +409,13 @@ public class EditorSettings extends DefaultExternalizableComponent implements Co
       }
 
       JComboBox result = new JComboBox(sizes.toArray());
-      result.setSelectedItem("" + myFontSize);
+      result.setSelectedItem("" + myState.myFontSize);
       return result;
     }
 
     private JComboBox createFontsComboBox() {
       JComboBox result = new JComboBox(GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames());
-      result.setSelectedItem("" + myFontFamily);
+      result.setSelectedItem("" + myState.myFontFamily);
       return result;
     }
 
@@ -466,8 +478,8 @@ public class EditorSettings extends DefaultExternalizableComponent implements Co
           setUseLegacyTypesystem(myLegacyTypesystemCheckBox.isSelected());
           setUseBraces(myUseBraces.isSelected());
 
-          mySelectionBackground = mySelectionBackgroundColorComponent.getColor();
-          mySelectionForeground = mySelectionForegroundColorComponent.getColor();
+          myState.mySelectionBackground = mySelectionBackgroundColorComponent.getColor();
+          myState.mySelectionForeground = mySelectionForegroundColorComponent.getColor();
 
           fireEditorSettingsChanged();          
         }
@@ -507,6 +519,84 @@ public class EditorSettings extends DefaultExternalizableComponent implements Co
       textLine.setCaretEnabled(true);
       boolean toShowCaret = myCaretIsVisible;
       textLine.paint(g, myX, myY, myWidth, myHeight, isSelected(), toShowCaret);
+    }
+  }
+
+  public static class MyState {
+    private String myFontFamily = "Monospaced";
+    private int myFontSize = 12;
+
+    private int myTextWidth = 500;
+    private boolean myUseAntialiasing = true;
+
+    private Color mySelectionForeground = getDefaultSelectionForegroundColor();
+    private Color mySelectionBackground = getDefaultSelectionBackgroundColor();
+
+    private boolean myUseLegacyTypesystem = true;
+    private boolean myUseBraces = true;
+
+    public String getFontFamily() {
+      return myFontFamily;
+    }
+
+    public void setFontFamily(String fontFamily) {
+      myFontFamily = fontFamily;
+    }
+
+    public int getFontSize() {
+      return myFontSize;
+    }
+
+    public void setFontSize(int fontSize) {
+      myFontSize = fontSize;
+    }
+
+    public int getTextWidth() {
+      return myTextWidth;
+    }
+
+    public void setTextWidth(int textWidth) {
+      myTextWidth = textWidth;
+    }
+
+    public boolean isUseAntialiasing() {
+      return myUseAntialiasing;
+    }
+
+    public void setUseAntialiasing(boolean useAntialiasing) {
+      myUseAntialiasing = useAntialiasing;
+    }
+
+    public Color getSelectionForeground() {
+      return mySelectionForeground;
+    }
+
+    public void setSelectionForeground(Color selectionForeground) {
+      mySelectionForeground = selectionForeground;
+    }
+
+    public Color getSelectionBackground() {
+      return mySelectionBackground;
+    }
+
+    public void setSelectionBackground(Color selectionBackground) {
+      mySelectionBackground = selectionBackground;
+    }
+
+    public boolean isUseLegacyTypesystem() {
+      return myUseLegacyTypesystem;
+    }
+
+    public void setUseLegacyTypesystem(boolean useLegacyTypesystem) {
+      myUseLegacyTypesystem = useLegacyTypesystem;
+    }
+
+    public boolean isUseBraces() {
+      return myUseBraces;
+    }
+
+    public void setUseBraces(boolean useBraces) {
+      myUseBraces = useBraces;
     }
   }
 }
