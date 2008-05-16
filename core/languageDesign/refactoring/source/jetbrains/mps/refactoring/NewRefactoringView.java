@@ -122,7 +122,7 @@ public class NewRefactoringView extends DefaultTool {
           public void run() {
             myUsageView.setRunOptions(TreeBuilder.forFinder(new ConstantFinder(mySearchResults.getSearchResults())),
               null,
-              new ButtonConfiguration(false, false, false),
+              new ButtonConfiguration(false, false, true),
               mySearchResults);
           }
         });
