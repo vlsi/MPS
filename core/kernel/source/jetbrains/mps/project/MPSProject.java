@@ -95,7 +95,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
   public MPSProject(final @NotNull File projectFile) {
     myContext.register(MPSProject.class, this);
-    myContext.register(GeneratorManager.class, createGeneratorManager());
+    myContext.register(GeneratorManager.class, new GeneratorManager(this));
     myContext.register(ProjectVCSManager.class);
 
     CommandProcessor.instance().executeCommand(new Runnable() {
@@ -132,11 +132,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
 
   protected void addInitialComponents() {
-  }
-
-  //todo IDEA platform hack
-  protected GeneratorManager createGeneratorManager() {
-    return new GeneratorManager();
   }
 
   public IScope getScope() {

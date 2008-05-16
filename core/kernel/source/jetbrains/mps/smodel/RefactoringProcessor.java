@@ -191,7 +191,7 @@ public class RefactoringProcessor {
           descriptors.add(model.getModelDescriptor());
         }
 
-        new GeneratorManager().generateModels(descriptors,
+        new GeneratorManager(operationContext.getProject()).generateModels(descriptors,
           operationContext,
           IGenerationType.FILES,
           IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR,

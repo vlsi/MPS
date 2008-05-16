@@ -9,6 +9,7 @@ import jetbrains.mps.ide.preferences.IComponentWithPreferences;
 import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.ide.progress.AdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+import jetbrains.mps.ide.progress.AdaptiveProgressMonitorFactory;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
@@ -38,7 +39,10 @@ public class GeneratorManager extends DefaultExternalizableComponent implements 
 
   private ExecutorService myExecutorService = Executors.newCachedThreadPool();
 
-  public GeneratorManager() {
+  private MPSProject myProject;
+
+  public GeneratorManager(MPSProject project) {
+    myProject = project;
   }
 
   public void addFileGenerator(IFileGenerator fileGenerator) {
@@ -202,9 +206,8 @@ public class GeneratorManager extends DefaultExternalizableComponent implements 
     });
   }
 
-  //todo IDEA platform hack
   protected AdaptiveProgressMonitor createAdaptriveProgressMonitor(boolean closeOnExit, IOperationContext invocationContext) {
-    return new AdaptiveProgressMonitor(invocationContext.getMainFrame(), closeOnExit);
+    return myProject.getComponent(AdaptiveProgressMonitorFactory.class).createMonitor();
   }
 
   /**
