@@ -18,6 +18,7 @@ import java.util.regex.Matcher;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.project.GlobalScope;
@@ -117,33 +118,34 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
 
   private class MyCommandListener implements SModelCommandListener {
     public void eventsHappenedInCommand(final List<SModelEvent> events) {
-      ApplicationManager.getApplication().runWriteAction(new Runnable() {        
+      ThreadUtils.runInUIThreadNoWait(new Runnable() {
         public void run() {
-          for (SModelEvent e : events) {
-            e.accept(new SModelEventVisitorAdapter() {
-              public void visitRootEvent(SModelRootEvent event) {
-                if (event.isRemoved()) {
-                  VirtualFile vf = (VirtualFile) event.getRoot().getUserObject(VIRTUAL_FILE);
-                  if (vf != null) {
-                    fireBeforeFileDeletion(this ,vf);
-                    fireFileDeleted(this, vf, vf.getName(), null);
+          ApplicationManager.getApplication().runWriteAction(new Runnable() {
+            public void run() {
+              for (SModelEvent e : events) {
+                e.accept(new SModelEventVisitorAdapter() {
+                  public void visitRootEvent(SModelRootEvent event) {
+                    if (event.isRemoved()) {
+                      VirtualFile vf = (VirtualFile) event.getRoot().getUserObject(VIRTUAL_FILE);
+                      if (vf != null) {
+                        fireBeforeFileDeletion(this ,vf);
+                        fireFileDeleted(this, vf, vf.getName(), null);
+                      }
+
+                    }
                   }
 
-                }
+                  public void visitPropertyEvent(SModelPropertyEvent event) {
+                    VirtualFile vf = (VirtualFile) event.getNode().getUserObject(VIRTUAL_FILE);
+                    if (event.getNode().isRoot() && vf != null) {
+                      fireBeforePropertyChange(this, vf, VirtualFile.PROP_NAME, event.getOldPropertyValue(), event.getNewPropertyValue());
+                      firePropertyChanged(this, vf, VirtualFile.PROP_NAME, event.getOldPropertyValue(), event.getNewPropertyValue());
+                    }
+                  }
+                });
               }
-
-              public void visitPropertyEvent(SModelPropertyEvent event) {
-                VirtualFile vf = (VirtualFile) event.getNode().getUserObject(VIRTUAL_FILE);
-                if (event.getNode().isRoot() &&
-                  INamedConcept.NAME.equals(event.getPropertyName()) &&
-                  vf != null) {
-
-                  fireBeforePropertyChange(this, vf, VirtualFile.PROP_NAME, event.getOldPropertyValue(), event.getNewPropertyValue());
-                  firePropertyChanged(this, vf, VirtualFile.PROP_NAME, event.getOldPropertyValue(), event.getNewPropertyValue());
-                }
-              }
-            });
-          }
+            }
+          });
         }
       });
     }
