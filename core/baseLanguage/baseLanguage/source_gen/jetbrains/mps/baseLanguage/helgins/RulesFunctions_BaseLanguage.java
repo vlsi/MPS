@@ -72,8 +72,8 @@ public class RulesFunctions_BaseLanguage {
             return new YieldingIterator <SNode>() {
 
               private int __CP__ = 0;
-              private SNode _12_returnStmt;
-              private Iterator<SNode> _12_returnStmt_it;
+              private SNode _11_returnStmt;
+              private Iterator<SNode> _11_returnStmt_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -83,15 +83,15 @@ __switch__:
                     case -1:
                       assert false : "Internal error";
                       return false;
+                    case 11:
+                      this._11_returnStmt_it = collectReturnStatements(it).iterator();
                     case 12:
-                      this._12_returnStmt_it = collectReturnStatements(it).iterator();
-                    case 13:
-                      if (!(this._12_returnStmt_it.hasNext())) {
-                        this.__CP__ = 9;
+                      if (!(this._11_returnStmt_it.hasNext())) {
+                        this.__CP__ = 3;
                         break;
                       }
-                      this._12_returnStmt = this._12_returnStmt_it.next();
-                      this.__CP__ = 14;
+                      this._11_returnStmt = this._11_returnStmt_it.next();
+                      this.__CP__ = 13;
                       break;
                     case 4:
                       if (SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ReturnStatement")) {
@@ -105,7 +105,7 @@ __switch__:
                         this.__CP__ = 8;
                         break;
                       }
-                      this.__CP__ = 11;
+                      this.__CP__ = 10;
                       break;
                     case 3:
                       if (false) {
@@ -118,9 +118,9 @@ __switch__:
                       this.__CP__ = 3;
                       this.yield(it);
                       return true;
-                    case 15:
-                      this.__CP__ = 13;
-                      this.yield(this._12_returnStmt);
+                    case 14:
+                      this.__CP__ = 12;
+                      this.yield(this._11_returnStmt);
                       return true;
                     case 0:
                       this.__CP__ = 2;
@@ -138,11 +138,11 @@ __switch__:
                       // don't look inside anonymous classes
                       this.__CP__ = 1;
                       break;
-                    case 11:
-                      this.__CP__ = 12;
+                    case 10:
+                      this.__CP__ = 11;
                       break;
-                    case 14:
-                      this.__CP__ = 15;
+                    case 13:
+                      this.__CP__ = 14;
                       break;
                     default:
                       break __loop__;

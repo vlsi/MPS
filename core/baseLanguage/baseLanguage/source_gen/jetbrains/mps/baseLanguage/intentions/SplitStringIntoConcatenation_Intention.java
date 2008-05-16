@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.intentions;
 
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
+import java.util.Map;
+import java.util.HashMap;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
@@ -12,6 +14,8 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
 public class SplitStringIntoConcatenation_Intention extends BaseIntention implements Intention {
+
+  private Map<String, Object[]> myMap = new HashMap<String, Object[]>();
 
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.StringLiteral";
@@ -37,6 +41,23 @@ public class SplitStringIntoConcatenation_Intention extends BaseIntention implem
     SNode plusExpression = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.PlusExpression");
     SPropertyOperations.set(SLinkOperations.setNewChild(plusExpression, "leftExpression", "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value", s1);
     SPropertyOperations.set(SLinkOperations.setNewChild(plusExpression, "rightExpression", "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value", s2);
+  }
+
+  public Object[] getField(String key) {
+    Object[] value = this.myMap.get(key);
+    if (value == null) {
+      value = new Object[1];
+      this.myMap.put(key, value);
+    }
+    return value;
+  }
+
+  public void putArgument(String key, Object argument) {
+    this.getField(key)[0] = argument;
+  }
+
+  public String getSourceModelUID() {
+    return "jetbrains.mps.baseLanguage.intentions";
   }
 
 }

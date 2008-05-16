@@ -5,6 +5,7 @@ package jetbrains.mps.bootstrap.smodelLanguage.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -17,7 +18,10 @@ public class typeof_PropertyRefQualifier_InferenceRule implements InferenceRule_
     SNode op = SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation", false, false);
     SNode propAAQ = SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyAttributeAccessQualifier", false, false);
     if (op == null || propAAQ == null) {
-      TypeChecker.getInstance().reportTypeError(nodeToCheck, "not expected here", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204909225630");
+      {
+        BaseIntentionProvider intentionProvider = null;
+        TypeChecker.getInstance().reportTypeError(nodeToCheck, "not expected here", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204909225630", intentionProvider);
+      }
       return;
     }
   }

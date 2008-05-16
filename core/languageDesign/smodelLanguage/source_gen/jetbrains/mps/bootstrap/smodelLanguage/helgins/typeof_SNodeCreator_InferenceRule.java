@@ -5,6 +5,7 @@ package jetbrains.mps.bootstrap.smodelLanguage.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -17,7 +18,10 @@ public class typeof_SNodeCreator_InferenceRule implements InferenceRule_Runtime 
     SNode createdType = SLinkOperations.getTarget(creator, "createdType", true);
     if (createdType != null) {
       if (SLinkOperations.getTarget(createdType, "concept", false) == null) {
-        TypeChecker.getInstance().reportTypeError(createdType, "concrete node type is expected", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1181944909006");
+        {
+          BaseIntentionProvider intentionProvider = null;
+          TypeChecker.getInstance().reportTypeError(createdType, "concrete node type is expected", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1181944909006", intentionProvider);
+        }
         return;
       }
       if (SLinkOperations.getTarget(creator, "prototypeNode", true) != null) {

@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.intentions;
 
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
+import java.util.Map;
+import java.util.HashMap;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
@@ -11,6 +13,8 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 
 public class ExtractWhileConditionToInternalIfStatement_Intention extends BaseIntention implements Intention {
+
+  private Map<String, Object[]> myMap = new HashMap<String, Object[]>();
 
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.WhileStatement";
@@ -41,6 +45,23 @@ public class ExtractWhileConditionToInternalIfStatement_Intention extends BaseIn
     SLinkOperations.insertChildFirst(SLinkOperations.getTarget(node, "body", true), "statement", ifStatement);
     SNode condition = SLinkOperations.setNewChild(node, "condition", "jetbrains.mps.baseLanguage.structure.BooleanConstant");
     SPropertyOperations.set(condition, "value", "" + (true));
+  }
+
+  public Object[] getField(String key) {
+    Object[] value = this.myMap.get(key);
+    if (value == null) {
+      value = new Object[1];
+      this.myMap.put(key, value);
+    }
+    return value;
+  }
+
+  public void putArgument(String key, Object argument) {
+    this.getField(key)[0] = argument;
+  }
+
+  public String getSourceModelUID() {
+    return "jetbrains.mps.baseLanguage.intentions";
   }
 
 }

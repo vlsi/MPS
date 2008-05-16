@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 
 public class typeof_IsNotEmptyOperation_InferenceRule implements InferenceRule_Runtime {
 
@@ -32,7 +33,10 @@ public class typeof_IsNotEmptyOperation_InferenceRule implements InferenceRule_R
           break;
         }
       }
-      TypeChecker.getInstance().reportTypeError(op, "not expected here", "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1178725705680");
+      {
+        BaseIntentionProvider intentionProvider = null;
+        TypeChecker.getInstance().reportTypeError(op, "not expected here", "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1178725705680", intentionProvider);
+      }
     } while(false);
   }
 

@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Type;
-
 import java.util.Iterator;
 import java.util.List;
 
@@ -28,7 +27,7 @@ public class InternalPartialInstanceMethodCall extends Expression implements IOp
   }
 
   public static InternalPartialInstanceMethodCall newInstance(SModel sm, boolean init) {
-    return (InternalPartialInstanceMethodCall) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InternalPartialInstanceMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InternalPartialInstanceMethodCall newInstance(SModel sm) {
@@ -69,7 +68,7 @@ public class InternalPartialInstanceMethodCall extends Expression implements IOp
   }
 
   public Type getReturnType() {
-    return (Type) this.getChild(InternalPartialInstanceMethodCall.RETURN_TYPE);
+    return (Type)this.getChild(InternalPartialInstanceMethodCall.RETURN_TYPE);
   }
 
   public void setReturnType(Type node) {
@@ -77,7 +76,7 @@ public class InternalPartialInstanceMethodCall extends Expression implements IOp
   }
 
   public Expression getInstance() {
-    return (Expression) this.getChild(InternalPartialInstanceMethodCall.INSTANCE);
+    return (Expression)this.getChild(InternalPartialInstanceMethodCall.INSTANCE);
   }
 
   public void setInstance(Expression node) {

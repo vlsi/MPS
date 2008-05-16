@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.helgins;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.dependencies.InferenceMethod;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -23,7 +24,10 @@ public class RulesFunctions_Collections {
       input = SLinkOperations.getTarget(parent, "operand", true);
     } else
     {
-      TypeChecker.getInstance().reportTypeError(op, "not expected here", "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184783963366");
+      {
+        BaseIntentionProvider intentionProvider = null;
+        TypeChecker.getInstance().reportTypeError(op, "not expected here", "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184783963366", intentionProvider);
+      }
     }
     return input;
   }
@@ -89,8 +93,8 @@ public class RulesFunctions_Collections {
             return new YieldingIterator <SNode>() {
 
               private int __CP__ = 0;
-              private SNode _12_yieldStmt;
-              private Iterator<SNode> _12_yieldStmt_it;
+              private SNode _11_yieldStmt;
+              private Iterator<SNode> _11_yieldStmt_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -100,15 +104,15 @@ __switch__:
                     case -1:
                       assert false : "Internal error";
                       return false;
+                    case 11:
+                      this._11_yieldStmt_it = collectYieldStatements(it).iterator();
                     case 12:
-                      this._12_yieldStmt_it = collectYieldStatements(it).iterator();
-                    case 13:
-                      if (!(this._12_yieldStmt_it.hasNext())) {
-                        this.__CP__ = 9;
+                      if (!(this._11_yieldStmt_it.hasNext())) {
+                        this.__CP__ = 3;
                         break;
                       }
-                      this._12_yieldStmt = this._12_yieldStmt_it.next();
-                      this.__CP__ = 14;
+                      this._11_yieldStmt = this._11_yieldStmt_it.next();
+                      this.__CP__ = 13;
                       break;
                     case 4:
                       if (SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.TraversalYieldStatement")) {
@@ -122,7 +126,7 @@ __switch__:
                         this.__CP__ = 8;
                         break;
                       }
-                      this.__CP__ = 11;
+                      this.__CP__ = 10;
                       break;
                     case 3:
                       if (false) {
@@ -135,9 +139,9 @@ __switch__:
                       this.__CP__ = 3;
                       this.yield(it);
                       return true;
-                    case 15:
-                      this.__CP__ = 13;
-                      this.yield(this._12_yieldStmt);
+                    case 14:
+                      this.__CP__ = 12;
+                      this.yield(this._11_yieldStmt);
                       return true;
                     case 0:
                       this.__CP__ = 2;
@@ -153,11 +157,11 @@ __switch__:
                       // don't look inside commented statements
                       this.__CP__ = 1;
                       break;
-                    case 11:
-                      this.__CP__ = 12;
+                    case 10:
+                      this.__CP__ = 11;
                       break;
-                    case 14:
-                      this.__CP__ = 15;
+                    case 13:
+                      this.__CP__ = 14;
                       break;
                     default:
                       break __loop__;

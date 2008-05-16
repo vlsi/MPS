@@ -4,11 +4,15 @@ package jetbrains.mps.baseLanguage.intentions;
 
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
+import java.util.Map;
+import java.util.HashMap;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
 public class AddInstanceInitializer_Intention extends BaseIntention implements Intention {
+
+  private Map<String, Object[]> myMap = new HashMap<String, Object[]>();
 
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.ClassConcept";
@@ -28,6 +32,23 @@ public class AddInstanceInitializer_Intention extends BaseIntention implements I
 
   public void execute(SNode node, EditorContext editorContext) {
     SLinkOperations.setNewChild(node, "instanceInitializer", "jetbrains.mps.baseLanguage.structure.InstanceInitializer");
+  }
+
+  public Object[] getField(String key) {
+    Object[] value = this.myMap.get(key);
+    if (value == null) {
+      value = new Object[1];
+      this.myMap.put(key, value);
+    }
+    return value;
+  }
+
+  public void putArgument(String key, Object argument) {
+    this.getField(key)[0] = argument;
+  }
+
+  public String getSourceModelUID() {
+    return "jetbrains.mps.baseLanguage.intentions";
   }
 
 }
