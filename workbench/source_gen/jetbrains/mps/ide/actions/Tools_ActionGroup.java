@@ -6,7 +6,6 @@ import jetbrains.mps.plugins.actions.BaseActionGroup;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.tools.InstallIDEAPluginAction;
-import jetbrains.mps.ide.actions.tools.ReloadAllAction;
 import jetbrains.mps.ide.actions.tools.MakeAllModulesAction;
 import jetbrains.mps.ide.actions.tools.RebuildAllModulesAction;
 import jetbrains.mps.ide.actions.tools.CleanAllModulesAction;
@@ -27,7 +26,6 @@ public class Tools_ActionGroup extends BaseActionGroup {
     this.setInternal(false);
     try {
       this.add(new InstallIDEAPluginAction(), this);
-      this.add(new ReloadAllAction(), this);
       this.addSeparator();
       this.add(new MakeAllModulesAction(), this);
       this.add(new RebuildAllModulesAction(), this);

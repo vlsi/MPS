@@ -594,10 +594,6 @@
         <link role="javaClass" targetNodeId="7.~SaveProjectAction" resolveInfo="SaveProjectAction" />
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981434289" />
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981438354">
-        <link role="javaClass" targetNodeId="13.~ReloadAllAction" resolveInfo="ReloadAllAction" />
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981439918" />
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981762832">
         <link role="javaClass" targetNodeId="19.~UndoAction" resolveInfo="UndoAction" />
       </node>
@@ -835,9 +831,6 @@
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983609908">
         <link role="javaClass" targetNodeId="13.~InstallIDEAPluginAction" resolveInfo="InstallIDEAPluginAction" />
       </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983612847">
-        <link role="javaClass" targetNodeId="13.~ReloadAllAction" resolveInfo="ReloadAllAction" />
-      </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1206351971744" />
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1206351974605">
         <link role="javaClass" targetNodeId="13.~MakeAllModulesAction" resolveInfo="MakeAllModulesAction" />
@@ -1048,18 +1041,13 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1209132744734">
               <link role="classifier" targetNodeId="33.~ToolsPane" resolveInfo="ToolsPane" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209132791531">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209132757476">
-                <node role="operand" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ConceptFunctionParameter_ActionContext" id="1209132754205" />
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209132774400">
-                  <link role="baseMethodDeclaration" targetNodeId="36.~ActionContext.get(java.lang.Class):java.lang.Object" resolveInfo="get" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1209132787229">
-                    <link role="classifier" targetNodeId="34.~AbstractProjectFrame" resolveInfo="AbstractProjectFrame" />
-                  </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209132757476">
+              <node role="operand" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ConceptFunctionParameter_ActionContext" id="1209132754205" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209132774400">
+                <link role="baseMethodDeclaration" targetNodeId="36.~ActionContext.get(java.lang.Class):java.lang.Object" resolveInfo="get" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1209132787229">
+                  <link role="classifier" targetNodeId="33.~ToolsPane" resolveInfo="ToolsPane" />
                 </node>
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209132795333">
-                <link role="baseMethodDeclaration" targetNodeId="34.~AbstractProjectFrame.getToolsPane():jetbrains.mps.ide.toolsPane.ToolsPane" resolveInfo="getToolsPane" />
               </node>
             </node>
           </node>
