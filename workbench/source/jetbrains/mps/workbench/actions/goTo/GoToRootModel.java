@@ -33,7 +33,6 @@ package jetbrains.mps.workbench.actions.goTo;
 
 import com.intellij.ide.util.NavigationItemListCellRenderer;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
-import com.intellij.navigation.ItemPresentation;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.progress.ProcessCanceledException;
@@ -157,9 +156,9 @@ public class GoToRootModel implements ChooseByNameModel {
   public String getFullName(final Object element) {
     return CommandProcessor.instance().executeLightweightCommand(new Calculable<String>() {
       public String calculate() {
-        ItemPresentation presentation = ((NavigationItem) element).getPresentation();
+        NodePresentation presentation = (NodePresentation) ((NavigationItem) element).getPresentation();
         assert presentation != null;
-        return presentation.getLocationString() + "." + presentation.getPresentableText();
+        return presentation.getModelName() + "." + presentation.getPresentableText();
       }
     });
   }
