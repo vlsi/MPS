@@ -151,8 +151,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   private void invalidateReferenceInCopiedNode(SReference reference) {
-    // todo: dynamic reference doesn't need validation?
+
     if (reference.isExternal()) return;
+    if(reference instanceof DynamicReference) return; // dynamic reference doesn't need validation (?)
+
     SNode outputNode = reference.getSourceNode();
     SNode inputNode = findInputNodeById(outputNode.getSNodeId());
     if (inputNode == null) return;
