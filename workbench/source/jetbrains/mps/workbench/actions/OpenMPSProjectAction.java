@@ -7,6 +7,7 @@ import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.wm.WindowManager;
+import com.intellij.openapi.util.Disposer;
 import com.intellij.ide.impl.ProjectUtil;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.IFileFilter;
@@ -39,7 +40,7 @@ public class OpenMPSProjectAction extends AnAction {
     Project ideaProject = projectManager.newProject(iprfilePath, true, false);
     assert ideaProject != null;
     ideaProject.save();
-    ideaProject.dispose();   
+    Disposer.dispose(ideaProject);
 
     ProjectUtil.openProject(iprfilePath, e.getData(PlatformDataKeys.PROJECT), false);
   }
