@@ -78,6 +78,9 @@ public class ClassLoaderManager implements IComponentLifecycle, ApplicationCompo
       return Class.forName(classFqName, true, loader);
     } catch (ClassNotFoundException e) {
       return null;
+    } catch (Throwable t) {
+      LOG.error(t);
+      return null;
     }
   }
 
