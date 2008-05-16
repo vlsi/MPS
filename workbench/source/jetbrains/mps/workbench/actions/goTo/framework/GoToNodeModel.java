@@ -29,7 +29,7 @@
  * IF JETBRAINS HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
  *
  */
-package jetbrains.mps.workbench.actions.goTo;
+package jetbrains.mps.workbench.actions.goTo.framework;
 
 import com.intellij.ide.util.NavigationItemListCellRenderer;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
@@ -38,11 +38,7 @@ import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.openapi.util.SystemInfo;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Calculable;
 import org.jetbrains.annotations.NotNull;
@@ -54,46 +50,15 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class GoToRootModel implements ChooseByNameModel {
+public class GoToNodeModel implements ChooseByNameModel {
   private static final Logger LOG = Logger.getInstance("#com.intellij.ide.util.gotoByName.ContributorsBasedGotoByModel");
 
   private MPSProject myProject;
-  private SNode[] myNodes = null;
-  private SNode[] myProjectNodes = null;
+  private INodesFinder myNodesFinder;
 
-  public GoToRootModel(MPSProject project) {
+  public GoToNodeModel(MPSProject project, INodesFinder nodesFinder) {
     myProject = project;
-  }
-
-  public SNode[] getNodes() {
-    if (myNodes == null) {
-      myNodes = loadItems(GlobalScope.getInstance());
-    }
-    return myNodes;
-  }
-
-  public SNode[] getProjectNodes() {
-    if (myProjectNodes == null) {
-      myProjectNodes = loadItems(myProject.getScope());
-    }
-    return myProjectNodes;
-  }
-
-  public SNode[] loadItems(final IScope scope) {
-    final List<SNode> nodes = new ArrayList<SNode>();
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-      public void run() {
-        List<SModelDescriptor> modelDescriptors = scope.getModelDescriptors();
-
-        for (SModelDescriptor modelDescriptor : modelDescriptors) {
-          if (SModelStereotype.JAVA_STUB.equals(modelDescriptor.getStereotype())) continue;
-          for (SNode node : modelDescriptor.getSModel().getRoots()) {
-            nodes.add(node);
-          }
-        }
-      }
-    });
-    return nodes.toArray(new SNode[0]);
+    myNodesFinder = nodesFinder;
   }
 
   public String[] getNames(final boolean checkBoxState) {
@@ -101,7 +66,7 @@ public class GoToRootModel implements ChooseByNameModel {
 
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
-        for (SNode node : checkBoxState ? getNodes() : getProjectNodes()) {
+        for (SNode node : myNodesFinder.getItems(checkBoxState)) {
           try {
             names.add(node.getName());
           } catch (ProcessCanceledException ex) {
@@ -121,9 +86,10 @@ public class GoToRootModel implements ChooseByNameModel {
 
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
-        for (SNode node : checkBoxState ? getNodes() : getProjectNodes()) {
+        for (SNode node : myNodesFinder.getItems(checkBoxState)) {
           try {
-            if (node.getName() != null && node.getName().equals(name)) {
+            String nodeName = node.getName();
+            if (nodeName != null && nodeName.equals(name)) {
               items.add(new NodeNavigationItem(myProject, node));
             }
           } catch (ProcessCanceledException ex) {

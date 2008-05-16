@@ -1,4 +1,4 @@
-package jetbrains.mps.workbench.actions.goTo;
+package jetbrains.mps.workbench.actions.goTo.gotoroot;
 
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
@@ -12,6 +12,7 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.impl.FakePsiElement;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.workbench.actions.goTo.framework.GoToNodeModel;
 
 public class GoToRootNodeAction extends AnAction {
   public void actionPerformed(AnActionEvent e) {
@@ -28,7 +29,8 @@ public class GoToRootNodeAction extends AnAction {
       }
     };
 
-    final ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, new GoToRootModel(mpsProject), fakePsiContext);
+    GoToNodeModel goToNodeModel = new GoToNodeModel(mpsProject, new RootNodesFinder(mpsProject));
+    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToNodeModel, fakePsiContext);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
