@@ -56,6 +56,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.util.Disposer;
+import com.intellij.ide.impl.ProjectUtil;
 
 /**
  * Author: Sergey Dmitriev
@@ -694,7 +695,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
         TypeChecker.getInstance().clearForReload();
         UndoManager.instance().clear();
-        ActionManager.instance().clearAll();           ;
+        ActionManager.instance().clearAll();
 
         MPSModuleRepository.getInstance().removeUnusedModules();
         SModelRepository.getInstance().removeUnusedDescriptors();
@@ -708,7 +709,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
           Project project = getComponentSafe(Project.class);
           if (IdeMain.isTestMode()) {
             ProjectManagerEx.getInstanceEx().closeProject(project);
-//            Disposer.dispose(project);
           }
         }
 
