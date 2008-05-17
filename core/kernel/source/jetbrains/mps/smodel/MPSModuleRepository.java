@@ -415,9 +415,19 @@ public class MPSModuleRepository implements IComponentLifecycle, ApplicationComp
     }
   }
 
+  private boolean isExluded(String dirName) {
+    if (".svn".equals(dirName)) return true;
+    if ("WEB-INF".equals(dirName)) return true;
+
+    return false;
+  }
+
 
   public void readModuleDescriptors(IFile dir, MPSModuleOwner owner) {
     String dirName = dir.getName();
+
+    if (isExluded(dirName)) return;
+
     List<IFile> files = dir.list();
     if (files == null) { //i.e it isn't a directory
       if (hasModuleExtension(dirName)) {
