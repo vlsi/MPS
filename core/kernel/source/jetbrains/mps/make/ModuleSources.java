@@ -92,7 +92,7 @@ public class ModuleSources {
         if (file.getName().endsWith(CLASS_SUFFIX)) {
           String containerName = file.getName().substring(0, file.getName().length() - CLASS_SUFFIX.length());
           if (containerName.contains("$")) {
-            containerName = containerName.substring(0, containerName.lastIndexOf("$"));
+            containerName = containerName.substring(0, containerName.indexOf("$"));
           }
           String fqName = toPack(addSubPath(path, containerName));
           JavaFile javaFile = myJavaFiles.get(fqName);
