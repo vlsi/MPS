@@ -358,7 +358,7 @@ public class SModelRepository implements IComponentLifecycle, ApplicationCompone
   }
 
   public void saveAll() {
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
       public void run() {
         List<SModelDescriptor> descriptors = new ArrayList(myChangedModels.keySet());
         for (SModelDescriptor modelDescriptor : descriptors) {
