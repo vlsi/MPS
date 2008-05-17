@@ -58,6 +58,7 @@ public class MPSEditorOpener implements ProjectComponent {
 
         MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(baseNode);
         FileEditorManager editorManager = FileEditorManager.getInstance(myProject);
+          
         FileEditor[] result = editorManager.openFile(file, true);
 
         MPSFileNodeEditor fileNodeEditor = (MPSFileNodeEditor) result[0];
@@ -66,7 +67,11 @@ public class MPSEditorOpener implements ProjectComponent {
         IEditor nodeEditor = fileNodeEditor.getNodeEditor();
         if (nodeEditor instanceof TabbedEditor) {
           ((TabbedEditor) nodeEditor).selectLinkedEditor(containingRoot);
-        }        
+        }
+
+        if (!node.isRoot()) {
+          nodeEditor.selectNode(node);
+        }
 
         return nodeEditor;
       }
