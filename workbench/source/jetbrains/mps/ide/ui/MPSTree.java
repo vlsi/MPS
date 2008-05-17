@@ -19,7 +19,7 @@ import java.awt.event.*;
 import java.util.*;
 import java.util.List;
 
-public abstract class MPSTree extends JTree {
+public abstract class iMPSTree extends JTree {
   public static final String MPS_TREE = "mps-tree";
   public static final String PATH = "path";
   public static final String SELECTION = "selection";
