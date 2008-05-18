@@ -28,57 +28,57 @@
 
     <group>
       <separator/>
-      <action id="GoToRootAction" class="jetbrains.mps.workbench.actions.goTo.gotonode.GoToRootNodeAction"
+      <action id="GoToRootAction" class="jetbrains.mps.workbench.actions.goTo.actions.GoToRootNodeAction"
               text="Go To Root Node(new)">
         <keyboard-shortcut first-keystroke="control N" keymap="$default"/>
       </action>
       <!--
-      <action id="GoToMPSRootAction" class="jetbrains.mps.workbench.actions.goTo.gotonode.GoToMPSRootAction"
+      <action id="GoToMPSRootAction" class="jetbrains.mps.workbench.actions.goTo.actions.old.GoToMPSRootAction"
               text="Go To Root Node">
         <keyboard-shortcut first-keystroke="control alt N" keymap="$default"/>
       </action>
       -->
-      <action id="GoToNamedNodeAction" class="jetbrains.mps.workbench.actions.goTo.gotonode.GoToNamedNodeAction"
+      <action id="GoToNamedNodeAction" class="jetbrains.mps.workbench.actions.goTo.actions.GoToNamedNodeAction"
               text="Go To Symbol">
         <keyboard-shortcut first-keystroke="control alt shift N" keymap="$default"/>
       </action>
       <!--
-      <action id="GoToMPSNamedNodeAction" class="jetbrains.mps.workbench.actions.goTo.gotonode.GoToMPSNamedNodeAction"
+      <action id="GoToMPSNamedNodeAction" class="jetbrains.mps.workbench.actions.goTo.actions.old.GoToMPSNamedNodeAction"
               text="Go To Symbol">
         <keyboard-shortcut first-keystroke="control alt shift N" keymap="$default"/>
       </action>
       -->
-      <action id="GoToConceptNodeAction" class="jetbrains.mps.workbench.actions.goTo.gotonode.GoToConceptNodeAction"
+      <action id="GoToConceptNodeAction" class="jetbrains.mps.workbench.actions.goTo.actions.GoToConceptNodeAction"
               text="Go To Concept">
         <keyboard-shortcut first-keystroke="control alt shift C" keymap="$default"/>
       </action>
       <!--
-      <action id="GoToMPSConceptAction" class="jetbrains.mps.workbench.actions.goTo.gotonode.GoToMPSConceptAction"
+      <action id="GoToMPSConceptAction" class="jetbrains.mps.workbench.actions.goTo.actions.old.GoToMPSConceptAction"
               text="Go To Concept">
         <keyboard-shortcut first-keystroke="control alt shift C" keymap="$default"/>
       </action>
       -->
-      <action id="GoToModelAction" class="jetbrains.mps.workbench.actions.goTo.gotomodel.GoToModelAction"
+      <action id="GoToModelAction" class="jetbrains.mps.workbench.actions.goTo.actions.GoToModelAction"
               text="Go To Model">
         <keyboard-shortcut first-keystroke="control alt shift M" keymap="$default"/>
       </action>
       <!--
-      <action id="GoToMPSModelAction" class="jetbrains.mps.workbench.actions.goTo.gotomodel.GoToMPSModelAction"
+      <action id="GoToMPSModelAction" class="jetbrains.mps.workbench.actions.goTo.actions.old.GoToMPSModelAction"
               text="Go To Model">
         <keyboard-shortcut first-keystroke="control alt shift M" keymap="$default"/>
       </action>
       -->
-      <action id="GoToLanguageAction" class="jetbrains.mps.workbench.actions.goTo.gotolanguage.GoToLanguageAction"
+      <action id="GoToLanguageAction" class="jetbrains.mps.workbench.actions.goTo.actions.GoToLanguageAction"
               text="Go To Language">
         <keyboard-shortcut first-keystroke="control alt shift L" keymap="$default"/>
       </action>
       <!--
-      <action id="GoToMPSLanguageAction" class="jetbrains.mps.workbench.actions.goTo.gotolanguage.GoToMPSLanguageAction"
+      <action id="GoToMPSLanguageAction" class="jetbrains.mps.workbench.actions.goTo.actions.old.GoToMPSLanguageAction"
               text="Go To Language">
         <keyboard-shortcut first-keystroke="control alt L" keymap="$default"/>
       </action>
       -->
-      <action id="GoToNodeById" class="jetbrains.mps.workbench.actions.goTo.GoToNodeByIdAction"
+      <action id="GoToNodeById" class="jetbrains.mps.workbench.actions.goTo.actions.old.GoToNodeByIdAction"
               text="Go To Node by ID"/>
 
       <add-to-group anchor="last" group-id="GoToMenu"/>
