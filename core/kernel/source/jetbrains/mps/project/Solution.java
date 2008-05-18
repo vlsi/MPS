@@ -142,29 +142,6 @@ public class Solution extends AbstractModule {
     }
   }
 
-  private void collectSourcePackages(Set<String> result, String pack, IFile current) {
-    List<IFile> children = current.list();
-    if (children == null) return;
-    boolean hasFiles = false;
-
-    for (IFile child : children) {      
-      if (child.getName().equals(".svn")) continue;
-
-      if (child.isDirectory()) {
-        String packName = pack.length() > 0 ? pack + "." + child.getName() : child.getName();
-        collectSourcePackages(result, packName, child);
-      }
-
-      if (child.isFile() && child.getName().endsWith(".java")) {
-        hasFiles = true;
-      }
-    }
-
-    if (hasFiles && pack.length() > 0) {
-      result.add(pack);
-    }
-  }
-
   public List<String> getClassPath() {
     List<String> result = new ArrayList<String>();
     if (getClassesGen() != null && getClassesGen().exists()) {
