@@ -1,4 +1,4 @@
-package jetbrains.mps.workbench.actions.goTo.gotonode;
+package jetbrains.mps.workbench.actions.goTo.actions;
 
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
@@ -16,13 +16,12 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.actions.goTo.framework.nodes.GoToNodeModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class GoToNamedNodeAction extends AnAction {
+public class GoToRootNodeAction extends AnAction {
   public void actionPerformed(AnActionEvent e) {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;
@@ -43,13 +42,9 @@ public class GoToNamedNodeAction extends AnAction {
         List<SModelDescriptor> modelDescriptors = scope.getModelDescriptors();
         for (SModelDescriptor modelDescriptor : modelDescriptors) {
           if (SModelStereotype.JAVA_STUB.equals(modelDescriptor.getStereotype())) continue;
-          nodes.addAll(modelDescriptor.getSModel().allNodes(new Condition<SNode>() {
-            public boolean met(SNode node) {
-              String name = node.getName();
-              if (name == null) return false;
-              return name.length() > 0;
-            }
-          }));
+          for (SNode node : modelDescriptor.getSModel().getRoots()) {
+            nodes.add(node);
+          }
         }
         return nodes.toArray(new SNode[0]);
       }

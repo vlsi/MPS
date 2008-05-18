@@ -1,4 +1,4 @@
-package jetbrains.mps.workbench.actions.goTo.gotolanguage;
+package jetbrains.mps.workbench.actions.goTo.actions;
 
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
@@ -13,10 +13,10 @@ import com.intellij.psi.impl.FakePsiElement;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.workbench.actions.goTo.framework.languages.GoToLanguageModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.workbench.actions.goTo.framework.models.GoToModelModel;
 
-public class GoToLanguageAction extends AnAction {
+public class GoToModelAction extends AnAction {
   public void actionPerformed(AnActionEvent e) {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;
@@ -31,12 +31,12 @@ public class GoToLanguageAction extends AnAction {
       }
     };
 
-    GoToLanguageModel goToLanguageModel = new GoToLanguageModel(mpsProject) {
-      public Language[] find(IScope scope) {
-        return scope.getVisibleLanguages().toArray(new Language[0]);
+    GoToModelModel goToModelModel = new GoToModelModel(mpsProject) {
+      public SModelDescriptor[] find(IScope scope) {
+        return scope.getModelDescriptors().toArray(new SModelDescriptor[0]);
       }
     };
-    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToLanguageModel, fakePsiContext);
+    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModelModel, fakePsiContext);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {

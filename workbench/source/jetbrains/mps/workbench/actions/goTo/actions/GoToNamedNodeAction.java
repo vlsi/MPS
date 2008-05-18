@@ -1,4 +1,4 @@
-package jetbrains.mps.workbench.actions.goTo.gotonode;
+package jetbrains.mps.workbench.actions.goTo.actions;
 
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
@@ -13,14 +13,16 @@ import com.intellij.psi.impl.FakePsiElement;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.actions.goTo.framework.nodes.GoToNodeModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class GoToConceptNodeAction extends AnAction {
+public class GoToNamedNodeAction extends AnAction {
   public void actionPerformed(AnActionEvent e) {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;
@@ -38,13 +40,18 @@ public class GoToConceptNodeAction extends AnAction {
     GoToNodeModel goToNodeModel = new GoToNodeModel(mpsProject) {
       public SNode[] find(IScope scope) {
         final List<SNode> nodes = new ArrayList<SNode>();
-        for (Language l : scope.getVisibleLanguages()) {
-          for (SNode node : l.getStructureModelDescriptor().getSModel().getRoots()) {
-            nodes.add(node);
-          }
+        List<SModelDescriptor> modelDescriptors = scope.getModelDescriptors();
+        for (SModelDescriptor modelDescriptor : modelDescriptors) {
+          if (SModelStereotype.JAVA_STUB.equals(modelDescriptor.getStereotype())) continue;
+          nodes.addAll(modelDescriptor.getSModel().allNodes(new Condition<SNode>() {
+            public boolean met(SNode node) {
+              String name = node.getName();
+              if (name == null) return false;
+              return name.length() > 0;
+            }
+          }));
         }
         return nodes.toArray(new SNode[0]);
-
       }
     };
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToNodeModel, fakePsiContext);
