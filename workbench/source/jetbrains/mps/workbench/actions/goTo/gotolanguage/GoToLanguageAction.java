@@ -12,6 +12,8 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.impl.FakePsiElement;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.workbench.actions.goTo.framework.languages.GoToLanguageModel;
 
 public class GoToLanguageAction extends AnAction {
@@ -29,7 +31,11 @@ public class GoToLanguageAction extends AnAction {
       }
     };
 
-    GoToLanguageModel goToLanguageModel = new GoToLanguageModel(mpsProject, new LanguagesFinder());
+    GoToLanguageModel goToLanguageModel = new GoToLanguageModel(mpsProject) {
+      public Language[] find(IScope scope) {
+        return scope.getVisibleLanguages().toArray(new Language[0]);
+      }
+    };
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToLanguageModel, fakePsiContext);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {

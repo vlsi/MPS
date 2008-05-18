@@ -12,7 +12,14 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.impl.FakePsiElement;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.actions.goTo.framework.nodes.GoToNodeModel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class GoToRootNodeAction extends AnAction {
   public void actionPerformed(AnActionEvent e) {
@@ -29,7 +36,19 @@ public class GoToRootNodeAction extends AnAction {
       }
     };
 
-    GoToNodeModel goToNodeModel = new GoToNodeModel(mpsProject, new RootNodesFinder());
+    GoToNodeModel goToNodeModel = new GoToNodeModel(mpsProject) {
+      public SNode[] find(IScope scope) {
+        final List<SNode> nodes = new ArrayList<SNode>();
+        List<SModelDescriptor> modelDescriptors = scope.getModelDescriptors();
+        for (SModelDescriptor modelDescriptor : modelDescriptors) {
+          if (SModelStereotype.JAVA_STUB.equals(modelDescriptor.getStereotype())) continue;
+          for (SNode node : modelDescriptor.getSModel().getRoots()) {
+            nodes.add(node);
+          }
+        }
+        return nodes.toArray(new SNode[0]);
+      }
+    };
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToNodeModel, fakePsiContext);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {

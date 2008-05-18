@@ -35,44 +35,27 @@ import com.intellij.navigation.NavigationItem;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.actions.goTo.framework.base.BaseMPSGoToModel;
-import jetbrains.mps.workbench.actions.goTo.framework.base.IFinder;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
-public class GoToNodeModel extends BaseMPSGoToModel<SNode> {
-  public GoToNodeModel(MPSProject project, IFinder<SNode> nodesFinder) {
-    super(project, nodesFinder);
+public abstract class GoToNodeModel extends BaseMPSGoToModel<SNode> {
+  public GoToNodeModel(MPSProject project) {
+    super(project);
   }
 
   //---------------------FIND STUFF------------------------
-
-  public String[] doGetNames(boolean checkBoxState) {
-    final Set<String> names = new HashSet<String>();
-    for (SNode node : getObjects(checkBoxState)) {
-      names.add(node.getName());
-    }
-    return names.toArray(new String[names.size()]);
-  }
-
-  public Object[] doGetElementsByName(String name, boolean checkBoxState, String pattern) {
-    final List<NodeNavigationItem> items = new ArrayList<NodeNavigationItem>();
-    for (SNode node : getObjects(checkBoxState)) {
-      String nodeName = node.getName();
-      if (nodeName != null && nodeName.equals(name)) {
-        items.add(new NodeNavigationItem(getProject(), node));
-      }
-    }
-    return items.toArray();
-  }
 
   public String doGetFullName(Object element) {
     NodePresentation presentation = (NodePresentation) ((NavigationItem) element).getPresentation();
     assert presentation != null;
     return presentation.getModelName() + "." + presentation.getPresentableText();
+  }
+
+  public String doGetObjectName(SNode node) {
+    return node.getName();
+  }
+
+  public NavigationItem doGetNavigationItem(SNode node) {
+    return new NodeNavigationItem(getProject(), node);
   }
 
   //---------------------INTERFACE STUFF------------------------

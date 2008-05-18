@@ -12,6 +12,8 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.impl.FakePsiElement;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.workbench.actions.goTo.framework.models.GoToModelModel;
 
 public class GoToModelAction extends AnAction {
@@ -29,7 +31,11 @@ public class GoToModelAction extends AnAction {
       }
     };
 
-    GoToModelModel goToModelModel = new GoToModelModel(mpsProject, new ModelsFinder());
+    GoToModelModel goToModelModel = new GoToModelModel(mpsProject) {
+      public SModelDescriptor[] find(IScope scope) {
+        return scope.getModelDescriptors().toArray(new SModelDescriptor[0]);
+      }
+    };
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModelModel, fakePsiContext);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
