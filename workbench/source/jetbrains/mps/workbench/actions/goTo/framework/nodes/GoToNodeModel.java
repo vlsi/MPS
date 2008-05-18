@@ -32,7 +32,6 @@
 package jetbrains.mps.workbench.actions.goTo.framework.nodes;
 
 import com.intellij.navigation.NavigationItem;
-import com.intellij.openapi.diagnostic.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.actions.goTo.framework.base.BaseMPSGoToModel;
@@ -44,21 +43,16 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class GoToNodeModel extends BaseMPSGoToModel {
-  private static final Logger LOG = Logger.getInstance("#" + GoToNodeModel.class.getName());
-
-  private IFinder<SNode> myNodesFinder;
-
+public class GoToNodeModel extends BaseMPSGoToModel<SNode> {
   public GoToNodeModel(MPSProject project, IFinder<SNode> nodesFinder) {
-    super(project);
-    myNodesFinder = nodesFinder;
+    super(project, nodesFinder);
   }
 
   //---------------------FIND STUFF------------------------
 
   public String[] doGetNames(boolean checkBoxState) {
     final Set<String> names = new HashSet<String>();
-    for (SNode node : myNodesFinder.getItems(getScope(checkBoxState))) {
+    for (SNode node : getObjects(checkBoxState)) {
       names.add(node.getName());
     }
     return names.toArray(new String[names.size()]);
@@ -66,7 +60,7 @@ public class GoToNodeModel extends BaseMPSGoToModel {
 
   public Object[] doGetElementsByName(String name, boolean checkBoxState, String pattern) {
     final List<NodeNavigationItem> items = new ArrayList<NodeNavigationItem>();
-    for (SNode node : myNodesFinder.getItems(getScope(checkBoxState))) {
+    for (SNode node : getObjects(checkBoxState)) {
       String nodeName = node.getName();
       if (nodeName != null && nodeName.equals(name)) {
         items.add(new NodeNavigationItem(getProject(), node));
