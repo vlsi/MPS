@@ -3,6 +3,10 @@
   <xi:include href="/idea/VcsActions.xml" xpointer="xpointer(/component/*)"/>
 
   <actions>
+    <action id="NewElement" class="com.intellij.ide.actions.NewElementAction">
+      <add-to-group group-id="EditCreateDeleteGroup" anchor="first"/>
+    </action>
+
     <group>
       <action id="NewProject" class="jetbrains.mps.workbench.actions.NewMPSProjectAction" text="New MPS Project"/>
       <action id="OpenProject" class="jetbrains.mps.workbench.actions.OpenMPSProjectAction" text="Open MPS Project"/>
@@ -32,52 +36,27 @@
               text="Go To Root Node(new)">
         <keyboard-shortcut first-keystroke="control N" keymap="$default"/>
       </action>
-      <!--
-      <action id="GoToMPSRootAction" class="jetbrains.mps.workbench.actions.goTo.actions.old.GoToMPSRootAction"
-              text="Go To Root Node">
-        <keyboard-shortcut first-keystroke="control alt N" keymap="$default"/>
-      </action>
-      -->
+
       <action id="GoToNamedNodeAction" class="jetbrains.mps.workbench.actions.goTo.actions.GoToNamedNodeAction"
               text="Go To Symbol">
         <keyboard-shortcut first-keystroke="control alt shift N" keymap="$default"/>
       </action>
-      <!--
-      <action id="GoToMPSNamedNodeAction" class="jetbrains.mps.workbench.actions.goTo.actions.old.GoToMPSNamedNodeAction"
-              text="Go To Symbol">
-        <keyboard-shortcut first-keystroke="control alt shift N" keymap="$default"/>
-      </action>
-      -->
+
       <action id="GoToConceptNodeAction" class="jetbrains.mps.workbench.actions.goTo.actions.GoToConceptNodeAction"
               text="Go To Concept">
         <keyboard-shortcut first-keystroke="control alt shift C" keymap="$default"/>
       </action>
-      <!--
-      <action id="GoToMPSConceptAction" class="jetbrains.mps.workbench.actions.goTo.actions.old.GoToMPSConceptAction"
-              text="Go To Concept">
-        <keyboard-shortcut first-keystroke="control alt shift C" keymap="$default"/>
-      </action>
-      -->
+
       <action id="GoToModelAction" class="jetbrains.mps.workbench.actions.goTo.actions.GoToModelAction"
               text="Go To Model">
         <keyboard-shortcut first-keystroke="control alt shift M" keymap="$default"/>
       </action>
-      <!--
-      <action id="GoToMPSModelAction" class="jetbrains.mps.workbench.actions.goTo.actions.old.GoToMPSModelAction"
-              text="Go To Model">
-        <keyboard-shortcut first-keystroke="control alt shift M" keymap="$default"/>
-      </action>
-      -->
+
       <action id="GoToLanguageAction" class="jetbrains.mps.workbench.actions.goTo.actions.GoToLanguageAction"
               text="Go To Language">
         <keyboard-shortcut first-keystroke="control alt shift L" keymap="$default"/>
       </action>
-      <!--
-      <action id="GoToMPSLanguageAction" class="jetbrains.mps.workbench.actions.goTo.actions.old.GoToMPSLanguageAction"
-              text="Go To Language">
-        <keyboard-shortcut first-keystroke="control alt L" keymap="$default"/>
-      </action>
-      -->
+
       <action id="GoToNodeById" class="jetbrains.mps.workbench.actions.goTo.actions.old.GoToNodeByIdAction"
               text="Go To Node by ID"/>
 
