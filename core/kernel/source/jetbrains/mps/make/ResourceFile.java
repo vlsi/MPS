@@ -2,7 +2,7 @@ package jetbrains.mps.make;
 
 import jetbrains.mps.vfs.IFile;
 
-class ResourceFile {
+public class ResourceFile {
   private String myPath;
   private IFile myFile;
 

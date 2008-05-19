@@ -11,7 +11,7 @@ public class ModuleSources {
   private static final String CLASS_SUFFIX = ".class";
 
   private IModule myModule;
-  private Map<String, JavaFile> myJavaFiles = new HashMap<String, JavaFile>();
+  private Map<String, JavaFile> myJavaFiles = new HashMap<String, JavaFile>();    
   private Map<String, ResourceFile> myResourceFiles = new HashMap<String, ResourceFile>();
 
   private Set<IFile> myFilesToDelete = new HashSet<IFile>();

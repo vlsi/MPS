@@ -5,7 +5,7 @@ import jetbrains.mps.util.FileUtil;
 
 import java.io.IOException;
 
-class JavaFile {
+public class JavaFile {
   private IFile myFile;
   private String myClassName;
 

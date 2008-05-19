@@ -2,6 +2,7 @@ package jetbrains.mps.make;
 
 import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+import jetbrains.mps.ide.messages.FileWithPosition;
 import jetbrains.mps.make.MakeScheduleBuilder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
@@ -146,11 +147,18 @@ public class ModuleMaker {
     for (CompilationResult cr : compiler.getCompilationResults()) {
       if (cr.getErrors() != null) {              
         for (CategorizedProblem cp : cr.getErrors()) {
-          String messageStirng = new String(cp.getOriginatingFileName()) + " : " + cp.getMessage();
+
+          String fileName = new String(cp.getOriginatingFileName());
+          String fqName = fileName.substring(0, fileName.length() - ".java".length()).replace(File.separatorChar, '.');
+          IModule containingModule = myContainingModules.get(fqName);
+          assert containingModule != null;
+          JavaFile javaFile = myModuleSources.get(containingModule).getJavaFile(fqName);
+
+          String messageStirng = new String(cp.getOriginatingFileName()) + " : " + cp.getMessage();                    
           if (cp.isWarning()) {
-            LOG.warning(messageStirng + " (line: )" + cp.getSourceLineNumber());
+            LOG.warning(messageStirng + " (line: )" + cp.getSourceLineNumber(), new FileWithPosition(javaFile.getFile(), cp.getSourceStart()));
           } else {
-            LOG.error(messageStirng + " (line: )" + cp.getSourceLineNumber());
+            LOG.error(messageStirng + " (line: )" + cp.getSourceLineNumber(), new FileWithPosition(javaFile.getFile(), cp.getSourceStart()));
           }
         }
         
