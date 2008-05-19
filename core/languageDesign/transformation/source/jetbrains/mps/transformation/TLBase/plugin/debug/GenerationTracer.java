@@ -32,7 +32,6 @@ public class GenerationTracer {
   private Map<String, List<TracerNode>> myTracingDataByOutputModel;
   private ModelsProcessedByScripts myModelsProcessedByScripts;
 
-//  private GenerationTracerViewTool myGenerationTracerViewTool;
   private Map<SNode, TracerNode> myOutputNodesToReplaceLater = new HashMap<SNode, TracerNode>();
 
   public GenerationTracer(MPSProject project) {
