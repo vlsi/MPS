@@ -12,6 +12,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.WeakHashMap;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
@@ -24,22 +25,22 @@ import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.project.GlobalScope;
 
 public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem implements ApplicationComponent {
-  private static String VIRTUAL_FILE = "virtualFile";
 
   public static MPSNodesVirtualFileSystem getInstance() {
     return ApplicationManager.getApplication().getComponent(MPSNodesVirtualFileSystem.class);
   }
 
   private SModelCommandListener myListener = new MyCommandListener();
+  private WeakHashMap<SNode, MPSNodeVirtualFile> myVirtualFiles = new WeakHashMap<SNode, MPSNodeVirtualFile>();
 
   public MPSNodeVirtualFile getFileFor(final SNode node) {
     return CommandProcessor.instance().executeLightweightCommand(new Calculable<MPSNodeVirtualFile>() {
       public MPSNodeVirtualFile calculate() {
-        if (node.getUserObject(VIRTUAL_FILE) != null) {
-          return (MPSNodeVirtualFile) node.getUserObject(VIRTUAL_FILE);
+        if (myVirtualFiles.containsKey(node)) {
+          return myVirtualFiles.get(node);
         }
         MPSNodeVirtualFile vf = new MPSNodeVirtualFile(node);
-        node.putUserObject(VIRTUAL_FILE, vf);
+        myVirtualFiles.put(node, vf);
         return vf;
       }
     });
@@ -126,17 +127,18 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
                 e.accept(new SModelEventVisitorAdapter() {
                   public void visitRootEvent(SModelRootEvent event) {
                     if (event.isRemoved()) {
-                      VirtualFile vf = (VirtualFile) event.getRoot().getUserObject(VIRTUAL_FILE);
+                      VirtualFile vf = myVirtualFiles.get(event.getRoot());
                       if (vf != null) {
                         fireBeforeFileDeletion(this ,vf);
                         fireFileDeleted(this, vf, vf.getName(), null);
+                        myVirtualFiles.remove(event.getRoot());
                       }
 
                     }
                   }
 
                   public void visitPropertyEvent(SModelPropertyEvent event) {
-                    VirtualFile vf = (VirtualFile) event.getNode().getUserObject(VIRTUAL_FILE);
+                    VirtualFile vf = myVirtualFiles.get(event.getNode());
                     if (event.getNode().isRoot() && vf != null) {
                       fireBeforePropertyChange(this, vf, VirtualFile.PROP_NAME, event.getOldPropertyValue(), event.getNewPropertyValue());
                       ((MPSNodeVirtualFile) vf).updateFields();
