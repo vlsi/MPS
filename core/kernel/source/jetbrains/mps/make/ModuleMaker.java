@@ -133,7 +133,7 @@ public class ModuleMaker {
         f.delete();
       }
 
-      for (JavaFile f : sources.getFilesToCompile()) {
+      for (JavaFile f : sources.getFilesToCompile()) {                        
         compiler.addSource(f.getContents(), f.getClassName());
         myContainingModules.put(f.getClassName(), m);
       }

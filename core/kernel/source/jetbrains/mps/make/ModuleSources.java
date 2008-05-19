@@ -16,7 +16,7 @@ public class ModuleSources {
 
   private Set<IFile> myFilesToDelete = new HashSet<IFile>();
   private Set<JavaFile> myFilesToCompile = new HashSet<JavaFile>();
-  
+
   private Set<ResourceFile> myResourcesToCopy = new HashSet<ResourceFile>();
 
   ModuleSources(IModule module) {
@@ -40,6 +40,10 @@ public class ModuleSources {
 
   public boolean isUpToDate() {
     return getFilesToDelete().isEmpty() && getFilesToCompile().isEmpty() && getResourcesToCopy().isEmpty();
+  }
+
+  public JavaFile getJavaFile(String fqName) {
+    return myJavaFiles.get(fqName);
   }
 
   private void collectInputFilesInfo() {
