@@ -7,6 +7,7 @@ import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.fileTypes.PlainTextFileType;
+import com.intellij.openapi.fileTypes.StdFileTypes;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.nodeEditor.CaretBlinker;
@@ -24,7 +25,8 @@ public class MPSAdapter implements ApplicationComponent {
   public void initComponent() {
     CaretBlinker.getInstance().launch();
 
-    FileTypeManager.getInstance().registerFileType(new PlainTextFileType(), "java");
+    FileTypeManager.getInstance().registerFileType(StdFileTypes.JAVA, "java");
+    FileTypeManager.getInstance().registerFileType(StdFileTypes.PATCH, "patch");
   }
 
   public void disposeComponent() {
