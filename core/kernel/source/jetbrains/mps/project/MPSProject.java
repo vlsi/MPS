@@ -527,10 +527,18 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     return result;
   }
 
+  /**
+   * It's not recommended to add/remove components dynamically since we are moving to IDEA platform
+   */
+  @Deprecated
   public void addComponent(@NotNull Class interfaceClass, @NotNull Object instance) {
     myContext.register(interfaceClass, instance);
   }
 
+  /**
+   * It's not recommended to add/remove components dynamically since we are moving to IDEA platform
+   */
+  @Deprecated
   public void removeComponent(Class interfaceClass) {
     myContext.unregister(interfaceClass);
   }
