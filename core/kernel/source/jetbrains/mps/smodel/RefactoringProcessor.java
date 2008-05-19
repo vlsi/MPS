@@ -213,7 +213,7 @@ public class RefactoringProcessor {
   private void processModel(SModel model, SModel usedModel, RefactoringContext refactoringContext) {
     refactoringContext.getRefactoring().updateModel(model, refactoringContext);
     model.updateImportedModelUsedVersion(usedModel.getUID(), usedModel.getVersion());
-    SModelRepository.getInstance().markChanged(model);
+   // SModelRepository.getInstance().markChanged(model);
   }
 
   private void writeIntoLog(SModel model, RefactoringContext refactoringContext) {

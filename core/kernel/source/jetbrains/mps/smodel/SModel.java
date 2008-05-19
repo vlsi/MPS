@@ -1075,6 +1075,7 @@ public class SModel implements Iterable<SNode> {
     } else {
       addAdditionalModelVersion(sModelUID, currentVersion);
     }
+    fireImportAddedEvent(myUID);
   }
 
   /*package*/ void increaseVersion() {
