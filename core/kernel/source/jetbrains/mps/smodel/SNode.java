@@ -41,7 +41,7 @@ public final class SNode {
 
   private static long ourCounter = 0;
 
-  private static INodeMemberAccessModifier ourMemberAccessModifier = null;
+  private static NodeMemberAccessModifier ourMemberAccessModifier = null;
 
   private static Set<Pair<SNode, String>> ourPropertySettersInProgress = new HashSet<Pair<SNode, String>>();
   private static Set<Pair<SNode, String>> ourPropertyGettersInProgress = new HashSet<Pair<SNode, String>>();
@@ -66,7 +66,7 @@ public final class SNode {
 
   private BaseAdapter myAdapter;
 
-  public static void setNodeMemeberAccessModifier(INodeMemberAccessModifier modifier) {
+  public static void setNodeMemeberAccessModifier(NodeMemberAccessModifier modifier) {
     ourMemberAccessModifier = modifier;
   }
 

@@ -4,7 +4,7 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.refactoring.framework.RefactoringContext.ConceptFeatureKind;
-import jetbrains.mps.smodel.INodeMemberAccessModifier;
+import jetbrains.mps.smodel.NodeMemberAccessModifier;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
  * Time: 18:14:51
  * To change this template use File | Settings | File Templates.
  */
-public class RefactoringNodeMembersAccessModifier implements INodeMemberAccessModifier {
+public class RefactoringNodeMembersAccessModifier implements NodeMemberAccessModifier {
   private static Logger LOG = Logger.getLogger(RefactoringNodeMembersAccessModifier.class);
 
   private Map<Pair<String, String>, String> myChildrenRolesMap = new HashMap<Pair<String, String>, String>();
