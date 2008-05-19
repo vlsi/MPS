@@ -1088,6 +1088,17 @@ public class SModel implements Iterable<SNode> {
 
   public void refreshRefactoringHistory() {
     try {
+//      boolean debug = false;
+//
+//      if (getUID().toString().equals("jetbrains.mps.core.editor")) {
+//        debug = true;
+//      }
+//
+//
+//      if (debug) {
+//        System.out.println("old class loader " + myRefactoringHistory.getRefactoringContexts().get(0).getClass().getClassLoader());
+//      }
+//
       Element e = myRefactoringHistory.toElement();
       myRefactoringHistory = new RefactoringHistory();
       myRefactoringHistory.fromElement(e);

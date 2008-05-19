@@ -148,7 +148,6 @@ public class ClassLoaderManager implements IComponentLifecycle, ApplicationCompo
     }    
     myRuntimeEnvironment.unload(toRemove.toArray(new RBundle[0]));
 
-
     myRuntimeEnvironment.reloadAll();
 
     for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {

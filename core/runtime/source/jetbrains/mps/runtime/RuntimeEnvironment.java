@@ -113,6 +113,7 @@ public class RuntimeEnvironment {
     }
 
     for (RBundle b : bundles) {
+      b.unload();
       myBundles.remove(b.getName());
       fireBundleRemoved(b);
     }

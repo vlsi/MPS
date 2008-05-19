@@ -34,6 +34,10 @@ public class RBundle {
     return Collections.unmodifiableSet(myDependencies);    
   }
 
+  public void unload() {
+    myClassLoader.dispose();
+  }
+
   boolean hasClass(String fqName) {
     return myLocator.find(fqName) != null;
   }
@@ -68,6 +72,9 @@ public class RBundle {
   }
 
   void reload() {
+    if (myClassLoader != null) {
+      myClassLoader.dispose();
+    }
     myClassLoader = new BundleClassLoader(this);
   }
 

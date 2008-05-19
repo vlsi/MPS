@@ -3,6 +3,7 @@ package jetbrains.mps.runtime;
 import java.net.URL;
 
 public class BundleClassLoader extends BaseClassLoader {
+  private Boolean myDisposed;
   private RBundle myBundle;
 
   BundleClassLoader(RBundle bundle) {
@@ -48,6 +49,14 @@ public class BundleClassLoader extends BaseClassLoader {
     }
     
     return null;
+  }
+
+  public void dispose() {
+    myDisposed = true;
+  }
+
+  public boolean isDisposed() {
+    return myDisposed;
   }
 
   public RBundle getBundle() {

@@ -46,8 +46,6 @@ public abstract class AbstractModule implements IModule {
   private ModuleScope myScope = new ModuleScope();
 
   private IClassPathItem myClassPath;
-  private Map<String, Class> myClassesCache = new HashMap<String, Class>();
-
 
   protected void reload() {
     MPSModuleRepository.getInstance().unRegisterModules(this);
@@ -489,13 +487,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   public Class getClass(String fqName) {
-    if (myClassesCache.containsKey(fqName)) {
-      return myClassesCache.get(fqName);
-    }
-
-    Class result = ClassLoaderManager.getInstance().getClassFor(this, fqName);
-    myClassesCache.put(fqName, result);
-    return result;
+    return ClassLoaderManager.getInstance().getClassFor(this, fqName);
   }
 
   public void updateClassPath() {
@@ -735,7 +727,6 @@ public abstract class AbstractModule implements IModule {
 
   public void invalidateCaches() {
     myScope.invalidateCaches();
-    myClassesCache.clear();
   }
 
   public class ModuleScope extends BaseScope {
