@@ -41,6 +41,8 @@ public final class SNode {
 
   private static long ourCounter = 0;
 
+  private static INodeMemberAccessModifier ourMemberAccessModifier = null;
+
   private static Set<Pair<SNode, String>> ourPropertySettersInProgress = new HashSet<Pair<SNode, String>>();
   private static Set<Pair<SNode, String>> ourPropertyGettersInProgress = new HashSet<Pair<SNode, String>>();
   private static Set<Pair<SNode, String>> ourSetReferentEventHandlersInProgress = new HashSet<Pair<SNode, String>>();
@@ -63,6 +65,10 @@ public final class SNode {
   private String myLanguageNamespace;
 
   private BaseAdapter myAdapter;
+
+  public static void setNodeMemeberAccessModifier(INodeMemberAccessModifier modifier) {
+    ourMemberAccessModifier = modifier;
+  }
 
   public SNode(SModel model, String conceptFqName, boolean callIntern) {
     myModel = model;
@@ -626,7 +632,9 @@ public final class SNode {
   @Nullable
   public String getPersistentProperty(@NotNull String propertyName) {
     if (myProperties == null) return null;
-    propertyName = SNodeMembersAccessModifier.getInstance().getNewPropertyName(myModel, myConceptFqName, propertyName);
+    if (ourMemberAccessModifier != null) {
+      propertyName = ourMemberAccessModifier.getNewPropertyName(myModel, myConceptFqName, propertyName);
+    }
     return myProperties.get(propertyName);
   }
 
@@ -662,7 +670,10 @@ public final class SNode {
     if (myProperties == null) {
       myProperties = new ListMap<String, String>();
     }
-    final String propertyName_ = SNodeMembersAccessModifier.getInstance().getNewPropertyName(myModel, myConceptFqName, propertyName);
+    if (ourMemberAccessModifier != null) {
+       propertyName = ourMemberAccessModifier.getNewPropertyName(myModel, myConceptFqName, propertyName);
+    }
+    final String propertyName_ = propertyName;
     final String oldValue = myProperties.get(propertyName_);
     if (propertyValue == null) {
       myProperties.remove(propertyName_);
@@ -719,7 +730,9 @@ public final class SNode {
   @Nullable
   public SNode getChild(@NotNull String role) {
     ModelAccess.assertLegalRead(this);
-    role = SNodeMembersAccessModifier.getInstance().getNewChildRole(myModel, myConceptFqName, role);
+    if (ourMemberAccessModifier != null) {
+      role = ourMemberAccessModifier.getNewChildRole(myModel, myConceptFqName, role);
+    }
     fireNodeReadAccess();
     int count = 0;
     SNode foundChild = null;
@@ -776,7 +789,9 @@ public final class SNode {
   }
 
   public int getChildCount(@NotNull String role) {
-    role = SNodeMembersAccessModifier.getInstance().getNewChildRole(myModel, myConceptFqName, role);
+    if (ourMemberAccessModifier != null) {
+      role = ourMemberAccessModifier.getNewChildRole(myModel, myConceptFqName, role);
+    }
     int count = 0;
     for (SNode child : _children()) {
       if (role.equals(child.getRole_())) {
@@ -842,7 +857,9 @@ public final class SNode {
   @NotNull
   public List<SNode> getChildren(@NotNull String role) {
     ModelAccess.assertLegalRead(this);
-    role = SNodeMembersAccessModifier.getInstance().getNewChildRole(myModel, myConceptFqName, role);
+    if (ourMemberAccessModifier != null) {
+      role = ourMemberAccessModifier.getNewChildRole(myModel, myConceptFqName, role);
+    }
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
     List<SNode> children = _children();
@@ -908,7 +925,10 @@ public final class SNode {
   }
 
   private void insertChildAt(final int index, @NotNull String _role, final @NotNull SNode child) {
-    final String role = SNodeMembersAccessModifier.getInstance().getNewChildRole(myModel, myConceptFqName, _role);
+    if (ourMemberAccessModifier != null) {
+      _role = ourMemberAccessModifier.getNewChildRole(myModel, myConceptFqName, _role);
+    }
+    final String role = _role;
     SNode parentOfChild = child.getParent();
     if (parentOfChild != null) {
       throw new RuntimeException(child.getDebugText() + " already has parent: " + parentOfChild.getDebugText() + "\n" +
@@ -1016,7 +1036,9 @@ public final class SNode {
 
   @Nullable
   public SReference setReferent(@NotNull String role, SNode newReferent, boolean useHandler) {
-    role = SNodeMembersAccessModifier.getInstance().getNewReferentRole(myModel, myConceptFqName, role);
+    if (ourMemberAccessModifier != null) {
+      role = ourMemberAccessModifier.getNewReferentRole(myModel, myConceptFqName, role);
+    }
     // remove old references
     List<SReference> toDelete = new ArrayList<SReference>();
     for (SReference reference : _references()) {
@@ -1068,7 +1090,9 @@ public final class SNode {
 
   public SReference getReference(@NotNull String role) {
     ModelAccess.assertLegalRead(this);
-    role = SNodeMembersAccessModifier.getInstance().getNewReferentRole(myModel, myConceptFqName, role);
+    if (ourMemberAccessModifier != null) {
+      role = ourMemberAccessModifier.getNewReferentRole(myModel, myConceptFqName, role);
+    }
     fireNodeReadAccess();
     SReference result = null;
     int count = 0; // paranoid check
@@ -1093,8 +1117,10 @@ public final class SNode {
   }
 
   public void removeReferent(@NotNull String role) {
-    role = SNodeMembersAccessModifier.getInstance().getNewReferentRole(myModel, myConceptFqName, role);
-    for (SReference reference : _references()) {
+    if (ourMemberAccessModifier != null) {
+      role = ourMemberAccessModifier.getNewReferentRole(myModel, myConceptFqName, role);
+    }
+      for (SReference reference : _references()) {
       if (reference.getRole().equals(role)) {
         int index = _references().indexOf(reference);
         removeReferenceAt(index);

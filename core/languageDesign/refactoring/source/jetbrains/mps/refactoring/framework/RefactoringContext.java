@@ -401,7 +401,7 @@ public class RefactoringContext {
     }
   }
 
-  public void setUpMembersAccessModifier(SNodeMembersAccessModifier modifier) {
+  public void setUpMembersAccessModifier(RefactoringNodeMembersAccessModifier modifier) {
     //assert myCachesAreUpToDate;
     for (ConceptFeature conceptFeature : myConceptFeatureMap.keySet()) {
       ConceptFeature newConceptFeature = myConceptFeatureMap.get(conceptFeature);

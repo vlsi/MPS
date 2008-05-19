@@ -17,6 +17,7 @@ import jetbrains.mps.refactoring.NewRefactoringView;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
+import jetbrains.mps.refactoring.framework.RefactoringNodeMembersAccessModifier;
 import jetbrains.mps.util.Calculable;
 import org.jetbrains.annotations.NotNull;
 
@@ -181,7 +182,7 @@ public class RefactoringProcessor {
   }
 
   private void generateModels(final ActionContext context, final Map<IModule, List<SModel>> sourceModels, RefactoringContext refactoringContext) {
-    final SNodeMembersAccessModifier modifier = SNodeMembersAccessModifier.getInstance();
+    final RefactoringNodeMembersAccessModifier modifier = new RefactoringNodeMembersAccessModifier();
     refactoringContext.setUpMembersAccessModifier(modifier);
     for (final IModule sourceModule : sourceModels.keySet()) {
       CommandProcessor.instance().executeGenerationCommand(new Runnable() {
@@ -189,7 +190,8 @@ public class RefactoringProcessor {
           try {
             IOperationContext operationContext = new ModuleContext(sourceModule, context.getOperationContext().getProject());
             final List<SModel> models = sourceModels.get(sourceModule);
-            modifier.startModificationMode(models);
+            modifier.addModelsToModify(models);
+            SNode.setNodeMemeberAccessModifier(modifier);
 
             List<SModelDescriptor> descriptors = new ArrayList<SModelDescriptor>();
             for (SModel model : models) {
@@ -203,7 +205,7 @@ public class RefactoringProcessor {
               new DefaultMessageHandler(operationContext.getProject())
             );
           } finally {
-            modifier.clear();
+            SNode.setNodeMemeberAccessModifier(null);
           }
         }
       });
