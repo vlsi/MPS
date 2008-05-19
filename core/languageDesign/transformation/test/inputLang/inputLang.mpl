@@ -25,10 +25,9 @@
   </classPath>
   <languageRuntimeClassPath />
   <sourcePath />
-  <osgiOptions>
-    <requiredBundles />
-    <exportedPackage />
-  </osgiOptions>
+  <dependencies>
+    <dependency reexport="false">jetbrains.mps.transformation.test.inputLang</dependency>
+  </dependencies>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>
     <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>

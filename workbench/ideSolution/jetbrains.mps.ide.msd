@@ -8,6 +8,7 @@
   <dependencies>
     <dependency reexport="false">jetbrains.mps.projectLanguage</dependency>
     <dependency reexport="false">jetbrains.mps.logging.refactoring</dependency>
+    <dependency reexport="false">jetbrains.mps.transformation.test.outputLang</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.uiLanguage</usedLanguages>
