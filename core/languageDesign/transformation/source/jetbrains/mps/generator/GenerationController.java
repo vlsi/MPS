@@ -223,7 +223,7 @@ public class GenerationController {
     return currentGenerationOK;
   }
 
-  private boolean compileModule(IModule module) throws RemoteException {
+  private boolean compileModule(IModule module) throws RemoteException, GenerationCanceledException {
     boolean compiledSuccessfully = true;
     if (module != null && (!isIDEAPresent() && !module.isCompileInMPS()) || !myGenerationType.requiresCompilationInIDEAfterGeneration()) {
       compiledSuccessfully = false;
@@ -299,7 +299,7 @@ public class GenerationController {
     }
   }
 
-  private void checkMonitorCanceled() {
+  private void checkMonitorCanceled() throws GenerationCanceledException {
     if (myProgress.isCanceled()) throw new GenerationCanceledException();
   }
 

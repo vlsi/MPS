@@ -8,6 +8,7 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.GenerationFailueException;
 import jetbrains.mps.generator.GenerationSessionContext;
+import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
@@ -36,9 +37,9 @@ public interface ITemplateGenerator {
    */
   SModel getTargetModel();
 
-  boolean doPrimaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailueException;
+  boolean doPrimaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailueException, GenerationCanceledException;
 
-  boolean doSecondaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailueException;
+  boolean doSecondaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailueException, GenerationCanceledException;
 
   SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName);
 

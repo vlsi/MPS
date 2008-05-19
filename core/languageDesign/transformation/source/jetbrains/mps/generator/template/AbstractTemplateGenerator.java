@@ -40,7 +40,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     return myProgressMonitor;
   }
 
-  protected void checkMonitorCanceled() {
+  protected void checkMonitorCanceled() throws GenerationCanceledException {
     if (myProgressMonitor.isCanceled()) throw new GenerationCanceledException();
   }
 

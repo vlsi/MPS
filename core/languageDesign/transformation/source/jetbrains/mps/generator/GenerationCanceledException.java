@@ -4,7 +4,7 @@ package jetbrains.mps.generator;
  * @author Kostik
  */
 @SuppressWarnings({"serial"})
-public class GenerationCanceledException extends RuntimeException {
+public class GenerationCanceledException extends Exception {
 
   public GenerationCanceledException() {
   }

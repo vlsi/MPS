@@ -3,6 +3,7 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.generator.GenerationFailueException;
 import jetbrains.mps.generator.GenerationSessionContext;
+import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.template.GeneratorUtil;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.smodel.*;
@@ -46,13 +47,13 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return myRuleManager;
   }
 
-  public boolean doPrimaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailueException {
+  public boolean doPrimaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailueException, GenerationCanceledException {
     reset(inputModel, outputModel);
     doMapping(true);
     return isChanged();
   }
 
-  public boolean doSecondaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailueException {
+  public boolean doSecondaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailueException, GenerationCanceledException {
     reset(inputModel, outputModel);
     doMapping(false);
     return isChanged();
@@ -75,7 +76,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myRuleManager = null;
   }
 
-  private void doMapping(boolean isPrimary) throws GenerationFailueException {
+  private void doMapping(boolean isPrimary) throws GenerationFailueException, GenerationCanceledException {
     checkMonitorCanceled();
     int oldErrorCount = getErrorCount();
 
@@ -179,7 +180,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     outputNode.addReference(postponedReference);
   }
 
-  private void revalidateAllReferences() {
+  private void revalidateAllReferences() throws GenerationCanceledException {
     // replace all postponed references
     List<SNode> roots = getTargetModel().getRoots();
     for (SNode root : roots) {
@@ -188,7 +189,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
   }
 
-  private void revalidateAllReferences(SNode node) {
+  private void revalidateAllReferences(SNode node) throws GenerationCanceledException {
     List<SReference> references = node.getReferences();
     for (SReference reference : references) {
       checkMonitorCanceled();

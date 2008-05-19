@@ -127,7 +127,7 @@ public class GenerationSession implements IGenerationSession {
     NoSuchMethodException,
     IllegalAccessException,
     InvocationTargetException,
-    InstantiationException {
+    InstantiationException, GenerationCanceledException {
 
     myInvocationCount++;
     myTransientModelsCount = 0;
@@ -152,7 +152,7 @@ public class GenerationSession implements IGenerationSession {
       status = new GenerationStatus(inputModel, outputModel, mySessionContext.getTraceMap(), wasErrors, wasWarnigns, false);
       addMessage(status.isError() ? MessageKind.WARNING : MessageKind.INFORMATION, "model \"" + inputModel.getUID() + "\" has been generated " + (status.isError() ? "with errors" : "successfully"));
     } catch (GenerationCanceledException gce) {
-      throw gce;//rethrow it for not to be caught in the last catch block
+      throw gce;
     } catch (GenerationFailueException gfe) {
       LOG.error(gfe);
       myProgressMonitor.addText(gfe.toString());
@@ -168,7 +168,7 @@ public class GenerationSession implements IGenerationSession {
     return status;
   }
 
-  private SModel generateModel_stepIntern(SModel inputModel, ITemplateGenerator generator) throws GenerationFailueException {
+  private SModel generateModel_stepIntern(SModel inputModel, ITemplateGenerator generator) throws GenerationFailueException, GenerationCanceledException {
     String modelsLongName = inputModel.getLongName();
     SModel currentInputModel = inputModel;
 
