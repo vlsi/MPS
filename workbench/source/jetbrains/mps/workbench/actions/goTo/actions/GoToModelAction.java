@@ -11,6 +11,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.impl.FakePsiElement;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -43,8 +44,12 @@ public class GoToModelAction extends AnAction {
         //if (GoToRootNodeAction.class.equals(myInAction)) myInAction = null;
       }
 
-      public void elementChosen(Object element) {
-        ((NavigationItem) element).navigate(true);
+      public void elementChosen(final Object element) {
+        CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+          public void run() {
+            ((NavigationItem) element).navigate(true);
+          }
+        });
       }
     }, ModalityState.current(), true);
   }
