@@ -39,6 +39,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vcs.ProjectVCSManager;
 import jetbrains.mps.nodeEditor.Highlighter;
+import jetbrains.mps.transformation.TLBase.plugin.debug.GenerationTracer;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.jdom.Document;
@@ -98,6 +99,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
   public MPSProject(final @NotNull File projectFile) {
     myContext.register(MPSProject.class, this);
     myContext.register(GeneratorManager.class, new GeneratorManager(this));
+    myContext.register(GenerationTracer.class, new GenerationTracer(this));
     myContext.register(ProjectVCSManager.class);
 
     CommandProcessor.instance().executeCommand(new Runnable() {
