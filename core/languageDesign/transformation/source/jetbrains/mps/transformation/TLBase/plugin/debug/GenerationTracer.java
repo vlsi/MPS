@@ -38,7 +38,7 @@ public class GenerationTracer {
   private Map<String, List<TracerNode>> myTracingDataByOutputModel;
   private ModelsProcessedByScripts myModelsProcessedByScripts;
 
-  private GenerationTracerViewTool myGenerationTracerViewTool;
+//  private GenerationTracerViewTool myGenerationTracerViewTool;
   private GenerationTracerActions myGenerationTracerActions;
   private Map<SNode, TracerNode> myOutputNodesToReplaceLater = new HashMap<SNode, TracerNode>();
 
@@ -46,44 +46,48 @@ public class GenerationTracer {
     if (DISABLED) return;
 
     // recreate state after total reloading in the end of generation
-    if (project == ourLastTracingProject) {
-      myTracingDataByInputModel = ourLastTracingDataByInputModel;
-      myTracingDataByOutputModel = ourLastTracingDataByOutputModel;
-      myModelsProcessedByScripts = ourLastModelsProcessedByScripts;
-    }
-    ourLastTracingDataByInputModel = null;
-    ourLastTracingDataByOutputModel = null;
-    ourLastModelsProcessedByScripts = null;
-    ourLastTracingProject = null;
+//    if (project == ourLastTracingProject) {
+//      myTracingDataByInputModel = ourLastTracingDataByInputModel;
+//      myTracingDataByOutputModel = ourLastTracingDataByOutputModel;
+//      myModelsProcessedByScripts = ourLastModelsProcessedByScripts;
+//    }
+//    ourLastTracingDataByInputModel = null;
+//    ourLastTracingDataByOutputModel = null;
+//    ourLastModelsProcessedByScripts = null;
+//    ourLastTracingProject = null;
 
     myProject = project;
 
-    if (myProject.getComponent(ToolsPane.class) == null) {
-      return;
-    }
+//    if (myProject.getComponent(ToolsPane.class) == null) {
+//      return;
+//    }
 
     // init
-    myGenerationTracerViewTool = new GenerationTracerViewTool(myProject);
-    myGenerationTracerViewTool.setTracingDataIsAvailable(hasTracingData());
-    myProject.getComponentSafe(ToolsPane.class).add(myGenerationTracerViewTool, false);
+//    myGenerationTracerViewTool = new GenerationTracerViewTool(myProject);
+//    getTracerViewTool().setTracingDataIsAvailable(hasTracingData());
+//    myProject.getComponentSafe(ToolsPane.class).add(myGenerationTracerViewTool, false);
     myGenerationTracerActions = new GenerationTracerActions();
     myGenerationTracerActions.addActions();
+  }
+
+  private GenerationTracerViewTool getTracerViewTool() {
+    return myProject.getComponentSafe(GenerationTracerViewTool.class);
   }
 
   public void shutDown() {
     if (DISABLED) return;
 
-    ourLastTracingProject = myProject;
-    ourLastTracingDataByInputModel = myTracingDataByInputModel;
-    ourLastTracingDataByOutputModel = myTracingDataByOutputModel;
-    ourLastModelsProcessedByScripts = myModelsProcessedByScripts;
-
-    if (myGenerationTracerViewTool != null) {
-      myGenerationTracerActions.removeActions();
-      myGenerationTracerViewTool.closeAll();
-      myProject.getComponentSafe(ToolsPane.class).removeTool(myGenerationTracerViewTool);
-      myGenerationTracerViewTool = null;
-    }
+//    ourLastTracingProject = myProject;
+//    ourLastTracingDataByInputModel = myTracingDataByInputModel;
+//    ourLastTracingDataByOutputModel = myTracingDataByOutputModel;
+//    ourLastModelsProcessedByScripts = myModelsProcessedByScripts;
+//
+//    if (myGenerationTracerViewTool != null) {
+//      myGenerationTracerActions.removeActions();
+//      myGenerationTracerViewTool.closeAll();
+//      myProject.getComponentSafe(ToolsPane.class).removeTool(myGenerationTracerViewTool);
+//      myGenerationTracerViewTool = null;
+//    }
   }
 
   public void startTracing() {
@@ -95,17 +99,19 @@ public class GenerationTracer {
     myCurrentTracingData = null;
     myCurrentTraceNode = null;
 
-    //todo IDEA platform hack    
-    if (myGenerationTracerViewTool != null) {
-      myGenerationTracerViewTool.setTracingDataIsAvailable(false);
-    }
+//    //todo IDEA platform hack
+//    if (myGenerationTracerViewTool != null) {
+//      myGenerationTracerViewTool.setTracingDataIsAvailable(false);
+//    }
+    getTracerViewTool().setTracingDataIsAvailable(false);
   }
 
   public void finishTracing() {
     myActive = false;
-    if (myGenerationTracerViewTool != null) {
-      myGenerationTracerViewTool.setTracingDataIsAvailable(hasTracingData());
-    }
+//    if (myGenerationTracerViewTool != null) {
+//      myGenerationTracerViewTool.setTracingDataIsAvailable(hasTracingData());
+//    }
+    getTracerViewTool().setTracingDataIsAvailable(hasTracingData());
   }
 
   public boolean isTracing() {
@@ -286,16 +292,16 @@ public class GenerationTracer {
   }
 
   public boolean showTraceInputData(SNode node) {
-    int index = myGenerationTracerViewTool.getTabIndex(Kind.INPUT, node);
+    int index = getTracerViewTool().getTabIndex(Kind.INPUT, node);
     if (index > -1) {
-      myGenerationTracerViewTool.selectIndex(index);
-      myGenerationTracerViewTool.showTool();
+      getTracerViewTool().selectIndex(index);
+      getTracerViewTool().showTool();
       return true;
     }
 
     TracerNode tracerNode = buildTraceInputTree(node);
     if (tracerNode == null) return false;
-    myGenerationTracerViewTool.showTraceView(tracerNode);
+    getTracerViewTool().showTraceView(tracerNode);
     return true;
   }
 
@@ -356,16 +362,16 @@ public class GenerationTracer {
   }
 
   public boolean showTracebackData(SNode node) {
-    int index = myGenerationTracerViewTool.getTabIndex(Kind.OUTPUT, node);
+    int index = getTracerViewTool().getTabIndex(Kind.OUTPUT, node);
     if (index > -1) {
-      myGenerationTracerViewTool.selectIndex(index);
-      myGenerationTracerViewTool.showTool();
+      getTracerViewTool().selectIndex(index);
+      getTracerViewTool().showTool();
       return true;
     }
 
     TracerNode tracerNode = buildTracebackTree(node);
     if (tracerNode == null) return false;
-    myGenerationTracerViewTool.showTraceView(tracerNode);
+    getTracerViewTool().showTraceView(tracerNode);
     return true;
   }
 
