@@ -17,9 +17,21 @@ import java.io.OutputStream;
 
 public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
   private SNode myNode;
+  private String myPath;
+  private String myName;
 
   public MPSNodeVirtualFile(SNode node) {
     myNode = node;
+    updateFields();
+  }
+
+  void updateFields() {
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        myPath = myNode.getModel().getUID() + "/" + myNode.getId();
+        myName = myNode.getPresentation();
+      }
+    });
   }
 
   public SNode getNode() {
@@ -27,11 +39,7 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
   }
 
   public String getPath() {
-    return CommandProcessor.instance().executeLightweightCommand(new Calculable<String>() {
-      public String calculate() {
-        return myNode.getModel().getUID() + "/" + myNode.getId();
-      }
-    });
+    return myPath;
   }
 
   @NotNull
@@ -41,11 +49,7 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
 
   @NotNull @NonNls
   public String getName() {
-    return CommandProcessor.instance().executeLightweightCommand(new Calculable<String>() {
-      public String calculate() {
-        return myNode.getPresentation();
-      }
-    });
+    return myName;
   }
 
   public boolean isDirectory() {

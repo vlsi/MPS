@@ -139,6 +139,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
                     VirtualFile vf = (VirtualFile) event.getNode().getUserObject(VIRTUAL_FILE);
                     if (event.getNode().isRoot() && vf != null) {
                       fireBeforePropertyChange(this, vf, VirtualFile.PROP_NAME, event.getOldPropertyValue(), event.getNewPropertyValue());
+                      ((MPSNodeVirtualFile) vf).updateFields();
                       firePropertyChanged(this, vf, VirtualFile.PROP_NAME, event.getOldPropertyValue(), event.getNewPropertyValue());
                     }
                   }
