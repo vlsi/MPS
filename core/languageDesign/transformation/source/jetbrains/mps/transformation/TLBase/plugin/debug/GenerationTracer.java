@@ -22,12 +22,6 @@ import org.jetbrains.annotations.NotNull;
  */
 public class GenerationTracer {
   private static Logger LOG = Logger.getLogger(GenerationTracer.class);
-  private static final boolean DISABLED = false;
-  private static Map<String, List<TracerNode>> ourLastTracingDataByInputModel;
-  private static Map<String, List<TracerNode>> ourLastTracingDataByOutputModel;
-  private static ModelsProcessedByScripts ourLastModelsProcessedByScripts;
-  private static MPSProject ourLastTracingProject;
-
 
   private MPSProject myProject;
   private boolean myActive = false;
@@ -39,59 +33,17 @@ public class GenerationTracer {
   private ModelsProcessedByScripts myModelsProcessedByScripts;
 
 //  private GenerationTracerViewTool myGenerationTracerViewTool;
-  private GenerationTracerActions myGenerationTracerActions;
   private Map<SNode, TracerNode> myOutputNodesToReplaceLater = new HashMap<SNode, TracerNode>();
 
   public GenerationTracer(MPSProject project) {
-    if (DISABLED) return;
-
-    // recreate state after total reloading in the end of generation
-//    if (project == ourLastTracingProject) {
-//      myTracingDataByInputModel = ourLastTracingDataByInputModel;
-//      myTracingDataByOutputModel = ourLastTracingDataByOutputModel;
-//      myModelsProcessedByScripts = ourLastModelsProcessedByScripts;
-//    }
-//    ourLastTracingDataByInputModel = null;
-//    ourLastTracingDataByOutputModel = null;
-//    ourLastModelsProcessedByScripts = null;
-//    ourLastTracingProject = null;
-
     myProject = project;
-
-//    if (myProject.getComponent(ToolsPane.class) == null) {
-//      return;
-//    }
-
-    // init
-//    myGenerationTracerViewTool = new GenerationTracerViewTool(myProject);
-//    getTracerViewTool().setTracingDataIsAvailable(hasTracingData());
-//    myProject.getComponentSafe(ToolsPane.class).add(myGenerationTracerViewTool, false);
-    myGenerationTracerActions = new GenerationTracerActions();
-    myGenerationTracerActions.addActions();
   }
 
   private GenerationTracerViewTool getTracerViewTool() {
     return myProject.getComponentSafe(GenerationTracerViewTool.class);
   }
 
-  public void shutDown() {
-    if (DISABLED) return;
-
-//    ourLastTracingProject = myProject;
-//    ourLastTracingDataByInputModel = myTracingDataByInputModel;
-//    ourLastTracingDataByOutputModel = myTracingDataByOutputModel;
-//    ourLastModelsProcessedByScripts = myModelsProcessedByScripts;
-//
-//    if (myGenerationTracerViewTool != null) {
-//      myGenerationTracerActions.removeActions();
-//      myGenerationTracerViewTool.closeAll();
-//      myProject.getComponentSafe(ToolsPane.class).removeTool(myGenerationTracerViewTool);
-//      myGenerationTracerViewTool = null;
-//    }
-  }
-
   public void startTracing() {
-    if (DISABLED) return;
     myActive = true;
     myTracingDataByInputModel = new HashMap<String, List<TracerNode>>();
     myTracingDataByOutputModel = new HashMap<String, List<TracerNode>>();
@@ -99,18 +51,11 @@ public class GenerationTracer {
     myCurrentTracingData = null;
     myCurrentTraceNode = null;
 
-//    //todo IDEA platform hack
-//    if (myGenerationTracerViewTool != null) {
-//      myGenerationTracerViewTool.setTracingDataIsAvailable(false);
-//    }
     getTracerViewTool().setTracingDataIsAvailable(false);
   }
 
   public void finishTracing() {
     myActive = false;
-//    if (myGenerationTracerViewTool != null) {
-//      myGenerationTracerViewTool.setTracingDataIsAvailable(hasTracingData());
-//    }
     getTracerViewTool().setTracingDataIsAvailable(hasTracingData());
   }
 
@@ -284,7 +229,6 @@ public class GenerationTracer {
   }
 
   public boolean hasTraceInputData(SModelUID modelUID) {
-    if (DISABLED) return false;
     if (getRootTracerNodes(Kind.INPUT, modelUID) != null) {
       return true;
     }
@@ -354,7 +298,6 @@ public class GenerationTracer {
   }
 
   public boolean hasTracebackData(SModelUID modelUID) {
-    if (DISABLED) return false;
     if (getRootTracerNodes(Kind.OUTPUT, modelUID) != null) {
       return true;
     }
