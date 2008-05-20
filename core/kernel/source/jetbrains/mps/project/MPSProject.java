@@ -131,7 +131,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
   }
 
   public PluginManager getPluginManager() {
-    return getComponent(Project.class).getComponent(PluginManager.class);
+    return getComponentSafe(Project.class).getComponent(PluginManager.class);
   }
 
   private void readModules() {
