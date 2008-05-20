@@ -5,8 +5,6 @@ import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.ide.toolsPane.ToolsPane;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.ide.preferences.IComponentWithPreferences;
-import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.util.IntegerValueDocumentFilter;

@@ -3,8 +3,6 @@ package jetbrains.mps.library;
 import jetbrains.mps.component.IComponentLifecycle;
 import jetbrains.mps.components.DefaultExternalizableComponent;
 import jetbrains.mps.components.Externalizable;
-import jetbrains.mps.ide.preferences.IComponentWithPreferences;
-import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.BootstrapModule;
 import jetbrains.mps.project.IModule;

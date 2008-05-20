@@ -1,7 +1,5 @@
 package jetbrains.mps.helgins.integration;
 
-import jetbrains.mps.ide.preferences.IComponentWithPreferences;
-import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.components.DefaultExternalizableComponent;
 import jetbrains.mps.components.Externalizable;
 import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
@@ -43,10 +41,6 @@ public class HelginsPreferencesComponent implements Configurable, PersistentStat
 
   public static HelginsPreferencesComponent getInstance() {
     return ApplicationManager.getApplication().getComponent(HelginsPreferencesComponent.class);
-  }
-
-  public List<IPreferencesPage> createPreferencesPages() {
-    return CollectionUtil.asList((IPreferencesPage) new MyPreferencesPage());
   }
 
   public boolean isUsesDebugHighlighting() {

@@ -226,10 +226,6 @@
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1210594630537">
         <property name="name" value="miscMenu" />
       </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1210594619378" />
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204910819335">
-        <link role="javaClass" targetNodeId="7.~ProjectSettingsAction" resolveInfo="ProjectSettingsAction" />
-      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991221264">
@@ -624,10 +620,6 @@
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981873878">
         <link role="javaClass" targetNodeId="20.~NextEditorAction" resolveInfo="NextEditorAction" />
       </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981877585" />
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981881401">
-        <link role="javaClass" targetNodeId="7.~ProjectSettingsAction" resolveInfo="ProjectSettingsAction" />
-      </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981882013" />
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1205936020383">
         <link role="javaClass" targetNodeId="13.~MakeAllModulesAction" resolveInfo="MakeAllModulesAction" />
@@ -698,9 +690,6 @@
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983116612">
         <link role="javaClass" targetNodeId="7.~SaveProjectAction" resolveInfo="SaveProjectAction" />
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983120332">
-        <link role="javaClass" targetNodeId="7.~ProjectSettingsAction" resolveInfo="ProjectSettingsAction" />
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204983121162" />
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983125070">

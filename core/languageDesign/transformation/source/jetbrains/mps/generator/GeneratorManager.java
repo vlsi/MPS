@@ -6,8 +6,6 @@ import jetbrains.mps.generator.fileGenerator.IFileGenerator;
 import jetbrains.mps.generator.GeneratorManager.MyState;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.messages.*;
-import jetbrains.mps.ide.preferences.IComponentWithPreferences;
-import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.ide.progress.AdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.AdaptiveProgressMonitorFactory;

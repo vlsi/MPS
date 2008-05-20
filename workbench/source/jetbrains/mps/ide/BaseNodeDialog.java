@@ -1,7 +1,6 @@
 package jetbrains.mps.ide;
 
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.TaskProgressSettings;
@@ -138,7 +137,7 @@ public abstract class BaseNodeDialog extends BaseDialog {
     saveChanges_internal();
   }
 
-  public class MyPreferencesPage implements IPreferencesPage {
+  public class MyPreferencesPage {
     public String getName() {
       return getTitle();
     }

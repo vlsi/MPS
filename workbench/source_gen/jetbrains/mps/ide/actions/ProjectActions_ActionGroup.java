@@ -10,7 +10,6 @@ import jetbrains.mps.ide.actions.make.MakeProjectAction;
 import jetbrains.mps.ide.actions.make.RebuildProjectAction;
 import jetbrains.mps.ide.actions.make.CleanProjectAction;
 import jetbrains.mps.ide.actions.project.OptimizeProjectImportsAction;
-import jetbrains.mps.ide.actions.file.ProjectSettingsAction;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
 
 public class ProjectActions_ActionGroup extends BaseActionGroup {
@@ -32,8 +31,6 @@ public class ProjectActions_ActionGroup extends BaseActionGroup {
       this.add(new OptimizeProjectImportsAction(), this);
       this.addSeparator();
       this.add(new Label(ProjectActions_ActionGroup.LABEL_ID_miscMenu), this);
-      this.addSeparator();
-      this.add(new ProjectSettingsAction(), this);
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

@@ -2,8 +2,6 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.components.DefaultExternalizableComponent;
 import jetbrains.mps.components.Externalizable;
-import jetbrains.mps.ide.preferences.IComponentWithPreferences;
-import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -128,9 +126,6 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
     myState.myUseLegacyTypesystem = useLegacyTypesystem;
   }
 
-  public List<IPreferencesPage> createPreferencesPages() {
-    return CollectionUtil.asList((IPreferencesPage) new MyPreferencesPage());
-  }
 
   public void addEditorSettingsListener(EditorSettingsListener l) {
     myListeners.add(l);

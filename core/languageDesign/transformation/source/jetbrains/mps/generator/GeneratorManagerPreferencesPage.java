@@ -1,6 +1,5 @@
 package jetbrains.mps.generator;
 
-import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.ide.projectPane.Icons;
 
 import javax.swing.*;

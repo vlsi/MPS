@@ -1,6 +1,5 @@
 package jetbrains.mps.library;
 
-import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.util.ToStringComparator;

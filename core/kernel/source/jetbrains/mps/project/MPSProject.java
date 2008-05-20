@@ -17,8 +17,6 @@ import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.ide.genconf.GeneratorConfigUtil;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
-import jetbrains.mps.ide.preferences.IComponentWithPreferences;
-import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
@@ -55,11 +53,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.application.ApplicationManager;
 
-/**
- * Author: Sergey Dmitriev
- * Created Apr 29, 2004
- */
-public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComponentWithPreferences {
+public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
   public static final String COMPONENTS = "components";
   public static final String COMPONENT = "component";
   public static final String CLASS = "class";
@@ -928,13 +922,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     }
 
     return res;
-  }
-
-  @NotNull
-  public List<IPreferencesPage> createPreferencesPages() {
-    return CollectionUtil.asList(
-      (IPreferencesPage) new ProjectPathsDialog(this, new ProjectOperationContext(this)).createPreferencesPage()
-    );
   }
 
   public void invalidateCaches() {
