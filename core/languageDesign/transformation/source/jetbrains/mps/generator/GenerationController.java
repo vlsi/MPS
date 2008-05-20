@@ -393,11 +393,11 @@ public class GenerationController {
           if (myMillis > estimatedTime) {
             myMillis = estimatedTime;
             myIndeterminate = true;
-            advance(myTotalJob, myMillis);
+            advance(myTotalJob, (myStartTime - myStartJobTime) + myMillis);
             myProgress.setIndeterminate(true);
           }
           if (!myIndeterminate) {
-            advance(myTotalJob, myMillis);
+            advance(myTotalJob, (myStartTime - myStartJobTime) + myMillis);
           }
         }
       });

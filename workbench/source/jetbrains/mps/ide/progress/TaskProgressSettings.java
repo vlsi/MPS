@@ -67,13 +67,13 @@ public class TaskProgressSettings implements PersistentStateComponent<MyState> {
 
     long newTime = estimatedTimeMillis;
     Long time = myState.myTasksToEstimatedTime.get(taskName);
-    if (time != null) newTime = (time + newTime) / 2;
+    if (time != null) newTime = (time + 2 * newTime) / 3;
     myState.myTasksToEstimatedTime.put(taskName, newTime);
 
     if (taskKind != null) {
       long newKindTime = newTime;
       Long kindTime = myState.myTaskKindsToEstimatedTime.get(taskKind);
-      if (kindTime != null) newKindTime = (kindTime + newKindTime) / 2;
+      if (kindTime != null) newKindTime = (kindTime + 2 * newKindTime) / 3;
       myState.myTaskKindsToEstimatedTime.put(taskKind, newKindTime);
     }
   }
