@@ -1,8 +1,9 @@
-package jetbrains.mps.ide.output;
+package jetbrains.mps.workbench.output;
 
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
+import jetbrains.mps.ide.toolsPane.ToolsPane;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.preferences.IComponentWithPreferences;
 import jetbrains.mps.ide.preferences.IPreferencesPage;
@@ -17,24 +18,22 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.ActionEvent;
-import java.util.*;
 import java.util.List;
 
 import org.jdom.Element;
 
-public class OutputView extends DefaultTool implements IExternalizableComponent, IComponentWithPreferences {
-  public static final String FONT_SIZE = "fontSize";
+public class OutputView extends DefaultTool {
 
   private JPanel myComponent = new JPanel();
   private JTextArea myTextArea = new JTextArea();
-  private IDEProjectFrame myIde;
+  private MPSProject myProject;
   private String myLastSearchPattern = null;
   private AbstractAction myFindAction;
   private AbstractAction myFindNextAction;
   private int myFontSize = 12;
 
-  public OutputView(IDEProjectFrame ide) {
-    myIde = ide;
+  public OutputView(MPSProject project) {
+    myProject = project;
 
     myTextArea.setEditable(false);
 
@@ -44,7 +43,7 @@ public class OutputView extends DefaultTool implements IExternalizableComponent,
       }
 
       public void actionPerformed(ActionEvent e) {
-        String pattern = JOptionPane.showInputDialog(myIde.getMainFrame(), "Enter pattern to find", myLastSearchPattern);
+        String pattern = JOptionPane.showInputDialog(myProject.getComponent(Frame.class), "Enter pattern to find", myLastSearchPattern);
         if (pattern == null) return;
         find(pattern);
       }
@@ -105,17 +104,6 @@ public class OutputView extends DefaultTool implements IExternalizableComponent,
     return null;
   }
 
-  public void read(Element element, MPSProject project) {
-    if (element.getAttribute(FONT_SIZE) != null) {
-      myFontSize = Integer.valueOf(element.getAttributeValue(FONT_SIZE));
-      updateComponent();
-    }
-  }
-
-  public void write(Element element, MPSProject project) {
-    element.setAttribute(FONT_SIZE, "" + myFontSize);
-  }
-
   private void updateComponent() {
     myTextArea.setFont(new Font("Monospaced", 0, myFontSize));
     myTextArea.repaint();
@@ -146,9 +134,7 @@ public class OutputView extends DefaultTool implements IExternalizableComponent,
   }
 
   public void activate() {
-    if (myIde != null) {
-      myIde.showOutputView();
-    }
+    myProject.getComponentSafe(ToolsPane.class).selectTool(this);
   }
 
   public JComponent getComponent() {
@@ -162,44 +148,6 @@ public class OutputView extends DefaultTool implements IExternalizableComponent,
   public Icon getIcon() {
     return Icons.OUTPUT_VIEW_ICON;
   }
-
-  public List<IPreferencesPage> createPreferencesPages() {
-    IPreferencesPage page = new IPreferencesPage() {
-      private JPanel myComponent = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 10));
-      private JTextField myFontSizeField = new JTextField("" + myFontSize);
-
-      {
-        myFontSizeField.setColumns(3);
-        ((AbstractDocument) myFontSizeField.getDocument()).setDocumentFilter(new IntegerValueDocumentFilter());
-
-        myComponent.add(new JLabel("Font Size : "));
-        myComponent.add(myFontSizeField);
-      }
-
-      public String getName() {
-        return "Output View";
-      }
-
-      public Icon getIcon() {
-        return Icons.OUTPUT_VIEW_ICON;
-      }
-
-      public JComponent getComponent() {
-        return myComponent;
-      }
-
-      public boolean validate() {
-        return true;
-      }
-
-      public void commit() {
-        myFontSize = Integer.valueOf(myFontSizeField.getText());
-        updateComponent();
-      }
-    };
-    return CollectionUtil.asList(page);
-  }
-
 
   public int getNumber() {
     return 4;

@@ -41,7 +41,7 @@
   <import index="8" modelUID="jetbrains.mps.plugins@java_stub" version="-1"/>
   <import index="9" modelUID="java.lang@java_stub" version="-1"/>
   <import index="10" modelUID="jetbrains.mps.project@java_stub" version="-1"/>
-  <import index="11" modelUID="jetbrains.mps.ide.output@java_stub" version="-1"/>
+  <import index="11" modelUID="jetbrains.mps.workbench.output@java_stub" version="-1"/>
   <import index="12" modelUID="jetbrains.mps.logging@java_stub" version="-1"/>
   <import index="13" modelUID="java.io@java_stub" version="-1"/>
   <import index="14" modelUID="jetbrains.mps.vfs@java_stub" version="-1"/>

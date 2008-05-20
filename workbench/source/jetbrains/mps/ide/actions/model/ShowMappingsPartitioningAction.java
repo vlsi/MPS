@@ -6,7 +6,7 @@ import jetbrains.mps.ide.messages.MessageView;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.IDEProjectFrame;
-import jetbrains.mps.ide.output.OutputView;
+import jetbrains.mps.workbench.output.OutputView;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;

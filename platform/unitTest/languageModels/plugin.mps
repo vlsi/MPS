@@ -44,7 +44,7 @@
   <import index="24" modelUID="java.util@java_stub" version="-1" />
   <import index="25" modelUID="javax.swing.event@java_stub" version="-1" />
   <import index="26" modelUID="java.util.concurrent@java_stub" version="-1" />
-  <import index="27" modelUID="jetbrains.mps.ide.output@java_stub" version="-1" />
+  <import index="27" modelUID="jetbrains.mps.workbench.output@java_stub" version="-1" />
   <import index="28" modelUID="javax.swing.table@java_stub" version="-1" />
   <import index="29" modelUID="jetbrains.mps.ide.action@java_stub" version="-1" />
   <import index="30" modelUID="java.awt.event@java_stub" version="-1" />
