@@ -5,6 +5,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.TimePresentationUtil;
 import jetbrains.mps.ide.progress.TaskProgressSettings;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.ide.messages.IMessageHandler;
@@ -41,6 +42,7 @@ public class GenerationController {
   private List<Pair<SModelDescriptor, IOperationContext>> myInputModels;
   private IGenerationType myGenerationType;
   private ProgressIndicator myProgress;
+  private String myText2;
   private IMessageHandler myMesssages;
   private boolean mySaveTransientModels;
 
@@ -110,7 +112,7 @@ public class GenerationController {
           ModelGenerationStatusManager.getInstance().invalidateData(sm);
         }
         if (compiledSuccessfully && needToReload) {
-          reloadClasses();
+          reloadClasses(totalJob, startJobTime);
         }
         if (generationOK) {
           info("generation completed successfully");
@@ -170,7 +172,7 @@ public class GenerationController {
 
     // myProgress.startTask("generating in module " + module);
     //todo start timer
-    myProgress.setText2("generating in module " + module);
+    setText2("generating in module " + module, totalJob, startJobTime);
 
     String outputFolder = module != null ? module.getGeneratorOutputPath() : null;
     if (outputFolder != null && !new File(outputFolder).exists()) {
@@ -200,8 +202,8 @@ public class GenerationController {
         String taskName = ModelsProgressUtil.generationModelTaskName(inputModel);
 
         //  myProgress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_GENERATION);
-        myProgress.setText2(taskName);
-        TaskProgressHelper progress = new TaskProgressHelper();
+        setText2(taskName, totalJob, startJobTime);
+        TaskProgressHelper progress = new TaskProgressHelper(this);
         progress.startLeafTask(taskName, myProgress, totalJob, startJobTime);
 
         GenerationStatus status = generationSession.generateModel(inputModel);
@@ -228,7 +230,7 @@ public class GenerationController {
 
         progress.finishTask();
 
-        myProgress.setText2("");
+        setText2("", totalJob, startJobTime);
       }
     } finally {
       if (wasLoggingThreshold != null) {
@@ -246,7 +248,7 @@ public class GenerationController {
     info("");
 
     //myProgress.finishTask("generating in module " + module);   //todo finish timer
-    myProgress.setText2("");
+    setText2("", totalJob, startJobTime);
 
     return currentGenerationOK;
   }
@@ -258,13 +260,13 @@ public class GenerationController {
     } else if (module != null) {
       checkMonitorCanceled();
       CompilationResult compilationResult;
-      TaskProgressHelper taskProgressHelper = new TaskProgressHelper();
+      TaskProgressHelper taskProgressHelper = new TaskProgressHelper(this);
       if (!module.isCompileInMPS()) {
         taskProgressHelper.startLeafTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS, myProgress, totalJob, startJobTime);
         getProjectHandler().refreshFS();
         taskProgressHelper.finishTask();
         String info = "compiling in IntelliJ IDEA...";
-        myProgress.setText2(info);
+        setText2(info, totalJob, startJobTime);
         info(info);
         taskProgressHelper.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_IDEA, myProgress, totalJob, startJobTime);
         compilationResult = getProjectHandler().buildModule(module.getGeneratorOutputPath());
@@ -272,7 +274,7 @@ public class GenerationController {
       } else {
         taskProgressHelper.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_MPS, myProgress, totalJob, startJobTime);
         String info = "compiling in JetBrains MPS...";
-        myProgress.setText2(info);
+        setText2(info, totalJob, startJobTime);
         info(info);
         compilationResult = new ModuleMaker().make(CollectionUtil.asSet(module), new EmptyProgressIndicator());
         taskProgressHelper.finishTask();
@@ -281,24 +283,23 @@ public class GenerationController {
         compiledSuccessfully = false;
       }
       info("" + compilationResult);
-      myProgress.setText2("");
+      setText2("", totalJob, startJobTime);
       checkMonitorCanceled();
     }
     return compiledSuccessfully;
   }
 
-  private void reloadClasses() {
+  private void reloadClasses(long totalJob, long startJobTime) {
     info("");
     String info = "reloading MPS classes...";
     info(info);
 
-    //myProgress.startLeafTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
-    myProgress.setText2(info);
-
+    setText2(info, totalJob, startJobTime);
+    TaskProgressHelper taskProgressHelper = new TaskProgressHelper(this);
+    taskProgressHelper.startLeafTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL, myProgress, totalJob, startJobTime);
     ClassLoaderManager.getInstance().reloadAll(myProgress);
-
-    //myProgress.finishTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
-    myProgress.setText2("");
+    taskProgressHelper.finishTask();
+    setText2("", totalJob, startJobTime);
   }
 
   private boolean isIDEAPresent() {
@@ -351,13 +352,31 @@ public class GenerationController {
     myMesssages.handle(new Message(MessageKind.WARNING, text));
   }
 
+  private void setText2(String text, long estimatedTime, long startJobTime) {
+    myText2 = text;
+    long elapsedTime = System.currentTimeMillis() - startJobTime;
+    String elapsedTimeString = TimePresentationUtil.timeIntervalStringPresentation(elapsedTime);
+    String estimatedTimeString = TimePresentationUtil.timeIntervalStringPresentation(estimatedTime);
+    myProgress.setText("Generation: " + myText2);
+    myProgress.setText2("Estimated time: " + estimatedTimeString + ", elapsed time: " + elapsedTimeString);
+  }
+
+ private String getText2() {
+  return myText2;
+}
+
   private static class TaskProgressHelper {
-    javax.swing.Timer myTimer;
-    String myTaskName;
-    ProgressIndicator myProgress;
-    long myStartTime;
-    long myStartJobTime;
-    long myTotalJob;
+    private javax.swing.Timer myTimer;
+    private String myTaskName;
+    private ProgressIndicator myProgress;
+    private GenerationController myGenerationController;
+    private long myStartTime;
+    private long myStartJobTime;
+    private long myTotalJob;
+
+    public TaskProgressHelper(GenerationController generationController) {
+      myGenerationController = generationController;
+    }
 
     private void advance(long totalJob, long elapsedJob) {
       double fraction = ((double)elapsedJob) / ((double)totalJob);
@@ -365,6 +384,7 @@ public class GenerationController {
         fraction = 1;
       }
       myProgress.setFraction(fraction);
+      myGenerationController.setText2(myGenerationController.getText2(), myTotalJob, myStartJobTime);
     }
 
     private void clear() {
