@@ -20,6 +20,7 @@
   <languageAspect modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="12" />
   <import index="1" modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />
@@ -1535,6 +1536,19 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1211314149978">
+    <property name="migrationFromBuild" value="339" />
+    <property name="name" value="Update_RuleConcequences" />
+    <property name="title" value="update concequence in generator rules" />
+    <property name="category" value="generator" />
+    <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1211314276544">
+      <property name="description" value="update weaving rules" />
+      <link role="affectedInstanceConcept" targetNodeId="1.1167171569011" resolveInfo="Weaving_MappingRule" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Updater" id="1211314276545">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1211314276546" />
       </node>
     </node>
   </node>
