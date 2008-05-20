@@ -1,7 +1,8 @@
 package jetbrains.mps.findUsages;
 
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.component.Dependency;
 import jetbrains.mps.component.IComponentLifecycle;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
@@ -10,13 +11,10 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
-
-import java.util.*;
-
-import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.*;
 
 public class FindUsagesManager implements IComponentLifecycle, ApplicationComponent {
   private static Logger LOG = Logger.getLogger(FindUsagesManager.class);
@@ -204,6 +202,38 @@ public class FindUsagesManager implements IComponentLifecycle, ApplicationCompon
         }
       }
       if (manageTasks) progress.finishTask(ModelsProgressUtil.TASK_KIND_FIND_INSTANCES);
+      return result;
+    } finally {
+      // progress.finishSomehow();
+    }
+  }
+
+  public Set<SNode> findExactInstances(AbstractConceptDeclaration concept, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks) {
+    LOG.assertInCommand();
+    Set<SNode> result = new HashSet<SNode>();
+    //noinspection EmptyFinallyBlock
+    try {
+      if (progress == null) progress = IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR;
+      List<SModelDescriptor> models = scope.getModelDescriptors();
+
+      if (manageTasks) {
+        long estimatedTime = ModelsProgressUtil.estimateFindExactInstancesTimeMillis(models);
+        progress.startTaskAnyway(ModelsProgressUtil.TASK_KIND_FIND_EXACT_INSTANCES, null, estimatedTime);
+        progress.addText("Finding Instances...");
+      }
+
+      for (SModelDescriptor model : models) {
+        String taskName = ModelsProgressUtil.findExactInstancesModelTaskName(model);
+        if (manageTasks) progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_FIND_EXACT_INSTANCES);
+        result.addAll(model.findExactInstances(concept, scope));
+        if (progress.isCanceled()) {
+          if (manageTasks) progress.finishAnyway();
+          return result;
+        } else {
+          if (manageTasks) progress.finishTask(taskName);
+        }
+      }
+      if (manageTasks) progress.finishTask(ModelsProgressUtil.TASK_KIND_FIND_EXACT_INSTANCES);
       return result;
     } finally {
       // progress.finishSomehow();

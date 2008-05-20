@@ -5,6 +5,7 @@ package jetbrains.mps.bootstrap.structureLanguage.findUsages;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
@@ -16,23 +17,23 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ConceptInstances_Finder extends GeneratedFinder {
-  public static Logger LOG = Logger.getLogger("jetbrains.mps.bootstrap.structureLanguage.findUsages.ConceptInstances_Finder");
+public class ExactConceptInstances_Finder extends GeneratedFinder {
+  public static Logger LOG = Logger.getLogger("jetbrains.mps.bootstrap.structureLanguage.findUsages.ExactConceptInstances_Finder");
 
   public boolean isVisible() {
     return true;
   }
 
   public String getDescription() {
-    return "Concept Instances";
+    return "Exact Concept Instances";
   }
 
   public String getLongDescription() {
-    return "";
+    return "only instances of the specified concept, not including instances of it's subconcepts";
   }
 
   public String getConcept() {
-    return "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration";
+    return "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration";
   }
 
   public boolean isApplicable(SNode node) {
@@ -40,7 +41,7 @@ public class ConceptInstances_Finder extends GeneratedFinder {
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, IAdaptiveProgressMonitor monitor) {
-    List<SNode> resNodes = new ArrayList<SNode>(FindUsagesManager.getInstance().findInstances((AbstractConceptDeclaration) ((AbstractConceptDeclaration) SNodeOperations.getAdapter(node)), scope, monitor, false));
+    List<SNode> resNodes = new ArrayList<SNode>(FindUsagesManager.getInstance().findExactInstances((AbstractConceptDeclaration) ((ConceptDeclaration) SNodeOperations.getAdapter(node)), scope, monitor, false));
     for (SNode resNode : resNodes) {
       ListOperations.addElement(_results, resNode);
     }

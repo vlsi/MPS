@@ -5,15 +5,19 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleStub;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
-import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.smodel.event.EventUtil;
+import jetbrains.mps.smodel.event.SModelCommandListener;
+import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
 
@@ -34,7 +38,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   private List<SModelListener> myModelListeners = new ArrayList<SModelListener>();
   private List<SModelCommandListener> myModelCommandListeners = new ArrayList<SModelCommandListener>();
   private long myLastStructuralChange = System.currentTimeMillis();
-  private long myLastChange ;
+  private long myLastChange;
   private FastNodeFinder myFastNodeFinder;
   private List<IPostLoadRunnable> myPostLoadRunnables = new ArrayList<IPostLoadRunnable>(2);
   private Throwable myInitializationStackTrace;
@@ -66,7 +70,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
           ourStructuralState++;
         }
 
-        if (EventUtil.isChange(events)) {        
+        if (EventUtil.isChange(events)) {
           myLastChange = System.currentTimeMillis();
         }
       }
@@ -413,7 +417,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     if (mySModel != null) {
       for (SModelDescriptor modelDescriptor : mySModel.allImportedModels(GlobalScope.getInstance())) {
         if (models.contains(modelDescriptor.getModelUID())) {
-           return true;
+          return true;
         }
       }
     }
@@ -536,6 +540,18 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     return result;
   }
 
+  public Set<SNode> findExactInstances(AbstractConceptDeclaration concept, IScope scope) {
+    if (!myModelRootManager.isFindUsagesSupported()) return new HashSet<SNode>();
+    getSModel();
+    Set<SNode> result = new HashSet<SNode>();
+    if (mySModel != null) {
+      for (SNode root : mySModel.getRoots()) {
+        addExactInstances(root, concept, result, scope);
+      }
+    }
+    return result;
+  }
+
   public FastNodeFinder getFastNodeFinder() {
     if (myFastNodeFinder == null) {
       myFastNodeFinder = new FastNodeFinder(this);
@@ -547,6 +563,15 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     if (current.isInstanceOfConcept(concept)) result.add(current);
     for (SNode child : current.getChildren()) {
       addInstances(child, concept, result, scope);
+    }
+  }
+
+  private void addExactInstances(SNode current, AbstractConceptDeclaration concept, Set<SNode> result, IScope scope) {
+    if (current.getConceptFqName().equals(NameUtil.nodeFQName(concept))) {
+      result.add(current);
+    }
+    for (SNode child : current.getChildren()) {
+      addExactInstances(child, concept, result, scope);
     }
   }
 

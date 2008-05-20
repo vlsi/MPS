@@ -25,6 +25,8 @@ public class ModelsProgressUtil {
   public static final String TASK_KIND_FIND_NODE_USAGES = "tk_findNodeUsages";
   public static final String TASK_KIND_FIND_USAGES = "tk_findUsages";
   public static final String TASK_KIND_FIND_INSTANCES = "tk_findInstances";
+  public static final String TASK_KIND_FIND_EXACT_INSTANCES = "tk_findExactInstances";
+
   public static final String TASK_NAME_COMPILE_ON_GENERATION = "tn_compileOnGeneration";
   public static final String TASK_NAME_RELOAD_ALL = "tn_reloadAll";
   public static final String TASK_NAME_REFRESH_FS = "tn_refreshFs";
@@ -73,8 +75,16 @@ public class ModelsProgressUtil {
     return getInstance().getModelsProgressHelper(TASK_KIND_FIND_INSTANCES).modelTaskName(modelDescriptor);
   }
 
+  public static String findExactInstancesModelTaskName(SModelDescriptor modelDescriptor) {
+    return getInstance().getModelsProgressHelper(TASK_KIND_FIND_EXACT_INSTANCES).modelTaskName(modelDescriptor);
+  }
+
   public static long estimateFindInstancesTimeMillis(Collection<SModelDescriptor> models) {
     return getInstance().getModelsProgressHelper(TASK_KIND_FIND_INSTANCES).estimateModelsTaskTimeMillis(models);
+  }
+
+  public static long estimateFindExactInstancesTimeMillis(Collection<SModelDescriptor> models) {
+    return getInstance().getModelsProgressHelper(TASK_KIND_FIND_EXACT_INSTANCES).estimateModelsTaskTimeMillis(models);
   }
 
   public static long estimateCheckModelsTimeMillis(Collection<SModelDescriptor> models) {
