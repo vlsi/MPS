@@ -34,6 +34,10 @@ public abstract class BaseMPSTool {
     myCanCloseContent = canCloseContent;
   }
 
+  protected Project getProject() {
+    return myProject;
+  }
+
   @Nullable
   private ToolWindow getToolWindow() {
     return ToolWindowManager.getInstance(myProject).getToolWindow(myId);
