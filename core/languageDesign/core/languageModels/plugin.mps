@@ -23,6 +23,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <maxImportIndex value="15"/>
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1"/>
   <import index="2" modelUID="jetbrains.mps.smodel@java_stub" version="-1"/>
@@ -121,7 +122,7 @@
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                   id="1209309386057">
               <link role="baseMethodDeclaration"
-                    targetNodeId="10.~NewUsagesView.findUsages(jetbrains.mps.ide.findusages.model.IResultProvider,jetbrains.mps.ide.findusages.model.SearchQuery,boolean,boolean,boolean):void"
+                    targetNodeId="10.~UsagesViewTool.findUsages(jetbrains.mps.ide.findusages.model.IResultProvider,jetbrains.mps.ide.findusages.model.SearchQuery,boolean,boolean,boolean):void"
                     resolveInfo="findUsages"/>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
                     id="1209309388355">
@@ -283,7 +284,7 @@
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                   id="1209824745407">
               <link role="baseMethodDeclaration"
-                    targetNodeId="10.~NewUsagesView.findUsages(jetbrains.mps.ide.findusages.model.IResultProvider,jetbrains.mps.ide.findusages.model.SearchQuery,boolean,boolean,boolean):void"
+                    targetNodeId="10.~UsagesViewTool.findUsages(jetbrains.mps.ide.findusages.model.IResultProvider,jetbrains.mps.ide.findusages.model.SearchQuery,boolean,boolean,boolean):void"
                     resolveInfo="findUsages"/>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
                     id="1209824745408">
