@@ -284,6 +284,10 @@
       <implementation-class>jetbrains.mps.nodeEditor.EditorManager</implementation-class>
     </component>
 
+    <component>
+      <implementation-class>jetbrains.mps.generator.TransientModelsModule</implementation-class>
+    </component>
+
   </project-components>
 
 </components>

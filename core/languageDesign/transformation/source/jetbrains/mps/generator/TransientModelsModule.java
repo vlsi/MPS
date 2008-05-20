@@ -4,24 +4,49 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
+import jetbrains.mps.MPSProjectHolder;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.NonNls;
 
 import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
 
-/**
- * Igor Alshannikov
- * Apr 22, 2008
- */
-public class TransientModelsModule extends AbstractModule {
-  private MPSProject myProject;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.components.ProjectComponent;
+
+public class TransientModelsModule extends AbstractModule implements ProjectComponent {
+  private Project myProject;
   private IModule myInvocationContext;
   private Set<String> myModelsToKeep = new HashSet<String>();
 
-  public TransientModelsModule(MPSProject project) {
+  public TransientModelsModule(Project project, MPSProjectHolder holder) {
     myProject = project;
-    MPSModuleRepository.getInstance().addModule(this, myProject);
+  }
+
+  public void projectOpened() {
+  }
+
+  public void projectClosed() {
+
+  }
+
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "Transient Models Module";
+  }
+
+  public void initComponent() {
+    MPSModuleRepository.getInstance().addModule(this, getMPSProject());
+  }
+
+  public void disposeComponent() {
+
+  }
+
+  private MPSProject getMPSProject() {
+    return myProject.getComponent(MPSProjectHolder.class).getMPSProject();
   }
 
   public void setInvocationContext(IModule invocationContext) {
@@ -30,7 +55,7 @@ public class TransientModelsModule extends AbstractModule {
 
   @NotNull
   public String toString() {
-    return "Transient models [" + myProject.getProjectFile().toString() + "]";
+    return "Transient models [" + myProject.getPresentableUrl() + "]";
   }
 
 

@@ -110,7 +110,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
         model.setLoading(false);
 
         myContext.init();
-        addComponent(TransientModelsModule.class, new TransientModelsModule(MPSProject.this));
       }
     });
 
