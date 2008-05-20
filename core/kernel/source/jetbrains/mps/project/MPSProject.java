@@ -97,8 +97,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
   private boolean myDisposed;
 
   public MPSProject(final @NotNull File projectFile) {
-    myContext.register(MPSProject.class, this);
-    myContext.register(GeneratorManager.class, new GeneratorManager(this));
+    myContext.register(MPSProject.class, this);    
     myContext.register(GenerationTracer.class, new GenerationTracer(this));
     myContext.register(ProjectVCSManager.class);
 

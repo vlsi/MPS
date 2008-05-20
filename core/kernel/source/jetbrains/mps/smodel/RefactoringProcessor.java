@@ -24,6 +24,8 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.JOptionPane;
 import java.util.*;
 
+import com.intellij.openapi.project.Project;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
@@ -198,7 +200,7 @@ public class RefactoringProcessor {
               descriptors.add(model.getModelDescriptor());
             }
 
-            new GeneratorManager(operationContext.getProject()).generateModels(descriptors,
+            new GeneratorManager(operationContext.getComponent(Project.class)).generateModels(descriptors,
               operationContext,
               IGenerationType.FILES,
               IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR,

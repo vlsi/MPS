@@ -71,8 +71,6 @@ public class ChooseModuleDialog extends BaseDialog {
     dispose();
   }
 
-
-
   public class ModuleTreeNode extends MPSTreeNode {
     private IModule myModule;
 

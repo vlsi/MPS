@@ -238,11 +238,6 @@
       <skipForDummyProject/>
     </component>
 
-<!--    <component>
-      <interface-class>com.intellij.packageDependencies.DependencyValidationManager</interface-class>
-      <implementation-class>com.intellij.packageDependencies.DependencyValidationManagerImpl</implementation-class>
-    </component> -->
-
     <component>
       <interface-class>com.intellij.psi.search.scope.packageSet.NamedScopeManager</interface-class>
       <implementation-class>com.intellij.psi.search.scope.packageSet.NamedScopeManager</implementation-class>
@@ -262,6 +257,10 @@
 
     <component>
       <implementation-class>jetbrains.mps.workbench.tools.IDEAToolsPaneAdapter</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.generator.GeneratorManager</implementation-class>
     </component>
   </project-components>
 

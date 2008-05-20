@@ -18,11 +18,14 @@ import jetbrains.mps.transformation.TLBase.plugin.debug.GenerationTracer;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.MPSProjectHolder;
 
 import javax.swing.JOptionPane;
 import java.util.*;
 import java.util.concurrent.*;
 import java.io.File;
+
+import com.intellij.openapi.project.Project;
 
 
 public class GeneratorManager extends DefaultExternalizableComponent implements IComponentWithPreferences {
@@ -31,17 +34,15 @@ public class GeneratorManager extends DefaultExternalizableComponent implements 
 
   public static final Logger LOG = Logger.getLogger(GeneratorManager.class);
 
-  private @Externalizable boolean mySaveTransientModels;
-  private @Externalizable boolean myDumpStatistics = false;
-  private @Externalizable boolean myShowErrorsOnly;
   private List<IFileGenerator> myFileGenerators = new LinkedList<IFileGenerator>();
   private List<GenerationListener> myGenerationListeners = new ArrayList<GenerationListener>();
+  private MyState myState = new MyState();
 
   private ExecutorService myExecutorService = Executors.newCachedThreadPool();
 
-  private MPSProject myProject;
+  private Project myProject;
 
-  public GeneratorManager(MPSProject project) {
+  public GeneratorManager(Project project) {
     myProject = project;
   }
 
@@ -54,27 +55,27 @@ public class GeneratorManager extends DefaultExternalizableComponent implements 
   }
 
   public boolean isSaveTransientModels() {
-    return mySaveTransientModels;
+    return myState.mySaveTransientModels;
   }
 
   public void setSaveTransientModels(boolean saveTransientModels) {
-    mySaveTransientModels = saveTransientModels;
+    myState.mySaveTransientModels = saveTransientModels;
   }
 
   public boolean isShowErrorsOnly() {
-    return myShowErrorsOnly;
+    return myState.myShowErrorsOnly;
   }
 
   public void setShowErrorsOnly(boolean showErrorsOnly) {
-    myShowErrorsOnly = showErrorsOnly;
+    myState.myShowErrorsOnly = showErrorsOnly;
   }
 
   public boolean isDumpStatistics() {
-    return myDumpStatistics;
+    return myState.myDumpStatistics;
   }
 
   public void setDumpStatistics(boolean dumpStatistics) {
-    myDumpStatistics = dumpStatistics;
+    myState.myDumpStatistics = dumpStatistics;
   }
 
   public List<IPreferencesPage> createPreferencesPages() {
@@ -207,7 +208,7 @@ public class GeneratorManager extends DefaultExternalizableComponent implements 
   }
 
   protected AdaptiveProgressMonitor createAdaptriveProgressMonitor(boolean closeOnExit, IOperationContext invocationContext) {
-    return myProject.getComponent(AdaptiveProgressMonitorFactory.class).createMonitor();
+    return myProject.getComponent(MPSProjectHolder.class).getMPSProject().getComponentSafe(AdaptiveProgressMonitorFactory.class).createMonitor();
   }
 
   /**
@@ -301,5 +302,35 @@ public class GeneratorManager extends DefaultExternalizableComponent implements 
 
   public void removeGenerationListener(GenerationListener l) {
     myGenerationListeners.remove(l);
+  }
+
+  public static class MyState {
+    private boolean mySaveTransientModels;
+    private boolean myDumpStatistics = false;
+    private boolean myShowErrorsOnly;
+
+    public boolean isSaveTransientModels() {
+      return mySaveTransientModels;
+    }
+
+    public void setSaveTransientModels(boolean saveTransientModels) {
+      mySaveTransientModels = saveTransientModels;
+    }
+
+    public boolean isDumpStatistics() {
+      return myDumpStatistics;
+    }
+
+    public void setDumpStatistics(boolean dumpStatistics) {
+      myDumpStatistics = dumpStatistics;
+    }
+
+    public boolean isShowErrorsOnly() {
+      return myShowErrorsOnly;
+    }
+
+    public void setShowErrorsOnly(boolean showErrorsOnly) {
+      myShowErrorsOnly = showErrorsOnly;
+    }
   }
 }
