@@ -3,6 +3,7 @@ package jetbrains.mps.generator;
 import jetbrains.mps.components.DefaultExternalizableComponent;
 import jetbrains.mps.components.Externalizable;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
+import jetbrains.mps.generator.GeneratorManager.MyState;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.messages.*;
 import jetbrains.mps.ide.preferences.IComponentWithPreferences;
@@ -21,14 +22,33 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.MPSProjectHolder;
 
 import javax.swing.JOptionPane;
+import javax.swing.Icon;
+import javax.swing.JComponent;
 import java.util.*;
 import java.util.concurrent.*;
 import java.io.File;
 
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.components.PersistentStateComponent;
+import com.intellij.openapi.components.State;
+import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.options.Configurable;
+import com.intellij.openapi.options.ConfigurationException;
+import org.jetbrains.annotations.Nls;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NonNls;
 
 
-public class GeneratorManager extends DefaultExternalizableComponent implements IComponentWithPreferences {
+@State(
+  name = "GenerationManager",
+  storages = {
+    @Storage(
+      id ="other",
+      file = "$WORKSPACE_FILE$"
+    )
+  }
+)
+public class GeneratorManager implements IComponentWithPreferences, PersistentStateComponent<MyState>, Configurable {
   public static final int AMOUNT_PER_MODEL = 100;
   public static final int AMOUNT_PER_COMPILATION = 100;
 
@@ -37,6 +57,8 @@ public class GeneratorManager extends DefaultExternalizableComponent implements 
   private List<IFileGenerator> myFileGenerators = new LinkedList<IFileGenerator>();
   private List<GenerationListener> myGenerationListeners = new ArrayList<GenerationListener>();
   private MyState myState = new MyState();
+
+  private GeneratorManagerPreferencesPage myPreferences;
 
   private ExecutorService myExecutorService = Executors.newCachedThreadPool();
 
@@ -302,6 +324,57 @@ public class GeneratorManager extends DefaultExternalizableComponent implements 
 
   public void removeGenerationListener(GenerationListener l) {
     myGenerationListeners.remove(l);
+  }
+
+  public MyState getState() {
+    return myState;
+  }
+
+  public void loadState(MyState state) {
+    myState = state;
+  }
+
+  private GeneratorManagerPreferencesPage getPreferences() {
+    if (myPreferences == null) {
+      myPreferences = new GeneratorManagerPreferencesPage(this);
+    }
+    return myPreferences;
+  }
+
+  @Nls
+  public String getDisplayName() {
+    return "Generator Settings";
+  }
+
+  @Nullable
+  public Icon getIcon() {
+    return null;
+  }
+
+  @Nullable
+  @NonNls
+  public String getHelpTopic() {
+    return null;
+  }
+
+  public JComponent createComponent() {
+    return getPreferences().getComponent();
+  }
+
+  public boolean isModified() {
+    return true;
+  }
+
+  public void apply() throws ConfigurationException {
+    getPreferences().commit();
+  }
+
+  public void reset() {
+
+  }
+
+  public void disposeUIResources() {
+
   }
 
   public static class MyState {

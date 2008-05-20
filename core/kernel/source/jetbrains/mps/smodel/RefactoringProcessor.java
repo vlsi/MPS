@@ -26,15 +26,7 @@ import java.util.*;
 
 import com.intellij.openapi.project.Project;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 28.09.2007
- * Time: 17:55:17
- * To change this template use File | Settings | File Templates.
- */
 public class RefactoringProcessor {
-
   private static final Logger LOG = Logger.getLogger(RefactoringProcessor.class);
 
   public void execute(final @NotNull ActionContext context, final ILoggableRefactoring refactoring) {
@@ -179,8 +171,6 @@ public class RefactoringProcessor {
       monitor.finishTask();
       monitor.finish();
     }
-
-
   }
 
   private void generateModels(final ActionContext context, final Map<IModule, List<SModel>> sourceModels, RefactoringContext refactoringContext) {
