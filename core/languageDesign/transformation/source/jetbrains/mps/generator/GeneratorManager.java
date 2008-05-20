@@ -48,7 +48,7 @@ import org.jetbrains.annotations.NonNls;
     )
   }
 )
-public class GeneratorManager implements IComponentWithPreferences, PersistentStateComponent<MyState>, Configurable {
+public class GeneratorManager implements PersistentStateComponent<MyState>, Configurable {
   public static final int AMOUNT_PER_MODEL = 100;
   public static final int AMOUNT_PER_COMPILATION = 100;
 
@@ -98,10 +98,6 @@ public class GeneratorManager implements IComponentWithPreferences, PersistentSt
 
   public void setDumpStatistics(boolean dumpStatistics) {
     myState.myDumpStatistics = dumpStatistics;
-  }
-
-  public List<IPreferencesPage> createPreferencesPages() {
-    return CollectionUtil.asList((IPreferencesPage) new GeneratorManagerPreferencesPage(this));
   }
 
   public IGenerationType getDefaultModuleGenerationType() {

@@ -99,7 +99,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
   public MPSProject(final @NotNull File projectFile) {
     myContext.register(MPSProject.class, this);    
     myContext.register(GenerationTracer.class, new GenerationTracer(this));
-    myContext.register(ProjectVCSManager.class);
 
     Highlighter hilghlighter = new Highlighter();
     myContext.register(Highlighter.class, hilghlighter);
