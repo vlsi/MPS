@@ -65,6 +65,14 @@ public class ChooseModuleDialog extends BaseDialog {
     dispose();
   }
 
+  @Button(position = 1, name = "Cancel")
+  public void cancelButton() {
+    myResult = null;
+    dispose();
+  }
+
+
+
   public class ModuleTreeNode extends MPSTreeNode {
     private IModule myModule;
 
