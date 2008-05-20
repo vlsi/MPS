@@ -35,7 +35,9 @@ public class RBundle {
   }
 
   public void unload() {
-    myClassLoader.dispose();
+    if (myClassLoader != null) {
+      myClassLoader.dispose();
+    }
   }
 
   boolean hasClass(String fqName) {
