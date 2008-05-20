@@ -102,6 +102,10 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     myContext.register(GenerationTracer.class, new GenerationTracer(this));
     myContext.register(ProjectVCSManager.class);
 
+    Highlighter hilghlighter = new Highlighter();
+    myContext.register(Highlighter.class, hilghlighter);
+    hilghlighter.setProjects(MPSProjects.instance());
+
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
         myProjectFile = projectFile;
@@ -124,14 +128,9 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
         myContext.init();
         addComponent(TransientModelsModule.class, new TransientModelsModule(MPSProject.this));
-
-        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
       }
     });
 
-    Highlighter hilghlighter = new Highlighter();
-    myContext.register(Highlighter.class, hilghlighter);
-    hilghlighter.setProjects(MPSProjects.instance());
   }
 
 
@@ -517,7 +516,11 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
   @Nullable
   public <T> T getComponent(Class<T> clazz) {
-    return myContext.get(clazz);
+    T result = myContext.get(clazz);
+    if (result == null) {
+      result = getComponentSafe(Project.class).getComponent(clazz);
+    }
+    return result;
   }
 
   @NotNull
