@@ -18,6 +18,10 @@ public class RootTemplateAnnotator extends SModelRepositoryAdapter {
 
   private SModelListener myModelListener = new MyModelListener();
 
+  public RootTemplateAnnotator() {
+    init();
+  }
+
   public void init() {
 //    System.out.println("RootTemplateAnnotator.init()");
     SModelRepository modelRepository = SModelRepository.getInstance();

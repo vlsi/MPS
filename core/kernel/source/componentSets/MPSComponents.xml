@@ -222,6 +222,11 @@
       <interface-class>com.intellij.ide.IconProvider</interface-class>
       <implementation-class>jetbrains.mps.workbench.editors.MPSIconProvider</implementation-class>
     </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.transformation.TLBase.plugin.RootTemplateAnnotator</implementation-class>
+    </component>
+
   </application-components>
 
   <project-components>
