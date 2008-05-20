@@ -83,7 +83,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
     }
   };
 
-  private PluginManager myPluginManager = new PluginManager(this);
   private boolean myDisposed;
 
   public MPSProject(final @NotNull File projectFile) {
@@ -132,7 +131,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
   }
 
   public PluginManager getPluginManager() {
-    return myPluginManager;
+    return getComponent(Project.class).getComponent(PluginManager.class);
   }
 
   private void readModules() {
@@ -673,8 +672,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
         projects.removeProject(MPSProject.this);
 
         getComponentSafe(Highlighter.class).stopUpdater();
-        myPluginManager.disposePlugins();
-        myPluginManager.dispose();
 
         for (Object pc : getComponents()) {
           if (pc instanceof IDisposable) {

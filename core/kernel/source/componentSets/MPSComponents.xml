@@ -294,6 +294,10 @@
       <implementation-class>jetbrains.mps.generator.TransientModelsModule</implementation-class>
     </component>
 
+    <component>
+      <implementation-class>jetbrains.mps.plugins.PluginManager</implementation-class>
+    </component>
+
   </project-components>
 
 </components>
