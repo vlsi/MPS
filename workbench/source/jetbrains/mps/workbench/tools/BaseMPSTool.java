@@ -46,30 +46,31 @@ public abstract class BaseMPSTool {
   public void showTool() {
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
-        if (isShowing()) return;
+        if (!isShowing()) {
+          ToolWindow toolWindow = ToolWindowManager.getInstance(myProject).registerToolWindow(myId, myCanCloseContent, myAnchor);
+          toolWindow.setIcon(myIcon);
+          Content content = new ContentFactoryImpl().createContent(getComponent(), null, false);
+          toolWindow.getContentManager().addContent(content);
 
-        ToolWindow toolWindow = ToolWindowManager.getInstance(myProject).registerToolWindow(myId, myCanCloseContent, myAnchor);
-        toolWindow.setIcon(myIcon);
-        Content content = new ContentFactoryImpl().createContent(getComponent(), null, false);
-        toolWindow.getContentManager().addContent(content);
-
-        String keyStroke = getKeyStroke();
-        if (!keyStroke.equals("")) {
-          KeymapManager.getInstance().getActiveKeymap().addShortcut(
-            ActivateToolWindowAction.getActionIdForToolWindow(myId),
-            new KeyboardShortcut(KeyStroke.getKeyStroke(keyStroke), null)
-          );
+          String keyStroke = getKeyStroke();
+          if (!keyStroke.equals("")) {
+            KeymapManager.getInstance().getActiveKeymap().addShortcut(
+              ActivateToolWindowAction.getActionIdForToolWindow(myId),
+              new KeyboardShortcut(KeyStroke.getKeyStroke(keyStroke), null)
+            );
+          }
         }
+        //noinspection ConstantConditions
+        getToolWindow().activate(null);
       }
     });
   }
 
   public void closeTool() {
-    if (!myIsCloseable) return;
-    if (!isShowing()) return;
-
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
+        if (!myIsCloseable) return;
+        if (!isShowing()) return;
         ToolWindowManager.getInstance(myProject).unregisterToolWindow(myId);
       }
     });
