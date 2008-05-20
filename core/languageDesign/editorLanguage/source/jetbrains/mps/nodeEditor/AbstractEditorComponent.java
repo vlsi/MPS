@@ -1,5 +1,6 @@
 package jetbrains.mps.nodeEditor;
 
+import com.intellij.openapi.actionSystem.DataProvider;
 import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRuleUtil;
 import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRule_Action;
 import jetbrains.mps.helgins.inference.IErrorReporter;
@@ -14,8 +15,8 @@ import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.nodes.GoByFirstReferenceAction;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.undo.UndoManager;
-import jetbrains.mps.ide.findusages.view.NewUsagesView;
-import jetbrains.mps.ide.findusages.view.UsageView;
+import jetbrains.mps.ide.findusages.view.UsagesView;
+import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.navigation.FocusPolicyUtil;
 import jetbrains.mps.ide.navigation.HistoryItem;
 import jetbrains.mps.ide.navigation.IHistoryItem;
@@ -38,9 +39,9 @@ import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.workbench.MPSDataKeys;
+import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.NonNls;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
@@ -56,8 +57,6 @@ import java.lang.ref.WeakReference;
 import java.lang.reflect.Field;
 import java.util.*;
 import java.util.List;
-
-import com.intellij.openapi.actionSystem.DataProvider;
 
 
 /**
@@ -314,19 +313,19 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        NewUsagesView usagesView = operationContext.getProject().getComponent(NewUsagesView.class);
-        assert usagesView != null;
-        UsageView usageView = usagesView.getCurrentView();
-        if (usageView != null) usageView.goToPrevious();
+        UsagesViewTool usagesViewTool = operationContext.getProject().getComponent(UsagesViewTool.class);
+        assert usagesViewTool != null;
+        UsagesView usagesView = usagesViewTool.getCurrentView();
+        if (usagesView != null) usagesView.goToPrevious();
       }
     }, KeyStroke.getKeyStroke("control alt UP"), WHEN_FOCUSED);
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        NewUsagesView usagesView = operationContext.getProject().getComponent(NewUsagesView.class);
-        assert usagesView != null;
-        UsageView usageView = usagesView.getCurrentView();
-        if (usageView != null) usageView.goToNext();
+        UsagesViewTool usagesViewTool = operationContext.getProject().getComponent(UsagesViewTool.class);
+        assert usagesViewTool != null;
+        UsagesView usagesView = usagesViewTool.getCurrentView();
+        if (usagesView != null) usagesView.goToNext();
       }
     }, KeyStroke.getKeyStroke("control alt DOWN"), WHEN_FOCUSED);
 
@@ -2274,7 +2273,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
       return getOperationContext();
     }
-    
+
     return null;
   }
 

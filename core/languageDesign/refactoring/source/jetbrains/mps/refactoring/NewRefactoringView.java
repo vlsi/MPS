@@ -5,8 +5,8 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.findusages.view.UsageView;
-import jetbrains.mps.ide.findusages.view.UsageView.ButtonConfiguration;
+import jetbrains.mps.ide.findusages.view.UsagesView;
+import jetbrains.mps.ide.findusages.view.UsagesView.ButtonConfiguration;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
@@ -40,7 +40,7 @@ public class NewRefactoringView extends DefaultTool {
   private RefactoringContext myRefactoringContext;
   private ActionContext myActionContext;
   private SearchResults mySearchResults;
-  private UsageView myUsageView;
+  private UsagesView myUsagesView;
   private JPanel myPanel;
   private JPanel myButtonsPanel;
   private MPSProject myProject;
@@ -76,7 +76,7 @@ public class NewRefactoringView extends DefaultTool {
     myName = myRefactoringContext.getRefactoring().getUserFriendlyName();
 
     myPanel = new JPanel(new BorderLayout());
-    myUsageView = new UsageView(actionContext.get(MPSProject.class), new ViewOptions()) {
+    myUsagesView = new UsagesView(actionContext.get(MPSProject.class), new ViewOptions()) {
       public void close() {
         cancel();
       }
@@ -109,7 +109,7 @@ public class NewRefactoringView extends DefaultTool {
     myButtonsPanel.add(myDoRefactorButton);
     myButtonsPanel.add(myCancelButton);
 
-    myPanel.add(myUsageView.getComponent(), BorderLayout.CENTER);
+    myPanel.add(myUsagesView.getComponent(), BorderLayout.CENTER);
     myPanel.add(myButtonsPanel, BorderLayout.SOUTH);
 
     initUsagesView();
@@ -120,7 +120,7 @@ public class NewRefactoringView extends DefaultTool {
       public void run() {
         CommandProcessor.instance().executeLightweightCommand(new Runnable() {
           public void run() {
-            myUsageView.setRunOptions(TreeBuilder.forFinder(new ConstantFinder(mySearchResults.getSearchResults())),
+            myUsagesView.setRunOptions(TreeBuilder.forFinder(new ConstantFinder(mySearchResults.getSearchResults())),
               null,
               new ButtonConfiguration(false, false, true),
               mySearchResults);

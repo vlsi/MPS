@@ -3,8 +3,8 @@ package jetbrains.mps.baseLanguage.plugin;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.findusages.view.UsageView;
-import jetbrains.mps.ide.findusages.view.UsageView.ButtonConfiguration;
+import jetbrains.mps.ide.findusages.view.UsagesView;
+import jetbrains.mps.ide.findusages.view.UsagesView.ButtonConfiguration;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.project.MPSProject;
@@ -17,7 +17,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class TodoViewer extends JPanel {
-  private UsageView myUsageView;
+  private UsagesView myUsagesView;
   private MPSProject myProject;
 
   public TodoViewer(final MPSProject project) {
@@ -40,12 +40,12 @@ public class TodoViewer extends JPanel {
 
     ViewOptions viewOptions = new ViewOptions(true, false, false, false, false);
 
-    myUsageView = new UsageView(myProject, viewOptions) {
+    myUsagesView = new UsagesView(myProject, viewOptions) {
       public void close() {
         //hideTool();
       }
     };
-    add(myUsageView.getComponent(), BorderLayout.CENTER);
+    add(myUsagesView.getComponent(), BorderLayout.CENTER);
 
     new Thread(new Runnable() {
       public void run() {
@@ -53,16 +53,16 @@ public class TodoViewer extends JPanel {
 
         if (project == null) return;
 
-        myUsageView.setRunOptions(
+        myUsagesView.setRunOptions(
           TreeBuilder.forFinder(new TodoFinder()),
           new SearchQuery(project.getScope()),
           new ButtonConfiguration(true),
           new SearchResults()
         );
 
-        myUsageView.setCustomNodeRepresentator(MyNodeRepresentator.class);
+        myUsagesView.setCustomNodeRepresentator(MyNodeRepresentator.class);
 
-        myUsageView.run();
+        myUsagesView.run();
       }
     }).start();
   }

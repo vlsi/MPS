@@ -2,10 +2,8 @@ package jetbrains.mps.ide.findusages.view;
 
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
-import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.MPSToolBar;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.progress.AdaptiveProgressMonitorFactory;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
@@ -19,11 +17,10 @@ import jetbrains.mps.ide.findusages.view.icons.Icons;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTreeHolder;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.ide.findusages.view.util.AnonymButton;
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.progress.AdaptiveProgressMonitorFactory;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
 import org.jdom.Element;
 
 import javax.swing.Icon;
@@ -36,8 +33,8 @@ import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class UsageView implements IExternalizeable {
-  private static final Logger LOG = Logger.getLogger(UsageView.class);
+public abstract class UsagesView implements IExternalizeable {
+  private static final Logger LOG = Logger.getLogger(UsagesView.class);
 
   //read/write constants
   private static final String QUERY = "query";
@@ -60,7 +57,7 @@ public abstract class UsageView implements IExternalizeable {
   //for assertions - check invariant - constructor -> read|setRunOpts
   private boolean myIsInitialized = false;
 
-  public UsageView(MPSProject project, ViewOptions defaultOptions) {
+  public UsagesView(MPSProject project, ViewOptions defaultOptions) {
     myProject = project;
 
     myPanel = new JPanel(new BorderLayout());

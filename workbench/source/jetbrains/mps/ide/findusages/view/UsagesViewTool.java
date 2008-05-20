@@ -4,21 +4,18 @@ import jetbrains.mps.bootstrap.structureLanguage.findUsages.ConceptInstances_Fin
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder;
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.ide.*;
-import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.ide.progress.AdaptiveProgressMonitor;
-import jetbrains.mps.ide.progress.AdaptiveProgressMonitorFactory;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.findusages.view.UsageView.ButtonConfiguration;
+import jetbrains.mps.ide.findusages.view.UsagesView.ButtonConfiguration;
 import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesDialog;
 import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
@@ -26,6 +23,7 @@ import jetbrains.mps.ide.findusages.view.optionseditor.options.QueryOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;
+import jetbrains.mps.ide.progress.AdaptiveProgressMonitorFactory;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.nodeEditor.EditorUtil;
 import jetbrains.mps.project.MPSProject;
@@ -42,7 +40,7 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NewUsagesView extends DefaultTool implements IExternalizableComponent {
+public class UsagesViewTool extends DefaultTool implements IExternalizableComponent {
   private static final String VERSION_NUMBER = "0.99";
   private static final String VERSION = "version";
   private static final String ID = "id";
@@ -63,7 +61,7 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
 
   //----CONSTRUCT STUFF----
 
-  public NewUsagesView(IDEProjectFrame projectFrame) {
+  public UsagesViewTool(IDEProjectFrame projectFrame) {
     super();
     myProjectFrame = projectFrame;
 
@@ -108,14 +106,14 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
   }
 
   @Nullable
-  public UsageView getCurrentView() {
+  public UsagesView getCurrentView() {
     int index = currentTabIndex();
     if (index == -1) return null;
 
-    NewUsagesView.UsageViewData data = myUsageViewsData.get(index);
+    UsagesViewTool.UsageViewData data = myUsageViewsData.get(index);
     assert data != null;
 
-    return data.myUsageView;
+    return data.myUsagesView;
   }
 
   private int currentTabIndex() {
@@ -267,13 +265,13 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
       usageViewData.createUsageView();
       myUsageViewsData.add(usageViewData);
 
-      myTabbedPane.addTab("", usageViewData.myUsageView.getComponent());
+      myTabbedPane.addTab("", usageViewData.myUsagesView.getComponent());
       myTabbedPane.setSelectedIndex(myTabbedPane.getTabCount() - 1);
 
-      usageViewData.myUsageView.setRunOptions(provider, query, new ButtonConfiguration(isRerunnable), searchResults);
+      usageViewData.myUsagesView.setRunOptions(provider, query, new ButtonConfiguration(isRerunnable), searchResults);
 
-      myTabbedPane.setTitleAt(currentTabIndex(), usageViewData.myUsageView.getCaption());
-      myTabbedPane.setIconAt(currentTabIndex(), usageViewData.myUsageView.getIcon());
+      myTabbedPane.setTitleAt(currentTabIndex(), usageViewData.myUsagesView.getCaption());
+      myTabbedPane.setIconAt(currentTabIndex(), usageViewData.myUsagesView.getIcon());
 
       showTool();
     }
@@ -295,10 +293,10 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
           continue;
         }
         myUsageViewsData.add(usageViewData);
-        myTabbedPane.add(usageViewData.myUsageView.getComponent());
+        myTabbedPane.add(usageViewData.myUsagesView.getComponent());
 
-        myTabbedPane.setTitleAt(myTabbedPane.getTabCount() - 1, usageViewData.myUsageView.getCaption());
-        myTabbedPane.setIconAt(myTabbedPane.getTabCount() - 1, usageViewData.myUsageView.getIcon());
+        myTabbedPane.setTitleAt(myTabbedPane.getTabCount() - 1, usageViewData.myUsagesView.getCaption());
+        myTabbedPane.setIconAt(myTabbedPane.getTabCount() - 1, usageViewData.myUsagesView.getIcon());
       }
     }
 
@@ -403,14 +401,14 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     private static final String USAGE_VIEW = "usage_view";
     private static final String USAGE_VIEW_OPTIONS = "usage_view_options";
 
-    public UsageView myUsageView;
+    public UsagesView myUsagesView;
     // now it's not in use, but will be used to implement constructable finders
     private FindUsagesOptions myOptions = new FindUsagesOptions();
 
     public void createUsageView() {
-      myUsageView = new UsageView(getProject(), myDefaultViewOptions) {
+      myUsagesView = new UsagesView(getProject(), myDefaultViewOptions) {
         public void close() {
-          NewUsagesView.this.closeTab(myUsageViewsData.indexOf(UsageViewData.this));
+          UsagesViewTool.this.closeTab(myUsageViewsData.indexOf(UsageViewData.this));
         }
       };
     }
@@ -418,7 +416,7 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     public void read(Element element, MPSProject project) throws CantLoadSomethingException {
       Element usageViewXML = element.getChild(USAGE_VIEW);
       createUsageView();
-      myUsageView.read(usageViewXML, project);
+      myUsagesView.read(usageViewXML, project);
 
       Element usageViewOptionsXML = element.getChild(USAGE_VIEW_OPTIONS);
       myOptions = new FindUsagesOptions(usageViewOptionsXML, project);
@@ -426,7 +424,7 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
 
     public void write(Element element, MPSProject project) throws CantSaveSomethingException {
       Element usageViewXML = new Element(USAGE_VIEW);
-      myUsageView.write(usageViewXML, project);
+      myUsagesView.write(usageViewXML, project);
       element.addContent(usageViewXML);
 
       Element usageViewOptionsXML = new Element(USAGE_VIEW_OPTIONS);
