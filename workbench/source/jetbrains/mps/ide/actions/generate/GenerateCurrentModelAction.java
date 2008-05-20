@@ -14,6 +14,10 @@ public abstract class GenerateCurrentModelAction extends MPSAction {
 
   public abstract IGenerationType getGenerationType();
 
+  public boolean executeInsideCommand() {
+    return false;
+  }
+
   public void doUpdate(@NotNull ActionContext context) {
     super.doUpdate(context);
     setEnabled(context.getModel() != null);
