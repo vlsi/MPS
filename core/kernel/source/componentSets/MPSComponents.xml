@@ -279,6 +279,11 @@
     <component>
       <implementation-class>jetbrains.mps.transformation.TLBase.plugin.debug.GenerationTracer</implementation-class>
     </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.nodeEditor.EditorManager</implementation-class>
+    </component>
+
   </project-components>
 
 </components>

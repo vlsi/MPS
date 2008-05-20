@@ -673,7 +673,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
         MPSProjects projects = MPSProjects.instance();
         projects.removeProject(MPSProject.this);
 
-        myContext.get(Highlighter.class).stopUpdater();
+        getComponentSafe(Highlighter.class).stopUpdater();
         myPluginManager.disposePlugins();
         myPluginManager.dispose();
 
