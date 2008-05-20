@@ -1,25 +1,22 @@
 package jetbrains.mps.ide;
 
-import jetbrains.mps.components.DefaultExternalizableComponent;
-import jetbrains.mps.components.Externalizable;
-import jetbrains.mps.ide.DialogDimensionsSettings.MyState;
-
-import java.util.HashMap;
-import java.awt.Dimension;
-
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import jetbrains.mps.ide.DialogDimensionsSettings.MyState;
+
+import java.awt.Dimension;
+import java.util.HashMap;
 
 
 @State(
-  name = "MPSIntentionsManager",
+  name = "DialogDimensionsSettings",
   storages = {
-    @Storage(
-      id ="other",
-      file = "$APP_CONFIG$/mpsDialogDimensionSettings.xml"
-    )}
+  @Storage(
+    id = "other",
+    file = "$APP_CONFIG$/mpsDialogDimensionSettings.xml"
+  )}
 )
 public class DialogDimensionsSettings implements PersistentStateComponent<MyState> {
   public static DialogDimensionsSettings getInstance() {
