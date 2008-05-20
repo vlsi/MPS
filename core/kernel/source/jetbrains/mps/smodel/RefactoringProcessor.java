@@ -25,6 +25,7 @@ import javax.swing.JOptionPane;
 import java.util.*;
 
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 
 public class RefactoringProcessor {
   private static final Logger LOG = Logger.getLogger(RefactoringProcessor.class);
@@ -193,7 +194,7 @@ public class RefactoringProcessor {
             new GeneratorManager(operationContext.getComponent(Project.class)).generateModels(descriptors,
               operationContext,
               IGenerationType.FILES,
-              IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR,
+              new EmptyProgressIndicator(), 
               new DefaultMessageHandler(operationContext.getProject())
             );
           } finally {

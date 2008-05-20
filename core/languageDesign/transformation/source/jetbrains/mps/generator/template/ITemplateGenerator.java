@@ -19,9 +19,11 @@ import jetbrains.mps.transformation.TLBase.structure.TemplateSwitch;
 
 import java.util.List;
 
+import com.intellij.openapi.progress.ProgressIndicator;
+
 public interface ITemplateGenerator {
 
-  IAdaptiveProgressMonitor getProgressMonitor();
+  ProgressIndicator getProgressMonitor();
 
   SModel getInputModel();
 

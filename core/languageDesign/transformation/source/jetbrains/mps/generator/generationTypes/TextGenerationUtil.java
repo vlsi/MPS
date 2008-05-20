@@ -12,6 +12,7 @@ import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CommonPaths;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
+import com.intellij.openapi.progress.ProgressIndicator;
 
 public class TextGenerationUtil {
   public static TextGenerationResult generateText(IOperationContext context, SNode node) {
@@ -27,7 +28,7 @@ public class TextGenerationUtil {
     return new TextGenerationResult(nodeText, containsErrors);
   }
 
-  public static JavaCompiler compile(IOperationContext context, SModel targetModel, IAdaptiveProgressMonitor progress) {
+  public static JavaCompiler compile(IOperationContext context, SModel targetModel, ProgressIndicator progress) {
     CompositeClassPathItem item = new CompositeClassPathItem();
     item.add(context.getModule().getModuleWithDependenciesClassPathItem());
     item.add(CommonPaths.getMPSPath());
@@ -43,7 +44,7 @@ public class TextGenerationUtil {
       }
     }
     
-    progress.addText("Compiling...");
+    progress.setText2("Compiling...");
     compiler.compile();
 
     for (org.eclipse.jdt.internal.compiler.CompilationResult cr : compiler.getCompilationResults()) {
@@ -53,7 +54,7 @@ public class TextGenerationUtil {
       }
     }
 
-    progress.addText("Compilation finished.");
+    progress.setText2("Compilation finished.");
     return compiler;
   }
 

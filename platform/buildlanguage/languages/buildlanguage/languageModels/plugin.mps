@@ -22,7 +22,9 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <maxImportIndex value="16" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <maxImportIndex value="17" />
   <import index="1" modelUID="jetbrains.mps.buildlanguage.structure" version="16" />
   <import index="2" modelUID="jetbrains.mps.mpsLayoutLanguage@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.ide.actions" version="-1" />
@@ -38,6 +40,7 @@
   <import index="14" modelUID="jetbrains.mps.util@java_stub" version="-1" />
   <import index="15" modelUID="jetbrains.mps.buildlanguage.tasksfromjar@java_stub" version="-1" />
   <import index="16" modelUID="jetbrains.mps.plugins@java_stub" version="-1" />
+  <import index="17" modelUID="com.intellij.openapi.progress@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1207326375796">
     <property name="name" value="ProjectPaneModelAddition" />
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1207326387469">
@@ -272,8 +275,8 @@
                     </node>
                     <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1207327884978">
                       <property name="name" value="monitor" />
-                      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207327898590">
-                        <link role="classifier" targetNodeId="11.~IAdaptiveProgressMonitor" resolveInfo="IAdaptiveProgressMonitor" />
+                      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1211283872381">
+                        <link role="classifier" targetNodeId="17.~ProgressIndicator" resolveInfo="ProgressIndicator" />
                       </node>
                     </node>
                     <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1207327905950">
@@ -294,7 +297,7 @@
               <link role="variableDeclaration" targetNodeId="1207326868546" resolveInfo="generatorManager" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207326934252">
-              <link role="baseMethodDeclaration" targetNodeId="6.~GeneratorManager.generateModelsWithProgressWindow(java.util.List,jetbrains.mps.smodel.IOperationContext,jetbrains.mps.generator.IGenerationType,boolean):java.util.concurrent.Future" resolveInfo="generateModelsWithProgressWindow" />
+              <link role="baseMethodDeclaration" targetNodeId="6.~GeneratorManager.generateModelsWithProgressWindow(java.util.List,jetbrains.mps.smodel.IOperationContext,jetbrains.mps.generator.IGenerationType,boolean):boolean" resolveInfo="generateModelsWithProgressWindow" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1207326957630">
                 <link role="baseMethodDeclaration" targetNodeId="7.~Arrays.asList(java.lang.Object[]):java.util.List" resolveInfo="asList" />
                 <link role="classConcept" targetNodeId="7.~Arrays" resolveInfo="Arrays" />

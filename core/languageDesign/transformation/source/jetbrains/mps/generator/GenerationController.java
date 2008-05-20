@@ -29,6 +29,7 @@ import java.io.File;
 import java.rmi.RemoteException;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import com.intellij.openapi.progress.ProgressIndicator;
 
 public class GenerationController {
   private static Logger LOG = Logger.getLogger(GenerationController.class);
@@ -36,7 +37,7 @@ public class GenerationController {
   private GeneratorManager myManager;
   private List<Pair<SModelDescriptor, IOperationContext>> myInputModels;
   private IGenerationType myGenerationType;
-  private IAdaptiveProgressMonitor myProgress;
+  private ProgressIndicator myProgress;
   private IMessageHandler myMesssages;
   private boolean mySaveTransientModels;
 
@@ -47,7 +48,7 @@ public class GenerationController {
   public GenerationController(GeneratorManager generatorManager,
                               List<Pair<SModelDescriptor, IOperationContext>> _inputModels,
                               IGenerationType generationType,
-                              IAdaptiveProgressMonitor progress,
+                              ProgressIndicator progress,
                               IMessageHandler messages,
                               boolean saveTransientModels) {
     
@@ -77,7 +78,10 @@ public class GenerationController {
   }
 
   public boolean generate() {
-    myProgress.start("generating", estimateGenerationTime());
+    myProgress.setIndeterminate(true);
+    if(!myProgress.isRunning()) {
+      myProgress.start();
+    }
     showMessageView();
     clearMessageVew();
     myMesssages.handle(new Message(MessageKind.INFORMATION, myGenerationType.getStartText()));
@@ -116,16 +120,16 @@ public class GenerationController {
       fireModelsGenerated(generationOK);
     } catch (GenerationCanceledException gce) {
       warning("generation canceled");
-      myProgress.finishAnyway();
+      myProgress.stop();
       showMessageView();
       return false;
     } catch (Throwable t) {
       LOG.error(t);
       final String text = t.toString();
-      myProgress.addText(text);
+     // myProgress.setText(text);
       myMesssages.handle(new Message(MessageKind.ERROR, text));
     } finally {
-      myProgress.finishAnyway();
+      myProgress.stop();
     }
     return true;
   }
@@ -155,7 +159,10 @@ public class GenerationController {
     boolean currentGenerationOK = false;
 
     IOperationContext invocationContext = myModulesToContexts.get(module);
-    myProgress.startTask("generating in module " + module);
+
+   // myProgress.startTask("generating in module " + module);
+    myProgress.setText2("generating in module " + module);
+
     String outputFolder = module != null ? module.getGeneratorOutputPath() : null;
     if (outputFolder != null && !new File(outputFolder).exists()) {
       new File(outputFolder).mkdirs();
@@ -182,7 +189,9 @@ public class GenerationController {
       for (SModelDescriptor inputModel : descriptors) {
         info("");
         String taskName = ModelsProgressUtil.generationModelTaskName(inputModel);
-        myProgress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_GENERATION);
+
+        //  myProgress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_GENERATION);
+        myProgress.setText2(taskName);
 
         GenerationStatus status = generationSession.generateModel(inputModel);
         currentGenerationOK = status.isOk();
@@ -203,7 +212,9 @@ public class GenerationController {
           myGenerationType.handleEmptyOutput(status, outputFolder, invocationContext, myProgress, myMesssages);
         }
         generationSession.discardTransients();
-        myProgress.finishTask(taskName);
+
+        // myProgress.finishTask(taskName);
+        myProgress.setText2("");
       }
     } finally {
       if (wasLoggingThreshold != null) {
@@ -219,7 +230,10 @@ public class GenerationController {
 
     checkMonitorCanceled();
     info("");
-    myProgress.finishTask("generating in module " + module);
+
+    //myProgress.finishTask("generating in module " + module);
+    myProgress.setText2("");
+
     return currentGenerationOK;
   }
 
@@ -229,27 +243,32 @@ public class GenerationController {
       compiledSuccessfully = false;
     } else if (module != null) {
       checkMonitorCanceled();
-      myProgress.startTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
+      // myProgress.startTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
       CompilationResult compilationResult;
       if (!module.isCompileInMPS()) {
-        myProgress.startLeafTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
+       // myProgress.startLeafTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
         getProjectHandler().refreshFS();
-        myProgress.finishTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
-        info("compiling in IntelliJ IDEA...");
-        myProgress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_IDEA);
+      //  myProgress.finishTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
+        String info = "compiling in IntelliJ IDEA...";
+        myProgress.setText2(info);
+        info(info);
+      //  myProgress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_IDEA);
         compilationResult = getProjectHandler().buildModule(module.getGeneratorOutputPath());
-        myProgress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_IDEA);
+      //  myProgress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_IDEA);
       } else {
-        myProgress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_MPS);
-        info("compiling in JetBrains MPS...");
+       // myProgress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_MPS);
+        String info = "compiling in JetBrains MPS...";
+        myProgress.setText2(info);
+        info(info);
         compilationResult = new ModuleMaker().make(CollectionUtil.asSet(module), new EmptyProgressIndicator());
-        myProgress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_MPS);
+      //  myProgress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_MPS);
       }
       if (compilationResult == null || compilationResult.getErrors() > 0) {
         compiledSuccessfully = false;
       }
       info("" + compilationResult);
-      myProgress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
+      //myProgress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
+      myProgress.setText2("");
       checkMonitorCanceled();
     }
     return compiledSuccessfully;
@@ -257,10 +276,16 @@ public class GenerationController {
 
   private void reloadClasses() {
     info("");
-    info("reloading MPS classes...");
-    myProgress.startLeafTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
-    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
-    myProgress.finishTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
+    String info = "reloading MPS classes...";
+    info(info);
+
+    //myProgress.startLeafTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
+    myProgress.setText2(info);
+
+    ClassLoaderManager.getInstance().reloadAll(myProgress);
+
+    //myProgress.finishTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
+    myProgress.setText2("");
   }
 
   private boolean isIDEAPresent() {
@@ -304,12 +329,12 @@ public class GenerationController {
   }
 
   private void info(String text) {
-    myProgress.addText(text);
+    // myProgress.addText(text);
     myMesssages.handle(new Message(MessageKind.INFORMATION, text));
   }
 
   private void warning(String text) {
-    myProgress.addText(text);
+    // myProgress.addText(text);
     myMesssages.handle(new Message(MessageKind.WARNING, text));
   }
 }

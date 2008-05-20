@@ -32,19 +32,23 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task.Modal;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 
 
 @State(
   name = "GenerationManager",
   storages = {
-    @Storage(
-      id ="other",
-      file = "$WORKSPACE_FILE$"
-    )
-  }
+  @Storage(
+    id ="other",
+    file = "$WORKSPACE_FILE$"
+  )
+    }
 )
 public class GeneratorManager implements PersistentStateComponent<MyState>, Configurable {
   public static final int AMOUNT_PER_MODEL = 100;
@@ -126,38 +130,31 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Conf
   }
 
   public void generateModelsFromDifferentModules(final IOperationContext operationContext, final List<SModelDescriptor> inputModels, final IGenerationType generationType) {
-    new Thread() {
-      public void run() {
-        try {
-          GeneratorManager generatorManager = operationContext.getComponent(GeneratorManager.class);
-          List<Pair<SModelDescriptor, IOperationContext>> modelsWithContext = new ArrayList<Pair<SModelDescriptor, IOperationContext>>();
-          for (SModelDescriptor model : inputModels) {
-            assert model != null;
-            ModuleContext moduleContext = ModuleContext.create(model, operationContext.getProject(), false);
-            modelsWithContext.add(new Pair<SModelDescriptor, IOperationContext>(model, moduleContext));
-          }
-
-          Future<Boolean> f = generatorManager.generateModelsWithProgressWindow(
-            modelsWithContext,
-            generationType,
-            false);
-          f.get();
-        } catch (InterruptedException e) {
-          LOG.error(e);
-        } catch (ExecutionException e) {
-          LOG.error(e);
-        }
+    try {
+      GeneratorManager generatorManager = operationContext.getComponent(GeneratorManager.class);
+      List<Pair<SModelDescriptor, IOperationContext>> modelsWithContext = new ArrayList<Pair<SModelDescriptor, IOperationContext>>();
+      for (SModelDescriptor model : inputModels) {
+        assert model != null;
+        ModuleContext moduleContext = ModuleContext.create(model, operationContext.getProject(), false);
+        modelsWithContext.add(new Pair<SModelDescriptor, IOperationContext>(model, moduleContext));
       }
-    }.start();
+
+      generatorManager.generateModelsWithProgressWindow(
+        modelsWithContext,
+        generationType,
+        false);
+    } catch (Throwable t) {
+      LOG.error(t);
+    }
   }
 
   /**
    * @return false if canceled
    */
-  public Future<Boolean> generateModelsWithProgressWindow(final List<SModelDescriptor> inputModels,
-                                                          final IOperationContext invocationContext,
-                                                          final IGenerationType generationType,
-                                                          boolean closeOnExit) {
+  public boolean generateModelsWithProgressWindow(final List<SModelDescriptor> inputModels,
+                                                  final IOperationContext invocationContext,
+                                                  final IGenerationType generationType,
+                                                  boolean closeOnExit) {
     return generateModelsWithProgressWindow(
       CollectionUtil.map(
         inputModels,
@@ -174,19 +171,14 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Conf
   /**
    * @return false if canceled
    */
-  private Future<Boolean> generateModelsWithProgressWindow(final List<Pair<SModelDescriptor, IOperationContext>> inputModels,
-                                                           final IGenerationType generationType,
-                                                           boolean closeOnExit) {
+  private boolean generateModelsWithProgressWindow(final List<Pair<SModelDescriptor, IOperationContext>> inputModels,
+                                                   final IGenerationType generationType,
+                                                   boolean closeOnExit) {
     if (inputModels.isEmpty()) {
-      return myExecutorService.submit(new Callable<Boolean>() {
-        public Boolean call() throws Exception {
-          return true;
-        }
-      });
+      return true;
     }
 
     final IOperationContext invocationContext = inputModels.get(0).o2;
-    final IAdaptiveProgressMonitor progress = createAdaptriveProgressMonitor(closeOnExit, invocationContext);
     final DefaultMessageHandler messages = new DefaultMessageHandler(invocationContext.getProject());
 
     // confirm saving transient models
@@ -216,11 +208,13 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Conf
       saveTransientModels = false;
     }
 
-    return myExecutorService.submit(new Callable<Boolean>() {
-      public Boolean call() throws Exception {
-        return generateModels(inputModels, generationType, progress, messages, saveTransientModels);
+    final boolean[] result = new boolean[]{false};
+    ProgressManager.getInstance().run(new Modal(invocationContext.getComponent(Project.class), "Generation" , true) {
+      public void run(@NotNull ProgressIndicator progress) {
+        result[0] = generateModels(inputModels, generationType, progress, messages, saveTransientModels);
       }
     });
+    return result[0];
   }
 
   protected AdaptiveProgressMonitor createAdaptriveProgressMonitor(boolean closeOnExit, IOperationContext invocationContext) {
@@ -233,7 +227,7 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Conf
   public boolean generateModels(final List<SModelDescriptor> inputModels,
                                 final IOperationContext invocationContext,
                                 final IGenerationType generationType,
-                                final IAdaptiveProgressMonitor progress,
+                                final ProgressIndicator progress,
                                 final IMessageHandler messages) {
 
     return generateModels(
@@ -256,7 +250,7 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Conf
    */
   private boolean generateModels(final List<Pair<SModelDescriptor, IOperationContext>> inputModels,
                                  final IGenerationType generationType,
-                                 final IAdaptiveProgressMonitor progress,
+                                 final ProgressIndicator progress,
                                  final IMessageHandler messages,
                                  final boolean saveTransientModels
   ) {

@@ -12,14 +12,15 @@ import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
+import com.intellij.openapi.progress.ProgressIndicator;
 
 public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   private IOperationContext myOperationContext;
-  private IAdaptiveProgressMonitor myProgressMonitor;
+  private ProgressIndicator myProgressMonitor;
   private GeneratorLogger myLogger;
 
   protected AbstractTemplateGenerator(IOperationContext operationContext,
-                                      IAdaptiveProgressMonitor progressMonitor) {
+                                      ProgressIndicator progressMonitor) {
     myOperationContext = operationContext;
     myProgressMonitor = progressMonitor;
     myLogger = new GeneratorLogger(operationContext);
@@ -36,7 +37,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     return null;
   }
 
-  public IAdaptiveProgressMonitor getProgressMonitor() {
+  public ProgressIndicator getProgressMonitor() {
     return myProgressMonitor;
   }
 

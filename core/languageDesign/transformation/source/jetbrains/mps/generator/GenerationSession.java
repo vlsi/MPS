@@ -23,6 +23,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Collections;
 import java.util.List;
 
+import com.intellij.openapi.progress.ProgressIndicator;
+
 /**
  * Igor Alshannikov
  * Oct 26, 2005
@@ -32,7 +34,7 @@ public class GenerationSession implements IGenerationSession {
 
   private IOperationContext myInvocationContext;
   private boolean myDiscardTransients;
-  private IAdaptiveProgressMonitor myProgressMonitor;
+  private ProgressIndicator myProgressMonitor;
   private IMessageHandler myMessagesHandler;
   private ILoggingHandler myLoggingHandler;
 
@@ -43,7 +45,7 @@ public class GenerationSession implements IGenerationSession {
   private boolean myIgnoreConflictsInMappingPriorityRules;
 
 
-  public GenerationSession(IOperationContext invocationContext, boolean saveTransientModels, IAdaptiveProgressMonitor progressMonitor, final IMessageHandler messagesHandler) {
+  public GenerationSession(IOperationContext invocationContext, boolean saveTransientModels, ProgressIndicator progressMonitor, final IMessageHandler messagesHandler) {
     myInvocationContext = invocationContext;
     myDiscardTransients = !saveTransientModels;
     myProgressMonitor = progressMonitor;
@@ -155,12 +157,12 @@ public class GenerationSession implements IGenerationSession {
       throw gce;
     } catch (GenerationFailueException gfe) {
       LOG.error(gfe);
-      myProgressMonitor.addText(gfe.toString());
+      // myProgressMonitor.addText(gfe.toString());
       addMessage(MessageKind.ERROR, "model \"" + inputModel.getUID() + "\" generation failed : " + gfe);
       status = new GenerationStatus.ERROR(inputModel);
     } catch (Throwable e) {
       LOG.error(e);
-      myProgressMonitor.addText(e.toString());
+      // myProgressMonitor.addText(e.toString());
       addMessage(MessageKind.ERROR, "model \"" + inputModel.getUID() + "\" generation failed : " + e);
       status = new GenerationStatus.ERROR(inputModel);
     }
@@ -329,7 +331,7 @@ public class GenerationSession implements IGenerationSession {
   }
 
   private void addProgressMessage(final MessageKind kind, final String text) {
-    myProgressMonitor.addText(text);
+    //myProgressMonitor.addText(text);
     addMessage(new Message(kind, text));
   }
 

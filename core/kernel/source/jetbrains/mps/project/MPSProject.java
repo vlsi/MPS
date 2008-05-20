@@ -891,7 +891,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
                   parms.getModels(),
                   new ModuleContext(parms.getModule(), MPSProject.this),
                   generationType,
-                  IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR,
+                  new EmptyProgressIndicator(), 
                   handler
           );
 

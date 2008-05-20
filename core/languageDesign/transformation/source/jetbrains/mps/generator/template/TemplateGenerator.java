@@ -12,6 +12,8 @@ import jetbrains.mps.util.Pair;
 
 import java.util.*;
 
+import com.intellij.openapi.progress.ProgressIndicator;
+
 /**
  * Created by: Sergey Dmitriev
  * Date: Jan 23, 2007
@@ -35,7 +37,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private RuleManager myRuleManager;
 
   public TemplateGenerator(GenerationSessionContext operationContext,
-                           IAdaptiveProgressMonitor progressMonitor) {
+                           ProgressIndicator progressMonitor) {
     super(operationContext, progressMonitor);
   }
 
@@ -439,7 +441,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   private void addProgressMessage(String message) {
-    getProgressMonitor().addText(message);
+    // getProgressMonitor().addText(message);
+    // todo implement somehow
   }
 
   private void reportWasErrors(int errorCount) {
