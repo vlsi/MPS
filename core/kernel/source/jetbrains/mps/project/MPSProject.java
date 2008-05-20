@@ -90,10 +90,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
     myContext.register(MPSProject.class, this);    
     myContext.register(GenerationTracer.class, new GenerationTracer(this));
 
-    Highlighter hilghlighter = new Highlighter();
-    myContext.register(Highlighter.class, hilghlighter);
-    hilghlighter.setProjects(MPSProjects.instance());
-
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
         myProjectFile = projectFile;
@@ -505,7 +501,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
   @Nullable
   public <T> T getComponent(Class<T> clazz) {
     T result = myContext.get(clazz);
-    if (result == null) {
+
+    if (result == null && clazz != Project.class) {
       result = getComponentSafe(Project.class).getComponent(clazz);
     }
     return result;

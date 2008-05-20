@@ -271,6 +271,10 @@
     <component>
       <implementation-class>jetbrains.mps.vcs.ProjectVCSManager</implementation-class>
     </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.nodeEditor.Highlighter</implementation-class>
+    </component>
   </project-components>
 
 </components>

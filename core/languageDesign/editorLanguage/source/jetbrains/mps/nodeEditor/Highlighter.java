@@ -15,10 +15,16 @@ import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.helgins.checking.IEditorChecker;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.workbench.highlighter.MPSIDEAEditorsProvider;
 
 import java.util.*;
 
-public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
+import com.intellij.openapi.components.ProjectComponent;
+import com.intellij.openapi.project.Project;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
+
+public class Highlighter implements IComponentLifecycle, IEditorMessageOwner, ProjectComponent {
   private static final Logger LOG = Logger.getLogger(Highlighter.class);
   public static final int CHECK_DELAY = 1000;
   private static final Object EVENTS_LOCK = new Object();
@@ -35,21 +41,31 @@ public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
   private Set<IEditorComponent> myCheckedOnceEditors = new WeakSet<IEditorComponent>();
   private IEditorsProvider myEditorsProvider = new MPSEditorsProvider();
 
-  public Highlighter() {
+  private Project myProject;
+
+  public Highlighter(Project project, GlobalSModelEventsManager eventsManager, ClassLoaderManager classLoaderManager, MPSProjects projects) {
+    myProject = project;
+    myGlobalSModelEventsManager = eventsManager;
+    myClassLoaderManager = classLoaderManager;
+    myProjects = projects;
   }
 
-  public void setEditorsProvider(IEditorsProvider editorsProvider) {
-    myEditorsProvider = editorsProvider;
+  public void projectOpened() {
+
   }
 
-  @Dependency
-  public void setModelRepository(GlobalSModelEventsManager manager) {
-    myGlobalSModelEventsManager = manager;
+  public void projectClosed() {
+
   }
 
-  @Dependency
-  public void setClassLoaderManager(ClassLoaderManager manager) {
-    myClassLoaderManager = manager;
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "MPS Higlighter";
+  }
+
+  public void disposeComponent() {
+
   }
 
   public Thread getThread() {
@@ -73,12 +89,10 @@ public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
     }
   }
 
-  @Dependency
-  public void setProjects(MPSProjects projects) {
-    myProjects = projects;
-  }
-
   public void initComponent() {
+
+    myEditorsProvider = new MPSIDEAEditorsProvider(myProject);    
+
     if (myThread != null && myThread.isAlive()) {
       LOG.error("trying to initialize a Highlighter being already initialized");
       return;
