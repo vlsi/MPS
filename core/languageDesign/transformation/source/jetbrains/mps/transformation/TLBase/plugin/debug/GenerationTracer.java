@@ -9,21 +9,19 @@ import jetbrains.mps.transformation.TLBase.plugin.debug.TracerNode.Kind;
 import jetbrains.mps.transformation.TLBase.structure.MappingScript;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.MPSProjectHolder;
 
 import java.util.*;
 
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.project.Project;
 
 
-/**
- * Igor Alshannikov
- * Jan 16, 2008
- */
 public class GenerationTracer {
   private static Logger LOG = Logger.getLogger(GenerationTracer.class);
 
-  private MPSProject myProject;
+  private Project myProject;
   private boolean myActive = false;
 
   private List<TracerNode> myCurrentTracingData;
@@ -34,12 +32,16 @@ public class GenerationTracer {
 
   private Map<SNode, TracerNode> myOutputNodesToReplaceLater = new HashMap<SNode, TracerNode>();
 
-  public GenerationTracer(MPSProject project) {
+  public GenerationTracer(Project project) {
     myProject = project;
   }
 
+  private MPSProject getMPSProject() {
+    return myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+  }
+
   private GenerationTracerViewTool getTracerViewTool() {
-    return myProject.getComponentSafe(GenerationTracerViewTool.class);
+    return getMPSProject().getComponentSafe(GenerationTracerViewTool.class);
   }
 
   public void startTracing() {

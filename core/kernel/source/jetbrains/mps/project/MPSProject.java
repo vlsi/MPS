@@ -88,7 +88,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
 
   public MPSProject(final @NotNull File projectFile) {
     myContext.register(MPSProject.class, this);    
-    myContext.register(GenerationTracer.class, new GenerationTracer(this));
 
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
