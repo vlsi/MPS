@@ -33,7 +33,6 @@ public class Edit_ActionGroup extends BaseActionGroup {
       this.add(new PasteNodeAction(), this);
       this.add(new CutNodeAction(), this);
       this.addSeparator();
-      this.add(new RecentEditorsAction(), this);
       this.add(new Label(Edit_ActionGroup.LABEL_ID_custom), this);
       this.addSeparator();
       this.add(new AddModelImportAction(), this);

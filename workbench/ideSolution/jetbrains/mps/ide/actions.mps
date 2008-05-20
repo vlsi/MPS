@@ -735,9 +735,6 @@
         <link role="javaClass" targetNodeId="1.~CutNodeAction" resolveInfo="CutNodeAction" />
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204983234438" />
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983237628">
-        <link role="javaClass" targetNodeId="19.~RecentEditorsAction" resolveInfo="RecentEditorsAction" />
-      </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1207910902706">
         <property name="name" value="custom" />
       </node>
