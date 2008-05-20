@@ -5,8 +5,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.ide.progress.MessagesOnlyAdaptiveProgressMonitorWrapper;
 import jetbrains.mps.ide.progress.TaskProgressSettings;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.ide.messages.IMessageHandler;
@@ -106,7 +104,7 @@ public class GenerationController {
           if (module != null && module.reloadClassesAfterGeneration()) {
             needToReload = true;
           }
-          compiledSuccessfully = compiledSuccessfully && compileModule(module);
+          compiledSuccessfully = compiledSuccessfully && compileModule(module, totalJob, startJobTime);
         }
         for (SModelDescriptor sm : myModelsToContexts.keySet()) {
           ModelGenerationStatusManager.getInstance().invalidateData(sm);
@@ -203,7 +201,7 @@ public class GenerationController {
 
         //  myProgress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_GENERATION);
         myProgress.setText2(taskName);
-        TaskProgress progress = new TaskProgress();
+        TaskProgressHelper progress = new TaskProgressHelper();
         progress.startLeafTask(taskName, myProgress, totalJob, startJobTime);
 
         GenerationStatus status = generationSession.generateModel(inputModel);
@@ -253,37 +251,36 @@ public class GenerationController {
     return currentGenerationOK;
   }
 
-  private boolean compileModule(IModule module) throws RemoteException, GenerationCanceledException {
+  private boolean compileModule(IModule module, long totalJob, long startJobTime) throws RemoteException, GenerationCanceledException {
     boolean compiledSuccessfully = true;
     if (module != null && (!isIDEAPresent() && !module.isCompileInMPS()) || !myGenerationType.requiresCompilationInIDEAfterGeneration()) {
       compiledSuccessfully = false;
     } else if (module != null) {
       checkMonitorCanceled();
-      // myProgress.startTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
       CompilationResult compilationResult;
+      TaskProgressHelper taskProgressHelper = new TaskProgressHelper();
       if (!module.isCompileInMPS()) {
-        // myProgress.startLeafTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
+        taskProgressHelper.startLeafTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS, myProgress, totalJob, startJobTime);
         getProjectHandler().refreshFS();
-        //  myProgress.finishTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
+        taskProgressHelper.finishTask();
         String info = "compiling in IntelliJ IDEA...";
         myProgress.setText2(info);
         info(info);
-        //  myProgress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_IDEA);
+        taskProgressHelper.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_IDEA, myProgress, totalJob, startJobTime);
         compilationResult = getProjectHandler().buildModule(module.getGeneratorOutputPath());
-        //  myProgress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_IDEA);
+        taskProgressHelper.finishTask();
       } else {
-        // myProgress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_MPS);
+        taskProgressHelper.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_MPS, myProgress, totalJob, startJobTime);
         String info = "compiling in JetBrains MPS...";
         myProgress.setText2(info);
         info(info);
         compilationResult = new ModuleMaker().make(CollectionUtil.asSet(module), new EmptyProgressIndicator());
-        //  myProgress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_MPS);
+        taskProgressHelper.finishTask();
       }
       if (compilationResult == null || compilationResult.getErrors() > 0) {
         compiledSuccessfully = false;
       }
       info("" + compilationResult);
-      //myProgress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
       myProgress.setText2("");
       checkMonitorCanceled();
     }
@@ -354,7 +351,7 @@ public class GenerationController {
     myMesssages.handle(new Message(MessageKind.WARNING, text));
   }
 
-  private static class TaskProgress {
+  private static class TaskProgressHelper {
     javax.swing.Timer myTimer;
     String myTaskName;
     ProgressIndicator myProgress;
@@ -368,6 +365,15 @@ public class GenerationController {
         fraction = 1;
       }
       myProgress.setFraction(fraction);
+    }
+
+    private void clear() {
+      myTimer = null;
+      myTaskName = null;
+      myProgress = null;
+      myStartTime = 0;
+      myStartJobTime = 0;
+      myTotalJob = 0;
     }
 
     public void startLeafTask(String taskName, ProgressIndicator progressIndicator, long totalJob, long startJobTime) {
@@ -405,6 +411,7 @@ public class GenerationController {
       TaskProgressSettings.getInstance().addEstimatedTimeMillis(myTaskName, elapsedTaskTime);
       advance(myTotalJob, elapsedJob);
       myTimer.stop();
+      clear();
     }
   }
 }
