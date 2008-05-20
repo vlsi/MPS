@@ -24,6 +24,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <maxImportIndex value="15"/>
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1"/>
   <import index="2" modelUID="jetbrains.mps.smodel@java_stub" version="-1"/>
@@ -188,6 +189,7 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1209824745368">
     <property name="name" value="FindLanguageUsages"/>
     <property name="caption" value="Find Usages"/>
+    <property name="outsideCommandExecution" value="false"/>
     <link role="extendedAction" targetNodeId="2v.~CurrentProjectMPSAction" resolveInfo="CurrentProjectMPSAction"/>
     <node role="parameterDeclaration" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterDeclaration"
           id="1209825433635">

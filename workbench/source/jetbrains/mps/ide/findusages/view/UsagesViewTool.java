@@ -1,9 +1,14 @@
 package jetbrains.mps.ide.findusages.view;
 
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.wm.ToolWindowAnchor;
+import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.ConceptInstances_Finder;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder;
-import jetbrains.mps.components.IExternalizableComponent;
-import jetbrains.mps.ide.*;
+import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
+import jetbrains.mps.ide.EditorsPane;
+import jetbrains.mps.ide.HintDialog;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
@@ -24,11 +29,12 @@ import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.progress.AdaptiveProgressMonitorFactory;
-import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.nodeEditor.EditorUtil;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.workbench.tools.BaseMPSTool;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
@@ -40,7 +46,7 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UsagesViewTool extends DefaultTool implements IExternalizableComponent {
+public class UsagesViewTool extends BaseMPSTool {
   private static final String VERSION_NUMBER = "0.99";
   private static final String VERSION = "version";
   private static final String ID = "id";
@@ -51,7 +57,7 @@ public class UsagesViewTool extends DefaultTool implements IExternalizableCompon
   private static final String DEFAULT_FIND_OPTIONS = "default_find_options";
   private static final String DEFAULT_VIEW_OPTIONS = "default_view_options";
 
-  private IDEProjectFrame myProjectFrame;
+  private Project myProject;
 
   private JPanel myPanel;
   private JTabbedPane myTabbedPane;
@@ -61,10 +67,10 @@ public class UsagesViewTool extends DefaultTool implements IExternalizableCompon
 
   //----CONSTRUCT STUFF----
 
-  public UsagesViewTool(IDEProjectFrame projectFrame) {
-    super();
-    myProjectFrame = projectFrame;
+  public UsagesViewTool(Project project) {
+    super(project, "Usages View", jetbrains.mps.ide.projectPane.Icons.USAGES_ICON, true, ToolWindowAnchor.BOTTOM, true);
 
+    myProject = project;
     myPanel = new JPanel(new BorderLayout());
 
     myTabbedPane = new JTabbedPane(JTabbedPane.BOTTOM);
@@ -85,24 +91,21 @@ public class UsagesViewTool extends DefaultTool implements IExternalizableCompon
     myDefaultFindOptions.setOption(queryOptions);
   }
 
-  //----TOOL STUFF----
-
-  public void hideTool() {
-    if (myProjectFrame != null) {
-      myProjectFrame.getToolsPane().closeTool(this);
-    }
+  private MPSProject getMPSProject() {
+    return myProject.getComponent(MPSProjectHolder.class).getMPSProject();
   }
+
+  //----TOOL STUFF----
 
   public void showTool() {
     if (myUsageViewsData.size() > 0) {
-      ThreadUtils.runInUIThreadNoWait(new Runnable() {
-        public void run() {
-          if (myProjectFrame != null) {
-            myProjectFrame.showNewUsagesView();
-          }
-        }
-      });
+      super.showTool();
     }
+  }
+
+  @NotNull
+  public String getKeyStroke() {
+    return "alt 3";
   }
 
   @Nullable
@@ -124,14 +127,14 @@ public class UsagesViewTool extends DefaultTool implements IExternalizableCompon
     myTabbedPane.remove(index);
     myUsageViewsData.remove(index);
     if (myUsageViewsData.isEmpty()) {
-      hideTool();
+      closeTool();
     }
   }
 
   public void closeAll() {
     myUsageViewsData.clear();
     myTabbedPane.removeAll();
-    hideTool();
+    closeTool();
   }
 
   private void closeAllBut(int tabIndex) {
@@ -144,25 +147,13 @@ public class UsagesViewTool extends DefaultTool implements IExternalizableCompon
     }
   }
 
-  public int getNumber() {
-    return 3;
-  }
-
-  public String getName() {
-    return "Usages View";
-  }
-
-  public Icon getIcon() {
-    return jetbrains.mps.ide.projectPane.Icons.USAGES_ICON;
-  }
-
   public JComponent getComponent() {
     return myPanel;
   }
 
   public void clear() {
     closeAll();
-    hideTool();
+    closeTool();
   }
 
   //---FIND USAGES STUFF----
@@ -200,11 +191,6 @@ public class UsagesViewTool extends DefaultTool implements IExternalizableCompon
     });
   }
 
-  //todo IDEA platform hack
-  protected Frame getFrame() {
-    return myProjectFrame.getMainFrame();
-  }
-
   public void findUsages(final SearchQuery query, final boolean isRerunnable, final boolean showOne, final boolean newTab, BaseFinder... finders) {
     findUsages(TreeBuilder.forFinders(finders), query, isRerunnable, showOne, newTab);
   }
@@ -216,7 +202,7 @@ public class UsagesViewTool extends DefaultTool implements IExternalizableCompon
           public void run() {
             SearchResults searchResults = provider.getResults(
               query,
-              getProject().getComponentSafe(AdaptiveProgressMonitorFactory.class).createMonitor());
+              getMPSProject().getComponentSafe(AdaptiveProgressMonitorFactory.class).createMonitor());
             showResults(searchResults, showOne, newTab, provider, query, isRerunnable);
           }
         });
@@ -250,8 +236,8 @@ public class UsagesViewTool extends DefaultTool implements IExternalizableCompon
           SNode node = ((SearchResult<SNode>) searchResults.getSearchResults().get(0)).getObject();
           if (node != null) {
             NavigationActionProcessor.getInstance().executeNavigationAction(
-              new EditorNavigationCommand(node, null, getProject().getComponent(EditorsPane.class)),
-              getProject(), true);
+              new EditorNavigationCommand(node, null, getMPSProject().getComponent(EditorsPane.class)),
+              getMPSProject(), true);
           }
         }
       });
@@ -342,6 +328,11 @@ public class UsagesViewTool extends DefaultTool implements IExternalizableCompon
     element.addContent(defaultViewOptionsXML);
   }
 
+  //todo write it
+  protected Frame getFrame() {
+    return null;
+  }
+
   class TabPaneMouseListener extends MouseAdapter {
     public void mousePressed(MouseEvent e) {
       if (e.getButton() == MouseEvent.BUTTON2) {
@@ -392,11 +383,6 @@ public class UsagesViewTool extends DefaultTool implements IExternalizableCompon
     }
   }
 
-  //todo IDEA platform hack
-  protected MPSProject getProject() {
-    return myProjectFrame.getProject();
-  }
-
   public class UsageViewData {
     private static final String USAGE_VIEW = "usage_view";
     private static final String USAGE_VIEW_OPTIONS = "usage_view_options";
@@ -406,7 +392,7 @@ public class UsagesViewTool extends DefaultTool implements IExternalizableCompon
     private FindUsagesOptions myOptions = new FindUsagesOptions();
 
     public void createUsageView() {
-      myUsagesView = new UsagesView(getProject(), myDefaultViewOptions) {
+      myUsagesView = new UsagesView(getMPSProject(), myDefaultViewOptions) {
         public void close() {
           UsagesViewTool.this.closeTab(myUsageViewsData.indexOf(UsageViewData.this));
         }

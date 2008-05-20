@@ -9,6 +9,7 @@ import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentFactoryImpl;
+import jetbrains.mps.ide.ThreadUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -43,24 +44,35 @@ public abstract class BaseMPSTool {
   }
 
   public void showTool() {
-    if (isShowing()) return;
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      public void run() {
+        if (isShowing()) return;
 
-    ToolWindow toolWindow = ToolWindowManager.getInstance(myProject).registerToolWindow(myId, myCanCloseContent, myAnchor);
-    toolWindow.setIcon(myIcon);
-    Content content = new ContentFactoryImpl().createContent(getComponent(), null, false);
-    toolWindow.getContentManager().addContent(content);
+        ToolWindow toolWindow = ToolWindowManager.getInstance(myProject).registerToolWindow(myId, myCanCloseContent, myAnchor);
+        toolWindow.setIcon(myIcon);
+        Content content = new ContentFactoryImpl().createContent(getComponent(), null, false);
+        toolWindow.getContentManager().addContent(content);
 
-    KeymapManager.getInstance().getActiveKeymap().addShortcut(
-      ActivateToolWindowAction.getActionIdForToolWindow(myId),
-      new KeyboardShortcut(KeyStroke.getKeyStroke(getKeyStroke()), null)
-    );
+        String keyStroke = getKeyStroke();
+        if (!keyStroke.equals("")) {
+          KeymapManager.getInstance().getActiveKeymap().addShortcut(
+            ActivateToolWindowAction.getActionIdForToolWindow(myId),
+            new KeyboardShortcut(KeyStroke.getKeyStroke(keyStroke), null)
+          );
+        }
+      }
+    });
   }
 
   public void closeTool() {
     if (!myIsCloseable) return;
     if (!isShowing()) return;
 
-    ToolWindowManager.getInstance(myProject).unregisterToolWindow(myId);
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      public void run() {
+        ToolWindowManager.getInstance(myProject).unregisterToolWindow(myId);
+      }
+    });
   }
 
   public void activate() {
