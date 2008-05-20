@@ -24,6 +24,11 @@
     <component>
       <implementation-class>com.intellij.platform.FilesystemToolwindowOpener</implementation-class>
     </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.workbench.projectPaths.MPSProjectPaths</implementation-class>
+    </component>
+
   </project-components>
 
   <xi:include href="/componentSets/Platform.xml" xpointer="xpointer(/components/*)"/>

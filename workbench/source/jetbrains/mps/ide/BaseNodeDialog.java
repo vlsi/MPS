@@ -46,30 +46,9 @@ public abstract class BaseNodeDialog extends BaseDialog {
     mySplitter.setResizeWeight(0.8);
   }
 
-  //todo temporary solution :-)
-  public IPreferencesPage createPreferencesPage() {
+  public MyPreferencesPage createPreferencesPage() {
     myEditorComponent.editNode(getNode());
-    return new IPreferencesPage() {
-      public String getName() {
-        return getTitle();
-      }
-
-      public Icon getIcon() {
-        return BaseNodeDialog.this.getIcon();
-      }
-
-      public JComponent getComponent() {
-        return getMainComponent();
-      }
-
-      public boolean validate() {
-        return validateNode();
-      }
-
-      public void commit() {
-        buttonOK();
-      }
-    };
+    return new MyPreferencesPage();
   }
 
   protected Icon getIcon() {
@@ -157,5 +136,27 @@ public abstract class BaseNodeDialog extends BaseDialog {
   @BaseDialog.Button(position = 2, name = "Apply")
   public void buttonApply() {
     saveChanges_internal();
+  }
+
+  public class MyPreferencesPage implements IPreferencesPage {
+    public String getName() {
+      return getTitle();
+    }
+
+    public Icon getIcon() {
+      return BaseNodeDialog.this.getIcon();
+    }
+
+    public JComponent getComponent() {
+      return getMainComponent();
+    }
+
+    public boolean validate() {
+      return validateNode();
+    }
+
+    public void commit() {
+      buttonOK();
+    }
   }
 }

@@ -8,7 +8,6 @@ import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.generationTypes.GenerateFilesAndClassesGenerationType;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.ide.AbstractProjectFrame;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.ProjectPathsDialog;
 import jetbrains.mps.ide.action.ActionManager;
@@ -37,7 +36,6 @@ import jetbrains.mps.util.IDisposable;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vcs.ProjectVCSManager;
 import jetbrains.mps.nodeEditor.Highlighter;
 import jetbrains.mps.transformation.TLBase.plugin.debug.GenerationTracer;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
@@ -56,8 +54,6 @@ import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.util.Disposer;
-import com.intellij.ide.impl.ProjectUtil;
 
 /**
  * Author: Sergey Dmitriev
@@ -937,7 +933,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
   @NotNull
   public List<IPreferencesPage> createPreferencesPages() {
     return CollectionUtil.asList(
-      (IPreferencesPage) new ProjectPathsDialog(getComponent(AbstractProjectFrame.class), this, new ProjectOperationContext(this)).createPreferencesPage()
+      (IPreferencesPage) new ProjectPathsDialog(this, new ProjectOperationContext(this)).createPreferencesPage()
     );
   }
 
