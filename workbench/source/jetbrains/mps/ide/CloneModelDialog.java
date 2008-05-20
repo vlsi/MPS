@@ -13,20 +13,12 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 15.08.2005
- * Time: 17:04:42
- * To change this template use File | Settings | File Templates.
- */
 public class CloneModelDialog extends BaseNodeDialog {
 
   private static final DialogDimensionsSettings.DialogDimensions ourDefaultDialogSettings = new DialogDimensionsSettings.DialogDimensions(100, 100, 500, 400);
   private CloneModelProperties myCloneModelProperties;
 
   private SModel myProjectModel;
-  private AbstractProjectFrame myIde;
   private SModel mySModel;
 
   protected SNode getNode() {
@@ -38,9 +30,8 @@ public class CloneModelDialog extends BaseNodeDialog {
   }
 
 
-  public CloneModelDialog(AbstractProjectFrame ide, SModelDescriptor modelDescriptor, IOperationContext operationContext) {
+  public CloneModelDialog(SModelDescriptor modelDescriptor, IOperationContext operationContext) {
     super("Clone Model", operationContext);
-    myIde = ide;
     IModule module = operationContext.getModule();
     assert module != null;
     SModelDescriptor workingModel = ProjectModels.createDescriptorFor(module);
@@ -148,7 +139,7 @@ public class CloneModelDialog extends BaseNodeDialog {
     
     CloneModelUtil.cloneModel(mySModel, modelDescriptor.getSModel(), getScope());
 
-    MPSProject project = myIde.getProject();
+    MPSProject project = getOperationContext().getProject();
     assert project != null;
     ProjectPane pane = project.getComponent(ProjectPane.class);
     assert pane != null;
