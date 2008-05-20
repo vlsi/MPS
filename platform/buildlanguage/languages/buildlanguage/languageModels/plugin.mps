@@ -58,6 +58,7 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1207326603097">
     <property name="name" value="GenerateMPSBuildAction" />
     <property name="caption" value="Generate MPS Build" />
+    <property name="outsideCommandExecution" value="true" />
     <link role="extendedAction" targetNodeId="16.~CurrentProjectMPSAction" resolveInfo="CurrentProjectMPSAction" />
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock" id="1207326603098">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207326603099">
