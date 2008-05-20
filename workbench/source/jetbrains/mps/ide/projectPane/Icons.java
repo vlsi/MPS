@@ -3,9 +3,6 @@ package jetbrains.mps.ide.projectPane;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-/**
- * @author Kostik
- */
 public class Icons {
   public static final Icon DEFAULT_ICON = new ImageIcon(Icons.class.getResource("nodes/default.png"));
   public static final Icon MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/model.png"));
@@ -95,9 +92,6 @@ public class Icons {
 
   public static final Icon JDK_OPENED_FOLDER = new ImageIcon(Icons.class.getResource("nodes/ppJdkOpen.png"));
   public static final Icon JDK_CLOSED_FOLDER = new ImageIcon(Icons.class.getResource("nodes/ppJdkClosed.png"));
-
-  public static final Icon SPLASH_SCREEN = new ImageIcon(Icons.class.getResource("splash.png"));
-  public static final Icon SPLASH_FOX = new ImageIcon(Icons.class.getResource("splash2.png"));
 
   public static final Icon MINIMIZE_ICON = new ImageIcon(Icons.class.getResource("nodes/minimize.png"));
   public static final Icon CLOSE_ICON = new ImageIcon(Icons.class.getResource("nodes/close.png"));
