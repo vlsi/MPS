@@ -118,10 +118,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
 
   }
 
-
-  protected void addInitialComponents() {
-  }
-
   public IScope getScope() {
     return myScope;
   }
@@ -374,30 +370,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
     return MPSPlugin.getInstance().getProjectHandler(projectPath);
   }
 
-  @Nullable
-  public File getIDEAProjectFile() {
-    return findIDEAProject(getProjectFile().getParentFile());
-  }
-
-  @Nullable
-  private File findIDEAProject(@NotNull File directory) {
-    if (directory.listFiles() == null) return null;
-
-    for (File file : directory.listFiles()) {
-      if (file.isFile() && file.getName().endsWith(".ipr")) {
-        if (MPSPlugin.getInstance().getProjectHandler(file.getAbsolutePath()) != null) {
-          return file;
-        }
-      }
-    }
-
-    if (directory.getParentFile() != null) {
-      return findIDEAProject(directory.getParentFile());
-    }
-
-    return null;
-  }
-
   public void addLanguageRoot(@NotNull String languagePath) {
     LanguagePath path = LanguagePath.newInstance(getProjectDescriptor().getModel());
     path.setPath(languagePath);
@@ -583,24 +555,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
 
   public boolean isDisposed() {
     return myDisposed;
-  }
-
-  @Nullable
-  public Solution getSolutionForModel(@NotNull SModelDescriptor md) {
-    Set<Solution> owners = SModelRepository.getInstance().getOwners(md, Solution.class);
-    for (Solution s : mySolutions) {
-      if (owners.contains(s)) return s;
-    }
-    return null;
-  }
-
-  @Nullable
-  public Language getLanguageForModel(@NotNull SModelDescriptor md) {
-    Set<Language> owners = SModelRepository.getInstance().getOwners(md, Language.class);
-    for (Language l : myLanguages) {
-      if (owners.contains(l)) return l;
-    }
-    return null;
   }
 
   public static class TestResult {
