@@ -20,7 +20,7 @@ public class NewMPSProjectAction extends AnAction {
     NewProjectDialog dialog = new NewProjectDialog(frame);
     dialog.showDialog();
 
-    MPSProject result = dialog.getResult();
+    Project result = dialog.getResult();
 
     if (result == null) {
       return;
@@ -28,13 +28,12 @@ public class NewMPSProjectAction extends AnAction {
 
     result.save();
 
-    String path = result.getProjectFile().getPath();
+    String path = result.getPresentableUrl();
+
     result.dispose();
 
-    String iprfilePath = path.replaceAll("(.*)(\\.mpr)", "$1.ipr");
-
     final ProjectManagerEx projectManager = ProjectManagerEx.getInstanceEx();
-    Project ideaProject = projectManager.newProject(iprfilePath, true, false);
+    Project ideaProject = projectManager.newProject(path, true, false);
     projectManager.openProject(ideaProject);
   }
 }

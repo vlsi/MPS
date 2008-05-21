@@ -85,7 +85,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
 
   private boolean myDisposed;
 
-  public MPSProject(final @NotNull File projectFile) {
+  public MPSProject(final File projectFile) {
     myContext.register(MPSProject.class, this);    
 
     CommandProcessor.instance().executeCommand(new Runnable() {
@@ -93,7 +93,12 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
         myProjectFile = projectFile;
         SModel model = ProjectModels.createDescriptorFor(MPSProject.this).getSModel();
         model.setLoading(true);
-        myProjectDescriptor = DescriptorsPersistence.loadProjectDescriptor(new File(FileUtil.getCanonicalPath(projectFile)), model);
+
+        if (myProjectFile == null) {
+          myProjectDescriptor = DescriptorsPersistence.loadProjectDescriptor(null, model);
+        } else {
+          myProjectDescriptor = DescriptorsPersistence.loadProjectDescriptor(new File(FileUtil.getCanonicalPath(projectFile)), model);
+        }
 
         MPSProjects projects = myContext.get(MPSProjects.class);
         projects.addProject(MPSProject.this);
@@ -530,38 +535,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
     myContext.unregister(interfaceClass);
   }
 
-  @NotNull
-  public File getClassGenPath() {
-    return new File(myProjectFile.getParentFile(), "classes_gen");
-  }
-
-  @NotNull
-  public List<String> getClassPath() {
-    List<String> classpath = new LinkedList<String>();
-
-    File file = new File(myProjectFile.getParent(), "classes");
-    if (file.exists()) {
-      classpath.add(FileUtil.getCanonicalPath(file));
-    }
-
-    if (getClassGenPath().exists()) {
-      classpath.add(FileUtil.getCanonicalPath(getClassGenPath()));
-    }
-
-    if (myProjectDescriptor.getAutoImportFromIDEA()) {
-      IProjectHandler handler = getProjectHandler();
-      if (handler != null) {
-        try {
-          classpath.addAll(handler.getModuleClassPath(getProjectFile().getAbsolutePath()));
-        } catch (RemoteException e) {
-          LOG.error(e);
-        }
-      }
-    }
-
-    return classpath;
-  }
-
   public void readWorkspaceSettings() {
     String projectFileName = myProjectFile.getName();
     int dotIndex = projectFileName.lastIndexOf('.');
@@ -927,8 +900,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
     public ModelOwner getModelOwner() {
       return MPSProject.this;
     }
-
-
 
     protected Set<IModule> getInitialModules() {
       Set<IModule> result = new HashSet<IModule>();
