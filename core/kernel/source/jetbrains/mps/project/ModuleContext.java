@@ -74,11 +74,6 @@ public class ModuleContext extends StandaloneMPSContext {
       module = owningModules.iterator().next();
     } else {
       Frame frame = null;
-      AbstractProjectFrame projectFrame = project.getComponent(AbstractProjectFrame.class);
-      if (projectFrame != null) {
-        frame = projectFrame.getMainFrame();
-      }
-
       ChooseModuleDialog md = new ChooseModuleDialog("Choose Context Module", frame, owningModules);
       md.showDialog();
       module = md.getResult();

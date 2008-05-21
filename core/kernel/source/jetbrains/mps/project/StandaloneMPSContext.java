@@ -20,11 +20,7 @@ public abstract class StandaloneMPSContext implements IOperationContext {
       return getComponent(Frame.class);
     }
 
-    AbstractProjectFrame projectFrame = getComponent(AbstractProjectFrame.class);
-    if (projectFrame == null) {
-      return null;
-    }
-    return projectFrame.getMainFrame();
+    return null;
   }
 
   public boolean isTestMode() {
