@@ -1,27 +1,45 @@
 package jetbrains.mps.ide.projectPane;
 
-import jetbrains.mps.ide.*;
-import jetbrains.mps.ide.command.CommandProcessor;
+import com.intellij.openapi.actionSystem.DataProvider;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.State;
+import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.startup.StartupManager;
+import com.intellij.openapi.wm.ToolWindowAnchor;
+import jetbrains.mps.components.IExternalizableComponent;
+import jetbrains.mps.ide.EditorsPane;
+import jetbrains.mps.ide.IProjectPane;
+import jetbrains.mps.ide.MPSToolBar;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.IActionDataProvider;
+import jetbrains.mps.ide.actions.*;
 import jetbrains.mps.ide.actions.model.DeleteModelsAction;
 import jetbrains.mps.ide.actions.nodes.DeleteNodeAction;
-import jetbrains.mps.ide.actions.*;
+import jetbrains.mps.ide.command.CommandEvent;
+import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.command.ICommandListener;
 import jetbrains.mps.ide.components.ComponentsUtil;
 import jetbrains.mps.ide.ui.*;
+import jetbrains.mps.ide.ui.MPSTree.TreeState;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.*;
+import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.reloading.ReloadListener;
-import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.workbench.tools.BaseMPSTool;
 import org.jdom.Element;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -36,13 +54,21 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
-import com.intellij.openapi.actionSystem.DataProvider;
-
 /**
  * Author: Sergey Dmitriev
  * Created Oct 25, 2003
  */
-public class ProjectPane extends AbstractProjectTreeView implements IActionDataProvider, DataProvider {
+
+@State(
+  name = "MPSProjectPane",
+  storages = {
+  @Storage(
+    id = "other",
+    file = "$WORKSPACE_FILE$"
+  )
+    }
+)
+public class ProjectPane extends BaseMPSTool implements IActionDataProvider, DataProvider, IProjectPane, IExternalizableComponent {
   private static final Logger LOG = Logger.getLogger(ProjectPane.class);
 
   public static final String PROJECT_PANE_NODE_ACTIONS = ProjectPaneNodeActions_ActionGroup.ID;
@@ -67,16 +93,21 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
   public static final String AUTOSCROLL_TO_SOURCE = "autoscroll-to-source";
   public static final String AUTOSCROLL_FROM_SOURCE = "autoscroll-from-source";
 
-  private MyTree myTree = new MyTree();
-  private ProjectModulesPoolTreeNode myModulesPool;
-  private IDEProjectFrame myIDE;
 
   private boolean myShowProperties;
+  private SModelRepositoryListener mySModelRepositoryListener = new MyModelRepositoryAdapter();
+  private MyCommandListener myCommandListener = new MyCommandListener();
+  private MyModuleRepositoryListener myRepositoryListener = new MyModuleRepositoryListener();
+  private boolean myNeedRebuild = false;
+  private boolean myDisposed;
+  private ProjectModulesPoolTreeNode myModulesPool;
 
-  private JToolBar myToolbar = new MPSToolBar();
   private JToggleButton myPAndRToggle;
   private JToggleButton myAutoscrollToSource;
   private JToggleButton myAutoscrollFromSource;
+  private JToolBar myToolbar = new MPSToolBar();
+  private JPanel myPanel = new JPanel();
+  private MyTree myTree = new MyTree();
 
   private ReloadListener myReloadListener = new ReloadListener() {
     public void onBeforeReload() {
@@ -90,22 +121,28 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     public void onAfterReload() {
       CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
         public void run() {
-          rebuild();          
+          rebuild();
         }
       });
     }
   };
 
-  public ProjectPane(IDEProjectFrame ide) {
-    myIDE = ide;
-    setLayout(new BorderLayout());
+  private MyState myState;
+
+  public ProjectPane(Project project) {
+    super(project, "MPS Project Pane", 1, Icons.MPS_SMALL_ICON, ToolWindowAnchor.LEFT, false);
+  }
+
+  public void initComponent() {
+    super.initComponent();
+    getPanel().setLayout(new BorderLayout());
 
     myToolbar.setFloatable(false);
-    add(myToolbar, BorderLayout.NORTH);
+    getPanel().add(myToolbar, BorderLayout.NORTH);
 
     JScrollPane scroller = new JScrollPane(myTree);
     scroller.setBorder(null);
-    add(scroller, BorderLayout.CENTER);
+    getPanel().add(scroller, BorderLayout.CENTER);
     myTree.addKeyListener(new KeyAdapter() {
       public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_F4 && e.getModifiers() == 0) {
@@ -185,18 +222,45 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
       }
     });
 
-    rebuildTree();
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      public void run() {
+        rebuildTree();
+      }
+    });
+    StartupManager.getInstance(getProject()).registerPostStartupActivity(new Runnable() {
+      public void run() {
+        showTool(false);
+      }
+    });
+  }
+
+  public static ProjectPane getProjectPane(MPSProject project) {
+    return getTool(project, ProjectPane.class);
+  }
+
+  public void showProjectPane() {
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      public void run() {
+        showTool(true);
+      }
+    });
+  }
+
+  protected void editNode(SNode node, IOperationContext context) {
+    MPSEditorOpener opener = getProject().getComponent(MPSEditorOpener.class);
+    assert opener != null;
+    opener.openNode(node, context);
   }
 
   public void addNotify() {
-    super.addNotify();
+    getPanel().addNotify();
     myReloadListener.onAfterReload();
     ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
   }
 
   public void removeNotify() {
     ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
-    super.removeNotify();
+    getPanel().removeNotify();
   }
 
 
@@ -215,7 +279,7 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
   public void setShowPropertiesAndReferences(boolean showProperties) {
     myShowProperties = showProperties;
     myPAndRToggle.getModel().setSelected(showProperties);
-    myIDE.getIProjectPane().rebuild();
+    rebuild();
   }
 
   public void openEditor() {
@@ -223,7 +287,7 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     if (selectionPath == null) return;
     if (!(selectionPath.getLastPathComponent() instanceof SNodeTreeNode)) return;
     SNodeTreeNode selectedTreeNode = (SNodeTreeNode) selectionPath.getLastPathComponent();
-    getProject().getComponentSafe(EditorsPane.class).openEditor(selectedTreeNode.getSNode(), selectedTreeNode.getOperationContext());
+    getMPSProject().getComponentSafe(EditorsPane.class).openEditor(selectedTreeNode.getSNode(), selectedTreeNode.getOperationContext());
   }
 
 
@@ -233,7 +297,7 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     if (cls == List.class) {
       List result = new ArrayList();
       result.addAll(getSelectedModels());
-      result.addAll(getSelectedNodes());      
+      result.addAll(getSelectedNodes());
       result.addAll(getSelectedModules());
       return (T) result;
     }
@@ -283,10 +347,8 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
         getTree().runWithoutExpansion(new Runnable() {
-          public void run() {                         
-            if (myIDE != null) { //todo IDEA platform hack
-              myIDE.showProjectPane();
-            }
+          public void run() {
+            showTool(true);
 
             IModule module = context.getModule();
             if (module == null) {
@@ -586,10 +648,6 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     return myTree;
   }
 
-  public JComponent getComponent() {
-    return this;
-  }
-
   public boolean isAutoscrollFromSource() {
     return myAutoscrollFromSource.getModel().isSelected();
   }
@@ -622,15 +680,116 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     element.setAttribute(AUTOSCROLL_FROM_SOURCE, "" + myAutoscrollFromSource.getModel().isSelected());
   }
 
-  protected void editNode(SNode node, IOperationContext context) {
-//    IDEProjectFrame projectFrame = (IDEProjectFrame) context.getComponent(AbstractProjectFrame.class);
-//    projectFrame.openNode(node, context);
+  public JPanel getPanel() {
+    return myPanel;
   }
 
-  public void showProjectPane() {
-    if (myIDE != null) {
-      myIDE.showMainProjectPane();
+  public void doRebuildTree() {
+    CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
+      public void run() {
+        if (isDisposed()) {
+          return;
+        }
+        rebuildTreeNow();
+      }
+    });
+  }
+
+  private void rebuildTreeNow() {
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        rebuildTree();
+      }
+    });
+  }
+
+
+  public void setProject(MPSProject project) {
+    assert false;
+    /*
+    removeListeners();
+    myProject = project;
+    CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
+      public void run() {
+        rebuildTreeNow();
+      }
+    });
+    addListeners();
+
+    */
+  }
+
+
+  public boolean isDisposed() {
+    return myDisposed;
+  }
+
+  public void dispose() {
+    myDisposed = true;
+  }
+
+  public void rebuild() {
+    doRebuildTree();
+  }
+
+  protected void removeListeners() {
+    if (getMPSProject() != null) {
+      SModelRepository.getInstance().removeModelRepositoryListener(mySModelRepositoryListener);
+      CommandProcessor.instance().removeCommandListener(myCommandListener);
+      MPSModuleRepository.getInstance().removeModuleRepositoryListener(myRepositoryListener);
     }
+  }
+
+  protected void addListeners() {
+    SModelRepository.getInstance().addModelRepositoryListener(mySModelRepositoryListener);
+    CommandProcessor.instance().addCommandListener(myCommandListener);
+    MPSModuleRepository.getInstance().addModuleRepositoryListener(myRepositoryListener);
+  }
+
+  protected SModelTreeNode findSModelTreeNode(MPSTreeNode parent, SModelDescriptor modelDescriptor) {
+    if (!(parent instanceof SModelTreeNode) && !parent.isInitialized() && !parent.hasInfiniteSubtree()) {
+      parent.init();
+    }
+
+    if (parent instanceof SModelTreeNode) {
+      SModelTreeNode parentSModelNode = (SModelTreeNode) parent;
+      SModelDescriptor parentModelDescriptor = parentSModelNode.getSModelDescriptor();
+      if (parentModelDescriptor == modelDescriptor) {
+        return parentSModelNode;
+      }
+    }
+    for (MPSTreeNode node : parent) {
+      SModelTreeNode foundNode = findSModelTreeNode(node, modelDescriptor);
+      if (foundNode != null) {
+        return foundNode;
+      }
+    }
+    return null;
+  }
+
+  protected MPSTreeNodeEx findTreeNode(MPSTreeNode parent, SNode node) {
+    if (!(parent.isInitialized() || parent.hasInfiniteSubtree())) parent.init();
+    if (parent instanceof SNodeTreeNode) {
+      SNodeTreeNode parentSNodeTreeNode = (SNodeTreeNode) parent;
+      if (node == parentSNodeTreeNode.getSNode()) {
+        return parentSNodeTreeNode;
+      }
+    }
+    for (MPSTreeNode childNode : parent) {
+      MPSTreeNodeEx foundNode = findTreeNode(childNode, node);
+      if (foundNode != null) {
+        return foundNode;
+      }
+    }
+    return null;
+  }
+
+  public JComponent getComponent() {
+    return getPanel();
+  }
+
+  public Icon getIcon() {
+    return null;
   }
 
   public class MyTree extends MPSTree {
@@ -671,38 +830,38 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
       if (getProject() == null || getProject().isDisposed()) {
         return new TextTreeNode("Empty");
       }
-      ProjectTreeNode root = new ProjectTreeNode(getProject());
+      ProjectTreeNode root = new ProjectTreeNode(getMPSProject());
 
       List<MPSTreeNode> moduleNodes = new ArrayList<MPSTreeNode>();
 
-      List<Solution> solutions = getProject().getProjectSolutions();
+      List<Solution> solutions = getMPSProject().getProjectSolutions();
       for (Solution solution : solutions) {
-        ProjectSolutionTreeNode solutionTreeNode = new ProjectSolutionTreeNode(solution, getProject());
+        ProjectSolutionTreeNode solutionTreeNode = new ProjectSolutionTreeNode(solution, getMPSProject());
         moduleNodes.add(solutionTreeNode);
       }
 
-      List<Language> languages = getProject().getProjectLanguages();
+      List<Language> languages = getMPSProject().getProjectLanguages();
       for (Language language : languages) {
-        ProjectLanguageTreeNode node = new ProjectLanguageTreeNode(language, getProject());
+        ProjectLanguageTreeNode node = new ProjectLanguageTreeNode(language, getMPSProject());
         moduleNodes.add(node);
       }
 
-      List<DevKit> devkits = getProject().getProjectDevKits();
+      List<DevKit> devkits = getMPSProject().getProjectDevKits();
       for (DevKit devKit : devkits) {
-        ProjectDevKitTreeNode node = new ProjectDevKitTreeNode(devKit, getProject());
+        ProjectDevKitTreeNode node = new ProjectDevKitTreeNode(devKit, getMPSProject());
         moduleNodes.add(node);
       }
 
-      ModulesNamespaceTreeBuilder builder = new ModulesNamespaceTreeBuilder(getProject());
+      ModulesNamespaceTreeBuilder builder = new ModulesNamespaceTreeBuilder(getMPSProject());
       for (MPSTreeNode mtn : moduleNodes) {
         builder.addNode(mtn);
       }
       builder.fillNode(root);
 
-      myModulesPool = new ProjectModulesPoolTreeNode(getProject());
+      myModulesPool = new ProjectModulesPoolTreeNode(getMPSProject());
       root.add(myModulesPool);
 
-      TransientModelsTreeNode transientModelsNode = new TransientModelsTreeNode(getProject());
+      TransientModelsTreeNode transientModelsNode = new TransientModelsTreeNode(getMPSProject());
       root.add(transientModelsNode);
       return root;
     }
@@ -735,4 +894,65 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     }
   }
 
+  private class MyModuleRepositoryListener extends ModuleRepositoryAdapter {
+    public void moduleAdded(IModule module) {
+      myNeedRebuild = true;
+    }
+
+    public void moduleRemoved(IModule module) {
+      myNeedRebuild = true;
+    }
+  }
+
+  private class MyCommandListener implements ICommandListener {
+    public void commandStarted(CommandEvent event) {
+      myNeedRebuild = false;
+    }
+
+    public void beforeCommandFinished(CommandEvent event) {
+    }
+
+    public void commandFinished(CommandEvent event) {
+      if (myNeedRebuild) {
+        getTree().rebuildLater();
+        myNeedRebuild = false;
+      }
+    }
+  }
+
+  private class MyModelRepositoryAdapter extends SModelRepositoryAdapter {
+    public void modelRepositoryChanged() {
+      myNeedRebuild = true;
+    }
+
+    public void beforeModelDeleted(SModelDescriptor modelDescriptor) {
+      onBeforeModelWillBeDeleted(modelDescriptor);
+    }
+  }
+
+  public MyState getState() {
+    MyState result = new MyState();
+    result.setState(getTree().saveState());
+    return result;
+  }
+
+  public void loadState(final MyState state) {
+    CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
+      public void run() {
+        getTree().loadState(state.getState());
+      }
+    });
+  }
+
+  public static class MyState {
+    private TreeState myState;
+
+    public TreeState getState() {
+      return myState;
+    }
+
+    public void setState(TreeState state) {
+      myState = state;
+    }
+  }
 }

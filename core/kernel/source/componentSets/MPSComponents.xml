@@ -307,13 +307,18 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.MPSProjectHolder</implementation-class>
+      <implementation-class>jetbrains.mps.ide.projectPane.ProjectPane</implementation-class>
+      <skipForDummyProject/>
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.MPSProjectHolder</implementation-class>
+    </component>
+    <!--
+    <component>
       <implementation-class>jetbrains.mps.workbench.tools.ProjectPaneToolWindow</implementation-class>
     </component>
-
+    -->
     <component>
       <implementation-class>jetbrains.mps.workbench.editors.MPSEditorOpener</implementation-class>
     </component>
