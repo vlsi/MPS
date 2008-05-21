@@ -1,7 +1,5 @@
 package jetbrains.mps.cache;
 
-import jetbrains.mps.component.IComponentLifecycle;
-import jetbrains.mps.component.Dependency;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -15,7 +13,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-public class CachesManager implements IComponentLifecycle, ApplicationComponent {
+public class CachesManager implements ApplicationComponent {
 
   private ClassLoaderManager myClassLoaderManager;
   private SModelRepository mySModelRepository;

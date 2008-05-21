@@ -1,7 +1,5 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.component.Dependency;
-import jetbrains.mps.component.IComponentLifecycle;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.event.*;
@@ -22,7 +20,7 @@ import org.jetbrains.annotations.NonNls;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.application.ApplicationManager;
 
-public class SModelRepository implements IComponentLifecycle, ApplicationComponent {
+public class SModelRepository implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(SModelRepository.class);
 
   public static SModelRepository getInstance() {

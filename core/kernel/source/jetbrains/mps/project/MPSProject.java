@@ -1,7 +1,5 @@
 package jetbrains.mps.project;
 
-import jetbrains.mps.component.ContextImpl;
-import jetbrains.mps.component.IContext;
 import jetbrains.mps.components.IContainer;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.generationTypes.GenerateFilesAndClassesGenerationType;
@@ -65,23 +63,11 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
 
   private Project myIDEAProject;
 
-  private IContext myContext = new ContextImpl() {
-    public <T> T get(Class<T> cls) {
-      T result = super.get(cls);
-      if (result != null) {
-        return result;
-      } else {
-        return ApplicationManager.getApplication().getComponent(cls);
-      }
-    }
-  };
 
   private boolean myDisposed;
 
   public MPSProject(final File projectFile, Project ideaProject) {
     myIDEAProject = ideaProject;
-
-    myContext.register(MPSProject.class, this);    
 
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
@@ -95,7 +81,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
           myProjectDescriptor = DescriptorsPersistence.loadProjectDescriptor(new File(FileUtil.getCanonicalPath(projectFile)), model);
         }
 
-        MPSProjects projects = myContext.get(MPSProjects.class);
+        MPSProjects projects = MPSProjects.instance();
         projects.addProject(MPSProject.this);
 
         LOG.assertLog(myProjectDescriptor.isRoot(), "Project descriptor has to be root");
@@ -107,8 +93,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
         }
 
         model.setLoading(false);
-
-        myContext.init();
       }
     });
 
@@ -116,10 +100,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
 
   public IScope getScope() {
     return myScope;
-  }
-
-  public IContext getContext() {
-    return myContext;
   }
 
   public void update() {
@@ -456,18 +436,12 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
     return false;
   }
 
-  public boolean containsComponent(Class<?> cls) {
-    return myContext.getComponentInterfaces().contains(cls);
-  }
-
   public IOperationContext createOperationContext() {
     return new ProjectOperationContext(this);
   }
 
   @Nullable
   public <T> T getComponent(Class<T> clazz) {
-    T result = myContext.get(clazz);
-
     if (clazz == Project.class) {
       return (T) myIDEAProject;
     }
@@ -476,10 +450,11 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
       return (T) WindowManager.getInstance().getFrame(getComponent(Project.class));
     }
 
-    if (result == null && clazz != Project.class) {
-      result = getComponentSafe(Project.class).getComponent(clazz);
+    if (clazz != Project.class) {
+      return getComponentSafe(Project.class).getComponent(clazz);
     }
-    return result;
+
+    return null;
   }
 
   @NotNull
@@ -487,22 +462,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
     T result = getComponent(clz);
     if (result == null) throw new RuntimeException("Can't find a component " + clz.getName());
     return result;
-  }
-
-  /**
-   * It's not recommended to add/remove components dynamically since we are moving to IDEA platform
-   */
-  @Deprecated
-  public void addComponent(@NotNull Class interfaceClass, @NotNull Object instance) {
-    myContext.register(interfaceClass, instance);
-  }
-
-  /**
-   * It's not recommended to add/remove components dynamically since we are moving to IDEA platform
-   */
-  @Deprecated
-  public void removeComponent(Class interfaceClass) {
-    myContext.unregister(interfaceClass);
   }
 
   public void saveModels() {

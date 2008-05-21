@@ -10,8 +10,6 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.component.*;
-import jetbrains.mps.component.Dependency;
 
 import java.io.File;
 import java.util.*;
@@ -21,7 +19,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-public class MPSModuleRepository implements IComponentLifecycle, ApplicationComponent {
+public class MPSModuleRepository implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(MPSModuleRepository.class);
 
   public static MPSModuleRepository getInstance() {

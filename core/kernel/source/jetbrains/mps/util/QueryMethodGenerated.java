@@ -7,8 +7,6 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.component.IComponentLifecycle;
-import jetbrains.mps.component.Dependency;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -21,7 +19,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-public class QueryMethodGenerated implements IComponentLifecycle, ApplicationComponent {
+public class QueryMethodGenerated implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(QueryMethodGenerated.class);
 
   private static Map<Pair<SModelUID, String>, Method> ourMethods = new HashMap<Pair<SModelUID, String>, Method>();

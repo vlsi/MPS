@@ -1,8 +1,6 @@
 package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.component.Dependency;
-import jetbrains.mps.component.IComponentLifecycle;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -17,7 +15,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-public class NodeTypesComponentsRepository implements IComponentLifecycle, ApplicationComponent {
+public class NodeTypesComponentsRepository implements ApplicationComponent {
   private Map<SNode, NodeTypesComponent> myNodesToComponents = new HashMap<SNode, NodeTypesComponent>();
   private Set<TypesComponentRepositoryListener> myListeners = new HashSet<TypesComponentRepositoryListener>();
   private TypeChecker myTypeChecker;

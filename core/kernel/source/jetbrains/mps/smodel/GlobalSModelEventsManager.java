@@ -1,7 +1,5 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.component.IComponentLifecycle;
-import jetbrains.mps.component.Dependency;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -23,7 +21,7 @@ import org.jetbrains.annotations.NonNls;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 
-public class GlobalSModelEventsManager implements IComponentLifecycle, ApplicationComponent {
+public class GlobalSModelEventsManager implements ApplicationComponent {
   private static Logger LOG = Logger.getLogger(GlobalSModelEventsManager.class);
 
   public static GlobalSModelEventsManager getInstance() {

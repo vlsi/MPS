@@ -11,8 +11,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.component.IComponentLifecycle;
-import jetbrains.mps.component.Dependency;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -38,7 +36,7 @@ import com.intellij.openapi.components.Storage;
       file = "$APP_CONFIG$/intentions.xml"
     )}
 )
-public class IntentionsManager implements IComponentLifecycle, ApplicationComponent, PersistentStateComponent<IntentionsManager.MyState> {
+public class IntentionsManager implements ApplicationComponent, PersistentStateComponent<IntentionsManager.MyState> {
   private static final Logger LOG = Logger.getLogger(IntentionsManager.class);
 
   public static IntentionsManager getInstance() {

@@ -3,7 +3,6 @@ package jetbrains.mps.findUsages;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.component.IComponentLifecycle;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.logging.Logger;
@@ -16,7 +15,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
-public class FindUsagesManager implements IComponentLifecycle, ApplicationComponent {
+public class FindUsagesManager implements ApplicationComponent {
   private static Logger LOG = Logger.getLogger(FindUsagesManager.class);
 
   public static FindUsagesManager getInstance() {

@@ -10,8 +10,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.component.IComponentLifecycle;
-import jetbrains.mps.component.Dependency;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -24,7 +22,7 @@ import java.util.*;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.application.ApplicationManager;
 
-public class FindersManager implements IComponentLifecycle, ApplicationComponent {
+public class FindersManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(FindersManager.class);
 
   private Map<String, Set<GeneratedFinder>> myFinders = new HashMap<String, Set<GeneratedFinder>>();

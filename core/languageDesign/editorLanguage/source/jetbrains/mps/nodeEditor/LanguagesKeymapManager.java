@@ -1,8 +1,6 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapDeclaration;
-import jetbrains.mps.component.Dependency;
-import jetbrains.mps.component.IComponentLifecycle;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
@@ -18,7 +16,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-public class LanguagesKeymapManager implements IComponentLifecycle, ApplicationComponent {
+public class LanguagesKeymapManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(LanguagesKeymapManager.class);
 
   public static LanguagesKeymapManager getInstance() {

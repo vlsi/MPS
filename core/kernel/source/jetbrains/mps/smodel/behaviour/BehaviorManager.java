@@ -11,8 +11,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.component.Dependency;
-import jetbrains.mps.component.IComponentLifecycle;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -26,7 +24,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-public final class BehaviorManager implements IComponentLifecycle, ApplicationComponent {
+public final class BehaviorManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(BehaviorManager.class);
   private static Map<Class, Object> ourDefaultValue = new HashMap<Class, Object>();
 

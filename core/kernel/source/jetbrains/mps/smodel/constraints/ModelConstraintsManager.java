@@ -3,8 +3,6 @@ package jetbrains.mps.smodel.constraints;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
-import jetbrains.mps.component.Dependency;
-import jetbrains.mps.component.IComponentLifecycle;
 import jetbrains.mps.core.structure.NamedConcept;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
@@ -24,7 +22,7 @@ import java.util.*;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.application.ApplicationManager;
 
-public class ModelConstraintsManager implements IComponentLifecycle, ApplicationComponent {
+public class ModelConstraintsManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(ModelConstraintsManager.class);
 
   public static ModelConstraintsManager getInstance() {

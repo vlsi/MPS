@@ -1,7 +1,5 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.component.Dependency;
-import jetbrains.mps.component.IComponentLifecycle;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 
@@ -11,7 +9,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-public class CommandEventsManager implements IComponentLifecycle, ApplicationComponent {
+public class CommandEventsManager implements ApplicationComponent {
 
   private SModelRepository mySModelRepository;
   private GlobalSModelEventsManager myGlobalSModelEventsManager;

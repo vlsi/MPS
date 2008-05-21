@@ -1,7 +1,5 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.component.Dependency;
-import jetbrains.mps.component.IComponentLifecycle;
 import jetbrains.mps.ide.*;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.project.MPSProject;
@@ -24,7 +22,7 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-public class Highlighter implements IComponentLifecycle, IEditorMessageOwner, ProjectComponent {
+public class Highlighter implements IEditorMessageOwner, ProjectComponent {
   private static final Logger LOG = Logger.getLogger(Highlighter.class);
   public static final int CHECK_DELAY = 1000;
   private static final Object EVENTS_LOCK = new Object();

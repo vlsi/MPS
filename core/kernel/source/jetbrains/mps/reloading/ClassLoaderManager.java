@@ -1,6 +1,5 @@
 package jetbrains.mps.reloading;
 
-import jetbrains.mps.component.IComponentLifecycle;
 import jetbrains.mps.runtime.RuntimeEnvironment;
 import jetbrains.mps.runtime.RBundle;
 import jetbrains.mps.runtime.BundleClassLoader;
@@ -30,7 +29,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
 
-public class ClassLoaderManager implements IComponentLifecycle, ApplicationComponent {
+public class ClassLoaderManager implements ApplicationComponent {
   private static Logger LOG = Logger.getLogger(ClassLoaderManager.class);
 
   public static ClassLoaderManager getInstance() {

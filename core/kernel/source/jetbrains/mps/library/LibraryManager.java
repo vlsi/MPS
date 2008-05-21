@@ -1,6 +1,5 @@
 package jetbrains.mps.library;
 
-import jetbrains.mps.component.IComponentLifecycle;
 import jetbrains.mps.components.DefaultExternalizableComponent;
 import jetbrains.mps.components.Externalizable;
 import jetbrains.mps.ide.command.CommandProcessor;
@@ -46,7 +45,7 @@ import javax.swing.JComponent;
       file = "$APP_CONFIG$/libraryManager.xml"
     )}
 )
-public class LibraryManager implements IComponentLifecycle, ApplicationComponent, Configurable, PersistentStateComponent<MyState> {
+public class LibraryManager implements ApplicationComponent, Configurable, PersistentStateComponent<MyState> {
 
   public static LibraryManager getInstance() {
     return ApplicationManager.getApplication().getComponent(LibraryManager.class);

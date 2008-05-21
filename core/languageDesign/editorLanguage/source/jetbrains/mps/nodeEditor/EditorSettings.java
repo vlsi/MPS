@@ -7,7 +7,6 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.IntegerValueDocumentFilter;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.component.Dependency;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorSettings.MyState;
 

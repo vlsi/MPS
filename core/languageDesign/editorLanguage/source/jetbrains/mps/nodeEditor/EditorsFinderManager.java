@@ -6,8 +6,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.component.Dependency;
-import jetbrains.mps.component.IComponentLifecycle;
 
 import java.util.*;
 import java.lang.reflect.Constructor;
@@ -17,7 +15,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-public class EditorsFinderManager implements IComponentLifecycle, ApplicationComponent {
+public class EditorsFinderManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(EditorsFinderManager.class);
 
   private static Map<String, IGeneralizingEntityEditorFinder> ourLanguageNamespacesToGEEditorFinders = new HashMap<String, IGeneralizingEntityEditorFinder>();  

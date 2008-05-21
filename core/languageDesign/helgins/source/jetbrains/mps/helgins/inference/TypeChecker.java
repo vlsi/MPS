@@ -14,8 +14,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.helgins.integration.HelginsPreferencesComponent;
-import jetbrains.mps.component.IComponentLifecycle;
-import jetbrains.mps.component.Dependency;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -30,7 +28,7 @@ import java.util.*;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.application.ApplicationManager;
 
-public class TypeChecker implements IComponentLifecycle, ApplicationComponent {
+public class TypeChecker implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(TypeChecker.class);
 
   private static final String RUNTIME_TYPES = "$runtimeTypes$";
