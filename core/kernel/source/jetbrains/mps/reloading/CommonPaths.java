@@ -18,7 +18,8 @@ public class CommonPaths {
 
   private static IClassPathItem ourRTJar = null;
   private static IClassPathItem ourMPSJar = null;
-  private static IClassPathItem ourIDEAJar = null;
+  private static IClassPathItem ourIDEAOpenAPIJar = null;
+  private static IClassPathItem ourIDEAAPIJar = null;
 
   private static JarFileClassPathItem findBootstrapJarByName(String name) {
     for (URL url : Launcher.getBootstrapClassPath().getURLs()) {
@@ -63,7 +64,8 @@ public class CommonPaths {
   public static IClassPathItem getMPSPath() {
     CompositeClassPathItem result = new CompositeClassPathItem();
     result.add(getBaseMPSClassPath());
-    result.add(getIDEAPlatformPath());
+    result.add(getIDEAOpenAPIJar());
+    result.add(getIDEAJar());
 
     IClassPathItem kernelClassPath = getMPSKernelClassPath();
     if (kernelClassPath != null) {
@@ -107,18 +109,32 @@ public class CommonPaths {
   }
 
 
-  private static IClassPathItem getIDEAPlatformPath() {
-    if (ourIDEAJar == null) {
+  private static IClassPathItem getIDEAOpenAPIJar() {
+    if (ourIDEAOpenAPIJar == null) {
       try {
         String path = PathManager.getHomePath() + File.separator + "lib" + File.separator +
           "idea-platform" + File.separator + "platform-api.jar";
-        ourIDEAJar = new JarFileClassPathItem(path);
+        ourIDEAOpenAPIJar = new JarFileClassPathItem(path);
       } catch (IOException e) {
         throw new RuntimeException(e);
       }
     }
-    return ourIDEAJar;
+    return ourIDEAOpenAPIJar;
   }
+
+  private static IClassPathItem getIDEAJar() {
+    if (ourIDEAOpenAPIJar == null) {
+      try {
+        String path = PathManager.getHomePath() + File.separator + "lib" + File.separator +
+          "idea-platform" + File.separator + "platform.jar";
+        ourIDEAOpenAPIJar = new JarFileClassPathItem(path);
+      } catch (IOException e) {
+        throw new RuntimeException(e);
+      }
+    }
+    return ourIDEAOpenAPIJar;
+  }
+
 
 
   private static IClassPathItem getBaseMPSClassPath() {
