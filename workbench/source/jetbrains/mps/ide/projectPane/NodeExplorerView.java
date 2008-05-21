@@ -2,7 +2,6 @@ package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.helgins.uiActions.PresentationManager;
-import jetbrains.mps.ide.AbstractProjectFrame;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.ide.toolsPane.ToolsPane;
 import jetbrains.mps.ide.ui.MPSTree;
@@ -33,13 +32,11 @@ public class NodeExplorerView extends DefaultTool {
   private MyTree myTree = new MyTree();
   private SNodePointer myNode;
   private JPanel myComponent = new JPanel(new BorderLayout());
-  private AbstractProjectFrame myAbstractProjectFrame;
 //  private JCheckBox myHelginsCheckBox;
 //  private JCheckBox myTypeCheckBox;
 //  private boolean myShowHelgins = true;
 
-  public NodeExplorerView(AbstractProjectFrame projectFrame) {
-    myAbstractProjectFrame = projectFrame;
+  public NodeExplorerView() {
     myTree.setRootVisible(true);
     myTree.rebuildNow();
     myComponent.add(new JScrollPane(myTree), BorderLayout.CENTER);
@@ -83,7 +80,7 @@ public class NodeExplorerView extends DefaultTool {
   }
 
   private ToolsPane getToolsPane() {
-    return myAbstractProjectFrame.getToolsPane();
+    return null;
   }
 
   private class MyTree extends MPSTree {

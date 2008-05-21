@@ -623,8 +623,8 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
   }
 
   protected void editNode(SNode node, IOperationContext context) {
-    IDEProjectFrame projectFrame = (IDEProjectFrame) context.getComponent(AbstractProjectFrame.class);
-    projectFrame.openNode(node, context);
+//    IDEProjectFrame projectFrame = (IDEProjectFrame) context.getComponent(AbstractProjectFrame.class);
+//    projectFrame.openNode(node, context);
   }
 
   public void showProjectPane() {
