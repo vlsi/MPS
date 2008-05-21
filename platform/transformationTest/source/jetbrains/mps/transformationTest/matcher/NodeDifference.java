@@ -1,10 +1,7 @@
 package jetbrains.mps.transformationTest.matcher;
 
-import jetbrains.mps.smodel.SNode;
-
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * Created by IntelliJ IDEA.
@@ -14,11 +11,11 @@ import java.util.Arrays;
  * To change this template use File | Settings | File Templates.
  */
 public class NodeDifference extends DifferanceItem {
-  private String name;
+  private String myName;
   private List<DifferanceItem> myDifference = new ArrayList<DifferanceItem>();
 
   public NodeDifference(String name, List<DifferanceItem> diffs) {
-    this.name = name;
+    this.myName = name;
     myDifference = new ArrayList<DifferanceItem>(diffs);
   }
 
@@ -28,7 +25,7 @@ public class NodeDifference extends DifferanceItem {
       pref += "  ";
     }
     StringBuffer buff = new StringBuffer();
-    buff.append(pref + "Node: " + name + "\n");
+    buff.append(pref + "Node: " + myName + "\n");
     for (DifferanceItem item: myDifference) {
       if (item instanceof NodeDifference) {
         buff.append(((NodeDifference)item).toString(deep + 1));
@@ -51,7 +48,7 @@ public class NodeDifference extends DifferanceItem {
       return false;
     }
     NodeDifference diff = (NodeDifference)obj;
-    if (name == null || ! name.equals(diff.name)) {
+    if (myName == null || ! myName.equals(diff.myName)) {
       return false;
     }
 
