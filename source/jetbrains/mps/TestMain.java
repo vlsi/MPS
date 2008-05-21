@@ -1,10 +1,10 @@
 package jetbrains.mps;
 
-import jetbrains.mps.helgins.integration.HelginsPreferencesComponent;
 import jetbrains.mps.logging.LoggerUtil;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.ide.progress.NullAdaptiveProgressMonitor;
+import jetbrains.mps.project.TestResult;
+import jetbrains.mps.project.ProjectTester;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.smodel.*;
@@ -89,7 +89,7 @@ public class TestMain {
     final MPSProject project = loadProject(projectFile);
     return testActionForLeaks(new Runnable() {
       public void run() {
-        project.testProject();
+        new ProjectTester(project).testProject();
       }
     }, leakThreshold);
   }
@@ -290,7 +290,7 @@ public class TestMain {
     }
 
     MPSProject project = loadProject(projectFile);
-    MPSProject.TestResult result = project.testProject();
+    TestResult result = new ProjectTester(project).testProject();
     project.dispose();
 
     result.dump(System.out);
