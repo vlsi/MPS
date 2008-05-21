@@ -1,5 +1,6 @@
 package jetbrains.mps.ide.messages;
 
+import com.intellij.ide.SelectInManager;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
@@ -46,8 +47,8 @@ public class MessageViewTool extends BaseMPSTool implements ProjectComponent, IE
   private JPanel myComponent = new JPanel();
   private JList myList = new JList(myModel);
 
-  public MessageViewTool(Project project) {
-    super(project, "MPSMessages", Icons.MESSAGE_VIEW_ICON, ToolWindowAnchor.BOTTOM, true);
+  public MessageViewTool(Project project, SelectInManager selectInManager) {
+    super(project, "MPS Messages", Icons.MESSAGE_VIEW_ICON, ToolWindowAnchor.BOTTOM, true);
   }
 
   public void initComponent() {
@@ -61,6 +62,11 @@ public class MessageViewTool extends BaseMPSTool implements ProjectComponent, IE
     checkboxPanel.add(myErrorsCheckbox);
     checkboxPanel.add(myWarningsCheckbox);
     checkboxPanel.add(myInfoCheckbox);
+    checkboxPanel.add(new JButton(new AbstractAction("X") {
+      public void actionPerformed(ActionEvent e) {
+        closeTool();
+      }
+    }));
 
     panel.add(checkboxPanel, BorderLayout.NORTH);
 
@@ -317,6 +323,13 @@ public class MessageViewTool extends BaseMPSTool implements ProjectComponent, IE
     Component renderer = myList.getCellRenderer().getListCellRendererComponent(myList, message, 0, false, false);
     int width = renderer.getPreferredSize().width;
     return width;
+  }
+
+  public static MessageViewTool getMessageViewTool(MPSProject project) {
+    assert project != null;
+    Project ideaProject = project.getComponent(Project.class);
+    assert ideaProject != null;
+    return ideaProject.getComponent(MessageViewTool.class);
   }
 
   public void read(Element element, MPSProject project) {

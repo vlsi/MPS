@@ -1,21 +1,21 @@
 package jetbrains.mps.ide.actions.model;
 
-import jetbrains.mps.ide.action.MPSAction;
+import jetbrains.mps.generator.plan.GenerationPartitioner;
+import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
+import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.messages.MessageView;
+import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
-import jetbrains.mps.ide.IDEProjectFrame;
-import jetbrains.mps.workbench.output.OutputView;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.ide.messages.MessageViewTool;
+import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
+import jetbrains.mps.projectLanguage.structure.MappingPriorityRule;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
-import jetbrains.mps.generator.plan.GenerationPartitioner;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
-import jetbrains.mps.projectLanguage.structure.MappingPriorityRule;
-import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
+import jetbrains.mps.workbench.output.OutputView;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
@@ -50,7 +50,7 @@ public class ShowMappingsPartitioningAction extends MPSAction {
     GenerationPartitioner partitioner = new GenerationPartitioner();
     List<List<MappingConfiguration>> mappingSets = partitioner.createMappingSets(generators);
 
-    MessageView messageView = operationContext.getComponent(MessageView.class);
+    MessageViewTool messageView = MessageViewTool.getMessageViewTool(operationContext.getProject());
     // print all rules
     messageView.add(new Message(MessageKind.INFORMATION, "================================="));
     for (Generator generator : generators) {
@@ -63,7 +63,7 @@ public class ShowMappingsPartitioningAction extends MPSAction {
     messageView.add(new Message(MessageKind.INFORMATION, "================================="));
     if (partitioner.hasConflictingPriorityRules()) {
       // message view
-      messageView.show(true);
+      messageView.showTool(true);
       List<String> messagesFull = GenerationPartitioningUtil.toStrings(partitioner.getConflictingPriorityRules(), true);
       for (String message : messagesFull) {
         messageView.add(new Message(MessageKind.ERROR, "conflicting rule: " + message));

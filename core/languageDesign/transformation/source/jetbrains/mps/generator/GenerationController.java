@@ -1,37 +1,36 @@
 package jetbrains.mps.generator;
 
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.TimePresentationUtil;
-import jetbrains.mps.ide.progress.TaskProgressSettings;
-import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
+import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.generator.template.Statistics;
+import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.helgins.inference.TypeCheckingMode;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
-import jetbrains.mps.ide.messages.MessageView;
+import jetbrains.mps.ide.messages.MessageViewTool;
+import jetbrains.mps.ide.progress.TaskProgressSettings;
+import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.make.ModuleMaker;
+import jetbrains.mps.plugin.CompilationResult;
+import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.plugin.IProjectHandler;
-import jetbrains.mps.plugin.CompilationResult;
-import jetbrains.mps.generator.template.Statistics;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.helgins.inference.TypeCheckingMode;
-import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.TimePresentationUtil;
 
 import javax.swing.JFrame;
-import java.util.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.rmi.RemoteException;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-
-import com.intellij.openapi.progress.EmptyProgressIndicator;
-import com.intellij.openapi.progress.ProgressIndicator;
+import java.util.*;
 
 public class GenerationController {
   private static Logger LOG = Logger.getLogger(GenerationController.class);
@@ -85,7 +84,7 @@ public class GenerationController {
   public boolean generate() {
     myProgress.setIndeterminate(false);
     myProgress.setFraction(0);
-    if(!myProgress.isRunning()) {
+    if (!myProgress.isRunning()) {
       myProgress.start();
     }
     long totalJob = estimateGenerationTime();
@@ -325,16 +324,16 @@ public class GenerationController {
   }
 
   private void clearMessageVew() {
-    MessageView messageView = getProject().getComponent(MessageView.class);
+    MessageViewTool messageView = MessageViewTool.getMessageViewTool(getProject());
     if (messageView != null) {
       messageView.clear();
     }
   }
 
   private void showMessageView() {
-    MessageView messageView = getProject().getComponent(MessageView.class);
+    MessageViewTool messageView = MessageViewTool.getMessageViewTool(getProject());
     if (messageView != null) {
-      messageView.show(true);
+      messageView.showTool(true);
     }
   }
 
@@ -361,9 +360,9 @@ public class GenerationController {
     myProgress.setText2("Estimated time: " + estimatedTimeString + ", elapsed time: " + elapsedTimeString);
   }
 
- private String getText2() {
-  return myText2;
-}
+  private String getText2() {
+    return myText2;
+  }
 
   private static class TaskProgressHelper {
     private javax.swing.Timer myTimer;
@@ -379,7 +378,7 @@ public class GenerationController {
     }
 
     private void advance(long totalJob, long elapsedJob) {
-      double fraction = ((double)elapsedJob) / ((double)totalJob);
+      double fraction = ((double) elapsedJob) / ((double) totalJob);
       if (fraction > 1) {
         fraction = 1;
       }
@@ -408,6 +407,7 @@ public class GenerationController {
       javax.swing.Timer timer = new javax.swing.Timer(TIMER_DELAY, new ActionListener() {
         long myMillis = 0;
         boolean myIndeterminate = false;
+
         public void actionPerformed(ActionEvent e) {
           myMillis += TIMER_DELAY;
           if (myMillis > estimatedTime) {
