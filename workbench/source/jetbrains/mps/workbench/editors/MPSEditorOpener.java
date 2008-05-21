@@ -92,11 +92,6 @@ public class MPSEditorOpener implements ProjectComponent {
   }
 
   public SNode getBaseNode(IOperationContext context, SNode node) {    
-    SNode editorsPaneBaseNode = context.getComponent(EditorsPane.class).getBaseNode(context, node);
-    if (editorsPaneBaseNode != node) {
-      return editorsPaneBaseNode;
-    }
-
     List<IEditorOpenHandler> badHandlers = new ArrayList<IEditorOpenHandler>();
     for (IEditorOpenHandler h : myEditorOpenHandlers) {
       try {
@@ -126,10 +121,6 @@ public class MPSEditorOpener implements ProjectComponent {
       } catch (Throwable t) {
         LOG.error(t);
       }
-    }
-
-    if (nodeEditor == null) {
-      nodeEditor = operationContext.getComponent(EditorsPane.class).createEditorFor(operationContext, node);
     }
 
     if (nodeEditor == null) {

@@ -62,13 +62,13 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
               if (descriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) continue;
 
               SNode node = descriptor.getSModel().getNodeById(id);
-              if (node != null) {
-                IDEProjectFrame frame = getProjectWindow();
-                ModuleContext operationContext = ModuleContext.create(node, myProject);
-                EditorsPane pane = frame.getEditorsPane();
-                IEditor editor = pane.openEditor(node, operationContext);
-                NavigationActionProcessor.getInstance().executeNavigationAction(new EditorNavigationCommand(node, editor, pane), operationContext.getProject());
-              }
+//              if (node != null) {
+//                IDEProjectFrame frame = getProjectWindow();
+//                ModuleContext operationContext = ModuleContext.create(node, myProject);
+//                EditorsPane pane = frame.getEditorsPane();
+//                IEditor editor = pane.openEditor(node, operationContext);
+//                NavigationActionProcessor.getInstance().executeNavigationAction(new EditorNavigationCommand(node, editor, pane), operationContext.getProject());
+//              }
             }
 
             FrameUtil.activateFrame(getMainFrame());
