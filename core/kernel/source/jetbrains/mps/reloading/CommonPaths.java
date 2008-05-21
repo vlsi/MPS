@@ -123,16 +123,16 @@ public class CommonPaths {
   }
 
   private static IClassPathItem getIDEAJar() {
-    if (ourIDEAOpenAPIJar == null) {
+    if (ourIDEAAPIJar == null) {
       try {
         String path = PathManager.getHomePath() + File.separator + "lib" + File.separator +
           "idea-platform" + File.separator + "platform.jar";
-        ourIDEAOpenAPIJar = new JarFileClassPathItem(path);
+        ourIDEAAPIJar = new JarFileClassPathItem(path);
       } catch (IOException e) {
         throw new RuntimeException(e);
       }
     }
-    return ourIDEAOpenAPIJar;
+    return ourIDEAAPIJar;
   }
 
 
