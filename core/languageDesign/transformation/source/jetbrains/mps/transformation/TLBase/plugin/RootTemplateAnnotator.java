@@ -18,70 +18,28 @@ import org.jetbrains.annotations.NotNull;
  * Igor Alshannikov
  * Jan 16, 2008
  */
-public class RootTemplateAnnotator extends SModelRepositoryAdapter implements ApplicationComponent {
-
-  private SModelListener myModelListener = new MyModelListener();
-
-  public RootTemplateAnnotator() {
-  }
-
-  //
-  // ApplicationComponent
-  //
+public class RootTemplateAnnotator implements ApplicationComponent {
 
   @NonNls
   @NotNull
   public String getComponentName() {
-    return "root template annotator";
+    return "Root Template Annotator";
   }
 
   public void initComponent() {
-//    System.out.println(" RootTemplateAnnotator.initComponent()");
-    SModelRepository modelRepository = SModelRepository.getInstance();
-    modelRepository.addModelRepositoryListener(this);
-
-    List<SModelDescriptor> models = modelRepository.getAllModelDescriptors();
-    for (SModelDescriptor model : models) {
-      modelAdded(model);
-    }
+    GlobalSModelEventsManager.getInstance().addGlobalModelListener(new SModelAdapter() {
+      public void rootAdded(SModelRootEvent event) {
+        SNode node = event.getRoot();
+        if (node.getModel().getStereotype().equals(SModelStereotype.TEMPLATES)) {
+          if (node.getNodeLanguage() != BootstrapLanguagesManager.getInstance().getTLBase()) {
+            SNode annotation = RootTemplateAnnotation.newInstance(node.getModel(), true).getNode();
+            node.addAttribute(RootTemplateAnnotation_AnnotationLink.ROOT_TEMPLATE_ANNOTATION, annotation);
+          }
+        }
+      }
+    });
   }
 
   public void disposeComponent() {
-//    System.out.println("RootTemplateAnnotator.disposeComponent()");
-    SModelRepository modelRepository = SModelRepository.getInstance();
-    modelRepository.removeModelRepositoryListener(this);
-
-    List<SModelDescriptor> models = modelRepository.getAllModelDescriptors();
-    for (SModelDescriptor model : models) {
-      modelRemoved(model);
-    }
   }
-
-  //
-  // SModelRepositoryAdapter
-  //
-
-  public void modelAdded(SModelDescriptor model) {
-    if (model.getStereotype().equals(SModelStereotype.TEMPLATES)) {
-      model.addModelListener(myModelListener);
-    }
-  }
-
-  public void modelRemoved(SModelDescriptor model) {
-    if (model.getStereotype().equals(SModelStereotype.TEMPLATES)) {
-      model.removeModelListener(myModelListener);
-    }
-  }
-
-  private class MyModelListener extends SModelAdapter {
-
-    public void rootAdded(SModelRootEvent event) {
-      SNode newRoot = event.getRoot();
-      if (newRoot.getNodeLanguage() != BootstrapLanguagesManager.getInstance().getTLBase()) {
-        SNode annotation = NodeFactoryManager.createNode(RootTemplateAnnotation.concept, null, newRoot, newRoot.getModel());
-        newRoot.addAttribute(RootTemplateAnnotation_AnnotationLink.ROOT_TEMPLATE_ANNOTATION, annotation);
-      }
-    }
-  }
-
 }
