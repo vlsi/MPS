@@ -42,9 +42,9 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor 
       public void run() {
         myFile = file;
         MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
-        EditorsPane pane = mpsProject.getComponentSafe(EditorsPane.class);
         SModelDescriptor sm = file.getNode().getModel().getModelDescriptor();
-        myNodeEditor = pane.createEditorFor(new ModuleContext(sm.getModule(), mpsProject), file.getNode());
+        myNodeEditor = project.getComponent(MPSEditorOpener.class)
+          .createEditorFor(new ModuleContext(sm.getModule(), mpsProject), file.getNode());
       }
     });
   }
