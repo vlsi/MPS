@@ -202,6 +202,7 @@ public class BlameDialog extends BaseDialog implements PersistentStateComponent<
   }
 
   public void loadState(MyState state) {
+    if (state == null) return;
     myAnonymous.setSelected(state.isAnonymous());
     myUsername.setText(state.getUsername());
     myPassword.setText(state.getPassword());
