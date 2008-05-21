@@ -5,7 +5,6 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.ide.AbstractProjectFrame;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;
@@ -19,13 +18,6 @@ import java.awt.event.ActionEvent;
 
 import org.jetbrains.annotations.NotNull;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 05.06.2007
- * Time: 16:50:49
- * To change this template use File | Settings | File Templates.
- */
 public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
 
   private SNodePointer myNodePointer;
