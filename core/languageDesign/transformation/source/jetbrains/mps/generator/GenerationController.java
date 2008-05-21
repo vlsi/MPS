@@ -11,6 +11,7 @@ import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.progress.TaskProgressSettings;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
+import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.plugin.CompilationResult;
@@ -302,7 +303,7 @@ public class GenerationController {
   }
 
   private boolean isIDEAPresent() {
-    return getProjectHandler() != null;
+    return !IdeMain.isTestMode() && getProjectHandler() != null;
   }
 
   private IOperationContext getFirstContext() {
