@@ -314,11 +314,7 @@
     <component>
       <implementation-class>jetbrains.mps.MPSProjectHolder</implementation-class>
     </component>
-    <!--
-    <component>
-      <implementation-class>jetbrains.mps.workbench.tools.ProjectPaneToolWindow</implementation-class>
-    </component>
-    -->
+
     <component>
       <implementation-class>jetbrains.mps.workbench.editors.MPSEditorOpener</implementation-class>
     </component>
@@ -353,6 +349,14 @@
 
     <component>
       <implementation-class>jetbrains.mps.plugins.PluginManager</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.ide.EditorsPane</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.ide.progress.AdaptiveProgressMonitorFactory</implementation-class>
     </component>
 
   </project-components>

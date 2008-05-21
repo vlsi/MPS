@@ -34,6 +34,7 @@ import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.objectweb.asm.tree.analysis.Frame;
 
 import java.io.File;
 import java.util.*;
@@ -42,6 +43,7 @@ import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.wm.WindowManager;
 
 public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
   public static final String COMPONENTS = "components";
@@ -61,6 +63,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
 
   private ProjectScope myScope = new ProjectScope();
 
+  private Project myIDEAProject;
+
   private IContext myContext = new ContextImpl() {
     public <T> T get(Class<T> cls) {
       T result = super.get(cls);
@@ -74,7 +78,9 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
 
   private boolean myDisposed;
 
-  public MPSProject(final File projectFile) {
+  public MPSProject(final File projectFile, Project ideaProject) {
+    myIDEAProject = ideaProject;
+
     myContext.register(MPSProject.class, this);    
 
     CommandProcessor.instance().executeCommand(new Runnable() {
@@ -461,6 +467,14 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
   @Nullable
   public <T> T getComponent(Class<T> clazz) {
     T result = myContext.get(clazz);
+
+    if (clazz == Project.class) {
+      return (T) myIDEAProject;
+    }
+
+    if (clazz == Frame.class) {
+      return (T) WindowManager.getInstance().getFrame(getComponent(Project.class));
+    }
 
     if (result == null && clazz != Project.class) {
       result = getComponentSafe(Project.class).getComponent(clazz);
