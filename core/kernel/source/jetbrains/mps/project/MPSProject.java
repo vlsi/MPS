@@ -145,12 +145,12 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
       }
       IFile descriptorFile = FileSystem.getFile(path);
       if (!descriptorFile.getName().endsWith(".msd")) {
-        LOG.error("Couldn't load solution from: " + descriptorFile.getAbsolutePath() + " : '*.msd' file expected");
+        LOG.error("Couldn't load solution from: " + descriptorFile.getPath() + " : '*.msd' file expected");
       } else if (descriptorFile.exists()) {
         mySolutions.add((Solution) MPSModuleRepository.getInstance().registerSolution(descriptorFile, this));
       } else {
         if (!tryToReadStub(path)) {
-          LOG.error("Couldn't load solution from: " + descriptorFile.getAbsolutePath() + " : file doesn't exist");
+          LOG.error("Couldn't load solution from: " + descriptorFile.getPath() + " : file doesn't exist");
         }
       }
     }
@@ -161,14 +161,16 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
       String path = languagePath.getPath();
       IFile descriptorFile = FileSystem.getFile(path);
       if (!descriptorFile.getName().endsWith(".mpl")) {
-        LOG.error("Couldn't load language from: " + descriptorFile.getAbsolutePath() + " : '*.mpl' file expected");
+        LOG.error("Couldn't load language from: " + descriptorFile.getPath() + " : '*.mpl' file expected");
       } else if (descriptorFile.exists()) {
         myLanguages.add(MPSModuleRepository.getInstance().registerLanguage(descriptorFile, this));
       } else {
         if (!tryToReadStub(path)) {
-          LOG.error("Couldn't load language from: " + descriptorFile.getAbsolutePath() + " : file doesn't exist");
+          LOG.error("Couldn't load language from: " + descriptorFile.getPath() + " : file doesn't exist");
         }
       }
+
+      FileSystem.getFile(path);
     }
 
     //load devkits
@@ -177,12 +179,12 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
       String path = dk.getPath();
       IFile devKit = FileSystem.getFile(path);
       if (!devKit.getName().endsWith(".devkit")) {
-        LOG.error("Couldn't load devkit from: " + devKit.getAbsolutePath() + " : '*.devkit' file expected");
+        LOG.error("Couldn't load devkit from: " + devKit.getPath() + " : '*.devkit' file expected");
       } else if (devKit.exists()) {
         myDevKits.add(MPSModuleRepository.getInstance().registerDevKit(devKit, this));
       } else {
         if (!tryToReadStub(path)) {
-          LOG.error("Couldn't load devkit from: " + devKit.getAbsolutePath() + " : file doesn't exist");
+          LOG.error("Couldn't load devkit from: " + devKit.getPath() + " : file doesn't exist");
         }
       }
     }
