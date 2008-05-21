@@ -1,39 +1,38 @@
 package jetbrains.mps.ide.classpath;
 
-import jetbrains.mps.ide.toolsPane.DefaultTool;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.action.MPSAction;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ClasspathCollector;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ToStringComparator;
-import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.workbench.tools.BaseMPSTool;
 
-import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
-import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
-public class ClassPathViewer extends DefaultTool {
+public class ClassPathViewerTool extends BaseMPSTool {
   private MyClassPathTree myTree = new MyClassPathTree();
   private JScrollPane myExternalComponent = new JScrollPane(myTree);
   private IModule myInspectedModule;
 
-  public ClassPathViewer() {
+  public ClassPathViewerTool(Project project) {
+    super(project, "Classpath Explorer", -1, MPSAction.EMPTY_ICON, ToolWindowAnchor.BOTTOM, true);
+  }
+
+  public void initComponent() {
+    super.initComponent();
     myTree.rebuildLater();
-  }
-
-  public String getName() {
-    return "Classpath Explorer";
-  }
-
-  public Icon getIcon() {
-    return MPSAction.EMPTY_ICON;
   }
 
   public JComponent getComponent() {
@@ -43,6 +42,10 @@ public class ClassPathViewer extends DefaultTool {
   public void analyzeModule(IModule m) {
     myInspectedModule = m;
     myTree.rebuildLater();
+  }
+
+  public static ClassPathViewerTool getClassPathViewerTool(MPSProject project) {
+    return getTool(project, ClassPathViewerTool.class);
   }
 
   private class MyClassPathTree extends MPSTree {

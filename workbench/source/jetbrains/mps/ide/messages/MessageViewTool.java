@@ -10,11 +10,13 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
+import jetbrains.mps.ide.MessageViewLoggingHandler;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.blame.BlameDialog;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.messages.MessageViewTool.MyState;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.tools.BaseMPSTool;
 
@@ -57,6 +59,7 @@ public class MessageViewTool extends BaseMPSTool implements ProjectComponent, Pe
   private DefaultListModel myModel = new DefaultListModel();
   private JPanel myComponent = new JPanel();
   private JList myList = new JList(myModel);
+  private MessageViewLoggingHandler myLoggingHandler;
 
   public MessageViewTool(Project project, SelectInManager selectInManager) {
     super(project, "MPS Messages", 0, Icons.MESSAGE_VIEW_ICON, ToolWindowAnchor.BOTTOM, true);
@@ -177,6 +180,17 @@ public class MessageViewTool extends BaseMPSTool implements ProjectComponent, Pe
         showTool(false);
       }
     });
+  }
+
+  public void projectOpened() {
+    super.projectOpened();
+    myLoggingHandler = new MessageViewLoggingHandler(this);
+    Logger.addLoggingHandler(myLoggingHandler);
+  }
+
+  public void projectClosed() {
+    Logger.removeLoggingHandler(myLoggingHandler);
+    super.projectClosed();
   }
 
   //------------TOOL STUFF---------------

@@ -281,6 +281,11 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.ide.classpath.ClassPathViewerTool</implementation-class>
+      <skipForDummyProject/>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.MPSProjectHolder</implementation-class>
     </component>
 
