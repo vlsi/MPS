@@ -2241,8 +2241,13 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
 
     if (cls == SNode.class) return (T) getRootCell().getSNode();
-    if (cls == SModelDescriptor.class && get(SNode.class) != null)
-      return (T) get(SNode.class).getModel().getModelDescriptor();
+    if (cls == SModelDescriptor.class && get(SNode.class) != null) {
+      return CommandProcessor.instance().executeLightweightCommand(new Calculable<T>() {
+        public T calculate() {
+          return (T) get(SNode.class).getModel().getModelDescriptor();
+        }
+      });
+    }
     if (cls == IOperationContext.class) return (T) getOperationContext();
     if (cls == AbstractEditorComponent.class) return (T) this;
     if (cls == EditorContext.class) return (T) getEditorContext();
@@ -2256,7 +2261,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
 
     if (dataId.equals(MPSDataKeys.SMODEL_DESCRIPTOR.getName())) {
-      return getRootCell().getSNode().getModel().getModelDescriptor();
+      return CommandProcessor.instance().executeLightweightCommand(new Calculable() {
+        public Object calculate() {
+          return getRootCell().getSNode().getModel().getModelDescriptor();
+        }
+      });      
     }
 
     if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
