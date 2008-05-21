@@ -61,7 +61,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
 
   private static final Logger LOG = Logger.getLogger(MPSProject.class);
 
-  private File myWorkspaceFile;
   private File myProjectFile;
 
   private ProjectDescriptor myProjectDescriptor;
@@ -489,11 +488,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
     return false;
   }
 
-  @NotNull
-  public List<Object> getComponents() {
-    return new ArrayList<Object>(myContext.getComponents());
-  }
-
   public boolean containsComponent(Class<?> cls) {
     return myContext.getComponentInterfaces().contains(cls);
   }
@@ -535,103 +529,15 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
     myContext.unregister(interfaceClass);
   }
 
-  public void readWorkspaceSettings() {
-    String projectFileName = myProjectFile.getName();
-    int dotIndex = projectFileName.lastIndexOf('.');
-    String mwsFileName = projectFileName.substring(0, dotIndex) + ".mws";
-    myWorkspaceFile = new File(myProjectFile.getParent(), mwsFileName);
-
-    if (IdeMain.isTestMode()) return;
-    try {
-      if (myWorkspaceFile.exists()) {
-        Document document = JDOMUtil.loadDocument(myWorkspaceFile);
-        Element rootElement = document.getRootElement();
-        List<Element> components = rootElement.getChildren(COMPONENT);
-        for (Element component : components) {
-          String className = component.getAttributeValue(CLASS);
-          String bundle = component.getAttributeValue(BUNDLE);
-
-          IModule module = MPSModuleRepository.getInstance().getModuleByUID(bundle);
-
-
-          Class cls = null;
-          if (module != null) {
-            cls = module.getClass(className);
-          } else {
-            try {
-              cls = Class.forName(className);
-            } catch (ClassNotFoundException cnfe) {
-            }
-          }
-
-
-          if (cls != null) {
-            if (containsComponent(cls) && getComponent(cls) instanceof IExternalizableComponent) {
-              try {
-                ((IExternalizableComponent) getComponentSafe(cls)).read(component, this);
-              } catch (Throwable e) {
-                LOG.error(e);
-              }
-            }
-          } else {
-            LOG.error("Can't find a class " + className + " in module " + module);
-          }
-        }
-      }
-    } catch (Throwable e) {
-      LOG.error(e);
-    }
-  }
-
   public void saveModels() {
     SModelRepository.getInstance().saveAll();
   }
 
   public void save() {
     if (IdeMain.isTestMode()) return;
-
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
         DescriptorsPersistence.saveProjectDescriptor(myProjectFile, myProjectDescriptor);
-
-        if (myWorkspaceFile != null) {
-          try {
-            if (!myWorkspaceFile.exists()) {
-              myWorkspaceFile.createNewFile();
-            }
-            Element root = new Element(COMPONENTS);
-            for (Class cls : myContext.getComponentInterfaces()) {
-              Object component = myContext.get(cls);
-              if (component instanceof IExternalizableComponent) {
-                Element componentElement = new Element(COMPONENT);
-                componentElement.setAttribute(CLASS, cls.getName());
-
-//                if (component.getClass().getClassLoader() instanceof DefaultClassLoader) {
-//                  DefaultClassLoader bcl = (DefaultClassLoader) component.getClass().getClassLoader();
-//
-//                  todo this is definitely a hack but I found no other way to
-//                  todo find a name of a bundle by its class loader
-//                  String repr = bcl.getDelegate().toString();
-//                  int indexOfUnderscore = repr.lastIndexOf('_');
-//                  assert indexOfUnderscore != -1;
-//                  String name = repr.substring(0, indexOfUnderscore);
-//                  componentElement.setAttribute(BUNDLE, name);
-//                }
-
-                try {
-                  ((IExternalizableComponent) component).write(componentElement, MPSProject.this);
-                } catch (Exception e) {
-                  LOG.error(e);
-                }
-                root.addContent(componentElement);
-              }
-            }
-            Document document = new Document(root);
-            JDOMUtil.writeDocument(document, myWorkspaceFile);
-          } catch (Exception e) {
-            LOG.error(e);
-          }
-        }
       }
     });
   }
@@ -647,16 +553,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
         projects.removeProject(MPSProject.this);
 
         getComponentSafe(Highlighter.class).stopUpdater();
-
-        for (Object pc : getComponents()) {
-          if (pc instanceof IDisposable) {
-            try {
-              ((IDisposable) pc).dispose();
-            } catch (Throwable t) {
-              LOG.error(t);
-            }
-          }
-        }
 
         MPSModuleRepository.getInstance().unRegisterModules(MPSProject.this);
         SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
