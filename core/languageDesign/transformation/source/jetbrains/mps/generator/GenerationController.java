@@ -8,7 +8,7 @@ import jetbrains.mps.helgins.inference.TypeCheckingMode;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
-import jetbrains.mps.ide.messages.MessageViewTool;
+import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.progress.TaskProgressSettings;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.logging.Logger;
@@ -324,16 +324,16 @@ public class GenerationController {
   }
 
   private void clearMessageVew() {
-    MessageViewTool messageView = MessageViewTool.getMessageViewTool(getProject());
-    if (messageView != null) {
-      messageView.clear();
+    MessagesViewTool messagesView = MessagesViewTool.getMessageViewTool(getProject());
+    if (messagesView != null) {
+      messagesView.clear();
     }
   }
 
   private void showMessageView() {
-    MessageViewTool messageView = MessageViewTool.getMessageViewTool(getProject());
-    if (messageView != null) {
-      messageView.showTool(true);
+    MessagesViewTool messagesView = MessagesViewTool.getMessageViewTool(getProject());
+    if (messagesView != null) {
+      messagesView.showTool(true);
     }
   }
 

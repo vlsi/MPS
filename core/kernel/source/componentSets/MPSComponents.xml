@@ -266,7 +266,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.ide.messages.MessageViewTool</implementation-class>
+      <implementation-class>jetbrains.mps.ide.messages.MessagesViewTool</implementation-class>
       <skipForDummyProject/>
     </component>
 
@@ -282,6 +282,12 @@
 
     <component>
       <implementation-class>jetbrains.mps.ide.classpath.ClassPathViewerTool</implementation-class>
+      <skipForDummyProject/>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.transformation.TLBase.plugin.debug.GenerationTracerViewTool
+      </implementation-class>
       <skipForDummyProject/>
     </component>
 

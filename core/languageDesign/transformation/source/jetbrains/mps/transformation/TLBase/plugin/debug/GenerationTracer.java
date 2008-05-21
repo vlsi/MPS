@@ -1,21 +1,17 @@
 package jetbrains.mps.transformation.TLBase.plugin.debug;
 
-import jetbrains.mps.ide.IDEProjectFrame;
-import jetbrains.mps.ide.toolsPane.ToolsPane;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.plugin.debug.TracerNode.Kind;
 import jetbrains.mps.transformation.TLBase.structure.MappingScript;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.MPSProjectHolder;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
-
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.project.Project;
 
 
 public class GenerationTracer {
@@ -41,7 +37,7 @@ public class GenerationTracer {
   }
 
   private GenerationTracerViewTool getTracerViewTool() {
-    return getMPSProject().getComponentSafe(GenerationTracerViewTool.class);
+    return GenerationTracerViewTool.getGenerationTracerViewTool(getMPSProject());
   }
 
   public void startTracing() {
@@ -240,7 +236,7 @@ public class GenerationTracer {
     int index = getTracerViewTool().getTabIndex(Kind.INPUT, node);
     if (index > -1) {
       getTracerViewTool().selectIndex(index);
-      getTracerViewTool().showTool();
+      getTracerViewTool().showTool(true);
       return true;
     }
 
@@ -309,7 +305,7 @@ public class GenerationTracer {
     int index = getTracerViewTool().getTabIndex(Kind.OUTPUT, node);
     if (index > -1) {
       getTracerViewTool().selectIndex(index);
-      getTracerViewTool().showTool();
+      getTracerViewTool().showTool(true);
       return true;
     }
 

@@ -16,10 +16,10 @@ public class DefaultMessageHandler implements IMessageHandler {
 
 
   public void handle(Message msg) {
-    MessageViewTool messageView = myProject.getComponent(Project.class).getComponent(MessageViewTool.class);
-    if (messageView != null) {
+    MessagesViewTool messagesView = myProject.getComponent(Project.class).getComponent(MessagesViewTool.class);
+    if (messagesView != null) {
       //it might happen if we haven't opened IDE yet
-      messageView.add(msg);
+      messagesView.add(msg);
     }
   }
 }

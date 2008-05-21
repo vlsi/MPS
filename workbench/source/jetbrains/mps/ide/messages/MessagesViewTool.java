@@ -14,7 +14,7 @@ import jetbrains.mps.ide.MessageViewLoggingHandler;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.blame.BlameDialog;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.messages.MessageViewTool.MyState;
+import jetbrains.mps.ide.messages.MessagesViewTool.MyState;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
@@ -41,12 +41,12 @@ import java.util.Queue;
   )
     }
 )
-public class MessageViewTool extends BaseMPSTool implements ProjectComponent, PersistentStateComponent<MyState> {
+public class MessagesViewTool extends BaseMPSTool implements ProjectComponent, PersistentStateComponent<MyState> {
   private static final int MAX_MESSAGES_SIZE = 30000;
 
-  public static final Icon INFORMATION_ICON = new ImageIcon(MessageViewTool.class.getResource("information.png"));
-  public static final Icon ERROR_ICON = new ImageIcon(MessageViewTool.class.getResource("error.png"));
-  public static final Icon WARNING_ICON = new ImageIcon(MessageViewTool.class.getResource("warning.png"));
+  public static final Icon INFORMATION_ICON = new ImageIcon(MessagesViewTool.class.getResource("information.png"));
+  public static final Icon ERROR_ICON = new ImageIcon(MessagesViewTool.class.getResource("error.png"));
+  public static final Icon WARNING_ICON = new ImageIcon(MessagesViewTool.class.getResource("warning.png"));
 
   private ToggleAction myErrorsAction = createToggleAction("Show Error Messages", ERROR_ICON);
   private ToggleAction myWarningsAction = createToggleAction("Show Warnings Messages", WARNING_ICON);
@@ -61,8 +61,8 @@ public class MessageViewTool extends BaseMPSTool implements ProjectComponent, Pe
   private JList myList = new JList(myModel);
   private MessageViewLoggingHandler myLoggingHandler;
 
-  public MessageViewTool(Project project, SelectInManager selectInManager) {
-    super(project, "MPS Messages", 0, Icons.MESSAGE_VIEW_ICON, ToolWindowAnchor.BOTTOM, true);
+  public MessagesViewTool(Project project, SelectInManager selectInManager) {
+    super(project, "Messages View", 0, Icons.MESSAGE_VIEW_ICON, ToolWindowAnchor.BOTTOM, true);
   }
 
   public void initComponent() {
@@ -77,6 +77,7 @@ public class MessageViewTool extends BaseMPSTool implements ProjectComponent, Pe
     group.add(myErrorsAction);
     group.add(myWarningsAction);
     group.add(myInfoAction);
+
     group.add(new AnAction("", "Close", Icons.CLOSE_ICON) {
       public void actionPerformed(AnActionEvent e) {
         closeTool();
@@ -347,8 +348,8 @@ public class MessageViewTool extends BaseMPSTool implements ProjectComponent, Pe
     return width;
   }
 
-  public static MessageViewTool getMessageViewTool(MPSProject project) {
-    return getTool(project, MessageViewTool.class);
+  public static MessagesViewTool getMessageViewTool(MPSProject project) {
+    return getTool(project, MessagesViewTool.class);
   }
 
   private ToggleAction createToggleAction(String tooltip, Icon icon) {
