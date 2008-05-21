@@ -1,20 +1,21 @@
 package jetbrains.mps.ide.messages;
 
 import com.intellij.ide.SelectInManager;
+import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ProjectComponent;
+import com.intellij.openapi.components.State;
+import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.wm.ToolWindowAnchor;
-import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.blame.BlameDialog;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.messages.MessageViewTool.MyState;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.tools.BaseMPSTool;
-import org.jdom.Element;
-import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import java.awt.*;
@@ -25,12 +26,17 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class MessageViewTool extends BaseMPSTool implements ProjectComponent, IExternalizableComponent {
+@State(
+  name = "MPSMessagesViewTool",
+  storages = {
+  @Storage(
+    id = "other",
+    file = "$WORKSPACE_FILE$"
+  )
+    }
+)
+public class MessageViewTool extends BaseMPSTool implements ProjectComponent, PersistentStateComponent<MyState> {
   private static final int MAX_MESSAGES_SIZE = 30000;
-
-  private static final String SHOW_INFORMATION = "showInformation";
-  private static final String SHOW_ERRORS = "showErrors";
-  private static final String SHOW_WARNINGS = "showWarnings";
 
   public static final Icon INFORMATION_ICON = new ImageIcon(MessageViewTool.class.getResource("information.png"));
   public static final Icon ERROR_ICON = new ImageIcon(MessageViewTool.class.getResource("error.png"));
@@ -41,6 +47,7 @@ public class MessageViewTool extends BaseMPSTool implements ProjectComponent, IE
   private JToggleButton myInfoCheckbox = createToggleButton("Show Information Messages", INFORMATION_ICON);
 
   private BlameDialog myBlameDialog;
+  private BlameDialog.MyState myDialogState;
 
   private Queue<Message> myMessages = new LinkedList<Message>();
   private DefaultListModel myModel = new DefaultListModel();
@@ -48,10 +55,11 @@ public class MessageViewTool extends BaseMPSTool implements ProjectComponent, IE
   private JList myList = new JList(myModel);
 
   public MessageViewTool(Project project, SelectInManager selectInManager) {
-    super(project, "MPS Messages", Icons.MESSAGE_VIEW_ICON, ToolWindowAnchor.BOTTOM, true);
+    super(project, "MPS Messages", 0, Icons.MESSAGE_VIEW_ICON, ToolWindowAnchor.BOTTOM, true);
   }
 
   public void initComponent() {
+    super.initComponent();
     myList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
     myComponent.setLayout(new BorderLayout());
 
@@ -158,6 +166,7 @@ public class MessageViewTool extends BaseMPSTool implements ProjectComponent, IE
     });
 
     myBlameDialog = new BlameDialog(null);
+    myBlameDialog.loadState(myDialogState);
 
     StartupManager.getInstance(getProject()).registerPostStartupActivity(new Runnable() {
       public void run() {
@@ -181,11 +190,6 @@ public class MessageViewTool extends BaseMPSTool implements ProjectComponent, IE
 
   public JComponent getComponent() {
     return myComponent;
-  }
-
-  @NotNull
-  public String getKeyStroke() {
-    return "alt 0";
   }
 
   //------------MESSAGES STUFF---------------
@@ -332,22 +336,6 @@ public class MessageViewTool extends BaseMPSTool implements ProjectComponent, IE
     return ideaProject.getComponent(MessageViewTool.class);
   }
 
-  public void read(Element element, MPSProject project) {
-    myErrorsCheckbox.setSelected("true".equals(element.getAttributeValue(SHOW_ERRORS)));
-    myWarningsCheckbox.setSelected("true".equals(element.getAttributeValue(SHOW_WARNINGS)));
-    myInfoCheckbox.setSelected("true".equals(element.getAttributeValue(SHOW_INFORMATION)));
-
-    myBlameDialog.read(element, project);
-  }
-
-  public void write(Element element, MPSProject project) {
-    element.setAttribute(SHOW_ERRORS, "" + myErrorsCheckbox.isSelected());
-    element.setAttribute(SHOW_WARNINGS, "" + myWarningsCheckbox.isSelected());
-    element.setAttribute(SHOW_INFORMATION, "" + myInfoCheckbox.isSelected());
-
-    myBlameDialog.write(element, project);
-  }
-
   private JToggleButton createToggleButton(String tooltip, Icon icon) {
     JToggleButton button = new JToggleButton(icon);
     button.setToolTipText(tooltip);
@@ -358,5 +346,65 @@ public class MessageViewTool extends BaseMPSTool implements ProjectComponent, IE
       }
     });
     return button;
+  }
+
+  public MyState getState() {
+    return new MyState(myErrorsCheckbox.isSelected(), myWarningsCheckbox.isSelected(), myInfoCheckbox.isSelected(), myBlameDialog.getState());
+  }
+
+  public void loadState(MyState state) {
+    myErrorsCheckbox.setSelected(state.isErrors());
+    myWarningsCheckbox.setSelected(state.isWarnings());
+    myInfoCheckbox.setSelected(state.isInfo());
+    myDialogState = state.getDialogState();
+  }
+
+  public static class MyState {
+    private boolean myErrors;
+    private boolean myWarnings;
+    private boolean myInfo;
+    private BlameDialog.MyState myDialogState;
+
+    public MyState() {
+    }
+
+    public MyState(boolean errors, boolean warnings, boolean info, BlameDialog.MyState dialogState) {
+      myErrors = errors;
+      myWarnings = warnings;
+      myInfo = info;
+      myDialogState = dialogState;
+    }
+
+    public BlameDialog.MyState getDialogState() {
+      return myDialogState;
+    }
+
+    public void setDialogState(BlameDialog.MyState dialogState) {
+      myDialogState = dialogState;
+    }
+
+    public boolean isErrors() {
+      return myErrors;
+    }
+
+    public void setErrors(boolean errors) {
+      myErrors = errors;
+    }
+
+    public boolean isWarnings() {
+      return myWarnings;
+    }
+
+    public void setWarnings(boolean warnings) {
+      myWarnings = warnings;
+    }
+
+    public boolean isInfo() {
+      return myInfo;
+    }
+
+    public void setInfo(boolean info) {
+      myInfo = info;
+    }
   }
 }

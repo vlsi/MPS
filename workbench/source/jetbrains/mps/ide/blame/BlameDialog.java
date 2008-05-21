@@ -1,28 +1,28 @@
 package jetbrains.mps.ide.blame;
 
+import com.intellij.openapi.components.PersistentStateComponent;
+import com.intellij.uiDesigner.core.GridConstraints;
+import com.intellij.uiDesigner.core.GridLayoutManager;
+import com.intellij.uiDesigner.core.Spacer;
 import jetbrains.mps.ide.BaseDialog;
 import jetbrains.mps.ide.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.components.IExternalizableComponent;
-import jetbrains.mps.project.MPSProject;
-
-import javax.swing.*;
-import javax.swing.event.ChangeListener;
-import javax.swing.event.ChangeEvent;
-import java.awt.*;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.io.PrintWriter;
-import java.io.StringWriter;
-import java.io.IOException;
-
+import jetbrains.mps.ide.blame.BlameDialog.MyState;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.methods.PostMethod;
-import org.jdom.Element;
-import com.intellij.uiDesigner.core.GridLayoutManager;
-import com.intellij.uiDesigner.core.GridConstraints;
-import com.intellij.uiDesigner.core.Spacer;
 
-public class BlameDialog extends BaseDialog implements IExternalizableComponent {
+import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import java.awt.Dimension;
+import java.awt.Frame;
+import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+
+public class BlameDialog extends BaseDialog implements PersistentStateComponent<MyState> {
   public static final String teamsys = "http://teamsys.intellij.net/teamsys";
   public static final String login = "/rest/user/login";
   public static final String issue = "XX-1";
@@ -32,10 +32,6 @@ public class BlameDialog extends BaseDialog implements IExternalizableComponent 
 
   private static final String ANONYMOUS_LOGIN = "mpsexception";
   private static final String ANONYMOUS_PASSWORD = "mpsexception";
-
-  private static final String ANONYMOUS = "ANONYMOUS";
-  private static final String USERNAME = "USERNAME";
-  private static final String PASSWORD = "PASSWORD";
 
   private Throwable myEx;
   private JPanel myPanel;
@@ -201,16 +197,14 @@ public class BlameDialog extends BaseDialog implements IExternalizableComponent 
     }
   }
 
-  public void read(Element element, MPSProject project) {
-    myAnonymous.setSelected(Boolean.parseBoolean(element.getAttributeValue(ANONYMOUS)));
-    myUsername.setText(element.getAttributeValue(USERNAME));
-    myPassword.setText(element.getAttributeValue(PASSWORD));
+  public MyState getState() {
+    return new MyState(myAnonymous.isSelected(), myUsername.getText(), myPassword.getText());
   }
 
-  public void write(Element element, MPSProject project) {
-    element.setAttribute(ANONYMOUS, String.valueOf(myAnonymous.isSelected()));
-    element.setAttribute(USERNAME, myUsername.getText());
-    element.setAttribute(PASSWORD, myPassword.getText());
+  public void loadState(MyState state) {
+    myAnonymous.setSelected(state.isAnonymous());
+    myUsername.setText(state.getUsername());
+    myPassword.setText(state.getPassword());
   }
 
   {
@@ -284,4 +278,44 @@ public class BlameDialog extends BaseDialog implements IExternalizableComponent 
   public JComponent $$$getRootComponent$$$() {
     return myPanel;
   }
+
+  public static class MyState {
+    private boolean myAnonymous;
+    private String myUsername;
+    private String myPassword;
+
+    public MyState() {
+    }
+
+    public MyState(boolean anonymous, String username, String password) {
+      myAnonymous = anonymous;
+      myUsername = username;
+      myPassword = password;
+    }
+
+    public boolean isAnonymous() {
+      return myAnonymous;
+    }
+
+    public void setAnonymous(boolean anonymous) {
+      myAnonymous = anonymous;
+    }
+
+    public String getUsername() {
+      return myUsername;
+    }
+
+    public void setUsername(String username) {
+      myUsername = username;
+    }
+
+    public String getPassword() {
+      return myPassword;
+    }
+
+    public void setPassword(String password) {
+      myPassword = password;
+    }
+  }
+
 }

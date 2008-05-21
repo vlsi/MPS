@@ -24,13 +24,15 @@ import javax.swing.KeyStroke;
 public abstract class BaseMPSTool implements ProjectComponent {
   private Project myProject;
   private String myId;
+  private int myNumber;
   private Icon myIcon;
   private ToolWindowAnchor myAnchor;
   private boolean myCanCloseContent;
 
-  protected BaseMPSTool(Project project, String id, Icon icon, ToolWindowAnchor anchor, boolean canCloseContent) {
+  protected BaseMPSTool(Project project, String id, int number, Icon icon, ToolWindowAnchor anchor, boolean canCloseContent) {
     myProject = project;
     myId = id;
+    myNumber = number;
     myIcon = icon;
     myAnchor = anchor;
     myCanCloseContent = canCloseContent;
@@ -55,14 +57,6 @@ public abstract class BaseMPSTool implements ProjectComponent {
           toolWindow.setIcon(myIcon);
           Content content = new ContentFactoryImpl().createContent(getComponent(), null, false);
           toolWindow.getContentManager().addContent(content);
-
-          String keyStroke = getKeyStroke();
-          if (!keyStroke.equals("")) {
-            KeymapManager.getInstance().getActiveKeymap().addShortcut(
-              ActivateToolWindowAction.getActionIdForToolWindow(myId),
-              new KeyboardShortcut(KeyStroke.getKeyStroke(keyStroke), null)
-            );
-          }
         }
         if (activate) {
           //noinspection ConstantConditions
@@ -101,11 +95,18 @@ public abstract class BaseMPSTool implements ProjectComponent {
   }
 
   public void initComponent() {
-
+    if (myNumber != -1) {
+      KeymapManager.getInstance().getActiveKeymap().addShortcut(
+        ActivateToolWindowAction.getActionIdForToolWindow(myId),
+        new KeyboardShortcut(KeyStroke.getKeyStroke("alt " + myNumber), null)
+      );
+    }
   }
 
   public void disposeComponent() {
-
+    if (myNumber != -1) {
+      KeymapManager.getInstance().getActiveKeymap().removeAllActionShortcuts(ActivateToolWindowAction.getActionIdForToolWindow(myId));
+    }
   }
 
   @NonNls
@@ -115,9 +116,6 @@ public abstract class BaseMPSTool implements ProjectComponent {
   }
 
   //------------STUFF TO IMPLEMENT-------------------
-
-  @NotNull
-  public abstract String getKeyStroke();
 
   public abstract JComponent getComponent();
 }

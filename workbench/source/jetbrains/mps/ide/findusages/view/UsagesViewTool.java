@@ -33,7 +33,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.tools.BaseMPSTool;
 import org.jdom.Element;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
@@ -65,10 +64,11 @@ public class UsagesViewTool extends BaseMPSTool {
   //----CONSTRUCT STUFF----
 
   public UsagesViewTool(Project project) {
-    super(project, "Usages View", jetbrains.mps.ide.projectPane.Icons.USAGES_ICON, ToolWindowAnchor.BOTTOM, true);
+    super(project, "Usages View", 3, jetbrains.mps.ide.projectPane.Icons.USAGES_ICON, ToolWindowAnchor.BOTTOM, true);
   }
 
   public void initComponent() {
+    super.initComponent();
     myPanel = new JPanel(new BorderLayout());
 
     myTabbedPane = new JTabbedPane(JTabbedPane.BOTTOM);
@@ -95,11 +95,6 @@ public class UsagesViewTool extends BaseMPSTool {
     if (myUsageViewsData.size() > 0) {
       super.showTool(true);
     }
-  }
-
-  @NotNull
-  public String getKeyStroke() {
-    return "alt 3";
   }
 
   @Nullable
