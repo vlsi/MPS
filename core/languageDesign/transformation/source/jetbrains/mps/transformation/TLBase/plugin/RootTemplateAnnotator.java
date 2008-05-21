@@ -10,20 +10,33 @@ import jetbrains.mps.transformation.TLBase.structure.RootTemplateAnnotation_Anno
 
 import java.util.List;
 
+import com.intellij.openapi.components.ApplicationComponent;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Igor Alshannikov
  * Jan 16, 2008
  */
-public class RootTemplateAnnotator extends SModelRepositoryAdapter {
+public class RootTemplateAnnotator extends SModelRepositoryAdapter implements ApplicationComponent {
 
   private SModelListener myModelListener = new MyModelListener();
 
   public RootTemplateAnnotator() {
-    init();
   }
 
-  public void init() {
-//    System.out.println("RootTemplateAnnotator.init()");
+  //
+  // ApplicationComponent
+  //
+
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "root template annotator";
+  }
+
+  public void initComponent() {
+//    System.out.println(" RootTemplateAnnotator.initComponent()");
     SModelRepository modelRepository = SModelRepository.getInstance();
     modelRepository.addModelRepositoryListener(this);
 
@@ -33,8 +46,8 @@ public class RootTemplateAnnotator extends SModelRepositoryAdapter {
     }
   }
 
-  public void shutDown() {
-//    System.out.println("RootTemplateAnnotator.shutDown()");
+  public void disposeComponent() {
+//    System.out.println("RootTemplateAnnotator.disposeComponent()");
     SModelRepository modelRepository = SModelRepository.getInstance();
     modelRepository.removeModelRepositoryListener(this);
 
@@ -43,6 +56,10 @@ public class RootTemplateAnnotator extends SModelRepositoryAdapter {
       modelRemoved(model);
     }
   }
+
+  //
+  // SModelRepositoryAdapter
+  //
 
   public void modelAdded(SModelDescriptor model) {
     if (model.getStereotype().equals(SModelStereotype.TEMPLATES)) {
