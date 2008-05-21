@@ -121,6 +121,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor 
   }
 
   public void dispose() {
+    myNodeEditor.dispose();
   }
   
   private class MyFileEditorState implements FileEditorState {
