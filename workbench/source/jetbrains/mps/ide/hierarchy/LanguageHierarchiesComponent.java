@@ -153,20 +153,6 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     myPanel.add(scrollPane, BorderLayout.CENTER);
 
     setBackground(Color.WHITE);
-
-
-    //ctrl-alt-arrows
-    registerKeyboardAction(new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
-        getEditorOpener().openPrevEditorInHistory(myOperationContext);
-      }
-    }, KeyStroke.getKeyStroke("control alt LEFT"), WHEN_IN_FOCUSED_WINDOW);
-
-    registerKeyboardAction(new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
-        getEditorOpener().openNextEditorInHistory(myOperationContext);
-      }
-    }, KeyStroke.getKeyStroke("control alt RIGHT"), WHEN_IN_FOCUSED_WINDOW);
   }
 
   private IEditorOpener getEditorOpener() {

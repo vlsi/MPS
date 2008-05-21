@@ -24,7 +24,6 @@ import java.util.List;
  */
 public class UIEditorComponent extends AbstractEditorComponent implements IEditorOpener {
   private InspectorEditorComponent myInspector;
-  private EditorsHistory myEditorsHistory;
 
   public UIEditorComponent(IOperationContext operationContext, InspectorEditorComponent inspector) {
     super(operationContext);
@@ -39,22 +38,6 @@ public class UIEditorComponent extends AbstractEditorComponent implements IEdito
         if (newSelection != null) {
           myInspector.inspectNode(newSelection.getSNode(), editor.getOperationContext());
         }
-      }
-    });
-
-    myEditorsHistory = new EditorsHistory(this);
-
-    EditorsNavigationMulticaster.getInstance().addEditorsNavigationsListener(new EditorsNavigationAdapter() {
-      public void editorNavigated(IEditor editor) {
-        myEditorsHistory.editorNavigated(editor);
-      }
-
-      public void beforeEditorLeft(IEditor editor) {
-        myEditorsHistory.editorNavigated(editor);
-      }
-
-      public void editorOpened(IEditor editor) {
-        myEditorsHistory.editorNavigated(editor);
       }
     });
   }
@@ -95,18 +78,6 @@ public class UIEditorComponent extends AbstractEditorComponent implements IEdito
 
   public IEditor getEditor() {
     return new MyEditor();
-  }
-
-  public void openPrevEditorInHistory(IOperationContext operationContext) {
-    myEditorsHistory.openPrevEditorInHistory(operationContext);
-  }
-
-  public void openNextEditorInHistory(IOperationContext operationContext) {
-    myEditorsHistory.openNextEditorInHistory(operationContext);
-  }
-
-  public EditorsHistory getEditorsHistory() {
-    return myEditorsHistory;
   }
 
   public boolean isOpeningNavigationEventsOn() {

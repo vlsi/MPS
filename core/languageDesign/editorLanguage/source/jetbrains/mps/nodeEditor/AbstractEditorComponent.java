@@ -1918,21 +1918,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       return;
     }
 
-    //ctrl-alt-arrows
-    if (keyEvent.isControlDown() && keyEvent.isAltDown()) {
-      if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT) {
-        getEditorOpener().openPrevEditorInHistory(myOperationContext);
-        keyEvent.consume();
-        return;
-      }
-
-      if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT) {
-        getEditorOpener().openNextEditorInHistory(myOperationContext);
-        keyEvent.consume();
-        return;
-      }
-    }
-
     // hardcoded "update" action
     if (keyEvent.getKeyCode() == KeyEvent.VK_F5 && keyEvent.getModifiers() == 0) {
       CommandProcessor.instance().tryToExecuteLightweightCommand(new Runnable() {

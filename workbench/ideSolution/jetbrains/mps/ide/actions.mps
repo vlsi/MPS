@@ -20,7 +20,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <maxImportIndex value="44" />
+  <maxImportIndex value="45" />
   <import index="1" modelUID="jetbrains.mps.ide.actions.nodes@java_stub" version="-1" />
   <import index="2" modelUID="jetbrains.mps.ide.modelchecker@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.ide.actions.model@java_stub" version="-1" />
@@ -37,7 +37,6 @@
   <import index="15" modelUID="jetbrains.mps.ide.actions.cells@java_stub" version="-1" />
   <import index="16" modelUID="jetbrains.mps.ide.actions.baseLanguage@java_stub" version="-1" />
   <import index="19" modelUID="jetbrains.mps.ide.actions@java_stub" version="-1" />
-  <import index="20" modelUID="jetbrains.mps.ide.actions.navigation@java_stub" version="-1" />
   <import index="21" modelUID="jetbrains.mps.ide.actions.help@java_stub" version="-1" />
   <import index="22" modelUID="jetbrains.mps.ide.actions.gotoMenu@java_stub" version="-1" />
   <import index="27" modelUID="jetbrains.mps.svn.ui@java_stub" version="-1" />
@@ -614,13 +613,6 @@
         <link role="javaClass" targetNodeId="19.~RedoAction" resolveInfo="RedoAction" />
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981850764" />
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981868592">
-        <link role="javaClass" targetNodeId="20.~PreviousEditorAction" resolveInfo="PreviousEditorAction" />
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981873878">
-        <link role="javaClass" targetNodeId="20.~NextEditorAction" resolveInfo="NextEditorAction" />
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981882013" />
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1205936020383">
         <link role="javaClass" targetNodeId="13.~MakeAllModulesAction" resolveInfo="MakeAllModulesAction" />
       </node>
