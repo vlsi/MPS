@@ -3,6 +3,7 @@ package jetbrains.mps.reloading;
 import jetbrains.mps.component.IComponentLifecycle;
 import jetbrains.mps.runtime.RuntimeEnvironment;
 import jetbrains.mps.runtime.RBundle;
+import jetbrains.mps.runtime.BundleClassLoader;
 import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.BootstrapLanguagesManager;
@@ -73,15 +74,7 @@ public class ClassLoaderManager implements IComponentLifecycle, ApplicationCompo
       return null;
     }
 
-    ClassLoader loader = bundle.getClassLoader();
-    try {
-      return Class.forName(classFqName, true, loader);
-    } catch (ClassNotFoundException e) {
-      return null;
-    } catch (Throwable t) {
-      LOG.error(t);
-      return null;
-    }
+    return bundle.getClassLoader().getClass(classFqName);    
   }
 
   public void reloadAll(@NotNull ProgressIndicator indicator) {

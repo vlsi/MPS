@@ -1,14 +1,39 @@
 package jetbrains.mps.runtime;
 
 import java.net.URL;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.Map;
+import java.util.HashMap;
 
 public class BundleClassLoader extends BaseClassLoader {
+  private Map<String, Class> myClassesCache = new HashMap<String, Class>();
+  private final Object myLock = new Object();
+
   private Boolean myDisposed;
   private RBundle myBundle;
 
   BundleClassLoader(RBundle bundle) {
     myBundle = bundle;
   }
+
+
+  public Class getClass(String fqName) {
+    synchronized (myLock) {
+      if (myClassesCache.containsKey(fqName)) {
+        return myClassesCache.get(fqName);
+      }      
+      try {
+        Class<?> cls = Class.forName(fqName, false, this);
+        myClassesCache.put(fqName, cls);
+        return cls;
+      } catch (ClassNotFoundException e) {
+        myClassesCache.put(fqName, null);
+        return null;
+      }
+    }
+  }
+
 
   protected Class loadBeforeCurrent(String name) {
     Class fromParent =  myBundle.getRuntimeEnvironment().loadFromParent(name);

@@ -54,11 +54,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
-/**
- * Author: Sergey Dmitriev
- * Created Oct 25, 2003
- */
-
 @State(
   name = "MPSProjectPane",
   storages = {

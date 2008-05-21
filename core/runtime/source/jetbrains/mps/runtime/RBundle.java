@@ -80,7 +80,7 @@ public class RBundle {
     myClassLoader = new BundleClassLoader(this);
   }
 
-  public ClassLoader getClassLoader() {
+  public BundleClassLoader getClassLoader() {
     assert myClassLoader != null;
     return myClassLoader;
   }
