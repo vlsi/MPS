@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
-import jetbrains.mps.workbench.output.OutputView;
+import jetbrains.mps.workbench.output.OutputViewTool;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
@@ -85,11 +85,11 @@ public class ShowMappingsPartitioningAction extends MPSAction {
       }
       text += "\n";
     }
-    OutputView view = operationContext.getComponent(OutputView.class);
-    view.clear();
-    view.append("---------------------  mappings partitioning  -----------------------------------\n\n");
-    view.append(text);
-    view.append("---------------------------------------------------------------------------------\n");
-    view.activate();
+    OutputViewTool viewTool = OutputViewTool.getOutputViewTool(operationContext.getProject());
+    viewTool.clear();
+    viewTool.append("---------------------  mappings partitioning  -----------------------------------\n\n");
+    viewTool.append(text);
+    viewTool.append("---------------------------------------------------------------------------------\n");
+    viewTool.showTool(true);
   }
 }

@@ -1,38 +1,35 @@
 package jetbrains.mps.workbench.output;
 
-import jetbrains.mps.ide.IDEProjectFrame;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
-import jetbrains.mps.ide.toolsPane.DefaultTool;
-import jetbrains.mps.ide.toolsPane.ToolsPane;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.util.IntegerValueDocumentFilter;
-import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.workbench.tools.BaseMPSTool;
 
 import javax.swing.*;
-import javax.swing.text.AbstractDocument;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Font;
+import java.awt.Frame;
+import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.ActionEvent;
-import java.util.List;
 
-import org.jdom.Element;
-
-public class OutputView extends DefaultTool {
+public class OutputViewTool extends BaseMPSTool {
 
   private JPanel myComponent = new JPanel();
   private JTextArea myTextArea = new JTextArea();
-  private MPSProject myProject;
   private String myLastSearchPattern = null;
   private AbstractAction myFindAction;
   private AbstractAction myFindNextAction;
   private int myFontSize = 12;
 
-  public OutputView(MPSProject project) {
-    myProject = project;
+  public OutputViewTool(Project project) {
+    super(project, "Output View", 4, Icons.OUTPUT_VIEW_ICON, ToolWindowAnchor.BOTTOM, true);
+  }
 
+  public void initComponent() {
+    super.initComponent();
     myTextArea.setEditable(false);
 
     myFindAction = new AbstractActionWithEmptyIcon("Find") {
@@ -41,7 +38,7 @@ public class OutputView extends DefaultTool {
       }
 
       public void actionPerformed(ActionEvent e) {
-        String pattern = JOptionPane.showInputDialog(myProject.getComponent(Frame.class), "Enter pattern to find", myLastSearchPattern);
+        String pattern = JOptionPane.showInputDialog(getMPSProject().getComponent(Frame.class), "Enter pattern to find", myLastSearchPattern);
         if (pattern == null) return;
         find(pattern);
       }
@@ -92,14 +89,10 @@ public class OutputView extends DefaultTool {
 
     myComponent.setLayout(new BorderLayout());
     myComponent.add(new JScrollPane(myTextArea), BorderLayout.CENTER);
-
-    if (getTopComponent() != null) {
-      myComponent.add(getTopComponent(), BorderLayout.NORTH);      
-    }
   }
 
-  protected JComponent getTopComponent() {
-    return null;
+  public static OutputViewTool getOutputViewTool(MPSProject project) {
+    return getTool(project, OutputViewTool.class);
   }
 
   private void updateComponent() {
@@ -131,23 +124,7 @@ public class OutputView extends DefaultTool {
     myTextArea.setText("");
   }
 
-  public void activate() {
-    myProject.getComponentSafe(ToolsPane.class).selectTool(this);
-  }
-
   public JComponent getComponent() {
     return myComponent;
-  }
-
-  public String getName() {
-    return "Output View";
-  }
-
-  public Icon getIcon() {
-    return Icons.OUTPUT_VIEW_ICON;
-  }
-
-  public int getNumber() {
-    return 4;
   }
 }

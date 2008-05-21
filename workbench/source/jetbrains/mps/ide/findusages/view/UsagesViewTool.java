@@ -78,6 +78,7 @@ public class UsagesViewTool extends BaseMPSTool {
     setDefaultOptions();
   }
 
+
   private void setDefaultOptions() {
     FindersOptions findersOptions = new FindersOptions(NodeUsages_Finder.class.getName(), ConceptInstances_Finder.class.getName());
     myDefaultFindOptions.setOption(findersOptions);
@@ -91,9 +92,9 @@ public class UsagesViewTool extends BaseMPSTool {
 
   //----TOOL STUFF----
 
-  public void showTool() {
+  public void showTool(boolean activate) {
     if (myUsageViewsData.size() > 0) {
-      super.showTool(true);
+      super.showTool(activate);
     }
   }
 
@@ -248,8 +249,12 @@ public class UsagesViewTool extends BaseMPSTool {
       myTabbedPane.setTitleAt(currentTabIndex(), usageViewData.myUsagesView.getCaption());
       myTabbedPane.setIconAt(currentTabIndex(), usageViewData.myUsagesView.getIcon());
 
-      showTool();
+      showTool(true);
     }
+  }
+
+  public static UsagesViewTool getUsagesViewTool(MPSProject project) {
+    return getTool(project, UsagesViewTool.class);
   }
 
   public void read(Element element, MPSProject project) {

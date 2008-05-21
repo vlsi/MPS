@@ -115,6 +115,13 @@ public abstract class BaseMPSTool implements ProjectComponent {
     return getClass().getName();
   }
 
+  public static <T> T getTool(MPSProject project, Class<T> toolClass) {
+    assert project != null;
+    Project ideaProject = project.getComponent(Project.class);
+    assert ideaProject != null;
+    return ideaProject.getComponent(toolClass);
+  }
+
   //------------STUFF TO IMPLEMENT-------------------
 
   public abstract JComponent getComponent();

@@ -330,10 +330,7 @@ public class MessageViewTool extends BaseMPSTool implements ProjectComponent, Pe
   }
 
   public static MessageViewTool getMessageViewTool(MPSProject project) {
-    assert project != null;
-    Project ideaProject = project.getComponent(Project.class);
-    assert ideaProject != null;
-    return ideaProject.getComponent(MessageViewTool.class);
+    return getTool(project, MessageViewTool.class);
   }
 
   private JToggleButton createToggleButton(String tooltip, Icon icon) {

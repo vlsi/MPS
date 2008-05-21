@@ -271,6 +271,11 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.workbench.output.OutputViewTool</implementation-class>
+      <skipForDummyProject/>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.MPSProjectHolder</implementation-class>
     </component>
 
