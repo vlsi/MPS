@@ -1,6 +1,7 @@
 package jetbrains.mps.ide.messages;
 
 import com.intellij.ide.SelectInManager;
+import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
@@ -20,7 +21,10 @@ import jetbrains.mps.workbench.tools.BaseMPSTool;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -42,9 +46,9 @@ public class MessageViewTool extends BaseMPSTool implements ProjectComponent, Pe
   public static final Icon ERROR_ICON = new ImageIcon(MessageViewTool.class.getResource("error.png"));
   public static final Icon WARNING_ICON = new ImageIcon(MessageViewTool.class.getResource("warning.png"));
 
-  private JToggleButton myErrorsCheckbox = createToggleButton("Show Error Messages", ERROR_ICON);
-  private JToggleButton myWarningsCheckbox = createToggleButton("Show Warnings Messages", WARNING_ICON);
-  private JToggleButton myInfoCheckbox = createToggleButton("Show Information Messages", INFORMATION_ICON);
+  private ToggleAction myErrorsAction = createToggleAction("Show Error Messages", ERROR_ICON);
+  private ToggleAction myWarningsAction = createToggleAction("Show Warnings Messages", WARNING_ICON);
+  private ToggleAction myInfoAction = createToggleAction("Show Information Messages", INFORMATION_ICON);
 
   private BlameDialog myBlameDialog;
   private BlameDialog.MyState myDialogState;
@@ -66,17 +70,17 @@ public class MessageViewTool extends BaseMPSTool implements ProjectComponent, Pe
     JPanel panel = new JPanel(new BorderLayout());
     panel.add(new JPanel(), BorderLayout.CENTER);
 
-    JPanel checkboxPanel = new JPanel(new GridLayout(3, 1));
-    checkboxPanel.add(myErrorsCheckbox);
-    checkboxPanel.add(myWarningsCheckbox);
-    checkboxPanel.add(myInfoCheckbox);
-    checkboxPanel.add(new JButton(new AbstractAction("X") {
-      public void actionPerformed(ActionEvent e) {
+    DefaultActionGroup group = new DefaultActionGroup();
+    group.add(myErrorsAction);
+    group.add(myWarningsAction);
+    group.add(myInfoAction);
+    group.add(new AnAction("", "Close", Icons.CLOSE_ICON) {
+      public void actionPerformed(AnActionEvent e) {
         closeTool();
       }
-    }));
+    });
 
-    panel.add(checkboxPanel, BorderLayout.NORTH);
+    panel.add(ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent(), BorderLayout.NORTH);
 
     myComponent.add(panel, BorderLayout.WEST);
     myComponent.add(new JScrollPane(myList), BorderLayout.CENTER);
@@ -261,11 +265,11 @@ public class MessageViewTool extends BaseMPSTool implements ProjectComponent, Pe
   private boolean isVisible(Message m) {
     switch (m.getKind()) {
       case ERROR:
-        return myErrorsCheckbox.isSelected();
+        return myErrorsAction.isSelected(null);
       case WARNING:
-        return myWarningsCheckbox.isSelected();
+        return myWarningsAction.isSelected(null);
       case INFORMATION:
-        return myInfoCheckbox.isSelected();
+        return myInfoAction.isSelected(null);
     }
     return true;
   }
@@ -333,26 +337,29 @@ public class MessageViewTool extends BaseMPSTool implements ProjectComponent, Pe
     return getTool(project, MessageViewTool.class);
   }
 
-  private JToggleButton createToggleButton(String tooltip, Icon icon) {
-    JToggleButton button = new JToggleButton(icon);
-    button.setToolTipText(tooltip);
-    button.setSelected(true);
-    button.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent event) {
+  private ToggleAction createToggleAction(String tooltip, Icon icon) {
+    return new ToggleAction("", tooltip, icon) {
+      private boolean mySelected = true;
+
+      public boolean isSelected(AnActionEvent e) {
+        return mySelected;
+      }
+
+      public void setSelected(AnActionEvent e, boolean state) {
+        mySelected = state;
         rebuildModel();
       }
-    });
-    return button;
+    };
   }
 
   public MyState getState() {
-    return new MyState(myErrorsCheckbox.isSelected(), myWarningsCheckbox.isSelected(), myInfoCheckbox.isSelected(), myBlameDialog.getState());
+    return new MyState(myErrorsAction.isSelected(null), myWarningsAction.isSelected(null), myInfoAction.isSelected(null), myBlameDialog.getState());
   }
 
   public void loadState(MyState state) {
-    myErrorsCheckbox.setSelected(state.isErrors());
-    myWarningsCheckbox.setSelected(state.isWarnings());
-    myInfoCheckbox.setSelected(state.isInfo());
+    myErrorsAction.setSelected(null, state.isErrors());
+    myWarningsAction.setSelected(null, state.isWarnings());
+    myInfoAction.setSelected(null, state.isInfo());
     myDialogState = state.getDialogState();
   }
 

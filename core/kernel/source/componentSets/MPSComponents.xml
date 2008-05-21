@@ -276,6 +276,11 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.refactoring.RefactoringViewTool</implementation-class>
+      <skipForDummyProject/>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.MPSProjectHolder</implementation-class>
     </component>
 
