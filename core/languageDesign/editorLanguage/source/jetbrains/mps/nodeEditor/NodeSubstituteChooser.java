@@ -556,14 +556,14 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
         LOG.error(t);
       }
 
+      myLeft.setForeground(UIManager.getColor("TextArea.selectionForeground"));
+      myRight.setForeground(UIManager.getColor("TextArea.selectionForeground"));
       if (isSelected) {
         setBackground(list.getSelectionBackground());
         setForeground(list.getSelectionForeground());
-        myRight.setForeground(null);
       } else {
         setBackground(list.getBackground());
         setForeground(list.getForeground());
-        myRight.setForeground(Color.GRAY);
       }
     }
   }
