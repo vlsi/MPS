@@ -29,8 +29,6 @@ import java.util.*;
 public class CellExplorerView extends DefaultTool {
   public static final Logger LOG = Logger.getLogger(CellExplorerView.class);
 
-  private AbstractProjectFrame myAbstractProjectFrame;
-
   private JPanel myComponent = new JPanel(new BorderLayout());
   private MyTree myTree = new MyTree();
   private AbstractEditorComponent myCurrentEditor;
@@ -59,8 +57,7 @@ public class CellExplorerView extends DefaultTool {
     }
   };
 
-  public CellExplorerView(AbstractProjectFrame projectFrame) {
-    myAbstractProjectFrame = projectFrame;
+  public CellExplorerView() {
     myTree.setRootVisible(true);
     myComponent.add(new JScrollPane(myTree), BorderLayout.CENTER);
     update();
@@ -82,11 +79,11 @@ public class CellExplorerView extends DefaultTool {
   }
 
   private ToolsPane getToolsPane() {
-    return myAbstractProjectFrame.getToolsPane();
+    return null;
   }
 
   private EditorsPane getEditorsPane() {
-    return myAbstractProjectFrame.getEditorsPane();
+    return null;
   }
 
 
@@ -239,7 +236,7 @@ public class CellExplorerView extends DefaultTool {
       }).setBorder(null);
       result.add(new AbstractActionWithEmptyIcon("Properties") {
         public void actionPerformed(ActionEvent e) {
-          new CellPropertiesWindow(myCell, myAbstractProjectFrame.getMainFrame());
+          new CellPropertiesWindow(myCell, null);
         }
       }).setBorder(null);
       return result;

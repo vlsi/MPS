@@ -1,6 +1,5 @@
 package jetbrains.mps.ide.ui.smodel;
 
-import jetbrains.mps.ide.AbstractProjectFrame;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.action.ActionContext;
@@ -180,9 +179,6 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   public void doubleClick() {
     if (getTree() instanceof ProjectPane.MyTree) {      
       ((ProjectPane.MyTree) getTree()).editNode(myNode, getOperationContext());
-    } else {
-      IDEProjectFrame projectFrame = (IDEProjectFrame) getOperationContext().getComponent(AbstractProjectFrame.class);
-      projectFrame.openNode(myNode, getOperationContext());
     }
   }
 
