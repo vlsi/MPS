@@ -292,6 +292,21 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.ide.hierarchy.HierarchyViewTool</implementation-class>
+      <skipForDummyProject/>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.ide.hierarchy.BaseLanguageHierarchyViewTool</implementation-class>
+      <skipForDummyProject/>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.helgins.uiActions.SupertypesViewTool</implementation-class>
+      <skipForDummyProject/>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.MPSProjectHolder</implementation-class>
     </component>
 

@@ -1,35 +1,31 @@
 package jetbrains.mps.ide.hierarchy;
 
-import jetbrains.mps.ide.toolsPane.DefaultTool;
-import jetbrains.mps.ide.*;
-import jetbrains.mps.ide.navigation.NavigationActionProcessor;
-import jetbrains.mps.ide.navigation.EditorNavigationCommand;
-import jetbrains.mps.ide.command.CommandProcessor;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.wm.ToolWindowAnchor;
+import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
+import jetbrains.mps.ide.ChooseItemWindow;
+import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.GoToNodeWindow.GoToNodeComponent;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.navigation.EditorNavigationCommand;
+import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.workbench.tools.BaseMPSTool;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
-import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 05.06.2007
- * Time: 15:40:25
- * To change this template use File | Settings | File Templates.
- */
-public abstract class AbstractHierarchyView<T extends INodeAdapter> extends DefaultTool {
+public abstract class AbstractHierarchyView<T extends INodeAdapter> extends BaseMPSTool {
 
   protected AbstractHierarchyTree<T> myHierarchyTree;
   protected HierarchyTreeNode<T> myTreeNode;
   protected JPanel myComponent = new JPanel(new BorderLayout());
-  protected JPanel myButtonsPanel = new JPanel(new GridLayout(1,3));
+  protected JPanel myButtonsPanel = new JPanel(new GridLayout(1, 3));
   protected ButtonGroup myButtonGroup = new ButtonGroup();
   protected JRadioButton myChildrenHierarchyButton;
   protected JRadioButton myParentsHierarchyButton;
@@ -38,19 +34,12 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Defa
   protected IDEProjectFrame myIde;
   public JScrollPane myScrollPane;
 
-  public AbstractHierarchyView(IDEProjectFrame ide) {
-    myIde = ide;
-    init();
+  public AbstractHierarchyView(Project project, String id, int number, Icon icon) {
+    super(project, id, number, icon, ToolWindowAnchor.BOTTOM, true);
   }
 
-  protected abstract AbstractHierarchyTree<T> createHierarchyTree(boolean isParentHierarchy);
-  
-  public void openNode(SNode node, IOperationContext context) {
-    final EditorsPane editorsPane = context.getComponent(EditorsPane.class);
-    NavigationActionProcessor.getInstance().executeNavigationAction(new EditorNavigationCommand(node, null, editorsPane), context.getProject());
-  }
-
-  protected void init() {
+  public void initComponent() {
+    super.initComponent();
     myHierarchyTree = createHierarchyTree(false);
     myHierarchyTree.setRootVisible(true);
 
@@ -61,6 +50,13 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Defa
     myScrollPane = new JScrollPane(myHierarchyTree);
     myComponent.add(myScrollPane, BorderLayout.CENTER);
     showConceptInHierarchy(null, null);
+  }
+
+  protected abstract AbstractHierarchyTree<T> createHierarchyTree(boolean isParentHierarchy);
+
+  public void openNode(SNode node, IOperationContext context) {
+    final EditorsPane editorsPane = context.getComponent(EditorsPane.class);
+    NavigationActionProcessor.getInstance().executeNavigationAction(new EditorNavigationCommand(node, null, editorsPane), context.getProject());
   }
 
   protected void initButtons() {

@@ -38,6 +38,24 @@ public abstract class BaseMPSTool implements ProjectComponent {
     myCanCloseContent = canCloseContent;
   }
 
+  //------------GETTERS-------------------
+
+  protected Project getProject() {
+    return myProject;
+  }
+
+  public String getId() {
+    return myId;
+  }
+
+  public int getNumber() {
+    return myNumber;
+  }
+
+  public Icon getIcon() {
+    return myIcon;
+  }
+
   //------------TOOL STUFF-------------------
 
   @Nullable
@@ -76,10 +94,6 @@ public abstract class BaseMPSTool implements ProjectComponent {
   }
 
   //------------PROJECT COMPONENT STUFF-------------------
-
-  protected Project getProject() {
-    return myProject;
-  }
 
   protected MPSProject getMPSProject() {
     return myProject.getComponent(MPSProjectHolder.class).getMPSProject();

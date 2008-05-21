@@ -1,42 +1,28 @@
 package jetbrains.mps.ide.hierarchy;
 
-import jetbrains.mps.bootstrap.structureLanguage.icons.Icons;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
-import jetbrains.mps.ide.*;
-import jetbrains.mps.ide.navigation.EditorNavigationCommand;
-import jetbrains.mps.ide.navigation.NavigationActionProcessor;
-import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.ide.ui.TreeTextUtil;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.project.MPSProject;
 
-import javax.swing.*;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
-public class HierarchyView extends AbstractHierarchyView<AbstractConceptDeclaration> {
+public class HierarchyViewTool extends AbstractHierarchyView<AbstractConceptDeclaration> {
 
-  public HierarchyView(IDEProjectFrame ide) {
-    super(ide);
+  public HierarchyViewTool(Project project) {
+    super(project, "Hierarchy View", 8, jetbrains.mps.ide.projectPane.Icons.HIERARCHY_ICON);
   }
 
   protected AbstractHierarchyTree<AbstractConceptDeclaration> createHierarchyTree(boolean isParentHierarchy) {
     return new ConceptHierarchyTree(this, isParentHierarchy);
   }
 
-  public void activate() {
-    if (myIde != null) { //todo IDEA platform hack
-      myIde.showHierarchyView();
-    }
+  public static HierarchyViewTool getHierarchyView(MPSProject project) {
+    return getTool(project, HierarchyViewTool.class);
   }
 
   private class ConceptHierarchyTree extends AbstractHierarchyTree<AbstractConceptDeclaration> {
@@ -73,7 +59,7 @@ public class HierarchyView extends AbstractHierarchyView<AbstractConceptDeclarat
 
     protected AbstractConceptDeclaration getParent(AbstractConceptDeclaration node) {
       if (node instanceof ConceptDeclaration) {
-        return ((ConceptDeclaration)node).getExtends();
+        return ((ConceptDeclaration) node).getExtends();
       } else {
         return null;
       }
@@ -87,17 +73,5 @@ public class HierarchyView extends AbstractHierarchyView<AbstractConceptDeclarat
       return "(no concept)";
     }
 
-  }
-
-  public String getName() {
-    return "Hierarchy View";
-  }
-
-  public Icon getIcon() {
-    return jetbrains.mps.ide.projectPane.Icons.HIERARCHY_ICON;
-  }
-
-  public int getNumber() {
-    return 8;
   }
 }

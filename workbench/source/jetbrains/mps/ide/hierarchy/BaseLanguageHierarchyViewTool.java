@@ -1,44 +1,32 @@
 package jetbrains.mps.ide.hierarchy;
 
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
-import jetbrains.mps.baseLanguage.structure.ClassifierType;
-import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.baseLanguage.structure.Interface;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.icons.Icons;
-import jetbrains.mps.ide.IDEProjectFrame;
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.baseLanguage.structure.ClassConcept;
+import jetbrains.mps.baseLanguage.structure.Classifier;
+import jetbrains.mps.baseLanguage.structure.ClassifierType;
+import jetbrains.mps.baseLanguage.structure.Interface;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SReference;
 
-import javax.swing.Icon;
-import java.util.Set;
 import java.util.HashSet;
+import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 05.06.2007
- * Time: 19:19:08
- * To change this template use File | Settings | File Templates.
- */
-public class BaseLanguageHierarchyView extends AbstractHierarchyView<Classifier> {
-  public BaseLanguageHierarchyView(IDEProjectFrame ide) {
-    super(ide);
-  }
-
-  public String getName() {
-    return "Class Hierarchy";
-  }
-
-  public Icon getIcon() {
-    return Icons.HIERARCHY_VIEW_ICON;
+public class BaseLanguageHierarchyViewTool extends AbstractHierarchyView<Classifier> {
+  public BaseLanguageHierarchyViewTool(Project project) {
+    super(project, "Class Hierarchy", -1, Icons.HIERARCHY_VIEW_ICON);
   }
 
   protected AbstractHierarchyTree<Classifier> createHierarchyTree(boolean isParentHierarchy) {
     return new BaseLanguageHierarchyTree(this, Classifier.class, isParentHierarchy);
+  }
+
+  public static BaseLanguageHierarchyViewTool getBaseLanguageHierarchyViewTool(MPSProject project) {
+    return getTool(project, BaseLanguageHierarchyViewTool.class);
   }
 
   private static class BaseLanguageHierarchyTree extends AbstractHierarchyTree<Classifier> {
