@@ -580,7 +580,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     new IntelligentNodeMover(getEditorContext(), getSelectedNodes(), false).move();
   }
 
-
   private void moveCurrentDown() {
     new IntelligentNodeMover(getEditorContext(), getSelectedNodes(), true).move();
   }
@@ -700,7 +699,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     });
   }
 
-
   public MessagesGutter getMessagesGutter() {
     return myMessagesGutter;
   }
@@ -745,7 +743,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     EditorSettings.getInstance().addEditorSettingsListener(mySettingsListener);
   }
 
-
   public void removeNotify() {
     EditorSettings.getInstance().removeEditorSettingsListener(mySettingsListener);
     KeyboardFocusManager.getCurrentKeyboardFocusManager().removePropertyChangeListener("focusOwner", myFocusListener);
@@ -789,7 +786,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     return null;
   }
-
 
   private void processPopupMenu(final MouseEvent e) {
     EditorCell selectedCell = getSelectedCell();
@@ -1508,7 +1504,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     });
   }
 
-
   public void addRebuildListener(RebuildListener listener) {
     myRebuildListeners.add(listener);
   }
@@ -1530,7 +1525,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       listener.cellSynchronizedWithModel(cell);
     }
   }
-
 
   public EditorCell findNearestCell(int x, int y) {
     EditorCell cell = myRootCell.findCell(x, y);
@@ -1618,7 +1612,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       revalidateAndRepaint(false);
     }
   }
-
 
   public void clearSelectionStack() {
     mySelectedStack.clear();
@@ -1712,7 +1705,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     fireCellSelectionChanged(oldSelection, newSelectedCell);
   }
 
-
   public void scrollToNode(SNode node) {
     EditorCell cell = findNodeCell(node);
     if (cell != null) {
@@ -1786,7 +1778,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     Rectangle rectangle = new Rectangle(r.x, r.y - height, r.width, r.height + 2 * height);
     return rectangle;
   }
-
 
   public void addCellSelectionListener(ICellSelectionListener l) {
     mySelectionListeners.add(l);
@@ -1908,7 +1899,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     peekKeyboardHandler().processKeyReleased(getEditorContext(), keyEvent);
     revalidateAndRepaint(false);
   }
-
 
   public void processKeyPressed(final KeyEvent keyEvent) {
     if (keyEvent.isConsumed()) return;
@@ -2042,7 +2032,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   public NodeRangeSelection getNodeRangeSelection() {
     return myNodeRangeSelection;
   }
-
 
   // last caret X
   boolean hasLastCaretX() {
