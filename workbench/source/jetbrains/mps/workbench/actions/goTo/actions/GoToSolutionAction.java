@@ -11,12 +11,16 @@ import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.impl.FakePsiElement;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.workbench.actions.goTo.framework.modules.GoToLanguageModel;
+import jetbrains.mps.workbench.actions.goTo.framework.modules.GoToSolutionModel;
 
-public class GoToLanguageAction extends AnAction {
+import java.util.ArrayList;
+import java.util.List;
+
+public class GoToSolutionAction extends AnAction {
   public void actionPerformed(AnActionEvent e) {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;
@@ -31,12 +35,18 @@ public class GoToLanguageAction extends AnAction {
       }
     };
 
-    GoToLanguageModel goToLanguageModel = new GoToLanguageModel(mpsProject) {
-      public Language[] find(IScope scope) {
-        return scope.getVisibleLanguages().toArray(new Language[0]);
+    GoToSolutionModel goToSolutionModel = new GoToSolutionModel(mpsProject) {
+      public Solution[] find(IScope scope) {
+        List<Solution> solutions = new ArrayList<Solution>();
+        for (IModule module : scope.getVisibleModules()) {
+          if (module instanceof Solution) {
+            solutions.add((Solution) module);
+          }
+        }
+        return solutions.toArray(new Solution[0]);
       }
     };
-    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToLanguageModel, fakePsiContext);
+    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToSolutionModel, fakePsiContext);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {

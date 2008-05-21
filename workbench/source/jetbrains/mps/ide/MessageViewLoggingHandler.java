@@ -1,15 +1,15 @@
 package jetbrains.mps.ide;
 
-import jetbrains.mps.logging.ILoggingHandler;
-import jetbrains.mps.logging.LogEntry;
-import jetbrains.mps.ide.messages.MessageView;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
+import jetbrains.mps.ide.messages.MessageViewTool;
+import jetbrains.mps.logging.ILoggingHandler;
+import jetbrains.mps.logging.LogEntry;
 
 public class MessageViewLoggingHandler implements ILoggingHandler {
-  private MessageView myMessageView;
+  private MessageViewTool myMessageView;
 
-  public MessageViewLoggingHandler(MessageView messageView) {
+  public MessageViewLoggingHandler(MessageViewTool messageView) {
     myMessageView = messageView;
   }
 

@@ -1,54 +1,57 @@
 package jetbrains.mps.ide.messages;
 
+import com.intellij.openapi.components.ProjectComponent;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.startup.StartupManager;
+import com.intellij.openapi.wm.ToolWindowAnchor;
+import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.blame.BlameDialog;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.ide.toolsPane.DefaultTool;
-import jetbrains.mps.ide.toolsPane.ToolsPane;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.components.IExternalizableComponent;
+import jetbrains.mps.workbench.tools.BaseMPSTool;
+import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
-import org.jdom.Element;
-
-public class MessageView extends DefaultTool implements IExternalizableComponent {
+public class MessageViewTool extends BaseMPSTool implements ProjectComponent, IExternalizableComponent {
   private static final int MAX_MESSAGES_SIZE = 30000;
 
   private static final String SHOW_INFORMATION = "showInformation";
   private static final String SHOW_ERRORS = "showErrors";
   private static final String SHOW_WARNINGS = "showWarnings";
 
-  public static final Icon INFORMATION_ICON = new ImageIcon(MessageView.class.getResource("information.png"));
-  public static final Icon ERROR_ICON = new ImageIcon(MessageView.class.getResource("error.png"));
-  public static final Icon WARNING_ICON = new ImageIcon(MessageView.class.getResource("warning.png"));
+  public static final Icon INFORMATION_ICON = new ImageIcon(MessageViewTool.class.getResource("information.png"));
+  public static final Icon ERROR_ICON = new ImageIcon(MessageViewTool.class.getResource("error.png"));
+  public static final Icon WARNING_ICON = new ImageIcon(MessageViewTool.class.getResource("warning.png"));
 
-  private JPanel myComponent = new JPanel();
+  private JToggleButton myErrorsCheckbox = createToggleButton("Show Error Messages", ERROR_ICON);
+  private JToggleButton myWarningsCheckbox = createToggleButton("Show Warnings Messages", WARNING_ICON);
+  private JToggleButton myInfoCheckbox = createToggleButton("Show Information Messages", INFORMATION_ICON);
 
   private BlameDialog myBlameDialog;
 
-  private JToggleButton myErrorsCheckbox = createToggleButton("Show Error Messages", ERROR_ICON);
-
-  private JToggleButton myWarningsCheckbox = createToggleButton("Show Warnings Messages", WARNING_ICON);
-
-  private JToggleButton myInfoCheckbox = createToggleButton("Show Information Messages", INFORMATION_ICON);
-
-
   private Queue<Message> myMessages = new LinkedList<Message>();
   private DefaultListModel myModel = new DefaultListModel();
+  private JPanel myComponent = new JPanel();
   private JList myList = new JList(myModel);
-  private ToolsPane myToolsPane;
 
-  public MessageView(ToolsPane toolsPane) {
+  public MessageViewTool(Project project) {
+    super(project, "MPSMessages", Icons.MESSAGE_VIEW_ICON, ToolWindowAnchor.BOTTOM, true);
+  }
+
+  public void initComponent() {
     myList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-    myToolsPane = toolsPane;
     myComponent.setLayout(new BorderLayout());
 
     JPanel panel = new JPanel(new BorderLayout());
@@ -149,11 +152,37 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
     });
 
     myBlameDialog = new BlameDialog(null);
+
+    StartupManager.getInstance(getProject()).registerPostStartupActivity(new Runnable() {
+      public void run() {
+        showTool(false);
+      }
+    });
   }
 
-  public boolean canClose() {
-    return false;
+  //------------TOOL STUFF---------------
+
+  public void showTool(boolean activate) {
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      public void run() {
+        if (myModel.size() > 0) {
+          myList.setSelectedValue(myModel.getElementAt(myModel.size() - 1), true);
+        }
+      }
+    });
+    super.showTool(activate);
   }
+
+  public JComponent getComponent() {
+    return myComponent;
+  }
+
+  @NotNull
+  public String getKeyStroke() {
+    return "alt 0";
+  }
+
+  //------------MESSAGES STUFF---------------
 
   public boolean hasErrors() {
     ListModel model = myList.getModel();
@@ -214,14 +243,9 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
         NavigationManager.getInstance()
-          .navigateTo(getProject(), selectedMessage.getHintObject());
+          .navigateTo(getMPSProject(), selectedMessage.getHintObject());
       }
     });
-  }
-
-  //todo IDEA platform hack
-  protected MPSProject getProject() {
-    return myToolsPane.getProject();
   }
 
   private boolean isVisible(Message m) {
@@ -284,8 +308,7 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
           myList.setFixedCellWidth(width);
         }
 
-
-        show(false);
+        showTool(false);
       }
     });
   }
@@ -294,23 +317,6 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
     Component renderer = myList.getCellRenderer().getListCellRendererComponent(myList, message, 0, false, false);
     int width = renderer.getPreferredSize().width;
     return width;
-  }
-
-  public JComponent getComponent() {
-    return myComponent;
-  }
-
-  public void show(final boolean activate) {
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
-      public void run() {
-        if (myModel.size() > 0) {
-          myList.setSelectedValue(myModel.getElementAt(myModel.size() - 1), true);
-        }
-        if (activate && myToolsPane != null) {
-          myToolsPane.selectTool(MessageView.this, false);
-        }
-      }
-    });
   }
 
   public void read(Element element, MPSProject project) {
@@ -327,18 +333,6 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
     element.setAttribute(SHOW_INFORMATION, "" + myInfoCheckbox.isSelected());
 
     myBlameDialog.write(element, project);
-  }
-
-  public String getName() {
-    return "Messages";
-  }
-
-  public Icon getIcon() {
-    return Icons.MESSAGE_VIEW_ICON;
-  }
-
-  public int getNumber() {
-    return 0;
   }
 
   private JToggleButton createToggleButton(String tooltip, Icon icon) {

@@ -266,6 +266,11 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.ide.messages.MessageViewTool</implementation-class>
+      <skipForDummyProject/>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.MPSProjectHolder</implementation-class>
     </component>
 

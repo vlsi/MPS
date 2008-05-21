@@ -2,7 +2,6 @@ package jetbrains.mps.ide.findusages.view;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
-import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.ConceptInstances_Finder;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
@@ -57,8 +56,6 @@ public class UsagesViewTool extends BaseMPSTool {
   private static final String DEFAULT_FIND_OPTIONS = "default_find_options";
   private static final String DEFAULT_VIEW_OPTIONS = "default_view_options";
 
-  private Project myProject;
-
   private JPanel myPanel;
   private JTabbedPane myTabbedPane;
   private List<UsageViewData> myUsageViewsData = new ArrayList<UsageViewData>();
@@ -68,9 +65,10 @@ public class UsagesViewTool extends BaseMPSTool {
   //----CONSTRUCT STUFF----
 
   public UsagesViewTool(Project project) {
-    super(project, "Usages View", jetbrains.mps.ide.projectPane.Icons.USAGES_ICON, true, ToolWindowAnchor.BOTTOM, true);
+    super(project, "Usages View", jetbrains.mps.ide.projectPane.Icons.USAGES_ICON, ToolWindowAnchor.BOTTOM, true);
+  }
 
-    myProject = project;
+  public void initComponent() {
     myPanel = new JPanel(new BorderLayout());
 
     myTabbedPane = new JTabbedPane(JTabbedPane.BOTTOM);
@@ -91,15 +89,11 @@ public class UsagesViewTool extends BaseMPSTool {
     myDefaultFindOptions.setOption(queryOptions);
   }
 
-  private MPSProject getMPSProject() {
-    return myProject.getComponent(MPSProjectHolder.class).getMPSProject();
-  }
-
   //----TOOL STUFF----
 
   public void showTool() {
     if (myUsageViewsData.size() > 0) {
-      super.showTool();
+      super.showTool(true);
     }
   }
 
