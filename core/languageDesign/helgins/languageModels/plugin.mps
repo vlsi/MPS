@@ -29,6 +29,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="30" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.helgins.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.helgins.uiActions@java_stub" version="-1" />
@@ -51,7 +52,6 @@
   <import index="20" modelUID="javax.swing@java_stub" version="-1" />
   <import index="21" modelUID="jetbrains.mps.helgins.inference@java_stub" version="-1" />
   <import index="22" modelUID="java.lang@java_stub" version="-1" />
-  <import index="23" modelUID="jetbrains.mps.ide.navigation@java_stub" version="-1" />
   <import index="24" modelUID="jetbrains.mps.logging@java_stub" version="-1" />
   <import index="25" modelUID="jetbrains.mps.helgins.integration@java_stub" version="-1" />
   <import index="26" modelUID="jetbrains.mps.smodel.event@java_stub" version="-1" />
@@ -706,13 +706,6 @@
         <link role="classifier" targetNodeId="8.~IOperationContext" resolveInfo="IOperationContext" />
       </node>
     </node>
-    <node role="parameterDeclaration" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterDeclaration" id="1206105800777">
-      <property name="name" value="editorsPane" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206105800778" />
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206105813612">
-        <link role="classifier" targetNodeId="13.~EditorsPane" resolveInfo="EditorsPane" />
-      </node>
-    </node>
     <node role="parameterDeclaration" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterDeclaration" id="1206108160319">
       <property name="name" value="project" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206108160320" />
@@ -797,30 +790,6 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1206108407496" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206108407497" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206108407498">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206108441229">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206108441230">
-            <property name="name" value="currentEditor" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206108441231">
-              <link role="classifier" targetNodeId="13.~IEditor" resolveInfo="IEditor" />
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206108441232">
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206108441236">
-                <link role="baseMethodDeclaration" targetNodeId="13.~EditorsPane.getCurrentEditor():jetbrains.mps.ide.IEditor" resolveInfo="getCurrentEditor" />
-              </node>
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206108462782">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206108461186">
-                  <link role="variableDeclaration" targetNodeId="1206108415663" resolveInfo="context" />
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206108468758">
-                  <link role="baseMethodDeclaration" targetNodeId="8.~IOperationContext.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1206108482409">
-                    <link role="classifier" targetNodeId="13.~EditorsPane" resolveInfo="EditorsPane" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206108441237">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206108441238">
             <property name="name" value="ruleID" />
@@ -1462,13 +1431,6 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206184137709" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206184140040">
         <link role="classifier" targetNodeId="8.~IOperationContext" resolveInfo="IOperationContext" />
-      </node>
-    </node>
-    <node role="parameterDeclaration" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterDeclaration" id="1210598830818">
-      <property name="name" value="editorsPane" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1210598830819" />
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210598832790">
-        <link role="classifier" targetNodeId="13.~EditorsPane" resolveInfo="EditorsPane" />
       </node>
     </node>
     <node role="parameterDeclaration" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterDeclaration" id="1206184707842">

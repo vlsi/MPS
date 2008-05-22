@@ -346,10 +346,6 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.ide.EditorsPane</implementation-class>
-    </component>
-
-    <component>
       <implementation-class>jetbrains.mps.ide.progress.AdaptiveProgressMonitorFactory</implementation-class>
     </component>
 

@@ -18,9 +18,6 @@ import javax.swing.event.ChangeListener;
 import java.awt.Color;
 import java.util.List;
 
-/**
- * @author Kostik
- */
 public class UIEditorComponent extends AbstractEditorComponent implements IEditorOpener {
   private InspectorEditorComponent myInspector;
 

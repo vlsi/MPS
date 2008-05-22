@@ -1,6 +1,5 @@
 package jetbrains.mps.workbench.highlighter;
 
-import jetbrains.mps.nodeEditor.IEditorsProvider;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
@@ -25,7 +24,7 @@ import com.intellij.openapi.vfs.VirtualFile;
  * Time: 21:01:42
  * To change this template use File | Settings | File Templates.
  */
-public class MPSIDEAEditorsProvider implements IEditorsProvider {
+public class EditorsProvider {
   private Project myProject;
 
   private List<IEditor> myEditors = new ArrayList<IEditor>();
@@ -33,7 +32,7 @@ public class MPSIDEAEditorsProvider implements IEditorsProvider {
 
   private final Object myLock = new Object();
 
-  public MPSIDEAEditorsProvider(Project project) {
+  public EditorsProvider(Project project) {
     myProject = project;
     FileEditorManager manager = FileEditorManager.getInstance(project);
     manager.addFileEditorManagerListener(new FileEditorManagerListener() {

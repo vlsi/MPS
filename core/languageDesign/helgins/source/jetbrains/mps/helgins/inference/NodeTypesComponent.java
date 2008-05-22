@@ -17,7 +17,6 @@ import jetbrains.mps.bootstrap.helgins.runtime.incremental.INodesReadListener;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.nodeEditor.IEditorMessageOwner;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
@@ -177,14 +176,16 @@ public class NodeTypesComponent implements IEditorMessageOwner, Cloneable {
 
   @Nullable
   private AbstractEditorComponent getEditorComponent() {
-    MPSProject project = myTypeChecker.getProject();
-    if (project == null) return null;
-    EditorsPane editorsPane = project.getComponent(EditorsPane.class);
-    if (editorsPane == null) return null;
-    IEditor iEditor = editorsPane.getEditorFor(myRootNode);
-    if (iEditor == null) return null;
-    AbstractEditorComponent component = iEditor.getCurrentEditorComponent();
-    return component;
+// todo on IDEA platform this code always returns null. Move it somewhere  
+//    MPSProject project = myTypeChecker.getProject();
+//    if (project == null) return null;
+//    EditorsPane editorsPane = project.getComponent(EditorsPane.class);
+//    if (editorsPane == null) return null;
+//    IEditor iEditor = editorsPane.getEditorFor(myRootNode);
+//    if (iEditor == null) return null;
+//    AbstractEditorComponent component = iEditor.getCurrentEditorComponent();
+//    return component;
+    return null;
   }
 
 

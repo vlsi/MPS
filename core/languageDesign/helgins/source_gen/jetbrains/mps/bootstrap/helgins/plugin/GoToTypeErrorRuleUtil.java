@@ -5,8 +5,6 @@ package jetbrains.mps.bootstrap.helgins.plugin;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.helgins.inference.IErrorReporter;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelUID;
@@ -16,7 +14,6 @@ import jetbrains.mps.workbench.editors.MPSEditorOpener;
 public class GoToTypeErrorRuleUtil {
 
   public static void goToTypeErrorRule(IOperationContext context, IErrorReporter error, Logger LOG) {
-    IEditor currentEditor = context.getComponent(EditorsPane.class).getCurrentEditor();
     String ruleID = error.getRuleId();
     String ruleModel = error.getRuleModel();
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(ruleModel));

@@ -31,10 +31,6 @@
     <entry path="${language_descriptor}\classes" />
   </languageRuntimeClassPath>
   <sourcePath />
-  <osgiOptions>
-    <requiredBundles />
-    <exportedPackage />
-  </osgiOptions>
   <dependencies>
     <dependency reexport="false">jetbrains.mps.bootstrap.actionsLanguage</dependency>
     <dependency reexport="false">jetbrains.mps.ide</dependency>

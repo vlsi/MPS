@@ -14,7 +14,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.ide.EditorsPane;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class ConvertInferenceRuleToNonTypesystemRule_Intention extends BaseIntention implements Intention {
 
@@ -49,8 +50,8 @@ public class ConvertInferenceRuleToNonTypesystemRule_Intention extends BaseInten
       }
     }
     SNodeOperations.deleteNode(node);
-    EditorsPane editorsPane = ((EditorsPane)editorContext.getOperationContext().getComponent(EditorsPane.class));
-    editorsPane.openEditor(nonTypesystemRule, editorContext.getOperationContext());
+    IOperationContext operationContext = editorContext.getOperationContext();
+    operationContext.getComponent(MPSEditorOpener.class).openNode(nonTypesystemRule);
   }
 
   public Object[] getField(String key) {

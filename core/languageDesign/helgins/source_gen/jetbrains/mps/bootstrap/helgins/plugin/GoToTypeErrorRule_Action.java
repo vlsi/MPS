@@ -6,7 +6,6 @@ import jetbrains.mps.plugins.CurrentProjectMPSAction;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.action.ActionContext;
@@ -18,7 +17,6 @@ public class GoToTypeErrorRule_Action extends CurrentProjectMPSAction {
 
   private SNode node;
   private IOperationContext operationContext;
-  private EditorsPane editorsPane;
   private MPSProject project;
   private boolean isAlwaysVisible = false;
 
@@ -64,10 +62,6 @@ public class GoToTypeErrorRule_Action extends CurrentProjectMPSAction {
       }
       this.operationContext = context.getOperationContext();
       if (this.operationContext == null) {
-        return false;
-      }
-      this.editorsPane = context.get(EditorsPane.class);
-      if (this.editorsPane == null) {
         return false;
       }
       {

@@ -82,9 +82,9 @@ public class CellExplorerView extends DefaultTool {
     return null;
   }
 
-  private EditorsPane getEditorsPane() {
-    return null;
-  }
+//  private EditorsPane getEditorsPane() {
+//    return null;
+//  }
 
 
   public void update() {
@@ -93,19 +93,19 @@ public class CellExplorerView extends DefaultTool {
     }
     removeListeners();
 
-    IEditor currentEditor = getEditorsPane().getCurrentEditor();
+//    IEditor currentEditor = getEditorsPane().getCurrentEditor();
+//
+//    if (!(currentEditor instanceof NodeEditor || currentEditor instanceof ConceptDeclarationEditor)) {
+//      myTree.rebuildNow();
+//      return;
+//    }
 
-    if (!(currentEditor instanceof NodeEditor || currentEditor instanceof ConceptDeclarationEditor)) {
-      myTree.rebuildNow();
-      return;
-    }
-
-    myCurrentEditor = currentEditor.getCurrentEditorComponent();
-    if (myCurrentEditor != null) {
-      myCurrentEditor.addRebuildListener(myRebuildListener);
-      myCurrentEditor.addSynchronizationListener(mySynchronizationListener);
-    }
-    myTree.rebuildNow();
+//    myCurrentEditor = currentEditor.getCurrentEditorComponent();
+//    if (myCurrentEditor != null) {
+//      myCurrentEditor.addRebuildListener(myRebuildListener);
+//      myCurrentEditor.addSynchronizationListener(mySynchronizationListener);
+//    }
+//    myTree.rebuildNow();
   }
 
   private void removeListeners() {
@@ -169,22 +169,24 @@ public class CellExplorerView extends DefaultTool {
 
   private class MyTree extends MPSTree {
     protected MPSTreeNode rebuild() {
-      IEditor editor = getEditorsPane().getCurrentEditor();
-      if (editor == null || editor.getCurrentEditorComponent() == null) {
-        return new TextTreeNode("No editor selected") {
-          {
-            setIcon(Icons.CELL_EXPLORER_ICON);
-          }
-        };
-      } else {
-        TextTreeNode root = new TextTreeNode("CELLS") {
-          {
-            setIcon(Icons.CELL_EXPLORER_ICON);
-          }
-        };
-        root.add(new CellTreeNode(editor.getRootCell()));
-        return root;
-      }
+//      IEditor editor = getEditorsPane().getCurrentEditor();
+//      if (editor == null || editor.getCurrentEditorComponent() == null) {
+//        return new TextTreeNode("No editor selected") {
+//          {
+//            setIcon(Icons.CELL_EXPLORER_ICON);
+//          }
+//        };
+//      } else {
+//        TextTreeNode root = new TextTreeNode("CELLS") {
+//          {
+//            setIcon(Icons.CELL_EXPLORER_ICON);
+//          }
+//        };
+//        root.add(new CellTreeNode(editor.getRootCell()));
+//        return root;
+//      }
+
+      return null;
     }
   }
 
@@ -243,13 +245,13 @@ public class CellExplorerView extends DefaultTool {
     }
 
     private void showCell() {
-      IEditor currentEditor = getEditorsPane().getCurrentEditor();
-      if (currentEditor != null) {
-        AbstractEditorComponent currentComponent = currentEditor.getCurrentEditorComponent();
-        if (currentComponent != null) {
-          currentComponent.changeSelection(myCell);
-        }
-      }
+//      IEditor currentEditor = getEditorsPane().getCurrentEditor();
+//      if (currentEditor != null) {
+//        AbstractEditorComponent currentComponent = currentEditor.getCurrentEditorComponent();
+//        if (currentComponent != null) {
+//          currentComponent.changeSelection(myCell);
+//        }
+//      }
     }
 
     public void doubleClick() {

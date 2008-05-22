@@ -13,7 +13,7 @@ import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.helgins.checking.IEditorChecker;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.workbench.highlighter.MPSIDEAEditorsProvider;
+import jetbrains.mps.workbench.highlighter.EditorsProvider;
 
 import java.util.*;
 
@@ -37,7 +37,7 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
   private Set<IEditorChecker> myCheckersToRemove = new LinkedHashSet<IEditorChecker>();
   private List<SModelEvent> myLastEvents = new ArrayList<SModelEvent>();
   private Set<IEditorComponent> myCheckedOnceEditors = new WeakSet<IEditorComponent>();
-  private IEditorsProvider myEditorsProvider = new MPSEditorsProvider();
+  private EditorsProvider myEditorsProvider;
 
   private Project myProject;
 
@@ -46,6 +46,7 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
     myGlobalSModelEventsManager = eventsManager;
     myClassLoaderManager = classLoaderManager;
     myProjects = projects;
+    myEditorsProvider = new EditorsProvider(project);
   }
 
   public void projectOpened() {
@@ -89,7 +90,7 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
 
   public void initComponent() {
 
-    myEditorsProvider = new MPSIDEAEditorsProvider(myProject);    
+    myEditorsProvider = new EditorsProvider(myProject);
 
     if (myThread != null && myThread.isAlive()) {
       LOG.error("trying to initialize a Highlighter being already initialized");
