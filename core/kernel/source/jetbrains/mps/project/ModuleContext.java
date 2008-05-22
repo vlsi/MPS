@@ -1,6 +1,5 @@
 package jetbrains.mps.project;
 
-import jetbrains.mps.ide.AbstractProjectFrame;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
