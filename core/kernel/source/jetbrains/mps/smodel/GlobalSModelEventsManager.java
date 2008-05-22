@@ -163,7 +163,6 @@ public class GlobalSModelEventsManager implements ApplicationComponent {
     }
 
     public void commandFinished(CommandEvent event) {
-
       if (myCommandEvents.isEmpty()) return;
 
       for (SModelCommandListener l : myGlobalCommandListeners) {
@@ -173,7 +172,8 @@ public class GlobalSModelEventsManager implements ApplicationComponent {
           LOG.error(t);
         }
       }
-      myCommandEvents.clear();
+
+      myCommandEvents = new ArrayList<SModelEvent>();
     }
   }
 }
