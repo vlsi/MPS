@@ -26,12 +26,12 @@ import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.QueryOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
-import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.progress.AdaptiveProgressMonitorFactory;
 import jetbrains.mps.nodeEditor.EditorUtil;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.tools.BaseMPSTool;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
 
@@ -225,9 +225,7 @@ public class UsagesViewTool extends BaseMPSTool {
         public void run() {
           SNode node = ((SearchResult<SNode>) searchResults.getSearchResults().get(0)).getObject();
           if (node != null) {
-            NavigationActionProcessor.getInstance().executeNavigationAction(
-              new EditorNavigationCommand(node, null, getMPSProject().getComponent(EditorsPane.class)),
-              getMPSProject(), true);
+            getMPSProject().getComponentSafe(MPSEditorOpener.class).openNode(node);
           }
         }
       });

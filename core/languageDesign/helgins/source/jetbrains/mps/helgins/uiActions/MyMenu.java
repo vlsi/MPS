@@ -28,8 +28,6 @@ public class MyMenu extends JPopupMenu {
     label.setBorder(new EmptyBorder(0, 20, 0, 0));
     label.setBackground(Color.LIGHT_GRAY);
     add(label);
-    final EditorsPane editorsPane = operationContext.getComponent(EditorsPane.class);
-    final IEditor currentEditor = editorsPane.getCurrentEditor();
     for (final SNode node : list) {
       if (node == null) continue;
       String nodeName = node.getName();
@@ -41,7 +39,7 @@ public class MyMenu extends JPopupMenu {
         }
 
         public void actionPerformed(ActionEvent e) {
-          operationContext.getComponent(MPSEditorOpener.class).openNode(node, operationContext);
+          operationContext.getComponent(MPSEditorOpener.class).openNode(node);
         }
       }).setBackground(Color.WHITE);
     }

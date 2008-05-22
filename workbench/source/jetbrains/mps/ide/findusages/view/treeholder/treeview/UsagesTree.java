@@ -13,7 +13,6 @@ import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.NodeN
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.tree.DataNode;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.tree.DataTree;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
-import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.TextMPSTreeNode;
@@ -23,6 +22,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Calculable;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 import javax.swing.AbstractAction;
 import javax.swing.KeyStroke;
@@ -536,9 +536,7 @@ public abstract class UsagesTree extends MPSTree {
   }
 
   public void navigateToNode(SNode node) {
-    NavigationActionProcessor.getInstance().executeNavigationAction(
-      new EditorNavigationCommand(node, null, getProject().getComponent(EditorsPane.class)),
-        getProject(), true);
+    getProject().getComponentSafe(MPSEditorOpener.class).openNode(node);
   }
 
   private void navigateInTree(Object o) {

@@ -8,14 +8,15 @@ import jetbrains.mps.bootstrap.helgins.structure.PatternCondition;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
-import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.AbstractAction;
@@ -63,7 +64,7 @@ public class GoToRulesAction extends MPSAction {
     IEditor currentEditor = editorsPane.getCurrentEditor();
     
     if (rules.size() == 1) {// single rule
-      NavigationActionProcessor.getInstance().executeNavigationAction(new EditorNavigationCommand(rules.get(0), currentEditor, editorsPane), operationContext.getProject());
+      operationContext.getComponent(MPSEditorOpener.class).openNode(rules.get(0));
       return;
     }
 
@@ -129,8 +130,6 @@ public class GoToRulesAction extends MPSAction {
       label.setBorder(new EmptyBorder(0, 20, 0, 0));
       label.setBackground(Color.LIGHT_GRAY);
       add(label);
-      final EditorsPane editorsPane = operationContext.getComponent(EditorsPane.class);
-      final IEditor currentEditor = editorsPane.getCurrentEditor();
       for (final SNode node : list) {
         if(node == null) continue;
         String nodeName = node.getName();
@@ -141,7 +140,7 @@ public class GoToRulesAction extends MPSAction {
           }
 
           public void actionPerformed(ActionEvent e) {
-            NavigationActionProcessor.getInstance().executeNavigationAction(new EditorNavigationCommand(node, currentEditor, editorsPane), operationContext.getProject());
+            operationContext.getComponent(MPSEditorOpener.class).openNode(node);
           }
         }).setBackground(Color.WHITE);
       }

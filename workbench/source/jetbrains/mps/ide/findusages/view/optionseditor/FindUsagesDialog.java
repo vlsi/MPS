@@ -14,8 +14,9 @@ import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.QueryOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
-import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
@@ -48,10 +49,8 @@ public class FindUsagesDialog extends BaseDialog {
 
             FindUsagesDialog.this.onCancel();
 
-            IDEProjectFrame frame = context.getOperationContext().getComponent(IDEProjectFrame.class);
-            NavigationActionProcessor.getInstance().executeNavigationAction(
-              new EditorNavigationCommand(finderNode[0], frame.getEditorsPane().getCurrentEditor(), frame.getEditorsPane()),
-              frame.getProject(), true);
+            MPSProject project = context.get(MPSProject.class);
+            project.getComponentSafe(MPSEditorOpener.class).openNode(finderNode[0]);
           }
         };
         myViewOptionsEditor = new ViewOptionsEditor(defaultOptions.getOption(ViewOptions.class), node, context);

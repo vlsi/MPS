@@ -9,7 +9,6 @@ import jetbrains.mps.ide.GoToNodeWindow.GoToNodeComponent;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
-import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.tools.BaseMPSTool;
