@@ -6,7 +6,6 @@ import jetbrains.mps.datatransfer.PasteNodeData;
 import jetbrains.mps.datatransfer.PastePlaceHint;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.resolve.Resolver;
 
 import java.util.List;
