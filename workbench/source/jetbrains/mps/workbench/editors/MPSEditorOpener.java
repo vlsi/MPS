@@ -3,6 +3,7 @@ package jetbrains.mps.workbench.editors;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.FileEditor;
+import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -23,7 +24,11 @@ import jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration
 import jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior;
 import jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.NodeEditorComponent;
+import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 
+import javax.swing.SwingUtilities;
 import java.util.*;
 
 public class MPSEditorOpener implements ProjectComponent {
@@ -153,32 +158,65 @@ public class MPSEditorOpener implements ProjectComponent {
   public IEditor openNode(final SNode node, final IOperationContext context) {
     return CommandProcessor.instance().executeLightweightCommand(new Calculable<IEditor>() {
       public IEditor calculate() {
-        SNode containingRoot = node.getContainingRoot();
-
-        SNode baseNode = getBaseNode(context, containingRoot);
-        if (baseNode == null) {
-          baseNode = containingRoot;
-        }
-
-        MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(baseNode);
-        FileEditorManager editorManager = FileEditorManager.getInstance(myProject);
-          
-        FileEditor[] result = editorManager.openFile(file, true);
-
-        MPSFileNodeEditor fileNodeEditor = (MPSFileNodeEditor) result[0];
-
-
-        IEditor nodeEditor = fileNodeEditor.getNodeEditor();
-        if (nodeEditor instanceof TabbedEditor) {
-          ((TabbedEditor) nodeEditor).selectLinkedEditor(containingRoot);
-        }
-
-        if (!node.isRoot()) {
-          nodeEditor.selectNode(node);
-        }
-
-        return nodeEditor;
+        final IEditor[] result = new IEditor[1];
+        final Project ideaProject = context.getComponent(Project.class);
+        com.intellij.openapi.command.CommandProcessor.getInstance().executeCommand(ideaProject, new Runnable() {
+          public void run() {
+            ideaProject.getComponent(IdeDocumentHistory.class).includeCurrentCommandAsNavigation();
+            result[0] = doOpenNode(node, context);
+          }
+        }, "navigate", "");
+        return result[0];
       }
     });
+  }
+
+  private IEditor doOpenNode(SNode node, IOperationContext context) {
+    SNode containingRoot = node.getContainingRoot();
+
+    SNode baseNode = getBaseNode(context, containingRoot);
+    if (baseNode == null) {
+      baseNode = containingRoot;
+    }
+
+    MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(baseNode);
+    FileEditorManager editorManager = FileEditorManager.getInstance(myProject);
+
+    FileEditor[] result = editorManager.openFile(file, true);
+
+    MPSFileNodeEditor fileNodeEditor = (MPSFileNodeEditor) result[0];
+
+
+    IEditor nodeEditor = fileNodeEditor.getNodeEditor();
+    if (nodeEditor instanceof TabbedEditor) {
+      ((TabbedEditor) nodeEditor).selectLinkedEditor(containingRoot);
+    }
+
+    if (!node.isRoot()) {
+      nodeEditor.selectNode(node);
+      if (nodeEditor.getCurrentEditorComponent() instanceof NodeEditorComponent) {
+        final NodeEditorComponent nec = (NodeEditorComponent) nodeEditor.getCurrentEditorComponent();
+        final InspectorEditorComponent inspector = nec.getInspector();
+
+        EditorCell cellInInspector = null;
+        SNode currentTargetNode = node;
+        while (cellInInspector == null && currentTargetNode != null) {
+          cellInInspector = inspector.findNodeCell(currentTargetNode);
+          currentTargetNode = currentTargetNode.getParent();
+        }
+        if (cellInInspector != null) {
+          final EditorCell cellToSelect = cellInInspector;
+          SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+              nec.showInspector();
+              inspector.changeSelection(cellToSelect);
+              inspector.requestFocus();
+            }
+          });
+        }
+      }
+    }
+
+    return nodeEditor;
   }
 }
