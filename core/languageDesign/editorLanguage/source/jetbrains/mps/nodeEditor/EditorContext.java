@@ -327,7 +327,7 @@ public class EditorContext {
 
     public boolean equals(Object object) {
       if (object == this) return true;
-      if (object.hashCode() == this.hashCode()) return true;
+      if (object.hashCode() == this.hashCode()) return true; //todo !?
       if (object instanceof EditorContext) {
         return ((EditorContext) object).createMemento().equals(this);
       }

@@ -12,7 +12,7 @@ public class ReportErrorExpression extends Expression {
   public static final String concept = "jetbrains.mps.ide.uiLanguage.structure.ReportErrorExpression";
   public static String ERROR_TEXT = "errorText";
 
-  public  ReportErrorExpression(SNode node) {
+  public ReportErrorExpression(SNode node) {
     super(node);
   }
 

@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class DisposeDialogExpression extends Expression {
   public static final String concept = "jetbrains.mps.ide.uiLanguage.structure.DisposeDialogExpression";
 
-  public  DisposeDialogExpression(SNode node) {
+  public DisposeDialogExpression(SNode node) {
     super(node);
   }
 

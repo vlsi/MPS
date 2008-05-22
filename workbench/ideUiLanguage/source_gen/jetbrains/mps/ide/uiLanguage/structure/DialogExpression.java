@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class DialogExpression extends Expression {
   public static final String concept = "jetbrains.mps.ide.uiLanguage.structure.DialogExpression";
 
-  public  DialogExpression(SNode node) {
+  public DialogExpression(SNode node) {
     super(node);
   }
 

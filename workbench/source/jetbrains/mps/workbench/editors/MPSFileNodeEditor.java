@@ -75,14 +75,14 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor 
   @NotNull
   public FileEditorState getState(@NotNull FileEditorStateLevel level) {
     MyFileEditorState state = new MyFileEditorState();
-    state.myHistoryItem = myNodeEditor.getHistoryItemFromEditor();
+    state.myMemento = myNodeEditor.getEditorContext().createMemento();
     return state;
   }
 
   public void setState(final @NotNull FileEditorState state) {
     if (!(state instanceof MyFileEditorState)) return;
     MyFileEditorState currentState = (MyFileEditorState) state;
-    currentState.myHistoryItem.applyToEditor(myNodeEditor);
+    myNodeEditor.getEditorContext().setMemento(currentState.myMemento);
   }
 
   public boolean isModified() {
@@ -125,7 +125,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor 
   }
   
   private class MyFileEditorState implements FileEditorState {
-    private IHistoryItem myHistoryItem;
+    private Object myMemento;
 
     public boolean canBeMergedWith(FileEditorState otherState, FileEditorStateLevel level) {
       return false;
@@ -136,7 +136,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor 
         return false;
       }
       MyFileEditorState state = (MyFileEditorState) obj;
-      return EqualUtil.equals(state.myHistoryItem, myHistoryItem);
+      return EqualUtil.equals(state.myMemento, myMemento);
     }
   }
 }

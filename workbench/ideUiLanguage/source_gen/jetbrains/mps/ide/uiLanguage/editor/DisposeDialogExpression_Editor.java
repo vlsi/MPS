@@ -12,23 +12,23 @@ import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class DisposeDialogExpression_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1203606609555");
+  private static void setupBasic_ConstantCell14101_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14101_0");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
   }
 
-  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell14101_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstantCell(context, node, "disposeDialog");
+    return this.create_ConstantCell14101_0(context, node, "disposeDialog");
   }
 
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell14101_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    DisposeDialogExpression_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    DisposeDialogExpression_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell14101_0(editorCell, node, context);
+    setupLabel_ConstantCell14101_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
