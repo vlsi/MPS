@@ -1,3 +1,5 @@
+package jetbrains.mps.transformationTest.matcher;
+
 import org.junit.Test;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.TestMain;
