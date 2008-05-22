@@ -44,6 +44,10 @@ public abstract class Macros {
     return new ProjectDescriptorMacros();
   }
 
+  public static Macros mpsHomeMacros() {
+    return new MPSHomeMacros();
+  }
+
   public static Macros moduleDescriptor(IModule module) {
     if (module instanceof Language) {
       return Macros.languageDescriptor();
@@ -216,6 +220,16 @@ public abstract class Macros {
         return PROJECT + relationalPath;
       }
       return super.shrinkPath_internal(absolutePath, projectDescriptor);
+    }
+  }
+
+  private static class MPSHomeMacros extends Macros {
+    protected String expandPath_internal(String path, IFile nullFile) {
+      return super.expandPath_internal(path, nullFile);
+    }
+
+    protected String shrinkPath_internal(String absolutePath, IFile nullFile) {
+      return super.shrinkPath_internal(absolutePath, nullFile);
     }
   }
 
