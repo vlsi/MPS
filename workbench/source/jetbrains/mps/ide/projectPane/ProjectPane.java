@@ -233,6 +233,7 @@ public class ProjectPane extends BaseMPSTool implements IActionDataProvider, Dat
 
   public void disposeComponent() {
     super.disposeComponent();
+    myTree.clear();
     removeListeners();
   }
 

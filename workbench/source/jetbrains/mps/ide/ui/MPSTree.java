@@ -492,7 +492,15 @@ public abstract class MPSTree extends JTree {
     }, true);
   }
 
+  public void clear() {
+    setRootNode(new TextTreeNode("Empty"));
+  }
+
   private void setRootNode(MPSTreeNode root) {
+    if (getModel().getRoot() instanceof MPSTreeNode) {
+      (getRootNode()).removeThisAndChildren();
+    }
+
     root.setTree(this);
     root.addThisAndChildren();
 
