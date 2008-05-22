@@ -42,6 +42,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.wm.WindowManager;
+import com.intellij.openapi.util.Disposer;
+import com.intellij.ide.impl.ProjectUtil;
 
 public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
   public static final String COMPONENTS = "components";
@@ -509,7 +511,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
         if (getComponent(Project.class) != null) {
           Project project = getComponentSafe(Project.class);
           if (IdeMain.isTestMode()) {
-            ProjectManagerEx.getInstanceEx().closeProject(project);
+            ProjectUtil.closeProject(project);
           }
         }
 
