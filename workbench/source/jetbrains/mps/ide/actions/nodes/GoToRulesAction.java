@@ -5,7 +5,6 @@ import jetbrains.mps.bootstrap.helgins.structure.AbstractRule;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.bootstrap.helgins.structure.PatternCondition;
 import jetbrains.mps.core.structure.BaseConcept;
-import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSAction;
@@ -57,8 +56,6 @@ public class GoToRulesAction extends MPSAction {
     final AbstractConceptDeclaration conceptDeclaration = (AbstractConceptDeclaration) BaseAdapter.fromNode(context.getNode());
     final IOperationContext operationContext = context.getOperationContext();
     List<SNode> rules = getHelginsRules(conceptDeclaration, operationContext);
-    EditorsPane editorsPane = operationContext.getComponent(EditorsPane.class);
-    IEditor currentEditor = editorsPane.getCurrentEditor();
     
     if (rules.size() == 1) {// single rule
       operationContext.getComponent(MPSEditorOpener.class).openNode(rules.get(0));
@@ -74,13 +71,7 @@ public class GoToRulesAction extends MPSAction {
       x = cell.getX();
       y = cell.getY();
     }
-    Component invoker;
-    if (currentEditor == null) {
-      invoker = context.getFrame();
-    } else {
-      invoker = currentEditor.getCurrentEditorComponent();
-    }
-    m.show(invoker, x, y);
+    m.show(context.getFrame(), x, y);
   }
 
   public static List<SNode> getHelginsRules(final AbstractConceptDeclaration conceptDeclaration, final IOperationContext operationContext) {
