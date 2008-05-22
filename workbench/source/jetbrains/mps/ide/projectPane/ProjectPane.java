@@ -5,6 +5,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.components.PersistentStateComponent;
+import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.wm.ToolWindowAnchor;
@@ -65,7 +66,7 @@ import java.util.List;
     )
   }
 )
-public class ProjectPane extends BaseMPSTool implements IActionDataProvider, DataProvider, IProjectPane, PersistentStateComponent<MyState>, IExternalizableComponent {
+public class ProjectPane extends BaseMPSTool implements IActionDataProvider, DataProvider, IProjectPane, PersistentStateComponent<MyState> {
   private static final Logger LOG = Logger.getLogger(ProjectPane.class);
 
   public static final String PROJECT_PANE_NODE_ACTIONS = ProjectPaneNodeActions_ActionGroup.ID;
@@ -129,6 +130,8 @@ public class ProjectPane extends BaseMPSTool implements IActionDataProvider, Dat
   }
 
   public void initComponent() {
+    addListeners();
+
     super.initComponent();
     getPanel().setLayout(new BorderLayout());
 
@@ -227,6 +230,11 @@ public class ProjectPane extends BaseMPSTool implements IActionDataProvider, Dat
         showTool(false);
       }
     });
+  }
+
+  public void disposeComponent() {
+    super.disposeComponent();
+    removeListeners();
   }
 
   public static ProjectPane getProjectPane(MPSProject project) {
@@ -647,34 +655,6 @@ public class ProjectPane extends BaseMPSTool implements IActionDataProvider, Dat
     return myAutoscrollFromSource.getModel().isSelected();
   }
 
-  //externalization
-  public void read(final Element element, MPSProject project) {
-    CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
-      public void run() {
-        getTree().fromXML(element.getChild(MPSTree.MPS_TREE));
-        getTree().scrollRectToVisible(ComponentsUtil.elementToRectangle(element.getChild(ComponentsUtil.RECTANGLE)));
-        if (element.getAttributeValue(SHOW_P_AND_R) != null) {
-          setShowPropertiesAndReferences("true".equals(element.getAttributeValue(SHOW_P_AND_R)));
-        }
-        if (element.getAttributeValue(AUTOSCROLL_TO_SOURCE) != null) {
-          myTree.setAutoOpen("true".equals(element.getAttributeValue(AUTOSCROLL_TO_SOURCE)));
-          myAutoscrollToSource.getModel().setSelected(myTree.isAutoOpen());
-        }
-        if (element.getAttributeValue(AUTOSCROLL_FROM_SOURCE) != null) {
-          myAutoscrollFromSource.getModel().setSelected("true".equals(element.getAttributeValue(AUTOSCROLL_FROM_SOURCE)));
-        }
-      }
-    });
-  }
-
-  public void write(Element element, MPSProject project) {
-    element.addContent(getTree().toXML());
-    element.addContent(ComponentsUtil.rectangleToElement(getTree().getVisibleRect()));
-    element.setAttribute(SHOW_P_AND_R, "" + myShowProperties);
-    element.setAttribute(AUTOSCROLL_TO_SOURCE, "" + myTree.isAutoOpen());
-    element.setAttribute(AUTOSCROLL_FROM_SOURCE, "" + myAutoscrollFromSource.getModel().isSelected());
-  }
-
   public JPanel getPanel() {
     return myPanel;
   }
@@ -701,19 +681,7 @@ public class ProjectPane extends BaseMPSTool implements IActionDataProvider, Dat
 
   public void setProject(MPSProject project) {
     assert false;
-    /*
-    removeListeners();
-    myProject = project;
-    CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
-      public void run() {
-        rebuildTreeNow();
-      }
-    });
-    addListeners();
-
-    */
   }
-
 
   public boolean isDisposed() {
     return myDisposed;
