@@ -1,11 +1,7 @@
 package jetbrains.mps.transformation.TLBase.plugin.debug;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.navigation.NavigationActionProcessor;
-import jetbrains.mps.ide.navigation.EditorNavigationCommand;
-import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
-import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNode;
@@ -127,7 +123,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
       LOG.info("clicked node was deleted");
 
     }
-    myProject.getComponentSafe(MPSEditorOpener.class).openNode(node, myProject);
+    myProject.getComponentSafe(MPSEditorOpener.class).openNode(node);
   }
 
   public boolean isLeaf() {

@@ -29,6 +29,7 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.MPSProjectHolder;
 
 import javax.swing.SwingUtilities;
 import java.util.*;
@@ -156,10 +157,10 @@ public class MPSEditorOpener implements ProjectComponent {
     myEditorOpenHandlersToOwners.remove(owner);
   }
 
-  public IEditor openNode(final SNode node, final MPSProject project) {
+  public IEditor openNode(final SNode node) {
     ModuleContext context = CommandProcessor.instance().executeLightweightCommand(new Calculable<ModuleContext>() {
       public ModuleContext calculate() {
-        return ModuleContext.create(node, project);
+        return ModuleContext.create(node, myProject.getComponent(MPSProjectHolder.class).getMPSProject());
       }
     });
     return openNode(node, context);

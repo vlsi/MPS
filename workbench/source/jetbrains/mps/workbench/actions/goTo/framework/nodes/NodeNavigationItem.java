@@ -3,11 +3,9 @@ package jetbrains.mps.workbench.actions.goTo.framework.nodes;
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.vcs.FileStatus;
-import jetbrains.mps.ide.EditorsPane;
-import jetbrains.mps.ide.navigation.EditorNavigationCommand;
-import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import org.jetbrains.annotations.Nullable;
 
 public final class NodeNavigationItem implements NavigationItem {
@@ -37,8 +35,7 @@ public final class NodeNavigationItem implements NavigationItem {
   }
 
   public void navigate(boolean requestFocus) {
-    final EditorsPane editorsPane = myProject.getComponent(EditorsPane.class);
-    NavigationActionProcessor.getInstance().executeNavigationAction(new EditorNavigationCommand(myNode, null, editorsPane), myProject, false);
+    myProject.getComponentSafe(MPSEditorOpener.class).openNode(myNode);
   }
 
   public boolean canNavigate() {

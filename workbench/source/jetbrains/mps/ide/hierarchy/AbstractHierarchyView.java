@@ -13,6 +13,7 @@ import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.tools.BaseMPSTool;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
@@ -55,8 +56,7 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
   protected abstract AbstractHierarchyTree<T> createHierarchyTree(boolean isParentHierarchy);
 
   public void openNode(SNode node, IOperationContext context) {
-    final EditorsPane editorsPane = context.getComponent(EditorsPane.class);
-    NavigationActionProcessor.getInstance().executeNavigationAction(new EditorNavigationCommand(node, null, editorsPane), context.getProject());
+    context.getComponent(MPSEditorOpener.class).openNode(node, context);
   }
 
   protected void initButtons() {
