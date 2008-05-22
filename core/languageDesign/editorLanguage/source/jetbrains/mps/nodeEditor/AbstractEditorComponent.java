@@ -5,7 +5,6 @@ import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRuleUtil;
 import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRule_Action;
 import jetbrains.mps.helgins.inference.IErrorReporter;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.ThreadUtils;
@@ -2252,10 +2251,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
 
     return null;
-  }
-
-  public IEditorOpener getEditorOpener() {
-    return getOperationContext().getComponent(EditorsPane.class);
   }
 
   private void showIntentionsMenu() {

@@ -61,21 +61,21 @@ public class CellExplorerView extends DefaultTool {
     myTree.setRootVisible(true);
     myComponent.add(new JScrollPane(myTree), BorderLayout.CENTER);
     update();
-    getEditorsPane().addListener(new EditorsPane.IEditorsPaneListener() {
-      public void editorOpened(@NotNull IEditor e) {
-        update();
-      }
-      public void editorClosed(@NotNull IEditor e) {
-        update();
-      }
-      public void editorSelected(@NotNull IEditor e) {
-        update();
-      }
-
-      public void editorStateChanged(@NotNull IEditor e) {
-        update();
-      }
-    });
+//    getEditorsPane().addListener(new EditorsPane.IEditorsPaneListener() {
+//      public void editorOpened(@NotNull IEditor e) {
+//        update();
+//      }
+//      public void editorClosed(@NotNull IEditor e) {
+//        update();
+//      }
+//      public void editorSelected(@NotNull IEditor e) {
+//        update();
+//      }
+//
+//      public void editorStateChanged(@NotNull IEditor e) {
+//        update();
+//      }
+//    });
   }
 
   private ToolsPane getToolsPane() {
