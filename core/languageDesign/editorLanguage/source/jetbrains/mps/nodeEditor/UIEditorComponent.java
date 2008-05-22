@@ -169,10 +169,6 @@ public class UIEditorComponent extends AbstractEditorComponent implements IEdito
       return UIEditorComponent.this;
     }
 
-    public IHistoryItem getHistoryItemFromEditor() {
-      return UIEditorComponent.this.getHistoryItemFromEditor();
-    }
-
     public void requestFocus() {
       UIEditorComponent.this.requestFocus();
     }

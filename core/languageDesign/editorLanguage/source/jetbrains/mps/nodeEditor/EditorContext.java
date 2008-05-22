@@ -4,6 +4,7 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
+import jetbrains.mps.util.EqualUtil;
 
 import java.util.*;
 
@@ -297,7 +298,6 @@ public class EditorContext {
 
   private static class Memento {
     private AbstractEditorComponent myNodeEditor;
-   // private Point selectionPosition;
     private CellInfo myCellInfo;
     private Stack<CellInfo> mySelectedStack = new Stack<CellInfo>();
     private List<CellInfo> myCollectionsWithEnabledBraces = new ArrayList<CellInfo>();
@@ -309,7 +309,6 @@ public class EditorContext {
       EditorCell selectedCell = myNodeEditor.getSelectedCell();
       EditorCell deepestSelectedCell = myNodeEditor.getDeepestSelectedCell();
       if (selectedCell != null) {
-    //    selectionPosition = new Point(selectedCell.getX(), selectedCell.getY());
         if (deepestSelectedCell != null) myCaretX = deepestSelectedCell.getCaretX();
         if (deepestSelectedCell instanceof EditorCell_Label && deepestSelectedCell.isErrorState()) {
         }
@@ -327,9 +326,17 @@ public class EditorContext {
 
     public boolean equals(Object object) {
       if (object == this) return true;
-      if (object.hashCode() == this.hashCode()) return true; //todo !?
-      if (object instanceof EditorContext) {
-        return ((EditorContext) object).createMemento().equals(this);
+      if (object instanceof Memento) {
+        Memento m = (Memento) object;
+        if (myNodeEditor == m.myNodeEditor &&
+          EqualUtil.equals(myCellInfo, m.myCellInfo) &&
+          EqualUtil.equals(myCaretX, m.myCaretX) &&
+          EqualUtil.equals(mySelectedStack, m.mySelectedStack) &&
+          EqualUtil.equals(myCollectionsWithEnabledBraces, m.myCollectionsWithEnabledBraces) &&
+          EqualUtil.equals(myFolded, m.myFolded)) {
+
+          return true;
+        }
       }
       return false;
     }

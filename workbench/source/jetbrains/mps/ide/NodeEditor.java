@@ -108,10 +108,6 @@ public class NodeEditor implements IEditor {
     return myEditorComponent.getEditorContext();
   }
 
-  public IHistoryItem getHistoryItemFromEditor() {
-    return myEditorComponent.getHistoryItemFromEditor();
-  }
-
   public void requestFocus() {
     myEditorComponent.requestFocus();
   }

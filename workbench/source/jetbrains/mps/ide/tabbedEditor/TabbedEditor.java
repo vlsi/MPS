@@ -182,12 +182,6 @@ public class TabbedEditor implements IEditor {
     editor.selectNode(node);
   }
 
-  public IHistoryItem getHistoryItemFromEditor() {
-    AbstractEditorComponent editor = getCurrentEditorComponent();
-    if (editor == null) return null;
-    return editor.getHistoryItemFromEditor();
-  }
-
   public void requestFocus() {
     AbstractEditorComponent editor = getCurrentEditorComponent();
     if (editor == null) return;

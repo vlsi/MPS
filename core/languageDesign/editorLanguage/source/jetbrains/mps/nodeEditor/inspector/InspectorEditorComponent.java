@@ -122,17 +122,4 @@ public class InspectorEditorComponent extends AbstractEditorComponent implements
     }
     return null;
   }
-
-
-  public IHistoryItem getHistoryItemFromEditor() {
-    IHistoryItem inspectorItem = super.getHistoryItemFromEditor();
-    if (!(inspectorItem instanceof HistoryItem)) return inspectorItem;
-
-    if (myContainer == null) {
-      throw new IllegalStateException();
-    }
-
-    IHistoryItem outerItem = myContainer.getHistoryItemFromEditor();
-    return new InspectorHistoryItem((HistoryItem) inspectorItem, outerItem);
-  }
 }

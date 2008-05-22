@@ -2128,10 +2128,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return isValid(cell.getParent());
   }
 
-  public IHistoryItem getHistoryItemFromEditor() {
-    return new HistoryItem(this, this.mySelectedCell, getSelectedStackForMemento());
-  }
-
   public void setSelectedStackFromMemento(Stack<CellInfo> mementoSelectedStack) {
     mySelectedStack.clear();
     Stack<EditorCell> temp = new Stack<EditorCell>();

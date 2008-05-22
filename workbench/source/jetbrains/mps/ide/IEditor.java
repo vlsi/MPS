@@ -39,7 +39,6 @@ public interface IEditor {
   EditorInfo getEditorInfo();
 
   void selectNode(SNode node);
-  IHistoryItem getHistoryItemFromEditor();
 
   void requestFocus();
   void dispose();
