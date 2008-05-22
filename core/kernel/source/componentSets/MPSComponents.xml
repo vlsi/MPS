@@ -314,6 +314,7 @@
     </component>
 
     <component>
+      <interface-class>jetbrains.mps.ide.toolsPane.ToolsPane</interface-class>
       <implementation-class>jetbrains.mps.workbench.tools.IDEAToolsPaneAdapter</implementation-class>
     </component>
 
