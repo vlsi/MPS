@@ -224,6 +224,12 @@ public class MPSEditorOpener implements ProjectComponent {
               inspector.requestFocus();
             }
           });
+        } else {
+          SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+              nec.requestFocus();
+            }
+          });
         }
       }
     }
