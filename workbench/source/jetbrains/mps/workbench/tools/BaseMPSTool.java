@@ -8,6 +8,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.openapi.wm.ToolWindowManager;
+import com.intellij.openapi.startup.StartupManager;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentFactoryImpl;
 import jetbrains.mps.MPSProjectHolder;
@@ -71,13 +72,6 @@ public abstract class BaseMPSTool implements ProjectComponent {
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
         if (myProject.isDisposed()) return;
-
-        if (!isShowing()) {
-          ToolWindow toolWindow = ToolWindowManager.getInstance(myProject).registerToolWindow(myId, myCanCloseContent, myAnchor);
-          toolWindow.setIcon(myIcon);
-          Content content = new ContentFactoryImpl().createContent(getComponent(), null, false);
-          toolWindow.getContentManager().addContent(content);
-        }
         if (activate) {
           //noinspection ConstantConditions
           getToolWindow().activate(null);
@@ -103,7 +97,14 @@ public abstract class BaseMPSTool implements ProjectComponent {
 
 
   public void projectOpened() {
-
+    StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
+      public void run() {
+        ToolWindow toolWindow = ToolWindowManager.getInstance(myProject).registerToolWindow(myId, myCanCloseContent, myAnchor);
+        toolWindow.setIcon(myIcon);
+        Content content = new ContentFactoryImpl().createContent(getComponent(), null, false);
+        toolWindow.getContentManager().addContent(content);
+      }
+    });
   }
 
   public void projectClosed() {
