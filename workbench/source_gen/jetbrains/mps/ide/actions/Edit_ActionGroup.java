@@ -25,9 +25,6 @@ public class Edit_ActionGroup extends BaseActionGroup {
     this.setMnemonic("E".charAt(0));
     this.setInternal(false);
     try {
-      this.add(new UndoAction(), this);
-      this.add(new RedoAction(), this);
-      this.addSeparator();
       this.add(new CopyNodeAction(), this);
       this.add(new CopyNodeReferenceAction(), this);
       this.add(new PasteNodeAction(), this);

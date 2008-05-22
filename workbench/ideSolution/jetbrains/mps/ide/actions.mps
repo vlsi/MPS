@@ -606,13 +606,6 @@
         <link role="javaClass" targetNodeId="7.~SaveProjectAction" resolveInfo="SaveProjectAction" />
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981434289" />
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981762832">
-        <link role="javaClass" targetNodeId="19.~UndoAction" resolveInfo="UndoAction" />
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981848543">
-        <link role="javaClass" targetNodeId="19.~RedoAction" resolveInfo="RedoAction" />
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981850764" />
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1205936020383">
         <link role="javaClass" targetNodeId="13.~MakeAllModulesAction" resolveInfo="MakeAllModulesAction" />
       </node>
@@ -707,13 +700,6 @@
       <link role="point" targetNodeId="1204982920758" resolveInfo="edit" />
     </node>
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1207148341327">
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983212689">
-        <link role="javaClass" targetNodeId="19.~UndoAction" resolveInfo="UndoAction" />
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983214770">
-        <link role="javaClass" targetNodeId="19.~RedoAction" resolveInfo="RedoAction" />
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204983215944" />
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983220211">
         <link role="javaClass" targetNodeId="1.~CopyNodeAction" resolveInfo="CopyNodeAction" />
       </node>
