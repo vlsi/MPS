@@ -38,6 +38,18 @@
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1158936076230" />
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1211460245588">
+          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1211460245589">
+            <link role="baseMethodDeclaration" targetNodeId="233.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
+            <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1211460245590">
+              <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
+            </node>
+          </node>
+          <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1211460245591">
+            <property name="name" value="z" />
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1211460245592" />
+        </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178546095343" />
     </node>

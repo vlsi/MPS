@@ -24,25 +24,25 @@ public class PasteNodeUtil {
   private static final int PASTE_TO_ROOT = 3;
 
 
-  public static boolean canPaste(SNode pasteTarget, SNode pasteNode, IOperationContext operationContext, Object invoker) {
-    return (canPaste_internal(pasteTarget, pasteNode, operationContext, null, invoker) != PASTE_N_A);
+  public static boolean canPaste(SNode pasteTarget, SNode pasteNode, IOperationContext operationContext, boolean pasteToRoot) {
+    return (canPaste_internal(pasteTarget, pasteNode, operationContext, null, pasteToRoot) != PASTE_N_A);
   }
 
-  public static boolean canPaste(EditorCell targetCell, SNode pasteNode, IOperationContext operationContext, Object invoker) {
+  public static boolean canPaste(EditorCell targetCell, SNode pasteNode, IOperationContext operationContext, boolean pasteToRoot) {
     String role = getRoleFromCell(targetCell);
     SNode pasteTarget = targetCell.getSNode();
-    return (canPaste_internal(pasteTarget, pasteNode, operationContext, role, invoker) != PASTE_N_A);
+    return (canPaste_internal(pasteTarget, pasteNode, operationContext, role, pasteToRoot) != PASTE_N_A);
   }
 
-  public static void paste(EditorCell targetCell, SNode pasteNode, IOperationContext operationContext, Object invoker) {
+  public static void paste(EditorCell targetCell, SNode pasteNode, IOperationContext operationContext, boolean pasteToRoot) {
     String role = getRoleFromCell(targetCell);
     SNode pasteTarget = targetCell.getSNode();
-    paste_internal(pasteTarget, pasteNode, operationContext, role, invoker);
+    paste_internal(pasteTarget, pasteNode, operationContext, role, pasteToRoot);
   }
 
-  public static void paste(SNode pasteTarget, SNode pasteNode, IOperationContext operationContext, Object invoker) {
+  public static void paste(SNode pasteTarget, SNode pasteNode, IOperationContext operationContext, boolean pasteToRoot) {
     String role_ = pasteTarget.getRole_();
-    paste_internal(pasteTarget, pasteNode, operationContext, role_, invoker);
+    paste_internal(pasteTarget, pasteNode, operationContext, role_, pasteToRoot);
   }
 
   public static void pasteAsRoot(SNode pasteNode, SModel model) {
@@ -55,9 +55,9 @@ public class PasteNodeUtil {
   }
 
 
-  private static void paste_internal(SNode pasteTarget, SNode pasteNode, IOperationContext operationContext, String role, Object invoker) {
+  private static void paste_internal(SNode pasteTarget, SNode pasteNode, IOperationContext operationContext, String role, boolean pasteToRoot) {
     String role_ = role != null ? role : pasteTarget.getRole_();
-    int status = canPaste_internal(pasteTarget, pasteNode, operationContext, role_, invoker);
+    int status = canPaste_internal(pasteTarget, pasteNode, operationContext, role_, pasteToRoot);
 
     if (status == PASTE_TO_TARGET) {
       pasteToTarget(pasteTarget, pasteNode, null, role_, PastePlaceHint.DEFAULT);
@@ -69,7 +69,7 @@ public class PasteNodeUtil {
   }
 
 
-  private static int canPaste_internal(SNode pasteTarget, SNode pasteNode, IOperationContext operationContext, String role, Object invoker) {
+  private static int canPaste_internal(SNode pasteTarget, SNode pasteNode, IOperationContext operationContext, String role, boolean pasteToRoot) {
     ProjectPane projectPane = operationContext.getComponent(ProjectPane.class);
     if (pasteTarget.getModel() != pasteNode.getModel()) {
       return PASTE_N_A;
@@ -80,7 +80,7 @@ public class PasteNodeUtil {
     boolean canPasteToRoot = canPasteToRoot(pasteTarget, pasteNode);
     boolean canPasteToTarget = canPasteToTarget(pasteTarget, pasteNode, role_);
 
-    if (projectPane != null && invoker == projectPane) {
+    if (projectPane != null && pasteToRoot) {
       // project pane
       if (canPasteToRoot) {
         return PASTE_TO_ROOT;
