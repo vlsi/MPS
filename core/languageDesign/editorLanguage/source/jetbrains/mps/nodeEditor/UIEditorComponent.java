@@ -18,7 +18,7 @@ import javax.swing.event.ChangeListener;
 import java.awt.Color;
 import java.util.List;
 
-public class UIEditorComponent extends AbstractEditorComponent implements IEditorOpener {
+public class UIEditorComponent extends AbstractEditorComponent {
   private InspectorEditorComponent myInspector;
 
   public UIEditorComponent(IOperationContext operationContext, InspectorEditorComponent inspector) {
@@ -53,41 +53,8 @@ public class UIEditorComponent extends AbstractEditorComponent implements IEdito
     return createRootCell(null);
   }
 
-  public InspectorEditorComponent getInspector() {
-    return myInspector;
-  }
-
-  @NotNull
-  public IEditor openEditor(SNode semanticNode, IOperationContext operationContext) {
-    return new MyEditor();
-  }
-
-  public
-  @Nullable
-  IEditor openEditor(Condition<IEditor> condition) {
-    IEditor editor = new MyEditor();
-    if (condition.met(editor)) {
-      return editor;
-    }
-    return null;
-  }
-
   public IEditor getEditor() {
     return new MyEditor();
-  }
-
-  public boolean isOpeningNavigationEventsOn() {
-    return true;
-  }
-
-  public IEditorOpener getEditorOpener() {
-    return this;
-  }
-
-
-  @Nullable
-  public IEditor openEditor(@NotNull GenericContext context, IOperationContext operationContext) {
-    throw new UnsupportedOperationException();
   }
 
   private class MyEditor implements IEditor {
