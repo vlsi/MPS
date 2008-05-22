@@ -7,6 +7,7 @@ import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 import javax.swing.JPopupMenu;
 import javax.swing.JLabel;
@@ -40,7 +41,7 @@ public class MyMenu extends JPopupMenu {
         }
 
         public void actionPerformed(ActionEvent e) {
-          NavigationActionProcessor.getInstance().executeNavigationAction(new EditorNavigationCommand(node, currentEditor, editorsPane), operationContext.getProject(), true);
+          operationContext.getComponent(MPSEditorOpener.class).openNode(node, operationContext);
         }
       }).setBackground(Color.WHITE);
     }

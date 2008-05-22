@@ -13,6 +13,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.transformation.TLBase.plugin.debug.icons.Icons;
 import jetbrains.mps.transformation.TLBase.plugin.debug.TracerNode.Kind;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 import javax.swing.JPopupMenu;
 import java.awt.event.ActionEvent;
@@ -126,12 +127,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
       LOG.info("clicked node was deleted");
 
     }
-    EditorsPane editorsPane = myProject.getComponentSafe(EditorsPane.class);
-    NavigationActionProcessor.getInstance().executeNavigationAction(
-      new EditorNavigationCommand(node,
-        editorsPane.getCurrentEditor(),
-        editorsPane),
-      myProject, true);
+    myProject.getComponentSafe(MPSEditorOpener.class).openNode(node, myProject);
   }
 
   public boolean isLeaf() {
