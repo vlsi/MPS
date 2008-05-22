@@ -122,7 +122,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
       Iterable<String> childLinksRoles = Sequence.fromIterable(childLinkDeclarations).select(new ISelector <SNode, String>() {
 
         public String select(SNode it) {
-          return SModelUtil_new.getGenuineLinkRole(((INodeAdapter)SNodeOperations.getAdapter(it)));
+          return SModelUtil_new.getGenuineLinkRole(((LinkDeclaration)SNodeOperations.getAdapter(it)));
         }
 
       });

@@ -17,6 +17,7 @@
   <language namespace="jetbrains.mps.baseLanguage.classifiers" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="30" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.smodel.constraints@java_stub" version="-1" />
@@ -41,7 +42,6 @@
   <import index="21" modelUID="javax.swing@java_stub" version="-1" />
   <import index="22" modelUID="jetbrains.mps.helgins.inference@java_stub" version="-1" />
   <import index="23" modelUID="java.lang@java_stub" version="-1" />
-  <import index="24" modelUID="jetbrains.mps.ide.navigation@java_stub" version="-1" />
   <import index="25" modelUID="jetbrains.mps.logging@java_stub" version="-1" />
   <import index="26" modelUID="jetbrains.mps.helgins.integration@java_stub" version="-1" />
   <import index="27" modelUID="jetbrains.mps.smodel.event@java_stub" version="-1" />

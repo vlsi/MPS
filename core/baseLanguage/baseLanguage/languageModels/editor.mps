@@ -33,6 +33,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="73" />
   <import index="17" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="18" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -56,7 +57,6 @@
   <import index="66" modelUID="jetbrains.mps.util@java_stub" version="-1" />
   <import index="67" modelUID="java.util@java_stub" version="-1" />
   <import index="68" modelUID="jetbrains.mps.baseLanguage.structure@java_stub" version="-1" />
-  <import index="69" modelUID="jetbrains.mps.ide.navigation@java_stub" version="-1" />
   <import index="70" modelUID="javax.swing.text@java_stub" version="-1" />
   <import index="71" modelUID="java.util.regex@java_stub" version="-1" />
   <import index="72" modelUID="jetbrains.mps.ide.command@java_stub" version="-1" />
