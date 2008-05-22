@@ -201,6 +201,7 @@ public class MPSEditorOpener implements ProjectComponent {
     IEditor nodeEditor = fileNodeEditor.getNodeEditor();
     if (nodeEditor instanceof TabbedEditor) {
       ((TabbedEditor) nodeEditor).selectLinkedEditor(containingRoot);
+      nodeEditor.getCurrentEditorComponent().requestFocus();
     }
 
     if (!node.isRoot()) {
