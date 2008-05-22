@@ -1407,6 +1407,9 @@
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196208151107">
       <link role="intfc" targetNodeId="4.1169194658468" resolveInfo="INamedConcept" />
     </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1211483220942">
+      <link role="intfc" targetNodeId="4.1196978630214" resolveInfo="IResolveInfo" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1109279851642">
     <property name="name" value="GenericDeclaration" />
