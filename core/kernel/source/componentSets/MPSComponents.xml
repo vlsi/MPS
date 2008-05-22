@@ -158,9 +158,6 @@
       <implementation-class>jetbrains.mps.ide.DialogDimensionsSettings</implementation-class>
     </component>
 
-    <component>
-      <implementation-class>jetbrains.mps.ide.navigation.NavigationActionProcessor</implementation-class>
-    </component>
 
     <component>
       <implementation-class>jetbrains.mps.ide.progress.TaskProgressSettings</implementation-class>

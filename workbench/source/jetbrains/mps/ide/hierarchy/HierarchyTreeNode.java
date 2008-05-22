@@ -3,16 +3,10 @@ package jetbrains.mps.ide.hierarchy;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
-import jetbrains.mps.ide.EditorsPane;
-import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.navigation.EditorNavigationCommand;
-import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.util.Calculable;
 
 import javax.swing.JPopupMenu;
-import javax.swing.Icon;
 import java.awt.event.ActionEvent;
 
 import org.jetbrains.annotations.NotNull;

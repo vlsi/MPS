@@ -7,7 +7,6 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.bootstrap.structureLanguage.structure.*;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;

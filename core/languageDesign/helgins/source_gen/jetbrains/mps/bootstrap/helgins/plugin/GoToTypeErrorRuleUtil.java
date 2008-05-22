@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class GoToTypeErrorRuleUtil {
@@ -29,7 +28,6 @@ public class GoToTypeErrorRuleUtil {
     if (rule == null) {
       LOG.error("can't find rule with id " + ruleID + " in the model " + modelDescriptor);
     }
-
     context.getComponent(MPSEditorOpener.class).openNode(rule);
   }
 

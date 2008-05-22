@@ -2,7 +2,6 @@ package jetbrains.mps.ide.findusages.view.optionseditor;
 
 import jetbrains.mps.ide.BaseDialog;
 import jetbrains.mps.ide.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
@@ -13,7 +12,6 @@ import jetbrains.mps.ide.findusages.view.optionseditor.components.ViewOptionsEdi
 import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.QueryOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
-import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;

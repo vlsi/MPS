@@ -7,11 +7,12 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import java.util.List;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -35,13 +36,13 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.ArrayList;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.refactoring.framework.ChooseNodeOrModelComponent;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class MoveNodes extends AbstractLoggableRefactoring {
   public static final String target = "target";
@@ -121,7 +122,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
       Iterable<String> childLinksRoles = Sequence.fromIterable(childLinkDeclarations).select(new ISelector <SNode, String>() {
 
         public String select(SNode it) {
-          return SModelUtil_new.getGenuineLinkRole(((LinkDeclaration)SNodeOperations.getAdapter(it)));
+          return SModelUtil_new.getGenuineLinkRole(((INodeAdapter)SNodeOperations.getAdapter(it)));
         }
 
       });
@@ -195,8 +196,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
         IModule module = targetModel.getModelDescriptor().getModule();
         IOperationContext operationContext = new ModuleContext(module, actionContext.getOperationContext().getProject());
         if (operationContext != null) {
-          SNode node = ListSequence.fromList(movedNodes).first();
-          operationContext.getComponent(MPSEditorOpener.class).openNode(node, operationContext);
+          operationContext.getComponent(MPSEditorOpener.class).openNode(ListSequence.fromList(movedNodes).first());
         }
       }
     }

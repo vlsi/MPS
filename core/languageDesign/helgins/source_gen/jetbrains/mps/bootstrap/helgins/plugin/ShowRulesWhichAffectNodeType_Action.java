@@ -20,13 +20,9 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelUID;
-import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.ide.navigation.EditorNavigationCommand;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.helgins.uiActions.MyMenu;
 import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
-
-import java.awt.Component;
 
 public class ShowRulesWhichAffectNodeType_Action extends CurrentProjectMPSAction {
   public static final Logger LOG = Logger.getLogger(ShowRulesWhichAffectNodeType_Action.class);
@@ -128,10 +124,9 @@ public class ShowRulesWhichAffectNodeType_Action extends CurrentProjectMPSAction
             rules.add(rule);
           }
         }
-        IEditor currentEditor = context.get(IEditor.class);
         // single rule
         if (rules.size() == 1) {
-          project.getComponentSafe(MPSEditorOpener.class).openNode(rules.get(0));
+          this.operationContext.getComponent(MPSEditorOpener.class).openNode(rules.get(0));
           return;
         }
         // multiple rules
@@ -143,14 +138,7 @@ public class ShowRulesWhichAffectNodeType_Action extends CurrentProjectMPSAction
           x = cell.getX();
           y = cell.getY();
         }
-        Component invoker;
-        if (currentEditor == null) {
-          invoker = context.getFrame();
-        } else
-        {
-          invoker = currentEditor.getCurrentEditorComponent();
-        }
-        m.show(invoker, x, y);
+        m.show(context.getFrame(), x, y);
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowRulesWhichAffectNodeType", t);

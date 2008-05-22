@@ -1,6 +1,5 @@
 package jetbrains.mps.ide.actions.nodes;
 
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.helgins.structure.AbstractRule;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
@@ -8,11 +7,9 @@ import jetbrains.mps.bootstrap.helgins.structure.PatternCondition;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
