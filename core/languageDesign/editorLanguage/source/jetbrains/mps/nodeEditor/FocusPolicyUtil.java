@@ -1,4 +1,4 @@
-package jetbrains.mps.ide.navigation;
+package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorUtil;
