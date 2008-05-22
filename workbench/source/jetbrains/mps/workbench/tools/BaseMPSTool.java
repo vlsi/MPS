@@ -70,6 +70,8 @@ public abstract class BaseMPSTool implements ProjectComponent {
   public void showTool(final boolean activate) {
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
+        if (myProject.isDisposed()) return;
+
         if (!isShowing()) {
           ToolWindow toolWindow = ToolWindowManager.getInstance(myProject).registerToolWindow(myId, myCanCloseContent, myAnchor);
           toolWindow.setIcon(myIcon);
