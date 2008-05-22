@@ -13,6 +13,7 @@ import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.helgins.checking.IEditorChecker;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.workbench.highlighter.EditorsProvider;
 import jetbrains.mps.TestMain;
 
@@ -40,6 +41,12 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
   private Set<IEditorComponent> myCheckedOnceEditors = new WeakSet<IEditorComponent>();
   private EditorsProvider myEditorsProvider;
 
+  private ReloadListener myReloadListener = new ReloadAdapter() {
+    public void onReload() {
+      myCheckedOnceEditors.clear();
+    }
+  };
+
   private Project myProject;
 
   public Highlighter(Project project, GlobalSModelEventsManager eventsManager, ClassLoaderManager classLoaderManager, MPSProjects projects) {
@@ -65,6 +72,7 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
   }
 
   public void disposeComponent() {
+    myClassLoaderManager.removeReloadHandler(myReloadListener);
 
   }
 
@@ -73,7 +81,7 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
   }
 
   public void addChecker(IEditorChecker checker) {
-    if (IdeMain.isTestMode()) return;
+
 
     if (checker != null) {
       synchronized (CHECKERS_LOCK) {
@@ -101,11 +109,7 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
       LOG.error("trying to initialize a Highlighter being already initialized");
       return;
     }
-    myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
-      public void onReload() {
-        myCheckedOnceEditors.clear();
-      }
-    });
+    myClassLoaderManager.addReloadHandler(myReloadListener);
     myGlobalSModelEventsManager.addGlobalCommandListener(new SModelCommandListener() {
       public void eventsHappenedInCommand(List<SModelEvent> events) {
         synchronized (EVENTS_LOCK) {
