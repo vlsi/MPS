@@ -1,7 +1,6 @@
 package jetbrains.mps.ide.hierarchy;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.action.ActionContext;
@@ -153,10 +152,6 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     myPanel.add(scrollPane, BorderLayout.CENTER);
 
     setBackground(Color.WHITE);
-  }
-
-  private IEditorOpener getEditorOpener() {
-    return myOperationContext.getComponent(EditorsPane.class);
   }
 
   public JComponent getExternalComponent() {

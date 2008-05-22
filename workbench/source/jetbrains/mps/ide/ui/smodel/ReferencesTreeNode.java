@@ -2,13 +2,13 @@ package jetbrains.mps.ide.ui.smodel;
 
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 import javax.swing.Icon;
 import javax.swing.JPopupMenu;
@@ -47,8 +47,8 @@ public class ReferencesTreeNode extends MPSTreeNodeEx {
             public void run() {
               SNode target = ref.getTargetNode();
               if (target == null) return;
-              getOperationContext().getComponent(EditorsPane.class).
-                      openEditor(target, getOperationContext()).selectNode(target);
+
+              getOperationContext().getComponent(MPSEditorOpener.class).openNode(target);
             }
           });
         }

@@ -10,7 +10,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.components.IExternalizableComponent;
-import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IProjectPane;
 import jetbrains.mps.ide.MPSToolBar;
 import jetbrains.mps.ide.ThreadUtils;
@@ -290,7 +289,8 @@ public class ProjectPane extends BaseMPSTool implements IActionDataProvider, Dat
     if (selectionPath == null) return;
     if (!(selectionPath.getLastPathComponent() instanceof SNodeTreeNode)) return;
     SNodeTreeNode selectedTreeNode = (SNodeTreeNode) selectionPath.getLastPathComponent();
-    getMPSProject().getComponentSafe(EditorsPane.class).openEditor(selectedTreeNode.getSNode(), selectedTreeNode.getOperationContext());
+
+    getMPSProject().getComponentSafe(MPSEditorOpener.class).openNode(selectedTreeNode.getSNode(), selectedTreeNode.getOperationContext());
   }
 
 
