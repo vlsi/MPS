@@ -2,7 +2,6 @@ package jetbrains.mps.ide.actions.model;
 
 import jetbrains.mps.generator.plan.GenerationPartitioner;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
-import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.messages.Message;
@@ -70,8 +69,7 @@ public class ShowMappingsPartitioningAction extends MPSAction {
       }
       messagesView.add(new Message(MessageKind.INFORMATION, "================================="));
 
-      IDEProjectFrame frame = context.get(IDEProjectFrame.class);
-      JOptionPane.showMessageDialog(frame.getMainFrame(), "Conflicting mapping priority rules encountered", "Generation plan error", JOptionPane.WARNING_MESSAGE);
+      JOptionPane.showMessageDialog(context.getFrame(), "Conflicting mapping priority rules encountered", "Generation plan error", JOptionPane.WARNING_MESSAGE);
     }
 
     // show partitioning
