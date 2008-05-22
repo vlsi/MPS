@@ -18,8 +18,6 @@ import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.findusages.view.UsagesView;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.navigation.FocusPolicyUtil;
-import jetbrains.mps.ide.navigation.HistoryItem;
-import jetbrains.mps.ide.navigation.IHistoryItem;
 import jetbrains.mps.ide.ui.CellSpeedSearch;
 import jetbrains.mps.ide.ui.JMultiLineToolTip;
 import jetbrains.mps.ide.ui.MPSErrorDialog;

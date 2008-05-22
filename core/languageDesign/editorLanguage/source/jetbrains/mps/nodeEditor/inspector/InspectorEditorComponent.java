@@ -1,12 +1,8 @@
 package jetbrains.mps.nodeEditor.inspector;
 
-import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.navigation.EditorInfo;
-import jetbrains.mps.ide.navigation.HistoryItem;
-import jetbrains.mps.ide.navigation.IHistoryItem;
-import jetbrains.mps.ide.navigation.InspectorHistoryItem;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;

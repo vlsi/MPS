@@ -1,7 +1,6 @@
 package jetbrains.mps.ide.tabbedEditor;
 
 import jetbrains.mps.ide.navigation.EditorInfo;
-import jetbrains.mps.ide.navigation.IHistoryItem;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.ConceptDeclarationEditor;
 import jetbrains.mps.ide.action.IActionDataProvider;

@@ -1,6 +1,5 @@
 package jetbrains.mps.workbench.editors;
 
-import com.intellij.openapi.util.UserDataHolder;
 import com.intellij.openapi.util.UserDataHolderBase;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorState;
@@ -8,27 +7,20 @@ import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import com.intellij.openapi.fileEditor.FileEditorLocation;
 import com.intellij.openapi.project.Project;
 import com.intellij.codeHighlighting.BackgroundEditorHighlighter;
-import com.intellij.codeHighlighting.HighlightingPass;
 import com.intellij.ide.structureView.StructureViewBuilder;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 
 import javax.swing.JComponent;
-import javax.swing.JLabel;
 import java.beans.PropertyChangeListener;
 
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.NodeEditor;
 import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.ide.EditorsPane;
-import jetbrains.mps.ide.navigation.IHistoryItem;
-import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.SModelDescriptor;

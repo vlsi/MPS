@@ -1,7 +1,6 @@
 package jetbrains.mps.ide;
 
 import jetbrains.mps.ide.navigation.EditorInfo;
-import jetbrains.mps.ide.navigation.IHistoryItem;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -9,8 +8,6 @@ import jetbrains.mps.nodeEditor.ICellSelectionListener;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
 import javax.swing.event.ChangeListener;

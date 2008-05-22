@@ -1,7 +1,6 @@
 package jetbrains.mps.ide;
 
 import jetbrains.mps.ide.navigation.EditorInfo;
-import jetbrains.mps.ide.navigation.IHistoryItem;
 import jetbrains.mps.ide.action.IActionDataProvider;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.IOperationContext;
