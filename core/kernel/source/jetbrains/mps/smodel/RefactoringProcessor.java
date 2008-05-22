@@ -2,13 +2,13 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.generator.*;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.AbstractProjectFrame;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.NullAdaptiveProgressMonitor;
+import jetbrains.mps.ide.progress.AdaptiveProgressMonitorFactory;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
@@ -100,11 +100,9 @@ public class RefactoringProcessor {
       }
     });
 
-    AbstractProjectFrame projectFrame = context.get(AbstractProjectFrame.class);
     IAdaptiveProgressMonitor monitor_ = new NullAdaptiveProgressMonitor();
-    boolean hasMonitor = projectFrame != null;
-    if (hasMonitor) {
-      monitor_ = projectFrame.createAdaptiveProgressMonitor();
+    if (context.getOperationContext() != null) {
+      monitor_ = context.getOperationContext().getComponent(AdaptiveProgressMonitorFactory.class).createMonitor();
     }
     final IAdaptiveProgressMonitor monitor = monitor_;
     final ILoggableRefactoring refactoring = refactoringContext.getRefactoring();
