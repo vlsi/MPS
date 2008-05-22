@@ -4,17 +4,19 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
+import jetbrains.mps.core.structure.IResolveInfo;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ClosureParameter extends BaseConcept implements INamedConcept {
+public class ClosureParameter extends BaseConcept implements INamedConcept, IResolveInfo {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ClosureParameter";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String RESOLVE_INFO = "resolveInfo";
 
   public ClosureParameter(SNode node) {
     super(node);
@@ -59,6 +61,14 @@ public class ClosureParameter extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(ClosureParameter.VIRTUAL_PACKAGE, value);
+  }
+
+  public String getResolveInfo() {
+    return this.getProperty(ClosureParameter.RESOLVE_INFO);
+  }
+
+  public void setResolveInfo(String value) {
+    this.setProperty(ClosureParameter.RESOLVE_INFO, value);
   }
 
 }
