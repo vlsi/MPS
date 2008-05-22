@@ -11,23 +11,17 @@
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   </language>
-  <language namespace="jetbrains.mps.ide.scriptLanguage" />
   <language namespace="jetbrains.mps.logging.refactoring" />
-  <language namespace="jetbrains.mps.quotation" />
-  <language namespace="jetbrains.mps.core" />
-  <language namespace="jetbrains.mps.bootstrap.constraintsLanguage">
-    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
-  </language>
   <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
-  <language namespace="jetbrains.mps.bootstrap.pluginLanguage">
-    <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="1" />
-  </language>
-  <language namespace="jetbrains.mps.baseLanguage.classifiers" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
@@ -65,29 +59,18 @@
   <maxImportIndex value="31" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.ide.action@java_stub" version="-1" />
-  <import index="3" modelUID="java.io@java_stub" version="-1" />
   <import index="4" modelUID="java.lang@java_stub" version="-1" />
   <import index="5" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <import index="6" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="7" modelUID="java.util@java_stub" version="-1" />
   <import index="8" modelUID="jetbrains.mps.refactoring.framework@java_stub" version="-1" />
-  <import index="9" modelUID="jetbrains.mps.util@java_stub" version="-1" />
-  <import index="10" modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="-1" />
-  <import index="11" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <import index="12" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
-  <import index="13" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.constraints" version="-1" />
   <import index="14" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />
   <import index="15" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" version="-1" />
-  <import index="16" modelUID="jetbrains.mps.ide@java_stub" version="-1" />
-  <import index="17" modelUID="jetbrains.mps.ide.navigation@java_stub" version="-1" />
   <import index="18" modelUID="jetbrains.mps.project@java_stub" version="-1" />
   <import index="19" modelUID="jetbrains.mps.bootstrap.structureLanguage.findUsages@java_stub" version="-1" />
-  <import index="22" modelUID="javax.swing@java_stub" version="-1" />
-  <import index="23" modelUID="jetbrains.mps.ide.findusages.view@java_stub" version="-1" />
   <import index="24" modelUID="jetbrains.mps.ide.progress@java_stub" version="-1" />
   <import index="25" modelUID="jetbrains.mps.ide.findusages.findalgorithm.resultproviders@java_stub" version="-1" />
   <import index="26" modelUID="jetbrains.mps.ide.findusages.model@java_stub" version="-1" />
-  <import index="29" modelUID="jetbrains.mps.core.plugin" version="-1" />
   <import index="30" modelUID="jetbrains.mps.ide.findusages.findalgorithm.finders.specific@java_stub" version="-1" />
   <import index="31" modelUID="jetbrains.mps.workbench.editors@java_stub" version="-1" />
   <node type="jetbrains.mps.logging.refactoring.structure.Refactoring" id="1198076144993">
