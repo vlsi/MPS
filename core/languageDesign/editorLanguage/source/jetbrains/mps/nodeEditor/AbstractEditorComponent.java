@@ -2261,7 +2261,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private void showIntentionsMenu() {
     EditorCell cell = getSelectedCell();
 
-    IntentionsMenu intentionsMenu = new IntentionsMenu(myOperationContext.getComponent(IDEProjectFrame.class));
+    IntentionsMenu intentionsMenu = new IntentionsMenu(getOperationContext());
 
     intentionsMenu.init(cell.getSNode(), getEditorContext(), getAvailableIntentions());
 
