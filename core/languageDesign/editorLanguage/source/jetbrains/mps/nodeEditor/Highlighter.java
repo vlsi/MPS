@@ -14,6 +14,7 @@ import jetbrains.mps.helgins.checking.IEditorChecker;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.workbench.highlighter.EditorsProvider;
+import jetbrains.mps.TestMain;
 
 import java.util.*;
 
@@ -72,6 +73,8 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
   }
 
   public void addChecker(IEditorChecker checker) {
+    if (IdeMain.isTestMode()) return;
+
     if (checker != null) {
       synchronized (CHECKERS_LOCK) {
         myCheckers.add(checker);
@@ -80,6 +83,8 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
   }
 
   public void removeChecker(IEditorChecker checker) {
+    if (IdeMain.isTestMode()) return;
+
     if (checker != null) {
       synchronized (CHECKERS_LOCK) {
         myCheckers.remove(checker);
