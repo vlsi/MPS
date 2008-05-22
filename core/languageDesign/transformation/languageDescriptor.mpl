@@ -47,11 +47,6 @@
   </classPath>
   <languageRuntimeClassPath />
   <sourcePath />
-  <dependencies>
-    <dependency reexport="false">jetbrains.mps.transformation.TLBase</dependency>
-    <dependency reexport="false">jetbrains.mps.transformation.TLBase</dependency>
-    <dependency reexport="false">jetbrains.mps.transformation.TLBase</dependency>
-  </dependencies>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>
     <extendedLanguage>jetbrains.mps.bootstrap.structureLanguage</extendedLanguage>
