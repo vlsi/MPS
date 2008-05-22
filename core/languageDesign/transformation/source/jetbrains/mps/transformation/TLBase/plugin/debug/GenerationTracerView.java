@@ -1,6 +1,5 @@
 package jetbrains.mps.transformation.TLBase.plugin.debug;
 
-import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.MPSToolBar;
 import jetbrains.mps.transformation.TLBase.plugin.debug.icons.Icons;
 import jetbrains.mps.project.MPSProject;

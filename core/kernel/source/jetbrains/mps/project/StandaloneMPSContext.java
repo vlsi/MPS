@@ -1,7 +1,6 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.toolsPane.ToolsPane;
 import jetbrains.mps.ide.toolsPane.ITool;

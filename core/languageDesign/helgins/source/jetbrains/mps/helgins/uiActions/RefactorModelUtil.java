@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.bootstrap.helgins.structure.AbstractEquationStatement;
 import jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause;
 import jetbrains.mps.baseLanguage.structure.Expression;
-import jetbrains.mps.ide.IDEProjectFrame;
 
 public class RefactorModelUtil {
   public static void refactorModel(SModelDescriptor modelDescriptor) {

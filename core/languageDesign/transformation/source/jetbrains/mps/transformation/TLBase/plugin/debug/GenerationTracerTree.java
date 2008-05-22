@@ -1,7 +1,6 @@
 package jetbrains.mps.transformation.TLBase.plugin.debug;
 
 import jetbrains.mps.ide.ui.MPSTree;
-import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.project.MPSProject;
 
 public class GenerationTracerTree extends MPSTree {

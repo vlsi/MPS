@@ -1,6 +1,5 @@
 package jetbrains.mps.ide.findusages.view.treeholder.treeview;
 
-import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.MPSToolBar;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
