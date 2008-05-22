@@ -10,8 +10,7 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.closures.runtime.Wrappers;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.constraints.INamedConcept_Behavior;
-import jetbrains.mps.ide.IDEProjectFrame;
-import jetbrains.mps.ide.AbstractProjectFrame;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class TestMethodTreeNode extends MPSTreeNode {
 
@@ -78,8 +77,7 @@ public class TestMethodTreeNode extends MPSTreeNode {
   }
 
   public void doubleClick() {
-    IDEProjectFrame ide = (IDEProjectFrame)this.getOperationContext().getComponent(AbstractProjectFrame.class);
-    ide.openNode(this.testMethod, this.getOperationContext());
+    this.getOperationContext().getComponent(MPSEditorOpener.class).openNode(this.testMethod);
   }
 
 }
