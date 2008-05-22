@@ -7,12 +7,8 @@ import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.ide.EditorsPane;
-import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.ide.ConceptDeclarationEditor;
-import jetbrains.mps.ide.NodeEditor;
-import jetbrains.mps.ide.EditorsPane.IEditorOpenHandler;
-import jetbrains.mps.ide.EditorsPane.IEditorOpenHandlerOwner;
+import jetbrains.mps.ide.*;
+import jetbrains.mps.workbench.editors.MPSEditorOpenHandlerOwner;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.smodel.*;
@@ -27,7 +23,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.MPSProjectHolder;
 
@@ -39,8 +34,8 @@ public class MPSEditorOpener implements ProjectComponent {
 
   private Project myProject;
 
-  private List<IEditorOpenHandler> myEditorOpenHandlers = new ArrayList<IEditorOpenHandler>();
-  private Map<IEditorOpenHandlerOwner, Set<IEditorOpenHandler>> myEditorOpenHandlersToOwners = new HashMap<IEditorOpenHandlerOwner, Set<IEditorOpenHandler>>();
+  private List<MPSEditorOpenHandler> myEditorOpenHandlers = new ArrayList<MPSEditorOpenHandler>();
+  private Map<MPSEditorOpenHandlerOwner, Set<MPSEditorOpenHandler>> myEditorOpenHandlersToOwners = new HashMap<MPSEditorOpenHandlerOwner, Set<MPSEditorOpenHandler>>();
 
   public MPSEditorOpener(Project project) {
     myProject = project;
@@ -61,7 +56,7 @@ public class MPSEditorOpener implements ProjectComponent {
   }
 
   public void initComponent() {
-    myEditorOpenHandlers.add(new IEditorOpenHandler() {
+    myEditorOpenHandlers.add(new MPSEditorOpenHandler() {
       public SNode getBaseNode(IOperationContext context, SNode node) {
         if (node == null) return null;
         AbstractConceptDeclaration baseNode = null;
@@ -100,8 +95,8 @@ public class MPSEditorOpener implements ProjectComponent {
   }
 
   public SNode getBaseNode(IOperationContext context, SNode node) {    
-    List<IEditorOpenHandler> badHandlers = new ArrayList<IEditorOpenHandler>();
-    for (IEditorOpenHandler h : myEditorOpenHandlers) {
+    List<MPSEditorOpenHandler> badHandlers = new ArrayList<MPSEditorOpenHandler>();
+    for (MPSEditorOpenHandler h : myEditorOpenHandlers) {
       try {
         SNode result = h.getBaseNode(context, node);
         if (result != null) {
@@ -120,7 +115,7 @@ public class MPSEditorOpener implements ProjectComponent {
 
   public IEditor createEditorFor(IOperationContext operationContext, SNode node) {
     IEditor nodeEditor = null;
-    for (IEditorOpenHandler handler : myEditorOpenHandlers) {
+    for (MPSEditorOpenHandler handler : myEditorOpenHandlers) {
       try {
         if (handler.canOpen(operationContext, node)) {
           nodeEditor = handler.open(operationContext, node);
@@ -137,20 +132,20 @@ public class MPSEditorOpener implements ProjectComponent {
     return nodeEditor;
   }
 
-  public void registerOpenHandler(IEditorOpenHandler handler, IEditorOpenHandlerOwner owner) {
+  public void registerOpenHandler(MPSEditorOpenHandler handler, MPSEditorOpenHandlerOwner owner) {
     myEditorOpenHandlers.add(handler);
 
     if (!myEditorOpenHandlersToOwners.containsKey(owner)) {
-      myEditorOpenHandlersToOwners.put(owner, new HashSet<IEditorOpenHandler>());
+      myEditorOpenHandlersToOwners.put(owner, new HashSet<MPSEditorOpenHandler>());
     }
 
     myEditorOpenHandlersToOwners.get(owner).add(handler);
   }
 
-  public void unregisterOpenHandlers(IEditorOpenHandlerOwner owner) {
+  public void unregisterOpenHandlers(MPSEditorOpenHandlerOwner owner) {
     if (!myEditorOpenHandlersToOwners.containsKey(owner)) return;
 
-    for (IEditorOpenHandler handler : myEditorOpenHandlersToOwners.get(owner)) {
+    for (MPSEditorOpenHandler handler : myEditorOpenHandlersToOwners.get(owner)) {
       myEditorOpenHandlers.remove(handler);
     }
 
