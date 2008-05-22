@@ -4,7 +4,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;

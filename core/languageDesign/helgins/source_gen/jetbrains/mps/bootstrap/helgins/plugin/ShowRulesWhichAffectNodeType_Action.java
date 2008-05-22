@@ -21,10 +21,11 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.helgins.uiActions.MyMenu;
 import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
+
 import java.awt.Component;
 
 public class ShowRulesWhichAffectNodeType_Action extends CurrentProjectMPSAction {
@@ -130,7 +131,7 @@ public class ShowRulesWhichAffectNodeType_Action extends CurrentProjectMPSAction
         IEditor currentEditor = context.get(IEditor.class);
         // single rule
         if (rules.size() == 1) {
-          NavigationActionProcessor.getInstance().executeNavigationAction(new EditorNavigationCommand(rules.get(0), currentEditor, this.editorsPane), this.project);
+          project.getComponentSafe(MPSEditorOpener.class).openNode(rules.get(0));
           return;
         }
         // multiple rules

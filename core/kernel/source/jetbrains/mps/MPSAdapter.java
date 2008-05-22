@@ -11,7 +11,6 @@ import com.intellij.openapi.fileTypes.StdFileTypes;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.nodeEditor.CaretBlinker;
-import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.project.MPSProject;
 

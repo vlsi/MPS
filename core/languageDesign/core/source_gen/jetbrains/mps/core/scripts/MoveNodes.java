@@ -35,13 +35,13 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.ArrayList;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.refactoring.framework.ChooseNodeOrModelComponent;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class MoveNodes extends AbstractLoggableRefactoring {
   public static final String target = "target";
@@ -195,7 +195,8 @@ public class MoveNodes extends AbstractLoggableRefactoring {
         IModule module = targetModel.getModelDescriptor().getModule();
         IOperationContext operationContext = new ModuleContext(module, actionContext.getOperationContext().getProject());
         if (operationContext != null) {
-          NavigationActionProcessor.getInstance().navigateToNode(ListSequence.fromList(movedNodes).first(), operationContext, true);
+          SNode node = ListSequence.fromList(movedNodes).first();
+          operationContext.getComponent(MPSEditorOpener.class).openNode(node, operationContext);
         }
       }
     }

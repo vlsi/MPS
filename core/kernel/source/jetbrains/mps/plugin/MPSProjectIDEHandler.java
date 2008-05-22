@@ -14,7 +14,6 @@ import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
-import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;

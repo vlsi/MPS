@@ -9,13 +9,13 @@ import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
-import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
@@ -124,8 +124,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
 
   private void navigateToEditorDeclaration(final SNode editorDeclaration, final IOperationContext operationContext, final IEditor currentEditor) {
     operationContext.getComponent(ProjectPane.class).selectNode(editorDeclaration, operationContext);
-
-    NavigationActionProcessor.getInstance().executeNavigationAction(new EditorNavigationCommand(editorDeclaration, currentEditor, operationContext.getComponent(EditorsPane.class)), operationContext.getProject());
+    operationContext.getComponent(MPSEditorOpener.class).openNode(editorDeclaration, operationContext);
   }
 
   public static ConceptEditorDeclaration createEditorDeclaration(ConceptDeclaration conceptDeclaration, SModelDescriptor editorModelDescriptor, IScope scope) {
