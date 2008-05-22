@@ -19,6 +19,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="13" />
   <import index="1" modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
   <import index="2" modelUID="java.util@java_stub" version="-1" />
@@ -33,17 +34,5 @@
   <import index="11" modelUID="java.lang@java_stub" version="-1" />
   <import index="12" modelUID="java.lang.reflect@java_stub" version="-1" />
   <import index="13" modelUID="jetbrains.mps.project@java_stub" version="-1" />
-  <visible index="2" modelUID="jetbrains.mps.ide.actions" />
-  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1207324124240">
-    <property name="name" value="EditorPopupNode" />
-    <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement" id="1207324163274">
-      <link role="modifiedGroup" targetNodeId="2v.1204991232446" resolveInfo="EditorInternal" />
-    </node>
-    <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1207324262846">
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1207324343752">
-        <link role="javaClass" targetNodeId="9.~UpdateRuleConsequenceAction" resolveInfo="UpdateRuleConsequenceAction" />
-      </node>
-    </node>
-  </node>
 </model>
 
