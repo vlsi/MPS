@@ -92,6 +92,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
           m.onModuleLoad();
         }
 
+        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+
         model.setLoading(false);
       }
     });
