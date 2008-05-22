@@ -16,6 +16,8 @@
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="jetbrains.mps.transformationTest.structure" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.core.structure" />
@@ -81,14 +83,14 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1210674036310">
             <property name="name" value="test" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1210674036311">
-              <link role="concept" targetNodeId="1.1210254477612" resolveInfo="TransformationTest" />
+              <link role="concept" targetNodeId="1.1211372351318" resolveInfo="AbstractNodeTest" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210674051839">
               <node role="operand" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1210674050837" />
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1210674056219">
                 <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1210674056220">
-                  <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1210674061037">
-                    <link role="conceptDeclaration" targetNodeId="1.1210254477612" resolveInfo="TransformationTest" />
+                  <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1211380680503">
+                    <link role="conceptDeclaration" targetNodeId="1.1211372351318" resolveInfo="AbstractNodeTest" />
                   </node>
                 </node>
                 <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1210674065104" />
@@ -107,8 +109,8 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1210674291998">
                   <link role="variableDeclaration" targetNodeId="1210674036310" resolveInfo="test" />
                 </node>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1210674295566">
-                  <link role="link" targetNodeId="1.1210254494803" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1211372790012">
+                  <link role="link" targetNodeId="1.1211372386867" />
                 </node>
               </node>
             </node>

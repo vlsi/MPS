@@ -19,6 +19,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="7" />
   <import index="1" modelUID="jetbrains.mps.transformationTest.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.core.constraints" version="-1" />
@@ -35,14 +36,14 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1210674858983">
               <property name="name" value="test" />
               <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1210674858984">
-                <link role="concept" targetNodeId="1.1210254477612" resolveInfo="TransformationTest" />
+                <link role="concept" targetNodeId="1.1211372351318" resolveInfo="AbstractNodeTest" />
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210674879987">
                 <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="1210676008802" />
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1210674879989">
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1210674879990">
-                    <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1210674879991">
-                      <link role="conceptDeclaration" targetNodeId="1.1210254477612" resolveInfo="TransformationTest" />
+                    <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1211380848253">
+                      <link role="conceptDeclaration" targetNodeId="1.1211372351318" resolveInfo="AbstractNodeTest" />
                     </node>
                   </node>
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1210674879992" />

@@ -19,6 +19,7 @@ public class DFAActions_ActionGroup extends BaseActionGroup {
     try {
       this.add(new PrintDFAResult_Action(project), this);
       this.add(new PrintInitializationInformation_Action(project), this);
+      this.add(new PrintReachingDefinintionsInformation_Action(project), this);
       this.add(new ShowDFA_Action(project), this);
     } catch (Throwable t) {
       LOG.error("User group error", t);

@@ -1,7 +1,6 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.ide.navigation.*;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
