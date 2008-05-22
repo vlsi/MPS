@@ -46,6 +46,13 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
       myCheckedOnceEditors.clear();
     }
   };
+  private SModelCommandListener myCommandListener = new SModelCommandListener() {
+    public void eventsHappenedInCommand(List<SModelEvent> events) {
+      synchronized (EVENTS_LOCK) {
+        myLastEvents.addAll(events);
+      }
+    }
+  };
 
   private Project myProject;
 
@@ -73,6 +80,7 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
 
   public void disposeComponent() {
     myClassLoaderManager.removeReloadHandler(myReloadListener);
+    myGlobalSModelEventsManager.removeGlobalCommandListener(myCommandListener);
 
   }
 
@@ -110,13 +118,7 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
       return;
     }
     myClassLoaderManager.addReloadHandler(myReloadListener);
-    myGlobalSModelEventsManager.addGlobalCommandListener(new SModelCommandListener() {
-      public void eventsHappenedInCommand(List<SModelEvent> events) {
-        synchronized (EVENTS_LOCK) {
-          myLastEvents.addAll(events);
-        }
-      }
-    });
+    myGlobalSModelEventsManager.addGlobalCommandListener(myCommandListener);
     myThread = new Thread("Highlighter") {
       {
         setDaemon(true);
