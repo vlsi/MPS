@@ -125,9 +125,6 @@
       <implementation-class>jetbrains.mps.ide.action.MPSIdeActions</implementation-class>
     </component>
 
-    <component>
-      <implementation-class>jetbrains.mps.ide.navigation.EditorsNavigationMulticaster</implementation-class>
-    </component>
 
     <component>
       <implementation-class>jetbrains.mps.findUsages.FindUsagesManager</implementation-class>
