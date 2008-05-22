@@ -2,7 +2,6 @@ package jetbrains.mps.nodeEditor.inspector;
 
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.navigation.EditorInfo;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
@@ -49,10 +48,6 @@ public class InspectorEditorComponent extends AbstractEditorComponent implements
     return false;
   }
 
-  @Nullable
-  public EditorInfo getEditorInfo() {
-    return null;
-  }
 
   public void editNode(SNode semanticNode, IOperationContext operationContext) {
     inspectNode(semanticNode, operationContext);

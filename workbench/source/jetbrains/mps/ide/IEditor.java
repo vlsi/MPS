@@ -1,6 +1,5 @@
 package jetbrains.mps.ide;
 
-import jetbrains.mps.ide.navigation.EditorInfo;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -31,9 +30,6 @@ public interface IEditor {
   EditorCell getRootCell();
   SNode getEditedNode();
   SNodePointer getEditedNodePointer();
-
-  //for those types of editors which do not contain node: to find them in another way 
-  EditorInfo getEditorInfo();
 
   void selectNode(SNode node);
 

@@ -1,6 +1,5 @@
 package jetbrains.mps.ide.tabbedEditor;
 
-import jetbrains.mps.ide.navigation.EditorInfo;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.ConceptDeclarationEditor;
 import jetbrains.mps.ide.action.IActionDataProvider;
@@ -202,12 +201,6 @@ public class TabbedEditor implements IEditor {
 
   public AbstractEditorComponent getCurrentEditorComponent() {
     return myTabbedPane.getCurrentTab().getEditorComponent();
-  }
-
-
-  @Nullable
-  public EditorInfo getEditorInfo() {
-    return null;
   }
 
   public boolean removeFromRecentEditorsOnClose() {

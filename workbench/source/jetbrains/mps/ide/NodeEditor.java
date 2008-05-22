@@ -1,6 +1,5 @@
 package jetbrains.mps.ide;
 
-import jetbrains.mps.ide.navigation.EditorInfo;
 import jetbrains.mps.ide.action.IActionDataProvider;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.IOperationContext;
@@ -58,12 +57,6 @@ public class NodeEditor implements IEditor {
 
   public void removeCellSelectionListener(@NotNull ICellSelectionListener listener) {
     myEditorComponent.removeCellSelectionListener(listener);
-  }
-
-
-  @Nullable
-  public EditorInfo getEditorInfo() {
-    return null;
   }
 
   @NotNull

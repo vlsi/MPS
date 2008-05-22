@@ -176,11 +176,5 @@ public class UIEditorComponent extends AbstractEditorComponent implements IEdito
     public AbstractEditorComponent getEditorComponent() {
       return UIEditorComponent.this;
     }
-
-
-    @Nullable
-    public EditorInfo getEditorInfo() {
-      return null;  
-    }
   }
 }
