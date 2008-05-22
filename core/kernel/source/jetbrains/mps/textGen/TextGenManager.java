@@ -1,6 +1,6 @@
 package jetbrains.mps.textGen;
 
-import jetbrains.mps.baseLanguage.textGen.JavaNodeTextGen;
+import jetbrains.mps.baseLanguage.textGen.BaseLangTextGen;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
@@ -31,7 +31,7 @@ public class TextGenManager {
 
   public TextGenerationResult generateText(IOperationContext context, SNode node) {
     TextGenBuffer buffer = new TextGenBuffer();
-    buffer.putUserObject(JavaNodeTextGen.PACKAGE_NAME, node.getModel().getLongName());
+    buffer.putUserObject(BaseLangTextGen.PACKAGE_NAME, node.getModel().getLongName());
     appendNodeText(context, buffer, node, null);
     return new TextGenerationResult(buffer.getText(), buffer.hasErrors());
   }
