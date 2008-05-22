@@ -7,11 +7,11 @@ import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.ISearchScope;
 import java.util.List;
+import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
@@ -30,8 +30,7 @@ public class TypeVariableReference_typeVariableDeclaration_ReferentConstraint im
   }
 
   public boolean canCreateNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    SNode genericDeclaration = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.GenericDeclaration", true, false);
-    return genericDeclaration != null;
+    return true;
   }
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
