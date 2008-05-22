@@ -16,6 +16,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FrameUtil;
 import jetbrains.mps.util.IDisposable;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 import java.awt.Frame;
 import java.rmi.NoSuchObjectException;
@@ -41,8 +42,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   }
 
   private Frame getMainFrame() {
-    if (getProjectWindow() == null) return null;
-    return getProjectWindow().getMainFrame();
+    return myProject.getComponent(Frame.class);
   }
 
   public void showNode(final String namespace, final String id) throws RemoteException {
@@ -96,8 +96,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
         AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(fqName, GlobalScope.getInstance());
-        IDEProjectFrame projectWindow = getProjectWindow();
-        projectWindow.getEditorsPane().openEditor(concept.getNode(), new ProjectOperationContext(projectWindow.getProject()));
+        myProject.getComponentSafe(MPSEditorOpener.class).openNode(concept.getNode());
         FrameUtil.activateFrame(getMainFrame());
       }
     });
