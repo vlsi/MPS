@@ -34,7 +34,7 @@ public class PostponedReference extends SReference {
   @Nullable
   public SModelUID getTargetModelUID() {
     if (myReferenceInfo != null) {
-      return myReferenceInfo.getOutputSourceNode().getModel().getUID();
+      return myReferenceInfo.getTargetModelUID();
     } else if (myReplacementReference != null) {
       return myReplacementReference.getTargetModelUID();
     }
@@ -67,13 +67,12 @@ public class PostponedReference extends SReference {
 
     String role = myReferenceInfo.getReferenceRole();
     SNode outputSourceNode = myReferenceInfo.getOutputSourceNode();
-    SModelUID targetModelUID = myGenerator.getOutputModel().getUID();
+    SModelUID targetModelUID = myReferenceInfo.getTargetModelUID();
 
     SNode outputTargetNode = myReferenceInfo.doResolve_Straightforward(myGenerator);
     if (outputTargetNode != null) {
       myReplacementReference = new StaticReference(role, outputSourceNode, outputTargetNode);
     } else if (SReferenceUtil.isDynamicResolve(role, outputSourceNode)) {
-//      myGenerator.showInformationMessage(outputSourceNode, "!!!create dynamic!!!");
       myReplacementReference = new DynamicReference(
         role,
         outputSourceNode,

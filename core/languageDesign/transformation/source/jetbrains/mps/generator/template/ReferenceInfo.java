@@ -8,6 +8,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.helgins.inference.TypeCheckingMode;
 import org.jetbrains.annotations.Nullable;
@@ -29,6 +30,11 @@ public abstract class ReferenceInfo {
 
   public SNode getOutputSourceNode() {
     return myOutputSourceNode;
+  }
+
+  public SModelUID getTargetModelUID() {
+    // todo: dynamic ref on a class can be external
+    return myOutputSourceNode.getModel().getUID();
   }
 
   public String getReferenceRole() {
