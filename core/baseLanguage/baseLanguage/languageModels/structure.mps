@@ -1319,6 +1319,10 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1107461130800">
     <property name="name" value="Classifier" />
     <link role="extends" targetNodeId="1109279851642" resolveInfo="GenericDeclaration" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1211504562189">
+      <property name="name" value="nestedName" />
+      <link role="dataType" targetNodeId="4.1082983041843" resolveInfo="string" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1128555889557">
       <property name="targetCardinality" value="1" />
       <property name="sourceCardinality" value="0..n" />

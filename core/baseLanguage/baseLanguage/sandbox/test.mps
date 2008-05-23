@@ -5,12 +5,13 @@
   <language namespace="jetbrains.mps.baseLanguage">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
-  <maxImportIndex value="29" />
+  <maxImportIndex value="30" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="26" modelUID="jetbrains.mps.baseLanguage.sandbox.misc" version="0" />
   <import index="27" modelUID="java.util@java_stub" version="-1" />
   <import index="28" modelUID="org.jetbrains.annotations@java_stub" version="-1" />
   <import index="29" modelUID="java.applet@java_stub" version="-1" />
+  <import index="30" modelUID="jetbrains.mps.closures.runtime@java_stub" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.Interface" id="1115766127296">
     <property name="name" value="IBaseInterface" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1115766147547">
@@ -1315,6 +1316,44 @@
         </node>
       </node>
     </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1211503175703">
+    <property name="name" value="TestInners" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1211503183002">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1211503183003" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1211503183004" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1211503183005">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1211503203833">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1211503203834">
+            <property name="name" value="_byte" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1211503203835">
+              <link role="classifier" targetNodeId="30.~Wrappers$_byte" resolveInfo="Wrappers._byte" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1211503384984">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1211503384985">
+            <property name="name" value="hmm" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1211503384986">
+              <link role="classifier" targetNodeId="26.1211503302539" resolveInfo="ClassWithInner" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1211503405300">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1211503405301">
+            <property name="name" value="hmmmm" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1211503405302">
+              <link role="classifier" targetNodeId="26.1211503330372" resolveInfo="TheInner" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1211505368551">
+              <link role="baseMethodDeclaration" targetNodeId="26.1211505440151" resolveInfo="TheInner" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1211503175704" />
   </node>
 </model>
 

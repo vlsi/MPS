@@ -113,7 +113,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
 
   public EditorCell create_classifierRefCell19365_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new StaticFieldReference_Editor._Inline12());
+    provider.setAuxiliaryCellProvider(new StaticFieldReference_Editor._Inline11());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_classifierRefCell19365_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -194,9 +194,9 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _Inline12 extends AbstractCellProvider {
+  public static class _Inline11 extends AbstractCellProvider {
 
-    public _Inline12() {
+    public _Inline11() {
       super();
     }
 

@@ -113,7 +113,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
 
   public EditorCell create_enumClassRefCell20615_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new EnumConstantReference_Editor._Inline11());
+    provider.setAuxiliaryCellProvider(new EnumConstantReference_Editor._Inline10());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_enumClassRefCell20615_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -195,9 +195,9 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _Inline11 extends AbstractCellProvider {
+  public static class _Inline10 extends AbstractCellProvider {
 
-    public _Inline11() {
+    public _Inline10() {
       super();
     }
 

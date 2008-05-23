@@ -1373,7 +1373,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
 
   public EditorCell create_extendedClassRefCell6031_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new ClassConcept_Editor._Inline16());
+    provider.setAuxiliaryCellProvider(new ClassConcept_Editor._Inline14());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_extendedClassRefCell6031_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -1545,9 +1545,9 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline16 extends AbstractCellProvider {
+  public static class _Inline14 extends AbstractCellProvider {
 
-    public _Inline16() {
+    public _Inline14() {
       super();
     }
 

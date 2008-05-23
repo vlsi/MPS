@@ -130,7 +130,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
 
   public EditorCell create_classConceptRefCell12257_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new StaticMethodCall_Editor._Inline13());
+    provider.setAuxiliaryCellProvider(new StaticMethodCall_Editor._Inline12());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_classConceptRefCell12257_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -211,9 +211,9 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _Inline13 extends AbstractCellProvider {
+  public static class _Inline12 extends AbstractCellProvider {
 
-    public _Inline13() {
+    public _Inline12() {
       super();
     }
 

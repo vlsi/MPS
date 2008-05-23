@@ -39,6 +39,8 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="133" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="java.util@java_stub" version="-1" />
@@ -447,6 +449,24 @@
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210955672993">
       <link role="classifier" targetNodeId="1210955648495" resolveInfo="C1" />
     </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1211503302539">
+    <property name="name" value="ClassWithInner" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1211505443202">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1211505443203" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1211505443204" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1211505443205" />
+    </node>
+    <node role="staticInnerClassifiers" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1211503330372">
+      <property name="name" value="TheInner" />
+      <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1211505440151">
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1211505440152" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1211505440153" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1211505440154" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1211503330373" />
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1211503302540" />
   </node>
 </model>
 

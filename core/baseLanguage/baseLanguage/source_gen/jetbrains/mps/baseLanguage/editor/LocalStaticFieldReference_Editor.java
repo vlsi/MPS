@@ -31,7 +31,7 @@ public class LocalStaticFieldReference_Editor extends DefaultNodeEditor {
 
   public EditorCell create_staticFieldDeclarationRefCell19115_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new LocalStaticFieldReference_Editor._Inline18());
+    provider.setAuxiliaryCellProvider(new LocalStaticFieldReference_Editor._Inline16());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_staticFieldDeclarationRefCell19115_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -58,9 +58,9 @@ public class LocalStaticFieldReference_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline18 extends AbstractCellProvider {
+  public static class _Inline16 extends AbstractCellProvider {
 
-    public _Inline18() {
+    public _Inline16() {
       super();
     }
 
