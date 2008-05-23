@@ -56,6 +56,8 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <maxImportIndex value="31" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.ide.action@java_stub" version="-1" />
@@ -699,7 +701,7 @@
                       </node>
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207782883084">
-                      <link role="baseMethodDeclaration" targetNodeId="5.~IOperationContext.getProject():jetbrains.mps.project.MPSProject" resolveInfo="getProject" />
+                      <link role="baseMethodDeclaration" targetNodeId="5.~IOperationContext.getMPSProject():jetbrains.mps.project.MPSProject" resolveInfo="getMPSProject" />
                     </node>
                   </node>
                 </node>
@@ -1328,7 +1330,7 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209124542262">
-                    <link role="baseMethodDeclaration" targetNodeId="5.~IOperationContext.getProject():jetbrains.mps.project.MPSProject" resolveInfo="getProject" />
+                    <link role="baseMethodDeclaration" targetNodeId="5.~IOperationContext.getMPSProject():jetbrains.mps.project.MPSProject" resolveInfo="getMPSProject" />
                   </node>
                 </node>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1209124545967" />
