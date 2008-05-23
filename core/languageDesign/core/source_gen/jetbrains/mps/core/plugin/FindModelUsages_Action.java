@@ -4,7 +4,6 @@ package jetbrains.mps.core.plugin;
 
 import jetbrains.mps.plugins.CurrentProjectMPSAction;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
@@ -13,11 +12,11 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ModelUsagesFinder;
+import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 
 public class FindModelUsages_Action extends CurrentProjectMPSAction {
   public static final Logger LOG = Logger.getLogger(FindModelUsages_Action.class);
 
-  private IDEProjectFrame projectFrame;
   private SModel model;
   private boolean isAlwaysVisible = false;
 
@@ -49,10 +48,6 @@ public class FindModelUsages_Action extends CurrentProjectMPSAction {
 
   private boolean fillFieldsIfNecessary(ActionContext context) {
     try {
-      this.projectFrame = context.get(IDEProjectFrame.class);
-      if (this.projectFrame == null) {
-        return false;
-      }
       {
         SModel model = null;
         if (context.getModel() != null) {
@@ -77,7 +72,7 @@ public class FindModelUsages_Action extends CurrentProjectMPSAction {
       {
         SearchQuery query = new SearchQuery(this.model, context.getScope());
         IResultProvider provider = TreeBuilder.forFinder(new ModelUsagesFinder());
-        this.projectFrame.getUsagesView().findUsages(provider, query, true, true, false);
+        context.getOperationContext().getComponent(UsagesViewTool.class).findUsages(provider, query, true, true, false);
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "FindModelUsages", t);
