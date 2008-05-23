@@ -4,6 +4,7 @@ import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro;
 import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_GetReferent;
@@ -27,6 +28,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
   private boolean myMacroProcessed;
   private String myResolveInfoForDynamicResolve;
   private SNode myOutputTargetNode;
+  private SModelUID myExternalTargetModelUID;
 
   public ReferenceInfo_Macro(SNode outputSourceNode, ReferenceMacro macro, @Nullable SNode inputNode, Map<String, SNode> inputNodesByMappingName, SNode templateReferenceNode) {
     super(outputSourceNode, getReferenceRole(macro), inputNode);
@@ -47,7 +49,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
 
   public SModelUID getTargetModelUID(TemplateGenerator generator) {
     ensureMacroProcessed(generator);
-    // todo: dynamic ref on a class can be external
+    if (myExternalTargetModelUID != null) return myExternalTargetModelUID;
     return super.getTargetModelUID(generator);
   }
 
@@ -109,8 +111,28 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
 
       if (result instanceof SNode) {
         myOutputTargetNode = (SNode) result;
-      } else {
-        myResolveInfoForDynamicResolve = (String) result;
+      } else if (result != null) {
+        String resolveInfo = (String) result;
+        // we are expecting:
+        // - just resolve-info
+        // - [models name]resolve-info
+        // - []resolve-info
+        if (resolveInfo.startsWith("[")) {
+          String[] modelNameAndTheRest = resolveInfo.split("]");
+          if (modelNameAndTheRest.length > 1 || (modelNameAndTheRest.length == 1 && resolveInfo.endsWith("]"))) {
+            resolveInfo = resolveInfo.substring(resolveInfo.indexOf("]") + 1).trim();
+            String modelName = modelNameAndTheRest[0].substring(1).trim();
+            if (modelName.length() > 0) {
+              // model: either current output or java_stub
+              if (!modelName.equals(generator.getOutputModel().getLongName())) {
+                // external java_stub
+                myExternalTargetModelUID = new SModelUID(modelName, SModelStereotype.JAVA_STUB);
+              }
+            }
+          }
+        }
+
+        myResolveInfoForDynamicResolve = resolveInfo;
       }
     } catch (Throwable t) {
       generator.showErrorMessage(getInputNode(), myReferenceMacro.getNode(), "couldn't evaluate reference macro");

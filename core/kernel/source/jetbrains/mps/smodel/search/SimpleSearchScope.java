@@ -2,6 +2,7 @@ package jetbrains.mps.smodel.search;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
@@ -47,7 +48,7 @@ public class SimpleSearchScope extends AbstractSearchScope {
 
   public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, AbstractConceptDeclaration targetConcept) {
     return new IReferenceInfoResolver() {
-      public SNode resolve(String referenceInfo) {
+      public SNode resolve(String referenceInfo, SModelUID targetModelUID) {
         if (referenceInfo == null) return null;
         for (SNode node : myNodes) {
           if (referenceInfo.equals(node.getResolveInfo())) {

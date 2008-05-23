@@ -54,8 +54,6 @@ public class DynamicReference extends SReferenceBase {
       return null;
     }
 
-    // todo: what about target model UID?
-
     SNode referenceNode = getSourceNode();
     AbstractConceptDeclaration referenceNodeConcept = referenceNode.getConceptDeclarationAdapter();
     SNode enclosingNode = getSourceNode().getParent();
@@ -83,7 +81,7 @@ public class DynamicReference extends SReferenceBase {
       return null;
     }
 
-    SNode targetNode = infoResolver.resolve(getResolveInfo());
+    SNode targetNode = infoResolver.resolve(getResolveInfo(), getTargetModelUID());
     if (targetNode == null) {
       error("can't find target by resolve info: '" + getResolveInfo() + "'");
 //      infoResolver.resolve(getResolveInfo());
