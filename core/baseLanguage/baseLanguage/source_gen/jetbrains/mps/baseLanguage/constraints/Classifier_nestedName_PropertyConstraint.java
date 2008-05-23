@@ -24,11 +24,11 @@ public class Classifier_nestedName_PropertyConstraint implements IModelConstrain
   }
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
-    if (SNodeOperations.getParent(node, null, false, false) == null) {
-      return SPropertyOperations.getString(node, "name");
-    }
     SNode enclosing = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-    return SPropertyOperations.getString(enclosing, "nestedName") + "." + SPropertyOperations.getString(node, "name");
+    if (enclosing != null) {
+      return SPropertyOperations.getString(enclosing, "nestedName") + "." + SPropertyOperations.getString(node, "name");
+    }
+    return SPropertyOperations.getString(node, "name");
   }
 
 }
