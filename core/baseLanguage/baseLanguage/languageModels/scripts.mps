@@ -44,6 +44,8 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <maxImportIndex value="19" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
@@ -1673,28 +1675,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1209830557339">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1209830557340">
-            <property name="name" value="projectFrame" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1209830557341">
-              <link role="classifier" targetNodeId="14.~IDEProjectFrame" resolveInfo="IDEProjectFrame" />
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1209830557342">
-              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1209830557343">
-                <link role="classifier" targetNodeId="14.~IDEProjectFrame" resolveInfo="IDEProjectFrame" />
-              </node>
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209830557344">
-                <node role="operand" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_ActionContext" id="1209830557345" />
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209830557346">
-                  <link role="baseMethodDeclaration" targetNodeId="10.~ActionContext.get(java.lang.Class):java.lang.Object" resolveInfo="get" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1209830557347">
-                    <link role="classifier" targetNodeId="14.~IDEProjectFrame" resolveInfo="IDEProjectFrame" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1209830557348">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1209830557349">
             <property name="name" value="monitor" />
@@ -1702,11 +1682,9 @@
               <link role="classifier" targetNodeId="15.~IAdaptiveProgressMonitor" resolveInfo="IAdaptiveProgressMonitor" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209830557351">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1209830557352">
-                <link role="variableDeclaration" targetNodeId="1209830557340" resolveInfo="projectFrame" />
-              </node>
+              <node role="operand" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_ActionContext" id="1211530090103" />
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209830557353">
-                <link role="baseMethodDeclaration" targetNodeId="14.~AbstractProjectFrame.createAdaptiveProgressMonitor():jetbrains.mps.ide.progress.IAdaptiveProgressMonitor" resolveInfo="createAdaptiveProgressMonitor" />
+                <link role="baseMethodDeclaration" targetNodeId="10.~ActionContext.createProgressMonitor():jetbrains.mps.ide.progress.IAdaptiveProgressMonitor" resolveInfo="createProgressMonitor" />
               </node>
             </node>
           </node>
