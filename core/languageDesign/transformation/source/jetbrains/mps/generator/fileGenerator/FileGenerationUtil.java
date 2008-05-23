@@ -39,7 +39,7 @@ public class FileGenerationUtil {
     }
 
     File outputRootDirectory = new File(outputDir);
-    GeneratorManager gm = context.getComponentSafe(GeneratorManager.class);
+    GeneratorManager gm = context.getComponent(GeneratorManager.class);
     Map<SNode, String> outputNodeContents = new LinkedHashMap<SNode, String>();
 
     boolean ok = true;
