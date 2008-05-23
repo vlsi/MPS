@@ -2,7 +2,6 @@ package jetbrains.mps.ide.dependency;
 
 import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.ide.action.MPSAction;
-import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.smodel.ModuleRepositoryListener;
 import jetbrains.mps.smodel.SModelRepository;

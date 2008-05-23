@@ -3,7 +3,6 @@ package jetbrains.mps.ide.dependency;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
