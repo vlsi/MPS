@@ -3,14 +3,13 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro;
 import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_GetReferent;
 import jetbrains.mps.util.QueryMethodGenerated;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.logging.Logger;
 
-import java.util.List;
 import java.util.Map;
 
 import org.jetbrains.annotations.Nullable;
@@ -22,8 +21,12 @@ import org.jetbrains.annotations.Nullable;
 public class ReferenceInfo_Macro extends ReferenceInfo {
   private SNode myTemplateReferenceNode;
   private ReferenceMacro myReferenceMacro;
-  private String myResolveInfoForDynamicResolve;
   private Map<String, SNode> myInputNodesByMappingName;
+
+  // results of 'expandReferenceMacro'
+  private boolean myMacroProcessed;
+  private String myResolveInfoForDynamicResolve;
+  private SNode myOutputTargetNode;
 
   public ReferenceInfo_Macro(SNode outputSourceNode, ReferenceMacro macro, @Nullable SNode inputNode, Map<String, SNode> inputNodesByMappingName, SNode templateReferenceNode) {
     super(outputSourceNode, getReferenceRole(macro), inputNode);
@@ -42,10 +45,23 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
     return linkRole;
   }
 
+  public SModelUID getTargetModelUID(TemplateGenerator generator) {
+    ensureMacroProcessed(generator);
+    // todo: dynamic ref on a class can be external
+    return super.getTargetModelUID(generator);
+  }
+
   public SNode doResolve_Straightforward(TemplateGenerator generator) {
+    ensureMacroProcessed(generator);
+    return myOutputTargetNode;
+  }
+
+  private void ensureMacroProcessed(TemplateGenerator generator) {
+    if (myMacroProcessed) return;
+    myMacroProcessed = true;
     Map<String, SNode> old = generator.setPreviousInputNodesByMappingName(myInputNodesByMappingName);
     try {
-      return expandReferenceMacro(generator);
+      expandReferenceMacro(generator);
     } finally {
       generator.setPreviousInputNodesByMappingName(old);
     }
@@ -72,18 +88,17 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
     return getOutputSourceNode().isReferentRequired(getReferenceRole());
   }
 
-  private SNode expandReferenceMacro(ITemplateGenerator generator) {
+  private void expandReferenceMacro(ITemplateGenerator generator) {
     String linkRole = getReferenceRole();
 
     // try new query
     ReferenceMacro_GetReferent function = myReferenceMacro.getReferentFunction();
     if (function == null) {
       generator.showErrorMessage(getInputNode(), myReferenceMacro.getNode(), "couldn't evaluate reference macro");
-      return null;
+      return;
     }
 
     String methodName = TemplateFunctionMethodName.referenceMacro_GetReferent(function.getNode());
-    SNode outputTargetNode = null;
     try {
       Object result;
       result = QueryMethodGenerated.invoke(
@@ -93,41 +108,38 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
         myReferenceMacro.getModel());
 
       if (result instanceof SNode) {
-        outputTargetNode = (SNode) result;
+        myOutputTargetNode = (SNode) result;
       } else {
         myResolveInfoForDynamicResolve = (String) result;
       }
     } catch (Throwable t) {
       generator.showErrorMessage(getInputNode(), myReferenceMacro.getNode(), "couldn't evaluate reference macro");
       Logger.getLogger(this.getClass()).error(t, myReferenceMacro.getNode());
-      return null;
     }
 
-    if (outputTargetNode == null) {
-      return null;
+    if (myOutputTargetNode == null) {
+      return;
     }
 
     // check referent because it's manual and thus error prone mapping
-    if (outputTargetNode.getModel() == generator.getInputModel()) {
-      // try to find copy in output model
-      SNode outputTargetNode_output = generator.findCopiedOutputNodeForInputNode(outputTargetNode);
+    if (myOutputTargetNode.getModel() == generator.getInputModel()) {
+      // try to find copy in output model and replace target
+      SNode outputTargetNode_output = generator.findCopiedOutputNodeForInputNode(myOutputTargetNode);
       if (outputTargetNode_output != null) {
-        return outputTargetNode_output;
+        myOutputTargetNode = outputTargetNode_output;
+      } else {
+        generator.showWarningMessage(getOutputSourceNode(), "reference '" + linkRole + "' to input model in output node " + getOutputSourceNode().getDebugText());
+        generator.showInformationMessage(myOutputTargetNode, " -- referent node: " + myOutputTargetNode.getDebugText());
+        generator.showInformationMessage(myReferenceMacro.getNode(), " -- template node: " + myReferenceMacro.getNode().getDebugText());
+        generator.getGeneratorSessionContext().addTransientModelToKeep(generator.getInputModel());
       }
-
-      generator.showWarningMessage(getOutputSourceNode(), "reference '" + linkRole + "' to input model in output node " + getOutputSourceNode().getDebugText());
-      generator.showInformationMessage(outputTargetNode, " -- referent node: " + outputTargetNode.getDebugText());
-      generator.showInformationMessage(myReferenceMacro.getNode(), " -- template node: " + myReferenceMacro.getNode().getDebugText());
-      generator.getGeneratorSessionContext().addTransientModelToKeep(generator.getInputModel());
     }
-
-    return outputTargetNode;
   }
 
   public void showErrorMessage(ITemplateGenerator generator) {
     generator.showErrorMessage(getOutputSourceNode(), "couldn't resolve reference '" + getReferenceRole() + "' in output node " + getOutputSourceNode().getDebugText());
     generator.showErrorMessage(myReferenceMacro.getParent().getNode(), "-- original reference was " + myReferenceMacro.getParent().getNode().getDebugText());
     SNode inputNode = getInputNode();
-    generator.showErrorMessage(inputNode, "-- input node was " + (inputNode != null ? inputNode.getDebugText(): "NULL"));
+    generator.showErrorMessage(inputNode, "-- input node was " + (inputNode != null ? inputNode.getDebugText() : "NULL"));
   }
 }

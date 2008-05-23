@@ -32,9 +32,10 @@ public abstract class ReferenceInfo {
     return myOutputSourceNode;
   }
 
-  public SModelUID getTargetModelUID() {
-    // todo: dynamic ref on a class can be external
-    return myOutputSourceNode.getModel().getUID();
+  public SModelUID getTargetModelUID(TemplateGenerator generator) {
+    // local references only
+    return generator.getOutputModel().getUID();
+//    return myOutputSourceNode.getModel().getUID();
   }
 
   public String getReferenceRole() {

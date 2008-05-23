@@ -14,7 +14,6 @@ import org.jetbrains.annotations.Nullable;
  * They are always internal.
  */
 public class PostponedReference extends SReference {
-  private static final Logger LOG = Logger.getLogger(PostponedReference.class);
 
   private ReferenceInfo myReferenceInfo;
   private TemplateGenerator myGenerator;
@@ -34,7 +33,7 @@ public class PostponedReference extends SReference {
   @Nullable
   public SModelUID getTargetModelUID() {
     if (myReferenceInfo != null) {
-      return myReferenceInfo.getTargetModelUID();
+      return myReferenceInfo.getTargetModelUID(myGenerator);
     } else if (myReplacementReference != null) {
       return myReplacementReference.getTargetModelUID();
     }
@@ -67,7 +66,7 @@ public class PostponedReference extends SReference {
 
     String role = myReferenceInfo.getReferenceRole();
     SNode outputSourceNode = myReferenceInfo.getOutputSourceNode();
-    SModelUID targetModelUID = myReferenceInfo.getTargetModelUID();
+    SModelUID targetModelUID = myReferenceInfo.getTargetModelUID(myGenerator);
 
     SNode outputTargetNode = myReferenceInfo.doResolve_Straightforward(myGenerator);
     if (outputTargetNode != null) {
