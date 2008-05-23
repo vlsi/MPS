@@ -109,7 +109,7 @@ public abstract class BaseNodeDialog extends BaseDialog {
 
   private boolean saveChanges_internal() {
     if (!validateNode()) return true;
-    ProgressManager.getInstance().run(new Modal(getOperationContext().getProject().getComponent(Project.class), "Applying changes", false) {
+    ProgressManager.getInstance().run(new Modal(getOperationContext().getComponent(Project.class), "Applying changes", false) {
       public void run(@NotNull ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
         try {

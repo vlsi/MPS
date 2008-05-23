@@ -87,7 +87,7 @@ public final class ChooseNodeDialog extends BaseDialog {
           JOptionPane.showMessageDialog(myContext.getMainFrame(), "Can't refactor node onto itself");
           return;
         }
-        String role = MoveNodeRefactoring.getRoleInTarget(mySourceNodes.get(0), sNode, myContext.getProject().getScope());
+        String role = MoveNodeRefactoring.getRoleInTarget(mySourceNodes.get(0), sNode, myContext.getScope());
         if (role == null) {
           JOptionPane.showMessageDialog(myContext.getMainFrame(), "Can't find suitable role");
           return;

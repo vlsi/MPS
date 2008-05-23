@@ -193,7 +193,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     SModelDescriptor result = DefaultModelRootManager.createModel(this, root, modelFile.getCanonicalPath(), uid, owner);
     IOperationContext operationContext = result.getOperationContext();
     if (operationContext != null) {
-      ProjectVCSManager projectVCSManager = operationContext.getProject().getComponent(ProjectVCSManager.class);
+      ProjectVCSManager projectVCSManager = operationContext.getComponent(ProjectVCSManager.class);
       assert projectVCSManager != null;
       projectVCSManager.getController().addFilesToVCS(Collections.singletonList(modelFile.toFile()));
     } else {
@@ -325,7 +325,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       metadataFile.createNewFile();
       IOperationContext operationContext = modelDescriptor.getOperationContext();
       if (operationContext != null) {
-        ProjectVCSManager projectVCSManager = operationContext.getProject().getComponent(ProjectVCSManager.class);
+        ProjectVCSManager projectVCSManager = operationContext.getComponent(ProjectVCSManager.class);
         assert projectVCSManager != null;
         projectVCSManager.getController().addFilesToVCS(CollectionUtil.asList(metadataFile.toFile()));
       } else {

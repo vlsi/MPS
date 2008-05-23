@@ -309,7 +309,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        UsagesViewTool usagesViewTool = operationContext.getProject().getComponent(UsagesViewTool.class);
+        UsagesViewTool usagesViewTool = operationContext.getComponent(UsagesViewTool.class);
         assert usagesViewTool != null;
         UsagesView usagesView = usagesViewTool.getCurrentView();
         if (usagesView != null) usagesView.goToPrevious();
@@ -318,7 +318,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        UsagesViewTool usagesViewTool = operationContext.getProject().getComponent(UsagesViewTool.class);
+        UsagesViewTool usagesViewTool = operationContext.getComponent(UsagesViewTool.class);
         assert usagesViewTool != null;
         UsagesView usagesView = usagesViewTool.getCurrentView();
         if (usagesView != null) usagesView.goToNext();

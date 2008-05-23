@@ -108,7 +108,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   @NotNull
   public TransientModelsModule getModule() {
-    return getProject().getComponentSafe(TransientModelsModule.class);
+    return getComponent(TransientModelsModule.class);
   }
 
   @NotNull
@@ -199,7 +199,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   }
 
   public GenerationTracer getGenerationTracer() {
-    return getProject().getComponentSafe(GenerationTracer.class);
+    return getComponent(GenerationTracer.class);
   }
 
   private boolean keepTransientForMessageNavigation() {

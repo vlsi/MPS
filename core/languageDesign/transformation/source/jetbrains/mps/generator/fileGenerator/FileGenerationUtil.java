@@ -39,7 +39,7 @@ public class FileGenerationUtil {
     }
 
     File outputRootDirectory = new File(outputDir);
-    GeneratorManager gm = context.getProject().getComponentSafe(GeneratorManager.class);
+    GeneratorManager gm = context.getComponentSafe(GeneratorManager.class);
     Map<SNode, String> outputNodeContents = new LinkedHashMap<SNode, String>();
 
     boolean ok = true;
@@ -53,7 +53,7 @@ public class FileGenerationUtil {
 
     generateFiles(status, outputRootDirectory, gm, outputNodeContents, generatedFiles, directories);
 
-    ProjectVCSManager projectVCSManager = context.getProject().getComponent(ProjectVCSManager.class);
+    ProjectVCSManager projectVCSManager = context.getComponent(ProjectVCSManager.class);
     assert projectVCSManager != null;
     projectVCSManager.getController().addFilesToVCS(new ArrayList<File>(generatedFiles));
 
@@ -101,7 +101,7 @@ public class FileGenerationUtil {
         }
       }
     }
-    ProjectVCSManager projectVCSManager = context.getProject().getComponent(ProjectVCSManager.class);
+    ProjectVCSManager projectVCSManager = context.getComponent(ProjectVCSManager.class);
     assert projectVCSManager != null;
     projectVCSManager.getController().deleteFilesAndRemoveFromVCS(filesToDelete);
   }
