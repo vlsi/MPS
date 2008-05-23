@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.ModuleRepositoryListener;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -32,8 +33,8 @@ public class DependencyViewer extends DefaultTool {
     }
   };
 
-  public DependencyViewer(IDEProjectFrame frame) {
-    myTree = new DependencyTree(frame);
+  public DependencyViewer(MPSProject project) {
+    myTree = new DependencyTree(project);
     myExternalComponent = new JScrollPane(myTree) {
       public void addNotify() {
         super.addNotify();

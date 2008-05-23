@@ -5,6 +5,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
 import java.util.List;
@@ -12,10 +13,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class DependencyTree extends MPSTree {
-  private IDEProjectFrame myProjectFrame;
+  private MPSProject myProject;
 
-  public DependencyTree(IDEProjectFrame projectFrame) {
-    myProjectFrame = projectFrame;
+  public DependencyTree(MPSProject project) {
+    myProject = project;
   }
 
   protected MPSTreeNode rebuild() {
@@ -27,7 +28,7 @@ public class DependencyTree extends MPSTree {
     Collections.sort(modules, new ModulesComparator());
 
     for (IModule m : modules) {
-      root.add(new ModuleTreeNode(myProjectFrame, m));
+      root.add(new ModuleTreeNode(myProject, m));
     }
 
     return root;

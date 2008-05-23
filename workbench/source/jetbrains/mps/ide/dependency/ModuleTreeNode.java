@@ -4,30 +4,32 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
 
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
 
 public class ModuleTreeNode extends MPSTreeNode {
-  private IDEProjectFrame myProjectFrame;
+  private MPSProject myProject;
   private IModule myModule;
   private boolean myInitialized;
 
-  public ModuleTreeNode(IDEProjectFrame frame, IModule module) {
+  public ModuleTreeNode(MPSProject project, IModule module) {
     super(module, null);
-    myProjectFrame = frame;
+    myProject = project;
     myModule = module;
 
     updatePresentation();
   }
 
   public void doubleClick() {
-    myProjectFrame.getProjectPane().selectModule(myModule);
+    myProject.getComponentSafe(ProjectPane.class).selectModule(myModule);
   }
 
   public int getToggleClickCount() {
@@ -93,7 +95,7 @@ public class ModuleTreeNode extends MPSTreeNode {
   private void addModules(MPSTreeNode node, List<? extends IModule> ms) {
     Collections.sort(ms, new ModulesComparator());
     for (IModule m : ms) {
-      node.add(new ModuleTreeNode(myProjectFrame, m));
+      node.add(new ModuleTreeNode(myProject, m));
     }
   }
 
