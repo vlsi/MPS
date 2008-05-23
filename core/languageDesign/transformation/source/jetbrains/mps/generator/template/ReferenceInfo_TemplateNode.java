@@ -66,23 +66,6 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
   }
 
   public SNode doResolve_Tricky(TemplateGenerator generator) {
-//    // find least common parent for the template reference and referent nodes
-//    SNode leastCommonParent_template = myTemplateSourceNode.findLeastCommonParent(myTemplateTargetNode);
-//    if (leastCommonParent_template != null) {
-//      // find output node for the least common parent template node
-//      SNode leastCommonParent_output = getOutputSourceNode();
-//      while (leastCommonParent_output != null && generator.findTemplateNodeByOutputNode(leastCommonParent_output) != leastCommonParent_template) {
-//        leastCommonParent_output = leastCommonParent_output.getParent();
-//      }
-//      if (leastCommonParent_output != null) {
-//        SNode outputTargetNode = findOutputSubnodeByTemplateNode(generator, leastCommonParent_output, myTemplateTargetNode);
-//        if (outputTargetNode != null) {
-//          generator.showWarningMessage(myTemplateSourceNode, "!RESOLVED TRICKY!!");
-//          return outputTargetNode;
-//        }
-//      }
-//    }
-
     // resolve anyhow
     SNode outputTargetNode = generator.findOutputNodeByTemplateNode(myTemplateTargetNode, false);
 //    if (outputTargetNode != null) {
@@ -91,18 +74,6 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
 //    }
     return outputTargetNode;
   }
-
-//  private static SNode findOutputSubnodeByTemplateNode(TemplateGenerator generator, SNode outputNode, SNode templateNode) {
-//    if (generator.findTemplateNodeByOutputNode(outputNode) == templateNode) return outputNode;
-//    List<SNode> children = outputNode.getChildren();
-//    for (SNode childNode : children) {
-//      SNode outputTargetNode = findOutputSubnodeByTemplateNode(generator, childNode, templateNode);
-//      if (outputTargetNode != null) {
-//        return outputTargetNode;
-//      }
-//    }
-//    return null;
-//  }
 
   public String getResolveInfoForDynamicResolve() {
     return myTemplateTargetNode.getResolveInfo();
@@ -115,6 +86,7 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
   public void showErrorMessage(ITemplateGenerator generator) {
     generator.showErrorMessage(getOutputSourceNode(), "couldn't resolve reference '" + getReferenceRole() + "' in output node " + getOutputSourceNode().getDebugText());
     generator.showErrorMessage(myTemplateSourceNode, "-- original reference was " + myTemplateSourceNode.getDebugText());
-    generator.showErrorMessage(getInputNode(), "-- input node was " + getInputNode().getDebugText());
+    SNode inputNode = getInputNode();
+    generator.showErrorMessage(inputNode, "-- input node was " + (inputNode != null ? inputNode.getDebugText() : "NULL"));
   }
 }
