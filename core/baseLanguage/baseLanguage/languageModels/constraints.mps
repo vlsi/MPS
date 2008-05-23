@@ -2144,22 +2144,6 @@
         <link role="classifier" targetNodeId="13.~String" resolveInfo="String" />
       </node>
     </node>
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1178620561746">
-      <property name="name" value="getQualifiedNameInAPackage" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1178620585007">
-        <link role="classifier" targetNodeId="13.~String" resolveInfo="String" />
-      </node>
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178620561748">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1211504789213">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1211504791734">
-            <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1211504789214" />
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1211504795023">
-              <link role="property" targetNodeId="1.1211504562189" resolveInfo="nestedName" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1179330359503">
       <property name="name" value="getShortClassifierNameToImport" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1179330390413">
