@@ -1,7 +1,5 @@
 package jetbrains.mps.helgins.integration;
 
-import jetbrains.mps.components.DefaultExternalizableComponent;
-import jetbrains.mps.components.Externalizable;
 import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.helgins.integration.HelginsPreferencesComponent.MyState;

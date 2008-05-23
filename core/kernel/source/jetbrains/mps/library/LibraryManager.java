@@ -1,7 +1,5 @@
 package jetbrains.mps.library;
 
-import jetbrains.mps.components.DefaultExternalizableComponent;
-import jetbrains.mps.components.Externalizable;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.BootstrapModule;
 import jetbrains.mps.project.IModule;

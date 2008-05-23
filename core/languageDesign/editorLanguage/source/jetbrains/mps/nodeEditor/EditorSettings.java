@@ -1,7 +1,5 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.components.DefaultExternalizableComponent;
-import jetbrains.mps.components.Externalizable;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.smodel.event.SModelEvent;

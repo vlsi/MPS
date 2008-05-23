@@ -1,6 +1,5 @@
 package jetbrains.mps.project;
 
-import jetbrains.mps.components.IContainer;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.generationTypes.GenerateFilesAndClassesGenerationType;
 import jetbrains.mps.helgins.inference.TypeChecker;
@@ -45,7 +44,7 @@ import com.intellij.openapi.wm.WindowManager;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.ide.impl.ProjectUtil;
 
-public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer {
+public class MPSProject implements ModelOwner, MPSModuleOwner {
   public static final String COMPONENTS = "components";
   public static final String COMPONENT = "component";
   public static final String CLASS = "class";
