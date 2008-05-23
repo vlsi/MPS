@@ -9,6 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ConstructorDeclaration extends BaseMethodDeclaration implements ClassifierMember {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration";
+  public static String NESTED_NAME = "nestedName";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
@@ -26,6 +27,14 @@ public class ConstructorDeclaration extends BaseMethodDeclaration implements Cla
     return ConstructorDeclaration.newInstance(sm, false);
   }
 
+
+  public String getNestedName() {
+    return this.getProperty(ConstructorDeclaration.NESTED_NAME);
+  }
+
+  public void setNestedName(String value) {
+    this.setProperty(ConstructorDeclaration.NESTED_NAME, value);
+  }
 
   public String getShortDescription() {
     return this.getProperty(ConstructorDeclaration.SHORT_DESCRIPTION);

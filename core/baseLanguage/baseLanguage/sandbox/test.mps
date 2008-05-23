@@ -1338,6 +1338,9 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1211503384986">
               <link role="classifier" targetNodeId="26.1211503302539" resolveInfo="ClassWithInner" />
             </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1211506415543">
+              <link role="baseMethodDeclaration" targetNodeId="26.1211505443202" resolveInfo="ClassWithInner" />
+            </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1211503405300">
@@ -1346,7 +1349,7 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1211503405302">
               <link role="classifier" targetNodeId="26.1211503330372" resolveInfo="TheInner" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1211505368551">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1211506424686">
               <link role="baseMethodDeclaration" targetNodeId="26.1211505440151" resolveInfo="TheInner" />
             </node>
           </node>

@@ -11,6 +11,7 @@ import java.util.List;
 
 public class Classifier extends GenericDeclaration implements HasAnnotation, IMemberContainer {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.Classifier";
+  public static String NESTED_NAME = "nestedName";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
@@ -31,6 +32,14 @@ public class Classifier extends GenericDeclaration implements HasAnnotation, IMe
     return Classifier.newInstance(sm, false);
   }
 
+
+  public String getNestedName() {
+    return this.getProperty(Classifier.NESTED_NAME);
+  }
+
+  public void setNestedName(String value) {
+    this.setProperty(Classifier.NESTED_NAME, value);
+  }
 
   public String getShortDescription() {
     return this.getProperty(Classifier.SHORT_DESCRIPTION);

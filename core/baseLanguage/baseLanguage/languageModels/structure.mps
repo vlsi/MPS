@@ -352,6 +352,10 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068580123140">
     <property name="name" value="ConstructorDeclaration" />
     <link role="extends" targetNodeId="1068580123132" resolveInfo="BaseMethodDeclaration" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1211505677611">
+      <property name="name" value="nestedName" />
+      <link role="dataType" targetNodeId="4.1082983041843" resolveInfo="string" />
+    </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1178289057572">
       <link role="intfc" targetNodeId="1178285077437" resolveInfo="ClassifierMember" />
     </node>

@@ -35,6 +35,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="73" />
   <import index="17" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="18" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -1959,7 +1960,7 @@
             <property name="readOnly" value="true" />
             <property name="drawBorder" value="false" />
             <property name="rightTransformAnchorTag" value="ext_1_RTransform" />
-            <link role="relationDeclaration" targetNodeId="17.1083152972672" />
+            <link role="relationDeclaration" targetNodeId="17.1211505677611" resolveInfo="nestedName" />
           </node>
         </node>
       </node>

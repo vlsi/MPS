@@ -40,6 +40,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="48" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -3289,8 +3290,8 @@
               <link role="baseMethodDeclaration" targetNodeId="13.~StringBuilder.append(java.lang.CharSequence):java.lang.StringBuilder" resolveInfo="append" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977963488">
                 <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1196336112534" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1196336155160">
-                  <link role="property" targetNodeId="1.1083152972672" resolveInfo="name" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1211505803630">
+                  <link role="property" targetNodeId="1.1211505677611" resolveInfo="nestedName" />
                 </node>
               </node>
             </node>
@@ -3494,6 +3495,27 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1147487532040">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1147487534198">
               <property name="value" value="?constructor?" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="properties" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint" id="1211505688895">
+      <link role="applicableProperty" targetNodeId="1.1211505677611" resolveInfo="nestedName" />
+      <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertyGetter" id="1211505693023">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1211505693024">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1211505774849">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1211505791345">
+              <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1211505786187">
+                <link role="concept" targetNodeId="1.1107461130800" resolveInfo="Classifier" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1211505774961">
+                  <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintsFunctionParameter_node" id="1211505774850" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1211505776776" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1211505795613">
+                <link role="property" targetNodeId="1.1211504562189" resolveInfo="nestedName" />
+              </node>
             </node>
           </node>
         </node>
