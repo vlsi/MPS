@@ -1,6 +1,5 @@
 package jetbrains.mps.ide.findusages.view.treeholder.treeview;
 
-import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.view.treeholder.path.PathItemRole;
@@ -539,9 +538,6 @@ public abstract class UsagesTree extends MPSTree {
 
   private void navigateInTree(Object o) {
     ProjectPane projectPane = getProject().getComponentSafe(ProjectPane.class);
-    if (getProjectFrame() != null) {
-      getProjectFrame().showMainProjectPane();
-    }
     if (o instanceof SNode) {
       projectPane.selectNode((SNode) o, new ProjectOperationContext(getProject()));
     } else if (o instanceof SModel) {
@@ -554,13 +550,7 @@ public abstract class UsagesTree extends MPSTree {
     projectPane.getTree().requestFocus();
   }
 
-  public MPSProject getProject() {
-    return getProjectFrame().getProject();
-  }
-
-  public IDEProjectFrame getProjectFrame() {
-    return getProject().getComponent(IDEProjectFrame.class);
-  }
+  public abstract MPSProject getProject();
 
   private UsagesTreeNode getResultsNode() {
     int index = myShowSearchedNodes ? 1 : 0;

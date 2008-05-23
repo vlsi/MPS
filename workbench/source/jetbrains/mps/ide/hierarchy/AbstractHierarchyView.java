@@ -5,7 +5,6 @@ import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.ChooseItemWindow;
 import jetbrains.mps.ide.GoToNodeWindow.GoToNodeComponent;
-import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
@@ -15,6 +14,7 @@ import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 
@@ -29,7 +29,6 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
   protected JRadioButton myParentsHierarchyButton;
   protected JCheckBox myOnlyInOneModelCheckBox;
   protected IOperationContext myContext;
-  protected IDEProjectFrame myIde;
   public JScrollPane myScrollPane;
 
   public AbstractHierarchyView(Project project, String id, int number, Icon icon) {
@@ -98,9 +97,9 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
           }
         }
 
-        new ChooseItemWindow(myIde.getMainFrame(), nodes.toArray(new SNode[0]), new GoToNodeComponent(myContext) {
+        new ChooseItemWindow(getMPSProject().getComponent(Frame.class), nodes.toArray(new SNode[0]), new GoToNodeComponent(myContext) {
           public void doChoose(final SNode node) {
-            MPSProject project = myIde.getProject();
+            MPSProject project = getMPSProject();
             if (project != null) {
               final IOperationContext operationContext = project.createOperationContext();
               showConceptInHierarchy((T) node.getAdapter(), operationContext);

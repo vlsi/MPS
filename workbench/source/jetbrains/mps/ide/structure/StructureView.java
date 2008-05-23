@@ -1,16 +1,18 @@
 package jetbrains.mps.ide.structure;
 
 import jetbrains.mps.ide.toolsPane.DefaultTool;
+import jetbrains.mps.ide.toolsPane.ToolsPane;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.bootstrap.structureLanguage.structure.*;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -18,7 +20,7 @@ import javax.swing.JScrollPane;
 import java.awt.Color;
 
 public class StructureView extends DefaultTool {
-  private IDEProjectFrame myProjectFrame;
+  private MPSProject myProject;
   private AbstractConceptDeclaration myConcept;
   private IOperationContext myContext;
   private MPSTree myTree = new MPSTree() {
@@ -28,8 +30,8 @@ public class StructureView extends DefaultTool {
   };
   private JComponent myComponent = new JScrollPane(myTree);
 
-  public StructureView(IDEProjectFrame projectFrame) {
-    myProjectFrame = projectFrame;
+  public StructureView(MPSProject project) {
+    myProject = project;
     updateView();
   }
 
@@ -38,7 +40,7 @@ public class StructureView extends DefaultTool {
     myContext = context;
     updateView();
     myTree.expandAll();
-    myProjectFrame.getToolsPane().selectTool(this);
+    myProject.getComponentSafe(ToolsPane.class).selectTool(this);
   }
 
   public String getName() {
@@ -130,7 +132,7 @@ public class StructureView extends DefaultTool {
     }
 
     public void doubleClick() {
-      myProjectFrame.openNode(myNode, myContext);
+      myContext.getComponent(MPSEditorOpener.class).openNode(myNode, myContext);
     }
 
     public boolean isLeaf() {

@@ -1,7 +1,6 @@
 package jetbrains.mps.ide.hierarchy;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionGroup;
@@ -13,6 +12,7 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -343,15 +343,14 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
       myNodePointer = new SNodePointer(conceptDeclaration);
       addMouseListener(new MouseAdapter() {
         public void mousePressed(MouseEvent e) {
-          IDEProjectFrame frame = myOperationContext.getComponent(IDEProjectFrame.class);
-          ProjectPane projectPane = frame.getProjectPane();
+          ProjectPane projectPane = myOperationContext.getComponent(ProjectPane.class);
           myComponent.select(ConceptContainer.this);
           if (e.isPopupTrigger()) {
             myComponent.processPopupMenu(e);
           } else {
             projectPane.selectNode(BaseAdapter.fromAdapter(getNode()), myOperationContext);
             if (e.getClickCount() == 2) {
-              frame.openNode(BaseAdapter.fromAdapter(getNode()), myOperationContext);
+              myOperationContext.getComponent(MPSEditorOpener.class).openNode(BaseAdapter.fromAdapter(getNode()), myOperationContext);
             }
           }
         }

@@ -3,12 +3,13 @@ package jetbrains.mps.plugin;
 import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
@@ -25,6 +26,8 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.jetbrains.annotations.NotNull;
+
 public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDEHandler, IDisposable {
   private static final Logger LOG = Logger.getLogger(MPSProjectIDEHandler.class);
 
@@ -35,10 +38,6 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     IProjectHandler handler = myProject.getProjectHandler();
     assert handler != null;
     handler.addIdeHandler(this);
-  }
-
-  private IDEProjectFrame getProjectWindow() {
-    return myProject.getComponent(IDEProjectFrame.class);
   }
 
   private Frame getMainFrame() {
@@ -85,7 +84,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
           public void run() {
             SearchQuery searchQuery = new SearchQuery(GlobalScope.getInstance());
             BaseFinder finder = new AspectMethodsFinder(applicableModelDescriptors, name);
-            getProjectWindow().getUsagesView().findUsages(searchQuery, false, true, true, finder);
+            myProject.getComponentSafe(UsagesViewTool.class).findUsages(searchQuery, false, true, true, finder);
           }
         }.start();
       }
@@ -111,7 +110,8 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
           return;
         }
         FrameUtil.activateFrame(getMainFrame());
-        getProjectWindow().findUsages(cls.getNode(), GlobalScope.getInstance());
+
+        findUsages(cls.getNode(), GlobalScope.getInstance());
       }
     });
   }
@@ -137,7 +137,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
           return;
         }
         FrameUtil.activateFrame(getMainFrame());
-        getProjectWindow().findUsages(m.getNode(), GlobalScope.getInstance());
+        findUsages(m.getNode(), GlobalScope.getInstance());
       }
     });
   }
@@ -157,5 +157,19 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     } catch (NoSuchObjectException e) {
       throw new RuntimeException(e);
     }
+
+  }
+
+  private void findUsages(final @NotNull SNode node, final IScope scope) {
+    new Thread() {
+      public void run() {
+        CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+          public void run() {
+            SearchQuery searchQuery = new SearchQuery(node, scope);
+            myProject.getComponentSafe(UsagesViewTool.class).findUsages(searchQuery, true, true, true, new NodeUsages_Finder());
+          }
+        });
+      }
+    }.start();
   }
 }
