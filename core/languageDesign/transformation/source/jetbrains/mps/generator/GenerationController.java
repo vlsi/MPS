@@ -315,7 +315,7 @@ public class GenerationController {
   }
 
   private MPSProject getProject() {
-    return getFirstContext().getProject();
+    return getFirstContext().getMPSProject();
   }
 
   private void tryToReloadModelsFromDisk() {

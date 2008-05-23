@@ -10,17 +10,13 @@ import jetbrains.mps.ide.ChooseItemComponent;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.ToStringComparator;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
 import java.awt.*;
 import static java.awt.GridBagConstraints.*;
 import java.util.*;
-
-import org.jetbrains.annotations.Nullable;
 
 public class ChooseNodeOrModelComponent extends JPanel implements IChooseComponent<Object> {
   private String myCaption;
@@ -105,7 +101,7 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
   }
 
   private Set<SModelDescriptor> getModelsFrom(IOperationContext context, Condition condition) {
-    Set<SModelDescriptor> models = new HashSet<SModelDescriptor>(context.getProject().getScope().getModelDescriptors());
+    Set<SModelDescriptor> models = new HashSet<SModelDescriptor>(context.getMPSProject().getScope().getModelDescriptors());
     for (SModelDescriptor model : new ArrayList<SModelDescriptor>(models)) {
       if (!model.getStereotype().equals(SModelStereotype.NONE) && !model.getStereotype().equals(SModelStereotype.TEMPLATES)) {
         models.remove(model);

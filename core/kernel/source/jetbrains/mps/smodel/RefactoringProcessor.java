@@ -42,7 +42,7 @@ public class RefactoringProcessor {
             public void run() {
               try {
                 ActionContext newContext = new ActionContext(context);
-                newContext.put(IOperationContext.class, new ProjectOperationContext(context.getOperationContext().getProject()));
+                newContext.put(IOperationContext.class, new ProjectOperationContext(context.getOperationContext().getMPSProject()));
                 refactoringContext.setUsages(refactoring.getAffectedNodes(newContext, refactoringContext));
               } catch (Throwable t) {
                 LOG.error(t);
@@ -179,7 +179,7 @@ public class RefactoringProcessor {
       CommandProcessor.instance().executeGenerationCommand(new Runnable() {
         public void run() {
           try {
-            IOperationContext operationContext = new ModuleContext(sourceModule, context.getOperationContext().getProject());
+            IOperationContext operationContext = new ModuleContext(sourceModule, context.getOperationContext().getMPSProject());
             final List<SModel> models = sourceModels.get(sourceModule);
             modifier.addModelsToModify(models);
             SNode.setNodeMemeberAccessModifier(modifier);
@@ -193,7 +193,7 @@ public class RefactoringProcessor {
               operationContext,
               IGenerationType.FILES,
               new EmptyProgressIndicator(), 
-              new DefaultMessageHandler(operationContext.getProject())
+              new DefaultMessageHandler(operationContext.getMPSProject())
             );
           } finally {
             SNode.setNodeMemeberAccessModifier(null);

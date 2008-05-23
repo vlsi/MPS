@@ -4,7 +4,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.IScope;
 
 public class GlobalOperationContext extends StandaloneMPSContext {
-  public MPSProject getProject() {
+  public MPSProject getMPSProject() {
     return null;
   }
 

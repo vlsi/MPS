@@ -82,7 +82,7 @@ public class QueryOptions extends BaseOptions<SearchQuery> {
     if (myScopeType.equals(GLOBAL_SCOPE)) {
       scope = GlobalScope.getInstance();
     } else if (myScopeType.equals(PROJECT_SCOPE)) {
-      scope = operationContext.getProject().getScope();
+      scope = operationContext.getMPSProject().getScope();
     } else if (myScopeType.equals(MODULE_SCOPE)) {
       if (myModule.equals(DEFAULT_VALUE)) {
         scope = operationContext.getModule().getScope();

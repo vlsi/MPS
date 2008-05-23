@@ -139,7 +139,7 @@ public class CloneModelDialog extends BaseNodeDialog {
     
     CloneModelUtil.cloneModel(mySModel, modelDescriptor.getSModel(), getScope());
 
-    MPSProject project = getOperationContext().getProject();
+    MPSProject project = getOperationContext().getMPSProject();
     assert project != null;
     ProjectPane pane = project.getComponent(ProjectPane.class);
     assert pane != null;

@@ -92,7 +92,7 @@ public class GenerateAllModelsInModuleAction extends MPSAction {
         }
 
         try {
-          return GeneratorConfigUtil.calculate(operationContext.getProject(), conf, myRegenerate);
+          return GeneratorConfigUtil.calculate(operationContext.getMPSProject(), conf, myRegenerate);
         } catch (GeneratorConfigUtil.GeneratorConfigurationException e) {
           JOptionPane.showMessageDialog(context.getFrame(), e.getMessage());
           return null;

@@ -10,6 +10,7 @@ import java.awt.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.project.Project;
 
 public abstract class StandaloneMPSContext implements IOperationContext {
   public Frame getMainFrame() {
@@ -19,6 +20,10 @@ public abstract class StandaloneMPSContext implements IOperationContext {
     }
 
     return null;
+  }
+
+  public Project getProject() {
+    return getComponent(Project.class);
   }
 
   public boolean isTestMode() {

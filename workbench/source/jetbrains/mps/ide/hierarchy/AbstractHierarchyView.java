@@ -112,7 +112,7 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
   }
 
   public void showConceptInHierarchy(T node, IOperationContext _context) {
-    IOperationContext context = _context == null ? null : _context.getProject().createOperationContext();
+    IOperationContext context = _context == null ? null : _context.getMPSProject().createOperationContext();
     myHierarchyTree.setOperationContext(context);
     myContext = context;
     myHierarchyTree.myHierarchyNode = node;

@@ -82,7 +82,7 @@ public class DeleteNodesHelper {
   }
 
   private void safeDelete(IOperationContext context, SNode node) {
-    final GenericRefactoringAction safeDeleteAction = new GenericRefactoringAction(new SafeDelete(), context.getProject());
+    final GenericRefactoringAction safeDeleteAction = new GenericRefactoringAction(new SafeDelete(), context.getMPSProject());
     final ActionContext newContext = new ActionContext(context, node);
     newContext.put(List.class, CollectionUtil.asList(node));
     safeDeleteAction.update(newContext);

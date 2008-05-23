@@ -67,7 +67,7 @@ public class GoToTypeErrorRule_Action extends CurrentProjectMPSAction {
       {
         MPSProject project = null;
         if (context.getOperationContext() != null) {
-          project = context.getOperationContext().getProject();
+          project = context.getOperationContext().getMPSProject();
         }
         this.project = project;
       }

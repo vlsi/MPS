@@ -72,7 +72,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
       }
     }
 
-    final ModuleContext languageContext = new ModuleContext(language, invocationContext.getProject());
+    final ModuleContext languageContext = new ModuleContext(language, invocationContext.getMPSProject());
     SModelDescriptor languageEditor = language.getEditorModelDescriptor();
     ConceptEditorDeclaration editorDeclaration;
     if (languageEditor != null) {

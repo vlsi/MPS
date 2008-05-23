@@ -32,7 +32,7 @@ class GeneratorTreeNode extends MPSTreeNode {
   public JPopupMenu getQuickCreatePopupMenu() {
     JPopupMenu result = new JPopupMenu();
     ActionContext context = new ActionContext(getOperationContext());
-    context.put(MPSProject.class, getOperationContext().getProject());
+    context.put(MPSProject.class, getOperationContext().getMPSProject());
     context.put(Generator.class, getGenerator());
     ActionManager.instance().getGroup(ProjectPane.GENERATOR_NEW_ACTIONS).add(result, context);
     return result;
@@ -41,7 +41,7 @@ class GeneratorTreeNode extends MPSTreeNode {
   public JPopupMenu getPopupMenu() {
     JPopupMenu result = new JPopupMenu();
     ActionContext context = new ActionContext(getOperationContext());
-    context.put(MPSProject.class, getOperationContext().getProject());
+    context.put(MPSProject.class, getOperationContext().getMPSProject());
     context.put(Generator.class, getGenerator());
     ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_GENERATOR_ACTIONS).add(result, context);
     return result;

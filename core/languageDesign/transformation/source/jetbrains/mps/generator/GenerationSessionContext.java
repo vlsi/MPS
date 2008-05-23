@@ -1,8 +1,6 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.plan.AbstractGenerationStepController;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.smodel.*;
@@ -112,8 +110,8 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   }
 
   @NotNull
-  public MPSProject getProject() {
-    return myInvocationContext.getProject();
+  public MPSProject getMPSProject() {
+    return myInvocationContext.getMPSProject();
   }
 
   @NotNull

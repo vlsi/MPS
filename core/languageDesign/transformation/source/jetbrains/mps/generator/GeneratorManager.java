@@ -1,13 +1,10 @@
 package jetbrains.mps.generator;
 
-import jetbrains.mps.components.DefaultExternalizableComponent;
-import jetbrains.mps.components.Externalizable;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
 import jetbrains.mps.generator.GeneratorManager.MyState;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.messages.*;
 import jetbrains.mps.ide.progress.AdaptiveProgressMonitor;
-import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.AdaptiveProgressMonitorFactory;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
@@ -135,7 +132,7 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Conf
       List<Pair<SModelDescriptor, IOperationContext>> modelsWithContext = new ArrayList<Pair<SModelDescriptor, IOperationContext>>();
       for (SModelDescriptor model : inputModels) {
         assert model != null;
-        ModuleContext moduleContext = ModuleContext.create(model, operationContext.getProject(), false);
+        ModuleContext moduleContext = ModuleContext.create(model, operationContext.getMPSProject(), false);
         modelsWithContext.add(new Pair<SModelDescriptor, IOperationContext>(model, moduleContext));
       }
 
@@ -179,7 +176,7 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Conf
     }
 
     final IOperationContext invocationContext = inputModels.get(0).o2;
-    final DefaultMessageHandler messages = new DefaultMessageHandler(invocationContext.getProject());
+    final DefaultMessageHandler messages = new DefaultMessageHandler(invocationContext.getMPSProject());
 
     // confirm saving transient models
     final boolean saveTransientModels;
@@ -257,7 +254,7 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Conf
     final boolean[] result = new boolean[1];
     CommandProcessor.instance().executeGenerationCommand(new Runnable() {
       public void run() {
-        MPSProject project = inputModels.get(0).o2.getProject();
+        MPSProject project = inputModels.get(0).o2.getMPSProject();
         project.getComponentSafe(TransientModelsModule.class).clearAll();
         project.saveModels();
         if (saveTransientModels) {

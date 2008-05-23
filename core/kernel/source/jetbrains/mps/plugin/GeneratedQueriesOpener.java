@@ -1,8 +1,6 @@
 package jetbrains.mps.plugin;
 
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
-import jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration;
 import jetbrains.mps.util.QueryMethodGenerated;
 
 import java.rmi.RemoteException;
@@ -21,7 +19,7 @@ public class GeneratedQueriesOpener {
     for (Method m : cls.getMethods()) {
       if (m.getName().endsWith("_" + node.getId())) {
         try {
-          IProjectHandler handler = context.getProject().getProjectHandler();
+          IProjectHandler handler = context.getMPSProject().getProjectHandler();
           if (handler != null) {
             handler.openMethod(modelName + ".QueriesGenerated", m.getName(), m.getParameterTypes().length);
             return true;

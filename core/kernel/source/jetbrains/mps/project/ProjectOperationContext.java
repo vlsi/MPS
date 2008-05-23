@@ -30,7 +30,7 @@ public class ProjectOperationContext extends StandaloneMPSContext {
   }
 
   @NotNull
-  public MPSProject getProject() {
+  public MPSProject getMPSProject() {
     return myProject;
   }
 

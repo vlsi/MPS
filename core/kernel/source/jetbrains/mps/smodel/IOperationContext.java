@@ -7,9 +7,18 @@ import java.awt.*;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import com.intellij.openapi.project.Project;
 
 public interface IOperationContext {
-  MPSProject getProject();
+  /**
+   * Use getProject() instead
+   * @return
+   */
+  @Deprecated
+  MPSProject getMPSProject();
+
+  Project getProject();
+
   IModule getModule();
   IScope getScope();
   Frame getMainFrame();

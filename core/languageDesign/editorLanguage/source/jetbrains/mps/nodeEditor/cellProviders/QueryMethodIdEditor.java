@@ -106,7 +106,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
 
           public void execute(KeyEvent keyEvent, EditorContext context) {
             try {
-              IProjectHandler handler = context.getOperationContext().getProject().getProjectHandler();
+              IProjectHandler handler = context.getOperationContext().getMPSProject().getProjectHandler();
               assert handler != null;
               handler.openQueryMethod(getNamespace(), getQueryMethodPrefix() + getQueryMethodId());
             } catch (IOException e) {
@@ -140,7 +140,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
 
   public void showMethodTextOnACell(EditorCell cell, final EditorContext context) {
     try {
-      final IProjectHandler handler = context.getOperationContext().getProject().getProjectHandler();
+      final IProjectHandler handler = context.getOperationContext().getMPSProject().getProjectHandler();
       assert handler != null;
 
 
@@ -184,7 +184,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
   protected List<INodeSubstituteAction> createActions(EditorContext context) {
     List<INodeSubstituteAction> actions = new ArrayList<INodeSubstituteAction>();
     List<String> conditionsList = getAvailableIdsUsingPlugin(context);
-    final MPSProject project = context.getOperationContext().getProject();
+    final MPSProject project = context.getOperationContext().getMPSProject();
 
     if (conditionsList == null) {
       LOG.debug("Plugin isn't present using reflection");
@@ -234,7 +234,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
   }
 
   private List<String> getAvailableIdsUsingPlugin(EditorContext context) {
-    IProjectHandler handler = context.getOperationContext().getProject().getProjectHandler();
+    IProjectHandler handler = context.getOperationContext().getMPSProject().getProjectHandler();
     List<String> result = null;
     try {
       assert handler != null;

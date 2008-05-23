@@ -49,7 +49,7 @@ public class ShowMappingsPartitioningAction extends MPSAction {
     GenerationPartitioner partitioner = new GenerationPartitioner();
     List<List<MappingConfiguration>> mappingSets = partitioner.createMappingSets(generators);
 
-    MessagesViewTool messagesView = MessagesViewTool.getMessageViewTool(operationContext.getProject());
+    MessagesViewTool messagesView = MessagesViewTool.getMessageViewTool(operationContext.getMPSProject());
     // print all rules
     messagesView.add(new Message(MessageKind.INFORMATION, "================================="));
     for (Generator generator : generators) {
@@ -83,7 +83,7 @@ public class ShowMappingsPartitioningAction extends MPSAction {
       }
       text += "\n";
     }
-    OutputViewTool viewTool = OutputViewTool.getOutputViewTool(operationContext.getProject());
+    OutputViewTool viewTool = OutputViewTool.getOutputViewTool(operationContext.getMPSProject());
     viewTool.clear();
     viewTool.append("---------------------  mappings partitioning  -----------------------------------\n\n");
     viewTool.append(text);

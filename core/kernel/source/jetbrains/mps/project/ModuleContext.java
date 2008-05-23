@@ -40,7 +40,7 @@ public class ModuleContext extends StandaloneMPSContext {
     return MPSModuleRepository.getInstance().getModuleByUID(myModuleUID);
   }
 
-  public MPSProject getProject() {
+  public MPSProject getMPSProject() {
     return myProject;
   }
 
