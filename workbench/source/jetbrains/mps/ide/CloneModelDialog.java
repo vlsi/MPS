@@ -13,6 +13,8 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
+import com.intellij.openapi.project.Project;
+
 public class CloneModelDialog extends BaseNodeDialog {
 
   private static final DialogDimensionsSettings.DialogDimensions ourDefaultDialogSettings = new DialogDimensionsSettings.DialogDimensions(100, 100, 500, 400);
@@ -139,7 +141,7 @@ public class CloneModelDialog extends BaseNodeDialog {
     
     CloneModelUtil.cloneModel(mySModel, modelDescriptor.getSModel(), getScope());
 
-    MPSProject project = getOperationContext().getMPSProject();
+    Project project = getOperationContext().getProject();
     assert project != null;
     ProjectPane pane = project.getComponent(ProjectPane.class);
     assert pane != null;
