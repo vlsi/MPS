@@ -11,10 +11,13 @@ import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.impl.FakePsiElement;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.workbench.actions.goTo.framework.modules.GoToLanguageModel;
+import jetbrains.mps.workbench.actions.goTo.framework.modules.BaseLanguageModel;
+import jetbrains.mps.workbench.actions.goTo.framework.modules.BaseNavigationItem;
 
 public class GoToLanguageAction extends AnAction {
   public void actionPerformed(AnActionEvent e) {
@@ -31,7 +34,16 @@ public class GoToLanguageAction extends AnAction {
       }
     };
 
-    GoToLanguageModel goToLanguageModel = new GoToLanguageModel(mpsProject) {
+    BaseLanguageModel goToLanguageModel = new BaseLanguageModel(mpsProject) {
+      public NavigationItem doGetNavigationItem(final IModule module) {
+        return new BaseNavigationItem(module) {
+          public void navigate(boolean requestFocus) {
+            ProjectPane projectPane = mpsProject.getComponentSafe(ProjectPane.class);
+            projectPane.selectModule(module);
+          }
+        };
+      }
+
       public Language[] find(IScope scope) {
         return scope.getVisibleLanguages().toArray(new Language[0]);
       }

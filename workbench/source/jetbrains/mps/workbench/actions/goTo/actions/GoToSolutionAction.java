@@ -11,11 +11,13 @@ import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.impl.FakePsiElement;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.workbench.actions.goTo.framework.modules.GoToSolutionModel;
+import jetbrains.mps.workbench.actions.goTo.framework.modules.BaseNavigationItem;
+import jetbrains.mps.workbench.actions.goTo.framework.modules.BaseSolutionModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +37,16 @@ public class GoToSolutionAction extends AnAction {
       }
     };
 
-    GoToSolutionModel goToSolutionModel = new GoToSolutionModel(mpsProject) {
+    BaseSolutionModel goToSolutionModel = new BaseSolutionModel(mpsProject) {
+      public NavigationItem doGetNavigationItem(final IModule module) {
+        return new BaseNavigationItem(module) {
+          public void navigate(boolean requestFocus) {
+            ProjectPane projectPane = mpsProject.getComponentSafe(ProjectPane.class);
+            projectPane.selectModule(module);
+          }
+        };
+      }
+
       public Solution[] find(IScope scope) {
         List<Solution> solutions = new ArrayList<Solution>();
         for (IModule module : scope.getVisibleModules()) {

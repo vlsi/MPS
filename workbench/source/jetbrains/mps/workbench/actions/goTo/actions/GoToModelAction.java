@@ -12,10 +12,12 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.impl.FakePsiElement;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.workbench.actions.goTo.framework.models.GoToModelModel;
+import jetbrains.mps.workbench.actions.goTo.framework.models.BaseModelItem;
+import jetbrains.mps.workbench.actions.goTo.framework.models.BaseModelModel;
 
 public class GoToModelAction extends AnAction {
   public void actionPerformed(AnActionEvent e) {
@@ -32,7 +34,16 @@ public class GoToModelAction extends AnAction {
       }
     };
 
-    GoToModelModel goToModelModel = new GoToModelModel(mpsProject) {
+    BaseModelModel goToModelModel = new BaseModelModel(mpsProject) {
+      public NavigationItem doGetNavigationItem(final SModelDescriptor modelDescriptor) {
+        return new BaseModelItem(modelDescriptor) {
+          public void navigate(boolean requestFocus) {
+            ProjectPane projectPane = mpsProject.getComponentSafe(ProjectPane.class);
+            projectPane.selectModel(modelDescriptor);
+          }
+        };
+      }
+
       public SModelDescriptor[] find(IScope scope) {
         return scope.getModelDescriptors().toArray(new SModelDescriptor[0]);
       }

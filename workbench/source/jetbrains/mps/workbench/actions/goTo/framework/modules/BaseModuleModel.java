@@ -29,47 +29,32 @@
  * IF JETBRAINS HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
  *
  */
-package jetbrains.mps.workbench.actions.goTo.framework.nodes;
+package jetbrains.mps.workbench.actions.goTo.framework.modules;
 
 import com.intellij.navigation.NavigationItem;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.actions.goTo.framework.base.BaseMPSChooseModel;
-import org.jetbrains.annotations.Nullable;
 
-public abstract class GoToNodeModel extends BaseMPSChooseModel<SNode> {
-  public GoToNodeModel(MPSProject project) {
+public abstract class BaseModuleModel extends BaseMPSChooseModel<IModule> {
+  //---------------------FIND STUFF------------------------
+
+  public BaseModuleModel(MPSProject project) {
     super(project);
   }
 
-  //---------------------FIND STUFF------------------------
-
   public String doGetFullName(Object element) {
-    NodePresentation presentation = (NodePresentation) ((NavigationItem) element).getPresentation();
+    ModulePresentation presentation = (ModulePresentation) ((NavigationItem) element).getPresentation();
     assert presentation != null;
-    return presentation.getModelName() + "." + presentation.getPresentableText();
+    return presentation.getNamespace();
   }
 
-  public String doGetObjectName(SNode node) {
-    return node.getName();
-  }
-
-  public NavigationItem doGetNavigationItem(SNode node) {
-    return new NodeNavigationItem(getProject(), node);
+  public String doGetObjectName(IModule module) {
+    return NameUtil.shortNameFromLongName(module.getModuleUID());
   }
 
   //---------------------INTERFACE STUFF------------------------
-
-  @Nullable
-  public String getPromptText() {
-    //return IdeBundle.message("prompt.gotoclass.enter.class.name");
-    return "Node name:";
-  }
-
-  public String getCheckBoxName() {
-    //return IdeBundle.message("checkbox.include.non.project.classes");
-    return "Include non-project models";
-  }
 
   public String getNotInMessage() {
     //return IdeBundle.message("label.no.matches.found.in.project");
