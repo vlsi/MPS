@@ -63,7 +63,7 @@ public class MessagesViewTool extends BaseMPSTool implements ProjectComponent, P
   private MessageViewLoggingHandler myLoggingHandler;
 
   @Hack
-  //DO NOT REMOVE SPACE AFTER "MESSAGES"!!
+  //DO NOT REMOVE _ AFTER "MESSAGES"!!
   //IN PLATFORM WE HAVE ANOTHER WINDOW WITH ID="Messages"
   public MessagesViewTool(Project project, SelectInManager selectInManager) {
     super(project, "Messages_", 0, Icons.MESSAGE_VIEW_ICON, ToolWindowAnchor.BOTTOM, true);
