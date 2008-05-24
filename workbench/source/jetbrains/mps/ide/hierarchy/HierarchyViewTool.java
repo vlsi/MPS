@@ -14,7 +14,7 @@ import java.util.Set;
 public class HierarchyViewTool extends AbstractHierarchyView<AbstractConceptDeclaration> {
 
   public HierarchyViewTool(Project project) {
-    super(project, "Hierarchy View", 8, jetbrains.mps.ide.projectPane.Icons.HIERARCHY_ICON);
+    super(project, "Hierarchy", 8, jetbrains.mps.ide.projectPane.Icons.HIERARCHY_ICON);
   }
 
   protected AbstractHierarchyTree<AbstractConceptDeclaration> createHierarchyTree(boolean isParentHierarchy) {

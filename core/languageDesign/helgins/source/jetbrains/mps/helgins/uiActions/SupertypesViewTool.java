@@ -16,7 +16,7 @@ public class SupertypesViewTool extends AbstractHierarchyView {
 
 
   public SupertypesViewTool(Project project) {
-    super(project, "Supertypes View", -1, Icons.DEFAULT_ICON);
+    super(project, "Supertypes", -1, Icons.DEFAULT_ICON);
   }
 
   protected AbstractHierarchyTree createHierarchyTree(boolean isParentHierarchy) {

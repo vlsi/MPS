@@ -28,8 +28,8 @@ import jetbrains.mps.ide.progress.AdaptiveProgressMonitorFactory;
 import jetbrains.mps.nodeEditor.EditorUtil;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.tools.BaseMPSTool;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.workbench.tools.BaseMPSTool;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
 
@@ -62,7 +62,7 @@ public class UsagesViewTool extends BaseMPSTool {
   //----CONSTRUCT STUFF----
 
   public UsagesViewTool(Project project) {
-    super(project, "Usages View", 3, jetbrains.mps.ide.projectPane.Icons.USAGES_ICON, ToolWindowAnchor.BOTTOM, true);
+    super(project, "Usages", 3, jetbrains.mps.ide.projectPane.Icons.USAGES_ICON, ToolWindowAnchor.BOTTOM, true);
   }
 
   public void initComponent() {

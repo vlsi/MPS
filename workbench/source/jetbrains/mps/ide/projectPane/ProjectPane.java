@@ -2,16 +2,15 @@ package jetbrains.mps.ide.projectPane;
 
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
-import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.IProjectPane;
 import jetbrains.mps.ide.MPSToolBar;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.projectPane.ProjectPane.MyState;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.IActionDataProvider;
 import jetbrains.mps.ide.actions.*;
@@ -20,6 +19,7 @@ import jetbrains.mps.ide.actions.nodes.DeleteNodeAction;
 import jetbrains.mps.ide.command.CommandEvent;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.ICommandListener;
+import jetbrains.mps.ide.projectPane.ProjectPane.MyState;
 import jetbrains.mps.ide.ui.*;
 import jetbrains.mps.ide.ui.MPSTree.TreeState;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
@@ -55,11 +55,11 @@ import java.util.List;
 @State(
   name = "MPSProjectPane",
   storages = {
-    @Storage(
-      id = "other",
-      file = "$WORKSPACE_FILE$"
-    )
-  }
+  @Storage(
+    id = "other",
+    file = "$WORKSPACE_FILE$"
+  )
+    }
 )
 public class ProjectPane extends BaseMPSTool implements IActionDataProvider, DataProvider, IProjectPane, PersistentStateComponent<MyState> {
   private static final Logger LOG = Logger.getLogger(ProjectPane.class);
@@ -121,7 +121,7 @@ public class ProjectPane extends BaseMPSTool implements IActionDataProvider, Dat
   };
 
   public ProjectPane(Project project) {
-    super(project, "MPS Project Pane", 1, Icons.MPS_SMALL_ICON, ToolWindowAnchor.LEFT, false);
+    super(project, "Project Pane", 1, Icons.MPS_SMALL_ICON, ToolWindowAnchor.LEFT, false);
   }
 
   public void initComponent() {

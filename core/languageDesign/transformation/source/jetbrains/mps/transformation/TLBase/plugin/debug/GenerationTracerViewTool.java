@@ -32,7 +32,7 @@ public class GenerationTracerViewTool extends BaseMPSTool {
 
 
   public GenerationTracerViewTool(Project project) {
-    super(project, "Generation Tracer View", -1, Icons.DEFAULT_ICON, ToolWindowAnchor.BOTTOM, true);
+    super(project, "Generation Tracer", -1, Icons.DEFAULT_ICON, ToolWindowAnchor.BOTTOM, true);
   }
 
   public void initComponent() {
