@@ -76,11 +76,11 @@
 
     <group>
       <separator/>
-      <action id="AddMPSModelImportAction" class="jetbrains.mps.ide.actions.model.AddModelImportAction"
+      <action id="AddMPSModelImportAction" class="jetbrains.mps.workbench.actions.imports.AddModelImportAction"
               text="Add Model Import">
         <keyboard-shortcut first-keystroke="control M" keymap="$default"/>
       </action>
-      <action id="AddMPSLanguageImportAction" class="jetbrains.mps.ide.actions.model.AddLanguageImportAction"
+      <action id="AddMPSLanguageImportAction" class="jetbrains.mps.workbench.actions.imports.AddLanguageImportAction"
               text="Add Language Import">
         <keyboard-shortcut first-keystroke="control L" keymap="$default"/>
       </action>
