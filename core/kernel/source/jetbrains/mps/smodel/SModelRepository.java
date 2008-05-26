@@ -27,10 +27,10 @@ public class SModelRepository implements ApplicationComponent {
     return ApplicationManager.getApplication().getComponent(SModelRepository.class);
   }
 
-  private Set<SModelDescriptor> myModelDescriptors = new HashSet<SModelDescriptor>();
-  private Map<SModelDescriptor, Long> myChangedModels = new HashMap<SModelDescriptor, Long>();
-  private Map<SModelUID, SModelDescriptor> myUIDToModelDescriptorMap = new HashMap<SModelUID, SModelDescriptor>();
-  private Set<SModelDescriptor> myModelsWithNoOwners = new HashSet<SModelDescriptor>();
+  private Set<SModelDescriptor> myModelDescriptors = new LinkedHashSet<SModelDescriptor>();
+  private Map<SModelDescriptor, Long> myChangedModels = new LinkedHashMap<SModelDescriptor, Long>();
+  private Map<SModelUID, SModelDescriptor> myUIDToModelDescriptorMap = new LinkedHashMap<SModelUID, SModelDescriptor>();
+  private Set<SModelDescriptor> myModelsWithNoOwners = new LinkedHashSet<SModelDescriptor>();
   private List<SModelRepositoryListener> mySModelRepositoryListeners = new ArrayList<SModelRepositoryListener>();
   private WeakSet<SModelRepositoryListener> myWeakSModelRepositoryListeners = new WeakSet<SModelRepositoryListener>();
 

@@ -3,8 +3,8 @@ package jetbrains.mps.util;
 import java.util.*;
 
 public class ManyToManyMap<F, S> {
-  private Map<F, Set<S>> myFToS = new HashMap<F, Set<S>>();
-  private Map<S, Set<F>> mySToF = new HashMap<S, Set<F>>();
+  private Map<F, Set<S>> myFToS = new LinkedHashMap<F, Set<S>>();
+  private Map<S, Set<F>> mySToF = new LinkedHashMap<S, Set<F>>();
 
   public void clearFirst(F f) {
     if (!myFToS.containsKey(f)) return;

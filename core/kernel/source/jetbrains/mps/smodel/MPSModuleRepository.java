@@ -26,14 +26,14 @@ public class MPSModuleRepository implements ApplicationComponent {
     return ApplicationManager.getApplication().getComponent(MPSModuleRepository.class);
   }
 
-  private Map<String, IModule> myFileToModuleMap = new HashMap<String, IModule>();
-  private Map<String, List<IModule>> myUIDToModulesMap = new HashMap<String, List<IModule>>();
+  private Map<String, IModule> myFileToModuleMap = new LinkedHashMap<String, IModule>();
+  private Map<String, List<IModule>> myUIDToModulesMap = new LinkedHashMap<String, List<IModule>>();
 
-  private Map<String, ModuleStub> myFileToModuleStubMap = new HashMap<String, ModuleStub>();
-  private Map<String, List<ModuleStub>> myUIDToModuleStubsMap = new HashMap<String, List<ModuleStub>>();
+  private Map<String, ModuleStub> myFileToModuleStubMap = new LinkedHashMap<String, ModuleStub>();
+  private Map<String, List<ModuleStub>> myUIDToModuleStubsMap = new LinkedHashMap<String, List<ModuleStub>>();
   private ManyToManyMap<ModuleStub, MPSModuleOwner> myModuleStubToOwners = new ManyToManyMap<ModuleStub, MPSModuleOwner>();
 
-  private Set<IModule> myModules = new HashSet<IModule>();
+  private Set<IModule> myModules = new LinkedHashSet<IModule>();
 
   private ManyToManyMap<IModule, MPSModuleOwner> myModuleToOwners = new ManyToManyMap<IModule, MPSModuleOwner>();
 
@@ -42,7 +42,7 @@ public class MPSModuleRepository implements ApplicationComponent {
 
   private boolean myDirtyFlag = false;
 
-  private Map<String, Class<? extends IModule>> myExtensionsToModuleTypes = new HashMap<String, Class<? extends IModule>>();
+  private Map<String, Class<? extends IModule>> myExtensionsToModuleTypes = new LinkedHashMap<String, Class<? extends IModule>>();
   public static final String LANGUAGE_EXT = ".mpl";
   public static final String SOLUTION_EXT = ".msd";
   public static final String DEVKIT_EXT = ".devkit";
