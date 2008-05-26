@@ -15,12 +15,12 @@ import sun.misc.Launcher;
 public class CommonPaths {
   private static Logger LOG = Logger.getLogger(CommonPaths.class);
 
-
   private static IClassPathItem ourRTJar = null;
   private static IClassPathItem ourMPSJar = null;
   private static IClassPathItem ourIDEAOpenAPIJar = null;
   private static IClassPathItem ourIDEAAPIJar = null;
   private static IClassPathItem ourIDEAUtilJar = null;
+  private static IClassPathItem ourIDEAxtensionsJar = null;
 
   private static JarFileClassPathItem findBootstrapJarByName(String name) {
     for (URL url : Launcher.getBootstrapClassPath().getURLs()) {
@@ -68,6 +68,7 @@ public class CommonPaths {
     result.add(getIDEAOpenAPIJar());
     result.add(getIDEAJar());
     result.add(getIDEAUtilJar());
+    result.add(getIDEAExtensionsJar());
 
     IClassPathItem kernelClassPath = getMPSKernelClassPath();
     if (kernelClassPath != null) {
@@ -148,6 +149,19 @@ public class CommonPaths {
       }
     }
     return ourIDEAUtilJar;
+  }
+
+  private static IClassPathItem getIDEAExtensionsJar() {
+    if (ourIDEAxtensionsJar == null) {
+      try {
+        String path = PathManager.getHomePath() + File.separator + "lib" + File.separator +
+          "idea-platform" + File.separator + "extensions.jar";
+        ourIDEAxtensionsJar = new JarFileClassPathItem(path);
+      } catch (IOException e) {
+        throw new RuntimeException(e);
+      }
+    }
+    return ourIDEAxtensionsJar;
   }
 
   private static IClassPathItem getBaseMPSClassPath() {
