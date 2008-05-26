@@ -48,6 +48,8 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
   }
 
   public void updateAfterLoad(@NotNull SModelDescriptor modelDescriptor) {
+    System.out.println("updating java stubs in " + myOwner + " with ");
+
     SModel model = modelDescriptor.getSModel();
     model.setLoading(true);
     try {
