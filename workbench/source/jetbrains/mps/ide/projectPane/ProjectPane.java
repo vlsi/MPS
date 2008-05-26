@@ -61,7 +61,7 @@ import java.util.List;
   )
     }
 )
-public class ProjectPane extends BaseMPSTool implements IActionDataProvider, DataProvider, IProjectPane, PersistentStateComponent<MyState> {
+public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPane, PersistentStateComponent<MyState> {
   private static final Logger LOG = Logger.getLogger(ProjectPane.class);
 
   public static final String PROJECT_PANE_NODE_ACTIONS = ProjectPaneNodeActions_ActionGroup.ID;
@@ -99,7 +99,7 @@ public class ProjectPane extends BaseMPSTool implements IActionDataProvider, Dat
   private JToggleButton myAutoscrollToSource;
   private JToggleButton myAutoscrollFromSource;
   private JToolBar myToolbar = new MPSToolBar();
-  private JPanel myPanel = new JPanel();
+  private MyPanel myPanel = new MyPanel();
   private MyTree myTree = new MyTree();
 
   private ReloadListener myReloadListener = new ReloadListener() {
@@ -284,21 +284,6 @@ public class ProjectPane extends BaseMPSTool implements IActionDataProvider, Dat
     SNodeTreeNode selectedTreeNode = (SNodeTreeNode) selectionPath.getLastPathComponent();
 
     getMPSProject().getComponentSafe(MPSEditorOpener.class).openNode(selectedTreeNode.getSNode(), selectedTreeNode.getOperationContext());
-  }
-
-
-  public <T> T get(Class<T> cls) {
-    if (cls == SNode.class) return (T) getSelectedNode();
-    if (cls == SModelDescriptor.class) return (T) getSelectedModel();
-    if (cls == List.class) {
-      List result = new ArrayList();
-      result.addAll(getSelectedModels());
-      result.addAll(getSelectedNodes());
-      result.addAll(getSelectedModules());
-      return (T) result;
-    }
-    if (cls == IOperationContext.class) return (T) getContextForSelection();
-    return null;
   }
 
   @Nullable
@@ -909,6 +894,22 @@ public class ProjectPane extends BaseMPSTool implements IActionDataProvider, Dat
 
     public void setState(TreeState state) {
       myState = state;
+    }
+  }
+
+  private class MyPanel extends JPanel implements IActionDataProvider {
+    public <T> T get(Class<T> cls) {
+      if (cls == SNode.class) return (T) getSelectedNode();
+      if (cls == SModelDescriptor.class) return (T) getSelectedModel();
+      if (cls == List.class) {
+        List result = new ArrayList();
+        result.addAll(getSelectedModels());
+        result.addAll(getSelectedNodes());
+        result.addAll(getSelectedModules());
+        return (T) result;
+      }
+      if (cls == IOperationContext.class) return (T) getContextForSelection();
+      return null;
     }
   }
 }
