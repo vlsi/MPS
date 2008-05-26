@@ -66,11 +66,7 @@ public enum LanguageAspect {
     }
   },
 
-  DOCUMENTATION("documentation") {
-    protected List<String> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList("jetbrains.mps.booksLanguage");
-    }
-  },
+  DOCUMENTATION("documentation"),
 
   INTENTIONS("intentions") {
     protected List<String> getLanguagesToImport(Language l) {
