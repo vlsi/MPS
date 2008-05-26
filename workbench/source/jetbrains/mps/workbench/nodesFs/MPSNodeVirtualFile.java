@@ -29,7 +29,7 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
         myPath = myNode.getModel().getUID() + "/" + myNode.getId();
-        myName = myNode.getPresentation();
+        myName = "" + myNode.getPresentation();
       }
     });
   }
