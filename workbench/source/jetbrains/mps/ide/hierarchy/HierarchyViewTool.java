@@ -21,10 +21,6 @@ public class HierarchyViewTool extends AbstractHierarchyView<AbstractConceptDecl
     return new ConceptHierarchyTree(this, isParentHierarchy);
   }
 
-  public static HierarchyViewTool getHierarchyView(MPSProject project) {
-    return getTool(project, HierarchyViewTool.class);
-  }
-
   private class ConceptHierarchyTree extends AbstractHierarchyTree<AbstractConceptDeclaration> {
     public ConceptHierarchyTree(AbstractHierarchyView<AbstractConceptDeclaration> abstractHierarchyView, boolean isParentHierarchy) {
       super(abstractHierarchyView, AbstractConceptDeclaration.class, isParentHierarchy);

@@ -92,7 +92,7 @@ public class OutputViewTool extends BaseMPSTool {
   }
 
   public static OutputViewTool getOutputViewTool(MPSProject project) {
-    return getTool(project, OutputViewTool.class);
+    return project.getComponent(OutputViewTool.class);
   }
 
   private void updateComponent() {

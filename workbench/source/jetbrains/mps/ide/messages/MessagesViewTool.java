@@ -349,10 +349,6 @@ public class MessagesViewTool extends BaseMPSTool implements ProjectComponent, P
     return width;
   }
 
-  public static MessagesViewTool getMessageViewTool(MPSProject project) {
-    return getTool(project, MessagesViewTool.class);
-  }
-
   private ToggleAction createToggleAction(String tooltip, Icon icon) {
     return new ToggleAction("", tooltip, icon) {
       private boolean mySelected = true;

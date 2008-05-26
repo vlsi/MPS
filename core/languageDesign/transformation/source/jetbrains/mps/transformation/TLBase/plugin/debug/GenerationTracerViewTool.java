@@ -177,10 +177,6 @@ public class GenerationTracerViewTool extends BaseMPSTool {
     }
   }
 
-  public static GenerationTracerViewTool getGenerationTracerViewTool(MPSProject project) {
-    return getTool(project, GenerationTracerViewTool.class);
-  }
-
   // -------------------
   // -------------------
   // -------------------

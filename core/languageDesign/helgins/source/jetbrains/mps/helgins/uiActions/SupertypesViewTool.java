@@ -32,7 +32,4 @@ public class SupertypesViewTool extends AbstractHierarchyView {
     myButtonsPanel.add(myCheckBox);
   }
 
-  public static SupertypesViewTool getSupertypesViewTool(MPSProject project) {
-    return getTool(project, SupertypesViewTool.class);
-  }
 }

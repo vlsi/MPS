@@ -44,10 +44,6 @@ public class ClassPathViewerTool extends BaseMPSTool {
     myTree.rebuildLater();
   }
 
-  public static ClassPathViewerTool getClassPathViewerTool(MPSProject project) {
-    return getTool(project, ClassPathViewerTool.class);
-  }
-
   private class MyClassPathTree extends MPSTree {
     protected MPSTreeNode rebuild() {
       if (myInspectedModule == null) {

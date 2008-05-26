@@ -325,14 +325,14 @@ public class GenerationController {
   }
 
   private void clearMessageVew() {
-    MessagesViewTool messagesView = MessagesViewTool.getMessageViewTool(getProject());
+    MessagesViewTool messagesView = getProject().getComponent(MessagesViewTool.class);
     if (messagesView != null) {
       messagesView.clear();
     }
   }
 
   private void showMessageView() {
-    MessagesViewTool messagesView = MessagesViewTool.getMessageViewTool(getProject());
+    MessagesViewTool messagesView = getProject().getComponent(MessagesViewTool.class);
     if (messagesView != null) {
       messagesView.showTool(true);
     }

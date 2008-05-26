@@ -233,10 +233,6 @@ public class ProjectPane extends BaseMPSTool implements IActionDataProvider, Dat
     removeListeners();
   }
 
-  public static ProjectPane getProjectPane(MPSProject project) {
-    return getTool(project, ProjectPane.class);
-  }
-
   public void showProjectPane() {
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {

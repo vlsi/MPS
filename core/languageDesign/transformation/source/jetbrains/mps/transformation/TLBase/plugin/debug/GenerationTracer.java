@@ -37,7 +37,7 @@ public class GenerationTracer {
   }
 
   private GenerationTracerViewTool getTracerViewTool() {
-    return GenerationTracerViewTool.getGenerationTracerViewTool(getMPSProject());
+    return getMPSProject().getComponent(GenerationTracerViewTool.class);
   }
 
   public void startTracing() {

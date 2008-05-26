@@ -249,10 +249,6 @@ public class UsagesViewTool extends BaseMPSTool {
     }
   }
 
-  public static UsagesViewTool getUsagesViewTool(MPSProject project) {
-    return getTool(project, UsagesViewTool.class);
-  }
-
   public void read(Element element, MPSProject project) {
     Element versionXML = element.getChild(VERSION);
     if (versionXML == null) return;

@@ -25,10 +25,6 @@ public class BaseLanguageHierarchyViewTool extends AbstractHierarchyView<Classif
     return new BaseLanguageHierarchyTree(this, Classifier.class, isParentHierarchy);
   }
 
-  public static BaseLanguageHierarchyViewTool getBaseLanguageHierarchyViewTool(MPSProject project) {
-    return getTool(project, BaseLanguageHierarchyViewTool.class);
-  }
-
   private static class BaseLanguageHierarchyTree extends AbstractHierarchyTree<Classifier> {
     public BaseLanguageHierarchyTree(AbstractHierarchyView<Classifier> abstractHierarchyView, Class<Classifier> aClass, boolean isParentHierarchy) {
       super(abstractHierarchyView, aClass, isParentHierarchy);
