@@ -29,7 +29,7 @@ public class JavaCompiler {
     myClassPathItem = item;
   }
 
-  public void addSource(String text, String classFqName) {
+  public void addSource(String classFqName, String text) {
     CompilationUnit compilationUnit = new CompilationUnit(text.toCharArray(), classFqName.replace(".", File.separator) + ".java", "UTF-8");
     myCompilationUnits.put(classFqName, compilationUnit);
   }

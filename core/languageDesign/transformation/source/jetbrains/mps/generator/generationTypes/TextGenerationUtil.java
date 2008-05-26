@@ -4,12 +4,10 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.textPresentation.TextPresentationManager;
 import jetbrains.mps.compiler.JavaCompiler;
-import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.Interface;
 import jetbrains.mps.reloading.CompositeClassPathItem;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CommonPaths;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -39,8 +37,8 @@ public class TextGenerationUtil {
     for (SNode root : targetModel.getRoots()) {
       INodeAdapter outputNode = BaseAdapter.fromNode(root);
       if (outputNode instanceof ClassConcept || outputNode instanceof Interface) {
-        compiler.addSource(generateText(context, root).getText(),
-                JavaNameUtil.packageNameForModelUID(targetModel.getUID()) + "." + root.getName());
+        compiler.addSource(JavaNameUtil.packageNameForModelUID(targetModel.getUID()) + "." + root.getName(), generateText(context, root).getText()
+        );
       }
     }
     

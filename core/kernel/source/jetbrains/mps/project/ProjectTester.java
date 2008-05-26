@@ -98,7 +98,7 @@ public class ProjectTester {
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
         List<BaseGeneratorConfiguration> configurations = new ArrayList<BaseGeneratorConfiguration>(myProject.getProjectDescriptor().getRunConfigurations());
-
+        
         if (myProject.getProjectDescriptor().getTestAllLanguages()) {
           for (Language l : myProject.getProjectLanguages()) {
             LanguageGeneratorConfiguration conf = LanguageGeneratorConfiguration.newInstance(myProject.getProjectDescriptor().getModel());
