@@ -62,11 +62,8 @@ public class MessagesViewTool extends BaseMPSTool implements ProjectComponent, P
   private JList myList = new JList(myModel);
   private MessageViewLoggingHandler myLoggingHandler;
 
-  @Hack
-  //DO NOT REMOVE _ AFTER "MESSAGES"!!
-  //IN PLATFORM WE HAVE ANOTHER WINDOW WITH ID="Messages"
   public MessagesViewTool(Project project, SelectInManager selectInManager) {
-    super(project, "Messages_", 0, Icons.MESSAGE_VIEW_ICON, ToolWindowAnchor.BOTTOM, true);
+    super(project, "MPS Messages", 0, Icons.MESSAGE_VIEW_ICON, ToolWindowAnchor.BOTTOM, true);
   }
 
   public void initComponent() {
