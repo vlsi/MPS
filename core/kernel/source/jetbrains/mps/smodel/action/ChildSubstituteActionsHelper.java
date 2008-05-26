@@ -22,6 +22,8 @@ import jetbrains.mps.util.*;
 import javax.swing.Icon;
 import java.util.*;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Igor Alshannikov
  * Jan 24, 2006
@@ -245,11 +247,12 @@ public class ChildSubstituteActionsHelper {
     return actions;
   }
 
-  public static List<INodeSubstituteAction> createDefaultActions(ConceptDeclaration applicableConcept,
+  public static List<INodeSubstituteAction> createDefaultActions(@NotNull ConceptDeclaration applicableConcept,
                                                                  SNode parentNode,
                                                                  SNode currentChild,
                                                                  IChildNodeSetter setter,
                                                                  IOperationContext operationContext) {
+
     String conceptFqName = NameUtil.nodeFQName(applicableConcept);
     SNode link = null;
     if (setter instanceof DefaultChildNodeSetter) {
