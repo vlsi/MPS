@@ -2,6 +2,7 @@ package jetbrains.mps.javastub.classpath;
 
 import jetbrains.mps.javastub.ConverterFactory;
 import jetbrains.mps.javastub.IConverter;
+import jetbrains.mps.javastub.ClassPathItemProvider;
 import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.reloading.IClassPathItem;
@@ -29,7 +30,11 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
   public Set<SModelDescriptor> read(@NotNull ModelRoot root, @NotNull IModule owner) {
     try {
       myOwner = owner;
-      myConverter = ConverterFactory.createClassPathConverter(this, root, getClassPathItem(), owner);
+      myConverter = ConverterFactory.createClassPathConverter(this, root, new ClassPathItemProvider() {
+        public IClassPathItem get() {
+          return getClassPathItem();
+        }
+      }, owner);
 
       Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
       addPackageModelDescriptors(result, root, root.getPrefix());
