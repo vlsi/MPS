@@ -67,7 +67,9 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor 
   @NotNull
   public FileEditorState getState(@NotNull FileEditorStateLevel level) {
     MyFileEditorState state = new MyFileEditorState();
-    state.myMemento = myNodeEditor.getEditorContext().createMemento();
+    if (myNodeEditor.getEditorContext() != null) {
+      state.myMemento = myNodeEditor.getEditorContext().createMemento();
+    }
     return state;
   }
 
