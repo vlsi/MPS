@@ -41,8 +41,6 @@ public class GenerationTracerViewTool extends BaseMPSTool {
     myPanel = new JPanel(new BorderLayout());
     myTabbedPane = new JTabbedPane(JTabbedPane.BOTTOM);
     myTabbedPane.addMouseListener(new TabPaneMouseListener());
-    myPanel.add(myTabbedPane, BorderLayout.CENTER);
-
     updateContentPanel();
 
     StartupManager.getInstance(getProject()).registerPostStartupActivity(new Runnable() {
@@ -104,16 +102,17 @@ public class GenerationTracerViewTool extends BaseMPSTool {
   }
 
   private void updateContentPanel() {
+    if (myNoTabsComponent != null) {
+      myPanel.remove(myNoTabsComponent);
+      myNoTabsComponent = null;
+    }
+
     if (myTracerViews.isEmpty()) {
       myPanel.remove(myTabbedPane);
       myNoTabsComponent = createNoTabsComponent();
       myPanel.add(myNoTabsComponent, BorderLayout.CENTER);
-    } else if (myNoTabsComponent != null) {
-      myPanel.remove(myNoTabsComponent);
-      myPanel.add(myTabbedPane);
-      myNoTabsComponent = null;
     } else {
-      return;
+      myPanel.add(myTabbedPane);
     }
 
     myPanel.revalidate();
@@ -172,9 +171,7 @@ public class GenerationTracerViewTool extends BaseMPSTool {
 
   public void setTracingDataIsAvailable(boolean b) {
     myTracingDataIsAvailable = b;
-    if (myNoTabsComponent != null) {
-      updateContentPanel();
-    }
+    updateContentPanel();
   }
 
   // -------------------
