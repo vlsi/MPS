@@ -12,10 +12,7 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.impl.FakePsiElement;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.actions.goTo.framework.nodes.GoToNodeModel;
 
@@ -43,6 +40,8 @@ public class GoToNamedNodeAction extends AnAction {
         List<SModelDescriptor> modelDescriptors = scope.getModelDescriptors();
         for (SModelDescriptor modelDescriptor : modelDescriptors) {
           if (SModelStereotype.JAVA_STUB.equals(modelDescriptor.getStereotype())) continue;
+          if (modelDescriptor instanceof StubModelDescriptor) continue;
+          
           nodes.addAll(modelDescriptor.getSModel().allNodes(new Condition<SNode>() {
             public boolean met(SNode node) {
               String name = node.getName();
