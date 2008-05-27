@@ -79,12 +79,6 @@ public class MessagesViewTool extends BaseMPSTool implements ProjectComponent, P
     group.add(myWarningsAction);
     group.add(myInfoAction);
 
-    group.add(new AnAction("", "Close", Icons.CLOSE_ICON) {
-      public void actionPerformed(AnActionEvent e) {
-        closeTool();
-      }
-    });
-
     panel.add(ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent(), BorderLayout.NORTH);
 
     myComponent.add(panel, BorderLayout.WEST);
