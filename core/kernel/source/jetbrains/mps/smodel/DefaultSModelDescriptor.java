@@ -34,13 +34,13 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   private Map<String, String> myMetadata;
   private boolean myMetadataLoaded;
 
-  private List<SModelListener> myWeakModelListeners = new ArrayList<SModelListener>();
-  private List<SModelListener> myModelListeners = new ArrayList<SModelListener>();
-  private List<SModelCommandListener> myModelCommandListeners = new ArrayList<SModelCommandListener>();
+  private List<SModelListener> myWeakModelListeners = new ArrayList<SModelListener>(0);
+  private List<SModelListener> myModelListeners = new ArrayList<SModelListener>(0);
+  private List<SModelCommandListener> myModelCommandListeners = new ArrayList<SModelCommandListener>(0);
   private long myLastStructuralChange = System.currentTimeMillis();
   private long myLastChange;
   private FastNodeFinder myFastNodeFinder;
-  private List<IPostLoadRunnable> myPostLoadRunnables = new ArrayList<IPostLoadRunnable>(2);
+  private List<IPostLoadRunnable> myPostLoadRunnables = new ArrayList<IPostLoadRunnable>(0);
   private Throwable myInitializationStackTrace;
 
   private boolean myTransient;

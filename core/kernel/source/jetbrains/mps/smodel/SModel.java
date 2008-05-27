@@ -35,9 +35,9 @@ public class SModel implements Iterable<SNode> {
 
   private static final Logger LOG = Logger.getLogger(SModel.class);
 
-  private Set<SModelListener> myWeakListeners = new WeakSet<SModelListener>();
-  private List<SModelListener> myListeners = new ArrayList<SModelListener>();
-  private List<SModelCommandListener> myCommandListeners = new ArrayList<SModelCommandListener>();
+  private Set<SModelListener> myWeakListeners = new WeakSet<SModelListener>(0);
+  private List<SModelListener> myListeners = new ArrayList<SModelListener>(0);
+  private List<SModelCommandListener> myCommandListeners = new ArrayList<SModelCommandListener>(0);
 
   private Set<Language> myVersionedLanguages = new HashSet<Language>();
 
