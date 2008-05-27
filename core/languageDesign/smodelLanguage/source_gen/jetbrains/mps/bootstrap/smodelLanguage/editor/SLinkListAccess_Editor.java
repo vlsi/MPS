@@ -18,38 +18,38 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 
 public class SLinkListAccess_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_LinkReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138412361312");
+  private static void setupBasic_linkRefCell2380_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_linkRefCell2380_0");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupLabel_LinkReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_linkRefCell2380_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createLinkReferenceCell(context, node);
+    return this.create_linkRefCell2380_0(context, node);
   }
 
-  public EditorCell createLinkReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_linkRefCell2380_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new SLinkListAccess_Editor._Inline2());
     EditorCell editorCell = provider.createEditorCell(context);
-    SLinkListAccess_Editor.setupBasic_LinkReferenceCell(editorCell, node, context);
+    setupBasic_linkRefCell2380_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      SLinkListAccess_Editor.setupLabel_LinkReferenceCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_linkRefCell2380_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createLinkReferenceCell(EditorContext context, SNode node) {
+  public EditorCell create_linkRefCell2380_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("link");
     provider.setNoTargetText("<no link>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createLinkReferenceCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_linkRefCell2380_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -66,13 +66,13 @@ public class SLinkListAccess_Editor extends DefaultNodeEditor {
       super();
     }
 
-    private static void setupBasic_RoleCell(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138412361314");
+    private static void setupBasic_rolePropertyCell2380_0(EditorCell editorCell, SNode node, EditorContext context) {
+      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_rolePropertyCell2380_0");
       editorCell.setDrawBorder(false);
       editorCell.setFontType(MPSFonts.ITALIC);
     }
 
-    private static void setupLabel_RoleCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    private static void setupLabel_rolePropertyCell2380_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
       editorCell.getTextLine().setTextColor(Color.darkGray);
     }
 
@@ -82,28 +82,28 @@ public class SLinkListAccess_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext context, SNode node) {
-      return this.createRoleCell(context, node);
+      return this.create_rolePropertyCell2380_0(context, node);
     }
 
-    public EditorCell createRoleCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    public EditorCell create_rolePropertyCell2380_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      SLinkListAccess_Editor._Inline2.setupBasic_RoleCell(editorCell, node, context);
+      setupBasic_rolePropertyCell2380_0(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        SLinkListAccess_Editor._Inline2.setupLabel_RoleCell((EditorCell_Label)editorCell, node, context);
+        setupLabel_rolePropertyCell2380_0((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
 
-    public EditorCell createRoleCell(EditorContext context, SNode node) {
+    public EditorCell create_rolePropertyCell2380_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("role");
       provider.setNoTargetText("");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
-      EditorCell cellWithRole = this.createRoleCellinternal(context, node, provider);
+      EditorCell cellWithRole = this.create_rolePropertyCell2380_0_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {

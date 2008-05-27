@@ -11,23 +11,23 @@ import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class Concept_GetHierarchy_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1180459627781");
+  private static void setupBasic_ConstantCell10811_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell10811_0");
   }
 
-  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell10811_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(true);
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstantCell(context, node, "hierarchy");
+    return this.create_ConstantCell10811_0(context, node, "hierarchy");
   }
 
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell10811_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    Concept_GetHierarchy_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    Concept_GetHierarchy_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell10811_0(editorCell, node, context);
+    setupLabel_ConstantCell10811_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }

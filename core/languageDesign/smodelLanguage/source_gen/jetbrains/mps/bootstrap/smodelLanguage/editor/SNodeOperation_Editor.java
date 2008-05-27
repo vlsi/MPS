@@ -11,23 +11,23 @@ import jetbrains.mps.nodeEditor.EditorCell_Error;
 
 public class SNodeOperation_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_ErrorCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138412005946");
+  private static void setupBasic_ErrorCell13087_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ErrorCell13087_0");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupLabel_ErrorCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ErrorCell13087_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createErrorCell(context, node);
+    return this.create_ErrorCell13087_0(context, node);
   }
 
-  public EditorCell createErrorCell(EditorContext context, SNode node) {
+  public EditorCell create_ErrorCell13087_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "<choose operaion>");
-    SNodeOperation_Editor.setupBasic_ErrorCell(editorCell, node, context);
-    SNodeOperation_Editor.setupLabel_ErrorCell(editorCell, node, context);
+    setupBasic_ErrorCell13087_0(editorCell, node, context);
+    setupLabel_ErrorCell13087_0(editorCell, node, context);
     return editorCell;
   }
 

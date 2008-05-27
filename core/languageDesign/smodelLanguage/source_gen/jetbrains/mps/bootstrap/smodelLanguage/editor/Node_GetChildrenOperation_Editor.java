@@ -11,24 +11,24 @@ import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class Node_GetChildrenOperation_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171501030411");
+  private static void setupBasic_ConstantCell11226_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11226_0");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell11226_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(true);
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstantCell(context, node, "children");
+    return this.create_ConstantCell11226_0(context, node, "children");
   }
 
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell11226_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    Node_GetChildrenOperation_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    Node_GetChildrenOperation_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell11226_0(editorCell, node, context);
+    setupLabel_ConstantCell11226_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }

@@ -11,24 +11,24 @@ import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class Node_GetContainingRootOperation_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171310416458");
+  private static void setupBasic_ConstantCell168_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell168_0");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell168_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(true);
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstantCell(context, node, "containing root");
+    return this.create_ConstantCell168_0(context, node, "containing root");
   }
 
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell168_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    Node_GetContainingRootOperation_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    Node_GetContainingRootOperation_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell168_0(editorCell, node, context);
+    setupLabel_ConstantCell168_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
