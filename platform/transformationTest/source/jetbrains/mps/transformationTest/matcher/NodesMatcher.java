@@ -4,13 +4,6 @@ import jetbrains.mps.smodel.SNode;
 
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Evgeny.Kurbatsky
- * Date: 08.05.2008
- * Time: 17:55:41
- * To change this template use File | Settings | File Templates.
- */
 public class NodesMatcher {
 
   public static NodeDifference matchNodes(SNode a, SNode b) {
