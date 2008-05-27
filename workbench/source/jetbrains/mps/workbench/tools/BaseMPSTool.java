@@ -39,8 +39,6 @@ public abstract class BaseMPSTool implements ProjectComponent {
     myCanCloseContent = canCloseContent;
   }
 
-  //------------GETTERS-------------------
-
   protected Project getProject() {
     return myProject;
   }
@@ -57,9 +55,6 @@ public abstract class BaseMPSTool implements ProjectComponent {
     return myIcon;
   }
 
-  //------------TOOL STUFF-------------------
-
-  @Nullable
   private ToolWindow getToolWindow() {
     return ToolWindowManager.getInstance(myProject).getToolWindow(myId);
   }
@@ -68,14 +63,12 @@ public abstract class BaseMPSTool implements ProjectComponent {
     return getToolWindow() != null;
   }
 
-  public void showTool(final boolean activate) {
+  public void showTool() {
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
         if (myProject.isDisposed()) return;
-        if (activate) {
-          //noinspection ConstantConditions
-          getToolWindow().activate(null);
-        }
+        getToolWindow().setAvailable(true, null);
+        getToolWindow().activate(null);
       }
     });
   }
@@ -84,12 +77,10 @@ public abstract class BaseMPSTool implements ProjectComponent {
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
         if (!isShowing()) return;
-        ToolWindowManager.getInstance(myProject).unregisterToolWindow(myId);
+        getToolWindow().setAvailable(false, null);
       }
     });
   }
-
-  //------------PROJECT COMPONENT STUFF-------------------
 
   protected MPSProject getMPSProject() {
     return myProject.getComponent(MPSProjectHolder.class).getMPSProject();
@@ -131,8 +122,6 @@ public abstract class BaseMPSTool implements ProjectComponent {
   public String getComponentName() {
     return getClass().getName();
   }
-
-  //------------STUFF TO IMPLEMENT-------------------
 
   public abstract JComponent getComponent();
 }

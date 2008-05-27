@@ -5,7 +5,6 @@ import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.transformation.TLBase.plugin.debug.TracerNode.Kind;
 import jetbrains.mps.workbench.tools.BaseMPSTool;
@@ -166,7 +165,7 @@ public class GenerationTracerViewTool extends BaseMPSTool {
     myTabbedPane.setIconAt(currentTabIndex(), tracerView.getIcon());
 
     updateContentPanel();
-    showTool(true);
+    showTool();
   }
 
   public void setTracingDataIsAvailable(boolean b) {

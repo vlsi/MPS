@@ -334,7 +334,7 @@ public class GenerationController {
   private void showMessageView() {
     MessagesViewTool messagesView = getProject().getComponent(MessagesViewTool.class);
     if (messagesView != null) {
-      messagesView.showTool(true);
+      messagesView.showTool();
     }
   }
 

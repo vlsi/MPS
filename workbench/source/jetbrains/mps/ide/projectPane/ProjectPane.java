@@ -220,11 +220,6 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
         rebuildTree();
       }
     });
-    StartupManager.getInstance(getProject()).registerPostStartupActivity(new Runnable() {
-      public void run() {
-        showTool(false);
-      }
-    });
   }
 
   public void disposeComponent() {
@@ -236,7 +231,7 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
   public void showProjectPane() {
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
-        showTool(true);
+        showTool();
       }
     });
   }
@@ -329,7 +324,7 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
       public void run() {
         getTree().runWithoutExpansion(new Runnable() {
           public void run() {
-            showTool(true);
+            showTool();
 
             IModule module = context.getModule();
             if (module == null) {

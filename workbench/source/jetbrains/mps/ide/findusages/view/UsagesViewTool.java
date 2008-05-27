@@ -90,9 +90,9 @@ public class UsagesViewTool extends BaseMPSTool {
 
   //----TOOL STUFF----
 
-  public void showTool(boolean activate) {
+  public void showTool() {
     if (myUsageViewsData.size() > 0) {
-      super.showTool(activate);
+      super.showTool();
     }
   }
 
@@ -245,7 +245,7 @@ public class UsagesViewTool extends BaseMPSTool {
       myTabbedPane.setTitleAt(currentTabIndex(), usageViewData.myUsagesView.getCaption());
       myTabbedPane.setIconAt(currentTabIndex(), usageViewData.myUsagesView.getIcon());
 
-      showTool(true);
+      showTool();
     }
   }
 

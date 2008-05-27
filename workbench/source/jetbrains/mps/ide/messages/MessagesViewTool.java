@@ -17,8 +17,6 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.messages.MessagesViewTool.MyState;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.workbench.tools.BaseMPSTool;
 
 import javax.swing.*;
@@ -170,12 +168,6 @@ public class MessagesViewTool extends BaseMPSTool implements ProjectComponent, P
 
     myBlameDialog = new BlameDialog(null);
     myBlameDialog.loadState(myDialogState);
-
-    StartupManager.getInstance(getProject()).registerPostStartupActivity(new Runnable() {
-      public void run() {
-        showTool(false);
-      }
-    });
   }
 
   public void projectOpened() {
@@ -191,7 +183,7 @@ public class MessagesViewTool extends BaseMPSTool implements ProjectComponent, P
 
   //------------TOOL STUFF---------------
 
-  public void showTool(boolean activate) {
+  public void showTool() {
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
         if (myModel.size() > 0) {
@@ -199,7 +191,7 @@ public class MessagesViewTool extends BaseMPSTool implements ProjectComponent, P
         }
       }
     });
-    super.showTool(activate);
+    super.showTool();
   }
 
   public JComponent getComponent() {
@@ -332,7 +324,7 @@ public class MessagesViewTool extends BaseMPSTool implements ProjectComponent, P
           myList.setFixedCellWidth(width);
         }
 
-        showTool(false);
+        showTool();
       }
     });
   }
