@@ -11,14 +11,8 @@ import jetbrains.mps.nodeEditor.cellMenu.*;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.smodel.Primitives;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.InternUtil;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 13.02.2006
- * Time: 20:18:26
- * To change this template use File | Settings | File Templates.
- */
 public class PropertyCellProvider extends CellProviderWithRole {
   private static Logger LOG = Logger.getLogger(PropertyCellProvider.class);
 
@@ -26,7 +20,7 @@ public class PropertyCellProvider extends CellProviderWithRole {
   private PropertyDeclaration myPropertyDeclaration;
 
   public void setRole(Object role) {
-    myPropertyName = role.toString();
+    myPropertyName = InternUtil.intern(role.toString());
     myPropertyDeclaration = getSNode().getPropertyDeclaration(myPropertyName);
     if (myPropertyDeclaration == null) {
       LOG.error("no property declaration could be found in NODE " + getSNode() + " for PROPERTY name " + myPropertyName);

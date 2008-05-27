@@ -650,6 +650,7 @@ public final class SNode {
   }
 
   public void setProperty(@NotNull String propertyName, String propertyValue, boolean usePropertySetter) {
+    propertyName = InternUtil.intern(propertyName);
     ModelChange.assertLegalNodeChange(this);
     propertyValue = InternUtil.intern(propertyValue);
     if (usePropertySetter) {
