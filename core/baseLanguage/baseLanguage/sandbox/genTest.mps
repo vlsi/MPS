@@ -63,6 +63,47 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1211879479825">
+      <property name="name" value="abcd" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1211879483532" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1211879479827" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1211879479828">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1211879484533">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1211879486349">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1211879486696">
+              <property name="value" value="23" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1211879485754">
+              <property name="value" value="2" />
+            </node>
+          </node>
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1211879484535">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1211881169062">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1211881170017">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1211881170568">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.Expression" id="1211881170569" />
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1211881170239">
+                    <property name="value" value="3" />
+                  </node>
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1211881169063">
+                  <property name="value" value="3" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1211879490029">
+            <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1211879490030">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1211879491297">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1211879491768">
+                  <property name="value" value="1" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1206627065062">
       <property name="name" value="abcde" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1206627066661" />

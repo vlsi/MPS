@@ -21,82 +21,82 @@ import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 public class MapInitializer_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myEntriesListHandler_entriesList_;
+  /* package */AbstractCellListHandler myListHandler_4231_0;
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1206657755458");
+  private static void setupBasic_CollectionCell4231_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell4231_0");
   }
 
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1206657757507");
+  private static void setupBasic_ConstantCell4231_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell4231_0");
   }
 
-  private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1206657759618");
+  private static void setupBasic_ConstantCell4231_01(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell4231_01");
   }
 
-  private static void setupBasic_EntriesList(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1206657763839");
+  private static void setupBasic_entriesRefNodeListCell4231_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_entriesRefNodeListCell4231_0");
   }
 
-  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell4231_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell4231_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_EntriesList(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_entriesRefNodeListCell4231_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createRowCell(context, node);
+    return this.create_CollectionCell4231_0(context, node);
   }
 
-  public EditorCell createRowCell(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell4231_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    MapInitializer_Editor.setupBasic_RowCell(editorCell, node, context);
+    setupBasic_CollectionCell4231_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "{"));
-    editorCell.addEditorCell(this.createEntriesList(context, node));
-    editorCell.addEditorCell(this.createConstantCell1(context, node, "}"));
+    editorCell.addEditorCell(this.create_ConstantCell4231_0(context, node, "{"));
+    editorCell.addEditorCell(this.create_entriesRefNodeListCell4231_0(context, node));
+    editorCell.addEditorCell(this.create_ConstantCell4231_01(context, node, "}"));
     return editorCell;
   }
 
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell4231_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    MapInitializer_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    MapInitializer_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell4231_0(editorCell, node, context);
+    setupLabel_ConstantCell4231_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell4231_01(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    MapInitializer_Editor.setupBasic_ConstantCell1(editorCell, node, context);
-    MapInitializer_Editor.setupLabel_ConstantCell1(editorCell, node, context);
+    setupBasic_ConstantCell4231_01(editorCell, node, context);
+    setupLabel_ConstantCell4231_01(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createEntriesList(EditorContext context, SNode node) {
-    if (this.myEntriesListHandler_entriesList_ == null) {
-      this.myEntriesListHandler_entriesList_ = new MapInitializer_Editor._RefNodeListHandler1(node, "entries", context);
+  public EditorCell create_entriesRefNodeListCell4231_0(EditorContext context, SNode node) {
+    if (this.myListHandler_4231_0 == null) {
+      this.myListHandler_4231_0 = new MapInitializer_Editor.entriesListHandler_4231_0(node, "entries", context);
     }
-    EditorCell_Collection editorCell = this.myEntriesListHandler_entriesList_.createCells(context, new CellLayout_Horizontal(), false);
-    MapInitializer_Editor.setupBasic_EntriesList(editorCell, node, context);
+    EditorCell_Collection editorCell = this.myListHandler_4231_0.createCells(context, new CellLayout_Horizontal(), false);
+    setupBasic_entriesRefNodeListCell4231_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myEntriesListHandler_entriesList_.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_4231_0.getElementRole());
     return editorCell;
   }
 
-  public static class _RefNodeListHandler1 extends RefNodeListHandler {
+  public static class entriesListHandler_4231_0 extends RefNodeListHandler {
 
-    public _RefNodeListHandler1(SNode ownerNode, String childRole, EditorContext context) {
+    public entriesListHandler_4231_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

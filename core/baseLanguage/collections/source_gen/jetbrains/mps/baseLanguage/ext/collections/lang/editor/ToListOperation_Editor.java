@@ -11,24 +11,24 @@ import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class ToListOperation_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1151703486466");
+  private static void setupBasic_ConstantCell18767_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18767_0");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell18767_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(true);
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstantCell(context, node, "toList");
+    return this.create_ConstantCell18767_0(context, node, "toList");
   }
 
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell18767_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    ToListOperation_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    ToListOperation_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell18767_0(editorCell, node, context);
+    setupLabel_ConstantCell18767_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
