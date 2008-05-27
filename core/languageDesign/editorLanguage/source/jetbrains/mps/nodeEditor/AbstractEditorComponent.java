@@ -35,6 +35,9 @@ import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.reloading.ReloadListener;
+import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -90,9 +93,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private IEditorMessageOwner myMessageOwner = new IEditorMessageOwner() {
   };
-
+  
   private EditorSettingsListener mySettingsListener = new EditorSettingsListener() {
     public void settingsChanged() {
+      rebuildEditorContent();
+    }
+  };
+  private ReloadListener myReloadListener = new ReloadAdapter() {
+    public void onAfterReload() {
       rebuildEditorContent();
     }
   };
@@ -737,10 +745,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     });
     EditorSettings.getInstance().addEditorSettingsListener(mySettingsListener);
+    ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
   }
 
   public void removeNotify() {
     EditorSettings.getInstance().removeEditorSettingsListener(mySettingsListener);
+    ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
     KeyboardFocusManager.getCurrentKeyboardFocusManager().removePropertyChangeListener("focusOwner", myFocusListener);
     myHighlightManager.dispose();
     super.removeNotify();
