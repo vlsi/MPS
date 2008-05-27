@@ -44,6 +44,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="48" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -2335,6 +2336,21 @@
               <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintsFunctionParameter_node" id="1211559363879" />
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1211559366086">
                 <link role="property" targetNodeId="2.1169194664001" resolveInfo="name" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="properties" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint" id="1211923693586">
+      <link role="applicableProperty" targetNodeId="2.1196978656277" resolveInfo="resolveInfo" />
+      <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertyGetter" id="1211923698544">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1211923698545">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1211923742494">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1211923742855">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintsFunctionParameter_node" id="1211923742495" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1211923745155">
+                <link role="property" targetNodeId="1.1211504562189" resolveInfo="nestedName" />
               </node>
             </node>
           </node>
