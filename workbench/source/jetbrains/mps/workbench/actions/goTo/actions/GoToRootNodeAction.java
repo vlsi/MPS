@@ -12,10 +12,7 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.impl.FakePsiElement;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.actions.goTo.framework.nodes.GoToNodeModel;
 
 import java.util.ArrayList;
@@ -42,6 +39,8 @@ public class GoToRootNodeAction extends AnAction {
         List<SModelDescriptor> modelDescriptors = scope.getModelDescriptors();
         for (SModelDescriptor modelDescriptor : modelDescriptors) {
           if (SModelStereotype.JAVA_STUB.equals(modelDescriptor.getStereotype())) continue;
+          if (modelDescriptor instanceof StubModelDescriptor) continue;
+
           for (SNode node : modelDescriptor.getSModel().getRoots()) {
             nodes.add(node);
           }
