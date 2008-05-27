@@ -1,5 +1,7 @@
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.util.InternUtil;
+
 /**
  * Created by: Sergey Dmitriev
  * Date: Apr 4, 2007
@@ -60,7 +62,7 @@ public abstract class SNodeId {
       if (!id.startsWith(ID_PREFIX)) {
         throw new IllegalArgumentException("foreign node id must begin with '" + ID_PREFIX + "'");
       }
-      myId = id;
+      myId = InternUtil.intern(id);
     }
 
     public boolean equals(Object o) {
