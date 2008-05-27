@@ -15,8 +15,6 @@ public class WhenConcreteEntity {
   private Runnable myRunnable;
   private String myNodeModel;
   private String myNodeId;
-  private Set<SNodePointer> myVariables;
-  private IWrapper myWrapperToCheck;
 
   public WhenConcreteEntity(Runnable runnable) {
     myRunnable = runnable;

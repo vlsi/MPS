@@ -67,9 +67,7 @@ public class NodeTypesComponent implements IEditorMessageOwner, Cloneable {
   private Set<SNode> myCurrentNodesToInvalidate = new HashSet<SNode>();
 
   // for diagnostics
-  private Set<SNodePointer> myNotSkippedNodes = new HashSet<SNodePointer>();
-  private IEditorMessageOwner myNotSkippedNodesMessagesOwner = new IEditorMessageOwner() {
-  };
+  private Set<SNodePointer> myNotSkippedNodes = new HashSet<SNodePointer>(1);
 
   private static final Logger LOG = Logger.getLogger(NodeTypesComponent.class);
   private Set<SNode> myCurrentFrontier;
@@ -611,7 +609,7 @@ public class NodeTypesComponent implements IEditorMessageOwner, Cloneable {
   }
 
   private class MyEventsReadListener implements INodesReadListener {
-    private Set<SNode> myAcessedNodes = new HashSet<SNode>();
+    private Set<SNode> myAcessedNodes = new HashSet<SNode>(1);
     private boolean myIsSetAccessReport = false;
 
     public void setAccessReport(boolean accessReport) {
