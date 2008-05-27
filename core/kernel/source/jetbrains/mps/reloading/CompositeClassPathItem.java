@@ -11,8 +11,6 @@ import org.jetbrains.annotations.NotNull;
  * @author Kostik
  */
 public class CompositeClassPathItem implements IClassPathItem {
-  private static final Logger LOG = Logger.getLogger(CompositeClassPathItem.class);
-
   private List<IClassPathItem> myChildren = new ArrayList<IClassPathItem>();
 
   public void add(IClassPathItem item) {

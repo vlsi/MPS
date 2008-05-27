@@ -92,8 +92,8 @@ public class FileClassPathItem extends AbstractClassPathItem {
   }
 
   private void buildCacheFor(String namespace) {
-    Set<String> subpacks = new HashSet<String>();
-    Set<String> classes = new HashSet<String>();
+    Set<String> subpacks = new HashSet<String>(0);
+    Set<String> classes = new HashSet<String>(0);
     IFile dir = getModelDir(namespace);
 
     List<IFile> files = dir.list();
