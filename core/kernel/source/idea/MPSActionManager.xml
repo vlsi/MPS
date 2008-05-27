@@ -20,6 +20,16 @@
               text="Generate Current Module">
         <keyboard-shortcut first-keystroke="control F9" keymap="$default"/>
       </action>
+      <action id="GenerateFilesFromCurrentModel" class="jetbrains.mps.workbench.actions.generate.GenerateFilesFromCurrentModelAction"
+              text="Generate Current Module">
+        <keyboard-shortcut first-keystroke="shift F9" keymap="$default"/>
+      </action>
+
+      <action id="GenerateTextFromCurrentModel" class="jetbrains.mps.workbench.actions.generate.GenerateTextFromCurrentModelAction"
+              text="Generate Text From Current Module">
+        <keyboard-shortcut first-keystroke="shift F10" keymap="$default"/>
+      </action>
+
       <add-to-group group-id="MainMenu" anchor="after" relative-to-action="GoToMenu"/>
     </group>
 
