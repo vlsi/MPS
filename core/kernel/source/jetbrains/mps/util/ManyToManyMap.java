@@ -22,10 +22,10 @@ public class ManyToManyMap<F, S> {
 
   public void addLink(F f, S s) {
     if (!myFToS.containsKey(f)) {
-      myFToS.put(f, new HashSet<S>());
+      myFToS.put(f, new HashSet<S>(1));
     }
     if (!mySToF.containsKey(s)) {
-      mySToF.put(s, new HashSet<F>());
+      mySToF.put(s, new HashSet<F>(1));
     }
     myFToS.get(f).add(s);
     mySToF.get(s).add(f);
