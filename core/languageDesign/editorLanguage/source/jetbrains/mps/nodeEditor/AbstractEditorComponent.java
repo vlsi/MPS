@@ -1927,7 +1927,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     // hardcoded "update" action
     if (keyEvent.getKeyCode() == KeyEvent.VK_F5 && keyEvent.getModifiers() == 0) {
-      CommandProcessor.instance().tryToExecuteLightweightCommand(new Runnable() {
+      ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           SNode sNode = getRootCell().getSNode();
           if (sNode == null) {
@@ -1940,7 +1940,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           TypeChecker.getInstance().checkRoot(sNode.getContainingRoot(), true);
           rebuildEditorContent();
         }
-      });
+      });.;
       keyEvent.consume();
       return;
     }

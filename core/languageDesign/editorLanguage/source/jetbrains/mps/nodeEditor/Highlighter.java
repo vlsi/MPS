@@ -7,6 +7,7 @@ import jetbrains.mps.project.MPSProjects;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.WeakSet;
@@ -224,7 +225,7 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
       if (!wasCheckedOnce(component)) {
         checkersToRecheck.addAll(checkers);
       } else {
-        CommandProcessor.instance().tryToExecuteLightweightCommand(new Runnable() {
+        ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             for (IEditorChecker checker : checkers) {
               if (checker.hasDramaticalEvent(events)) {
