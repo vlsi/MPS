@@ -26,11 +26,15 @@ import org.jetbrains.annotations.Nullable;
 import java.io.File;
 import java.util.*;
 import java.awt.Frame;
+import java.lang.reflect.InvocationTargetException;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
+import com.intellij.openapi.util.EmptyRunnable;
 import com.intellij.ide.impl.ProjectUtil;
+
+import javax.swing.SwingUtilities;
 
 public class MPSProject implements ModelOwner, MPSModuleOwner {
   public static final String COMPONENTS = "components";
@@ -493,11 +497,22 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
           ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
         }
 
-
         //todo hack
         if (getComponent(Project.class) != null) {
           Project project = getComponentSafe(Project.class);
           if (IdeMain.isTestMode()) {
+            for (int i = 0; i < 3; i++) {
+              try {
+                SwingUtilities.invokeAndWait(new Runnable() {
+                  public void run() {
+
+                  }
+                });
+              } catch (Exception e) {
+                LOG.error(e);
+              }
+            }
+
             ProjectUtil.closeProject(project);
           }
         }
