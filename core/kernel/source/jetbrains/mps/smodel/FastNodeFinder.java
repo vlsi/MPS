@@ -21,28 +21,14 @@ public class FastNodeFinder {
   private SModelDescriptor myModelDescriptor;
   private long myStructuralState;
   private boolean myInitialized;
-  private SModelAdapter myListener;
+  private SModelAdapter myListener = new MySModelAdapter();
 
   private WeakHashMap<AbstractConceptDeclaration, WeakSet<SNode>> myNodesAll = new WeakHashMap<AbstractConceptDeclaration, WeakSet<SNode>>();
   private WeakHashMap<AbstractConceptDeclaration, WeakSet<SNode>> myNodesNoInheritance = new WeakHashMap<AbstractConceptDeclaration, WeakSet<SNode>>();
 
   public FastNodeFinder(SModelDescriptor modelDescriptor) {
     myModelDescriptor = modelDescriptor;
-    modelDescriptor.addWeakModelListener(myListener = new SModelAdapter() {
-      public void childAdded(SModelChildEvent event) {
-        buildCache(event.getChild(), new HashSet<AbstractConceptDeclaration>());
-      }
-
-      public void childRemoved(SModelChildEvent event) {
-      }
-
-      public void rootAdded(SModelRootEvent event) {
-        buildCache(event.getRoot(), new HashSet<AbstractConceptDeclaration>());
-      }
-
-      public void rootRemoved(SModelRootEvent event) {
-      }
-    });
+    modelDescriptor.addWeakModelListener(myListener);
   }
 
   private void initCache() {
@@ -153,6 +139,22 @@ public class FastNodeFinder {
       myNodesAll.put(concept, list);
     }
     return list;
+  }
+
+  private class MySModelAdapter extends SModelAdapter {
+    public void childAdded(SModelChildEvent event) {
+      buildCache(event.getChild(), new HashSet<AbstractConceptDeclaration>());
+    }
+
+    public void childRemoved(SModelChildEvent event) {
+    }
+
+    public void rootAdded(SModelRootEvent event) {
+      buildCache(event.getRoot(), new HashSet<AbstractConceptDeclaration>());
+    }
+
+    public void rootRemoved(SModelRootEvent event) {
+    }
   }
 }
 
