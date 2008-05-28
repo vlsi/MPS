@@ -60,7 +60,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor 
   @NonNls @NotNull
   public String getName() {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
-      public String calculate() {
+      public String compute() {
         return myFile.getNode().getName();
       }
     });

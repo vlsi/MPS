@@ -68,7 +68,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
   @Nullable
   public VirtualFile findFileByPath(final @NotNull @NonNls String path) {
     return ModelAccess.instance().runReadAction(new Computable<VirtualFile>() {
-      public VirtualFile calculate() {
+      public VirtualFile compute() {
         Pattern p = Pattern.compile("(.*)\\/(.*)");
         Matcher m = p.matcher(path);
         if (m.matches()) {

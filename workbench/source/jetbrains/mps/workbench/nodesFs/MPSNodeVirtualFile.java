@@ -98,7 +98,7 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
 
   public long getTimeStamp() {
     return ModelAccess.instance().runReadAction(new Computable<Long>() {
-      public Long calculate() {
+      public Long compute() {
         return myNode.getModel().getModelDescriptor().lastChangeTime();
       }
     });
