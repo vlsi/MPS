@@ -1,9 +1,7 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorWithContinuation;
 
-import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.concurrent.locks.Lock;
 
@@ -13,6 +11,7 @@ public class ModelAccess {
   private static final ModelAccess ourInstance = new ModelAccess();
 
   private ReentrantReadWriteLock myReadWriteLock = new ReentrantReadWriteLock();
+  private EDTReadExecutor myEDTExecutor = new EDTReadExecutor();
 
   public static ModelAccess instance() {
     return ourInstance;
@@ -66,6 +65,10 @@ public class ModelAccess {
     } else {
       return false;
     }
+  }
+
+  public void runReadInEDT(Runnable r) {
+    myEDTExecutor.invokeInEDT(r);
   }
 
   public<T> T tryRead(Computable<T> c) {

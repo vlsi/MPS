@@ -1,24 +1,20 @@
-package jetbrains.mps.ide.command;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
 
 import javax.swing.SwingUtilities;
 import java.util.Queue;
 import java.util.LinkedList;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 
-class EDTLightweighCommandExecutor extends Thread {
+class EDTReadExecutor extends Thread {
   private static final long MAX_TIME = 100;
 
-  private static final Logger LOG = Logger.getLogger(EDTLightweighCommandExecutor.class); 
+  private static final Logger LOG = Logger.getLogger(EDTReadExecutor.class);
 
   private final Object myLock = new Object();
   private Queue<Runnable> myToExecute = new LinkedList<Runnable>();
 
-  public EDTLightweighCommandExecutor() {
+  public EDTReadExecutor() {
     setDaemon(true);
     start();
   }
@@ -56,7 +52,7 @@ class EDTLightweighCommandExecutor extends Thread {
 
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        CommandProcessor.instance().tryToExecuteLightweightCommand(new Runnable() {
+        ModelAccess.instance().tryRead(new Runnable() {
           public void run() {
             long start = System.currentTimeMillis();
             while (true) {
