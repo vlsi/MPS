@@ -1,6 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
 import com.intellij.openapi.actionSystem.DataProvider;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRuleUtil;
 import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRule_Action;
 import jetbrains.mps.helgins.inference.IErrorReporter;
@@ -625,8 +626,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public String getToolTipText(final MouseEvent event) {
-    return CommandProcessor.instance().tryToExecuteLightweightCommand(new Calculable<String>() {
-      public String calculate() {
+    return ModelAccess.instance().tryRead(new Computable<String>() {
+      public String compute() {
         EditorCell cell = myRootCell.findCell(event.getX(), event.getY());
         if (cell == null) {
           return null;
