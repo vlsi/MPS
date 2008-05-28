@@ -12,15 +12,14 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.projectLanguage.structure.BaseGeneratorConfiguration;
 import jetbrains.mps.projectLanguage.structure.LanguageGeneratorConfiguration;
 import jetbrains.mps.projectLanguage.structure.SolutionGeneratorConfiguration;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
+
+import com.intellij.openapi.util.Computable;
 
 public class GenerateAllModelsInModuleAction extends MPSAction {
   private boolean myRegenerate;
@@ -64,8 +63,8 @@ public class GenerateAllModelsInModuleAction extends MPSAction {
     }
 
     final IModule module1 = module;
-    GenParameters params = CommandProcessor.instance().executeLightweightCommand(new Calculable<GenParameters>() {
-      public GenParameters calculate() {
+    GenParameters params = ModelAccess.instance().runReadAction(new Computable<GenParameters>() {
+      public GenParameters compute() {
         SModel tmp = new SModel();
         tmp.setLoading(true);
 

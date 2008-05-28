@@ -11,6 +11,7 @@ import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.JSplitPaneWithoutBorders;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.logging.Logger;
@@ -25,6 +26,7 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Computable;
 import org.jetbrains.annotations.NotNull;
 
 public abstract class BaseNodeDialog extends BaseDialog {
@@ -80,8 +82,8 @@ public abstract class BaseNodeDialog extends BaseDialog {
   }
 
   private boolean validateNode() {
-    return CommandProcessor.instance().executeLightweightCommand(new Calculable<Boolean>() {
-      public Boolean calculate() {
+    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      public Boolean compute() {
         String errorString = getErrorString();
         if (errorString != null) {
           setErrorText(errorString);

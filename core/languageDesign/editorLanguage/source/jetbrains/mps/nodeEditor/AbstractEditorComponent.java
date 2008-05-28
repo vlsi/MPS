@@ -492,8 +492,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
 
   public List<SNode> getSelectedNodes() {
-    return CommandProcessor.instance().executeLightweightCommand(new Calculable<List<SNode>>() {
-      public List<SNode> calculate() {
+    return ModelAccess.instance().runReadAction(new Computable<List<SNode>>() {
+      public List<SNode> compute() {
         if (getNodeRangeSelection().isActive()) {
           return getNodeRangeSelection().getNodes();
         } else {
@@ -861,8 +861,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private ActionContext createActionContext() {
-    return CommandProcessor.instance().executeLightweightCommand(new Calculable<ActionContext>() {
-      public ActionContext calculate() {
+    return ModelAccess.instance().runReadAction(new Computable<ActionContext>() {
+      public ActionContext compute() {
         ActionContext context = new ActionContext(getOperationContext());
         EditorCell cell_ = getSelectedCell();
         if (cell_ != null) {
@@ -1940,7 +1940,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           TypeChecker.getInstance().checkRoot(sNode.getContainingRoot(), true);
           rebuildEditorContent();
         }
-      });.;
+      });
       keyEvent.consume();
       return;
     }
@@ -2230,8 +2230,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     if (cls == SNode.class) return (T) getRootCell().getSNode();
     if (cls == SModelDescriptor.class && get(SNode.class) != null) {
-      return CommandProcessor.instance().executeLightweightCommand(new Calculable<T>() {
-        public T calculate() {
+      return ModelAccess.instance().runReadAction(new Computable<T>() {
+        public T compute() {
           return (T) get(SNode.class).getModel().getModelDescriptor();
         }
       });
@@ -2249,8 +2249,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
 
     if (dataId.equals(MPSDataKeys.SMODEL_DESCRIPTOR.getName())) {
-      return CommandProcessor.instance().executeLightweightCommand(new Calculable() {
-        public Object calculate() {
+      return ModelAccess.instance().runReadAction(new Computable() {
+        public Object compute() {
           return getRootCell().getSNode().getModel().getModelDescriptor();
         }
       });      

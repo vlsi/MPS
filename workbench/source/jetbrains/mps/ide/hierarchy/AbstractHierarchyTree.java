@@ -9,6 +9,7 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Calculable;
@@ -18,6 +19,8 @@ import javax.swing.Icon;
 import javax.swing.JPopupMenu;
 import java.util.ArrayList;
 import java.util.Set;
+
+import com.intellij.openapi.util.Computable;
 
 /**
  * Created by IntelliJ IDEA.
@@ -83,8 +86,8 @@ public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPST
 
   protected MPSTreeNode rebuild() {
     if (myHierarchyNode == null) return new RootTextTreeNode(noNodeString());
-    return CommandProcessor.instance().executeLightweightCommand(new Calculable<MPSTreeNode>() {
-      public MPSTreeNode calculate() {
+    return ModelAccess.instance().runReadAction(new Computable<MPSTreeNode>() {
+      public MPSTreeNode compute() {
         return rebuildParentHierarchy();
       }
     });

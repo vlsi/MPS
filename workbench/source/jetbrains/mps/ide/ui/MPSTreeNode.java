@@ -4,6 +4,7 @@ import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.Nullable;
@@ -20,6 +21,8 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
+import com.intellij.openapi.util.Computable;
 
 /**
  * @author Kostik
@@ -95,8 +98,8 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     if (keyEvent.isAltDown() && (
       (!SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_INSERT) ||
         (SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_HELP))) {
-      JPopupMenu popupMenu = CommandProcessor.instance().executeLightweightCommand(new Calculable<JPopupMenu>() {
-        public JPopupMenu calculate() {
+      JPopupMenu popupMenu = ModelAccess.instance().runReadAction(new Computable<JPopupMenu>() {
+        public JPopupMenu compute() {
           return getQuickCreatePopupMenu();
         }
       });

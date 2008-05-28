@@ -4,6 +4,7 @@ import com.intellij.ide.util.NavigationItemListCellRenderer;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.util.SystemInfo;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
@@ -70,8 +71,8 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
   }
 
   public String[] getNames(final boolean checkBoxState) {
-    return CommandProcessor.instance().executeLightweightCommand(new Calculable<String[]>() {
-      public String[] calculate() {
+    return ModelAccess.instance().runReadAction(new Computable<String[]>() {
+      public String[] compute() {
         //return doGetNames(checkBoxState);
         ensureLoaded();
         Map<String, List<NavigationItem>> namesMap = checkBoxState ? myGlobalNamesCache : myProjectNamesCache;
@@ -81,8 +82,8 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
   }
 
   public Object[] getElementsByName(final String name, final boolean checkBoxState, final String pattern) {
-    return CommandProcessor.instance().executeLightweightCommand(new Calculable<Object[]>() {
-      public Object[] calculate() {
+    return ModelAccess.instance().runReadAction(new Computable<Object[]>() {
+      public Object[] compute() {
         //return doGetElementsByName(name, checkBoxState, pattern);
         Map<String, List<NavigationItem>> namesMap = checkBoxState ? myGlobalNamesCache : myProjectNamesCache;
         return namesMap.get(name).toArray();
@@ -91,16 +92,16 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
   }
 
   public String getFullName(final Object element) {
-    return CommandProcessor.instance().executeLightweightCommand(new Calculable<String>() {
-      public String calculate() {
+    return ModelAccess.instance().runReadAction(new Computable<String>() {
+      public String compute() {
         return doGetFullName(element);
       }
     });
   }
 
   public String getElementName(final Object element) {
-    return CommandProcessor.instance().executeLightweightCommand(new Calculable<String>() {
-      public String calculate() {
+    return ModelAccess.instance().runReadAction(new Computable<String>() {
+      public String compute() {
         return ((NavigationItem) element).getName();
       }
     });

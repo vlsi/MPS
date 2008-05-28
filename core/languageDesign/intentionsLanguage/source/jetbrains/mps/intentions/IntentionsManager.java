@@ -22,6 +22,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.util.Computable;
 
 
 @State(
@@ -79,8 +80,8 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       if (node.isInstanceOfConcept(conceptFQName)) {
         for (final Intention intention : Collections.unmodifiableSet(myIntentions.get(conceptFQName))) {
           try {
-            boolean isApplicable = CommandProcessor.instance().executeLightweightCommand(new Calculable<Boolean>() {
-              public Boolean calculate() {
+            boolean isApplicable = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+              public Boolean compute() {
                 return intention.isApplicable(node, context);
               }
             });

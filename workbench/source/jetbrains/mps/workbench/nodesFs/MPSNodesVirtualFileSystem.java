@@ -6,6 +6,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileListener;
 import com.intellij.openapi.vfs.DeprecatedVirtualFileSystem;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.util.Computable;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -34,8 +35,8 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
   private WeakHashMap<SNode, MPSNodeVirtualFile> myVirtualFiles = new WeakHashMap<SNode, MPSNodeVirtualFile>();
 
   public MPSNodeVirtualFile getFileFor(final SNode node) {
-    return CommandProcessor.instance().executeLightweightCommand(new Calculable<MPSNodeVirtualFile>() {
-      public MPSNodeVirtualFile calculate() {
+    return ModelAccess.instance().runReadAction(new Computable<MPSNodeVirtualFile>() {
+      public MPSNodeVirtualFile compute() {
         if (myVirtualFiles.containsKey(node)) {
           return myVirtualFiles.get(node);
         }
@@ -66,7 +67,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
 
   @Nullable
   public VirtualFile findFileByPath(final @NotNull @NonNls String path) {
-    return CommandProcessor.instance().executeLightweightCommand(new Calculable<VirtualFile>() {
+    return ModelAccess.instance().runReadAction(new Computable<VirtualFile>() {
       public VirtualFile calculate() {
         Pattern p = Pattern.compile("(.*)\\/(.*)");
         Matcher m = p.matcher(path);

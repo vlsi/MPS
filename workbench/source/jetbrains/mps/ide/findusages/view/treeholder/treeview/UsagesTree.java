@@ -30,6 +30,8 @@ import javax.swing.tree.TreePath;
 import java.awt.event.*;
 import java.util.*;
 
+import com.intellij.openapi.util.Computable;
+
 public abstract class UsagesTree extends MPSTree {
   private static final String COMMAND_OPEN_NODE_IN_PROJECT = "open_node_in_project";
   private static final String COMMAND_OPEN_NODE_IN_TREE = "open_node_in_tree";
@@ -195,8 +197,8 @@ public abstract class UsagesTree extends MPSTree {
   }
 
   protected UsagesTreeNode rebuild() {
-    return CommandProcessor.instance().executeLightweightCommand(new Calculable<UsagesTreeNode>() {
-      public UsagesTreeNode calculate() {
+    return ModelAccess.instance().runReadAction(new Computable<UsagesTreeNode>() {
+      public UsagesTreeNode compute() {
         UsagesTreeNode root = new UsagesTreeNode("");
         if (myShowSearchedNodes) {
           HashSet<PathItemRole> searchedNodesPathProvider = new HashSet<PathItemRole>();

@@ -17,6 +17,7 @@ import java.util.*;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.util.Computable;
 
 public class FindersManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(FindersManager.class);
@@ -54,8 +55,8 @@ public class FindersManager implements ApplicationComponent {
 
   public Set<GeneratedFinder> getAvailableFinders(final SNode node) {
     return
-      (Set<GeneratedFinder>) CommandProcessor.instance().executeLightweightCommand(new Calculable<Object>() {
-        public Object calculate() {
+      (Set<GeneratedFinder>) ModelAccess.instance().runReadAction(new Computable<Object>() {
+        public Object compute() {
           Set<GeneratedFinder> result = new HashSet<GeneratedFinder>();
 
           for (String conceptFQName : myFinders.keySet()) {

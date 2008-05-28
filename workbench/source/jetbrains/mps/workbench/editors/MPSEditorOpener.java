@@ -5,6 +5,7 @@ import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Computable;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.*;
@@ -153,8 +154,8 @@ public class MPSEditorOpener implements ProjectComponent {
   }
 
   public IEditor openNode(final SNode node) {
-    ModuleContext context = CommandProcessor.instance().executeLightweightCommand(new Calculable<ModuleContext>() {
-      public ModuleContext calculate() {
+    ModuleContext context = ModelAccess.instance().runReadAction(new Computable<ModuleContext>() {
+      public ModuleContext compute() {
         return ModuleContext.create(node, myProject.getComponent(MPSProjectHolder.class).getMPSProject());
       }
     });
@@ -162,8 +163,8 @@ public class MPSEditorOpener implements ProjectComponent {
   }
 
   public IEditor openNode(final SNode node, final IOperationContext context) {
-    return CommandProcessor.instance().executeLightweightCommand(new Calculable<IEditor>() {
-      public IEditor calculate() {
+    return ModelAccess.instance().runReadAction(new Computable<IEditor>() {
+      public IEditor compute() {
         final IEditor[] result = new IEditor[1];
         final Project ideaProject = context.getComponent(Project.class);
         com.intellij.openapi.command.CommandProcessor.getInstance().executeCommand(ideaProject, new Runnable() {

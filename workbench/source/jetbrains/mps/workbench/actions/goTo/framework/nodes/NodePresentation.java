@@ -3,10 +3,13 @@ package jetbrains.mps.workbench.actions.goTo.framework.nodes;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.workbench.actions.goTo.framework.base.BasePresentation;
 
 import javax.swing.Icon;
+
+import com.intellij.openapi.util.Computable;
 
 public class NodePresentation extends BasePresentation {
   private SNode myNode;
@@ -18,8 +21,8 @@ public class NodePresentation extends BasePresentation {
 
   public String getModelName() {
     if (myModelName == null) {
-      myModelName = CommandProcessor.instance().executeLightweightCommand(new Calculable<String>() {
-        public String calculate() {
+      myModelName = ModelAccess.instance().runReadAction(new Computable<String>() {
+        public String compute() {
           return myNode.getModel().getModelDescriptor().getModelUID().toString();
         }
       });

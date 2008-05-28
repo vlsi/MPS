@@ -1,6 +1,7 @@
 package jetbrains.mps.workbench.editors;
 
 import com.intellij.openapi.util.UserDataHolderBase;
+import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorState;
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
@@ -58,7 +59,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor 
 
   @NonNls @NotNull
   public String getName() {
-    return CommandProcessor.instance().executeLightweightCommand(new Calculable<String>() {
+    return ModelAccess.instance().runReadAction(new Computable<String>() {
       public String calculate() {
         return myFile.getNode().getName();
       }

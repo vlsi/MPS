@@ -20,6 +20,8 @@ import java.awt.event.*;
 import java.util.*;
 import java.util.List;
 
+import com.intellij.openapi.util.Computable;
+
 public abstract class MPSTree extends JTree {
   public static final String MPS_TREE = "mps-tree";
   public static final String PATH = "path";
@@ -135,16 +137,16 @@ public abstract class MPSTree extends JTree {
 
           for (TreePath p : paths) {
             final MPSTreeNode lastNode = (MPSTreeNode) p.getLastPathComponent();
-            final JPopupMenu menu = CommandProcessor.instance().executeLightweightCommand(new Calculable<JPopupMenu>() {
-              public JPopupMenu calculate() {
+            final JPopupMenu menu = ModelAccess.instance().runReadAction(new Computable<JPopupMenu>() {
+              public JPopupMenu compute() {
                 return lastNode.getPopupMenu();
               }
             });
 
             if (menu == null) return;
 
-            JMenuItem item = CommandProcessor.instance().executeLightweightCommand(new Calculable<JMenuItem>() {
-              public JMenuItem calculate() {
+            JMenuItem item = ModelAccess.instance().runReadAction(new Computable<JMenuItem>() {
+              public JMenuItem compute() {
                 return findMenuItem(eventKeyStroke, menu);
               }
             });
@@ -342,8 +344,8 @@ public abstract class MPSTree extends JTree {
     TreePath path = getPathForLocation(x, y);
     if (path != null && path.getLastPathComponent() instanceof MPSTreeNode) {
       final MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
-      JPopupMenu menu = CommandProcessor.instance().executeLightweightCommand(new Calculable<JPopupMenu>() {
-        public JPopupMenu calculate() {
+      JPopupMenu menu = ModelAccess.instance().runReadAction(new Computable<JPopupMenu>() {
+        public JPopupMenu compute() {
           return node.getPopupMenu();
         }
       });

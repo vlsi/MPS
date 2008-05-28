@@ -26,6 +26,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.awt.image.BufferedImage;
 
+import com.intellij.openapi.util.Computable;
+
 
 /**
  * @author Kostik
@@ -37,8 +39,8 @@ public class IconManager {
   private static Map<String, Icon> ourPathsToIcons = new HashMap<String, Icon>();
 
   public static Icon getIconFor(final SNode node) {
-    return CommandProcessor.instance().executeLightweightCommand(new Calculable<Icon>() {
-      public Icon calculate() {
+    return ModelAccess.instance().runReadAction(new Computable<Icon>() {
+      public Icon compute() {
         if (node == null) return Icons.DEFAULT_ICON;
 
         if (!(node.getConceptDeclarationAdapter() instanceof ConceptDeclaration)) {

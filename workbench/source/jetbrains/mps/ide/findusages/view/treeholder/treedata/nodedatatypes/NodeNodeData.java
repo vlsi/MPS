@@ -12,6 +12,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRootEvent;
@@ -20,6 +21,8 @@ import org.jdom.Element;
 
 import javax.swing.Icon;
 import java.util.List;
+
+import com.intellij.openapi.util.Computable;
 
 public class NodeNodeData extends BaseNodeData {
   private static Logger LOG = Logger.getLogger(NodeNodeData.class);
@@ -106,8 +109,8 @@ public class NodeNodeData extends BaseNodeData {
 
   public static String snodeRepresentation(final SNode node) {
     return
-      CommandProcessor.instance().executeLightweightCommand(new Calculable<String>() {
-        public String calculate() {
+      ModelAccess.instance().runReadAction(new Computable<String>() {
+        public String compute() {
           if (node.getName() != null) {
             return node.getName();
           } else {
@@ -118,8 +121,8 @@ public class NodeNodeData extends BaseNodeData {
   }
 
   public static String nodeAdditionalInfo(final SNode node) {
-    return CommandProcessor.instance().executeLightweightCommand(new Calculable<String>() {
-      public String calculate() {
+    return ModelAccess.instance().runReadAction(new Computable<String>() {
+      public String compute() {
         if (node == node.getContainingRoot()) return "";
         return "role: " +
           "<i>" +

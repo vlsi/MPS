@@ -20,6 +20,8 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.Icon;
 import java.util.*;
 
+import com.intellij.openapi.util.Computable;
+
 /**
  * @author Kostik
  */
@@ -87,8 +89,8 @@ public class CreateRootNodeGroup extends ActionGroup {
   private MPSAction newRootNodeAction(final SNodePointer nodeConcept, final SModelDescriptor modelDescriptor) {
     return new MPSAction(NodePresentationUtil.matchingText(nodeConcept.getNode())) {
       public Icon getIcon() {
-        return CommandProcessor.instance().executeLightweightCommand(new Calculable<Icon>() {
-          public Icon calculate() {
+        return ModelAccess.instance().runReadAction(new Computable<Icon>() {
+          public Icon compute() {
             return IconManager.getIconForConceptFQName(NameUtil.nodeFQName(nodeConcept.getNode()));
           }
         });

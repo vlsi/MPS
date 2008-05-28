@@ -13,8 +13,10 @@ import jetbrains.mps.ide.progress.TaskProgressSettings;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Calculable;
 import org.jdom.Element;
+import com.intellij.openapi.util.Computable;
 
 public class FinderNode extends BaseLeaf {
   private static final String FINDER = "finder";
@@ -47,8 +49,8 @@ public class FinderNode extends BaseLeaf {
   public SearchResults doGetResults(final SearchQuery query, final IAdaptiveProgressMonitor monitor) {
     monitor.addText(getTaskName() + " started");
     monitor.startLeafTask(getTaskName(), getTaskKind());
-    final SearchResults results = CommandProcessor.instance().executeLightweightCommand(new Calculable<SearchResults>() {
-      public SearchResults calculate() {
+    final SearchResults results = ModelAccess.instance().runReadAction(new Computable<SearchResults>() {
+      public SearchResults compute() {
         try {
           return myFinder.find(query, monitor);
         } catch (Throwable t) {
