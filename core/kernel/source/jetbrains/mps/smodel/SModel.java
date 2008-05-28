@@ -524,7 +524,7 @@ public class SModel implements Iterable<SNode> {
 
   public void addLanguage_internal(@NotNull String languageNamespace) {
     if (!myLanguages.contains(languageNamespace)) {
-      myLanguages.add(languageNamespace);
+      myLanguages.add(InternUtil.intern(languageNamespace));
       fireLanguageAddedEvent(languageNamespace);
     }
   }
