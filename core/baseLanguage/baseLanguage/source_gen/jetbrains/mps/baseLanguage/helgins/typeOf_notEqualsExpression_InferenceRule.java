@@ -15,7 +15,7 @@ public class typeOf_notEqualsExpression_InferenceRule implements InferenceRule_R
 
   public void applyRule(final SNode notEqExpr) {
     TypeChecker.getInstance().getRuntimeSupport().createComparableEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(notEqExpr, "leftExpression", true), "jetbrains.mps.baseLanguage.helgins", "1175606239715", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(notEqExpr, "rightExpression", true), "jetbrains.mps.baseLanguage.helgins", "1175606261733", true), notEqExpr, null, "jetbrains.mps.baseLanguage.helgins", "1175606237774");
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_14().createNode(), notEqExpr, "jetbrains.mps.baseLanguage.helgins", "1175606302946");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_13().createNode(), notEqExpr, "jetbrains.mps.baseLanguage.helgins", "1175606302946");
   }
 
   public String getApplicableConceptFQName() {

@@ -33,13 +33,11 @@ public class BaseLanguageUtil {
   }
 
   public static ClassConcept getSuperclass(ClassConcept subClass) {
-    // new
     ClassifierType superclass = subClass.getSuperclass();
     if (superclass != null) {
       return (ClassConcept) superclass.getClassifier();
     }
-    // old
-    return subClass.getExtendedClass();
+    return null;
   }
 
   public static ClassifierType createObjectClassType(SModel model, IScope scope) {

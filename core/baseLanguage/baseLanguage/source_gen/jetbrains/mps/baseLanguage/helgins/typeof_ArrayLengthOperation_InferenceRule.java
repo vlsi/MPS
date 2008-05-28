@@ -13,7 +13,7 @@ public class typeof_ArrayLengthOperation_InferenceRule implements InferenceRule_
   }
 
   public void applyRule(final SNode lengthOperation) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(lengthOperation, "jetbrains.mps.baseLanguage.helgins", "1208891064552", true), new QuotationClass_94().createNode(), lengthOperation, null, "jetbrains.mps.baseLanguage.helgins", "1208891068843");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(lengthOperation, "jetbrains.mps.baseLanguage.helgins", "1208891064552", true), new QuotationClass_93().createNode(), lengthOperation, null, "jetbrains.mps.baseLanguage.helgins", "1208891068843");
   }
 
   public String getApplicableConceptFQName() {

@@ -30,7 +30,7 @@ public class FieldReferenceOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell create_fieldDeclarationRefCell20973_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new FieldReferenceOperation_Editor._Inline21());
+    provider.setAuxiliaryCellProvider(new FieldReferenceOperation_Editor._Inline20());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_fieldDeclarationRefCell20973_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -57,9 +57,9 @@ public class FieldReferenceOperation_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline21 extends AbstractCellProvider {
+  public static class _Inline20 extends AbstractCellProvider {
 
-    public _Inline21() {
+    public _Inline20() {
       super();
     }
 

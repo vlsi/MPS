@@ -14,7 +14,7 @@ public class typeof_ElsifClause_InferenceRule implements InferenceRule_Runtime {
   }
 
   public void applyRule(final SNode elsifClause) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(elsifClause, "condition", true), "jetbrains.mps.baseLanguage.helgins", "1206069320266", true), new QuotationClass_83().createNode(), SLinkOperations.getTarget(elsifClause, "condition", true), "condition should be boolean", "jetbrains.mps.baseLanguage.helgins", "1206069320261", false);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(elsifClause, "condition", true), "jetbrains.mps.baseLanguage.helgins", "1206069320266", true), new QuotationClass_82().createNode(), SLinkOperations.getTarget(elsifClause, "condition", true), "condition should be boolean", "jetbrains.mps.baseLanguage.helgins", "1206069320261", false);
   }
 
   public String getApplicableConceptFQName() {

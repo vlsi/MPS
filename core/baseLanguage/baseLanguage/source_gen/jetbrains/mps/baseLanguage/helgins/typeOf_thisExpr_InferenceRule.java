@@ -27,9 +27,9 @@ public class typeOf_thisExpr_InferenceRule implements InferenceRule_Runtime {
     }
     List<SNode> typeVarRefs = new ArrayList<SNode>();
     for(SNode typeVariableDeclaration : SLinkOperations.getTargets(classConcept, "typeVariableDeclaration", true)) {
-      ListSequence.fromList(typeVarRefs).addElement(new QuotationClass_96().createNode(typeVariableDeclaration));
+      ListSequence.fromList(typeVarRefs).addElement(new QuotationClass_95().createNode(typeVariableDeclaration));
     }
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(thisExpr, "jetbrains.mps.baseLanguage.helgins", "1208466580607", true), new QuotationClass_17().createNode(typeVarRefs, classConcept), thisExpr, null, "jetbrains.mps.baseLanguage.helgins", "1208466580605");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(thisExpr, "jetbrains.mps.baseLanguage.helgins", "1208466580607", true), new QuotationClass_16().createNode(typeVarRefs, classConcept), thisExpr, null, "jetbrains.mps.baseLanguage.helgins", "1208466580605");
   }
 
   public String getApplicableConceptFQName() {

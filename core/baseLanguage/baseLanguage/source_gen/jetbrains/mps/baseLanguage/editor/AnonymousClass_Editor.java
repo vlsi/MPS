@@ -524,7 +524,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 
   public EditorCell create_classifierRefCell15389_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new AnonymousClass_Editor._Inline15());
+    provider.setAuxiliaryCellProvider(new AnonymousClass_Editor._Inline14());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_classifierRefCell15389_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -580,9 +580,9 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline15 extends AbstractCellProvider {
+  public static class _Inline14 extends AbstractCellProvider {
 
-    public _Inline15() {
+    public _Inline14() {
       super();
     }
 

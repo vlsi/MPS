@@ -130,7 +130,7 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell create_instanceMethodDeclarationRefCell18816_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new InstanceMethodCallOperation_Editor._Inline23());
+    provider.setAuxiliaryCellProvider(new InstanceMethodCallOperation_Editor._Inline22());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_instanceMethodDeclarationRefCell18816_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -157,9 +157,9 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline23 extends AbstractCellProvider {
+  public static class _Inline22 extends AbstractCellProvider {
 
-    public _Inline23() {
+    public _Inline22() {
       super();
     }
 

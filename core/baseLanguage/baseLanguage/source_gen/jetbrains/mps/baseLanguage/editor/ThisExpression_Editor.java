@@ -130,7 +130,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell create_classConceptRefCell2695_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new ThisExpression_Editor._Inline18());
+    provider.setAuxiliaryCellProvider(new ThisExpression_Editor._Inline17());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_classConceptRefCell2695_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -157,9 +157,9 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline18 extends AbstractCellProvider {
+  public static class _Inline17 extends AbstractCellProvider {
 
-    public _Inline18() {
+    public _Inline17() {
       super();
     }
 

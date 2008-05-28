@@ -17,7 +17,7 @@ public class typeof_ArrayCreator_InferenceRule implements InferenceRule_Runtime 
   public void applyRule(final SNode arrayCreator) {
     SNode type = SLinkOperations.getTarget(arrayCreator, "componentType", true);
     for(int i = 0 ; i < ListSequence.fromList(SLinkOperations.getTargets(arrayCreator, "dimensionExpression", true)).count() ; i = i + 1) {
-      type = new QuotationClass_95().createNode(type);
+      type = new QuotationClass_94().createNode(type);
     }
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(arrayCreator, "jetbrains.mps.baseLanguage.helgins", "1209402739197", true), type, arrayCreator, null, "jetbrains.mps.baseLanguage.helgins", "1209402744151");
   }

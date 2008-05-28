@@ -153,7 +153,7 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
 
   public EditorCell create_annotationRefCell15912_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new AnnotationInstance_Editor._Inline19());
+    provider.setAuxiliaryCellProvider(new AnnotationInstance_Editor._Inline18());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_annotationRefCell15912_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -180,9 +180,9 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline19 extends AbstractCellProvider {
+  public static class _Inline18 extends AbstractCellProvider {
 
-    public _Inline19() {
+    public _Inline18() {
       super();
     }
 

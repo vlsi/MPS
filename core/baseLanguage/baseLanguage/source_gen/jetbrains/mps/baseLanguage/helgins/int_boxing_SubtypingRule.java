@@ -13,7 +13,7 @@ public class int_boxing_SubtypingRule extends SubtypingRule_Runtime implements I
   }
 
   public SNode getSubOrSuperType(SNode integerType) {
-    return new QuotationClass_58().createNode();
+    return new QuotationClass_57().createNode();
   }
 
   public String getApplicableConceptFQName() {

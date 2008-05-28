@@ -133,12 +133,6 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1081236700938" resolveInfo="StaticMethodDeclaration" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1069939147256">
-      <property name="targetCardinality" value="0..n" />
-      <property name="sourceCardinality" value="0..1" />
-      <property name="role" value="extendedClass" />
-      <link role="target" targetNodeId="1068390468198" resolveInfo="ClassConcept" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1165602531693">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="superclass" />

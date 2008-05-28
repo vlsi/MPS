@@ -14,7 +14,7 @@ public class short_unboxing_SubtypingRule extends SubtypingRule_Runtime implemen
   }
 
   public SNode getSubOrSuperType(SNode shortType) {
-    return new QuotationClass_68().createNode();
+    return new QuotationClass_67().createNode();
   }
 
   public String getApplicableConceptFQName() {
