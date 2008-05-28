@@ -122,22 +122,18 @@ public abstract class UsagesView implements IExternalizeable {
     run();
   }
 
-  public void regenerate() {
+  private void regenerate() {
     final MPSProject project = myProject;
     if (project == null) {
       return;
     }
 
-    new Thread() {
-      public void run() {
-        GeneratorManager manager = project.getComponentSafe(GeneratorManager.class);
-        List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
-        for (SModelDescriptor modelDescriptor : myTreeHolder.getIncludedModels()) {
-          models.add(modelDescriptor);
-        }
-        manager.generateModelsFromDifferentModules(project.createOperationContext(), models, IGenerationType.FILES);
-      }
-    }.start();
+    GeneratorManager manager = project.getComponentSafe(GeneratorManager.class);
+    List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
+    for (SModelDescriptor modelDescriptor : myTreeHolder.getIncludedModels()) {
+      models.add(modelDescriptor);
+    }
+    manager.generateModelsFromDifferentModules(project.createOperationContext(), models, IGenerationType.FILES);
   }
 
   public void goToNext() {
