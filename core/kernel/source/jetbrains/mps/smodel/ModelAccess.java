@@ -47,13 +47,12 @@ public class ModelAccess {
   }
 
   public <T> T runReadAction(final Computable<T> c) {
-    final Object[] result = new Object[1];
-    runReadAction(new Runnable() {
-      public void run() {
-        result[0] = c.compute();
-      }
-    });
-    return (T) result[0];
+    getReadLock().lock();
+    try {
+      return c.compute();
+    } finally {
+      getReadLock().unlock();
+    }
   }
 
   public boolean tryRead(Runnable r) {
@@ -69,6 +68,17 @@ public class ModelAccess {
     }
   }
 
+  public<T> T tryRead(Computable<T> c) {
+    if (getReadLock().tryLock()) {
+      try {
+        return c.compute();
+      } finally {
+        getReadLock().unlock();
+      }
+    } else {
+      return null;
+    }
+  }
 
   public void runWriteAction(Runnable r) {
     getWriteLock().lock();
@@ -80,13 +90,12 @@ public class ModelAccess {
   }
 
   public <T> T runWriteAction(final Computable<T> c) {
-    final Object[] result = new Object[1];
-    runWriteAction(new Runnable() {
-      public void run() {
-        result[0] = c.compute();
-      }
-    });
-    return (T) result[0];
+    getWriteLock().lock();
+    try {
+      return c.compute();
+    } finally {
+      getWriteLock().unlock();
+    }
   }
 
   public boolean tryWrite(Runnable r) {
@@ -102,7 +111,17 @@ public class ModelAccess {
     }
   }
 
-
+  public<T> T tryWrite(Computable<T> c) {
+    if (getWriteLock().tryLock()) {
+      try {
+        return c.compute();
+      } finally {
+        getWriteLock().unlock();
+      }
+    } else {
+      return null;
+    }
+  }
 
   public void checkWriteAccess() {
     if (!myReadWriteLock.isWriteLockedByCurrentThread()) {
