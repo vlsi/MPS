@@ -16,6 +16,7 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="11" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -147,9 +148,8 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1138412002490">
     <property name="package" value="operation" />
     <link role="conceptDeclaration" targetNodeId="1.1138411891628" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Error" id="1138412005946">
-      <property name="drawBorder" value="false" />
-      <property name="text" value="&lt;choose operaion&gt;" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1212009058728">
+      <link role="editorComponent" targetNodeId="1206480334645" resolveInfo="ReplaceableAlias_Comp" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1138661965229">
@@ -2504,14 +2504,40 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.EditorComponentDeclaration" id="1206480334645">
     <property name="name" value="ReplaceableAlias_Comp" />
     <link role="conceptDeclaration" targetNodeId="1.1138411891628" resolveInfo="SNodeOperation" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1206484954170">
-      <property name="fontStyle" value="BOLD" />
-      <property name="noTargetText" value="&lt;no alias&gt;" />
-      <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
-      <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1206484954171">
-        <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1206484954172">
-          <link role="replacementConcept" targetNodeId="1.1138411891628" resolveInfo="SNodeOperation" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Alternation" id="1212008926114">
+      <property name="vertical" value="true" />
+      <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1212008926115">
+        <property name="fontStyle" value="BOLD" />
+        <property name="noTargetText" value="&lt;no alias&gt;" />
+        <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1212008926116">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1212008926117">
+            <link role="replacementConcept" targetNodeId="1.1138411891628" resolveInfo="SNodeOperation" />
+          </node>
         </node>
+      </node>
+      <node role="alternationCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1212008926118">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212008926119">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212008996929">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1212009032940">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212009032941">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212009032942">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1212009032943" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetConceptOperation" id="1212009032944" />
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsExactlyOperation" id="1212009032945">
+                  <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1212009032946">
+                    <link role="conceptDeclaration" targetNodeId="1.1138411891628" resolveInfo="SNodeOperation" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Error" id="1212008965862">
+        <property name="drawBorder" value="false" />
+        <property name="text" value="&lt;choose operaion&gt;" />
       </node>
     </node>
   </node>

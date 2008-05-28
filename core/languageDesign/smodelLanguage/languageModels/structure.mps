@@ -29,12 +29,16 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <maxImportIndex value="6" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <maxImportIndex value="7" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="5" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <import index="6" modelUID="jetbrains.mps.closures.structure" version="0" />
+  <import index="7" modelUID="java.lang@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1138055754698">
     <property name="name" value="SNodeType" />
     <link role="extends" targetNodeId="2.1068431790189" />
@@ -2100,6 +2104,24 @@
     <property name="package" value="command" />
     <property name="name" value="CommandClosureLiteral" />
     <link role="extends" targetNodeId="6.1199569711397" resolveInfo="ClosureLiteral" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1212008292747">
+    <property name="package" value="operation.model" />
+    <property name="name" value="Model_GetLongNameOperation" />
+    <link role="extends" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1212009559902">
+      <link role="conceptLinkDeclaration" targetNodeId="1179351420610" resolveInfo="returnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212009597217">
+        <link role="classifier" targetNodeId="7.~String" resolveInfo="String" />
+      </node>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1212008780883">
+      <property name="value" value="name" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1212008780884">
+      <link role="conceptPropertyDeclaration" targetNodeId="1143235288634" resolveInfo="applicable_to_model" />
+    </node>
   </node>
 </model>
 

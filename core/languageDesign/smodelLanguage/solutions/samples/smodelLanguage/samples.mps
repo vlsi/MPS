@@ -18,6 +18,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="30" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="3" modelUID="java.lang@java_stub" version="-1" />
@@ -3465,6 +3466,31 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1171313827134">
     <property name="name" value="Model" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1212009456494">
+      <property name="name" value="model_long_name" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1212009456495" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1212009456496" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212009456497">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1212009674217">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1212009674218">
+            <property name="name" value="name" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212009674219">
+              <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212009674220">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1212009674221">
+                <link role="variableDeclaration" targetNodeId="1212009478202" resolveInfo="model" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Model_GetLongNameOperation" id="1212009674222" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1212009478202">
+        <property name="name" value="model" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SModelType" id="1212009478203" />
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1171315492760">
       <property name="name" value="new_node_1" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1171315527256">

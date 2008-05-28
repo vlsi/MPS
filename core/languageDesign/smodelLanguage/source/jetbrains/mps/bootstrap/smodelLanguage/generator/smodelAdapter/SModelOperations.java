@@ -120,4 +120,9 @@ public class SModelOperations {
     }
     return node;
   }
+
+  public static String getModelName(SModel model) {
+    if (model == null) return null;
+    return model.getLongName();
+  }
 }
