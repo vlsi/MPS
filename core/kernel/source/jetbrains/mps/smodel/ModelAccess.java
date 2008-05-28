@@ -46,6 +46,16 @@ public class ModelAccess {
     }
   }
 
+  public <T> T runReadAction(final Computable<T> c) {
+    final Object[] result = new Object[1];
+    runReadAction(new Runnable() {
+      public void run() {
+        result[0] = c.compute();
+      }
+    });
+    return (T) result[0];
+  }
+
   public boolean tryRead(Runnable r) {
     if (getReadLock().tryLock()) {
       try {
@@ -59,15 +69,6 @@ public class ModelAccess {
     }
   }
 
-  public <T> T runReadAction(final Computable<T> c) {
-    final Object[] result = new Object[1];
-    runReadAction(new Runnable() {
-      public void run() {
-        result[0] = c.compute();
-      }
-    });
-    return (T) result[0];
-  }
 
   public void runWriteAction(Runnable r) {
     getWriteLock().lock();
@@ -75,18 +76,6 @@ public class ModelAccess {
       r.run();
     } finally {
       getWriteLock().unlock();
-    }
-  }
-
-  public boolean tryWrite(Runnable r) {
-    if (getWriteLock().tryLock()) {
-      try {
-        r.run();
-      } finally {
-        getWriteLock().unlock();
-      }      
-    } else {
-      return false;
     }
   }
 
@@ -99,6 +88,21 @@ public class ModelAccess {
     });
     return (T) result[0];
   }
+
+  public boolean tryWrite(Runnable r) {
+    if (getWriteLock().tryLock()) {
+      try {
+        r.run();
+      } finally {
+        getWriteLock().unlock();
+      }
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+
 
   public void checkWriteAccess() {
     if (!myReadWriteLock.isWriteLockedByCurrentThread()) {
@@ -115,8 +119,6 @@ public class ModelAccess {
       }
     }
   }
-
-  
 
   static void assertLegalRead(SNode node) {
     if (!CommandProcessor.instance().isInsideCommand()) {
