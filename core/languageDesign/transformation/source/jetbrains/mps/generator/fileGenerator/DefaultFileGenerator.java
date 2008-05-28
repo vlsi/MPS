@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.FileUtil;
 
 import java.io.File;
 import java.io.IOException;
@@ -61,7 +62,8 @@ public abstract class DefaultFileGenerator implements IFileGenerator {
         //ok
       }
     }
-    FileGenerationUtil.writeContent(file, content);
+
+    FileUtil.write(file, content);
     return fileCreated ? file : null;
   }
 

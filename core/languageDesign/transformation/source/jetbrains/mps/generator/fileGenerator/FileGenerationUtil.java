@@ -136,13 +136,4 @@ public class FileGenerationUtil {
       }
     }
   }
-
-  public static void writeContent(File file, String content) throws IOException {
-    Writer writer = new FileWriter(file);
-    try {
-      writer.write(content);
-    } finally {
-      writer.close();
-    }
-  }
 }
