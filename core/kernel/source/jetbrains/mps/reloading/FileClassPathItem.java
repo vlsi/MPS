@@ -79,7 +79,12 @@ public class FileClassPathItem extends AbstractClassPathItem {
       buildCacheFor(namespace);
     }
 
-    return Collections.unmodifiableSet(myAvailableClassesCache.get(namespace));
+    Set<String> result = myAvailableClassesCache.get(namespace);
+    if (result == null) {
+      return Collections.emptySet();
+    }
+
+    return Collections.unmodifiableSet(result);
   }
 
   @NotNull
@@ -88,7 +93,12 @@ public class FileClassPathItem extends AbstractClassPathItem {
       buildCacheFor(namespace);
     }
 
-    return Collections.unmodifiableSet(mySubpackagesCache.get(namespace));
+    Set<String> result = mySubpackagesCache.get(namespace);
+    if (result == null) {
+      return Collections.emptySet();
+    }
+
+    return Collections.unmodifiableSet(result);
   }
 
   private void buildCacheFor(String namespace) {
@@ -114,8 +124,8 @@ public class FileClassPathItem extends AbstractClassPathItem {
       }
     }
 
-    mySubpackagesCache.put(namespace, subpacks);
-    myAvailableClassesCache.put(namespace, classes);
+    mySubpackagesCache.put(namespace, subpacks.isEmpty() ? null : subpacks );
+    myAvailableClassesCache.put(namespace, classes.isEmpty() ? null : classes);
   }
 
   public long getClassesTimestamp(String namespace) {
