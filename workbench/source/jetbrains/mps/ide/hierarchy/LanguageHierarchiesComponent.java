@@ -1,7 +1,6 @@
 package jetbrains.mps.ide.hierarchy;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionGroup;
 import jetbrains.mps.ide.action.ActionManager;
@@ -205,7 +204,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
   private void relayout() {
     if (myRoots.isEmpty()) return;
 
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         int y = 0;
         int x = 0;
@@ -241,7 +240,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
 
 
   public void rebuild() {
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         mySelectedConceptContainer = null;
         myRoots = createHierarchyForest();
@@ -269,7 +268,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     g.setColor(Color.WHITE);
     g.fillRect(0, 0, getWidth(), getHeight());
 
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (ConceptContainer root : myRoots) {
           root.paintTree(g);

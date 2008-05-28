@@ -15,6 +15,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.RefactoringProcessor;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
@@ -118,14 +119,14 @@ public class NewRefactoringView extends DefaultTool {
   private void initUsagesView() {
     Thread thread = new Thread() {
       public void run() {
-        CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-          public void run() {
-            myUsagesView.setRunOptions(TreeBuilder.forFinder(new ConstantFinder(mySearchResults.getSearchResults())),
-              null,
-              new ButtonConfiguration(false, false, true),
-              mySearchResults);
-          }
-        });
+        ModelAccess.instance().runReadAction(new Runnable() {
+              public void run() {
+                myUsagesView.setRunOptions(TreeBuilder.forFinder(new ConstantFinder(mySearchResults.getSearchResults())),
+                  null,
+                  new ButtonConfiguration(false, false, true),
+                  mySearchResults);
+              }
+            });
       }
     };
     thread.start();

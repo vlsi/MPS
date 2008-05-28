@@ -1,10 +1,8 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.IntegerValueDocumentFilter;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorSettings.MyState;
 
@@ -453,29 +451,29 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
     }
 
     public void commit() {
-      CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-        public void run() {
-          String fontName = myFontsComboBox.getSelectedItem().toString();
-          int fontSize = Integer.parseInt(myFontSizesComboBox.getSelectedItem().toString());
+      ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            String fontName = myFontsComboBox.getSelectedItem().toString();
+            int fontSize = Integer.parseInt(myFontSizesComboBox.getSelectedItem().toString());
 
-          Font newFont = new Font(fontName, Font.PLAIN, fontSize);
-          setDefaultEditorFont(newFont);
+            Font newFont = new Font(fontName, Font.PLAIN, fontSize);
+            setDefaultEditorFont(newFont);
 
-          setTextWidth(Integer.parseInt(myTextWidthComboBox.getSelectedItem().toString()));
+            setTextWidth(Integer.parseInt(myTextWidthComboBox.getSelectedItem().toString()));
 
-          int blinkingPeriod = getBlinkingPeriod();
-          CaretBlinker.getInstance().setCaretBlinkingRateTimeMillis(blinkingPeriod);
+            int blinkingPeriod = getBlinkingPeriod();
+            CaretBlinker.getInstance().setCaretBlinkingRateTimeMillis(blinkingPeriod);
 
-          setUseAntialiasing(myAntialiasingCheckBox.isSelected());
-          setUseLegacyTypesystem(myLegacyTypesystemCheckBox.isSelected());
-          setUseBraces(myUseBraces.isSelected());
+            setUseAntialiasing(myAntialiasingCheckBox.isSelected());
+            setUseLegacyTypesystem(myLegacyTypesystemCheckBox.isSelected());
+            setUseBraces(myUseBraces.isSelected());
 
-          myState.mySelectionBackground = mySelectionBackgroundColorComponent.getColor();
-          myState.mySelectionForeground = mySelectionForegroundColorComponent.getColor();
+            myState.mySelectionBackground = mySelectionBackgroundColorComponent.getColor();
+            myState.mySelectionForeground = mySelectionForegroundColorComponent.getColor();
 
-          fireEditorSettingsChanged();          
-        }
-      });
+            fireEditorSettingsChanged();
+          }
+        });
     }
 
     private int getBlinkingPeriod() {

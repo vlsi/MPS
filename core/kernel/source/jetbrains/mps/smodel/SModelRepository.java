@@ -1,19 +1,13 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.ManyToManyMap;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.ide.command.*;
 
 import javax.swing.*;
 import java.util.*;
-import java.lang.reflect.Proxy;
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
@@ -356,7 +350,7 @@ public class SModelRepository implements ApplicationComponent {
   }
 
   public void saveAll() {
-    CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
+    ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
         List<SModelDescriptor> descriptors = new ArrayList(myChangedModels.keySet());
         for (SModelDescriptor modelDescriptor : descriptors) {

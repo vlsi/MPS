@@ -8,9 +8,9 @@ import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
-import javax.swing.Icon;
 import javax.swing.JPopupMenu;
 import java.awt.event.ActionEvent;
 
@@ -43,14 +43,14 @@ public class ReferencesTreeNode extends MPSTreeNodeEx {
         }
 
         public void doubleClick() {
-          CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-            public void run() {
-              SNode target = ref.getTargetNode();
-              if (target == null) return;
+          ModelAccess.instance().runReadAction(new Runnable() {
+                  public void run() {
+                    SNode target = ref.getTargetNode();
+                    if (target == null) return;
 
-              getOperationContext().getComponent(MPSEditorOpener.class).openNode(target);
-            }
-          });
+                    getOperationContext().getComponent(MPSEditorOpener.class).openNode(target);
+                  }
+                });
         }
 
         @Override

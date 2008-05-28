@@ -6,7 +6,6 @@ import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.IProjectPane;
 import jetbrains.mps.ide.MPSToolBar;
@@ -112,11 +111,11 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
     }
 
     public void onAfterReload() {
-      CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
-        public void run() {
-          rebuild();
-        }
-      });
+      ModelAccess.instance().runReadInEDT(new Runnable() {
+          public void run() {
+            rebuild();
+          }
+        });
     }
   };
 
@@ -320,7 +319,7 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
   }
 
   public void selectNode(final SNode node, final IOperationContext context) {
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         getTree().runWithoutExpansion(new Runnable() {
           public void run() {
@@ -500,7 +499,7 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
   }
 
   public void selectModule(final IModule module) {
-    CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
+    ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
         DefaultTreeModel model = (DefaultTreeModel) myTree.getModel();
         MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
@@ -633,7 +632,7 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
   }
 
   public void doRebuildTree() {
-    CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
+    ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
         if (isDisposed()) {
           return;
@@ -644,7 +643,7 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
   }
 
   private void rebuildTreeNow() {
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         rebuildTree();
       }
@@ -873,7 +872,7 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
   }
 
   public void loadState(final MyState state) {
-    CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
+    ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
         getTree().loadState(state.getState());
       }

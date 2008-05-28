@@ -64,7 +64,7 @@ public class TestMain {
 
     assert ideaProject != null;
 
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         new ModuleMaker().make(
           new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()),
@@ -100,7 +100,7 @@ public class TestMain {
     File projectFile = new File(projectDirectory, "testRefactoring.mpr");
     final MPSProject project = loadProject(projectFile);
     final boolean[] b = new boolean[]{true};
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         if (getSandbox1(project) == null) {
           b[0] = false;

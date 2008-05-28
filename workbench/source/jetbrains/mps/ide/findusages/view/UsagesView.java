@@ -4,7 +4,6 @@ import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.ide.MPSToolBar;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.IExternalizeable;
@@ -21,6 +20,7 @@ import jetbrains.mps.ide.progress.AdaptiveProgressMonitorFactory;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jdom.Element;
 
 import javax.swing.Icon;
@@ -103,7 +103,7 @@ public abstract class UsagesView implements IExternalizeable {
   public void run() {
     assert myIsInitialized;
     assert !ThreadUtils.isEventDispatchThread();
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SearchResults myLastResults = myResultProvider.getResults(mySearchQuery, myProject.getComponentSafe(AdaptiveProgressMonitorFactory.class).createMonitor());
         myLastResults.removeDuplicates();

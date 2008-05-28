@@ -17,6 +17,7 @@ import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.projectLanguage.structure.BaseGeneratorConfiguration;
 import jetbrains.mps.projectLanguage.structure.LanguageGeneratorConfiguration;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 
@@ -47,7 +48,7 @@ public class ProjectTester {
   }
 
   public TestResult testProject() {
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myProject.getPluginManager().reloadPlugins();
       }

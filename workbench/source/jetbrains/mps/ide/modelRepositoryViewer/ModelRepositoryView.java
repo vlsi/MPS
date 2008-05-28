@@ -15,8 +15,6 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.event.SModelListener;
-import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -64,30 +62,30 @@ public class ModelRepositoryView extends DefaultTool {
     protected MPSTreeNode rebuild() {
       final TextTreeNode[] root = new TextTreeNode[1];
 
-      CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-        public void run() {
-          root[0] = new TextTreeNode("Loaded Models") {
-            {
-              setIcon(Icons.PROJECT_MODELS_ICON);
+      ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            root[0] = new TextTreeNode("Loaded Models") {
+              {
+                setIcon(Icons.PROJECT_MODELS_ICON);
+              }
+
+              public JPopupMenu getPopupMenu() {
+                JPopupMenu result = new JPopupMenu();
+
+                result.add(new AbstractActionWithEmptyIcon("Refresh") {
+                  public void actionPerformed(ActionEvent e) {
+                    myTree.rebuildNow();
+                  }
+                });
+
+                return result;
+              }
+            };
+            for (SModelDescriptor modelDescriptor : SortUtil.sortModels(SModelRepository.getInstance().getAllModelDescriptors())) {
+              root[0].add(new ModelTreeNode(modelDescriptor));
             }
-
-            public JPopupMenu getPopupMenu() {
-              JPopupMenu result = new JPopupMenu();
-
-              result.add(new AbstractActionWithEmptyIcon("Refresh") {
-                public void actionPerformed(ActionEvent e) {
-                  myTree.rebuildNow();
-                }
-              });
-
-              return result;
-            }
-          };
-          for (SModelDescriptor modelDescriptor : SortUtil.sortModels(SModelRepository.getInstance().getAllModelDescriptors())) {
-            root[0].add(new ModelTreeNode(modelDescriptor));
           }
-        }
-      });
+        });
 
 
       return root[0];

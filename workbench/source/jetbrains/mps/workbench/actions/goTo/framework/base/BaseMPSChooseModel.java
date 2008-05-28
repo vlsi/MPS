@@ -8,6 +8,7 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Calculable;
 import org.jetbrains.annotations.NotNull;
 
@@ -42,7 +43,7 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
   }
 
   private void ensureLoaded() {
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myObjectsInGlobalScope = find(GlobalScope.getInstance());
         myObjectsInProjectScope = find(myProject.getScope());

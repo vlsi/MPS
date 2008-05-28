@@ -243,27 +243,27 @@ public class EditorContext {
       final Memento memento = (Memento) o;
       if (myNodeEditorComponent == memento.myNodeEditor) {
         if (memento.myCellInfo != null) {
-          CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-            public void run() {
-              EditorCell cellToSelect = memento.myCellInfo.findCell(myNodeEditorComponent);
-              myNodeEditorComponent.changeSelection(cellToSelect);
-              myNodeEditorComponent.setSelectedStackFromMemento(memento.mySelectedStack);
-              for (CellInfo collectionInfo : memento.myCollectionsWithEnabledBraces) {
-                EditorCell collection = collectionInfo.findCell(myNodeEditorComponent);
-                if (!(collection instanceof EditorCell_Collection)) continue;
-                ((EditorCell_Collection)collection).enableBraces();
-              }
-              for (CellInfo collectionInfo : memento.myFolded) {
-                EditorCell collection = collectionInfo.findCell(myNodeEditorComponent);
-                if (!(collection instanceof EditorCell_Collection)) continue;
-                ((EditorCell_Collection)collection).fold(true);
-              }
-              EditorCell deepestSelectedCell = myNodeEditorComponent.getDeepestSelectedCell();
-              if (deepestSelectedCell != null) {
-                deepestSelectedCell.setCaretX(memento.myCaretX);
-              }
-            }
-          });
+          ModelAccess.instance().runReadAction(new Runnable() {
+                  public void run() {
+                    EditorCell cellToSelect = memento.myCellInfo.findCell(myNodeEditorComponent);
+                    myNodeEditorComponent.changeSelection(cellToSelect);
+                    myNodeEditorComponent.setSelectedStackFromMemento(memento.mySelectedStack);
+                    for (CellInfo collectionInfo : memento.myCollectionsWithEnabledBraces) {
+                      EditorCell collection = collectionInfo.findCell(myNodeEditorComponent);
+                      if (!(collection instanceof EditorCell_Collection)) continue;
+                      ((EditorCell_Collection)collection).enableBraces();
+                    }
+                    for (CellInfo collectionInfo : memento.myFolded) {
+                      EditorCell collection = collectionInfo.findCell(myNodeEditorComponent);
+                      if (!(collection instanceof EditorCell_Collection)) continue;
+                      ((EditorCell_Collection)collection).fold(true);
+                    }
+                    EditorCell deepestSelectedCell = myNodeEditorComponent.getDeepestSelectedCell();
+                    if (deepestSelectedCell != null) {
+                      deepestSelectedCell.setCaretX(memento.myCaretX);
+                    }
+                  }
+                });
         }
         CommandProcessor.instance().invokeNowOrLater(new Runnable() {
           public void run() {

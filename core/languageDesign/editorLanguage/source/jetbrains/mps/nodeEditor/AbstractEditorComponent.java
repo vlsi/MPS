@@ -349,13 +349,13 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myShowIntentionsAction = new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
         //setEnabled(false);
-        CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-          public void run() {
-            if (!getEditedNode().getModel().isNotEditable()) {
-              showIntentionsMenu();
-            }
-          }
-        });
+        ModelAccess.instance().runReadAction(new Runnable() {
+              public void run() {
+                if (!getEditedNode().getModel().isNotEditable()) {
+                  showIntentionsMenu();
+                }
+              }
+            });
       }
     };
     registerKeyboardAction(myShowIntentionsAction, KeyStroke.getKeyStroke("alt ENTER"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
@@ -437,35 +437,35 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
             try {
               final boolean[] enabledPresent = new boolean[1];
               final boolean[] availablePresent = new boolean[1];
-              CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-                public void run() {
-                  enabledPresent[0] = !getEnabledIntentions().isEmpty();
-                  availablePresent[0] = !getAvailableIntentions().isEmpty();
-                }
-              });
+              ModelAccess.instance().runReadAction(new Runnable() {
+                          public void run() {
+                            enabledPresent[0] = !getEnabledIntentions().isEmpty();
+                            availablePresent[0] = !getAvailableIntentions().isEmpty();
+                          }
+                        });
 
-              CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
-                public void run() {
-                  if (getSelectedCell() != null) {
-                    adjustLightBulbLocation();
-                    myShowIntentionsAction.setEnabled(availablePresent[0]);
-                  } else {
-                    myShowIntentionsAction.setEnabled(false);
-                  }
-                }
-              });
+              ModelAccess.instance().runReadInEDT(new Runnable() {
+                          public void run() {
+                            if (getSelectedCell() != null) {
+                              adjustLightBulbLocation();
+                              myShowIntentionsAction.setEnabled(availablePresent[0]);
+                            } else {
+                              myShowIntentionsAction.setEnabled(false);
+                            }
+                          }
+                        });
 
               Thread.sleep(INTENTION_SHOW_DELAY);
 
-              CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
-                public void run() {
-                  if (getSelectedCell() != null) {
-                    setLightBulbVisibility(enabledPresent[0]);
-                  } else {
-                    hideLightBulb();
-                  }
-                }
-              });
+              ModelAccess.instance().runReadInEDT(new Runnable() {
+                          public void run() {
+                            if (getSelectedCell() != null) {
+                              setLightBulbVisibility(enabledPresent[0]);
+                            } else {
+                              hideLightBulb();
+                            }
+                          }
+                        });
             } catch (InterruptedException e) {
 
             }
@@ -509,7 +509,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private Set<Intention> getAvailableIntentions() {
     final Set<Intention> result = new LinkedHashSet<Intention>();
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SNode node = getSelectedNode();
         EditorContext editorContext = getEditorContext();
@@ -693,7 +693,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   protected void editNode(final SNode node) {
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         IOperationContext operationContext = getOperationContext();
         myNodePointer = new SNodePointer(node);
@@ -797,11 +797,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private void processPopupMenu(final MouseEvent e) {
     EditorCell selectedCell = getSelectedCell();
     if (selectedCell != null) {
-      CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-        public void run() {
-          showPopupMenu(e);
-        }
-      });
+      ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            showPopupMenu(e);
+          }
+        });
     }
   }
 
@@ -1192,7 +1192,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public void selectNode(final SNode node) {
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         EditorCell nodeCell = findNodeCell(node);
         if (nodeCell != null) {
@@ -1483,30 +1483,30 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   public void rebuildEditorContent(final List<SModelEvent> events) {
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
-        CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-          public void run() {
-            //i.e. we are disposed. it's too late to rebuild
-            if (getEditorContext() == null) {
-              return;
-            }
-
-            removeAll();
-
-            runSwapCellsActions(new Runnable() {
+        ModelAccess.instance().runReadAction(new Runnable() {
               public void run() {
-                setRootCell(createRootCell(events));
+                //i.e. we are disposed. it's too late to rebuild
+                if (getEditorContext() == null) {
+                  return;
+                }
+
+                removeAll();
+
+                runSwapCellsActions(new Runnable() {
+                  public void run() {
+                    setRootCell(createRootCell(events));
+                  }
+                });
+
+                for (JComponent component : myRootCell.getSwingComponents()) {
+                  AbstractEditorComponent.this.add(component);
+                }
+
+                for (RebuildListener listener : myRebuildListeners) {
+                  listener.editorRebuilt(AbstractEditorComponent.this);
+                }
               }
             });
-
-            for (JComponent component : myRootCell.getSwingComponents()) {
-              AbstractEditorComponent.this.add(component);
-            }
-
-            for (RebuildListener listener : myRebuildListeners) {
-              listener.editorRebuilt(AbstractEditorComponent.this);
-            }
-          }
-        });
       }
     });
   }
@@ -1563,7 +1563,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private void goByFirstReference() {
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         new GoByFirstReferenceAction().doExecute(createActionContext());
       }
@@ -1572,37 +1572,37 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private void showCellError() {
     if (getSelectedCell() != null) {
-      CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-        public void run() {
-          SNode selectedNode = getSelectedCell().getSNode();
-          while (selectedNode != null) {
-            final IErrorReporter herror = TypeChecker.getInstance().getTypeErrorDontCheck(selectedNode);
-            if (herror != null) {
-              SwingUtilities.invokeLater(new Runnable() {
-                public void run() {
-                  String s = herror.reportError();
-                  final MPSErrorDialog dialog = new MPSErrorDialog(myOperationContext.getMainFrame(), s, "TYPESYSTEM ERROR", false);
-                  JButton button = new JButton(new AbstractAction("Go To Rule") {
-                    public void actionPerformed(ActionEvent e) {
-                      CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-                        public void run() {
-                          GoToTypeErrorRuleUtil.goToTypeErrorRule(myOperationContext, herror, GoToTypeErrorRule_Action.LOG);
-                          dialog.dispose();
-                        }
-                      });
-                    }
-                  });
-                  dialog.addButton(button);
-                  dialog.initializeUI();
-                  dialog.setVisible(true);
-                }
-              });
-              return;
+      ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            SNode selectedNode = getSelectedCell().getSNode();
+            while (selectedNode != null) {
+              final IErrorReporter herror = TypeChecker.getInstance().getTypeErrorDontCheck(selectedNode);
+              if (herror != null) {
+                SwingUtilities.invokeLater(new Runnable() {
+                  public void run() {
+                    String s = herror.reportError();
+                    final MPSErrorDialog dialog = new MPSErrorDialog(myOperationContext.getMainFrame(), s, "TYPESYSTEM ERROR", false);
+                    JButton button = new JButton(new AbstractAction("Go To Rule") {
+                      public void actionPerformed(ActionEvent e) {
+                        ModelAccess.instance().runReadAction(new Runnable() {
+                          public void run() {
+                            GoToTypeErrorRuleUtil.goToTypeErrorRule(myOperationContext, herror, GoToTypeErrorRule_Action.LOG);
+                            dialog.dispose();
+                          }
+                        });
+                      }
+                    });
+                    dialog.addButton(button);
+                    dialog.initializeUI();
+                    dialog.setVisible(true);
+                  }
+                });
+                return;
+              }
+              selectedNode = selectedNode.getParent();
             }
-            selectedNode = selectedNode.getParent();
           }
-        }
-      });
+        });
 
     }
   }
@@ -2276,19 +2276,19 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
 
       public void popupMenuWillBecomeInvisible(PopupMenuEvent e) {
-        CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
-          public void run() {
-            setLightBulbVisibility(!getEnabledIntentions().isEmpty());
-          }
-        });
+        ModelAccess.instance().runReadInEDT(new Runnable() {
+              public void run() {
+                setLightBulbVisibility(!getEnabledIntentions().isEmpty());
+              }
+            });
       }
 
       public void popupMenuCanceled(PopupMenuEvent e) {
-        CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
-          public void run() {
-            setLightBulbVisibility(!getEnabledIntentions().isEmpty());
-          }
-        });
+        ModelAccess.instance().runReadInEDT(new Runnable() {
+              public void run() {
+                setLightBulbVisibility(!getEnabledIntentions().isEmpty());
+              }
+            });
       }
     });
 
@@ -2300,7 +2300,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private void setLightBulbVisibility(final boolean value) {
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         if (value) {
           Set<Intention> enabledIntentions = getEnabledIntentions();

@@ -1,14 +1,13 @@
 package jetbrains.mps.nodeEditor.inspector;
 
 import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.event.SModelEvent;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
 import javax.swing.event.ChangeListener;
@@ -64,7 +63,7 @@ public class InspectorEditorComponent extends AbstractEditorComponent implements
     if (node != null && getEditedNode() == node) {
       return;
     }
-    CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
+    ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
         if (node == null) {
           setOperationContext(null);

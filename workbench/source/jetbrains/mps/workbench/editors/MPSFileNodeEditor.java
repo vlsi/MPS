@@ -24,13 +24,14 @@ import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.ModelAccess;
 
 public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor {
   private MPSNodeVirtualFile myFile;  
   private IEditor myNodeEditor;
 
   public MPSFileNodeEditor(final Project project, final MPSNodeVirtualFile file) {
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myFile = file;
         MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();

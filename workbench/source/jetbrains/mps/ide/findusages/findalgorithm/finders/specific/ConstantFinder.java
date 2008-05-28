@@ -1,6 +1,5 @@
 package jetbrains.mps.ide.findusages.findalgorithm.finders.specific;
 
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
@@ -10,6 +9,7 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jdom.Element;
 
 import java.util.Collection;
@@ -20,7 +20,7 @@ public class ConstantFinder extends BaseFinder {
   private SearchResults<SNode> myResults = new SearchResults<SNode>();
 
   public ConstantFinder(final Collection<SNode> nodes, final String categoryName) {
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (SNode node : nodes) {
           myResults.getSearchResults().add(new SearchResult<SNode>(node, categoryName));

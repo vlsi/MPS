@@ -1,10 +1,10 @@
 package jetbrains.mps.library;
 
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.smodel.ModelAccess;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.Task.Modal;
@@ -172,11 +171,11 @@ public class LibraryManagerPreferences {
     if (myChanged) {
       ProgressManager.getInstance().run(new Modal(null, "Applying settings", false) {
         public void run(@NotNull final ProgressIndicator indicator) {
-          CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-            public void run() {
-              ClassLoaderManager.getInstance().reloadAll(indicator);
-            }
-          });
+          ModelAccess.instance().runReadAction(new Runnable() {
+                  public void run() {
+                    ClassLoaderManager.getInstance().reloadAll(indicator);
+                  }
+                });
         }
       });
     }

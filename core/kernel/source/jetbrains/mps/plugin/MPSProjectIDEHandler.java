@@ -5,14 +5,12 @@ import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FrameUtil;
@@ -47,31 +45,31 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   public void showNode(final String namespace, final String id) throws RemoteException {
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
-        CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-          public void run() {
-            for (SModelDescriptor descriptor : GlobalScope.getInstance().getModelDescriptors()) {
-              if (!namespace.equals(descriptor.getModelUID().getLongName())) continue;
-              if (descriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) continue;
+        ModelAccess.instance().runReadAction(new Runnable() {
+              public void run() {
+                for (SModelDescriptor descriptor : GlobalScope.getInstance().getModelDescriptors()) {
+                  if (!namespace.equals(descriptor.getModelUID().getLongName())) continue;
+                  if (descriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) continue;
 
-              SNode node = descriptor.getSModel().getNodeById(id);
-//              if (node != null) {
-//                IDEProjectFrame frame = getProjectWindow();
-//                ModuleContext operationContext = ModuleContext.create(node, myProject);
-//                EditorsPane pane = frame.getEditorsPane();
-//                IEditor editor = pane.openEditor(node, operationContext);
-//                NavigationActionProcessor.getInstance().executeNavigationAction(new EditorNavigationCommand(node, editor, pane), operationContext.getProject());
-//              }
-            }
+                  SNode node = descriptor.getSModel().getNodeById(id);
+    //              if (node != null) {
+    //                IDEProjectFrame frame = getProjectWindow();
+    //                ModuleContext operationContext = ModuleContext.create(node, myProject);
+    //                EditorsPane pane = frame.getEditorsPane();
+    //                IEditor editor = pane.openEditor(node, operationContext);
+    //                NavigationActionProcessor.getInstance().executeNavigationAction(new EditorNavigationCommand(node, editor, pane), operationContext.getProject());
+    //              }
+                }
 
-            FrameUtil.activateFrame(getMainFrame());
-          }
-        });
+                FrameUtil.activateFrame(getMainFrame());
+              }
+            });
       }
     });
   }
 
   public void showAspectMethodUsages(final String namespace, final String name) throws RemoteException {
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         final List<SModel> applicableModelDescriptors = new ArrayList<SModel>();
         for (final SModelDescriptor descriptor : GlobalScope.getInstance().getModelDescriptors()) {
@@ -92,7 +90,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   }
 
   public void showConceptNode(final String fqName) throws RemoteException {
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(fqName, GlobalScope.getInstance());
         myProject.getComponentSafe(MPSEditorOpener.class).openNode(concept.getNode());
@@ -102,7 +100,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   }
 
   public void showClassUsages(final String fqName) throws RemoteException {
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         Classifier cls = SModelUtil_new.findNodeByFQName(fqName, Classifier.class, GlobalScope.getInstance());
         if (cls == null) {
@@ -117,7 +115,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   }
 
   public void showMethodUsages(final String classFqName, final String methodName, final int parameterCount) throws RemoteException {
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         Classifier cls = SModelUtil_new.findNodeByFQName(classFqName, Classifier.class, GlobalScope.getInstance());
         if (cls == null) {
@@ -163,12 +161,12 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   private void findUsages(final @NotNull SNode node, final IScope scope) {
     new Thread() {
       public void run() {
-        CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-          public void run() {
-            SearchQuery searchQuery = new SearchQuery(node, scope);
-            myProject.getComponentSafe(UsagesViewTool.class).findUsages(searchQuery, true, true, true, new NodeUsages_Finder());
-          }
-        });
+        ModelAccess.instance().runReadAction(new Runnable() {
+              public void run() {
+                SearchQuery searchQuery = new SearchQuery(node, scope);
+                myProject.getComponentSafe(UsagesViewTool.class).findUsages(searchQuery, true, true, true, new NodeUsages_Finder());
+              }
+            });
       }
     }.start();
   }

@@ -426,7 +426,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   private void updateNodePresentation(final boolean reloadSubTree) {
-    CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
+    ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
         if (getTree() == null) {
           return;

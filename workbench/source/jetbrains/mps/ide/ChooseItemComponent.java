@@ -16,6 +16,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.ActionEvent;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.command.CommandProcessor;
 
@@ -65,11 +66,11 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
         if (e.getClickCount() == 2) {
           final Item selectedItem = (Item) myList.getSelectedValue();
           if (selectedItem == null) return;
-          CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-            public void run() {
-              doChoose(selectedItem);
-            }
-          });
+          ModelAccess.instance().runReadAction(new Runnable() {
+                  public void run() {
+                    doChoose(selectedItem);
+                  }
+                });
           askForDispose();
         }
       }

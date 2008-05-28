@@ -8,7 +8,6 @@ import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.HintDialog;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
@@ -28,6 +27,7 @@ import jetbrains.mps.ide.progress.AdaptiveProgressMonitorFactory;
 import jetbrains.mps.nodeEditor.EditorUtil;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.workbench.tools.BaseMPSTool;
 import org.jdom.Element;
@@ -149,7 +149,7 @@ public class UsagesViewTool extends BaseMPSTool {
   public void findUsages(final ActionContext context) {
     final SNode[] semanticNode = new SNode[1];
     final SNode[] operationNode = new SNode[1];
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         semanticNode[0] = context.getNode();
         operationNode[0] = EditorUtil.getOperationNodeWRTReference(context, semanticNode[0]);
@@ -162,18 +162,18 @@ public class UsagesViewTool extends BaseMPSTool {
         findUsagesDialog.showDialog();
 
         if (!findUsagesDialog.isCancelled()) {
-          CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-            public void run() {
-              FindUsagesOptions options = findUsagesDialog.getResult();
-              myDefaultFindOptions = options;
+          ModelAccess.instance().runReadAction(new Runnable() {
+                  public void run() {
+                    FindUsagesOptions options = findUsagesDialog.getResult();
+                    myDefaultFindOptions = options;
 
-              IResultProvider provider = options.getOption(FindersOptions.class).getResult(operationNode[0], context);
-              SearchQuery query = options.getOption(QueryOptions.class).getResult(operationNode[0], context);
-              ViewOptions viewOptions = options.getOption(ViewOptions.class);
+                    IResultProvider provider = options.getOption(FindersOptions.class).getResult(operationNode[0], context);
+                    SearchQuery query = options.getOption(QueryOptions.class).getResult(operationNode[0], context);
+                    ViewOptions viewOptions = options.getOption(ViewOptions.class);
 
-              findUsages(provider, query, true, viewOptions.myShowOneResult, viewOptions.myNewTab);
-            }
-          });
+                    findUsages(provider, query, true, viewOptions.myShowOneResult, viewOptions.myNewTab);
+                  }
+                });
         }
       }
     });
@@ -186,14 +186,14 @@ public class UsagesViewTool extends BaseMPSTool {
   public void findUsages(final IResultProvider provider, final SearchQuery query, final boolean isRerunnable, final boolean showOne, final boolean newTab) {
     new Thread() {
       public void run() {
-        CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-          public void run() {
-            SearchResults searchResults = provider.getResults(
-              query,
-              getMPSProject().getComponentSafe(AdaptiveProgressMonitorFactory.class).createMonitor());
-            showResults(searchResults, showOne, newTab, provider, query, isRerunnable);
-          }
-        });
+        ModelAccess.instance().runReadAction(new Runnable() {
+              public void run() {
+                SearchResults searchResults = provider.getResults(
+                  query,
+                  getMPSProject().getComponentSafe(AdaptiveProgressMonitorFactory.class).createMonitor());
+                showResults(searchResults, showOne, newTab, provider, query, isRerunnable);
+              }
+            });
       }
     }.start();
   }
@@ -201,11 +201,11 @@ public class UsagesViewTool extends BaseMPSTool {
   public void showResults(final SearchQuery query, final SearchResults searchResults) {
     new Thread() {
       public void run() {
-        CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-          public void run() {
-            showResults(searchResults, false, false, TreeBuilder.forFinder(new ConstantFinder(searchResults.getSearchResults())), query, false);
-          }
-        });
+        ModelAccess.instance().runReadAction(new Runnable() {
+              public void run() {
+                showResults(searchResults, false, false, TreeBuilder.forFinder(new ConstantFinder(searchResults.getSearchResults())), query, false);
+              }
+            });
       }
     }.start();
   }

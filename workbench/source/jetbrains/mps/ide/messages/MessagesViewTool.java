@@ -7,17 +7,16 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.MessageViewLoggingHandler;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.blame.BlameDialog;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.messages.MessagesViewTool.MyState;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.workbench.tools.BaseMPSTool;
+import jetbrains.mps.smodel.ModelAccess;
 
 import javax.swing.*;
 import java.awt.*;
@@ -256,7 +255,7 @@ public class MessagesViewTool extends BaseMPSTool implements ProjectComponent, P
     final Message selectedMessage = (Message) myList.getSelectedValue();
     if (selectedMessage == null || selectedMessage.getHintObject() == null) return;
 
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         NavigationManager.getInstance()
           .navigateTo(getMPSProject(), selectedMessage.getHintObject());

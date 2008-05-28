@@ -18,6 +18,7 @@ import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
@@ -381,7 +382,7 @@ public abstract class UsagesTree extends MPSTree {
   }
 
   private void goByNodeLink(final UsagesTreeNode treeNode, final boolean inProjectIfPossible) {
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         if (treeNode.getUserObject() == null) {
           return;

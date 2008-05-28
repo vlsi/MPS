@@ -2,9 +2,9 @@ package jetbrains.mps.transformation.TLBase.plugin.debug;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.transformation.TLBase.plugin.debug.icons.Icons;
 import jetbrains.mps.transformation.TLBase.plugin.debug.TracerNode.Kind;
@@ -155,11 +155,11 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     }
 
     public void actionPerformed(ActionEvent e) {
-      CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-        public void run() {
-          action();
-        }
-      });
+      ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            action();
+          }
+        });
     }
 
     protected abstract void action();

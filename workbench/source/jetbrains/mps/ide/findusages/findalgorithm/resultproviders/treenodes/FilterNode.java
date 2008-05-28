@@ -1,6 +1,5 @@
 package jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes;
 
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.filters.BaseFilter;
@@ -13,6 +12,7 @@ import jetbrains.mps.ide.progress.TaskProgressSettings;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jdom.Element;
 
 public class FilterNode extends BaseNode {
@@ -48,7 +48,7 @@ public class FilterNode extends BaseNode {
     monitor.addText(getTaskName() + " started");
     monitor.startTask(getTaskName(), getTaskKind());
     final SearchResults[] results = new SearchResults[1];
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SearchResults childRes = myChildren.get(0).getResults(query, monitor);
         try {

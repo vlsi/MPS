@@ -1,6 +1,6 @@
 package jetbrains.mps.ide;
 
-import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.smodel.ModelAccess;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
@@ -33,7 +33,7 @@ public class ChooseItemWindowCellRenderer<Item> extends JPanel implements ListCe
   }
 
   public Component getListCellRendererComponent(final JList list, final Object value, int index, final boolean isSelected, boolean cellHasFocus) {
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         Item item = (Item) value;
         setIcon(myChooseItemComponent.getItemIcon(item));

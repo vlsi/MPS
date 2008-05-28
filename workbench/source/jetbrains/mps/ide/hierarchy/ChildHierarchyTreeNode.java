@@ -2,10 +2,8 @@ package jetbrains.mps.ide.hierarchy;
 
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.ui.TreeTextUtil;
-import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Condition;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -35,7 +33,7 @@ public class ChildHierarchyTreeNode<T extends INodeAdapter> extends HierarchyTre
   }
 
   protected void doInit() {
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         List<T> descendants = new ArrayList<T>(myHierarchyTree.getAbstractChildren((T) getUserObject()));
         Collections.sort(descendants, new Comparator<T>() {

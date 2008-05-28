@@ -6,7 +6,6 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.core.structure.BaseConcept;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -51,7 +50,7 @@ public class ChildSubstituteActionsHelper {
                                                           final IOperationContext context) {
     final List<INodeSubstituteAction>[] result = new List[1];
     // enable R/O access
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         result[0] = createActions_internal(parentNode, currentChild, childConcept, childSetter, context);
       }

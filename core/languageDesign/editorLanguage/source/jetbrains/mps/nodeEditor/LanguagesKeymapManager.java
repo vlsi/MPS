@@ -5,9 +5,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.ide.command.CommandProcessor;
 
 import java.util.*;
 
@@ -46,7 +44,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
 
     myRepository.addModuleRepositoryListener(myListener);
 
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (Language l : myRepository.getAllLanguages()) {
           registerLanguageKeyMaps(l);

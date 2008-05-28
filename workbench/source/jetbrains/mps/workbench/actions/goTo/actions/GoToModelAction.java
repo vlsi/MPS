@@ -11,11 +11,11 @@ import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.impl.FakePsiElement;
 import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.actions.goTo.framework.models.BaseModelItem;
 import jetbrains.mps.workbench.actions.goTo.framework.models.BaseModelModel;
 
@@ -56,11 +56,11 @@ public class GoToModelAction extends AnAction {
       }
 
       public void elementChosen(final Object element) {
-        CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-          public void run() {
-            ((NavigationItem) element).navigate(true);
-          }
-        });
+        ModelAccess.instance().runReadAction(new Runnable() {
+              public void run() {
+                ((NavigationItem) element).navigate(true);
+              }
+            });
       }
     }, ModalityState.current(), true);
   }

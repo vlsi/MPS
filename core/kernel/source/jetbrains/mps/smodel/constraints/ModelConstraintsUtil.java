@@ -4,7 +4,6 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.helgins.inference.TypeCheckingMode;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus.OK;
@@ -42,7 +41,7 @@ public class ModelConstraintsUtil {
 
     final SNode enclosingNode_ = enclosingNode;
     final SearchScopeStatus[] status = new SearchScopeStatus[1];
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         try {
           TypeChecker.getInstance().setTypeCheckingMode(TypeCheckingMode.RESOLVE);

@@ -1,10 +1,10 @@
 package jetbrains.mps.workbench.actions.goTo.framework.modules;
 
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.actions.goTo.framework.base.BasePresentation;
+import jetbrains.mps.smodel.ModelAccess;
 
 import javax.swing.Icon;
 
@@ -15,7 +15,7 @@ public class ModulePresentation extends BasePresentation {
 
   public ModulePresentation(IModule module) {
     myModule = module;
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         String s = myModule.getModuleUID();
         myShortName = NameUtil.shortNameFromLongName(s);

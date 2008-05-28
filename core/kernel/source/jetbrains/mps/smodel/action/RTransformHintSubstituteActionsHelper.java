@@ -6,7 +6,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.QueryMethodGenerated;
-import jetbrains.mps.ide.command.CommandProcessor;
 
 import java.util.*;
 
@@ -30,7 +29,7 @@ import java.util.*;
                                                           final IOperationContext context) {
     final List<INodeSubstituteAction>[] result = new List[1];
     // enable R/O access
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         try {
           result[0] = createActions_internal(sourceNode, transformTag, context);

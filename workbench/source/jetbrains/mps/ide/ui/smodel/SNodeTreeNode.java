@@ -1,6 +1,5 @@
 package jetbrains.mps.ide.ui.smodel;
 
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.icons.IconManager;
@@ -8,11 +7,10 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.presentation.NodePresentationUtil;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.CollectionUtil;
 
-import javax.swing.Icon;
 import javax.swing.JPopupMenu;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
@@ -56,11 +54,11 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
 
   protected void onAdd() {
     super.onAdd();
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         updatePresentation();
       }
-    });    
+    });
   }
 
   protected void onRemove() {

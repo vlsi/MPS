@@ -3,7 +3,6 @@ package jetbrains.mps.ide.hierarchy;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.icons.IconManager;
 
 import javax.swing.JPopupMenu;
@@ -79,7 +78,7 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
   }
 
   public void doubleClick() {
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         if (myHierarchyTree.doubleClick(HierarchyTreeNode.this)) {
           return;

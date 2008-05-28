@@ -43,7 +43,7 @@ public class GlobalSModelEventsManager implements ApplicationComponent {
   }
 
   public void initComponent() {
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         mySModelRepository.addModelRepositoryListener(new SModelRepositoryAdapter() {
           public void modelAdded(SModelDescriptor modelDescriptor) {

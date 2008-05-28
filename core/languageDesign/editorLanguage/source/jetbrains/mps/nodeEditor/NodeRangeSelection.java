@@ -9,8 +9,8 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.ide.actions.nodes.DeleteNodesHelper;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Pair;
 
 import java.awt.Graphics;
@@ -259,7 +259,7 @@ public class NodeRangeSelection implements IKeyboardHandler {
   public void paint(final Graphics g) {
     myEditorComponent.turnOnAliasingIfPossible((Graphics2D) g);
 
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (SNode sNode : getNodes()) {
           EditorCell cell = myEditorComponent.findNodeCell(sNode);

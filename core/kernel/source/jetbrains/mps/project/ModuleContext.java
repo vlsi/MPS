@@ -1,6 +1,5 @@
 package jetbrains.mps.project;
 
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 
@@ -22,7 +21,7 @@ public class ModuleContext extends StandaloneMPSContext {
   private String myModuleUID;
 
   public ModuleContext(final IModule module, final MPSProject project) {
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myModuleUID = module.getModuleUID();
         myProject = project;

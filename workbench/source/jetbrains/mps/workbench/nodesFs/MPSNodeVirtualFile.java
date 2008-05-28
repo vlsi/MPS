@@ -4,7 +4,7 @@ import com.intellij.openapi.vfs.DeprecatedVirtualFile;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.util.Calculable;
 import org.jetbrains.annotations.NotNull;
@@ -26,7 +26,7 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
   }
 
   void updateFields() {
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myPath = myNode.getModel().getUID() + "/" + myNode.getId();
         myName = "" + myNode.getPresentation();

@@ -8,6 +8,7 @@ import jetbrains.mps.ide.ui.tooltip.TreeToolTipHandler;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jdom.Element;
 
 import javax.swing.*;
@@ -236,7 +237,7 @@ public abstract class MPSTree extends JTree {
   }
 
   protected void doInit(final MPSTreeNode node) {
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         node.init();
       }
@@ -431,7 +432,7 @@ public abstract class MPSTree extends JTree {
       throw new RuntimeException("Rebuild now can be only called from UI thread");
     }
 
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         List<String> expansion = getExpandedPaths();
         List<String> selection = getSelectedPaths();
@@ -446,7 +447,7 @@ public abstract class MPSTree extends JTree {
   }
 
   public void rebuildTreeLater(final Runnable rebuildAction, final boolean saveExpansion) {
-    CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
+    ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
         runRebuildAction(rebuildAction, saveExpansion);
       }

@@ -2,6 +2,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
@@ -11,7 +12,6 @@ import jetbrains.mps.logging.Logger;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Arrays;
 
 class IntelligentNodeMover {
   private static final Logger LOG = Logger.getLogger(IntelligentNodeMover.class);
@@ -44,7 +44,7 @@ class IntelligentNodeMover {
       }
     });
 
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         if (nodes.size() == 1) {
           myEditorContext.getNodeEditorComponent().selectNode(nodes.get(0));

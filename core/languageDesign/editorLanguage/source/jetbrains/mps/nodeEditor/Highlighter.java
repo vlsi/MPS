@@ -16,7 +16,6 @@ import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.workbench.highlighter.EditorsProvider;
-import jetbrains.mps.TestMain;
 
 import java.util.*;
 
@@ -276,7 +275,7 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
       if (checker.executeInUndoableCommand()) {
         CommandProcessor.instance().executeCommand(runnable);
       } else {
-        CommandProcessor.instance().executeLightweightCommand(runnable);
+        ModelAccess.instance().runReadAction(runnable);
       }
 
       IEditorMessageOwner owner = owners[0];
@@ -296,7 +295,7 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
           owners[0] = checker.getOwner(node);
         }
       };
-      CommandProcessor.instance().executeLightweightCommand(runnable);
+      ModelAccess.instance().runReadAction(runnable);
       highlightManager.clearForOwner(owners[0]);
     }
 

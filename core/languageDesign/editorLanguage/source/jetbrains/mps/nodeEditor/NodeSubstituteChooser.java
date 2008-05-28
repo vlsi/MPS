@@ -3,6 +3,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.util.WindowsUtil;
@@ -365,11 +366,11 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       myList.addMouseListener(new MouseAdapter() {
         public void mousePressed(MouseEvent e) {
           repaintPopupMenu();
-          CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-            public void run() {
-              updatePatternEditor(); 
-            }
-          });
+          ModelAccess.instance().runReadAction(new Runnable() {
+                  public void run() {
+                    updatePatternEditor();
+                  }
+                });
         }
 
         public void mouseClicked(MouseEvent e) {
@@ -530,11 +531,11 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     }
 
     public Component getListCellRendererComponent(final JList list, final Object value, int index, final boolean isSelected, boolean cellHasFocus) {
-      CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-        public void run() {
-          setupThis(list, value, isSelected);
-        }
-      });
+      ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            setupThis(list, value, isSelected);
+          }
+        });
 
       return this;
     }

@@ -1,17 +1,10 @@
 package jetbrains.mps.project;
 
-import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.generationTypes.GenerateFilesAndClassesGenerationType;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.undo.UndoManager;
-import jetbrains.mps.ide.genconf.GenParameters;
-import jetbrains.mps.ide.genconf.GeneratorConfigUtil;
-import jetbrains.mps.ide.messages.IMessageHandler;
-import jetbrains.mps.ide.messages.Message;
-import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugin.IProjectHandler;
@@ -27,8 +20,6 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.nodeEditor.Highlighter;
-import org.eclipse.jdt.core.compiler.CategorizedProblem;
-import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -38,10 +29,7 @@ import java.awt.Frame;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ex.ProjectManagerEx;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.wm.WindowManager;
-import com.intellij.openapi.util.Disposer;
 import com.intellij.ide.impl.ProjectUtil;
 
 public class MPSProject implements ModelOwner, MPSModuleOwner {
@@ -473,7 +461,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
 
   public void save() {
     if (IdeMain.isTestMode()) return;
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         DescriptorsPersistence.saveProjectDescriptor(myProjectFile, myProjectDescriptor);
       }

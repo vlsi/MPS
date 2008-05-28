@@ -5,7 +5,6 @@ import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.ChooseItemWindow;
 import jetbrains.mps.ide.GoToNodeWindow.GoToNodeComponent;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.tools.BaseMPSTool;
@@ -116,7 +115,7 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
     myHierarchyTree.setOperationContext(context);
     myContext = context;
     myHierarchyTree.myHierarchyNode = node;
-    CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
+    ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
         myHierarchyTree.rebuildNow();
         if (myTreeNode != null) {

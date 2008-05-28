@@ -38,24 +38,24 @@ public class RefactoringProcessor {
       Thread thread = new Thread() {
         public void run() {
           final boolean toReturn[] = new boolean[]{false};
-          CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-            public void run() {
-              try {
-                ActionContext newContext = new ActionContext(context);
-                newContext.put(IOperationContext.class, new ProjectOperationContext(context.getOperationContext().getMPSProject()));
-                refactoringContext.setUsages(refactoring.getAffectedNodes(newContext, refactoringContext));
-              } catch (Throwable t) {
-                LOG.error(t);
-                ThreadUtils.runInUIThreadAndWait(new Runnable() {
+          ModelAccess.instance().runReadAction(new Runnable() {
                   public void run() {
-                    int promptResult = JOptionPane.showConfirmDialog(context.getFrame(),
-                      "An exception occurred during searching affected nodes. Do you want to continue anyway?", "Exception", JOptionPane.YES_NO_OPTION);
-                    toReturn[0] = promptResult == JOptionPane.NO_OPTION;
+                    try {
+                      ActionContext newContext = new ActionContext(context);
+                      newContext.put(IOperationContext.class, new ProjectOperationContext(context.getOperationContext().getMPSProject()));
+                      refactoringContext.setUsages(refactoring.getAffectedNodes(newContext, refactoringContext));
+                    } catch (Throwable t) {
+                      LOG.error(t);
+                      ThreadUtils.runInUIThreadAndWait(new Runnable() {
+                        public void run() {
+                          int promptResult = JOptionPane.showConfirmDialog(context.getFrame(),
+                            "An exception occurred during searching affected nodes. Do you want to continue anyway?", "Exception", JOptionPane.YES_NO_OPTION);
+                          toReturn[0] = promptResult == JOptionPane.NO_OPTION;
+                        }
+                      });
+                    }
                   }
                 });
-              }
-            }
-          });
           if (toReturn[0]) return;
           SearchResults usages = refactoringContext.getUsages();
           if (usages == null || (refactoring.refactorImmediatelyIfNoUsages() && usages.getSearchResults().isEmpty())) {
@@ -63,11 +63,11 @@ public class RefactoringProcessor {
           } else {
             ThreadUtils.runInUIThreadNoWait(new Runnable() {
               public void run() {
-                CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-                  public void run() {
-                    NewRefactoringView.showRefactoringView(context, refactoringContext);
-                  }
-                });
+                ModelAccess.instance().runReadAction(new Runnable() {
+                              public void run() {
+                                NewRefactoringView.showRefactoringView(context, refactoringContext);
+                              }
+                            });
               }
             });
           }
@@ -94,7 +94,7 @@ public class RefactoringProcessor {
   }
 
   private void doExecute(final @NotNull ActionContext context, final @NotNull RefactoringContext refactoringContext) {
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SModelRepository.getInstance().saveAll();
       }
