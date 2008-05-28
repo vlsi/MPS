@@ -3,6 +3,8 @@ package jetbrains.mps.transformationTest.matcher;
 import org.junit.Test;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.TestMain;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.util.Macros;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.transformationTest.matcher.*;
@@ -111,7 +113,7 @@ public class TransformationTests {
     IdeMain.setTestMode(true);
     MPSProject project = null;    
     try {
-      project = TestMain.loadProject(new File("C:\\MPS\\platform\\transformationTest\\transformationTest.mpr"));
+      project = TestMain.loadProject(new File(Macros.mpsHomeMacros().expandPath("${mps_home}platform/transformationTest/transformationTest.mpr", ((IFile)null))));
       final SModelDescriptor sm = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.transformationTest.test"));
       return sm.getSModel();
     } finally {

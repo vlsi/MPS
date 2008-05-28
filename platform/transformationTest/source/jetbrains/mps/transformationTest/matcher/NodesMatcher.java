@@ -7,9 +7,39 @@ import java.util.*;
 public class NodesMatcher {
 
   public static NodeDifference matchNodes(SNode a, SNode b) {
+    ArrayList<SNode> aList = new ArrayList<SNode>();
+    aList.add(a);
+    ArrayList<SNode> bList = new ArrayList<SNode>();
+    bList.add(b);
+    ArrayList<NodeDifference> diffs = matchNodes(aList, bList);
+    if (diffs != null) {
+      return diffs.get(0);
+    } else {
+      return null;
+    }
+  }
+
+  public static ArrayList<NodeDifference> matchNodes(List<SNode> a, List<SNode> b) {
     HashMap<SNode, SNode> map = new HashMap<SNode, SNode>();
-    match(a, b, map);
-    return matchNodes(a, b, map);
+    Iterator<SNode> iteratorA = a.iterator();
+    Iterator<SNode> iteratorB = b.iterator();
+    while (iteratorA.hasNext() && iteratorB.hasNext()) {
+      match(iteratorA.next(), iteratorB.next(), map);
+    }
+
+    ArrayList<NodeDifference> ret = null;
+    iteratorA = a.iterator();
+    iteratorB = b.iterator();
+    while (iteratorA.hasNext() && iteratorB.hasNext()) {
+      NodeDifference diff = matchNodes(iteratorA.next(), iteratorB.next(), map);
+      if (diff != null) {
+        if (ret == null) {
+          ret = new ArrayList<NodeDifference>();
+        }
+        ret.add(diff);
+      }
+    }
+    return ret;
   }
 
   private static void match(SNode a, SNode b, HashMap<SNode, SNode> map) {
@@ -62,8 +92,14 @@ public class NodesMatcher {
     roles.addAll(a.getReferenceRoles());
     roles.addAll(b.getReferenceRoles());
     for (String role: roles) {
-      SNode reference1 = a.getReference(role).getTargetNode();
-      SNode reference2 = b.getReference(role).getTargetNode();
+      SNode reference1 = null;
+      if (a.getReference(role) != null) {
+        reference1 = a.getReference(role).getTargetNode();
+      }
+      SNode reference2 = null;
+      if (b.getReference(role) != null) {
+        reference2 = b.getReference(role).getTargetNode();
+      }
 
       if (map.containsKey(reference1)) {
         if (map.get(reference1) != reference2) {
