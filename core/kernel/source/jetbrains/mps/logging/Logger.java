@@ -1,6 +1,7 @@
 package jetbrains.mps.logging;
 
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.smodel.ModelAccess;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -209,6 +210,14 @@ public class Logger {
     if (!condition) {
       error(message, new Throwable());
     }
+  }
+
+  public void assertCanRead() {
+    assertLog(ModelAccess.instance().canRead(), "Should be able to read models");
+  }
+
+  public void assertCanWrite() {
+    assertLog(ModelAccess.instance().canRead(), "Should be able to write models");
   }
 
   public void assertInCommand() {

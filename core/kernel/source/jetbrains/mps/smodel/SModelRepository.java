@@ -396,48 +396,43 @@ public class SModelRepository implements ApplicationComponent {
   }
 
   public void tryToReloadModelsFromDisk(final JFrame frame) {
-    if (myInChangedModelsReloading) {
-      return;
-    }
-
-    Runnable command = new Runnable() {
-      public void run() {
-        myInChangedModelsReloading = true;
-        try {
-          final Set<SModelDescriptor> toReload = new HashSet<SModelDescriptor>();
-          for (SModelDescriptor sm : getAllModelDescriptors()) {
-            if (sm.needsReloading()) {
-              toReload.add(sm);
-            }
-          }
-
-          for (SModelDescriptor sm : toReload) {
-            if (isChanged(sm)) {
-              int result = JOptionPane.showConfirmDialog(frame,
-                      "Model " + sm.getModelUID() + " changed on a disk. Do you want to discard memory changes?",
-                      "Model Changed " + sm.getModelUID(), JOptionPane.YES_NO_OPTION);
-
-              if (result == JOptionPane.YES_OPTION) {
-                sm.reloadFromDisk();
-              } else {
-                sm.save();
-              }
-            } else {
-              sm.reloadFromDisk();
-            }
-          }
-        } finally {
-          myInChangedModelsReloading = false;
-        }
-      }
-    };
-
-    if (CommandProcessor.instance().getCurrentCommandKind() == CommandKind.GENERATION) {
-      //ignore it during generation
-      return;
-    } else {
-      CommandProcessor.instance().executeLightweightCommandInEDT(command);
-    }
+//    if (myInChangedModelsReloading) {
+//      return;
+//    }
+//
+//    Runnable command = new Runnable() {
+//      public void run() {
+//        myInChangedModelsReloading = true;
+//        try {
+//          final Set<SModelDescriptor> toReload = new HashSet<SModelDescriptor>();
+//          for (SModelDescriptor sm : getAllModelDescriptors()) {
+//            if (sm.needsReloading()) {
+//              toReload.add(sm);
+//            }
+//          }
+//
+//          for (SModelDescriptor sm : toReload) {
+//            if (isChanged(sm)) {
+//              int result = JOptionPane.showConfirmDialog(frame,
+//                      "Model " + sm.getModelUID() + " changed on a disk. Do you want to discard memory changes?",
+//                      "Model Changed " + sm.getModelUID(), JOptionPane.YES_NO_OPTION);
+//
+//              if (result == JOptionPane.YES_OPTION) {
+//                sm.reloadFromDisk();
+//              } else {
+//                sm.save();
+//              }
+//            } else {
+//              sm.reloadFromDisk();
+//            }
+//          }
+//        } finally {
+//          myInChangedModelsReloading = false;
+//        }
+//      }
+//    };
+//
+//    CommandProcessor.instance().executeLightweightCommandInEDT(command);
   }
 
   private void fireModelRemoved(SModelDescriptor modelDescriptor) {

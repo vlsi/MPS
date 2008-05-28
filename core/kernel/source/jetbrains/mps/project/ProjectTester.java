@@ -29,7 +29,6 @@ public class ProjectTester {
     myProject = project;
   }
 
-
   private List<String> createCompilationProblemsList(List<CompilationResult> compilationResults) {
     List<String> res = new ArrayList<String>();
 

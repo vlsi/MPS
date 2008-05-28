@@ -48,7 +48,7 @@ public class FindUsagesManager implements ApplicationComponent {
   }
 
   public Set<AbstractConceptDeclaration> findDescendants(AbstractConceptDeclaration node, IScope scope) {
-    LOG.assertInCommand();
+    LOG.assertCanRead();
     HashMap<SModelDescriptor, HashSet<AbstractConceptDeclaration>> knownDescendantsInModelDescriptors = myConceptsToKnownDescendantsInModelDescriptors.get(node);
     if (knownDescendantsInModelDescriptors == null) {
       knownDescendantsInModelDescriptors = new HashMap<SModelDescriptor, HashSet<AbstractConceptDeclaration>>();
@@ -85,7 +85,7 @@ public class FindUsagesManager implements ApplicationComponent {
    * @return
    */
   public Set<SReference> findUsages(SNode node, IScope scope, IAdaptiveProgressMonitor progress) {
-    LOG.assertInCommand();
+    LOG.assertCanRead();
     return findUsages(CollectionUtil.asSet(node), scope, progress);
   }
 
@@ -102,7 +102,7 @@ public class FindUsagesManager implements ApplicationComponent {
   }
 
   public Set<SReference> findUsages(Set<SNode> nodes, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks) {
-    LOG.assertInCommand();
+    LOG.assertCanRead();
     Set<SReference> result = new HashSet<SReference>();
     //noinspection EmptyFinallyBlock
     try {
@@ -176,7 +176,7 @@ public class FindUsagesManager implements ApplicationComponent {
   }
 
   public Set<SNode> findInstances(AbstractConceptDeclaration concept, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks) {
-    LOG.assertInCommand();
+    LOG.assertCanRead();
     Set<SNode> result = new HashSet<SNode>();
     //noinspection EmptyFinallyBlock
     try {
@@ -208,7 +208,7 @@ public class FindUsagesManager implements ApplicationComponent {
   }
 
   public Set<SNode> findExactInstances(AbstractConceptDeclaration concept, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks) {
-    LOG.assertInCommand();
+    LOG.assertCanRead();
     Set<SNode> result = new HashSet<SNode>();
     //noinspection EmptyFinallyBlock
     try {

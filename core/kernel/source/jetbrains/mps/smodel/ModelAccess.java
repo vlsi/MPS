@@ -123,6 +123,18 @@ public class ModelAccess {
     }
   }
 
+  public boolean canWrite() {
+    return myReadWriteLock.isWriteLockedByCurrentThread();
+  }
+
+  public boolean canRead() {
+    if (allowSharedRead()) {
+      throw new UnsupportedOperationException();
+    } else {
+      return canWrite();
+    }
+  }
+
   public void checkWriteAccess() {
     if (!myReadWriteLock.isWriteLockedByCurrentThread()) {
       throw new IllegalStateException();
@@ -140,7 +152,7 @@ public class ModelAccess {
   }
 
   static void assertLegalRead(SNode node) {
-    if (!CommandProcessor.instance().isInsideCommand()) {
+    if (!ModelAccess.instance().canRead()) {
       if (Thread.currentThread() instanceof CursorWithContinuation) {
         return;
       }

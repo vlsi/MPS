@@ -34,7 +34,7 @@ public class RefactoringNodeMembersAccessModifier implements NodeMemberAccessMod
   private Set<SModel> myModifiableModels = new HashSet<SModel>();
 
   public void addModelsToModify(Collection<SModel> models) {
-    LOG.assertInCommand();
+    LOG.assertCanRead();
     myModifiableModels.addAll(models);
   }
 
@@ -44,12 +44,12 @@ public class RefactoringNodeMembersAccessModifier implements NodeMemberAccessMod
   }
 
   public void addReferentRoleChange(String conceptFQName, String oldRole, String newRole) {
-    LOG.assertInCommand();
+    LOG.assertCanRead();
     myReferencesRolesMap.put(new Pair<String, String>(conceptFQName, oldRole), newRole);
   }
 
   public void addPropertyNameChange(String conceptFQName, String oldName, String newName) {
-    LOG.assertInCommand();
+    LOG.assertCanRead();
     myPropertiesNamesMap.put(new Pair<String, String>(conceptFQName, oldName), newName);
   }
 
