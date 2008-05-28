@@ -42,6 +42,12 @@
 
     <group>
       <separator/>
+
+      <action id="GoToActionAction" class="com.intellij.ide.actions.GotoActionAction" text="Go To Action">
+        <keyboard-shortcut first-keystroke="control shift A" keymap="$default"/>
+      </action>
+
+      <separator/>
       <action id="GoToRootAction" class="jetbrains.mps.workbench.actions.goTo.actions.GoToRootNodeAction"
               text="Go To Root Node(new)">
         <keyboard-shortcut first-keystroke="control N" keymap="$default"/>
