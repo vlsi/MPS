@@ -9,7 +9,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.closures.runtime.Wrappers;
-import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.core.constraints.INamedConcept_Behavior;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
@@ -37,7 +37,7 @@ public class TestCaseTreeNode extends MPSTreeNode {
 
   public String getClassName() {
     final Wrappers._T<String> className = new Wrappers._T<String>(null);
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
 
       public void run() {
         className.value = INamedConcept_Behavior.call_getFqName_1184686272576(TestCaseTreeNode.this.testCase);

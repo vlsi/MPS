@@ -1177,11 +1177,11 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "commandClosureLiteral", true);
   }
 
-  public static SNode sourceNodeQuery_1208784118133(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_1211986017281(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "commandClosureLiteral", true);
   }
 
-  public static SNode sourceNodeQuery_1208784315509(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_1211986066274(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "commandClosureLiteral", true);
   }
 

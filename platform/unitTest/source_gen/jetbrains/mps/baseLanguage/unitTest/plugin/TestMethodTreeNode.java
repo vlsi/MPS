@@ -6,7 +6,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.closures.runtime.Wrappers;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.constraints.INamedConcept_Behavior;
@@ -35,7 +35,7 @@ public class TestMethodTreeNode extends MPSTreeNode {
 
   public void setState(TestState state) {
     this.state = state;
-    CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
+    ModelAccess.instance().runReadInEDT(new Runnable() {
 
       public void run() {
         TestMethodTreeNode.this.updatePresentation();
@@ -47,7 +47,7 @@ public class TestMethodTreeNode extends MPSTreeNode {
 
   public String getClassName() {
     final Wrappers._T<String> className = new Wrappers._T<String>(null);
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
 
       public void run() {
         SNode classConcept = SNodeOperations.getAncestor(TestMethodTreeNode.this.testMethod, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
@@ -62,7 +62,7 @@ public class TestMethodTreeNode extends MPSTreeNode {
 
   public String getMethodName() {
     final Wrappers._T<String> methodName = new Wrappers._T<String>(null);
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
 
       public void run() {
         methodName.value = SPropertyOperations.getString(TestMethodTreeNode.this.testMethod, "name");

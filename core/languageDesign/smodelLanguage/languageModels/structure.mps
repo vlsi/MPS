@@ -28,6 +28,7 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="6" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
@@ -2082,7 +2083,7 @@
     <property name="name" value="ExecuteLightweightCommandStatement" />
     <link role="extends" targetNodeId="1208782992286" resolveInfo="BaseExecuteCommandStatement" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1208783334927">
-      <property name="value" value="lightweight command" />
+      <property name="value" value="read action" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
@@ -2091,23 +2092,8 @@
     <property name="name" value="ExecuteEDTCommandStatement" />
     <link role="extends" targetNodeId="1208782992286" resolveInfo="BaseExecuteCommandStatement" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1208784234278">
-      <property name="value" value="EDT command" />
+      <property name="value" value="execute in EDT" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1208800367109">
-    <property name="package" value="command" />
-    <property name="name" value="ExecuteCommandStatement_New" />
-    <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1208800501343">
-      <property name="value" value="command_new" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1208800408260">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="commandClosure" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1208899702690" resolveInfo="CommandClosureLiteral" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1208899702690">
