@@ -217,7 +217,7 @@ public class Logger {
   }
 
   public void assertCanWrite() {
-    assertLog(ModelAccess.instance().canRead(), "Should be able to write models");
+    assertLog(ModelAccess.instance().canWrite(), "Should be able to write models");
   }
 
   public void assertInCommand() {

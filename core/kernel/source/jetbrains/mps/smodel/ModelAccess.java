@@ -129,25 +129,21 @@ public class ModelAccess {
 
   public boolean canRead() {
     if (allowSharedRead()) {
-      throw new UnsupportedOperationException();
+      return true; //todo find a way to check read access
     } else {
       return canWrite();
     }
   }
 
   public void checkWriteAccess() {
-    if (!myReadWriteLock.isWriteLockedByCurrentThread()) {
+    if (!canWrite()) {
       throw new IllegalStateException();
     }
   }
 
   public void checkReadAccess() {
-    if (allowSharedRead()) {
-      throw new UnsupportedOperationException();
-    } else {
-      if (!myReadWriteLock.isWriteLockedByCurrentThread()) {
-        throw new IllegalStateException();
-      }
+    if (!canRead()) {
+      throw new IllegalStateException();
     }
   }
 

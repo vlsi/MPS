@@ -62,14 +62,13 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
   }
 
   public void initComponent() {
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
         //todo hack
         //since bootstrap manager can't do this in its constructor we do it here
         for (BootstrapModule bm : BootstrapModule.values()) {
           bm.get().onModuleLoad();
         }
-
 
         updatePredefinedLibraries();
 
@@ -175,7 +174,7 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
       myRepository.unRegisterModules(myOwner);
     }
     myOwner = new MPSModuleOwner() { };
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
         for (Library l : getLibraries()) {
           if (!l.isPredefined()) {

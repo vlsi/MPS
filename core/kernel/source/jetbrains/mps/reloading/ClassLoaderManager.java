@@ -81,7 +81,7 @@ public class ClassLoaderManager implements ApplicationComponent {
     try {
       indicator.setIndeterminate(true);
       indicator.setText("Reloading classes...");
-      LOG.assertCanRead();
+      LOG.assertCanWrite();
 
       indicator.setText2("Disposing old classes...");
       callBeforeReloadHandlers();
