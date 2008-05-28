@@ -14,10 +14,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.WeakSet;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Mapper;
+import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.ForDebug;
 import jetbrains.mps.util.annotation.UseCarefully;
 import org.jetbrains.annotations.NotNull;
@@ -533,7 +530,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void deleteLanguage(@NotNull String languageNamespace) {
-    myLanguages.remove(languageNamespace);
+    myLanguages.remove(InternUtil.intern(languageNamespace));
     fireLanguageRemovedEvent(languageNamespace);
   }
 
@@ -573,7 +570,7 @@ public class SModel implements Iterable<SNode> {
 
   public void addDevKit(@NotNull String fqName) {
     if (!myDevKits.contains(fqName)) {
-      myDevKits.add(fqName);
+      myDevKits.add(InternUtil.intern(fqName));
       fireDevKitAddedEvent(fqName);
     }
   }
@@ -1026,7 +1023,7 @@ public class SModel implements Iterable<SNode> {
 
   public void addEngagedOnGenerationLanguage(String languageNamespace) {
     if (!myLanguagesEngagedOnGeneration.contains(languageNamespace)) {
-      myLanguagesEngagedOnGeneration.add(languageNamespace);
+      myLanguagesEngagedOnGeneration.add(InternUtil.intern(languageNamespace));
       // don't send event but mark model as changed
       if (!isLoading()) {
         SModelRepository.getInstance().markChanged(this);
@@ -1110,7 +1107,7 @@ public class SModel implements Iterable<SNode> {
   @UseCarefully
   public void changeImportedLanguageNamespace(String languageNamespace, String newModuleUID) {
     myLanguages.remove(languageNamespace);
-    myLanguages.add(newModuleUID);
+    myLanguages.add(InternUtil.intern(newModuleUID));
     fireLanguageRemovedEvent(languageNamespace);
     fireLanguageAddedEvent(newModuleUID);
   }
