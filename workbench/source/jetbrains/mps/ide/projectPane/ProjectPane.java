@@ -95,7 +95,6 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
   private ProjectModulesPoolTreeNode myModulesPool;
 
   private JToggleButton myPAndRToggle;
-  private JToggleButton myAutoscrollToSource;
   private JToggleButton myAutoscrollFromSource;
   private JToolBar myToolbar = new MPSToolBar();
   private MyPanel myPanel = new MyPanel();
@@ -112,10 +111,10 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
 
     public void onAfterReload() {
       ModelAccess.instance().runReadInEDT(new Runnable() {
-          public void run() {
-            rebuild();
-          }
-        });
+        public void run() {
+          rebuild();
+        }
+      });
     }
   };
 
