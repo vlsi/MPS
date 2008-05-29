@@ -18,17 +18,15 @@ public class BaseMPSTest extends TestCase {
 
   protected void tearDown() throws Exception {
     super.tearDown();
-    if (IdeMain.isTestMode()) {
-      for (int i = 0; i < 3; i++) {
-        try {
-          SwingUtilities.invokeAndWait(new Runnable() {
-            public void run() {
+    for (int i = 0; i < 3; i++) {
+      try {
+        SwingUtilities.invokeAndWait(new Runnable() {
+          public void run() {
 
-            }
-          });
-        } catch (Exception e) {
-          e.printStackTrace();
-        }
+          }
+        });
+      } catch (Exception e) {
+        e.printStackTrace();
       }
     }
   }
