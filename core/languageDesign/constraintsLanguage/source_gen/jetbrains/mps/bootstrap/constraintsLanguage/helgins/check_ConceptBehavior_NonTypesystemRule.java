@@ -11,6 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -36,12 +37,18 @@ public class check_ConceptBehavior_NonTypesystemRule implements NonTypesystemRul
         }
       }
       if (notImplementedMethods) {
-        TypeChecker.getInstance().reportTypeError(nodeToCheck, "Concept " + SPropertyOperations.getString(SLinkOperations.getTarget(nodeToCheck, "concept", false), "name") + " doesn't implement " + methodDeclarations, "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1198950378289");
+        {
+          BaseIntentionProvider intentionProvider = null;
+          TypeChecker.getInstance().reportTypeError(nodeToCheck, "Concept " + SPropertyOperations.getString(SLinkOperations.getTarget(nodeToCheck, "concept", false), "name") + " doesn't implement " + methodDeclarations, "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1198950378289", intentionProvider);
+        }
       }
     }
     for(SNode cmd : SLinkOperations.getTargets(nodeToCheck, "method", true)) {
       if (SConceptPropertyOperations.getBoolean(cmd, "abstract")) {
-        TypeChecker.getInstance().reportTypeError(cmd, "Abstract method in non abstract concept", "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1198949983025");
+        {
+          BaseIntentionProvider intentionProvider = null;
+          TypeChecker.getInstance().reportTypeError(cmd, "Abstract method in non abstract concept", "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1198949983025", intentionProvider);
+        }
       }
     }
   }
