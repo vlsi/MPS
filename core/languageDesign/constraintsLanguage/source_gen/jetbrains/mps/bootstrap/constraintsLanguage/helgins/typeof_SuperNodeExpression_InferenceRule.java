@@ -27,7 +27,7 @@ public class typeof_SuperNodeExpression_InferenceRule implements InferenceRule_R
       SNode icd = concept;
       result = ListSequence.fromList(SLinkOperations.getTargets(icd, "extends", true)).first();
     }
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_9().createNode(result), nodeToCheck, "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1193400817254");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1212097622220", true), new QuotationClass_9().createNode(result), nodeToCheck, null, "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1212097622218");
   }
 
   public String getApplicableConceptFQName() {
