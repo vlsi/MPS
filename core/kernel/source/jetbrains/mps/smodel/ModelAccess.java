@@ -1,6 +1,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorWithContinuation;
+import jetbrains.mps.ide.ThreadUtils;
 
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.concurrent.locks.Lock;
@@ -8,6 +9,8 @@ import java.util.concurrent.locks.Lock;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.application.ApplicationManager;
 
+// We access IDEA locking mechanism here in order to prevent different way of acquiring locks
+// We always first acquire IDEA's lock and only then acquire MPS's lock
 public class ModelAccess {
   private static final ModelAccess ourInstance = new ModelAccess();
 
@@ -47,25 +50,33 @@ public class ModelAccess {
   }
 
   public <T> T runReadAction(final Computable<T> c) {
-    getReadLock().lock();
-    try {
-      return c.compute();
-    } finally {
-      getReadLock().unlock();
-    }
+    return ApplicationManager.getApplication().runReadAction(new Computable<T>() {
+      public T compute() {
+        getReadLock().lock();
+        try {
+          return c.compute();
+        } finally {
+          getReadLock().unlock();
+        }
+      }
+    });
   }
 
-  public boolean tryRead(Runnable r) {
-    if (getReadLock().tryLock()) {
-      try {
-        r.run();
-      } finally {
-        getReadLock().unlock();
+  public boolean tryRead(final Runnable r) {    
+    return ApplicationManager.getApplication().runReadAction(new Computable<Boolean>() {
+      public Boolean compute() {
+        if (getReadLock().tryLock()) {
+          try {
+            r.run();
+          } finally {
+            getReadLock().unlock();
+          }
+          return true;
+        } else {
+          return false;
+        }
       }
-      return true;
-    } else {
-      return false;
-    }
+    });
   }
 
   public void runReadInEDT(Runnable r) {
@@ -94,11 +105,20 @@ public class ModelAccess {
   }
 
   public <T> T runWriteAction(final Computable<T> c) {
-    getWriteLock().lock();
-    try {
-      return c.compute();
-    } finally {
-      getWriteLock().unlock();
+    Computable<T> computable = new Computable<T>() {
+      public T compute() {
+        getWriteLock().lock();
+        try {
+          return c.compute();
+        } finally {
+          getWriteLock().unlock();
+        }
+      }
+    };    
+    if (ThreadUtils.isEventDispatchThread()) {
+      return ApplicationManager.getApplication().runWriteAction(computable);
+    } else {
+      return computable.compute();
     }
   }
 
