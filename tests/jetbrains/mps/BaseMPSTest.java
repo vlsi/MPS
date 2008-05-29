@@ -7,6 +7,9 @@ import java.lang.reflect.Method;
 
 import jetbrains.mps.bootstrap.helgins.tests.HelginsTestUtil;
 import jetbrains.mps.refactoring.framework.tests.IRefactoringTester;
+import jetbrains.mps.ide.IdeMain;
+
+import javax.swing.SwingUtilities;
 
 public class BaseMPSTest extends TestCase {
   protected void setUp() throws Exception {
@@ -15,6 +18,19 @@ public class BaseMPSTest extends TestCase {
 
   protected void tearDown() throws Exception {
     super.tearDown();
+    if (IdeMain.isTestMode()) {
+      for (int i = 0; i < 3; i++) {
+        try {
+          SwingUtilities.invokeAndWait(new Runnable() {
+            public void run() {
+
+            }
+          });
+        } catch (Exception e) {
+          e.printStackTrace();
+        }
+      }
+    }
   }
 
   protected String testProject(File project) {    

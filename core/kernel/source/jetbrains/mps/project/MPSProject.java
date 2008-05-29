@@ -512,21 +512,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
         myDisposed = true;
       }
     });
-
-
-    if (IdeMain.isTestMode()) {
-      for (int i = 0; i < 3; i++) {
-        try {
-          SwingUtilities.invokeAndWait(new Runnable() {
-            public void run() {
-
-            }
-          });
-        } catch (Exception e) {
-          LOG.error(e);
-        }
-      }
-    }
   }
 
   public boolean isDisposed() {
