@@ -23,6 +23,10 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="6" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
@@ -163,7 +167,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1174663118805">
     <property name="name" value="CreateLessThanInequationStatement" />
-    <link role="extends" targetNodeId="1174660718586" resolveInfo="AbstractEquationStatement" />
+    <link role="extends" targetNodeId="1212056081426" resolveInfo="AbstractInequationStatement" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1174663199540">
       <property name="value" value=":&lt;=:" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
@@ -175,7 +179,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1174663239020">
     <property name="name" value="CreateGreaterThanInequationStatement" />
-    <link role="extends" targetNodeId="1174660718586" resolveInfo="AbstractEquationStatement" />
+    <link role="extends" targetNodeId="1212056081426" resolveInfo="AbstractInequationStatement" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1174663257474">
       <property name="value" value=":&gt;=:" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
@@ -592,7 +596,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1179832490862">
     <property name="name" value="CreateStrongLessThanInequationStatement" />
-    <link role="extends" targetNodeId="1174660718586" resolveInfo="AbstractEquationStatement" />
+    <link role="extends" targetNodeId="1212056081426" resolveInfo="AbstractInequationStatement" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1179832533723">
       <property name="value" value=":&lt;&lt;=:" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
@@ -1011,6 +1015,38 @@
       <property name="sourceCardinality" value="1" />
       <property name="role" value="intentionArgument" />
       <link role="target" targetNodeId="6.1210781279743" resolveInfo="IntentionArgument" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1212056081426">
+    <property name="name" value="AbstractInequationStatement" />
+    <link role="extends" targetNodeId="1174660718586" resolveInfo="AbstractEquationStatement" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1212056105818">
+      <property name="name" value="inequationPriority" />
+      <link role="dataType" targetNodeId="1212056179025" resolveInfo="InequationPriority" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration" id="1212056179025">
+    <property name="name" value="InequationPriority" />
+    <link role="memberDataType" targetNodeId="1.1082983657062" resolveInfo="integer" />
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1212056179026">
+      <property name="externalValue" value="0" />
+      <property name="internalValue" value="0" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1212056190371">
+      <property name="externalValue" value="1" />
+      <property name="internalValue" value="1" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1212056192028">
+      <property name="externalValue" value="2" />
+      <property name="internalValue" value="2" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1212056204513">
+      <property name="externalValue" value="3" />
+      <property name="internalValue" value="3" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1212056211202">
+      <property name="externalValue" value="inf" />
+      <property name="internalValue" value="65535" />
     </node>
   </node>
 </model>
