@@ -124,7 +124,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     public void eventsHappenedInCommand(final List<SModelEvent> events) {
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          ApplicationManager.getApplication().runWriteAction(new Runnable() {
+          ModelAccess.instance().runWriteAction(new Runnable() {
             public void run() {
               for (SModelEvent e : events) {
                 e.accept(new SModelEventVisitorAdapter() {
