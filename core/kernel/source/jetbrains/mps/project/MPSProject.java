@@ -62,7 +62,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   public MPSProject(final File projectFile, Project ideaProject) {
     myIDEAProject = ideaProject;
 
-    CommandProcessor.instance().executeCommand(new Runnable() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         myProjectFile = projectFile;
         SModel model = ProjectModels.createDescriptorFor(MPSProject.this).getSModel();
