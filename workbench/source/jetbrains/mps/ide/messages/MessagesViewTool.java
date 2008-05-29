@@ -315,6 +315,7 @@ public class MessagesViewTool extends BaseMPSTool implements ProjectComponent, P
 
         if (isVisible(message)) {
           myModel.addElement(message);
+          myList.setSelectedValue(message, true);
         }
         myMessages.add(message);
 
