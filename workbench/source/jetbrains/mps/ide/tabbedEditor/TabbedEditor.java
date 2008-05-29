@@ -87,8 +87,8 @@ public class TabbedEditor implements IEditor {
   public Set<SNode> getAvailableNodes() {
     Set<SNode> result = new HashSet<SNode>();
     for (ILazyTab tab : myTabbedPane.getTabs()) {
-      if (tab.getEditorComponent() != null) {
-        result.add(tab.getEditorComponent().getEditedNode());
+      for (AbstractEditorComponent c : tab.getEditorComponents()) {
+        result.add(c.getEditedNode());
       }
     }
 
@@ -136,9 +136,7 @@ public class TabbedEditor implements IEditor {
   private List<AbstractEditorComponent> getEditors() {
     List<AbstractEditorComponent> result = new ArrayList<AbstractEditorComponent>();
     for (ILazyTab tab : myTabbedPane.getTabs()) {
-      if (tab.getEditorComponent() != null) {
-        result.add(tab.getEditorComponent());
-      }
+      result.addAll(tab.getEditorComponents());
     }
     return result;
   }
@@ -200,7 +198,11 @@ public class TabbedEditor implements IEditor {
   }
 
   public AbstractEditorComponent getCurrentEditorComponent() {
-    return myTabbedPane.getCurrentTab().getEditorComponent();
+    List<AbstractEditorComponent> components = myTabbedPane.getCurrentTab().getEditorComponents();
+    if (components.isEmpty()) {
+      return null;
+    }
+    return components.get(0);
   }
 
   public boolean removeFromRecentEditorsOnClose() {
@@ -226,10 +228,12 @@ public class TabbedEditor implements IEditor {
           }
           innerIndex++;
         }
-      } else if (tab.getEditorComponent() != null) {
-        if (tab.getEditorComponent().getEditedNode() == node) {
-          myTabbedPane.selectTab(index);
-          return;
+      } else {
+        for (AbstractEditorComponent c : tab.getEditorComponents()) {
+          if (c.getEditedNode() == node) {
+            myTabbedPane.selectTab(index);
+            return;
+          }
         }
       }
       index++;

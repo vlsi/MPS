@@ -1484,29 +1484,29 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
         ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            //i.e. we are disposed. it's too late to rebuild
+            if (getEditorContext() == null) {
+              return;
+            }
+
+            removeAll();
+
+            runSwapCellsActions(new Runnable() {
               public void run() {
-                //i.e. we are disposed. it's too late to rebuild
-                if (getEditorContext() == null) {
-                  return;
-                }
-
-                removeAll();
-
-                runSwapCellsActions(new Runnable() {
-                  public void run() {
-                    setRootCell(createRootCell(events));
-                  }
-                });
-
-                for (JComponent component : myRootCell.getSwingComponents()) {
-                  AbstractEditorComponent.this.add(component);
-                }
-
-                for (RebuildListener listener : myRebuildListeners) {
-                  listener.editorRebuilt(AbstractEditorComponent.this);
-                }
+                setRootCell(createRootCell(events));
               }
             });
+
+            for (JComponent component : myRootCell.getSwingComponents()) {
+              AbstractEditorComponent.this.add(component);
+            }
+
+            for (RebuildListener listener : myRebuildListeners) {
+              listener.editorRebuilt(AbstractEditorComponent.this);
+            }
+          }
+        });
       }
     });
   }
