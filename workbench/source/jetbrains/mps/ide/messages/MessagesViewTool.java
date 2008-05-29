@@ -322,8 +322,6 @@ public class MessagesViewTool extends BaseMPSTool implements ProjectComponent, P
         if (width > myList.getFixedCellWidth()) {
           myList.setFixedCellWidth(width);
         }
-
-        showTool();
       }
     });
   }
