@@ -12,8 +12,10 @@
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage.strings" />
+  <language namespace="jetbrains.mps.bootstrap.helgins" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
@@ -441,6 +443,25 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1210955648495">
     <property name="name" value="C1" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1212070699006">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1212070699007" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1212070699008" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212070699009">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1212070711354">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1212070711355">
+            <property name="name" value="t" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1212070711356" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212070836912">
+          <node role="expression" type="jetbrains.mps.bootstrap.helgins.structure.ImmediateSupertypesExpression" id="1212070836913">
+            <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1212070842743">
+              <link role="variableDeclaration" targetNodeId="1212070711355" resolveInfo="t" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1210955648496" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1210955660966">

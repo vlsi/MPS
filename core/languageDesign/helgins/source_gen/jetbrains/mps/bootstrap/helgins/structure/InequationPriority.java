@@ -10,7 +10,7 @@ public enum InequationPriority {
   _1("1", 1),
   _2("2", 2),
   _3("3", 3),
-  inf("inf", 65535);
+  inf("inf", 500);
 
   /* package */String myName;
   /* package */int myValue;

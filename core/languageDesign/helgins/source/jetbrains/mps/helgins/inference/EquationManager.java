@@ -798,25 +798,29 @@ public class EquationManager {
     Set<IWrapper> types = subtypingGraphVertices();
     boolean hasConcreteTypes = true;
     int priority = 0;
+    int[] minPriority = new int[]{Integer.MAX_VALUE};
     while (hasConcreteTypes) {
       startCollectingConcretes();
       hasConcreteTypes = false;
       for (IWrapper type : types) {
         if (type == null) continue;
         if (!type.isConcrete()) {
-          typeLessThanVar(type, true, priority);
-          typeLessThanVar(type, false, priority);
-          varLessThanType(type, true, priority);
-          varLessThanType(type, false, priority);
+          typeLessThanVar(type, true, priority, minPriority);
+          typeLessThanVar(type, false, priority, minPriority);
+          varLessThanType(type, true, priority, minPriority);
+          varLessThanType(type, false, priority, minPriority);
         } else {
-          typeLessThanConcrete(type, true, priority);
-          typeLessThanConcrete(type, false, priority);
-          concreteLessThanType(type, true, priority);
-          concreteLessThanType(type, false, priority);
+          typeLessThanConcrete(type, true, priority, minPriority);
+          typeLessThanConcrete(type, false, priority, minPriority);
+          concreteLessThanType(type, true, priority, minPriority);
+          concreteLessThanType(type, false, priority, minPriority);
           hasConcreteTypes = true;
         }
       }
       processConcretes();
+      if (minPriority[0] < Integer.MAX_VALUE && minPriority[0] > priority) {
+        priority = minPriority[0];
+      }
       types = subtypingGraphVertices();
     }
 
@@ -879,7 +883,7 @@ public class EquationManager {
     public void performAction(IWrapper type, Set<IWrapper> concreteSubtypes, Map<IWrapper, EquationInfo> errorInfoMap, boolean isWeak, EquationInfo errorInfo);
   }
 
-  private void typeLessThanVar(IWrapper var, boolean isWeak, int priority) {
+  private void typeLessThanVar(IWrapper var, boolean isWeak, int priority, int[] minPriority) {
     typeLessThanThis(var, isWeak, new IActionPerformer() {
       public void performAction(IWrapper type, Set<IWrapper> concreteSubtypes, Map<IWrapper, EquationInfo> errorInfoMap, boolean isWeak, EquationInfo errorInfo) {
         //  T,S <: c => c = lcs(T,S)
@@ -891,10 +895,10 @@ public class EquationManager {
         addEquation(type, myTypeChecker.getSubtypingManager().leastCommonSupertype(expandedSubtypes, isWeak, EquationManager.this),
           errorInfo);
       }
-    }, priority);
+    }, priority, minPriority);
   }
 
-  private void typeLessThanConcrete(IWrapper concreteType, boolean isWeak, int priority) {
+  private void typeLessThanConcrete(IWrapper concreteType, boolean isWeak, int priority, int[] minPriority) {
     typeLessThanThis(concreteType, isWeak, new IActionPerformer() {
       public void performAction(IWrapper type, Set<IWrapper> concreteSubtypes, Map<IWrapper, EquationInfo> errorInfoMap, boolean isWeak, EquationInfo errorInfo) {
         for (IWrapper subtype : concreteSubtypes) {
@@ -902,10 +906,10 @@ public class EquationManager {
           addInequation(subtype, type, errorInfoMap.get(subtype), isWeak, false);
         }
       }
-    }, priority);
+    }, priority, minPriority);
   }
 
-  private void typeLessThanThis(IWrapper thisType, boolean isWeak, IActionPerformer action, int priority) {
+  private void typeLessThanThis(IWrapper thisType, boolean isWeak, IActionPerformer action, int priority, int[] minPriority) {
     final Map<IWrapper, Map<IWrapper, EquationInfo>> supertypesToSubtypesMap;
     final Map<IWrapper, Map<IWrapper, EquationInfo>> subtypesToSupertypesMap;
     if (isWeak) {
@@ -931,7 +935,9 @@ public class EquationManager {
         subtypes.remove(subtypeNode);
         continue;
       }
-      if (subtypeNode.isConcrete() && subtypes.get(subtypeNode).getInequationPriority() <= priority) {//todo
+      int inequationPriority = subtypes.get(subtypeNode).getInequationPriority();
+      minPriority[0] = Math.min(minPriority[0], inequationPriority);
+      if (subtypeNode.isConcrete() && inequationPriority <= priority) {//todo
         concreteSubtypes.add(subtypeNode);
       }
     }
@@ -951,16 +957,16 @@ public class EquationManager {
     action.performAction(thisType, concreteSubtypes, equationInfoMap, isWeak, equationInfo);
   }
 
-  private void varLessThanType(IWrapper var, boolean isWeak, int priority) {
+  private void varLessThanType(IWrapper var, boolean isWeak, int priority, int[] minPriority) {
     thisLessThanType(var, isWeak, new IActionPerformer() {
       public void performAction(IWrapper type, Set<IWrapper> concreteSupertypes, Map<IWrapper, EquationInfo> errorInfoMap, boolean isWeak, EquationInfo errorInfo) {
         // c :< T => c = T
         addEquation(type, concreteSupertypes.iterator().next(), errorInfo);
       }
-    }, priority);
+    }, priority, minPriority);
   }
 
-  private void concreteLessThanType(IWrapper concreteType, boolean isWeak, int priority) {
+  private void concreteLessThanType(IWrapper concreteType, boolean isWeak, int priority, int[] minPriority) {
     thisLessThanType(concreteType, isWeak, new IActionPerformer() {
       public void performAction(IWrapper type, Set<IWrapper> concreteSupertypes, Map<IWrapper, EquationInfo> errorInfoMap, boolean isWeak, EquationInfo errorInfo) {
         for (IWrapper supertype : concreteSupertypes) {
@@ -968,10 +974,10 @@ public class EquationManager {
           addInequation(type, supertype, errorInfoMap.get(supertype), isWeak, false);
         }
       }
-    }, priority);
+    }, priority, minPriority);
   }
 
-  private void thisLessThanType(IWrapper thisType, boolean isWeak, IActionPerformer actionPerformer, int priority) {
+  private void thisLessThanType(IWrapper thisType, boolean isWeak, IActionPerformer actionPerformer, int priority, int[] minPriority) {
     final Map<IWrapper, Map<IWrapper, EquationInfo>> supertypesToSubtypesMap;
     final Map<IWrapper, Map<IWrapper, EquationInfo>> subtypesToSupertypesMap;
     if (isWeak) {
@@ -996,7 +1002,9 @@ public class EquationManager {
         supertypes.remove(supertypeNode);
         continue;
       }
-      if (supertypeNode.isConcrete() && supertypes.get(supertypeNode).getInequationPriority() <= priority) { //todo
+      int inequationPriority = supertypes.get(supertypeNode).getInequationPriority();
+      minPriority[0] = Math.min(minPriority[0], inequationPriority);
+      if (supertypeNode.isConcrete() && inequationPriority <= priority) { //todo
         concreteSupertypes.add(supertypeNode);
       }
     }
