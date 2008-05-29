@@ -3,27 +3,36 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.ICommandListener;
 import jetbrains.mps.ide.command.CommandEvent;
+import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.cleanup.CleanupListener;
+import com.intellij.openapi.components.ApplicationComponent;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 
-public class GarbageCollector {
+public class GarbageCollector implements ApplicationComponent {
 
-  public GarbageCollector() {
-    CommandProcessor.instance().addCommandListener(new ICommandListener() {
-      public void commandStarted(CommandEvent event) {
-      }
+  private CleanupManager myCleanupManager;
 
-      public void beforeCommandFinished(CommandEvent event) {
-        if (event.getKind().gcNeeded()) {
-          //DO NOT CHANGE the order of these calls and DO NOT move them to listeners
-          //Some before command finished listeners might need not disposed modules and models
-          MPSModuleRepository.getInstance().removeUnusedModules();
-          SModelRepository.getInstance().removeUnusedDescriptors();
-        }
-      }
+  public GarbageCollector(CleanupManager cleanupManager) {
+    myCleanupManager = cleanupManager;
+  }
 
-      public void commandFinished(CommandEvent event) {
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "Garbage Collector";
+  }
 
+  public void initComponent() {
+    myCleanupManager.addCleanupListener(new CleanupListener() {
+      public void performCleanup() {
+        MPSModuleRepository.getInstance().removeUnusedModules();
+        SModelRepository.getInstance().removeUnusedDescriptors();
       }
     });
+  }
+
+  public void disposeComponent() {
 
   }
 
