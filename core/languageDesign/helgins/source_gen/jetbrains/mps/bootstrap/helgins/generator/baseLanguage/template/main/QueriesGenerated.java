@@ -527,6 +527,18 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "intentionArgument", false), "name");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1212064595348(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getInteger_def(_context.getNode(), "inequationPriority", "0");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1212064701049(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getInteger_def(_context.getNode(), "inequationPriority", "0");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1212064722904(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getInteger_def(_context.getNode(), "inequationPriority", "0");
+  }
+
   public static Object referenceMacro_GetReferent_1174655195413(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode rule = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.AbstractRule", false, false);
     SNode method = _context.getGenerator().findOutputNodeByInputNodeAndMappingName(rule, "mainMethodForRule");
