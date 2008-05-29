@@ -5,6 +5,7 @@ import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
@@ -43,6 +44,8 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   }
 
   public void projectOpened() {
+    if (IdeMain.isTestMode()) return;
+
     try {
       IProjectHandler handler = getProject().getProjectHandler();
       if (handler == null) {

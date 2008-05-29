@@ -176,7 +176,7 @@ public class RefactoringProcessor {
     final RefactoringNodeMembersAccessModifier modifier = new RefactoringNodeMembersAccessModifier();
     refactoringContext.setUpMembersAccessModifier(modifier);
     for (final IModule sourceModule : sourceModels.keySet()) {
-      CommandProcessor.instance().executeGenerationCommand(new Runnable() {
+      ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
           try {
             IOperationContext operationContext = new ModuleContext(sourceModule, context.getOperationContext().getMPSProject());

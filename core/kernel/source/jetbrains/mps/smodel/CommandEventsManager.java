@@ -49,6 +49,7 @@ public class CommandEventsManager implements ApplicationComponent {
 
     for (SModelUID modelUID : eventsByModel.keySet()) {
       SModelDescriptor sm = mySModelRepository.getModelDescriptor(modelUID);
+      if (sm == null) continue;
       List<SModelEvent> modelEvents = eventsByModel.get(modelUID);
       sm.getSModel().fireSModelChangedInCommandEvent(Collections.unmodifiableList(modelEvents));
     }
