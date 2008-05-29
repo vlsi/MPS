@@ -6,6 +6,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.concurrent.locks.Lock;
 
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.application.ApplicationManager;
 
 public class ModelAccess {
   private static final ModelAccess ourInstance = new ModelAccess();
