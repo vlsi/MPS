@@ -2,6 +2,7 @@ package jetbrains.mps.nodeEditor;
 
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.application.RuntimeInterruptedException;
 import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRuleUtil;
 import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRule_Action;
 import jetbrains.mps.helgins.inference.IErrorReporter;
@@ -467,7 +468,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
                           }
                         });
             } catch (InterruptedException e) {
-
+            } catch (RuntimeInterruptedException e) {
             }
           }
         };
