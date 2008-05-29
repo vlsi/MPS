@@ -14,8 +14,8 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FrameUtil;
-import jetbrains.mps.util.IDisposable;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.MPSProjectHolder;
 
 import java.awt.Frame;
 import java.rmi.NoSuchObjectException;
@@ -25,45 +25,86 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.NonNls;
+import com.intellij.openapi.components.ProjectComponent;
+import com.intellij.openapi.project.Project;
 
-public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDEHandler, IDisposable {
+public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDEHandler, ProjectComponent {
   private static final Logger LOG = Logger.getLogger(MPSProjectIDEHandler.class);
 
-  private MPSProject myProject;
+  private Project myProject;
 
-  public MPSProjectIDEHandler(MPSProject project) throws RemoteException {
+  public MPSProjectIDEHandler(Project project) throws RemoteException {
     myProject = project;
-    IProjectHandler handler = myProject.getProjectHandler();
-    assert handler != null;
-    handler.addIdeHandler(this);
+  }
+
+  private MPSProject getProject() {
+    return myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+  }
+
+  public void projectOpened() {
+    try {
+      IProjectHandler handler = getProject().getProjectHandler();
+      assert handler != null;
+      handler.addIdeHandler(this);
+    } catch (RemoteException e) {
+      e.printStackTrace();
+    }
+  }
+
+  public void projectClosed() {
+    IProjectHandler handler = getProject().getProjectHandler();
+    if (handler != null) {
+      try {
+        handler.removeIdeHandler(this);
+      } catch (RemoteException e) {
+        LOG.error(e);
+      }
+    }
+
+    try {
+      unexportObject(this, true);
+    } catch (NoSuchObjectException e) {
+      throw new RuntimeException(e);
+    }
+  }
+
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "MPS Project IDE Handler";
+  }
+
+  public void initComponent() {
+
+  }
+
+  public void disposeComponent() {
+
   }
 
   private Frame getMainFrame() {
-    return myProject.getComponent(Frame.class);
+    return getProject().getComponent(Frame.class);
   }
 
   public void showNode(final String namespace, final String id) throws RemoteException {
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
         ModelAccess.instance().runReadAction(new Runnable() {
-              public void run() {
-                for (SModelDescriptor descriptor : GlobalScope.getInstance().getModelDescriptors()) {
-                  if (!namespace.equals(descriptor.getModelUID().getLongName())) continue;
-                  if (descriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) continue;
+          public void run() {
+            for (SModelDescriptor descriptor : GlobalScope.getInstance().getModelDescriptors()) {
+              if (!namespace.equals(descriptor.getModelUID().getLongName())) continue;
+              if (descriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) continue;
 
-                  SNode node = descriptor.getSModel().getNodeById(id);
-    //              if (node != null) {
-    //                IDEProjectFrame frame = getProjectWindow();
-    //                ModuleContext operationContext = ModuleContext.create(node, myProject);
-    //                EditorsPane pane = frame.getEditorsPane();
-    //                IEditor editor = pane.openEditor(node, operationContext);
-    //                NavigationActionProcessor.getInstance().executeNavigationAction(new EditorNavigationCommand(node, editor, pane), operationContext.getProject());
-    //              }
-                }
-
-                FrameUtil.activateFrame(getMainFrame());
+              SNode node = descriptor.getSModel().getNodeById(id);
+              if (node != null) {
+                myProject.getComponent(MPSEditorOpener.class).openNode(node);
               }
-            });
+            }
+
+            FrameUtil.activateFrame(getMainFrame());
+          }
+        });
       }
     });
   }
@@ -82,7 +123,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
           public void run() {
             SearchQuery searchQuery = new SearchQuery(GlobalScope.getInstance());
             BaseFinder finder = new AspectMethodsFinder(applicableModelDescriptors, name);
-            myProject.getComponentSafe(UsagesViewTool.class).findUsages(searchQuery, false, true, true, finder);
+            myProject.getComponent(UsagesViewTool.class).findUsages(searchQuery, false, true, true, finder);
           }
         }.start();
       }
@@ -93,7 +134,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(fqName, GlobalScope.getInstance());
-        myProject.getComponentSafe(MPSEditorOpener.class).openNode(concept.getNode());
+        myProject.getComponent(MPSEditorOpener.class).openNode(concept.getNode());
         FrameUtil.activateFrame(getMainFrame());
       }
     });
@@ -140,33 +181,15 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     });
   }
 
-  public void dispose() {
-    IProjectHandler handler = myProject.getProjectHandler();
-    if (handler != null) {
-      try {
-        handler.removeIdeHandler(this);
-      } catch (RemoteException e) {
-        LOG.error(e);
-      }
-    }
-
-    try {
-      unexportObject(this, true);
-    } catch (NoSuchObjectException e) {
-      throw new RuntimeException(e);
-    }
-
-  }
-
   private void findUsages(final @NotNull SNode node, final IScope scope) {
     new Thread() {
       public void run() {
         ModelAccess.instance().runReadAction(new Runnable() {
-              public void run() {
-                SearchQuery searchQuery = new SearchQuery(node, scope);
-                myProject.getComponentSafe(UsagesViewTool.class).findUsages(searchQuery, true, true, true, new NodeUsages_Finder());
-              }
-            });
+          public void run() {
+            SearchQuery searchQuery = new SearchQuery(node, scope);
+            myProject.getComponent(UsagesViewTool.class).findUsages(searchQuery, true, true, true, new NodeUsages_Finder());
+          }
+        });
       }
     }.start();
   }

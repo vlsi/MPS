@@ -350,6 +350,10 @@
       <implementation-class>jetbrains.mps.ide.progress.AdaptiveProgressMonitorFactory</implementation-class>
     </component>
 
+    <component>
+      <implementation-class>jetbrains.mps.plugin.MPSProjectIDEHandler</implementation-class>
+    </component>
+
   </project-components>
 
 </components>

@@ -435,7 +435,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     return new ProjectOperationContext(this);
   }
 
-  @Nullable
   public <T> T getComponent(Class<T> clazz) {
     if (clazz == Project.class) {
       return (T) myIDEAProject;
