@@ -937,7 +937,7 @@ public class EquationManager {
       }
       int inequationPriority = subtypes.get(subtypeNode).getInequationPriority();
       minPriority[0] = Math.min(minPriority[0], inequationPriority);
-      if (subtypeNode.isConcrete() && inequationPriority <= priority) {//todo
+      if (subtypeNode.isConcrete() && inequationPriority <= priority) {
         concreteSubtypes.add(subtypeNode);
       }
     }
@@ -1004,7 +1004,7 @@ public class EquationManager {
       }
       int inequationPriority = supertypes.get(supertypeNode).getInequationPriority();
       minPriority[0] = Math.min(minPriority[0], inequationPriority);
-      if (supertypeNode.isConcrete() && inequationPriority <= priority) { //todo
+      if (supertypeNode.isConcrete() && inequationPriority <= priority) {
         concreteSupertypes.add(supertypeNode);
       }
     }
