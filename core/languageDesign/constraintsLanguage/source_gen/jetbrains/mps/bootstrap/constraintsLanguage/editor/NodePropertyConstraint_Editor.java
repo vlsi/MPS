@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
-import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
@@ -104,7 +103,6 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_propertyGetterRefNodeCell4539_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_propertyGetterRefNodeCell4539_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell4539_05(EditorCell editorCell, SNode node, EditorContext context) {
@@ -146,14 +144,12 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell4539_012(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell4539_012");
-    editorCell.setDrawBorder(false);
-  }
-
   private static void setupBasic_propertySetterRefNodeCell4539_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_propertySetterRefNodeCell4539_0");
-    editorCell.setDrawBorder(false);
+  }
+
+  private static void setupBasic_propertyValidatorRefNodeCell4539_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_propertyValidatorRefNodeCell4539_0");
   }
 
   private static void setupLabel_ConstantCell4539_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -205,13 +201,12 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell4539_011(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.gray);
-  }
-
-  private static void setupLabel_ConstantCell4539_012(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_propertySetterRefNodeCell4539_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_propertyValidatorRefNodeCell4539_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition4539_0(SNode node, EditorContext editorContext, IScope scope) {
@@ -235,7 +230,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.create_CollectionCell4539_01(context, node));
     editorCell.addEditorCell(this.create_CollectionCell4539_02(context, node));
-    editorCell.addEditorCell(this.create_ConstantCell4539_012(context, node, ""));
+    editorCell.addEditorCell(this.create_ConstantCell4539_011(context, node, ""));
     return editorCell;
   }
 
@@ -313,7 +308,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.create_ConstantCell4539_09(context, node, "validate"));
     editorCell.addEditorCell(this.create_ConstantCell4539_010(context, node, ":"));
-    editorCell.addEditorCell(this.create_ConstantCell4539_011(context, node, "-not implemented-"));
+    editorCell.addEditorCell(this.create_propertyValidatorRefNodeCell4539_0(context, node));
     return editorCell;
   }
 
@@ -409,14 +404,6 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell4539_011(editorCell, node, context);
     setupLabel_ConstantCell4539_011(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public EditorCell create_ConstantCell4539_012(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_ConstantCell4539_012(editorCell, node, context);
-    setupLabel_ConstantCell4539_012(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -527,6 +514,35 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_propertySetterRefNodeCell4539_0_internal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else
+    return cellWithRole;
+  }
+
+  public EditorCell create_propertyValidatorRefNodeCell4539_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(null);
+    EditorCell editorCell = provider.createEditorCell(context);
+    setupBasic_propertyValidatorRefNodeCell4539_0(editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      setupLabel_propertyValidatorRefNodeCell4539_0((EditorCell_Label)editorCell, node, context);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    return editorCell;
+  }
+
+  public EditorCell create_propertyValidatorRefNodeCell4539_0(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+    provider.setRole("propertyValidator");
+    provider.setNoTargetText("<default>");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(false);
+    EditorCell cellWithRole = this.create_propertyValidatorRefNodeCell4539_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
