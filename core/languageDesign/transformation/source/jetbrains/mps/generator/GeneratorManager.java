@@ -15,6 +15,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.cleanup.CleanupManager;
 
 import javax.swing.JOptionPane;
 import javax.swing.Icon;
@@ -252,7 +253,7 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Conf
                                  final boolean saveTransientModels
   ) {
     final boolean[] result = new boolean[1];
-    CommandProcessor.instance().executeGenerationCommand(new Runnable() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         MPSProject project = inputModels.get(0).o2.getMPSProject();
         project.getComponentSafe(TransientModelsModule.class).clearAll();
@@ -264,6 +265,8 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Conf
         GenerationController gc = new GenerationController(GeneratorManager.this, inputModels, generationType, progress, messages, saveTransientModels);
         result[0] = gc.generate();
         project.getComponentSafe(GenerationTracer.class).finishTracing();
+
+        CleanupManager.getInstance().cleanup();
       }
     });
     return result[0];
