@@ -4,6 +4,8 @@ import jetbrains.mps.ide.command.CommandAdapter;
 import jetbrains.mps.ide.command.CommandEvent;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.util.WeakSet;
+import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.cleanup.CleanupListener;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -16,8 +18,8 @@ import org.jetbrains.annotations.Nullable;
   private static final WeakSet<SReferenceBase> ourImmatureReferences = new WeakSet<SReferenceBase>();
 
   static {
-    CommandProcessor.instance().addCommandListener(new CommandAdapter() {
-      public void commandFinished(@NotNull CommandEvent event) {
+    CleanupManager.getInstance().addCleanupListener(new CleanupListener() {
+      public void performCleanup() {
         synchronized (ourImmatureReferences) {
           for (SReferenceBase sr : ourImmatureReferences) {
             if (sr != null) {
