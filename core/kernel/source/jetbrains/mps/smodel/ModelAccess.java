@@ -37,13 +37,13 @@ public class ModelAccess {
     return myReadWriteLock.writeLock();
   }
 
-  public void runReadAction(Runnable r) {
-    getReadLock().lock();
-    try {
-      r.run();
-    } finally {
-      getReadLock().unlock();
-    }
+  public void runReadAction(final Runnable r) {
+    runReadAction(new Computable<Object>() {
+      public Object compute() {
+        r.run();
+        return null;
+      }
+    });
   }
 
   public <T> T runReadAction(final Computable<T> c) {
@@ -84,13 +84,13 @@ public class ModelAccess {
     }
   }
 
-  public void runWriteAction(Runnable r) {
-    getWriteLock().lock();
-    try {
-      r.run();
-    } finally {
-      getWriteLock().unlock();
-    }
+  public void runWriteAction(final Runnable r) {
+    runWriteAction(new Computable<Object>() {
+      public Object compute() {
+        r.run();
+        return null;
+      }
+    });
   }
 
   public <T> T runWriteAction(final Computable<T> c) {
@@ -99,31 +99,6 @@ public class ModelAccess {
       return c.compute();
     } finally {
       getWriteLock().unlock();
-    }
-  }
-
-  public boolean tryWrite(Runnable r) {
-    if (getWriteLock().tryLock()) {
-      try {
-        r.run();
-      } finally {
-        getWriteLock().unlock();
-      }
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  public<T> T tryWrite(Computable<T> c) {
-    if (getWriteLock().tryLock()) {
-      try {
-        return c.compute();
-      } finally {
-        getWriteLock().unlock();
-      }
-    } else {
-      return null;
     }
   }
 
