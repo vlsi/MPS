@@ -24,7 +24,7 @@ public class EnumerationDataTypeDeclaration_defaultMember_ReferentConstraint imp
   }
 
   public boolean canCreateNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return _context.getReferenceNode() != null;
+    return true;
   }
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {

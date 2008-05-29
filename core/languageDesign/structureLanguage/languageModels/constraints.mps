@@ -20,6 +20,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="23" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />
@@ -1893,14 +1894,16 @@
         <link role="concept" targetNodeId="1.1083171877298" resolveInfo="EnumerationMemberDeclaration" />
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197509213198">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1197509261618">
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1197509267716">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1197509268907" />
-            <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1197509266246" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1212082149210">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212082149211">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1212082159849">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1212082162291" />
+            </node>
           </node>
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197509261620">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197509278501">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1197509280910" />
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212082154921">
+            <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1212082153638" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1212082157910">
+              <link role="property" targetNodeId="1.1212080844762" resolveInfo="hasNoDefaultMember" />
             </node>
           </node>
         </node>
@@ -1958,16 +1961,6 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1162583340030">
               <link role="baseMethodDeclaration" targetNodeId="2.~SubnodesSearchScope.&lt;init&gt;(jetbrains.mps.smodel.SNode)" resolveInfo="SubnodesSearchScope" />
               <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_referenceNode" id="1162583511413" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="searchScopeCanCreate" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_CanCreate" id="1162583482070">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1162583482071">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1162583505409">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1162583505410">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1162583505411" />
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_referenceNode" id="1162583505412" />
             </node>
           </node>
         </node>

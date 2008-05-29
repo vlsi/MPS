@@ -577,6 +577,14 @@ public class QueriesGenerated {
     return SLinkOperations.getCount(_context.getNode(), "extends") == 0;
   }
 
+  public static boolean ifMacro_Condition_1212083662247(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(SPropertyOperations.getBoolean(_context.getNode(), "hasNoDefaultMember"));
+  }
+
+  public static boolean ifMacro_Condition_1212084337843(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "hasNoDefaultMember");
+  }
+
   public static List sourceNodesQuery_1167954157081(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "conceptPropertyDeclaration", true);
   }

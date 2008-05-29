@@ -26,79 +26,79 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class AggregationConceptLink_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105739124743");
+  private static void setupBasic_CollectionCell20120_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell20120_0");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_AggregationConceptLinkDeclarationReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105739124744");
+  private static void setupBasic_aggregationConceptLinkDeclarationRefCell20120_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_aggregationConceptLinkDeclarationRefCell20120_0");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105739124746");
+  private static void setupBasic_ConstantCell20120_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell20120_0");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_TargetCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105987989392");
+  private static void setupBasic_targetRefNodeCell20120_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_targetRefNodeCell20120_0");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupLabel_AggregationConceptLinkDeclarationReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_aggregationConceptLinkDeclarationRefCell20120_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell20120_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_TargetCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_targetRefNodeCell20120_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createRowCell(context, node);
+    return this.create_CollectionCell20120_0(context, node);
   }
 
-  public EditorCell createRowCell(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell20120_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    AggregationConceptLink_Editor.setupBasic_RowCell(editorCell, node, context);
+    setupBasic_CollectionCell20120_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createAggregationConceptLinkDeclarationReferenceCell(context, node));
-    editorCell.addEditorCell(this.createConstantCell(context, node, "="));
-    editorCell.addEditorCell(this.createTargetCell(context, node));
+    editorCell.addEditorCell(this.create_aggregationConceptLinkDeclarationRefCell20120_0(context, node));
+    editorCell.addEditorCell(this.create_ConstantCell20120_0(context, node, "="));
+    editorCell.addEditorCell(this.create_targetRefNodeCell20120_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell20120_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    AggregationConceptLink_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    AggregationConceptLink_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell20120_0(editorCell, node, context);
+    setupLabel_ConstantCell20120_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createAggregationConceptLinkDeclarationReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_aggregationConceptLinkDeclarationRefCell20120_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new AggregationConceptLink_Editor._Inline4());
     EditorCell editorCell = provider.createEditorCell(context);
-    AggregationConceptLink_Editor.setupBasic_AggregationConceptLinkDeclarationReferenceCell(editorCell, node, context);
+    setupBasic_aggregationConceptLinkDeclarationRefCell20120_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      AggregationConceptLink_Editor.setupLabel_AggregationConceptLinkDeclarationReferenceCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_aggregationConceptLinkDeclarationRefCell20120_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createAggregationConceptLinkDeclarationReferenceCell(EditorContext context, SNode node) {
+  public EditorCell create_aggregationConceptLinkDeclarationRefCell20120_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("aggregationConceptLinkDeclaration");
     provider.setNoTargetText("<no link>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createAggregationConceptLinkDeclarationReferenceCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_aggregationConceptLinkDeclarationRefCell20120_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -109,26 +109,26 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createTargetCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_targetRefNodeCell20120_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    AggregationConceptLink_Editor.setupBasic_TargetCell(editorCell, node, context);
+    setupBasic_targetRefNodeCell20120_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      AggregationConceptLink_Editor.setupLabel_TargetCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_targetRefNodeCell20120_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new AggregationConceptLink_Editor.AggregationConceptLink_target_cellMenu()}));
     return editorCell;
   }
 
-  public EditorCell createTargetCell(EditorContext context, SNode node) {
+  public EditorCell create_targetRefNodeCell20120_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("target");
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createTargetCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_targetRefNodeCell20120_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -145,13 +145,13 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
       super();
     }
 
-    private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105739124745");
+    private static void setupBasic_namePropertyCell20120_0(EditorCell editorCell, SNode node, EditorContext context) {
+      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell20120_0");
       editorCell.setDrawBorder(false);
       editorCell.setFontType(MPSFonts.BOLD);
     }
 
-    private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    private static void setupLabel_namePropertyCell20120_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
       editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
     }
 
@@ -161,28 +161,28 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext context, SNode node) {
-      return this.createNameCell(context, node);
+      return this.create_namePropertyCell20120_0(context, node);
     }
 
-    public EditorCell createNameCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    public EditorCell create_namePropertyCell20120_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      AggregationConceptLink_Editor._Inline4.setupBasic_NameCell(editorCell, node, context);
+      setupBasic_namePropertyCell20120_0(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        AggregationConceptLink_Editor._Inline4.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        setupLabel_namePropertyCell20120_0((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
 
-    public EditorCell createNameCell(EditorContext context, SNode node) {
+    public EditorCell create_namePropertyCell20120_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
-      EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
+      EditorCell cellWithRole = this.create_namePropertyCell20120_0_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {

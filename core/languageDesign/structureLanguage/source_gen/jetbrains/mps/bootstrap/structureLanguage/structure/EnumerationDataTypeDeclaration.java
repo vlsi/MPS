@@ -11,6 +11,7 @@ import java.util.List;
 
 public class EnumerationDataTypeDeclaration extends DataTypeDeclaration {
   public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration";
+  public static String HAS_NO_DEFAULT_MEMBER = "hasNoDefaultMember";
   public static String MEMBER_IDENTIFIER_POLICY = "memberIdentifierPolicy";
   public static String MEMBER_DATA_TYPE = "memberDataType";
   public static String DEFAULT_MEMBER = "defaultMember";
@@ -28,6 +29,14 @@ public class EnumerationDataTypeDeclaration extends DataTypeDeclaration {
     return EnumerationDataTypeDeclaration.newInstance(sm, false);
   }
 
+
+  public boolean getHasNoDefaultMember() {
+    return this.getBooleanProperty(EnumerationDataTypeDeclaration.HAS_NO_DEFAULT_MEMBER);
+  }
+
+  public void setHasNoDefaultMember(boolean value) {
+    this.setBooleanProperty(EnumerationDataTypeDeclaration.HAS_NO_DEFAULT_MEMBER, value);
+  }
 
   public EnumerationMemberIdentifierPolicy getMemberIdentifierPolicy() {
     String value = super.getProperty(EnumerationDataTypeDeclaration.MEMBER_IDENTIFIER_POLICY);
