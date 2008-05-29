@@ -4,10 +4,14 @@ package jetbrains.mps.core.intentions;
 
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
+import java.util.Map;
+import java.util.HashMap;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 
 public class AddMissingLanguageImport_Intention extends BaseIntention implements Intention {
+
+  private Map<String, Object[]> myMap = new HashMap<String, Object[]>();
 
   public String getConcept() {
     return "jetbrains.mps.core.structure.BaseConcept";
@@ -27,6 +31,23 @@ public class AddMissingLanguageImport_Intention extends BaseIntention implements
 
   public void execute(SNode node, EditorContext editorContext) {
     editorContext.getOperationContext().getModule().addUsedLangauge(node.getLanguageNamespace());
+  }
+
+  public Object[] getField(String key) {
+    Object[] value = this.myMap.get(key);
+    if (value == null) {
+      value = new Object[1];
+      this.myMap.put(key, value);
+    }
+    return value;
+  }
+
+  public void putArgument(String key, Object argument) {
+    this.getField(key)[0] = argument;
+  }
+
+  public String getSourceModelUID() {
+    return "jetbrains.mps.core.intentions";
   }
 
 }

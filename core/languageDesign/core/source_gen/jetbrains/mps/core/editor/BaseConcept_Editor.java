@@ -12,25 +12,25 @@ import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class BaseConcept_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1133921115694");
+  private static void setupBasic_ConstantCell5616_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5616_0");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell5616_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(true);
     editorCell.getTextLine().setTextColor(Color.lightGray);
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstantCell(context, node, "");
+    return this.create_ConstantCell5616_0(context, node, "");
   }
 
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell5616_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    BaseConcept_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    BaseConcept_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell5616_0(editorCell, node, context);
+    setupLabel_ConstantCell5616_0(editorCell, node, context);
     editorCell.setDefaultText("<abstract concept>");
     return editorCell;
   }
