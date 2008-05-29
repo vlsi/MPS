@@ -3,7 +3,7 @@
   <persistence version="1" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.constraintsLanguage">
-    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
@@ -18,6 +18,7 @@
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
   <language namespace="jetbrains.mps.ypath" />
   <language namespace="jetbrains.mps.quotation" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
@@ -811,7 +812,7 @@
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1212096231131">
                 <property name="value" value="true" />
               </node>
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.PropertySetter_FunctionParm_propertyValue" id="1212096223955" />
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintsFunctionParameter_propertyValue" id="1212096223955" />
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197704754569">
@@ -823,7 +824,7 @@
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1197704754571">
-                <node role="value" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.PropertySetter_FunctionParm_propertyValue" id="1197704799401" />
+                <node role="value" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintsFunctionParameter_propertyValue" id="1197704799401" />
               </node>
             </node>
           </node>
@@ -1370,7 +1371,7 @@
       <node role="propertySetter" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertySetter" id="1197906970255">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197906970256">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1197907015589">
-            <node role="condition" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.PropertySetter_FunctionParm_propertyValue" id="1198586659345" />
+            <node role="condition" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintsFunctionParameter_propertyValue" id="1198586659345" />
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197907015591">
               <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachStatement" id="1197907033790">
                 <node role="variable" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariable" id="1197907033791">
@@ -1429,7 +1430,7 @@
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1197907076309">
-                <node role="value" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.PropertySetter_FunctionParm_propertyValue" id="1197907077358" />
+                <node role="value" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintsFunctionParameter_propertyValue" id="1197907077358" />
               </node>
             </node>
           </node>
