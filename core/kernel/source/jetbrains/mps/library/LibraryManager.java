@@ -4,16 +4,14 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.BootstrapModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.pathVariables.PathVariableManager;
 import jetbrains.mps.library.LibraryManager.MyState;
+import jetbrains.mps.cleanup.CleanupManager;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -62,7 +60,7 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
   }
 
   public void initComponent() {
-    CommandProcessor.instance().executeCommand(new Runnable() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         //todo hack
         //since bootstrap manager can't do this in its constructor we do it here
@@ -174,7 +172,7 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
       myRepository.unRegisterModules(myOwner);
     }
     myOwner = new MPSModuleOwner() { };
-    CommandProcessor.instance().executeCommand(new Runnable() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         for (Library l : getLibraries()) {
           if (!l.isPredefined()) {
@@ -182,8 +180,9 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
           }
         }
         ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
-
         fireOnLoad(myOwner);
+
+        CleanupManager.getInstance().cleanup();
       }
     });
   }

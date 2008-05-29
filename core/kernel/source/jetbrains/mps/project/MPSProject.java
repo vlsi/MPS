@@ -20,6 +20,7 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.nodeEditor.Highlighter;
+import jetbrains.mps.cleanup.CleanupManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -476,7 +477,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   }
 
   public void dispose(final boolean reloadAll) {
-    CommandProcessor.instance().executeCommand(new Runnable() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         MPSProjects projects = MPSProjects.instance();
         projects.removeProject(MPSProject.this);
@@ -516,6 +517,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
           }
         }
 
+        CleanupManager.getInstance().cleanup();
+        
         myDisposed = true;
       }
     });

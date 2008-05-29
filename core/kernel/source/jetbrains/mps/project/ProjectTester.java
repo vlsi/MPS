@@ -95,7 +95,7 @@ public class ProjectTester {
 
     final List<String> compilationResults = new ArrayList<String>();
 
-    CommandProcessor.instance().executeCommand(new Runnable() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         List<BaseGeneratorConfiguration> configurations = new ArrayList<BaseGeneratorConfiguration>(myProject.getProjectDescriptor().getRunConfigurations());
         
