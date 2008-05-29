@@ -37,6 +37,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="11" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
@@ -282,6 +283,14 @@
       <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1152960114677" />
     </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1212095089935">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1147468365020" resolveInfo="ConstraintsFunctionParameter_node" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1212094369186">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1153138554286" resolveInfo="PropertySetter_FunctionParm_propertyValue" />
+    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1161720987823">
       <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" />
       <link role="target" targetNodeId="11.1161622878565" />
@@ -292,18 +301,18 @@
         <property name="name" value="PropertySetter_FunctionParm_node" />
         <link role="extends" targetNodeId="3.1107135704075" />
         <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1152960189265">
-          <property name="value" value="node" />
+          <property name="value" value="!old-node!" />
           <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
         </node>
         <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1152960189266">
           <property name="value" value="function parameter" />
           <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
         </node>
+        <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1212095159459">
+          <property name="value" value="replaced with ConstraintsFunctionParameter_node" />
+          <link role="conceptPropertyDeclaration" targetNodeId="1.1210365515391" resolveInfo="deprecated_next_after_607" />
+        </node>
       </node>
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1212094369186">
-      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
-      <link role="target" targetNodeId="1153138554286" resolveInfo="PropertySetter_FunctionParm_propertyValue" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1152960028074">
       <property name="value" value="setter" />

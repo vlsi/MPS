@@ -23,6 +23,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="23" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />
@@ -1865,7 +1866,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1212088691404">
               <node role="rValue" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.PropertySetter_FunctionParm_propertyValue" id="1212088694047" />
               <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212088686118">
-                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.PropertySetter_FunctionParm_node" id="1212088678336" />
+                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintsFunctionParameter_node" id="1212095904270" />
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1212088688996">
                   <link role="property" targetNodeId="1.1212080844762" resolveInfo="hasNoDefaultMember" />
                 </node>
@@ -1884,7 +1885,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1212088671611">
                   <node role="rValue" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1212088672974" />
                   <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212088668951">
-                    <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.PropertySetter_FunctionParm_node" id="1212088667278" />
+                    <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintsFunctionParameter_node" id="1212095979568" />
                     <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1212088669767">
                       <link role="link" targetNodeId="1.1083241965437" />
                     </node>

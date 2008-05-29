@@ -16,7 +16,7 @@ public class typeof_ThisNodeExpression_InferenceRule implements InferenceRule_Ru
 
   public void applyRule(final SNode thisNode) {
     SNode behaviour = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior", true, false);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_10().createNode(SLinkOperations.getTarget(behaviour, "concept", false)), thisNode, "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1178176661418");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_8().createNode(SLinkOperations.getTarget(behaviour, "concept", false)), thisNode, "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1178176661418");
   }
 
   public String getApplicableConceptFQName() {
