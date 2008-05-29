@@ -21,7 +21,10 @@ import java.util.LinkedHashSet;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.idea.IdeaTestApplication;
+
+import javax.swing.SwingUtilities;
 
 public class TestMain {
   private static boolean ourTestMode;

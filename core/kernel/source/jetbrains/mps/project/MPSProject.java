@@ -506,11 +506,11 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
 
             for (int i = 0; i < 3; i++) {
               try {
-//                SwingUtilities.invokeAndWait(new Runnable() {
-//                  public void run() {
-//
-//                  }
-//                });
+                SwingUtilities.invokeAndWait(new Runnable() {
+                  public void run() {
+
+                  }
+                });
               } catch (Exception e) {
                 LOG.error(e);
               }
