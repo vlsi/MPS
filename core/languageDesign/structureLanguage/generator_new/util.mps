@@ -17,6 +17,8 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="16" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
@@ -1436,6 +1438,78 @@
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178550081282" />
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1212077391612">
+    <property name="name" value="LinkDeclarationUtil" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1212077391613" />
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1212077459446">
+      <property name="name" value="getterMethodName" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212077459447">
+        <link role="classifier" targetNodeId="14.~String" resolveInfo="String" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1212077459448" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212077459449">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1212077566684">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1212077572625">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1212077579316">
+              <link role="baseMethodDeclaration" targetNodeId="16.~NameUtil.capitalize(java.lang.String):java.lang.String" resolveInfo="capitalize" />
+              <link role="classConcept" targetNodeId="16.~NameUtil" resolveInfo="NameUtil" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212077583350">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1212077581911">
+                  <link role="variableDeclaration" targetNodeId="1212077459450" resolveInfo="link" />
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1212077584071">
+                  <link role="property" targetNodeId="1.1071599776563" resolveInfo="role" />
+                </node>
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1212077568640">
+              <property name="value" value="get" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1212077459450">
+        <property name="name" value="link" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1212077459451">
+          <link role="concept" targetNodeId="1.1071489288298" resolveInfo="LinkDeclaration" />
+        </node>
+      </node>
+    </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1212077597994">
+      <property name="name" value="setterMethodName" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212077597995">
+        <link role="classifier" targetNodeId="14.~String" resolveInfo="String" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1212077597996" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212077597997">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1212077597998">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1212077597999">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1212077598000">
+              <link role="baseMethodDeclaration" targetNodeId="16.~NameUtil.capitalize(java.lang.String):java.lang.String" resolveInfo="capitalize" />
+              <link role="classConcept" targetNodeId="16.~NameUtil" resolveInfo="NameUtil" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212077598001">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1212077598002">
+                  <link role="variableDeclaration" targetNodeId="1212077598005" resolveInfo="link" />
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1212077598003">
+                  <link role="property" targetNodeId="1.1071599776563" resolveInfo="role" />
+                </node>
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1212077598004">
+              <property name="value" value="set" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1212077598005">
+        <property name="name" value="link" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1212077598006">
+          <link role="concept" targetNodeId="1.1071489288298" resolveInfo="LinkDeclaration" />
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 

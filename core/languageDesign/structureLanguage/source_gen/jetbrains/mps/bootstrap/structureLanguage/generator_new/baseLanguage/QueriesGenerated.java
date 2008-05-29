@@ -13,7 +13,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.structureLanguage.generator_new.util.QueriesUtil;
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.generator_new.util.LinkDeclarationUtil;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.bootstrap.structureLanguage.constraints.EnumerationDataTypeDeclaration_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
@@ -420,7 +420,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1198516836152(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _QueriesUtil.linkSetterName(((LinkDeclaration)SNodeOperations.getAdapter(SLinkOperations.getTarget(_context.getNode(), "specializedLink", false))));
+    return LinkDeclarationUtil.setterMethodName(SLinkOperations.getTarget(_context.getNode(), "specializedLink", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_1198516896741(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -428,7 +428,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1198516914297(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _QueriesUtil.linkGetterName(((LinkDeclaration)SNodeOperations.getAdapter(SLinkOperations.getTarget(_context.getNode(), "specializedLink", false))));
+    return LinkDeclarationUtil.getterMethodName(SLinkOperations.getTarget(_context.getNode(), "specializedLink", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_1198517006541(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -436,11 +436,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1198517017613(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _QueriesUtil.linkGetterName(((LinkDeclaration)SNodeOperations.getAdapter(SLinkOperations.getTarget(_context.getNode(), "specializedLink", false))));
+    return LinkDeclarationUtil.getterMethodName(SLinkOperations.getTarget(_context.getNode(), "specializedLink", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_1198517087605(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _QueriesUtil.linkSetterName(((LinkDeclaration)SNodeOperations.getAdapter(SLinkOperations.getTarget(_context.getNode(), "specializedLink", false))));
+    return LinkDeclarationUtil.setterMethodName(SLinkOperations.getTarget(_context.getNode(), "specializedLink", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_1204743264017(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -473,6 +473,38 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1204744645214(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return QueriesUtil.AL_class_listGetterName(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1212077641851(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return LinkDeclarationUtil.getterMethodName(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1212077689625(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return LinkDeclarationUtil.getterMethodName(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1212077722054(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return LinkDeclarationUtil.getterMethodName(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1212077750997(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return LinkDeclarationUtil.getterMethodName(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1212078150727(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return LinkDeclarationUtil.setterMethodName(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1212078184085(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return LinkDeclarationUtil.setterMethodName(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1212078194418(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return LinkDeclarationUtil.setterMethodName(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1212078209314(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return LinkDeclarationUtil.setterMethodName(_context.getNode());
   }
 
   public static Object referenceMacro_GetReferent_1197509802062(final IOperationContext operationContext, final ReferenceMacroContext _context) {
