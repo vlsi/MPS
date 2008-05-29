@@ -272,11 +272,7 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
           messages.addAll(checker.createMessages(node, editor.getOperationContext()));
         }
       };
-      if (checker.executeInUndoableCommand()) {
-//        CommandProcessor.instance().executeCommand(runnable);
-      } else {
-        ModelAccess.instance().runReadAction(runnable);
-      }
+      ModelAccess.instance().runReadAction(runnable);
 
       IEditorMessageOwner owner = owners[0];
       if (owner != null) {

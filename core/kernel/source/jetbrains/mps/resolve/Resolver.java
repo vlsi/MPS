@@ -41,6 +41,13 @@ public class Resolver {
    * @return unresolved references
    * */
   public static List<SReference> resolveReferences(Set<SReference> references, IOperationContext operationContext) {
+    return resolveReferences(references, operationContext, new ArrayList<ResolveResult>(), true);
+  }
+
+  /**
+   * @return unresolved references
+   * */
+  public static List<SReference> resolveReferences(Set<SReference> references, IOperationContext operationContext, List<ResolveResult> results, boolean forceResolve) {
     List<SReference> referencesToSort = new ArrayList<SReference>(references);
     Collections.sort(referencesToSort, new Comparator<SReference>() {
       public int compare(SReference o1, SReference o2) {
@@ -55,7 +62,7 @@ public class Resolver {
     while(true) {
       int size = referencesToSort.size();
       for (SReference reference : new ArrayList<SReference>(referencesToSort)) {
-        boolean resolved = resolve1(reference, operationContext);
+        boolean resolved = resolve1(reference, operationContext, results, forceResolve);
         if (resolved) {
           referencesToSort.remove(reference);
         }
@@ -84,7 +91,11 @@ public class Resolver {
     return referentNodes;
   }
 
-  public static boolean resolve1(final SReference reference, final IOperationContext operationContext) {
+  public static boolean resolve1(SReference reference, IOperationContext operationContext) {
+    return resolve1(reference, operationContext, new ArrayList<ResolveResult>(), true);
+  }
+
+  public static boolean resolve1(final SReference reference, final IOperationContext operationContext, List<ResolveResult> results, boolean forceResolve) {
     // search scope
     SNode referenceNode = reference.getSourceNode();
     ConceptDeclaration referenceNodeConcept = (ConceptDeclaration) referenceNode.getConceptDeclarationAdapter();
@@ -132,7 +143,11 @@ public class Resolver {
       };
       List<SNode> filtered = CollectionUtil.filter(nodes, nameMatchesCondition);
       if (!filtered.isEmpty()) {
-        reference.getSourceNode().setReferent(reference.getRole(), filtered.get(0));
+        ResolveResult resolveResult = new ResolveResult(referenceNode, filtered.get(0), reference.getRole(), null);
+        results.add(resolveResult);
+        if (forceResolve) {
+          resolveResult.setTarget();
+        }
         return true;
       }
       if (referenceNode.getParent() == null) {
@@ -160,9 +175,11 @@ public class Resolver {
         List<SNode> filteredRefTargets = CollectionUtil.filter(smartReferenceTargets, nameMatchesCondition);
         if (!filteredRefTargets.isEmpty()) {
           SNode target = filteredRefTargets.get(0);
-          SNode newNode = SModelUtil_new.instantiateConceptDeclaration(applicableConcept, referenceNode.getModel()).getNode();
-          newNode.setReferent(SModelUtil_new.getGenuineLinkRole(smartReference), target);
-          parent.replaceChild(referenceNode, newNode);
+          ResolveResult resolveResult = new ResolveResult(referenceNode, target, SModelUtil_new.getGenuineLinkRole(smartReference), applicableConcept);
+          results.add(resolveResult);
+          if (forceResolve) {
+            resolveResult.setTarget();
+          }
           return true;
         }
       }

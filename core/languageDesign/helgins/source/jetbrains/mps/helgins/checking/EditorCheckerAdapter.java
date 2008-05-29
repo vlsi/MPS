@@ -22,10 +22,6 @@ public abstract class EditorCheckerAdapter implements IEditorChecker, IEditorMes
     return this;
   }
 
-  public boolean executeInUndoableCommand() {
-    return false;
-  }
-
   protected IEditorMessage createErrorMessage(SNode node, String message) {
     DefaultEditorMessage error = new DefaultEditorMessage(node, Color.RED, message, getOwner(node.getContainingRoot())) {
       public void paint(Graphics g, IEditorComponent editorComponent) {

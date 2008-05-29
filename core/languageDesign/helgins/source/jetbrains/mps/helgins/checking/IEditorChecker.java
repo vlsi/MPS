@@ -26,7 +26,5 @@ public interface IEditorChecker {
 
   public IEditorMessageOwner getOwner(SNode rootNode);
 
-  public boolean executeInUndoableCommand();
-
   public boolean hasDramaticalEvent(List<SModelEvent> events);
 }

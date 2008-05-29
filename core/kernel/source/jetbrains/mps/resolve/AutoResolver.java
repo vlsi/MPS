@@ -6,6 +6,8 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.helgins.checking.IEditorChecker;
 import jetbrains.mps.helgins.checking.EditorCheckerAdapter;
+import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.command.CommandProcessor;
 
 import java.awt.Color;
 import java.util.*;
@@ -26,16 +28,30 @@ public class AutoResolver extends EditorCheckerAdapter {
       return messages;
     }
     List<SReference> yetBadReferences = new ArrayList<SReference>();
+
     SReference.disableLogging();
+    final ArrayList<ResolveResult> resolveResultArrayList = new ArrayList<ResolveResult>();
     try {
       // resolve references
       Set<SReference> badReferences = collectBadReferences(rootNode);
       if (!badReferences.isEmpty()) {
-        yetBadReferences = Resolver.resolveReferences(badReferences, operationContext);
+        yetBadReferences = Resolver.resolveReferences(badReferences, operationContext, resolveResultArrayList, false);
       }
     } finally {
       SReference.enableLogging();
     }
+
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      public void run() {
+        CommandProcessor.instance().executeCommand(new Runnable() {
+          public void run() {
+            for (ResolveResult resolveResult : resolveResultArrayList) {
+              resolveResult.setTarget();
+            }
+          }
+        });
+      }
+    });
 
      // highlight nodes with errors
     for (SReference ref : yetBadReferences) {
@@ -58,9 +74,4 @@ public class AutoResolver extends EditorCheckerAdapter {
     }
     return result;
   }
-
-  public boolean executeInUndoableCommand() {
-    return true;
-  }
-
 }
