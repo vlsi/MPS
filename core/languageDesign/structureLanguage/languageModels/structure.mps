@@ -108,6 +108,10 @@
       <property name="name" value="hasNoDefaultMember" />
       <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1212087449254">
+      <property name="name" value="noValueText" />
+      <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1083171729157">
       <property name="targetCardinality" value="0..n" />
       <property name="sourceCardinality" value="1" />
@@ -172,8 +176,8 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration" id="1084197782722">
     <property name="name" value="Cardinality" />
     <property name="memberIdentifierPolicy" value="derive_from_internal_value" />
+    <property name="hasNoDefaultMember" value="false" />
     <link role="memberDataType" targetNodeId="1.1082983041843" />
-    <link role="defaultMember" targetNodeId="1084197782723" resolveInfo="_0_1" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1084197782723">
       <property name="name" value="_0_1" />
       <property name="externalValue" value="0..1" />

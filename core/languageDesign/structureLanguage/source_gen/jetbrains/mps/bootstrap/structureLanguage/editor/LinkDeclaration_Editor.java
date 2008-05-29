@@ -410,7 +410,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
       List<String> result = ListSequence.<String>fromArray();
-      if (SPropertyOperations.hasValue(node, "metaClass", "aggregation", null)) {
+      if (SPropertyOperations.hasValue(node, "metaClass", "aggregation", "reference")) {
         for(Cardinality c : Cardinality.getConstants()) {
           ListSequence.fromList(result).addElement(c.getValueAsString());
         }

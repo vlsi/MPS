@@ -24,11 +24,11 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
     super(editorContext);
     LinkDeclaration genuineLink = SModelUtil_new.getGenuineLinkDeclaration(linkDeclaration);
     if (genuineLink.getMetaClass() != LinkMetaclass.reference) {
-      LOG.error("only reference links are allowed here", new RuntimeException("only reference links are allowed here"), linkDeclaration.getNode());
+      LOG.error("only reference links are allowed here", linkDeclaration.getNode());
     }
     Cardinality sourceCardinality = genuineLink.getSourceCardinality();
     if (!(sourceCardinality == Cardinality._1 || sourceCardinality == Cardinality._0__1)) {
-      LOG.error("only cardinalities 1 or 0..1 are allowed here", new RuntimeException("only cardinalities 1 or 0..1 are allowed here"), linkDeclaration.getNode());
+      LOG.error("only cardinalities 1 or 0..1 are allowed here", linkDeclaration.getNode());
     }
 
     mySourceNode = sourceNode;

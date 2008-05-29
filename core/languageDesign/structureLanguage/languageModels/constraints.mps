@@ -21,6 +21,8 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="23" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />
@@ -1855,6 +1857,45 @@
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178192141427">
     <link role="concept" targetNodeId="1.1082978164219" />
+    <node role="properties" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint" id="1212088610885">
+      <link role="applicableProperty" targetNodeId="1.1212080844762" resolveInfo="hasNoDefaultMember" />
+      <node role="propertySetter" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertySetter" id="1212088619434">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212088619435">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212088678335">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1212088691404">
+              <node role="rValue" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.PropertySetter_FunctionParm_propertyValue" id="1212088694047" />
+              <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212088686118">
+                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.PropertySetter_FunctionParm_node" id="1212088678336" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1212088688996">
+                  <link role="property" targetNodeId="1.1212080844762" resolveInfo="hasNoDefaultMember" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1212088638314">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1212088654116">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1212088662558">
+                <property name="value" value="true" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.PropertySetter_FunctionParm_propertyValue" id="1212088640927" />
+            </node>
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212088638316">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212088667277">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1212088671611">
+                  <node role="rValue" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1212088672974" />
+                  <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212088668951">
+                    <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.PropertySetter_FunctionParm_node" id="1212088667278" />
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1212088669767">
+                      <link role="link" targetNodeId="1.1083241965437" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1182473436982">
       <property name="name" value="toBaseLanguageType" />
       <link role="overriddenMethod" targetNodeId="1182472765133" resolveInfo="toBaseLanguageType" />

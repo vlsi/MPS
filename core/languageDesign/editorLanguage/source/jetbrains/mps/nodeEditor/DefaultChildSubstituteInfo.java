@@ -21,11 +21,11 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
   public DefaultChildSubstituteInfo(SNode sourceNode, LinkDeclaration linkDeclaration, EditorContext editorContext) {
     super(editorContext);
     if (isNotAggregation(linkDeclaration)) {
-      LOG.error("only aggregation links are allowed here", new RuntimeException("only aggregation links are allowed here."), linkDeclaration.getNode());
+      LOG.error("only aggregation links are allowed here", linkDeclaration.getNode());
     }
     Cardinality sourceCardinality = SModelUtil_new.getGenuineLinkSourceCardinality(linkDeclaration);
     if (!(sourceCardinality == Cardinality._1 || sourceCardinality == Cardinality._0__1)) {
-      LOG.error("only cardinalities 1 or 0..1 are allowed here", new RuntimeException("only cardinalities 1 or 0..1 are allowed here"), linkDeclaration.getNode());
+      LOG.error("only cardinalities 1 or 0..1 are allowed here", linkDeclaration.getNode());
     }
 
     myParentNode = sourceNode;

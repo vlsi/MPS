@@ -18,6 +18,8 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="31" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -306,6 +308,40 @@
               </node>
               <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1212080919060">
                 <link role="relationDeclaration" targetNodeId="1.1212080844762" resolveInfo="hasNoDefaultValue" />
+              </node>
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1212087554896">
+              <property name="selectable" value="false" />
+              <property name="drawBorder" value="false" />
+              <property name="vertical" value="false" />
+              <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1212087554897">
+                <property name="selectable" value="false" />
+                <property name="drawBorder" value="false" />
+                <property name="text" value="null text" />
+              </node>
+              <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1212087554898">
+                <property name="drawBorder" value="false" />
+                <property name="text" value=":" />
+                <property name="selectable" value="false" />
+                <property name="name" value="indent" />
+              </node>
+              <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1212087554899">
+                <property name="noTargetText" value="&lt;none&gt;" />
+                <property name="allowEmptyText" value="true" />
+                <property name="textFgColor" value="DARK_GREEN" />
+                <link role="relationDeclaration" targetNodeId="1.1212087449254" resolveInfo="noValueText" />
+              </node>
+              <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1212087593853">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212087593854">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212087613562">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212087614971">
+                      <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1212087613563" />
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1212087622053">
+                        <link role="property" targetNodeId="1.1212080844762" resolveInfo="hasNoDefaultMember" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1212080889122">

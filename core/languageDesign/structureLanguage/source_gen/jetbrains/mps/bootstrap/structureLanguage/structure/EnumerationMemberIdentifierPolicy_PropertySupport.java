@@ -40,7 +40,7 @@ public class EnumerationMemberIdentifierPolicy_PropertySupport extends PropertyS
     if (constant != null) {
       return constant.getName();
     }
-    return null;
+    return "";
   }
 
 }

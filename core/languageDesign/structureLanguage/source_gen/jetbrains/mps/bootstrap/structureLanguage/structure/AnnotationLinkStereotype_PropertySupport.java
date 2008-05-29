@@ -40,7 +40,7 @@ public class AnnotationLinkStereotype_PropertySupport extends PropertySupport {
     if (constant != null) {
       return constant.getName();
     }
-    return null;
+    return "";
   }
 
 }

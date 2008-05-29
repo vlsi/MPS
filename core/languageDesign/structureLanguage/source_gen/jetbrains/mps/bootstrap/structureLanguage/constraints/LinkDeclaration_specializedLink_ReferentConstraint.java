@@ -36,7 +36,7 @@ public class LinkDeclaration_specializedLink_ReferentConstraint implements IMode
   }
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    final boolean aggregation = SPropertyOperations.hasValue(_context.getReferenceNode(), "metaClass", "aggregation", null);
+    final boolean aggregation = SPropertyOperations.hasValue(_context.getReferenceNode(), "metaClass", "aggregation", "reference");
     List<SNode> result = new ArrayList<SNode>();
     SNode enclosingConcept = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration", true, false);
     List<SNode> directSupers = SConceptOperations.getDirectSuperConcepts(enclosingConcept, false);
@@ -46,9 +46,9 @@ public class LinkDeclaration_specializedLink_ReferentConstraint implements IMode
 
         public boolean accept(SNode it) {
           if (aggregation) {
-            return SPropertyOperations.hasValue(it, "metaClass", "aggregation", null);
+            return SPropertyOperations.hasValue(it, "metaClass", "aggregation", "reference");
           }
-          return SPropertyOperations.hasValue(it, "metaClass", null, null);
+          return SPropertyOperations.hasValue(it, "metaClass", "reference", "reference");
         }
 
       }));

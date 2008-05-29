@@ -507,6 +507,13 @@ public class QueriesGenerated {
     return LinkDeclarationUtil.setterMethodName(_context.getNode());
   }
 
+  public static Object propertyMacro_GetPropertyValue_1212087871489(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    if (SPropertyOperations.getString(_context.getNode(), "noValueText") != null) {
+      return SPropertyOperations.getString(_context.getNode(), "noValueText");
+    }
+    return "";
+  }
+
   public static Object referenceMacro_GetReferent_1197509802062(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode defaultMember = EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1197509213196(_context.getNode());
     SNode outputEnumConstant = _context.getGenerator().findOutputNodeByInputNodeAndMappingName(defaultMember, "outputEnumConstant");
