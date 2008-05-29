@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.LinkedList;
 
 public enum LinkMetaclass {
-  reference("reference", null),
+  reference("reference", "reference"),
   aggregation("aggregation", "aggregation");
 
   private String myName;

@@ -198,10 +198,12 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration" id="1084199179703">
     <property name="name" value="LinkMetaclass" />
     <property name="hasNoDefaultMember" value="false" />
+    <property name="memberIdentifierPolicy" value="derive_from_internal_value" />
     <link role="memberDataType" targetNodeId="1.1082983041843" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1084199179704">
       <property name="name" value="reference" />
       <property name="externalValue" value="reference" />
+      <property name="internalValue" value="reference" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1084199179705">
       <property name="name" value="aggregation" />
