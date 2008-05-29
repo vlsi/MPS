@@ -9,8 +9,8 @@ public enum AnnotationLinkCardinality {
   _0__1("1", "0..1"),
   _0__n("*", "0..n");
 
-  /* package */String myName;
-  /* package */String myValue;
+  private String myName;
+  private String myValue;
 
 AnnotationLinkCardinality(String name, String value) {
     this.myName = name;

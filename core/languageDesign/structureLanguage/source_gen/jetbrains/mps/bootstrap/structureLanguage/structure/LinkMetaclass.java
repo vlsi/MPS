@@ -9,8 +9,8 @@ public enum LinkMetaclass {
   reference("reference", null),
   aggregation("aggregation", "aggregation");
 
-  /* package */String myName;
-  /* package */String myValue;
+  private String myName;
+  private String myValue;
 
 LinkMetaclass(String name, String value) {
     this.myName = name;

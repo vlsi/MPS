@@ -10,8 +10,8 @@ public enum AnnotationLinkStereotype {
   link("link", "link"),
   property("property", "property");
 
-  /* package */String myName;
-  /* package */String myValue;
+  private String myName;
+  private String myValue;
 
 AnnotationLinkStereotype(String name, String value) {
     this.myName = name;

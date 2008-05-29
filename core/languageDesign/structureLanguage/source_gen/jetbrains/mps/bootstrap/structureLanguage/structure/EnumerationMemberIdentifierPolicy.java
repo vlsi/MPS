@@ -10,8 +10,8 @@ public enum EnumerationMemberIdentifierPolicy {
   derive_from_internal_value("derive from internal value", "derive_from_internal_value"),
   custom("custom", "custom");
 
-  /* package */String myName;
-  /* package */String myValue;
+  private String myName;
+  private String myValue;
 
 EnumerationMemberIdentifierPolicy(String name, String value) {
     this.myName = name;
