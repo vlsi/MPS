@@ -18,7 +18,7 @@ public class typeOf_Concept_NewInstance_InferenceRule implements InferenceRule_R
 
   public void applyRule(final SNode node) {
     if (SLinkOperations.getTarget(node, "prototypeNode", true) != null) {
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(node, "prototypeNode", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061176339", true), new QuotationClass_57().createNode(), SLinkOperations.getTarget(node, "prototypeNode", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1181950211367", false);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(node, "prototypeNode", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061176339", true), new QuotationClass_57().createNode(), SLinkOperations.getTarget(node, "prototypeNode", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1181950211367", false, 0);
     }
     SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1200920411564(node);
     {

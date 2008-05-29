@@ -19,7 +19,7 @@ public class typeof_Node_GetConceptOperation_InferenceRule implements InferenceR
   public void applyRule(final SNode op) {
     RulesUtil.checkAppliedCorrectly_generic(op);
     RulesUtil.checkOpParameters_generic(op);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1210625778386", true), new QuotationClass_97().createNode(), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1210625806639", false);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1210625778386", true), new QuotationClass_97().createNode(), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1210625806639", false, 0);
     SNode operand = SLinkOperations.getTarget(SNodeOperations.getParent(op, null, false, false), "operand", true);
     {
       final SNode operandType = TypeChecker.getInstance().getRuntimeSupport().typeOf(operand, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1210625639214", false);
