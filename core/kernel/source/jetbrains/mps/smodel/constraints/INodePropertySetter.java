@@ -4,11 +4,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 15.07.2006
- * Time: 14:56:48
- * To change this template use File | Settings | File Templates.
+ * Cyril.Konopko
+ * 15.07.2006
  */
 public interface INodePropertySetter extends IModelConstraints {
   void execPropertySet(SNode node, String propertyName, String value, IScope scope);

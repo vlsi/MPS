@@ -39,14 +39,14 @@ public class Resolver {
 
   /**
    * @return unresolved references
-   * */
+   */
   public static List<SReference> resolveReferences(Set<SReference> references, IOperationContext operationContext) {
     return resolveReferences(references, operationContext, new ArrayList<ResolveResult>(), true);
   }
 
   /**
    * @return unresolved references
-   * */
+   */
   public static List<SReference> resolveReferences(Set<SReference> references, IOperationContext operationContext, List<ResolveResult> results, boolean forceResolve) {
     List<SReference> referencesToSort = new ArrayList<SReference>(references);
     Collections.sort(referencesToSort, new Comparator<SReference>() {
@@ -59,7 +59,7 @@ public class Resolver {
       }
     });
 
-    while(true) {
+    while (true) {
       int size = referencesToSort.size();
       for (SReference reference : new ArrayList<SReference>(referencesToSort)) {
         boolean resolved = resolve1(reference, operationContext, results, forceResolve);
@@ -100,6 +100,10 @@ public class Resolver {
     SNode referenceNode = reference.getSourceNode();
     ConceptDeclaration referenceNodeConcept = (ConceptDeclaration) referenceNode.getConceptDeclarationAdapter();
     LinkDeclaration linkDeclaration = SModelUtil_new.findLinkDeclaration(referenceNodeConcept, reference.getRole());
+    if (linkDeclaration == null) {
+      LOG.error("couldn't find link declaration for role '" + reference.getRole() + "'", referenceNode);
+      return false;
+    }
     final AbstractConceptDeclaration referentConcept = linkDeclaration.getTarget();
 
     SNode sNode = referenceNode.getParent();
@@ -111,7 +115,7 @@ public class Resolver {
     NodeTypesComponent temporaryComponent;
     try {
       temporaryComponent = nodeTypesComponent.clone();
-    } catch(CloneNotSupportedException ex) {
+    } catch (CloneNotSupportedException ex) {
       LOG.error(ex);
       return false;
     }
@@ -185,7 +189,7 @@ public class Resolver {
       }
 
       return false;
-    } finally{
+    } finally {
       NodeTypesComponentsRepository.getInstance().swapTypesComponentForRoot(containingRoot, nodeTypesComponent);
     }
   }

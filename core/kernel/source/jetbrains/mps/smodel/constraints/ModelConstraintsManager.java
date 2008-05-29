@@ -34,6 +34,8 @@ public class ModelConstraintsManager implements ApplicationComponent {
   private Map<String, INodePropertyGetter> myNodePropertyGettersCache = new HashMap<String, INodePropertyGetter>();
   private Map<String, INodePropertySetter> myNodePropertySettersMap = new HashMap<String, INodePropertySetter>();
   private Map<String, INodePropertySetter> myNodePropertySettersCache = new HashMap<String, INodePropertySetter>();
+  private Map<String, INodePropertyValidator> myNodePropertyValidatorsMap = new HashMap<String, INodePropertyValidator>();
+  private Map<String, INodePropertyValidator> myNodePropertyValidatorsCache = new HashMap<String, INodePropertyValidator>();
   private Map<String, INodeReferentSetEventHandler> myNodeReferentSetEventHandlersMap = new HashMap<String, INodeReferentSetEventHandler>();
   private Map<String, INodeReferentSearchScopeProvider> myNodeReferentSearchScopeProvidersMap = new HashMap<String, INodeReferentSearchScopeProvider>();
   private Map<String, INodeReferentSearchScopeProvider> myNodeDefaultSearchScopeProvidersMap = new HashMap<String, INodeReferentSearchScopeProvider>();
@@ -90,7 +92,6 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   public void unRegisterNodePropertyGetter(String conceptFqName, String propertyName) {
     myNodePropertyGettersMap.remove(conceptFqName + "#" + propertyName);
-
     myNodePropertyGettersCache.clear();
   }
 
@@ -107,8 +108,23 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   public void unRegisterNodePropertySetter(String conceptFqName, String propertyName) {
     myNodePropertySettersMap.remove(conceptFqName + "#" + propertyName);
+    myNodePropertySettersCache.clear();
+  }
 
-    myNodePropertyGettersCache.clear();
+  public void registerNodePropertyValidator(String conceptFqName, String propertyName, INodePropertyValidator validator) {
+    String key = conceptFqName + "#" + propertyName;
+    if (!myNodePropertyValidatorsMap.containsKey(key)) {
+      myNodePropertyValidatorsMap.put(key, validator);
+    } else {
+      LOG.error("property validator is already registered for key '" + key + "' : " + myNodePropertyValidatorsMap.get(key));
+    }
+
+    myNodePropertyValidatorsCache.clear();
+  }
+
+  public void unRegisterNodePropertyValidator(String conceptFqName, String propertyName) {
+    myNodePropertyValidatorsMap.remove(conceptFqName + "#" + propertyName);
+    myNodePropertyValidatorsCache.clear();
   }
 
   public void registerNodeReferentSetEventHandler(String conceptFqName, String referentRole, INodeReferentSetEventHandler eventHandler) {
@@ -190,14 +206,14 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
     // 'bootstrap' properties
     if (namespace.equals("jetbrains.mps.bootstrap.structureLanguage") && propertyName.equals(NamedConcept.NAME)
-            && !node.getConceptFQName().equals("jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration")) {
+      && !node.getConceptFQName().equals("jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration")) {
       return null;
     }
     if (namespace.equals("jetbrains.mps.projectLanguage")) {
       return null;
     }
     if (node instanceof RuntimeTypeVariable) {
-      // helgins fhtagn!
+      // helgins ku-ku!
       return null;
     }
 
@@ -212,7 +228,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
       builder.append(nodeConceptFqName);
       builder.append(prefixedPropertyName);
       String originalKey = builder.toString();
-      
+
       if (isSetter) {
         if (myNodePropertySettersCache.containsKey(originalKey)) {
           return myNodePropertySettersCache.get(originalKey);
@@ -265,6 +281,62 @@ public class ModelConstraintsManager implements ApplicationComponent {
     }
   }
 
+  public INodePropertyValidator getNodePropertyValidator(@NotNull final INodeAdapter node, @NotNull final String propertyName) {
+//    String namespace = node.getNode().getLanguageNamespace();
+
+    // 'bootstrap' properties
+// may be for validators it is safe?
+//    if (namespace.equals("jetbrains.mps.bootstrap.structureLanguage") && propertyName.equals(NamedConcept.NAME)
+//      && !node.getConceptFQName().equals("jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration")) {
+//      return null;
+//    }
+//    if (namespace.equals("jetbrains.mps.projectLanguage")) {
+//      return null;
+//    }
+    if (node instanceof RuntimeTypeVariable) {
+      // helgins ku-ku!
+      return null;
+    }
+
+    StringBuilder builder = new StringBuilder();
+    builder.append('#');
+    builder.append(propertyName);
+    String prefixedPropertyName = builder.toString();
+    builder.setLength(0);
+
+    String nodeConceptFqName = node.getConceptFQName();
+    builder.append(nodeConceptFqName);
+    builder.append(prefixedPropertyName);
+    String originalKey = builder.toString();
+
+    if (myNodePropertyValidatorsCache.containsKey(originalKey)) {
+      return myNodePropertyValidatorsCache.get(originalKey);
+    }
+
+    // find validator and put to cache
+    List<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(node.getConceptDeclarationAdapter());
+    for (AbstractConceptDeclaration concept : hierarchy) {
+      Language l = SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
+      if (!myAddedLanguageNamespaces.containsKey(l.getNamespace())) {
+        processLanguageAdded(l);
+      }
+
+      String conceptFqName = NameUtil.nodeFQName(concept);
+      builder.setLength(0);
+      builder.append(conceptFqName);
+      builder.append(prefixedPropertyName);
+      INodePropertyValidator result = myNodePropertyValidatorsMap.get(builder.toString());
+      if (result != null) {
+        myNodePropertyValidatorsCache.put(originalKey, result);
+        return result;
+      }
+    }
+
+    // no setter/getter found
+    myNodePropertyValidatorsCache.put(originalKey, null);
+    return null;
+  }
+
   /*package*/ INodeReferentSearchScopeProvider getNodeDefaultSearchScopeProvider(AbstractConceptDeclaration referentConcept) {
     while (referentConcept != null) {
       Language l = SModelUtil_new.getDeclaringLanguage(referentConcept, GlobalScope.getInstance());
@@ -285,17 +357,17 @@ public class ModelConstraintsManager implements ApplicationComponent {
    * use the ModelConstraintsUtil.getSearchScope()
    */
   /*package*/ INodeReferentSearchScopeProvider getNodeReferentSearchScopeProvider(AbstractConceptDeclaration nodeConcept, String referentRole) {
-      List<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(nodeConcept);
-      for (AbstractConceptDeclaration concept : hierarchy) {
-        Language l = SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
-        if (!myAddedLanguageNamespaces.containsKey(l.getNamespace())) {
-          processLanguageAdded(l);
-        }
-
-        String conceptFqName = NameUtil.nodeFQName(concept);
-        INodeReferentSearchScopeProvider provider = myNodeReferentSearchScopeProvidersMap.get(conceptFqName + "#" + referentRole);
-        if (provider != null) return provider;
+    List<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(nodeConcept);
+    for (AbstractConceptDeclaration concept : hierarchy) {
+      Language l = SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
+      if (!myAddedLanguageNamespaces.containsKey(l.getNamespace())) {
+        processLanguageAdded(l);
       }
+
+      String conceptFqName = NameUtil.nodeFQName(concept);
+      INodeReferentSearchScopeProvider provider = myNodeReferentSearchScopeProvidersMap.get(conceptFqName + "#" + referentRole);
+      if (provider != null) return provider;
+    }
     return null;
   }
 
