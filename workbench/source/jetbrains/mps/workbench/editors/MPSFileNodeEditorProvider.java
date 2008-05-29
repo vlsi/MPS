@@ -3,6 +3,7 @@ package jetbrains.mps.workbench.editors;
 import com.intellij.openapi.fileEditor.*;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.util.Disposer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
 import org.jdom.Element;
@@ -19,7 +20,7 @@ public class MPSFileNodeEditorProvider implements FileEditorProvider {
   }
 
   public void disposeEditor(@NotNull FileEditor editor) {
-
+    Disposer.dispose(editor);
   }
 
   @NotNull

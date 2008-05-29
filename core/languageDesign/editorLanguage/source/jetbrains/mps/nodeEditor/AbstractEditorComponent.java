@@ -930,7 +930,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public void dispose() {
-    removeOurListener();
+    removeOurListeners();
     clearCaches();
 
     setEditorContext(null);
@@ -940,14 +940,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
   }
 
-  private void addOurListener(SModelDescriptor sm) {
+  private void addOurListeners(SModelDescriptor sm) {
     if (sm.hasSModelCommandListener(myModelListener)) return;
     sm.addModelCommandListener(myModelListener);
     sm.addModelListener(mySimpleModelListener);
     myModelDescriptorsWithListener.add(sm);
   }
 
-  private void removeOurListener() {
+  private void removeOurListeners() {
     for (SModelDescriptor sm : myModelDescriptorsWithListener) {
       sm.removeModelCommandListener(myModelListener);
       sm.removeModelListener(mySimpleModelListener);
@@ -966,7 +966,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private void setRootCell(EditorCell rootCell) {
-    removeOurListener();
+    removeOurListeners();
 
     myRootCell = rootCell;
     doRelayout(false);
@@ -976,7 +976,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       for (SNode node : nodesWhichEditorDependsOn) {
         SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
         if (modelDescriptor != null) {
-          addOurListener(modelDescriptor);
+          addOurListeners(modelDescriptor);
         }
       }
     }
@@ -990,7 +990,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           nodeProxiesToDelete.add(nodeProxy);
           continue;
         }
-        addOurListener(model);
+        addOurListeners(model);
       }
       refTargetsWhichEditorDependsOn.removeAll(nodeProxiesToDelete);
     }
