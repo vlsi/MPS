@@ -35,6 +35,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ModuleContext;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import java.util.Map;
 import java.util.HashMap;
@@ -42,8 +43,6 @@ import java.util.ArrayList;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.refactoring.framework.ChooseNodeOrModelComponent;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
-import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.application.ApplicationManager;
 
 public class MoveNodes extends AbstractLoggableRefactoring {
   public static final String target = "target";
@@ -199,11 +198,13 @@ public class MoveNodes extends AbstractLoggableRefactoring {
         if (operationContext != null) {
           final List<SNode> movedNodes1 = movedNodes;
           ApplicationManager.getApplication().invokeLater(new Runnable() {
-            public void run() { //we can't open node outside of EDT
+
+            public void run() {
+              // we can't open node outside of EDT
               operationContext.getComponent(MPSEditorOpener.class).openNode(ListSequence.fromList(movedNodes1).first());
             }
-          });
 
+          });
         }
       }
     }
