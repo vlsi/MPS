@@ -438,22 +438,22 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
               final boolean[] enabledPresent = new boolean[1];
               final boolean[] availablePresent = new boolean[1];
               ModelAccess.instance().runReadAction(new Runnable() {
-                          public void run() {
-                            enabledPresent[0] = !getEnabledIntentions().isEmpty();
-                            availablePresent[0] = !getAvailableIntentions().isEmpty();
-                          }
-                        });
+                public void run() {
+                  enabledPresent[0] = !getEnabledIntentions().isEmpty();
+                  availablePresent[0] = !getAvailableIntentions().isEmpty();
+                }
+              });
 
               ModelAccess.instance().runReadInEDT(new Runnable() {
-                          public void run() {
-                            if (getSelectedCell() != null) {
-                              adjustLightBulbLocation();
-                              myShowIntentionsAction.setEnabled(availablePresent[0]);
-                            } else {
-                              myShowIntentionsAction.setEnabled(false);
-                            }
-                          }
-                        });
+                public void run() {
+                  if (getSelectedCell() != null) {
+                    adjustLightBulbLocation();
+                    myShowIntentionsAction.setEnabled(availablePresent[0]);
+                  } else {
+                    myShowIntentionsAction.setEnabled(false);
+                  }
+                }
+              });
 
               Thread.sleep(INTENTION_SHOW_DELAY);
 

@@ -124,36 +124,32 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     public void eventsHappenedInCommand(final List<SModelEvent> events) {
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          ModelAccess.instance().runReadAction(new Runnable() {
+          ApplicationManager.getApplication().runWriteAction(new Runnable() {
             public void run() {
-              ApplicationManager.getApplication().runWriteAction(new Runnable() {
-                public void run() {
-                  for (SModelEvent e : events) {
-                    e.accept(new SModelEventVisitorAdapter() {
-                      public void visitRootEvent(SModelRootEvent event) {
-                        if (event.isRemoved()) {
-                          VirtualFile vf = myVirtualFiles.get(event.getRoot());
-                          if (vf != null) {
-                            fireBeforeFileDeletion(this ,vf);
-                            fireFileDeleted(this, vf, vf.getName(), null);
-                            myVirtualFiles.remove(event.getRoot());
-                          }
-
-                        }
+              for (SModelEvent e : events) {
+                e.accept(new SModelEventVisitorAdapter() {
+                  public void visitRootEvent(SModelRootEvent event) {
+                    if (event.isRemoved()) {
+                      VirtualFile vf = myVirtualFiles.get(event.getRoot());
+                      if (vf != null) {
+                        fireBeforeFileDeletion(this ,vf);
+                        fireFileDeleted(this, vf, vf.getName(), null);
+                        myVirtualFiles.remove(event.getRoot());
                       }
 
-                      public void visitPropertyEvent(SModelPropertyEvent event) {
-                        VirtualFile vf = myVirtualFiles.get(event.getNode());
-                        if (event.getNode().isRoot() && vf != null) {
-                          fireBeforePropertyChange(this, vf, VirtualFile.PROP_NAME, event.getOldPropertyValue(), event.getNewPropertyValue());
-                          ((MPSNodeVirtualFile) vf).updateFields();
-                          firePropertyChanged(this, vf, VirtualFile.PROP_NAME, event.getOldPropertyValue(), event.getNewPropertyValue());
-                        }
-                      }
-                    });
+                    }
                   }
-                }
-              });
+
+                  public void visitPropertyEvent(SModelPropertyEvent event) {
+                    VirtualFile vf = myVirtualFiles.get(event.getNode());
+                    if (event.getNode().isRoot() && vf != null) {
+                      fireBeforePropertyChange(this, vf, VirtualFile.PROP_NAME, event.getOldPropertyValue(), event.getNewPropertyValue());
+                      ((MPSNodeVirtualFile) vf).updateFields();
+                      firePropertyChanged(this, vf, VirtualFile.PROP_NAME, event.getOldPropertyValue(), event.getNewPropertyValue());
+                    }
+                  }
+                });
+              }
             }
           });
         }

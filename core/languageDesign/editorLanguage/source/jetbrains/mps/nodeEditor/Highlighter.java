@@ -273,7 +273,7 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
         }
       };
       if (checker.executeInUndoableCommand()) {
-        CommandProcessor.instance().executeCommand(runnable);
+//        CommandProcessor.instance().executeCommand(runnable);
       } else {
         ModelAccess.instance().runReadAction(runnable);
       }
