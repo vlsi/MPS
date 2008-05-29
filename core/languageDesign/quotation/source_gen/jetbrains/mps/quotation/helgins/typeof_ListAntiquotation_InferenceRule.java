@@ -10,11 +10,11 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ListAntiquotation_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_ListAntiquotation_InferenceRule() {
+  public typeof_ListAntiquotation_InferenceRule() {
   }
 
   public void applyRule(final SNode nodeToCheck) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "expression", true), "jetbrains.mps.quotation.helgins", "1196864123848", true), new QuotationClass_3().createNode(), SLinkOperations.getTarget(nodeToCheck, "expression", true), null, "jetbrains.mps.quotation.helgins", "1196864131532");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "expression", true), "jetbrains.mps.quotation.helgins", "1196864123848", true), new QuotationClass_3().createNode(), SLinkOperations.getTarget(nodeToCheck, "expression", true), null, "jetbrains.mps.quotation.helgins", "1196864131532", false);
   }
 
   public String getApplicableConceptFQName() {

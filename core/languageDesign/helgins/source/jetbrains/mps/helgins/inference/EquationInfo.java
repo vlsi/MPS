@@ -19,17 +19,36 @@ public class EquationInfo {
   private String myRuleModel;
   private String myRuleId;
 
+  private int myInequationPriority;
+
 
   public EquationInfo(SNode nodeWithError, String errorString) {
     myErrorString = errorString;
     myNodeWithError = nodeWithError;
   }
 
-  public EquationInfo(SNode nodeWithError, String errorString, String ruleModel, String ruleId) {
+  public EquationInfo(SNode nodeWithError, String errorString, String ruleModel, String ruleId, int inequationPriority) {
     myErrorString = errorString;
     myNodeWithError = nodeWithError;
     myRuleModel = ruleModel;
     myRuleId = ruleId;
+    myInequationPriority = inequationPriority;
+  }
+
+  @Deprecated
+    public EquationInfo(SNode nodeWithError, String errorString, String ruleModel, String ruleId) {
+    myErrorString = errorString;
+    myNodeWithError = nodeWithError;
+    myRuleModel = ruleModel;
+    myRuleId = ruleId;
+    }
+
+  public EquationInfo(EquationInfo pattern) {
+    myErrorString = pattern.myErrorString;
+    myNodeWithError = pattern.myNodeWithError;
+    myRuleModel = pattern.myRuleModel;
+    myRuleId = pattern.myRuleId;
+    myInequationPriority = pattern.myInequationPriority;
   }
 
   public String getErrorString() {
@@ -46,6 +65,10 @@ public class EquationInfo {
 
   public String getRuleId() {
     return myRuleId;
+  }
+
+  public int getInequationPriority() {
+    return myInequationPriority;
   }
 
   public SNode findRuleNode() {

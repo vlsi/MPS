@@ -7,11 +7,12 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.helgins.inference.TypeChecker;
 
 public class check_ListAntiquotation_NonTypesystemRule implements NonTypesystemRule_Runtime {
 
-  public  check_ListAntiquotation_NonTypesystemRule() {
+  public check_ListAntiquotation_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode listAntiquotation) {
@@ -21,9 +22,12 @@ public class check_ListAntiquotation_NonTypesystemRule implements NonTypesystemR
       {
         boolean matches_1202840835245 = false;
         matches_1202840835245 = SModelUtil_new.isAssignableConcept(SNodeOperations.getParent(annotatedNode, null, false, false).getConceptFqName(), "jetbrains.mps.quotation.structure.Quotation");
-        if(matches_1202840835245) {
-          if(SLinkOperations.getTarget(matchedNode_1202840835241, "quotedNode", true) == annotatedNode) {
-            TypeChecker.getInstance().reportTypeError(listAntiquotation, "list antiquotation should not be used on a quoted node itself", "jetbrains.mps.quotation.helgins", "1202840835255");
+        if (matches_1202840835245) {
+          if (SLinkOperations.getTarget(matchedNode_1202840835241, "quotedNode", true) == annotatedNode) {
+            {
+              BaseIntentionProvider intentionProvider = null;
+              TypeChecker.getInstance().reportTypeError(listAntiquotation, "list antiquotation should not be used on a quoted node itself", "jetbrains.mps.quotation.helgins", "1202840835255", intentionProvider);
+            }
           }
           break;
         }

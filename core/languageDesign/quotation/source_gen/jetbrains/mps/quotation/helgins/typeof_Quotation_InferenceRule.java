@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_Quotation_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_Quotation_InferenceRule() {
+  public typeof_Quotation_InferenceRule() {
   }
 
   public void applyRule(final SNode quotation) {
