@@ -32,9 +32,13 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.workbench.tools.BaseMPSTool;
+import jetbrains.mps.generator.GenerationListener;
+import jetbrains.mps.generator.GenerationStatus;
+import jetbrains.mps.generator.GeneratorManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 
@@ -50,6 +54,8 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Collection;
+import java.io.File;
 
 @State(
   name = "MPSProjectPane",
@@ -112,10 +118,24 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
 
     public void onAfterReload() {
       ModelAccess.instance().runReadInEDT(new Runnable() {
-          public void run() {
-            rebuild();
-          }
-        });
+        public void run() {
+          rebuild();
+        }
+      });
+    }
+  };
+
+  private GenerationListener myGenerationListener = new GenerationListener() {
+    public void beforeGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
+
+    }
+
+    public void modelsGenerated(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
+      ModelAccess.instance().runReadInEDT(new Runnable() {
+        public void run() {
+          rebuild();
+        }
+      });
     }
   };
 
@@ -672,6 +692,7 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
       SModelRepository.getInstance().removeModelRepositoryListener(mySModelRepositoryListener);
       CommandProcessor.instance().removeCommandListener(myCommandListener);
       MPSModuleRepository.getInstance().removeModuleRepositoryListener(myRepositoryListener);
+      getMPSProject().getComponent(GeneratorManager.class).addGenerationListener(myGenerationListener);
     }
   }
 
@@ -679,6 +700,7 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
     SModelRepository.getInstance().addModelRepositoryListener(mySModelRepositoryListener);
     CommandProcessor.instance().addCommandListener(myCommandListener);
     MPSModuleRepository.getInstance().addModuleRepositoryListener(myRepositoryListener);
+    getMPSProject().getComponent(GeneratorManager.class).addGenerationListener(myGenerationListener);
   }
 
   protected SModelTreeNode findSModelTreeNode(MPSTreeNode parent, SModelDescriptor modelDescriptor) {

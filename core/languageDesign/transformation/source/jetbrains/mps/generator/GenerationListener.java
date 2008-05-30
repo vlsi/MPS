@@ -11,7 +11,5 @@ import java.io.File;
 public interface GenerationListener {
   void beforeGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels);
 
-  void filesGenerated(Collection<File> generatedFiles, GenerationStatus status);
-
   void modelsGenerated(List<Pair<SModelDescriptor,IOperationContext>> models, boolean success);
 }

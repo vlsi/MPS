@@ -286,16 +286,6 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Conf
     }
   }
 
-  public void fireFilesGenerated(Collection<File> generatedFiles, GenerationStatus status) {
-    for (GenerationListener l : myGenerationListeners) {
-      try {
-        l.filesGenerated(generatedFiles, status);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
   private void fireBeforeGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
     for (GenerationListener l : myGenerationListeners) {
       try {
