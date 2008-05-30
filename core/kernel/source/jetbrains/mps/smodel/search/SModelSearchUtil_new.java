@@ -56,20 +56,8 @@ public class SModelSearchUtil_new {
     return result;
   }
 
-  public static List<PropertyDeclaration> getPropertyDeclarationsExcludingOverridden(AbstractConceptDeclaration concept) {
-    List<AbstractConceptDeclaration> concepts = new ConceptAndSuperConceptsScope(concept).getConcepts();
-    Set<String> names = new HashSet<String>();
-    List<PropertyDeclaration> result = new ArrayList<PropertyDeclaration>();
-    for (AbstractConceptDeclaration c : concepts) {
-      for (PropertyDeclaration property : c.getPropertyDeclarations()) {
-        String name = property.getName();
-        if (name == null) continue;
-        if (names.contains(name)) continue;
-        names.add(name);
-        result.add(property);
-      }
-    }
-    return result;
+  public static List<PropertyDeclaration> getPropertyDeclarations(AbstractConceptDeclaration concept) {
+    return new ConceptAndSuperConceptsScope(concept).getPropertyDeclarations();
   }
 
   public static PropertyDeclaration findPropertyDeclaration(AbstractConceptDeclaration concept, String propertyName) {

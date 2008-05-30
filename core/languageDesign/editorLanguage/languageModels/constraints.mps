@@ -21,6 +21,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="21" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -115,57 +116,15 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1166057086228">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1166057086229">
-              <property name="name" value="properties" />
-              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1166057086230">
-                <link role="classifier" targetNodeId="7.~List" resolveInfo="List" />
-              </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1166057086232">
-                <link role="classConcept" targetNodeId="5.~SModelSearchUtil_new" resolveInfo="SModelSearchUtil_new" />
-                <link role="baseMethodDeclaration" targetNodeId="5.~SModelSearchUtil_new.getPropertyDeclarationsExcludingOverridden(jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration):java.util.List" resolveInfo="getPropertyDeclarationsExcludingOverridden" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721532">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1166057086234">
-                    <link role="variableDeclaration" targetNodeId="1166057086223" resolveInfo="editedConcept" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1171037504378" />
-                </node>
-              </node>
-            </node>
-          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1166057086236">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1166057086237">
               <link role="baseMethodDeclaration" targetNodeId="5.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1171037514943">
-                <link role="classConcept" targetNodeId="3.~BaseAdapter" resolveInfo="BaseAdapter" />
-                <link role="baseMethodDeclaration" targetNodeId="3.~BaseAdapter.toNodes(java.util.List):java.util.List" resolveInfo="toNodes" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1171037515975">
-                  <link role="variableDeclaration" targetNodeId="1166057086229" resolveInfo="properties" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212180923218">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1212180921764">
+                  <link role="variableDeclaration" targetNodeId="1166057086223" resolveInfo="editedConcept" />
                 </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="searchScopeCanCreate" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_CanCreate" id="1166057086239">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1166057086240">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1166057086241">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1166057086242">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1166057086243" />
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227932837">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227889407">
-                  <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="1166057086246" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1173725139910">
-                    <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1166057086248" />
-                    <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1166057086249">
-                      <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1207872492638">
-                        <link role="conceptDeclaration" targetNodeId="1.1166040637528" resolveInfo="CellMenuComponent" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1166057086250">
-                  <link role="link" targetNodeId="1.1166049300910" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1212180926330">
+                  <link role="conceptMethodDeclaration" targetNodeId="21.1203539034160" resolveInfo="getPropertyDeclarations" />
                 </node>
               </node>
             </node>

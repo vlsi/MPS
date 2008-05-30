@@ -9,9 +9,8 @@ import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
-import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
-import jetbrains.mps.smodel.search.SModelSearchUtil_new;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_PropertyAttributeAccessQualifier_InferenceRule implements InferenceRule_Runtime {
@@ -46,8 +45,8 @@ public class typeof_PropertyAttributeAccessQualifier_InferenceRule implements In
 
           public void run() {
             SNode inputNodeConcept = TypeChecker.getInstance().getEquationManager().getRepresentator(C);
-            List<PropertyDeclaration> declaredProperties = SModelSearchUtil_new.getPropertyDeclarationsExcludingOverridden(((AbstractConceptDeclaration)SNodeOperations.getAdapter(inputNodeConcept)));
-            if (!(declaredProperties.contains(((PropertyDeclaration)SNodeOperations.getAdapter(property))))) {
+            List<SNode> declaredProperties = AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1203539034160(inputNodeConcept);
+            if (!(ListSequence.fromList(declaredProperties).contains(property))) {
               TypeChecker.getInstance().reportTypeError(propQ, "access to property '" + SPropertyOperations.getString(property, "name") + "' is not expected here", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204914077394");
             }
           }

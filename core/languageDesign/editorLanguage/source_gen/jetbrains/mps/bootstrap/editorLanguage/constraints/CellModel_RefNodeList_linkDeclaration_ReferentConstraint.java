@@ -45,7 +45,7 @@ public class CellModel_RefNodeList_linkDeclaration_ReferentConstraint implements
     return new SimpleSearchScope(ListSequence.fromList(links).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SPropertyOperations.hasValue(it, "metaClass", "aggregation", null) && (SPropertyOperations.hasValue(it, "sourceCardinality", "0..n", "0..1") || SPropertyOperations.hasValue(it, "sourceCardinality", "1..n", "0..1"));
+        return SPropertyOperations.hasValue(it, "metaClass", "aggregation", "reference") && (SPropertyOperations.hasValue(it, "sourceCardinality", "0..n", "0..1") || SPropertyOperations.hasValue(it, "sourceCardinality", "1..n", "0..1"));
       }
 
     }).toListSequence());

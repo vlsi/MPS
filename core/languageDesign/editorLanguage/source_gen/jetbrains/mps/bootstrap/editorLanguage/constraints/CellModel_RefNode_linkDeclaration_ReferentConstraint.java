@@ -45,7 +45,7 @@ public class CellModel_RefNode_linkDeclaration_ReferentConstraint implements IMo
     return new SimpleSearchScope(ListSequence.fromList(links).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SPropertyOperations.hasValue(it, "metaClass", "aggregation", null) && (SPropertyOperations.hasValue(it, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(it, "sourceCardinality", "1", "0..1"));
+        return SPropertyOperations.hasValue(it, "metaClass", "aggregation", "reference") && (SPropertyOperations.hasValue(it, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(it, "sourceCardinality", "1", "0..1"));
       }
 
     }).toListSequence());
