@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
-import jetbrains.mps.smodel.search.SModelSearchUtil_new;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.*;
 
 import javax.swing.Icon;
@@ -69,7 +69,7 @@ public class ChildSubstituteActionsHelper {
     if (childConcept == SModelUtil_new.getBaseConcept()) {
       if ((currentChild == null || currentChild.getConceptFqName().equals(BaseConcept.concept))) {
         resultActions = new ArrayList<INodeSubstituteAction>();
-        ISearchScope conceptsSearchScope = SModelSearchUtil_new.createConceptsFromModelLanguagesScope(parentNode.getModel(), true, context.getScope());
+        ISearchScope conceptsSearchScope = SModelSearchUtil.createConceptsFromModelLanguagesScope(parentNode.getModel(), true, context.getScope());
         List<SNode> allVisibleConcepts = conceptsSearchScope.getNodes();
         for (SNode visibleConcept : allVisibleConcepts) {
           resultActions.add(new DefaultChildNodeSubstituteAction(visibleConcept, parentNode, currentChild, childSetter, context.getScope()) {
@@ -230,7 +230,7 @@ public class ChildSubstituteActionsHelper {
 
     // create search scope that only includes root concepts.
     // case: concept-function-parameters declared as child-concepts are not added to substitute menue by default
-    ISearchScope conceptsSearchScope = SModelSearchUtil_new.createConceptsFromModelLanguagesScope(parentNode.getModel(), true, scope);
+    ISearchScope conceptsSearchScope = SModelSearchUtil.createConceptsFromModelLanguagesScope(parentNode.getModel(), true, scope);
     List<SNode> applicableConcepts = conceptsSearchScope.getNodes(new Condition<SNode>() {
       public boolean met(SNode object) {
         return isDefaultSubstitutableConcept((AbstractConceptDeclaration) BaseAdapter.fromNode(object), childConcept, scope) &&

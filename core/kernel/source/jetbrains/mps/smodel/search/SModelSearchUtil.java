@@ -1,7 +1,6 @@
 package jetbrains.mps.smodel.search;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.*;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
@@ -12,7 +11,7 @@ import java.util.*;
  * Igor Alshannikov
  * Jan 19, 2006
  */
-public class SModelSearchUtil_new {
+public class SModelSearchUtil {
 
   public static ISearchScope createModelAndImportedModelsScope(SModel model, IScope scope) {
     return createModelAndImportedModelsScope(model, false, scope);
@@ -23,11 +22,11 @@ public class SModelSearchUtil_new {
   }
 
   public static ISearchScope createConceptsFromModelLanguagesScope(SModel model, IScope scope) {
-    return new SModelSearchUtil_new._ConceptsFromModelLanguagesScope(model, false, scope);
+    return new SModelSearchUtil._ConceptsFromModelLanguagesScope(model, false, scope);
   }
 
   public static ISearchScope createConceptsFromModelLanguagesScope(SModel model, boolean rootsOnly, IScope scope) {
-    return new SModelSearchUtil_new._ConceptsFromModelLanguagesScope(model, rootsOnly, scope);
+    return new SModelSearchUtil._ConceptsFromModelLanguagesScope(model, rootsOnly, scope);
   }
 
   public static List<LinkDeclaration> getLinkDeclarationsExcludingOverridden(AbstractConceptDeclaration concept) {

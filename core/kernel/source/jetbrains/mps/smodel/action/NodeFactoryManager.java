@@ -13,8 +13,7 @@ import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.smodel.search.SModelSearchUtil_new;
-import jetbrains.mps.util.Condition;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.QueryMethodGenerated;
 import org.jetbrains.annotations.Nullable;
@@ -41,7 +40,7 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
 
   private static LinkDeclaration getTopLinkDeclaration(ConceptDeclaration conceptDeclaration, LinkDeclaration linkDeclaration) {
     LinkDeclaration result = linkDeclaration;
-    List<LinkDeclaration> linkDeclarations = SModelSearchUtil_new.getLinkDeclarationsExcludingOverridden(conceptDeclaration);
+    List<LinkDeclaration> linkDeclarations = SModelSearchUtil.getLinkDeclarationsExcludingOverridden(conceptDeclaration);
     for (LinkDeclaration declaration : linkDeclarations) {
       LinkDeclaration specializedLink = declaration.getSpecializedLink();
       if (specializedLink == linkDeclaration) {

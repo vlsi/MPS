@@ -1098,8 +1098,8 @@
                 <link role="classifier" targetNodeId="6.~List" resolveInfo="List" />
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1148948951662">
-                <link role="classConcept" targetNodeId="7.~SModelSearchUtil_new" resolveInfo="SModelSearchUtil_new" />
-                <link role="baseMethodDeclaration" targetNodeId="7.~SModelSearchUtil_new.getReferenceLinkDeclarationsExcludingOverridden(jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration):java.util.List" resolveInfo="getReferenceLinkDeclarationsExcludingOverridden" />
+                <link role="classConcept" targetNodeId="7.~SModelSearchUtil" resolveInfo="SModelSearchUtil" />
+                <link role="baseMethodDeclaration" targetNodeId="7.~SModelSearchUtil.getReferenceLinkDeclarationsExcludingOverridden(jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration):java.util.List" resolveInfo="getReferenceLinkDeclarationsExcludingOverridden" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1205757423897">
                   <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205757423898">
                     <link role="classifier" targetNodeId="19.~AbstractConceptDeclaration" resolveInfo="AbstractConceptDeclaration" />

@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus.OK;
 import jetbrains.mps.smodel.search.EmptySearchScope;
 import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.smodel.search.SModelSearchUtil_new;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 
 /**
  * Igor Alshannikov
@@ -97,7 +97,7 @@ public class ModelConstraintsUtil {
     }
 
     // global search scope
-    ISearchScope searchScope = SModelSearchUtil_new.createModelAndImportedModelsScope(model, false, context.getScope());
+    ISearchScope searchScope = SModelSearchUtil.createModelAndImportedModelsScope(model, false, context.getScope());
     return newOK(searchScope, true);
   }
 

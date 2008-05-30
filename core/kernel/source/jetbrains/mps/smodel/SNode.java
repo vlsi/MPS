@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.constraints.INodePropertyGetter;
 import jetbrains.mps.smodel.constraints.INodePropertySetter;
 import jetbrains.mps.smodel.constraints.INodeReferentSetEventHandler;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.smodel.search.SModelSearchUtil_new;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
 import org.jetbrains.annotations.NotNull;
@@ -1501,7 +1501,7 @@ public final class SNode {
   public PropertyDeclaration getPropertyDeclaration(String propertyName) {
     SNode sourceNode = this;
     AbstractConceptDeclaration typeDeclaration = sourceNode.getConceptDeclarationAdapter();
-    return SModelSearchUtil_new.findPropertyDeclaration(typeDeclaration, propertyName);
+    return SModelSearchUtil.findPropertyDeclaration(typeDeclaration, propertyName);
   }
 
   public LinkDeclaration getLinkDeclaration(String role) {
@@ -1565,7 +1565,7 @@ public final class SNode {
     } else {
       conceptDeclaration = node.getConceptDeclarationAdapter();
     }
-    return SModelSearchUtil_new.findConceptProperty(conceptDeclaration, propertyName);
+    return SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName);
   }
 
   public SNode findChildByPath(String path) {
