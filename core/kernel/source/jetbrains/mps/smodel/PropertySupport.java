@@ -6,13 +6,15 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.bootstrap.structureLanguage.structure.*;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.DataTypeDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.PrimitiveDataTypeDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.constraints.INodePropertyValidator;
+import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -22,11 +24,23 @@ public abstract class PropertySupport {
 
   protected static final Object PROPERTY_SUPPORT = new Object();
 
+  /**
+   * new validation method
+   */
   public boolean canSetValue(SNode node, String propertyName, String value, IScope scope) {
-    return canSetValue(value);
+    if (value == null) return true;  // can always remove property
+    if (!canSetValue(value)) return false;
+    INodePropertyValidator propertyValidator = ModelConstraintsManager.getInstance().getNodePropertyValidator(node, propertyName);
+    if (propertyValidator != null) {
+      return propertyValidator.checkPropertyValue(node, propertyName, value, scope);
+    }
+    return true;
   }
 
-  public abstract boolean canSetValue(String value);
+  /**
+   * old validation method - keep it for compatibility
+   */
+  protected abstract boolean canSetValue(String value);
 
   public String toInternalValue(String value) {
     return value;
@@ -115,16 +129,6 @@ public abstract class PropertySupport {
   }
 
   private static class DefaultPropertySupport extends PropertySupport {
-    public boolean canSetValue(SNode node, String propertyName, String value, IScope scope) {
-      if (value == null) return true;
-      if (!super.canSetValue(node, propertyName, value, scope)) return false;
-      INodePropertyValidator propertyValidator = ModelConstraintsManager.getInstance().getNodePropertyValidator(node, propertyName);
-      if (propertyValidator != null) {
-        return propertyValidator.checkPropertyValue(node, propertyName, value, scope);
-      }
-      return true;
-    }
-
     public boolean canSetValue(String value) {
       return true;
     }
@@ -132,9 +136,6 @@ public abstract class PropertySupport {
 
   private static class IntegerPropertySupport extends PropertySupport {
     public boolean canSetValue(String value) {
-      if (value == null) {
-        return true;
-      }
       try {
         Integer.parseInt(value);
         return true;
@@ -147,7 +148,7 @@ public abstract class PropertySupport {
 
   private static class BooleanPropertySupport extends PropertySupport {
     public boolean canSetValue(String value) {
-      return value == null || String.valueOf(value).equals("true") || String.valueOf(value).equals("false");
+      return String.valueOf(value).equals("true") || String.valueOf(value).equals("false");
     }
 
     public String fromInternalValue(String value) {
