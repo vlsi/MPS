@@ -53,6 +53,22 @@ import java.util.*;
 
   }
 
+  public PropertyDeclaration getPropertyDeclarationByName(String name) {
+    if (!containsDataSet(PropertyDeclarationsDataSet.ID)) {
+      addDataSet(new PropertyDeclarationsDataSet(this));
+    }
+    PropertyDeclarationsDataSet dataSet = (PropertyDeclarationsDataSet) getDataSet(PropertyDeclarationsDataSet.ID);
+    return dataSet.getPropertyDeclarationByName(name);
+  }
+
+  public List<PropertyDeclaration> getPropertyDeclarations() {
+    if (!containsDataSet(PropertyDeclarationsDataSet.ID)) {
+      addDataSet(new PropertyDeclarationsDataSet(this));
+    }
+    PropertyDeclarationsDataSet dataSet = (PropertyDeclarationsDataSet) getDataSet(PropertyDeclarationsDataSet.ID);
+    return dataSet.getPropertyDeclarations();
+  }
+
   public LinkDeclaration getLinkDeclarationByRole(String role) {
     if (!containsDataSet(LinkDeclarationsDataSet.ID)) {
       addDataSet(new LinkDeclarationsDataSet(this));
@@ -182,6 +198,92 @@ import java.util.*;
     }
 
   } // private static class ConceptsDataSet
+
+  private static class PropertyDeclarationsDataSet extends DataSet {
+    public static final String ID = "PROPERTY_DECLARATIONS_DATASET";
+    private Map<String, PropertyDeclaration> myPropertyByName;
+    private List<PropertyDeclaration> myProperties;
+    private Set<SNode> myDependsOnNodes;
+
+    public PropertyDeclarationsDataSet(AbstractCache ownerCache) {
+      super(ID, ownerCache, DefaultNodeChangedProcessing.DROP_DATA_SET);
+    }
+
+    public Set<SNode> getDependsOnNodes() {
+      return myDependsOnNodes;
+    }
+
+    public PropertyDeclaration getPropertyDeclarationByName(String name) {
+      return myPropertyByName.get(name);
+    }
+
+    public List<PropertyDeclaration> getPropertyDeclarations() {
+      return new ArrayList<PropertyDeclaration>(myProperties);
+    }
+
+    protected void init() {
+      List<PropertyDeclaration> allProperties = new ArrayList<PropertyDeclaration>();
+      myProperties = new ArrayList<PropertyDeclaration>();
+      myPropertyByName = new HashMap<String, PropertyDeclaration>();
+
+      List<AbstractConceptDeclaration> concepts = ((ConceptAndSuperConceptsCache) getOwnerCache()).getConcepts();
+      // iterate bottom-up
+      for (int i = concepts.size() - 1; i >= 0; i--) {
+        List<PropertyDeclaration> props = concepts.get(i).getPropertyDeclarations();
+        for (PropertyDeclaration prop : props) {
+          allProperties.add(prop);
+          String name = prop.getName();
+          if (name == null) continue;
+          if (myPropertyByName.containsKey(name)) {
+            // properties can not be "overridden"
+            continue;
+          }
+          myProperties.add(prop);
+          myPropertyByName.put(name, prop);
+        }
+      }
+
+      // depends on concepts and link declarations
+      myDependsOnNodes = new HashSet<SNode>();
+      for (AbstractConceptDeclaration concept : concepts) {
+        myDependsOnNodes.add(concept.getNode());
+      }
+      for (PropertyDeclaration prop : allProperties) {
+        myDependsOnNodes.add(prop.getNode());
+      }
+    }
+
+    //
+    // event handling
+    //
+
+    public void childAdded(SModelChildEvent event) {
+      if (event.getParent().getAdapter() instanceof AbstractConceptDeclaration) {
+        String role = event.getChildRole();
+        // don't process adding of smth. to concept unless it is property-declaration
+        if (AbstractConceptDeclaration.PROPERTY_DECLARATION.equals(role)) {
+          super.childAdded(event);
+        }
+      }
+    }
+
+    public void childRemoved(SModelChildEvent event) {
+      if (event.getParent().getAdapter() instanceof AbstractConceptDeclaration) {
+        String role = event.getChildRole();
+        // don't process removing of smth. from concept unless it is property-declaration
+        if (AbstractConceptDeclaration.PROPERTY_DECLARATION.equals(role)) {
+          super.childRemoved(event);
+        }
+      }
+    }
+
+    public void propertyChanged(SModelPropertyEvent event) {
+      // don't process unless it is property name
+      if (event.getNode().getAdapter() instanceof PropertyDeclaration) {
+        super.propertyChanged(event);
+      }
+    }
+  } // private static class PropertyDeclarationsDataSet
 
 
   private static class LinkDeclarationsDataSet extends DataSet {

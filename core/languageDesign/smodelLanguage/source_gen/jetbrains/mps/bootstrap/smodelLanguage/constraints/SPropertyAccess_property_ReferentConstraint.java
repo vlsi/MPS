@@ -31,7 +31,7 @@ public class SPropertyAccess_property_ReferentConstraint implements IModelConstr
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode dotOperandConcept = SNodeOperation_Behavior.getLeftNodeConcept_1208193558130(_context.getEnclosingNode());
-    return new SimpleSearchScope(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarationsExcludingOverridden_1203539034160(dotOperandConcept));
+    return new SimpleSearchScope(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1203539034160(dotOperandConcept));
   }
 
   public String getNodeReferentSearchScopeDescription() {

@@ -72,13 +72,9 @@ public class SModelSearchUtil_new {
     return result;
   }
 
-  public static PropertyDeclaration findPropertyDeclaration(AbstractConceptDeclaration conceptDeclaration, String propertyName) {
-    if (propertyName == null) return null;
-    List<PropertyDeclaration> list = getPropertyDeclarationsExcludingOverridden(conceptDeclaration);
-    for (PropertyDeclaration property : list) {
-      if (propertyName.equals(property.getName())) return property;
-    }
-    return null;
+  public static PropertyDeclaration findPropertyDeclaration(AbstractConceptDeclaration concept, String propertyName) {
+    if (concept == null || propertyName == null) return null;
+    return new ConceptAndSuperConceptsScope(concept).getPropertyDeclarationByName(propertyName);
   }
 
   public static List<ConceptPropertyDeclaration> getConceptPropertyDeclarations(AbstractConceptDeclaration concept) {

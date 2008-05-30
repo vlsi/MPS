@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -25,6 +26,16 @@ public class ConceptAndSuperConceptsScope extends AbstractSearchScope {
   public List<AbstractConceptDeclaration> getConcepts() {
     if (myTopConcept == null) return new ArrayList();
     return new ArrayList(ConceptAndSuperConceptsCache.getInstance(myTopConcept).getConcepts());
+  }
+
+  public PropertyDeclaration getPropertyDeclarationByName(String name) {
+    if (myTopConcept == null) return null;
+    return ConceptAndSuperConceptsCache.getInstance(myTopConcept).getPropertyDeclarationByName(name);
+  }
+
+  public List<PropertyDeclaration> getPropertyDeclarations() {
+    if (myTopConcept == null) return null;
+    return ConceptAndSuperConceptsCache.getInstance(myTopConcept).getPropertyDeclarations();
   }
 
   public LinkDeclaration getLinkDeclarationByRole(String role) {

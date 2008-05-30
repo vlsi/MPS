@@ -439,7 +439,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1205438232690(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode link = LinkDeclaration_Behavior.call_getGenuineLink_1203463866634(SLinkOperations.getTarget(_context.getNode(), "link", false));
-    return SPropertyOperations.hasValue(link, "metaClass", "aggregation", null);
+    return SPropertyOperations.hasValue(link, "metaClass", "aggregation", "reference");
   }
 
   public static Object propertyMacro_GetPropertyValue_1205439083450(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -448,7 +448,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1205439083460(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode link = LinkDeclaration_Behavior.call_getGenuineLink_1203463866634(SLinkOperations.getTarget(_context.getNode(), "link", false));
-    return SPropertyOperations.hasValue(link, "metaClass", "aggregation", null);
+    return SPropertyOperations.hasValue(link, "metaClass", "aggregation", "reference");
   }
 
   public static Object propertyMacro_GetPropertyValue_1205440206252(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -492,7 +492,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1206049660341(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode link = LinkDeclaration_Behavior.call_getGenuineLink_1203463866634(SLinkOperations.getTarget(_context.getNode(), "link", false));
-    return SPropertyOperations.hasValue(link, "metaClass", "aggregation", null);
+    return SPropertyOperations.hasValue(link, "metaClass", "aggregation", "reference");
   }
 
   public static Object propertyMacro_GetPropertyValue_1206050125869(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -501,7 +501,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1206050125884(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode link = LinkDeclaration_Behavior.call_getGenuineLink_1203463866634(SLinkOperations.getTarget(_context.getNode(), "link", false));
-    return SPropertyOperations.hasValue(link, "metaClass", "aggregation", null);
+    return SPropertyOperations.hasValue(link, "metaClass", "aggregation", "reference");
   }
 
   public static Object propertyMacro_GetPropertyValue_1206552330304(final IOperationContext operationContext, final PropertyMacroContext _context) {

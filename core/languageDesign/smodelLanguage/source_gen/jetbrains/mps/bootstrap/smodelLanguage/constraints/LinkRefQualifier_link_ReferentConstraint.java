@@ -54,7 +54,7 @@ public class LinkRefQualifier_link_ReferentConstraint implements IModelConstrain
     links = ListSequence.fromList(links).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SPropertyOperations.hasValue(it, "metaClass", null, null);
+        return SPropertyOperations.hasValue(it, "metaClass", "reference", "reference");
       }
 
     }).toListSequence();
