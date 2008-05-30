@@ -29,7 +29,7 @@ public class SModelSearchUtil {
     return new SModelSearchUtil._ConceptsFromModelLanguagesScope(model, rootsOnly, scope);
   }
 
-  public static List<LinkDeclaration> getLinkDeclarationsExcludingOverridden(AbstractConceptDeclaration concept) {
+  public static List<LinkDeclaration> getLinkDeclarations(AbstractConceptDeclaration concept) {
     return new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
   }
 

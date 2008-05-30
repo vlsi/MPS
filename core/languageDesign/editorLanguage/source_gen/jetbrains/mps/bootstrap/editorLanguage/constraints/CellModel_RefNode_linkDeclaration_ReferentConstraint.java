@@ -12,13 +12,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.bootstrap.structureLanguage.constraints.LinkDeclaration_Behavior;
 
 public class CellModel_RefNode_linkDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -40,12 +38,11 @@ public class CellModel_RefNode_linkDeclaration_ReferentConstraint implements IMo
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode editorComponent = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.BaseEditorComponent", true, false);
     SNode editedConcept = SLinkOperations.getTarget(editorComponent, "conceptDeclaration", false);
-    List linkAdapters = SModelSearchUtil.getLinkDeclarationsExcludingOverridden(((AbstractConceptDeclaration)SNodeOperations.getAdapter(editedConcept)));
-    List<SNode> links = BaseAdapter.toNodes(linkAdapters);
+    List<SNode> links = AbstractConceptDeclaration_Behavior.call_getAggregationLinkDeclarations_1212184463482(editedConcept);
     return new SimpleSearchScope(ListSequence.fromList(links).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SPropertyOperations.hasValue(it, "metaClass", "aggregation", "reference") && (SPropertyOperations.hasValue(it, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(it, "sourceCardinality", "1", "0..1"));
+        return LinkDeclaration_Behavior.call_isSingular_1205275061212(it);
       }
 
     }).toListSequence());

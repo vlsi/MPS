@@ -40,7 +40,7 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
 
   private static LinkDeclaration getTopLinkDeclaration(ConceptDeclaration conceptDeclaration, LinkDeclaration linkDeclaration) {
     LinkDeclaration result = linkDeclaration;
-    List<LinkDeclaration> linkDeclarations = SModelSearchUtil.getLinkDeclarationsExcludingOverridden(conceptDeclaration);
+    List<LinkDeclaration> linkDeclarations = SModelSearchUtil.getLinkDeclarations(conceptDeclaration);
     for (LinkDeclaration declaration : linkDeclarations) {
       LinkDeclaration specializedLink = declaration.getSpecializedLink();
       if (specializedLink == linkDeclaration) {
