@@ -203,6 +203,9 @@ public class SModel implements Iterable<SNode> {
     myRoots.add(node);
     node.registerInModel(this);
     if (ModelChange.needRegisterUndo(this)) {
+
+      UndoUtil.addUndoableAction(new AddOrRemoveRootUndoableAction(node, false));
+
       UndoManager.instance().undoableActionPerformed(new UndoRootAddOrDelete(node, false));
     }
     fireRootAddedEvent(node);
@@ -214,6 +217,8 @@ public class SModel implements Iterable<SNode> {
       myRoots.remove(node);
       node.unRegisterFromModel();
       if (ModelChange.needRegisterUndo(this)) {
+        UndoUtil.addUndoableAction(new AddOrRemoveRootUndoableAction(node, true));
+
         UndoManager.instance().undoableActionPerformed(new UndoRootAddOrDelete(node, true));
       }
       fireRootRemovedEvent(node);
