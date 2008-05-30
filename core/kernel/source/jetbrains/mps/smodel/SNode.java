@@ -25,12 +25,6 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
-import com.intellij.openapi.command.undo.UndoableAction;
-import com.intellij.openapi.command.undo.DocumentReference;
-import com.intellij.openapi.command.UndoConfirmationPolicy;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectManager;
-
 /**
  * User: Sergey Dmitriev
  * Date: Aug 2, 2003
@@ -1165,12 +1159,14 @@ public final class SNode {
     return result;
   }
 
-  private void insertReferenceAt(final int i, @NotNull final SReference reference) {
+  void insertReferenceAt(final int i, @NotNull final SReference reference) {
     ModelChange.assertLegalNodeChange(this);
     if (myReferences == null) myReferences = new ArrayList<SReference>(1);
     myReferences.add(i, reference);
 
     if (ModelChange.needRegisterUndo(getModel())) {
+      UndoUtil.addUndoableAction(new InsertReferenceAtUndoableAction(this, i, reference));
+      
       UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
         public void undo() throws UnexpectedUndoException {
           removeReferenceAt(i);
@@ -1187,12 +1183,14 @@ public final class SNode {
     }
   }
 
-  private void removeReferenceAt(final int i) {
+  void removeReferenceAt(final int i) {
     ModelChange.assertLegalNodeChange(this);
     final SReference reference = _references().get(i);
     myReferences.remove(reference);
 
     if (ModelChange.needRegisterUndo(getModel())) {
+      UndoUtil.addUndoableAction(new RemoveReferenceAtUndoableAction(this, i, reference));
+
       UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
         public void undo() {
           insertReferenceAt(i, reference);
