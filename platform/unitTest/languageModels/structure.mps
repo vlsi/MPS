@@ -31,7 +31,7 @@
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1171931851045">
       <property name="name" value="testCaseName" />
-      <link role="dataType" targetNodeId="2.1083065718921" />
+      <link role="dataType" targetNodeId="2.1083065718921" resolveInfo="_Identifier_String" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1171931858461">
