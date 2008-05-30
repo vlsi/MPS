@@ -1209,7 +1209,7 @@
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1090923492515">
       <property name="name" value="name" />
       <property name="propertyType" value="string" />
-      <link role="dataType" targetNodeId="1083065718921" resolveInfo="_Identifier_String" />
+      <link role="dataType" targetNodeId="4.1082983041843" resolveInfo="string" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1083245396908">
       <property name="targetCardinality" value="1" />
@@ -1394,7 +1394,7 @@
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1107796744532">
       <property name="name" value="name" />
-      <link role="dataType" targetNodeId="1083065718921" resolveInfo="_Identifier_String" />
+      <link role="dataType" targetNodeId="4.1082983041843" resolveInfo="string" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1109279763828">

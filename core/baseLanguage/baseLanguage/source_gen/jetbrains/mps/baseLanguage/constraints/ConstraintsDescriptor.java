@@ -13,9 +13,10 @@ public class ConstraintsDescriptor implements IModelConstraints {
 
   public ConstraintsDescriptor() {
     this.myConstraints.add(new BaseMethodDeclaration_shortDescription_PropertyConstraint());
-    this.myConstraints.add(new Classifier_shortDescription_PropertyConstraint());
+    this.myConstraints.add(new Classifier_name_PropertyConstraint());
     this.myConstraints.add(new Classifier_nestedName_PropertyConstraint());
     this.myConstraints.add(new Classifier_resolveInfo_PropertyConstraint());
+    this.myConstraints.add(new Classifier_shortDescription_PropertyConstraint());
     this.myConstraints.add(new StringLiteral_value_PropertyConstraint());
     this.myConstraints.add(new VariableDeclaration_shortDescription_PropertyConstraint());
     this.myConstraints.add(new AnonymousClass_name_PropertyConstraint());
@@ -23,7 +24,6 @@ public class ConstraintsDescriptor implements IModelConstraints {
     this.myConstraints.add(new EnumConstantDeclaration_shortDescription_PropertyConstraint());
     this.myConstraints.add(new ConstructorDeclaration_name_PropertyConstraint());
     this.myConstraints.add(new ConstructorDeclaration_nestedName_PropertyConstraint());
-    this.myConstraints.add(new ClassConcept_name_PropertyConstraint());
     this.myConstraints.add(new Property_alias_PropertyConstraint());
     this.myConstraints.add(new Property_name_PropertyConstraint());
     this.myConstraints.add(new TypeVariableReference_typeVariableDeclaration_ReferentConstraint());
