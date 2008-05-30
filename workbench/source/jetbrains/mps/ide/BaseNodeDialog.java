@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.JSplitPaneWithoutBorders;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.cleanup.CleanupManager;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -115,9 +116,11 @@ public abstract class BaseNodeDialog extends BaseDialog {
       public void run(@NotNull ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
         try {
-          CommandProcessor.instance().executeCommand(new Runnable() {
+          ModelAccess.instance().runWriteAction(new Runnable() {
             public void run() {
               saveChanges();
+
+              CleanupManager.getInstance().cleanup();
             }
           });
         } catch (Throwable t) {
