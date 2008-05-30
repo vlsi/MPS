@@ -2,7 +2,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
-import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.command.AfterCommandInvocator;
 
 import java.util.*;
 import java.util.List;
@@ -65,7 +65,7 @@ public class LeftEditorHighlighter {
         }
       }
     }
-    CommandProcessor.instance().invokeNowOrLater(new Runnable() {
+    AfterCommandInvocator.getInstance().invokeNowOrAfterCommand(new Runnable() {
       public void run() {
         relayout(true, false);
       }

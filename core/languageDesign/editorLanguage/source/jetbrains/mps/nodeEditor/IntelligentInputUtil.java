@@ -1,6 +1,5 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.AfterCommandInvocator;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.logging.Logger;
@@ -83,23 +82,23 @@ public class IntelligentInputUtil {
     EditorCellAction rtAction = EditorUtil.getCellAction(EditorUtil.findLastSelectableCell(cellForNewNode), EditorCellAction.RIGHT_TRANSFORM, editorContext);
     if (rtAction == null) {
       final CellInfo cellInfo = cellForNewNode.getCellInfo();
-      CommandProcessor.instance().invokeNowOrLater(new Runnable() {
-        public void run() {
-          AbstractEditorComponent component = editorContext.getNodeEditorComponent();
-          EditorCell cellToSelect = cellInfo.findCell(component);
-          if (cellToSelect != null) {
-            EditorCell errorCell = EditorUtil.findErrorCell(cellToSelect);
-            if (errorCell instanceof EditorCell_Label) {
-              EditorCell_Label label = (EditorCell_Label) errorCell;
-              if (label.isEditable() && !(label instanceof EditorCell_Constant)) {
-                label.changeText(smallPattern + tail);
+      AfterCommandInvocator.getInstance().invokeNowOrAfterCommand(new Runnable() {
+          public void run() {
+            AbstractEditorComponent component = editorContext.getNodeEditorComponent();
+            EditorCell cellToSelect = cellInfo.findCell(component);
+            if (cellToSelect != null) {
+              EditorCell errorCell = EditorUtil.findErrorCell(cellToSelect);
+              if (errorCell instanceof EditorCell_Label) {
+                EditorCell_Label label = (EditorCell_Label) errorCell;
+                if (label.isEditable() && !(label instanceof EditorCell_Constant)) {
+                  label.changeText(smallPattern + tail);
+                }
+                label.getRenderedTextLine().setCaretPositionToLast();
               }
-              label.getRenderedTextLine().setCaretPositionToLast();
             }
-          }
 
-        }
-      });
+          }
+        });
       return;
     }
     UndoManager.instance().markPlaceInCurrentUndoActionsWithObject(ourMarker);
@@ -125,22 +124,22 @@ public class IntelligentInputUtil {
           newNode.removeRightTransformHint();
           UndoManager.instance().removeActionsAfterObject(ourMarker);
           final CellInfo cellInfo = cellForNewNode.getCellInfo();
-          CommandProcessor.instance().invokeNowOrLater(new Runnable() {
-            public void run() {
-              AbstractEditorComponent component = editorContext.getNodeEditorComponent();
-              EditorCell cellToSelect = cellInfo.findCell(component);
-              if (cellToSelect != null) {
-                component.changeSelection(cellToSelect);
-              }
-              if (cellToSelect instanceof EditorCell_Label) {
-                EditorCell_Label label = (EditorCell_Label) cellToSelect;
-                if (label.isEditable() && !(label instanceof EditorCell_Constant)) {
-                  label.changeText(label.getRenderedText() + tail);
-                }
-                label.getRenderedTextLine().setCaretPositionToLast();
-              }
-            }
-          });
+          AfterCommandInvocator.getInstance().invokeNowOrAfterCommand(new Runnable() {
+                  public void run() {
+                    AbstractEditorComponent component = editorContext.getNodeEditorComponent();
+                    EditorCell cellToSelect = cellInfo.findCell(component);
+                    if (cellToSelect != null) {
+                      component.changeSelection(cellToSelect);
+                    }
+                    if (cellToSelect instanceof EditorCell_Label) {
+                      EditorCell_Label label = (EditorCell_Label) cellToSelect;
+                      if (label.isEditable() && !(label instanceof EditorCell_Constant)) {
+                        label.changeText(label.getRenderedText() + tail);
+                      }
+                      label.getRenderedTextLine().setCaretPositionToLast();
+                    }
+                  }
+                });
         }
         return;
       }

@@ -1,6 +1,5 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.AfterCommandInvocator;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -250,11 +249,11 @@ public class EditorContext {
             }
           });
         }
-        CommandProcessor.instance().invokeNowOrLater(new Runnable() {
-          public void run() {
-            myNodeEditorComponent.relayout();
-          }
-        });
+        AfterCommandInvocator.getInstance().invokeNowOrAfterCommand(new Runnable() {
+              public void run() {
+                myNodeEditorComponent.relayout();
+              }
+            });
         return true;
       }
     }
