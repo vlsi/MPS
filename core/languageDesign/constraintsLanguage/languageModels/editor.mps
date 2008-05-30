@@ -18,6 +18,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="14" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -226,7 +227,7 @@
             <property name="selectable" value="false" />
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1149010905595">
               <property name="drawBorder" value="false" />
-              <property name="text" value="validate" />
+              <property name="text" value="is valid" />
               <property name="textFgColor" value="DARK_BLUE" />
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1149010905596">

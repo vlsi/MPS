@@ -11,6 +11,8 @@ import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.smodel.constraints.INodePropertyValidator;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -18,7 +20,11 @@ import java.lang.reflect.InvocationTargetException;
 public abstract class PropertySupport {
   private static final Logger LOG = Logger.getLogger(PropertySupport.class);
 
-  private static final Object PROPERTY_SUPPORT = new Object();
+  protected static final Object PROPERTY_SUPPORT = new Object();
+
+  public boolean canSetValue(SNode node, String propertyName, String value, IScope scope) {
+    return canSetValue(value);
+  }
 
   public abstract boolean canSetValue(String value);
 
@@ -95,7 +101,7 @@ public abstract class PropertySupport {
     }
     return propertySupport;
   }
-    
+
   public static boolean isString(PrimitiveDataTypeDeclaration datatype) {
     return Primitives.STRING_TYPE.equals(datatype.getName());
   }
@@ -109,6 +115,16 @@ public abstract class PropertySupport {
   }
 
   private static class DefaultPropertySupport extends PropertySupport {
+    public boolean canSetValue(SNode node, String propertyName, String value, IScope scope) {
+      if (value == null) return true;
+      if (!super.canSetValue(node, propertyName, value, scope)) return false;
+      INodePropertyValidator propertyValidator = ModelConstraintsManager.getInstance().getNodePropertyValidator(node, propertyName);
+      if (propertyValidator != null) {
+        return propertyValidator.checkPropertyValue(node, propertyName, value, scope);
+      }
+      return true;
+    }
+
     public boolean canSetValue(String value) {
       return true;
     }

@@ -4,6 +4,7 @@ package jetbrains.mps.bootstrap.constraintsLanguage.generator.baseLanguage.templ
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
@@ -29,7 +30,6 @@ import jetbrains.mps.baseLanguage.constraints.Type_Behavior;
 import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.TemplateFragmentContext;
 import jetbrains.mps.bootstrap.constraintsLanguage.generator.baseLanguage.template.util.QueriesUtil;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
@@ -37,7 +37,7 @@ import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 public class QueriesGenerated {
 
   public static boolean createRootRule_Condition_1194967181314(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    return _context.getSourceModel().getLongName().endsWith(".constraints");
+    return SModelOperations.getModelName(_context.getSourceModel()).endsWith(".constraints");
   }
 
   public static boolean baseMappingRule_Condition_1187043003325(final IOperationContext operationContext, final BaseMappingRuleContext _context) {

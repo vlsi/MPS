@@ -1358,5 +1358,9 @@
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1211503175704" />
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1212106626138">
+    <property name="name" value="AAABa1Nme" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1212106626139" />
+  </node>
 </model>
 

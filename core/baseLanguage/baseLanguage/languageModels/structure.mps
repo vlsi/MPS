@@ -106,7 +106,7 @@
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1075300953595">
       <property name="name" value="name" />
       <property name="propertyType" value="string" />
-      <link role="dataType" targetNodeId="1083065718921" resolveInfo="_Identifier_String" />
+      <link role="dataType" targetNodeId="4.1082983041843" resolveInfo="string" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1068390468199">
       <property name="targetCardinality" value="1" />

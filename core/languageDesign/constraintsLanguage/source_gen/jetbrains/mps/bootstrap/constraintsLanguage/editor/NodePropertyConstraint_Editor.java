@@ -306,7 +306,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.create_ConstantCell4539_09(context, node, "validate"));
+    editorCell.addEditorCell(this.create_ConstantCell4539_09(context, node, "is valid"));
     editorCell.addEditorCell(this.create_ConstantCell4539_010(context, node, ":"));
     editorCell.addEditorCell(this.create_propertyValidatorRefNodeCell4539_0(context, node));
     return editorCell;

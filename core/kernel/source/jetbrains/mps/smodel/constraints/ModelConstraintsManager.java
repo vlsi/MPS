@@ -281,7 +281,9 @@ public class ModelConstraintsManager implements ApplicationComponent {
     }
   }
 
-  public INodePropertyValidator getNodePropertyValidator(@NotNull final INodeAdapter node, @NotNull final String propertyName) {
+  public INodePropertyValidator getNodePropertyValidator(SNode node, @NotNull String propertyName) {
+    if(node == null) return null;
+    
 //    String namespace = node.getNode().getLanguageNamespace();
 
     // 'bootstrap' properties
@@ -293,10 +295,10 @@ public class ModelConstraintsManager implements ApplicationComponent {
 //    if (namespace.equals("jetbrains.mps.projectLanguage")) {
 //      return null;
 //    }
-    if (node instanceof RuntimeTypeVariable) {
-      // helgins ku-ku!
-      return null;
-    }
+//    if (node instanceof RuntimeTypeVariable) {
+//      // helgins ku-ku!
+//      return null;
+//    }
 
     StringBuilder builder = new StringBuilder();
     builder.append('#');
@@ -304,7 +306,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
     String prefixedPropertyName = builder.toString();
     builder.setLength(0);
 
-    String nodeConceptFqName = node.getConceptFQName();
+    String nodeConceptFqName = node.getConceptFqName();
     builder.append(nodeConceptFqName);
     builder.append(prefixedPropertyName);
     String originalKey = builder.toString();

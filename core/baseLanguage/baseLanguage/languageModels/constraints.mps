@@ -46,6 +46,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="48" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -4442,6 +4443,24 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178610164825">
     <property name="package" value="classConcept" />
     <link role="concept" targetNodeId="1.1068390468198" />
+    <node role="properties" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint" id="1212105645084">
+      <link role="applicableProperty" targetNodeId="1.1075300953595" resolveInfo="name" />
+      <node role="propertyValidator" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertyValidator" id="1212105650034">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212105650035">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212106354981">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212106357936">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintsFunctionParameter_propertyValue" id="1212106354982" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1212106362665">
+                <link role="baseMethodDeclaration" targetNodeId="13.~String.matches(java.lang.String):boolean" resolveInfo="matches" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1212106364916">
+                  <property name="value" value="[a-zA-Z[_]][a-zA-Z0-9[_]]*" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1194954280187">
       <property name="name" value="getMembers" />
       <link role="overriddenMethod" targetNodeId="1194952456574" resolveInfo="getMembers" />
