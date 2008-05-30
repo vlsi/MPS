@@ -45,6 +45,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="133" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="java.util@java_stub" version="-1" />
@@ -446,6 +447,7 @@
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1210955648495">
     <property name="name" value="C1" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1212070699006">
+      <property name="name" value="a" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1212070699007" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1212070699008" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212070699009">

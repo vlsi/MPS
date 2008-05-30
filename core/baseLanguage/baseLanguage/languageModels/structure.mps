@@ -210,7 +210,7 @@
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1083152972671">
       <property name="name" value="name" />
       <property name="propertyType" value="string" />
-      <link role="dataType" targetNodeId="1083065718921" resolveInfo="_Identifier_String" />
+      <link role="dataType" targetNodeId="4.1082983041843" resolveInfo="string" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1176718929932">
       <property name="name" value="isFinal" />
@@ -230,8 +230,8 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
     </node>
-    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196208197093">
-      <link role="intfc" targetNodeId="4.1169194658468" resolveInfo="INamedConcept" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1212170670345">
+      <link role="intfc" targetNodeId="1212170275853" resolveInfo="IValidIdentifier" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1188211976433">
       <link role="intfc" targetNodeId="1188208481402" resolveInfo="Annotable" />
@@ -1224,7 +1224,7 @@
     <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1095257688468">
       <property name="name" value="name" />
-      <link role="dataType" targetNodeId="1083065718921" resolveInfo="_Identifier_String" />
+      <link role="dataType" targetNodeId="4.1082983041843" resolveInfo="string" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1083245396909">
       <property name="targetCardinality" value="1" />
@@ -1233,8 +1233,8 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
     </node>
-    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196208207703">
-      <link role="intfc" targetNodeId="4.1169194658468" resolveInfo="INamedConcept" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1212170587518">
+      <link role="intfc" targetNodeId="1212170275853" resolveInfo="IValidIdentifier" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1189675724652">
       <link role="intfc" targetNodeId="1178285077437" resolveInfo="ClassifierMember" />
@@ -1406,10 +1406,10 @@
     <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1109279783704">
       <property name="name" value="name" />
-      <link role="dataType" targetNodeId="1083065718921" resolveInfo="_Identifier_String" />
+      <link role="dataType" targetNodeId="4.1082983041843" resolveInfo="string" />
     </node>
-    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196208151107">
-      <link role="intfc" targetNodeId="4.1169194658468" resolveInfo="INamedConcept" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1212170629590">
+      <link role="intfc" targetNodeId="1212170275853" resolveInfo="IValidIdentifier" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1211483220942">
       <link role="intfc" targetNodeId="4.1196978630214" resolveInfo="IResolveInfo" />
