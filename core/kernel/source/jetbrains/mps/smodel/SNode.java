@@ -25,6 +25,10 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
+import com.intellij.openapi.command.undo.UndoableAction;
+import com.intellij.openapi.command.undo.DocumentReference;
+import com.intellij.openapi.command.UndoConfirmationPolicy;
+
 /**
  * User: Sergey Dmitriev
  * Date: Aug 2, 2003
@@ -684,6 +688,10 @@ public final class SNode {
 
     if (ModelChange.needRegisterUndo(getModel())) {
       final String pv = propertyValue;
+
+//      com.intellij.openapi.command.undo.UndoManager.getGlobalInstance().undoableActionPerformed(
+//        new PropertyChangeUndoableAction(this, propertyName, oldValue, propertyValue));
+
       UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
         public void undo() throws UnexpectedUndoException {
           setProperty(propertyName_, oldValue);

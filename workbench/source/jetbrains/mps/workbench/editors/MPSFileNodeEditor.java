@@ -26,6 +26,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelRepository;
 
 public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor {
   private MPSNodeVirtualFile myFile;  
@@ -82,7 +83,11 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor 
   }
 
   public boolean isModified() {
-    return false;
+    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      public Boolean compute() {
+        return SModelRepository.getInstance().isChanged(myFile.getNode().getModel());
+      }
+    });
   }
 
   public boolean isValid() {
