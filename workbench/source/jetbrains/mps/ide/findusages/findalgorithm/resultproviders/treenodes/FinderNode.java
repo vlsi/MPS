@@ -1,22 +1,19 @@
 package jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes;
 
-import jetbrains.mps.ide.command.CommandProcessor;
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
-import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.BaseLeaf;
-import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.progress.TaskProgressSettings;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Calculable;
 import org.jdom.Element;
-import com.intellij.openapi.util.Computable;
 
 public class FinderNode extends BaseLeaf {
   private static final String FINDER = "finder";
@@ -46,21 +43,21 @@ public class FinderNode extends BaseLeaf {
     return "finder";
   }
 
-  public SearchResults doGetResults(final SearchQuery query, final IAdaptiveProgressMonitor monitor) {
-    monitor.addText(getTaskName() + " started");
-    monitor.startLeafTask(getTaskName(), getTaskKind());
+  public SearchResults doGetResults(final SearchQuery query, final ProgressIndicator indicator) {
+    indicator.setText(getTaskName() + " started");
+    //indicator.startLeafTask(getTaskName(), getTaskKind());
     final SearchResults results = ModelAccess.instance().runReadAction(new Computable<SearchResults>() {
       public SearchResults compute() {
         try {
-          return myFinder.find(query, monitor);
+          return myFinder.find(query, indicator);
         } catch (Throwable t) {
           LOG.error(t.getMessage(), t);
           return new SearchResults();
         }
       }
     });
-    monitor.finishTask();
-    monitor.addText(getTaskName() + " finished");
+    //indicator.finishTask();
+    indicator.setText(getTaskName() + " finished");
 
     return results;
   }

@@ -1,11 +1,11 @@
 package jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes;
 
+import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.filters.BaseFilter;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.TaskProgressSettings;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
@@ -42,13 +42,13 @@ public class FilterNode extends BaseNode {
     return "filter";
   }
 
-  public SearchResults doGetResults(final SearchQuery query, final IAdaptiveProgressMonitor monitor) {
-    monitor.addText(getTaskName() + " started");
-    monitor.startTask(getTaskName(), getTaskKind());
+  public SearchResults doGetResults(final SearchQuery query, final ProgressIndicator indicator) {
+    indicator.setText(getTaskName() + " started");
+    //indicator.startTask(getTaskName(), getTaskKind());
     final SearchResults[] results = new SearchResults[1];
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SearchResults childRes = myChildren.get(0).getResults(query);
+        SearchResults childRes = myChildren.get(0).getResults(query, indicator);
         try {
           results[0] = myFilter.filter(childRes);
         } catch (Throwable t) {
@@ -57,8 +57,7 @@ public class FilterNode extends BaseNode {
         }
       }
     });
-    monitor.finishTask(getTaskName());
-    monitor.addText(getTaskKind() + " finished");
+    //indicator.finishTask(getTaskName());
 
     return results[0];
   }

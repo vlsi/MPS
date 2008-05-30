@@ -1,16 +1,16 @@
 package jetbrains.mps.ide.findusages.findalgorithm.finders.specific;
 
+import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
-import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModuleHolder;
-import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.DevKit;
+import jetbrains.mps.smodel.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -29,7 +29,7 @@ public class LanguageUsagesFinder extends BaseFinder {
   private static final String EXPORTED_BY = "exported by";
   private static final String MODELS_WRITTEN_IN_LANGUAGE = "models written in language";
 
-  public SearchResults find(SearchQuery query, IAdaptiveProgressMonitor monitor) {
+  public SearchResults find(SearchQuery query, ProgressIndicator indicator) {
     SearchResults searchResults = new SearchResults();
     IHolder objectHolder = query.getObjectHolder();
     if (!(objectHolder instanceof ModuleHolder)) {
@@ -42,11 +42,11 @@ public class LanguageUsagesFinder extends BaseFinder {
     }
     Language language = (Language) searchedModule;
     for (IModule module : MPSModuleRepository.getInstance().getAllModules()) {
-      if (monitor.isCanceled()) {
+      if (indicator.isCanceled()) {
         return searchResults;
       }
       if (module instanceof Solution) {
-        collectUsagesInSolution(language, (Solution)module, searchResults);
+        collectUsagesInSolution(language, (Solution) module, searchResults);
       }
       if (module instanceof Language) {
         collectUsagesInLanguage(language, (Language) module, searchResults);

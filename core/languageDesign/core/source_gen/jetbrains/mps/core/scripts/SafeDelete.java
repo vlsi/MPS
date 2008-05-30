@@ -101,7 +101,7 @@ public class SafeDelete extends AbstractLoggableRefactoring {
       SearchQuery searchQuery = new SearchQuery(actionContext.getNode(), GlobalScope.getInstance());
       NodeAndDescendantsUsages_Finder finder = new NodeAndDescendantsUsages_Finder();
       IResultProvider resultProvider = TreeBuilder.forFinder(finder);
-      SearchResults searchResults = resultProvider.getResults(searchQuery);
+      SearchResults searchResults = resultProvider.getResults(searchQuery, actionContext.createProgressIndicator());
       return searchResults;
     }
   }

@@ -17,12 +17,13 @@ public class FindUtils {
     final SearchResults[] results = new SearchResults[1];
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
-        ProgressManager.getInstance().run(new Modal(project, "Searching", false) {
+        ProgressManager.getInstance().run(new Modal(project, "Searching", true) {
           public void run(@NotNull final ProgressIndicator indicator) {
             ModelAccess.instance().runReadAction(new Runnable() {
               public void run() {
                 indicator.setIndeterminate(true);
-                results[0] = provider.getResults(query);
+                long time = provider.getEstimatedTime(query.getScope());
+                results[0] = provider.getResults(query, indicator);
               }
             });
           }

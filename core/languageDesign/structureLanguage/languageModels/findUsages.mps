@@ -23,6 +23,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <maxImportIndex value="16"/>
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1"/>
   <import index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1"/>
@@ -86,14 +87,10 @@
                   <node role="actualArgument"
                         type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_scope"
                         id="1210514234985"/>
-                  <node role="actualArgument"
-                        type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference"
-                        id="1210514234986">
-                    <property name="name" value="monitor"/>
-                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210514234987">
-                      <link role="classifier" targetNodeId="14.~IAdaptiveProgressMonitor"
-                            resolveInfo="IAdaptiveProgressMonitor"/>
-                    </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression"
+                        id="1212169387306">
+                    <link role="baseMethodDeclaration" targetNodeId="14.~NullAdaptiveProgressMonitor.&lt;init&gt;()"
+                          resolveInfo="NullAdaptiveProgressMonitor"/>
                   </node>
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant"
                         id="1210514234988">
@@ -200,13 +197,10 @@
                 <node role="actualArgument"
                       type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_scope"
                       id="1206463389285"/>
-                <node role="actualArgument"
-                      type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" id="1210514274507">
-                  <property name="name" value="monitor"/>
-                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210514277462">
-                    <link role="classifier" targetNodeId="14.~IAdaptiveProgressMonitor"
-                          resolveInfo="IAdaptiveProgressMonitor"/>
-                  </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression"
+                      id="1212169415024">
+                  <link role="baseMethodDeclaration" targetNodeId="14.~NullAdaptiveProgressMonitor.&lt;init&gt;()"
+                        resolveInfo="NullAdaptiveProgressMonitor"/>
                 </node>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant"
                       id="1210514285983">
@@ -362,13 +356,10 @@
                 <node role="actualArgument"
                       type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_scope"
                       id="1206463374367"/>
-                <node role="actualArgument"
-                      type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" id="1210514377897">
-                  <property name="name" value="monitor"/>
-                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210514380869">
-                    <link role="classifier" targetNodeId="14.~IAdaptiveProgressMonitor"
-                          resolveInfo="IAdaptiveProgressMonitor"/>
-                  </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression"
+                      id="1212169342874">
+                  <link role="baseMethodDeclaration" targetNodeId="14.~NullAdaptiveProgressMonitor.&lt;init&gt;()"
+                        resolveInfo="NullAdaptiveProgressMonitor"/>
                 </node>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant"
                       id="1210514391607">
@@ -790,14 +781,10 @@
                   <node role="actualArgument"
                         type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_scope"
                         id="1211301915951"/>
-                  <node role="actualArgument"
-                        type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference"
-                        id="1211301915952">
-                    <property name="name" value="monitor"/>
-                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1211301915953">
-                      <link role="classifier" targetNodeId="14.~IAdaptiveProgressMonitor"
-                            resolveInfo="IAdaptiveProgressMonitor"/>
-                    </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression"
+                        id="1212169399279">
+                    <link role="baseMethodDeclaration" targetNodeId="14.~NullAdaptiveProgressMonitor.&lt;init&gt;()"
+                          resolveInfo="NullAdaptiveProgressMonitor"/>
                   </node>
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant"
                         id="1211301915954">

@@ -1,12 +1,12 @@
 package jetbrains.mps.ide.findusages.findalgorithm.finders.specific;
 
+import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -36,7 +36,7 @@ public class AspectMethodsFinder extends BaseFinder {
     myMethodName = methodName;
   }
 
-  public SearchResults<SNode> find(SearchQuery query, IAdaptiveProgressMonitor monitor) {
+  public SearchResults<SNode> find(SearchQuery query, ProgressIndicator indicator) {
     SearchResults<SNode> res = new SearchResults<SNode>();
     for (SModel model : myModels) {
       for (SNode root : model.getRoots()) {

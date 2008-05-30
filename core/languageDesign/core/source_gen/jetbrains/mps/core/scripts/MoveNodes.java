@@ -94,7 +94,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
       Iterable<SNode> childLinkDeclarations = ListSequence.fromList(linkDeclarations).where(new IWhereFilter<LinkDeclaration>() {
 
         public boolean accept(LinkDeclaration it) {
-          return SPropertyOperations.hasValue(((SNode) it.getNode()), "metaClass", "aggregation", null);
+          return SPropertyOperations.hasValue(((SNode) it.getNode()), "metaClass", "aggregation", "reference");
         }
 
       }).select(new ISelector<LinkDeclaration, SNode>() {
@@ -158,7 +158,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
       SearchQuery searchQuery = new SearchQuery(actionContext.getNode(), GlobalScope.getInstance());
       NodeAndDescendantsUsages_Finder finder = new NodeAndDescendantsUsages_Finder();
       IResultProvider resultProvider = TreeBuilder.forFinder(finder);
-      SearchResults searchResults = resultProvider.getResults(searchQuery);
+      SearchResults searchResults = resultProvider.getResults(searchQuery, actionContext.createProgressIndicator());
       return searchResults;
     }
   }

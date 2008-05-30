@@ -113,7 +113,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
       SNode node = actionContext.getNode();
       SearchQuery searchQuery = new SearchQuery(node, GlobalScope.getInstance());
       IResultProvider resultProvider = TreeBuilder.forFinders(new ConceptInstances_Finder(), new NodeAndDescendantsUsages_Finder());
-      SearchResults searchResults = resultProvider.getResults(searchQuery);
+      SearchResults searchResults = resultProvider.getResults(searchQuery, actionContext.createProgressIndicator());
       return searchResults;
     }
   }

@@ -103,7 +103,7 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
       SNode node = actionContext.getNode();
       SearchQuery searchQuery = new SearchQuery(node, GlobalScope.getInstance());
       IResultProvider resultProvider = TreeBuilder.forFinders(new ConceptInstances_Finder(), new NodeAndDescendantsUsages_Finder());
-      SearchResults searchResults = resultProvider.getResults(searchQuery);
+      SearchResults searchResults = resultProvider.getResults(searchQuery, actionContext.createProgressIndicator());
       refactoringContext.setParameter("sourceLanguage", Language.getLanguageFor(SNodeOperations.getModel(node).getModelDescriptor()));
       if (((Language) refactoringContext.getParameter("sourceLanguage")) != null) {
         SModelDescriptor editorModelDescriptor = ((Language) refactoringContext.getParameter("sourceLanguage")).getEditorModelDescriptor();

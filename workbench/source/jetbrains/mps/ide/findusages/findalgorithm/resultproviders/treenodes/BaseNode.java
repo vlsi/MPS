@@ -1,5 +1,7 @@
 package jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes;
 
+import com.intellij.openapi.progress.EmptyProgressIndicator;
+import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
@@ -7,12 +9,11 @@ import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.ide.progress.NullAdaptiveProgressMonitor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
 import org.jdom.Element;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -65,18 +66,14 @@ public abstract class BaseNode implements IResultProvider {
 
   //----SEARCH STUFF----
 
-  public SearchResults getResults(SearchQuery query) {
+  public SearchResults getResults(SearchQuery query, @Nullable ProgressIndicator indicator) {
     assert !ThreadUtils.isEventDispatchThread();
-    final IAdaptiveProgressMonitor monitor = new NullAdaptiveProgressMonitor();
 
-    SearchResults results;
-    if (isRoot()) {
-      monitor.start("find usages", getEstimatedTime(query.getScope()));
-    }
+    if (indicator == null) indicator = new EmptyProgressIndicator();
 
-    results = doGetResults(query, monitor);
+    SearchResults results = doGetResults(query, indicator);
 
-    //no null pointer exception will occure!!
+    //no null pointer exception will occur!!
     if (results.getSearchedNodes().contains(null)) {
       LOG.error("GetResults returned nodes containing null, which means that some of your filters and finders is incorrect");
       results.getSearchedNodes().remove(null);
@@ -98,18 +95,10 @@ public abstract class BaseNode implements IResultProvider {
       results = new SearchResults(results.getSearchedNodes(), newResults);
     }
 
-    if (isRoot()) {
-      new Thread() {
-        public void run() {
-          //todo hack
-          monitor.finish();
-        }
-      }.start();
-    }
     return results;
   }
 
-  public abstract SearchResults doGetResults(SearchQuery query, IAdaptiveProgressMonitor monitor);
+  public abstract SearchResults doGetResults(SearchQuery query, ProgressIndicator indicator);
 
   public long getEstimatedTime(IScope scope) {
     long sumTime = 0;
