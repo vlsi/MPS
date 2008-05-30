@@ -13,7 +13,6 @@ import org.jetbrains.annotations.NotNull;
 
 public class FindUtils {
   public static SearchResults getResultsWithProgress(final Project project, final IResultProvider provider, final SearchQuery query) {
-    assert !ThreadUtils.isEventDispatchThread();
     final SearchResults[] results = new SearchResults[1];
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
