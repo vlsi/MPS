@@ -14,10 +14,13 @@ import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.workbench.actions.goTo.framework.models.BaseModelItem;
 import jetbrains.mps.workbench.actions.goTo.framework.models.BaseModelModel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class GoToModelAction extends AnAction {
   public void actionPerformed(AnActionEvent e) {
@@ -45,7 +48,13 @@ public class GoToModelAction extends AnAction {
       }
 
       public SModelDescriptor[] find(IScope scope) {
-        return scope.getModelDescriptors().toArray(new SModelDescriptor[0]);
+        List<SModelDescriptor> modelDescriptors = scope.getModelDescriptors();
+        List<SModelDescriptor> res = new ArrayList<SModelDescriptor>(modelDescriptors.size());
+        for (SModelDescriptor modelDescriptor : modelDescriptors) {
+          if (modelDescriptor.getModule() == null) continue;
+          res.add(modelDescriptor);
+        }
+        return res.toArray(new SModelDescriptor[0]);
       }
     };
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModelModel, fakePsiContext);
@@ -57,10 +66,10 @@ public class GoToModelAction extends AnAction {
 
       public void elementChosen(final Object element) {
         ModelAccess.instance().runReadAction(new Runnable() {
-              public void run() {
-                ((NavigationItem) element).navigate(true);
-              }
-            });
+          public void run() {
+            ((NavigationItem) element).navigate(true);
+          }
+        });
       }
     }, ModalityState.current(), true);
   }
