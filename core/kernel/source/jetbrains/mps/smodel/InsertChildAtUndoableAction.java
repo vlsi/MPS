@@ -16,7 +16,6 @@ class InsertChildAtUndoableAction extends SNodeUndoableAction {
 
   protected void doUndo() {
     myNode.removeChildAt(myIndex);
-
   }
 
   protected void doRedo() {

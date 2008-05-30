@@ -37,7 +37,7 @@ abstract class SNodeUndoableAction implements UndoableAction {
   public final void redo() throws UnexpectedUndoException {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        doUndo();
+        doRedo();
       }
     });
   }
