@@ -58,6 +58,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <maxImportIndex value="20"/>
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0"/>
   <import index="6" modelUID="jetbrains.mps.core.structure" version="-1"/>
@@ -220,66 +221,6 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
           id="1206113005758">
       <property name="value" value="Tool"/>
-      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203080649866">
-    <property name="name" value="ProjectPane"/>
-    <property name="package" value="ProjectPane"/>
-    <property name="rootable" value="true"/>
-    <property name="iconPath" value="${language_descriptor}\icons\treePane.png"/>
-    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
-          id="1204478343258">
-      <property name="metaClass" value="aggregation"/>
-      <property name="role" value="openModuleBlock"/>
-      <property name="sourceCardinality" value="1"/>
-      <link role="target" targetNodeId="1204477602436" resolveInfo="OpenModuleBlock"/>
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
-          id="1204478348572">
-      <property name="metaClass" value="aggregation"/>
-      <property name="role" value="rebuildBlock"/>
-      <property name="sourceCardinality" value="1"/>
-      <link role="target" targetNodeId="1204477604390" resolveInfo="RebuildBlock"/>
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
-          id="1204478352635">
-      <property name="metaClass" value="aggregation"/>
-      <property name="role" value="scrollFromSourceBlock"/>
-      <property name="sourceCardinality" value="1"/>
-      <link role="target" targetNodeId="1204477605969" resolveInfo="ScrollFromSourceBlock"/>
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
-          id="1204478355855">
-      <property name="metaClass" value="aggregation"/>
-      <property name="role" value="setProjectBlock"/>
-      <property name="sourceCardinality" value="1"/>
-      <link role="target" targetNodeId="1204477594372" resolveInfo="SetProjectBlock"/>
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
-          id="1204477555839">
-      <property name="role" value="componentClass"/>
-      <property name="sourceCardinality" value="1"/>
-      <link role="target" targetNodeId="2.1068390468198" resolveInfo="ClassConcept"/>
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"
-          id="1204477510962">
-      <property name="name" value="title"/>
-      <link role="dataType" targetNodeId="6.1082983041843" resolveInfo="string"/>
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"
-          id="1204477531337">
-      <property name="name" value="icon"/>
-      <link role="dataType" targetNodeId="6.1082983041843" resolveInfo="string"/>
-    </node>
-    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference"
-          id="1204478890569">
-      <link role="intfc" targetNodeId="6.1169194658468" resolveInfo="INamedConcept"/>
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
-          id="1206112996230">
-      <property name="value" value="Project Pane"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
     </node>
   </node>
@@ -846,84 +787,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204477594372">
-    <property name="package" value="ProjectPane.Methods"/>
-    <property name="name" value="SetProjectBlock"/>
-    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction"/>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
-          id="1204478227032">
-      <property name="value" value="setProject"/>
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1201882037552" resolveInfo="conceptFunctionName"/>
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink"
-          id="1204478323566">
-      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType"/>
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1204478326646"/>
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink"
-          id="1204478327898">
-      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665"
-            resolveInfo="applicableConceptFunctionParameter"/>
-      <link role="target" targetNodeId="1204478074808" resolveInfo="ConceptFunctionParameter_MPSProject"/>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204477602436">
-    <property name="package" value="ProjectPane.Methods"/>
-    <property name="name" value="OpenModuleBlock"/>
-    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction"/>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink"
-          id="1204478240300">
-      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType"/>
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1204478242677"/>
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink"
-          id="1204478259904">
-      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665"
-            resolveInfo="applicableConceptFunctionParameter"/>
-      <link role="target" targetNodeId="1204477852167" resolveInfo="ConceptFunctionParameter_IModule"/>
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
-          id="1204478191980">
-      <property name="value" value="openModule"/>
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1201882037552" resolveInfo="conceptFunctionName"/>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204477604390">
-    <property name="package" value="ProjectPane.Methods"/>
-    <property name="name" value="RebuildBlock"/>
-    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction"/>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
-          id="1204478201747">
-      <property name="value" value="rebuild"/>
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1201882037552" resolveInfo="conceptFunctionName"/>
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink"
-          id="1204478305079">
-      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType"/>
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1204478311221"/>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204477605969">
-    <property name="package" value="ProjectPane.Methods"/>
-    <property name="name" value="ScrollFromSourceBlock"/>
-    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction"/>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
-          id="1204478217125">
-      <property name="value" value="scrollFromSource"/>
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1201882037552" resolveInfo="conceptFunctionName"/>
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink"
-          id="1204477692673">
-      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType"/>
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1204477695112"/>
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink"
-          id="1204478289562">
-      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665"
-            resolveInfo="applicableConceptFunctionParameter"/>
-      <link role="target" targetNodeId="1204477759787" resolveInfo="ConceptFunctionParameter_SNode"/>
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204477759787">
     <property name="package" value="Shared"/>
     <property name="name" value="ConceptFunctionParameter_SNode"/>
@@ -990,16 +853,6 @@
       <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206185882027">
         <link role="classifier" targetNodeId="15.~MPSProject" resolveInfo="MPSProject"/>
       </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204478385903">
-    <property name="package" value="ProjectPane"/>
-    <property name="name" value="ProjectPaneInstanceExpression"/>
-    <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression"/>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
-          id="1204478405232">
-      <property name="value" value="instance"/>
-      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204903488751">

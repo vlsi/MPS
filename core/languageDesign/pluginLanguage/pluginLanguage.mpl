@@ -17,7 +17,7 @@
                    namespacePrefix="jetbrains.mps.bootstrap.pluginLanguage.generator.baseLanguage.template"/>
       </models>
       <external-templates>
-        <generator generatorUID="jetbrains.mps.baseLanguage.classifiers#1205839057922" />
+        <generator generatorUID="jetbrains.mps.baseLanguage.classifiers#1205839057922"/>
       </external-templates>
       <dependencies>
         <dependency reexport="false">jetbrains.mps.baseLanguage</dependency>
@@ -28,7 +28,7 @@
         <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
         <usedLanguages>jetbrains.mps.baseLanguage.classifiers</usedLanguages>
       </usedLanguages>
-      <mapping-priorities />
+      <mapping-priorities/>
     </generator>
   </generators>
   <classPath>
@@ -49,6 +49,7 @@
     <usedLanguages>jetbrains.mps.baseLanguage.classifiers</usedLanguages>
     <usedLanguages>jetbrains.mps.internal.collections</usedLanguages>
     <usedLanguages>jetbrains.mps.baseLanguage.strings</usedLanguages>
+    <usedLanguages>jetbrains.mps.transformationTest</usedLanguages>
   </usedLanguages>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.baseLanguage.classifiers</extendedLanguage>
