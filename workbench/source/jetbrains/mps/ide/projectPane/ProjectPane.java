@@ -64,7 +64,7 @@ import java.io.File;
     id = "other",
     file = "$WORKSPACE_FILE$"
   )
-    }
+  }
 )
 public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPane, PersistentStateComponent<MyState> {
   private static final Logger LOG = Logger.getLogger(ProjectPane.class);
