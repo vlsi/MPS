@@ -63,7 +63,7 @@ public abstract class BaseMPSTool implements ProjectComponent {
   }
 
   public void showTool() {
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
         if (myProject.isDisposed()) return;
         getToolWindow().setAvailable(true, null);
@@ -74,7 +74,7 @@ public abstract class BaseMPSTool implements ProjectComponent {
   }
 
   public void closeTool() {
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
         if (!isShowing()) return;
         getToolWindow().setAvailable(false, null);

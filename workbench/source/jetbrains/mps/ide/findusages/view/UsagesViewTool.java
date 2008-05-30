@@ -1,7 +1,12 @@
 package jetbrains.mps.ide.findusages.view;
 
+import com.intellij.openapi.components.PersistentStateComponent;
+import com.intellij.openapi.components.State;
+import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.ConceptInstances_Finder;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
@@ -26,8 +31,8 @@ import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
 import jetbrains.mps.ide.progress.AdaptiveProgressMonitorFactory;
 import jetbrains.mps.nodeEditor.EditorUtil;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.workbench.tools.BaseMPSTool;
 import org.jdom.Element;
@@ -35,14 +40,22 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
-import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UsagesViewTool extends BaseMPSTool {
+@State(
+  name = "UsagesViewTool",
+  storages = {
+  @Storage(
+    id = "other",
+    file = "$WORKSPACE_FILE$"
+  )
+    }
+)
+public class UsagesViewTool extends BaseMPSTool implements PersistentStateComponent<Element> {
   private static final String VERSION_NUMBER = "0.99";
   private static final String VERSION = "version";
   private static final String ID = "id";
@@ -63,10 +76,7 @@ public class UsagesViewTool extends BaseMPSTool {
 
   public UsagesViewTool(Project project) {
     super(project, "Usages", 3, jetbrains.mps.ide.projectPane.Icons.USAGES_ICON, ToolWindowAnchor.BOTTOM, true);
-  }
 
-  public void initComponent() {
-    super.initComponent();
     myPanel = new JPanel(new BorderLayout());
 
     myTabbedPane = new JTabbedPane(JTabbedPane.BOTTOM);
@@ -75,7 +85,6 @@ public class UsagesViewTool extends BaseMPSTool {
 
     setDefaultOptions();
   }
-
 
   private void setDefaultOptions() {
     FindersOptions findersOptions = new FindersOptions(NodeUsages_Finder.class.getName(), ConceptInstances_Finder.class.getName());
@@ -163,17 +172,17 @@ public class UsagesViewTool extends BaseMPSTool {
 
         if (!findUsagesDialog.isCancelled()) {
           ModelAccess.instance().runReadAction(new Runnable() {
-                  public void run() {
-                    FindUsagesOptions options = findUsagesDialog.getResult();
-                    myDefaultFindOptions = options;
+            public void run() {
+              FindUsagesOptions options = findUsagesDialog.getResult();
+              myDefaultFindOptions = options;
 
-                    IResultProvider provider = options.getOption(FindersOptions.class).getResult(operationNode[0], context);
-                    SearchQuery query = options.getOption(QueryOptions.class).getResult(operationNode[0], context);
-                    ViewOptions viewOptions = options.getOption(ViewOptions.class);
+              IResultProvider provider = options.getOption(FindersOptions.class).getResult(operationNode[0], context);
+              SearchQuery query = options.getOption(QueryOptions.class).getResult(operationNode[0], context);
+              ViewOptions viewOptions = options.getOption(ViewOptions.class);
 
-                    findUsages(provider, query, true, viewOptions.myShowOneResult, viewOptions.myNewTab);
-                  }
-                });
+              findUsages(provider, query, true, viewOptions.myShowOneResult, viewOptions.myNewTab);
+            }
+          });
         }
       }
     });
@@ -187,13 +196,13 @@ public class UsagesViewTool extends BaseMPSTool {
     new Thread() {
       public void run() {
         ModelAccess.instance().runReadAction(new Runnable() {
-              public void run() {
-                SearchResults searchResults = provider.getResults(
-                  query,
-                  getMPSProject().getComponentSafe(AdaptiveProgressMonitorFactory.class).createMonitor());
-                showResults(searchResults, showOne, newTab, provider, query, isRerunnable);
-              }
-            });
+          public void run() {
+            SearchResults searchResults = provider.getResults(
+              query,
+              getMPSProject().getComponentSafe(AdaptiveProgressMonitorFactory.class).createMonitor());
+            showResults(searchResults, showOne, newTab, provider, query, isRerunnable);
+          }
+        });
       }
     }.start();
   }
@@ -202,10 +211,10 @@ public class UsagesViewTool extends BaseMPSTool {
     new Thread() {
       public void run() {
         ModelAccess.instance().runReadAction(new Runnable() {
-              public void run() {
-                showResults(searchResults, false, false, TreeBuilder.forFinder(new ConstantFinder(searchResults.getSearchResults())), query, false);
-              }
-            });
+          public void run() {
+            showResults(searchResults, false, false, TreeBuilder.forFinder(new ConstantFinder(searchResults.getSearchResults())), query, false);
+          }
+        });
       }
     }.start();
   }
@@ -215,7 +224,7 @@ public class UsagesViewTool extends BaseMPSTool {
     if (resCount == 0) {
       ThreadUtils.runInUIThreadNoWait(new Runnable() {
         public void run() {
-          new HintDialog(getFrame(), "Not found", "No usages for that node").showDialog();
+          new HintDialog(JOptionPane.getFrameForComponent(myPanel), "Not found", "No usages for that node").showDialog();
         }
       });
     } else if (resCount == 1 && !showOne) {
@@ -314,9 +323,22 @@ public class UsagesViewTool extends BaseMPSTool {
     element.addContent(defaultViewOptionsXML);
   }
 
-  //todo write it
-  protected Frame getFrame() {
-    return null;
+  public Element getState() {
+    return ModelAccess.instance().runReadAction(new Computable<Element>() {
+      public Element compute() {
+        Element state = new Element("state");
+        write(state, getProject().getComponent(MPSProject.class));
+        return state;
+      }
+    });
+  }
+
+  public void loadState(final Element state) {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        read(state, getProject().getComponent(MPSProjectHolder.class).getMPSProject());
+      }
+    });
   }
 
   class TabPaneMouseListener extends MouseAdapter {

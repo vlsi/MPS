@@ -3,7 +3,6 @@ package jetbrains.mps.ide.messages;
 import com.intellij.ide.SelectInManager;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.components.PersistentStateComponent;
-import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
@@ -39,7 +38,7 @@ import java.util.Queue;
   )
     }
 )
-public class MessagesViewTool extends BaseMPSTool implements ProjectComponent, PersistentStateComponent<MyState> {
+public class MessagesViewTool extends BaseMPSTool implements PersistentStateComponent<MyState> {
   private static final int MAX_MESSAGES_SIZE = 30000;
 
   public static final Icon INFORMATION_ICON = new ImageIcon(MessagesViewTool.class.getResource("information.png"));
@@ -183,7 +182,7 @@ public class MessagesViewTool extends BaseMPSTool implements ProjectComponent, P
   //------------TOOL STUFF---------------
 
   public void showTool() {
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
         if (myModel.size() > 0) {
           myList.setSelectedValue(myModel.getElementAt(myModel.size() - 1), true);
