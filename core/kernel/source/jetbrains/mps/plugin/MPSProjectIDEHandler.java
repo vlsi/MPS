@@ -29,6 +29,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Computable;
 
 public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDEHandler, ProjectComponent {
   private static final Logger LOG = Logger.getLogger(MPSProjectIDEHandler.class);
@@ -189,12 +190,13 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   private void findUsages(final @NotNull SNode node, final IScope scope) {
     new Thread() {
       public void run() {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            SearchQuery searchQuery = new SearchQuery(node, scope);
-            myProject.getComponent(UsagesViewTool.class).findUsages(searchQuery, true, true, true, new NodeUsages_Finder());
+        SearchQuery query = ModelAccess.instance().runReadAction(new Computable<SearchQuery>() {
+          public SearchQuery compute() {
+            return new SearchQuery(node, scope);
           }
         });
+
+        myProject.getComponent(UsagesViewTool.class).findUsages(query, true, true, true, new NodeUsages_Finder());
       }
     }.start();
   }
