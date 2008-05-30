@@ -5,10 +5,10 @@ import com.intellij.openapi.actionSystem.KeyboardShortcut;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.openapi.wm.ToolWindowManager;
-import com.intellij.openapi.startup.StartupManager;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentFactoryImpl;
 import jetbrains.mps.MPSProjectHolder;
@@ -16,7 +16,6 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -64,17 +63,18 @@ public abstract class BaseMPSTool implements ProjectComponent {
   }
 
   public void showTool() {
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         if (myProject.isDisposed()) return;
         getToolWindow().setAvailable(true, null);
         getToolWindow().activate(null);
+        getToolWindow().show(null);
       }
     });
   }
 
   public void closeTool() {
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         if (!isShowing()) return;
         getToolWindow().setAvailable(false, null);

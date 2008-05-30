@@ -15,8 +15,8 @@ import jetbrains.mps.ide.blame.BlameDialog;
 import jetbrains.mps.ide.messages.MessagesViewTool.MyState;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.workbench.tools.BaseMPSTool;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.workbench.tools.BaseMPSTool;
 
 import javax.swing.*;
 import java.awt.*;
@@ -183,7 +183,7 @@ public class MessagesViewTool extends BaseMPSTool implements ProjectComponent, P
   //------------TOOL STUFF---------------
 
   public void showTool() {
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         if (myModel.size() > 0) {
           myList.setSelectedValue(myModel.getElementAt(myModel.size() - 1), true);
