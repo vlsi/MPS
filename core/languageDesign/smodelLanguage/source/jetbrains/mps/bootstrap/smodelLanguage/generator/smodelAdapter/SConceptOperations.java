@@ -4,7 +4,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.search.SModelSearchUtil_new;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.util.NameUtil;
@@ -101,7 +101,7 @@ public final class SConceptOperations {
     if (conceptDeclarationNode == null) return new ArrayList<SNode>();
     AbstractConceptDeclaration concept = (AbstractConceptDeclaration) conceptDeclarationNode.getAdapter();
 
-    ISearchScope ss = SModelSearchUtil_new.createConceptsFromModelLanguagesScope(model, scope);
+    ISearchScope ss = SModelSearchUtil.createConceptsFromModelLanguagesScope(model, scope);
     List<AbstractConceptDeclaration> concepts = ss.getAdapters(AbstractConceptDeclaration.class);
 
     Set<AbstractConceptDeclaration> subConcepts = new HashSet<AbstractConceptDeclaration>();//FindUsagesManager.getInstance().findDescendants(concept, GlobalScope.getInstance());

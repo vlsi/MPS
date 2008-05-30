@@ -2,7 +2,7 @@ package jetbrains.mps.transformation.TLBase.constraints;
 
 import jetbrains.mps.smodel.search.AbstractSearchScope;
 import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.smodel.search.SModelSearchUtil_new;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.ide.BootstrapLanguagesManager;
@@ -42,7 +42,7 @@ public class MappingRuleTemplateNodeSearchScope extends AbstractSearchScope {
 
   private void ensureInitialized() {
     if (myOwnNodes == null) {
-      ISearchScope searchScope = SModelSearchUtil_new.createModelAndImportedModelsScope(myModel, true, myScope);
+      ISearchScope searchScope = SModelSearchUtil.createModelAndImportedModelsScope(myModel, true, myScope);
       Condition<SNode> condition = new Condition<SNode>() {
         public boolean met(SNode object) {
           // templates model ?

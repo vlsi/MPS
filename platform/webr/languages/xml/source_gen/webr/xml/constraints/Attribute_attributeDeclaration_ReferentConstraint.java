@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.search.SModelSearchUtil_new;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import webr.xmlSchema.constraints.ElementDeclaration_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
@@ -36,7 +36,7 @@ public class Attribute_attributeDeclaration_ReferentConstraint implements IModel
     ISearchScope searchScope;
     SNode element = SNodeOperations.getAncestor(_context.getEnclosingNode(), "webr.xml.structure.Element", false, false);
     if ((element == null)) {
-      searchScope = SModelSearchUtil_new.createModelAndImportedModelsScope(_context.getModel(), operationContext.getScope());
+      searchScope = SModelSearchUtil.createModelAndImportedModelsScope(_context.getModel(), operationContext.getScope());
     } else
     {
       searchScope = new SimpleSearchScope(ElementDeclaration_Behavior.call_getAttributeDeclarations_1183587644932(SLinkOperations.getTarget(element, "elementDeclaration", false)));

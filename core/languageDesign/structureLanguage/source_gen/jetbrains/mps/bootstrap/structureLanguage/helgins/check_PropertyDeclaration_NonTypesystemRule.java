@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
-import jetbrains.mps.smodel.search.SModelSearchUtil_new;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.intentions.BaseIntentionProvider;
@@ -25,7 +25,7 @@ public class check_PropertyDeclaration_NonTypesystemRule implements NonTypesyste
       return;
     }
     SNode concept = SNodeOperations.getAncestor(prop, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration", false, false);
-    PropertyDeclaration _propInConcept = SModelSearchUtil_new.findPropertyDeclaration(((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept)), SPropertyOperations.getString(prop, "name"));
+    PropertyDeclaration _propInConcept = SModelSearchUtil.findPropertyDeclaration(((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept)), SPropertyOperations.getString(prop, "name"));
     SNode propInConcept = BaseAdapter.fromAdapter(_propInConcept);
     if (prop != propInConcept) {
       {

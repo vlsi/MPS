@@ -272,8 +272,8 @@
                 <link role="classifier" targetNodeId="7.~List" resolveInfo="List" />
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1166056968234">
-                <link role="classConcept" targetNodeId="5.~SModelSearchUtil_new" resolveInfo="SModelSearchUtil_new" />
-                <link role="baseMethodDeclaration" targetNodeId="5.~SModelSearchUtil_new.getLinkDeclarationsExcludingOverridden(jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration):java.util.List" resolveInfo="getLinkDeclarationsExcludingOverridden" />
+                <link role="classConcept" targetNodeId="5.~SModelSearchUtil" resolveInfo="SModelSearchUtil" />
+                <link role="baseMethodDeclaration" targetNodeId="5.~SModelSearchUtil.getLinkDeclarationsExcludingOverridden(jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration):java.util.List" resolveInfo="getLinkDeclarationsExcludingOverridden" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721776">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1166056968236">
                     <link role="variableDeclaration" targetNodeId="1166056968225" resolveInfo="editedConcept" />
@@ -488,8 +488,8 @@
                 <link role="classifier" targetNodeId="7.~List" resolveInfo="List" />
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1164075354167">
-                <link role="classConcept" targetNodeId="5.~SModelSearchUtil_new" resolveInfo="SModelSearchUtil_new" />
-                <link role="baseMethodDeclaration" targetNodeId="5.~SModelSearchUtil_new.getLinkDeclarationsExcludingOverridden(jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration):java.util.List" resolveInfo="getLinkDeclarationsExcludingOverridden" />
+                <link role="classConcept" targetNodeId="5.~SModelSearchUtil" resolveInfo="SModelSearchUtil" />
+                <link role="baseMethodDeclaration" targetNodeId="5.~SModelSearchUtil.getLinkDeclarationsExcludingOverridden(jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration):java.util.List" resolveInfo="getLinkDeclarationsExcludingOverridden" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721757">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1164075371487">
                     <link role="variableDeclaration" targetNodeId="1164075315659" resolveInfo="editedConcept" />
@@ -1055,8 +1055,8 @@
                 <link role="classifier" targetNodeId="7.~List" resolveInfo="List" />
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1180297366948">
-                <link role="baseMethodDeclaration" targetNodeId="5.~SModelSearchUtil_new.getLinkDeclarationsExcludingOverridden(jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration):java.util.List" resolveInfo="getLinkDeclarationsExcludingOverridden" />
-                <link role="classConcept" targetNodeId="5.~SModelSearchUtil_new" resolveInfo="SModelSearchUtil_new" />
+                <link role="baseMethodDeclaration" targetNodeId="5.~SModelSearchUtil.getLinkDeclarationsExcludingOverridden(jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration):java.util.List" resolveInfo="getLinkDeclarationsExcludingOverridden" />
+                <link role="classConcept" targetNodeId="5.~SModelSearchUtil" resolveInfo="SModelSearchUtil" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672722013">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1180297366951">
                     <link role="variableDeclaration" targetNodeId="1180297366940" resolveInfo="editedConcept" />
@@ -1212,8 +1212,8 @@
                 <link role="classifier" targetNodeId="7.~List" resolveInfo="List" />
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1180297845746">
-                <link role="classConcept" targetNodeId="5.~SModelSearchUtil_new" resolveInfo="SModelSearchUtil_new" />
-                <link role="baseMethodDeclaration" targetNodeId="5.~SModelSearchUtil_new.getLinkDeclarationsExcludingOverridden(jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration):java.util.List" resolveInfo="getLinkDeclarationsExcludingOverridden" />
+                <link role="classConcept" targetNodeId="5.~SModelSearchUtil" resolveInfo="SModelSearchUtil" />
+                <link role="baseMethodDeclaration" targetNodeId="5.~SModelSearchUtil.getLinkDeclarationsExcludingOverridden(jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration):java.util.List" resolveInfo="getLinkDeclarationsExcludingOverridden" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721940">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1180297845749">
                     <link role="variableDeclaration" targetNodeId="1180297845738" resolveInfo="editedConcept" />

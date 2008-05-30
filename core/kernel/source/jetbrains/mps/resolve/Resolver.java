@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.constraints.SearchScopeStatus;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
-import jetbrains.mps.smodel.search.SModelSearchUtil_new;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 
@@ -165,7 +165,7 @@ public class Resolver {
       }
       final AbstractConceptDeclaration possibleChildConceptDeclaration = parentLinkDeclaration.getTarget();
 
-      ISearchScope conceptsSearchScope = SModelSearchUtil_new.createConceptsFromModelLanguagesScope(parent.getModel(), true, operationContext.getScope());
+      ISearchScope conceptsSearchScope = SModelSearchUtil.createConceptsFromModelLanguagesScope(parent.getModel(), true, operationContext.getScope());
       List<SNode> applicableConcepts = conceptsSearchScope.getNodes(new Condition<SNode>() {
         public boolean met(SNode object) {
           return SModelUtil_new.isAssignableConcept((ConceptDeclaration) BaseAdapter.fromNode(object), possibleChildConceptDeclaration);

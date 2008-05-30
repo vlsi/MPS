@@ -14,7 +14,7 @@ import java.util.List;
 import webr.xml.actions.ElementUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
-import jetbrains.mps.smodel.search.SModelSearchUtil_new;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class Element_elementDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
@@ -39,7 +39,7 @@ public class Element_elementDeclaration_ReferentConstraint implements IModelCons
     SNode element = SNodeOperations.getAncestor(_context.getEnclosingNode(), "webr.xml.structure.Element", false, false);
     List<SNode> elementDeclarations = ElementUtil.getElementDeclarations(SLinkOperations.getTarget(element, "elementDeclaration", false), _context.getEnclosingNode(), operationContext.getScope());
     if (SequenceOperations.isEmpty(elementDeclarations)) {
-      searchScope = SModelSearchUtil_new.createModelAndImportedModelsScope(_context.getModel(), operationContext.getScope());
+      searchScope = SModelSearchUtil.createModelAndImportedModelsScope(_context.getModel(), operationContext.getScope());
     } else
     {
       searchScope = new SimpleSearchScope(elementDeclarations);

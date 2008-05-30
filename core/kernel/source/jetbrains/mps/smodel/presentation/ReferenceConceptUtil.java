@@ -3,8 +3,7 @@ package jetbrains.mps.smodel.presentation;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.smodel.search.SModelSearchUtil_new;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
@@ -45,7 +44,7 @@ public class ReferenceConceptUtil {
       expectedReferentRole = matches[1];
     }
 
-    List<LinkDeclaration> links = SModelSearchUtil_new.getReferenceLinkDeclarationsExcludingOverridden(concept);
+    List<LinkDeclaration> links = SModelSearchUtil.getReferenceLinkDeclarationsExcludingOverridden(concept);
     if (expectedReferentRole != null) {
       for (LinkDeclaration link : links) {
         if (expectedReferentRole.equals(link.getRole())) {

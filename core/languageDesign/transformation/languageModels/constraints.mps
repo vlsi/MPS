@@ -313,8 +313,8 @@
               <link role="classifier" targetNodeId="6.~PropertyDeclaration" resolveInfo="PropertyDeclaration" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1182452729537">
-              <link role="classConcept" targetNodeId="10.~SModelSearchUtil_new" resolveInfo="SModelSearchUtil_new" />
-              <link role="baseMethodDeclaration" targetNodeId="10.~SModelSearchUtil_new.findPropertyDeclaration(jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration,java.lang.String):jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" resolveInfo="findPropertyDeclaration" />
+              <link role="classConcept" targetNodeId="10.~SModelSearchUtil" resolveInfo="SModelSearchUtil" />
+              <link role="baseMethodDeclaration" targetNodeId="10.~SModelSearchUtil.findPropertyDeclaration(jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration,java.lang.String):jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" resolveInfo="findPropertyDeclaration" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672722032">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227881803">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1182452892491">

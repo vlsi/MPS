@@ -717,8 +717,8 @@
                 <link role="classifier" targetNodeId="3.~List" resolveInfo="List" />
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1149280781302">
-                <link role="classConcept" targetNodeId="4.~SModelSearchUtil_new" resolveInfo="SModelSearchUtil_new" />
-                <link role="baseMethodDeclaration" targetNodeId="4.~SModelSearchUtil_new.getAggregationLinkDeclarationsExcludingOverridden(jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration):java.util.List" resolveInfo="getAggregationLinkDeclarationsExcludingOverridden" />
+                <link role="classConcept" targetNodeId="4.~SModelSearchUtil" resolveInfo="SModelSearchUtil" />
+                <link role="baseMethodDeclaration" targetNodeId="4.~SModelSearchUtil.getAggregationLinkDeclarationsExcludingOverridden(jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration):java.util.List" resolveInfo="getAggregationLinkDeclarationsExcludingOverridden" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668169851">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1149280790183">
                     <link role="variableDeclaration" targetNodeId="1149280698777" resolveInfo="conceptOfParent" />
