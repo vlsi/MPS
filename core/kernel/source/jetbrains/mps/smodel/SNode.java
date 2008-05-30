@@ -912,6 +912,8 @@ public final class SNode {
     wasChild.unRegisterFromModel();
 
     if (ModelChange.needRegisterUndo(getModel())) {
+      UndoUtil.addUndoableAction(new RemoveChildUndoableAction(this, index, wasRole, wasChild));
+
       UndoManager.instance().undoableActionPerformed(new IUndoableAction() {
         public void undo() {
           insertChildAt(index, wasRole, wasChild);
