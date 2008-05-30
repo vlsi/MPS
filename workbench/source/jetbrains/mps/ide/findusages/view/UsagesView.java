@@ -1,5 +1,6 @@
 package jetbrains.mps.ide.findusages.view;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.ide.MPSToolBar;
@@ -7,6 +8,7 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.IExternalizeable;
+import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.FindUtils;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -16,11 +18,10 @@ import jetbrains.mps.ide.findusages.view.icons.Icons;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTreeHolder;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.ide.findusages.view.util.AnonymButton;
-import jetbrains.mps.ide.progress.AdaptiveProgressMonitorFactory;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
 import org.jdom.Element;
 
 import javax.swing.Icon;
@@ -103,10 +104,10 @@ public abstract class UsagesView implements IExternalizeable {
   public void run() {
     assert myIsInitialized;
     assert !ThreadUtils.isEventDispatchThread();
+    final SearchResults myLastResults = FindUtils.getResultsWithProgress(myProject.getComponent(Project.class), myResultProvider, mySearchQuery);
+    myLastResults.removeDuplicates();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SearchResults myLastResults = myResultProvider.getResults(mySearchQuery, myProject.getComponentSafe(AdaptiveProgressMonitorFactory.class).createMonitor());
-        myLastResults.removeDuplicates();
         myTreeHolder.setContents(myLastResults);
       }
     });

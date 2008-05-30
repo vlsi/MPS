@@ -1,8 +1,7 @@
 package jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes;
 
-import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.BaseNode;
-import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 
 public class UnionNode extends BaseNode {
@@ -10,7 +9,7 @@ public class UnionNode extends BaseNode {
     SearchResults results = new SearchResults();
     for (BaseNode child : myChildren) {
       if (monitor.isCanceled()) break;
-      SearchResults childResults = child.getResults(query, monitor);
+      SearchResults childResults = child.getResults(query);
       results.getSearchResults().addAll(childResults.getSearchResults());
       results.getSearchedNodes().addAll(childResults.getSearchedNodes());
     }

@@ -4,10 +4,11 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
+import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+import jetbrains.mps.ide.progress.NullAdaptiveProgressMonitor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
@@ -64,8 +65,9 @@ public abstract class BaseNode implements IResultProvider {
 
   //----SEARCH STUFF----
 
-  public SearchResults getResults(SearchQuery query, final IAdaptiveProgressMonitor monitor) {
+  public SearchResults getResults(SearchQuery query) {
     assert !ThreadUtils.isEventDispatchThread();
+    final IAdaptiveProgressMonitor monitor = new NullAdaptiveProgressMonitor();
 
     SearchResults results;
     if (isRoot()) {

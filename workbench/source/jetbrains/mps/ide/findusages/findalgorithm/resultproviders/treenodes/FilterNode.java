@@ -3,10 +3,8 @@ package jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.filters.BaseFilter;
-import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.BaseLeaf;
-import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.BaseNode;
-import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.TaskProgressSettings;
 import jetbrains.mps.logging.Logger;
@@ -50,7 +48,7 @@ public class FilterNode extends BaseNode {
     final SearchResults[] results = new SearchResults[1];
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SearchResults childRes = myChildren.get(0).getResults(query, monitor);
+        SearchResults childRes = myChildren.get(0).getResults(query);
         try {
           results[0] = myFilter.filter(childRes);
         } catch (Throwable t) {

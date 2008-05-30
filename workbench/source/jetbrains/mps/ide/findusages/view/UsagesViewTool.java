@@ -17,6 +17,7 @@ import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.FindUtils;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
@@ -28,7 +29,6 @@ import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.QueryOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
-import jetbrains.mps.ide.progress.AdaptiveProgressMonitorFactory;
 import jetbrains.mps.nodeEditor.EditorUtil;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
@@ -158,6 +158,7 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
   public void findUsages(final ActionContext context) {
     final SNode[] semanticNode = new SNode[1];
     final SNode[] operationNode = new SNode[1];
+
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         semanticNode[0] = context.getNode();
@@ -165,27 +166,31 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
       }
     });
 
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+    final boolean[] isCancelled = new boolean[]{false};
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         final FindUsagesDialog findUsagesDialog = new FindUsagesDialog(myDefaultFindOptions, operationNode[0], context);
         findUsagesDialog.showDialog();
-
-        if (!findUsagesDialog.isCancelled()) {
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              FindUsagesOptions options = findUsagesDialog.getResult();
-              myDefaultFindOptions = options;
-
-              IResultProvider provider = options.getOption(FindersOptions.class).getResult(operationNode[0], context);
-              SearchQuery query = options.getOption(QueryOptions.class).getResult(operationNode[0], context);
-              ViewOptions viewOptions = options.getOption(ViewOptions.class);
-
-              findUsages(provider, query, true, viewOptions.myShowOneResult, viewOptions.myNewTab);
-            }
-          });
-        }
+        isCancelled[0] = findUsagesDialog.isCancelled();
+        if (!isCancelled[0]) myDefaultFindOptions = findUsagesDialog.getResult();
       }
     });
+
+    if (!isCancelled[0]) {
+      final IResultProvider[] provider = new IResultProvider[1];
+      final SearchQuery[] query = new SearchQuery[1];
+      final ViewOptions[] viewOptions = new ViewOptions[1];
+
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          provider[0] = myDefaultFindOptions.getOption(FindersOptions.class).getResult(operationNode[0], context);
+          query[0] = myDefaultFindOptions.getOption(QueryOptions.class).getResult(operationNode[0], context);
+          viewOptions[0] = myDefaultFindOptions.getOption(ViewOptions.class);
+        }
+      });
+
+      findUsages(provider[0], query[0], true, viewOptions[0].myShowOneResult, viewOptions[0].myNewTab);
+    }
   }
 
   public void findUsages(final SearchQuery query, final boolean isRerunnable, final boolean showOne, final boolean newTab, BaseFinder... finders) {
@@ -193,30 +198,20 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
   }
 
   public void findUsages(final IResultProvider provider, final SearchQuery query, final boolean isRerunnable, final boolean showOne, final boolean newTab) {
-    new Thread() {
+    final SearchResults searchResults = FindUtils.getResultsWithProgress(getProject(), provider, query);
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            SearchResults searchResults = provider.getResults(
-              query,
-              getMPSProject().getComponentSafe(AdaptiveProgressMonitorFactory.class).createMonitor());
-            showResults(searchResults, showOne, newTab, provider, query, isRerunnable);
-          }
-        });
+        showResults(searchResults, showOne, newTab, provider, query, isRerunnable);
       }
-    }.start();
+    });
   }
 
   public void showResults(final SearchQuery query, final SearchResults searchResults) {
-    new Thread() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            showResults(searchResults, false, false, TreeBuilder.forFinder(new ConstantFinder(searchResults.getSearchResults())), query, false);
-          }
-        });
+        showResults(searchResults, false, false, TreeBuilder.forFinder(new ConstantFinder(searchResults.getSearchResults())), query, false);
       }
-    }.start();
+    });
   }
 
   private void showResults(final SearchResults searchResults, boolean showOne, boolean newTab, IResultProvider provider, SearchQuery query, boolean isRerunnable) {
