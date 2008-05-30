@@ -15,7 +15,6 @@ import java.util.List;
 
 public class IntelligentInputUtil {
 
-  private static final Logger LOG = Logger.getLogger(IntelligentInputUtil.class);
   private static Object ourMarker = new Object();
   private static EditorManager ourServiceEditorManager = new EditorManager();
 
@@ -125,21 +124,21 @@ public class IntelligentInputUtil {
           UndoManager.instance().removeActionsAfterObject(ourMarker);
           final CellInfo cellInfo = cellForNewNode.getCellInfo();
           AfterCommandInvocator.getInstance().invokeNowOrAfterCommand(new Runnable() {
-                  public void run() {
-                    AbstractEditorComponent component = editorContext.getNodeEditorComponent();
-                    EditorCell cellToSelect = cellInfo.findCell(component);
-                    if (cellToSelect != null) {
-                      component.changeSelection(cellToSelect);
-                    }
-                    if (cellToSelect instanceof EditorCell_Label) {
-                      EditorCell_Label label = (EditorCell_Label) cellToSelect;
-                      if (label.isEditable() && !(label instanceof EditorCell_Constant)) {
-                        label.changeText(label.getRenderedText() + tail);
-                      }
-                      label.getRenderedTextLine().setCaretPositionToLast();
-                    }
-                  }
-                });
+            public void run() {
+              AbstractEditorComponent component = editorContext.getNodeEditorComponent();
+              EditorCell cellToSelect = cellInfo.findCell(component);
+              if (cellToSelect != null) {
+                component.changeSelection(cellToSelect);
+              }
+              if (cellToSelect instanceof EditorCell_Label) {
+                EditorCell_Label label = (EditorCell_Label) cellToSelect;
+                if (label.isEditable() && !(label instanceof EditorCell_Constant)) {
+                  label.changeText(label.getRenderedText() + tail);
+                }
+                label.getRenderedTextLine().setCaretPositionToLast();
+              }
+            }
+          });
         }
         return;
       }
