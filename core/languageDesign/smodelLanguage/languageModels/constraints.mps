@@ -25,6 +25,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="20" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
@@ -1808,7 +1809,7 @@
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205274917352">
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1205274917353">
-                  <link role="conceptMethodDeclaration" targetNodeId="13.1196820678380" resolveInfo="getLinkDeclarationsExcludingOverridden" />
+                  <link role="conceptMethodDeclaration" targetNodeId="13.1196820678380" resolveInfo="getLinkDeclarations" />
                 </node>
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208194397055">
                   <link role="variableDeclaration" targetNodeId="1205274360434" resolveInfo="dotOperandConcept" />
@@ -2731,7 +2732,7 @@
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204852122459">
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1204852122460">
-                  <link role="conceptMethodDeclaration" targetNodeId="13.1196820678380" resolveInfo="getLinkDeclarationsExcludingOverridden" />
+                  <link role="conceptMethodDeclaration" targetNodeId="13.1196820678380" resolveInfo="getLinkDeclarations" />
                 </node>
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204852122461">
                   <link role="variableDeclaration" targetNodeId="1204852041437" resolveInfo="dotOperandConcept" />

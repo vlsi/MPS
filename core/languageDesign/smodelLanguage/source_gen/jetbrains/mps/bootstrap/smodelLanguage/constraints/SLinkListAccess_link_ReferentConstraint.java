@@ -35,7 +35,7 @@ public class SLinkListAccess_link_ReferentConstraint implements IModelConstraint
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode dotOperandConcept = SNodeOperation_Behavior.getLeftNodeConcept_1208193558130(_context.getEnclosingNode());
-    List<SNode> links = AbstractConceptDeclaration_Behavior.call_getLinkDeclarationsExcludingOverridden_1196820678380(dotOperandConcept);
+    List<SNode> links = AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1196820678380(dotOperandConcept);
     return new SimpleSearchScope(ListSequence.fromList(links).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {

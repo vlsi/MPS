@@ -28,6 +28,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="23" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />
@@ -1107,7 +1108,7 @@
       </node>
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1196820678380">
-      <property name="name" value="getLinkDeclarationsExcludingOverridden" />
+      <property name="name" value="getLinkDeclarations" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType" id="1196820781378">
         <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1196820784724">
           <link role="concept" targetNodeId="1.1071489288298" resolveInfo="LinkDeclaration" />
@@ -1690,7 +1691,7 @@
                       <link role="variable" targetNodeId="1196820541395" resolveInfo="concept" />
                     </node>
                     <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1196820904168">
-                      <link role="conceptMethodDeclaration" targetNodeId="1196820678380" resolveInfo="getLinkDeclarationsExcludingOverridden" />
+                      <link role="conceptMethodDeclaration" targetNodeId="1196820678380" resolveInfo="getLinkDeclarations" />
                     </node>
                   </node>
                 </node>

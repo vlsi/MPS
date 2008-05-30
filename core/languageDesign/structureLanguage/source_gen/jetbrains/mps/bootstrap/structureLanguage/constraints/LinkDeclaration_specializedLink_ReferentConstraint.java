@@ -41,7 +41,7 @@ public class LinkDeclaration_specializedLink_ReferentConstraint implements IMode
     SNode enclosingConcept = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration", true, false);
     List<SNode> directSupers = SConceptOperations.getDirectSuperConcepts(enclosingConcept, false);
     for(SNode concept : directSupers) {
-      List<SNode> links = AbstractConceptDeclaration_Behavior.call_getLinkDeclarationsExcludingOverridden_1196820678380(concept);
+      List<SNode> links = AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1196820678380(concept);
       ListSequence.fromList(result).addSequence(ListSequence.fromList(links).where(new IWhereFilter <SNode>() {
 
         public boolean accept(SNode it) {
