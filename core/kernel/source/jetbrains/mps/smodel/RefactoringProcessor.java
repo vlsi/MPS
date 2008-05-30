@@ -94,6 +94,8 @@ public class RefactoringProcessor {
   }
 
   private void doExecute(final @NotNull ActionContext context, final @NotNull RefactoringContext refactoringContext) {
+    Thread t = Thread.currentThread();
+    System.err.println("current thread is " + t);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SModelRepository.getInstance().saveAll();
@@ -201,7 +203,6 @@ public class RefactoringProcessor {
   private void processModel(SModel model, SModel usedModel, RefactoringContext refactoringContext) {
     refactoringContext.getRefactoring().updateModel(model, refactoringContext);
     model.updateImportedModelUsedVersion(usedModel.getUID(), usedModel.getVersion());
-   // SModelRepository.getInstance().markChanged(model);
   }
 
   private void writeIntoLog(SModel model, RefactoringContext refactoringContext) {

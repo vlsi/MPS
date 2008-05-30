@@ -118,7 +118,7 @@ public class ModelAccess {
     if (ThreadUtils.isEventDispatchThread()) {
       return ApplicationManager.getApplication().runWriteAction(computable);
     } else {
-      return computable.compute();
+      return ApplicationManager.getApplication().runReadAction(computable);
     }
   }
 
