@@ -1396,6 +1396,9 @@ public final class SNode {
   public void addRightTransformHint() {
     putUserObject(RIGHT_TRANSFORM_HINT, RIGHT_TRANSFORM_HINT);
     getModel().firePropertyChangedEvent(this, RIGHT_TRANSFORM_HINT, null, "", true, false);
+
+    UndoUtil.addUndoableAction(new AddRTHintUndoableAction(this));
+
     UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
       public void undo() throws UnexpectedUndoException {
         removeRightTransformHint();
@@ -1415,6 +1418,9 @@ public final class SNode {
   public void removeRightTransformHint() {
     removeUserObject(RIGHT_TRANSFORM_HINT);
     getModel().firePropertyChangedEvent(this, RIGHT_TRANSFORM_HINT, "", null, true, true);
+
+    UndoUtil.addUndoableAction(new RemoveRTHintUndoableAction(this));
+
     UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
       public void undo() throws UnexpectedUndoException {
         addRightTransformHint();
