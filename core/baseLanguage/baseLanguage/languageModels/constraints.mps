@@ -1677,6 +1677,24 @@
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178181704926">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178181704927" />
     </node>
+    <node role="properties" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint" id="1212169421305">
+      <link role="applicableProperty" targetNodeId="1.1083152972672" resolveInfo="name" />
+      <node role="propertyValidator" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertyValidator" id="1212169448301">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212169448302">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212169448303">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212169448304">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintsFunctionParameter_propertyValue" id="1212169448305" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1212169448306">
+                <link role="baseMethodDeclaration" targetNodeId="13.~String.matches(java.lang.String):boolean" resolveInfo="matches" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1212169448307">
+                  <property name="value" value="[a-zA-Z[_]][a-zA-Z0-9[_]]*" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="properties" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint" id="1156247157927">
       <link role="applicableProperty" targetNodeId="2.1156234966388" />
       <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertyGetter" id="1156247206181">

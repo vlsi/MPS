@@ -268,7 +268,7 @@
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1083152972672">
       <property name="name" value="name" />
       <property name="propertyType" value="string" />
-      <link role="dataType" targetNodeId="1083065718921" resolveInfo="_Identifier_String" />
+      <link role="dataType" targetNodeId="4.1082983041843" resolveInfo="string" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1181808852946">
       <property name="name" value="isFinal" />
