@@ -44,6 +44,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="133" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="java.util@java_stub" version="-1" />
@@ -448,65 +449,109 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1212070699007" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1212070699008" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212070699009">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1212076263771">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1212076263772">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1212076254267">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1212076254268">
             <property name="name" value="t" />
-            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1212076263773" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1212076254269" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212070836912">
           <node role="expression" type="jetbrains.mps.bootstrap.helgins.structure.ImmediateSupertypesExpression" id="1212070836913">
             <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1212070842743">
-              <link role="variableDeclaration" targetNodeId="1212076263772" resolveInfo="t" />
+              <link role="variableDeclaration" targetNodeId="1212076254268" resolveInfo="t" />
             </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212076234019">
           <node role="expression" type="jetbrains.mps.bootstrap.helgins.structure.ImmediateSupertypesExpression" id="1212076234020">
             <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1212076234021">
-              <link role="variableDeclaration" targetNodeId="1212076263772" resolveInfo="t" />
+              <link role="variableDeclaration" targetNodeId="1212076254268" resolveInfo="t" />
             </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212076234600">
           <node role="expression" type="jetbrains.mps.bootstrap.helgins.structure.ImmediateSupertypesExpression" id="1212076234601">
             <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1212076234602">
-              <link role="variableDeclaration" targetNodeId="1212076263772" resolveInfo="t" />
+              <link role="variableDeclaration" targetNodeId="1212076254268" resolveInfo="t" />
             </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212076234790">
           <node role="expression" type="jetbrains.mps.bootstrap.helgins.structure.ImmediateSupertypesExpression" id="1212076234791">
             <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1212076234792">
-              <link role="variableDeclaration" targetNodeId="1212076263772" resolveInfo="t" />
+              <link role="variableDeclaration" targetNodeId="1212076254268" resolveInfo="t" />
             </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212076234981">
           <node role="expression" type="jetbrains.mps.bootstrap.helgins.structure.ImmediateSupertypesExpression" id="1212076234982">
             <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1212076234983">
-              <link role="variableDeclaration" targetNodeId="1212076263772" resolveInfo="t" />
+              <link role="variableDeclaration" targetNodeId="1212076254268" resolveInfo="t" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212138930154">
+          <node role="expression" type="jetbrains.mps.bootstrap.helgins.structure.ImmediateSupertypesExpression" id="1212138930155">
+            <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1212138930156">
+              <link role="variableDeclaration" targetNodeId="1212076254268" resolveInfo="t" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212138933110">
+          <node role="expression" type="jetbrains.mps.bootstrap.helgins.structure.ImmediateSupertypesExpression" id="1212138933111">
+            <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1212138933112">
+              <link role="variableDeclaration" targetNodeId="1212076254268" resolveInfo="t" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212142406410">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1212142408725">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1212142406411">
+              <property name="value" value="2" />
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1212142412307">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1212142409993">
+                <property name="value" value="3" />
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1212142413858">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1212142412716">
+                  <property name="value" value="4" />
+                </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1212142417651">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1212142414251">
+                    <property name="value" value="5" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212138936801">
+          <node role="expression" type="jetbrains.mps.bootstrap.helgins.structure.ImmediateSupertypesExpression" id="1212138936802">
+            <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1212138936803">
+              <link role="variableDeclaration" targetNodeId="1212076254268" resolveInfo="t" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212138941648">
+          <node role="expression" type="jetbrains.mps.bootstrap.helgins.structure.ImmediateSupertypesExpression" id="1212138941649">
+            <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1212138941650">
+              <link role="variableDeclaration" targetNodeId="1212076254268" resolveInfo="t" />
             </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212076235156">
           <node role="expression" type="jetbrains.mps.bootstrap.helgins.structure.ImmediateSupertypesExpression" id="1212076235157">
             <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1212076235158">
-              <link role="variableDeclaration" targetNodeId="1212076263772" resolveInfo="t" />
+              <link role="variableDeclaration" targetNodeId="1212076254268" resolveInfo="t" />
             </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212076235331">
           <node role="expression" type="jetbrains.mps.bootstrap.helgins.structure.ImmediateSupertypesExpression" id="1212076235332">
             <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1212076235333">
-              <link role="variableDeclaration" targetNodeId="1212076263772" resolveInfo="t" />
+              <link role="variableDeclaration" targetNodeId="1212076254268" resolveInfo="t" />
             </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1212076254267">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1212076254268">
-            <property name="name" value="t" />
-            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1212076254269" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212076235505">
