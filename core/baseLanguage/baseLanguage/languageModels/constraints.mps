@@ -48,6 +48,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="48" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -1677,24 +1678,6 @@
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178181704926">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178181704927" />
     </node>
-    <node role="properties" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint" id="1212169421305">
-      <link role="applicableProperty" targetNodeId="1.1083152972672" resolveInfo="name" />
-      <node role="propertyValidator" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertyValidator" id="1212169448301">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212169448302">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212169448303">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212169448304">
-              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintsFunctionParameter_propertyValue" id="1212169448305" />
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1212169448306">
-                <link role="baseMethodDeclaration" targetNodeId="13.~String.matches(java.lang.String):boolean" resolveInfo="matches" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1212169448307">
-                  <property name="value" value="[a-zA-Z[_]][a-zA-Z0-9[_]]*" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="properties" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint" id="1156247157927">
       <link role="applicableProperty" targetNodeId="2.1156234966388" />
       <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertyGetter" id="1156247206181">
@@ -2250,24 +2233,6 @@
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation" id="1178550138723">
               <link role="concept" targetNodeId="1.1146644602865" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="properties" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint" id="1212168628088">
-      <link role="applicableProperty" targetNodeId="2.1169194664001" resolveInfo="name" />
-      <node role="propertyValidator" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertyValidator" id="1212168721590">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212168721591">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212168721592">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212168721593">
-              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintsFunctionParameter_propertyValue" id="1212168721594" />
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1212168721595">
-                <link role="baseMethodDeclaration" targetNodeId="13.~String.matches(java.lang.String):boolean" resolveInfo="matches" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1212168721596">
-                  <property name="value" value="[a-zA-Z[_]][a-zA-Z0-9[_]]*" />
-                </node>
-              </node>
             </node>
           </node>
         </node>
@@ -9758,6 +9723,30 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1212170312683">
+    <link role="concept" targetNodeId="1.1212170275853" resolveInfo="IValidIdentifier" />
+    <node role="properties" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint" id="1212170322202">
+      <link role="applicableProperty" targetNodeId="2.1169194664001" resolveInfo="name" />
+      <node role="propertyValidator" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertyValidator" id="1212170340351">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212170340352">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212170340353">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212170340354">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintsFunctionParameter_propertyValue" id="1212170340355" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1212170340356">
+                <link role="baseMethodDeclaration" targetNodeId="13.~String.matches(java.lang.String):boolean" resolveInfo="matches" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1212170340357">
+                  <property name="value" value="[a-zA-Z[_]][a-zA-Z0-9[_]]*" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1212170312684">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212170312685" />
     </node>
   </node>
 </model>

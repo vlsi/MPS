@@ -12,9 +12,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
   private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
 
   public ConstraintsDescriptor() {
-    this.myConstraints.add(new BaseMethodDeclaration_name_PropertyConstraint());
     this.myConstraints.add(new BaseMethodDeclaration_shortDescription_PropertyConstraint());
-    this.myConstraints.add(new Classifier_name_PropertyConstraint());
     this.myConstraints.add(new Classifier_nestedName_PropertyConstraint());
     this.myConstraints.add(new Classifier_resolveInfo_PropertyConstraint());
     this.myConstraints.add(new Classifier_shortDescription_PropertyConstraint());
@@ -27,6 +25,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     this.myConstraints.add(new ConstructorDeclaration_nestedName_PropertyConstraint());
     this.myConstraints.add(new Property_alias_PropertyConstraint());
     this.myConstraints.add(new Property_name_PropertyConstraint());
+    this.myConstraints.add(new IValidIdentifier_name_PropertyConstraint());
     this.myConstraints.add(new TypeVariableReference_typeVariableDeclaration_ReferentConstraint());
     this.myConstraints.add(new LocalStaticMethodCall_staticMethodDeclaration_ReferentConstraint());
     this.myConstraints.add(new StaticFieldReference_staticFieldDeclaration_ReferentConstraint());

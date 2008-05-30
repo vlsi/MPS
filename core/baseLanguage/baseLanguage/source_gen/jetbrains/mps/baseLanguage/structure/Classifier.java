@@ -10,13 +10,14 @@ import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
 import java.util.List;
 
-public class Classifier extends GenericDeclaration implements HasAnnotation, IMemberContainer, IResolveInfo {
+public class Classifier extends GenericDeclaration implements HasAnnotation, IMemberContainer, IResolveInfo, IValidIdentifier {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.Classifier";
   public static String NESTED_NAME = "nestedName";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String RESOLVE_INFO = "resolveInfo";
+  public static String NAME = "name";
   public static String VISIBILITY = "visibility";
   public static String STATIC_FIELD = "staticField";
   public static String METHOD = "method";
@@ -73,6 +74,14 @@ public class Classifier extends GenericDeclaration implements HasAnnotation, IMe
 
   public void setResolveInfo(String value) {
     this.setProperty(Classifier.RESOLVE_INFO, value);
+  }
+
+  public String getName() {
+    return this.getProperty(Classifier.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(Classifier.NAME, value);
   }
 
   public Visibility getVisibility() {

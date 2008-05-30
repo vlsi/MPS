@@ -301,8 +301,8 @@
       <property name="role" value="throwsItem" />
       <link role="target" targetNodeId="1107535904670" resolveInfo="ClassifierType" />
     </node>
-    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196208242738">
-      <link role="intfc" targetNodeId="4.1169194658468" resolveInfo="INamedConcept" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1212170354671">
+      <link role="intfc" targetNodeId="1212170275853" resolveInfo="IValidIdentifier" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1188210442792">
       <link role="intfc" targetNodeId="1188208481402" resolveInfo="Annotable" />
@@ -1344,6 +1344,9 @@
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1211923660512">
       <link role="intfc" targetNodeId="4.1196978630214" resolveInfo="IResolveInfo" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1212170319804">
+      <link role="intfc" targetNodeId="1212170275853" resolveInfo="IValidIdentifier" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1107535904670">
@@ -2750,6 +2753,12 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1208890803094">
       <property name="value" value="array length readonly property" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" resolveInfo="short_description" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1212170275853">
+    <property name="name" value="IValidIdentifier" />
+    <node role="extends" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1212170300369">
+      <link role="intfc" targetNodeId="4.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </node>
 </model>
