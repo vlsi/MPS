@@ -7,6 +7,9 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import com.intellij.openapi.command.CommandProcessor;
+import com.intellij.openapi.command.CommandAdapter;
+import com.intellij.openapi.command.CommandEvent;
 import jetbrains.mps.ide.IProjectPane;
 import jetbrains.mps.ide.MPSToolBar;
 import jetbrains.mps.ide.ThreadUtils;
@@ -15,9 +18,6 @@ import jetbrains.mps.ide.action.IActionDataProvider;
 import jetbrains.mps.ide.actions.*;
 import jetbrains.mps.ide.actions.model.DeleteModelsAction;
 import jetbrains.mps.ide.actions.nodes.DeleteNodeAction;
-import jetbrains.mps.ide.command.CommandEvent;
-import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.command.ICommandListener;
 import jetbrains.mps.ide.projectPane.ProjectPane.MyState;
 import jetbrains.mps.ide.ui.*;
 import jetbrains.mps.ide.ui.MPSTree.TreeState;
@@ -690,7 +690,7 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
   protected void removeListeners() {
     if (getMPSProject() != null) {
       SModelRepository.getInstance().removeModelRepositoryListener(mySModelRepositoryListener);
-      CommandProcessor.instance().removeCommandListener(myCommandListener);
+      CommandProcessor.getInstance().removeCommandListener(myCommandListener);
       MPSModuleRepository.getInstance().removeModuleRepositoryListener(myRepositoryListener);
       getMPSProject().getComponent(GeneratorManager.class).addGenerationListener(myGenerationListener);
     }
@@ -698,7 +698,7 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
 
   protected void addListeners() {
     SModelRepository.getInstance().addModelRepositoryListener(mySModelRepositoryListener);
-    CommandProcessor.instance().addCommandListener(myCommandListener);
+    CommandProcessor.getInstance().addCommandListener(myCommandListener);
     MPSModuleRepository.getInstance().addModuleRepositoryListener(myRepositoryListener);
     getMPSProject().getComponent(GeneratorManager.class).addGenerationListener(myGenerationListener);
   }
@@ -861,12 +861,9 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
     }
   }
 
-  private class MyCommandListener implements ICommandListener {
+  private class MyCommandListener extends CommandAdapter {
     public void commandStarted(CommandEvent event) {
       myNeedRebuild = false;
-    }
-
-    public void beforeCommandFinished(CommandEvent event) {
     }
 
     public void commandFinished(CommandEvent event) {

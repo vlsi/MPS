@@ -1,32 +1,24 @@
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.command.undo.UndoableAction;
-import com.intellij.openapi.command.undo.UnexpectedUndoException;
-import com.intellij.openapi.command.undo.DocumentReference;
-import jetbrains.mps.ide.command.CommandProcessor;
-
-class PropertyChangeUndoableAction extends BaseUndoableAction {
+class PropertyChangeUndoableAction extends SNodeUndoableAction {
   private SNode myNode;
   private String myProperty;
   private String myOldValue;
   private String myNewValue;
 
   PropertyChangeUndoableAction(SNode node, String property, String oldValue, String newValue) {
+    super(node);
     myNode = node;
     myProperty = property;
     myOldValue = oldValue;
     myNewValue = newValue;
   }
 
-  public void undo() throws UnexpectedUndoException {
+  protected void doUndo() {
     myNode.setProperty(myProperty, myOldValue);
   }
 
-  public void redo() throws UnexpectedUndoException {
+  protected void doRedo() {
     myNode.setProperty(myProperty, myNewValue);
-  }
-
-  protected SNode getAffectedNode() {
-    return myNode;
   }
 }

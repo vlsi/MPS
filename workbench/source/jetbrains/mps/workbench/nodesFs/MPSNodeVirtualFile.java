@@ -21,7 +21,7 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
   private String myPath;
   private String myName;
 
-  public MPSNodeVirtualFile(SNode node) {
+  public MPSNodeVirtualFile(@NotNull SNode node) {
     myNode = node;
     updateFields();
   }

@@ -691,11 +691,7 @@ public final class SNode {
     if (ModelChange.needRegisterUndo(getModel())) {
       final String pv = propertyValue;
 
-//      for (Project p : ProjectManager.getInstance().getOpenProjects()) {
-//        com.intellij.openapi.command.undo.UndoManager.getInstance(p).undoableActionPerformed(
-//          new PropertyChangeUndoableAction(this, propertyName, oldValue, propertyValue));
-//      }
-//
+      UndoUtil.addUndoableAction(new PropertyChangeUndoableAction(this, propertyName, oldValue, propertyValue));
 
       UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
         public void undo() throws UnexpectedUndoException {
@@ -905,7 +901,7 @@ public final class SNode {
     return children.get(index - 1);
   }
 
-  private void removeChildAt(final int index) {
+  void removeChildAt(final int index) {
     ModelChange.assertLegalNodeChange(this);
     final SNode wasChild = _children().get(index);
     final String wasRole = wasChild.getRole_();
@@ -938,7 +934,7 @@ public final class SNode {
     }
   }
 
-  private void insertChildAt(final int index, @NotNull String _role, final @NotNull SNode child) {
+  void insertChildAt(final int index, @NotNull String _role, final @NotNull SNode child) {
     if (ourMemberAccessModifier != null) {
       _role = ourMemberAccessModifier.getNewChildRole(myModel, myConceptFqName, _role);
     }
@@ -970,6 +966,8 @@ public final class SNode {
     }
 
     if (ModelChange.needRegisterUndo(getModel())) {
+      UndoUtil.addUndoableAction(new InsertChildAtUndoableAction(this, index, _role, child));
+
       UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
         public void undo() throws UnexpectedUndoException {
           removeChildAt(index);
@@ -1703,6 +1701,7 @@ public final class SNode {
     return null;
   }
 
+  
 
   abstract class NodeUndoableAction implements IUndoableAction {
     public SNode getNode() {

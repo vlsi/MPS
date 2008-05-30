@@ -2,9 +2,6 @@ package jetbrains.mps.ide.moduleRepositoryViewer;
 
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.command.CommandEvent;
-import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.command.ICommandListener;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.SortUtil;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
@@ -21,9 +18,8 @@ import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import java.awt.event.ActionEvent;
 
-/**
- * @author Kostik
- */
+import com.intellij.openapi.command.*;
+
 public class ModuleRepositoryView extends DefaultTool {
   private MPSTree myTree = new MyTree();
   private JScrollPane myComponent = new JScrollPane(myTree);
@@ -59,7 +55,7 @@ public class ModuleRepositoryView extends DefaultTool {
 
       final TextTreeNode[] root = new TextTreeNode[1];
 
-      CommandProcessor.instance().executeCommand(new Runnable() {
+      jetbrains.mps.ide.command.CommandProcessor.instance().executeCommand(new Runnable() {
         public void run() {
           root[0] = new TextTreeNode("Loaded Modules") {
             {
@@ -128,21 +124,21 @@ public class ModuleRepositoryView extends DefaultTool {
     }
   }
 
-  private class DeferringEventHandler implements ICommandListener, RepositoryListener {
+  private class DeferringEventHandler extends CommandAdapter implements RepositoryListener {
     private boolean myDeferredUpdate = false;
 
     public void installListeners() {
-      CommandProcessor.instance().addCommandListener(this);
+      CommandProcessor.getInstance().addCommandListener(this);
       MPSModuleRepository.getInstance().addRepositoryListener(this);
     }
 
     public void unInstallListeners() {
-      CommandProcessor.instance().removeCommandListener(this);
+      CommandProcessor.getInstance().removeCommandListener(this);
       MPSModuleRepository.getInstance().removeRepositoryListener(this);
     }
 
     public void repositoryChanged() {
-      if (CommandProcessor.instance().isInsideCommand()) {
+      if (CommandProcessorEx.getInstance().getCurrentCommand() != null) {
         myDeferredUpdate = true;
       } else {
         myTree.rebuildLater();

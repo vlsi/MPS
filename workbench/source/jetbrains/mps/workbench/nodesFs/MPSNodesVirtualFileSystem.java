@@ -36,7 +36,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
   private SModelCommandListener myListener = new MyCommandListener();
   private WeakHashMap<SNode, MPSNodeVirtualFile> myVirtualFiles = new WeakHashMap<SNode, MPSNodeVirtualFile>();
 
-  public MPSNodeVirtualFile getFileFor(final SNode node) {
+  public MPSNodeVirtualFile getFileFor(@NotNull final SNode node) {
     return ModelAccess.instance().runReadAction(new Computable<MPSNodeVirtualFile>() {
       public MPSNodeVirtualFile compute() {
         if (myVirtualFiles.containsKey(node)) {

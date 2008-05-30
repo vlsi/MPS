@@ -408,14 +408,18 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  void fireSModelChangedInCommandEvent(@NotNull List<SModelEvent> events) {
-    for (SModelCommandListener l : copyCommandListeners()) {
-      try {
-        l.eventsHappenedInCommand(events);
-      } catch (Exception e) {
-        LOG.error(e);
+  void fireSModelChangedInCommandEvent(@NotNull final List<SModelEvent> events) {
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        for (SModelCommandListener l : copyCommandListeners()) {
+          try {
+            l.eventsHappenedInCommand(events);
+          } catch (Exception e) {
+            LOG.error(e);
+          }
+        }
       }
-    }
+    });
   }
 
   void fireModelSaved() {

@@ -1,9 +1,6 @@
 package jetbrains.mps.ide.modelRepositoryViewer;
 
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
-import jetbrains.mps.ide.command.CommandEvent;
-import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.command.ICommandListener;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.SortUtil;
@@ -22,6 +19,11 @@ import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
+
+import com.intellij.openapi.command.CommandProcessor;
+import com.intellij.openapi.command.CommandEvent;
+import com.intellij.openapi.command.CommandProcessorEx;
+import com.intellij.openapi.command.CommandListener;
 
 /**
  * @author Kostik
@@ -146,7 +148,7 @@ public class ModelRepositoryView extends DefaultTool {
     }
   }
 
-  private class DeferringEventHandler extends SModelAdapter implements ICommandListener {
+  private class DeferringEventHandler extends SModelAdapter implements CommandListener {
     private boolean myDeferredUpdate = false;
 
     private SModelRepositoryListener myRepoListener = new SModelRepositoryAdapter() {
@@ -156,18 +158,18 @@ public class ModelRepositoryView extends DefaultTool {
     };
 
     public void installListeners() {
-      CommandProcessor.instance().addCommandListener(this);
+      CommandProcessor.getInstance().addCommandListener(this);
       SModelRepository.getInstance().addModelRepositoryListener(myRepoListener);
       GlobalSModelEventsManager.getInstance().addGlobalModelListener(this);
     }
     public void unInstallListeners() {
-      CommandProcessor.instance().removeCommandListener(this);
+      CommandProcessor.getInstance().removeCommandListener(this);
       SModelRepository.getInstance().removeModelRepositoryListener(myRepoListener);
       GlobalSModelEventsManager.getInstance().removeGlobalModelListener(this);
     }
 
     public void modelInitialized(SModelDescriptor modelDescriptor) {
-      if(CommandProcessor.instance().isInsideCommand()) {
+      if(CommandProcessorEx.getInstance().getCurrentCommand() != null) {
          myDeferredUpdate = true;
       } else {
         myTree.rebuildLater();
@@ -175,7 +177,7 @@ public class ModelRepositoryView extends DefaultTool {
     }
 
     private void repositoryChanged() {
-      if(CommandProcessor.instance().isInsideCommand()) {
+      if(CommandProcessorEx.getInstance().getCurrentCommand() != null) {
          myDeferredUpdate = true;
       } else {
         myTree.rebuildLater();
@@ -193,6 +195,13 @@ public class ModelRepositoryView extends DefaultTool {
     }
 
     public void commandStarted(CommandEvent event) {
+    }
+
+    public void undoTransparentActionStarted() {
+    }
+
+    public void undoTransparentActionFinished() {
+
     }
   }
 }
