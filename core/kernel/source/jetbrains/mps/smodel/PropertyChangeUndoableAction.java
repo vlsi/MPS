@@ -3,6 +3,7 @@ package jetbrains.mps.smodel;
 import com.intellij.openapi.command.undo.UndoableAction;
 import com.intellij.openapi.command.undo.UnexpectedUndoException;
 import com.intellij.openapi.command.undo.DocumentReference;
+import jetbrains.mps.ide.command.CommandProcessor;
 
 class PropertyChangeUndoableAction extends BaseUndoableAction {
   private SNode myNode;

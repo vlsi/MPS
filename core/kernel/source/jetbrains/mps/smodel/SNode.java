@@ -28,6 +28,8 @@ import java.util.*;
 import com.intellij.openapi.command.undo.UndoableAction;
 import com.intellij.openapi.command.undo.DocumentReference;
 import com.intellij.openapi.command.UndoConfirmationPolicy;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
 
 /**
  * User: Sergey Dmitriev
@@ -689,8 +691,11 @@ public final class SNode {
     if (ModelChange.needRegisterUndo(getModel())) {
       final String pv = propertyValue;
 
-//      com.intellij.openapi.command.undo.UndoManager.getGlobalInstance().undoableActionPerformed(
-//        new PropertyChangeUndoableAction(this, propertyName, oldValue, propertyValue));
+//      for (Project p : ProjectManager.getInstance().getOpenProjects()) {
+//        com.intellij.openapi.command.undo.UndoManager.getInstance(p).undoableActionPerformed(
+//          new PropertyChangeUndoableAction(this, propertyName, oldValue, propertyValue));
+//      }
+//
 
       UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
         public void undo() throws UnexpectedUndoException {
