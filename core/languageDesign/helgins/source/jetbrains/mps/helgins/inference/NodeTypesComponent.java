@@ -8,7 +8,6 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.helgins.integration.HelginsPreferencesComponent;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.NonTypesystemRule_Runtime;
@@ -16,8 +15,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.ICheckingRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.incremental.INodesReadListener;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
-import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.ide.command.AfterCommandInvocator;
 import jetbrains.mps.nodeEditor.IEditorMessageOwner;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
@@ -250,19 +248,19 @@ public class NodeTypesComponent implements IEditorMessageOwner, Cloneable {
       }
       final Set<SNodePointer> notSkippedNodes = new HashSet<SNodePointer>(myNotSkippedNodes);
       if (HelginsPreferencesComponent.getInstance().isUsesDebugHighlighting()) {
-        CommandProcessor.instance().invokeLater(new Runnable() {
-          public void run() {
-            AbstractEditorComponent component = (AbstractEditorComponent) getEditorComponent();
-            if (component == null) return;
-            component.getHighlightManager().clearForOwner(component.getHighlightMessagesOwner()); //todo change an owner
-            for (SNodePointer notSkippedNode : notSkippedNodes) {
-              markNode(component, notSkippedNode);
-              if (component instanceof NodeEditorComponent) {
-                markNode(((NodeEditorComponent) component).getInspector(), notSkippedNode);
+        AfterCommandInvocator.getInstance().invokeAfterCommand(new Runnable() {
+              public void run() {
+                AbstractEditorComponent component = (AbstractEditorComponent) getEditorComponent();
+                if (component == null) return;
+                component.getHighlightManager().clearForOwner(component.getHighlightMessagesOwner()); //todo change an owner
+                for (SNodePointer notSkippedNode : notSkippedNodes) {
+                  markNode(component, notSkippedNode);
+                  if (component instanceof NodeEditorComponent) {
+                    markNode(((NodeEditorComponent) component).getInspector(), notSkippedNode);
+                  }
+                }
               }
-            }
-          }
-        });
+            });
       }
     } finally {
       myTypeChecker.clearCurrentTypesComponent();

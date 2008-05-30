@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.command.AfterCommandInvocator;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.tabbedEditor.ILazyTab;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
@@ -49,11 +50,11 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
           myLoadableNodes.clear();
           myLoadableNodesList.clear();
           myEditors.clear();
-          CommandProcessor.instance().invokeLater(new Runnable() {
-            public void run() {
-              myTabbedEditor.getTabbedPane().initTab(BaseMultitabbedTab.this);
-            }
-          });
+          AfterCommandInvocator.getInstance().invokeAfterCommand(new Runnable() {
+                  public void run() {
+                    myTabbedEditor.getTabbedPane().initTab(BaseMultitabbedTab.this);
+                  }
+                });
         }
       }
 
@@ -68,11 +69,11 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
           myLoadableNodes.clear();
           myLoadableNodesList.clear();
           myEditors.clear();
-          CommandProcessor.instance().invokeLater(new Runnable() {
-            public void run() {
-              myTabbedEditor.getTabbedPane().initTab(BaseMultitabbedTab.this);
-            }
-          });
+          AfterCommandInvocator.getInstance().invokeAfterCommand(new Runnable() {
+                  public void run() {
+                    myTabbedEditor.getTabbedPane().initTab(BaseMultitabbedTab.this);
+                  }
+                });
         }
       }
 

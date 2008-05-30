@@ -14,6 +14,7 @@ import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.nodes.GoByFirstReferenceAction;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.command.AfterCommandInvocator;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.findusages.view.UsagesView;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
@@ -2543,11 +2544,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private class MySimpleModelListener extends SModelAdapter {
     public void modelReloaded(SModelDescriptor sm) {
-      CommandProcessor.instance().invokeLater(new Runnable() {
-        public void run() {
-          rebuildEditorContent();
-        }
-      });
+      AfterCommandInvocator.getInstance().invokeAfterCommand(new Runnable() {
+          public void run() {
+            rebuildEditorContent();
+          }
+        });
     }
   }
 

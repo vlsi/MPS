@@ -3,10 +3,8 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.annotations.structure.AttributeConcept;
 import jetbrains.mps.annotations.structure.LinkAttributeConcept;
 import jetbrains.mps.annotations.structure.PropertyAttributeConcept;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration;
-import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.command.AfterCommandInvocator;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.cellMenu.DefaultAttributeSubstituteInfo;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
@@ -309,21 +307,21 @@ public class EditorManager {
 
     // set focus
     if (node.getUserObject(RIGHT_TRANSFORM_HINT_JUST_ADDED) != null) {
-      CommandProcessor.instance().invokeLater(new Runnable() {
-        public void run() {
-          node.removeUserObject(RIGHT_TRANSFORM_HINT_JUST_ADDED);
-          if (node.hasRightTransformHint()) {
-            context.getNodeEditorComponent().changeSelection(rightTransformHintCell);
+      AfterCommandInvocator.getInstance().invokeAfterCommand(new Runnable() {
+          public void run() {
+            node.removeUserObject(RIGHT_TRANSFORM_HINT_JUST_ADDED);
+            if (node.hasRightTransformHint()) {
+              context.getNodeEditorComponent().changeSelection(rightTransformHintCell);
+            }
           }
-        }
-      });
+        });
     }
     return resultCell;
   }
 
   private void removeRTHintAndChangeSelection(final EditorContext context, SNode node, final CellInfo cellInfoToSelect) {
     node.removeRightTransformHint();
-    CommandProcessor.instance().invokeLater(new Runnable() {
+    AfterCommandInvocator.getInstance().invokeAfterCommand(new Runnable() {
       public void run() {
         AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
         if (cellInfoToSelect == null) return;

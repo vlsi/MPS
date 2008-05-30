@@ -1,6 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.command.AfterCommandInvocator;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
@@ -60,14 +61,14 @@ public class IntelligentInputUtil {
       cellForNewNode = editorContext.createNodeCellInAir(newNode, ourServiceEditorManager);
       EditorCell errorCell = EditorUtil.findErrorCell(cellForNewNode);
       if (errorCell != null && errorCell instanceof EditorCell_Label) {
-        CommandProcessor.instance().invokeLater(new Runnable() {
-          public void run() {
-            EditorCell cellForNewNode = editorContext.getNodeEditorComponent().findNodeCell(newNode);
-            EditorCell_Label errorCell = (EditorCell_Label) EditorUtil.findErrorCell(cellForNewNode);
-            ((EditorCell_Label) errorCell).changeText(tail);
-            errorCell.getTextLine().setCaretPosition(tail.length());
-          }
-        });
+        AfterCommandInvocator.getInstance().invokeAfterCommand(new Runnable() {
+              public void run() {
+                EditorCell cellForNewNode = editorContext.getNodeEditorComponent().findNodeCell(newNode);
+                EditorCell_Label errorCell = (EditorCell_Label) EditorUtil.findErrorCell(cellForNewNode);
+                ((EditorCell_Label) errorCell).changeText(tail);
+                errorCell.getTextLine().setCaretPosition(tail.length());
+              }
+            });
         return;
       }
     } else if (canCompleteImmediately(substituteInfo, smallPattern, tail)) {
@@ -150,22 +151,22 @@ public class IntelligentInputUtil {
       cellFounder.setCallSelect(true);
 
       if (!uniqueAction(rtSubstituteInfo, tail, "")) { //don't execute non-unique action on RT hint cell
-        CommandProcessor.instance().invokeLater(cellFounder);
+        AfterCommandInvocator.getInstance().invokeAfterCommand(cellFounder);
         return;
       }
 
       INodeSubstituteAction rtItem = rtMatchingActions.get(0);
       final SNode yetNewNode = rtItem.doSubstitute(smallPattern);
-      CommandProcessor.instance().invokeLater(new Runnable() {
-        public void run() {
-          AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
-          EditorCell yetNewNodeCell = editor.findNodeCell(yetNewNode);
-          EditorCell errorOrEditableCell = EditorUtil.findErrorOrEditableCell(yetNewNodeCell);
-          editor.changeSelectionWRTFocusPolicy(errorOrEditableCell);
-        }
-      });
+      AfterCommandInvocator.getInstance().invokeAfterCommand(new Runnable() {
+          public void run() {
+            AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
+            EditorCell yetNewNodeCell = editor.findNodeCell(yetNewNode);
+            EditorCell errorOrEditableCell = EditorUtil.findErrorOrEditableCell(yetNewNodeCell);
+            editor.changeSelectionWRTFocusPolicy(errorOrEditableCell);
+          }
+        });
     } else {
-      CommandProcessor.instance().invokeLater(cellFounder);
+      AfterCommandInvocator.getInstance().invokeAfterCommand(cellFounder);
     }
 
   }

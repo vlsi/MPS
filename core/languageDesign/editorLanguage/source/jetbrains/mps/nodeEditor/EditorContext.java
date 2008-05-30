@@ -1,6 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.command.AfterCommandInvocator;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
@@ -150,7 +151,7 @@ public class EditorContext {
   }
 
   public void selectLater(final SNode node) {
-    CommandProcessor.instance().invokeLater(new Runnable() {
+    AfterCommandInvocator.getInstance().invokeAfterCommand(new Runnable() {
       public void run() {
         getNodeEditorComponent().selectNode(node);
       }
@@ -158,7 +159,7 @@ public class EditorContext {
   }
 
   public void selectBeforeLater(final SNode node) {
-    CommandProcessor.instance().invokeLater(new Runnable() {
+    AfterCommandInvocator.getInstance().invokeAfterCommand(new Runnable() {
       public void run() {
         getNodeEditorComponent().selectNode(node);
         EditorCell cell = getNodeEditorComponent().getSelectedCell();
@@ -172,7 +173,7 @@ public class EditorContext {
   }
 
   public void selectAfterLater(final SNode node) {
-    CommandProcessor.instance().invokeLater(new Runnable() {
+    AfterCommandInvocator.getInstance().invokeAfterCommand(new Runnable() {
       public void run() {
         getNodeEditorComponent().selectNode(node);
         EditorCell cell = getNodeEditorComponent().getSelectedCell();
@@ -191,7 +192,7 @@ public class EditorContext {
   }
 
   public void selectLaterWRTFocusPolicy(final SNode node, final boolean force) {
-    CommandProcessor.instance().invokeLater(new Runnable() {
+    AfterCommandInvocator.getInstance().invokeAfterCommand(new Runnable() {
       public void run() {
         if (!force && getNodeEditorComponent().getSelectedNode() == node) {
           return;
@@ -208,7 +209,7 @@ public class EditorContext {
 
 
   public void selectAndSetCaretLater(final SNode node, final int position) {
-    CommandProcessor.instance().invokeLater(new Runnable() {
+    AfterCommandInvocator.getInstance().invokeAfterCommand(new Runnable() {
       public void run() {
         getNodeEditorComponent().selectNode(node);
         EditorCell selectedCell = getNodeEditorComponent().getSelectedCell();
@@ -234,7 +235,7 @@ public class EditorContext {
           }
         }
         return newPosition;
-      }      
+      }
     });
   }
 
