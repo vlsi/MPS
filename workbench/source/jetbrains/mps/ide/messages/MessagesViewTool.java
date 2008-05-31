@@ -292,11 +292,11 @@ public class MessagesViewTool extends BaseMPSTool implements PersistentStateComp
   private boolean isVisible(Message m) {
     switch (m.getKind()) {
       case ERROR:
-        return myErrorsAction.isReallySelected();
+        return myErrorsAction.isSelected(null);
       case WARNING:
-        return myWarningsAction.isReallySelected();
+        return myWarningsAction.isSelected(null);
       case INFORMATION:
-        return myInfoAction.isReallySelected();
+        return myInfoAction.isSelected(null);
     }
     return true;
   }
@@ -360,7 +360,7 @@ public class MessagesViewTool extends BaseMPSTool implements PersistentStateComp
   }
 
   public MyState getState() {
-    return new MyState(myErrorsAction.isReallySelected(), myWarningsAction.isReallySelected(), myInfoAction.isReallySelected(), myBlameDialog.getState());
+    return new MyState(myErrorsAction.isSelected(null), myWarningsAction.isSelected(null), myInfoAction.isSelected(null), myBlameDialog.getState());
   }
 
   public void loadState(MyState state) {
@@ -420,23 +420,19 @@ public class MessagesViewTool extends BaseMPSTool implements PersistentStateComp
   }
 
   private class MyToggleAction extends ToggleAction {
-    private Boolean myEnabledCache;
     private boolean mySelected;
+    private Icon myIcon;
     private final Computable<Boolean> myEnabled;
 
     public MyToggleAction(String tooltip, Icon icon, Computable<Boolean> enabled) {
       super("", tooltip, icon);
+      myIcon = icon;
       myEnabled = enabled;
-      myEnabledCache = false;
       mySelected = true;
     }
 
-    public boolean isReallySelected() {
-      return mySelected;
-    }
-
     public boolean isSelected(AnActionEvent e) {
-      return mySelected && myEnabledCache;
+      return mySelected;
     }
 
     public void setSelected(AnActionEvent e, boolean state) {
@@ -447,8 +443,9 @@ public class MessagesViewTool extends BaseMPSTool implements PersistentStateComp
     public void update(AnActionEvent e) {
       super.update(e);
       if (myEnabled != null) {
-        myEnabledCache = myEnabled.compute();
-        e.getPresentation().setEnabled(myEnabledCache);
+        boolean enabled = myEnabled.compute();
+        Icon icon = enabled ? myIcon : UIManager.getLookAndFeel().getDisabledIcon(null, myIcon);
+        e.getPresentation().setIcon(icon);
       }
     }
   }
