@@ -5,10 +5,6 @@ import jetbrains.mps.smodel.action.INodeSubstituteAction;
 
 import java.util.List;
 
-/**
- * Author: Sergey Dmitriev.
- * Time: Oct 15, 2003 12:21:00 PM
- */
 public interface INodeSubstituteInfo {
   List<INodeSubstituteAction> getMatchingActions(String pattern, boolean strictMatching);
 

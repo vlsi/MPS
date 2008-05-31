@@ -14,8 +14,6 @@ import jetbrains.mps.helgins.inference.TypeCheckingMode;
 import java.util.List;
 
 public class IntelligentInputUtil {
-
-  private static Object ourMarker = new Object();
   private static EditorManager ourServiceEditorManager = new EditorManager();
 
   public static void processCell(EditorCell cell, final EditorContext editorContext, String pattern) {
@@ -100,7 +98,6 @@ public class IntelligentInputUtil {
         });
       return;
     }
-    UndoManager.instance().markPlaceInCurrentUndoActionsWithObject(ourMarker);
 
     rtAction.execute(editorContext);
     final CellFinder cellFounder = new CellFinder(editorContext, newNode, tail);
@@ -118,30 +115,6 @@ public class IntelligentInputUtil {
       List<INodeSubstituteAction> rtMatchingActions = rtSubstituteInfo.getMatchingActions(tail, true);
       TypeChecker.getInstance().resetTypeCheckingMode();
 
-      if (rtSubstituteInfo.hasNoActionsWithPrefix(tail)) { // don't create RT hint cell in such a case
-        if (newNode != null) {
-          newNode.removeRightTransformHint();
-          UndoManager.instance().removeActionsAfterObject(ourMarker);
-          final CellInfo cellInfo = cellForNewNode.getCellInfo();
-          AfterCommandInvocator.getInstance().invokeNowOrAfterCommand(new Runnable() {
-            public void run() {
-              AbstractEditorComponent component = editorContext.getNodeEditorComponent();
-              EditorCell cellToSelect = cellInfo.findCell(component);
-              if (cellToSelect != null) {
-                component.changeSelection(cellToSelect);
-              }
-              if (cellToSelect instanceof EditorCell_Label) {
-                EditorCell_Label label = (EditorCell_Label) cellToSelect;
-                if (label.isEditable() && !(label instanceof EditorCell_Constant)) {
-                  label.changeText(label.getRenderedText() + tail);
-                }
-                label.getRenderedTextLine().setCaretPositionToLast();
-              }
-            }
-          });
-        }
-        return;
-      }
       if (sourceCellRemains) {
         ((EditorCell_Label) cell).changeText(smallPattern);
       }
