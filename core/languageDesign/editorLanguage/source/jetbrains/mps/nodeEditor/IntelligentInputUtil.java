@@ -156,17 +156,16 @@ public class IntelligentInputUtil {
       INodeSubstituteAction rtItem = rtMatchingActions.get(0);
       final SNode yetNewNode = rtItem.doSubstitute(smallPattern);
       AfterCommandInvocator.getInstance().invokeAfterCommand(new Runnable() {
-          public void run() {
-            AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
-            EditorCell yetNewNodeCell = editor.findNodeCell(yetNewNode);
-            EditorCell errorOrEditableCell = EditorUtil.findErrorOrEditableCell(yetNewNodeCell);
-            editor.changeSelectionWRTFocusPolicy(errorOrEditableCell);
-          }
-        });
+        public void run() {
+          AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
+          EditorCell yetNewNodeCell = editor.findNodeCell(yetNewNode);
+          EditorCell errorOrEditableCell = EditorUtil.findErrorOrEditableCell(yetNewNodeCell);
+          editor.changeSelectionWRTFocusPolicy(errorOrEditableCell);
+        }
+      });
     } else {
       AfterCommandInvocator.getInstance().invokeAfterCommand(cellFounder);
     }
-
   }
 
   private static boolean uniqueAction(INodeSubstituteInfo info, String smallPattern, String tail) {

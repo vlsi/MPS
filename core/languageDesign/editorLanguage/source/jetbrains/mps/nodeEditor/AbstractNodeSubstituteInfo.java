@@ -59,9 +59,7 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
   }
 
   public boolean hasNoActionsWithPrefix(String pattern) {
-    Pair<String, List<INodeSubstituteAction>> pair = getPatternAndActions(pattern, false);
-    List<INodeSubstituteAction> result = pair.o2;
-    return result.isEmpty();
+    return getMatchingActions(pattern, false).isEmpty();
   }
 
   public boolean hasExactlyNActions(String pattern, boolean strictMatching, final int n) {
@@ -70,7 +68,6 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
 
   public List<INodeSubstituteAction> getMatchingActions(String pattern, boolean strictMatching) {
     Pair<String, List<INodeSubstituteAction>> pair = getPatternAndActions(pattern, strictMatching);
-    String smallPattern = pair.o1;
     List<INodeSubstituteAction> result = pair.o2;
 
     if (strictMatching) {
@@ -81,7 +78,7 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
         iterator1.remove();
       }
 
-      myStrictPatternsToActionListsCache.put(smallPattern, new ArrayList<INodeSubstituteAction>(result));
+      myStrictPatternsToActionListsCache.put(pattern, new ArrayList<INodeSubstituteAction>(result));
     } else {
       Iterator<INodeSubstituteAction> items = result.iterator();
       while (items.hasNext()) {
@@ -91,8 +88,7 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
         }
       }
 
-
-      myPatternsToActionListsCache.put(smallPattern, new ArrayList<INodeSubstituteAction>(result));
+      myPatternsToActionListsCache.put(pattern, new ArrayList<INodeSubstituteAction>(result));
     }
 
     return (List)result;
