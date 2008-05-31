@@ -1,8 +1,5 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.ide.command.CommandAdapter;
-import jetbrains.mps.ide.command.CommandEvent;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.cleanup.CleanupListener;

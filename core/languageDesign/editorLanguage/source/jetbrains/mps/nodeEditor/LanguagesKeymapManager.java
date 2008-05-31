@@ -135,7 +135,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
     return myLanguagesToKeyMaps.get(languageNamespace);
   }
 
-  private class MyModuleRepositoryListener /*extends CommandAdapter*/ implements ModuleRepositoryListener {
+  private class MyModuleRepositoryListener implements ModuleRepositoryListener {
     public void moduleInitialized(IModule module) {         
       if (module instanceof Language) {
         myLanguagesToRegister.add((Language) module);
@@ -153,12 +153,5 @@ public class LanguagesKeymapManager implements ApplicationComponent {
         unregisterLanguageKeyMaps((Language) module);
       }
     }
-
-  /*  public void beforeCommandFinished(@NotNull CommandEvent event) {
-      for (Language language : myLanguagesToRegister) {
-        registerLanguageKeyMaps(language);
-      }
-      myLanguagesToRegister.clear();
-    }*/
   }
 }

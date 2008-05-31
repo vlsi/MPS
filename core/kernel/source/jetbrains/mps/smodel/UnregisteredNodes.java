@@ -1,12 +1,8 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.ide.command.CommandAdapter;
-import jetbrains.mps.ide.command.CommandEvent;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.cleanup.CleanupListener;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
 import java.util.HashSet;

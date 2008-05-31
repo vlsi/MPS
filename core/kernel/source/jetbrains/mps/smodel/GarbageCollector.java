@@ -1,8 +1,5 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.command.ICommandListener;
-import jetbrains.mps.ide.command.CommandEvent;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.cleanup.CleanupListener;
 import com.intellij.openapi.components.ApplicationComponent;
