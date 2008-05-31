@@ -82,6 +82,7 @@ public abstract class BaseMPSTool implements ProjectComponent {
     });
   }
 
+  @Deprecated
   protected MPSProject getMPSProject() {
     return myProject.getComponent(MPSProjectHolder.class).getMPSProject();
   }
