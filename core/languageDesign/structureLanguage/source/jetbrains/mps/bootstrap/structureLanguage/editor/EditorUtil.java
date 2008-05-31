@@ -1,7 +1,7 @@
 package jetbrains.mps.bootstrap.structureLanguage.editor;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.ide.command.CommandRunnable;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.*;
@@ -53,12 +53,11 @@ public class EditorUtil {
         String selectedPath = FileUtil.getCanonicalPath(result.toFile());
         final String pathToShow = macros.shrinkPath(selectedPath, finalModule.getDescriptorFile());
 
-        new CommandRunnable() {
-          protected Object onRun() {
+        CommandProcessor.instance().executeCommand(new Runnable() {
+          public void run() {
             sourceNode.setProperty(propertyName, pathToShow);
-            return null;
           }
-        }.run();
+        });
       }
     });
     return button;
