@@ -1,20 +1,26 @@
 package jetbrains.mps.ide.findusages.view.treeholder.treedata.tree;
 
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.IExternalizeable;
+import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.findusages.view.treeholder.path.PathItem;
+import jetbrains.mps.ide.findusages.view.treeholder.path.PathItemRole;
+import jetbrains.mps.ide.findusages.view.treeholder.path.PathProvider;
+import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.*;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class DataTree implements IExternalizeable, IChangeListener {
-  private DataNode myTreeRoot = DataTreeBuilder.buildEmpty();
+  private DataNode myTreeRoot = buildEmpty();
   private List<IChangeListener> myListeners = new ArrayList<IChangeListener>();
   private boolean myIsAdjusting = false;
 
@@ -38,7 +44,7 @@ public class DataTree implements IExternalizeable, IChangeListener {
   }
 
   public void setContents(SearchResults results, INodeRepresentator nodeRepresentator) {
-    setContents(DataTreeBuilder.build(results, nodeRepresentator));
+    setContents(build(results, nodeRepresentator));
   }
 
   protected void setContents(DataNode root) {
@@ -63,7 +69,7 @@ public class DataTree implements IExternalizeable, IChangeListener {
   }
 
   public void clearContents() {
-    setContents(DataTreeBuilder.buildEmpty());
+    setContents(buildEmpty());
   }
 
   public List<SModelDescriptor> getIncludedModels() {
@@ -80,6 +86,100 @@ public class DataTree implements IExternalizeable, IChangeListener {
 
   public List<SNodePointer> getAllNodes() {
     return myTreeRoot/*.getChild(1)*/.getAllNodes();
+  }
+
+  //----TREE BUILD STUFF----
+
+  public DataNode buildEmpty() {
+    return build(new SearchResults(), null);
+  }
+
+  public DataNode build(final SearchResults results, final INodeRepresentator nodeRepresentator) {
+    return ModelAccess.instance().runReadAction(new Computable<DataNode>() {
+      public DataNode compute() {
+        DataNode root = new DataNode(new MainNodeData(PathItemRole.ROLE_MAIN_ROOT));
+
+        DataNode nodesRoot = new DataNode(new SearchedNodesNodeData(PathItemRole.ROLE_MAIN_SEARCHED_NODES));
+        for (Object node : results.getAliveNodes()) {
+          addSearchedNode(nodesRoot, node);
+        }
+        root.add(nodesRoot);
+
+        DataNode resultsRoot = new DataNode(new ResultsNodeData(PathItemRole.ROLE_MAIN_RESULTS));
+        for (SearchResult result : (List<SearchResult>) results.getAliveResults()) {
+          addResultWithPresentation(resultsRoot, result, nodeRepresentator);
+        }
+        root.add(resultsRoot);
+
+        buildCounters(resultsRoot);
+
+        return root;
+      }
+    });
+  }
+
+  private int buildCounters(DataNode root) {
+    int num = 0;
+    for (DataNode child : root.getChildren()) {
+      num += buildCounters(child);
+    }
+
+    if (root.getData().isResultNode()) {
+      num++;
+    }
+
+    root.getData().setSubresultsCount(num);
+
+    return num;
+  }
+
+  private void addSearchedNode(DataNode root, Object node) {
+    List<PathItem> path = PathProvider.getPathForSearchResult(new SearchResult(node, SearchedNodesNodeData.CATEGORY_NAME));
+    createPath(path, 0, root, null);
+  }
+
+  private void addResultWithPresentation(DataNode root, SearchResult result, INodeRepresentator nodeRepresentator) {
+    List<PathItem> path = PathProvider.getPathForSearchResult(result);
+    createPath(path, 0, root, nodeRepresentator);
+  }
+
+  private DataNode createPath(List<PathItem> path, int index, DataNode root, INodeRepresentator nodeRepresentator) {
+    DataNode next = null;
+    for (DataNode child : root.getChildren()) {
+      if (path.get(index).getIdObject() instanceof String) {
+        if (child.getData().getIdObject().equals(path.get(index).getIdObject())) {
+          next = child;
+        }
+      } else {
+        if (child.getData().getIdObject() == path.get(index).getIdObject()) {
+          next = child;
+        }
+      }
+    }
+    if (next == null) {
+      Object o = path.get(index).getIdObject();
+      PathItemRole creator = path.get(index).getRole();
+      BaseNodeData data = null;
+
+      boolean isResult = index == path.size() - 1;
+      if (o instanceof IModule) {
+        data = new ModuleNodeData(creator, ((IModule) o).getModuleUID(), isResult);
+      } else if (o instanceof SModel) {
+        data = new ModelNodeData(creator, (SModel) o, isResult);
+      } else if (o instanceof SNode) {
+        data = new NodeNodeData(creator, (SNode) o, isResult, nodeRepresentator);
+      } else {
+        String caption = (String) path.get(index).getIdObject();
+        data = new CategoryNodeData(creator, caption);
+      }
+      next = new DataNode(data);
+      root.add(next);
+    }
+    if (index == path.size() - 1) {
+      return next;
+    } else {
+      return createPath(path, index + 1, next, nodeRepresentator);
+    }
   }
 
   //----READ/WRITE STUFF----
