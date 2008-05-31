@@ -20,6 +20,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.ide.findusages.view.util.AnonymButton;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jdom.Element;
@@ -132,7 +133,9 @@ public abstract class UsagesView implements IExternalizeable {
     GeneratorManager manager = project.getComponentSafe(GeneratorManager.class);
     List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
     for (SModelDescriptor modelDescriptor : myTreeHolder.getIncludedModels()) {
-      models.add(modelDescriptor);
+      if (!modelDescriptor.isTransient() && (modelDescriptor instanceof DefaultSModelDescriptor)) {
+        models.add(modelDescriptor);
+      }
     }
     manager.generateModelsFromDifferentModules(project.createOperationContext(), models, IGenerationType.FILES);
   }
