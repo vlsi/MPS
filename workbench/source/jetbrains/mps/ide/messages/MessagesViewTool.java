@@ -360,7 +360,7 @@ public class MessagesViewTool extends BaseMPSTool implements PersistentStateComp
   }
 
   public MyState getState() {
-    return new MyState(myErrorsAction.isSelected(null), myWarningsAction.isSelected(null), myInfoAction.isSelected(null), myBlameDialog.getState());
+    return new MyState(myErrorsAction.isReallySelected(), myWarningsAction.isReallySelected(), myInfoAction.isReallySelected(), myBlameDialog.getState());
   }
 
   public void loadState(MyState state) {
