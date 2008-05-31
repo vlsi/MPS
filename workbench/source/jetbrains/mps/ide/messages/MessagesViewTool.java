@@ -46,17 +46,17 @@ public class MessagesViewTool extends BaseMPSTool implements PersistentStateComp
   public static final Icon ERROR_ICON = new ImageIcon(MessagesViewTool.class.getResource("error.png"));
   public static final Icon WARNING_ICON = new ImageIcon(MessagesViewTool.class.getResource("warning.png"));
 
-  private ToggleAction myErrorsAction = createToggleAction("Show Error Messages", ERROR_ICON, new Computable<Boolean>() {
+  private MyToggleAction myErrorsAction = new MyToggleAction("Show Error Messages", ERROR_ICON, new Computable<Boolean>() {
     public Boolean compute() {
       return hasErrors();
     }
   });
-  private ToggleAction myWarningsAction = createToggleAction("Show Warnings Messages", WARNING_ICON, new Computable<Boolean>() {
+  private MyToggleAction myWarningsAction = new MyToggleAction("Show Warnings Messages", WARNING_ICON, new Computable<Boolean>() {
     public Boolean compute() {
       return hasWarnings();
     }
   });
-  private ToggleAction myInfoAction = createToggleAction("Show Information Messages", INFORMATION_ICON, new Computable<Boolean>() {
+  private MyToggleAction myInfoAction = new MyToggleAction("Show Information Messages", INFORMATION_ICON, new Computable<Boolean>() {
     public Boolean compute() {
       return hasInfo();
     }
@@ -292,11 +292,11 @@ public class MessagesViewTool extends BaseMPSTool implements PersistentStateComp
   private boolean isVisible(Message m) {
     switch (m.getKind()) {
       case ERROR:
-        return myErrorsAction.isSelected(null);
+        return myErrorsAction.isReallySelected();
       case WARNING:
-        return myWarningsAction.isSelected(null);
+        return myWarningsAction.isReallySelected();
       case INFORMATION:
-        return myInfoAction.isSelected(null);
+        return myInfoAction.isReallySelected();
     }
     return true;
   }
@@ -359,30 +359,6 @@ public class MessagesViewTool extends BaseMPSTool implements PersistentStateComp
     return width;
   }
 
-  private ToggleAction createToggleAction(String tooltip, Icon icon, final Computable<Boolean> isEnabled) {
-    return new ToggleAction("", tooltip, icon) {
-      private Boolean myEnabled = false;
-      private boolean mySelected = true;
-
-      public boolean isSelected(AnActionEvent e) {
-        return mySelected && myEnabled;
-      }
-
-      public void setSelected(AnActionEvent e, boolean state) {
-        mySelected = state;
-        rebuildModel();
-      }
-
-      public void update(AnActionEvent e) {
-        super.update(e);
-        if (isEnabled != null) {
-          myEnabled = isEnabled.compute();
-          e.getPresentation().setEnabled(myEnabled);
-        }
-      }
-    };
-  }
-
   public MyState getState() {
     return new MyState(myErrorsAction.isSelected(null), myWarningsAction.isSelected(null), myInfoAction.isSelected(null), myBlameDialog.getState());
   }
@@ -440,6 +416,40 @@ public class MessagesViewTool extends BaseMPSTool implements PersistentStateComp
 
     public void setInfo(boolean info) {
       myInfo = info;
+    }
+  }
+
+  private class MyToggleAction extends ToggleAction {
+    private Boolean myEnabledCache;
+    private boolean mySelected;
+    private final Computable<Boolean> myEnabled;
+
+    public MyToggleAction(String tooltip, Icon icon, Computable<Boolean> enabled) {
+      super("", tooltip, icon);
+      myEnabled = enabled;
+      myEnabledCache = false;
+      mySelected = true;
+    }
+
+    public boolean isReallySelected() {
+      return mySelected;
+    }
+
+    public boolean isSelected(AnActionEvent e) {
+      return mySelected && myEnabledCache;
+    }
+
+    public void setSelected(AnActionEvent e, boolean state) {
+      mySelected = state;
+      rebuildModel();
+    }
+
+    public void update(AnActionEvent e) {
+      super.update(e);
+      if (myEnabled != null) {
+        myEnabledCache = myEnabled.compute();
+        e.getPresentation().setEnabled(myEnabledCache);
+      }
     }
   }
 }
