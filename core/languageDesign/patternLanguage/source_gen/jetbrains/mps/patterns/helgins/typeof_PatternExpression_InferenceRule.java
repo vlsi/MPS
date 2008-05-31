@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_PatternExpression_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_PatternExpression_InferenceRule() {
+  public typeof_PatternExpression_InferenceRule() {
   }
 
   public void applyRule(final SNode patternExpression) {

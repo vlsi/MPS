@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ListPattern extends AsPattern {
   public static final String concept = "jetbrains.mps.patterns.structure.ListPattern";
 
-  public  ListPattern(SNode node) {
+  public ListPattern(SNode node) {
     super(node);
   }
 

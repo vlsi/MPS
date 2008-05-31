@@ -12,7 +12,7 @@ public class PatternExpression extends BaseConcept {
   public static final String concept = "jetbrains.mps.patterns.structure.PatternExpression";
   public static String PATTERN_NODE = "patternNode";
 
-  public  PatternExpression(SNode node) {
+  public PatternExpression(SNode node) {
     super(node);
   }
 

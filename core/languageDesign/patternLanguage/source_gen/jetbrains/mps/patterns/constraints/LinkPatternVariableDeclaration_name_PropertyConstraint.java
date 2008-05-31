@@ -11,7 +11,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 
 public class LinkPatternVariableDeclaration_name_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
 
-  public  LinkPatternVariableDeclaration_name_PropertyConstraint() {
+  public LinkPatternVariableDeclaration_name_PropertyConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

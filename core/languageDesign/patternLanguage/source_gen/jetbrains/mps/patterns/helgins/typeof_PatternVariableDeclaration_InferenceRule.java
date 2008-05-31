@@ -6,24 +6,24 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_PatternVariableDeclaration_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_PatternVariableDeclaration_InferenceRule() {
+  public typeof_PatternVariableDeclaration_InferenceRule() {
   }
 
   public void applyRule(final SNode nodeToCheck) {
     SNode attributedNode = SNodeOperations.getParent(nodeToCheck, null, false, false);
     SNode parent = SNodeOperations.getParent(attributedNode, null, false, false);
-    if(parent == null) {
+    if (parent == null) {
       TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.patterns.helgins", "1202488469553", true), new QuotationClass_3().createNode(), nodeToCheck, null, "jetbrains.mps.patterns.helgins", "1202488480088");
     } else
     {
       String role = attributedNode.getRole_();
-      SNode linkDeclaration = (SNode)SModelUtil_new.findLinkDeclaration(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(parent))), role).getNode();
+      SNode linkDeclaration = AbstractConceptDeclaration_Behavior.call_findLinkDeclaration_1212193671949(SNodeOperations.getConceptDeclaration(parent), role);
       TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.patterns.helgins", "1202488496552", true), new QuotationClass_4().createNode(SLinkOperations.getTarget(linkDeclaration, "target", false)), nodeToCheck, null, "jetbrains.mps.patterns.helgins", "1202488496543");
     }
   }

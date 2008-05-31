@@ -14,7 +14,6 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOper
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.patterns.structure.AsPattern_AnnotationLink;
 import jetbrains.mps.core.structure.BaseConcept;
-import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.patterns.structure.AsPattern;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
 import jetbrains.mps.nodeEditor.PropertyAccessor;
@@ -32,7 +31,7 @@ import jetbrains.mps.quotation.structure.ReferenceAntiquotation;
 
 public class _PatternExpression_KeyMap extends EditorCellKeyMap {
 
-  public  _PatternExpression_KeyMap() {
+  public _PatternExpression_KeyMap() {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
     action = new _PatternExpression_KeyMap._PatternExpression_KeyMap_Action0();
@@ -54,7 +53,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
   }
   public static class _PatternExpression_KeyMap_Action0 extends EditorCellKeyMapAction {
 
-    public  _PatternExpression_KeyMap_Action0() {
+    public _PatternExpression_KeyMap_Action0() {
       this.setShownInPopupMenu(false);
     }
 
@@ -68,11 +67,11 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
 
     public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
-      if((contextCell == null)) {
+      if ((contextCell == null)) {
         return false;
       }
       SNode contextNode = contextCell.getSNode();
-      if(contextNode == null) {
+      if (contextNode == null) {
         return false;
       }
       return this.canExecute_internal(keyEvent, editorContext, contextNode, this.getSelectedNodes(editorContext));
@@ -98,7 +97,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
 }
   public static class _PatternExpression_KeyMap_Action1 extends EditorCellKeyMapAction {
 
-    public  _PatternExpression_KeyMap_Action1() {
+    public _PatternExpression_KeyMap_Action1() {
       this.setShownInPopupMenu(false);
     }
 
@@ -112,11 +111,11 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
 
     public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
-      if((contextCell == null)) {
+      if ((contextCell == null)) {
         return false;
       }
       SNode contextNode = contextCell.getSNode();
-      if(contextNode == null) {
+      if (contextNode == null) {
         return false;
       }
       return this.canExecute_internal(keyEvent, editorContext, contextNode, this.getSelectedNodes(editorContext));
@@ -132,7 +131,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
     }
 
     private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
-      AsPattern_AnnotationLink.setAsPattern((BaseConcept)((INodeAdapter)SNodeOperations.getAdapter(node)), ((AsPattern)SNodeOperations.getAdapter(SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.patterns.structure.AsPattern", null))));
+      AsPattern_AnnotationLink.setAsPattern((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(node)), ((AsPattern)SNodeOperations.getAdapter(SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.patterns.structure.AsPattern", null))));
     }
 
     public String getKeyStroke() {
@@ -142,7 +141,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
 }
   public static class _PatternExpression_KeyMap_Action2 extends EditorCellKeyMapAction {
 
-    public  _PatternExpression_KeyMap_Action2() {
+    public _PatternExpression_KeyMap_Action2() {
       this.setShownInPopupMenu(false);
     }
 
@@ -156,11 +155,11 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
 
     public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
-      if((contextCell == null)) {
+      if ((contextCell == null)) {
         return false;
       }
       SNode contextNode = contextCell.getSNode();
-      if(contextNode == null) {
+      if (contextNode == null) {
         return false;
       }
       return this.canExecute_internal(keyEvent, editorContext, contextNode, this.getSelectedNodes(editorContext));
@@ -186,7 +185,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
 }
   public static class _PatternExpression_KeyMap_Action3 extends EditorCellKeyMapAction {
 
-    public  _PatternExpression_KeyMap_Action3() {
+    public _PatternExpression_KeyMap_Action3() {
       this.setShownInPopupMenu(false);
     }
 
@@ -200,11 +199,11 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
 
     public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
-      if((contextCell == null)) {
+      if ((contextCell == null)) {
         return false;
       }
       SNode contextNode = contextCell.getSNode();
-      if(contextNode == null) {
+      if (contextNode == null) {
         return false;
       }
       return this.canExecute_internal(keyEvent, editorContext, contextNode, this.getSelectedNodes(editorContext));
@@ -232,7 +231,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
 }
   public static class _PatternExpression_KeyMap_Action4 extends EditorCellKeyMapAction {
 
-    public  _PatternExpression_KeyMap_Action4() {
+    public _PatternExpression_KeyMap_Action4() {
       this.setShownInPopupMenu(false);
     }
 
@@ -246,11 +245,11 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
 
     public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
-      if((contextCell == null)) {
+      if ((contextCell == null)) {
         return false;
       }
       SNode contextNode = contextCell.getSNode();
-      if(contextNode == null) {
+      if (contextNode == null) {
         return false;
       }
       return this.canExecute_internal(keyEvent, editorContext, contextNode, this.getSelectedNodes(editorContext));
@@ -267,7 +266,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
 
     private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
       List<SNode> siblings = SNodeOperations.getAllSiblings(node, false);
-      AsPattern_AnnotationLink.setAsPattern((BaseConcept)((INodeAdapter)SNodeOperations.getAdapter(node)), ((ListPattern)SNodeOperations.getAdapter(SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.patterns.structure.ListPattern", null))));
+      AsPattern_AnnotationLink.setAsPattern((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(node)), ((ListPattern)SNodeOperations.getAdapter(SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.patterns.structure.ListPattern", null))));
       for(SNode sibling : siblings) {
         SNodeOperations.deleteNode(sibling);
       }
@@ -280,7 +279,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
 }
   public static class _PatternExpression_KeyMap_Action5 extends EditorCellKeyMapAction {
 
-    public  _PatternExpression_KeyMap_Action5() {
+    public _PatternExpression_KeyMap_Action5() {
       this.setShownInPopupMenu(false);
     }
 
@@ -294,11 +293,11 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
 
     public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
-      if((contextCell == null)) {
+      if ((contextCell == null)) {
         return false;
       }
       SNode contextNode = contextCell.getSNode();
-      if(contextNode == null) {
+      if (contextNode == null) {
         return false;
       }
       return this.canExecute_internal(keyEvent, editorContext, contextNode, this.getSelectedNodes(editorContext));
@@ -315,16 +314,16 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
 
     private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
       SNode contextNode = editorContext.getSelectedCell().getSNode();
-      if(contextNode == null) {
+      if (contextNode == null) {
         return;
       }
-      if(SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.annotations.structure.AttributeConcept")) {
+      if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.annotations.structure.AttributeConcept")) {
         SNode attributedNode = SLinkOperations.getTarget((contextNode), "attributedNode", false);
         attributedNode.setAttribute(null);
         return;
       }
       SModel model = SNodeOperations.getModel(contextNode);
-      if(Antiquotation_AnnotationLink.getAntiquotation(((BaseConcept)SNodeOperations.getAdapter(contextNode))) != null) {
+      if (Antiquotation_AnnotationLink.getAntiquotation(((BaseConcept)SNodeOperations.getAdapter(contextNode))) != null) {
         contextNode.setAttribute(null);
       } else
       contextNode.setAttribute(SModelOperations.createNewNode(model, "jetbrains.mps.quotation.structure.Antiquotation", null));
@@ -337,7 +336,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
 }
   public static class _PatternExpression_KeyMap_Action6 extends EditorCellKeyMapAction {
 
-    public  _PatternExpression_KeyMap_Action6() {
+    public _PatternExpression_KeyMap_Action6() {
       this.setShownInPopupMenu(false);
     }
 
@@ -351,11 +350,11 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
 
     public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
-      if((contextCell == null)) {
+      if ((contextCell == null)) {
         return false;
       }
       SNode contextNode = contextCell.getSNode();
-      if(contextNode == null) {
+      if (contextNode == null) {
         return false;
       }
       return this.canExecute_internal(keyEvent, editorContext, contextNode, this.getSelectedNodes(editorContext));
@@ -372,17 +371,17 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
 
     private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
       SNode contextNode = editorContext.getSelectedCell().getSNode();
-      if(contextNode == null) {
+      if (contextNode == null) {
         return;
       }
-      if(SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.quotation.structure.ListAntiquotation")) {
+      if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.quotation.structure.ListAntiquotation")) {
         SNode attributedNode = SNodeOperations.getParent(contextNode, null, false, false);
         assert attributedNode != null;
         attributedNode.setAttribute(null);
         return;
       }
       SModel model = SNodeOperations.getModel(contextNode);
-      if(BaseAdapter.isInstance(contextNode.getAttribute(), ListAntiquotation.class)) {
+      if (BaseAdapter.isInstance(contextNode.getAttribute(), ListAntiquotation.class)) {
         contextNode.setAttribute(null);
       } else
       contextNode.setAttribute(SModelOperations.createNewNode(model, "jetbrains.mps.quotation.structure.ListAntiquotation", null));
@@ -395,7 +394,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
 }
   public static class _PatternExpression_KeyMap_Action7 extends EditorCellKeyMapAction {
 
-    public  _PatternExpression_KeyMap_Action7() {
+    public _PatternExpression_KeyMap_Action7() {
       this.setShownInPopupMenu(false);
     }
 
@@ -409,11 +408,11 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
 
     public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
-      if((contextCell == null)) {
+      if ((contextCell == null)) {
         return false;
       }
       SNode contextNode = contextCell.getSNode();
-      if(contextNode == null) {
+      if (contextNode == null) {
         return false;
       }
       return this.canExecute_internal(keyEvent, editorContext, contextNode, this.getSelectedNodes(editorContext));
@@ -432,18 +431,18 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
       EditorCell selectedCell = editorContext.getSelectedCell();
       SNode contextNode = selectedCell.getSNode();
       SNode linkNode = (SNode)selectedCell.getUserObject(EditorCell_Component.METAINFO_LINK_DECLARATION);
-      if(!(BaseAdapter.isInstance(linkNode, LinkDeclaration.class))) {
+      if (!(BaseAdapter.isInstance(linkNode, LinkDeclaration.class))) {
         return;
       }
-      if(contextNode == null) {
+      if (contextNode == null) {
         return;
       }
       SNode link = linkNode;
-      if(SPropertyOperations.hasValue(link, "metaClass", "aggregation", null)) {
+      if (SPropertyOperations.hasValue(link, "metaClass", "aggregation", "reference")) {
         return;
       }
       String role = SPropertyOperations.getString(link, "role");
-      if(SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.quotation.structure.ReferenceAntiquotation")) {
+      if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.quotation.structure.ReferenceAntiquotation")) {
         SNode attributedNode = SNodeOperations.getParent(contextNode, null, false, false);
         assert attributedNode != null;
         ReferenceAntiquotation_AnnotationLink.setReferenceAntiquotation(((BaseConcept)SNodeOperations.getAdapter(attributedNode)), role, null);
@@ -451,7 +450,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
         return;
       }
       SModel model = SNodeOperations.getModel(contextNode);
-      if(ReferenceAntiquotation_AnnotationLink.getReferenceAntiquotation(((BaseConcept)SNodeOperations.getAdapter(contextNode)), role) != null) {
+      if (ReferenceAntiquotation_AnnotationLink.getReferenceAntiquotation(((BaseConcept)SNodeOperations.getAdapter(contextNode)), role) != null) {
         ReferenceAntiquotation_AnnotationLink.setReferenceAntiquotation(((BaseConcept)SNodeOperations.getAdapter(contextNode)), role, null);
       } else
       {

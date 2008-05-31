@@ -30,6 +30,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="23" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />
@@ -1105,6 +1106,40 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1179511422130">
             <link role="variableDeclaration" targetNodeId="1179511422114" resolveInfo="adapterClassType" />
           </node>
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1212193671949">
+      <property name="name" value="findLinkDeclaration" />
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1212193676558">
+        <link role="concept" targetNodeId="1.1071489288298" resolveInfo="LinkDeclaration" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212193671951">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1212193716539">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1212193805299">
+            <link role="concept" targetNodeId="1.1071489288298" resolveInfo="LinkDeclaration" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1212193790299">
+              <link role="baseMethodDeclaration" targetNodeId="5.~BaseAdapter.fromAdapter(jetbrains.mps.smodel.INodeAdapter):jetbrains.mps.smodel.SNode" resolveInfo="fromAdapter" />
+              <link role="classConcept" targetNodeId="5.~BaseAdapter" resolveInfo="BaseAdapter" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1212193791930">
+                <link role="baseMethodDeclaration" targetNodeId="2.~SModelSearchUtil.findLinkDeclaration(jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration,java.lang.String):jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" resolveInfo="findLinkDeclaration" />
+                <link role="classConcept" targetNodeId="2.~SModelSearchUtil" resolveInfo="SModelSearchUtil" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212193791931">
+                  <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1212193791932" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1212193791933" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1212193791934">
+                  <link role="variableDeclaration" targetNodeId="1212193696663" resolveInfo="role" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1212193696663">
+        <property name="name" value="role" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212193696664">
+          <link role="classifier" targetNodeId="9.~String" resolveInfo="String" />
         </node>
       </node>
     </node>

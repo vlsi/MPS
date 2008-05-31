@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class AsPattern extends PatternVariableDeclaration {
   public static final String concept = "jetbrains.mps.patterns.structure.AsPattern";
 
-  public  AsPattern(SNode node) {
+  public AsPattern(SNode node) {
     super(node);
   }
 

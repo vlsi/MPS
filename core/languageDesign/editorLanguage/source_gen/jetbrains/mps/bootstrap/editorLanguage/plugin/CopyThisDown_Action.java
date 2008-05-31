@@ -9,10 +9,8 @@ import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
+import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.bootstrap.structureLanguage.constraints.LinkDeclaration_Behavior;
 
 public class CopyThisDown_Action extends CurrentProjectMPSAction {
   public static final Logger LOG = Logger.getLogger(CopyThisDown_Action.class);
@@ -77,14 +75,12 @@ public class CopyThisDown_Action extends CurrentProjectMPSAction {
         SNode nodeToCopy = this.inputNode;
         while(SNodeOperations.getParent(nodeToCopy, null, false, false) != null) {
           SNode parent = SNodeOperations.getParent(nodeToCopy, null, false, false);
-          SNode acd = SNodeOperations.getConceptDeclaration(parent);
           String role = nodeToCopy.getRole_();
-          LinkDeclaration linkDeclaration = SModelUtil_new.findLinkDeclaration(((AbstractConceptDeclaration)SNodeOperations.getAdapter(acd)), role);
-          if (linkDeclaration == null) {
+          SNode link = AbstractConceptDeclaration_Behavior.call_findLinkDeclaration_1212193671949(SNodeOperations.getConceptDeclaration(parent), role);
+          if (link == null) {
             return;
           }
-          Cardinality cardinality = linkDeclaration.getSourceCardinality();
-          if (cardinality == Cardinality._0__n || cardinality == Cardinality._1__n) {
+          if (!(LinkDeclaration_Behavior.call_isSingular_1205275061212(link))) {
             SNode copy = SNodeOperations.copyNode(nodeToCopy);
             parent.insertChild(nodeToCopy, role, copy);
             return;

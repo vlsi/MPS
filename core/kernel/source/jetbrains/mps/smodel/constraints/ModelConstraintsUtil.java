@@ -78,7 +78,7 @@ public class ModelConstraintsUtil {
 
     // default search scope
     if (linkTarget == null) {
-      LinkDeclaration linkDeclaration = SModelUtil_new.findLinkDeclaration(referenceNodeConcept, linkRole);
+      LinkDeclaration linkDeclaration = SModelSearchUtil.findLinkDeclaration(referenceNodeConcept, linkRole);
       if (linkDeclaration != null) {
         linkTarget = linkDeclaration.getTarget();
       } else {

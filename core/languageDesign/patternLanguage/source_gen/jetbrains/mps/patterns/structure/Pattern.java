@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class Pattern extends AttributeConcept {
   public static final String concept = "jetbrains.mps.patterns.structure.Pattern";
 
-  public  Pattern(SNode node) {
+  public Pattern(SNode node) {
     super(node);
   }
 

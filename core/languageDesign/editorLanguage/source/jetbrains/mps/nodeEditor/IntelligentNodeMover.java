@@ -3,6 +3,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
@@ -65,7 +66,7 @@ class IntelligentNodeMover {
     assert parent != null && role != null;
 
     final AbstractConceptDeclaration acd = parent.getConceptDeclarationAdapter();
-    final LinkDeclaration link = SModelUtil_new.findLinkDeclaration(acd, role);
+    final LinkDeclaration link = SModelSearchUtil.findLinkDeclaration(acd, role);
 
     if (link == null) {
       LOG.error("Can't find a link " + role + " in concept " + acd.getName());

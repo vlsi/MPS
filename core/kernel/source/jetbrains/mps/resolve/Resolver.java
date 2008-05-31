@@ -99,7 +99,7 @@ public class Resolver {
     // search scope
     SNode referenceNode = reference.getSourceNode();
     ConceptDeclaration referenceNodeConcept = (ConceptDeclaration) referenceNode.getConceptDeclarationAdapter();
-    LinkDeclaration linkDeclaration = SModelUtil_new.findLinkDeclaration(referenceNodeConcept, reference.getRole());
+    LinkDeclaration linkDeclaration = SModelSearchUtil.findLinkDeclaration(referenceNodeConcept, reference.getRole());
     if (linkDeclaration == null) {
       LOG.error("couldn't find link declaration for role '" + reference.getRole() + "'", referenceNode);
       return false;
@@ -158,7 +158,7 @@ public class Resolver {
         return false;
       }
       SNode parent = referenceNode.getParent();
-      LinkDeclaration parentLinkDeclaration = SModelUtil_new.findLinkDeclaration(parent.getConceptDeclarationAdapter(),
+      LinkDeclaration parentLinkDeclaration = SModelSearchUtil.findLinkDeclaration(parent.getConceptDeclarationAdapter(),
         referenceNode.getRole_());
       if (parentLinkDeclaration == null) {
         return false;
@@ -200,12 +200,12 @@ public class Resolver {
     final SNode sourceNode = reference.getSourceNode();
 
     ConceptDeclaration sourceConcept = (ConceptDeclaration) sourceNode.getConceptDeclarationAdapter();
-    LinkDeclaration refLinkDeclaration = SModelUtil_new.findLinkDeclaration(sourceConcept, role);
+    LinkDeclaration refLinkDeclaration = SModelSearchUtil.findLinkDeclaration(sourceConcept, role);
     SNode sourceParent = sourceNode.getParent();
 
     if (sourceParent == null) sourceParent = sourceNode;
 
-    LinkDeclaration childLinkDeclaration = SModelUtil_new.findLinkDeclaration(sourceParent.getConceptDeclarationAdapter(), sourceNode.getRole_());
+    LinkDeclaration childLinkDeclaration = SModelSearchUtil.findLinkDeclaration(sourceParent.getConceptDeclarationAdapter(), sourceNode.getRole_());
 
     EditorCell editorCell = editorContext.createNodeCell(sourceParent);
     EditorCell inspectedCell = editorContext.createInspectedCell(sourceNode, null);

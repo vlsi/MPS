@@ -38,12 +38,12 @@ public class QueriesGenerated {
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_CellMenuPart_Abstract_1199894948366(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     SNode editedFeature = CellMenuUtil.getEditedFeature(_context.getParentNode());
-    return SNodeOperations.isInstanceOf(editedFeature, "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration") && SPropertyOperations.hasValue(editedFeature, "metaClass", null, null);
+    return SNodeOperations.isInstanceOf(editedFeature, "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration") && SPropertyOperations.hasValue(editedFeature, "metaClass", "reference", "reference");
   }
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_CellMenuPart_Abstract_1199895015796(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     SNode editedFeature = CellMenuUtil.getEditedFeature(_context.getParentNode());
-    return SNodeOperations.isInstanceOf(editedFeature, "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration") && SPropertyOperations.hasValue(editedFeature, "metaClass", "aggregation", null);
+    return SNodeOperations.isInstanceOf(editedFeature, "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration") && SPropertyOperations.hasValue(editedFeature, "metaClass", "aggregation", "reference");
   }
 
   public static void nodeFactory_NodeSetup_CellModel_Property_1158947460473(final IOperationContext operationContext, final NodeSetupContext _context) {

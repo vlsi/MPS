@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class WildcardPattern extends Pattern {
   public static final String concept = "jetbrains.mps.patterns.structure.WildcardPattern";
 
-  public  WildcardPattern(SNode node) {
+  public WildcardPattern(SNode node) {
     super(node);
   }
 

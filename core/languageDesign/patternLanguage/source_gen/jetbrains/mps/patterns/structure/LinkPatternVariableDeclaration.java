@@ -17,7 +17,7 @@ public class LinkPatternVariableDeclaration extends LinkAttributeConcept impleme
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  LinkPatternVariableDeclaration(SNode node) {
+  public LinkPatternVariableDeclaration(SNode node) {
     super(node);
   }
 

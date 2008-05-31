@@ -11,7 +11,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 
 public class PatternVariableDeclaration_name_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
 
-  public  PatternVariableDeclaration_name_PropertyConstraint() {
+  public PatternVariableDeclaration_name_PropertyConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

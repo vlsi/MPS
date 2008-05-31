@@ -11,7 +11,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
 
   private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
 
-  public  ConstraintsDescriptor() {
+  public ConstraintsDescriptor() {
     this.myConstraints.add(new PropertyPatternVariableDeclaration_name_PropertyConstraint());
     this.myConstraints.add(new LinkPatternVariableDeclaration_name_PropertyConstraint());
     this.myConstraints.add(new PatternVariableDeclaration_name_PropertyConstraint());

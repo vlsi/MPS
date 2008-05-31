@@ -1,6 +1,7 @@
 package jetbrains.mps.vcs;
 
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
 import jetbrains.mps.project.GlobalScope;
@@ -188,7 +189,7 @@ public class DiffBuilder {
   }
 
   private boolean isToManyCardinality(String fqName, String role) {
-    LinkDeclaration ld = SModelUtil_new.findLinkDeclaration(SModelUtil_new.findConceptDeclaration(fqName, GlobalScope.getInstance()), role);
+    LinkDeclaration ld = SModelSearchUtil.findLinkDeclaration(SModelUtil_new.findConceptDeclaration(fqName, GlobalScope.getInstance()), role);
     if (ld == null) {
       return false;
     }

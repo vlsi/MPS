@@ -16,7 +16,7 @@ public class PatternVariableDeclaration extends Pattern implements INamedConcept
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  PatternVariableDeclaration(SNode node) {
+  public PatternVariableDeclaration(SNode node) {
     super(node);
   }
 

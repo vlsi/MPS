@@ -17,7 +17,7 @@ public class PropertyPatternVariableDeclaration extends PropertyAttributeConcept
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  PropertyPatternVariableDeclaration(SNode node) {
+  public PropertyPatternVariableDeclaration(SNode node) {
     super(node);
   }
 

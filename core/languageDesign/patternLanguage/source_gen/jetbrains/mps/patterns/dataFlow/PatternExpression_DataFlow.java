@@ -10,7 +10,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 
 public class PatternExpression_DataFlow extends DataFlowBuilder {
 
-  public  PatternExpression_DataFlow() {
+  public PatternExpression_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

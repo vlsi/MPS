@@ -1506,7 +1506,7 @@ public final class SNode {
 
   public LinkDeclaration getLinkDeclaration(String role) {
     AbstractConceptDeclaration conceptDeclaration = getConceptDeclarationAdapter();
-    return SModelUtil_new.findLinkDeclaration(conceptDeclaration, role);
+    return SModelSearchUtil.findLinkDeclaration(conceptDeclaration, role);
   }
 
   public SNode findParent(Condition<SNode> condition) {
@@ -1613,7 +1613,7 @@ public final class SNode {
 
   public boolean isReferentRequired(String role) {
     AbstractConceptDeclaration conceptDeclaration = getConceptDeclarationAdapter();
-    LinkDeclaration linkDeclaration = SModelUtil_new.findLinkDeclaration(conceptDeclaration, role);
+    LinkDeclaration linkDeclaration = SModelSearchUtil.findLinkDeclaration(conceptDeclaration, role);
     LOG.assertLog(linkDeclaration != null, "couldn't find link declaration for role \"" + role + "\" in hierarchy of concept " + conceptDeclaration.getDebugText());
     Cardinality cardinality = SModelUtil_new.getGenuineLinkSourceCardinality(linkDeclaration);
     if (cardinality == Cardinality._1 || cardinality == Cardinality._1__n) {

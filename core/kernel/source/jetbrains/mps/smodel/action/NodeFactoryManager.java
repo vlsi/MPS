@@ -31,7 +31,7 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
 
   public static SNode createNode(SNode enclosingNode, EditorContext editorContext, String linkRole) {
     ConceptDeclaration concept = (ConceptDeclaration) enclosingNode.getConceptDeclarationAdapter();
-    LinkDeclaration linkDeclaration = getTopLinkDeclaration(concept, SModelUtil_new.findLinkDeclaration(concept, linkRole));
+    LinkDeclaration linkDeclaration = getTopLinkDeclaration(concept, SModelSearchUtil.findLinkDeclaration(concept, linkRole));
     AbstractConceptDeclaration targetConcept = linkDeclaration.getTarget();
     SModel model = enclosingNode.getModel();
     IScope scope = editorContext.getOperationContext().getScope();
