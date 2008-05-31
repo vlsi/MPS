@@ -1173,10 +1173,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept", false)).first(), "conceptArgument", true);
   }
 
-  public static SNode sourceNodeQuery_1208783961226(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "commandClosureLiteral", true);
-  }
-
   public static SNode sourceNodeQuery_1211986017281(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "commandClosureLiteral", true);
   }
@@ -1187,6 +1183,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1212009901000(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperation_Behavior.call_getLeftExpression_1200920411564(_context.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1212248281718(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "commandClosureLiteral", true);
   }
 
   public static List sourceNodesQuery_1179412359821(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
