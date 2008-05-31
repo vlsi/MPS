@@ -3,7 +3,6 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.generator.*;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
@@ -18,7 +17,6 @@ import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.refactoring.framework.RefactoringNodeMembersAccessModifier;
-import jetbrains.mps.util.Calculable;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
@@ -115,7 +113,7 @@ public class RefactoringProcessor {
       monitor.start("refactoring", estimatedTime);
       monitor.startLeafTask(refactoringTaskName, "refactoring", estimatedTime);
 
-      Map<IModule, List<SModel>> moduleToModelsMap = CommandProcessor.instance().executeCommand(new Computable<Map<IModule, List<SModel>>>() {
+      Map<IModule, List<SModel>> moduleToModelsMap = ModelAccess.instance().runWriteActionInCommand(new Computable<Map<IModule, List<SModel>>>() {
         public Map<IModule, List<SModel>> compute() {
           SModelDescriptor modelDescriptor = context.getModel();
           SModelUID initialModelUID = modelDescriptor.getModelUID();

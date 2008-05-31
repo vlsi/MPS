@@ -7,7 +7,6 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
 import jetbrains.mps.ide.BootstrapLanguagesManager;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.logging.refactoring.structure.Refactoring;
 import jetbrains.mps.project.*;
@@ -16,7 +15,6 @@ import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.refactoring.logging.Marshallable;
 import jetbrains.mps.reloading.*;
-import jetbrains.mps.util.Calculable;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.Hack;
@@ -349,7 +347,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   }
 
   private ModuleDescriptor renameExtendedLanguage(final String oldLanguageNamespace, final String newLanguageNamespace, final boolean setModuleDescriptor) {
-    return CommandProcessor.instance().executeCommand(new Computable<ModuleDescriptor>() {
+    return ModelAccess.instance().runWriteActionInCommand(new Computable<ModuleDescriptor>() {
       public ModuleDescriptor compute() {
         LanguageDescriptor ld = getLanguageDescriptor();
         if (ld == null) return null;

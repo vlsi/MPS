@@ -18,7 +18,6 @@ import java.beans.PropertyChangeListener;
 
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.AfterCommandInvocator;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.util.Calculable;

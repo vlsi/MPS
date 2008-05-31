@@ -5,7 +5,6 @@ import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;

@@ -1,6 +1,5 @@
 package jetbrains.mps.workbench.actions.goTo.framework.nodes;
 
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;

@@ -2,7 +2,6 @@ package jetbrains.mps.ide.findusages;
 
 import jetbrains.mps.bootstrap.findUsagesLanguage.constraints.FinderDeclaration_Behavior;
 import jetbrains.mps.bootstrap.findUsagesLanguage.structure.FinderDeclaration;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;

@@ -3,7 +3,6 @@ package jetbrains.mps.project;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.action.ActionManager;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugin.IProjectHandler;

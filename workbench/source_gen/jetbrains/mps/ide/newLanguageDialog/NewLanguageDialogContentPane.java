@@ -7,7 +7,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.Language;
+
 import java.util.List;
 import org.jdesktop.beansbinding.AutoBinding;
 import java.util.ArrayList;
@@ -17,15 +17,14 @@ import org.jdesktop.beansbinding.Property;
 import org.jdesktop.beansbinding.BeanProperty;
 import org.jdesktop.beansbinding.Bindings;
 import java.io.File;
-import jetbrains.mps.smodel.MPSModuleRepository;
+
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.DirectoryUtil;
 import java.awt.Frame;
-import jetbrains.mps.ide.command.CommandProcessor;
+
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.projectLanguage.structure.LanguageDescriptor;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 
@@ -221,7 +220,7 @@ public class NewLanguageDialogContentPane extends JPanel {
       }
     }
     myThis.getDialog().dispose();
-    CommandProcessor.instance().executeCommand(new Runnable() {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
 
       public void run() {
         myThis.createNewLanguage();

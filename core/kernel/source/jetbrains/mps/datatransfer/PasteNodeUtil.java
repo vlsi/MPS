@@ -1,14 +1,10 @@
 package jetbrains.mps.datatransfer;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.*;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 
 /**
@@ -125,28 +121,28 @@ public class PasteNodeUtil {
       return false;
     }
     if (reallyPaste) {
-      CommandProcessor.instance().executeCommand(new Runnable() {
-        public void run() {
-          if (linkDeclaration.getMetaClass() == LinkMetaclass.reference) {
-            pasteTarget.setReferent(linkDeclaration.getRole(), pasteNode);
-            return;
-          }
-          if (anchorNode == null) {
-            pasteTarget.setChild(linkDeclaration.getRole(), pasteNode);
-            return;
-          }
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          public void run() {
+            if (linkDeclaration.getMetaClass() == LinkMetaclass.reference) {
+              pasteTarget.setReferent(linkDeclaration.getRole(), pasteNode);
+              return;
+            }
+            if (anchorNode == null) {
+              pasteTarget.setChild(linkDeclaration.getRole(), pasteNode);
+              return;
+            }
 
-          Cardinality cardinality = linkDeclaration.getSourceCardinality();
-          boolean uniqueChild = (cardinality == Cardinality._0__1 || cardinality == Cardinality._1);
-          boolean deleteOldChild = uniqueChild ||
-            (placeHint == PastePlaceHint.DEFAULT &&
-              anchorNode.getConceptDeclarationAdapter().hasConceptProperty(AbstractConceptDeclaration.CPR_Abstract));
-          pasteTarget.insertChild(anchorNode, linkDeclaration.getRole(), pasteNode, placeHint == PastePlaceHint.BEFORE_ANCHOR);
-          if (deleteOldChild) {
-            anchorNode.delete();
+            Cardinality cardinality = linkDeclaration.getSourceCardinality();
+            boolean uniqueChild = (cardinality == Cardinality._0__1 || cardinality == Cardinality._1);
+            boolean deleteOldChild = uniqueChild ||
+              (placeHint == PastePlaceHint.DEFAULT &&
+                anchorNode.getConceptDeclarationAdapter().hasConceptProperty(AbstractConceptDeclaration.CPR_Abstract));
+            pasteTarget.insertChild(anchorNode, linkDeclaration.getRole(), pasteNode, placeHint == PastePlaceHint.BEFORE_ANCHOR);
+            if (deleteOldChild) {
+              anchorNode.delete();
+            }
           }
-        }
-      });
+        });
     }
     return true;
   }

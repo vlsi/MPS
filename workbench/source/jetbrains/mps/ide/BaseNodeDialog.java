@@ -1,6 +1,5 @@
 package jetbrains.mps.ide;
 
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.TaskProgressSettings;

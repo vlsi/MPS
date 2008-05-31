@@ -4,7 +4,6 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.BootstrapLanguagesManager;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;

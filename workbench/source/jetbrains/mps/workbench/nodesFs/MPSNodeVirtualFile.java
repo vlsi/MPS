@@ -6,7 +6,6 @@ import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.util.Calculable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;

@@ -4,12 +4,10 @@ import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.helgins.checking.IEditorChecker;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.helgins.checking.EditorCheckerAdapter;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.command.CommandProcessor;
 
-import java.awt.Color;
 import java.util.*;
 
 /**
@@ -43,13 +41,13 @@ public class AutoResolver extends EditorCheckerAdapter {
 
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
-        CommandProcessor.instance().executeCommand(new Runnable() {
-          public void run() {
-            for (ResolveResult resolveResult : resolveResultArrayList) {
-              resolveResult.setTarget();
-            }
-          }
-        });
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+              public void run() {
+                for (ResolveResult resolveResult : resolveResultArrayList) {
+                  resolveResult.setTarget();
+                }
+              }
+            });
       }
     });
 

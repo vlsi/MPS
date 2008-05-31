@@ -19,7 +19,6 @@ import java.util.regex.Matcher;
 
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.core.structure.INamedConcept;

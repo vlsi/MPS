@@ -1,6 +1,5 @@
 package jetbrains.mps.ide;
 
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
 import jetbrains.mps.projectLanguage.structure.LanguageDescriptor;
@@ -145,7 +144,7 @@ public class NewGeneratorDialog extends BaseDialog {
     String targetLanguageName = (String) myTargetLanguageName.getSelectedItem();
     final Language targetLanguage = myContext.getScope().getLanguage(targetLanguageName);
 
-    CommandProcessor.instance().executeCommand(new Runnable() {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         createNewGenerator(mySourceLanguage, targetLanguage, dir);
       }

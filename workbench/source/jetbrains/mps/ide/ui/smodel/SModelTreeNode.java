@@ -9,7 +9,6 @@ import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionGroup;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.actions.model.CreateRootNodeGroup;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.ProjectPane;
@@ -784,19 +783,19 @@ public class SModelTreeNode extends MPSTreeNodeEx {
           Frame frame = SModelTreeNode.this.getOperationContext().getMainFrame();
           final String newName = JOptionPane.showInputDialog(frame, "Enter New Package Name", myName);
           if (newName != null) {
-            CommandProcessor.instance().executeCommand(new Runnable() {
-              public void run() {
-                for (SNode n : getNodesUnderPackage()) {
-                  String oldPackage = n.getProperty(PACK);
-                  String newPack = newName + oldPackage.substring(myName.length());
-                  if (newPack.length() > 0) {
-                    n.setProperty(PACK, newPack);
-                  } else {
-                    n.setProperty(PACK, null);
-                  }
-                }
-              }
-            });
+            ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+                      public void run() {
+                        for (SNode n : getNodesUnderPackage()) {
+                          String oldPackage = n.getProperty(PACK);
+                          String newPack = newName + oldPackage.substring(myName.length());
+                          if (newPack.length() > 0) {
+                            n.setProperty(PACK, newPack);
+                          } else {
+                            n.setProperty(PACK, null);
+                          }
+                        }
+                      }
+                    });
           }
         }
       });

@@ -6,7 +6,6 @@ import jetbrains.mps.runtime.BundleClassLoader;
 import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.BootstrapLanguagesManager;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;

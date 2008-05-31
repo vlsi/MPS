@@ -1,6 +1,5 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.ThreadUtils;
 
 /**

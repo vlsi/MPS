@@ -5,9 +5,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.Macros;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.transformationTest.matcher.*;
 import jetbrains.mps.project.MPSProject;
 
 import java.io.File;
@@ -26,7 +24,7 @@ public class TransformationTests {
 
   @Test
   public void equalNodeTest() throws Throwable {
-    CommandProcessor.instance().executeCommand(new Runnable() {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         SModel m = getModel();
         SNode s1 = m.getRootByName("c1");
@@ -38,7 +36,7 @@ public class TransformationTests {
 
   @Test
   public void conceptDiffernse() {
-    CommandProcessor.instance().executeCommand(new Runnable() {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         SModel m = getModel();
         SNode s1 = m.getRootByName("i1");
@@ -51,7 +49,7 @@ public class TransformationTests {
 
   @Test
   public void propertyDiffernce() {
-    CommandProcessor.instance().executeCommand(new Runnable() {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         SModel m = getModel();
         SNode s1 = m.getRootByName("c1");
@@ -68,7 +66,7 @@ public class TransformationTests {
 
   @Test
   public void childrenDiffernce() {
-    CommandProcessor.instance().executeCommand(new Runnable() {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         SModel m = getModel();
         SNode s1 = m.getRootByName("c1");
@@ -85,7 +83,7 @@ public class TransformationTests {
 
   @Test
   public void referenceDiffernce() {
-    CommandProcessor.instance().executeCommand(new Runnable() {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         SModel m = getModel();
         SNode s1 = m.getRootByName("differentReference1");

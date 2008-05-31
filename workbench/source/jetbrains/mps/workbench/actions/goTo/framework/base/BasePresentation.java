@@ -3,7 +3,6 @@ package jetbrains.mps.workbench.actions.goTo.framework.base;
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.openapi.editor.colors.TextAttributesKey;
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.Nullable;

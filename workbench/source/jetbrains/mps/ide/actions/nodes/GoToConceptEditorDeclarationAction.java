@@ -5,7 +5,6 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSAction;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
@@ -101,7 +100,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     // create ...
     final Language languageFinal = language;
     final SModelDescriptor languageEditorFinal = languageEditor;
-    CommandProcessor.instance().executeCommand(new Runnable() {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         if (languageEditorFinal == null) {
           LanguageAspect.EDITOR.createNew(languageFinal);

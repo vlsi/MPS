@@ -4,7 +4,6 @@ import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSAction;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.ide.genconf.GeneratorConfigUtil;
 import jetbrains.mps.project.IModule;

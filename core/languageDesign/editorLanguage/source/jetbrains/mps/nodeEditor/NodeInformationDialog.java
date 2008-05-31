@@ -4,7 +4,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.util.NameUtil;
 

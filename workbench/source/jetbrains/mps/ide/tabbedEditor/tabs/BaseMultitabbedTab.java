@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.AfterCommandInvocator;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.tabbedEditor.ILazyTab;
@@ -177,7 +176,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
   }
 
   private void createNewInnerTab() {
-    CommandProcessor.instance().executeCommand(new Runnable() {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         Pair<SNode, IOperationContext> nodeAndContext = createLoadableNode();
         if (nodeAndContext != null) {
@@ -190,7 +189,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
   }
 
   public void createNewItem() {
-    CommandProcessor.instance().executeCommand(new Runnable() {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         createEditor();
       }

@@ -10,7 +10,6 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
-import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -19,6 +18,7 @@ import javax.swing.JScrollPane;
 import java.awt.event.ActionEvent;
 
 import com.intellij.openapi.command.*;
+import com.intellij.openapi.command.CommandProcessor;
 
 public class ModuleRepositoryView extends DefaultTool {
   private MPSTree myTree = new MyTree();
@@ -55,31 +55,31 @@ public class ModuleRepositoryView extends DefaultTool {
 
       final TextTreeNode[] root = new TextTreeNode[1];
 
-      jetbrains.mps.ide.command.CommandProcessor.instance().executeCommand(new Runnable() {
-        public void run() {
-          root[0] = new TextTreeNode("Loaded Modules") {
-            {
-              setIcon(Icons.PROJECT_ICON);
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          public void run() {
+            root[0] = new TextTreeNode("Loaded Modules") {
+              {
+                setIcon(Icons.PROJECT_ICON);
+              }
+
+              public JPopupMenu getPopupMenu() {
+                JPopupMenu result = new JPopupMenu();
+
+                result.add(new AbstractActionWithEmptyIcon("Refresh") {
+                  public void actionPerformed(ActionEvent e) {
+                    myTree.rebuildNow();
+                  }
+                });
+
+                return result;
+              }
+
+            };
+            for (IModule module : SortUtil.sortModules(MPSModuleRepository.getInstance().getAllModules())) {
+              root[0].add(new LanguageTreeNode(module));
             }
-
-            public JPopupMenu getPopupMenu() {
-              JPopupMenu result = new JPopupMenu();
-
-              result.add(new AbstractActionWithEmptyIcon("Refresh") {
-                public void actionPerformed(ActionEvent e) {
-                  myTree.rebuildNow();
-                }
-              });
-
-              return result;
-            }
-
-          };
-          for (IModule module : SortUtil.sortModules(MPSModuleRepository.getInstance().getAllModules())) {
-            root[0].add(new LanguageTreeNode(module));
           }
-        }
-      });
+        });
 
       return root[0];
     }

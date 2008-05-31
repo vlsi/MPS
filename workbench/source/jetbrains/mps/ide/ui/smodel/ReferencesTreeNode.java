@@ -3,7 +3,6 @@ package jetbrains.mps.ide.ui.smodel;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
@@ -59,11 +58,11 @@ public class ReferencesTreeNode extends MPSTreeNodeEx {
 
           result.add(new AbstractActionWithEmptyIcon("Delete") {
             public void actionPerformed(ActionEvent e) {
-              CommandProcessor.instance().executeCommand(new Runnable() {
-                public void run() {
-                  myNode.removeReference(ref);
-                }
-              });
+              ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+                          public void run() {
+                            myNode.removeReference(ref);
+                          }
+                        });
             }
           });
 

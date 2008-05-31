@@ -2,7 +2,6 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.javastub.classpath.ClassPathModelRootManager;
 import jetbrains.mps.ide.BootstrapLanguagesManager;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.reloading.*;
@@ -11,9 +10,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.ModelRootsUtil;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.Calculable;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.JarFileEntryFile;
@@ -22,7 +18,6 @@ import jetbrains.mps.runtime.BytecodeLocator;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
-import java.awt.image.ImagingOpException;
 import java.net.URL;
 
 import com.intellij.openapi.util.Computable;
@@ -616,7 +611,7 @@ public abstract class AbstractModule implements IModule {
   }
   
   public void addModuleImport(final String moduleUID) {
-    CommandProcessor.instance().executeCommand(new Runnable() {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         ModuleDescriptor md = getModuleDescriptor();
         if (md == null) return;
@@ -638,7 +633,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   private ModuleDescriptor renameModuleImport(final String oldModuleUID, final String newModuleUID, final boolean setModuleDescriptor) {
-    return CommandProcessor.instance().executeCommand(new Computable<ModuleDescriptor>() {
+    return ModelAccess.instance().runWriteActionInCommand(new Computable<ModuleDescriptor>() {
       public ModuleDescriptor compute() {
         ModuleDescriptor md = getModuleDescriptor();
         if (md == null) return null;
@@ -663,7 +658,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   public void addUsedLanguage(final String languageNamespace) {
-    CommandProcessor.instance().executeCommand(new Runnable() {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         ModuleDescriptor md = getModuleDescriptor();
         if (md == null) return;
@@ -685,7 +680,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   private ModuleDescriptor renameUsedLanguage(final String oldLanguageNamespace, final String newLanguageNamespace, final boolean setModuleDescriptor) {
-    return CommandProcessor.instance().executeCommand(new Computable<ModuleDescriptor>() {
+    return ModelAccess.instance().runWriteActionInCommand(new Computable<ModuleDescriptor>() {
       public ModuleDescriptor compute() {
         ModuleDescriptor md = getModuleDescriptor();
         if (md == null) return null;

@@ -8,7 +8,6 @@ import jetbrains.mps.nodeEditor.IEditorMessage;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Calculable;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import org.jetbrains.annotations.Nullable;

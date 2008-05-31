@@ -1,6 +1,5 @@
 package jetbrains.mps.library;
 
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.BootstrapModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;

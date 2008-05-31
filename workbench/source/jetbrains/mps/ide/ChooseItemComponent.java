@@ -18,7 +18,6 @@ import java.awt.event.ActionEvent;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.command.CommandProcessor;
 
 /**
  * Created by IntelliJ IDEA.
@@ -82,11 +81,11 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
       public void actionPerformed(ActionEvent e) {
         final Item selectedItem = (Item) myList.getSelectedValue();
         if (selectedItem == null) return;
-        CommandProcessor.instance().executeCommand(new Runnable() {
-          public void run() {
-            doChoose(selectedItem);
-          }
-        });
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+              public void run() {
+                doChoose(selectedItem);
+              }
+            });
         askForDispose();
       }
     }, KeyStroke.getKeyStroke("ENTER"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);

@@ -6,7 +6,6 @@ import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import java.util.List;
 import java.util.ArrayList;
 
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.genconf.GenParameters;

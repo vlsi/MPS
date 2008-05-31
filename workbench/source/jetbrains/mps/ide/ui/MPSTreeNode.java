@@ -1,7 +1,6 @@
 package jetbrains.mps.ide.ui;
 
 import jetbrains.mps.ide.SystemInfo;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;

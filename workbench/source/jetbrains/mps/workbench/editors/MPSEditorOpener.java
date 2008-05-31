@@ -11,7 +11,6 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.*;
 import jetbrains.mps.workbench.editors.MPSEditorOpenHandlerOwner;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;

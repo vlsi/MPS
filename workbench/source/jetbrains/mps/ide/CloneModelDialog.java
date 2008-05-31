@@ -2,7 +2,6 @@ package jetbrains.mps.ide;
 
 import jetbrains.mps.datatransfer.CloneModelUtil;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.smodel.*;
@@ -53,7 +52,7 @@ public class CloneModelDialog extends BaseNodeDialog {
   }
 
   private void initNode() {
-    CommandProcessor.instance().executeCommand(new Runnable() {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         Language l = getOperationContext().getScope().getLanguage("jetbrains.mps.projectLanguage");
         assert l != null;
@@ -86,7 +85,7 @@ public class CloneModelDialog extends BaseNodeDialog {
         }
 
         for (String devKit : mySModel.getDevKitNamespaces()) {
-          jetbrains.mps.projectLanguage.structure.DevKit dk = DevKit.newInstance(myProjectModel);
+          DevKit dk = DevKit.newInstance(myProjectModel);
           dk.setName(devKit);
           myCloneModelProperties.addDevKit(dk);
         }

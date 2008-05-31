@@ -1,7 +1,6 @@
 package jetbrains.mps.refactoring;
 
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -147,12 +146,12 @@ public class NewRefactoringView extends DefaultTool {
   private void doRefactor() {
     new Thread() {
       public void run() {
-        CommandProcessor.instance().executeCommand(new Runnable() {
-          public void run() {
-            new RefactoringProcessor().doExecuteInThread(myActionContext, myRefactoringContext);
-            closeRefactoringView(myProject);
-          }
-        });
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+              public void run() {
+                new RefactoringProcessor().doExecuteInThread(myActionContext, myRefactoringContext);
+                closeRefactoringView(myProject);
+              }
+            });
       }
     }.start();
 

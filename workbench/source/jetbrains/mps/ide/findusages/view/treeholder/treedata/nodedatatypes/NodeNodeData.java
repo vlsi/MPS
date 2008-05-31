@@ -1,6 +1,5 @@
 package jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes;
 
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.components.ComponentsUtil;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;

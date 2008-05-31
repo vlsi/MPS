@@ -1,6 +1,5 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
@@ -326,13 +325,13 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       final SNode node = action.doSubstitute(prefix);
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          CommandProcessor.instance().executeCommand(new Runnable() {
-            public void run() {
-              EditorCell cell = myEditorComponent.findNodeCell(node);
-              myEditorComponent.changeSelection(cell);
-              IntelligentInputUtil.processCell(cell, myEditorComponent.getEditorContext(), pattern);
-            }
-          });
+          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+                  public void run() {
+                    EditorCell cell = myEditorComponent.findNodeCell(node);
+                    myEditorComponent.changeSelection(cell);
+                    IntelligentInputUtil.processCell(cell, myEditorComponent.getEditorContext(), pattern);
+                  }
+                });
         }
       });
     }
@@ -375,11 +374,11 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
         public void mouseClicked(MouseEvent e) {
           if (e.getClickCount() == 2) {
-            CommandProcessor.instance().executeCommand(new Runnable() {
-              public void run() {
-                doSubstituteSelection();
-              }
-            });
+            ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+                      public void run() {
+                        doSubstituteSelection();
+                      }
+                    });
           }
         }
       });

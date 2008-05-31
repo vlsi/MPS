@@ -2,7 +2,6 @@ package jetbrains.mps.ide.ui;
 
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSAction;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.ui.tooltip.TreeToolTipHandler;
 import jetbrains.mps.logging.Logger;

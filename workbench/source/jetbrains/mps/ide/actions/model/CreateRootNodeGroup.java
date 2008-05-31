@@ -6,15 +6,12 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionGroup;
 import jetbrains.mps.ide.action.MPSAction;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ToStringComparator;
-import jetbrains.mps.util.Calculable;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
@@ -101,7 +98,7 @@ public class CreateRootNodeGroup extends ActionGroup {
       }
 
       public void doExecute(@NotNull final ActionContext context) {
-        SNode node = CommandProcessor.instance().executeCommand(new Computable<SNode>() {
+        SNode node = ModelAccess.instance().runWriteActionInCommand(new Computable<SNode>() {
           public SNode compute() {
             SNode result = NodeFactoryManager.createNode((ConceptDeclaration) nodeConcept.getNode().getAdapter(), null, null, modelDescriptor.getSModel(), context.getScope());
             result.setProperty(SModelTreeNode.PACK, myPackage);

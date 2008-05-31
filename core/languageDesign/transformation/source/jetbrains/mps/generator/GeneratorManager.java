@@ -2,7 +2,6 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
 import jetbrains.mps.generator.GeneratorManager.MyState;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.messages.*;
 import jetbrains.mps.ide.progress.AdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.AdaptiveProgressMonitorFactory;

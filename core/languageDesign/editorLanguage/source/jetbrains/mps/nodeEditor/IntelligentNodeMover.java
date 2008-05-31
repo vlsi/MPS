@@ -1,10 +1,8 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
@@ -33,7 +31,7 @@ class IntelligentNodeMover {
 
   void move() {
     final List<SNode> nodes = new ArrayList<SNode>();
-    CommandProcessor.instance().executeCommand(new Runnable() {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         nodes.addAll(myEditorContext.getSelectedNodes());
 

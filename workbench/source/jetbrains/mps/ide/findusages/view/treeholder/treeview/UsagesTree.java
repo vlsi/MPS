@@ -1,7 +1,6 @@
 package jetbrains.mps.ide.findusages.view.treeholder.treeview;
 
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.view.treeholder.path.PathItemRole;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.TextOptions;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.BaseNodeData;

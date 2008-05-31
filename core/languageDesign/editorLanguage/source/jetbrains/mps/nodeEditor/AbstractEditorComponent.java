@@ -15,7 +15,6 @@ import jetbrains.mps.ide.action.*;
 import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.nodes.GoByFirstReferenceAction;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.AfterCommandInvocator;
 import jetbrains.mps.ide.findusages.view.UsagesView;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
@@ -1953,7 +1952,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
 
     // all other processing should be performed inside command
-    CommandProcessor.instance().executeCommand(new Runnable() {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         updateMPSActionsWithKeyStrokes(createActionContext());
         EditorContext editorContext = getEditorContext();
