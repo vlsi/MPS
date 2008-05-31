@@ -3,11 +3,11 @@ package jetbrains.mps.ide.findusages.view.optionseditor.options;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
-import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
+import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
@@ -80,7 +80,7 @@ public class FindersOptions extends BaseOptions<IResultProvider> {
         LOG.warning("Can't find a class " + finderClassName + " in " + languageNamespace + ". The finder is disabled.");
       }
     }
-    return TreeBuilder.forFinders(finders);
+    return FindUtils.makeProvider(finders);
   }
 
   public void write(Element element, MPSProject project) {

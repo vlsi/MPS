@@ -3,8 +3,8 @@ package jetbrains.mps.refactoring;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder;
-import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.view.UsagesView;
 import jetbrains.mps.ide.findusages.view.UsagesView.ButtonConfiguration;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
@@ -14,8 +14,8 @@ import jetbrains.mps.ide.toolsPane.ToolsPane;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.smodel.RefactoringProcessor;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.RefactoringProcessor;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
@@ -120,13 +120,13 @@ public class NewRefactoringView extends DefaultTool {
     Thread thread = new Thread() {
       public void run() {
         ModelAccess.instance().runReadAction(new Runnable() {
-              public void run() {
-                myUsagesView.setRunOptions(TreeBuilder.forFinder(new ConstantFinder(mySearchResults.getSearchResults())),
-                  null,
-                  new ButtonConfiguration(false, false, true),
-                  mySearchResults);
-              }
-            });
+          public void run() {
+            myUsagesView.setRunOptions(FindUtils.makeProvider(new ConstantFinder(mySearchResults.getSearchResults())),
+              null,
+              new ButtonConfiguration(false, false, true),
+              mySearchResults);
+          }
+        });
       }
     };
     thread.start();

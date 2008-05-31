@@ -6,6 +6,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
+import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IScope;
@@ -41,7 +42,7 @@ public class InterfaceAncestors_Finder extends GeneratedFinder {
     SNode current = node;
     for (SNode ancestor : SLinkOperations.getTargets(current, "extendedInterface", true)) {
       ListOperations.addElement(_results, ancestor);
-      for (SNode ancestorAncestor : this.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder", ancestor, scope, indicator)) {
+      for (SNode ancestorAncestor : FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder", ancestor, scope, indicator)) {
         ListOperations.addElement(_results, ancestorAncestor);
       }
     }

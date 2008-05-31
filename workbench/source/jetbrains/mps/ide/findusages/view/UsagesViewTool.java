@@ -17,8 +17,6 @@ import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder;
-import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.FindUtils;
-import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -194,7 +192,7 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
   }
 
   public void findUsages(final SearchQuery query, final boolean isRerunnable, final boolean showOne, final boolean newTab, BaseFinder... finders) {
-    findUsages(TreeBuilder.forFinders(finders), query, isRerunnable, showOne, newTab);
+    findUsages(FindUtils.makeProvider(finders), query, isRerunnable, showOne, newTab);
   }
 
   public void findUsages(final IResultProvider provider, final SearchQuery query, final boolean isRerunnable, final boolean showOne, final boolean newTab) {
@@ -209,7 +207,7 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
   public void showResults(final SearchQuery query, final SearchResults searchResults) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        showResults(searchResults, false, false, TreeBuilder.forFinder(new ConstantFinder(searchResults.getSearchResults())), query, false);
+        showResults(searchResults, false, false, FindUtils.makeProvider(new ConstantFinder(searchResults.getSearchResults())), query, false);
       }
     });
   }

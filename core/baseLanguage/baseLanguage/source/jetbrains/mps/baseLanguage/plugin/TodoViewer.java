@@ -1,8 +1,8 @@
 package jetbrains.mps.baseLanguage.plugin;
 
-import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.view.UsagesView;
 import jetbrains.mps.ide.findusages.view.UsagesView.ButtonConfiguration;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
@@ -54,7 +54,7 @@ public class TodoViewer extends JPanel {
         if (project == null) return;
 
         myUsagesView.setRunOptions(
-          TreeBuilder.forFinder(new TodoFinder()),
+          FindUtils.makeProvider(new TodoFinder()),
           new SearchQuery(project.getScope()),
           new ButtonConfiguration(true),
           new SearchResults()
