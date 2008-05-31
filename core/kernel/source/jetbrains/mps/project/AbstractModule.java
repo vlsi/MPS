@@ -25,6 +25,8 @@ import java.util.*;
 import java.awt.image.ImagingOpException;
 import java.net.URL;
 
+import com.intellij.openapi.util.Computable;
+
 public abstract class AbstractModule implements IModule {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
   public static final String RUNTIME_JAR_SUFFIX = "runtime.jar";
@@ -636,8 +638,8 @@ public abstract class AbstractModule implements IModule {
   }
 
   private ModuleDescriptor renameModuleImport(final String oldModuleUID, final String newModuleUID, final boolean setModuleDescriptor) {
-    return CommandProcessor.instance().executeCommand(new Calculable<ModuleDescriptor>() {
-      public ModuleDescriptor calculate() {
+    return CommandProcessor.instance().executeCommand(new Computable<ModuleDescriptor>() {
+      public ModuleDescriptor compute() {
         ModuleDescriptor md = getModuleDescriptor();
         if (md == null) return null;
 
@@ -683,8 +685,8 @@ public abstract class AbstractModule implements IModule {
   }
 
   private ModuleDescriptor renameUsedLanguage(final String oldLanguageNamespace, final String newLanguageNamespace, final boolean setModuleDescriptor) {
-    return CommandProcessor.instance().executeCommand(new Calculable<ModuleDescriptor>() {
-      public ModuleDescriptor calculate() {
+    return CommandProcessor.instance().executeCommand(new Computable<ModuleDescriptor>() {
+      public ModuleDescriptor compute() {
         ModuleDescriptor md = getModuleDescriptor();
         if (md == null) return null;
 

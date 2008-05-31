@@ -33,7 +33,7 @@ class IntelligentNodeMover {
 
   void move() {
     final List<SNode> nodes = new ArrayList<SNode>();
-    CommandProcessor.instance().executeCommand(myEditorContext, new Runnable() {
+    CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
         nodes.addAll(myEditorContext.getSelectedNodes());
 

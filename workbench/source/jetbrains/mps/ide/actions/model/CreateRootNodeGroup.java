@@ -101,8 +101,8 @@ public class CreateRootNodeGroup extends ActionGroup {
       }
 
       public void doExecute(@NotNull final ActionContext context) {
-        SNode node = CommandProcessor.instance().executeCommand(new Calculable<SNode>() {
-          public SNode calculate() {
+        SNode node = CommandProcessor.instance().executeCommand(new Computable<SNode>() {
+          public SNode compute() {
             SNode result = NodeFactoryManager.createNode((ConceptDeclaration) nodeConcept.getNode().getAdapter(), null, null, modelDescriptor.getSModel(), context.getScope());
             result.setProperty(SModelTreeNode.PACK, myPackage);
             modelDescriptor.getSModel().addRoot(result);

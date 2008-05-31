@@ -1,6 +1,7 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
@@ -348,8 +349,8 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   }
 
   private ModuleDescriptor renameExtendedLanguage(final String oldLanguageNamespace, final String newLanguageNamespace, final boolean setModuleDescriptor) {
-    return CommandProcessor.instance().executeCommand(new Calculable<ModuleDescriptor>() {
-      public ModuleDescriptor calculate() {
+    return CommandProcessor.instance().executeCommand(new Computable<ModuleDescriptor>() {
+      public ModuleDescriptor compute() {
         LanguageDescriptor ld = getLanguageDescriptor();
         if (ld == null) return null;
 

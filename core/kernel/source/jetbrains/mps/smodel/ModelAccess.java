@@ -8,6 +8,8 @@ import java.util.concurrent.locks.Lock;
 
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.command.CommandProcessor;
+import com.intellij.openapi.command.UndoConfirmationPolicy;
 
 // We access IDEA locking mechanism here in order to prevent different way of acquiring locks
 // We always first acquire IDEA's lock and only then acquire MPS's lock
@@ -120,6 +122,29 @@ public class ModelAccess {
     } else {
       return ApplicationManager.getApplication().runReadAction(computable);
     }
+  }
+
+  public <T> T runWriteActionInCommand(final Computable<T> c) {
+    return runWriteAction(new Computable<T>() {
+      public T compute() {
+        final Object[] result = new Object[1];
+        CommandProcessor.getInstance().executeCommand(null, new Runnable() {
+          public void run() {
+            result[0] = c.compute();
+          }
+        }, "name", "groupId", UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+        return (T) result[0];
+      }
+    });
+  }
+
+  public void runWriteActionInCommand(final Runnable r) {
+    runWriteActionInCommand(new Computable<Object>() {
+      public Object compute() {
+        r.run();
+        return null;
+      }
+    });
   }
 
   public boolean canWrite() {

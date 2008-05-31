@@ -26,6 +26,7 @@ import java.util.*;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import com.intellij.openapi.util.Computable;
 
 public class RefactoringProcessor {
   private static final Logger LOG = Logger.getLogger(RefactoringProcessor.class);
@@ -114,8 +115,8 @@ public class RefactoringProcessor {
       monitor.start("refactoring", estimatedTime);
       monitor.startLeafTask(refactoringTaskName, "refactoring", estimatedTime);
 
-      Map<IModule, List<SModel>> moduleToModelsMap = CommandProcessor.instance().executeCommand(new Calculable<Map<IModule, List<SModel>>>() {
-        public Map<IModule, List<SModel>> calculate() {
+      Map<IModule, List<SModel>> moduleToModelsMap = CommandProcessor.instance().executeCommand(new Computable<Map<IModule, List<SModel>>>() {
+        public Map<IModule, List<SModel>> compute() {
           SModelDescriptor modelDescriptor = context.getModel();
           SModelUID initialModelUID = modelDescriptor.getModelUID();
           refactoring.doRefactor(context, refactoringContext);
