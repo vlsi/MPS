@@ -44,7 +44,7 @@ public class ReferenceConceptUtil {
       expectedReferentRole = matches[1];
     }
 
-    List<LinkDeclaration> links = SModelSearchUtil.getReferenceLinkDeclarationsExcludingOverridden(concept);
+    List<LinkDeclaration> links = SModelSearchUtil.getReferenceLinkDeclarations(concept);
     if (expectedReferentRole != null) {
       for (LinkDeclaration link : links) {
         if (expectedReferentRole.equals(link.getRole())) {

@@ -17,8 +17,7 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   </language>
   <language namespace="jetbrains.mps.quotation" />
-  <language namespace="jetbrains.mps.bootstrap.actionsLanguage" />
-  <language namespace="jetbrains.mps.core" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
@@ -711,59 +710,17 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1149280736094">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1149280736095">
-              <property name="name" value="links" />
-              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1149280736096">
-                <link role="classifier" targetNodeId="3.~List" resolveInfo="List" />
-              </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1149280781302">
-                <link role="classConcept" targetNodeId="4.~SModelSearchUtil" resolveInfo="SModelSearchUtil" />
-                <link role="baseMethodDeclaration" targetNodeId="4.~SModelSearchUtil.getAggregationLinkDeclarationsExcludingOverridden(jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration):java.util.List" resolveInfo="getAggregationLinkDeclarationsExcludingOverridden" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668169851">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1149280790183">
-                    <link role="variableDeclaration" targetNodeId="1149280698777" resolveInfo="conceptOfParent" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1171037719098" />
-                </node>
-              </node>
-            </node>
-          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1149280801716">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1149280804718">
               <link role="baseMethodDeclaration" targetNodeId="4.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1171037736401">
-                <link role="classConcept" targetNodeId="6.~BaseAdapter" resolveInfo="BaseAdapter" />
-                <link role="baseMethodDeclaration" targetNodeId="6.~BaseAdapter.toNodes(java.util.List):java.util.List" resolveInfo="toNodes" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1173134904081">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1173134904082">
-                    <link role="variableDeclaration" targetNodeId="1149280736095" resolveInfo="links" />
-                  </node>
-                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1173134904083">
-                    <link role="classifier" targetNodeId="3.~List" resolveInfo="List" />
-                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.UpperBoundType" id="1173134904084">
-                      <node role="bound" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1173134904085">
-                        <link role="classifier" targetNodeId="6.~INodeAdapter" resolveInfo="INodeAdapter" />
-                      </node>
-                    </node>
-                  </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212192145934">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1212192143933">
+                  <link role="variableDeclaration" targetNodeId="1149280698777" resolveInfo="conceptOfParent" />
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1212192147515">
+                  <link role="conceptMethodDeclaration" targetNodeId="13.1212184463482" resolveInfo="getAggregationLinkDeclarations" />
                 </node>
               </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="searchScopeCanCreate" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_CanCreate" id="1159217105516">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1159217105517">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1159217109065">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227957558">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227935801">
-                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_referenceNode" id="1159217115200" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1173898345504">
-                  <link role="link" targetNodeId="1.1144195362400" />
-                </node>
-              </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNotNullOperation" id="1173389785711" />
             </node>
           </node>
         </node>

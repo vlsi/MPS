@@ -33,7 +33,7 @@ public class SModelSearchUtil {
     return new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
   }
 
-  public static List<LinkDeclaration> getAggregationLinkDeclarationsExcludingOverridden(AbstractConceptDeclaration concept) {
+  public static List<LinkDeclaration> getAggregationLinkDeclarations(AbstractConceptDeclaration concept) {
     List<LinkDeclaration> list = new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
     List<LinkDeclaration> result = new ArrayList<LinkDeclaration>();
     for (LinkDeclaration link : list) {
@@ -44,7 +44,7 @@ public class SModelSearchUtil {
     return result;
   }
 
-  public static List<LinkDeclaration> getReferenceLinkDeclarationsExcludingOverridden(AbstractConceptDeclaration concept) {
+  public static List<LinkDeclaration> getReferenceLinkDeclarations(AbstractConceptDeclaration concept) {
     List<LinkDeclaration> list = new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
     List<LinkDeclaration> result = new ArrayList<LinkDeclaration>();
     for (LinkDeclaration link : list) {
