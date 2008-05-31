@@ -361,10 +361,11 @@ public class MessagesViewTool extends BaseMPSTool implements PersistentStateComp
 
   private ToggleAction createToggleAction(String tooltip, Icon icon, final Computable<Boolean> isEnabled) {
     return new ToggleAction("", tooltip, icon) {
+      private Boolean myEnabled = false;
       private boolean mySelected = true;
 
       public boolean isSelected(AnActionEvent e) {
-        return mySelected;
+        return mySelected && myEnabled;
       }
 
       public void setSelected(AnActionEvent e, boolean state) {
@@ -374,7 +375,10 @@ public class MessagesViewTool extends BaseMPSTool implements PersistentStateComp
 
       public void update(AnActionEvent e) {
         super.update(e);
-        if (isEnabled != null) e.getPresentation().setEnabled(isEnabled.compute());
+        if (isEnabled != null) {
+          myEnabled = isEnabled.compute();
+          e.getPresentation().setEnabled(myEnabled);
+        }
       }
     };
   }
