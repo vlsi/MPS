@@ -6,6 +6,7 @@ import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.MessageViewLoggingHandler;
@@ -45,9 +46,21 @@ public class MessagesViewTool extends BaseMPSTool implements PersistentStateComp
   public static final Icon ERROR_ICON = new ImageIcon(MessagesViewTool.class.getResource("error.png"));
   public static final Icon WARNING_ICON = new ImageIcon(MessagesViewTool.class.getResource("warning.png"));
 
-  private ToggleAction myErrorsAction = createToggleAction("Show Error Messages", ERROR_ICON);
-  private ToggleAction myWarningsAction = createToggleAction("Show Warnings Messages", WARNING_ICON);
-  private ToggleAction myInfoAction = createToggleAction("Show Information Messages", INFORMATION_ICON);
+  private ToggleAction myErrorsAction = createToggleAction("Show Error Messages", ERROR_ICON, new Computable<Boolean>() {
+    public Boolean compute() {
+      return hasErrors();
+    }
+  });
+  private ToggleAction myWarningsAction = createToggleAction("Show Warnings Messages", WARNING_ICON, new Computable<Boolean>() {
+    public Boolean compute() {
+      return hasWarnings();
+    }
+  });
+  private ToggleAction myInfoAction = createToggleAction("Show Information Messages", INFORMATION_ICON, new Computable<Boolean>() {
+    public Boolean compute() {
+      return hasInfo();
+    }
+  });
 
   private BlameDialog myBlameDialog;
   private BlameDialog.MyState myDialogState;
@@ -199,10 +212,24 @@ public class MessagesViewTool extends BaseMPSTool implements PersistentStateComp
   //------------MESSAGES STUFF---------------
 
   public boolean hasErrors() {
-    ListModel model = myList.getModel();
-    for (int i = 0; i < model.getSize(); i++) {
-      Message m = (Message) model.getElementAt(i);
+    for (Message m : myMessages) {
       if (m.getKind() == MessageKind.ERROR) return true;
+    }
+
+    return false;
+  }
+
+  public boolean hasWarnings() {
+    for (Message m : myMessages) {
+      if (m.getKind() == MessageKind.WARNING) return true;
+    }
+
+    return false;
+  }
+
+  public boolean hasInfo() {
+    for (Message m : myMessages) {
+      if (m.getKind() == MessageKind.INFORMATION) return true;
     }
 
     return false;
@@ -332,7 +359,7 @@ public class MessagesViewTool extends BaseMPSTool implements PersistentStateComp
     return width;
   }
 
-  private ToggleAction createToggleAction(String tooltip, Icon icon) {
+  private ToggleAction createToggleAction(String tooltip, Icon icon, final Computable<Boolean> isEnabled) {
     return new ToggleAction("", tooltip, icon) {
       private boolean mySelected = true;
 
@@ -343,6 +370,11 @@ public class MessagesViewTool extends BaseMPSTool implements PersistentStateComp
       public void setSelected(AnActionEvent e, boolean state) {
         mySelected = state;
         rebuildModel();
+      }
+
+      public void update(AnActionEvent e) {
+        super.update(e);
+        if (isEnabled != null) e.getPresentation().setEnabled(isEnabled.compute());
       }
     };
   }
