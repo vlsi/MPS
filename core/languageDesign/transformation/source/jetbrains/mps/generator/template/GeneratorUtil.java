@@ -16,6 +16,7 @@ import jetbrains.mps.generator.GenerationFailueException;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.transformation.TLBase.structure.*;
 import jetbrains.mps.util.Pair;
@@ -648,7 +649,7 @@ public class GeneratorUtil {
   private static boolean checktLinkTarget(SNode sourceNode, String role, SNode targetNode, boolean child, boolean riseError) {
     String relationKind = child ? "child" : "referent";
     AbstractConceptDeclaration concept = sourceNode.getConceptDeclarationAdapter();
-    LinkDeclaration link = SModelUtil_new.findMostSpecificLinkDeclaration(concept, role);
+    LinkDeclaration link = SModelSearchUtil.findMostSpecificLinkDeclaration(concept, role);
     if (link == null) {
       reportProblem("concept '" + concept.getName() + "' can't have " + relationKind + " with role '" + role + "'", sourceNode, riseError);
       reportProblem(" -- was " + relationKind + (child ? ": " : " (hidden in editor): ") + targetNode.getDebugText(), targetNode, riseError);

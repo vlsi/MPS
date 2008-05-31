@@ -29,6 +29,12 @@ public class SModelSearchUtil {
     return new SModelSearchUtil._ConceptsFromModelLanguagesScope(model, rootsOnly, scope);
   }
 
+
+  public static LinkDeclaration findMostSpecificLinkDeclaration(AbstractConceptDeclaration conceptDeclaration, String role) {
+    if (role == null) return null;
+    return new ConceptAndSuperConceptsScope(conceptDeclaration).getMostSpecificLinkDeclarationByRole(role);
+  }
+
   public static List<LinkDeclaration> getLinkDeclarations(AbstractConceptDeclaration concept) {
     return new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
   }
@@ -55,6 +61,8 @@ public class SModelSearchUtil {
     return result;
   }
 
+
+
   public static List<PropertyDeclaration> getPropertyDeclarations(AbstractConceptDeclaration concept) {
     return new ConceptAndSuperConceptsScope(concept).getPropertyDeclarations();
   }
@@ -63,6 +71,8 @@ public class SModelSearchUtil {
     if (concept == null || propertyName == null) return null;
     return new ConceptAndSuperConceptsScope(concept).getPropertyDeclarationByName(propertyName);
   }
+
+
 
   public static List<ConceptPropertyDeclaration> getConceptPropertyDeclarations(AbstractConceptDeclaration concept) {
     List<ConceptPropertyDeclaration> result = new ArrayList<ConceptPropertyDeclaration>();
