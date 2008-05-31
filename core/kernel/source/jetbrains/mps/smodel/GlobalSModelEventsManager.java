@@ -4,10 +4,6 @@ import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.command.CommandAdapter;
-import jetbrains.mps.ide.command.CommandEvent;
-import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.command.ICommandListener;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -20,6 +16,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.command.CommandListener;
+import com.intellij.openapi.command.CommandProcessor;
+import com.intellij.openapi.command.CommandAdapter;
+import com.intellij.openapi.command.CommandEvent;
 
 public class GlobalSModelEventsManager implements ApplicationComponent {
   private static Logger LOG = Logger.getLogger(GlobalSModelEventsManager.class);
@@ -35,7 +35,7 @@ public class GlobalSModelEventsManager implements ApplicationComponent {
 
   private SModelListener myRelayListener = createRelayListener();
   private SModelListener myCommandEventsCollector = createCommandEventsCollector();
-  private ICommandListener myCommandListener = new MyCommandListener();
+  private CommandListener myCommandListener = new MyCommandListener();
   private List<SModelEvent> myCommandEvents = new ArrayList<SModelEvent>();
 
   public GlobalSModelEventsManager(SModelRepository SModelRepository) {
@@ -61,7 +61,7 @@ public class GlobalSModelEventsManager implements ApplicationComponent {
       }
     });
 
-    CommandProcessor.instance().addCommandListener(myCommandListener);
+    CommandProcessor.getInstance().addCommandListener(myCommandListener);
   }
 
   @NonNls
@@ -162,7 +162,7 @@ public class GlobalSModelEventsManager implements ApplicationComponent {
       myCommandEvents.clear();
     }
 
-    public void commandFinished(CommandEvent event) {
+    public void beforeCommandFinished(CommandEvent event) {
       if (myCommandEvents.isEmpty()) return;
 
       for (SModelCommandListener l : myGlobalCommandListeners) {

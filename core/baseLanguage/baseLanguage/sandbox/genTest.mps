@@ -302,6 +302,14 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1212245607486">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212245607487">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1212245607488" />
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1212245608568">
+            <property name="value" value="true" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.WhileStatement" id="1211888756673">
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1211888757895">
             <property name="value" value="true" />

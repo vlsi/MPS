@@ -3,6 +3,8 @@ package jetbrains.mps.nodeEditor;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.application.RuntimeInterruptedException;
+import com.intellij.openapi.command.undo.UndoManager;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRuleUtil;
 import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRule_Action;
 import jetbrains.mps.helgins.inference.IErrorReporter;
@@ -15,7 +17,6 @@ import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.nodes.GoByFirstReferenceAction;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.AfterCommandInvocator;
-import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.findusages.view.UsagesView;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.nodeEditor.FocusPolicyUtil;
@@ -61,10 +62,6 @@ import java.util.*;
 import java.util.List;
 
 
-/**
- * Author: Sergey Dmitriev
- * Created Sep 14, 2003
- */
 public abstract class AbstractEditorComponent extends JComponent implements Scrollable, IActionDataProvider, IEditorComponent, DataProvider {
   private static final Logger LOG = Logger.getLogger(AbstractEditorComponent.class);
   public static final String EDITOR_POPUP_MENU_ACTIONS = EditorPopup_ActionGroup.ID;
@@ -479,7 +476,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     ToolTipManager.sharedInstance().registerComponent(this);
     CaretBlinker.getInstance().registerEditor(this);
-    addRebuildListener(UndoManager.instance().rebuildListener());
   }
 
   protected void onEscape() {
@@ -1912,15 +1908,18 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   public void processKeyPressed(final KeyEvent keyEvent) {
     if (keyEvent.isConsumed()) return;
 
+    Project project = getOperationContext().getProject();
+    UndoManager undoManager = UndoManager.getInstance(project);
+
     // hardcoded undo/redo action
     if (keyEvent.getKeyCode() == KeyEvent.VK_Z && keyEvent.isControlDown()) {
       if (keyEvent.isShiftDown()) {
-        if (UndoManager.instance().isRedoAvailable()) {
-          UndoManager.instance().redo(getEditorContext());
+        if (undoManager.isRedoAvailable(null)) {
+          undoManager.redo(null);
         }
       } else {
-        if (UndoManager.instance().isUndoAvailable()) {
-          UndoManager.instance().undo(getEditorContext());
+        if (undoManager.isUndoAvailable(null)) {
+          undoManager.undo(null);
         }
       }
       keyEvent.consume();

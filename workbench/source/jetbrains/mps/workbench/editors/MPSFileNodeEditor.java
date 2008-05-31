@@ -19,6 +19,7 @@ import java.beans.PropertyChangeListener;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.command.AfterCommandInvocator;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.util.EqualUtil;
@@ -70,6 +71,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor 
   @NotNull
   public FileEditorState getState(@NotNull FileEditorStateLevel level) {
     MyFileEditorState state = new MyFileEditorState();
+    state.myLevel = level;
     if (myNodeEditor.getEditorContext() != null) {
       state.myMemento = myNodeEditor.getEditorContext().createMemento();
     }
@@ -78,8 +80,15 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor 
 
   public void setState(final @NotNull FileEditorState state) {
     if (!(state instanceof MyFileEditorState)) return;
-    MyFileEditorState currentState = (MyFileEditorState) state;
-    myNodeEditor.getEditorContext().setMemento(currentState.myMemento);
+    final MyFileEditorState currentState = (MyFileEditorState) state;
+
+    //need to invoke only after all the events are handled since undo manager might call this method
+    AfterCommandInvocator.getInstance().invokeAfterCommand(new Runnable() {
+      public void run() {
+        myNodeEditor.getEditorContext().setMemento(currentState.myMemento);
+      }
+    });
+
   }
 
   public boolean isModified() {
@@ -127,15 +136,26 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor 
   
   private class MyFileEditorState implements FileEditorState {
     private Object myMemento;
+    private FileEditorStateLevel myLevel;
 
     public boolean canBeMergedWith(FileEditorState otherState, FileEditorStateLevel level) {
       return false;
+    }
+
+    public int hashCode() {
+      return myMemento.hashCode() + myLevel.hashCode() * 23;
     }
 
     public boolean equals(Object obj) {
       if (!(obj instanceof MyFileEditorState)) {
         return false;
       }
+
+      //todo find a more precise way of comparing undo level state without causing strange behavior
+      if (myLevel == FileEditorStateLevel.UNDO) {
+        return true;
+      }
+
       MyFileEditorState state = (MyFileEditorState) obj;
       return EqualUtil.equals(state.myMemento, myMemento);
     }

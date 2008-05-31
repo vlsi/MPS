@@ -250,10 +250,10 @@ public class EditorContext {
           });
         }
         AfterCommandInvocator.getInstance().invokeNowOrAfterCommand(new Runnable() {
-              public void run() {
-                myNodeEditorComponent.relayout();
-              }
-            });
+          public void run() {
+            myNodeEditorComponent.relayout();
+          }
+        });
         return true;
       }
     }

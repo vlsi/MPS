@@ -1,7 +1,6 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.ide.command.AfterCommandInvocator;
-import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;

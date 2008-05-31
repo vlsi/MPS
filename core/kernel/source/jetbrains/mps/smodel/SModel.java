@@ -5,9 +5,6 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.ide.command.CommandEvent;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.ICommandListener;
-import jetbrains.mps.ide.command.undo.IUndoableAction;
-import jetbrains.mps.ide.command.undo.UndoManager;
-import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
@@ -205,8 +202,6 @@ public class SModel implements Iterable<SNode> {
     if (ModelChange.needRegisterUndo(this)) {
 
       UndoUtil.addUndoableAction(new AddOrRemoveRootUndoableAction(node, false));
-
-      UndoManager.instance().undoableActionPerformed(new UndoRootAddOrDelete(node, false));
     }
     fireRootAddedEvent(node);
   }
@@ -218,8 +213,6 @@ public class SModel implements Iterable<SNode> {
       node.unRegisterFromModel();
       if (ModelChange.needRegisterUndo(this)) {
         UndoUtil.addUndoableAction(new AddOrRemoveRootUndoableAction(node, true));
-
-        UndoManager.instance().undoableActionPerformed(new UndoRootAddOrDelete(node, true));
       }
       fireRootRemovedEvent(node);
     }
@@ -278,7 +271,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   private boolean canFireEvent() {
-    return !myLoading /*&& !UndoManager.instance().isUndoOrRedoInProgress() */;
+    return !myLoading;
   }
 
   void fireDevKitAddedEvent(@NotNull String devkitNamespace) {
@@ -1154,30 +1147,6 @@ public class SModel implements Iterable<SNode> {
         "uid=" + myModelDescriptor + ", " +
         "referenceId=" + myReferenceID + ", " +
         "usedVersion=" + myUsedVersion + ")";
-    }
-  }
-
-  private static class UndoRootAddOrDelete implements IUndoableAction {
-    private SNode myRoot;
-    private boolean myAdd;
-
-    UndoRootAddOrDelete(SNode root, boolean isAdd) {
-      myRoot = root;
-      myAdd = isAdd;
-    }
-
-    public void undo() throws UnexpectedUndoException {
-      SModel model = myRoot.getModel();
-      if (myAdd) {
-        model.addRoot(myRoot);
-      } else {
-        model.removeRoot(myRoot);
-      }
-      UndoManager.instance().undoableActionPerformed(new UndoRootAddOrDelete(myRoot, !myAdd));
-    }
-
-    public String toString() {
-      return (myAdd ? "add" : "delete") + " root " + myRoot;
     }
   }
 

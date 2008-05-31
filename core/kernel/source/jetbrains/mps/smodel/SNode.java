@@ -5,9 +5,6 @@ import jetbrains.mps.core.constraints.BaseConcept_Behavior;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.core.structure.IResolveInfo;
-import jetbrains.mps.ide.command.undo.IUndoableAction;
-import jetbrains.mps.ide.command.undo.UndoManager;
-import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.project.GlobalScope;
@@ -686,16 +683,6 @@ public final class SNode {
       final String pv = propertyValue;
 
       UndoUtil.addUndoableAction(new PropertyChangeUndoableAction(this, propertyName, oldValue, propertyValue));
-
-      UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
-        public void undo() throws UnexpectedUndoException {
-          setProperty(propertyName_, oldValue);
-        }
-
-        public String toString() {
-          return "set property " + propertyName_ + " in " + SNode.this + " to " + pv;
-        }
-      });
     }
 
     if (ModelChange.needFireEvents(getModel(), this)) {
@@ -913,16 +900,6 @@ public final class SNode {
 
     if (ModelChange.needRegisterUndo(getModel())) {
       UndoUtil.addUndoableAction(new RemoveChildUndoableAction(this, index, wasRole, wasChild));
-
-      UndoManager.instance().undoableActionPerformed(new IUndoableAction() {
-        public void undo() {
-          insertChildAt(index, wasRole, wasChild);
-        }
-
-        public String toString() {
-          return "remove child " + wasChild.getId() + " at role " + wasRole;
-        }
-      });
     }
 
     if (ModelChange.needFireEvents(getModel(), this)) {
@@ -963,16 +940,6 @@ public final class SNode {
 
     if (ModelChange.needRegisterUndo(getModel())) {
       UndoUtil.addUndoableAction(new InsertChildAtUndoableAction(this, index, _role, child));
-
-      UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
-        public void undo() throws UnexpectedUndoException {
-          removeChildAt(index);
-        }
-
-        public String toString() {
-          return "insert child " + child.getId() + " at role " + role;
-        }
-      });
     }
 
     if (ModelChange.needFireEvents(getModel(), this)) {
@@ -1168,16 +1135,6 @@ public final class SNode {
 
     if (ModelChange.needRegisterUndo(getModel())) {
       UndoUtil.addUndoableAction(new InsertReferenceAtUndoableAction(this, i, reference));
-      
-      UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
-        public void undo() throws UnexpectedUndoException {
-          removeReferenceAt(i);
-        }
-
-        public String toString() {
-          return "add reference " + reference;
-        }
-      });
     }
 
     if (ModelChange.needFireEvents(getModel(), this)) {
@@ -1192,16 +1149,6 @@ public final class SNode {
 
     if (ModelChange.needRegisterUndo(getModel())) {
       UndoUtil.addUndoableAction(new RemoveReferenceAtUndoableAction(this, i, reference));
-
-      UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
-        public void undo() {
-          insertReferenceAt(i, reference);
-        }
-
-        public String toString() {
-          return "remove reference " + reference;
-        }
-      });
     }
 
     if (ModelChange.needFireEvents(getModel(), this)) {
@@ -1400,16 +1347,6 @@ public final class SNode {
     getModel().firePropertyChangedEvent(this, RIGHT_TRANSFORM_HINT, null, "", true, false);
 
     UndoUtil.addUndoableAction(new AddRTHintUndoableAction(this));
-
-    UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
-      public void undo() throws UnexpectedUndoException {
-        removeRightTransformHint();
-      }
-
-      public String toString() {
-        return "add RTHint";
-      }
-    });
   }
 
   public boolean hasRightTransformHint() {
@@ -1422,16 +1359,6 @@ public final class SNode {
     getModel().firePropertyChangedEvent(this, RIGHT_TRANSFORM_HINT, "", null, true, true);
 
     UndoUtil.addUndoableAction(new RemoveRTHintUndoableAction(this));
-
-    UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
-      public void undo() throws UnexpectedUndoException {
-        addRightTransformHint();
-      }
-
-      public String toString() {
-        return "removeRTHint";
-      }
-    });
   }
 
   @Nullable
@@ -1705,13 +1632,5 @@ public final class SNode {
       return children.get(index + 1);
     }
     return null;
-  }
-
-  
-
-  abstract class NodeUndoableAction implements IUndoableAction {
-    public SNode getNode() {
-      return SNode.this;
-    }
   }
 }

@@ -4,7 +4,6 @@ import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugin.IProjectHandler;
@@ -488,7 +487,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
         SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
 
         TypeChecker.getInstance().clearForReload();
-        UndoManager.instance().clear();
         ActionManager.instance().clearAll();
 
         MPSModuleRepository.getInstance().removeUnusedModules();
