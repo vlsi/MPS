@@ -1,7 +1,6 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.ide.*;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjects;
 import jetbrains.mps.logging.Logger;
@@ -21,6 +20,7 @@ import java.util.*;
 
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.command.CommandProcessor;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -127,10 +127,10 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
       public void run() {
         if (IdeMain.isTestMode()) return;
 
-        CommandProcessor commandProcessor = CommandProcessor.instance();
+        CommandProcessor commandProcessor = CommandProcessor.getInstance();
         while (true) {
           try {
-            while (commandProcessor.isInsideCommand()) {
+            while (commandProcessor.getCurrentCommand() != null) {
               Thread.sleep(200);
             }
             doUpdate();

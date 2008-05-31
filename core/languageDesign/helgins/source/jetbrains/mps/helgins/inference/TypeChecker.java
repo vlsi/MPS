@@ -1,7 +1,6 @@
 package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.bootstrap.helgins.runtime.RuntimeSupport;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -27,6 +26,7 @@ import java.util.*;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.command.CommandProcessor;
 
 public class TypeChecker implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(TypeChecker.class);
@@ -451,7 +451,7 @@ public class TypeChecker implements ApplicationComponent {
     }
 
     public void eventFired(SModelEvent event) {
-      if (CommandProcessor.instance().isInsideCommand()) return;
+      if (CommandProcessor.getInstance().getCurrentCommand() != null) return;
       event.accept(myVisitor);
     }
   }

@@ -1,6 +1,5 @@
 package jetbrains.mps.logging;
 
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.smodel.ModelAccess;
 
 import java.util.ArrayList;
@@ -9,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Level;
+import com.intellij.openapi.command.CommandProcessor;
 
 public class Logger {
   private static Map<String, Logger> ourLoggers = new HashMap<String, Logger>();
@@ -221,11 +221,11 @@ public class Logger {
   }
 
   public void assertInCommand() {
-    assertLog(CommandProcessor.instance().isInsideCommand(), "This action must be performed in command");
+    assertLog(CommandProcessor.getInstance().getCurrentCommand() != null, "This action must be performed in command");
   }
 
   public void assertNotInCommand() {
-    assertLog(!CommandProcessor.instance().isInsideCommand(), "This action should be performed outside of command");
+    assertLog(CommandProcessor.getInstance().getCurrentCommand() == null, "This action should be performed outside of command");
   }
 }
 

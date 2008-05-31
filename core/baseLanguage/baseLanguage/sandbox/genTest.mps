@@ -14,7 +14,7 @@
   <import index="7" modelUID="java.io@java_stub" version="-1" />
   <import index="8" modelUID="java.util@java_stub" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1196072461367">
-    <property name="name" value="ABC" />
+    <property name="name" value="ABCssss" />
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1201384189984">
       <property name="name" value="k2" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1201384189985" />
@@ -310,6 +310,7 @@
             <property name="value" value="true" />
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1212246665357" />
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.WhileStatement" id="1211888756673">
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1211888757895">
             <property name="value" value="true" />
