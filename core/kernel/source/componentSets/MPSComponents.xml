@@ -225,10 +225,6 @@
       <implementation-class>jetbrains.mps.cleanup.CleanupManager</implementation-class>
     </component>
 
-    <component>
-      <implementation-class>jetbrains.mps.ide.command.AfterCommandInvocator</implementation-class>
-    </component>
-
   </application-components>
 
   <project-components>

@@ -20,7 +20,6 @@ import jetbrains.mps.ide.action.*;
 import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.nodes.GoByFirstReferenceAction;
-import jetbrains.mps.ide.command.AfterCommandInvocator;
 import jetbrains.mps.ide.findusages.view.UsagesView;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.nodeEditor.FocusPolicyUtil;
