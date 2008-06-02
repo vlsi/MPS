@@ -308,26 +308,17 @@ public class EditorManager {
 
   private void removeRTHintAndChangeSelection(final EditorContext context, SNode node, final CellInfo cellInfoToSelect) {
     node.removeRightTransformHint();
-    AfterCommandInvocator.getInstance().invokeAfterCommand(new Runnable() {
-      public void run() {
-        AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
-        if (cellInfoToSelect == null) return;
-        EditorCell newlySelectedCell = cellInfoToSelect.findCell(nodeEditorComponent);
-        EditorCell nextSelectableCell = nodeEditorComponent.findNextSelectableCell(newlySelectedCell);
-        if (nextSelectableCell != null) {
-          context.getNodeEditorComponent().changeSelection(nextSelectableCell);
-          if (nextSelectableCell instanceof EditorCell_Label) {
-            ((EditorCell_Label) nextSelectableCell).getRenderedTextLine().setCaretPosition(0);
-          }
-        } else {
-          if (newlySelectedCell == null) return;
-          context.getNodeEditorComponent().changeSelection(newlySelectedCell);
-          if (newlySelectedCell instanceof EditorCell_Label) {
-            ((EditorCell_Label) newlySelectedCell).getRenderedTextLine().setCaretPositionToLast();
-          }
-        }
-      }
-    });
+
+    context.flushEvents();
+
+    AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
+    if (cellInfoToSelect == null) return;
+    EditorCell newlySelectedCell = cellInfoToSelect.findCell(nodeEditorComponent);
+    if (newlySelectedCell == null) return;
+    context.getNodeEditorComponent().changeSelection(newlySelectedCell);
+    if (newlySelectedCell instanceof EditorCell_Label) {
+      ((EditorCell_Label) newlySelectedCell).getRenderedTextLine().setCaretPositionToLast();
+    }
   }
 
 
