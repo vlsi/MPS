@@ -22,7 +22,6 @@ public class SNodeCreator_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_createdTypeRefNodeCell10423_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_createdTypeRefNodeCell10423_0");
   }
 
   private static void setupBasic_CollectionCell10423_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -37,7 +36,6 @@ public class SNodeCreator_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_prototypeNodeRefNodeCell10423_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_prototypeNodeRefNodeCell10423_0");
   }
 
   private static void setupBasic_ConstantCell10423_01(EditorCell editorCell, SNode node, EditorContext context) {

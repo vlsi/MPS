@@ -32,7 +32,6 @@ public class Node_IsInstanceOfOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_conceptArgumentRefNodeCell21039_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_conceptArgumentRefNodeCell21039_0");
   }
 
   private static void setupBasic_CollectionCell21039_01(EditorCell editorCell, SNode node, EditorContext context) {

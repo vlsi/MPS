@@ -30,7 +30,6 @@ public class Model_AddRootOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_nodeArgumentRefNodeCell18660_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_nodeArgumentRefNodeCell18660_0");
   }
 
   private static void setupBasic_ConstantCell18660_0(EditorCell editorCell, SNode node, EditorContext context) {

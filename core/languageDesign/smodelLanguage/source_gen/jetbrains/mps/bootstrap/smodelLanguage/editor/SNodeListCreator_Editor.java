@@ -15,7 +15,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class SNodeListCreator_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_createdTypeRefNodeCell10946_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_createdTypeRefNodeCell10946_0");
     editorCell.setDrawBorder(false);
   }
 

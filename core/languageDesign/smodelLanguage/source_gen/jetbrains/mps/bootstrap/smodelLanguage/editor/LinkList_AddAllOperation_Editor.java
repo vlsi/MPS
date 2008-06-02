@@ -26,7 +26,6 @@ public class LinkList_AddAllOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_parameterRefNodeCell15645_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_parameterRefNodeCell15645_0");
     editorCell.setDrawBorder(false);
   }
 

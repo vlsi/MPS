@@ -40,7 +40,6 @@ public class Model_CreateNewRootNodeOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_prototypeNodeRefNodeCell5481_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_prototypeNodeRefNodeCell5481_0");
   }
 
   private static void setupBasic_ConstantCell5481_01(EditorCell editorCell, SNode node, EditorContext context) {

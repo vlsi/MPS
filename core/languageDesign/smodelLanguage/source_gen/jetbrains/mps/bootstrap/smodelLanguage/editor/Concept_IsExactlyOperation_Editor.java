@@ -43,7 +43,6 @@ public class Concept_IsExactlyOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_conceptArgumentRefNodeCell1868_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_conceptArgumentRefNodeCell1868_0");
   }
 
   private static void setupBasic_ConstantCell1868_01(EditorCell editorCell, SNode node, EditorContext context) {

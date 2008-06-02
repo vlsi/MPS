@@ -48,7 +48,6 @@ public class OperationParm_Concept_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_conceptArgumentRefNodeCell7071_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_conceptArgumentRefNodeCell7071_0");
   }
 
   private static void setupLabel_ConstantCell7071_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

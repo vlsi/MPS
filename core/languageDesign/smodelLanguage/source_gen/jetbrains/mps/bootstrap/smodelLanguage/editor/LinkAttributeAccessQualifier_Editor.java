@@ -32,7 +32,6 @@ public class LinkAttributeAccessQualifier_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_linkQualifierRefNodeCell11337_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_linkQualifierRefNodeCell11337_0");
   }
 
   private static void setupBasic_ConstantCell11337_01(EditorCell editorCell, SNode node, EditorContext context) {

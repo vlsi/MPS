@@ -51,7 +51,6 @@ public class EventsCollector {
 
           if (args != null && args.length == 1 && args[0] instanceof SModelEvent) {
             SModelEvent e = (SModelEvent) args[0];
-            assert myInsideOfCommand;            
             myEvents.add(e);
           }
 

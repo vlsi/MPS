@@ -37,7 +37,6 @@ public class Concept_IsSuperConceptOfOperation_Editor extends DefaultNodeEditor 
   }
 
   private static void setupBasic_conceptArgumentRefNodeCell13835_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_conceptArgumentRefNodeCell13835_0");
   }
 
   private static void setupBasic_ConstantCell13835_01(EditorCell editorCell, SNode node, EditorContext context) {

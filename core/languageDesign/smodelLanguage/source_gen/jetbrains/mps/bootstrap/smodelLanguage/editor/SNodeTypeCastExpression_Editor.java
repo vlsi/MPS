@@ -26,7 +26,6 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_leftExpressionRefNodeCell3022_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_leftExpressionRefNodeCell3022_0");
     editorCell.setDrawBorder(false);
   }
 

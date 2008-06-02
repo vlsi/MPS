@@ -34,7 +34,6 @@ public class Model_RootsIncludingImportedOperation_Editor extends DefaultNodeEdi
   }
 
   private static void setupBasic_scopeRefNodeCell6453_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_scopeRefNodeCell6453_0");
     editorCell.setDrawBorder(false);
   }
 

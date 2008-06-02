@@ -26,7 +26,6 @@ public class Concept_IsSubConceptOfOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_conceptArgumentRefNodeCell722_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_conceptArgumentRefNodeCell722_0");
   }
 
   private static void setupBasic_ReplaceableAlias_CompComponentCell722_0(EditorCell editorCell, SNode node, EditorContext context) {

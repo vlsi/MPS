@@ -28,7 +28,6 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
   }
 
   private static void setupBasic_scopeRefNodeCell16817_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_scopeRefNodeCell16817_0");
   }
 
   private static void setupBasic_ConstantCell16817_0(EditorCell editorCell, SNode node, EditorContext context) {

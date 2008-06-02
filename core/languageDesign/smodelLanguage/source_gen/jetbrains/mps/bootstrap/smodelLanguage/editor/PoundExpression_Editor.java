@@ -30,7 +30,6 @@ public class PoundExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_expressionRefNodeCell18647_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_expressionRefNodeCell18647_0");
     editorCell.setDrawBorder(false);
   }
 

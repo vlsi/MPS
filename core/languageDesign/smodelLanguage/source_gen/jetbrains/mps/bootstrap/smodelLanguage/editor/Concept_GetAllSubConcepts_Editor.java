@@ -25,7 +25,6 @@ public class Concept_GetAllSubConcepts_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_smodelRefNodeCell8444_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_smodelRefNodeCell8444_0");
   }
 
   private static void setupBasic_ConstantCell8444_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -33,7 +32,6 @@ public class Concept_GetAllSubConcepts_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_scopeRefNodeCell8444_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_scopeRefNodeCell8444_0");
   }
 
   private static void setupBasic_ReplaceableAlias_CompComponentCell8444_0(EditorCell editorCell, SNode node, EditorContext context) {

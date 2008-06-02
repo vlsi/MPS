@@ -26,7 +26,6 @@ public class Property_HasValue_Simple_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_valueRefNodeCell4854_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_valueRefNodeCell4854_0");
     editorCell.setDrawBorder(false);
   }
 

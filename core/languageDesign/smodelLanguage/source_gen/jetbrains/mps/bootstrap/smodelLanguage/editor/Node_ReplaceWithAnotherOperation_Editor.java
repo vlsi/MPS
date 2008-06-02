@@ -26,7 +26,6 @@ public class Node_ReplaceWithAnotherOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_parameterRefNodeCell20636_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_parameterRefNodeCell20636_0");
     editorCell.setDrawBorder(false);
   }
 

@@ -27,7 +27,6 @@ public class Node_InsertNextSiblingOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_insertedNodeRefNodeCell13948_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_insertedNodeRefNodeCell13948_0");
     editorCell.setDrawBorder(false);
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
