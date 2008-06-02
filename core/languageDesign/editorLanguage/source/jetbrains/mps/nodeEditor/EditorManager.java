@@ -23,7 +23,6 @@ public class EditorManager {
 
   public static final Object BIG_CELL_CONTEXT = new Object();
 
-  public static final Object RIGHT_TRANSFORM_HINT_JUST_ADDED = new Object();
   public static final Object RIGHT_TRANSFORM_HINT_ANCHOR_CELL_ID = new Object();
   public static final Object RIGHT_TRANSFORM_HINT_ANCHOR_TAG = new Object();
 
@@ -303,16 +302,6 @@ public class EditorManager {
       rowWrapper.addEditorCell(rightTransformHintCell);
       resultCell = rowWrapper;
       rightTransformHintCell.setAnchor(nodeCell);
-    }
-
-    // set focus
-    if (node.getUserObject(RIGHT_TRANSFORM_HINT_JUST_ADDED) != null) {
-      context.flushEvents();
-
-      node.removeUserObject(RIGHT_TRANSFORM_HINT_JUST_ADDED);
-      if (node.hasRightTransformHint()) {
-        context.getNodeEditorComponent().changeSelection(rightTransformHintCell);
-      }
     }
     return resultCell;
   }
