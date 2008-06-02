@@ -18,13 +18,13 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="7" />
   <import index="1" modelUID="jetbrains.mps.logging.refactoring.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.refactoring.framework@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.logging.refactoring.samples@java_stub" version="-1" />
   <import index="4" modelUID="jetbrains.mps.ide.action@java_stub" version="-1" />
   <import index="5" modelUID="jetbrains.mps.ide.projectPane@java_stub" version="-1" />
-  <import index="6" modelUID="jetbrains.mps.ide.command@java_stub" version="-1" />
   <import index="7" modelUID="java.lang@java_stub" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.ide.actions" />
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1207494806291">
