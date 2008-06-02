@@ -4,10 +4,7 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.refactoring.framework.RefactoringContext.ConceptFeatureKind;
-import jetbrains.mps.smodel.NodeMemberAccessModifier;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.*;
 
 import java.util.*;
 
@@ -39,17 +36,17 @@ public class RefactoringNodeMembersAccessModifier implements NodeMemberAccessMod
   }
 
   public void addChildRoleChange(String conceptFQName, String oldRole, String newRole) {
-    LOG.assertInCommand();
+    LOG.assertCanWrite();
     myChildrenRolesMap.put(new Pair<String, String>(conceptFQName, oldRole), newRole);
   }
 
   public void addReferentRoleChange(String conceptFQName, String oldRole, String newRole) {
-    LOG.assertCanRead();
+    LOG.assertCanWrite();
     myReferencesRolesMap.put(new Pair<String, String>(conceptFQName, oldRole), newRole);
   }
 
   public void addPropertyNameChange(String conceptFQName, String oldName, String newName) {
-    LOG.assertCanRead();
+    LOG.assertCanWrite();
     myPropertiesNamesMap.put(new Pair<String, String>(conceptFQName, oldName), newName);
   }
 

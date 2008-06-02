@@ -2,6 +2,7 @@ package jetbrains.mps.refactoring.framework.tests;
 
 import jetbrains.mps.bootstrap.structureLanguage.scripts.MoveConcepts;
 import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.*;
@@ -10,37 +11,57 @@ import jetbrains.mps.util.CollectionUtil;
 import java.util.List;
 
 public class MoveConceptRefactoringTester implements IRefactoringTester {
-   public boolean testRefactoring(MPSProject project,
-                                 SModelDescriptor sandbox1,
-                                 SModelDescriptor sandbox2,
-                                 Language testRefactoringLanguage,
-                                 Language testRefactoringTargetLanguage) {
+  public boolean testRefactoring(MPSProject project,
+                                 final SModelDescriptor sandbox1,
+                                 final SModelDescriptor sandbox2,
+                                 final Language testRefactoringLanguage,
+                                 final Language testRefactoringTargetLanguage, Runnable continuation) {
     System.err.println("preparing arguments for refactoring");
-    ActionContext actionContext = new ActionContext(project.createOperationContext());
-    SModelDescriptor structureModelDescriptor = testRefactoringLanguage.getStructureModelDescriptor();
-    SModelDescriptor targetStructureModelDescriptor = testRefactoringTargetLanguage.getStructureModelDescriptor();
-     String conceptName = "MyVeryGoodConcept1";
-     SNode concept = structureModelDescriptor.getSModel().getRootByName(conceptName);
-    actionContext.put(SNode.class, concept);
-    actionContext.put(List.class, CollectionUtil.asList(concept)); 
-    actionContext.put(SModelDescriptor.class, structureModelDescriptor);
-     MoveConcepts moveConcepts = new MoveConcepts();
-     RefactoringContext refactoringContext = new RefactoringContext(moveConcepts);
-     refactoringContext.setParameter(MoveConcepts.targetModel, targetStructureModelDescriptor);
-     System.err.println("executing a refactoring");
-    new RefactoringProcessor().doExecuteInTest(actionContext, refactoringContext);
+    final ActionContext actionContext = new ActionContext(project.createOperationContext());
+    final String conceptName = "MyVeryGoodConcept1";
+    MoveConcepts moveConcepts = new MoveConcepts();
+    final RefactoringContext refactoringContext = new RefactoringContext(moveConcepts);
+    final SModelDescriptor targetStructureModelDescriptor[] = new SModelDescriptor[]{null};
 
-    try {
-      System.err.println("checking a model");
-      if (sandbox1.isInitialized()) {
-        System.err.println("test environment is invalid: model sandbox1 is already initialized, should be not");
-        return false;
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        SModelDescriptor structureModelDescriptor = testRefactoringLanguage.getStructureModelDescriptor();
+        targetStructureModelDescriptor[0] = testRefactoringTargetLanguage.getStructureModelDescriptor();
+        SNode concept = structureModelDescriptor.getSModel().getRootByName(conceptName);
+        actionContext.put(SNode.class, concept);
+        actionContext.put(List.class, CollectionUtil.asList(concept));
+        actionContext.put(SModelDescriptor.class, structureModelDescriptor);
+        refactoringContext.setParameter(MoveConcepts.targetModel, targetStructureModelDescriptor[0]);
       }
-      SModel sModel = sandbox1.getSModel();
-      return sModel.getRoots().get(0).getConceptFqName().equals(targetStructureModelDescriptor + "." + conceptName);
-    } catch (Throwable t) {
-      t.printStackTrace();
-      return false;
-    }
+    });
+
+
+    System.err.println("executing a refactoring");
+    new RefactoringProcessor().doExecuteInTest(actionContext, refactoringContext, continuation);
+
+    final boolean[] result = new boolean[]{false};
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            try {
+              System.err.println("checking a model");
+              if (sandbox1.isInitialized()) {
+                System.err.println("test environment is invalid: model sandbox1 is already initialized, should be not");
+                result[0] = false;
+                return;
+              }
+              SModel sModel = sandbox1.getSModel();
+              result[0] = sModel.getRoots().get(0).getConceptFqName().equals(targetStructureModelDescriptor[0] + "." + conceptName);
+            } catch (Throwable t) {
+              t.printStackTrace();
+              result[0] = false;
+              return;
+            }
+          }
+        });
+      }
+    });
+    return result[0];
   }
 }

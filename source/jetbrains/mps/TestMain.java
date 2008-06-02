@@ -20,7 +20,10 @@ import java.util.LinkedHashSet;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.idea.IdeaTestApplication;
+
+import javax.swing.SwingUtilities;
 
 public class TestMain {
   private static boolean ourTestMode;
@@ -155,12 +158,12 @@ public class TestMain {
 
     //loading a project
     try {
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-          public void run() {
-            File projectFile = new File(destination, "testRefactoring.mpr");
-            projectArray[0] = loadProject(projectFile);
-          }
-        });
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          File projectFile = new File(destination, "testRefactoring.mpr");
+          projectArray[0] = loadProject(projectFile);
+        }
+      });
     } catch (Throwable t) {
       t.printStackTrace();
       return false;
@@ -169,53 +172,65 @@ public class TestMain {
     final MPSProject project = projectArray[0];
 
 
-    try {
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-          public void run() {
-            try {
-              SModelDescriptor sandbox1 = getSandbox1(project);
-              SModelDescriptor sandbox2 = getSandbox2(project);
-              Language testRefactoringLanguage = getTestRefactoringLanguage(project);
-              Language testRefactoringTargetLanguage = getTestRefactoringTargetLanguage(project);
-
-              //update languages' classpathes
-              {
-                LanguageDescriptor testRefactoringDescriptor = testRefactoringLanguage.getLanguageDescriptor();
-                LanguageDescriptor testRefactoringTargetDescriptor = testRefactoringTargetLanguage.getLanguageDescriptor();
-
-                ClassPathEntry cpEntry1 = ClassPathEntry.newInstance(testRefactoringDescriptor.getModel());
-                ClassPathEntry cpEntry2 = ClassPathEntry.newInstance(testRefactoringTargetDescriptor.getModel());
-                String classPath = destination.getAbsolutePath() + "/classes";
-                cpEntry1.setPath(classPath);
-                cpEntry2.setPath(classPath);
-
-                testRefactoringDescriptor.replaceChild(testRefactoringDescriptor.getClassPathEntrys().get(0), cpEntry1);
-                testRefactoringTargetDescriptor.replaceChild(testRefactoringTargetDescriptor.getClassPathEntrys().get(0), cpEntry2);
-
-                testRefactoringLanguage.setLanguageDescriptor(testRefactoringDescriptor);
-                testRefactoringTargetLanguage.setLanguageDescriptor(testRefactoringTargetDescriptor);
-              }
-
-              b[0] = refactoringTester.testRefactoring(
-                project,
-                sandbox1,
-                sandbox2,
-                testRefactoringLanguage,
-                testRefactoringTargetLanguage);
-            } catch (Throwable t) {
-              t.printStackTrace();
-              b[0] = false;
-              return;
-            }
-          }
-        });
-    } finally {
-      if (project != null) {
-        project.dispose();
+    final Runnable continuation = new Runnable() {
+      public void run() {
+        if (project != null) {
+          project.dispose();
+        }
+        FileUtil.delete(destination);
       }
-      FileUtil.delete(destination);
+    };
+
+    final SModelDescriptor[] sandbox1 = new SModelDescriptor[]{null};
+    final SModelDescriptor[] sandbox2 = new SModelDescriptor[]{null};
+    final Language[] testRefactoringLanguage = new Language[]{null};
+    final Language[] testRefactoringTargetLanguage = new Language[]{null};
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        try {
+          sandbox1[0] = getSandbox1(project);
+          sandbox2[0] = getSandbox2(project);
+          testRefactoringLanguage[0] = getTestRefactoringLanguage(project);
+          testRefactoringTargetLanguage[0] = getTestRefactoringTargetLanguage(project);
+
+          //update languages' classpathes
+          {
+            LanguageDescriptor testRefactoringDescriptor = testRefactoringLanguage[0].getLanguageDescriptor();
+            LanguageDescriptor testRefactoringTargetDescriptor = testRefactoringTargetLanguage[0].getLanguageDescriptor();
+
+            ClassPathEntry cpEntry1 = ClassPathEntry.newInstance(testRefactoringDescriptor.getModel());
+            ClassPathEntry cpEntry2 = ClassPathEntry.newInstance(testRefactoringTargetDescriptor.getModel());
+            String classPath = destination.getAbsolutePath() + "/classes";
+            cpEntry1.setPath(classPath);
+            cpEntry2.setPath(classPath);
+
+            testRefactoringDescriptor.replaceChild(testRefactoringDescriptor.getClassPathEntrys().get(0), cpEntry1);
+            testRefactoringTargetDescriptor.replaceChild(testRefactoringTargetDescriptor.getClassPathEntrys().get(0), cpEntry2);
+
+            testRefactoringLanguage[0].setLanguageDescriptor(testRefactoringDescriptor);
+            testRefactoringTargetLanguage[0].setLanguageDescriptor(testRefactoringTargetDescriptor);
+          }
+        } catch (Throwable t) {
+          t.printStackTrace();
+          b[0] = false;
+          return;
+        }
+      } });
+
+    if (!b[0]) {
+      return false;
     }
-    return b[0];
+    try {
+      return refactoringTester.testRefactoring(
+        project,
+        sandbox1[0],
+        sandbox2[0],
+        testRefactoringLanguage[0],
+        testRefactoringTargetLanguage[0], continuation);
+    } catch (Throwable t) {
+      t.printStackTrace();
+      return false;
+    }
   }
 
   public static boolean testProjectReloadForLeaks(final File projectFile) {

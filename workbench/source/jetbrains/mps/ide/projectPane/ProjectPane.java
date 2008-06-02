@@ -18,6 +18,7 @@ import com.intellij.ide.CutProvider;
 import jetbrains.mps.ide.IProjectPane;
 import jetbrains.mps.ide.MPSToolBar;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.IActionDataProvider;
 import jetbrains.mps.ide.actions.*;
@@ -242,11 +243,13 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
       }
     });
 
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
-      public void run() {
-        rebuildTree();
-      }
-    });
+    if (!IdeMain.isTestMode()) {
+      ThreadUtils.runInUIThreadNoWait(new Runnable() {
+        public void run() {
+          rebuildTree();
+        }
+      });
+    }
   }
 
   public void disposeComponent() {

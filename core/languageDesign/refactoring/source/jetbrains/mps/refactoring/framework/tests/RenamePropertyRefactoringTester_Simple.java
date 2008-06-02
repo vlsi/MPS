@@ -3,45 +3,64 @@ package jetbrains.mps.refactoring.framework.tests;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.scripts.RenameProperty;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 
 public class RenamePropertyRefactoringTester_Simple implements IRefactoringTester {
   public boolean testRefactoring(MPSProject project,
-                                 SModelDescriptor sandbox1,
-                                 SModelDescriptor sandbox2,
-                                 Language testRefactoringLanguage,
-                                 Language testRefactoringTargetLanguage) {
+                                 final SModelDescriptor sandbox1,
+                                 final SModelDescriptor sandbox2,
+                                 final Language testRefactoringLanguage,
+                                 final Language testRefactoringTargetLanguage, Runnable continuation) {
     System.err.println("preparing arguments for refactoring");
-    ActionContext actionContext = new ActionContext(project.createOperationContext());
-    SModelDescriptor structureModelDescriptor = testRefactoringLanguage.getStructureModelDescriptor();
-    SNode node = structureModelDescriptor.getSModel().getRootByName("YetAnotherGoodConcept");
-    ConceptDeclaration concept = (ConceptDeclaration) BaseAdapter.fromNode(node);
-    SNode property = concept.getPropertyDeclarations().get(0).getNode();
-    actionContext.put(SNode.class, property);
-    actionContext.put(SModelDescriptor.class, structureModelDescriptor);
+    final ActionContext actionContext = new ActionContext(project.createOperationContext());
     RenameProperty renameProperty = new RenameProperty();
-    RefactoringContext refactoringContext = new RefactoringContext(renameProperty);
-    String newPropertyName = "niceProperty";
-    refactoringContext.setParameter(RenameProperty.newName, newPropertyName);
-    System.err.println("executing a refactoring");
-    new RefactoringProcessor().doExecuteInTest(actionContext, refactoringContext);
+    final RefactoringContext refactoringContext = new RefactoringContext(renameProperty);
+    final String newPropertyName = "niceProperty";
 
-    try {
-      System.err.println("checking a model");
-      if (sandbox1.isInitialized()) {
-        System.err.println("test environment is invalid: model sandbox1 is already initialized, should be not");
-        return false;
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        SModelDescriptor structureModelDescriptor = testRefactoringLanguage.getStructureModelDescriptor();
+        SNode node = structureModelDescriptor.getSModel().getRootByName("YetAnotherGoodConcept");
+        ConceptDeclaration concept = (ConceptDeclaration) BaseAdapter.fromNode(node);
+        SNode property = concept.getPropertyDeclarations().get(0).getNode();
+        actionContext.put(SNode.class, property);
+        actionContext.put(SModelDescriptor.class, structureModelDescriptor);
+        refactoringContext.setParameter(RenameProperty.newName, newPropertyName);
       }
-      SModel sModel = sandbox1.getSModel();
-      SNode root = sModel.getRoots().get(0);
-      SNode firstChild = root.getChildren("anotherGoodConcept").get(0);
-      String propertyValue = firstChild.getProperty(newPropertyName);
-      return "cat".equals(propertyValue);
-    } catch (Throwable t) {
-      t.printStackTrace();
-      return false;
-    }
+    });
+
+    System.err.println("executing a refactoring");
+    new RefactoringProcessor().doExecuteInTest(actionContext, refactoringContext, continuation);
+
+    final boolean[] result = new boolean[]{false};
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            try {
+              System.err.println("checking a model");
+              if (sandbox1.isInitialized()) {
+                System.err.println("test environment is invalid: model sandbox1 is already initialized, should be not");
+                result[0] = false;
+                return;
+              }
+              SModel sModel = sandbox1.getSModel();
+              SNode root = sModel.getRoots().get(0);
+              SNode firstChild = root.getChildren("anotherGoodConcept").get(0);
+              String propertyValue = firstChild.getProperty(newPropertyName);
+              result[0] = "cat".equals(propertyValue);
+            } catch (Throwable t) {
+              t.printStackTrace();
+              result[0] = false;
+              return;
+            }
+          }
+        });
+      }
+    });
+    return result[0];
   }
 }
