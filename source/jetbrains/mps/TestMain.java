@@ -26,8 +26,6 @@ import com.intellij.idea.IdeaTestApplication;
 import javax.swing.SwingUtilities;
 
 public class TestMain {
-  private static boolean ourTestMode;
-
   public static void main(String[] args) {
     if (args.length != 1) {
       System.out.println("Usage : TestMain mpsProject");

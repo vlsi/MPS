@@ -18,6 +18,9 @@ import jetbrains.mps.projectLanguage.structure.LanguageGeneratorConfiguration;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.logging.ILoggingHandler;
+import jetbrains.mps.logging.LogEntry;
+import jetbrains.mps.logging.LoggingHandlerAdapter;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 
 public class ProjectTester {
@@ -56,6 +59,8 @@ public class ProjectTester {
     final List<String> errors = new ArrayList<String>();
     final List<String> warnings = new ArrayList<String>();
 
+    final List<String> compilationResults = new ArrayList<String>();
+
     final IMessageHandler handler = new IMessageHandler() {
       public void handle(Message msg) {
         final String message = msg.getText();
@@ -78,66 +83,90 @@ public class ProjectTester {
       }
     };
 
-    final GenerateFilesAndClassesGenerationType generationType = new GenerateFilesAndClassesGenerationType(false) {
-      public boolean requiresCompilationInIDEABeforeGeneration() {
-        return false;
+    final ILoggingHandler loggingHandler = new ILoggingHandler() {
+      public void info(LogEntry e) {
+
       }
 
-      public boolean requiresCompilationInIDEAfterGeneration() {
-        return false;
+      public void warning(LogEntry e) {
+        warnings.add(e.getMessage());
       }
 
-      protected boolean isPutClassesOnTheDisk() {
-        return false;
+      public void debug(LogEntry e) {
+
+      }
+
+      public void error(LogEntry e) {
+        errors.add(e.getMessage());
+      }
+
+      public void fatal(LogEntry e) {
+        errors.add(e.getMessage());
       }
     };
 
-    final List<String> compilationResults = new ArrayList<String>();
+    try {
+      Logger.addLoggingHandler(loggingHandler);
 
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        List<BaseGeneratorConfiguration> configurations = new ArrayList<BaseGeneratorConfiguration>(myProject.getProjectDescriptor().getRunConfigurations());
-        
-        if (myProject.getProjectDescriptor().getTestAllLanguages()) {
-          for (Language l : myProject.getProjectLanguages()) {
-            LanguageGeneratorConfiguration conf = LanguageGeneratorConfiguration.newInstance(myProject.getProjectDescriptor().getModel());
-            conf.setLanguageNamespace(l.getNamespace());
-            configurations.add(conf);
-          }
+      final GenerateFilesAndClassesGenerationType generationType = new GenerateFilesAndClassesGenerationType(false) {
+        public boolean requiresCompilationInIDEABeforeGeneration() {
+          return false;
         }
 
-        for (BaseGeneratorConfiguration t : configurations) {
-          System.out.println("completed : " + configurations.indexOf(t) + " / " + configurations.size());
+        public boolean requiresCompilationInIDEAfterGeneration() {
+          return false;
+        }
 
-          GenParameters parms;
-          try {
-            parms = GeneratorConfigUtil.calculate(myProject, t);
-          } catch (GeneratorConfigUtil.GeneratorConfigurationException e) {
-            errors.add("Can't create a generator configuration : " + e.getMessage());
-            return;
+        protected boolean isPutClassesOnTheDisk() {
+          return false;
+        }
+      };
+
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          List<BaseGeneratorConfiguration> configurations = new ArrayList<BaseGeneratorConfiguration>(myProject.getProjectDescriptor().getRunConfigurations());
+
+          if (myProject.getProjectDescriptor().getTestAllLanguages()) {
+            for (Language l : myProject.getProjectLanguages()) {
+              LanguageGeneratorConfiguration conf = LanguageGeneratorConfiguration.newInstance(myProject.getProjectDescriptor().getModel());
+              conf.setLanguageNamespace(l.getNamespace());
+              configurations.add(conf);
+            }
           }
 
-          GeneratorManager gm = myProject.getComponentSafe(GeneratorManager.class);
-          gm.generateModels(
-                  parms.getModels(),
-                  new ModuleContext(parms.getModule(), myProject),
-                  generationType,
-                  new EmptyProgressIndicator(),
-                  handler
-          );
+          for (BaseGeneratorConfiguration t : configurations) {
+            System.out.println("completed : " + configurations.indexOf(t) + " / " + configurations.size());
 
-          compilationResults.addAll(createCompilationProblemsList(generationType.compile(IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR)));
+            GenParameters parms;
+            try {
+              parms = GeneratorConfigUtil.calculate(myProject, t);
+            } catch (GeneratorConfigUtil.GeneratorConfigurationException e) {
+              errors.add("Can't create a generator configuration : " + e.getMessage());
+              return;
+            }
 
-          System.out.println("");
-          System.out.println("");
-          System.out.println("");
+            GeneratorManager gm = myProject.getComponentSafe(GeneratorManager.class);
+            gm.generateModels(
+                    parms.getModels(),
+                    new ModuleContext(parms.getModule(), myProject),
+                    generationType,
+                    new EmptyProgressIndicator(),
+                    handler
+            );
+
+            compilationResults.addAll(createCompilationProblemsList(generationType.compile(IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR)));
+
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+          }
         }
-      }
-    });
+      });
+    } finally {
+      Logger.removeLoggingHandler(loggingHandler);
+    }
 
     return new TestResult(errors, warnings, compilationResults);
   }
-
-
 
 }

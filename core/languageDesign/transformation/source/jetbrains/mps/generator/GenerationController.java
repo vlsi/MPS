@@ -13,6 +13,8 @@ import jetbrains.mps.ide.progress.TaskProgressSettings;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.logging.ILoggingHandler;
+import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.plugin.CompilationResult;
 import jetbrains.mps.plugin.IProjectHandler;
@@ -60,9 +62,9 @@ public class GenerationController {
     myManager = generatorManager;
     myInputModels = _inputModels;
     myGenerationType = generationType;
-    this.myProgress = progress;
-    this.myMesssages = messages;
-    this.mySaveTransientModels = saveTransientModels;
+    myProgress = progress;
+    myMesssages = messages;
+    mySaveTransientModels = saveTransientModels;
 
     for (Pair<SModelDescriptor, IOperationContext> modelPair : myInputModels) {
       myModelsToContexts.put(modelPair.o1, modelPair.o2);
@@ -166,7 +168,7 @@ public class GenerationController {
   }
 
   private boolean generateModelsInModule(IModule module, List<SModelDescriptor> descriptors, final long totalJob, long startJobTime) throws Exception {
-    boolean currentGenerationOK = false;
+    boolean currentGenerationOK = true;
 
     IOperationContext invocationContext = myModulesToContexts.get(module);
 
@@ -207,7 +209,7 @@ public class GenerationController {
         progress.startLeafTask(taskName, myProgress, totalJob, startJobTime);
 
         GenerationStatus status = generationSession.generateModel(inputModel);
-        currentGenerationOK = status.isOk();
+        currentGenerationOK = currentGenerationOK && status.isOk();
         if (myManager.isDumpStatistics()) {
           Statistics.dumpAll();
         }
