@@ -81,23 +81,21 @@ public class IntelligentInputUtil {
     EditorCellAction rtAction = EditorUtil.getCellAction(EditorUtil.findLastSelectableCell(cellForNewNode), EditorCellAction.RIGHT_TRANSFORM, editorContext);
     if (rtAction == null) {
       final CellInfo cellInfo = cellForNewNode.getCellInfo();
-      AfterCommandInvocator.getInstance().invokeNowOrAfterCommand(new Runnable() {
-          public void run() {
-            AbstractEditorComponent component = editorContext.getNodeEditorComponent();
-            EditorCell cellToSelect = cellInfo.findCell(component);
-            if (cellToSelect != null) {
-              EditorCell errorCell = EditorUtil.findErrorCell(cellToSelect);
-              if (errorCell instanceof EditorCell_Label) {
-                EditorCell_Label label = (EditorCell_Label) errorCell;
-                if (label.isEditable() && !(label instanceof EditorCell_Constant)) {
-                  label.changeText(smallPattern + tail);
-                }
-                label.getRenderedTextLine().setCaretPositionToLast();
-              }
-            }
 
+      editorContext.flushEvents();
+
+      AbstractEditorComponent component = editorContext.getNodeEditorComponent();
+      EditorCell cellToSelect = cellInfo.findCell(component);
+      if (cellToSelect != null) {
+        EditorCell errorCell = EditorUtil.findErrorCell(cellToSelect);
+        if (errorCell instanceof EditorCell_Label) {
+          EditorCell_Label label = (EditorCell_Label) errorCell;
+          if (label.isEditable() && !(label instanceof EditorCell_Constant)) {
+            label.changeText(smallPattern + tail);
           }
-        });
+          label.getRenderedTextLine().setCaretPositionToLast();
+        }
+      }
       return;
     }
 
