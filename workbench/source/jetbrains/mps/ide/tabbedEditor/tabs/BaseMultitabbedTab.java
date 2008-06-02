@@ -49,11 +49,11 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
           myLoadableNodes.clear();
           myLoadableNodesList.clear();
           myEditors.clear();
-          AfterCommandInvocator.getInstance().invokeAfterCommand(new Runnable() {
-                  public void run() {
-                    myTabbedEditor.getTabbedPane().initTab(BaseMultitabbedTab.this);
-                  }
-                });
+          SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+              myTabbedEditor.getTabbedPane().initTab(BaseMultitabbedTab.this);
+            }
+          });
         }
       }
 
@@ -68,11 +68,11 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
           myLoadableNodes.clear();
           myLoadableNodesList.clear();
           myEditors.clear();
-          AfterCommandInvocator.getInstance().invokeAfterCommand(new Runnable() {
-                  public void run() {
-                    myTabbedEditor.getTabbedPane().initTab(BaseMultitabbedTab.this);
-                  }
-                });
+          SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+              myTabbedEditor.getTabbedPane().initTab(BaseMultitabbedTab.this);
+            }
+          });
         }
       }
 

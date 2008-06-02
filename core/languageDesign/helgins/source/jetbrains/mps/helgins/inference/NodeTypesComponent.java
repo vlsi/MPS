@@ -26,6 +26,8 @@ import java.awt.Color;
 
 import org.jetbrains.annotations.Nullable;
 
+import javax.swing.SwingUtilities;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
@@ -248,19 +250,19 @@ public class NodeTypesComponent implements IEditorMessageOwner, Cloneable {
       }
       final Set<SNodePointer> notSkippedNodes = new HashSet<SNodePointer>(myNotSkippedNodes);
       if (HelginsPreferencesComponent.getInstance().isUsesDebugHighlighting()) {
-        AfterCommandInvocator.getInstance().invokeAfterCommand(new Runnable() {
-              public void run() {
-                AbstractEditorComponent component = (AbstractEditorComponent) getEditorComponent();
-                if (component == null) return;
-                component.getHighlightManager().clearForOwner(component.getHighlightMessagesOwner()); //todo change an owner
-                for (SNodePointer notSkippedNode : notSkippedNodes) {
-                  markNode(component, notSkippedNode);
-                  if (component instanceof NodeEditorComponent) {
-                    markNode(((NodeEditorComponent) component).getInspector(), notSkippedNode);
-                  }
-                }
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            AbstractEditorComponent component = (AbstractEditorComponent) getEditorComponent();
+            if (component == null) return;
+            component.getHighlightManager().clearForOwner(component.getHighlightMessagesOwner()); //todo change an owner
+            for (SNodePointer notSkippedNode : notSkippedNodes) {
+              markNode(component, notSkippedNode);
+              if (component instanceof NodeEditorComponent) {
+                markNode(((NodeEditorComponent) component).getInspector(), notSkippedNode);
               }
-            });
+            }
+          }
+        });
       }
     } finally {
       myTypeChecker.clearCurrentTypesComponent();
