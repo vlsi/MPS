@@ -26,12 +26,12 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <maxImportIndex value="15" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <maxImportIndex value="17" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.findUsages@java_stub" version="-1" />
   <import index="4" modelUID="jetbrains.mps.ide.findusages.model@java_stub" version="-1" />
-  <import index="5" modelUID="jetbrains.mps.ide.findusages.findalgorithm.resultproviders@java_stub" version="-1" />
   <import index="6" modelUID="jetbrains.mps.ide.findusages.findalgorithm.finders.specific@java_stub" version="-1" />
   <import index="7" modelUID="jetbrains.mps.project@java_stub" version="-1" />
   <import index="8" modelUID="jetbrains.mps.ide@java_stub" version="-1" />
@@ -85,8 +85,8 @@
               <link role="classifier" targetNodeId="4.~IResultProvider" resolveInfo="IResultProvider" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1209308799202">
-              <link role="baseMethodDeclaration" targetNodeId="5.~TreeBuilder.forFinder(jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder):jetbrains.mps.ide.findusages.model.IResultProvider" resolveInfo="forFinder" />
-              <link role="classConcept" targetNodeId="5.~TreeBuilder" resolveInfo="TreeBuilder" />
+              <link role="classConcept" targetNodeId="10.~FindUtils" resolveInfo="FindUtils" />
+              <link role="baseMethodDeclaration" targetNodeId="10.~FindUtils.makeProvider(jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder[]):jetbrains.mps.ide.findusages.model.IResultProvider" resolveInfo="makeProvider" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1209308800922">
                 <link role="baseMethodDeclaration" targetNodeId="6.~ModelUsagesFinder.&lt;init&gt;()" resolveInfo="ModelUsagesFinder" />
               </node>
@@ -192,8 +192,8 @@
               <link role="classifier" targetNodeId="4.~IResultProvider" resolveInfo="IResultProvider" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1209824745389">
-              <link role="classConcept" targetNodeId="5.~TreeBuilder" resolveInfo="TreeBuilder" />
-              <link role="baseMethodDeclaration" targetNodeId="5.~TreeBuilder.forFinder(jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder):jetbrains.mps.ide.findusages.model.IResultProvider" resolveInfo="forFinder" />
+              <link role="classConcept" targetNodeId="10.~FindUtils" resolveInfo="FindUtils" />
+              <link role="baseMethodDeclaration" targetNodeId="10.~FindUtils.makeProvider(jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder[]):jetbrains.mps.ide.findusages.model.IResultProvider" resolveInfo="makeProvider" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1209824745390">
                 <link role="baseMethodDeclaration" targetNodeId="6.~LanguageUsagesFinder.&lt;init&gt;()" resolveInfo="LanguageUsagesFinder" />
               </node>
