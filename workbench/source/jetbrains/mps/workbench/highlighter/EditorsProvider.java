@@ -76,13 +76,13 @@ public class EditorsProvider {
     }
   }
 
-  public List<IEditor> getAllEditors(final MPSProject mpsProject) {
+  public List<IEditor> getAllEditors() {
     synchronized (myLock) {
       return new ArrayList<IEditor>(myEditors);
     }
   }
 
-  public IEditor getCurrentEditor(final MPSProject mpsProject) {
+  public IEditor getCurrentEditor() {
     synchronized (myLock) {
       return myCurrentEditor;
     }

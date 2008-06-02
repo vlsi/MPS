@@ -3,9 +3,11 @@ package jetbrains.mps.helgins.checking;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
+import jetbrains.mps.util.TimePresentationUtil;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.Date;
 
 /**
  * Created by IntelliJ IDEA.
@@ -29,10 +31,10 @@ public class HighlighterMessage extends DefaultEditorMessage {
 
   public void paint(Graphics g, IEditorComponent editorComponent) {
     EditorCell cell = getCell(editorComponent);
-    paintWaveUnderCell(g, cell);
+    paintDecorations(g, cell);
   }
 
-  private void paintWaveUnderCell(Graphics g, EditorCell cell) {
+  private void paintDecorations(Graphics g, EditorCell cell) {
     if (cell == null) return;
     if (isWarning()) {
       int x = cell.getX();
@@ -40,7 +42,7 @@ public class HighlighterMessage extends DefaultEditorMessage {
       int height = cell.getHeight();
       int leftInternalInset = cell.getLeftInternalInset();
       int effectiveWidth = cell.getEffectiveWidth();
-      g.setColor(new Color(250,247,158));
+      g.setColor(new Color(250, 247, 158));
       g.fillRect(x + leftInternalInset, y, effectiveWidth, height);
     } else {
       ColorAndGraphicsUtil.drawWaveUnderCell(g, getColor(), cell);

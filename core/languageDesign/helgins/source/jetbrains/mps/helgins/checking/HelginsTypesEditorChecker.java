@@ -46,10 +46,13 @@ public class HelginsTypesEditorChecker extends EditorCheckerAdapter {
         status = MessageStatus.WARNING;
         color = Color.YELLOW;
       }
+      String errorString = errorNode.o2.reportError();
       DefaultEditorMessage message =
-        new HighlighterMessage(errorNode.o1, status, color, "TYPE ERROR: " + errorNode.o2.reportError(), typesComponent);
+        new HighlighterMessage(errorNode.o1, status, color, "TYPE ERROR: " + errorString, typesComponent);
       message.setIntentionProvider(errorNode.o2.getIntentionProvider());
       messages.add(message);
+      System.err.println("message created: " + (message.getStatus() == MessageStatus.WARNING ? "a warning " : "an error ") + errorString);    
+      new Throwable().printStackTrace();
     }
 
     return messages;

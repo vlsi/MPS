@@ -65,52 +65,6 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
   }
 
   public void projectOpened() {
-
-  }
-
-  public void projectClosed() {
-
-  }
-
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return "MPS Higlighter";
-  }
-
-  public void disposeComponent() {
-    myClassLoaderManager.removeReloadHandler(myReloadListener);
-    myGlobalSModelEventsManager.removeGlobalCommandListener(myCommandListener);
-
-  }
-
-  public Thread getThread() {
-    return myThread;
-  }
-
-  public void addChecker(IEditorChecker checker) {
-
-
-    if (checker != null) {
-      synchronized (CHECKERS_LOCK) {
-        myCheckers.add(checker);
-      }
-    }
-  }
-
-  public void removeChecker(IEditorChecker checker) {
-    if (IdeMain.isTestMode()) return;
-
-    if (checker != null) {
-      synchronized (CHECKERS_LOCK) {
-        myCheckers.remove(checker);
-        myCheckersToRemove.add(checker);
-      }
-    }
-  }
-
-  public void initComponent() {
-
     myEditorsProvider = new EditorsProvider(myProject);
 
     if (myThread != null && myThread.isAlive()) {
@@ -149,6 +103,52 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
     myThread.start();
   }
 
+  public void projectClosed() {
+    myClassLoaderManager.removeReloadHandler(myReloadListener);
+    myGlobalSModelEventsManager.removeGlobalCommandListener(myCommandListener);
+
+  }
+
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "MPS Higlighter";
+  }
+
+  public void disposeComponent() {
+
+  }
+
+  public Thread getThread() {
+    return myThread;
+  }
+
+  public void addChecker(IEditorChecker checker) {
+
+
+    if (checker != null) {
+      synchronized (CHECKERS_LOCK) {
+        myCheckers.add(checker);
+      }
+    }
+  }
+
+  public void removeChecker(IEditorChecker checker) {
+    if (IdeMain.isTestMode()) return;
+
+    if (checker != null) {
+      synchronized (CHECKERS_LOCK) {
+        myCheckers.remove(checker);
+        myCheckersToRemove.add(checker);
+      }
+    }
+  }
+
+  public void initComponent() {
+
+
+  }
+
   public void stopUpdater() {
     LOG.warning("stopping an updater from a thread " + Thread.currentThread());
     myStopThread = true;
@@ -157,11 +157,16 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
   protected void doUpdate() {
     // SwingUtilities.invokeLater(new Runnable() {
     //   public void run() {
-    if (myProjects == null) return;
+    if (myProjects == null) {
+      return;
+    }
     MPSProjects projects = myProjects;
 
     List<SModelEvent> events = new ArrayList<SModelEvent>();
     synchronized (EVENTS_LOCK) {
+      if (!myLastEvents.isEmpty()) {
+        System.err.println("oy");
+      }
       events.addAll(myLastEvents);
       myLastEvents.clear();
     }
@@ -176,44 +181,40 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
       myCheckersToRemove.clear();
     }
 
-    for (MPSProject project : projects.getProjects()) {
-      boolean isUpdated = false;
-      List<IEditor> allEditors = getAllEditors(project);
+    boolean isUpdated = false;
+    List<IEditor> allEditors = getAllEditors();
 
-      for (IEditor editor : allEditors) {
-        AbstractEditorComponent component = editor.getCurrentEditorComponent();
-        if (component != null) {
-          if (updateEditorComponent(component, events, checkers, checkersToRemove)) {
-            isUpdated = true;
-          }
-
-          if (component instanceof NodeEditorComponent) {
-            updateEditorComponent(((NodeEditorComponent) component).getInspector(), events, checkers, checkersToRemove);
-          }
+    for (IEditor editor : allEditors) {
+      AbstractEditorComponent component = editor.getCurrentEditorComponent();
+      if (component != null) {
+        if (updateEditorComponent(component, events, checkers, checkersToRemove)) {
+          isUpdated = true;
         }
-      }
 
-      if (isUpdated) { //why do we need this code? it's looks like a hack.
-        IEditor currentEditor = getCurrentEditor(project);
-        if (currentEditor != null) {
-          currentEditor.repaint();
-          AbstractEditorComponent component = currentEditor.getCurrentEditorComponent();
-          if (component != null) {
-            component.getMessagesGutter().repaint();
-          }
+        if (component instanceof NodeEditorComponent) {
+          updateEditorComponent(((NodeEditorComponent) component).getInspector(), events, checkers, checkersToRemove);
         }
       }
     }
-    //    }
-    //  });
+
+    if (isUpdated) { //why do we need this code? it's looks like a hack.
+      IEditor currentEditor = getCurrentEditor();
+      if (currentEditor != null) {
+        currentEditor.repaint();
+        AbstractEditorComponent component = currentEditor.getCurrentEditorComponent();
+        if (component != null) {
+          component.getMessagesGutter().repaint();
+        }
+      }
+    }
   }
 
-  protected List<IEditor> getAllEditors(MPSProject project) {
-    return myEditorsProvider.getAllEditors(project);
+  protected List<IEditor> getAllEditors() {
+    return myEditorsProvider.getAllEditors();
   }
 
-  protected IEditor getCurrentEditor(MPSProject project) {
-    return myEditorsProvider.getCurrentEditor(project);
+  protected IEditor getCurrentEditor() {
+    return myEditorsProvider.getCurrentEditor();
   }
 
   private boolean updateEditorComponent(IEditorComponent component, final List<SModelEvent> events, final Set<IEditorChecker> checkers, Set<IEditorChecker> checkersToRemove) {
