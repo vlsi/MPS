@@ -32,6 +32,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="30" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.helgins.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.helgins.uiActions@java_stub" version="-1" />
@@ -1675,10 +1676,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1211814355155">
-              <link role="baseMethodDeclaration" targetNodeId="27.~MessagesViewTool.showTool(boolean):void" resolveInfo="showTool" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1211814357969">
-                <property name="value" value="true" />
-              </node>
+              <link role="baseMethodDeclaration" targetNodeId="27.~MessagesViewTool.showTool():void" resolveInfo="showTool" />
             </node>
           </node>
         </node>

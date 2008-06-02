@@ -82,7 +82,7 @@ public class FindUtils {
       result.add(searchResult.getObject());
     }
     return result;
-  }
+  }                                                                                        
 
   @Nullable
   public static GeneratedFinder getFinderByClassName(String className) {
