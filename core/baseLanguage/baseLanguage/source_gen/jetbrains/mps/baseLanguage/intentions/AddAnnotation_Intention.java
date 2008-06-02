@@ -33,7 +33,7 @@ public class AddAnnotation_Intention extends BaseIntention implements Intention 
 
   public void execute(SNode node, EditorContext editorContext) {
     SNode annotationInstance = SLinkOperations.addNewChild(node, "annotation", "jetbrains.mps.baseLanguage.structure.AnnotationInstance");
-    editorContext.selectLater(annotationInstance);
+    editorContext.select(annotationInstance);
   }
 
   public Object[] getField(String key) {

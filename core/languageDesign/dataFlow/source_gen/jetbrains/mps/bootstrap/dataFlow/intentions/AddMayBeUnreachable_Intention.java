@@ -32,7 +32,7 @@ public class AddMayBeUnreachable_Intention extends BaseIntention implements Inte
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.dataFlow.structure.EmitMayBeUnreachable", null);
     SNodeOperations.replaceWithAnother(node, result);
     SLinkOperations.setTarget(result, "emitStatement", node, true);
-    editorContext.selectLater(node);
+    editorContext.select(node);
   }
 
 }

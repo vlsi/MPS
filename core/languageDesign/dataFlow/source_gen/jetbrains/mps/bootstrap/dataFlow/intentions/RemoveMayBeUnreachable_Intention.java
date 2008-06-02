@@ -28,7 +28,7 @@ public class RemoveMayBeUnreachable_Intention extends BaseIntention implements I
 
   public void execute(SNode node, EditorContext editorContext) {
     SNodeOperations.replaceWithAnother(SNodeOperations.getParent(node, null, false, false), node);
-    editorContext.selectLater(node);
+    editorContext.select(node);
   }
 
 }

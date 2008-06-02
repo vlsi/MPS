@@ -153,93 +153,83 @@ public class EditorContext {
     return false;
   }
 
-  public void selectLater(final SNode node) {
-    AfterCommandInvocator.getInstance().invokeAfterCommand(new Runnable() {
-      public void run() {
-        getNodeEditorComponent().selectNode(node);
-      }
-    });
+  public void select(final SNode node) {
+    flushEvents();
+
+    getNodeEditorComponent().selectNode(node);
   }
 
-  public void selectBeforeLater(final SNode node) {
-    AfterCommandInvocator.getInstance().invokeAfterCommand(new Runnable() {
-      public void run() {
-        getNodeEditorComponent().selectNode(node);
-        EditorCell cell = getNodeEditorComponent().getSelectedCell();
+  public void selectBefore(final SNode node) {
+    flushEvents();
 
-        if (cell instanceof EditorCell_Label) {
-          EditorCell_Label label = (EditorCell_Label) cell;
-          label.getTextLine().home();
-        }
-      }
-    });
+    getNodeEditorComponent().selectNode(node);
+    EditorCell cell = getNodeEditorComponent().getSelectedCell();
+
+    if (cell instanceof EditorCell_Label) {
+      EditorCell_Label label = (EditorCell_Label) cell;
+      label.getTextLine().home();
+    }
   }
 
-  public void selectAfterLater(final SNode node) {
-    AfterCommandInvocator.getInstance().invokeAfterCommand(new Runnable() {
-      public void run() {
-        getNodeEditorComponent().selectNode(node);
-        EditorCell cell = getNodeEditorComponent().getSelectedCell();
+  public void selectAfter(final SNode node) {
+    flushEvents();
 
-        if (cell instanceof EditorCell_Label) {
-          EditorCell_Label label = (EditorCell_Label) cell;
-          label.getTextLine().end();
-        }
+    getNodeEditorComponent().selectNode(node);
+    EditorCell cell = getNodeEditorComponent().getSelectedCell();
 
-      }
-    });
+    if (cell instanceof EditorCell_Label) {
+      EditorCell_Label label = (EditorCell_Label) cell;
+      label.getTextLine().end();
+    }
+
   }
 
-  public void selectLaterWRTFocusPolicy(final SNode node) {
-    selectLaterWRTFocusPolicy(node, true);
+  public void selectWRTFocusPolicy(final SNode node) {
+    selectWRTFocusPolicy(node, true);
   }
 
-  public void selectLaterWRTFocusPolicy(final SNode node, final boolean force) {
-    AfterCommandInvocator.getInstance().invokeAfterCommand(new Runnable() {
-      public void run() {
-        if (!force && getNodeEditorComponent().getSelectedNode() == node) {
-          return;
-        }
+  public void selectWRTFocusPolicy(final SNode node, final boolean force) {
+    flushEvents();
 
-        EditorCell cell = getNodeEditorComponent().findNodeCell(node);
-        if (cell != null) {
-          getNodeEditorComponent().changeSelectionWRTFocusPolicy(cell);
-        }
-      }
-    });
+    if (!force && getNodeEditorComponent().getSelectedNode() == node) {
+      return;
+    }
+
+    EditorCell cell = getNodeEditorComponent().findNodeCell(node);
+    if (cell != null) {
+      getNodeEditorComponent().changeSelectionWRTFocusPolicy(cell);
+    }
   }
 
 
 
-  public void selectAndSetCaretLater(final SNode node, final int position) {
-    AfterCommandInvocator.getInstance().invokeAfterCommand(new Runnable() {
-      public void run() {
-        getNodeEditorComponent().selectNode(node);
-        EditorCell selectedCell = getNodeEditorComponent().getSelectedCell();
-        setCaretPosition(selectedCell, position);
-      }
+  public void selectAndSetCaret(final SNode node, final int position) {
+    flushEvents();
 
-      private int setCaretPosition(EditorCell editorCell, int position) {
-        int newPosition = position;
-        if (editorCell instanceof EditorCell_Label) {
-          EditorCell_Label editorCell_label = (EditorCell_Label) editorCell;
-          newPosition = position - editorCell_label.getTextLine().getText().length();
-          if (newPosition < 0) {
-            getNodeEditorComponent().changeSelection(editorCell);
-            editorCell_label.getTextLine().setCaretPosition(position);
-          }
-        } else if (editorCell instanceof EditorCell_Collection) {
-          EditorCell_Collection editorCell_iterable = (EditorCell_Collection) editorCell;
-          for (EditorCell subEditorCell: editorCell_iterable) {
-            newPosition = setCaretPosition(subEditorCell, newPosition);
-            if (newPosition < 0) {
-              break;
-            }
-          }
-        }
-        return newPosition;
+    getNodeEditorComponent().selectNode(node);
+    EditorCell selectedCell = getNodeEditorComponent().getSelectedCell();
+    setCaretPosition(selectedCell, position);
+  }
+
+  private int setCaretPosition(EditorCell editorCell, int position) {
+    int newPosition = position;
+    if (editorCell instanceof EditorCell_Label) {
+      EditorCell_Label editorCell_label = (EditorCell_Label) editorCell;
+      newPosition = position - editorCell_label.getTextLine().getText().length();
+      if (newPosition < 0) {
+        getNodeEditorComponent().changeSelection(editorCell);
+        editorCell_label.getTextLine().setCaretPosition(position);
       }
-    });
+    } else if (editorCell instanceof EditorCell_Collection) {
+      EditorCell_Collection editorCell_iterable = (EditorCell_Collection) editorCell;
+      for (EditorCell subEditorCell: editorCell_iterable) {
+        newPosition = setCaretPosition(subEditorCell, newPosition);
+        if (newPosition < 0) {
+          break;
+        }
+      }
+    }
+    return newPosition;
   }
 
   public boolean setMemento(Object o) {

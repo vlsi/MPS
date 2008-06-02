@@ -37,7 +37,7 @@ public class MergeStringConcatenation_Intention extends BaseIntention implements
     String left = SPropertyOperations.getString(SLinkOperations.getTarget(node, "leftExpression", true), "value");
     String right = SPropertyOperations.getString(SLinkOperations.getTarget(node, "rightExpression", true), "value");
     SPropertyOperations.set(stringLiteral, "value", left + right);
-    editorContext.selectAndSetCaretLater(stringLiteral, left.length() + 1);
+    editorContext.selectAndSetCaret(stringLiteral, left.length() + 1);
   }
 
   public Object[] getField(String key) {

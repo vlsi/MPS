@@ -1,6 +1,5 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
@@ -23,7 +22,7 @@ public class IntelligentInputUtil {
       INodeSubstituteInfo substituteInfo = rtHintCell.getSubstituteInfo();
       if (uniqueAction(substituteInfo, pattern, "")) {
         SNode resultNode = substituteInfo.getMatchingActions(pattern, true).get(0).doSubstitute(pattern);
-        editorContext.selectLaterWRTFocusPolicy(resultNode);
+        editorContext.selectWRTFocusPolicy(resultNode);
       }
       return;
     }
@@ -71,7 +70,7 @@ public class IntelligentInputUtil {
     } else if (canCompleteImmediately(substituteInfo, smallPattern, tail)) {
       List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(smallPattern + tail, true);
       INodeSubstituteAction item = matchingActions.get(0);
-      editorContext.selectLaterWRTFocusPolicy(item.doSubstitute(smallPattern + tail));
+      editorContext.selectWRTFocusPolicy(item.doSubstitute(smallPattern + tail));
       return;
     } else {
       return;
