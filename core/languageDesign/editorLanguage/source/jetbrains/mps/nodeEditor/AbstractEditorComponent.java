@@ -129,7 +129,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private NodeSubstituteChooser myNodeSubstituteChooser;
   private HashMap myUserDataMap = new HashMap();
 
-  private MyModelListener myModelListener = new MyModelListener();
+  private MyEventsCollector myEventsCollector = new MyEventsCollector();
   private MySimpleModelListener mySimpleModelListener = new MySimpleModelListener();
   private Set<SModelDescriptor> myModelDescriptorsWithListener = new HashSet<SModelDescriptor>();
 
@@ -928,9 +928,15 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return new HashSet<EditorCell>(myBracesEnabledCells);
   }
 
+  public void flushEvents() {         
+    myEventsCollector.flush();
+  }
+
   public void dispose() {
     removeOurListeners();
     clearCaches();
+
+    myEventsCollector.dispose();
 
     setEditorContext(null);
 
@@ -940,15 +946,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private void addOurListeners(SModelDescriptor sm) {
-    if (sm.hasSModelCommandListener(myModelListener)) return;
-    sm.addModelCommandListener(myModelListener);
+    myEventsCollector.add(sm);
     sm.addModelListener(mySimpleModelListener);
     myModelDescriptorsWithListener.add(sm);
   }
 
   private void removeOurListeners() {
     for (SModelDescriptor sm : myModelDescriptorsWithListener) {
-      sm.removeModelCommandListener(myModelListener);
+      myEventsCollector.remove(sm);
       sm.removeModelListener(mySimpleModelListener);
     }
     myModelDescriptorsWithListener.clear();
@@ -2552,12 +2557,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
   }
 
-  private class MyModelListener implements SModelCommandListener {
-    public void eventsHappenedInCommand(List<SModelEvent> events) {
-      AbstractEditorComponent.this.handleEvents(events);
-    }
-  }
-
   private class MySimpleModelListener extends SModelAdapter {
     public void modelReloaded(SModelDescriptor sm) {
       AfterCommandInvocator.getInstance().invokeAfterCommand(new Runnable() {
@@ -2565,6 +2564,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           rebuildEditorContent();
         }
       });
+    }
+  }
+
+  private class MyEventsCollector extends EventsCollector {
+    protected void eventsHappened(List<SModelEvent> events) {
+      handleEvents(events);
     }
   }
 

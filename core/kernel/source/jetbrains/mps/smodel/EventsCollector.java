@@ -19,15 +19,18 @@ public class EventsCollector {
   private SModelListener myListeners = createCommandEventsCollector();
   private Set<SModelDescriptor> myModelDescriptors = new LinkedHashSet<SModelDescriptor>();
   private CommandListener myCommandListener;
+  private boolean myInsideOfCommand = false;
 
   public EventsCollector() {
     CommandProcessor.getInstance().addCommandListener(myCommandListener = new CommandAdapter() {
       public void commandStarted(CommandEvent event) {
         myEvents.clear();
+        myInsideOfCommand = true;
       }
 
       public void beforeCommandFinished(CommandEvent event) {
         flush();
+        myInsideOfCommand = false;
       }
     });
   }
@@ -48,6 +51,7 @@ public class EventsCollector {
 
           if (args != null && args.length == 1 && args[0] instanceof SModelEvent) {
             SModelEvent e = (SModelEvent) args[0];
+            assert myInsideOfCommand;            
             myEvents.add(e);
           }
 
@@ -68,9 +72,13 @@ public class EventsCollector {
   }
 
   public void flush() {
-    if (myEvents.isEmpty()) return;    
-    eventsHappened(Collections.unmodifiableList(myEvents));
-    myEvents = new ArrayList<SModelEvent>();
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        if (myEvents.isEmpty()) return;
+        eventsHappened(Collections.unmodifiableList(myEvents));
+        myEvents = new ArrayList<SModelEvent>();
+      }
+    });
   }
 
   protected void eventsHappened(List<SModelEvent> events) {

@@ -56,14 +56,17 @@ public class IntelligentInputUtil {
       cellForNewNode = editorContext.createNodeCellInAir(newNode, ourServiceEditorManager);
       EditorCell errorCell = EditorUtil.findErrorCell(cellForNewNode);
       if (errorCell != null && errorCell instanceof EditorCell_Label) {
-        AfterCommandInvocator.getInstance().invokeAfterCommand(new Runnable() {
-              public void run() {
-                EditorCell cellForNewNode = editorContext.getNodeEditorComponent().findNodeCell(newNode);
-                EditorCell_Label errorCell = (EditorCell_Label) EditorUtil.findErrorCell(cellForNewNode);
-                ((EditorCell_Label) errorCell).changeText(tail);
-                errorCell.getTextLine().setCaretPosition(tail.length());
-              }
-            });
+        editorContext.flushEvents();
+
+        new Runnable() {
+          public void run() {
+            EditorCell cellForNewNode = editorContext.getNodeEditorComponent().findNodeCell(newNode);
+            EditorCell_Label errorCell = (EditorCell_Label) EditorUtil.findErrorCell(cellForNewNode);
+            ((EditorCell_Label) errorCell).changeText(tail);
+            errorCell.getTextLine().setCaretPosition(tail.length());
+          }
+        }.run();
+
         return;
       }
     } else if (canCompleteImmediately(substituteInfo, smallPattern, tail)) {
@@ -121,22 +124,23 @@ public class IntelligentInputUtil {
       cellFounder.setCallSelect(true);
 
       if (!uniqueAction(rtSubstituteInfo, tail, "")) { //don't execute non-unique action on RT hint cell
-        AfterCommandInvocator.getInstance().invokeAfterCommand(cellFounder);
+        editorContext.flushEvents();
+        cellFounder.run();
         return;
       }
 
       INodeSubstituteAction rtItem = rtMatchingActions.get(0);
       final SNode yetNewNode = rtItem.doSubstitute(smallPattern);
-      AfterCommandInvocator.getInstance().invokeAfterCommand(new Runnable() {
-        public void run() {
-          AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
-          EditorCell yetNewNodeCell = editor.findNodeCell(yetNewNode);
-          EditorCell errorOrEditableCell = EditorUtil.findErrorOrEditableCell(yetNewNodeCell);
-          editor.changeSelectionWRTFocusPolicy(errorOrEditableCell);
-        }
-      });
+
+      editorContext.flushEvents();
+
+      AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
+      EditorCell yetNewNodeCell = editor.findNodeCell(yetNewNode);
+      EditorCell errorOrEditableCell = EditorUtil.findErrorOrEditableCell(yetNewNodeCell);
+      editor.changeSelectionWRTFocusPolicy(errorOrEditableCell);
     } else {
-      AfterCommandInvocator.getInstance().invokeAfterCommand(cellFounder);
+      editorContext.flushEvents();
+      cellFounder.run();
     }
   }
 

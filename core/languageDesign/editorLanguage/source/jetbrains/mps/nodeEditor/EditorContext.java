@@ -138,6 +138,10 @@ public class EditorContext {
     return nodeCell;
   }
 
+  public void flushEvents() {
+    myNodeEditorComponent.flushEvents();
+  }
+
   public Object createMemento() {
     return new Memento(this);
   }

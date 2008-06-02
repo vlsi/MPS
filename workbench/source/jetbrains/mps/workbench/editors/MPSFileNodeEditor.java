@@ -82,15 +82,8 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor 
     if (!(state instanceof MyFileEditorState)) return;
     final MyFileEditorState currentState = (MyFileEditorState) state;
 
-    GlobalSModelEventsManager.getInstance().flushEvents();
-
-    //need to invoke only after all the events are handled since undo manager might call this method
-//    AfterCommandInvocator.getInstance().invokeAfterCommand(new Runnable() {
-//      public void run() {
-        myNodeEditor.getEditorContext().setMemento(currentState.myMemento);
-//        myNotYetAppliedState = null;
-//      }
-//    });
+    myNodeEditor.getCurrentEditorComponent().flushEvents();
+    myNodeEditor.getEditorContext().setMemento(currentState.myMemento);
   }
 
   public boolean isModified() {
@@ -152,11 +145,6 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor 
       if (!(obj instanceof MyFileEditorState)) {
         return false;
       }
-
-      //todo find a more precise way of comparing undo level state without causing strange behavior
-//      if (myLevel == FileEditorStateLevel.UNDO) {
-//        return true;
-//      }
 
       MyFileEditorState state = (MyFileEditorState) obj;
       return EqualUtil.equals(state.myMemento, myMemento);

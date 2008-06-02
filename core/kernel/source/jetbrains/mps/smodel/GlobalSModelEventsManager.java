@@ -60,9 +60,6 @@ public class GlobalSModelEventsManager implements ApplicationComponent {
     });
   }
 
-  public void flushEvents() {
-    myEventsCollector.flush();
-  }
 
   @NonNls
   @NotNull
