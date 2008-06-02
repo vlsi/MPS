@@ -1,10 +1,15 @@
 package jetbrains.mps.nodeEditor;
 
 import com.intellij.openapi.actionSystem.DataProvider;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.application.RuntimeInterruptedException;
 import com.intellij.openapi.command.undo.UndoManager;
 import com.intellij.openapi.project.Project;
+import com.intellij.ide.CutProvider;
+import com.intellij.ide.CopyProvider;
+import com.intellij.ide.PasteProvider;
 import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRuleUtil;
 import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRule_Action;
 import jetbrains.mps.helgins.inference.IErrorReporter;
@@ -2260,6 +2265,18 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       return getOperationContext();
     }
 
+    if (dataId.equals(PlatformDataKeys.CUT_PROVIDER.getName())) {
+      return new MyCutProvider();
+    }
+
+    if (dataId.equals(PlatformDataKeys.COPY_PROVIDER.getName())) {
+      return new MyCopyProvider();
+    }
+
+    if (dataId.equals(PlatformDataKeys.PASTE_PROVIDER.getName())) {
+      return new MyPasteProvider();
+    }
+
     return null;
   }
 
@@ -2579,6 +2596,70 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         }
       }
 
+    }
+  }
+
+  private class MyCutProvider implements CutProvider {
+    private CellAction_CutNode myCutAction = new CellAction_CutNode();
+
+    public void performCut(DataContext dataContext) {
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          myCutAction.execute(getEditorContext());
+        }
+      });
+    }
+
+    public boolean isCutEnabled(DataContext dataContext) {
+      return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+        public Boolean compute() {
+          return myCutAction.canExecute(getEditorContext());
+        }
+      });
+    }
+  }
+
+  private class MyCopyProvider implements CopyProvider {
+    private CellAction_CopyNode myCopyAction = new CellAction_CopyNode();
+
+    public void performCopy(DataContext dataContext) {
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          myCopyAction.execute(getEditorContext());
+        }
+      });
+    }
+
+    public boolean isCopyEnabled(DataContext dataContext) {
+      return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+        public Boolean compute() {
+          return myCopyAction.canExecute(getEditorContext());
+        }
+      });
+    }
+  }
+
+  private class MyPasteProvider implements PasteProvider {
+    private CellAction_PasteNode myPasteAction = new CellAction_PasteNode();
+
+    public void performPaste(DataContext dataContext) {
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          myPasteAction.execute(getEditorContext());
+        }
+      });
+    }
+
+    public boolean isPastePossible(DataContext dataContext) {
+      return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+        public Boolean compute() {
+          return myPasteAction.canExecute(getEditorContext());
+        }
+      });
+    }
+
+    public boolean isPasteEnabled(DataContext dataContext) {
+      return true;
     }
   }
 }

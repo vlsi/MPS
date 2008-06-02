@@ -1,6 +1,8 @@
 package jetbrains.mps.ide.projectPane;
 
 import com.intellij.openapi.actionSystem.DataProvider;
+import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
@@ -10,6 +12,9 @@ import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.command.CommandAdapter;
 import com.intellij.openapi.command.CommandEvent;
+import com.intellij.ide.CopyProvider;
+import com.intellij.ide.PasteProvider;
+import com.intellij.ide.CutProvider;
 import jetbrains.mps.ide.IProjectPane;
 import jetbrains.mps.ide.MPSToolBar;
 import jetbrains.mps.ide.ThreadUtils;
@@ -18,6 +23,9 @@ import jetbrains.mps.ide.action.IActionDataProvider;
 import jetbrains.mps.ide.actions.*;
 import jetbrains.mps.ide.actions.model.DeleteModelsAction;
 import jetbrains.mps.ide.actions.nodes.DeleteNodeAction;
+import jetbrains.mps.ide.actions.nodes.CopyNodeAction;
+import jetbrains.mps.ide.actions.nodes.PasteNodeAction;
+import jetbrains.mps.ide.actions.nodes.CutNodeAction;
 import jetbrains.mps.ide.projectPane.ProjectPane.MyState;
 import jetbrains.mps.ide.ui.*;
 import jetbrains.mps.ide.ui.MPSTree.TreeState;
@@ -312,6 +320,18 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
 
     if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
       return getContextForSelection();
+    }
+
+    if (dataId.equals(PlatformDataKeys.COPY_PROVIDER.getName())) {
+      return new MyCopyProvider();
+    }
+
+    if (dataId.equals(PlatformDataKeys.PASTE_PROVIDER.getName())) {
+      return new MyPasteProvider();
+    }
+
+    if (dataId.equals(PlatformDataKeys.CUT_PROVIDER.getName())) {
+      return new MyCutProvider();
     }
 
     return null;
@@ -910,7 +930,7 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
     }
   }
 
-  private class MyPanel extends JPanel implements IActionDataProvider {
+  private class MyPanel extends JPanel implements IActionDataProvider, DataProvider {
     public <T> T get(Class<T> cls) {
       if (cls == SNode.class) return (T) getSelectedNode();
       if (cls == SModelDescriptor.class) return (T) getSelectedModel();
@@ -924,5 +944,55 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
       if (cls == IOperationContext.class) return (T) getContextForSelection();
       return null;
     }
+
+    @Nullable
+    public Object getData(@NonNls String dataId) {
+      return ProjectPane.this.getData(dataId);
+    }
   }
+
+  private class MyCopyProvider implements CopyProvider {
+    private CopyNodeAction myAction = new CopyNodeAction();
+
+    public void performCopy(DataContext dataContext) {
+      myAction.execute(new ActionContext());
+    }
+
+    public boolean isCopyEnabled(DataContext dataContext) {
+      myAction.update(new ActionContext());
+      return myAction.isEnabled();
+    }
+  }
+
+  private class MyPasteProvider implements PasteProvider {
+    private PasteNodeAction myAction = new PasteNodeAction();
+    
+    public void performPaste(DataContext dataContext) {
+      myAction.execute(new ActionContext());
+    }
+
+    public boolean isPastePossible(DataContext dataContext) {
+      return true;
+    }
+
+    public boolean isPasteEnabled(DataContext dataContext) {
+      myAction.update(new ActionContext());
+      return myAction.isEnabled();
+    }
+  }
+
+  private class MyCutProvider implements CutProvider {
+    private CutNodeAction myAction = new CutNodeAction();
+
+    public void performCut(DataContext dataContext) {
+      myAction.execute(new ActionContext());
+    }
+
+    public boolean isCutEnabled(DataContext dataContext) {
+      myAction.update(new ActionContext());
+      return myAction.isEnabled();
+    }
+  }
+
+  
 }
