@@ -15,9 +15,8 @@
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.patterns" />
   <language namespace="jetbrains.mps.quotation" />
-  <language namespace="jetbrains.mps.core" />
-  <language namespace="jetbrains.mps.bootstrap.actionsLanguage" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
@@ -55,7 +54,6 @@
   <import index="54" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   <import index="56" modelUID="java.awt@java_stub" version="-1" />
   <import index="61" modelUID="jetbrains.mps.ide@java_stub" version="-1" />
-  <import index="62" modelUID="jetbrains.mps.project@java_stub" version="-1" />
   <import index="63" modelUID="jetbrains.mps.core.constraints" version="-1" />
   <import index="64" modelUID="jetbrains.mps.baseLanguage.actions@java_stub" version="-1" />
   <import index="65" modelUID="jetbrains.mps.baseLanguage.plugin.uiActions@java_stub" version="-1" />
@@ -64,7 +62,6 @@
   <import index="68" modelUID="jetbrains.mps.baseLanguage.structure@java_stub" version="-1" />
   <import index="70" modelUID="javax.swing.text@java_stub" version="-1" />
   <import index="71" modelUID="java.util.regex@java_stub" version="-1" />
-  <import index="72" modelUID="jetbrains.mps.ide.command@java_stub" version="-1" />
   <import index="73" modelUID="jetbrains.mps.workbench.editors@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1073416106125">
     <property name="name" value="StatementList_Editor" />
