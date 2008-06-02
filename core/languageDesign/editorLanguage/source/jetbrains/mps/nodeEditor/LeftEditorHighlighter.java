@@ -2,7 +2,6 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
-import jetbrains.mps.ide.command.AfterCommandInvocator;
 
 import java.util.*;
 import java.util.List;

@@ -3,7 +3,6 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.annotations.structure.AttributeConcept;
 import jetbrains.mps.annotations.structure.LinkAttributeConcept;
 import jetbrains.mps.annotations.structure.PropertyAttributeConcept;
-import jetbrains.mps.ide.command.AfterCommandInvocator;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;

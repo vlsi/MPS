@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
-import jetbrains.mps.ide.command.AfterCommandInvocator;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.tabbedEditor.ILazyTab;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;

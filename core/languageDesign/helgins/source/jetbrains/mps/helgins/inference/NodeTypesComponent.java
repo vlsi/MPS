@@ -15,7 +15,6 @@ import jetbrains.mps.bootstrap.helgins.runtime.ICheckingRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.incremental.INodesReadListener;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
-import jetbrains.mps.ide.command.AfterCommandInvocator;
 import jetbrains.mps.nodeEditor.IEditorMessageOwner;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
