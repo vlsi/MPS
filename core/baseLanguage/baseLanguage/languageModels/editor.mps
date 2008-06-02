@@ -2801,7 +2801,7 @@
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332454823">
                     <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_editorContext" id="1197547701026" />
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332454824">
-                      <link role="baseMethodDeclaration" targetNodeId="21.~EditorContext.selectAndSetCaretLater(jetbrains.mps.smodel.SNode,int):void" resolveInfo="selectAndSetCaretLater" />
+                      <link role="baseMethodDeclaration" targetNodeId="21.~EditorContext.selectAndSetCaret(jetbrains.mps.smodel.SNode,int):void" resolveInfo="selectAndSetCaret" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977966522">
                         <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1197547712433">
                           <link role="concept" targetNodeId="17.1079359253375" resolveInfo="ParenthesizedExpression" />
@@ -10333,7 +10333,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332445091">
               <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_editorContext" id="1191846170273" />
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332445092">
-                <link role="baseMethodDeclaration" targetNodeId="21.~EditorContext.selectLater(jetbrains.mps.smodel.SNode):void" resolveInfo="selectLater" />
+                <link role="baseMethodDeclaration" targetNodeId="21.~EditorContext.select(jetbrains.mps.smodel.SNode):void" resolveInfo="select" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977964813">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191846177280">
                     <link role="variableDeclaration" targetNodeId="1191845549738" resolveInfo="ifStatement" />
@@ -10438,7 +10438,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332445694">
               <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_editorContext" id="1191846208041" />
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332445695">
-                <link role="baseMethodDeclaration" targetNodeId="21.~EditorContext.selectLater(jetbrains.mps.smodel.SNode):void" resolveInfo="selectLater" />
+                <link role="baseMethodDeclaration" targetNodeId="21.~EditorContext.select(jetbrains.mps.smodel.SNode):void" resolveInfo="select" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977952283">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191846214123">
                     <link role="variableDeclaration" targetNodeId="1191845655038" resolveInfo="ifStatement" />
@@ -10528,7 +10528,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332445698">
               <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_editorContext" id="1191846220722" />
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332445699">
-                <link role="baseMethodDeclaration" targetNodeId="21.~EditorContext.selectLater(jetbrains.mps.smodel.SNode):void" resolveInfo="selectLater" />
+                <link role="baseMethodDeclaration" targetNodeId="21.~EditorContext.select(jetbrains.mps.smodel.SNode):void" resolveInfo="select" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977962756">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191846225973">
                     <link role="variableDeclaration" targetNodeId="1191845708452" resolveInfo="whileStatement" />
@@ -10618,7 +10618,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332469573">
               <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_editorContext" id="1191846252158" />
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332469574">
-                <link role="baseMethodDeclaration" targetNodeId="21.~EditorContext.selectLater(jetbrains.mps.smodel.SNode):void" resolveInfo="selectLater" />
+                <link role="baseMethodDeclaration" targetNodeId="21.~EditorContext.select(jetbrains.mps.smodel.SNode):void" resolveInfo="select" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977954476">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191846252161">
                     <link role="variableDeclaration" targetNodeId="1191846252130" resolveInfo="whileStatement" />
@@ -10708,7 +10708,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332444202">
               <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_editorContext" id="1191846303877" />
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332444203">
-                <link role="baseMethodDeclaration" targetNodeId="21.~EditorContext.selectLater(jetbrains.mps.smodel.SNode):void" resolveInfo="selectLater" />
+                <link role="baseMethodDeclaration" targetNodeId="21.~EditorContext.select(jetbrains.mps.smodel.SNode):void" resolveInfo="select" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977952183">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977956670">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191846303880">
@@ -10803,7 +10803,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332445674">
               <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_editorContext" id="1191852804721" />
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332445675">
-                <link role="baseMethodDeclaration" targetNodeId="21.~EditorContext.selectLater(jetbrains.mps.smodel.SNode):void" resolveInfo="selectLater" />
+                <link role="baseMethodDeclaration" targetNodeId="21.~EditorContext.select(jetbrains.mps.smodel.SNode):void" resolveInfo="select" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977957009">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977954687">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191852804726">
@@ -10898,7 +10898,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332468487">
               <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_editorContext" id="1191846395090" />
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332468488">
-                <link role="baseMethodDeclaration" targetNodeId="21.~EditorContext.selectLater(jetbrains.mps.smodel.SNode):void" resolveInfo="selectLater" />
+                <link role="baseMethodDeclaration" targetNodeId="21.~EditorContext.select(jetbrains.mps.smodel.SNode):void" resolveInfo="select" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977956520">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977966603">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206572405873">
@@ -11001,7 +11001,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332468273">
               <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_editorContext" id="1191846543468" />
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332468274">
-                <link role="baseMethodDeclaration" targetNodeId="21.~EditorContext.selectLater(jetbrains.mps.smodel.SNode):void" resolveInfo="selectLater" />
+                <link role="baseMethodDeclaration" targetNodeId="21.~EditorContext.select(jetbrains.mps.smodel.SNode):void" resolveInfo="select" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977955324">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191846543474">
                     <link role="variableDeclaration" targetNodeId="1191846543440" resolveInfo="tryCatchStatement" />
@@ -11104,7 +11104,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332444511">
               <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_editorContext" id="1191846698213" />
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332444512">
-                <link role="baseMethodDeclaration" targetNodeId="21.~EditorContext.selectLater(jetbrains.mps.smodel.SNode):void" resolveInfo="selectLater" />
+                <link role="baseMethodDeclaration" targetNodeId="21.~EditorContext.select(jetbrains.mps.smodel.SNode):void" resolveInfo="select" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977954939">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977968180">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206572405540">
@@ -11207,7 +11207,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332446172">
               <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_editorContext" id="1191846758739" />
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332446173">
-                <link role="baseMethodDeclaration" targetNodeId="21.~EditorContext.selectLater(jetbrains.mps.smodel.SNode):void" resolveInfo="selectLater" />
+                <link role="baseMethodDeclaration" targetNodeId="21.~EditorContext.select(jetbrains.mps.smodel.SNode):void" resolveInfo="select" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977955375">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191846758745">
                     <link role="variableDeclaration" targetNodeId="1191846758711" resolveInfo="tryStatement" />
@@ -11297,7 +11297,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332454868">
               <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_editorContext" id="1191846851248" />
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332454869">
-                <link role="baseMethodDeclaration" targetNodeId="21.~EditorContext.selectLater(jetbrains.mps.smodel.SNode):void" resolveInfo="selectLater" />
+                <link role="baseMethodDeclaration" targetNodeId="21.~EditorContext.select(jetbrains.mps.smodel.SNode):void" resolveInfo="select" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206572405432">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977968082">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977967281">
@@ -11390,7 +11390,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332445814">
               <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_editorContext" id="1197487560148" />
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332445815">
-                <link role="baseMethodDeclaration" targetNodeId="21.~EditorContext.selectLater(jetbrains.mps.smodel.SNode):void" resolveInfo="selectLater" />
+                <link role="baseMethodDeclaration" targetNodeId="21.~EditorContext.select(jetbrains.mps.smodel.SNode):void" resolveInfo="select" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206572405243">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977951828">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197487560154">
@@ -13755,7 +13755,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332446100">
-              <link role="baseMethodDeclaration" targetNodeId="21.~EditorContext.selectLater(jetbrains.mps.smodel.SNode):void" resolveInfo="selectLater" />
+              <link role="baseMethodDeclaration" targetNodeId="21.~EditorContext.select(jetbrains.mps.smodel.SNode):void" resolveInfo="select" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977967254">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198528149135">
                   <link role="variableDeclaration" targetNodeId="1198527806546" resolveInfo="newStatement" />
@@ -13908,7 +13908,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332445583">
-              <link role="baseMethodDeclaration" targetNodeId="21.~EditorContext.selectLater(jetbrains.mps.smodel.SNode):void" resolveInfo="selectLater" />
+              <link role="baseMethodDeclaration" targetNodeId="21.~EditorContext.select(jetbrains.mps.smodel.SNode):void" resolveInfo="select" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198586186618">
                 <link role="variableDeclaration" targetNodeId="1198586186551" resolveInfo="newStatement" />
               </node>
@@ -14054,7 +14054,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332444441">
-              <link role="baseMethodDeclaration" targetNodeId="21.~EditorContext.selectLater(jetbrains.mps.smodel.SNode):void" resolveInfo="selectLater" />
+              <link role="baseMethodDeclaration" targetNodeId="21.~EditorContext.select(jetbrains.mps.smodel.SNode):void" resolveInfo="select" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198588867007">
                 <link role="variableDeclaration" targetNodeId="1198588866959" resolveInfo="newDeclaration" />
               </node>
