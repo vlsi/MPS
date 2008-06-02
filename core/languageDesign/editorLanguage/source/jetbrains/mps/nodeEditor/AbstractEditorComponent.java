@@ -95,9 +95,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private Set<EditorCell> myFoldedCells = new HashSet<EditorCell>();
   private Set<EditorCell> myBracesEnabledCells = new HashSet<EditorCell>();
 
-  private IEditorMessageOwner myMessageOwner = new IEditorMessageOwner() {
-  };
-  
   private EditorSettingsListener mySettingsListener = new EditorSettingsListener() {
     public void settingsChanged() {
       rebuildEditorContent();
@@ -2393,167 +2390,171 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return getInsertedPosition(viewRect, menu.getPreferredSize(), point);
   }
 
-  private class MyModelListener implements SModelCommandListener {
-    public void eventsHappenedInCommand(List<SModelEvent> events) {
-      if (EventUtil.isDetachedOnlyChange(events)) {
-        return;
-      }
+  private void handleEvents(List<SModelEvent> events) {
+    if (EventUtil.isDetachedOnlyChange(events)) {
+      return;
+    }
 
-      if (!EventUtil.isDramaticalChange(events)) {
-        if (EventUtil.isPropertyChange(events)) {
-          String propertyName = ((SModelPropertyEvent) events.get(0)).getPropertyName();
-          SNodePointer nodeProxy = new SNodePointer(((SModelPropertyEvent) events.get(0)).getNode());
-          Pair<SNodePointer, String> pair = new Pair<SNodePointer, String>(nodeProxy, propertyName);
-          Set<EditorCell_Property> editorCell_properties = myNodePropertiesAccessedCleanlyToDependentCellsMap.get(pair);
-          Set<EditorCell> editorCells = myNodePropertiesAccessedDirtilyToDependentCellsMap.get(pair);
-          Set<EditorCell> editorCellsDependentOnExistence = myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap.get(pair);
-          if (editorCellsDependentOnExistence != null) {
-            if (EventUtil.isPropertyAddedOrRemoved(events.get(0))) {
-              rebuildEditorContent(events);
-            } else {
-              for (EditorCell cell : editorCellsDependentOnExistence) {
-                cell.synchronizeViewWithModel();
-                fireCellSynchronized(cell);
-              }
-              if (editorCell_properties != null) {
-                for (EditorCell cell : editorCell_properties) {
-                  cell.synchronizeViewWithModel();
-                  fireCellSynchronized(cell);
-                }
-              }
-              relayout();
-            }
-            return;
-          }
-          if (editorCells != null) {
+    if (!EventUtil.isDramaticalChange(events)) {
+      if (EventUtil.isPropertyChange(events)) {
+        String propertyName = ((SModelPropertyEvent) events.get(0)).getPropertyName();
+        SNodePointer nodeProxy = new SNodePointer(((SModelPropertyEvent) events.get(0)).getNode());
+        Pair<SNodePointer, String> pair = new Pair<SNodePointer, String>(nodeProxy, propertyName);
+        Set<EditorCell_Property> editorCell_properties = myNodePropertiesAccessedCleanlyToDependentCellsMap.get(pair);
+        Set<EditorCell> editorCells = myNodePropertiesAccessedDirtilyToDependentCellsMap.get(pair);
+        Set<EditorCell> editorCellsDependentOnExistence = myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap.get(pair);
+        if (editorCellsDependentOnExistence != null) {
+          if (EventUtil.isPropertyAddedOrRemoved(events.get(0))) {
             rebuildEditorContent(events);
-          } else if (editorCell_properties != null) {
-            for (EditorCell_Property cell : editorCell_properties) {
+          } else {
+            for (EditorCell cell : editorCellsDependentOnExistence) {
               cell.synchronizeViewWithModel();
               fireCellSynchronized(cell);
             }
+            if (editorCell_properties != null) {
+              for (EditorCell cell : editorCell_properties) {
+                cell.synchronizeViewWithModel();
+                fireCellSynchronized(cell);
+              }
+            }
             relayout();
           }
-        } else {
-          rebuildEditorContent(events);
-        }
-      } else {// "dramatical" change
-        rebuildEditorContent(events);
-
-
-        if (!hasFocus() && !myLightBulb.isVisible()) {
           return;
         }
+        if (editorCells != null) {
+          rebuildEditorContent(events);
+        } else if (editorCell_properties != null) {
+          for (EditorCell_Property cell : editorCell_properties) {
+            cell.synchronizeViewWithModel();
+            fireCellSynchronized(cell);
+          }
+          relayout();
+        }
+      } else {
+        rebuildEditorContent(events);
+      }
+    } else {// "dramatical" change
+      rebuildEditorContent(events);
 
-        updateSelection(events);
+
+      if (!hasFocus() && !myLightBulb.isVisible()) {
+        return;
+      }
+
+      updateSelection(events);
+    }
+  }
+
+
+  private void updateSelection(List<SModelEvent> events) {
+    SModelEvent lastAdd = null;
+    SModelEvent lastRemove = null;
+
+    List<SNode> childAddedEventNodes = new ArrayList<SNode>();
+
+    for (SModelEvent e : events) {
+      if (e instanceof SModelChildEvent) {
+        SModelChildEvent ce = (SModelChildEvent) e;
+        if (ce.getParent().getAncestors(true).contains(getEditedNode())) {
+          if (ce.isAdded()) {
+            lastAdd = ce;
+            childAddedEventNodes.add(ce.getChild());
+          }
+          if (ce.isRemoved()) lastRemove = ce;
+        }
+      }
+
+      if (e instanceof SModelReferenceEvent) {
+        SModelReferenceEvent re = (SModelReferenceEvent) e;
+        if (re.isAdded()) lastAdd = re;
+        if (re.isRemoved()) lastRemove = re;
       }
     }
 
+    if (lastAdd != null) {
+      if (lastAdd instanceof SModelChildEvent) {
+        List<NodesParetoFrontier.NodeBox> frontier = NodesParetoFrontier.findParetoFrontier(childAddedEventNodes);
+        SNode addedChild = frontier.get(frontier.size() - 1).getNode();
+        EditorCell cell = findNodeCell(addedChild);
+        if (cell != null) {
+          changeSelectionWRTFocusPolicy(cell);
+        }
+        return;
+      } else //noinspection ConstantConditions
+        if (lastAdd instanceof SModelReferenceEvent) {
+          SModelReferenceEvent re = (SModelReferenceEvent) lastAdd;
+          selectRefCell(re.getReference());
+          return;
+        } else {
+          //
+        }
+    }
 
-    private void updateSelection(List<SModelEvent> events) {
-      SModelEvent lastAdd = null;
-      SModelEvent lastRemove = null;
+    if (lastRemove != null) {
+      if (lastRemove instanceof SModelChildEvent) {
+        SModelChildEvent ce = (SModelChildEvent) lastRemove;
+        int index = ce.getChildIndex();
+        String role = ce.getChildRole();
+        SNode parent = ce.getParent();
 
-      List<SNode> childAddedEventNodes = new ArrayList<SNode>();
-
-      for (SModelEvent e : events) {
-        if (e instanceof SModelChildEvent) {
-          SModelChildEvent ce = (SModelChildEvent) e;
-          if (ce.getParent().getAncestors(true).contains(getEditedNode())) {
-            if (ce.isAdded()) {
-              lastAdd = ce;
-              childAddedEventNodes.add(ce.getChild());
+        if (parent.getChildCount() > index) {
+          SNode child = parent.getChildAt(index);
+          if (role.equals(child.getRole_())) {
+            EditorCell cell = findNodeCell(child);
+            if (cell != null) {
+              changeSelectionWRTFocusPolicy(cell);
             }
-            if (ce.isRemoved()) lastRemove = ce;
+            return;
           }
         }
 
-        if (e instanceof SModelReferenceEvent) {
-          SModelReferenceEvent re = (SModelReferenceEvent) e;
-          if (re.isAdded()) lastAdd = re;
-          if (re.isRemoved()) lastRemove = re;
+        if (index != 0) {
+          SNode child = parent.getChildAt(index - 1);
+          if (role.equals(child.getRole_())) {
+            EditorCell cell = findNodeCell(child);
+            if (cell != null) {
+              changeSelectionWRTFocusPolicy(cell);
+            }
+            return;
+          }
         }
-      }
 
-      if (lastAdd != null) {
-        if (lastAdd instanceof SModelChildEvent) {
-          List<NodesParetoFrontier.NodeBox> frontier = NodesParetoFrontier.findParetoFrontier(childAddedEventNodes);
-          SNode addedChild = frontier.get(frontier.size() - 1).getNode();
-          EditorCell cell = findNodeCell(addedChild);
+
+        EditorCell nullCell = findNodeCellWithRole(parent, role);
+        if (nullCell == null) {
+          EditorCell cell = findNodeCell(parent);
           if (cell != null) {
             changeSelectionWRTFocusPolicy(cell);
           }
-          return;
-        } else //noinspection ConstantConditions
-          if (lastAdd instanceof SModelReferenceEvent) {
-            SModelReferenceEvent re = (SModelReferenceEvent) lastAdd;
-            selectRefCell(re.getReference());
-            return;
-          } else {
-            //
-          }
-      }
-
-      if (lastRemove != null) {
-        if (lastRemove instanceof SModelChildEvent) {
-          SModelChildEvent ce = (SModelChildEvent) lastRemove;
-          int index = ce.getChildIndex();
-          String role = ce.getChildRole();
-          SNode parent = ce.getParent();
-
-          if (parent.getChildCount() > index) {
-            SNode child = parent.getChildAt(index);
-            if (role.equals(child.getRole_())) {
-              EditorCell cell = findNodeCell(child);
-              if (cell != null) {
-                changeSelectionWRTFocusPolicy(cell);
-              }
-              return;
-            }
-          }
-
-          if (index != 0) {
-            SNode child = parent.getChildAt(index - 1);
-            if (role.equals(child.getRole_())) {
-              EditorCell cell = findNodeCell(child);
-              if (cell != null) {
-                changeSelectionWRTFocusPolicy(cell);
-              }
-              return;
-            }
-          }
-
-
-          EditorCell nullCell = findNodeCellWithRole(parent, role);
-          if (nullCell == null) {
-            EditorCell cell = findNodeCell(parent);
-            if (cell != null) {
-              changeSelectionWRTFocusPolicy(cell);
-            }
-          } else {
-            changeSelectionWRTFocusPolicy(nullCell);
-          }
-
-          return;
+        } else {
+          changeSelectionWRTFocusPolicy(nullCell);
         }
 
-        //noinspection ConstantConditions
-        if (lastRemove instanceof SModelReferenceEvent) {
-          SModelReferenceEvent re = (SModelReferenceEvent) lastRemove;
-          SReference ref = re.getReference();
-          SNode sourceNode = ref.getSourceNode();
-          String role = ref.getRole();
-          EditorCell nullCell = findNodeCellWithRole(sourceNode, role);
-          if (nullCell == null) {
-            EditorCell cell = findNodeCell(sourceNode);
-            if (cell != null) {
-              changeSelectionWRTFocusPolicy(cell);
-            }
-          } else {
-            changeSelectionWRTFocusPolicy(nullCell);
+        return;
+      }
+
+      //noinspection ConstantConditions
+      if (lastRemove instanceof SModelReferenceEvent) {
+        SModelReferenceEvent re = (SModelReferenceEvent) lastRemove;
+        SReference ref = re.getReference();
+        SNode sourceNode = ref.getSourceNode();
+        String role = ref.getRole();
+        EditorCell nullCell = findNodeCellWithRole(sourceNode, role);
+        if (nullCell == null) {
+          EditorCell cell = findNodeCell(sourceNode);
+          if (cell != null) {
+            changeSelectionWRTFocusPolicy(cell);
           }
+        } else {
+          changeSelectionWRTFocusPolicy(nullCell);
         }
       }
+    }
+  }
+
+  private class MyModelListener implements SModelCommandListener {
+    public void eventsHappenedInCommand(List<SModelEvent> events) {
+      AbstractEditorComponent.this.handleEvents(events);
     }
   }
 
