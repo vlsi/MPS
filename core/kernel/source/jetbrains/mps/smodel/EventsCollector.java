@@ -68,6 +68,7 @@ public class EventsCollector {
   }
 
   public void flush() {
+    if (myEvents.isEmpty()) return;    
     eventsHappened(Collections.unmodifiableList(myEvents));
     myEvents = new ArrayList<SModelEvent>();
   }
