@@ -49,6 +49,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="48" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -2892,7 +2893,7 @@
                   <link role="variableDeclaration" targetNodeId="1190026803773" resolveInfo="editorContext" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332445697">
-                  <link role="baseMethodDeclaration" targetNodeId="26.~EditorContext.selectLater(jetbrains.mps.smodel.SNode):void" resolveInfo="selectLater" />
+                  <link role="baseMethodDeclaration" targetNodeId="26.~EditorContext.select(jetbrains.mps.smodel.SNode):void" resolveInfo="select" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1190053175720">
                     <link role="variableDeclaration" targetNodeId="1190053132211" resolveInfo="newSelection" />
                   </node>
