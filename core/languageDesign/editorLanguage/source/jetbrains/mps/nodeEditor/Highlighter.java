@@ -165,9 +165,6 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
 
     List<SModelEvent> events = new ArrayList<SModelEvent>();
     synchronized (EVENTS_LOCK) {
-      if (!myLastEvents.isEmpty()) {
-        System.err.println("oy");
-      }
       events.addAll(myLastEvents);
       myLastEvents.clear();
     }
