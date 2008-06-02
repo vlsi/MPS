@@ -34,9 +34,7 @@ public class GlobalSModelEventsManager implements ApplicationComponent {
   private List<SModelCommandListener> myGlobalCommandListeners = new ArrayList<SModelCommandListener>();
 
   private SModelListener myRelayListener = createRelayListener();
-  private SModelListener myCommandEventsCollector = createCommandEventsCollector();
-  private CommandListener myCommandListener = new MyCommandListener();
-  private List<SModelEvent> myCommandEvents = new ArrayList<SModelEvent>();
+  private MyEventsCollector myEventsCollector = new MyEventsCollector();
 
   public GlobalSModelEventsManager(SModelRepository SModelRepository) {
     mySModelRepository = SModelRepository;
@@ -60,22 +58,10 @@ public class GlobalSModelEventsManager implements ApplicationComponent {
         }
       }
     });
-
-    CommandProcessor.getInstance().addCommandListener(myCommandListener);
   }
 
   public void flushEvents() {
-    if (myCommandEvents.isEmpty()) return;
-
-    for (SModelCommandListener l : myGlobalCommandListeners) {
-      try {
-        l.eventsHappenedInCommand(Collections.unmodifiableList(myCommandEvents));
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-
-    myCommandEvents = new ArrayList<SModelEvent>();
+    myEventsCollector.flush();
   }
 
   @NonNls
@@ -89,12 +75,12 @@ public class GlobalSModelEventsManager implements ApplicationComponent {
 
   private void addListeners(SModelDescriptor sm) {
     sm.addModelListener(myRelayListener);
-    sm.addModelListener(myCommandEventsCollector);
+    myEventsCollector.add(sm);
   }
 
   private void removeListeners(SModelDescriptor sm) {
-    sm.removeModelListener(myRelayListener);;
-    sm.removeModelListener(myCommandEventsCollector);
+    sm.removeModelListener(myRelayListener);
+    myEventsCollector.remove(sm);
   }
 
   public void addGlobalModelListener(SModelListener l) {
@@ -146,38 +132,17 @@ public class GlobalSModelEventsManager implements ApplicationComponent {
     );
   }
 
-  private SModelListener createCommandEventsCollector() {
-    return (SModelListener) Proxy.newProxyInstance(
-      getClass().getClassLoader(),
-      new Class[] { SModelListener.class },
-      new InvocationHandler() {
-        public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-          if (method.getName().equals("equals") && args.length == 1) {
-            return proxy == args[0];
-          }
+  private class MyEventsCollector extends EventsCollector {
+    protected void eventsHappened(List<SModelEvent> events) {
+      if (events.isEmpty()) return;
 
-          if (method.getName().equals("hashCode") && args == null) {
-            return this.hashCode();
-          }
-
-          if (args != null && args.length == 1 && args[0] instanceof SModelEvent) {
-            SModelEvent e = (SModelEvent) args[0];
-            myCommandEvents.add(e);
-          }
-
-          return null;
+      for (SModelCommandListener l : myGlobalCommandListeners) {
+        try {
+          l.eventsHappenedInCommand(Collections.unmodifiableList(events));
+        } catch (Throwable t) {
+          LOG.error(t);
         }
       }
-    );
-  }
-
-  private class MyCommandListener extends CommandAdapter {
-    public void commandStarted(CommandEvent event) {
-      myCommandEvents.clear();
-    }
-
-    public void beforeCommandFinished(CommandEvent event) {
-      flushEvents();
     }
   }
 }
