@@ -15,6 +15,7 @@ import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.workbench.highlighter.EditorsProvider;
+import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 
 import java.util.*;
 
@@ -190,10 +191,6 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
         if (updateEditorComponent(component, events, checkers, checkersToRemove)) {
           isUpdated = true;
         }
-
-        if (component instanceof NodeEditorComponent) {
-          updateEditorComponent(((NodeEditorComponent) component).getInspector(), events, checkers, checkersToRemove);
-        }
       }
     }
 
@@ -256,12 +253,18 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
     myCheckedOnceEditors.remove(editorComponent);
   }
 
-  protected boolean updateEditor(final IEditorComponent editor, Set<IEditorChecker> checkersToRecheck, Set<IEditorChecker> checkersToRemove) {
+  private boolean updateEditor(final IEditorComponent editor, Set<IEditorChecker> checkersToRecheck, Set<IEditorChecker> checkersToRemove) {
     if (editor == null || editor.getRootCell() == null) {
       return false;
     }
 
+    InspectorEditorComponent inspectorEditorComponent = null;
+    if (editor instanceof NodeEditorComponent) {
+      inspectorEditorComponent = ((NodeEditorComponent)editor).getInspector();
+    }
+
     NodeHighlightManager highlightManager = editor.getHighlightManager();
+    NodeHighlightManager inspectorHighlightManager = inspectorEditorComponent == null ? null : inspectorEditorComponent.getHighlightManager();
     for (final IEditorChecker checker : checkersToRecheck) {
       final LinkedHashSet<IEditorMessage> messages = new LinkedHashSet<IEditorMessage>();
       final IEditorMessageOwner[] owners = new IEditorMessageOwner[1];
@@ -278,9 +281,15 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
       IEditorMessageOwner owner = owners[0];
       if (owner != null) {
         highlightManager.clearForOwner(owner);
+        if (inspectorHighlightManager != null) {
+          inspectorHighlightManager.clearForOwner(owner);
+        }
       }
       for (IEditorMessage message : messages) {
         highlightManager.mark(message);
+        if (inspectorHighlightManager != null) {
+          inspectorHighlightManager.mark(message);
+        }
       }
     }
     for (final IEditorChecker checker : checkersToRemove) {
@@ -294,6 +303,9 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
       };
       ModelAccess.instance().runReadAction(runnable);
       highlightManager.clearForOwner(owners[0]);
+      if (inspectorHighlightManager != null) {
+        inspectorHighlightManager.clearForOwner(owners[0]);
+      }
     }
 
     return true;
