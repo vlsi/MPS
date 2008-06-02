@@ -10,8 +10,6 @@ import com.intellij.ide.DataManager;
 
 class UndoUtil {
   static void addUndoableAction(UndoableAction action) {
-
-
     DataContext dataContext = DataManager.getInstance().getDataContext();
     Project project = PlatformDataKeys.PROJECT.getData(dataContext);
 

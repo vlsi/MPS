@@ -350,5 +350,15 @@ public class EditorContext {
               (myCellInfo != null ? myCellInfo.hashCode() : 0) +
               (myCaretX != null ? myCaretX.hashCode() : 0);
     }
+
+    public String toString() {
+      return "Editor Memento[\n" +
+        "  caretX = " + myCaretX + "\n" +
+        "  cellInfo = " + myCellInfo + "\n" +
+        "  selectedStack = " + mySelectedStack + "\n" +
+        "  collectionsWithBraces = " + myCollectionsWithEnabledBraces + "\n" +
+        "  foldedCells = " + myFolded + "\n" +
+        "]\n";
+    }
   } // private static class Memento
 }

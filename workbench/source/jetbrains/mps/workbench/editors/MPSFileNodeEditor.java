@@ -27,9 +27,10 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.GlobalSModelEventsManager;
 
 public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor {
-  private MPSNodeVirtualFile myFile;  
+  private MPSNodeVirtualFile myFile;
   private IEditor myNodeEditor;
 
   public MPSFileNodeEditor(final Project project, final MPSNodeVirtualFile file) {
@@ -81,13 +82,15 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor 
     if (!(state instanceof MyFileEditorState)) return;
     final MyFileEditorState currentState = (MyFileEditorState) state;
 
-    //need to invoke only after all the events are handled since undo manager might call this method
-    AfterCommandInvocator.getInstance().invokeAfterCommand(new Runnable() {
-      public void run() {
-        myNodeEditor.getEditorContext().setMemento(currentState.myMemento);
-      }
-    });
+    GlobalSModelEventsManager.getInstance().flushEvents();
 
+    //need to invoke only after all the events are handled since undo manager might call this method
+//    AfterCommandInvocator.getInstance().invokeAfterCommand(new Runnable() {
+//      public void run() {
+        myNodeEditor.getEditorContext().setMemento(currentState.myMemento);
+//        myNotYetAppliedState = null;
+//      }
+//    });
   }
 
   public boolean isModified() {
@@ -151,9 +154,9 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor 
       }
 
       //todo find a more precise way of comparing undo level state without causing strange behavior
-      if (myLevel == FileEditorStateLevel.UNDO) {
-        return true;
-      }
+//      if (myLevel == FileEditorStateLevel.UNDO) {
+//        return true;
+//      }
 
       MyFileEditorState state = (MyFileEditorState) obj;
       return EqualUtil.equals(state.myMemento, myMemento);

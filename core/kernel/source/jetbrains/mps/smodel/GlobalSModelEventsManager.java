@@ -64,6 +64,20 @@ public class GlobalSModelEventsManager implements ApplicationComponent {
     CommandProcessor.getInstance().addCommandListener(myCommandListener);
   }
 
+  public void flushEvents() {
+    if (myCommandEvents.isEmpty()) return;
+
+    for (SModelCommandListener l : myGlobalCommandListeners) {
+      try {
+        l.eventsHappenedInCommand(Collections.unmodifiableList(myCommandEvents));
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+
+    myCommandEvents = new ArrayList<SModelEvent>();
+  }
+
   @NonNls
   @NotNull
   public String getComponentName() {
@@ -163,17 +177,7 @@ public class GlobalSModelEventsManager implements ApplicationComponent {
     }
 
     public void beforeCommandFinished(CommandEvent event) {
-      if (myCommandEvents.isEmpty()) return;
-
-      for (SModelCommandListener l : myGlobalCommandListeners) {
-        try {
-          l.eventsHappenedInCommand(Collections.unmodifiableList(myCommandEvents));
-        } catch (Throwable t) {
-          LOG.error(t);
-        }
-      }
-
-      myCommandEvents = new ArrayList<SModelEvent>();
+      flushEvents();
     }
   }
 }
