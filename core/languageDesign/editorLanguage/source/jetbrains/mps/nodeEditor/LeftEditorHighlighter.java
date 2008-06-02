@@ -65,11 +65,9 @@ public class LeftEditorHighlighter {
         }
       }
     }
-    AfterCommandInvocator.getInstance().invokeNowOrAfterCommand(new Runnable() {
-      public void run() {
-        relayout(true, false);
-      }
-    });
+
+    
+    relayout(true, false);
   }
 
   public void paint(Graphics g) {

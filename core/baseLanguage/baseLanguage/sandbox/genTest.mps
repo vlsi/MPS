@@ -335,7 +335,48 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1212245607486">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212245607487">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1212245607488" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1212411246353">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212411246354">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212411247967">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1212411253684">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1212411254673">
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1212411255880">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1212411257087">
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1212411258216">
+                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1212411259595">
+                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1212411260020">
+                                <property name="value" value="2" />
+                              </node>
+                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1212411258719">
+                                <property name="value" value="2" />
+                              </node>
+                            </node>
+                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1212411257418">
+                              <property name="value" value="2" />
+                            </node>
+                          </node>
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1212411256274">
+                            <property name="value" value="2" />
+                          </node>
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1212411255020">
+                          <property name="value" value="2" />
+                        </node>
+                      </node>
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1212411254234">
+                        <property name="value" value="2" />
+                      </node>
+                    </node>
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1212411247968">
+                      <property name="value" value="2" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1212411247169">
+                <property name="value" value="true" />
+              </node>
+            </node>
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1212245608568">
             <property name="value" value="true" />
