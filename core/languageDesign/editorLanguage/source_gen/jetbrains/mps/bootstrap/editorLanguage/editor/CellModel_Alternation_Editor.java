@@ -45,7 +45,6 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_ifTrueCellModelRefNodeCell65_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ifTrueCellModelRefNodeCell65_0");
     editorCell.setDrawBorder(true);
   }
 
@@ -67,7 +66,6 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_ifFalseCellModelRefNodeCell65_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ifFalseCellModelRefNodeCell65_0");
     editorCell.setDrawBorder(true);
   }
 
@@ -89,7 +87,6 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_ifTrueCellModelRefNodeCell65_01(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ifTrueCellModelRefNodeCell65_01");
     editorCell.setDrawBorder(true);
   }
 
@@ -104,7 +101,6 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_ifFalseCellModelRefNodeCell65_01(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ifFalseCellModelRefNodeCell65_01");
     editorCell.setDrawBorder(true);
   }
 
@@ -314,7 +310,6 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_renderingConditionRefNodeCell65_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_renderingConditionRefNodeCell65_0");
     editorCell.setDrawBorder(true);
   }
 
@@ -331,7 +326,6 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_alternationConditionRefNodeCell65_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_alternationConditionRefNodeCell65_0");
     editorCell.setDrawBorder(true);
   }
 
@@ -348,7 +342,6 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_menuDescriptorRefNodeCell65_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_menuDescriptorRefNodeCell65_0");
     editorCell.setDrawBorder(true);
   }
 

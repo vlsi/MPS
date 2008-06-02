@@ -22,7 +22,6 @@ public class CastExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_expressionRefNodeCell18526_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_expressionRefNodeCell18526_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -39,7 +38,6 @@ public class CastExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_typeRefNodeCell18526_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_typeRefNodeCell18526_0");
     editorCell.setDrawBorder(false);
   }
 

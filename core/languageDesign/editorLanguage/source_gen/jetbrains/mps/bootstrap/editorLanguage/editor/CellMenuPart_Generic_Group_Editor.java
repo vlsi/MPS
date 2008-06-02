@@ -73,7 +73,6 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_parameterObjectTypeRefNodeCell14578_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_parameterObjectTypeRefNodeCell14578_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -95,7 +94,6 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_parametersFunctionRefNodeCell14578_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_parametersFunctionRefNodeCell14578_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -139,7 +137,6 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_matchingTextFunctionRefNodeCell14578_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_matchingTextFunctionRefNodeCell14578_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -161,7 +158,6 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_descriptionTextFunctionRefNodeCell14578_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_descriptionTextFunctionRefNodeCell14578_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -183,7 +179,6 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_handlerFunctionRefNodeCell14578_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_handlerFunctionRefNodeCell14578_0");
     editorCell.setDrawBorder(false);
   }
 

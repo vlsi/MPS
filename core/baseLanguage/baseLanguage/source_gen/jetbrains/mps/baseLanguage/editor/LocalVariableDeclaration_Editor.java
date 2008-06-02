@@ -66,7 +66,6 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_typeRefNodeCell21166_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_typeRefNodeCell21166_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -87,7 +86,6 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_initializerRefNodeCell21166_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_initializerRefNodeCell21166_0");
     editorCell.setDrawBorder(false);
   }
 

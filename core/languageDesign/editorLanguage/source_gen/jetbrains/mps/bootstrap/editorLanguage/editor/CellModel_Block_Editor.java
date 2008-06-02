@@ -47,11 +47,9 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_bodyRefNodeCell12355_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_bodyRefNodeCell12355_0");
   }
 
   private static void setupBasic_headerRefNodeCell12355_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_headerRefNodeCell12355_0");
   }
 
   private static void setupBasic_CollectionCell12355_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -186,7 +184,6 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_menuDescriptorRefNodeCell12355_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_menuDescriptorRefNodeCell12355_0");
     editorCell.setDrawBorder(true);
   }
 
@@ -240,7 +237,6 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_renderingConditionRefNodeCell12355_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_renderingConditionRefNodeCell12355_0");
   }
 
   private static void setupBasic_openBracePropertyCell12355_0(EditorCell editorCell, SNode node, EditorContext context) {

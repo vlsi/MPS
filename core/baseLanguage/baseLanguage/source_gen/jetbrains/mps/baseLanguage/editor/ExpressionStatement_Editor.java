@@ -22,7 +22,6 @@ public class ExpressionStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_expressionRefNodeCell140_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_expressionRefNodeCell140_0");
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
     ExpressionStatement_Expression_Actions.setCellActions(editorCell, node, context);

@@ -22,7 +22,6 @@ public class LocalVariableDeclarationStatement_Editor extends DefaultNodeEditor 
   }
 
   private static void setupBasic_localVariableDeclarationRefNodeCell1518_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_localVariableDeclarationRefNodeCell1518_0");
     editorCell.setDrawBorder(false);
   }
 

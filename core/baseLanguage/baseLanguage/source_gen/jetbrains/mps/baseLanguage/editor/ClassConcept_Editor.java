@@ -246,7 +246,6 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_staticInitializerRefNodeCell6031_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_staticInitializerRefNodeCell6031_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -291,7 +290,6 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_staticInitializerRefNodeCell6031_01(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_staticInitializerRefNodeCell6031_01");
     editorCell.setDrawBorder(false);
   }
 
@@ -403,7 +401,6 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_instanceInitializerRefNodeCell6031_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_instanceInitializerRefNodeCell6031_0");
   }
 
   private static void setupBasic_CollectionCell6031_020(EditorCell editorCell, SNode node, EditorContext context) {
@@ -419,7 +416,6 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_superclassRefNodeCell6031_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_superclassRefNodeCell6031_0");
     editorCell.setDrawBorder(false);
   }
 

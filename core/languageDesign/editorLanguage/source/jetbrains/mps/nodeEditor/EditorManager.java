@@ -307,14 +307,12 @@ public class EditorManager {
 
     // set focus
     if (node.getUserObject(RIGHT_TRANSFORM_HINT_JUST_ADDED) != null) {
-      AfterCommandInvocator.getInstance().invokeAfterCommand(new Runnable() {
-        public void run() {
-          node.removeUserObject(RIGHT_TRANSFORM_HINT_JUST_ADDED);
-          if (node.hasRightTransformHint()) {
-            context.getNodeEditorComponent().changeSelection(rightTransformHintCell);
-          }
-        }
-      });
+      context.flushEvents();
+
+      node.removeUserObject(RIGHT_TRANSFORM_HINT_JUST_ADDED);
+      if (node.hasRightTransformHint()) {
+        context.getNodeEditorComponent().changeSelection(rightTransformHintCell);
+      }
     }
     return resultCell;
   }

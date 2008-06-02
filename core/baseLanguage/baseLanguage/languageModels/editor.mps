@@ -38,6 +38,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="73" />
   <import index="17" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="18" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -13054,12 +13055,12 @@
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1200421067639">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332446433">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1200421067643">
-                <link role="baseMethodDeclaration" targetNodeId="72.~CommandProcessor.instance():jetbrains.mps.ide.command.CommandProcessor" resolveInfo="instance" />
-                <link role="classConcept" targetNodeId="72.~CommandProcessor" resolveInfo="CommandProcessor" />
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1212418759996">
+                <link role="baseMethodDeclaration" targetNodeId="20.~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolveInfo="instance" />
+                <link role="classConcept" targetNodeId="20.~ModelAccess" resolveInfo="ModelAccess" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332446434">
-                <link role="baseMethodDeclaration" targetNodeId="72.~CommandProcessor.executeCommand(java.lang.Runnable):void" resolveInfo="executeCommand" />
+                <link role="baseMethodDeclaration" targetNodeId="20.~ModelAccess.runWriteActionInCommand(java.lang.Runnable):void" resolveInfo="runWriteActionInCommand" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204244929131">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1200421067642" />
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1204244929132">

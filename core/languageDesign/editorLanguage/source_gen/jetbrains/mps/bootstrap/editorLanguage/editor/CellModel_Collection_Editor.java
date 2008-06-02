@@ -214,7 +214,6 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_cellLayoutRefNodeCell15568_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_cellLayoutRefNodeCell15568_0");
     editorCell.setDrawBorder(true);
   }
 
@@ -361,7 +360,6 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_renderingConditionRefNodeCell15568_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_renderingConditionRefNodeCell15568_0");
   }
 
   private static void setupBasic_CollectionCell15568_021(EditorCell editorCell, SNode node, EditorContext context) {
@@ -447,7 +445,6 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_menuDescriptorRefNodeCell15568_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_menuDescriptorRefNodeCell15568_0");
     editorCell.setDrawBorder(true);
   }
 

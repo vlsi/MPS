@@ -297,7 +297,6 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_renderingConditionRefNodeCell19694_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_renderingConditionRefNodeCell19694_0");
   }
 
   private static void setupBasic_ConstantCell19694_018(EditorCell editorCell, SNode node, EditorContext context) {
@@ -319,7 +318,6 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_menuDescriptorRefNodeCell19694_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_menuDescriptorRefNodeCell19694_0");
     editorCell.setDrawBorder(true);
   }
 
@@ -352,7 +350,6 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_modelAcessorRefNodeCell19694_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_modelAcessorRefNodeCell19694_0");
   }
 
   private static void setupBasic_CollectionCell19694_019(EditorCell editorCell, SNode node, EditorContext context) {
@@ -417,7 +414,6 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_cellForegroundFunctionRefNodeCell19694_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_cellForegroundFunctionRefNodeCell19694_0");
   }
 
   private static void setupBasic_CollectionCell19694_023(EditorCell editorCell, SNode node, EditorContext context) {
@@ -455,7 +451,6 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_textForegroundEmptyFunctionRefNodeCell19694_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_textForegroundEmptyFunctionRefNodeCell19694_0");
   }
 
   private static void setupBasic_CollectionCell19694_026(EditorCell editorCell, SNode node, EditorContext context) {
@@ -493,7 +488,6 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_textBackgroundFunctionRefNodeCell19694_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_textBackgroundFunctionRefNodeCell19694_0");
   }
 
   private static void setupBasic_CollectionCell19694_029(EditorCell editorCell, SNode node, EditorContext context) {
@@ -531,7 +525,6 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_textBgColorSelectedFunctionRefNodeCell19694_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_textBgColorSelectedFunctionRefNodeCell19694_0");
   }
 
   private static void setupLabel_ConstantCell19694_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

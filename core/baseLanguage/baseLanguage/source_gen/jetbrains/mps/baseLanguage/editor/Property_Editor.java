@@ -38,7 +38,6 @@ public class Property_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_typeRefNodeCell15789_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_typeRefNodeCell15789_0");
   }
 
   private static void setupBasic_propertyNamePropertyCell15789_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -51,7 +50,6 @@ public class Property_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_propertyImplementationRefNodeCell15789_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_propertyImplementationRefNodeCell15789_0");
   }
 
   private static void setupBasic_ConstantCell15789_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -71,7 +69,6 @@ public class Property_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_typeRefNodeCell15789_01(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_typeRefNodeCell15789_01");
   }
 
   private static void setupBasic_propertyNamePropertyCell15789_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -98,7 +95,6 @@ public class Property_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_propertyImplementationRefNodeCell15789_01(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_propertyImplementationRefNodeCell15789_01");
   }
 
   private static void setupLabel_typeRefNodeCell15789_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

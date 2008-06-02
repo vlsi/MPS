@@ -71,7 +71,6 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_createFunctionRefNodeCell19337_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_createFunctionRefNodeCell19337_0");
     editorCell.setDrawBorder(false);
   }
 

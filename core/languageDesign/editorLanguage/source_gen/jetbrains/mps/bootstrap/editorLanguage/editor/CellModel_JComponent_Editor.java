@@ -40,7 +40,6 @@ public class CellModel_JComponent_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_componentProviderRefNodeCell4652_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_componentProviderRefNodeCell4652_0");
   }
 
   private static void setupLabel_ConstantCell4652_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -22,7 +22,6 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_conditionRefNodeCell14651_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_conditionRefNodeCell14651_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -32,7 +31,6 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_ifTrueRefNodeCell14651_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ifTrueRefNodeCell14651_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -43,7 +41,6 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_ifFalseRefNodeCell14651_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ifFalseRefNodeCell14651_0");
     editorCell.setDrawBorder(false);
   }
 

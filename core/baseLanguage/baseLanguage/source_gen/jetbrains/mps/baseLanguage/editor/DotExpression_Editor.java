@@ -22,7 +22,6 @@ public class DotExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_operandRefNodeCell7793_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_operandRefNodeCell7793_0");
   }
 
   private static void setupBasic_ConstantCell7793_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -31,7 +30,6 @@ public class DotExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_operationRefNodeCell7793_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_operationRefNodeCell7793_0");
     DotExpression_Actions_DeleteOperation.setCellActions(editorCell, node, context);
   }
 

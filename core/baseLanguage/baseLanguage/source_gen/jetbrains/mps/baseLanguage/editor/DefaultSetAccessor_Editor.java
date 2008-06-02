@@ -29,7 +29,6 @@ public class DefaultSetAccessor_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_visibilityRefNodeCell9640_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_visibilityRefNodeCell9640_0");
   }
 
   private static void setupLabel_ConstantCell9640_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

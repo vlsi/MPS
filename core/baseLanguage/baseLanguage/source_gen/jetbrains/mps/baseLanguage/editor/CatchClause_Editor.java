@@ -44,7 +44,6 @@ public class CatchClause_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_throwableRefNodeCell6964_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_throwableRefNodeCell6964_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -66,7 +65,6 @@ public class CatchClause_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_catchBodyRefNodeCell6964_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_catchBodyRefNodeCell6964_0");
     editorCell.setDrawBorder(false);
   }
 

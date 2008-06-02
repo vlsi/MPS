@@ -75,7 +75,6 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_typeRefNodeCell7665_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_typeRefNodeCell7665_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -96,7 +95,6 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_initializerRefNodeCell7665_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_initializerRefNodeCell7665_0");
     editorCell.setDrawBorder(false);
   }
 

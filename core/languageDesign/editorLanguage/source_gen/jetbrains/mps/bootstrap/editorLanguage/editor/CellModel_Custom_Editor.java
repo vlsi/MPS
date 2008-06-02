@@ -230,7 +230,6 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_renderingConditionRefNodeCell210_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_renderingConditionRefNodeCell210_0");
   }
 
   private static void setupBasic_ConstantCell210_015(EditorCell editorCell, SNode node, EditorContext context) {
@@ -252,7 +251,6 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_menuDescriptorRefNodeCell210_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_menuDescriptorRefNodeCell210_0");
     editorCell.setDrawBorder(true);
   }
 
@@ -278,7 +276,6 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_cellProviderRefNodeCell210_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_cellProviderRefNodeCell210_0");
   }
 
   private static void setupBasic_ConstantCell210_019(EditorCell editorCell, SNode node, EditorContext context) {

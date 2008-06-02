@@ -81,7 +81,6 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_setterRefNodeCell14408_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_setterRefNodeCell14408_0");
   }
 
   private static void setupBasic_CollectionCell14408_06(EditorCell editorCell, SNode node, EditorContext context) {
@@ -108,7 +107,6 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_getterRefNodeCell14408_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_getterRefNodeCell14408_0");
   }
 
   private static void setupBasic_ConstantCell14408_011(EditorCell editorCell, SNode node, EditorContext context) {
@@ -139,7 +137,6 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_validatorRefNodeCell14408_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_validatorRefNodeCell14408_0");
   }
 
   private static void setupBasic_ConstantCell14408_015(EditorCell editorCell, SNode node, EditorContext context) {

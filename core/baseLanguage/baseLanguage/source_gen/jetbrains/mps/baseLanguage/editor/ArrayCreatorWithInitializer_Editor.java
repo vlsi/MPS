@@ -34,7 +34,6 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_componentTypeRefNodeCell1091_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_componentTypeRefNodeCell1091_0");
     editorCell.setDrawBorder(false);
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.FIRST_EDITABLE_CELL);

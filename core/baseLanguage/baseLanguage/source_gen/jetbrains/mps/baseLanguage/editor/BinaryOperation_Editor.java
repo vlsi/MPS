@@ -25,13 +25,11 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_leftExpressionRefNodeCell7417_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_leftExpressionRefNodeCell7417_0");
     editorCell.setDrawBorder(false);
     BinaryOperation_LeftArgument_Actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_rightExpressionRefNodeCell7417_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_rightExpressionRefNodeCell7417_0");
     editorCell.setDrawBorder(false);
     BinaryOperation_RightArgument_Actions.setCellActions(editorCell, node, context);
   }

@@ -33,7 +33,6 @@ public class SetAccessor_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_statementListRefNodeCell20837_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_statementListRefNodeCell20837_0");
   }
 
   private static void setupBasic_ConstantCell20837_0(EditorCell editorCell, SNode node, EditorContext context) {

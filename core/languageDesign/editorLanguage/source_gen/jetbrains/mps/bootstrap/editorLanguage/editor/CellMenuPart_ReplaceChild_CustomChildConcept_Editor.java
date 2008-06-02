@@ -59,7 +59,6 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
   }
 
   private static void setupBasic_childConceptFunctionRefNodeCell20847_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_childConceptFunctionRefNodeCell20847_0");
     editorCell.setDrawBorder(false);
   }
 

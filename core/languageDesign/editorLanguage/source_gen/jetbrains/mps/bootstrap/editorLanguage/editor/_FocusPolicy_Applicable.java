@@ -37,7 +37,6 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
   }
 
   private static void setupBasic_focusPolicyApplicableRefNodeCell11964_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_focusPolicyApplicableRefNodeCell11964_0");
   }
 
   private static void setupBasic_CollectionCell11964_02(EditorCell editorCell, SNode node, EditorContext context) {

@@ -23,7 +23,6 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_leftExpressionRefNodeCell12173_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_leftExpressionRefNodeCell12173_0");
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
   }
@@ -34,7 +33,6 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_classTypeRefNodeCell12173_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_classTypeRefNodeCell12173_0");
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
   }

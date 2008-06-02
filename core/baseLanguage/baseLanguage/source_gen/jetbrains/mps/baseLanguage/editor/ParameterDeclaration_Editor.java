@@ -66,7 +66,6 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_typeRefNodeCell4498_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_typeRefNodeCell4498_0");
     editorCell.setDrawBorder(false);
   }
 

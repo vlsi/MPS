@@ -36,7 +36,6 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_statementsRefNodeCell3670_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_statementsRefNodeCell3670_0");
     editorCell.setDrawBorder(false);
   }
 

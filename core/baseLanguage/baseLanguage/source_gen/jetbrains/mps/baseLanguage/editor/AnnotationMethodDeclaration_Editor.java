@@ -22,7 +22,6 @@ public class AnnotationMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_returnTypeRefNodeCell5555_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_returnTypeRefNodeCell5555_0");
   }
 
   private static void setupBasic_namePropertyCell5555_0(EditorCell editorCell, SNode node, EditorContext context) {

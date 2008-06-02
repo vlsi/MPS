@@ -52,7 +52,6 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_expressionRefNodeCell14370_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_expressionRefNodeCell14370_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -134,7 +133,6 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_defaultBlockRefNodeCell14370_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_defaultBlockRefNodeCell14370_0");
     editorCell.setDrawBorder(false);
   }
 

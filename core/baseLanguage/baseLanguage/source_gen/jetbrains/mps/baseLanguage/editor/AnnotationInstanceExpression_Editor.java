@@ -20,7 +20,6 @@ public class AnnotationInstanceExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_annotationInstanceRefNodeCell2938_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_annotationInstanceRefNodeCell2938_0");
   }
 
   private static void setupLabel_annotationInstanceRefNodeCell2938_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

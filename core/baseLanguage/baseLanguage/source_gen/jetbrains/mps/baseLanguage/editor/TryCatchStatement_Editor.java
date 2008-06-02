@@ -61,7 +61,6 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_bodyRefNodeCell18678_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_bodyRefNodeCell18678_0");
     editorCell.setDrawBorder(false);
   }
 

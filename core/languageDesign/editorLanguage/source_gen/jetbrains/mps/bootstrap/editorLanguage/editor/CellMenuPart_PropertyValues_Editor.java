@@ -42,7 +42,6 @@ public class CellMenuPart_PropertyValues_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_valuesFunctionRefNodeCell13005_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_valuesFunctionRefNodeCell13005_0");
     editorCell.setDrawBorder(false);
   }
 

@@ -68,7 +68,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_conditionRefNodeCell17307_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_conditionRefNodeCell17307_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -91,7 +90,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_ifTrueRefNodeCell17307_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ifTrueRefNodeCell17307_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -150,7 +148,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_ifFalseStatementRefNodeCell17307_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ifFalseStatementRefNodeCell17307_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -167,7 +164,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_ifFalseStatementRefNodeCell17307_01(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ifFalseStatementRefNodeCell17307_01");
   }
 
   private static void setupBasic_elsifClausesRefNodeListCell17307_0(EditorCell editorCell, SNode node, EditorContext context) {

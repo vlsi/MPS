@@ -53,7 +53,6 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_executeFunctionRefNodeCell5279_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_executeFunctionRefNodeCell5279_0");
     editorCell.setDrawBorder(false);
   }
 

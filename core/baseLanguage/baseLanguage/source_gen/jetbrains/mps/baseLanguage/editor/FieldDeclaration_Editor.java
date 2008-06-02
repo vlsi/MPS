@@ -48,7 +48,6 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_typeRefNodeCell3369_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_typeRefNodeCell3369_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -69,7 +68,6 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_initializerRefNodeCell3369_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_initializerRefNodeCell3369_0");
     editorCell.setDrawBorder(false);
   }
 

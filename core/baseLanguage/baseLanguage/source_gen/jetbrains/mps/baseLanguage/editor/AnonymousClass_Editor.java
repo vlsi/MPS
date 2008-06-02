@@ -170,7 +170,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_instanceInitializerRefNodeCell15389_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_instanceInitializerRefNodeCell15389_0");
   }
 
   private static void setupLabel_ConstantCell15389_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

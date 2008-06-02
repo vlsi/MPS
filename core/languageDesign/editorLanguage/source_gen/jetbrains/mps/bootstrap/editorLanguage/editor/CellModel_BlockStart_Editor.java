@@ -157,7 +157,6 @@ public class CellModel_BlockStart_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_menuDescriptorRefNodeCell7038_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_menuDescriptorRefNodeCell7038_0");
     editorCell.setDrawBorder(true);
   }
 

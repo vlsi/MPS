@@ -59,7 +59,6 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
   }
 
   private static void setupBasic_postfixesFunctionRefNodeCell14374_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_postfixesFunctionRefNodeCell14374_0");
     editorCell.setDrawBorder(false);
   }
 

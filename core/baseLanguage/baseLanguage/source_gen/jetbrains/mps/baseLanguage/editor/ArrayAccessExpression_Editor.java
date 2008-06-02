@@ -22,7 +22,6 @@ public class ArrayAccessExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_arrayRefNodeCell19469_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_arrayRefNodeCell19469_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -33,7 +32,6 @@ public class ArrayAccessExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_indexRefNodeCell19469_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_indexRefNodeCell19469_0");
     editorCell.setDrawBorder(false);
   }
 

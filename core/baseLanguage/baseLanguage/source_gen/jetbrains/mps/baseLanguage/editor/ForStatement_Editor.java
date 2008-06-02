@@ -42,7 +42,6 @@ public class ForStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_variableRefNodeCell17219_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_variableRefNodeCell17219_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -74,7 +73,6 @@ public class ForStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_bodyRefNodeCell17219_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_bodyRefNodeCell17219_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -90,7 +88,6 @@ public class ForStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_conditionRefNodeCell17219_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_conditionRefNodeCell17219_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -100,7 +97,6 @@ public class ForStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_iterationRefNodeCell17219_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_iterationRefNodeCell17219_0");
     editorCell.setDrawBorder(false);
   }
 

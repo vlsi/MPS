@@ -290,7 +290,6 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_renderingConditionRefNodeCell1154_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_renderingConditionRefNodeCell1154_0");
   }
 
   private static void setupBasic_CollectionCell1154_013(EditorCell editorCell, SNode node, EditorContext context) {
@@ -306,7 +305,6 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_menuDescriptorRefNodeCell1154_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_menuDescriptorRefNodeCell1154_0");
     editorCell.setDrawBorder(true);
   }
 
@@ -327,7 +325,6 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_imagePathProviderRefNodeCell1154_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_imagePathProviderRefNodeCell1154_0");
   }
 
   private static void setupBasic_CollectionCell1154_015(EditorCell editorCell, SNode node, EditorContext context) {

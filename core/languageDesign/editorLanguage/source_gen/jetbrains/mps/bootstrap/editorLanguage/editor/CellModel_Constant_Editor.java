@@ -352,7 +352,6 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_renderingConditionRefNodeCell10258_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_renderingConditionRefNodeCell10258_0");
   }
 
   private static void setupBasic_CollectionCell10258_018(EditorCell editorCell, SNode node, EditorContext context) {
@@ -368,7 +367,6 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_menuDescriptorRefNodeCell10258_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_menuDescriptorRefNodeCell10258_0");
     editorCell.setDrawBorder(true);
   }
 
@@ -442,7 +440,6 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_cellForegroundFunctionRefNodeCell10258_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_cellForegroundFunctionRefNodeCell10258_0");
   }
 
   private static void setupBasic_CollectionCell10258_023(EditorCell editorCell, SNode node, EditorContext context) {
@@ -480,7 +477,6 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_textForegroundEmptyFunctionRefNodeCell10258_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_textForegroundEmptyFunctionRefNodeCell10258_0");
   }
 
   private static void setupBasic_CollectionCell10258_026(EditorCell editorCell, SNode node, EditorContext context) {
@@ -518,7 +514,6 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_textBackgroundFunctionRefNodeCell10258_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_textBackgroundFunctionRefNodeCell10258_0");
   }
 
   private static void setupBasic_CollectionCell10258_029(EditorCell editorCell, SNode node, EditorContext context) {
@@ -556,7 +551,6 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_textBgColorSelectedFunctionRefNodeCell10258_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_textBgColorSelectedFunctionRefNodeCell10258_0");
   }
 
   private static void setupLabel_textPropertyCell10258_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

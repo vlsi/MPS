@@ -74,7 +74,6 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_isApplicableFunctionRefNodeCell5981_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_isApplicableFunctionRefNodeCell5981_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -90,7 +89,6 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_executeFunctionRefNodeCell5981_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_executeFunctionRefNodeCell5981_0");
     editorCell.setDrawBorder(false);
   }
 

@@ -64,7 +64,6 @@ public class TryStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_finallyBodyRefNodeCell15273_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_finallyBodyRefNodeCell15273_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -101,7 +100,6 @@ public class TryStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_bodyRefNodeCell15273_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_bodyRefNodeCell15273_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -123,7 +121,6 @@ public class TryStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_bodyRefNodeCell15273_01(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_bodyRefNodeCell15273_01");
     editorCell.setDrawBorder(false);
   }
 

@@ -22,7 +22,6 @@ public class ArrayType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_componentTypeRefNodeCell6968_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_componentTypeRefNodeCell6968_0");
     editorCell.setDrawBorder(false);
   }
 

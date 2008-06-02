@@ -51,7 +51,6 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
   }
 
   private static void setupBasic_returnTypeRefNodeCell18242_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_returnTypeRefNodeCell18242_0");
   }
 
   private static void setupBasic_prefixPropertyCell18242_0(EditorCell editorCell, SNode node, EditorContext context) {

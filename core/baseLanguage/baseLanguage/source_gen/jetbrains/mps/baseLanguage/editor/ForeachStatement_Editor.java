@@ -48,7 +48,6 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_iterableRefNodeCell19902_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_iterableRefNodeCell19902_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -75,7 +74,6 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_bodyRefNodeCell19902_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_bodyRefNodeCell19902_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -91,7 +89,6 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_variableRefNodeCell19902_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_variableRefNodeCell19902_0");
     editorCell.setDrawBorder(false);
   }
 

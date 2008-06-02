@@ -93,7 +93,6 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_handlerFunctionRefNodeCell11977_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_handlerFunctionRefNodeCell11977_0");
     editorCell.setDrawBorder(false);
   }
 

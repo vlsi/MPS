@@ -85,7 +85,6 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_emptyCellModelRefNodeCell3462_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_emptyCellModelRefNodeCell3462_0");
     editorCell.setDrawBorder(true);
   }
 
@@ -124,7 +123,6 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_emptyCellModelRefNodeCell3462_01(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_emptyCellModelRefNodeCell3462_01");
     editorCell.setDrawBorder(true);
   }
 
@@ -253,7 +251,6 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_cellLayoutRefNodeCell3462_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_cellLayoutRefNodeCell3462_0");
     editorCell.setDrawBorder(true);
   }
 
@@ -419,7 +416,6 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_nodeFactoryRefNodeCell3462_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_nodeFactoryRefNodeCell3462_0");
   }
 
   private static void setupBasic_CollectionCell3462_024(EditorCell editorCell, SNode node, EditorContext context) {
@@ -451,7 +447,6 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_elementMenuDescriptorRefNodeCell3462_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_elementMenuDescriptorRefNodeCell3462_0");
   }
 
   private static void setupBasic_ConstantCell3462_028(EditorCell editorCell, SNode node, EditorContext context) {
@@ -591,7 +586,6 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_renderingConditionRefNodeCell3462_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_renderingConditionRefNodeCell3462_0");
   }
 
   private static void setupBasic_CollectionCell3462_033(EditorCell editorCell, SNode node, EditorContext context) {
@@ -603,7 +597,6 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_filterRefNodeCell3462_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_filterRefNodeCell3462_0");
   }
 
   private static void setupBasic_verticalPropertyCell3462_01(EditorCell editorCell, SNode node, EditorContext context) {

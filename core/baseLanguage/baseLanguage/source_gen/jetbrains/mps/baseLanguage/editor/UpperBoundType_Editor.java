@@ -33,7 +33,6 @@ public class UpperBoundType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_boundRefNodeCell3950_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_boundRefNodeCell3950_0");
     editorCell.setDrawBorder(false);
   }
 

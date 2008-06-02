@@ -25,7 +25,6 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_expressionRefNodeCell17987_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_expressionRefNodeCell17987_0");
     editorCell.setDrawBorder(false);
   }
 

@@ -29,7 +29,6 @@ public class CaretPositionParameter_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_positionRefNodeCell256_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_positionRefNodeCell256_0");
   }
 
   private static void setupLabel_ConstantCell256_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

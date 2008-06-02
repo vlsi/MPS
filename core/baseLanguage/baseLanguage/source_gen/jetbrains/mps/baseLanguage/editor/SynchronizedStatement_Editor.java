@@ -39,7 +39,6 @@ public class SynchronizedStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_expressionRefNodeCell20142_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_expressionRefNodeCell20142_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -71,7 +70,6 @@ public class SynchronizedStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_blockRefNodeCell20142_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_blockRefNodeCell20142_0");
     editorCell.setDrawBorder(false);
   }
 

@@ -77,7 +77,6 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_extendedClassRefNodeCell13915_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_extendedClassRefNodeCell13915_0");
   }
 
   private static void setupLabel_namePropertyCell13915_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

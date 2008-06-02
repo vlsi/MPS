@@ -42,7 +42,6 @@ public class InstanceInitializer_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_statementListRefNodeCell7809_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_statementListRefNodeCell7809_0");
   }
 
   private static void setupBasic_ConstantCell7809_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -55,7 +54,6 @@ public class InstanceInitializer_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_statementListRefNodeCell7809_01(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_statementListRefNodeCell7809_01");
   }
 
   private static void setupBasic_ConstantCell7809_02(EditorCell editorCell, SNode node, EditorContext context) {
