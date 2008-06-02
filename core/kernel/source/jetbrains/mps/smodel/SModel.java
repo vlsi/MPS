@@ -214,7 +214,7 @@ public class SModel implements Iterable<SNode> {
       fireRootRemovedEvent(node);
     }
   }
-
+    
   public void addWeakSModelListener(@NotNull SModelListener listener) {
     LOG.assertLog(!myWeakListeners.contains(listener), "Duplicated weak listener");
     myWeakListeners.add(listener);

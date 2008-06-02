@@ -132,7 +132,7 @@ public class ModelAccess {
           public void run() {
             result[0] = c.compute();
           }
-        }, "name", "groupId", UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+        }, null, null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
         return (T) result[0];
       }
     });
