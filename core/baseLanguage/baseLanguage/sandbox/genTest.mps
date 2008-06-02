@@ -352,7 +352,9 @@
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1212247648780">
                   <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1212247650096">
                     <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1212415978176">
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.Expression" id="1212415978177" />
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1212424031403">
+                        <property name="value" value="2" />
+                      </node>
                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1212247650177">
                         <property name="value" value="2" />
                       </node>

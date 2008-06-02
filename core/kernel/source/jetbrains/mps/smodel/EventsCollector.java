@@ -74,8 +74,9 @@ public class EventsCollector {
     if (myEvents.isEmpty()) return;
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        eventsHappened(Collections.unmodifiableList(myEvents));
+        List<SModelEvent> wrappedEvents = Collections.unmodifiableList(myEvents);
         myEvents = new ArrayList<SModelEvent>();
+        eventsHappened(wrappedEvents);
       }
     });
   }

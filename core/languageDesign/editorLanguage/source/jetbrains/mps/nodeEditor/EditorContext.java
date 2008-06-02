@@ -243,11 +243,11 @@ public class EditorContext {
             }
           });
         }
-        AfterCommandInvocator.getInstance().invokeNowOrAfterCommand(new Runnable() {
-          public void run() {
-            myNodeEditorComponent.relayout();
-          }
-        });
+
+        myNodeEditorComponent.flushEvents();
+
+        myNodeEditorComponent.relayout();
+
         return true;
       }
     }
@@ -303,11 +303,6 @@ public class EditorContext {
     }
 
     public void restore() {
-      if (myCellInfo.findCell(myNodeEditor) == null) {
-
-        
-      }
-      
       EditorCell cellToSelect = myCellInfo.findCell(myNodeEditor);
       myNodeEditor.changeSelection(cellToSelect);
       myNodeEditor.setSelectedStackFromMemento(mySelectedStack);
