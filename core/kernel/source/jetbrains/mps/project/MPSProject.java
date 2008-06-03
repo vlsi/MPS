@@ -493,22 +493,21 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
         if (reloadAll) {
           ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
         }
-
-        //todo hack
-        if (getComponent(Project.class) != null) {
-          Project project = getComponentSafe(Project.class);
-          if (IdeMain.isTestMode()) {
-            com.intellij.openapi.command.undo.UndoManager.getGlobalInstance().dropHistory();
-
-            ProjectUtil.closeProject(project);
-          }
-        }
-
-        CleanupManager.getInstance().cleanup();
-        
-        myDisposed = true;
       }
     });
+
+    //todo hack
+    if (getComponent(Project.class) != null) {
+      Project project = getComponentSafe(Project.class);
+      if (IdeMain.isTestMode()) {
+        com.intellij.openapi.command.undo.UndoManager.getGlobalInstance().dropHistory();
+        ProjectUtil.closeProject(project);
+      }
+    }
+
+    CleanupManager.getInstance().cleanup();
+
+    myDisposed = true;
   }
 
   public boolean isDisposed() {
