@@ -16,7 +16,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class _Line_Actions extends EditorCellKeyMap {
 
-  public  _Line_Actions() {
+  public _Line_Actions() {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
     action = new _Line_Actions._Line_Actions_Action0();
@@ -24,7 +24,7 @@ public class _Line_Actions extends EditorCellKeyMap {
   }
   public static class _Line_Actions_Action0 extends EditorCellKeyMapAction {
 
-    public  _Line_Actions_Action0() {
+    public _Line_Actions_Action0() {
       this.setShownInPopupMenu(false);
     }
 

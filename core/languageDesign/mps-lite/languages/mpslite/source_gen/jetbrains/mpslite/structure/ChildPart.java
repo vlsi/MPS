@@ -11,7 +11,7 @@ public class ChildPart extends LinePart {
   public static final String concept = "jetbrains.mpslite.structure.ChildPart";
   public static String SEPARATOR = "separator";
 
-  public  ChildPart(SNode node) {
+  public ChildPart(SNode node) {
     super(node);
   }
 

@@ -11,7 +11,7 @@ public class ConstantLinePart extends LinePart {
   public static final String concept = "jetbrains.mpslite.structure.ConstantLinePart";
   public static String TEXT = "text";
 
-  public  ConstantLinePart(SNode node) {
+  public ConstantLinePart(SNode node) {
     super(node);
   }
 

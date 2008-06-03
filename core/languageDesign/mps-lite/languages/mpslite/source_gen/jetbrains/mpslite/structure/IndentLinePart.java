@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class IndentLinePart extends LinePart {
   public static final String concept = "jetbrains.mpslite.structure.IndentLinePart";
 
-  public  IndentLinePart(SNode node) {
+  public IndentLinePart(SNode node) {
     super(node);
   }
 

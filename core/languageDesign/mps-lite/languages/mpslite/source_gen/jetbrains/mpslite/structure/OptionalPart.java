@@ -13,7 +13,7 @@ public class OptionalPart extends LinePart {
   public static final String concept = "jetbrains.mpslite.structure.OptionalPart";
   public static String PART = "part";
 
-  public  OptionalPart(SNode node) {
+  public OptionalPart(SNode node) {
     super(node);
   }
 
