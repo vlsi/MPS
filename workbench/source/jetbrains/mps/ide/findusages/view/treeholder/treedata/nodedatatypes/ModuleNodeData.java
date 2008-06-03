@@ -7,6 +7,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryAdapter;
 import org.jdom.Element;
@@ -22,15 +23,26 @@ public class ModuleNodeData extends BaseNodeData {
   private boolean myIsRemoved = false;
   public String myModuleUID = "";
 
-  public ModuleNodeData(PathItemRole role, String moduleUID, boolean isResult) {
-    super(role, moduleUID, "", true, isResult);
-    myModuleUID = moduleUID;
+  public ModuleNodeData(PathItemRole role, IModule module, boolean isResult) {
+    super(role, getCaption(module), "", true, isResult);
+    myModuleUID = module.getModuleUID();
 
     startListening();
   }
 
   public ModuleNodeData(Element element, MPSProject project) throws CantLoadSomethingException {
     read(element, project);
+  }
+
+  private static String getCaption(IModule module) {
+    if (module instanceof Generator) {
+      Generator generator = (Generator) module;
+      String name = generator.getName();
+      if (name == null || name.equals("")) name = "no name";
+      return generator.getSourceLanguage().getModuleUID() + " (generator/" + name + ")";
+    } else {
+      return module.getModuleUID();
+    }
   }
 
   private void startListening() {
