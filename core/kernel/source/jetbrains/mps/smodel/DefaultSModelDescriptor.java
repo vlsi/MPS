@@ -137,7 +137,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     LOG.assertLog(mySModel != null, "Couldn't load model \"" + getModelUID() + "\"");
 
     updateModelWithRefactorings();
-    doAdditionalPostLoadStuff();
 
     myDiskTimestamp = fileTimestamp();
     addListenersToNewModel();
