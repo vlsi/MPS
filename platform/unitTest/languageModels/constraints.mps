@@ -17,6 +17,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="3" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.unitTest.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -27,7 +28,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178187486784" />
     </node>
     <node role="properties" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint" id="1177112030697">
-      <link role="applicableProperty" targetNodeId="3.1083152972672" />
+      <link role="applicableProperty" targetNodeId="2.1169194664001" resolveInfo="name" />
       <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertyGetter" id="1177112055027">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177112055028">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1177112063368">
