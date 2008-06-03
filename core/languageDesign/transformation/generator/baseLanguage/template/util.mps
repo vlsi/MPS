@@ -16,12 +16,14 @@
   <languageAspect modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="5" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="3" modelUID="jetbrains.mps.generator.template@java_stub" version="-1" />
   <import index="4" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <import index="5" modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
+  <visible index="2" modelUID="jetbrains.mps.core.structure" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1184619194061">
     <property name="name" value="QueriesUtil" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1184619205891">
@@ -77,7 +79,7 @@
                                 <link role="closureParameter" targetNodeId="1184619272592" resolveInfo="it" />
                               </node>
                               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1184619351136">
-                                <link role="property" targetNodeId="2.1075300953595" />
+                                <link role="property" targetNodeId="2v.1169194664001" resolveInfo="name" />
                               </node>
                             </node>
                           </node>

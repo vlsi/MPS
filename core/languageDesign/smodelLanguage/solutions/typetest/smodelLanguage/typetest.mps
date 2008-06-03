@@ -15,6 +15,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="17" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
@@ -1081,7 +1082,7 @@
                 <link role="variableDeclaration" targetNodeId="1170378882805" resolveInfo="node" />
               </node>
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1170378926610">
-                <link role="property" targetNodeId="6.1083152972672" />
+                <link role="property" targetNodeId="7.1169194664001" resolveInfo="name" />
               </node>
             </node>
           </node>
@@ -1096,7 +1097,7 @@
                   <link role="variableDeclaration" targetNodeId="1170378882805" resolveInfo="node" />
                 </node>
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1173224663384">
-                  <link role="property" targetNodeId="6.1083152972672" />
+                  <link role="property" targetNodeId="7.1169194664001" resolveInfo="name" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Simple" id="1173224663385">
@@ -1114,7 +1115,7 @@
                 <link role="variableDeclaration" targetNodeId="1170378882805" resolveInfo="node" />
               </node>
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1170379008115">
-                <link role="property" targetNodeId="6.1083152972672" />
+                <link role="property" targetNodeId="7.1169194664001" resolveInfo="name" />
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1170379012023">
@@ -1134,7 +1135,7 @@
                   <link role="variableDeclaration" targetNodeId="1170378882805" resolveInfo="node" />
                 </node>
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1170380750290">
-                  <link role="property" targetNodeId="6.1083152972672" />
+                  <link role="property" targetNodeId="7.1169194664001" resolveInfo="name" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206475933819">
@@ -1160,7 +1161,7 @@
                   <link role="variableDeclaration" targetNodeId="1170378882805" resolveInfo="node" />
                 </node>
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1170383291218">
-                  <link role="property" targetNodeId="6.1083152972672" />
+                  <link role="property" targetNodeId="7.1169194664001" resolveInfo="name" />
                 </node>
               </node>
             </node>
@@ -1186,7 +1187,7 @@
                 <link role="variableDeclaration" targetNodeId="1170378905398" resolveInfo="node" />
               </node>
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1170381360773">
-                <link role="property" targetNodeId="6.1083152972672" />
+                <link role="property" targetNodeId="7.1169194664001" resolveInfo="name" />
               </node>
             </node>
             <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1170381360774">
@@ -1203,7 +1204,7 @@
                 <link role="variableDeclaration" targetNodeId="1170378905398" resolveInfo="node" />
               </node>
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1170378941570">
-                <link role="property" targetNodeId="6.1083152972672" />
+                <link role="property" targetNodeId="7.1169194664001" resolveInfo="name" />
               </node>
             </node>
           </node>
@@ -1218,7 +1219,7 @@
                   <link role="variableDeclaration" targetNodeId="1170378905398" resolveInfo="node" />
                 </node>
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1170379021496">
-                  <link role="property" targetNodeId="6.1083152972672" />
+                  <link role="property" targetNodeId="7.1169194664001" resolveInfo="name" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Simple" id="1170379021497">
@@ -1236,7 +1237,7 @@
                 <link role="variableDeclaration" targetNodeId="1170378905398" resolveInfo="node" />
               </node>
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1170379021503">
-                <link role="property" targetNodeId="6.1083152972672" />
+                <link role="property" targetNodeId="7.1169194664001" resolveInfo="name" />
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1170379021504">
@@ -1295,7 +1296,7 @@
                 <link role="variableDeclaration" targetNodeId="1170380043474" resolveInfo="o" />
               </node>
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1170380035342">
-                <link role="property" targetNodeId="6.1083152972672" />
+                <link role="property" targetNodeId="7.1169194664001" resolveInfo="name" />
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1170380035343">
@@ -1319,7 +1320,7 @@
                   <link role="variableDeclaration" targetNodeId="1170378905398" resolveInfo="node" />
                 </node>
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1170383323994">
-                  <link role="property" targetNodeId="6.1083152972672" />
+                  <link role="property" targetNodeId="7.1169194664001" resolveInfo="name" />
                 </node>
               </node>
             </node>
@@ -2143,7 +2144,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1170381953192">
-              <link role="property" targetNodeId="6.1083152972672" />
+              <link role="property" targetNodeId="7.1169194664001" resolveInfo="name" />
             </node>
           </node>
         </node>

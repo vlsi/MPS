@@ -22,6 +22,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="19" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.smodel.constraints@java_stub" version="-1" />
@@ -213,7 +214,7 @@
                   <link role="variableDeclaration" targetNodeId="1177759528593" resolveInfo="baseMethod" />
                 </node>
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1177759576720">
-                  <link role="property" targetNodeId="12.1083152972672" />
+                  <link role="property" targetNodeId="11.1169194664001" resolveInfo="name" />
                 </node>
               </node>
             </node>
@@ -249,7 +250,7 @@
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227898535">
                 <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1181725332581" />
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1181725335397">
-                  <link role="property" targetNodeId="12.1083152972672" />
+                  <link role="property" targetNodeId="11.1169194664001" resolveInfo="name" />
                 </node>
               </node>
             </node>
@@ -285,7 +286,7 @@
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227866955">
                 <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1193402369217" />
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1193402374406">
-                  <link role="property" targetNodeId="12.1083152972672" resolveInfo="name" />
+                  <link role="property" targetNodeId="11.1169194664001" resolveInfo="name" />
                 </node>
               </node>
             </node>
@@ -425,14 +426,14 @@
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227918431">
                     <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_referenceNode" id="1177764202259" />
                     <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1177764206982">
-                      <link role="property" targetNodeId="12.1083152972672" />
+                      <link role="property" targetNodeId="11.1169194664001" resolveInfo="name" />
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1177764210652">
                     <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227926947">
                       <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_newReferentNode" id="1177764213596" />
                       <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1177764217774">
-                        <link role="property" targetNodeId="12.1083152972672" />
+                        <link role="property" targetNodeId="11.1169194664001" resolveInfo="name" />
                       </node>
                     </node>
                   </node>
@@ -1454,7 +1455,7 @@
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206019111407">
               <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1206019111062" />
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1206019112253">
-                <link role="property" targetNodeId="12.1083152972672" resolveInfo="name" />
+                <link role="property" targetNodeId="11.1169194664001" resolveInfo="name" />
               </node>
             </node>
           </node>

@@ -23,6 +23,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="13" />
   <import index="1" modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />
@@ -634,6 +635,7 @@
       </node>
     </node>
   </node>
+  <visible index="2" modelUID="jetbrains.mps.core.structure" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1187127850710">
     <property name="name" value="QueriesUtil" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1187127925384">
@@ -688,7 +690,7 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1187128836526">
-                    <link role="property" targetNodeId="5.1083152972672" />
+                    <link role="property" targetNodeId="2v.1169194664001" resolveInfo="name" />
                   </node>
                 </node>
               </node>
@@ -875,7 +877,7 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1187222929783">
-                    <link role="property" targetNodeId="5.1083152972672" />
+                    <link role="property" targetNodeId="2v.1169194664001" resolveInfo="name" />
                   </node>
                 </node>
               </node>
@@ -1445,7 +1447,6 @@
       </node>
     </node>
   </node>
-  <visible index="2" modelUID="jetbrains.mps.core.structure" />
   <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1207697731300">
     <property name="name" value="Replace_ConditionalRootLabelDeclaration504" />
     <property name="package" value="label" />

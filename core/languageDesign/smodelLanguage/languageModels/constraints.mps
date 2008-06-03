@@ -25,6 +25,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="20" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
@@ -973,7 +974,7 @@
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1187950233139">
-                <link role="property" targetNodeId="18.1083152972672" />
+                <link role="property" targetNodeId="9.1169194664001" resolveInfo="name" />
               </node>
             </node>
             <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1187950205911">
