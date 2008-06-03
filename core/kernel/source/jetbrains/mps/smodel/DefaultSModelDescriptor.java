@@ -34,9 +34,13 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   private Map<String, String> myMetadata;
   private boolean myMetadataLoaded;
 
+  //it should be possible to add listeners from any thread so we use lock here
+  //access to other fields is synchronized with ModelAccess
+  private final Object myListenersLock = new Object();
   private List<SModelListener> myWeakModelListeners = new ArrayList<SModelListener>(0);
   private List<SModelListener> myModelListeners = new ArrayList<SModelListener>(0);
   private List<SModelCommandListener> myModelCommandListeners = new ArrayList<SModelCommandListener>(0);
+
   private long myLastStructuralChange = System.currentTimeMillis();
   private long myLastChange;
   private FastNodeFinder myFastNodeFinder;
@@ -88,9 +92,11 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
   public void reloadFromDisk() {
     if (isInitialized()) {
-      myWeakModelListeners.addAll(mySModel.getWeakModelListeners());
-      myModelListeners.addAll(mySModel.getModelListeners());
-      myModelCommandListeners.addAll(mySModel.getCommandListeners());
+      synchronized (myListenersLock) {
+        myWeakModelListeners.addAll(mySModel.getWeakModelListeners());
+        myModelListeners.addAll(mySModel.getModelListeners());
+        myModelCommandListeners.addAll(mySModel.getCommandListeners());
+      }
 
       SModel oldModel = mySModel;
       mySModel = loadModel();
@@ -215,26 +221,28 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   private void addListenersToNewModel() {
     if (mySModel == null) return;
 
-    for (SModelListener listener : myWeakModelListeners) {
-      if (!mySModel.hasModelListener(listener)) {
-        mySModel.addWeakSModelListener(listener);
+    synchronized (myListenersLock) {
+      for (SModelListener listener : myWeakModelListeners) {
+        if (!mySModel.hasModelListener(listener)) {
+          mySModel.addWeakSModelListener(listener);
+        }
       }
-    }
-    myWeakModelListeners.clear();
+      myWeakModelListeners.clear();
 
-    for (SModelListener listener : myModelListeners) {
-      if (!mySModel.hasModelListener(listener)) {
-        mySModel.addModelListener(listener);
+      for (SModelListener listener : myModelListeners) {
+        if (!mySModel.hasModelListener(listener)) {
+          mySModel.addModelListener(listener);
+        }
       }
-    }
-    myModelListeners.clear();
+      myModelListeners.clear();
 
-    for (SModelCommandListener listener : myModelCommandListeners) {
-      if (!mySModel.hasModelCommandListener(listener)) {
-        mySModel.addModelCommandListener(listener);
+      for (SModelCommandListener listener : myModelCommandListeners) {
+        if (!mySModel.hasModelCommandListener(listener)) {
+          mySModel.addModelCommandListener(listener);
+        }
       }
+      myModelCommandListeners.clear();
     }
-    myModelCommandListeners.clear();
   }
 
   public long lastStructuralChange() {
@@ -246,57 +254,69 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   public void addWeakModelListener(SModelListener listener) {
-    if (mySModel != null) {
-      if (!mySModel.hasModelListener(listener)) {
-        mySModel.addWeakSModelListener(listener);
+    synchronized (myListenersLock) {
+      if (mySModel != null) {
+        if (!mySModel.hasModelListener(listener)) {
+          mySModel.addWeakSModelListener(listener);
+        }
+      } else {
+        myWeakModelListeners.add(listener);
       }
-    } else {
-      myWeakModelListeners.add(listener);
     }
   }
 
   public void addModelListener(SModelListener listener) {
-    if (mySModel != null) {
-      if (!mySModel.hasModelListener(listener)) {
-        mySModel.addModelListener(listener);
+    synchronized (myListenersLock) {
+      if (mySModel != null) {
+        if (!mySModel.hasModelListener(listener)) {
+          mySModel.addModelListener(listener);
+        }
+      } else {
+        myModelListeners.add(listener);
       }
-    } else {
-      myModelListeners.add(listener);
     }
   }
 
   public void removeModelListener(SModelListener listener) {
-    if (mySModel != null) {
-      mySModel.removeModelListener(listener);
-    } else {
-      myModelListeners.remove(listener);
-      myWeakModelListeners.remove(listener);
+    synchronized (myListenersLock) {
+      if (mySModel != null) {
+        mySModel.removeModelListener(listener);
+      } else {
+        myModelListeners.remove(listener);
+        myWeakModelListeners.remove(listener);
+      }
     }
   }
 
   public boolean hasSModelCommandListener(SModelCommandListener listener) {
-    if (mySModel != null) {
-      return mySModel.hasModelCommandListener(listener);
-    } else {
-      return myModelCommandListeners.contains(listener);
+    synchronized (myListenersLock) {
+      if (mySModel != null) {
+        return mySModel.hasModelCommandListener(listener);
+      } else {
+        return myModelCommandListeners.contains(listener);
+      }
     }
   }
 
   public void addModelCommandListener(SModelCommandListener listener) {
-    if (mySModel != null) {
-      if (!mySModel.hasModelCommandListener(listener)) {
-        mySModel.addModelCommandListener(listener);
+    synchronized (myListenersLock) {
+      if (mySModel != null) {
+        if (!mySModel.hasModelCommandListener(listener)) {
+          mySModel.addModelCommandListener(listener);
+        }
+      } else {
+        myModelCommandListeners.add(listener);
       }
-    } else {
-      myModelCommandListeners.add(listener);
     }
   }
 
   public void removeModelCommandListener(SModelCommandListener listener) {
-    if (mySModel != null) {
-      mySModel.removeModelCommandListener(listener);
-    } else {
-      myModelCommandListeners.remove(listener);
+    synchronized (myListenersLock) {
+      if (mySModel != null) {
+        mySModel.removeModelCommandListener(listener);
+      } else {
+        myModelCommandListeners.remove(listener);
+      }
     }
   }
 
@@ -324,9 +344,11 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     if (isInitialized()) {
       long start = System.currentTimeMillis();
       myFastNodeFinder = null;
-      myWeakModelListeners.addAll(mySModel.getWeakModelListeners());
-      myModelListeners.addAll(mySModel.getModelListeners());
-      myModelCommandListeners.addAll(mySModel.getCommandListeners());
+      synchronized (myListenersLock) {
+        myWeakModelListeners.addAll(mySModel.getWeakModelListeners());
+        myModelListeners.addAll(mySModel.getModelListeners());
+        myModelCommandListeners.addAll(mySModel.getCommandListeners());
+      }
 
       SModel oldModel = mySModel;
       mySModel = myModelRootManager.refresh(this);
@@ -346,9 +368,11 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     if (newModel == mySModel) return;
     if (isInitialized()) {
       myFastNodeFinder = null;
-      myWeakModelListeners.addAll(mySModel.getWeakModelListeners());
-      myModelListeners.addAll(mySModel.getModelListeners());
-      myModelCommandListeners.addAll(mySModel.getCommandListeners());
+      synchronized (myListenersLock) {
+        myWeakModelListeners.addAll(mySModel.getWeakModelListeners());
+        myModelListeners.addAll(mySModel.getModelListeners());
+        myModelCommandListeners.addAll(mySModel.getCommandListeners());
+      }
       mySModel.dispose();
     }
     mySModel = newModel;
@@ -359,9 +383,11 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   public void dispose() {
-    myModelCommandListeners.clear();
-    myWeakModelListeners.clear();
-    myModelListeners.clear();
+    synchronized (myListenersLock) {
+      myModelCommandListeners.clear();
+      myWeakModelListeners.clear();
+      myModelListeners.clear();
+    }
 
     UnregisteredNodes.instance().clear(getModelUID());
 
