@@ -7,6 +7,7 @@ import jetbrains.mps.ide.findusages.view.UsagesView;
 import jetbrains.mps.ide.findusages.view.UsagesView.ButtonConfiguration;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
+import jetbrains.mps.plugins.tool.GeneratedTool;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
 
@@ -31,9 +32,13 @@ public class TodoViewer extends JPanel {
       public void mouseClicked(MouseEvent e) {
         remove(label);
         refresh();
-        repaint();
+        doLayout();
       }
     });
+  }
+
+  private GeneratedTool getTool() {
+    return myProject.getPluginManager().getTool(TodoViewer_Tool.class);
   }
 
   private void refresh() {
@@ -43,7 +48,7 @@ public class TodoViewer extends JPanel {
 
     myUsagesView = new UsagesView(myProject, viewOptions) {
       public void close() {
-        //hideTool();
+        getTool().hideTool();
       }
     };
     add(myUsagesView.getComponent(), BorderLayout.CENTER);
