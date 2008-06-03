@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="MPS-external" default="main">
   <import file="MPS-languages.xml" />
+  <import file="MPS-multystep.xml" />
   <property file=".\MPS.properties" />
+  <property name="date" value="01.01.07" />
   <target name="main" depends="clean.before,folders.create,do.the.job,clean.after" />
   <target name="clean.before">
     <delete dir="${deploy.dir}" />
+    <tstamp>
+      <format property="${date}" pattern="d-MMMM-yyyy" />
+    </tstamp>
   </target>
   <target name="folders.create" depends="clean.before">
     <mkdir dir="${deploy.dir}" />
@@ -47,6 +52,7 @@
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/servlet-api" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/smack" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp" />
+    <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp/idea" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/app" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/app/agreement" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/app/complexLanguage" />
@@ -182,8 +188,9 @@
       <fileset dir="workbench/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
-      <fileset dir="core/kernel/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
+      <fileset dir="core/kernel/classes" excludes="idea/MPSApplicationInfo.xml, **/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
+    <antcall target="replace" />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/mps.jar.tmp">
       <fileset dir="core/languageDesign/core/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
@@ -393,7 +400,7 @@
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/log">
       <fileset dir="log" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
-    <echo file="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/build.number">build.number=${build.number}${line.separator}revision.number=${build.vcs.number.1}${line.separator}configuration.name=${teamcity.buildConfName}</echo>
+    <echo file="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/build.number">build.number=${build.number}${line.separator}revision.number=${null}${line.separator}configuration.name=${null}</echo>
     <copy file="entryPoints.xml" tofile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/entryPoints.xml" />
     <copy file="readme.txt" tofile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/readme.txt" />
     <copy file="mps.bat" tofile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/mps.bat" />
