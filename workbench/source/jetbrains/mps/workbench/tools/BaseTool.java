@@ -11,6 +11,7 @@ import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentFactoryImpl;
 import com.intellij.ui.content.ContentManager;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NonNls;
@@ -22,6 +23,8 @@ import javax.swing.JComponent;
 import javax.swing.KeyStroke;
 
 public abstract class BaseTool {
+  private static Logger LOG = Logger.getLogger(BaseTool.class);
+
   private Project myProject;
   private String myId;
   private int myNumber;
@@ -56,89 +59,69 @@ public abstract class BaseTool {
 
 
   public boolean toolIsOpened() {
-    final boolean[] res = new boolean[1];
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        ToolWindow window = checkRegistered();
-        res[0] = window.isVisible();
-      }
-    });
-    return res[0];
+    LOG.checkEDT();
+
+    ToolWindow window = checkRegistered();
+    return window.isVisible();
   }
 
   /**
    * Opens the tool's window, shows tool if invisible at the moment
    */
   public void openTool(final boolean setActive) {
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        ToolWindow window = checkRegistered();
-        if (!toolIsShown()) showTool();
-        if (!toolIsOpened()) window.show(null);
-        if (setActive) window.activate(null);
-      }
-    });
+    LOG.checkEDT();
+
+    ToolWindow window = checkRegistered();
+    if (!toolIsShown()) showTool();
+    if (!toolIsOpened()) window.show(null);
+    if (setActive) window.activate(null);
   }
 
   /**
    * Minimizes the window, doesn't remove tool from panel
    */
   public void closeTool() {
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        ToolWindow window = checkRegistered();
-        if (toolIsShown() && toolIsOpened()) window.hide(null);
-      }
-    });
+    LOG.checkEDT();
+
+    ToolWindow window = checkRegistered();
+    if (toolIsShown() && toolIsOpened()) window.hide(null);
   }
 
   /**
    * @return whether the tool is visible by user (in the panel)
    */
   public boolean toolIsShown() {
-    final boolean[] res = new boolean[1];
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        ToolWindow window = checkRegistered();
-        res[0] = window.isAvailable();
-      }
-    });
-    return res[0];
+    LOG.checkEDT();
+
+    ToolWindow window = checkRegistered();
+    return window.isAvailable();
   }
 
   /**
    * If the tool is visible, does nothing, else show the tool in panel in minimized state
    */
   public void showTool() {
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        ToolWindow window = checkRegistered();
-        if (!toolIsShown()) window.setAvailable(true, null);
-      }
-    });
+    LOG.checkEDT();
+
+    ToolWindow window = checkRegistered();
+    if (!toolIsShown()) window.setAvailable(true, null);
   }
 
   /**
    * Removes the tool from the panel
    */
   public void hideTool() {
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        ToolWindow window = checkRegistered();
-        if (toolIsShown()) window.setAvailable(false, null);
-      }
-    });
+    LOG.checkEDT();
+
+    ToolWindow window = checkRegistered();
+    if (toolIsShown()) window.setAvailable(false, null);
   }
 
   @Nullable
   public ToolWindow getToolWindow() {
-    final ToolWindow[] window = new ToolWindow[1];
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        window[0] = ToolWindowManager.getInstance(myProject).getToolWindow(myId);
-      }
-    });
-    return window[0];
+    LOG.checkEDT();
+
+    return ToolWindowManager.getInstance(myProject).getToolWindow(myId);
   }
 
   @NonNls
@@ -148,41 +131,37 @@ public abstract class BaseTool {
   }
 
   public void register() {
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        ToolWindow toolWindow = ToolWindowManager.getInstance(myProject).registerToolWindow(myId, myCanCloseContent, myAnchor);
-        toolWindow.setIcon(myIcon);
-        Content content = new ContentFactoryImpl().createContent(getComponent(), null, false);
-        toolWindow.getContentManager().addContent(content);
+    LOG.checkEDT();
 
-        if (myNumber != -1) {
-          KeymapManager.getInstance().getActiveKeymap().addShortcut(
-            ActivateToolWindowAction.getActionIdForToolWindow(myId),
-            new KeyboardShortcut(KeyStroke.getKeyStroke("alt " + myNumber), null)
-          );
-        }
-      }
-    });
+    ToolWindow toolWindow = ToolWindowManager.getInstance(myProject).registerToolWindow(myId, myCanCloseContent, myAnchor);
+    toolWindow.setIcon(myIcon);
+    Content content = new ContentFactoryImpl().createContent(getComponent(), null, false);
+    toolWindow.getContentManager().addContent(content);
+
+    if (myNumber != -1) {
+      KeymapManager.getInstance().getActiveKeymap().addShortcut(
+        ActivateToolWindowAction.getActionIdForToolWindow(myId),
+        new KeyboardShortcut(KeyStroke.getKeyStroke("alt " + myNumber), null)
+      );
+    }
   }
 
   public void unregister() {
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        if (myNumber != -1) {
-          KeymapManager.getInstance().getActiveKeymap().removeAllActionShortcuts(ActivateToolWindowAction.getActionIdForToolWindow(myId));
-        }
+    LOG.checkEDT();
+    
+    if (myNumber != -1) {
+      KeymapManager.getInstance().getActiveKeymap().removeAllActionShortcuts(ActivateToolWindowAction.getActionIdForToolWindow(myId));
+    }
 
-        ToolWindow toolWindow = getToolWindow();
-        if (toolWindow != null) {
-          ContentManager contentManager = toolWindow.getContentManager();
-          if (contentManager != null && !contentManager.isDisposed()) {
-            contentManager.removeAllContents(true);
-          }
-
-          ToolWindowManager.getInstance(myProject).unregisterToolWindow(myId);
-        }
+    ToolWindow toolWindow = getToolWindow();
+    if (toolWindow != null) {
+      ContentManager contentManager = toolWindow.getContentManager();
+      if (contentManager != null && !contentManager.isDisposed()) {
+        contentManager.removeAllContents(true);
       }
-    });
+
+      ToolWindowManager.getInstance(myProject).unregisterToolWindow(myId);
+    }
   }
 
   public abstract JComponent getComponent();

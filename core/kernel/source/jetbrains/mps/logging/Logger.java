@@ -1,6 +1,7 @@
 package jetbrains.mps.logging;
 
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.ThreadUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -226,6 +227,12 @@ public class Logger {
 
   public void assertNotInCommand() {
     assertLog(CommandProcessor.getInstance().getCurrentCommand() == null, "This action should be performed outside of command");
+  }
+
+  public void checkEDT() {
+    if (!ThreadUtils.isEventDispatchThread()) {
+      throw new IllegalStateException("Can't use this in EDT");
+    }
   }
 }
 
