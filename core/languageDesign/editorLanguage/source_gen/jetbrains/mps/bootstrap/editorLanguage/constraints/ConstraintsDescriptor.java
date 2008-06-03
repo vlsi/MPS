@@ -22,6 +22,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     this.myConstraints.add(new CellModel_RefNode_linkDeclaration_ReferentConstraint());
     this.myConstraints.add(new CellModel_RefNodeList_linkDeclaration_ReferentConstraint());
     this.myConstraints.add(new CellModel_Component_editorComponent_ReferentConstraint());
+    this.myConstraints.add(new CellModel_Property_propertyDeclaration_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {
