@@ -10151,8 +10151,8 @@
           <link role="conceptDeclaration" targetNodeId="17.1188206331916" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1188208085021">
             <property name="readOnly" value="true" />
-            <link role="relationDeclaration" targetNodeId="17.1107796744532" />
             <link role="styleClass" targetNodeId="1198596447279" resolveInfo="Annotation" />
+            <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
           </node>
         </node>
       </node>
