@@ -66,6 +66,8 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <maxImportIndex value="34" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.ide.action@java_stub" version="-1" />
@@ -998,7 +1000,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.logging.refactoring.structure.Refactoring" id="1209043749725">
-    <property name="name" value="RenameModel_new" />
+    <property name="name" value="RenameModel" />
     <property name="userFriendlyName" value="Rename Model" />
     <property name="refactoringTargetKind" value="model" />
     <link role="applicableConcept" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
