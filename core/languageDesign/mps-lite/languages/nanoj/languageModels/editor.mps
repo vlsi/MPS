@@ -18,6 +18,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="8" />
   <import index="1" modelUID="jetbrains.mps.nanoj.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -40,8 +41,8 @@
           <property name="text" value="class" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197638404820">
-          <link role="relationDeclaration" targetNodeId="1.1197638404549" resolveInfo="name" />
           <link role="actionMap" targetNodeId="1197638405124" resolveInfo="ActionMap" />
+          <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197638404821">
           <property name="selectable" value="false" />
@@ -130,7 +131,7 @@
           <link role="relationDeclaration" targetNodeId="1.1197638404553" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197638404848">
-          <link role="relationDeclaration" targetNodeId="1.1197638404557" resolveInfo="name" />
+          <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197638404849">
           <property name="text" value="(" />
@@ -177,7 +178,7 @@
         <property name="vertical" value="false" />
         <property name="selectable" value="true" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197638404861">
-          <link role="relationDeclaration" targetNodeId="1.1197638404557" resolveInfo="name" />
+          <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197638404862">
           <property name="text" value="(" />
@@ -450,8 +451,8 @@
         <link role="relationDeclaration" targetNodeId="1.1197638404629" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197638404945">
-        <link role="relationDeclaration" targetNodeId="1.1197638404632" resolveInfo="name" />
         <link role="actionMap" targetNodeId="1197638405134" resolveInfo="ActionMap1" />
+        <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197638404946">
         <property name="selectable" value="false" />
@@ -490,8 +491,8 @@
         <link role="relationDeclaration" targetNodeId="1.1197638404629" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197638404960">
-        <link role="relationDeclaration" targetNodeId="1.1197638404632" resolveInfo="name" />
         <link role="actionMap" targetNodeId="1197638405144" resolveInfo="ActionMap2" />
+        <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197638404961">
         <property name="selectable" value="false" />
@@ -530,7 +531,7 @@
         <link role="relationDeclaration" targetNodeId="1.1197638404629" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197638404975">
-        <link role="relationDeclaration" targetNodeId="1.1197638404632" resolveInfo="name" />
+        <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
       </node>
     </node>
   </node>
@@ -544,8 +545,8 @@
         <link role="relationDeclaration" targetNodeId="1.1197638404629" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197638404979">
-        <link role="relationDeclaration" targetNodeId="1.1197638404632" resolveInfo="name" />
         <link role="actionMap" targetNodeId="1197638405154" resolveInfo="ActionMap3" />
+        <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197638404980">
         <property name="selectable" value="false" />

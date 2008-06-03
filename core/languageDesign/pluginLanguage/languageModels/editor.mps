@@ -1232,7 +1232,7 @@
           <link role="conceptDeclaration" targetNodeId="15.1068580123140" resolveInfo="ConstructorDeclaration" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1205675636396">
             <property name="readOnly" value="true" />
-            <link role="relationDeclaration" targetNodeId="15.1083152972672" resolveInfo="name" />
+            <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name" />
           </node>
         </node>
       </node>
@@ -1302,7 +1302,7 @@
         <link role="conceptDeclaration" targetNodeId="1.1205679047295" resolveInfo="ActionParameterDeclaration" />
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1206093130943">
           <property name="readOnly" value="true" />
-          <link role="relationDeclaration" targetNodeId="15.1083152972671" resolveInfo="name" />
+          <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name" />
         </node>
       </node>
     </node>
@@ -1391,7 +1391,7 @@
         <link role="conceptDeclaration" targetNodeId="1.1206111530559" resolveInfo="PluginFieldDeclaration" />
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1206112141590">
           <property name="readOnly" value="true" />
-          <link role="relationDeclaration" targetNodeId="15.1083152972671" resolveInfo="name" />
+          <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name" />
         </node>
       </node>
     </node>
@@ -1918,8 +1918,8 @@
         <link role="conceptDeclaration" targetNodeId="1.1210179190070" resolveInfo="PersistentPropertyDeclaration" />
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1210181156769">
           <property name="readOnly" value="true" />
-          <link role="relationDeclaration" targetNodeId="15.1083152972671" resolveInfo="name" />
           <link role="styleClass" targetNodeId="17.1198595398954" resolveInfo="Field" />
+          <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name" />
         </node>
       </node>
     </node>

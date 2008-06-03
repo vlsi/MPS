@@ -15,6 +15,7 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="8" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.actionsLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
@@ -1835,7 +1836,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1179504778096">
         <property name="noTargetText" value="&lt;no name&gt;" />
-        <link role="relationDeclaration" targetNodeId="4.1083152972671" />
+        <link role="relationDeclaration" targetNodeId="3.1169194664001" resolveInfo="name" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1179504778097">
         <property name="text" value="=" />
@@ -2042,7 +2043,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1203347807138">
         <property name="noTargetText" value="&lt;no name&gt;" />
-        <link role="relationDeclaration" targetNodeId="4.1083152972671" resolveInfo="name" />
+        <link role="relationDeclaration" targetNodeId="3.1169194664001" resolveInfo="name" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1203347807139">
         <property name="text" value="=" />

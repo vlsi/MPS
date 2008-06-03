@@ -19,6 +19,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="14" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -1261,7 +1262,7 @@
               <link role="relationDeclaration" targetNodeId="3.1068580123133" />
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1177755613648">
-              <link role="relationDeclaration" targetNodeId="3.1083152972672" />
+              <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
               <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1197897040650">
                 <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_CellMenuComponent" id="1197897044370">
                   <link role="cellMenuComponent" targetNodeId="1197896807120" resolveInfo="ConceptMethodDeclaration_Menu" />
@@ -1562,7 +1563,7 @@
             <link role="conceptDeclaration" targetNodeId="1.1177673300966" />
             <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1177755574139">
               <property name="readOnly" value="true" />
-              <link role="relationDeclaration" targetNodeId="3.1083152972672" />
+              <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
             </node>
           </node>
         </node>
@@ -1771,7 +1772,7 @@
           <link role="relationDeclaration" targetNodeId="3.1068580123133" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1206017741074">
-          <link role="relationDeclaration" targetNodeId="3.1083152972672" resolveInfo="name" />
+          <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
           <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1206017741075">
             <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_CellMenuComponent" id="1206017741076">
               <link role="cellMenuComponent" targetNodeId="1197896807120" resolveInfo="ConceptMethodDeclaration_Menu" />

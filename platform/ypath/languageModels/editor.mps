@@ -16,6 +16,7 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="40" />
   <import index="1" modelUID="jetbrains.mps.ypath.structure" version="12" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -1469,7 +1470,7 @@
         <link role="relationDeclaration" targetNodeId="5.1068431790188" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1180013823179">
-        <link role="relationDeclaration" targetNodeId="5.1083152972671" />
+        <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1180013858259">
         <property name="selectable" value="false" />

@@ -573,8 +573,8 @@
             <property name="readOnly" value="true" />
             <property name="fontStyle" value="BOLD" />
             <property name="drawBorder" value="false" />
-            <link role="relationDeclaration" targetNodeId="17.1083152972671" />
             <link role="styleClass" targetNodeId="1198595398954" resolveInfo="Field" />
+            <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
           </node>
         </node>
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1165014900128">
@@ -683,7 +683,7 @@
           <property name="readOnly" value="true" />
           <property name="noTargetText" value="&lt;constructor&gt;" />
           <property name="drawBorder" value="false" />
-          <link role="relationDeclaration" targetNodeId="17.1083152972672" />
+          <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1075140096042">
           <property name="text" value="(" />
@@ -1633,7 +1633,7 @@
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1088426063981">
             <property name="drawBorder" value="false" />
             <property name="readOnly" value="true" />
-            <link role="relationDeclaration" targetNodeId="17.1083152972672" />
+            <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
           </node>
         </node>
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1165018668942">
@@ -1747,7 +1747,7 @@
             <property name="fontStyle" value="ITALIC" />
             <property name="drawBorder" value="false" />
             <property name="readOnly" value="true" />
-            <link role="relationDeclaration" targetNodeId="17.1083152972672" />
+            <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
           </node>
         </node>
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1165018814906">
@@ -3107,7 +3107,7 @@
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1091709481302">
             <property name="drawBorder" value="false" />
             <property name="readOnly" value="true" />
-            <link role="relationDeclaration" targetNodeId="17.1083152972672" />
+            <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
           </node>
         </node>
       </node>
@@ -3206,8 +3206,8 @@
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1088427644685">
             <property name="readOnly" value="true" />
             <property name="drawBorder" value="false" />
-            <link role="relationDeclaration" targetNodeId="17.1083152972671" />
             <link role="styleClass" targetNodeId="1198160792349" resolveInfo="staticField" />
+            <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
           </node>
         </node>
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1165018744026">
@@ -4065,7 +4065,7 @@
           <property name="noTargetText" value="&lt;no name&gt;" />
           <property name="drawBorder" value="false" />
           <property name="readOnly" value="true" />
-          <link role="relationDeclaration" targetNodeId="17.1083152972671" />
+          <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
         </node>
       </node>
     </node>
@@ -4277,7 +4277,7 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1109281432641">
       <property name="noTargetText" value="&lt;no name&gt;" />
       <property name="drawBorder" value="false" />
-      <link role="relationDeclaration" targetNodeId="17.1109279783704" />
+      <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1109283666334">
@@ -4293,7 +4293,7 @@
           <property name="noTargetText" value="&lt;no name&gt;" />
           <property name="drawBorder" value="false" />
           <property name="readOnly" value="true" />
-          <link role="relationDeclaration" targetNodeId="17.1109279783704" />
+          <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
         </node>
       </node>
     </node>
@@ -7925,8 +7925,8 @@
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1172009005787">
           <property name="readOnly" value="true" />
           <property name="drawBorder" value="false" />
-          <link role="relationDeclaration" targetNodeId="17.1083152972671" />
           <link role="styleClass" targetNodeId="1198160792349" resolveInfo="staticField" />
+          <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
         </node>
       </node>
     </node>
@@ -8034,7 +8034,7 @@
             <property name="fontStyle" value="ITALIC" />
             <property name="drawBorder" value="false" />
             <property name="readOnly" value="true" />
-            <link role="relationDeclaration" targetNodeId="17.1083152972672" />
+            <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
           </node>
         </node>
       </node>
@@ -9811,7 +9811,7 @@
     <property name="name" value="BaseMethodDeclaration_NameCellComponent" />
     <link role="conceptDeclaration" targetNodeId="17.1068580123132" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1185275036523">
-      <link role="relationDeclaration" targetNodeId="17.1083152972672" />
+      <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
       <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1185275065395">
         <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_PropertyPostfixHints" id="1185275066907">
           <node role="postfixesFunction" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_PropertyPostfixHints_GetPostfixes" id="1185275066908">
@@ -10123,7 +10123,7 @@
         <link role="relationDeclaration" targetNodeId="17.1068580123133" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1188206662537">
-        <link role="relationDeclaration" targetNodeId="17.1083152972672" />
+        <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1188206667508">
         <property name="text" value="(" />
@@ -11972,8 +11972,8 @@
         <link role="conceptDeclaration" targetNodeId="17.1068390468200" resolveInfo="FieldDeclaration" />
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197029664792">
           <property name="readOnly" value="true" />
-          <link role="relationDeclaration" targetNodeId="17.1083152972671" resolveInfo="name" />
           <link role="styleClass" targetNodeId="1198595398954" resolveInfo="Field" />
+          <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
         </node>
       </node>
     </node>
