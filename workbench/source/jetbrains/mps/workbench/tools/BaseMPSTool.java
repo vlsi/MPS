@@ -9,7 +9,7 @@ import javax.swing.Icon;
 
 public abstract class BaseMPSTool extends BaseTool implements ProjectComponent {
   protected BaseMPSTool(Project project, String id, int number, Icon icon, ToolWindowAnchor anchor, boolean canCloseContent) {
-    super(anchor, number, id, icon, canCloseContent, project);
+    super(project, id, number, icon, anchor, canCloseContent);
   }
 
   public void projectOpened() {

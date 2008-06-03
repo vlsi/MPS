@@ -9,6 +9,7 @@ import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentFactoryImpl;
+import com.intellij.ui.content.ContentManager;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.MPSProject;
@@ -28,7 +29,7 @@ public abstract class BaseTool {
   private ToolWindowAnchor myAnchor;
   private boolean myCanCloseContent;
 
-  public BaseTool(ToolWindowAnchor anchor, int number, String id, Icon icon, boolean canCloseContent, Project project) {
+  public BaseTool(Project project, String id, int number, Icon icon, ToolWindowAnchor anchor, boolean canCloseContent) {
     myAnchor = anchor;
     myNumber = number;
     myId = id;
@@ -173,6 +174,11 @@ public abstract class BaseTool {
 
         ToolWindow toolWindow = getToolWindow();
         if (toolWindow != null) {
+          ContentManager contentManager = toolWindow.getContentManager();
+          if (contentManager != null && !contentManager.isDisposed()) {
+            contentManager.removeAllContents(true);
+          }
+
           ToolWindowManager.getInstance(myProject).unregisterToolWindow(getId());
         }
       }

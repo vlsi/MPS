@@ -31,6 +31,7 @@ public class TodoViewer extends JPanel {
       public void mouseClicked(MouseEvent e) {
         remove(label);
         refresh();
+        repaint();
       }
     });
   }
