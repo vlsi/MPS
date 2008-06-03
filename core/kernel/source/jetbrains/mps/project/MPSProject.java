@@ -493,6 +493,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
         if (reloadAll) {
           ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
         }
+
+        CleanupManager.getInstance().cleanup();
       }
     });
 
@@ -504,9 +506,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
         ProjectUtil.closeProject(project);
       }
     }
-
-    CleanupManager.getInstance().cleanup();
-
     myDisposed = true;
   }
 
