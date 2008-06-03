@@ -47,6 +47,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="16" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.strings.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.buildlanguage.constraints" version="6" />
@@ -1154,23 +1155,22 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1209459983539">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209459989144">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209459986061">
-              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1209459985481" />
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1209459988205">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212499611098">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1212499613430">
+            <link role="baseMethodDeclaration" targetNodeId="3.~EqualUtil.equalsIgnoreCase(java.lang.String,java.lang.String):boolean" resolveInfo="equalsIgnoreCase" />
+            <link role="classConcept" targetNodeId="3.~EqualUtil" resolveInfo="EqualUtil" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212499620060">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1212499620061" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1212499620062">
                 <link role="property" targetNodeId="5.1169194664001" resolveInfo="name" />
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209459995696">
-              <link role="baseMethodDeclaration" targetNodeId="7.~String.equalsIgnoreCase(java.lang.String):boolean" resolveInfo="equalsIgnoreCase" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209459999498">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1209459998824">
-                  <link role="variableDeclaration" targetNodeId="1209459593518" resolveInfo="snode" />
-                </node>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1209460001391">
-                  <link role="property" targetNodeId="5.1169194664001" resolveInfo="name" />
-                </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212499624340">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1212499623478">
+                <link role="variableDeclaration" targetNodeId="1209459593518" resolveInfo="snode" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1212499626579">
+                <link role="property" targetNodeId="5.1169194664001" resolveInfo="name" />
               </node>
             </node>
           </node>
