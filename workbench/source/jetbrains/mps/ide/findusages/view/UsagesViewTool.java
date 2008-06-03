@@ -194,23 +194,19 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
   }
 
   public void findUsages(final SearchQuery query, final boolean isRerunnable, final boolean showOne, final boolean newTab, BaseFinder... finders) {
-    assert !ThreadUtils.isEventDispatchThread();
     findUsages(FindUtils.makeProvider(finders), query, isRerunnable, showOne, newTab);
   }
 
   public void findUsages(final IResultProvider provider, final SearchQuery query, final boolean isRerunnable, final boolean showOne, final boolean newTab) {
-    assert !ThreadUtils.isEventDispatchThread();
     final SearchResults searchResults = FindUtils.getResultsWithProgress(getProject(), provider, query);
     showResults(searchResults, showOne, newTab, provider, query, isRerunnable);
   }
 
   public void showResults(final SearchQuery query, final SearchResults searchResults) {
-    assert !ThreadUtils.isEventDispatchThread();
     showResults(searchResults, false, false, FindUtils.makeProvider(new ConstantFinder(searchResults.getSearchResults())), query, false);
   }
 
   private void showResults(final SearchResults searchResults, boolean showOne, boolean newTab, final IResultProvider provider, final SearchQuery query, final boolean isRerunnable) {
-    assert !ThreadUtils.isEventDispatchThread();
     int resCount = searchResults.getSearchResults().size();
     if (resCount == 0) {
       ThreadUtils.runInUIThreadNoWait(new Runnable() {

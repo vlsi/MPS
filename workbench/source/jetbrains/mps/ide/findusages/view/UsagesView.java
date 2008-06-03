@@ -92,7 +92,6 @@ public abstract class UsagesView implements IExternalizeable {
   }
 
   public void setRunOptions(IResultProvider resultProvider, SearchQuery searchQuery, ButtonConfiguration buttonConfiguration, SearchResults results) {
-    assert !ThreadUtils.isEventDispatchThread();
     setRunOptions(resultProvider, searchQuery, buttonConfiguration);
     myTreeHolder.setContents(results);
   }
