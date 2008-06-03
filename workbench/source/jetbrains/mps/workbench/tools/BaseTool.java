@@ -179,7 +179,7 @@ public abstract class BaseTool {
             contentManager.removeAllContents(true);
           }
 
-          ToolWindowManager.getInstance(myProject).unregisterToolWindow(getId());
+          ToolWindowManager.getInstance(myProject).unregisterToolWindow(myId);
         }
       }
     });
