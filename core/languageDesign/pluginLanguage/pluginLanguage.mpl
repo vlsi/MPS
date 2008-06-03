@@ -49,7 +49,6 @@
     <usedLanguages>jetbrains.mps.baseLanguage.classifiers</usedLanguages>
     <usedLanguages>jetbrains.mps.internal.collections</usedLanguages>
     <usedLanguages>jetbrains.mps.baseLanguage.strings</usedLanguages>
-    <usedLanguages>jetbrains.mps.transformationTest</usedLanguages>
   </usedLanguages>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.baseLanguage.classifiers</extendedLanguage>
