@@ -27,7 +27,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   private static final String VERSION = "version";
   private static final String NAME_VERSION = "nameVersion";
 
-  private static final Logger LOG = Logger.getLogger(DefaultSModelDescriptor.class);
+  private static final Logger LOG = Logger.getLogger(DefaultSModelDescriptor.class);  
 
   protected SModel mySModel = null;
 

@@ -11,6 +11,8 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.command.UndoConfirmationPolicy;
 
+import javax.swing.SwingUtilities;
+
 // We access IDEA locking mechanism here in order to prevent different way of acquiring locks
 // We always first acquire IDEA's lock and only then acquire MPS's lock
 public class ModelAccess {
@@ -147,11 +149,19 @@ public class ModelAccess {
     });
   }
 
+  public void runWriteActionInCommandAsync(final Runnable r) {
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        runWriteActionInCommand(r);
+      }
+    });
+  }
+
   public boolean canWrite() {
     return myReadWriteLock.isWriteLockedByCurrentThread();
   }
 
-  public boolean canRead() {
+  public boolean canRead() {                                                                                   
     if (allowSharedRead()) {
       return true; //todo find a way to check read access
     } else {
