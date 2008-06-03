@@ -10226,7 +10226,7 @@
           <link role="conceptDeclaration" targetNodeId="17.1188206574119" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1188214586947">
             <property name="readOnly" value="true" />
-            <link role="relationDeclaration" targetNodeId="17.1083152972672" />
+            <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
           </node>
         </node>
       </node>
