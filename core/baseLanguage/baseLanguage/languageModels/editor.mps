@@ -38,6 +38,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="73" />
   <import index="17" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="18" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -9368,7 +9369,7 @@
                         <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977968078">
                           <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_Abstract_editedNode" id="1198583198862" />
                           <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1198583214323">
-                            <link role="property" targetNodeId="17.1083152972671" resolveInfo="name" />
+                            <link role="property" targetNodeId="18.1169194664001" resolveInfo="name" />
                           </node>
                         </node>
                       </node>
@@ -9380,7 +9381,7 @@
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977951702">
                     <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_Abstract_editedNode" id="1198583189317" />
                     <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1198583192040">
-                      <link role="property" targetNodeId="17.1083152972671" resolveInfo="name" />
+                      <link role="property" targetNodeId="18.1169194664001" resolveInfo="name" />
                     </node>
                   </node>
                 </node>
@@ -9693,7 +9694,7 @@
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977957167">
                         <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_FunctionParm_selectedNode" id="1197035423432" />
                         <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1197035425722">
-                          <link role="property" targetNodeId="17.1083152972671" resolveInfo="name" />
+                          <link role="property" targetNodeId="18.1169194664001" resolveInfo="name" />
                         </node>
                       </node>
                     </node>

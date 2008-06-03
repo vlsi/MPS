@@ -19,6 +19,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="14" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="5" modelUID="jetbrains.mps.bootstrap.structureLanguage.findUsages" version="-1" />
@@ -26,6 +27,7 @@
   <import index="9" modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
   <import index="10" modelUID="java.lang@java_stub" version="-1" />
   <import index="14" modelUID="jetbrains.mps.ide.findusages.model@java_stub" version="-1" />
+  <visible index="2" modelUID="jetbrains.mps.core.structure" />
   <node type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.FinderDeclaration" id="1200309609796">
     <property name="name" value="OverridingMethods" />
     <property name="description" value="Overriding Methods" />
@@ -204,7 +206,7 @@
                           <link role="variable" targetNodeId="1200413471960" resolveInfo="sMethod" />
                         </node>
                         <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1200413526900">
-                          <link role="property" targetNodeId="1.1083152972672" resolveInfo="name" />
+                          <link role="property" targetNodeId="2v.1169194664001" resolveInfo="name" />
                         </node>
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332445649">
@@ -212,7 +214,7 @@
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977962895">
                           <node role="operand" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ConceptFunctionParameter_node" id="1206445026780" />
                           <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1200413528198">
-                            <link role="property" targetNodeId="1.1083152972672" resolveInfo="name" />
+                            <link role="property" targetNodeId="2v.1169194664001" resolveInfo="name" />
                           </node>
                         </node>
                       </node>
@@ -1435,7 +1437,7 @@
                           <link role="variable" targetNodeId="1200497698915" resolveInfo="field" />
                         </node>
                         <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1200499565458">
-                          <link role="property" targetNodeId="1.1083152972671" resolveInfo="name" />
+                          <link role="property" targetNodeId="2v.1169194664001" resolveInfo="name" />
                         </node>
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332444252">
@@ -1443,7 +1445,7 @@
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977954322">
                           <node role="operand" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ConceptFunctionParameter_node" id="1206445005523" />
                           <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1200499566771">
-                            <link role="property" targetNodeId="1.1083152972671" resolveInfo="name" />
+                            <link role="property" targetNodeId="2v.1169194664001" resolveInfo="name" />
                           </node>
                         </node>
                       </node>
