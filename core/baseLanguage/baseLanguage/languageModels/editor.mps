@@ -39,6 +39,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="73" />
   <import index="17" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="18" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -1873,7 +1874,7 @@
           <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1182955053206">
             <link role="conceptDeclaration" targetNodeId="17.1068390468198" />
             <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1182955065205">
-              <link role="relationDeclaration" targetNodeId="17.1075300953595" />
+              <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
             </node>
           </node>
         </node>
@@ -3877,7 +3878,7 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1085483277586">
           <property name="drawBorder" value="false" />
           <property name="selectable" value="true" />
-          <link role="relationDeclaration" targetNodeId="17.1075300953595" />
+          <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1169763676999">
           <property name="textFgColor" value="DARK_BLUE" />
