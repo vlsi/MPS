@@ -19,7 +19,7 @@ public class FindAspectMethodUsages extends AnAction {
     PsiFile file = PsiDocumentManager.getInstance(project).getCachedPsiFile(editor.getDocument());
     if (file == null) return;
     PsiElement element = file.findElementAt(offset);
-    if (getMethod(element) != null) {
+    if (element != null && getMethod(element) != null) {
       e.getPresentation().setVisible(true);
     }
   }
