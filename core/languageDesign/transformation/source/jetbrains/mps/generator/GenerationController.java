@@ -5,16 +5,14 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.template.Statistics;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.helgins.inference.TypeCheckingMode;
+import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.progress.TaskProgressSettings;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
-import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.logging.ILoggingHandler;
-import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.plugin.CompilationResult;
 import jetbrains.mps.plugin.IProjectHandler;
@@ -85,6 +83,7 @@ public class GenerationController {
   }
 
   public boolean generate() {
+    clearMessageVew();
     myProgress.setIndeterminate(false);
     myProgress.setFraction(0);
     if (!myProgress.isRunning()) {
@@ -92,8 +91,6 @@ public class GenerationController {
     }
     long totalJob = estimateGenerationTime();
     long startJobTime = System.currentTimeMillis();
-    showMessageView();
-    clearMessageVew();
     myMesssages.handle(new Message(MessageKind.INFORMATION, myGenerationType.getStartText()));
     try {
       boolean generationOK = true;
@@ -131,7 +128,6 @@ public class GenerationController {
     } catch (GenerationCanceledException gce) {
       warning("generation canceled");
       myProgress.stop();
-      showMessageView();
       return false;
     } catch (Throwable t) {
       LOG.error(t);
@@ -330,13 +326,6 @@ public class GenerationController {
     MessagesViewTool messagesView = getProject().getComponent(MessagesViewTool.class);
     if (messagesView != null) {
       messagesView.clear();
-    }
-  }
-
-  private void showMessageView() {
-    MessagesViewTool messagesView = getProject().getComponent(MessagesViewTool.class);
-    if (messagesView != null) {
-      messagesView.showTool();
     }
   }
 

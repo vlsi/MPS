@@ -122,14 +122,14 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
     myTabbedPane.remove(index);
     myUsageViewsData.remove(index);
     if (myUsageViewsData.isEmpty()) {
-      closeTool();
+      hideTool();
     }
   }
 
   public void closeAll() {
     myUsageViewsData.clear();
     myTabbedPane.removeAll();
-    closeTool();
+    hideTool();
   }
 
   private void closeAllBut(int tabIndex) {
@@ -148,7 +148,7 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
 
   public void clear() {
     closeAll();
-    closeTool();
+    hideTool();
   }
 
   //---FIND USAGES STUFF----
@@ -197,22 +197,14 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
 
   public void findUsages(final IResultProvider provider, final SearchQuery query, final boolean isRerunnable, final boolean showOne, final boolean newTab) {
     final SearchResults searchResults = FindUtils.getResultsWithProgress(getProject(), provider, query);
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        showResults(searchResults, showOne, newTab, provider, query, isRerunnable);
-      }
-    });
+    showResults(searchResults, showOne, newTab, provider, query, isRerunnable);
   }
 
   public void showResults(final SearchQuery query, final SearchResults searchResults) {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        showResults(searchResults, false, false, FindUtils.makeProvider(new ConstantFinder(searchResults.getSearchResults())), query, false);
-      }
-    });
+    showResults(searchResults, false, false, FindUtils.makeProvider(new ConstantFinder(searchResults.getSearchResults())), query, false);
   }
 
-  private void showResults(final SearchResults searchResults, boolean showOne, boolean newTab, IResultProvider provider, SearchQuery query, boolean isRerunnable) {
+  private void showResults(final SearchResults searchResults, boolean showOne, boolean newTab, final IResultProvider provider, final SearchQuery query, final boolean isRerunnable) {
     int resCount = searchResults.getSearchResults().size();
     if (resCount == 0) {
       ThreadUtils.runInUIThreadNoWait(new Runnable() {
@@ -223,10 +215,14 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
     } else if (resCount == 1 && !showOne) {
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          SNode node = ((SearchResult<SNode>) searchResults.getSearchResults().get(0)).getObject();
-          if (node != null) {
-            getMPSProject().getComponentSafe(MPSEditorOpener.class).openNode(node);
-          }
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              SNode node = ((SearchResult<SNode>) searchResults.getSearchResults().get(0)).getObject();
+              if (node != null) {
+                getMPSProject().getComponentSafe(MPSEditorOpener.class).openNode(node);
+              }
+            }
+          });
         }
       });
     } else {
@@ -235,19 +231,25 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
           closeTab(currentTabIndex());
         }
       }
-      UsageViewData usageViewData = new UsageViewData();
-      usageViewData.createUsageView();
-      myUsageViewsData.add(usageViewData);
 
-      myTabbedPane.addTab("", usageViewData.myUsagesView.getComponent());
-      myTabbedPane.setSelectedIndex(myTabbedPane.getTabCount() - 1);
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
 
-      usageViewData.myUsagesView.setRunOptions(provider, query, new ButtonConfiguration(isRerunnable), searchResults);
+          UsageViewData usageViewData = new UsageViewData();
+          usageViewData.createUsageView();
+          myUsageViewsData.add(usageViewData);
 
-      myTabbedPane.setTitleAt(currentTabIndex(), usageViewData.myUsagesView.getCaption());
-      myTabbedPane.setIconAt(currentTabIndex(), usageViewData.myUsagesView.getIcon());
+          myTabbedPane.addTab("", usageViewData.myUsagesView.getComponent());
+          myTabbedPane.setSelectedIndex(myTabbedPane.getTabCount() - 1);
 
-      showTool();
+          usageViewData.myUsagesView.setRunOptions(provider, query, new ButtonConfiguration(isRerunnable), searchResults);
+
+          myTabbedPane.setTitleAt(currentTabIndex(), usageViewData.myUsagesView.getCaption());
+          myTabbedPane.setIconAt(currentTabIndex(), usageViewData.myUsagesView.getIcon());
+        }
+      });
+
+      openTool(true);
     }
   }
 

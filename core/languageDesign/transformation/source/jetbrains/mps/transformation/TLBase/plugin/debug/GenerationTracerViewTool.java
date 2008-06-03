@@ -165,7 +165,7 @@ public class GenerationTracerViewTool extends BaseMPSTool {
     myTabbedPane.setIconAt(currentTabIndex(), tracerView.getIcon());
 
     updateContentPanel();
-    showTool();
+    openTool(true);
   }
 
   public void setTracingDataIsAvailable(boolean b) {

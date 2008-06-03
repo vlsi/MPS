@@ -236,7 +236,7 @@ public class GenerationTracer {
     int index = getTracerViewTool().getTabIndex(Kind.INPUT, node);
     if (index > -1) {
       getTracerViewTool().selectIndex(index);
-      getTracerViewTool().showTool();
+      getTracerViewTool().openTool(true);
       return true;
     }
 
@@ -305,7 +305,7 @@ public class GenerationTracer {
     int index = getTracerViewTool().getTabIndex(Kind.OUTPUT, node);
     if (index > -1) {
       getTracerViewTool().selectIndex(index);
-      getTracerViewTool().showTool();
+      getTracerViewTool().openTool(true);
       return true;
     }
 

@@ -1,9 +1,9 @@
 package jetbrains.mps.ide.actions.generate;
 
-import jetbrains.mps.ide.action.MPSAction;
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.IGenerationType;
+import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.annotations.NotNull;
 
@@ -32,3 +32,4 @@ public abstract class GenerateCurrentModelAction extends MPSAction {
     );
   }
 }
+

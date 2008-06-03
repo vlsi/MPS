@@ -1,32 +1,34 @@
 package jetbrains.mps.ide.projectPane;
 
-import com.intellij.openapi.actionSystem.DataProvider;
+import com.intellij.ide.CopyProvider;
+import com.intellij.ide.CutProvider;
+import com.intellij.ide.PasteProvider;
 import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.command.CommandAdapter;
+import com.intellij.openapi.command.CommandEvent;
+import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
-import com.intellij.openapi.command.CommandProcessor;
-import com.intellij.openapi.command.CommandAdapter;
-import com.intellij.openapi.command.CommandEvent;
-import com.intellij.ide.CopyProvider;
-import com.intellij.ide.PasteProvider;
-import com.intellij.ide.CutProvider;
+import jetbrains.mps.generator.GenerationListener;
+import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.ide.IProjectPane;
+import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.MPSToolBar;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.IActionDataProvider;
 import jetbrains.mps.ide.actions.*;
 import jetbrains.mps.ide.actions.model.DeleteModelsAction;
-import jetbrains.mps.ide.actions.nodes.DeleteNodeAction;
 import jetbrains.mps.ide.actions.nodes.CopyNodeAction;
-import jetbrains.mps.ide.actions.nodes.PasteNodeAction;
 import jetbrains.mps.ide.actions.nodes.CutNodeAction;
+import jetbrains.mps.ide.actions.nodes.DeleteNodeAction;
+import jetbrains.mps.ide.actions.nodes.PasteNodeAction;
 import jetbrains.mps.ide.projectPane.ProjectPane.MyState;
 import jetbrains.mps.ide.ui.*;
 import jetbrains.mps.ide.ui.MPSTree.TreeState;
@@ -45,9 +47,6 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.workbench.tools.BaseMPSTool;
-import jetbrains.mps.generator.GenerationListener;
-import jetbrains.mps.generator.GenerationStatus;
-import jetbrains.mps.generator.GeneratorManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 
@@ -63,8 +62,6 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Collection;
-import java.io.File;
 
 @State(
   name = "MPSProjectPane",
@@ -73,7 +70,7 @@ import java.io.File;
     id = "other",
     file = "$WORKSPACE_FILE$"
   )
-  }
+    }
 )
 public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPane, PersistentStateComponent<MyState> {
   private static final Logger LOG = Logger.getLogger(ProjectPane.class);
@@ -261,7 +258,7 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
   public void showProjectPane() {
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
-        showTool();
+        openTool(true);
       }
     });
   }
@@ -366,7 +363,7 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
       public void run() {
         getTree().runWithoutExpansion(new Runnable() {
           public void run() {
-            showTool();
+            openTool(true);
 
             IModule module = context.getModule();
             if (module == null) {
@@ -969,7 +966,7 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
 
   private class MyPasteProvider implements PasteProvider {
     private PasteNodeAction myAction = new PasteNodeAction();
-    
+
     public void performPaste(DataContext dataContext) {
       myAction.execute(new ActionContext());
     }
@@ -997,5 +994,5 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
     }
   }
 
-  
+
 }

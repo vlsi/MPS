@@ -194,15 +194,15 @@ public class MessagesViewTool extends BaseMPSTool implements PersistentStateComp
 
   //------------TOOL STUFF---------------
 
-  public void showTool() {
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+  public void openTool(boolean setActive) {
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         if (myModel.size() > 0) {
           myList.setSelectedValue(myModel.getElementAt(myModel.size() - 1), true);
         }
       }
     });
-    super.showTool();
+    super.openTool(setActive);
   }
 
   public JComponent getComponent() {

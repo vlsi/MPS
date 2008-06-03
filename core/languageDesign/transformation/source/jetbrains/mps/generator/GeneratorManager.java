@@ -1,29 +1,6 @@
 package jetbrains.mps.generator;
 
-import jetbrains.mps.generator.fileGenerator.IFileGenerator;
-import jetbrains.mps.generator.GeneratorManager.MyState;
-import jetbrains.mps.ide.messages.*;
-import jetbrains.mps.ide.progress.AdaptiveProgressMonitor;
-import jetbrains.mps.ide.progress.AdaptiveProgressMonitorFactory;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.transformation.TLBase.plugin.debug.GenerationTracer;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Mapper;
-import jetbrains.mps.util.Pair;
-import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.cleanup.CleanupManager;
-
-import javax.swing.JOptionPane;
-import javax.swing.Icon;
-import javax.swing.JComponent;
-import java.util.*;
-import java.util.concurrent.*;
-import java.io.File;
-
-import com.intellij.openapi.project.Project;
+import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
@@ -32,17 +9,47 @@ import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.generator.GeneratorManager.MyState;
+import jetbrains.mps.generator.fileGenerator.IFileGenerator;
+import jetbrains.mps.ide.messages.DefaultMessageHandler;
+import jetbrains.mps.ide.messages.IMessageHandler;
+import jetbrains.mps.ide.messages.MessagesViewTool;
+import jetbrains.mps.ide.progress.AdaptiveProgressMonitor;
+import jetbrains.mps.ide.progress.AdaptiveProgressMonitorFactory;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.transformation.TLBase.plugin.debug.GenerationTracer;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Mapper;
+import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nls;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import javax.swing.Icon;
+import javax.swing.JComponent;
+import javax.swing.JOptionPane;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 
 @State(
   name = "GenerationManager",
   storages = {
   @Storage(
-    id ="other",
+    id = "other",
     file = "$WORKSPACE_FILE$"
   )
     }
@@ -165,6 +172,13 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Conf
       closeOnExit);
   }
 
+  private void showMessageView() {
+    MessagesViewTool messagesView = myProject.getComponent(MessagesViewTool.class);
+    if (messagesView != null) {
+      messagesView.openTool(true);
+    }
+  }
+
   /**
    * @return false if canceled
    */
@@ -205,8 +219,11 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Conf
       saveTransientModels = false;
     }
 
+    showMessageView();
+    IdeEventQueue.getInstance().flushQueue();
+
     final boolean[] result = new boolean[]{false};
-    ProgressManager.getInstance().run(new Modal(invocationContext.getComponent(Project.class), "Generation" , true) {
+    ProgressManager.getInstance().run(new Modal(invocationContext.getComponent(Project.class), "Generation", true) {
       public void run(@NotNull ProgressIndicator progress) {
         result[0] = generateModels(inputModels, generationType, progress, messages, saveTransientModels);
       }
