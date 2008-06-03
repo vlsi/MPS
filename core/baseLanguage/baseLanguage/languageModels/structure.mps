@@ -98,6 +98,10 @@
       <property name="value" value="class declaration" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1212527038714">
+      <property name="value" value="property 'name' in this concept. now INamedConcept.name only" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1210365515391" resolveInfo="deprecated_next_after_607" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1075300953594">
       <property name="name" value="abstractClass" />
       <property name="propertyType" value="boolean" />
@@ -264,6 +268,10 @@
     <link role="extends" targetNodeId="1109279851642" resolveInfo="GenericDeclaration" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1109283235663">
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1212527133045">
+      <property name="value" value="property 'name' in this concept. now INamedConcept.name only" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1210365515391" resolveInfo="deprecated_next_after_607" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1083152972672">
       <property name="name" value="name" />
@@ -1206,6 +1214,10 @@
       <property name="value" value="enumeration class declaration" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1212527102513">
+      <property name="value" value="property 'name' in this concept. now INamedConcept.name only" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1210365515391" resolveInfo="deprecated_next_after_607" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1090923492515">
       <property name="name" value="name" />
       <property name="propertyType" value="string" />
@@ -1238,6 +1250,10 @@
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1189675724652">
       <link role="intfc" targetNodeId="1178285077437" resolveInfo="ClassifierMember" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1212527148515">
+      <property name="value" value="property 'name' in this concept. now INamedConcept.name only" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1210365515391" resolveInfo="deprecated_next_after_607" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1083260308424">
@@ -1388,6 +1404,10 @@
       <property name="value" value="interface declaration" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1212527093043">
+      <property name="value" value="property 'name' in this concept. now INamedConcept.name only" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1210365515391" resolveInfo="deprecated_next_after_607" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1107797138135">
       <property name="targetCardinality" value="1" />
       <property name="sourceCardinality" value="0..n" />
@@ -1413,6 +1433,10 @@
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1211483220942">
       <link role="intfc" targetNodeId="4.1196978630214" resolveInfo="IResolveInfo" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1212527160922">
+      <property name="value" value="property 'name' in this concept. now INamedConcept.name only" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1210365515391" resolveInfo="deprecated_next_after_607" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1109279851642">
