@@ -27,8 +27,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   private static final String VERSION = "version";
   private static final String NAME_VERSION = "nameVersion";
 
-  private static final Logger LOG = Logger.getLogger(DefaultSModelDescriptor.class);  
-
+  private static final Logger LOG = Logger.getLogger(DefaultSModelDescriptor.class);
+      
   protected SModel mySModel = null;
 
   private Map<String, String> myMetadata;
@@ -40,7 +40,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   private long myLastStructuralChange = System.currentTimeMillis();
   private long myLastChange;
   private FastNodeFinder myFastNodeFinder;
-  private List<IPostLoadRunnable> myPostLoadRunnables = new ArrayList<IPostLoadRunnable>(0);
   private Throwable myInitializationStackTrace;
 
   private boolean myTransient;
@@ -53,7 +52,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     updateLastChange();
   }
 
-  private void updateLastChange() {
+  private void updateLastChange() {                  
     if (myModelFile != null) {
       myLastChange = myModelFile.lastModified();
     } else {
@@ -144,15 +143,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     addListenersToNewModel();
   }
 
-  private void doAdditionalPostLoadStuff() {
-    for (IPostLoadRunnable runnable : myPostLoadRunnables) {
-      runnable.doPostLoadStuff(this);
-    }
-  }
-
-  public void addPostLoadRunnable(IPostLoadRunnable runnable) {
-    myPostLoadRunnables.add(runnable);
-  }
 
   private void updateModelWithRefactorings() {
     assert mySModel != null;
