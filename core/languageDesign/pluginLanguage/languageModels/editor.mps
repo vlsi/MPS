@@ -36,6 +36,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <maxImportIndex value="21"/>
   <import index="1" modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="1"/>
   <import index="2" modelUID="jetbrains.mps.nodeEditor@java_stub" version="-1"/>
@@ -97,6 +98,19 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
               id="1211299034804">
           <link role="relationDeclaration" targetNodeId="1.1211298967294" resolveInfo="isExecutedInCommand"/>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
+            id="1212506466723">
+        <property name="selectable" value="false"/>
+        <property name="vertical" value="false"/>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1212506468725">
+          <property name="text" value="execute in new thread:"/>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
+              id="1212506483008">
+          <link role="relationDeclaration" targetNodeId="1.1212506431080" resolveInfo="executeInAnotherThread"/>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"

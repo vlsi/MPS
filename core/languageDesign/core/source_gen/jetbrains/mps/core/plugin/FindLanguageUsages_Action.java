@@ -12,7 +12,9 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.CurrentProjectMPSAction;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
 
 public class FindLanguageUsages_Action extends CurrentProjectMPSAction {
@@ -66,19 +68,40 @@ public class FindLanguageUsages_Action extends CurrentProjectMPSAction {
     return true;
   }
 
-  public void doExecute(@NotNull()ActionContext context) {
+  public void doExecute(@NotNull() final ActionContext context) {
     try {
       if (!(this.fillFieldsIfNecessary(context))) {
         return;
       }
       {
-        SearchQuery query = new SearchQuery(this.module, context.getScope());
-        IResultProvider provider = FindUtils.makeProvider(new LanguageUsagesFinder());
-        context.getOperationContext().getComponent(UsagesViewTool.class).findUsages(provider, query, true, true, false);
+        Thread t = new Thread() {
+
+          public void run() {
+            performExecution(context);
+          }
+
+        };
+        t.start();
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "FindLanguageUsages", t);
     }
+  }
+
+  private void performExecution(ActionContext context) {
+    final SearchQuery[] query = new SearchQuery[1];
+    final IResultProvider[] provider = new IResultProvider[1];
+    final IModule module = this.module;
+    final IScope scope = context.getScope();
+    ModelAccess.instance().runReadAction(new Runnable() {
+
+      public void run() {
+        query[0] = new SearchQuery(module, scope);
+        provider[0] = FindUtils.makeProvider(new LanguageUsagesFinder());
+      }
+
+    });
+    context.getOperationContext().getComponent(UsagesViewTool.class).findUsages(provider[0], query[0], true, true, false);
   }
 
 }

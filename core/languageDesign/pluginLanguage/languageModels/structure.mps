@@ -59,6 +59,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <maxImportIndex value="20"/>
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0"/>
   <import index="6" modelUID="jetbrains.mps.core.structure" version="-1"/>
@@ -131,6 +132,11 @@
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"
           id="1211298967294">
       <property name="name" value="outsideCommandExecution"/>
+      <link role="dataType" targetNodeId="6.1082983657063" resolveInfo="boolean"/>
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"
+          id="1212506431080">
+      <property name="name" value="executeInNewThread"/>
       <link role="dataType" targetNodeId="6.1082983657063" resolveInfo="boolean"/>
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference"

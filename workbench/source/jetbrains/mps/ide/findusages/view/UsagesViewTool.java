@@ -154,6 +154,8 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
   //---FIND USAGES STUFF----
 
   public void findUsages(final ActionContext context) {
+    assert !ThreadUtils.isEventDispatchThread();
+
     final SNode[] semanticNode = new SNode[1];
     final SNode[] operationNode = new SNode[1];
 
@@ -192,19 +194,23 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
   }
 
   public void findUsages(final SearchQuery query, final boolean isRerunnable, final boolean showOne, final boolean newTab, BaseFinder... finders) {
+    assert !ThreadUtils.isEventDispatchThread();
     findUsages(FindUtils.makeProvider(finders), query, isRerunnable, showOne, newTab);
   }
 
   public void findUsages(final IResultProvider provider, final SearchQuery query, final boolean isRerunnable, final boolean showOne, final boolean newTab) {
+    assert !ThreadUtils.isEventDispatchThread();
     final SearchResults searchResults = FindUtils.getResultsWithProgress(getProject(), provider, query);
     showResults(searchResults, showOne, newTab, provider, query, isRerunnable);
   }
 
   public void showResults(final SearchQuery query, final SearchResults searchResults) {
+    assert !ThreadUtils.isEventDispatchThread();
     showResults(searchResults, false, false, FindUtils.makeProvider(new ConstantFinder(searchResults.getSearchResults())), query, false);
   }
 
   private void showResults(final SearchResults searchResults, boolean showOne, boolean newTab, final IResultProvider provider, final SearchQuery query, final boolean isRerunnable) {
+    assert !ThreadUtils.isEventDispatchThread();
     int resCount = searchResults.getSearchResults().size();
     if (resCount == 0) {
       ThreadUtils.runInUIThreadNoWait(new Runnable() {
@@ -253,7 +259,7 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
     }
   }
 
-  public void read(Element element, MPSProject project) {
+  private void read(Element element, MPSProject project) {
     Element versionXML = element.getChild(VERSION);
     if (versionXML == null) return;
     String version = versionXML.getAttribute(ID).getValue();
@@ -287,7 +293,7 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
     myDefaultViewOptions.read(defaultViewOptionsXML, project);
   }
 
-  public void write(Element element, MPSProject project) {
+  private void write(Element element, MPSProject project) {
     Element versionXML = new Element(VERSION);
     versionXML.setAttribute(ID, VERSION_NUMBER);
     element.addContent(versionXML);
@@ -336,7 +342,7 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
     });
   }
 
-  class TabPaneMouseListener extends MouseAdapter {
+  private class TabPaneMouseListener extends MouseAdapter {
     public void mousePressed(MouseEvent e) {
       if (e.getButton() == MouseEvent.BUTTON2) {
         int tabIndex = myTabbedPane.indexAtLocation(e.getX(), e.getY());
