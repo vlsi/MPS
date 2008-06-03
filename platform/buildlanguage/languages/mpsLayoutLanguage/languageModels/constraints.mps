@@ -46,6 +46,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="16" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.strings.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.buildlanguage.constraints" version="6" />
@@ -713,6 +714,21 @@
                 <property name="value" value=":" />
               </node>
               <node role="map" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205338680332">
+                <link role="variableDeclaration" targetNodeId="1205338622551" resolveInfo="vars" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212492592804">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1212492604639">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1212492605706">
+              <property name="value" value="date" />
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapElement" id="1212492594243">
+              <node role="key" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1212492596529">
+                <property name="value" value="date" />
+              </node>
+              <node role="map" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1212492592805">
                 <link role="variableDeclaration" targetNodeId="1205338622551" resolveInfo="vars" />
               </node>
             </node>

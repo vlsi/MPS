@@ -27,6 +27,8 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="jetbrains.mps.mpsLayoutLanguage.structure" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.core.structure" />
@@ -466,6 +468,38 @@
       <property name="role" value="targetDeclaration" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="3v.1196851099544" resolveInfo="TargetDeclaration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1212485154251">
+    <property name="package" value="projectComponents" />
+    <property name="name" value="Replace" />
+    <link role="extends" targetNodeId="1203598322527" resolveInfo="File" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1212485191151">
+      <property name="value" value="replace" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1212485610544">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="replacingPair" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1212485500119" resolveInfo="Pair" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1212485500119">
+    <property name="package" value="variables" />
+    <property name="name" value="Pair" />
+    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1212485511583">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="first" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1205339194346" resolveInfo="IStringExpression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1212485518918">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="second" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1205339194346" resolveInfo="IStringExpression" />
     </node>
   </node>
 </model>
