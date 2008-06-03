@@ -85,6 +85,8 @@
     </group>
 
     <group>
+      <action id="InstallIDEAPlugin" class="jetbrains.mps.workbench.actions.InstallIDEAPluginAction" text="Install IntelliJ IDEA Plugin"/>
+      <separator />
       <action id="ReloadAllAction" class="jetbrains.mps.workbench.actions.ReloadAllAction" text="Reload All Classes"/>
 
       <add-to-group anchor="last" group-id="ToolsMenu"/>
