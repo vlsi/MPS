@@ -31,7 +31,6 @@ public class PageOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_fromElementRefNodeCell3703_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_fromElementRefNodeCell3703_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -41,7 +40,6 @@ public class PageOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_toElementRefNodeCell3703_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_toElementRefNodeCell3703_0");
     editorCell.setDrawBorder(false);
   }
 

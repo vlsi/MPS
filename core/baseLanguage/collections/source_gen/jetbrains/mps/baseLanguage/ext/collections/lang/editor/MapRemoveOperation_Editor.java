@@ -36,7 +36,6 @@ public class MapRemoveOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_keyRefNodeCell6162_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_keyRefNodeCell6162_0");
   }
 
   private static void setupLabel_ConceptPropertyCell6162_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

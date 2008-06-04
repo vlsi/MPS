@@ -17,7 +17,6 @@ import jetbrains.mps.generator.fileGenerator.IFileGenerator;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.MessagesViewTool;
-import jetbrains.mps.ide.progress.AdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.AdaptiveProgressMonitorFactory;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
@@ -229,10 +228,6 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Conf
       }
     });
     return result[0];
-  }
-
-  protected AdaptiveProgressMonitor createAdaptriveProgressMonitor(boolean closeOnExit, IOperationContext invocationContext) {
-    return myProject.getComponent(MPSProjectHolder.class).getMPSProject().getComponentSafe(AdaptiveProgressMonitorFactory.class).createMonitor();
   }
 
   /**

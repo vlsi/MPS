@@ -34,7 +34,6 @@ public class ContainsKeyOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_keyRefNodeCell14589_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_keyRefNodeCell14589_0");
   }
 
   private static void setupLabel_ConceptPropertyCell14589_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

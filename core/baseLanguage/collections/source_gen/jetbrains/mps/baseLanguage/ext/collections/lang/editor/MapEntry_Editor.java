@@ -21,7 +21,6 @@ public class MapEntry_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_keyRefNodeCell2588_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_keyRefNodeCell2588_0");
   }
 
   private static void setupBasic_ConstantCell2588_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -29,7 +28,6 @@ public class MapEntry_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_valueRefNodeCell2588_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_valueRefNodeCell2588_0");
   }
 
   private static void setupLabel_keyRefNodeCell2588_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

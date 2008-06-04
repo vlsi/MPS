@@ -22,8 +22,8 @@ public class EditorManager {
 
   public static final Object BIG_CELL_CONTEXT = new Object();
 
-  public static final Object RIGHT_TRANSFORM_HINT_ANCHOR_CELL_ID = new Object();
-  public static final Object RIGHT_TRANSFORM_HINT_ANCHOR_TAG = new Object();
+  public static final String RIGHT_TRANSFORM_HINT_ANCHOR_CELL_ID = "RTHint_Anchor_ID";
+  public static final String RIGHT_TRANSFORM_HINT_ANCHOR_TAG = "RTHint_Anchor_Tag";
 
   private HashMap<ReferencedNodeContext, EditorCell> myMap = new HashMap<ReferencedNodeContext, EditorCell>();
   private boolean myCreatingInspectedCell = false;

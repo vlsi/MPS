@@ -31,7 +31,6 @@ public class TakeOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_elementsToTakeRefNodeCell9583_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_elementsToTakeRefNodeCell9583_0");
     editorCell.setDrawBorder(false);
   }
 

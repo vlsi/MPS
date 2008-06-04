@@ -33,7 +33,6 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_rightExpressionRefNodeCell7417_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_rightExpressionRefNodeCell7417_0");
   }
 
   private static void setupBasic_ConstantCell7417_01(EditorCell editorCell, SNode node, EditorContext context) {

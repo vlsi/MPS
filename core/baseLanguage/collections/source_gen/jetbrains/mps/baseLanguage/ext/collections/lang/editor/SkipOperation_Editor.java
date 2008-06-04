@@ -31,7 +31,6 @@ public class SkipOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_elementsToSkipRefNodeCell7035_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_elementsToSkipRefNodeCell7035_0");
     editorCell.setDrawBorder(false);
   }
 

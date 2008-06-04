@@ -33,7 +33,6 @@ public class HashMapCreator_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_keyTypeRefNodeCell11619_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_keyTypeRefNodeCell11619_0");
   }
 
   private static void setupBasic_ConstantCell11619_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -41,7 +40,6 @@ public class HashMapCreator_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_valueTypeRefNodeCell11619_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_valueTypeRefNodeCell11619_0");
   }
 
   private static void setupBasic_ConceptPropertyCell11619_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -49,7 +47,6 @@ public class HashMapCreator_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_initializerRefNodeCell11619_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_initializerRefNodeCell11619_0");
   }
 
   private static void setupLabel_ConstantCell11619_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
