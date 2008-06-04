@@ -53,7 +53,6 @@ public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_bodyRefNodeCell19902_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_bodyRefNodeCell19902_0");
   }
 
   private static void setupBasic_ConstantCell19902_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -91,7 +90,6 @@ public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_returnTypeRefNodeCell19902_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_returnTypeRefNodeCell19902_0");
   }
 
   private static void setupBasic_namePropertyCell19902_0(EditorCell editorCell, SNode node, EditorContext context) {

@@ -71,7 +71,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_bodyRefNodeCell20116_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_bodyRefNodeCell20116_0");
   }
 
   private static void setupBasic_CollectionCell20116_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -139,7 +138,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_returnTypeRefNodeCell20116_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_returnTypeRefNodeCell20116_0");
   }
 
   private static void setupBasic_namePropertyCell20116_01(EditorCell editorCell, SNode node, EditorContext context) {

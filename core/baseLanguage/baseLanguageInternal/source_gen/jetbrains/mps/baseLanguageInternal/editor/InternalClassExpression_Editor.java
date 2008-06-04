@@ -22,7 +22,6 @@ public class InternalClassExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_typeRefNodeCell4834_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_typeRefNodeCell4834_0");
     editorCell.setDrawBorder(false);
   }
 

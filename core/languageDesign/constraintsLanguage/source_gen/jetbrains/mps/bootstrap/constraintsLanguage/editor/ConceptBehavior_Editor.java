@@ -77,7 +77,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_constructorRefNodeCell15551_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_constructorRefNodeCell15551_0");
   }
 
   private static void setupBasic_ConstantCell15551_04(EditorCell editorCell, SNode node, EditorContext context) {
@@ -117,7 +116,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_defaultScopeRefNodeCell15551_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_defaultScopeRefNodeCell15551_0");
   }
 
   private static void setupBasic_CollectionCell15551_04(EditorCell editorCell, SNode node, EditorContext context) {
@@ -149,7 +147,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_canBeAChildRefNodeCell15551_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_canBeAChildRefNodeCell15551_0");
   }
 
   private static void setupBasic_ConstantCell15551_015(EditorCell editorCell, SNode node, EditorContext context) {
@@ -158,7 +155,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_canBeAParentRefNodeCell15551_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_canBeAParentRefNodeCell15551_0");
   }
 
   private static void setupBasic_ConstantCell15551_016(EditorCell editorCell, SNode node, EditorContext context) {
@@ -177,7 +173,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_canBeAChildRefNodeCell15551_01(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_canBeAChildRefNodeCell15551_01");
   }
 
   private static void setupBasic_CollectionCell15551_07(EditorCell editorCell, SNode node, EditorContext context) {
@@ -191,7 +186,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_canBeAParentRefNodeCell15551_01(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_canBeAParentRefNodeCell15551_01");
   }
 
   private static void setupBasic_ConstantCell15551_019(EditorCell editorCell, SNode node, EditorContext context) {

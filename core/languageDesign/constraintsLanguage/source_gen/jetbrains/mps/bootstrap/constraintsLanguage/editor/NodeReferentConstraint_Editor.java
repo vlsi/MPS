@@ -109,7 +109,6 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_searchScopeCanCreateRefNodeCell1768_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_searchScopeCanCreateRefNodeCell1768_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -132,7 +131,6 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_searchScopeFactoryRefNodeCell1768_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_searchScopeFactoryRefNodeCell1768_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -167,7 +165,6 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_referentSetHandlerRefNodeCell1768_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_referentSetHandlerRefNodeCell1768_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -200,7 +197,6 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_searchScopeFactoryRefNodeCell1768_01(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_searchScopeFactoryRefNodeCell1768_01");
     editorCell.setDrawBorder(false);
   }
 

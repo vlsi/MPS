@@ -29,7 +29,6 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_fieldTypeRefNodeCell13692_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_fieldTypeRefNodeCell13692_0");
   }
 
   private static void setupBasic_ConstantCell13692_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -37,7 +36,6 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_instanceRefNodeCell13692_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_instanceRefNodeCell13692_0");
   }
 
   private static void setupBasic_ConstantCell13692_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -62,7 +60,6 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_instanceTypeRefNodeCell13692_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_instanceTypeRefNodeCell13692_0");
   }
 
   private static void setupBasic_ConstantCell13692_05(EditorCell editorCell, SNode node, EditorContext context) {

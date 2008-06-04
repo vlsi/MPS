@@ -11,23 +11,23 @@ import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class EmitNopStatement_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1206443683005");
+  private static void setupBasic_ConstantCell8768_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell8768_0");
     DataFlow_StyleSheet.INSTRUCTION.apply(editorCell);
   }
 
-  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell8768_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstantCell(context, node, "nop");
+    return this.create_ConstantCell8768_0(context, node, "nop");
   }
 
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+  public EditorCell create_ConstantCell8768_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    EmitNopStatement_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    EmitNopStatement_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    setupBasic_ConstantCell8768_0(editorCell, node, context);
+    setupLabel_ConstantCell8768_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }

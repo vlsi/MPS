@@ -58,7 +58,6 @@ public class FunctionType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_resultRefNodeCell14194_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_resultRefNodeCell14194_0");
     editorCell.setDrawBorder(false);
   }
 

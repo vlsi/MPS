@@ -102,7 +102,6 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_searchScopeCanCreateRefNodeCell4442_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_searchScopeCanCreateRefNodeCell4442_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -125,7 +124,6 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_searchScopeFactoryRefNodeCell4442_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_searchScopeFactoryRefNodeCell4442_0");
     editorCell.setDrawBorder(false);
   }
 

@@ -16,60 +16,59 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 
 public class BaseEmitJumpStatement_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1206445209770");
+  private static void setupBasic_CollectionCell14251_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell14251_0");
   }
 
-  private static void setupBasic_CellModel_ConceptProperty(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1206445210819");
+  private static void setupBasic_ConceptPropertyCell14251_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConceptPropertyCell14251_0");
     DataFlow_StyleSheet.INSTRUCTION.apply(editorCell);
   }
 
-  private static void setupBasic_JumpToCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1206445217024");
+  private static void setupBasic_jumpToRefNodeCell14251_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_CellModel_ConceptProperty(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConceptPropertyCell14251_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_JumpToCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_jumpToRefNodeCell14251_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createRowCell(context, node);
+    return this.create_CollectionCell14251_0(context, node);
   }
 
-  public EditorCell createRowCell(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell14251_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    BaseEmitJumpStatement_Editor.setupBasic_RowCell(editorCell, node, context);
+    setupBasic_CollectionCell14251_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createCellModel_ConceptProperty(context, node));
-    editorCell.addEditorCell(this.createJumpToCell(context, node));
+    editorCell.addEditorCell(this.create_ConceptPropertyCell14251_0(context, node));
+    editorCell.addEditorCell(this.create_jumpToRefNodeCell14251_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createCellModel_ConceptPropertyinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_ConceptPropertyCell14251_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    BaseEmitJumpStatement_Editor.setupBasic_CellModel_ConceptProperty(editorCell, node, context);
+    setupBasic_ConceptPropertyCell14251_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      BaseEmitJumpStatement_Editor.setupLabel_CellModel_ConceptProperty((EditorCell_Label)editorCell, node, context);
+      setupLabel_ConceptPropertyCell14251_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createCellModel_ConceptProperty(EditorContext context, SNode node) {
+  public EditorCell create_ConceptPropertyCell14251_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createCellModel_ConceptPropertyinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_ConceptPropertyCell14251_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -80,25 +79,25 @@ public class BaseEmitJumpStatement_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createJumpToCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_jumpToRefNodeCell14251_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    BaseEmitJumpStatement_Editor.setupBasic_JumpToCell(editorCell, node, context);
+    setupBasic_jumpToRefNodeCell14251_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      BaseEmitJumpStatement_Editor.setupLabel_JumpToCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_jumpToRefNodeCell14251_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createJumpToCell(EditorContext context, SNode node) {
+  public EditorCell create_jumpToRefNodeCell14251_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("jumpTo");
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createJumpToCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_jumpToRefNodeCell14251_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

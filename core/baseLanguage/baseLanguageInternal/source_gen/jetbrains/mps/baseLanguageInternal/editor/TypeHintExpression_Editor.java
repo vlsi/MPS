@@ -25,7 +25,6 @@ public class TypeHintExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_typeHintRefNodeCell2405_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_typeHintRefNodeCell2405_0");
   }
 
   private static void setupBasic_ConstantCell2405_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -33,7 +32,6 @@ public class TypeHintExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_expressionRefNodeCell2405_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_expressionRefNodeCell2405_0");
   }
 
   private static void setupLabel_ConstantCell2405_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
