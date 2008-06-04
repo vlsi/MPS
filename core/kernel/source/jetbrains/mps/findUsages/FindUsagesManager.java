@@ -2,8 +2,10 @@ package jetbrains.mps.findUsages;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+import jetbrains.mps.ide.progress.NullAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -70,7 +72,7 @@ public class FindUsagesManager implements ApplicationComponent {
   }
 
   public Set<SReference> findUsages(SNode node, IScope scope) {
-    return findUsages(node, scope, null);
+    return findUsages(node, scope, (IAdaptiveProgressMonitor) null);
   }
 
   /**
@@ -252,5 +254,21 @@ public class FindUsagesManager implements ApplicationComponent {
         invalidateCaches();
       }
     });
+  }
+
+  public static class ProgressAdapter extends NullAdaptiveProgressMonitor {
+    private final ProgressIndicator myProgress;
+
+    public ProgressAdapter(ProgressIndicator progress) {
+      myProgress = progress;
+    }
+
+    public void addText(String text) {
+      myProgress.setText(text);
+    }
+
+    public boolean isCanceled() {
+      return myProgress.isCanceled();
+    }
   }
 }

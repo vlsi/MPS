@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
-import jetbrains.mps.ide.progress.NullAdaptiveProgressMonitor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
@@ -48,7 +47,7 @@ public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
       nodes.add(child);
     }
     // 
-    Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(nodes, scope, new NullAdaptiveProgressMonitor(), false);
+    Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(nodes, scope, new FindUsagesManager.ProgressAdapter(indicator), false);
     for (SReference reference : resRefs) {
       if (!(nodes.contains(reference.getSourceNode()))) {
         ListOperations.addElement(_results, reference.getSourceNode());

@@ -8,7 +8,6 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
-import jetbrains.mps.ide.progress.NullAdaptiveProgressMonitor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
@@ -41,7 +40,7 @@ public class ConceptInstances_Finder extends GeneratedFinder {
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
-    List<SNode> resNodes = new ArrayList<SNode>(FindUsagesManager.getInstance().findInstances((AbstractConceptDeclaration) ((AbstractConceptDeclaration) SNodeOperations.getAdapter(node)), scope, new NullAdaptiveProgressMonitor(), false));
+    List<SNode> resNodes = new ArrayList<SNode>(FindUsagesManager.getInstance().findInstances((AbstractConceptDeclaration) ((AbstractConceptDeclaration) SNodeOperations.getAdapter(node)), scope, new FindUsagesManager.ProgressAdapter(indicator), false));
     for (SNode resNode : resNodes) {
       ListOperations.addElement(_results, resNode);
     }

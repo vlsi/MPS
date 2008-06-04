@@ -1,5 +1,6 @@
 package jetbrains.mps.ide.findusages.view.treeholder.treeview;
 
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.view.treeholder.path.PathItemRole;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.TextOptions;
@@ -13,12 +14,11 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.TextMPSTreeNode;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Calculable;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 import javax.swing.AbstractAction;
@@ -28,8 +28,6 @@ import javax.swing.event.TreeExpansionListener;
 import javax.swing.tree.TreePath;
 import java.awt.event.*;
 import java.util.*;
-
-import com.intellij.openapi.util.Computable;
 
 public abstract class UsagesTree extends MPSTree {
   private static final String COMMAND_OPEN_NODE_IN_PROJECT = "open_node_in_project";
@@ -367,7 +365,6 @@ public abstract class UsagesTree extends MPSTree {
       setExcluded(child, state);
     }
   }
-
 
   private void openCurrentNodeLinkIfLeaf(boolean inProject) {
     UsagesTreeNode treeNode = getCurrentNode();

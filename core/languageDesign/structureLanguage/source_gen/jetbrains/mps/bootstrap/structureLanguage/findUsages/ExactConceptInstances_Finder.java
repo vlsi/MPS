@@ -9,7 +9,6 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
-import jetbrains.mps.ide.progress.NullAdaptiveProgressMonitor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
@@ -42,7 +41,7 @@ public class ExactConceptInstances_Finder extends GeneratedFinder {
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
-    List<SNode> resNodes = new ArrayList<SNode>(FindUsagesManager.getInstance().findExactInstances((AbstractConceptDeclaration) ((ConceptDeclaration) SNodeOperations.getAdapter(node)), scope, new NullAdaptiveProgressMonitor(), false));
+    List<SNode> resNodes = new ArrayList<SNode>(FindUsagesManager.getInstance().findExactInstances((AbstractConceptDeclaration) ((ConceptDeclaration) SNodeOperations.getAdapter(node)), scope, new FindUsagesManager.ProgressAdapter(indicator), false));
     for (SNode resNode : resNodes) {
       ListOperations.addElement(_results, resNode);
     }

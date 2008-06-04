@@ -24,7 +24,9 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
-  <maxImportIndex value="16"/>
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
+  <maxImportIndex value="17"/>
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1"/>
   <import index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1"/>
   <import index="5" modelUID="jetbrains.mps.findUsages@java_stub" version="-1"/>
@@ -35,6 +37,7 @@
   <import index="14" modelUID="jetbrains.mps.ide.progress@java_stub" version="-1"/>
   <import index="15" modelUID="jetbrains.mps.util@java_stub" version="-1"/>
   <import index="16" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" version="-1"/>
+  <import index="17" modelUID="com.intellij.openapi.progress@java_stub" version="-1"/>
   <node type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.FinderDeclaration" id="1197632773078">
     <property name="name" value="ConceptInstances"/>
     <property name="description" value="Concept Instances"/>
@@ -89,8 +92,17 @@
                         id="1210514234985"/>
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression"
                         id="1212169387306">
-                    <link role="baseMethodDeclaration" targetNodeId="14.~NullAdaptiveProgressMonitor.&lt;init&gt;()"
-                          resolveInfo="NullAdaptiveProgressMonitor"/>
+                    <link role="baseMethodDeclaration"
+                          targetNodeId="5.~FindUsagesManager$ProgressAdapter.&lt;init&gt;(com.intellij.openapi.progress.ProgressIndicator)"
+                          resolveInfo="FindUsagesManager.ProgressAdapter"/>
+                    <node role="actualArgument"
+                          type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference"
+                          id="1212595713478">
+                      <property name="name" value="indicator"/>
+                      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212595748964">
+                        <link role="classifier" targetNodeId="17.~ProgressIndicator" resolveInfo="ProgressIndicator"/>
+                      </node>
+                    </node>
                   </node>
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant"
                         id="1210514234988">
@@ -198,9 +210,18 @@
                       type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_scope"
                       id="1206463389285"/>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression"
-                      id="1212169415024">
-                  <link role="baseMethodDeclaration" targetNodeId="14.~NullAdaptiveProgressMonitor.&lt;init&gt;()"
-                        resolveInfo="NullAdaptiveProgressMonitor"/>
+                      id="1212595819940">
+                  <link role="baseMethodDeclaration"
+                        targetNodeId="5.~FindUsagesManager$ProgressAdapter.&lt;init&gt;(com.intellij.openapi.progress.ProgressIndicator)"
+                        resolveInfo="FindUsagesManager.ProgressAdapter"/>
+                  <node role="actualArgument"
+                        type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference"
+                        id="1212595819941">
+                    <property name="name" value="indicator"/>
+                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212595819942">
+                      <link role="classifier" targetNodeId="17.~ProgressIndicator" resolveInfo="ProgressIndicator"/>
+                    </node>
+                  </node>
                 </node>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant"
                       id="1210514285983">
@@ -357,9 +378,18 @@
                       type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_scope"
                       id="1206463374367"/>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression"
-                      id="1212169342874">
-                  <link role="baseMethodDeclaration" targetNodeId="14.~NullAdaptiveProgressMonitor.&lt;init&gt;()"
-                        resolveInfo="NullAdaptiveProgressMonitor"/>
+                      id="1212595810141">
+                  <link role="baseMethodDeclaration"
+                        targetNodeId="5.~FindUsagesManager$ProgressAdapter.&lt;init&gt;(com.intellij.openapi.progress.ProgressIndicator)"
+                        resolveInfo="FindUsagesManager.ProgressAdapter"/>
+                  <node role="actualArgument"
+                        type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference"
+                        id="1212595810142">
+                    <property name="name" value="indicator"/>
+                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212595810143">
+                      <link role="classifier" targetNodeId="17.~ProgressIndicator" resolveInfo="ProgressIndicator"/>
+                    </node>
+                  </node>
                 </node>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant"
                       id="1210514391607">
@@ -782,9 +812,18 @@
                         type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_scope"
                         id="1211301915951"/>
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression"
-                        id="1212169399279">
-                    <link role="baseMethodDeclaration" targetNodeId="14.~NullAdaptiveProgressMonitor.&lt;init&gt;()"
-                          resolveInfo="NullAdaptiveProgressMonitor"/>
+                        id="1212595800266">
+                    <link role="baseMethodDeclaration"
+                          targetNodeId="5.~FindUsagesManager$ProgressAdapter.&lt;init&gt;(com.intellij.openapi.progress.ProgressIndicator)"
+                          resolveInfo="FindUsagesManager.ProgressAdapter"/>
+                    <node role="actualArgument"
+                          type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference"
+                          id="1212595800267">
+                      <property name="name" value="indicator"/>
+                      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212595800268">
+                        <link role="classifier" targetNodeId="17.~ProgressIndicator" resolveInfo="ProgressIndicator"/>
+                      </node>
+                    </node>
                   </node>
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant"
                         id="1211301915954">

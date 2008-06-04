@@ -6,7 +6,6 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
-import jetbrains.mps.ide.progress.NullAdaptiveProgressMonitor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
@@ -41,7 +40,7 @@ public class NodeUsages_Finder extends GeneratedFinder {
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
-    Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(CollectionUtil.asSet(node), scope, new NullAdaptiveProgressMonitor(), false);
+    Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(CollectionUtil.asSet(node), scope, new FindUsagesManager.ProgressAdapter(indicator), false);
     for (SReference reference : resRefs) {
       ListOperations.addElement(_results, reference.getSourceNode());
     }
