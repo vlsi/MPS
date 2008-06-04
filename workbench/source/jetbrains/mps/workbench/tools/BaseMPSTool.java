@@ -7,6 +7,8 @@ import com.intellij.openapi.wm.ToolWindowAnchor;
 
 import javax.swing.Icon;
 
+import jetbrains.mps.ide.ThreadUtils;
+
 public abstract class BaseMPSTool extends BaseTool implements ProjectComponent {
   protected BaseMPSTool(Project project, String id, int number, Icon icon, ToolWindowAnchor anchor, boolean canCloseContent) {
     super(project, id, number, icon, anchor, canCloseContent);
@@ -15,13 +17,21 @@ public abstract class BaseMPSTool extends BaseTool implements ProjectComponent {
   public void projectOpened() {
     StartupManager.getInstance(getProject()).registerPostStartupActivity(new Runnable() {
       public void run() {
-        register();
+        ThreadUtils.runInUIThreadNoWait(new Runnable() {
+          public void run() {
+            register();
+          }
+        });
       }
     });
   }
 
   public void projectClosed() {
-    unregister();
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      public void run() {
+        unregister();
+      }
+    });
   }
 
   public void initComponent() {
