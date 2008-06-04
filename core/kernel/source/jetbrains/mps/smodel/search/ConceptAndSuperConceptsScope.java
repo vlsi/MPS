@@ -24,7 +24,7 @@ public class ConceptAndSuperConceptsScope extends AbstractSearchScope {
   }
 
   public List<AbstractConceptDeclaration> getConcepts() {
-    if (myTopConcept == null) return new ArrayList();
+    if (myTopConcept == null) return new ArrayList(1);
     return new ArrayList(ConceptAndSuperConceptsCache.getInstance(myTopConcept).getConcepts());
   }
 
@@ -34,7 +34,7 @@ public class ConceptAndSuperConceptsScope extends AbstractSearchScope {
   }
 
   public List<PropertyDeclaration> getPropertyDeclarations() {
-    if (myTopConcept == null) return null;
+    if (myTopConcept == null) return new ArrayList(1);
     return ConceptAndSuperConceptsCache.getInstance(myTopConcept).getPropertyDeclarations();
   }
 
