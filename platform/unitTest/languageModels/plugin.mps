@@ -208,8 +208,8 @@
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                       id="1208533715695">
-                  <link role="baseMethodDeclaration" targetNodeId="32.~BaseTool.openTool(boolean):void"
-                        resolveInfo="openTool"/>
+                  <link role="baseMethodDeclaration" targetNodeId="32.~BaseTool.openToolLater(boolean):void"
+                        resolveInfo="openToolLater"/>
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant"
                         id="1212517753012">
                     <property name="value" value="false"/>
@@ -5502,8 +5502,8 @@
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                       id="1208769567887">
-                  <link role="baseMethodDeclaration" targetNodeId="32.~BaseTool.openTool(boolean):void"
-                        resolveInfo="openTool"/>
+                  <link role="baseMethodDeclaration" targetNodeId="32.~BaseTool.openToolLater(boolean):void"
+                        resolveInfo="openToolLater"/>
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant"
                         id="1212517779436">
                     <property name="value" value="false"/>
@@ -12069,8 +12069,8 @@
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                       id="1209121024563">
-                  <link role="baseMethodDeclaration" targetNodeId="32.~BaseTool.openTool(boolean):void"
-                        resolveInfo="openTool"/>
+                  <link role="baseMethodDeclaration" targetNodeId="32.~BaseTool.openToolLater(boolean):void"
+                        resolveInfo="openToolLater"/>
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant"
                         id="1212517788468">
                     <property name="value" value="false"/>
@@ -12447,8 +12447,8 @@
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                           id="1209121623545">
-                      <link role="baseMethodDeclaration" targetNodeId="32.~BaseTool.openTool(boolean):void"
-                            resolveInfo="openTool"/>
+                      <link role="baseMethodDeclaration" targetNodeId="32.~BaseTool.openToolLater(boolean):void"
+                            resolveInfo="openToolLater"/>
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant"
                             id="1212517797191">
                         <property name="value" value="false"/>

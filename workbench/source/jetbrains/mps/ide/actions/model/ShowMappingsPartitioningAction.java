@@ -62,7 +62,7 @@ public class ShowMappingsPartitioningAction extends MPSAction {
     messagesView.add(new Message(MessageKind.INFORMATION, "================================="));
     if (partitioner.hasConflictingPriorityRules()) {
       // message view
-      messagesView.openTool(true);
+      messagesView.openToolLater(true);
       List<String> messagesFull = GenerationPartitioningUtil.toStrings(partitioner.getConflictingPriorityRules(), true);
       for (String message : messagesFull) {
         messagesView.add(new Message(MessageKind.ERROR, "conflicting rule: " + message));
@@ -88,6 +88,6 @@ public class ShowMappingsPartitioningAction extends MPSAction {
     viewTool.append("---------------------  mappings partitioning  -----------------------------------\n\n");
     viewTool.append(text);
     viewTool.append("---------------------------------------------------------------------------------\n");
-    viewTool.openTool(true);
+    viewTool.openToolLater(true);
   }
 }

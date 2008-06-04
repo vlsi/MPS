@@ -62,6 +62,8 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <maxImportIndex value="20"/>
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0"/>
   <import index="6" modelUID="jetbrains.mps.core.structure" version="-1"/>
@@ -215,7 +217,7 @@
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"
           id="1204464939608">
       <property name="name" value="number"/>
-      <link role="dataType" targetNodeId="6.1082983657062" resolveInfo="integer"/>
+      <link role="dataType" targetNodeId="1212578595463" resolveInfo="digit"/>
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"
           id="1204464929231">
@@ -1942,6 +1944,11 @@
             resolveInfo="applicableConceptFunctionParameter"/>
       <link role="target" targetNodeId="1210690798207" resolveInfo="ConceptFunctionParameter_PreferencePage_component"/>
     </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConstrainedDataTypeDeclaration" id="1212578595463">
+    <property name="package" value="Tool"/>
+    <property name="name" value="digit"/>
+    <property name="constraint" value="[0-9]"/>
   </node>
 </model>
 

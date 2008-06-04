@@ -48,7 +48,7 @@ public class TodoViewer extends JPanel {
 
     myUsagesView = new UsagesView(myProject, viewOptions) {
       public void close() {
-        getTool().hideTool();
+        getTool().hideToolLater();
       }
     };
     add(myUsagesView.getComponent(), BorderLayout.CENTER);

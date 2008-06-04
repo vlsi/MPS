@@ -10,14 +10,12 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.GeneratorManager.MyState;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.MessagesViewTool;
-import jetbrains.mps.ide.progress.AdaptiveProgressMonitorFactory;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
@@ -174,7 +172,7 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Conf
   private void showMessageView() {
     MessagesViewTool messagesView = myProject.getComponent(MessagesViewTool.class);
     if (messagesView != null) {
-      messagesView.openTool(true);
+      messagesView.openToolLater(true);
     }
   }
 

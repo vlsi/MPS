@@ -97,9 +97,9 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
 
   //----TOOL STUFF----
 
-  public void showTool() {
+  public void showToolLater() {
     if (myUsageViewsData.size() > 0) {
-      super.showTool();
+      super.showToolLater();
     }
   }
 
@@ -122,14 +122,14 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
     myTabbedPane.remove(index);
     myUsageViewsData.remove(index);
     if (myUsageViewsData.isEmpty()) {
-      hideTool();
+      hideToolLater();
     }
   }
 
   public void closeAll() {
     myUsageViewsData.clear();
     myTabbedPane.removeAll();
-    hideTool();
+    hideToolLater();
   }
 
   private void closeAllBut(int tabIndex) {
@@ -148,7 +148,7 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
 
   public void clear() {
     closeAll();
-    hideTool();
+    hideToolLater();
   }
 
   //---FIND USAGES STUFF----
@@ -251,7 +251,7 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
         }
       });
 
-      openTool(true);
+      openToolLater(true);
     }
   }
 

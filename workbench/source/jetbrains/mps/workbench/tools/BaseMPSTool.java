@@ -4,10 +4,9 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import jetbrains.mps.ide.ThreadUtils;
 
 import javax.swing.Icon;
-
-import jetbrains.mps.ide.ThreadUtils;
 
 public abstract class BaseMPSTool extends BaseTool implements ProjectComponent {
   protected BaseMPSTool(Project project, String id, int number, Icon icon, ToolWindowAnchor anchor, boolean canCloseContent) {
@@ -19,7 +18,7 @@ public abstract class BaseMPSTool extends BaseTool implements ProjectComponent {
       public void run() {
         ThreadUtils.runInUIThreadNoWait(new Runnable() {
           public void run() {
-            register();
+            registerLater();
           }
         });
       }
@@ -29,7 +28,7 @@ public abstract class BaseMPSTool extends BaseTool implements ProjectComponent {
   public void projectClosed() {
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
-        unregister();
+        unregisterLater();
       }
     });
   }

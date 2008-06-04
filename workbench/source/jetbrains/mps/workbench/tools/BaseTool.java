@@ -12,7 +12,6 @@ import com.intellij.ui.content.ContentFactoryImpl;
 import com.intellij.ui.content.ContentManager;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -21,6 +20,7 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.KeyStroke;
+import javax.swing.SwingUtilities;
 
 public abstract class BaseTool {
   private static Logger LOG = Logger.getLogger(BaseTool.class);
@@ -68,23 +68,27 @@ public abstract class BaseTool {
   /**
    * Opens the tool's window, shows tool if invisible at the moment
    */
-  public void openTool(final boolean setActive) {
-    LOG.checkEDT();
-
-    ToolWindow window = checkRegistered();
-    if (!toolIsShown()) showTool();
-    if (!toolIsOpened()) window.show(null);
-    if (setActive) window.activate(null);
+  public void openToolLater(final boolean setActive) {
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        ToolWindow window = checkRegistered();
+        if (!toolIsShown()) showToolLater();
+        if (!toolIsOpened()) window.show(null);
+        if (setActive) window.activate(null);
+      }
+    });
   }
 
   /**
    * Minimizes the window, doesn't remove tool from panel
    */
-  public void closeTool() {
-    LOG.checkEDT();
-
-    ToolWindow window = checkRegistered();
-    if (toolIsShown() && toolIsOpened()) window.hide(null);
+  public void closeToolLater() {
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        ToolWindow window = checkRegistered();
+        if (toolIsShown() && toolIsOpened()) window.hide(null);
+      }
+    });
   }
 
   /**
@@ -100,21 +104,25 @@ public abstract class BaseTool {
   /**
    * If the tool is visible, does nothing, else show the tool in panel in minimized state
    */
-  public void showTool() {
-    LOG.checkEDT();
-
-    ToolWindow window = checkRegistered();
-    if (!toolIsShown()) window.setAvailable(true, null);
+  public void showToolLater() {
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        ToolWindow window = checkRegistered();
+        if (!toolIsShown()) window.setAvailable(true, null);
+      }
+    });
   }
 
   /**
    * Removes the tool from the panel
    */
-  public void hideTool() {
-    LOG.checkEDT();
-
-    ToolWindow window = checkRegistered();
-    if (toolIsShown()) window.setAvailable(false, null);
+  public void hideToolLater() {
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        ToolWindow window = checkRegistered();
+        if (toolIsShown()) window.setAvailable(false, null);
+      }
+    });
   }
 
   @Nullable
@@ -130,38 +138,42 @@ public abstract class BaseTool {
     return getClass().getName();
   }
 
-  public void register() {
-    LOG.checkEDT();
+  public void registerLater() {
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        if (myNumber != -1) {
+          KeymapManager.getInstance().getActiveKeymap().addShortcut(
+            ActivateToolWindowAction.getActionIdForToolWindow(myId),
+            new KeyboardShortcut(KeyStroke.getKeyStroke("alt " + myNumber), null)
+          );
+        }
 
-    ToolWindow toolWindow = ToolWindowManager.getInstance(myProject).registerToolWindow(myId, myCanCloseContent, myAnchor);
-    toolWindow.setIcon(myIcon);
-    Content content = new ContentFactoryImpl().createContent(getComponent(), null, false);
-    toolWindow.getContentManager().addContent(content);
-
-    if (myNumber != -1) {
-      KeymapManager.getInstance().getActiveKeymap().addShortcut(
-        ActivateToolWindowAction.getActionIdForToolWindow(myId),
-        new KeyboardShortcut(KeyStroke.getKeyStroke("alt " + myNumber), null)
-      );
-    }
+        ToolWindow toolWindow = ToolWindowManager.getInstance(myProject).registerToolWindow(myId, myCanCloseContent, myAnchor);
+        toolWindow.setIcon(myIcon);
+        Content content = new ContentFactoryImpl().createContent(getComponent(), null, false);
+        toolWindow.getContentManager().addContent(content);
+      }
+    });
   }
 
-  public void unregister() {
-    LOG.checkEDT();
-    
-    if (myNumber != -1) {
-      KeymapManager.getInstance().getActiveKeymap().removeAllActionShortcuts(ActivateToolWindowAction.getActionIdForToolWindow(myId));
-    }
+  public void unregisterLater() {
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        if (myNumber != -1) {
+          KeymapManager.getInstance().getActiveKeymap().removeAllActionShortcuts(ActivateToolWindowAction.getActionIdForToolWindow(myId));
+        }
 
-    ToolWindow toolWindow = getToolWindow();
-    if (toolWindow != null) {
-      ContentManager contentManager = toolWindow.getContentManager();
-      if (contentManager != null && !contentManager.isDisposed()) {
-        contentManager.removeAllContents(true);
+        ToolWindow toolWindow = getToolWindow();
+        if (toolWindow != null) {
+          ContentManager contentManager = toolWindow.getContentManager();
+          if (contentManager != null && !contentManager.isDisposed()) {
+            contentManager.removeAllContents(true);
+          }
+
+          ToolWindowManager.getInstance(myProject).unregisterToolWindow(myId);
+        }
       }
-
-      ToolWindowManager.getInstance(myProject).unregisterToolWindow(myId);
-    }
+    });
   }
 
   public abstract JComponent getComponent();

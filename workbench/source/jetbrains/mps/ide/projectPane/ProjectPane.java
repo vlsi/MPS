@@ -258,7 +258,7 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
   public void showProjectPane() {
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
-        openTool(true);
+        openToolLater(true);
       }
     });
   }
@@ -363,7 +363,7 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
       public void run() {
         getTree().runWithoutExpansion(new Runnable() {
           public void run() {
-            openTool(true);
+            openToolLater(true);
 
             IModule module = context.getModule();
             if (module == null) {
