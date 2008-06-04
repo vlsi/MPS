@@ -765,7 +765,6 @@ __switch__:
 
           public Object calculate() {
             SNode classConcept = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-            SNode currentConstr = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", true, false);
             return SLinkOperations.getTargets(classConcept, "constructor", true);
           }
 
