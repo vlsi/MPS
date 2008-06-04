@@ -466,8 +466,8 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return getLanguageDescriptor().getLanguagePluginClass();
   }
 
-  public String getGeneratedPluginClassName() {
-    return getPluginModelDescriptor().getLongName() + "." + "GeneratedPlugin";
+  public String getGeneratedPluginClassLongName() {
+    return getPluginModelDescriptor().getLongName() + "." + NameUtil.capitalize(NameUtil.shortNameFromLongName(getModuleUID())) + "_Plugin";
   }
 
   public List<Generator> getGenerators() {

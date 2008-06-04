@@ -139,7 +139,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private Map<KeyStroke, MPSActionProxy> myActionProxies = new HashMap<KeyStroke, MPSActionProxy>();
   private CellSpeedSearch myCellSpeedSearch;
-  private IntentionsHelper myIntentionsHelper;
+  private IntentionsSupport myIntentionsSupport;
 
   public AbstractEditorComponent(IOperationContext operationContext) {
     this(operationContext, false);
@@ -384,7 +384,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     });
 
-    myIntentionsHelper = new IntentionsHelper(this);
+    myIntentionsSupport = new IntentionsSupport(this);
     ToolTipManager.sharedInstance().registerComponent(this);
     CaretBlinker.getInstance().registerEditor(this);
   }
@@ -2223,7 +2223,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       rebuildEditorContent(events);
 
 
-      if (!hasFocus() && !myIntentionsHelper.isLightBulbVisible()) {
+      if (!hasFocus() && !myIntentionsSupport.isLightBulbVisible()) {
         return;
       }
 

@@ -23,7 +23,7 @@ import java.awt.event.ActionEvent;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-public class IntentionsHelper {
+public class IntentionsSupport {
   static final long INTENTION_SHOW_DELAY = 700;
 
   private AbstractAction myShowIntentionsAction;
@@ -33,7 +33,7 @@ public class IntentionsHelper {
 
   private AbstractEditorComponent myEditor;
 
-  public IntentionsHelper(AbstractEditorComponent editor) {
+  public IntentionsSupport(AbstractEditorComponent editor) {
     myEditor = editor;
 
     myLightBulb = new LightBulbMenu() {
@@ -93,7 +93,7 @@ public class IntentionsHelper {
                 }
               });
 
-              Thread.sleep(IntentionsHelper.INTENTION_SHOW_DELAY);
+              Thread.sleep(IntentionsSupport.INTENTION_SHOW_DELAY);
 
               ModelAccess.instance().runReadInEDT(new Runnable() {
                 public void run() {

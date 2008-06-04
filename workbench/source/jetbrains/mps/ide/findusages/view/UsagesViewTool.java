@@ -239,11 +239,7 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
         }
       });
     } else {
-      if (!newTab) {
-        if (currentTabIndex() != -1) {
-          closeTab(currentTabIndex());
-        }
-      }
+      final int index = currentTabIndex();
 
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
@@ -262,7 +258,16 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
         }
       });
 
-      openToolLater(true);
+      if (!newTab) {
+        if (currentTabIndex() != -1) {
+          SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+              closeTab(index);
+              openTool(true);
+            }
+          });
+        }
+      }
     }
   }
 
