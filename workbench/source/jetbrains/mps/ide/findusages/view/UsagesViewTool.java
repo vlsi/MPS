@@ -3,6 +3,9 @@ package jetbrains.mps.ide.findusages.view;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.ToolWindowAnchor;
@@ -11,7 +14,6 @@ import jetbrains.mps.bootstrap.structureLanguage.findUsages.ConceptInstances_Fin
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.HintDialog;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
@@ -35,6 +37,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.workbench.tools.BaseMPSTool;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
@@ -165,43 +168,43 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
   //---FIND USAGES STUFF----
 
   public void findUsages(final ActionContext context) {
-    assert !ThreadUtils.isEventDispatchThread();
-
-    final SNode[] semanticNode = new SNode[1];
-    final SNode[] operationNode = new SNode[1];
-
-    ModelAccess.instance().runReadAction(new Runnable() {
+    new Thread(new Runnable() {
       public void run() {
-        semanticNode[0] = context.getNode();
-        operationNode[0] = EditorUtil.getOperationNodeWRTReference(context, semanticNode[0]);
+        final SNode[] semanticNode = new SNode[1];
+        final SNode[] operationNode = new SNode[1];
+
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            semanticNode[0] = context.getNode();
+            operationNode[0] = EditorUtil.getOperationNodeWRTReference(context, semanticNode[0]);
+          }
+        });
+
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            final FindUsagesDialog findUsagesDialog = new FindUsagesDialog(myDefaultFindOptions, operationNode[0], context);
+            findUsagesDialog.showDialog();
+
+            if (!findUsagesDialog.isCancelled()) {
+              myDefaultFindOptions = findUsagesDialog.getResult();
+              final IResultProvider[] provider = new IResultProvider[1];
+              final SearchQuery[] query = new SearchQuery[1];
+              final ViewOptions[] viewOptions = new ViewOptions[1];
+
+              ModelAccess.instance().runReadAction(new Runnable() {
+                public void run() {
+                  provider[0] = myDefaultFindOptions.getOption(FindersOptions.class).getResult(operationNode[0], context);
+                  query[0] = myDefaultFindOptions.getOption(QueryOptions.class).getResult(operationNode[0], context);
+                  viewOptions[0] = myDefaultFindOptions.getOption(ViewOptions.class);
+                }
+              });
+
+              findUsages(provider[0], query[0], true, viewOptions[0].myShowOneResult, viewOptions[0].myNewTab);
+            }
+          }
+        });
       }
-    });
-
-    final boolean[] isCancelled = new boolean[]{false};
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        final FindUsagesDialog findUsagesDialog = new FindUsagesDialog(myDefaultFindOptions, operationNode[0], context);
-        findUsagesDialog.showDialog();
-        isCancelled[0] = findUsagesDialog.isCancelled();
-        if (!isCancelled[0]) myDefaultFindOptions = findUsagesDialog.getResult();
-      }
-    });
-
-    if (!isCancelled[0]) {
-      final IResultProvider[] provider = new IResultProvider[1];
-      final SearchQuery[] query = new SearchQuery[1];
-      final ViewOptions[] viewOptions = new ViewOptions[1];
-
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          provider[0] = myDefaultFindOptions.getOption(FindersOptions.class).getResult(operationNode[0], context);
-          query[0] = myDefaultFindOptions.getOption(QueryOptions.class).getResult(operationNode[0], context);
-          viewOptions[0] = myDefaultFindOptions.getOption(ViewOptions.class);
-        }
-      });
-
-      findUsages(provider[0], query[0], true, viewOptions[0].myShowOneResult, viewOptions[0].myNewTab);
-    }
+    }).start();
   }
 
   public void findUsages(final SearchQuery query, final boolean isRerunnable, final boolean showOne, final boolean newTab, BaseFinder... finders) {
@@ -209,8 +212,17 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
   }
 
   public void findUsages(final IResultProvider provider, final SearchQuery query, final boolean isRerunnable, final boolean showOne, final boolean newTab) {
-    final SearchResults searchResults = FindUtils.getResultsWithProgress(getProject(), provider, query);
-    showResults(searchResults, showOne, newTab, provider, query, isRerunnable);
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        ProgressManager.getInstance().run(new Modal(getProject(), "Searching", true) {
+          public void run(@NotNull final ProgressIndicator indicator) {
+            indicator.setIndeterminate(true);
+            final SearchResults searchResults = FindUtils.getSearchResults(indicator, query, provider);
+            showResults(searchResults, showOne, newTab, provider, query, isRerunnable);
+          }
+        });
+      }
+    });
   }
 
   public void showResults(final SearchQuery query, final SearchResults searchResults) {
@@ -220,7 +232,7 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
   private void showResults(final SearchResults searchResults, boolean showOne, final boolean newTab, final IResultProvider provider, final SearchQuery query, final boolean isRerunnable) {
     int resCount = searchResults.getSearchResults().size();
     if (resCount == 0) {
-      ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      SwingUtilities.invokeLater(new Runnable() {
         public void run() {
           new HintDialog(JOptionPane.getFrameForComponent(myPanel), "Not found", "No usages for that node").showDialog();
         }

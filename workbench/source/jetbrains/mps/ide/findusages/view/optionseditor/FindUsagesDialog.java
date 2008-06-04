@@ -3,17 +3,17 @@ package jetbrains.mps.ide.findusages.view.optionseditor;
 import jetbrains.mps.ide.BaseDialog;
 import jetbrains.mps.ide.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.FindersManager;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.view.optionseditor.components.FindersEditor;
 import jetbrains.mps.ide.findusages.view.optionseditor.components.QueryEditor;
 import jetbrains.mps.ide.findusages.view.optionseditor.components.ViewOptionsEditor;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.QueryOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 import javax.swing.JComponent;
@@ -33,35 +33,18 @@ public class FindUsagesDialog extends BaseDialog {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myQueryEditor = new QueryEditor(defaultOptions.getOption(QueryOptions.class), node, context);
-        myFindersEditor = new FindersEditor(defaultOptions.getOption(FindersOptions.class), node, context) {
-          public void goToFinder(final GeneratedFinder finder) {
-            final SNode[] finderNode = new SNode[]{null};
-
-            ModelAccess.instance().runReadAction(new Runnable() {
-              public void run() {
-                finderNode[0] = FindersManager.getInstance().getNodeByFinder(finder);
-              }
-            });
-
-            if (finderNode[0] == null) return;
-
-            FindUsagesDialog.this.onCancel();
-
-            MPSProject project = context.get(MPSProject.class);
-            project.getComponentSafe(MPSEditorOpener.class).openNode(finderNode[0]);
-          }
-        };
+        myFindersEditor = new MyFindersEditor(defaultOptions, node, context);
         myViewOptionsEditor = new ViewOptionsEditor(defaultOptions.getOption(ViewOptions.class), node, context);
-
-        JPanel centerPanel = new JPanel(new BorderLayout());
-        centerPanel.add(myFindersEditor.getComponent(), BorderLayout.CENTER);
-        centerPanel.add(myViewOptionsEditor.getComponent(), BorderLayout.EAST);
-
-        myPanel = new JPanel(new BorderLayout());
-        myPanel.add(centerPanel, BorderLayout.CENTER);
-        myPanel.add(myQueryEditor.getComponent(), BorderLayout.SOUTH);
       }
     });
+
+    JPanel centerPanel = new JPanel(new BorderLayout());
+    centerPanel.add(myFindersEditor.getComponent(), BorderLayout.CENTER);
+    centerPanel.add(myViewOptionsEditor.getComponent(), BorderLayout.EAST);
+
+    myPanel = new JPanel(new BorderLayout());
+    myPanel.add(centerPanel, BorderLayout.CENTER);
+    myPanel.add(myQueryEditor.getComponent(), BorderLayout.SOUTH);
   }
 
   public FindUsagesOptions getResult() {
@@ -95,5 +78,31 @@ public class FindUsagesDialog extends BaseDialog {
   protected void prepareDialog() {
     super.prepareDialog();
     pack();
+  }
+
+  private class MyFindersEditor extends FindersEditor {
+    private final ActionContext myContext;
+
+    public MyFindersEditor(FindUsagesOptions defaultOptions, SNode node, ActionContext context) {
+      super(defaultOptions.getOption(FindersOptions.class), node, context);
+      myContext = context;
+    }
+
+    public void goToFinder(final GeneratedFinder finder) {
+      final SNode[] finderNode = new SNode[]{null};
+
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          finderNode[0] = FindersManager.getInstance().getNodeByFinder(finder);
+        }
+      });
+
+      if (finderNode[0] == null) return;
+
+      FindUsagesDialog.this.onCancel();
+
+      MPSProject project = myContext.get(MPSProject.class);
+      project.getComponentSafe(MPSEditorOpener.class).openNode(finderNode[0]);
+    }
   }
 }

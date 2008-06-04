@@ -1,5 +1,9 @@
 package jetbrains.mps.baseLanguage.plugin;
 
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task.Modal;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -10,6 +14,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.plugins.tool.GeneratedTool;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -42,6 +47,10 @@ public class TodoViewer extends JPanel {
     return myProject.getPluginManager().getTool(TodoViewer_Tool.class);
   }
 
+  private Project getProject() {
+    return myProject.getComponent(Project.class);
+  }
+
   private void refresh() {
     removeAll();
 
@@ -54,9 +63,11 @@ public class TodoViewer extends JPanel {
     };
     add(myUsagesView.getComponent(), BorderLayout.CENTER);
 
-    new Thread(new Runnable() {
-      public void run() {
-        MPSProject project = myProject;
+    final MPSProject project = myProject;
+
+    ProgressManager.getInstance().run(new Modal(getProject(), "Searching", true) {
+      public void run(@NotNull final ProgressIndicator indicator) {
+        indicator.setIndeterminate(true);
 
         if (project == null) return;
 
@@ -68,8 +79,7 @@ public class TodoViewer extends JPanel {
         );
 
         myUsagesView.setCustomNodeRepresentator(MyNodeRepresentator.class);
-
-        myUsagesView.run();
+        myUsagesView.run(indicator);
 
         SwingUtilities.invokeLater(new Runnable() {
           public void run() {
@@ -77,7 +87,7 @@ public class TodoViewer extends JPanel {
           }
         });
       }
-    }).start();
+    });
   }
 
   public static class MyNodeRepresentator implements INodeRepresentator {

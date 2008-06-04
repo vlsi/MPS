@@ -1,10 +1,12 @@
 package jetbrains.mps.ide.findusages.view;
 
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.ide.MPSToolBar;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.IExternalizeable;
@@ -20,9 +22,9 @@ import jetbrains.mps.ide.findusages.view.util.AnonymButton;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -100,26 +102,11 @@ public abstract class UsagesView implements IExternalizeable {
     myTreeHolder.setCustomRepresentator(nodeRepresentatorClass);
   }
 
-  public void run() {
+  public void run(ProgressIndicator indicator) {
     assert myIsInitialized;
-    assert !ThreadUtils.isEventDispatchThread();
-    final SearchResults myLastResults = FindUtils.getResultsWithProgress(myProject.getComponent(Project.class), myResultProvider, mySearchQuery);
+    final SearchResults myLastResults = FindUtils.getSearchResults(indicator, mySearchQuery, myResultProvider);
     myLastResults.removeDuplicates();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        myTreeHolder.setContents(myLastResults);
-      }
-    });
-  }
-
-  public void rerun() {
-    assert mySearchQuery != null;
-    if (mySearchQuery.getScope() == null) return;
-    IHolder holder = mySearchQuery.getObjectHolder();
-    if (!(holder instanceof VoidHolder)) {
-      if (holder.getObject() == null) return; //object was deleted
-    }
-    run();
+    myTreeHolder.setContents(myLastResults);
   }
 
   private void regenerate() {
@@ -268,11 +255,18 @@ public abstract class UsagesView implements IExternalizeable {
       if (buttonConfiguration.isShowRerunButton()) {
         add(new AnonymButton(Icons.RERUN_ICON, "Rerun search") {
           public void action() {
-            new Thread() {
-              public void run() {
-                rerun();
+            assert mySearchQuery != null;
+            if (mySearchQuery.getScope() == null) return;
+            IHolder holder = mySearchQuery.getObjectHolder();
+            if (!(holder instanceof VoidHolder)) {
+              if (holder.getObject() == null) return; //object was deleted
+            }
+            ProgressManager.getInstance().run(new Modal(myProject.getComponent(Project.class), "Searching", true) {
+              public void run(@NotNull final ProgressIndicator indicator) {
+                indicator.setIndeterminate(true);
+                UsagesView.this.run(indicator);
               }
-            }.start();
+            });
           }
         });
       }

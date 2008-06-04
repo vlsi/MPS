@@ -1,10 +1,6 @@
 package jetbrains.mps.ide.findusages.view;
 
 import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Task.Modal;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.BaseLeaf;
@@ -19,7 +15,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -30,17 +25,18 @@ import java.util.List;
 public class FindUtils {
   private static Logger LOG = Logger.getLogger(FindUtils.class);
 
-  public static SearchResults getResultsWithProgress(final Project project, final IResultProvider provider, final SearchQuery query) {
+  public static SearchResults getSearchResults(@Nullable final ProgressIndicator indicator, final Collection<SNode> nodes, final IScope scope, final BaseFinder... finders) {
     final SearchResults[] results = new SearchResults[1];
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        ProgressManager.getInstance().run(new Modal(project, "Searching", true) {
-          public void run(@NotNull final ProgressIndicator indicator) {
-            indicator.setIndeterminate(true);
-            long time = provider.getEstimatedTime(query.getScope());
-            results[0] = getSearchResults(indicator, query, provider);
-          }
-        });
+        SearchResults result = new SearchResults();
+        for (SNode node : nodes) {
+          SearchResults singleRes = makeProvider(finders).getResults(new SearchQuery(node, scope), indicator);
+          result.getSearchedNodes().addAll(singleRes.getSearchedNodes());
+          result.getSearchResults().addAll(singleRes.getSearchedNodes());
+          result.removeDuplicates();
+        }
+        results[0] = result;
       }
     });
     return results[0];
@@ -82,7 +78,7 @@ public class FindUtils {
       result.add(searchResult.getObject());
     }
     return result;
-  }                                                                                        
+  }
 
   @Nullable
   public static GeneratedFinder getFinderByClassName(String className) {

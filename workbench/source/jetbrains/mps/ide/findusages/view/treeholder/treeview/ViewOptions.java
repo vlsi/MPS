@@ -82,7 +82,7 @@ public class ViewOptions implements IExternalizeable {
     element.addContent(viewOptionsXML);
   }
 
-  public void setValues(ViewOptions options) {
+  synchronized public void setValues(ViewOptions options) {
     myAutoscrolls = options.myAutoscrolls;
 
     myCategory = options.myCategory;

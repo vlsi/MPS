@@ -1,7 +1,6 @@
 package jetbrains.mps.ide.findusages.view.treeholder.treeview;
 
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.view.treeholder.path.PathItemRole;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.TextOptions;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.BaseNodeData;
@@ -109,17 +108,15 @@ public abstract class UsagesTree extends MPSTree {
   }
 
   public void rebuildNow() {
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        UsagesTree.super.rebuildNow();
-        int i;
-        for (i = 0; i < getRootNode().getChildCount(); i++) {
-          Object[] path = {getRootNode(), getRootNode().getChildAt(i)};
-          TreePath treePath = new TreePath(path);
-          expandPath(treePath);
-        }
-      }
-    });
+    LOG.checkEDT();
+
+    UsagesTree.super.rebuildNow();
+    int i;
+    for (i = 0; i < getRootNode().getChildCount(); i++) {
+      Object[] path = {getRootNode(), getRootNode().getChildAt(i)};
+      TreePath treePath = new TreePath(path);
+      expandPath(treePath);
+    }
   }
 
   public void setContents(DataTree contents, Set<PathItemRole> pathProvider) {
@@ -341,9 +338,6 @@ public abstract class UsagesTree extends MPSTree {
     myContents.setAdjusting(true);
     setExcluded(node, !node.getData().isExcluded());
     myContents.setAdjusting(false);
-
-    //todo: make it faster, do not rebuild all the tree
-    //rebuildLater();
   }
 
   private void setCurrentNodeExclusion(boolean isExculded) {
