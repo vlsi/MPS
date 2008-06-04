@@ -24,7 +24,7 @@ public class MPSAdapter implements ApplicationComponent {
     FileTypeManager.getInstance().registerFileType(StdFileTypes.JAVA, "java");
     FileTypeManager.getInstance().registerFileType(StdFileTypes.PATCH, "patch");
 
-    RepaintManager.setCurrentManager(new ThreadCheckingRepaintManager());
+//    RepaintManager.setCurrentManager(new ThreadCheckingRepaintManager());
   }
 
   public void disposeComponent() {
