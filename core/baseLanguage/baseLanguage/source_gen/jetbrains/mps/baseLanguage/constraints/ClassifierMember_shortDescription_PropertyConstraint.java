@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
+import jetbrains.mps.util.NameUtil;
 
 public class ClassifierMember_shortDescription_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
 
@@ -25,12 +25,11 @@ public class ClassifierMember_shortDescription_PropertyConstraint implements IMo
   }
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
-    String where = "?declaring classifier?";
-    SNode parent = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-    if (parent != null) {
-      where = NameUtil.compactNodeFQName(parent);
+    SNode classifier = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+    if (classifier != null) {
+      return NodePresentationUtil.getRoleInParentOrConceptName(node) + " (" + NameUtil.compactNodeFQName(classifier) + ")";
     }
-    return NodePresentationUtil.getRoleInParentOrConceptName(node) + " (" + where + ")";
+    return NodePresentationUtil.getRoleInParentOrConceptName(node) + " (?declaring classifier?)";
   }
 
 }
