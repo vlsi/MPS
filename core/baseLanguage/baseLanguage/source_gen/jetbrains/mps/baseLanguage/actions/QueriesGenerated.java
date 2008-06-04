@@ -763,8 +763,8 @@ __switch__:
         Calculable calc = new Calculable() {
 
           public Object calculate() {
-            SNode classConcept = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-            return SLinkOperations.getTargets(classConcept, "constructor", true);
+            SNode thisConcept = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+            return SLinkOperations.getTargets(thisConcept, "constructor", true);
           }
 
         };
@@ -803,12 +803,9 @@ __switch__:
         Calculable calc = new Calculable() {
 
           public Object calculate() {
-            SNode classConcept = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-            SNode superClass;
-            if ((SLinkOperations.getTarget(classConcept, "superclass", true) != null) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(classConcept, "superclass", true), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-              superClass = SLinkOperations.getTarget(SLinkOperations.getTarget(classConcept, "superclass", true), "classifier", false);
-            } else
-            {
+            SNode thisConcept = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+            SNode superClass = SLinkOperations.getTarget(SLinkOperations.getTarget(thisConcept, "superclass", true), "classifier", false);
+            if (superClass == null) {
               superClass = SLinkOperations.getTarget(new QuotationClass_2().createNode(), "classifier", false);
             }
             return SLinkOperations.getTargets(superClass, "constructor", true);
