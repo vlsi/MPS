@@ -9,6 +9,7 @@ import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 import java.util.Map;
 import java.util.Set;
 import java.util.HashSet;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -82,7 +83,7 @@ public class RuntimeSupport {
     typeVar.setNullable(isNullable);
     typeVar.setName(getNewVarName());
     registerTypeVariable(typeVar.getNode());
-   /* if ("n".equals(typeVar.getName())) {
+    /* if ("n".equals(typeVar.getName())) {
       System.err.println("oy vey!");
     }*/
     return typeVar.getNode();
@@ -135,7 +136,7 @@ public class RuntimeSupport {
     myTypeChecker.getEquationManager().addInequation(node1, node2, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId), true, checkOnly);
   }
 
-   public void createLessThanInequation(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId, boolean checkOnly, int inequationPriority) {
+  public void createLessThanInequation(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId, boolean checkOnly, int inequationPriority) {
     myTypeChecker.getEquationManager().addInequation(node1, node2, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, inequationPriority), true, checkOnly);
   }
 
@@ -144,7 +145,7 @@ public class RuntimeSupport {
     myTypeChecker.getEquationManager().addInequation(node1, node2, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId), false, checkOnly);
   }
 
-   public void createLessThanInequationStrong(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId, boolean checkOnly, int inequationPriority) {
+  public void createLessThanInequationStrong(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId, boolean checkOnly, int inequationPriority) {
     myTypeChecker.getEquationManager().addInequation(node1, node2, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, inequationPriority), false, checkOnly);
   }
 
@@ -195,6 +196,33 @@ public class RuntimeSupport {
       new WhenConcreteEntity(r, nodeModel, nodeId));
   }
 
+
+
+  public void whenConcrete(List<NodeInfo> arguments, final Runnable r) {
+    if (arguments.isEmpty()) {
+      return;
+    }
+    final EquationManager equationManager = myTypeChecker.getEquationManager();
+    Runnable current = r;
+    int lastindex = arguments.size() - 1;
+    int index = 0;
+    for (final NodeInfo argument : arguments) {
+      if (index == lastindex) break;
+      final Runnable oldRunnable = current;
+      Runnable newRunnable = new Runnable() {
+        public void run() {
+          equationManager.addNewWhenConcreteEntity(NodeWrapper.createWrapperFromNode(argument.myNode, equationManager),
+            new WhenConcreteEntity(oldRunnable, argument.myNodeModel, argument.myNodeId));
+        }
+      };
+      current = newRunnable;
+      index++;
+    }
+    NodeInfo lastInfo = arguments.get(lastindex);
+    equationManager.addNewWhenConcreteEntity(NodeWrapper.createWrapperFromNode(lastInfo.myNode, equationManager),
+      new WhenConcreteEntity(current, lastInfo.myNodeModel, lastInfo.myNodeId));
+  }
+
   public SNode coerce(SNode subtype, IMatchingPattern pattern, boolean isWeak) {
     EquationManager equationManager = myTypeChecker.getEquationManager();
     return myTypeChecker.getSubtypingManager().coerceSubtyping(subtype, pattern, isWeak, equationManager);
@@ -210,4 +238,16 @@ public class RuntimeSupport {
     return myTypeChecker.getSubtypingManager().coerceSubtyping(subtype, pattern, false, equationManager);
   }
 
+  public static class NodeInfo {
+    private SNode myNode;
+    private String myNodeModel;
+    private String myNodeId;
+
+    public NodeInfo(SNode node, String nodeModel, String nodeId) {
+      myNode = node;
+      myNodeModel = nodeModel;
+      myNodeId = nodeId;
+    }
+
+  }
 }

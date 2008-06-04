@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class ChildTypeRestriction extends BaseConcept {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.ChildTypeRestriction";
@@ -44,11 +45,11 @@ public class ChildTypeRestriction extends BaseConcept {
     super.setProperty(ChildTypeRestriction.RESTRICTION_KIND, value.getValueAsString());
   }
 
-  public BaseConcept getType() {
-    return (BaseConcept)this.getChild(ChildTypeRestriction.TYPE);
+  public Expression getType() {
+    return (Expression)this.getChild(ChildTypeRestriction.TYPE);
   }
 
-  public void setType(BaseConcept node) {
+  public void setType(Expression node) {
     super.setChild(ChildTypeRestriction.TYPE, node);
   }
 

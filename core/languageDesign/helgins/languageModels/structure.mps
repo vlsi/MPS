@@ -31,6 +31,8 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="6" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
@@ -1080,7 +1082,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="type" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration" id="1212573620175">
