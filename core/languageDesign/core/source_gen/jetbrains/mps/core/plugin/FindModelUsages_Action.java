@@ -99,7 +99,7 @@ public class FindModelUsages_Action extends CurrentProjectMPSAction {
       }
 
     });
-    context.getOperationContext().getComponent(UsagesViewTool.class).findUsages(provider[0], query[0], true, true, false);
+    context.getOperationContext().getComponent(UsagesViewTool.class).findUsages(provider[0], query[0], true, true, true);
   }
 
 }

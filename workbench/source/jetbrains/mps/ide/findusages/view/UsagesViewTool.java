@@ -217,7 +217,7 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
     showResults(searchResults, false, false, FindUtils.makeProvider(new ConstantFinder(searchResults.getSearchResults())), query, false);
   }
 
-  private void showResults(final SearchResults searchResults, boolean showOne, boolean newTab, final IResultProvider provider, final SearchQuery query, final boolean isRerunnable) {
+  private void showResults(final SearchResults searchResults, boolean showOne, final boolean newTab, final IResultProvider provider, final SearchQuery query, final boolean isRerunnable) {
     int resCount = searchResults.getSearchResults().size();
     if (resCount == 0) {
       ThreadUtils.runInUIThreadNoWait(new Runnable() {
@@ -258,16 +258,16 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
         }
       });
 
-      if (!newTab) {
-        if (index != -1) {
-          SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          if (!newTab) {
+            if (index != -1) {
               closeTab(index);
-              openTool(true);
             }
-          });
+          }
+          openTool(true);
         }
-      }
+      });
     }
   }
 
