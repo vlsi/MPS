@@ -11,11 +11,8 @@ import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import java.util.List;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
+import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 public class ChildTypeRestriction_childLinkDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -35,14 +32,10 @@ public class ChildTypeRestriction_childLinkDeclaration_ReferentConstraint implem
   }
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    SNode inferenceRule = SNodeOperations.getParent(_context.getEnclosingNode(), null, false, false);
+    SNode inferenceRule = SNodeOperations.getParent(_context.getReferenceNode(), null, false, false);
     SNode abstractConceptDeclaration = ApplicableNodeCondition_Behavior.call_getApplicableConcept_1212576937269(SLinkOperations.getTarget(inferenceRule, "applicableNode", true));
-    List<SNode> declarations = new ArrayList<SNode>();
-    SNode current = abstractConceptDeclaration;
-    while((current != null)) {
-      ListSequence.fromList(declarations).addSequence(ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getAggregationLinkDeclarations_1212184463482(current)));
-    }
-    return new SimpleSearchScope(declarations);
+    ConceptAndSuperConceptsScope conceptScope = new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration)SNodeOperations.getAdapter(abstractConceptDeclaration)));
+    return conceptScope;
   }
 
   public String getNodeReferentSearchScopeDescription() {
