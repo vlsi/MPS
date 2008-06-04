@@ -35,7 +35,6 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_argumentRefNodeCell6496_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_argumentRefNodeCell6496_0");
   }
 
   private static void setupBasic_ConstantCell6496_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -52,7 +51,6 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_bodyRefNodeCell6496_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_bodyRefNodeCell6496_0");
   }
 
   private static void setupBasic_ConstantCell6496_04(EditorCell editorCell, SNode node, EditorContext context) {
@@ -65,7 +63,6 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_argumentRepresentatorRefNodeCell6496_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_argumentRepresentatorRefNodeCell6496_0");
   }
 
   private static void setupLabel_ConstantCell6496_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

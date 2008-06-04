@@ -26,7 +26,6 @@ public class NormalTypeClause_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_normalTypeRefNodeCell1456_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_normalTypeRefNodeCell1456_0");
   }
 
   private static void setupBasic_ConstantCell1456_01(EditorCell editorCell, SNode node, EditorContext context) {

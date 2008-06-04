@@ -12,8 +12,8 @@ public enum InequationPriority {
   _3("3", 3),
   inf("inf", 500);
 
-  /* package */String myName;
-  /* package */int myValue;
+  private String myName;
+  private int myValue;
 
 InequationPriority(String name, int value) {
     this.myName = name;

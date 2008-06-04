@@ -28,7 +28,6 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_warningTextRefNodeCell8225_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_warningTextRefNodeCell8225_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -38,7 +37,6 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_nodeToReportRefNodeCell8225_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_nodeToReportRefNodeCell8225_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -56,7 +54,6 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_helginsIntentionRefNodeCell8225_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_helginsIntentionRefNodeCell8225_0");
   }
 
   private static void setupLabel_ConstantCell8225_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

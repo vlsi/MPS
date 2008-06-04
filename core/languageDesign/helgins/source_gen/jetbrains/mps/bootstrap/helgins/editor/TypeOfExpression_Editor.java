@@ -31,7 +31,6 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_termRefNodeCell14674_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_termRefNodeCell14674_0");
     editorCell.setDrawBorder(false);
   }
 

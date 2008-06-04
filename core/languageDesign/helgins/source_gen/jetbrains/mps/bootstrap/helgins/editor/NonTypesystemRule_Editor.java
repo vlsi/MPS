@@ -97,7 +97,6 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_applicableNodeRefNodeCell7335_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_applicableNodeRefNodeCell7335_0");
     editorCell.setDrawBorder(false);
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.FIRST_EDITABLE_CELL);
@@ -136,7 +135,6 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_bodyRefNodeCell7335_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_bodyRefNodeCell7335_0");
     editorCell.setDrawBorder(false);
   }
 

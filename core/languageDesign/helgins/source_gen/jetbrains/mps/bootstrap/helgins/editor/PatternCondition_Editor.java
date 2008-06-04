@@ -25,7 +25,6 @@ public class PatternCondition_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_patternRefNodeCell10016_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_patternRefNodeCell10016_0");
     editorCell.setDrawBorder(false);
   }
 

@@ -57,7 +57,6 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_applicableNodeRefNodeCell19999_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_applicableNodeRefNodeCell19999_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -66,7 +65,6 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_supertypeNodeRefNodeCell19999_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_supertypeNodeRefNodeCell19999_0");
   }
 
   private static void setupBasic_ConstantCell19999_04(EditorCell editorCell, SNode node, EditorContext context) {
@@ -102,7 +100,6 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_bodyRefNodeCell19999_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_bodyRefNodeCell19999_0");
     editorCell.setDrawBorder(false);
   }
 

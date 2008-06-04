@@ -12,6 +12,7 @@ import java.util.List;
 public class InferenceRule extends AbstractCheckingRule {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.InferenceRule";
   public static String DEPENDENCY = "dependency";
+  public static String CHILD_TYPE_RESTRICTION = "childTypeRestriction";
 
   public InferenceRule(SNode node) {
     super(node);
@@ -44,6 +45,26 @@ public class InferenceRule extends AbstractCheckingRule {
 
   public void insertDependency(Dependency prev, Dependency node) {
     this.insertChild(prev, InferenceRule.DEPENDENCY, node);
+  }
+
+  public int getChildTypeRestrictionsCount() {
+    return this.getChildCount(InferenceRule.CHILD_TYPE_RESTRICTION);
+  }
+
+  public Iterator<ChildTypeRestriction> childTypeRestrictions() {
+    return this.children(InferenceRule.CHILD_TYPE_RESTRICTION);
+  }
+
+  public List<ChildTypeRestriction> getChildTypeRestrictions() {
+    return this.getChildren(InferenceRule.CHILD_TYPE_RESTRICTION);
+  }
+
+  public void addChildTypeRestriction(ChildTypeRestriction node) {
+    this.addChild(InferenceRule.CHILD_TYPE_RESTRICTION, node);
+  }
+
+  public void insertChildTypeRestriction(ChildTypeRestriction prev, ChildTypeRestriction node) {
+    this.insertChild(prev, InferenceRule.CHILD_TYPE_RESTRICTION, node);
   }
 
 }

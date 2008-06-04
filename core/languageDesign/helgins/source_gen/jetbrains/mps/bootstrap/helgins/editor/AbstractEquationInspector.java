@@ -36,7 +36,6 @@ public class AbstractEquationInspector extends AbstractCellProvider {
   }
 
   private static void setupBasic_nodeToCheckRefNodeCell19992_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_nodeToCheckRefNodeCell19992_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -49,7 +48,6 @@ public class AbstractEquationInspector extends AbstractCellProvider {
   }
 
   private static void setupBasic_errorStringRefNodeCell19992_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_errorStringRefNodeCell19992_0");
   }
 
   private static void setupBasic_ConstantCell19992_02(EditorCell editorCell, SNode node, EditorContext context) {

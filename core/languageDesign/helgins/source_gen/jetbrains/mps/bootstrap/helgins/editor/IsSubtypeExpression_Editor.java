@@ -29,7 +29,6 @@ public class IsSubtypeExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_subtypeExpressionRefNodeCell9141_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_subtypeExpressionRefNodeCell9141_0");
   }
 
   private static void setupBasic_ConstantCell9141_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -37,7 +36,6 @@ public class IsSubtypeExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_supertypeExpressionRefNodeCell9141_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_supertypeExpressionRefNodeCell9141_0");
   }
 
   private static void setupBasic_ConstantCell9141_02(EditorCell editorCell, SNode node, EditorContext context) {

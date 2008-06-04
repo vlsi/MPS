@@ -64,7 +64,6 @@ public class MultipleForeachLoop_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_bodyRefNodeCell237_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_bodyRefNodeCell237_0");
   }
 
   private static void setupBasic_ConstantCell237_04(EditorCell editorCell, SNode node, EditorContext context) {

@@ -27,7 +27,6 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_leftExpressionRefNodeCell15735_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_leftExpressionRefNodeCell15735_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -37,7 +36,6 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_rightExpressionRefNodeCell15735_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_rightExpressionRefNodeCell15735_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -61,7 +59,6 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_nodeToCheckRefNodeCell15735_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_nodeToCheckRefNodeCell15735_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -74,7 +71,6 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_errorStringRefNodeCell15735_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_errorStringRefNodeCell15735_0");
   }
 
   private static void setupBasic_CollectionCell15735_04(EditorCell editorCell, SNode node, EditorContext context) {

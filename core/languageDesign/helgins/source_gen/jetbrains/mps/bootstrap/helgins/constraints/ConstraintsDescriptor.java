@@ -21,6 +21,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     this.myConstraints.add(new ListVarReference_listVarDeclaration_ReferentConstraint());
     this.myConstraints.add(new WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint());
     this.myConstraints.add(new HelginsIntentionArgument_intentionArgument_ReferentConstraint());
+    this.myConstraints.add(new ChildTypeRestriction_childLinkDeclaration_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

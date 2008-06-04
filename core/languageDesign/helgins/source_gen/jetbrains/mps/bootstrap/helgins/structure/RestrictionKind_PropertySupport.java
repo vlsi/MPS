@@ -5,15 +5,15 @@ package jetbrains.mps.bootstrap.helgins.structure;
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
 
-public class EquationDirection_Enum_PropertySupport extends PropertySupport {
+public class RestrictionKind_PropertySupport extends PropertySupport {
 
   public boolean canSetValue(String value) {
     if (value == null) {
       return true;
     }
-    Iterator<EquationDirection_Enum> constants = EquationDirection_Enum.getConstants().iterator();
+    Iterator<RestrictionKind> constants = RestrictionKind.getConstants().iterator();
     while(constants.hasNext()) {
-      EquationDirection_Enum constant = constants.next();
+      RestrictionKind constant = constants.next();
       if (value.equals(constant.getName())) {
         return true;
       }
@@ -25,9 +25,9 @@ public class EquationDirection_Enum_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<EquationDirection_Enum> constants = EquationDirection_Enum.getConstants().iterator();
+    Iterator<RestrictionKind> constants = RestrictionKind.getConstants().iterator();
     while(constants.hasNext()) {
-      EquationDirection_Enum constant = constants.next();
+      RestrictionKind constant = constants.next();
       if (value.equals(constant.getName())) {
         return constant.getValueAsString();
       }
@@ -36,7 +36,7 @@ public class EquationDirection_Enum_PropertySupport extends PropertySupport {
   }
 
   public String fromInternalValue(String value) {
-    EquationDirection_Enum constant = EquationDirection_Enum.parseValue(value);
+    RestrictionKind constant = RestrictionKind.parseValue(value);
     if (constant != null) {
       return constant.getName();
     }

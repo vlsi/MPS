@@ -34,7 +34,6 @@ public class CoerceExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_nodeToCoerceRefNodeCell99_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_nodeToCoerceRefNodeCell99_0");
   }
 
   private static void setupBasic_ConstantCell99_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -42,7 +41,6 @@ public class CoerceExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_patternRefNodeCell99_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_patternRefNodeCell99_0");
   }
 
   private static void setupBasic_ConstantCell99_03(EditorCell editorCell, SNode node, EditorContext context) {

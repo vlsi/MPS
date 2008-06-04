@@ -10,8 +10,8 @@ public enum EquationDirection_Enum {
   left(":=", "left"),
   right("=:", "right");
 
-  /* package */String myName;
-  /* package */String myValue;
+  private String myName;
+  private String myValue;
 
 EquationDirection_Enum(String name, String value) {
     this.myName = name;

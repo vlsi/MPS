@@ -26,7 +26,6 @@ public class MatchStatementItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_conditionRefNodeCell14782_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_conditionRefNodeCell14782_0");
   }
 
   private static void setupBasic_ConstantCell14782_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -44,7 +43,6 @@ public class MatchStatementItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_ifTrueRefNodeCell14782_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ifTrueRefNodeCell14782_0");
   }
 
   private static void setupBasic_ConstantCell14782_02(EditorCell editorCell, SNode node, EditorContext context) {

@@ -81,7 +81,6 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_applicableNodeRefNodeCell1383_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_applicableNodeRefNodeCell1383_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -104,7 +103,6 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_bodyRefNodeCell1383_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_bodyRefNodeCell1383_0");
     editorCell.setDrawBorder(false);
   }
 

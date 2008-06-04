@@ -41,7 +41,6 @@ public class Dependency_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_findSourceBlockRefNodeCell17378_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_findSourceBlockRefNodeCell17378_0");
   }
 
   private static void setupBasic_CollectionCell17378_02(EditorCell editorCell, SNode node, EditorContext context) {

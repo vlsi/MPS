@@ -28,7 +28,6 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_errorStringRefNodeCell13901_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_errorStringRefNodeCell13901_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -38,7 +37,6 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_nodeToReportRefNodeCell13901_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_nodeToReportRefNodeCell13901_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -56,7 +54,6 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_helginsIntentionRefNodeCell13901_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_helginsIntentionRefNodeCell13901_0");
   }
 
   private static void setupLabel_ConstantCell13901_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

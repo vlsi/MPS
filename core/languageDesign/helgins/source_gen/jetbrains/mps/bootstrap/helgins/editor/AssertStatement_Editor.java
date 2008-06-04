@@ -28,7 +28,6 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_conditionRefNodeCell13153_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_conditionRefNodeCell13153_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -38,7 +37,6 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_errorStringRefNodeCell13153_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_errorStringRefNodeCell13153_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -48,7 +46,6 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_nodeToReportRefNodeCell13153_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_nodeToReportRefNodeCell13153_0");
     editorCell.setDrawBorder(false);
   }
 

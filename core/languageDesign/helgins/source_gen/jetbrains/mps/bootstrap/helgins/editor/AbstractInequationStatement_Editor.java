@@ -33,7 +33,6 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_leftExpressionRefNodeCell18424_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_leftExpressionRefNodeCell18424_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -43,7 +42,6 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_rightExpressionRefNodeCell18424_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_rightExpressionRefNodeCell18424_0");
     editorCell.setDrawBorder(false);
   }
 

@@ -29,6 +29,8 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="6" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
@@ -80,6 +82,12 @@
       <property name="role" value="dependency" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1193733698246" resolveInfo="Dependency" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1212574183907">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="childTypeRestriction" />
+      <link role="target" targetNodeId="1212573344738" resolveInfo="ChildTypeRestriction" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1174648085619">
@@ -1049,6 +1057,43 @@
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1212056211202">
       <property name="externalValue" value="inf" />
       <property name="internalValue" value="500" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1212573344738">
+    <property name="name" value="ChildTypeRestriction" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1212575801821">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="childLinkDeclaration" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3.1071489288298" resolveInfo="LinkDeclaration" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1212573520910">
+      <property name="name" value="childRole" />
+      <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1212573745114">
+      <property name="name" value="restrictionKind" />
+      <link role="dataType" targetNodeId="1212573620175" resolveInfo="RestrictionKind" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1212573461488">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="type" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration" id="1212573620175">
+    <property name="name" value="RestrictionKind" />
+    <property name="memberIdentifierPolicy" value="derive_from_internal_value" />
+    <link role="memberDataType" targetNodeId="1.1082983041843" resolveInfo="string" />
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1212573620176">
+      <property name="internalValue" value="equals" />
+      <property name="externalValue" value=":==:" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1212573652489">
+      <property name="internalValue" value="subtype" />
+      <property name="externalValue" value=":&lt;=:" />
     </node>
   </node>
 </model>

@@ -31,12 +31,10 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_leftExpressionRefNodeCell20705_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_leftExpressionRefNodeCell20705_0");
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_rightExpressionRefNodeCell20705_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_rightExpressionRefNodeCell20705_0");
     editorCell.setDrawBorder(false);
   }
 
