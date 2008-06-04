@@ -40,7 +40,6 @@
   <import index="19" modelUID="jetbrains.mps.logging@java_stub" version="-1"/>
   <import index="20" modelUID="jetbrains.mps.plugins.tool@java_stub" version="-1"/>
   <import index="21" modelUID="jetbrains.mps.baseLanguage.unitTest.runtime" version="-1"/>
-  <import index="22" modelUID="jetbrains.mps.ide.command@java_stub" version="-1"/>
   <import index="23" modelUID="jetbrains.mps.ide@java_stub" version="-1"/>
   <import index="24" modelUID="java.util@java_stub" version="-1"/>
   <import index="25" modelUID="javax.swing.event@java_stub" version="-1"/>

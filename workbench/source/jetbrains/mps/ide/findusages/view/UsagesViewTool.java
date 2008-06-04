@@ -229,17 +229,13 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
     showResults(searchResults, false, false, FindUtils.makeProvider(new ConstantFinder(searchResults.getSearchResults())), query, false);
   }
 
-  private void showResults(final SearchResults searchResults, boolean showOne, final boolean newTab, final IResultProvider provider, final SearchQuery query, final boolean isRerunnable) {
-    int resCount = searchResults.getSearchResults().size();
-    if (resCount == 0) {
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
+  private void showResults(final SearchResults searchResults, final boolean showOne, final boolean newTab, final IResultProvider provider, final SearchQuery query, final boolean isRerunnable) {
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        int resCount = searchResults.getSearchResults().size();
+        if (resCount == 0) {
           new HintDialog(JOptionPane.getFrameForComponent(myPanel), "Not found", "No usages for that node").showDialog();
-        }
-      });
-    } else if (resCount == 1 && !showOne) {
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
+        } else if (resCount == 1 && !showOne) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               SNode node = ((SearchResult<SNode>) searchResults.getSearchResults().get(0)).getObject();
@@ -248,30 +244,24 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
               }
             }
           });
-        }
-      });
-    } else {
-      final int index = currentTabIndex();
+        } else {
+          int index = currentTabIndex();
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              UsageViewData usageViewData = new UsageViewData();
+              usageViewData.createUsageView();
+              myUsageViewsData.add(usageViewData);
 
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
+              myTabbedPane.addTab("", usageViewData.myUsagesView.getComponent());
+              myTabbedPane.setSelectedIndex(myTabbedPane.getTabCount() - 1);
 
-          UsageViewData usageViewData = new UsageViewData();
-          usageViewData.createUsageView();
-          myUsageViewsData.add(usageViewData);
+              usageViewData.myUsagesView.setRunOptions(provider, query, new ButtonConfiguration(isRerunnable), searchResults);
 
-          myTabbedPane.addTab("", usageViewData.myUsagesView.getComponent());
-          myTabbedPane.setSelectedIndex(myTabbedPane.getTabCount() - 1);
+              myTabbedPane.setTitleAt(currentTabIndex(), usageViewData.myUsagesView.getCaption());
+              myTabbedPane.setIconAt(currentTabIndex(), usageViewData.myUsagesView.getIcon());
+            }
+          });
 
-          usageViewData.myUsagesView.setRunOptions(provider, query, new ButtonConfiguration(isRerunnable), searchResults);
-
-          myTabbedPane.setTitleAt(currentTabIndex(), usageViewData.myUsagesView.getCaption());
-          myTabbedPane.setIconAt(currentTabIndex(), usageViewData.myUsagesView.getIcon());
-        }
-      });
-
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
           if (!newTab) {
             if (index != -1) {
               closeTab(index);
@@ -279,8 +269,8 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
           }
           openTool(true);
         }
-      });
-    }
+      }
+    });
   }
 
   private void read(Element element, MPSProject project) {

@@ -28,6 +28,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <maxImportIndex value="17"/>
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1"/>
   <import index="2" modelUID="jetbrains.mps.smodel@java_stub" version="-1"/>
@@ -202,8 +203,8 @@
                     <link role="classConcept" targetNodeId="10.~FindUtils" resolveInfo="FindUtils"/>
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression"
                           id="1212510263921">
-                      <link role="baseMethodDeclaration" targetNodeId="6.~LanguageUsagesFinder.&lt;init&gt;()"
-                            resolveInfo="LanguageUsagesFinder"/>
+                      <link role="baseMethodDeclaration" targetNodeId="6.~ModelUsagesFinder.&lt;init&gt;()"
+                            resolveInfo="ModelUsagesFinder"/>
                     </node>
                   </node>
                   <node role="lValue" type="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression"
