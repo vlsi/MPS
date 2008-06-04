@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.SNode;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import java.awt.BorderLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -30,9 +31,9 @@ public class TodoViewer extends JPanel {
 
     addMouseListener(new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
+        removeMouseListener(this);
         remove(label);
         refresh();
-        doLayout();
       }
     });
   }
@@ -69,6 +70,12 @@ public class TodoViewer extends JPanel {
         myUsagesView.setCustomNodeRepresentator(MyNodeRepresentator.class);
 
         myUsagesView.run();
+
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            getTool().openTool(true);
+          }
+        });
       }
     }).start();
   }

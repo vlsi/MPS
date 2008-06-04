@@ -27,6 +27,7 @@ import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.QueryOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorUtil;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
@@ -54,6 +55,8 @@ import java.util.List;
     }
 )
 public class UsagesViewTool extends BaseMPSTool implements PersistentStateComponent<Element> {
+  private static Logger LOG = Logger.getLogger(UsagesViewTool.class);
+
   private static final String VERSION_NUMBER = "0.99";
   private static final String VERSION = "version";
   private static final String ID = "id";
@@ -105,6 +108,8 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
 
   @Nullable
   public UsagesView getCurrentView() {
+    LOG.checkEDT();
+
     int index = currentTabIndex();
     if (index == -1) return null;
 
@@ -119,22 +124,26 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
   }
 
   public void closeTab(int index) {
+    LOG.checkEDT();
+
     myTabbedPane.remove(index);
     myUsageViewsData.remove(index);
-    if (myUsageViewsData.isEmpty()) {
-      hideToolLater();
-    }
+    if (myUsageViewsData.isEmpty()) hideTool();
   }
 
   public void closeAll() {
+    LOG.checkEDT();
+
     myUsageViewsData.clear();
     myTabbedPane.removeAll();
-    hideToolLater();
+    hideTool();
   }
 
   private void closeAllBut(int tabIndex) {
-    int i = myUsageViewsData.size() - 1;
-    for (; i > tabIndex; i--) {
+    LOG.checkEDT();
+
+    int i;
+    for (i = myUsageViewsData.size() - 1; i > tabIndex; i--) {
       closeTab(tabIndex + 1);
     }
     for (i = 0; i < tabIndex; i++) {
@@ -147,8 +156,10 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
   }
 
   public void clear() {
+    LOG.checkEDT();
+
     closeAll();
-    hideToolLater();
+    hideTool();
   }
 
   //---FIND USAGES STUFF----
