@@ -1,15 +1,14 @@
 package jetbrains.mps.nodeEditor;
 
+import com.intellij.ide.CopyProvider;
+import com.intellij.ide.CutProvider;
+import com.intellij.ide.PasteProvider;
+import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import com.intellij.openapi.actionSystem.DataContext;
-import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.application.RuntimeInterruptedException;
 import com.intellij.openapi.command.undo.UndoManager;
 import com.intellij.openapi.project.Project;
-import com.intellij.ide.CutProvider;
-import com.intellij.ide.CopyProvider;
-import com.intellij.ide.PasteProvider;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRuleUtil;
 import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRule_Action;
 import jetbrains.mps.helgins.inference.IErrorReporter;
@@ -22,39 +21,30 @@ import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.nodes.GoByFirstReferenceAction;
 import jetbrains.mps.ide.findusages.view.UsagesView;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
-import jetbrains.mps.nodeEditor.FocusPolicyUtil;
 import jetbrains.mps.ide.ui.CellSpeedSearch;
 import jetbrains.mps.ide.ui.JMultiLineToolTip;
 import jetbrains.mps.ide.ui.MPSErrorDialog;
-import jetbrains.mps.intentions.Intention;
-import jetbrains.mps.intentions.IntentionsManager;
-import jetbrains.mps.intentions.IntentionsMenu;
-import jetbrains.mps.intentions.LightBulbMenu;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.reloading.ReloadListener;
-import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
-import javax.swing.event.PopupMenuEvent;
-import javax.swing.event.PopupMenuListener;
 import java.awt.*;
 import java.awt.event.*;
 import java.beans.PropertyChangeEvent;
@@ -69,7 +59,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private static final Logger LOG = Logger.getLogger(AbstractEditorComponent.class);
   public static final String EDITOR_POPUP_MENU_ACTIONS = EditorPopup_ActionGroup.ID;
   public static final String EDITOR_POPUP_MENU_ACTIONS_INTERNAL = EditorInternal_ActionGroup.ID;
-  private static final long INTENTION_SHOW_DELAY = 700;
 
   static void turnOnAliasingIfPossible(Graphics2D g) {
     if (EditorSettings.getInstance().isUseAntialiasing()) {
@@ -150,10 +139,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private Map<KeyStroke, MPSActionProxy> myActionProxies = new HashMap<KeyStroke, MPSActionProxy>();
   private CellSpeedSearch myCellSpeedSearch;
-  private AbstractAction myShowIntentionsAction;
-  private Point myLightBulbLocation = new Point();
-  private LightBulbMenu myLightBulb;
-  private Thread myShowIntentionsThread = new Thread();
+  private IntentionsHelper myIntentionsHelper;
 
   public AbstractEditorComponent(IOperationContext operationContext) {
     this(operationContext, false);
@@ -333,32 +319,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     }, KeyStroke.getKeyStroke("control alt DOWN"), WHEN_FOCUSED);
 
-    myLightBulb = new LightBulbMenu() {
-      public void activate() {
-        showIntentionsMenu();
-      }
-    };
-
-    myScrollPane.getViewport().addChangeListener(new ChangeListener() {
-      public void stateChanged(ChangeEvent e) {
-        adjustLightBulbLocation();
-      }
-    });
-
-    myShowIntentionsAction = new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
-        //setEnabled(false);
-        ModelAccess.instance().runReadAction(new Runnable() {
-              public void run() {
-                if (!getEditedNode().getModel().isNotEditable()) {
-                  showIntentionsMenu();
-                }
-              }
-            });
-      }
-    };
-    registerKeyboardAction(myShowIntentionsAction, KeyStroke.getKeyStroke("alt ENTER"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-
     addMouseListener(new MouseAdapter() {
       public void mousePressed(final MouseEvent e) {
         if (e.isPopupTrigger()) {
@@ -424,61 +384,20 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     });
 
-    addCellSelectionListener(new ICellSelectionListener() {
-      public void selectionChanged(AbstractEditorComponent editor, EditorCell oldSelection, EditorCell newSelection) {
-        myShowIntentionsThread.interrupt();
-
-        hideLightBulb();
-        myShowIntentionsAction.setEnabled(false);
-
-        myShowIntentionsThread = new Thread("Intentions") {
-          public void run() {
-            try {
-              final boolean[] enabledPresent = new boolean[1];
-              final boolean[] availablePresent = new boolean[1];
-              ModelAccess.instance().runReadAction(new Runnable() {
-                public void run() {
-                  enabledPresent[0] = !getEnabledIntentions().isEmpty();
-                  availablePresent[0] = !getAvailableIntentions().isEmpty();
-                }
-              });
-
-              ModelAccess.instance().runReadInEDT(new Runnable() {
-                public void run() {
-                  if (getSelectedCell() != null) {
-                    adjustLightBulbLocation();
-                    myShowIntentionsAction.setEnabled(availablePresent[0]);
-                  } else {
-                    myShowIntentionsAction.setEnabled(false);
-                  }
-                }
-              });
-
-              Thread.sleep(INTENTION_SHOW_DELAY);
-
-              ModelAccess.instance().runReadInEDT(new Runnable() {
-                          public void run() {
-                            if (getSelectedCell() != null) {
-                              setLightBulbVisibility(enabledPresent[0]);
-                            } else {
-                              hideLightBulb();
-                            }
-                          }
-                        });
-            } catch (InterruptedException e) {
-            } catch (RuntimeInterruptedException e) {
-            }
-          }
-        };
-        myShowIntentionsThread.start();
-      }
-    });
-
+    myIntentionsHelper = new IntentionsHelper(this);
     ToolTipManager.sharedInstance().registerComponent(this);
     CaretBlinker.getInstance().registerEditor(this);
   }
 
   protected void onEscape() {
+  }
+
+  public int getAdditionalShiftX() {
+    return ADDITIONAL_SHIFT_X;
+  }
+
+  public JViewport getViewport() {
+    return myScrollPane.getViewport();
   }
 
   public SNode getSelectedNode() {
@@ -503,30 +422,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         }
       }
     });
-  }
-
-  private Set<Intention> getAvailableIntentions() {
-    final Set<Intention> result = new LinkedHashSet<Intention>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        SNode node = getSelectedNode();
-        EditorContext editorContext = getEditorContext();
-        if (node != null && editorContext != null) {
-          result.addAll(IntentionsManager.getInstance().getAvailableIntentions(node, editorContext));
-        }
-      }
-    });
-    return result;
-  }
-
-  private Set<Intention> getEnabledIntentions() {
-    final Set<Intention> result = new LinkedHashSet<Intention>();
-    SNode node = getSelectedNode();
-    EditorContext editorContext = getEditorContext();
-    if (node != null && editorContext != null) {
-      result.addAll(IntentionsManager.getInstance().getEnabledAvailableIntentions(node, editorContext));
-    }
-    return result;
   }
 
   private void updateMPSActionsWithKeyStrokes() {
@@ -796,10 +691,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     EditorCell selectedCell = getSelectedCell();
     if (selectedCell != null) {
       ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            showPopupMenu(e);
-          }
-        });
+        public void run() {
+          showPopupMenu(e);
+        }
+      });
     }
   }
 
@@ -927,7 +822,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return new HashSet<EditorCell>(myBracesEnabledCells);
   }
 
-  public void flushEvents() {         
+  public void flushEvents() {
     myEventsCollector.flush();
   }
 
@@ -1576,36 +1471,36 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private void showCellError() {
     if (getSelectedCell() != null) {
       ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            SNode selectedNode = getSelectedCell().getSNode();
-            while (selectedNode != null) {
-              final IErrorReporter herror = TypeChecker.getInstance().getTypeErrorDontCheck(selectedNode);
-              if (herror != null) {
-                SwingUtilities.invokeLater(new Runnable() {
-                  public void run() {
-                    String s = herror.reportError();
-                    final MPSErrorDialog dialog = new MPSErrorDialog(myOperationContext.getMainFrame(), s, "TYPESYSTEM ERROR", false);
-                    JButton button = new JButton(new AbstractAction("Go To Rule") {
-                      public void actionPerformed(ActionEvent e) {
-                        ModelAccess.instance().runReadAction(new Runnable() {
-                          public void run() {
-                            GoToTypeErrorRuleUtil.goToTypeErrorRule(myOperationContext, herror, GoToTypeErrorRule_Action.LOG);
-                            dialog.dispose();
-                          }
-                        });
-                      }
-                    });
-                    dialog.addButton(button);
-                    dialog.initializeUI();
-                    dialog.setVisible(true);
-                  }
-                });
-                return;
-              }
-              selectedNode = selectedNode.getParent();
+        public void run() {
+          SNode selectedNode = getSelectedCell().getSNode();
+          while (selectedNode != null) {
+            final IErrorReporter herror = TypeChecker.getInstance().getTypeErrorDontCheck(selectedNode);
+            if (herror != null) {
+              SwingUtilities.invokeLater(new Runnable() {
+                public void run() {
+                  String s = herror.reportError();
+                  final MPSErrorDialog dialog = new MPSErrorDialog(myOperationContext.getMainFrame(), s, "TYPESYSTEM ERROR", false);
+                  JButton button = new JButton(new AbstractAction("Go To Rule") {
+                    public void actionPerformed(ActionEvent e) {
+                      ModelAccess.instance().runReadAction(new Runnable() {
+                        public void run() {
+                          GoToTypeErrorRuleUtil.goToTypeErrorRule(myOperationContext, herror, GoToTypeErrorRule_Action.LOG);
+                          dialog.dispose();
+                        }
+                      });
+                    }
+                  });
+                  dialog.addButton(button);
+                  dialog.initializeUI();
+                  dialog.setVisible(true);
+                }
+              });
+              return;
             }
+            selectedNode = selectedNode.getParent();
           }
-        });
+        }
+      });
 
     }
   }
@@ -2259,7 +2154,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         public Object compute() {
           return getRootCell().getSNode().getModel().getModelDescriptor();
         }
-      });      
+      });
     }
 
     if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
@@ -2279,119 +2174,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
 
     return null;
-  }
-
-  private void showIntentionsMenu() {
-    EditorCell cell = getSelectedCell();
-
-    IntentionsMenu intentionsMenu = new IntentionsMenu(getOperationContext());
-
-    intentionsMenu.init(cell.getSNode(), getEditorContext(), getAvailableIntentions());
-
-    intentionsMenu.addPopupMenuListener(new PopupMenuListener() {
-      public void popupMenuWillBecomeVisible(PopupMenuEvent e) {
-        //setLightBulbVisibility(false);
-      }
-
-      public void popupMenuWillBecomeInvisible(PopupMenuEvent e) {
-        ModelAccess.instance().runReadInEDT(new Runnable() {
-              public void run() {
-                setLightBulbVisibility(!getEnabledIntentions().isEmpty());
-              }
-            });
-      }
-
-      public void popupMenuCanceled(PopupMenuEvent e) {
-        ModelAccess.instance().runReadInEDT(new Runnable() {
-              public void run() {
-                setLightBulbVisibility(!getEnabledIntentions().isEmpty());
-              }
-            });
-      }
-    });
-
-    EditorCell bigCell = getBigCellForNode(cell.getSNode());
-    assert bigCell != null : "selected cell mustn't be null";
-
-    Point loc = getIntentionsMenuLocation(bigCell, intentionsMenu);
-    intentionsMenu.show(this, loc.x, loc.y);
-  }
-
-  private void setLightBulbVisibility(final boolean value) {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        if (value) {
-          Set<Intention> enabledIntentions = getEnabledIntentions();
-          if ((!enabledIntentions.isEmpty()) && (!getEditedNode().getModel().isNotEditable())) {
-            boolean showError = false;
-            for (Intention intention : enabledIntentions) {
-              if (intention.isErrorIntention()) {
-                showError = true;
-              }
-            }
-            showLightBulb(showError);
-          }
-        } else {
-          hideLightBulb();
-        }
-      }
-    });
-  }
-
-  private void adjustLightBulbLocation() {
-    EditorCell selectedCell = getSelectedCell();
-    if (selectedCell == null) return;
-
-    Point p = getLightBulbLocation(selectedCell);
-
-    myLightBulbLocation.setLocation(p);
-
-    myLightBulb.setLocation(myLightBulbLocation);
-  }
-
-  private void showLightBulb(boolean showError) {
-    myLightBulb.setError(showError);
-    add(myLightBulb);
-    myLightBulb.setLocation(myLightBulbLocation);
-    repaint();
-  }
-
-  private void hideLightBulb() {
-    remove(myLightBulb);
-  }
-
-  @NotNull
-  private Point getInsertedPosition(@NotNull Rectangle parentView, @NotNull Dimension childDim, @NotNull Point preferredLoc) {
-    Point p = new Point(preferredLoc);
-
-    p.x = Math.max(p.x, parentView.x + 2);
-    p.y = Math.max(p.y, parentView.y + 2);
-
-    p.x = Math.min(p.x, parentView.x + parentView.width - 2 - childDim.width);
-    p.y = Math.min(p.y, parentView.y + parentView.height - 2 - childDim.height);
-
-    return p;
-  }
-
-  @NotNull
-  private Point getLightBulbLocation(@NotNull EditorCell selectedCell) {
-    EditorCell bigCell = getBigCellForNode(selectedCell.getSNode());
-    if (bigCell != null) selectedCell = bigCell;
-
-    int x = getRootCell().getX() - ADDITIONAL_SHIFT_X - myLightBulb.getWidth() - 6;
-    int y = selectedCell.getY();
-
-    Rectangle viewRect = myScrollPane.getViewport().getViewRect();
-    return getInsertedPosition(viewRect, myLightBulb.getPreferredSize(), new Point(x, y));
-  }
-
-  @NotNull
-  private Point getIntentionsMenuLocation(@NotNull EditorCell selectedCell, @NotNull IntentionsMenu menu) {
-    Point point = getLightBulbLocation(selectedCell);
-    point.x = selectedCell.getX();
-    point.y += myLightBulb.getHeight();
-    Rectangle viewRect = myScrollPane.getViewport().getViewRect();
-    return getInsertedPosition(viewRect, menu.getPreferredSize(), point);
   }
 
   private void handleEvents(List<SModelEvent> events) {
@@ -2441,7 +2223,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       rebuildEditorContent(events);
 
 
-      if (!hasFocus() && !myLightBulb.isVisible()) {
+      if (!hasFocus() && !myIntentionsHelper.isLightBulbVisible()) {
         return;
       }
 
