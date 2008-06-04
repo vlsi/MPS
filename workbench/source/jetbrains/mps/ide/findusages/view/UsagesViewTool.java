@@ -259,7 +259,7 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
       });
 
       if (!newTab) {
-        if (currentTabIndex() != -1) {
+        if (index != -1) {
           SwingUtilities.invokeLater(new Runnable() {
             public void run() {
               closeTab(index);
