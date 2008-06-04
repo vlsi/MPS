@@ -10,21 +10,21 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 
-public class ConstructorDeclaration_name_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
+public class ConstructorDeclaration_resolveInfo_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
 
-  public ConstructorDeclaration_name_PropertyConstraint() {
+  public ConstructorDeclaration_resolveInfo_PropertyConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
-    manager.registerNodePropertyGetter("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", "name", this);
+    manager.registerNodePropertyGetter("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", "resolveInfo", this);
   }
 
   public void unRegisterSelf(ModelConstraintsManager manager) {
-    manager.unRegisterNodePropertyGetter("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", "name");
+    manager.unRegisterNodePropertyGetter("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", "resolveInfo");
   }
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
-    return SPropertyOperations.getString(SNodeOperations.getParent(node, null, false, false), "name");
+    return SPropertyOperations.getString(SNodeOperations.getParent(node, null, false, false), "resolveInfo");
   }
 
 }
