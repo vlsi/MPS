@@ -49,9 +49,8 @@ import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.ModelActions;
+import jetbrains.mps.baseLanguage.constraints.BaseMethodDeclaration_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.baseLanguage.constraints.QueriesUtil;
-import jetbrains.mps.generator.JavaModelUtil_new;
 import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.action.RTActionsBuilderContext;
@@ -786,9 +785,7 @@ __switch__:
             }
 
             public String getMatchingText(String pattern) {
-              StringBuilder builder = new StringBuilder(SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation"), "alias"));
-              QueriesUtil.appendParameterTypes_BaseMethodDeclaration((item), builder);
-              return builder.toString();
+              return "this" + BaseMethodDeclaration_Behavior.call_getParametersPresentation_1212604672312((item));
             }
 
             public String getDescriptionText(String pattern) {
@@ -812,8 +809,7 @@ __switch__:
               superClass = SLinkOperations.getTarget(SLinkOperations.getTarget(classConcept, "superclass", true), "classifier", false);
             } else
             {
-              SNode node = JavaModelUtil_new.findClassifier(Object.class).getNode();
-              superClass = node;
+              superClass = SLinkOperations.getTarget(new QuotationClass_2().createNode(), "classifier", false);
             }
             return SLinkOperations.getTargets(superClass, "constructor", true);
           }
@@ -836,9 +832,7 @@ __switch__:
             }
 
             public String getMatchingText(String pattern) {
-              StringBuilder builder = new StringBuilder(SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation"), "alias"));
-              QueriesUtil.appendParameterTypes_BaseMethodDeclaration((item), builder);
-              return builder.toString();
+              return "super" + BaseMethodDeclaration_Behavior.call_getParametersPresentation_1212604672312((item));
             }
 
             public String getDescriptionText(String pattern) {
