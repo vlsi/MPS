@@ -1,12 +1,6 @@
 package jetbrains.mps.smodel;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.WeakHashMap;
+import java.util.*;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
@@ -14,7 +8,6 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDecla
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
-import jetbrains.mps.util.WeakSet;
 
 
 public class FastNodeFinder {
@@ -22,8 +15,8 @@ public class FastNodeFinder {
   private boolean myInitialized;
   private SModelAdapter myListener = new MySModelAdapter();
 
-  private WeakHashMap<AbstractConceptDeclaration, WeakSet<SNode>> myNodesAll = new WeakHashMap<AbstractConceptDeclaration, WeakSet<SNode>>();
-  private WeakHashMap<AbstractConceptDeclaration, WeakSet<SNode>> myNodesNoInheritance = new WeakHashMap<AbstractConceptDeclaration, WeakSet<SNode>>();
+  private Map<AbstractConceptDeclaration, Set<SNode>> myNodesAll = new HashMap<AbstractConceptDeclaration, Set<SNode>>();
+  private Map<AbstractConceptDeclaration, Set<SNode>> myNodesNoInheritance = new HashMap<AbstractConceptDeclaration, Set<SNode>>();
 
   public FastNodeFinder(SModelDescriptor modelDescriptor) {
     myModelDescriptor = modelDescriptor;
@@ -31,15 +24,16 @@ public class FastNodeFinder {
   }
 
   private void initCache() {
-    boolean wasLoading = myModelDescriptor.getSModel().setLoading(true); // don't fire events while building the cache
-    try {
-      for (SNode root : myModelDescriptor.getSModel().getRoots()) {
-        buildCache(root, new HashSet<AbstractConceptDeclaration>());
-      }
-    } finally {
-      myModelDescriptor.getSModel().setLoading(wasLoading);
-      myInitialized = true;
+    for (SNode root : myModelDescriptor.getSModel().getRoots()) {
+      addToCache(root);
     }
+    myInitialized = true;
+  }
+
+  private void clear() {
+    myInitialized = false;
+    myNodesAll.clear();
+    myNodesNoInheritance.clear();
   }
 
   public List<SNode> getNodes(AbstractConceptDeclaration concept, boolean includeInherited) {
@@ -47,7 +41,7 @@ public class FastNodeFinder {
       initCache();
     }
 
-    WeakHashMap<AbstractConceptDeclaration, WeakSet<SNode>> map = myNodesNoInheritance;
+    Map<AbstractConceptDeclaration, Set<SNode>> map = myNodesNoInheritance;
     if (includeInherited) {
       map = myNodesAll;
     }
@@ -73,16 +67,30 @@ public class FastNodeFinder {
     return Collections.EMPTY_LIST;
   }
 
-  private void buildCache(final SNode root, final Set<AbstractConceptDeclaration> result) {
+  private void addToCache(final SNode root) {
     for (SNode child : root.getChildren()) {
-      buildCache(child, result);
+      addToCache(child);
     }
 
     AbstractConceptDeclaration concept = root.getConceptDeclarationAdapter();
-    getNodes_noInheritance(concept).add(root);
+
+    add(concept, root, true);
 
     for (AbstractConceptDeclaration acd : getParents(concept)) {
-      getNodes_all(acd).add(root);
+      add(acd, root, false);
+    }
+  }
+
+  private void removeFromCache(final SNode root) {
+    for (SNode child : root.getChildren()) {
+      removeFromCache(child);
+    }
+
+    AbstractConceptDeclaration concept = root.getConceptDeclarationAdapter();
+    remove(concept, root, true);
+
+    for (AbstractConceptDeclaration acd : getParents(concept)) {
+      remove(acd, root, false);
     }
   }
 
@@ -120,41 +128,57 @@ public class FastNodeFinder {
     }
   }
 
-  private WeakSet<SNode> getNodes_noInheritance(AbstractConceptDeclaration concept) {
-    WeakSet<SNode> list = myNodesNoInheritance.get(concept);
-    if (list == null) {
-      list = new WeakSet<SNode>(2);
-      myNodesNoInheritance.put(concept, list);
+
+  private void add(AbstractConceptDeclaration acd, SNode node, boolean noInheritance) {
+    Map<AbstractConceptDeclaration, Set<SNode>> map;
+    if (noInheritance) {
+      map = myNodesNoInheritance;
+    } else {
+      map = myNodesAll;
     }
-    return list;
+
+    Set<SNode> set = map.get(acd);
+    if (set == null) {
+      set = new HashSet<SNode>(1);
+      map.put(acd, set);
+    }
+    set.add(node);
   }
 
-  private WeakSet<SNode> getNodes_all(AbstractConceptDeclaration concept) {
-    WeakSet<SNode> list = myNodesAll.get(concept);
-    if (list == null) {
-      list = new WeakSet<SNode>(2);
-      myNodesAll.put(concept, list);
+  private void remove(AbstractConceptDeclaration acd, SNode node, boolean noInheritance) {
+    Map<AbstractConceptDeclaration, Set<SNode>> map;
+    if (noInheritance) {
+      map = myNodesNoInheritance;
+    } else {
+      map = myNodesAll;
     }
-    return list;
+
+    Set<SNode> set = map.get(acd);
+    set.remove(node);
+    if (set.isEmpty()) {
+      map.remove(acd);
+    }
   }
 
   private class MySModelAdapter extends SModelAdapter {
     public void childAdded(SModelChildEvent event) {
-      buildCache(event.getChild(), new HashSet<AbstractConceptDeclaration>());
+      addToCache(event.getChild());
     }
 
     public void childRemoved(SModelChildEvent event) {
+      removeFromCache(event.getChild());
     }
 
     public void rootAdded(SModelRootEvent event) {
-      buildCache(event.getRoot(), new HashSet<AbstractConceptDeclaration>());
+      addToCache(event.getRoot());
     }
 
     public void rootRemoved(SModelRootEvent event) {
+      removeFromCache(event.getRoot());
     }
 
     public void loadingStateChanged(SModelDescriptor model, boolean isLoading) {
-      super.loadingStateChanged(model, isLoading);
+      clear();
     }
   }
 }
