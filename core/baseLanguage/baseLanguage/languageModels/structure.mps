@@ -56,9 +56,6 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1137987266052">
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" />
     </node>
-    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1201184076827">
-      <link role="intfc" targetNodeId="1201183863028" resolveInfo="TypeDerivable" />
-    </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1204053975900">
       <link role="intfc" targetNodeId="1204053956946" resolveInfo="IMethodCall" />
     </node>
@@ -2715,6 +2712,9 @@
       <property name="sourceCardinality" value="1" />
       <property name="role" value="baseMethodDeclaration" />
       <link role="target" targetNodeId="1068580123132" resolveInfo="BaseMethodDeclaration" />
+    </node>
+    <node role="extends" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1212690967447">
+      <link role="intfc" targetNodeId="1201183863028" resolveInfo="TypeDerivable" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204200696010">

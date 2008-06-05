@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
 import java.util.List;
 
-public class BaseMethodCall extends Expression implements TypeDerivable, IMethodCall {
+public class BaseMethodCall extends Expression implements IMethodCall {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.BaseMethodCall";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
