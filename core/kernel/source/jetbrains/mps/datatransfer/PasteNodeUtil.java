@@ -7,6 +7,8 @@ import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 
+import java.util.List;
+
 /**
  * Author: Sergey Dmitriev.
  * Time: Nov 25, 2003 7:27:37 PM
@@ -122,27 +124,34 @@ public class PasteNodeUtil {
     }
     if (reallyPaste) {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-          public void run() {
-            if (linkDeclaration.getMetaClass() == LinkMetaclass.reference) {
-              pasteTarget.setReferent(linkDeclaration.getRole(), pasteNode);
-              return;
-            }
-            if (anchorNode == null) {
+        public void run() {
+          if (linkDeclaration.getMetaClass() == LinkMetaclass.reference) {
+            pasteTarget.setReferent(linkDeclaration.getRole(), pasteNode);
+            return;
+          }
+
+          SNode _anchorNode = anchorNode;
+          if (_anchorNode == null) {
+            // anchorNode is NULL if no children or list is filtered
+            List<SNode> children = pasteTarget.getChildren(linkDeclaration.getRole());
+            if (children.isEmpty()) {
               pasteTarget.setChild(linkDeclaration.getRole(), pasteNode);
               return;
             }
-
-            Cardinality cardinality = linkDeclaration.getSourceCardinality();
-            boolean uniqueChild = (cardinality == Cardinality._0__1 || cardinality == Cardinality._1);
-            boolean deleteOldChild = uniqueChild ||
-              (placeHint == PastePlaceHint.DEFAULT &&
-                anchorNode.getConceptDeclarationAdapter().hasConceptProperty(AbstractConceptDeclaration.CPR_Abstract));
-            pasteTarget.insertChild(anchorNode, linkDeclaration.getRole(), pasteNode, placeHint == PastePlaceHint.BEFORE_ANCHOR);
-            if (deleteOldChild) {
-              anchorNode.delete();
-            }
+            _anchorNode = children.get(0);
           }
-        });
+
+          Cardinality cardinality = linkDeclaration.getSourceCardinality();
+          boolean uniqueChild = (cardinality == Cardinality._0__1 || cardinality == Cardinality._1);
+          boolean deleteOldChild = uniqueChild ||
+            (placeHint == PastePlaceHint.DEFAULT &&
+              _anchorNode.getConceptDeclarationAdapter().hasConceptProperty(AbstractConceptDeclaration.CPR_Abstract));
+          pasteTarget.insertChild(_anchorNode, linkDeclaration.getRole(), pasteNode, placeHint == PastePlaceHint.BEFORE_ANCHOR);
+          if (deleteOldChild) {
+            _anchorNode.delete();
+          }
+        }
+      });
     }
     return true;
   }

@@ -17,6 +17,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="7" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
@@ -360,7 +361,9 @@
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1204929909796">
               <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1204929913250">
-                <link role="concept" targetNodeId="7.1194952169813" resolveInfo="IMemberContainer" />
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1212685367987">
+                  <link role="conceptDeclaration" targetNodeId="7.1194952169813" resolveInfo="IMemberContainer" />
+                </node>
               </node>
             </node>
           </node>
