@@ -213,7 +213,7 @@ public class RuntimeSupport {
       final Runnable oldRunnableWrapper = wrapRunnableWithIf(argument, oldRunnable);
       Runnable newRunnable = new Runnable() {
         public void run() {
-          equationManager.addNewWhenConcreteEntity(NodeWrapper.createWrapperFromNode(argument.myNode, equationManager),
+          equationManager.addNewWhenConcreteEntity(NodeWrapper.createWrapperFromNode(typeOf(argument.myNode), equationManager),
             new WhenConcreteEntity(oldRunnableWrapper, argument.myNodeModel, argument.myNodeId));
         }
       };
@@ -221,7 +221,7 @@ public class RuntimeSupport {
       index++;
     }
     NodeInfo lastInfo = arguments.get(lastindex);
-    equationManager.addNewWhenConcreteEntity(NodeWrapper.createWrapperFromNode(lastInfo.myNode, equationManager),
+    equationManager.addNewWhenConcreteEntity(NodeWrapper.createWrapperFromNode(typeOf(lastInfo.myNode), equationManager),
       new WhenConcreteEntity(wrapRunnableWithIf(lastInfo, current), lastInfo.myNodeModel, lastInfo.myNodeId));
   }
 
