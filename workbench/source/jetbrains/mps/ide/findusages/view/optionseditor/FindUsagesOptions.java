@@ -7,10 +7,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import org.jdom.Element;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.lang.reflect.InvocationTargetException;
 
 public class FindUsagesOptions implements Cloneable {
@@ -19,7 +16,7 @@ public class FindUsagesOptions implements Cloneable {
   private static final String OPTION = "option";
   private static final String CLASS_NAME = "class_name";
 
-  private Map<Class, BaseOptions> myOptions = new HashMap<Class, BaseOptions>();
+  private Map<Class, BaseOptions> myOptions = new LinkedHashMap<Class, BaseOptions>();
 
   public FindUsagesOptions(Element element, MPSProject project) throws CantLoadSomethingException {
     read(element, project);
@@ -39,7 +36,7 @@ public class FindUsagesOptions implements Cloneable {
     return new FindUsagesOptions((BaseOptions[]) optionsCopy.toArray());
   }
 
-  public void setOption(BaseOptions options) {
+  public void setOption(BaseOptions options) {               
     myOptions.put(options.getClass(), options);
   }
 
