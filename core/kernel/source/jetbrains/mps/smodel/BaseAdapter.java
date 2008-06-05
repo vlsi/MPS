@@ -126,28 +126,11 @@ public abstract class BaseAdapter implements INodeAdapter {
 
   @NotNull
   public <E extends INodeAdapter> List<E> getDescendants(final Class<E> cls) {
-
-    if (getNode().getContainingRoot() == null) {
-      return toAdapters(cls, getNode().getDescendants(new Condition<SNode>() {
-        public boolean met(SNode object) {
-          return cls.isInstance(object.getAdapter());
-        }
-      }));
-    }
-
-    // this strategy is very effective when model doesn't contain too many nodes of required type
-    FastNodeFinder finder = getModel().getModelDescriptor().getFastNodeFinder();
-    AbstractConceptDeclaration acd = SModelUtil_new.findConceptDeclaration(cls.getName(), GlobalScope.getInstance());
-    List<E> result = toAdapters(finder.getNodes(acd, true));
-    Iterator<E> it = result.iterator();
-    while (it.hasNext()) {
-      E current = it.next();
-      if (!current.getNode().isDescendantOf(getNode(), false)) {
-        it.remove();
+    return toAdapters(cls, getNode().getDescendants(new Condition<SNode>() {
+      public boolean met(SNode object) {
+        return cls.isInstance(object.getAdapter());
       }
-    }
-
-    return result;
+    }));
   }
 
   @NotNull
