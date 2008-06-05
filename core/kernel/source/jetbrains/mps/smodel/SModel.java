@@ -287,70 +287,110 @@ public class SModel implements Iterable<SNode> {
   void fireDevKitAddedEvent(@NotNull String devkitNamespace) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
-      sModelListener.devkitAdded(new SModelDevKitEvent(this, devkitNamespace));
+      try {
+        sModelListener.devkitAdded(new SModelDevKitEvent(this, devkitNamespace));
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
   void fireDevKitRemovedEvent(@NotNull String devkitNamespace) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
-      sModelListener.devkitRemoved(new SModelDevKitEvent(this, devkitNamespace));
+      try {
+        sModelListener.devkitRemoved(new SModelDevKitEvent(this, devkitNamespace));
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
   void fireLanguageAddedEvent(@NotNull String languageNamespace) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
-      sModelListener.languageAdded(new SModelLanguageEvent(this, languageNamespace));
+      try {
+        sModelListener.languageAdded(new SModelLanguageEvent(this, languageNamespace));
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
   void fireLanguageRemovedEvent(@NotNull String languageNamespace) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
-      sModelListener.languageRemoved(new SModelLanguageEvent(this, languageNamespace));
+      try {
+        sModelListener.languageRemoved(new SModelLanguageEvent(this, languageNamespace));
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
   void fireImportAddedEvent(@NotNull SModelUID modelUID) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
-      sModelListener.importAdded(new SModelImportEvent(this, modelUID));
+      try {
+        sModelListener.importAdded(new SModelImportEvent(this, modelUID));
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
   void fireImportRemovedEvent(@NotNull SModelUID modelUID) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
-      sModelListener.importAdded(new SModelImportEvent(this, modelUID));
+      try {
+        sModelListener.importAdded(new SModelImportEvent(this, modelUID));
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
   void fireRootAddedEvent(@NotNull SNode root) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
-      sModelListener.rootAdded(new SModelRootEvent(this, root, true));
+      try {
+        sModelListener.rootAdded(new SModelRootEvent(this, root, true));
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
   void fireRootRemovedEvent(@NotNull SNode root) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
-      sModelListener.rootRemoved(new SModelRootEvent(this, root, false));
+      try {
+        sModelListener.rootRemoved(new SModelRootEvent(this, root, false));
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
   void fireModelInitialized() {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
-      sModelListener.modelInitialized(getModelDescriptor());
+      try {
+        sModelListener.modelInitialized(getModelDescriptor());
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
   void fireModelReloaded() {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
-      sModelListener.modelReloaded(getModelDescriptor());
+      try {
+        sModelListener.modelReloaded(getModelDescriptor());
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
@@ -362,7 +402,11 @@ public class SModel implements Iterable<SNode> {
                                 boolean isRemoved) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
-      sModelListener.propertyChanged(new SModelPropertyEvent(this, property, node, oldValue, newValue));
+      try {
+        sModelListener.propertyChanged(new SModelPropertyEvent(this, property, node, oldValue, newValue));
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
@@ -372,7 +416,11 @@ public class SModel implements Iterable<SNode> {
                            int childIndex) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
-      sModelListener.childAdded(new SModelChildEvent(this, true, parent, role, childIndex, child));
+      try {
+        sModelListener.childAdded(new SModelChildEvent(this, true, parent, role, childIndex, child));
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
@@ -382,7 +430,11 @@ public class SModel implements Iterable<SNode> {
                              int childIndex) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
-      sModelListener.childRemoved(new SModelChildEvent(this, false, parent, role, childIndex, child));
+      try {
+        sModelListener.childRemoved(new SModelChildEvent(this, false, parent, role, childIndex, child));
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
@@ -392,27 +444,43 @@ public class SModel implements Iterable<SNode> {
                                           int childIndex) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
-      sModelListener.beforeChildRemoved(new SModelChildEvent(this, false, parent, role, childIndex, child));
+      try {
+        sModelListener.beforeChildRemoved(new SModelChildEvent(this, false, parent, role, childIndex, child));
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
   void fireReferenceAddedEvent(@NotNull SReference reference) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
-      sModelListener.referenceAdded(new SModelReferenceEvent(this, reference, true));
+      try {
+        sModelListener.referenceAdded(new SModelReferenceEvent(this, reference, true));
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
   void fireReferenceRemovedEvent(@NotNull SReference reference) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
-      sModelListener.referenceRemoved(new SModelReferenceEvent(this, reference, false));
+      try {
+        sModelListener.referenceRemoved(new SModelReferenceEvent(this, reference, false));
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
   void fireLoadingStateChanged() {
     for (SModelListener sModelListener : copyListeners()) {
-      sModelListener.loadingStateChanged(getModelDescriptor(), isLoading());
+      try {
+        sModelListener.loadingStateChanged(getModelDescriptor(), isLoading());
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
@@ -433,7 +501,11 @@ public class SModel implements Iterable<SNode> {
   void fireModelSaved() {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
-      sModelListener.modelSaved(getModelDescriptor());
+      try {
+        sModelListener.modelSaved(getModelDescriptor());
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
