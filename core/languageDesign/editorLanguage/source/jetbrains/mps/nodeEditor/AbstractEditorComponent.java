@@ -2396,6 +2396,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     public boolean isCutEnabled(DataContext dataContext) {
       return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
         public Boolean compute() {
+          if (getEditorContext() == null) return false;
           return myCutAction.canExecute(getEditorContext());
         }
       });
@@ -2416,6 +2417,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     public boolean isCopyEnabled(DataContext dataContext) {
       return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
         public Boolean compute() {
+          if (getEditorContext() == null) return false;
           return myCopyAction.canExecute(getEditorContext());
         }
       });
@@ -2436,6 +2438,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     public boolean isPastePossible(DataContext dataContext) {
       return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
         public Boolean compute() {
+          if (getEditorContext() == null) return false;
           return myPasteAction.canExecute(getEditorContext());
         }
       });
