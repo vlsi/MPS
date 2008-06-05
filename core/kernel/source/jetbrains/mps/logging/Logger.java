@@ -231,7 +231,7 @@ public class Logger {
 
   public void checkEDT() {
     if (!ThreadUtils.isEventDispatchThread()) {
-      throw new IllegalStateException("Can't use this in EDT");
+      throw new IllegalStateException("Can't use this outside of EDT");
     }
   }
 }
