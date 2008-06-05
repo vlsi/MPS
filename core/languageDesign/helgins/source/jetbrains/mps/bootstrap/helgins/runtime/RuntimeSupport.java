@@ -4,6 +4,7 @@ import jetbrains.mps.helgins.inference.*;
 import jetbrains.mps.helgins.inference.EquationInfo;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.patterns.IMatchingPattern;
+import jetbrains.mps.patterns.util.MatchingUtil;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 
 import java.util.Map;
@@ -209,10 +210,25 @@ public class RuntimeSupport {
     for (final NodeInfo argument : arguments) {
       if (index == lastindex) break;
       final Runnable oldRunnable = current;
+      final Runnable oldRunnableWrapper = new Runnable() {
+        public void run() {
+          SNode nodeType = typeOf(argument.myNode);
+          SNode restriction = argument.myType;
+          if (argument.myEquals) {
+            if (MatchingUtil.matchNodes(nodeType, restriction)) {
+              oldRunnable.run();
+            }
+          } else {
+            if (myTypeChecker.getSubtypingManager().isSubtype(nodeType, restriction)) {
+              oldRunnable.run();
+            }
+          }
+        }
+      };
       Runnable newRunnable = new Runnable() {
         public void run() {
           equationManager.addNewWhenConcreteEntity(NodeWrapper.createWrapperFromNode(argument.myNode, equationManager),
-            new WhenConcreteEntity(oldRunnable, argument.myNodeModel, argument.myNodeId));
+            new WhenConcreteEntity(oldRunnableWrapper, argument.myNodeModel, argument.myNodeId));
         }
       };
       current = newRunnable;
