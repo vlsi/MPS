@@ -45,7 +45,6 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", new BaseMethodDeclaration_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.ArrayLengthExpression", new ArrayLengthExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.StaticMethodCall", new StaticMethodCall_DataFlow());
-    manager.register("jetbrains.mps.baseLanguage.structure.BaseMethodCall", new BaseMethodCall_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.ConceptFunction", new ConceptFunction_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.NotExpression", new NotExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.InstanceMethodCall", new InstanceMethodCall_DataFlow());
