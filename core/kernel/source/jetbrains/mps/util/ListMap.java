@@ -3,53 +3,67 @@ package jetbrains.mps.util;
 import java.util.*;
 
 public class ListMap<K, V> extends AbstractMap<K, V> {
-  private List<MyEntry<K, V>> myEntries;
+  private MyEntry<K, V>[] myEntries;
 
   public ListMap() {
-    this(1);
   }
 
-  public ListMap(int initialSize) {
-    myEntries = new ArrayList<MyEntry<K, V>>(initialSize);
+  private List<MyEntry<K, V>> _entries() {
+    return (List<MyEntry<K, V>>) (List) new ArrayWrapper<MyEntry>(MyEntry.class) {
+      protected MyEntry[] getArray() {
+        if (myEntries == null) {
+          return MyEntry.EMPTY_ARRAY;
+        }
+        return myEntries;
+      }
+
+      protected void setArray(MyEntry[] newArray) {
+        myEntries = newArray;
+      }
+    };
   }
 
   public V put(K key, V value) {
-    for (MyEntry<K, V> e : myEntries) {
-      if (key.equals(e.getKey())) {
-        V oldValue = e.getValue();
-        e.setValue(value);
-        return oldValue;
+    if (myEntries != null) {
+      for (MyEntry<K, V> e : myEntries) {
+        if (key.equals(e.myKey)) {
+          V oldValue = e.myValue;
+          e.myValue = value;
+          return oldValue;
+        }
       }
     }
-    myEntries.add(new MyEntry<K, V>(key, value));
+    _entries().add(new MyEntry<K, V>(key, value));
     return null;
   }
 
   public Set<Entry<K, V>> entrySet() {
     return new AbstractSet<Entry<K, V>>() {
       public Iterator<Entry<K, V>> iterator() {
-        return (Iterator<Entry<K,V>>) (Iterator) myEntries.iterator();
+        return (Iterator<Entry<K,V>>) (Iterator) _entries().iterator();
       }
 
       public int size() {
-        return myEntries.size();
+        return myEntries == null ? 0 : myEntries.length;
       }
     };
   }
 
 
   public V get(Object key) {
-    int size = myEntries.size();
-    for (int i = 0; i < size; i++) {
-      MyEntry<K, V> entry = myEntries.get(i);
-      if (entry.getKey().equals(key)) {
-        return entry.getValue();
+    if (myEntries == null) return null;
+
+    for (MyEntry<K, V> e : myEntries) {
+      if (e.myKey.equals(key)) {
+        return e.myValue;
       }
     }
     return null;
   }
 
   private static class MyEntry<K, V> implements Entry<K, V> {
+    private static MyEntry[] EMPTY_ARRAY = new MyEntry[0];
+
     private K myKey;
     private V myValue;
 

@@ -154,8 +154,10 @@ public final class SNode {
       assert role != null;
       return role;
     }
-    for (SReference reference : _references()) {
-      if (reference.getTargetNode() == node) return reference.getRole();
+    if (myReferences != null) {
+      for (SReference reference : myReferences) {
+        if (reference.getTargetNode() == node) return reference.getRole();
+      }
     }
 
     return "<no role>";
@@ -214,8 +216,10 @@ public final class SNode {
 
     fireNodeReadAccess();
     Set<String> result = new HashSet<String>();
-    for (SReference ref : _references()) {
-      result.add(ref.getRole());
+    if (myReferences != null) {
+      for (SReference ref : myReferences) {
+        result.add(ref.getRole());
+      }
     }
     result.addAll(getLinkNamesFromAttributes());
     return result;
@@ -304,7 +308,7 @@ public final class SNode {
     ModelAccess.assertLegalRead(this);
 
     if (myUserObjects == null) {
-      myUserObjects = new ListMap<Object, Object>(2);
+      myUserObjects = new ListMap<Object, Object>();
     }
     myUserObjects.put(key, value);
   }
