@@ -283,9 +283,8 @@ __switch__:
       SNode originalExpression = ExpectedType_FactoryUtil.getOriginalExpression(_context.getEnclosingNode(), _context.getSampleNode());
       if ((originalExpression != null)) {
         SNode expectedType = ExpectedType_FactoryUtil.createExpectedType(originalExpression);
-        SNode abstractCreator = null;
         if ((expectedType != null)) {
-          abstractCreator = Type_Behavior.call_getAbstractCreator_1187945523562(expectedType);
+          SNode abstractCreator = Type_Behavior.call_getAbstractCreator_1187945523562(expectedType);
           if ((abstractCreator != null)) {
             SLinkOperations.setTarget(_context.getNewNode(), "creator", abstractCreator, true);
           }

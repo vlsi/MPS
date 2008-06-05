@@ -30,6 +30,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="44" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="4" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -716,29 +717,21 @@
                       </node>
                     </node>
                   </node>
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1187945368906">
-                    <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1187945368907">
-                      <property name="name" value="abstractCreator" />
-                      <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1187945368908">
-                        <link role="concept" targetNodeId="1.1145552809883" />
-                      </node>
-                      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1187945387112" />
-                    </node>
-                  </node>
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1187945390524">
                     <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1187945390525">
-                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1187945410679">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1187945412128">
-                          <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977962861">
-                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1187945458524">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1187945368906">
+                        <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1187945368907">
+                          <property name="name" value="abstractCreator" />
+                          <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1187945368908">
+                            <link role="concept" targetNodeId="1.1145552809883" />
+                          </node>
+                          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212701827466">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1212701827467">
                               <link role="variableDeclaration" targetNodeId="1187945256421" resolveInfo="expectedType" />
                             </node>
-                            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1187945621586">
-                              <link role="conceptMethodDeclaration" targetNodeId="35.1187945523562" />
+                            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1212701827468">
+                              <link role="conceptMethodDeclaration" targetNodeId="35.1187945523562" resolveInfo="getAbstractCreator" />
                             </node>
-                          </node>
-                          <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1187945410680">
-                            <link role="variableDeclaration" targetNodeId="1187945368907" resolveInfo="abstractCreator" />
                           </node>
                         </node>
                       </node>
