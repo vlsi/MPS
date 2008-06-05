@@ -210,21 +210,7 @@ public class RuntimeSupport {
     for (final NodeInfo argument : arguments) {
       if (index == lastindex) break;
       final Runnable oldRunnable = current;
-      final Runnable oldRunnableWrapper = new Runnable() {
-        public void run() {
-          SNode nodeType = typeOf(argument.myNode);
-          SNode restriction = argument.myType;
-          if (argument.myEquals) {
-            if (MatchingUtil.matchNodes(nodeType, restriction)) {
-              oldRunnable.run();
-            }
-          } else {
-            if (myTypeChecker.getSubtypingManager().isSubtype(nodeType, restriction)) {
-              oldRunnable.run();
-            }
-          }
-        }
-      };
+      final Runnable oldRunnableWrapper = wrapRunnableWithIf(argument, oldRunnable);
       Runnable newRunnable = new Runnable() {
         public void run() {
           equationManager.addNewWhenConcreteEntity(NodeWrapper.createWrapperFromNode(argument.myNode, equationManager),
@@ -236,7 +222,25 @@ public class RuntimeSupport {
     }
     NodeInfo lastInfo = arguments.get(lastindex);
     equationManager.addNewWhenConcreteEntity(NodeWrapper.createWrapperFromNode(lastInfo.myNode, equationManager),
-      new WhenConcreteEntity(current, lastInfo.myNodeModel, lastInfo.myNodeId));
+      new WhenConcreteEntity(wrapRunnableWithIf(lastInfo, current), lastInfo.myNodeModel, lastInfo.myNodeId));
+  }
+
+  private Runnable wrapRunnableWithIf(final NodeInfo argument, final Runnable oldRunnable) {
+    return new Runnable() {
+      public void run() {
+        SNode nodeType = typeOf(argument.myNode);
+        SNode restriction = argument.myType;
+        if (argument.myEquals) {
+          if (MatchingUtil.matchNodes(nodeType, restriction)) {
+            oldRunnable.run();
+          }
+        } else {
+          if (myTypeChecker.getSubtypingManager().isSubtype(nodeType, restriction)) {
+            oldRunnable.run();
+          }
+        }
+      }
+    };
   }
 
   public SNode coerce(SNode subtype, IMatchingPattern pattern, boolean isWeak) {
