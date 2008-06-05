@@ -69,6 +69,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="134" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="java.util@java_stub" version="-1" />
@@ -499,17 +500,6 @@
           <link role="constructorDeclaration" targetNodeId="1212603958991" resolveInfo="C1" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1212603948272">
             <property name="value" value="10" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212604179984">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212604179985">
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1212604179986">
-              <link role="baseMethodDeclaration" targetNodeId="1212604148552" resolveInfo="a" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1212604182644">
-                <property name="value" value="10" />
-              </node>
-            </node>
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1212604179987" />
           </node>
         </node>
       </node>
