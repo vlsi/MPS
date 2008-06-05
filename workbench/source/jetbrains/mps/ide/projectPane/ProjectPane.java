@@ -17,10 +17,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.ide.IProjectPane;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.MPSToolBar;
-import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.*;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.IActionDataProvider;
 import jetbrains.mps.ide.actions.*;
@@ -305,7 +302,8 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
     if (!(selectionPath.getLastPathComponent() instanceof SNodeTreeNode)) return;
     SNodeTreeNode selectedTreeNode = (SNodeTreeNode) selectionPath.getLastPathComponent();
 
-    getMPSProject().getComponentSafe(MPSEditorOpener.class).openNode(selectedTreeNode.getSNode(), selectedTreeNode.getOperationContext());
+    IEditor editor = getMPSProject().getComponentSafe(MPSEditorOpener.class).openNode(selectedTreeNode.getSNode(), selectedTreeNode.getOperationContext());
+    editor.requestFocus();
   }
 
   @Nullable
@@ -359,11 +357,13 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
   }
 
   public void selectNode(final SNode node, final IOperationContext context) {
+    LOG.checkEDT();
+
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         getTree().runWithoutExpansion(new Runnable() {
           public void run() {
-            openToolLater(true);
+            openTool(true);
 
             IModule module = context.getModule();
             if (module == null) {
