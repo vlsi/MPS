@@ -4,7 +4,6 @@
     <modelRoot path="${solution_descriptor}\" namespacePrefix="" />
   </models>
   <classPath>
-    <entry path="${mps_home}\platform\ypath\classes" />
     <entry path="${mps_home}\platform\ypath\solutions\classes" />
   </classPath>
   <sourcePath />
