@@ -144,7 +144,8 @@ public abstract class BaseTool {
   @Nullable
   public ToolWindow getToolWindow() {
     LOG.checkEDT();
-
+    
+    if (myProject.isDisposed()) return null;
     return ToolWindowManager.getInstance(myProject).getToolWindow(myId);
   }
 
