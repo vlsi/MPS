@@ -240,13 +240,17 @@ public class RuntimeSupport {
 
   public static class NodeInfo {
     private SNode myNode;
+    private SNode myType;
+    private boolean myEquals;
     private String myNodeModel;
     private String myNodeId;
 
-    public NodeInfo(SNode node, String nodeModel, String nodeId) {
+    public NodeInfo(SNode node, String nodeModel, String nodeId, SNode type, boolean equals) {
       myNode = node;
       myNodeModel = nodeModel;
       myNodeId = nodeId;
+      myType = type;
+      myEquals = equals;
     }
 
   }
