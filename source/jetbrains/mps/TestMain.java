@@ -272,6 +272,14 @@ public class TestMain {
   }
 
   private static void allowToCreateASnapshot() {
+
+    try {
+      System.out.println("take a snapshot!!!!");
+      Thread.sleep(30000);
+
+    } catch (Throwable t) {
+      t.printStackTrace();
+    }
   }
 
   private static void gc() {

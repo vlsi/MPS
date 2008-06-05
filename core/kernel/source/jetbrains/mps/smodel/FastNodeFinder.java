@@ -19,7 +19,6 @@ import jetbrains.mps.util.WeakSet;
 
 public class FastNodeFinder {
   private SModelDescriptor myModelDescriptor;
-  private long myStructuralState;
   private boolean myInitialized;
   private SModelAdapter myListener = new MySModelAdapter();
 
@@ -32,7 +31,6 @@ public class FastNodeFinder {
   }
 
   private void initCache() {
-    myStructuralState = myModelDescriptor.structuralState();
     boolean wasLoading = myModelDescriptor.getSModel().setLoading(true); // don't fire events while building the cache
     try {
       for (SNode root : myModelDescriptor.getSModel().getRoots()) {
@@ -42,10 +40,6 @@ public class FastNodeFinder {
       myModelDescriptor.getSModel().setLoading(wasLoading);
       myInitialized = true;
     }
-  }
-
-  public long getStructuralState() {
-    return myStructuralState;
   }
 
   public List<SNode> getNodes(AbstractConceptDeclaration concept, boolean includeInherited) {
@@ -154,6 +148,10 @@ public class FastNodeFinder {
     }
 
     public void rootRemoved(SModelRootEvent event) {
+    }
+
+    public void loadingStateChanged(SModelDescriptor model, boolean isLoading) {
+      super.loadingStateChanged(model, isLoading);
     }
   }
 }
