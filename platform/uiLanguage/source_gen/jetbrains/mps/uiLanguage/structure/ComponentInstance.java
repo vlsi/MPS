@@ -4,11 +4,10 @@ package jetbrains.mps.uiLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
-import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.SNode;
-
+import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
 import java.util.List;
 
@@ -26,7 +25,7 @@ public class ComponentInstance extends BaseConcept implements IComponentPart, IC
   }
 
   public static ComponentInstance newInstance(SModel sm, boolean init) {
-    return (ComponentInstance) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ComponentInstance", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ComponentInstance)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ComponentInstance", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ComponentInstance newInstance(SModel sm) {
@@ -67,7 +66,7 @@ public class ComponentInstance extends BaseConcept implements IComponentPart, IC
   }
 
   public ComponentDeclaration getComponentDeclaration() {
-    return (ComponentDeclaration) this.getReferent(ComponentInstance.COMPONENT_DECLARATION);
+    return (ComponentDeclaration)this.getReferent(ComponentInstance.COMPONENT_DECLARATION);
   }
 
   public void setComponentDeclaration(ComponentDeclaration node) {
