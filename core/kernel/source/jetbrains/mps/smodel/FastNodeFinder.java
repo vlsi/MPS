@@ -81,12 +81,15 @@ public class FastNodeFinder {
     AbstractConceptDeclaration concept = root.getConceptDeclarationAdapter();
     getNodes_noInheritance(concept).add(root);
 
-    result.clear();
-    collectParents(concept, result);
-
-    for (AbstractConceptDeclaration acd : result) {
+    for (AbstractConceptDeclaration acd : getParents(concept)) {
       getNodes_all(acd).add(root);
     }
+  }
+
+  private Set<AbstractConceptDeclaration> getParents(AbstractConceptDeclaration current) {
+    Set<AbstractConceptDeclaration> result = new HashSet<AbstractConceptDeclaration>();
+    collectParents(current, result);
+    return result;
   }
 
   private void collectParents(final AbstractConceptDeclaration current, final Set<AbstractConceptDeclaration> result) {
