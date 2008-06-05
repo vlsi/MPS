@@ -36,14 +36,6 @@ public class FastNodeFinder {
     myInitialized = true;
   }
 
-  private void clear() {
-    synchronized (myLock) {
-      myInitialized = false;
-      myNodesAll.clear();
-      myNodesNoInheritance.clear();
-    }
-  }
-
   public List<SNode> getNodes(AbstractConceptDeclaration concept, boolean includeInherited) {
     synchronized (myLock) {
       if (!myInitialized) {
@@ -215,7 +207,12 @@ public class FastNodeFinder {
     }
 
     public void loadingStateChanged(SModelDescriptor model, boolean isLoading) {
-      clear();
+
+      synchronized (myLock) {
+        myInitialized = false;
+        myNodesAll.clear();
+        myNodesNoInheritance.clear();
+      }
     }
   }
 }
