@@ -9,6 +9,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptRefer
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 
 
 public class FastNodeFinder {
@@ -32,6 +33,7 @@ public class FastNodeFinder {
     for (SNode root : myModelDescriptor.getSModel().getRoots()) {
       addToCache(root);
     }
+    myInitialized = true;
   }
 
   private void clear() {
@@ -76,29 +78,43 @@ public class FastNodeFinder {
   }
 
   private void addToCache(final SNode root) {
-    for (SNode child : root.getChildren()) {
-      addToCache(child);
-    }
+    boolean wereBlocked = NodeReadAccessCaster.areEventsBlocked();
+    try {
+      NodeReadAccessCaster.blockEvents();
 
-    AbstractConceptDeclaration concept = root.getConceptDeclarationAdapter();
+      for (SNode child : root.getChildren()) {
+        addToCache(child);
+      }
 
-    add(concept, root, true);
+      AbstractConceptDeclaration concept = root.getConceptDeclarationAdapter();
 
-    for (AbstractConceptDeclaration acd : getParents(concept)) {
-      add(acd, root, false);
+      add(concept, root, true);
+
+      for (AbstractConceptDeclaration acd : getParents(concept)) {
+        add(acd, root, false);
+      }
+    } finally {
+      NodeReadAccessCaster.setEventsBlocked(wereBlocked);
     }
   }
 
   private void removeFromCache(final SNode root) {
-    for (SNode child : root.getChildren()) {
-      removeFromCache(child);
-    }
+    boolean wereBlocked = NodeReadAccessCaster.areEventsBlocked();
+    try {
+      NodeReadAccessCaster.blockEvents();
 
-    AbstractConceptDeclaration concept = root.getConceptDeclarationAdapter();
-    remove(concept, root, true);
+      for (SNode child : root.getChildren()) {
+        removeFromCache(child);
+      }
 
-    for (AbstractConceptDeclaration acd : getParents(concept)) {
-      remove(acd, root, false);
+      AbstractConceptDeclaration concept = root.getConceptDeclarationAdapter();
+      remove(concept, root, true);
+
+      for (AbstractConceptDeclaration acd : getParents(concept)) {
+        remove(acd, root, false);
+      }
+    } finally {
+      NodeReadAccessCaster.setEventsBlocked(wereBlocked);
     }
   }
 

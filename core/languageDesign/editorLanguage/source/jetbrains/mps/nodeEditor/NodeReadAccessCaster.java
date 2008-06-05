@@ -125,6 +125,13 @@ public class NodeReadAccessCaster {
     }
   }
 
+  public static boolean areEventsBlocked() {
+    return ourEventsBlocked;
+  }
+
+  public static void setEventsBlocked(boolean blocked) {
+    ourEventsBlocked = blocked;
+  }
 
   public static void blockEvents() {
     ourEventsBlocked = true;
