@@ -851,6 +851,18 @@ public final class SNode {
     return getChildren(true);
   }
 
+  /**
+   * Array iteration with foreach is much faster than List iteration so use array in bottlenecks
+   */
+  public SNode[] getChildrenArray() {
+    if (myChildren == null) {
+      return SNode.EMPTY_ARRAY;
+    }
+    SNode[] nodes = new SNode[myChildren.length];
+    System.arraycopy(myChildren, 0, nodes, 0, myChildren.length);
+    return nodes;
+  }
+
   @NotNull
   public List<SNode> getChildren(boolean includeAttributes) {
     ModelAccess.assertLegalRead(this);
@@ -887,8 +899,7 @@ public final class SNode {
     return myChildren.length;
   }
 
-  @NotNull
-  public List<SNode> getChildren(@NotNull String role) {
+  public List<SNode> getChildren(String role) {
     ModelAccess.assertLegalRead(this);
     if (ourMemberAccessModifier != null) {
       role = ourMemberAccessModifier.getNewChildRole(myModel, myConceptFqName, role);
@@ -903,6 +914,14 @@ public final class SNode {
       }
     }
     return result;
+  }
+
+  /**
+   * Array iteration with foreach is much faster than List iteration so use array in bottlenecks
+   */
+  public SNode[] getChildrenArray(String role) {
+    List<SNode> children = getChildren(role);
+    return children.toArray(new SNode[children.size()]);
   }
 
   @Nullable

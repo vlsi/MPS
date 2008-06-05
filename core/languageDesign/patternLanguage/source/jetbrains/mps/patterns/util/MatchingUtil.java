@@ -77,7 +77,7 @@ public class MatchingUtil {
         continue;
       }
       Iterator<SNode> childrenIterator = children1.iterator();
-      for (SNode child2 : children2) {
+      for (SNode child2 : children2.toArray(new SNode[children2.size()])) {
         SNode child1 = childrenIterator.hasNext() ? childrenIterator.next() : null;
         if (matchModifier.accept(child1, child2)) {
           matchModifier.performAction(child1, child2);

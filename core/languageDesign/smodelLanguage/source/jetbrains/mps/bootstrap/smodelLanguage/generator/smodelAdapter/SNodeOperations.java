@@ -181,8 +181,7 @@ public class SNodeOperations {
   }
 
   private static void _populateListOfDescendants(List<SNode> list, SNode node, Condition<SNode> condition) {
-    List<SNode> nodes = node.getChildren();
-    for (SNode child : nodes) {
+    for (SNode child : node.getChildrenArray()) {
       if (condition.met(child)) {
         list.add(child);
       }

@@ -409,7 +409,7 @@ public abstract class BaseAdapter implements INodeAdapter {
 
   public static <T extends INodeAdapter> List<T> toAdapters(List<? extends SNode> list) {
     List<T> result = new ArrayList<T>();
-    for (SNode node : list) {
+    for (SNode node : list.toArray(new SNode[list.size()])) {
       result.add((T) node.getAdapter());
     }
     return result;

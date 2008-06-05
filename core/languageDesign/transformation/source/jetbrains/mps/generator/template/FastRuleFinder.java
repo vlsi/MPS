@@ -123,7 +123,7 @@ public class FastRuleFinder {
       return null;
     }
 
-    for (Reduction_MappingRule rule : allRules) {
+    for (Reduction_MappingRule rule : allRules.toArray(new Reduction_MappingRule[allRules.size()])) {
       if (!isDisabledReductionForNode(node, rule)) {
         if (GeneratorUtil.checkCondition(rule.getConditionFunction(), false, node, rule.getNode(), myGenerator)) {
           registerReduction(node, rule);

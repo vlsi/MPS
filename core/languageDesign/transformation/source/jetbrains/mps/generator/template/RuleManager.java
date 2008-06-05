@@ -129,7 +129,7 @@ public class RuleManager {
         SNode parent = clonedOutputNode.getParent();
         String childRole = parent.getRoleOf(clonedOutputNode);
         // check new children
-        for (SNode outputNode : outputNodes) {
+        for (SNode outputNode : outputNodes.toArray(new SNode[outputNodes.size()])) {
           if (!GeneratorUtil.checkChild(parent, childRole, outputNode)) {
             LOG.warning(" -- was input: " + inputNode.getDebugText(), inputNode);
           }
