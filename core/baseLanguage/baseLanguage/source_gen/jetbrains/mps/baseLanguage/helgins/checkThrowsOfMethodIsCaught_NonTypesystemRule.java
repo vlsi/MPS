@@ -15,20 +15,20 @@ public class checkThrowsOfMethodIsCaught_NonTypesystemRule implements NonTypesys
   public checkThrowsOfMethodIsCaught_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode baseMethodCall) {
-    if ((SNodeOperations.getAncestor(baseMethodCall, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false) == null)) {
+  public void applyRule(final SNode methodCall) {
+    if ((SNodeOperations.getAncestor(methodCall, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false) == null)) {
       return;
     }
-    SNode mainBaseMethodDeclaration = SLinkOperations.getTarget(baseMethodCall, "baseMethodDeclaration", false);
-    if ((mainBaseMethodDeclaration == null)) {
+    SNode method = SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false);
+    if ((method == null)) {
       return;
     }
-    Set<SNode> throwables = new HashSet<SNode>(SLinkOperations.getTargets(mainBaseMethodDeclaration, "throwsItem", true));
-    RulesFunctions_BaseLanguage.check(throwables, baseMethodCall);
+    Set<SNode> throwables = new HashSet<SNode>(SLinkOperations.getTargets(method, "throwsItem", true));
+    RulesFunctions_BaseLanguage.check(throwables, methodCall);
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.baseLanguage.structure.BaseMethodCall";
+    return "jetbrains.mps.baseLanguage.structure.IMethodCall";
   }
 
   public boolean isApplicable(SNode argument) {
