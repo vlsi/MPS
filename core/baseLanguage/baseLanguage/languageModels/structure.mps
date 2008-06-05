@@ -88,7 +88,7 @@
     <property name="name" value="ClassConcept" />
     <property name="iconPath" value="${language_descriptor}\icons\class.png" />
     <property name="rootable" value="true" />
-    <property name="package" value="classConcept" />
+    <property name="package" value="classifier" />
     <link role="extends" targetNodeId="1107461130800" resolveInfo="Classifier" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1107215907103">
       <property name="value" value="class" />
@@ -724,6 +724,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1070475587102">
     <property name="name" value="SuperConstructorInvocation" />
+    <property name="package" value="classifier" />
     <link role="extends" targetNodeId="1068580123157" resolveInfo="Statement" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1107217765937">
       <property name="value" value="super" />
@@ -1331,6 +1332,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1107461130800">
     <property name="name" value="Classifier" />
+    <property name="package" value="classifier" />
     <link role="extends" targetNodeId="1109279851642" resolveInfo="GenericDeclaration" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1211504562189">
       <property name="name" value="nestedName" />
@@ -1398,6 +1400,7 @@
     <property name="name" value="Interface" />
     <property name="iconPath" value="${language_descriptor}\icons\interface.png" />
     <property name="rootable" value="true" />
+    <property name="package" value="classifier" />
     <link role="extends" targetNodeId="1107461130800" resolveInfo="Classifier" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1107798030877">
       <property name="value" value="interface" />
@@ -1504,6 +1507,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1116615150612">
     <property name="name" value="ClassifierClassExpression" />
+    <property name="package" value="classifier" />
     <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1137986169635">
       <property name="value" value="&lt;{classifier}&gt;.class" />
@@ -2033,7 +2037,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1170345865475">
     <property name="name" value="AnonymousClass" />
     <property name="rootable" value="false" />
-    <property name="package" value="classConcept" />
+    <property name="package" value="classifier" />
     <link role="extends" targetNodeId="1068390468198" resolveInfo="ClassConcept" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1174396595294">
       <property name="value" value="new..." />
@@ -2063,6 +2067,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1170346941296">
     <property name="name" value="AnonymousClassExpression" />
+    <property name="package" value="classifier.deprecated" />
     <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1182161702962">
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" />
@@ -2244,6 +2249,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1178285077437">
     <property name="name" value="ClassifierMember" />
+    <property name="package" value="classifier" />
     <node role="extends" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1178549989306">
       <link role="intfc" targetNodeId="1178549954367" resolveInfo="Visible" />
     </node>
@@ -2259,6 +2265,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1178893518978">
     <property name="name" value="ThisConstructorInvocation" />
+    <property name="package" value="classifier" />
     <link role="extends" targetNodeId="1068580123157" resolveInfo="Statement" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1178893868075">
       <property name="value" value="this" />
@@ -2306,6 +2313,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1182160077978">
     <property name="name" value="AnonymousClassCreator" />
+    <property name="package" value="classifier" />
     <link role="extends" targetNodeId="1145552809883" resolveInfo="AbstractCreator" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1182160111638">
       <property name="value" value="anonymous class" />
@@ -2711,6 +2719,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204200696010">
     <property name="name" value="NullType" />
+    <property name="package" value="type" />
     <link role="extends" targetNodeId="1164118113764" resolveInfo="PrimitiveType" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1204200727982">
       <property name="value" value="nulltype" />
@@ -2743,7 +2752,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1206629501431">
     <property name="name" value="InstanceInitializer" />
-    <property name="package" value="classConcept" />
+    <property name="package" value="classifier" />
     <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1206629521979">
       <property name="metaClass" value="aggregation" />

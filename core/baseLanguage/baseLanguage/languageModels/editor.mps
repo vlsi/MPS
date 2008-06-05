@@ -41,6 +41,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="73" />
   <import index="17" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="18" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -87,7 +88,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1074794490343">
     <property name="name" value="ClassConcept_Editor" />
-    <property name="package" value="classConcept" />
+    <property name="package" value="classifier" />
     <link role="conceptDeclaration" targetNodeId="17.1068390468198" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1074794490344">
       <property name="name" value="classBox" />
@@ -3052,6 +3053,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1081790432906">
     <property name="name" value="SuperConstructorInvocation_Editor" />
+    <property name="package" value="classifier" />
     <link role="conceptDeclaration" targetNodeId="17.1070475587102" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1085059533049">
       <property name="vertical" value="false" />
@@ -4073,6 +4075,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1107796847143">
     <property name="name" value="Interface_Editor" />
+    <property name="package" value="classifier" />
     <link role="conceptDeclaration" targetNodeId="17.1107796713796" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1107796852505">
       <property name="name" value="classBox" />
@@ -4326,6 +4329,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1116615249130">
+    <property name="package" value="classifier" />
     <link role="conceptDeclaration" targetNodeId="17.1116615150612" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1116615268507">
       <property name="vertical" value="false" />
@@ -7505,7 +7509,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1170345896430">
-    <property name="package" value="classConcept" />
+    <property name="package" value="classifier" />
     <link role="conceptDeclaration" targetNodeId="17.1170345865475" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1170345921993">
       <property name="name" value="classBox" />
@@ -7856,6 +7860,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1170346961658">
+    <property name="package" value="classifier.deprecated" />
     <link role="conceptDeclaration" targetNodeId="17.1170346941296" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1170346963692">
       <property name="drawBorder" value="false" />
@@ -8694,6 +8699,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1178893548885">
+    <property name="package" value="classifier" />
     <link role="conceptDeclaration" targetNodeId="17.1178893518978" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1178893550245">
       <property name="vertical" value="false" />
@@ -9400,6 +9406,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1182160159358">
+    <property name="package" value="classifier" />
     <link role="conceptDeclaration" targetNodeId="17.1182160077978" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1182160175804">
       <property name="vertical" value="false" />
@@ -14633,7 +14640,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1206629914988">
-    <property name="package" value="classConcept" />
+    <property name="package" value="classifier" />
     <link role="conceptDeclaration" targetNodeId="17.1206629501431" resolveInfo="InstanceInitializer" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Alternation" id="1208705181506">
       <property name="vertical" value="true" />

@@ -56,6 +56,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="48" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -1380,6 +1381,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178181704931">
+    <property name="package" value="classifier" />
     <link role="concept" targetNodeId="1.1107461130800" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1210616725718">
       <property name="name" value="getVisibleMembers" />
@@ -1943,7 +1945,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178181704973">
-    <property name="package" value="classConcept" />
+    <property name="package" value="classifier" />
     <link role="concept" targetNodeId="1.1170345865475" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178181704974">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178181704975" />
@@ -3675,6 +3677,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178551970215">
+    <property name="package" value="classifier" />
     <link role="concept" targetNodeId="1.1116615150612" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178551970216">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178551970217" />
@@ -3814,7 +3817,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178610164825">
-    <property name="package" value="classConcept" />
+    <property name="package" value="classifier" />
     <link role="concept" targetNodeId="1.1068390468198" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1194954280187">
       <property name="name" value="getMembers" />
@@ -5783,6 +5786,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1188505359202">
+    <property name="package" value="classifier" />
     <link role="concept" targetNodeId="1.1107796713796" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1188505359203">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1188505359204" />
@@ -8989,6 +8993,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1212607395549">
+    <property name="package" value="classifier" />
     <link role="concept" targetNodeId="1.1178285077437" resolveInfo="ClassifierMember" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1212607395550">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212607395551" />
@@ -9200,6 +9205,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1212621446303">
+    <property name="package" value="classifier" />
     <link role="concept" targetNodeId="1.1178893518978" resolveInfo="ThisConstructorInvocation" />
     <node role="references" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1212621451391">
       <link role="applicableLink" targetNodeId="1.1178893537034" />
@@ -9248,6 +9254,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1212621678252">
+    <property name="package" value="classifier" />
     <link role="concept" targetNodeId="1.1070475587102" resolveInfo="SuperConstructorInvocation" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1212621678253">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212621678254" />
