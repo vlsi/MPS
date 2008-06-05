@@ -8,9 +8,14 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDecla
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
+import jetbrains.mps.logging.Logger;
 
 
 public class FastNodeFinder {
+  private static Logger LOG = Logger.getLogger(FastNodeFinder.class);
+
+  private final Object myLock = new Object();
+
   private SModelDescriptor myModelDescriptor;
   private boolean myInitialized;
   private SModelAdapter myListener = new MySModelAdapter();
@@ -27,44 +32,47 @@ public class FastNodeFinder {
     for (SNode root : myModelDescriptor.getSModel().getRoots()) {
       addToCache(root);
     }
-    myInitialized = true;
   }
 
   private void clear() {
-    myInitialized = false;
-    myNodesAll.clear();
-    myNodesNoInheritance.clear();
+    synchronized (myLock) {
+      myInitialized = false;
+      myNodesAll.clear();
+      myNodesNoInheritance.clear();
+    }
   }
 
   public List<SNode> getNodes(AbstractConceptDeclaration concept, boolean includeInherited) {
-    if (!myInitialized) {
-      initCache();
-    }
-
-    Map<AbstractConceptDeclaration, Set<SNode>> map = myNodesNoInheritance;
-    if (includeInherited) {
-      map = myNodesAll;
-    }
-
-    if (map.containsKey(concept)) {
-      final List<SNode> result = new ArrayList<SNode>();
-      for (SNode n : map.get(concept)) {
-        SNode node = n;
-        if (node != null) {
-          result.add(node);
-        }
+    synchronized (myLock) {
+      if (!myInitialized) {
+        initCache();
       }
 
-      Collections.sort(result, new Comparator<SNode>() {
-        public int compare(SNode o1, SNode o2) {
-          return o1.getId().compareTo(o2.getId());
+      Map<AbstractConceptDeclaration, Set<SNode>> map = myNodesNoInheritance;
+      if (includeInherited) {
+        map = myNodesAll;
+      }
+
+      if (map.containsKey(concept)) {
+        final List<SNode> result = new ArrayList<SNode>();
+        for (SNode n : map.get(concept)) {
+          SNode node = n;
+          if (node != null) {
+            result.add(node);
+          }
         }
-      });
 
-      return result;
+        Collections.sort(result, new Comparator<SNode>() {
+          public int compare(SNode o1, SNode o2) {
+            return o1.getId().compareTo(o2.getId());
+          }
+        });
+
+        return result;
+      }
+
+      return Collections.EMPTY_LIST;
     }
-
-    return Collections.EMPTY_LIST;
   }
 
   private void addToCache(final SNode root) {
@@ -154,27 +162,40 @@ public class FastNodeFinder {
     }
 
     Set<SNode> set = map.get(acd);
-    set.remove(node);
-    if (set.isEmpty()) {
-      map.remove(acd);
+
+    if (set != null) {
+      set.remove(node);
+      if (set.isEmpty()) {
+        map.remove(acd);
+      }
+    } else {
+      LOG.errorWithTrace("Can't find cache for " + acd.getName());
     }
   }
 
   private class MySModelAdapter extends SModelAdapter {
     public void childAdded(SModelChildEvent event) {
-      addToCache(event.getChild());
+      synchronized (myLock) {
+        addToCache(event.getChild());
+      }
     }
 
     public void childRemoved(SModelChildEvent event) {
-      removeFromCache(event.getChild());
+      synchronized (myLock) {
+        removeFromCache(event.getChild());
+      }
     }
 
     public void rootAdded(SModelRootEvent event) {
-      addToCache(event.getRoot());
+      synchronized (myLock) {
+        addToCache(event.getRoot());
+      }      
     }
 
     public void rootRemoved(SModelRootEvent event) {
-      removeFromCache(event.getRoot());
+      synchronized (myLock) {
+        removeFromCache(event.getRoot());
+      }
     }
 
     public void loadingStateChanged(SModelDescriptor model, boolean isLoading) {
