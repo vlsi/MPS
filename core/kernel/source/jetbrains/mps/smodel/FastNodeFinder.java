@@ -13,8 +13,6 @@ import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 
 
 public class FastNodeFinder {
-  private static Logger LOG = Logger.getLogger(FastNodeFinder.class);
-
   private final Object myLock = new Object();
 
   private SModelDescriptor myModelDescriptor;
@@ -175,37 +173,41 @@ public class FastNodeFinder {
 
     Set<SNode> set = map.get(acd);
 
-    if (set != null) {
-      set.remove(node);
-      if (set.isEmpty()) {
-        map.remove(acd);
-      }
-    } else {
-      LOG.errorWithTrace("Can't find cache for " + acd.getName() + " initialized = " + myInitialized);
+    set.remove(node);
+    if (set.isEmpty()) {
+      map.remove(acd);
     }
   }
 
   private class MySModelAdapter extends SModelAdapter {
     public void childAdded(SModelChildEvent event) {
       synchronized (myLock) {
+        if (!myInitialized) return;
+
         addToCache(event.getChild());
       }
     }
 
     public void childRemoved(SModelChildEvent event) {
       synchronized (myLock) {
+        if (!myInitialized) return;
+
         removeFromCache(event.getChild());
       }
     }
 
     public void rootAdded(SModelRootEvent event) {
       synchronized (myLock) {
+        if (!myInitialized) return;
+
         addToCache(event.getRoot());
       }      
     }
 
     public void rootRemoved(SModelRootEvent event) {
       synchronized (myLock) {
+        if (!myInitialized) return;
+        
         removeFromCache(event.getRoot());
       }
     }
