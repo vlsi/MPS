@@ -185,7 +185,7 @@ public class FastNodeFinder {
         map.remove(acd);
       }
     } else {
-      LOG.errorWithTrace("Can't find cache for " + acd.getName());
+      LOG.errorWithTrace("Can't find cache for " + acd.getName() + " initialized = " + myInitialized);
     }
   }
 
