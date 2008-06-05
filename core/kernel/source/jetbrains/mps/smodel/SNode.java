@@ -86,8 +86,10 @@ public final class SNode {
     SModel wasModel = myModel;
     myModel = newModel;
     UnregisteredNodes.instance().nodeModelChanged(this, wasModel);
-    for (SNode child : _children()) {
-      child.changeModel(newModel);
+    if (myChildren != null) {
+      for (SNode child : myChildren) {
+        child.changeModel(newModel);
+      }
     }
   }
 
@@ -149,7 +151,7 @@ public final class SNode {
 
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
-    if (_children().contains(node)) {
+    if (node.getParent() == this) {
       String role = node.getRole_();
       assert role != null;
       return role;
@@ -1080,7 +1082,7 @@ public final class SNode {
     SReference resultReference = null;
     if (newReferent != null) {
       resultReference = SReference.create(role, this, newReferent);
-      insertReferenceAt(_references().size(), resultReference);
+      insertReferenceAt(myReferences == null ? 0 : myReferences.length, resultReference);
     }
 
     if (useHandler && !getModel().isLoading()) {
