@@ -67,12 +67,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   {
     this.addModelCommandListener(new SModelCommandListener() {
       public void eventsHappenedInCommand(List<SModelEvent> events) {
-        if (EventUtil.isDramaticalChange(events)) {
-          myLastStructuralChange = System.currentTimeMillis();
-          myFastNodeFinder = null;
-          ourStructuralState++;
-        }
-
         if (EventUtil.isChange(events)) {
           myLastChange = System.currentTimeMillis();
         }
@@ -343,6 +337,9 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   public void refresh() {
     if (isInitialized()) {
       long start = System.currentTimeMillis();
+      if (myFastNodeFinder != null) {
+        myFastNodeFinder.dispose();
+      }
       myFastNodeFinder = null;
       synchronized (myListenersLock) {
         myWeakModelListeners.addAll(mySModel.getWeakModelListeners());
@@ -367,6 +364,9 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   public void replaceModel(SModel newModel) {
     if (newModel == mySModel) return;
     if (isInitialized()) {
+      if (myFastNodeFinder != null) {
+        myFastNodeFinder.dispose();
+      }
       myFastNodeFinder = null;
       synchronized (myListenersLock) {
         myWeakModelListeners.addAll(mySModel.getWeakModelListeners());

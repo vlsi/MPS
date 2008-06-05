@@ -26,7 +26,11 @@ public class FastNodeFinder {
 
   public FastNodeFinder(SModelDescriptor modelDescriptor) {
     myModelDescriptor = modelDescriptor;
-    modelDescriptor.addWeakModelListener(myListener);
+    myModelDescriptor.addModelListener(myListener);
+  }
+
+  public void dispose() {
+    myModelDescriptor.removeModelListener(myListener);    
   }
 
   private void initCache() {
@@ -207,7 +211,6 @@ public class FastNodeFinder {
     }
 
     public void loadingStateChanged(SModelDescriptor model, boolean isLoading) {
-
       synchronized (myLock) {
         myInitialized = false;
         myNodesAll.clear();
