@@ -47,7 +47,7 @@ public final class SNode {
   private String myRoleInParent;
   private SNode myParent;
 
-  private List<SNode> myChildren;
+  private SNode[] myChildren;
   private List<SReference> myReferences;
 
   private Map<String, String> myProperties;
@@ -92,10 +92,18 @@ public final class SNode {
   }
 
   private List<SNode> _children() {
-    if (myChildren == null) {
-      return Collections.emptyList();
-    }
-    return myChildren;
+    return new ArrayWrapper<SNode>(SNode.class) {
+      protected SNode[] getArray() {
+        if (myChildren == null) {
+          return new SNode[0];
+        }
+        return myChildren;
+      }
+
+      protected void setArray(SNode[] newArray) {
+        myChildren = newArray;
+      }
+    };
   }
 
   private List<SReference> _references() {
@@ -152,11 +160,13 @@ public final class SNode {
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
     Set<String> result = new HashSet<String>();
-    for (SNode child : _children()) {
-      String roleOf = child.getRole_();
-      assert roleOf != null;
-      if (includeAttributeRoles || !(roleOf.contains(AttributesRolesUtil.STEREOTYPE_DELIM))) {
-        result.add(roleOf);
+    if (myChildren != null) {
+      for (SNode child : myChildren) {
+        String roleOf = child.getRole_();
+        assert roleOf != null;
+        if (includeAttributeRoles || !(roleOf.contains(AttributesRolesUtil.STEREOTYPE_DELIM))) {
+          result.add(roleOf);
+        }
       }
     }
     return result;
@@ -168,11 +178,13 @@ public final class SNode {
 
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
-    for (SNode child : _children()) {
-      String roleOf = child.getRole_();
-      assert roleOf != null;
-      if (includeAttributeRoles || !(roleOf.contains(AttributesRolesUtil.STEREOTYPE_DELIM))) {
-        augend.add(roleOf);
+    if (myChildren != null) {
+      for (SNode child : myChildren) {
+        String roleOf = child.getRole_();
+        assert roleOf != null;
+        if (includeAttributeRoles || !(roleOf.contains(AttributesRolesUtil.STEREOTYPE_DELIM))) {
+          augend.add(roleOf);
+        }
       }
     }
     return augend;
@@ -349,9 +361,11 @@ public final class SNode {
   @NotNull
   public List<SNode> getNodeAttributes() {
     List<SNode> attributes = new ArrayList<SNode>(0);
-    for (SNode child : _children()) {
-      if (AttributesRolesUtil.isNodeAttributeRole(child.getRole_())) {
-        attributes.add(child);
+    if (myChildren != null) {
+      for (SNode child : myChildren) {
+        if (AttributesRolesUtil.isNodeAttributeRole(child.getRole_())) {
+          attributes.add(child);
+        }
       }
     }
     return attributes;
@@ -360,12 +374,14 @@ public final class SNode {
   @NotNull
   public List<SNode> getAllAttributes() {
     List<SNode> attributes = new ArrayList<SNode>(0);
-    for (SNode child : _children()) {
-      String role = child.getRole_();
-      if (AttributesRolesUtil.isNodeAttributeRole(role) ||
-        AttributesRolesUtil.isLinkAttributeRole(role) ||
-        AttributesRolesUtil.isPropertyAttributeRole(role)) {
-        attributes.add(child);
+    if (myChildren != null) {
+      for (SNode child : myChildren) {
+        String role = child.getRole_();
+        if (AttributesRolesUtil.isNodeAttributeRole(role) ||
+          AttributesRolesUtil.isLinkAttributeRole(role) ||
+          AttributesRolesUtil.isPropertyAttributeRole(role)) {
+          attributes.add(child);
+        }
       }
     }
     return attributes;
@@ -412,9 +428,11 @@ public final class SNode {
     if (result != null) return result;
 
     // back compatibility with some obsolete property attributes?
-    for (SNode child : _children()) {
-      if (AttributesRolesUtil.isChildRoleOfPropertyAttributeForPropertyName(propertyName, child.getRole_())) {
-        return child;
+    if (myChildren != null) {
+      for (SNode child : myChildren) {
+        if (AttributesRolesUtil.isChildRoleOfPropertyAttributeForPropertyName(propertyName, child.getRole_())) {
+          return child;
+        }
       }
     }
 
@@ -471,9 +489,11 @@ public final class SNode {
     if (result != null) return result;
 
     // back compatibility with some obsolete link attributes?
-    for (SNode child : _children()) {
-      if (AttributesRolesUtil.isChildRoleOfLinkAttributeForLinkRole(role, child.getRole_())) {
-        return child;
+    if (myChildren != null) {
+      for (SNode child : myChildren) {
+        if (AttributesRolesUtil.isChildRoleOfLinkAttributeForLinkRole(role, child.getRole_())) {
+          return child;
+        }
       }
     }
 
@@ -727,10 +747,12 @@ public final class SNode {
     fireNodeReadAccess();
     int count = 0;
     SNode foundChild = null;
-    for (SNode child : _children()) {
-      if (role.equals(child.getRole_())) {
-        foundChild = child;
-        count++;
+    if (myChildren != null) {
+      for (SNode child : myChildren) {
+        if (role.equals(child.getRole_())) {
+          foundChild = child;
+          count++;
+        }
       }
     }
     if (count > 1) {
@@ -743,17 +765,18 @@ public final class SNode {
   }
 
   public SNode getChildAt(int index) {
-    return _children().get(index);
+    return myChildren[index];
   }
 
   public void removeChild(@NotNull SNode child) {
-    if (!_children().contains(child)) return;
-    removeChildAt(_children().indexOf(child));
+    List<SNode> children = _children();
+    if (!children.contains(child)) return;
+    removeChildAt(children.indexOf(child));
   }
 
   public void addChild(@NotNull String role,
                        @NotNull SNode child) {
-    insertChildAt(_children().size(), role, child);
+    insertChildAt(myChildren == null? 0 : myChildren.length, role, child);
   }
 
   public void insertChild(@Nullable SNode anchorChild,
@@ -784,9 +807,11 @@ public final class SNode {
       role = ourMemberAccessModifier.getNewChildRole(myModel, myConceptFqName, role);
     }
     int count = 0;
-    for (SNode child : _children()) {
-      if (role.equals(child.getRole_())) {
-        count++;
+    if (myChildren != null) {
+      for (SNode child : myChildren) {
+        if (role.equals(child.getRole_())) {
+          count++;
+        }
       }
     }
     return count;
@@ -796,10 +821,12 @@ public final class SNode {
     String role_ = child_.getRole_();
     if (role_ == null) return -1;
     int count = 0;
-    for (SNode child : _children()) {
-      if (child == child_) return count;
-      if (role_.equals(child.getRole_())) {
-        count++;
+    if (myChildren != null) {
+      for (SNode child : myChildren) {
+        if (child == child_) return count;
+        if (role_.equals(child.getRole_())) {
+          count++;
+        }
       }
     }
     return -1;
@@ -842,7 +869,8 @@ public final class SNode {
 
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
-    return _children().size();
+    if (myChildren == null) return 0;
+    return myChildren.length;
   }
 
   @NotNull
@@ -853,11 +881,12 @@ public final class SNode {
     }
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
-    List<SNode> children = _children();
-    if (children.isEmpty()) return Collections.emptyList();
+    if (myChildren == null) return Collections.emptyList();
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode child : children) {
-      if (role.equals(child.getRole_())) result.add(child);
+    if (myChildren != null) {
+      for (SNode child : myChildren) {
+        if (role.equals(child.getRole_())) result.add(child);
+      }
     }
     return result;
   }
@@ -884,7 +913,7 @@ public final class SNode {
 
   void removeChildAt(final int index) {
     ModelChange.assertLegalNodeChange(this);
-    final SNode wasChild = _children().get(index);
+    final SNode wasChild = myChildren[index];
     final String wasRole = wasChild.getRole_();
 
     assert wasRole != null;
@@ -924,10 +953,7 @@ public final class SNode {
 
     ModelChange.assertLegalNodeChange(this);
 
-//    _children().add(index, child);
-    _children();
-    if (myChildren == null) myChildren = new ArrayList<SNode>(1);
-    myChildren.add(index, child);
+    _children().add(index, child);
 
     child.myRoleInParent = InternUtil.intern(role);
     child.setParent(this);
@@ -958,8 +984,10 @@ public final class SNode {
     if (myId != null) {
       myModel.removeNodeId(myId);
     }
-    for (SNode child : _children()) {
-      child.unRegisterFromModel();
+    if (myChildren != null) {
+      for (SNode child : myChildren) {
+        child.unRegisterFromModel();
+      }
     }
   }
 
@@ -975,8 +1003,10 @@ public final class SNode {
     myRegisteredInModelFlag = true;
     myModel = model;
     myModel.putNodeId(getSNodeId(), this);
-    for (SNode child : _children()) {
-      child.registerInModel(model);
+    if (myChildren != null) {
+      for (SNode child : myChildren) {
+        child.registerInModel(model);
+      }
     }
 
     // add language because helgins needs it to invalidate/revalidate its caches
@@ -1318,11 +1348,13 @@ public final class SNode {
   private void collectDescendants(@Nullable Condition<SNode> condition,
                                   @NotNull List<SNode> list) {
     // depth-first traversal
-    for (SNode child : _children()) {
-      if (condition == null || condition == Condition.TRUE_CONDITION || condition.met(child)) {
-        list.add(child);
+    if (myChildren != null) {
+      for (SNode child : myChildren) {
+        if (condition == null || condition == Condition.TRUE_CONDITION || condition.met(child)) {
+          list.add(child);
+        }
+        child.collectDescendants(condition, list);
       }
-      child.collectDescendants(condition, list);
     }
   }
 
@@ -1584,15 +1616,19 @@ public final class SNode {
 
   void clearAdapters() {
     myAdapter = null;
-    for (SNode child : _children()) {
-      child.clearAdapters();
+    if (myChildren != null) {
+      for (SNode child : myChildren) {
+        child.clearAdapters();
+      }
     }
   }
 
   void clearUserObjects() {
     removeAllUserObjects();
-    for (SNode child : _children()) {
-      child.clearUserObjects();
+    if (myChildren != null) {
+      for (SNode child : myChildren) {
+        child.clearUserObjects();
+      }
     }
   }
 
