@@ -48,7 +48,7 @@ public final class SNode {
   private SNode myParent;
 
   private SNode[] myChildren;
-  private List<SReference> myReferences;
+  private SReference[] myReferences;
 
   private Map<String, String> myProperties;
 
@@ -95,7 +95,7 @@ public final class SNode {
     return new ArrayWrapper<SNode>(SNode.class) {
       protected SNode[] getArray() {
         if (myChildren == null) {
-          return new SNode[0];
+          return SNode.EMPTY_ARRAY;
         }
         return myChildren;
       }
@@ -107,10 +107,18 @@ public final class SNode {
   }
 
   private List<SReference> _references() {
-    if (myReferences == null) {
-      return Collections.emptyList();
-    }
-    return myReferences;
+    return new ArrayWrapper<SReference>(SReference.class) {
+      protected SReference[] getArray() {
+        if (myReferences == null) {
+          return SReference.EMPTY_ARRAY;
+        }
+        return myReferences;
+      }
+
+      protected void setArray(SReference[] newArray) {
+        myReferences = newArray;
+      }
+    };
   }
 
   public boolean isRoot() {
@@ -1046,9 +1054,11 @@ public final class SNode {
     }
     // remove old references
     List<SReference> toDelete = new ArrayList<SReference>();
-    for (SReference reference : _references()) {
-      if (reference.getRole().equals(role)) {
-        toDelete.add(reference);
+    if (myReferences != null) {
+      for (SReference reference : myReferences) {
+        if (reference.getRole().equals(role)) {
+          toDelete.add(reference);
+        }
       }
     }
     SNode oldReferent = null;
@@ -1101,10 +1111,12 @@ public final class SNode {
     fireNodeReadAccess();
     SReference result = null;
     int count = 0; // paranoid check
-    for (SReference reference : _references()) {
-      if (reference.getRole().equals(role)) {
-        result = reference;
-        count++;
+    if (myReferences != null) {
+      for (SReference reference : myReferences) {
+        if (reference.getRole().equals(role)) {
+          result = reference;
+          count++;
+        }
       }
     }
 
@@ -1118,28 +1130,32 @@ public final class SNode {
   }
 
   public void addReference(@NotNull SReference reference) {
-    insertReferenceAt(_references().size(), reference);
+    insertReferenceAt(myReferences == null ? 0 : myReferences.length, reference);
   }
 
   public void removeReferent(@NotNull String role) {
     if (ourMemberAccessModifier != null) {
       role = ourMemberAccessModifier.getNewReferentRole(myModel, myConceptFqName, role);
     }
-      for (SReference reference : _references()) {
-      if (reference.getRole().equals(role)) {
-        int index = _references().indexOf(reference);
-        removeReferenceAt(index);
-        break;
+    if (myReferences != null) {
+      for (SReference reference : myReferences) {
+        if (reference.getRole().equals(role)) {
+          int index = _references().indexOf(reference);
+          removeReferenceAt(index);
+          break;
+        }
       }
     }
   }
 
   public void removeReference(@NotNull SReference referenceToRemove) {
-    for (SReference reference : _references()) {
-      if (reference.equals(referenceToRemove)) {
-        int index = _references().indexOf(reference);
-        removeReferenceAt(index);
-        break;
+    if (myReferences != null) {
+      for (SReference reference : myReferences) {
+        if (reference.equals(referenceToRemove)) {
+          int index = _references().indexOf(reference);
+          removeReferenceAt(index);
+          break;
+        }
       }
     }
   }
@@ -1151,17 +1167,18 @@ public final class SNode {
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
     List<SNode> result = new ArrayList<SNode>();
-    for (SReference reference : _references()) {
-      SNode targetNode = reference.getTargetNode();
-      if (targetNode != null) result.add(targetNode);
+    if (myReferences != null) {
+      for (SReference reference : myReferences) {
+        SNode targetNode = reference.getTargetNode();
+        if (targetNode != null) result.add(targetNode);
+      }
     }
     return result;
   }
 
   void insertReferenceAt(final int i, @NotNull final SReference reference) {
     ModelChange.assertLegalNodeChange(this);
-    if (myReferences == null) myReferences = new ArrayList<SReference>(1);
-    myReferences.add(i, reference);
+    _references().add(i, reference);
 
     if (ModelChange.needRegisterUndo(getModel())) {
       UndoUtil.addUndoableAction(new InsertReferenceAtUndoableAction(this, i, reference));
@@ -1174,8 +1191,8 @@ public final class SNode {
 
   void removeReferenceAt(final int i) {
     ModelChange.assertLegalNodeChange(this);
-    final SReference reference = _references().get(i);
-    myReferences.remove(reference);
+    final SReference reference = myReferences[i];
+    _references().remove(reference);
 
     if (ModelChange.needRegisterUndo(getModel())) {
       UndoUtil.addUndoableAction(new RemoveReferenceAtUndoableAction(this, i, reference));

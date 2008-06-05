@@ -14,6 +14,8 @@ import java.util.Set;
  * Date: Aug 2, 2003
  */
 public abstract class SReference {
+  public static final SReference[] EMPTY_ARRAY = new SReference[0];
+
   private String myRole;
   private SNode mySourceNode;
 
