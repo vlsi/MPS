@@ -2797,5 +2797,25 @@
       <link role="intfc" targetNodeId="4.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1212685548494">
+    <property name="package" value="classifier" />
+    <property name="name" value="ClassCreator" />
+    <link role="extends" targetNodeId="1145552809883" resolveInfo="AbstractCreator" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1212686240295">
+      <property name="role" value="constructorDeclaration" />
+      <link role="specializedLink" targetNodeId="1068499141037" />
+      <link role="target" targetNodeId="1068580123140" resolveInfo="ConstructorDeclaration" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1212687122400">
+      <property name="targetCardinality" value="1" />
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="typeParameter" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1068431790189" resolveInfo="Type" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1212690175805">
+      <link role="intfc" targetNodeId="1204053956946" resolveInfo="IMethodCall" />
+    </node>
+  </node>
 </model>
 
