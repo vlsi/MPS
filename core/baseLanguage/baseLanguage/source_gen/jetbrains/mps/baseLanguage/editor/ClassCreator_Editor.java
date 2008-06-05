@@ -191,6 +191,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_resolveInfoPropertyCell6179_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_resolveInfoPropertyCell6179_0");
+      editorCell.setRightTransformAnchorTag("ext_1_RTransform");
     }
 
     private static void setupLabel_resolveInfoPropertyCell6179_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
