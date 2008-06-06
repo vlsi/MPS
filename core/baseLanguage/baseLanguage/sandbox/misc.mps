@@ -84,6 +84,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="134" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="java.util@java_stub" version="-1" />
@@ -581,6 +582,34 @@
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1212717728227">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1212781362046">
                 <link role="baseMethodDeclaration" targetNodeId="1212603775082" resolveInfo="C2" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1212785824447">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1212785824448">
+            <property name="name" value="mmm" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212785824449">
+              <link role="classifier" targetNodeId="3.~HashMap" resolveInfo="HashMap" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212785836296">
+                <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
+              </node>
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212785840625">
+                <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
+              </node>
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1212786755647">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1212786755649">
+                <link role="baseMethodDeclaration" targetNodeId="3.~HashMap.&lt;init&gt;(int)" resolveInfo="HashMap" />
+                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212786727795">
+                  <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
+                </node>
+                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212786727796">
+                  <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1212786744302">
+                  <property name="value" value="10" />
+                </node>
               </node>
             </node>
           </node>

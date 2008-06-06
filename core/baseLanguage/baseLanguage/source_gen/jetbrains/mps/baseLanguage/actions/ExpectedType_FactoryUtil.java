@@ -23,7 +23,6 @@ public class ExpectedType_FactoryUtil {
 
   public static SNode getOriginalExpression(SNode enclosingNode, SNode copiedExpression) {
     SNode originalExpression = null;
-    SNode expressionConcept = SNodeOperations.getConceptDeclaration(copiedExpression);
     for(SNode child : SNodeOperations.getChildren(enclosingNode)) {
       if (MatchingUtil.matchNodes(copiedExpression, child)) {
         originalExpression = child;
