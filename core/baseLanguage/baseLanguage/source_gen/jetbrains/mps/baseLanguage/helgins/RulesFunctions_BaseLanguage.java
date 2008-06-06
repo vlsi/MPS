@@ -42,13 +42,13 @@ public class RulesFunctions_BaseLanguage {
     TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(rightExpressionType_typevar_1185962758265), SLinkOperations.getTarget(new QuotationClass_25().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "rightExpression", true), null, "jetbrains.mps.baseLanguage.helgins", "1176908856117", false, 0);
     TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(leftExpressionType_typevar_1185962769627), SLinkOperations.getTarget(new QuotationClass_26().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "leftExpression", true), null, "jetbrains.mps.baseLanguage.helgins", "1176908902743", false, 0);
     {
-      final SNode _representatorVar5 = TypeChecker.getInstance().getEquationManager().getRepresentator(leftExpressionType_typevar_1185962769627);
-      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar5, new Runnable() {
+      final SNode _representatorVar3 = TypeChecker.getInstance().getEquationManager().getRepresentator(leftExpressionType_typevar_1185962769627);
+      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar3, new Runnable() {
 
         public void run() {
           {
-            final SNode _representatorVar6 = TypeChecker.getInstance().getEquationManager().getRepresentator(rightExpressionType_typevar_1185962758265);
-            TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar6, new Runnable() {
+            final SNode _representatorVar4 = TypeChecker.getInstance().getEquationManager().getRepresentator(rightExpressionType_typevar_1185962758265);
+            TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar4, new Runnable() {
 
               public void run() {
                 TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(binOp, "jetbrains.mps.baseLanguage.helgins", "1203512296348", true), Queries.getBinaryOperationType(TypeChecker.getInstance().getEquationManager().getRepresentator(leftExpressionType_typevar_1185962769627), TypeChecker.getInstance().getEquationManager().getRepresentator(rightExpressionType_typevar_1185962758265)), binOp, null, "jetbrains.mps.baseLanguage.helgins", "1203512296346");
@@ -280,8 +280,8 @@ __switch__:
             final SNode prevVar_typevar_1204114618000 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
             TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(prevVar_typevar_1204114618000), prev, null, null, "jetbrains.mps.baseLanguage.helgins", "1204114618001");
             {
-              final SNode _representatorVar7 = TypeChecker.getInstance().getEquationManager().getRepresentator(prevVar_typevar_1204114618000);
-              TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar7, new Runnable() {
+              final SNode _representatorVar5 = TypeChecker.getInstance().getEquationManager().getRepresentator(prevVar_typevar_1204114618000);
+              TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar5, new Runnable() {
 
                 public void run() {
                   System.out.println("-4- " + BaseConcept_Behavior.call_getPresentation_1180102203531(var) + " :==: " + BaseConcept_Behavior.call_getPresentation_1180102203531(TypeChecker.getInstance().getEquationManager().getRepresentator(prevVar_typevar_1204114618000)));
@@ -365,7 +365,7 @@ __switch__:
 
   /* package */static void check(Set<SNode> throwables, SNode mainNode) {
     for(SNode livingThrowable : new HashSet<SNode>(throwables)) {
-      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, new QuotationClass_97().createNode()) || TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, new QuotationClass_96().createNode())) {
+      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, new QuotationClass_92().createNode()) || TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, new QuotationClass_91().createNode())) {
         throwables.remove(livingThrowable);
       }
     }

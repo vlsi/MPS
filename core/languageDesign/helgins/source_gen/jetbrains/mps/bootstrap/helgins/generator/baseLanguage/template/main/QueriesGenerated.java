@@ -547,10 +547,6 @@ public class QueriesGenerated {
     return SPropertyOperations.getInteger_def(_context.getNode(), "inequationPriority", "0");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1212597119497(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "childLinkDeclaration", false), "role");
-  }
-
   public static Object propertyMacro_GetPropertyValue_1212597246468(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "applicableNode", true), "name");
   }
@@ -560,11 +556,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1212673817949(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
+    return SPropertyOperations.getString(_context.getNode(), "name") + "_restriction";
   }
 
   public static Object propertyMacro_GetPropertyValue_1212673899982(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
+    return SPropertyOperations.getString(_context.getNode(), "name") + "_restriction";
   }
 
   public static Object propertyMacro_GetPropertyValue_1212675205084(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -575,8 +571,28 @@ public class QueriesGenerated {
     return _context.getNode().getId();
   }
 
-  public static Object propertyMacro_GetPropertyValue_1212764802100(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_1212766422782(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1212766516839(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "typeRestriction", false), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1212766833028(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1212766848882(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "childLinkDeclaration", false), "role");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1212766894939(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "child_" + SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1212766952999(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "child_" + SPropertyOperations.getString(_context.getNode(), "name");
   }
 
   public static Object referenceMacro_GetReferent_1174655195413(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -1518,6 +1534,14 @@ public class QueriesGenerated {
   }
 
   public static List sourceNodesQuery_1212673768728(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "childTypeRestriction", true);
+  }
+
+  public static List sourceNodesQuery_1212766854877(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "childTypeRestriction", true);
+  }
+
+  public static List sourceNodesQuery_1212766862146(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "childTypeRestriction", true);
   }
 
