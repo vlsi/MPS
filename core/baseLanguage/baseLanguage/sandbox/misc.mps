@@ -74,6 +74,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="134" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="java.util@java_stub" version="-1" />
@@ -481,12 +482,17 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1212666390012" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212666390013">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212681282041">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1212681290233">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1212681291611">
-              <property name="value" value="3" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1212746299269">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1212746324605">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1212746325467">
+                <property name="value" value="5" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1212746300303">
+                <property name="value" value="5" />
+              </node>
             </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1212681282042">
-              <property name="value" value="2" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1212746298096">
+              <property name="value" value="5" />
             </node>
           </node>
         </node>
