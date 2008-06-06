@@ -76,6 +76,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="134" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="java.util@java_stub" version="-1" />
@@ -486,8 +487,13 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1212746299269">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1212746324605">
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1212753682120">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1212753683310">
-                  <property name="value" value="5" />
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1212762014393">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1212762015177">
+                    <property name="value" value="" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1212753683310">
+                    <property name="value" value="5" />
+                  </node>
                 </node>
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1212746325467">
                   <property name="value" value="5" />
@@ -498,6 +504,16 @@
               </node>
             </node>
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1212746298096">
+              <property name="value" value="5" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212761816146">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1212761817241">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1212761823417">
+              <property name="value" value="" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1212761816147">
               <property name="value" value="5" />
             </node>
           </node>
