@@ -20,6 +20,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="3" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage@java_stub" version="-1" />
@@ -1761,6 +1762,35 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210954246891">
         <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitMayBeUnreachable" id="1210954428565">
           <node role="emitStatement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitNopStatement" id="1210954428566" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1212764384343">
+    <property name="package" value="method" />
+    <link role="conceptDeclaration" targetNodeId="1.1068581242872" resolveInfo="NewExpression" />
+    <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1212764384344">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212764384345">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1212764386518">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212764386519">
+            <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1212764386520">
+              <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1212764386521">
+                <link role="variableDeclaration" targetNodeId="1212764386525" resolveInfo="arg" />
+              </node>
+            </node>
+          </node>
+          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212764386522">
+            <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1212764386523" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1212764386524">
+              <link role="link" targetNodeId="1.1068499141038" />
+            </node>
+          </node>
+          <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1212764386525">
+            <property name="name" value="arg" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1212764386526">
+              <link role="concept" targetNodeId="1.1068431790191" resolveInfo="Expression" />
+            </node>
+          </node>
         </node>
       </node>
     </node>

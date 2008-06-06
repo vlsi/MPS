@@ -29,6 +29,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="15" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.helgins.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />
@@ -2392,6 +2393,50 @@
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1212577489566">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212577489567" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1212763748069">
+    <link role="concept" targetNodeId="1.1212763614690" resolveInfo="ChildTypeRestrictionReference" />
+    <node role="references" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1212763755212">
+      <link role="applicableLink" targetNodeId="1.1212763674348" />
+      <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1212763757713">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212763757714">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1212764034561">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1212764034562">
+              <property name="name" value="childTypeRestrictions" />
+              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType" id="1212764034563">
+                <link role="elementConcept" targetNodeId="1.1212573344738" resolveInfo="ChildTypeRestriction" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212764034564">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212764034565">
+                  <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="1212764034566" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1212764034567">
+                    <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1212764034568">
+                      <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1212764034569">
+                        <link role="conceptDeclaration" targetNodeId="1.1174643105530" resolveInfo="InferenceRule" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1212764034570">
+                  <link role="link" targetNodeId="1.1212574183907" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1212764039619">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1212764041715">
+              <link role="baseMethodDeclaration" targetNodeId="2.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1212764060883">
+                <link role="variableDeclaration" targetNodeId="1212764034562" resolveInfo="childTypeRestrictions" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1212763748070">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212763748071" />
     </node>
   </node>
 </model>
