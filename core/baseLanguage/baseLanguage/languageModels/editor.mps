@@ -48,6 +48,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="73" />
   <import index="17" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="18" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -1910,8 +1911,8 @@
       <property name="vertical" value="false" />
       <property name="drawBorder" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1075374525821">
-        <property name="textFgColor" value="DARK_BLUE" />
-        <property name="text" value="new" />
+        <property name="textFgColor" value="red" />
+        <property name="text" value="!new" />
         <property name="fontStyle" value="BOLD" />
         <property name="selectable" value="true" />
         <property name="drawBorder" value="false" />

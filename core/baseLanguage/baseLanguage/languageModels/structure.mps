@@ -628,6 +628,13 @@
       <property name="value" value="class instantiation" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1212788593701">
+      <property name="value" value="the NewExpression is replaced with ClassCreator in generic new expression" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1210365515391" resolveInfo="deprecated_next_after_607" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1212789145785">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1135374435992">
       <property name="role" value="constructorDeclaration" />
       <link role="target" targetNodeId="1068580123140" resolveInfo="ConstructorDeclaration" />
@@ -1628,7 +1635,7 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1145553082100">
-      <property name="value" value="generic creation expression" />
+      <property name="value" value="instance creation expression" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1145553007750">
