@@ -47,8 +47,8 @@ public final class SNode {
   private String myRoleInParent;
   private SNode myParent;
 
-  private SNode[] myChildren;
-  private SReference[] myReferences;
+  private SNode[] myChildren = EMPTY_ARRAY;
+  private SReference[] myReferences = SReference.EMPTY_ARRAY;
 
   private Map<String, String> myProperties;
 
@@ -96,9 +96,6 @@ public final class SNode {
   private List<SNode> _children() {
     return new ArrayWrapper<SNode>(SNode.class) {
       protected SNode[] getArray() {
-        if (myChildren == null) {
-          return SNode.EMPTY_ARRAY;
-        }
         return myChildren;
       }
 
@@ -111,9 +108,6 @@ public final class SNode {
   private List<SReference> _references() {
     return new ArrayWrapper<SReference>(SReference.class) {
       protected SReference[] getArray() {
-        if (myReferences == null) {
-          return SReference.EMPTY_ARRAY;
-        }
         return myReferences;
       }
 
