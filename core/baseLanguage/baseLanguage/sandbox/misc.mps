@@ -598,17 +598,14 @@
                 <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
               </node>
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1212786755647">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1212786755649">
-                <link role="baseMethodDeclaration" targetNodeId="3.~HashMap.&lt;init&gt;(int)" resolveInfo="HashMap" />
-                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212786727795">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1212788469725">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1212788469726">
+                <link role="baseMethodDeclaration" targetNodeId="3.~HashMap.&lt;init&gt;()" resolveInfo="HashMap" />
+                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212788469727">
                   <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
                 </node>
-                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212786727796">
+                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212788469728">
                   <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1212786744302">
-                  <property name="value" value="10" />
                 </node>
               </node>
             </node>
