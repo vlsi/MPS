@@ -94,7 +94,7 @@ public final class SNode {
   }
 
   private List<SNode> _children() {
-    return new ArrayWrapper<SNode>(SNode.class) {
+    return new ArrayWrapper<SNode>() {
       protected SNode[] getArray() {
         return myChildren;
       }
@@ -102,17 +102,25 @@ public final class SNode {
       protected void setArray(SNode[] newArray) {
         myChildren = newArray;
       }
+
+      protected SNode[] newArray(int size) {
+        return new SNode[size];
+      }
     };
   }
 
   private List<SReference> _references() {
-    return new ArrayWrapper<SReference>(SReference.class) {
+    return new ArrayWrapper<SReference>() {
       protected SReference[] getArray() {
         return myReferences;
       }
 
       protected void setArray(SReference[] newArray) {
         myReferences = newArray;
+      }
+
+      protected SReference[] newArray(int size) {
+        return new SReference[size];
       }
     };
   }

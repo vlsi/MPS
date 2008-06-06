@@ -5,11 +5,9 @@ import java.util.Arrays;
 import java.lang.reflect.Array;
 
 public abstract class ArrayWrapper<T> extends AbstractList<T> {
-  private Class<T> myItemType;
   private T[] myArray;
 
-  protected ArrayWrapper(Class<T> aClass) {
-    myItemType = aClass;
+  protected ArrayWrapper() {
     myArray = getArray();
   }
 
@@ -25,7 +23,7 @@ public abstract class ArrayWrapper<T> extends AbstractList<T> {
 
   public void add(int index, T element) {
     T[] oldArray = myArray;
-    T[] newArray = (T[]) Array.newInstance(myItemType, oldArray.length + 1);
+    T[] newArray = newArray(oldArray.length + 1);
     System.arraycopy(oldArray, 0, newArray, 0, index);
     newArray[index] = element;
     System.arraycopy(oldArray, index, newArray, index + 1, oldArray.length - index);
@@ -36,7 +34,7 @@ public abstract class ArrayWrapper<T> extends AbstractList<T> {
   public T remove(int index) {
     T oldItem = myArray[index];
     T[] oldArray = myArray;
-    T[] newArray = (T[]) Array.newInstance(myItemType, oldArray.length - 1);
+    T[] newArray = newArray(oldArray.length - 1);
     System.arraycopy(oldArray, 0, newArray, 0, index);
     System.arraycopy(oldArray, index + 1, newArray, index, oldArray.length - index - 1);
     myArray = newArray;
@@ -59,4 +57,6 @@ public abstract class ArrayWrapper<T> extends AbstractList<T> {
   protected abstract T[] getArray();
 
   protected abstract void setArray(T[] newArray);
+
+  protected abstract T[] newArray(int size);
 }

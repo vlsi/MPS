@@ -3,34 +3,33 @@ package jetbrains.mps.util;
 import java.util.*;
 
 public class ListMap<K, V> extends AbstractMap<K, V> {
-  private MyEntry<K, V>[] myEntries;
+  private MyEntry<K, V>[] myEntries = MyEntry.EMPTY_ARRAY;
 
   public ListMap() {
   }
 
   private List<MyEntry<K, V>> _entries() {
-    return (List<MyEntry<K, V>>) (List) new ArrayWrapper<MyEntry>(MyEntry.class) {
+    return (List<MyEntry<K, V>>) (List) new ArrayWrapper<MyEntry>() {
       protected MyEntry[] getArray() {
-        if (myEntries == null) {
-          return MyEntry.EMPTY_ARRAY;
-        }
         return myEntries;
       }
 
       protected void setArray(MyEntry[] newArray) {
         myEntries = newArray;
       }
+
+      protected MyEntry[] newArray(int size) {
+        return new MyEntry[size];
+      }
     };
   }
 
   public V put(K key, V value) {
-    if (myEntries != null) {
-      for (MyEntry<K, V> e : myEntries) {
-        if (key.equals(e.myKey)) {
-          V oldValue = e.myValue;
-          e.myValue = value;
-          return oldValue;
-        }
+    for (MyEntry<K, V> e : myEntries) {
+      if (key.equals(e.myKey)) {
+        V oldValue = e.myValue;
+        e.myValue = value;
+        return oldValue;
       }
     }
     _entries().add(new MyEntry<K, V>(key, value));
@@ -44,15 +43,13 @@ public class ListMap<K, V> extends AbstractMap<K, V> {
       }
 
       public int size() {
-        return myEntries == null ? 0 : myEntries.length;
+        return myEntries.length;
       }
     };
   }
 
 
   public V get(Object key) {
-    if (myEntries == null) return null;
-
     for (MyEntry<K, V> e : myEntries) {
       if (e.myKey.equals(key)) {
         return e.myValue;
