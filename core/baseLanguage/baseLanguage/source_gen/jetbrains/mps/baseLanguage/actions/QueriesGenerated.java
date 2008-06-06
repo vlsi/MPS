@@ -1048,6 +1048,11 @@ __switch__:
                 SLinkOperations.setNewChild(method_copy, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
                 SLinkOperations.addChild(SLinkOperations.getTarget(creator, "cls", true), "method", method_copy);
               }
+              // replace all type vars with Object
+              List<SNode> typeVarRefs = SNodeOperations.getDescendants(SLinkOperations.getTarget(creator, "cls", true), "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false);
+              for(SNode typeVar : typeVarRefs) {
+                SNodeOperations.replaceWithAnother(typeVar, new QuotationClass_3().createNode());
+              }
               return creator;
             }
 
