@@ -579,8 +579,8 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212700605518">
               <link role="classifier" targetNodeId="1210955660966" resolveInfo="C2" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1212717728227">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1212781362046">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1212789419319">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1212789419320">
                 <link role="baseMethodDeclaration" targetNodeId="1212603775082" resolveInfo="C2" />
               </node>
             </node>
