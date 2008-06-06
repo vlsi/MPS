@@ -82,6 +82,8 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="134" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="java.util@java_stub" version="-1" />
@@ -577,8 +579,8 @@
               <link role="classifier" targetNodeId="1210955660966" resolveInfo="C2" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1212717728227">
-              <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListCreator" id="1212781300592">
-                <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType" id="1212781300593" />
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1212781362046">
+                <link role="baseMethodDeclaration" targetNodeId="1212603775082" resolveInfo="C2" />
               </node>
             </node>
           </node>
