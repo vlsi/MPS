@@ -42,12 +42,12 @@ public class AutoResolver extends EditorCheckerAdapter {
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-              public void run() {
-                for (ResolveResult resolveResult : resolveResultArrayList) {
-                  resolveResult.setTarget();
-                }
-              }
-            });
+          public void run() {
+            for (ResolveResult resolveResult : resolveResultArrayList) {
+              resolveResult.setTarget();
+            }
+          }
+        });
       }
     });
 
