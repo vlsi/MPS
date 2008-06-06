@@ -1002,6 +1002,54 @@ __switch__:
     return result;
   }
 
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_AbstractCreator_1212710956125(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClassCreator", operationContext.getScope());
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+        Calculable calc = new Calculable() {
+
+          public Object calculate() {
+            VisibleClassifiersScope serchScope = new VisibleClassifiersScope(_context.getModel(), IClassifiersSearchScope.ANYTHING, operationContext.getScope());
+            List<SNode> list = (List<SNode>)serchScope.getClassifierNodes();
+            return ListSequence.fromList(list).where(new IWhereFilter <SNode>() {
+
+              public boolean accept(SNode it) {
+                return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Interface") || (SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ClassConcept") && SConceptPropertyOperations.getBoolean(it, "abstract"));
+              }
+
+            }).toListSequence();
+          }
+
+        };
+        Iterable<SNode> queryResult = (Iterable)calc.calculate();
+        assert queryResult != null;
+        for(final SNode item : queryResult) {
+          result.add(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+
+            public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+              SNode creator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnonymousClassCreator", null);
+              SLinkOperations.setTarget(creator, "cls", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnonymousClass", null), true);
+              SLinkOperations.setTarget(SLinkOperations.getTarget(creator, "cls", true), "classifier", (item), false);
+              return creator;
+            }
+
+            public String getMatchingText(String pattern) {
+              return SPropertyOperations.getString((item), "nestedName") + " {..}";
+            }
+
+            public String getDescriptionText(String pattern) {
+              return "anonimus class";
+            }
+
+          });
+        }
+      }
+    }
+    return result;
+  }
+
   public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1138168906052(final IOperationContext operationContext, final RTActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {

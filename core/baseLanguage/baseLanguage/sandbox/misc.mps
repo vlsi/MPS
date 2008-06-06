@@ -72,6 +72,8 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="134" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="java.util@java_stub" version="-1" />
@@ -515,6 +517,14 @@
             <property name="name" value="c2" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212700605518">
               <link role="classifier" targetNodeId="1210955660966" resolveInfo="C2" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1212712253241">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1212712794131">
+                <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1212712794132">
+                  <link role="classifier" targetNodeId="1.~Appendable" resolveInfo="Appendable" />
+                  <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1212712794133" />
+                </node>
+              </node>
             </node>
           </node>
         </node>

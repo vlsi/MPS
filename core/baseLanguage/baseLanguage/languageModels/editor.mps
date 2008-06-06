@@ -45,6 +45,9 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="73" />
   <import index="17" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="18" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -7518,6 +7521,7 @@
       <property name="name" value="classBox" />
       <property name="vertical" value="true" />
       <property name="drawBorder" value="false" />
+      <property name="selectable" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1170345921994">
         <property name="name" value="headerRow" />
         <property name="vertical" value="false" />
@@ -7583,7 +7587,6 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1170345922029">
           <property name="text" value="{" />
-          <property name="selectable" value="false" />
           <property name="drawBorder" value="false" />
         </node>
       </node>
@@ -14219,6 +14222,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapDeclaration" id="1201186331830">
     <property name="name" value="AnonymousClass_AfterName" />
+    <property name="package" value="classifier" />
     <link role="applicableConcept" targetNodeId="17.1170345865475" resolveInfo="AnonymousClass" />
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapItem" id="1201186340018">
       <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_ExecuteFunction" id="1201186340019">
