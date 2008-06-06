@@ -19,7 +19,8 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <maxImportIndex value="8" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <maxImportIndex value="10" />
   <import index="1" modelUID="jetbrains.mps.generator.template@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="-1" />
   <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
@@ -27,6 +28,8 @@
   <import index="6" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="7" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <import index="8" modelUID="jetbrains.mps.generator@java_stub" version="-1" />
+  <import index="9" modelUID="jetbrains.mps.util@java_stub" version="-1" />
+  <import index="10" modelUID="jetbrains.mps.nodeEditor.cellProviders@java_stub" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1186771508849">
     <property name="name" value="QueriesUtil" />
@@ -36,8 +39,67 @@
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210358699882">
         <link role="classifier" targetNodeId="5.~Object" resolveInfo="Object" />
       </node>
-      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1210358714852">
-        <link role="baseMethodDeclaration" targetNodeId="5.~Object.&lt;init&gt;()" resolveInfo="Object" />
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1212794635592">
+        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1212794635594">
+          <link role="baseMethodDeclaration" targetNodeId="5.~Object.&lt;init&gt;()" resolveInfo="Object" />
+        </node>
+      </node>
+    </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1212794206564">
+      <property name="name" value="getProviderClassNameForCellWithRole" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212794212412">
+        <link role="classifier" targetNodeId="5.~String" resolveInfo="String" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1212794206566" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212794206567">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1212794442177">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1212794442178">
+            <property name="name" value="conceptFqName" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212794442179">
+              <link role="classifier" targetNodeId="5.~String" resolveInfo="String" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212794442180">
+              <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1212794442181">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1212794442182">
+                  <link role="variableDeclaration" targetNodeId="1212794236741" resolveInfo="node" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1212794442183">
+                <link role="baseMethodDeclaration" targetNodeId="7.~SNode.getConceptFqName():java.lang.String" resolveInfo="getConceptFqName" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1212794530704">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1212794530705">
+            <property name="name" value="something" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212794530706">
+              <link role="classifier" targetNodeId="5.~String" resolveInfo="String" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1212794530707">
+              <link role="baseMethodDeclaration" targetNodeId="9.~NameUtil.removeStructureFromFqName(java.lang.String):java.lang.String" resolveInfo="removeStructureFromFqName" />
+              <link role="classConcept" targetNodeId="9.~NameUtil" resolveInfo="NameUtil" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1212794530708">
+                <link role="variableDeclaration" targetNodeId="1212794442178" resolveInfo="conceptFqName" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1212794627449">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1212794627450">
+            <link role="baseMethodDeclaration" targetNodeId="10.~CellProviderNameUtil.getProviderClassName(java.lang.String):java.lang.String" resolveInfo="getProviderClassName" />
+            <link role="classConcept" targetNodeId="10.~CellProviderNameUtil" resolveInfo="CellProviderNameUtil" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1212794627451">
+              <link role="variableDeclaration" targetNodeId="1212794530705" resolveInfo="something" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1212794236741">
+        <property name="name" value="node" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1212794236742">
+          <link role="concept" targetNodeId="3.1139848536355" resolveInfo="CellModel_WithRole" />
+        </node>
       </node>
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1186771518038">
