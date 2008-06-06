@@ -7208,7 +7208,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212786090301">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212786168384">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1212786168385">
-            <property name="value" value="Convert deprecated" />
+            <property name="value" value="Convert deprecated 'new'" />
           </node>
         </node>
       </node>
