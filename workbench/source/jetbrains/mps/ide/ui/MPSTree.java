@@ -488,8 +488,6 @@ public abstract class MPSTree extends JTree {
 
         MPSTreeNode root = rebuild();
         setRootNode(root);
-
-        updateUI();
       }
     }, true);
   }
