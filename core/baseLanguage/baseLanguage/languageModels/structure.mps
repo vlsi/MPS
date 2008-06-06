@@ -2315,6 +2315,9 @@
       <property name="value" value="anonymous class" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1212713961436">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1182160096073">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="1" />

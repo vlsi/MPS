@@ -519,10 +519,10 @@
               <link role="classifier" targetNodeId="1210955660966" resolveInfo="C2" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1212712253241">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1212712794131">
-                <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1212712794132">
-                  <link role="classifier" targetNodeId="1.~Appendable" resolveInfo="Appendable" />
-                  <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1212712794133" />
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1212714163196">
+                <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1212714163197">
+                  <link role="classifier" targetNodeId="3.~AbstractCollection" resolveInfo="AbstractCollection" />
+                  <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1212714163198" />
                 </node>
               </node>
             </node>

@@ -1016,7 +1016,7 @@ __switch__:
             return ListSequence.fromList(list).where(new IWhereFilter <SNode>() {
 
               public boolean accept(SNode it) {
-                return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Interface") || (SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ClassConcept") && SConceptPropertyOperations.getBoolean(it, "abstract"));
+                return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Interface") || (SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ClassConcept") && SPropertyOperations.getBoolean(it, "abstractClass"));
               }
 
             }).toListSequence();
@@ -1032,6 +1032,22 @@ __switch__:
               SNode creator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnonymousClassCreator", null);
               SLinkOperations.setTarget(creator, "cls", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnonymousClass", null), true);
               SLinkOperations.setTarget(SLinkOperations.getTarget(creator, "cls", true), "classifier", (item), false);
+              List<SNode> methodsToImplement = SLinkOperations.getTargets((item), "method", true);
+              if (SNodeOperations.isInstanceOf((item), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+                methodsToImplement = ListSequence.fromList(methodsToImplement).where(new IWhereFilter <SNode>() {
+
+                  public boolean accept(SNode it) {
+                    return SPropertyOperations.getBoolean(it, "isAbstract");
+                  }
+
+                }).toListSequence();
+              }
+              for(SNode method : methodsToImplement) {
+                SNode method_copy = SNodeOperations.copyNode(method);
+                SPropertyOperations.set(method_copy, "isAbstract", "" + false);
+                SLinkOperations.setNewChild(method_copy, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
+                SLinkOperations.addChild(SLinkOperations.getTarget(creator, "cls", true), "method", method_copy);
+              }
               return creator;
             }
 
@@ -1040,7 +1056,7 @@ __switch__:
             }
 
             public String getDescriptionText(String pattern) {
-              return "anonimus class";
+              return "anonimous class";
             }
 
           });
