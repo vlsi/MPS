@@ -83,6 +83,8 @@ public class GenerationController {
   }
 
   public boolean generate() {
+    long startTime = System.currentTimeMillis();
+
     clearMessageVew();
     myProgress.setIndeterminate(false);
     myProgress.setFraction(0);
@@ -114,12 +116,12 @@ public class GenerationController {
           reloadClasses(totalJob, startJobTime);
         }
         if (generationOK) {
-          info("generation completed successfully");
+          info("generation completed successfully in " + (System.currentTimeMillis() - startTime) + " ms");
         } else {
-          info("generation completed with errors");
+          info("generation completed with errors in " + (System.currentTimeMillis() - startTime) + " ms");
         }
       } else if (!generationOK) {
-        info("generation finished with errors");
+        info("generation finished with errors in " + (System.currentTimeMillis() - startTime) + " ms");
       }
       if (isIDEAPresent() && !myGenerationType.requiresCompilationInIDEAfterGeneration()) {
         getProjectHandler().refreshFS();
