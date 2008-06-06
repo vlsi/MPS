@@ -59,16 +59,6 @@ public class NodePresentationUtil {
     }
 
     return nodeAdapter.getNode().getPresentation();
-//    String presentation = nodeAdapter.getNode().getPresentation();
-//    if (presentation != null) {
-//      return presentation;
-//    }
-//
-//    if (nodeAdapter instanceof INamedConcept) {
-//      return ((INamedConcept) nodeAdapter).getName();
-//    }
-//
-//    return ((BaseConcept) nodeAdapter).getAlias();
   }
 
   public static String descriptionText(SNode node) {

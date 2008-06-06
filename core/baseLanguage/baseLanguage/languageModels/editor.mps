@@ -5222,7 +5222,7 @@
     <link role="conceptDeclaration" targetNodeId="17.1145552809883" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Error" id="1145552947529">
       <property name="drawBorder" value="false" />
-      <property name="text" value="what?" />
+      <property name="text" value="?" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1145553127929">

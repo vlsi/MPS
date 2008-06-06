@@ -5523,15 +5523,6 @@
               </node>
             </node>
           </node>
-          <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_ParameterizedSubstitute_String" id="1212711781134">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212711781135">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212711785141">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1212711785142">
-                  <property name="value" value="anonimous class" />
-                </node>
-              </node>
-            </node>
-          </node>
         </node>
       </node>
     </node>

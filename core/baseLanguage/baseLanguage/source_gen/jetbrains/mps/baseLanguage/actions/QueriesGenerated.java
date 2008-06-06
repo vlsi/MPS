@@ -1055,10 +1055,6 @@ __switch__:
               return SPropertyOperations.getString((item), "nestedName") + " {..}";
             }
 
-            public String getDescriptionText(String pattern) {
-              return "anonimous class";
-            }
-
           });
         }
       }

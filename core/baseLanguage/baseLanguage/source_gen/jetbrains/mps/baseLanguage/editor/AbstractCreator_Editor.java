@@ -25,7 +25,7 @@ public class AbstractCreator_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell create_ErrorCell17248_0(EditorContext context, SNode node) {
-    EditorCell_Error editorCell = new EditorCell_Error(context, node, "what?");
+    EditorCell_Error editorCell = new EditorCell_Error(context, node, "?");
     setupBasic_ErrorCell17248_0(editorCell, node, context);
     setupLabel_ErrorCell17248_0(editorCell, node, context);
     return editorCell;
