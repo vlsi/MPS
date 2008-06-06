@@ -8,6 +8,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDecla
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
+import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 
@@ -112,40 +113,9 @@ public class FastNodeFinder {
     }
   }
 
-  private Set<AbstractConceptDeclaration> getParents(AbstractConceptDeclaration current) {
-    Set<AbstractConceptDeclaration> result = new HashSet<AbstractConceptDeclaration>();
-    collectParents(current, result);
-    return result;
+  private List<AbstractConceptDeclaration> getParents(AbstractConceptDeclaration current) {
+    return new ConceptAndSuperConceptsScope(current).getConcepts();
   }
-
-  private void collectParents(final AbstractConceptDeclaration current, final Set<AbstractConceptDeclaration> result) {
-    if (result.contains(current)) {
-      return;
-    }
-
-    result.add(current);
-
-    if (current instanceof InterfaceConceptDeclaration) {
-      InterfaceConceptDeclaration icd = (InterfaceConceptDeclaration) current;
-
-      for (InterfaceConceptReference parent : icd.getExtendses()) {
-        collectParents(parent.getIntfc(), result);
-      }
-    }
-
-    if (current instanceof ConceptDeclaration) {
-      ConceptDeclaration cd = (ConceptDeclaration) current;
-
-      for (InterfaceConceptReference ref : cd.getImplementses()) {
-        collectParents(ref.getIntfc(), result);
-      }
-
-      if (cd.getExtends() != null) {
-        collectParents(cd.getExtends(), result);
-      }
-    }
-  }
-
 
   private void add(AbstractConceptDeclaration acd, SNode node, boolean noInheritance) {
     Map<AbstractConceptDeclaration, Set<SNode>> map;
