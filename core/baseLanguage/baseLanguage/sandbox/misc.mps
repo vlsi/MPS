@@ -81,6 +81,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="134" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="java.util@java_stub" version="-1" />
@@ -576,23 +577,8 @@
               <link role="classifier" targetNodeId="1210955660966" resolveInfo="C2" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1212717728227">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1212778591291">
-                <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1212778591292">
-                  <link role="classifier" targetNodeId="1.~Iterable" resolveInfo="Iterable" />
-                  <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1212778591293" />
-                  <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1212778591294">
-                    <property name="isAbstract" value="false" />
-                    <property name="name" value="iterator" />
-                    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1212778591295" />
-                    <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212778591296">
-                      <link role="classifier" targetNodeId="3.~Iterator" resolveInfo="Iterator" />
-                      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212778591297">
-                        <link role="classifier" targetNodeId="1.~Object" />
-                      </node>
-                    </node>
-                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212778591298" />
-                  </node>
-                </node>
+              <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListCreator" id="1212781300592">
+                <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType" id="1212781300593" />
               </node>
             </node>
           </node>

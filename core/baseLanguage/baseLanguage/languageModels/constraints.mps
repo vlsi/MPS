@@ -61,6 +61,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="48" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -3389,11 +3390,7 @@
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1149122067641">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1188411626000">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1188411626001">
-              <link role="baseMethodDeclaration" targetNodeId="32.~NewExpression_ClassConstructorScope.&lt;init&gt;(jetbrains.mps.baseLanguage.structure.NewExpression,jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.IScope)" resolveInfo="NewExpression_ClassConstructorScope" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721329">
-                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_referenceNode" id="1190137908849" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1190137913681" />
-              </node>
+              <link role="baseMethodDeclaration" targetNodeId="32.~VisibleClassConstructorsScope.&lt;init&gt;(jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.IScope)" resolveInfo="VisibleClassConstructorsScope" />
               <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_model" id="1188411709999" />
               <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_scope" id="1188411718501" />
             </node>
@@ -9297,6 +9294,27 @@
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1212691022683">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212691022684" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1212780975339">
+    <property name="package" value="classifier" />
+    <link role="concept" targetNodeId="1.1212685548494" resolveInfo="ClassCreator" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1212780975340">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212780975341" />
+    </node>
+    <node role="references" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1212780984248">
+      <link role="applicableLink" targetNodeId="1.1212686240295" />
+      <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1212780994499">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212780994500">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212781037699">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1212781037700">
+              <link role="baseMethodDeclaration" targetNodeId="32.~VisibleClassConstructorsScope.&lt;init&gt;(jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.IScope)" resolveInfo="VisibleClassConstructorsScope" />
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_model" id="1212781099233" />
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_scope" id="1212781102141" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>
