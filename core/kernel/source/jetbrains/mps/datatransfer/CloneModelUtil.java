@@ -22,10 +22,14 @@ public class CloneModelUtil {
     return cloneModel(model, modelCopy, operationContext.getScope());
   }
 
-  public static SModel cloneModel(SModel model, SModel modelCopy, IScope scope) {
-    for (SNode root : CopyUtil.copy(model.getRoots())) {
-      modelCopy.addRoot(root);
-    }
+  public static SModel cloneModel(final SModel model, final SModel modelCopy, IScope scope) {
+    modelCopy.runLoadingAction(new Runnable() {
+      public void run() {
+        for (SNode root : CopyUtil.copy(model.getRoots())) {
+          modelCopy.addRoot(root);
+        }
+      }
+    });
     return modelCopy;
   }
 
