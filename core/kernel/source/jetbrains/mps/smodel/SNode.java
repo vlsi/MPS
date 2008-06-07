@@ -871,15 +871,17 @@ public final class SNode {
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
 
-    List<SNode> result = new ArrayList<SNode>(_children());
-    if (!includeAttributes) {
+    if (includeAttributes) {
+      return Collections.unmodifiableList(_children());      
+    } else {
+      List<SNode> result = new ArrayList<SNode>(_children());
       Iterator<SNode> it = result.iterator();
       while (it.hasNext()) {
         SNode child = it.next();
         if (child.isAttribute()) it.remove();
       }
+      return result;
     }
-    return result;
   }
 
   private void fireNodeUnclassifiedReadAccess() {
