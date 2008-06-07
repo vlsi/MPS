@@ -27,7 +27,7 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   private Map<String, IModule> myFileToModuleMap = new LinkedHashMap<String, IModule>();
-  private Map<String, List<IModule>> myUIDToModulesMap = new LinkedHashMap<String, List<IModule>>();
+  private Map<String, IModule> myUIDToModulesMap = new LinkedHashMap<String, IModule>();
 
   private Map<String, ModuleStub> myFileToModuleStubMap = new LinkedHashMap<String, ModuleStub>();
   private Map<String, List<ModuleStub>> myUIDToModuleStubsMap = new LinkedHashMap<String, List<ModuleStub>>();
@@ -179,9 +179,7 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   public IModule getModuleByUID(String moduleUID) {
-    List<IModule> modules = myUIDToModulesMap.get(moduleUID);
-    if (modules == null || modules.isEmpty()) return null;
-    return modules.get(0);
+    return myUIDToModulesMap.get(moduleUID);
   }
 
   public ModuleStub getModuleStubByUID(String moduleUID) {
@@ -271,18 +269,12 @@ public class MPSModuleRepository implements ApplicationComponent {
 
   private void putModuleWithUID(String moduleUID, IModule module) {
 
-    List<IModule> modulesWithUID = myUIDToModulesMap.get(moduleUID);
-    if (modulesWithUID == null) {
-      modulesWithUID = new ArrayList<IModule>(1);
-      myUIDToModulesMap.put(moduleUID, modulesWithUID);
+    if (myUIDToModulesMap.containsKey(moduleUID)) {
+      IModule m = myUIDToModulesMap.get(moduleUID);
+      LOG.error("can't add module " + moduleUID + " : module with the same UID exists at " + m.getDescriptorFile() + " and " + module.getDescriptorFile(), m);
     }
-    if (modulesWithUID.size() > 1) {
-      LOG.error("can't add module " + moduleUID + " : module with the same UID exists at " + modulesWithUID.get(0).getDescriptorFile() + " and " + module.getDescriptorFile(), modulesWithUID.get(0));
-    }
-    if (modulesWithUID.size() == 1 && modulesWithUID.get(0) != module) {
-      LOG.error("can't add module " + moduleUID + " : module with the same UID exists at " + modulesWithUID.get(0).getDescriptorFile() + " and " + module.getDescriptorFile(), modulesWithUID.get(0));
-    }
-    modulesWithUID.add(module);
+
+    myUIDToModulesMap.put(moduleUID, module);
   }
 
   public boolean existsModule(IModule module, MPSModuleOwner owner) {
@@ -392,10 +384,7 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   private void removeModuleFromUIDMap(IModule module) {
-    List<IModule> modules = myUIDToModulesMap.get(module.getModuleUID());
-    if (modules != null) {
-      modules.remove(module);
-    }
+    myUIDToModulesMap.remove(module.getModuleUID());
   }
 
   public void readModuleDescriptors(Iterator<? extends Root> roots, MPSModuleOwner owner) {
@@ -475,14 +464,13 @@ public class MPSModuleRepository implements ApplicationComponent {
     if (descriptorFile != null) {
       myFileToModuleMap.remove(descriptorFile.getCanonicalPath());
     }
-    myUIDToModulesMap.get(l.getNamespace()).remove(l);
+    myUIDToModulesMap.remove(l.getNamespace());
 
-    List<IModule> modules = myUIDToModulesMap.get(newUID);
-    if (modules == null) {
-      modules = new ArrayList<IModule>(1);
-      myUIDToModulesMap.put(newUID, modules);
+    if (myUIDToModulesMap.containsKey(newUID)) {
+      throw new IllegalStateException("Can't rename " + l + " to " + newUID);
     }
-    modules.add(l);
+
+    myUIDToModulesMap.put(l.getModuleUID(), l);
     myFileToModuleMap.put(l.newDescriptorFileByNewName(newUID).getCanonicalPath(), l);
   }
 
@@ -495,36 +483,15 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   public Language getLanguage(String namespace) {
-    List<IModule> modules = myUIDToModulesMap.get(namespace);
-    if (modules == null || modules.isEmpty()) return null;
-    return modulesAs(Language.class, modules);
+    return (Language) myUIDToModulesMap.get(namespace);
   }
 
   public DevKit getDevKit(String namespace) {
-    List<IModule> modules = myUIDToModulesMap.get(namespace);
-    if (modules == null || modules.isEmpty()) return null;
-    return modulesAs(DevKit.class, modules);
+    return (DevKit) myUIDToModulesMap.get(namespace);
   }
 
   public Solution getSolution(String namespace) {
-    List<IModule> modules = myUIDToModulesMap.get(namespace);
-    if (modules == null || modules.isEmpty()) return null;
-    return modulesAs(Solution.class, modules);
-  }
-
-  private List<IModule> getModules(String namespace, MPSModuleOwner moduleOwner) {
-    List<IModule> modules = myUIDToModulesMap.get(namespace);
-    List<IModule> result = new LinkedList<IModule>();
-    if (modules == null) {
-      return result;
-    }
-    for (IModule module : modules) {
-      Set<MPSModuleOwner> languageOwners = myModuleToOwners.getByFirst(module);
-      if (languageOwners.contains(moduleOwner)) {
-        result.add(module);
-      }
-    }
-    return result;
+    return (Solution) myUIDToModulesMap.get(namespace);
   }
 
   private<M extends IModule> M  modulesAs(Class<? extends M> cls, List<IModule> modules) {
@@ -547,10 +514,6 @@ public class MPSModuleRepository implements ApplicationComponent {
 
     }
     return result;
-  }
-
-  public Language getLanguage(String namespace, MPSModuleOwner moduleOwner) {
-    return modulesAs(Language.class, getModules(namespace, moduleOwner));
   }
 
   public <MT extends IModule> List<MT> getModules(MPSModuleOwner moduleOwner, Class<MT> cls) {
