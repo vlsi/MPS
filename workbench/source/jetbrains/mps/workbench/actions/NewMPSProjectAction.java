@@ -28,12 +28,7 @@ public class NewMPSProjectAction extends AnAction {
 
     result.save();
 
-    String path = result.getPresentableUrl();
-
-    result.dispose();
-
     final ProjectManagerEx projectManager = ProjectManagerEx.getInstanceEx();
-    Project ideaProject = projectManager.newProject(path, true, false);
-    projectManager.openProject(ideaProject);
+    projectManager.openProject(result);
   }
 }

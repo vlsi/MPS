@@ -58,7 +58,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
 
   private boolean myDisposed;
 
-  public MPSProject(final File projectFile, Project ideaProject) {
+  public MPSProject(final File projectFile, final ProjectDescriptor projectDescriptor, Project ideaProject) {
     myIDEAProject = ideaProject;
 
     ModelAccess.instance().runWriteAction(new Runnable() {
@@ -67,11 +67,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
         SModel model = ProjectModels.createDescriptorFor(MPSProject.this).getSModel();
         model.setLoading(true);
 
-        if (myProjectFile == null) {
-          myProjectDescriptor = DescriptorsPersistence.loadProjectDescriptor(null, model);
-        } else {
-          myProjectDescriptor = DescriptorsPersistence.loadProjectDescriptor(new File(FileUtil.getCanonicalPath(projectFile)), model);
-        }
+        myProjectDescriptor = projectDescriptor;
+        model.addRoot(myProjectDescriptor);
 
         MPSProjects projects = MPSProjects.instance();
         projects.addProject(MPSProject.this);
@@ -459,15 +456,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
 
   public void saveModels() {
     SModelRepository.getInstance().saveAll();
-  }
-
-  public void save() {
-    if (IdeMain.isTestMode()) return;
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        DescriptorsPersistence.saveProjectDescriptor(myProjectFile, myProjectDescriptor);
-      }
-    });
   }
 
   public void dispose() {
