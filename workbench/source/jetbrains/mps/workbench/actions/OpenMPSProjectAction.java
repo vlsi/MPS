@@ -25,7 +25,7 @@ public class OpenMPSProjectAction extends AnAction {
 
     chooser.setFileFilter(new IFileFilter() {
       public boolean accept(IFile file) {
-        return file.isDirectory() || file.getName().toLowerCase().endsWith(".mpr");
+        return file.isDirectory() || file.getName().toLowerCase().endsWith(".ipr") || file.getName().toLowerCase().endsWith(".mpr");
       }
     });
 
