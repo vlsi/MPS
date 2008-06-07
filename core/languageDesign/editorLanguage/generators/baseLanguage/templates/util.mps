@@ -20,6 +20,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="10" />
   <import index="1" modelUID="jetbrains.mps.generator.template@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="-1" />
@@ -98,6 +99,26 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1212794236741">
         <property name="name" value="node" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1212794236742">
+          <link role="concept" targetNodeId="3.1139848536355" resolveInfo="CellModel_WithRole" />
+        </node>
+      </node>
+    </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1212799175613">
+      <property name="name" value="getRoleForCellWithRole" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212799188961">
+        <link role="classifier" targetNodeId="5.~String" resolveInfo="String" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1212799175615" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212799175616">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1212799224839">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1212799226216">
+            <property name="value" value="" />
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1212799208415">
+        <property name="name" value="node" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1212799208416">
           <link role="concept" targetNodeId="3.1139848536355" resolveInfo="CellModel_WithRole" />
         </node>
       </node>
