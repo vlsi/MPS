@@ -900,7 +900,6 @@
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/ypath.test.tmp/module" />
     <mkdir dir="platform/ypath/solutions/test/classes_gen" />
     <mkdir dir="platform/ypath/solutions/test/classes_gen" />
-    <mkdir dir="platform/ypath/classes" />
     <mkdir dir="platform/ypath/solutions/classes" />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/ypath.test.tmp/module">
       <fileset file="platform/ypath/solutions/test/test.msd" />
@@ -911,7 +910,6 @@
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp\MPS\platform\ypath.test.tmp">
       <fileset dir="platform/ypath/solutions/test/classes_gen" />
       <fileset dir="platform/ypath/solutions/test/classes_gen" />
-      <fileset dir="platform/ypath/classes" />
       <fileset dir="platform/ypath/solutions/classes" />
     </copy>
     <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/ypath.test.mpsarch.jar" duplicate="preserve">

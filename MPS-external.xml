@@ -407,8 +407,6 @@
     <copy file="readme.txt" tofile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/readme.txt" />
     <copy file="mps.bat" tofile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/mps.bat" />
     <copy file="mps.sh" tofile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/mps.sh" />
-    <copy file="mpsOnIDEA.bat" tofile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/mpsOnIDEA.bat" />
-    <copy file="mpsOnIDEA.sh" tofile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/mpsOnIDEA.sh" />
     <zip destfile="${deploy.dir}/MPS-${build.number}.zip" duplicate="preserve" filesonly="true">
       <zipfileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp" excludes="**/*.iml, **/*.ipr" includes="" filemode="755" />
     </zip>
