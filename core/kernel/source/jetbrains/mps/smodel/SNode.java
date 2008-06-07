@@ -29,6 +29,8 @@ import java.util.*;
 public final class SNode {
   private static final Logger LOG = Logger.getLogger(SNode.class);
 
+  private static final ModelConstraintsManager CONSTRAINTS_MANAGER = ModelConstraintsManager.getInstance();
+
   public static final Object STATUS = new Object();
   public static final Object LAST_UPDATE = new Object();
 
@@ -644,7 +646,7 @@ public final class SNode {
   private String getProperty_internal(String propertyName) {
     String propertyValue = null;
     if (!ourPropertyGettersInProgress.contains(new Pair<SNode, String>(this, propertyName))) {
-      INodePropertyGetter getter = ModelConstraintsManager.getInstance().getNodePropertyGetter(this, propertyName);
+      INodePropertyGetter getter = CONSTRAINTS_MANAGER.getNodePropertyGetter(this, propertyName);
       if (getter != null) {
         ourPropertyGettersInProgress.add(new Pair<SNode, String>(this, propertyName));
         try {
@@ -688,7 +690,7 @@ public final class SNode {
     propertyValue = InternUtil.intern(propertyValue);
     if (usePropertySetter) {
       if (!ourPropertySettersInProgress.contains(new Pair<SNode, String>(this, propertyName)) && !myModel.isLoading()) {
-        INodePropertySetter setter = ModelConstraintsManager.getInstance().getNodePropertySetter(this, propertyName);
+        INodePropertySetter setter = CONSTRAINTS_MANAGER.getNodePropertySetter(this, propertyName);
         if (setter != null) {
           ourPropertySettersInProgress = new HashSet<Pair<SNode, String>>(1);
           ourPropertySettersInProgress.add(new Pair<SNode, String>(this, propertyName));
@@ -1111,7 +1113,7 @@ public final class SNode {
     if (useHandler && !getModel().isLoading()) {
       // invoke custom referent set event handler
       if (!ourSetReferentEventHandlersInProgress.contains(new Pair<SNode, String>(this, role))) {
-        INodeReferentSetEventHandler handler = ModelConstraintsManager.getInstance().getNodeReferentSetEventHandler(this, role);
+        INodeReferentSetEventHandler handler = CONSTRAINTS_MANAGER.getNodeReferentSetEventHandler(this, role);
         if (handler != null) {
           ourSetReferentEventHandlersInProgress.add(new Pair<SNode, String>(this, role));
           try {
