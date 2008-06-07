@@ -22,6 +22,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="11" />
   <import index="8" modelUID="jetbrains.mps.baseLanguage.sandbox.refactoringTest" version="-1" />
   <import index="9" modelUID="jetbrains.mps.core.structure" version="-1" />
