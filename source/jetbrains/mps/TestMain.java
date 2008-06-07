@@ -1,6 +1,7 @@
 package jetbrains.mps;
 
 import jetbrains.mps.logging.LoggerUtil;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.TestResult;
@@ -15,17 +16,24 @@ import jetbrains.mps.projectLanguage.structure.ClassPathEntry;
 import jetbrains.mps.make.ModuleMaker;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.LinkedHashSet;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectUtil;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.idea.IdeaTestApplication;
 
 import javax.swing.SwingUtilities;
 
+import org.jdom.JDOMException;
+
 public class TestMain {
+  private static final Logger LOG = Logger.getLogger(TestMain.class);
+
   public static void main(String[] args) {
     if (args.length != 1) {
       System.out.println("Usage : TestMain mpsProject");
@@ -60,7 +68,16 @@ public class TestMain {
     String filePath = projectFile.getAbsolutePath();
     String iprfilePath = filePath.replaceAll("(.*)(\\.mpr)", "$1.ipr");
 
-    Project ideaProject = projectManager.newProject(iprfilePath, true, false);
+    Project ideaProject = null;
+    try {
+      ideaProject = projectManager.loadAndOpenProject(iprfilePath, false);
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    } catch (JDOMException e) {
+      throw new RuntimeException(e);
+    } catch (InvalidDataException e) {
+      throw new RuntimeException(e);
+    }
 
     assert ideaProject != null;
 
