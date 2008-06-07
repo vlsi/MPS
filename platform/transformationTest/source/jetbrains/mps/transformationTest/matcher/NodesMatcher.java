@@ -103,11 +103,11 @@ public class NodesMatcher {
 
       if (map.containsKey(reference1)) {
         if (map.get(reference1) != reference2) {
-          difference.add(new ReferenceDifferense(role));
+          difference.add(new ReferenceDifferense(role, true));
         }
       } else {
         if (reference1 != reference2) {
-          difference.add(new ReferenceDifferense(role));
+          difference.add(new ReferenceDifferense(role, false));
         }
       }
     }
