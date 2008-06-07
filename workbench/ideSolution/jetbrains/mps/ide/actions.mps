@@ -115,6 +115,9 @@
         <link role="javaClass" targetNodeId="43.~ShowGenerationTracebackAction" resolveInfo="ShowGenerationTracebackAction" />
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204908878146" />
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1212826701950">
+        <link role="javaClass" targetNodeId="1.~FindSpecificNodeUsagesAction" resolveInfo="FindSpecificNodeUsagesAction" />
+      </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908888414">
         <link role="javaClass" targetNodeId="1.~FastFindUsagesNodeAction" resolveInfo="FastFindUsagesNodeAction" />
       </node>
