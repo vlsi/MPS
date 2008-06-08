@@ -300,6 +300,11 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.refactoring.NewRefactoringView</implementation-class>
+      <skipForDummyProject/>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.ide.hierarchy.BaseLanguageHierarchyViewTool</implementation-class>
       <skipForDummyProject/>
     </component>

@@ -68,7 +68,7 @@ public class RefactoringProcessor {
               public void run() {
                 ModelAccess.instance().runReadAction(new Runnable() {
                   public void run() {
-                    NewRefactoringView.showRefactoringView(context, refactoringContext);
+                    context.getOperationContext().getComponent(NewRefactoringView.class).showRefactoringView(context, refactoringContext);
                   }
                 });
               }
