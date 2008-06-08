@@ -140,8 +140,8 @@ public class SModel implements Iterable<SNode> {
 
   @NotNull
   public List<SNode> getRoots() {
-    return new ArrayList<SNode>(myRoots);
-  }
+    return Collections.unmodifiableList(myRoots);
+  }    
 
   public boolean isRoot(@Nullable SNode node) {
     return myRoots.contains(node);

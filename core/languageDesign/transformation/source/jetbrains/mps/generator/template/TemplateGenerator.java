@@ -123,7 +123,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   private List<SNode> copyRootsFromInputModel(RuleManager ruleManager) {
-    List<SNode> rootsToCopy = myInputModel.getRoots();
+    List<SNode> rootsToCopy = new ArrayList<SNode>(myInputModel.getRoots());
     for (SNode rootNode : myRootsNotToCopy) {
       rootsToCopy.remove(rootNode);
     }

@@ -1070,7 +1070,7 @@ public final class SNode {
 
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
-    return new ArrayList<SReference>(_references());
+    return Collections.unmodifiableList(_references());
   }
 
   @Nullable
