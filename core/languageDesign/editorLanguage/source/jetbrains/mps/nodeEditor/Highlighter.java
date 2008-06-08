@@ -32,7 +32,6 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
   private static final Object CHECKERS_LOCK = new Object();
 
   private boolean myStopThread = false;
-  private MPSProjects myProjects;
   private GlobalSModelEventsManager myGlobalSModelEventsManager;
   private ClassLoaderManager myClassLoaderManager;
   protected Thread myThread;
@@ -57,11 +56,10 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
 
   private Project myProject;
 
-  public Highlighter(Project project, GlobalSModelEventsManager eventsManager, ClassLoaderManager classLoaderManager, MPSProjects projects) {
+  public Highlighter(Project project, GlobalSModelEventsManager eventsManager, ClassLoaderManager classLoaderManager) {
     myProject = project;
     myGlobalSModelEventsManager = eventsManager;
     myClassLoaderManager = classLoaderManager;
-    myProjects = projects;
     myEditorsProvider = new EditorsProvider(project);
   }
 
@@ -158,10 +156,6 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
   protected void doUpdate() {
     // SwingUtilities.invokeLater(new Runnable() {
     //   public void run() {
-    if (myProjects == null) {
-      return;
-    }
-    MPSProjects projects = myProjects;
 
     List<SModelEvent> events = new ArrayList<SModelEvent>();
     synchronized (EVENTS_LOCK) {
