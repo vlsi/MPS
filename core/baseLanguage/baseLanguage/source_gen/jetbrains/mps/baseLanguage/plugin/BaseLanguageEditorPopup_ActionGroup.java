@@ -22,6 +22,7 @@ public class BaseLanguageEditorPopup_ActionGroup extends BaseActionGroup {
       this.add(new RunClassConcept_Action(project), this);
       this.addSeparator();
       this.add(new ExtractMethod_Action(project), this);
+      this.add(new InlineMethod_Action(project), this);
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

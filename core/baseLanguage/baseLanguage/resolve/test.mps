@@ -1009,6 +1009,16 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213008020699">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213008020700">
+            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213008033546">
+              <link role="baseMethodDeclaration" targetNodeId="2.~Integer.&lt;init&gt;(int)" resolveInfo="Integer" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1213008034422">
+                <property name="value" value="10" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213003975650">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1213003977161">
             <node role="rValue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1213003978516">
@@ -1096,6 +1106,20 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213011562604">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213011562605">
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1213011562606">
+              <link role="baseMethodDeclaration" targetNodeId="1213003937582" resolveInfo="bla" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1213011564014">
+                <property name="value" value="10" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1213011564641">
+                <property name="value" value="10" />
+              </node>
+            </node>
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1213011562607" />
           </node>
         </node>
       </node>
