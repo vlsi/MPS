@@ -12,6 +12,8 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentManager;
+import com.intellij.ui.content.ContentManagerAdapter;
+import com.intellij.ui.content.ContentManagerEvent;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.ConceptInstances_Finder;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder;
@@ -80,6 +82,20 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
     super(project, "Usages", 3, jetbrains.mps.ide.projectPane.Icons.USAGES_ICON, ToolWindowAnchor.BOTTOM, true);
 
     setDefaultOptions();
+
+    StartupManager.getInstance(project).registerPostStartupActivity(new Runnable() {
+      public void run() {
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            getContentManager().addContentManagerListener(new ContentManagerAdapter() {
+              public void contentRemoved(ContentManagerEvent event) {
+                myUsageViewsData.remove(event.getIndex());
+              }
+            });
+          }
+        });
+      }
+    });
   }
 
   private void setDefaultOptions() {
@@ -108,11 +124,6 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
     return data.myUsagesView;
   }
 
-  private int currentTabIndex() {
-    ContentManager contentManager = getContentManager();
-    return contentManager.getIndexOfContent(contentManager.getSelectedContent());
-  }
-
   public void closeTab(int index) {
     LOG.checkEDT();
 
@@ -120,14 +131,11 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
     Content content = contentManager.getContent(index);
     assert content != null;
     contentManager.removeContent(content, true);
-    myUsageViewsData.remove(index);
   }
 
-  public void clear() {
-    LOG.checkEDT();
-
-    getContentManager().removeAllContents(true);
-    makeUnavailable();
+  private int currentTabIndex() {
+    ContentManager contentManager = getContentManager();
+    return contentManager.getIndexOfContent(contentManager.getSelectedContent());
   }
 
   //---FIND USAGES STUFF----

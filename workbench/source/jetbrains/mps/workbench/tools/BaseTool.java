@@ -15,7 +15,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -31,6 +30,7 @@ public abstract class BaseTool {
   private Icon myIcon;
   private ToolWindowAnchor myAnchor;
   private boolean myCanCloseContent;
+  private boolean myIsRegistered;
 
   public BaseTool(Project project, String id, int number, Icon icon, ToolWindowAnchor anchor, boolean canCloseContent) {
     myAnchor = anchor;
@@ -39,6 +39,7 @@ public abstract class BaseTool {
     myIcon = icon;
     myCanCloseContent = canCloseContent;
     myProject = project;
+    myIsRegistered = false;
   }
 
   public String getId() {
@@ -53,16 +54,17 @@ public abstract class BaseTool {
     return myIcon;
   }
 
-  public boolean isRegistered() {
-    return getToolWindow() != null;
+  synchronized private boolean isRegistered() {
+    return myIsRegistered;
   }
 
+  synchronized private void setIsRegistered(boolean isRegistered) {
+    myIsRegistered = isRegistered;
+  }
 
   public boolean toolIsOpened() {
     LOG.checkEDT();
-
-    ToolWindow window = checkRegistered();
-    return window.isVisible();
+    return getToolWindow().isVisible();
   }
 
   /**
@@ -77,7 +79,7 @@ public abstract class BaseTool {
   }
 
   public void openTool(boolean setActive) {
-    ToolWindow window = checkRegistered();
+    ToolWindow window = getToolWindow();
     if (!isShown()) makeAvailableLater();
     if (!toolIsOpened()) window.show(null);
     if (setActive) window.activate(null);
@@ -95,8 +97,7 @@ public abstract class BaseTool {
   }
 
   public void close() {
-    ToolWindow window = checkRegistered();
-    if (isShown() && toolIsOpened()) window.hide(null);
+    if (isShown() && toolIsOpened()) getToolWindow().hide(null);
   }
 
   /**
@@ -104,9 +105,7 @@ public abstract class BaseTool {
    */
   public boolean isShown() {
     LOG.checkEDT();
-
-    ToolWindow window = checkRegistered();
-    return window.isAvailable();
+    return getToolWindow().isAvailable();
   }
 
   /**
@@ -121,8 +120,7 @@ public abstract class BaseTool {
   }
 
   public void makeAvailable() {
-    ToolWindow window = checkRegistered();
-    if (!isShown()) window.setAvailable(true, null);
+    if (!isShown()) getToolWindow().setAvailable(true, null);
   }
 
   /**
@@ -137,15 +135,14 @@ public abstract class BaseTool {
   }
 
   public void makeUnavailable() {
-    ToolWindow window = checkRegistered();
-    if (isShown()) window.setAvailable(false, null);
+    if (isShown()) getToolWindow().setAvailable(false, null);
   }
 
-  @Nullable
+  @NotNull
   public ToolWindow getToolWindow() {
     LOG.checkEDT();
 
-    if (myProject.isDisposed()) return null;
+    if (!isRegistered()) register();
     return ToolWindowManager.getInstance(myProject).getToolWindow(myId);
   }
 
@@ -165,6 +162,7 @@ public abstract class BaseTool {
 
   public void register() {
     if (isRegistered()) return;
+    setIsRegistered(true);
 
     if (myNumber != -1) {
       KeymapManager.getInstance().getActiveKeymap().addShortcut(
@@ -199,14 +197,12 @@ public abstract class BaseTool {
     }
 
     ToolWindow toolWindow = getToolWindow();
-    if (toolWindow != null) {
-      ContentManager contentManager = toolWindow.getContentManager();
-      if (contentManager != null && !contentManager.isDisposed()) {
-        contentManager.removeAllContents(true);
-      }
-
-      ToolWindowManager.getInstance(myProject).unregisterToolWindow(myId);
+    ContentManager contentManager = toolWindow.getContentManager();
+    if (contentManager != null && !contentManager.isDisposed()) {
+      contentManager.removeAllContents(true);
     }
+
+    ToolWindowManager.getInstance(myProject).unregisterToolWindow(myId);
   }
 
   public JComponent getComponent() {
@@ -215,15 +211,14 @@ public abstract class BaseTool {
 
   protected Content addContent(JComponent component, String name, boolean isLockable) {
     Content content = new ContentFactoryImpl().createContent(component, name, isLockable);
-    getContentManager().addContent(content);
+    ContentManager contentManager = getContentManager();
+    contentManager.addContent(content);
     return content;
   }
 
   protected ContentManager getContentManager() {
     if (!isRegistered()) register();
-    ToolWindow window = getToolWindow();
-    assert window != null;
-    return window.getContentManager();
+    return getToolWindow().getContentManager();
   }
 
   protected Project getProject() {
@@ -233,14 +228,5 @@ public abstract class BaseTool {
   @Deprecated
   protected MPSProject getMPSProject() {
     return myProject.getComponent(MPSProjectHolder.class).getMPSProject();
-  }
-
-  private
-  @NotNull
-  ToolWindow checkRegistered() {
-    if (!isRegistered()) throw new InvalidUsageException("The tool is used before it was registered");
-    ToolWindow window = getToolWindow();
-    assert window != null;
-    return window;
   }
 }
