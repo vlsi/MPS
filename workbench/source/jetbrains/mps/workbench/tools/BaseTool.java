@@ -164,6 +164,8 @@ public abstract class BaseTool {
   }
 
   public void register() {
+    if (isRegistered()) return;
+
     if (myNumber != -1) {
       KeymapManager.getInstance().getActiveKeymap().addShortcut(
         ActivateToolWindowAction.getActionIdForToolWindow(myId),
@@ -173,8 +175,12 @@ public abstract class BaseTool {
 
     ToolWindow toolWindow = ToolWindowManager.getInstance(myProject).registerToolWindow(myId, myCanCloseContent, myAnchor);
     toolWindow.setIcon(myIcon);
-    Content content = new ContentFactoryImpl().createContent(getComponent(), null, false);
-    toolWindow.getContentManager().addContent(content);
+    toolWindow.setToHideOnEmptyContent(true);
+    toolWindow.installWatcher(toolWindow.getContentManager());
+
+    if (getComponent() != null) {
+      addContent(getComponent(), null, false);
+    }
   }
 
   public void unregisterLater() {
@@ -186,6 +192,8 @@ public abstract class BaseTool {
   }
 
   public void unregister() {
+    if (!isRegistered()) return;
+
     if (myNumber != -1) {
       KeymapManager.getInstance().getActiveKeymap().removeAllActionShortcuts(ActivateToolWindowAction.getActionIdForToolWindow(myId));
     }
@@ -201,7 +209,22 @@ public abstract class BaseTool {
     }
   }
 
-  public abstract JComponent getComponent();
+  public JComponent getComponent() {
+    return null;
+  }
+
+  protected Content addContent(JComponent component, String name, boolean isLockable) {
+    Content content = new ContentFactoryImpl().createContent(component, name, isLockable);
+    getContentManager().addContent(content);
+    return content;
+  }
+
+  protected ContentManager getContentManager() {
+    if (!isRegistered()) register();
+    ToolWindow window = getToolWindow();
+    assert window != null;
+    return window.getContentManager();
+  }
 
   protected Project getProject() {
     return myProject;

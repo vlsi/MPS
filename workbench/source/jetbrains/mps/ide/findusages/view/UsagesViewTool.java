@@ -7,12 +7,14 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import com.intellij.ui.content.Content;
+import com.intellij.ui.content.ContentManager;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.ConceptInstances_Finder;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder;
-import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.HintDialog;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
@@ -40,11 +42,9 @@ import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.*;
-import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import javax.swing.Icon;
+import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,8 +70,6 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
   private static final String DEFAULT_FIND_OPTIONS = "default_find_options";
   private static final String DEFAULT_VIEW_OPTIONS = "default_view_options";
 
-  private JPanel myPanel;
-  private JTabbedPane myTabbedPane;
   private List<UsageViewData> myUsageViewsData = new ArrayList<UsageViewData>();
   private FindUsagesOptions myDefaultFindOptions = new FindUsagesOptions();
   private jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions myDefaultViewOptions = new jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions();
@@ -80,12 +78,6 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
 
   public UsagesViewTool(Project project) {
     super(project, "Usages", 3, jetbrains.mps.ide.projectPane.Icons.USAGES_ICON, ToolWindowAnchor.BOTTOM, true);
-
-    myPanel = new JPanel(new BorderLayout());
-
-    myTabbedPane = new JTabbedPane(JTabbedPane.BOTTOM);
-    myTabbedPane.addMouseListener(new TabPaneMouseListener());
-    myPanel.add(myTabbedPane, BorderLayout.CENTER);
 
     setDefaultOptions();
   }
@@ -103,13 +95,6 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
 
   //----TOOL STUFF----
 
-  @Override
-  public void makeAvailableLater() {
-    if (myUsageViewsData.size() > 0) {
-      super.makeAvailableLater();
-    }
-  }
-
   @Nullable
   public UsagesView getCurrentView() {
     LOG.checkEDT();
@@ -124,45 +109,24 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
   }
 
   private int currentTabIndex() {
-    return myTabbedPane.getSelectedIndex();
+    ContentManager contentManager = getContentManager();
+    return contentManager.getIndexOfContent(contentManager.getSelectedContent());
   }
 
   public void closeTab(int index) {
     LOG.checkEDT();
 
-    myTabbedPane.remove(index);
+    ContentManager contentManager = getContentManager();
+    Content content = contentManager.getContent(index);
+    assert content != null;
+    contentManager.removeContent(content, true);
     myUsageViewsData.remove(index);
-    if (myUsageViewsData.isEmpty()) makeUnavailable();
-  }
-
-  public void closeAll() {
-    LOG.checkEDT();
-
-    myUsageViewsData.clear();
-    myTabbedPane.removeAll();
-    makeUnavailable();
-  }
-
-  private void closeAllBut(int tabIndex) {
-    LOG.checkEDT();
-
-    int i;
-    for (i = myUsageViewsData.size() - 1; i > tabIndex; i--) {
-      closeTab(tabIndex + 1);
-    }
-    for (i = 0; i < tabIndex; i++) {
-      closeTab(tabIndex - 1 - i);
-    }
-  }
-
-  public JComponent getComponent() {
-    return myPanel;
   }
 
   public void clear() {
     LOG.checkEDT();
 
-    closeAll();
+    getContentManager().removeAllContents(true);
     makeUnavailable();
   }
 
@@ -235,7 +199,7 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
       public void run() {
         int resCount = searchResults.getSearchResults().size();
         if (resCount == 0) {
-          new HintDialog(JOptionPane.getFrameForComponent(myPanel), "Not found", "No usages for that node").showDialog();
+          new HintDialog(JOptionPane.getFrameForComponent(getContentManager().getComponent()), "Not found", "No usages for that node").showDialog();
         } else if (resCount == 1 && !showOne) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
@@ -253,13 +217,11 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
               usageViewData.createUsageView();
               myUsageViewsData.add(usageViewData);
 
-              myTabbedPane.addTab("", usageViewData.myUsagesView.getComponent());
-              myTabbedPane.setSelectedIndex(myTabbedPane.getTabCount() - 1);
-
               usageViewData.myUsagesView.setRunOptions(provider, query, new ButtonConfiguration(isRerunnable), searchResults);
 
-              myTabbedPane.setTitleAt(currentTabIndex(), usageViewData.myUsagesView.getCaption());
-              myTabbedPane.setIconAt(currentTabIndex(), usageViewData.myUsagesView.getIcon());
+              Content content = addContent(usageViewData.myUsagesView.getComponent(), usageViewData.myUsagesView.getCaption(), true);
+              content.setIcon(usageViewData.myUsagesView.getIcon());
+              getContentManager().setSelectedContent(content);
             }
           });
 
@@ -283,17 +245,26 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
     Element tabsXML = element.getChild(TABS);
     if (tabsXML != null) {
       for (Element tabXML : (List<Element>) tabsXML.getChildren()) {
-        UsageViewData usageViewData = new UsageViewData();
+        final UsageViewData usageViewData = new UsageViewData();
         try {
           usageViewData.read(tabXML, project);
         } catch (CantLoadSomethingException e) {
           continue;
         }
         myUsageViewsData.add(usageViewData);
-        myTabbedPane.add(usageViewData.myUsagesView.getComponent());
 
-        myTabbedPane.setTitleAt(myTabbedPane.getTabCount() - 1, usageViewData.myUsagesView.getCaption());
-        myTabbedPane.setIconAt(myTabbedPane.getTabCount() - 1, usageViewData.myUsagesView.getIcon());
+        final String caption = usageViewData.myUsagesView.getCaption();
+        final Icon icon = usageViewData.myUsagesView.getIcon();
+        StartupManager.getInstance(getProject()).registerPostStartupActivity(new Runnable() {
+          public void run() {
+            SwingUtilities.invokeLater(new Runnable() {
+              public void run() {
+                Content content = addContent(usageViewData.myUsagesView.getComponent(), caption, true);
+                content.setIcon(icon);
+              }
+            });
+          }
+        });
       }
     }
 
@@ -355,56 +326,6 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
         read(state, getProject().getComponent(MPSProjectHolder.class).getMPSProject());
       }
     });
-  }
-
-  private class TabPaneMouseListener extends MouseAdapter {
-    public void mousePressed(MouseEvent e) {
-      if (e.getButton() == MouseEvent.BUTTON2) {
-        int tabIndex = myTabbedPane.indexAtLocation(e.getX(), e.getY());
-        if (tabIndex != -1) {
-          closeTab(tabIndex);
-        }
-      } else {
-        if (e.isPopupTrigger()) {
-          handlePopup(e);
-        }
-      }
-    }
-
-    public void mouseReleased(MouseEvent e) {
-      if (e.isPopupTrigger()) {
-        handlePopup(e);
-      }
-    }
-
-    private void handlePopup(MouseEvent e) {
-      final int index = myTabbedPane.indexAtLocation(e.getX(), e.getY());
-      if (index != -1) {
-        new TabPanePopupMenu(index).show(myTabbedPane, e.getX(), e.getY());
-      }
-    }
-  }
-
-  class TabPanePopupMenu extends JPopupMenu {
-    TabPanePopupMenu(final int tabIndex) {
-      add(new AbstractActionWithEmptyIcon("Close") {
-        public void actionPerformed(ActionEvent e) {
-          closeTab(tabIndex);
-        }
-      });
-
-      add(new AbstractActionWithEmptyIcon("Close all but this") {
-        public void actionPerformed(ActionEvent e) {
-          closeAllBut(tabIndex);
-        }
-      });
-
-      add(new AbstractActionWithEmptyIcon("Close all") {
-        public void actionPerformed(ActionEvent e) {
-          closeAll();
-        }
-      });
-    }
   }
 
   public class UsageViewData {
