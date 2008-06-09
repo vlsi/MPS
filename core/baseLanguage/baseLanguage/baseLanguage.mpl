@@ -21,10 +21,6 @@
   </classPath>
   <languageRuntimeClassPath />
   <sourcePath />
-  <osgiOptions>
-    <requiredBundles />
-    <exportedPackage />
-  </osgiOptions>
   <dependencies>
     <dependency reexport="true">jetbrains.mps.baseLanguage.blTypes</dependency>
     <dependency reexport="true">JDK</dependency>
@@ -32,6 +28,7 @@
     <dependency reexport="false">jetbrains.mps.ide</dependency>
     <dependency reexport="false">jetbrains.mps.bootstrap.pluginLanguage</dependency>
     <dependency reexport="false">jetbrains.mps.bootstrap.dataFlow</dependency>
+    <dependency reexport="false">jetbrains.mps.quotation</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.regexp</usedLanguages>

@@ -32,6 +32,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="24" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />
@@ -7204,6 +7205,7 @@
   <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1212786090299">
     <property name="name" value="ConvertNewExpressionToGenericNewExpression" />
     <property name="isErrorIntention" value="true" />
+    <property name="package" value="migration" />
     <link role="forConcept" targetNodeId="1.1068581242872" resolveInfo="NewExpression" />
     <node role="descriptionFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.DescriptionBlock" id="1212786090300">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212786090301">
