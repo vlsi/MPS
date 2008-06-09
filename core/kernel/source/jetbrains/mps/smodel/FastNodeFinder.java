@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
+import jetbrains.mps.util.NameUtil;
 
 
 public class FastNodeFinder {
@@ -20,8 +21,8 @@ public class FastNodeFinder {
   private boolean myInitialized;
   private SModelAdapter myListener = new MySModelAdapter();
 
-  private Map<AbstractConceptDeclaration, Set<SNode>> myNodesAll = new HashMap<AbstractConceptDeclaration, Set<SNode>>();
-  private Map<AbstractConceptDeclaration, Set<SNode>> myNodesNoInheritance = new HashMap<AbstractConceptDeclaration, Set<SNode>>();
+  private Map<String, Set<SNode>> myNodesAll = new HashMap<String, Set<SNode>>();
+  private Map<String, Set<SNode>> myNodesNoInheritance = new HashMap<String, Set<SNode>>();
 
   public FastNodeFinder(SModelDescriptor modelDescriptor) {
     myModelDescriptor = modelDescriptor;
@@ -40,19 +41,21 @@ public class FastNodeFinder {
   }
 
   public List<SNode> getNodes(AbstractConceptDeclaration concept, boolean includeInherited) {
+    String conceptFqName = NameUtil.nodeFQName(concept);
+
     synchronized (myLock) {
       if (!myInitialized) {
         initCache();
       }
 
-      Map<AbstractConceptDeclaration, Set<SNode>> map = myNodesNoInheritance;
+      Map<String, Set<SNode>> map = myNodesNoInheritance;
       if (includeInherited) {
         map = myNodesAll;
       }
 
-      if (map.containsKey(concept)) {
+      if (map.containsKey(conceptFqName)) {
         final List<SNode> result = new ArrayList<SNode>();
-        for (SNode n : map.get(concept)) {
+        for (SNode n : map.get(conceptFqName)) {
           SNode node = n;
           if (node != null) {
             result.add(node);
@@ -118,34 +121,38 @@ public class FastNodeFinder {
   }
 
   private void add(AbstractConceptDeclaration acd, SNode node, boolean noInheritance) {
-    Map<AbstractConceptDeclaration, Set<SNode>> map;
+    String conceptFqName = NameUtil.nodeFQName(acd);
+
+    Map<String, Set<SNode>> map;
     if (noInheritance) {
       map = myNodesNoInheritance;
     } else {
       map = myNodesAll;
     }
 
-    Set<SNode> set = map.get(acd);
+    Set<SNode> set = map.get(conceptFqName);
     if (set == null) {
       set = new HashSet<SNode>(1);
-      map.put(acd, set);
+      map.put(conceptFqName, set);
     }
     set.add(node);
   }
 
   private void remove(AbstractConceptDeclaration acd, SNode node, boolean noInheritance) {
-    Map<AbstractConceptDeclaration, Set<SNode>> map;
+    String conceptFqName = NameUtil.nodeFQName(acd);
+
+    Map<String, Set<SNode>> map;
     if (noInheritance) {
       map = myNodesNoInheritance;
     } else {
       map = myNodesAll;
     }
 
-    Set<SNode> set = map.get(acd);
+    Set<SNode> set = map.get(conceptFqName);
 
     set.remove(node);
     if (set.isEmpty()) {
-      map.remove(acd);
+      map.remove(conceptFqName);
     }
   }
 

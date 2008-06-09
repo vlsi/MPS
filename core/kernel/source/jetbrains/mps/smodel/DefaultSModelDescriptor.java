@@ -337,10 +337,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   public void refresh() {
     if (isInitialized()) {
       long start = System.currentTimeMillis();
-      if (myFastNodeFinder != null) {
-        myFastNodeFinder.dispose();
-      }
-      myFastNodeFinder = null;
       synchronized (myListenersLock) {
         myWeakModelListeners.addAll(mySModel.getWeakModelListeners());
         myModelListeners.addAll(mySModel.getModelListeners());
