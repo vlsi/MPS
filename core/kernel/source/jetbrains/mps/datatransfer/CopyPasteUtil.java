@@ -38,21 +38,20 @@ public class CopyPasteUtil {
   }
 
 
-  private static void processImportsAndLanguages(HashSet<SModelUID> necessaryImports, HashSet<String> necessaryLanguages, Set<SNode> sourceNodes, Set<SReference> allReferences) {
+  private static void processImportsAndLanguages(HashSet<SModelUID> necessaryImports, HashSet<String> necessaryLanguages, Map<SNode, SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {
     necessaryImports.clear();
     necessaryLanguages.clear();
-    SModel sourceModel = sourceNodes.iterator().next().getModel();
+    Set<SNode> sourceNodes = sourceNodesToNewNodes.keySet();
     for (SNode node : sourceNodes) {
       String languageNamespace = NameUtil.namespaceFromConceptFQName(node.getConceptFqName());
       necessaryLanguages.add(languageNamespace);
     }
     for (SReference ref : allReferences) {
-      if (ref.isExternal()) {
+      if (sourceNodesToNewNodes.get(ref.getTargetNode()) == null) {
         SModelUID targetModelUID = ref.getTargetModelUID();
         necessaryImports.add(targetModelUID);
       }
     }
-    necessaryImports.add(sourceModel.getUID());
   }
 
   public static PasteNodeData createNodeDataIn(List<SNode> sourceNodes, Map<SNode, Set<SNode>> sourceNodesAndAttributes) {
@@ -72,7 +71,7 @@ public class CopyPasteUtil {
     HashSet<String> necessaryLanguages = new HashSet<String>();
     HashSet<String> necessaryDevKits = new HashSet<String>();  // todo populate
     SModel fakeModel = copyModelProperties(model);
-    processImportsAndLanguages(necessaryImports, necessaryLanguages, sourceNodesToNewNodes.keySet(), allReferences);
+    processImportsAndLanguages(necessaryImports, necessaryLanguages, sourceNodesToNewNodes, allReferences);
     for (SNode copiedNode : result) {
       copiedNode.changeModel(fakeModel);
     }
@@ -282,26 +281,22 @@ public class CopyPasteUtil {
     return getNodesFromClipboard(model).get(0);
   }
 
-  public static boolean addImportsAndLanguagesToModel(SModel targetModel, SModel modelPropertiesPattern, Set<String> necessaryLanguages, Set<SModelUID> necessaryImports, IOperationContext context) {
+  public static boolean addImportsAndLanguagesToModel(SModel targetModel, Set<String> necessaryLanguages, Set<SModelUID> necessaryImports, IOperationContext context) {
     List<String> additionalLanguages = new ArrayList<String>();
     List<SModelUID> additionalModels = new ArrayList<SModelUID>();
     List<String> additionalDevKits = new ArrayList<String>();
-    List<String> languagesFromPattern = new ArrayList<String>(modelPropertiesPattern.getExplicitlyImportedLanguages());
-    List<SModelUID> importsFromPattern = new ArrayList<SModelUID>(modelPropertiesPattern.getImportedModelUIDs());
-    List<String> devKitsFromPattern = new ArrayList<String>(modelPropertiesPattern.getDevKitNamespaces());
-
-    importsFromPattern.addAll(necessaryImports);
-    languagesFromPattern.addAll(necessaryLanguages);
+    Set<String> necessaryDevKits = new HashSet<String>();
 
 
-    for (SModelUID modelUID : importsFromPattern) {
+    for (SModelUID modelUID : necessaryImports) {
       if (modelUID != null && !(targetModel.hasImportedModel(modelUID)) && !(targetModel.getUID().equals(modelUID)))
         additionalModels.add(modelUID);
     }
-    for (String devKit : devKitsFromPattern) {
+    //todo
+  /*  for (String devKit : devKitsFromPattern) {
       if (!(targetModel.hasDevKit(devKit))) additionalDevKits.add(devKit);
-    }
-    for (String namespace : languagesFromPattern) {
+    }*/
+    for (String namespace : necessaryLanguages) {
       if (!targetModel.hasLanguage(namespace)) additionalLanguages.add(namespace);
     }
 
@@ -312,13 +307,11 @@ public class CopyPasteUtil {
       if (devKit != null) necessaryLanguages.removeAll(devKit.getLanguageNamespaces());
     }
 
-    if ((!additionalModels.isEmpty()) || (!additionalLanguages.isEmpty())) {
+    if ((!necessaryImports.isEmpty()) || (!necessaryLanguages.isEmpty()) || (!necessaryDevKits.isEmpty())) {
       AddRequiredModelImportsDialog dialog = new AddRequiredModelImportsDialog(context.getMainFrame(), targetModel,
-        additionalModels,
-        additionalLanguages,
-        additionalDevKits,
         necessaryImports,
-        necessaryLanguages);
+        necessaryLanguages,
+        necessaryDevKits);
       dialog.setModal(true);
       dialog.showDialog();
       return (!dialog.isCanceled());

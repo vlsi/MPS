@@ -39,18 +39,16 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
   }
 
   public AddRequiredModelImportsDialog(Frame frame, SModel model,
-                                       List<SModelUID> imports,
-                                       List<String> languages,
-                                       List<String> devKits,
                                        Set<SModelUID> necessaryImports,
-                                       Set<String> necessaryLanguages) {
+                                       Set<String> necessaryLanguages,
+                                       Set<String> necessaryDevKits  ) {
     super(frame, "Imports and Languages");
-    myImports = imports;
-    myLanguages = languages;                                                    
-    myDevKits = devKits;
+    myImports = new ArrayList<SModelUID>(necessaryImports);
+    myLanguages = new ArrayList<String>(necessaryLanguages);
+    myDevKits = new ArrayList<String>(necessaryDevKits);
     myLanguagesToAdd = new ArrayList<String>(necessaryLanguages);
     myImportsToAdd = new ArrayList<SModelUID>(necessaryImports);
-    myDevKitsToAdd = new ArrayList<String>(devKits);
+    myDevKitsToAdd = new ArrayList<String>(necessaryDevKits);
 
     myModel = model;
 
@@ -127,7 +125,7 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
     for (String language : myLanguagesToAdd) {
       myModel.addLanguage(language);
     }
-    for (String devKit : myDevKits) {
+    for (String devKit : myDevKitsToAdd) {
       myModel.addNewlyImportedDevKit(devKit);
     }
     myCanceled = false;

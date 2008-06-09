@@ -45,11 +45,9 @@ public class CellAction_PasteNode extends EditorCellAction {
 
     SModel model = selectedNode.getModel();
     PasteNodeData pasteNodeData = CopyPasteUtil.getPasteNodeDataFromClipboard(model);
-    SModel modelProperties = pasteNodeData.getModelProperties();
     Set<String> necessaryLanguages = pasteNodeData.getNecessaryLanguages();
     Set<SModelUID> necessaryImports = pasteNodeData.getNecessaryImports();
     if (!CopyPasteUtil.addImportsAndLanguagesToModel(model,
-      modelProperties,
       necessaryLanguages,
       necessaryImports,
       context.getOperationContext())) return;
