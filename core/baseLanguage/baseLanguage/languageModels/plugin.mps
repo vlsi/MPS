@@ -37,7 +37,8 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <maxImportIndex value="39" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <maxImportIndex value="40" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.plugin.uiActions@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.ide.actions" version="-1" />
@@ -76,6 +77,7 @@
   <import index="37" modelUID="jetbrains.mps.plugins.tool@java_stub" version="-1" />
   <import index="38" modelUID="jetbrains.mps.smodel.event@java_stub" version="-1" />
   <import index="39" modelUID="jetbrains.mps.workbench.tools@java_stub" version="-1" />
+  <import index="40" modelUID="jetbrains.mps.baseLanguage.refactoring.inlineMethod@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1205247197267">
     <property name="name" value="BaseLanguageEditorPopup" />
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement" id="1205247338363">
@@ -4724,7 +4726,32 @@
       </node>
     </node>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock" id="1213008751377">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213008751378" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213008751378">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213018990315">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213018990316">
+            <property name="name" value="dialog" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213018990317">
+              <link role="classifier" targetNodeId="40.~InlineMethodDialog" resolveInfo="InlineMethodDialog" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213018994240">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213018994241">
+                <link role="baseMethodDeclaration" targetNodeId="40.~InlineMethodDialog.&lt;init&gt;(jetbrains.mps.ide.action.ActionContext)" resolveInfo="InlineMethodDialog" />
+                <node role="actualArgument" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ConceptFunctionParameter_ActionContext" id="1213019010102" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213019019537">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213019027866">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213019019538">
+              <link role="variableDeclaration" targetNodeId="1213018990316" resolveInfo="dialog" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1213019040350">
+              <link role="baseMethodDeclaration" targetNodeId="30.~BaseDialog.showDialog():void" resolveInfo="showDialog" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="keystroke" type="jetbrains.mps.bootstrap.pluginLanguage.structure.KeyMapKeystroke" id="1213008791177">
       <property name="keycode" value="N" />

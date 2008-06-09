@@ -7,6 +7,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.baseLanguage.refactoring.inlineMethod.InlineMethodDialog;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 
@@ -60,6 +61,8 @@ public class InlineMethod_Action extends CurrentProjectMPSAction {
   }
 
   private void performExecution(ActionContext context) {
+    InlineMethodDialog dialog = new InlineMethodDialog(context);
+    dialog.showDialog();
   }
 
   /* package */boolean isMethod(SNode node) {
