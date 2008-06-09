@@ -17,6 +17,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="27" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -6498,11 +6499,13 @@
             <node role="componentProvider" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_JComponent" id="1176475935262">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1176475935263">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1176475981469">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1176476477521">
-                    <link role="baseMethodDeclaration" targetNodeId="13.~SelectImageFileButton.&lt;init&gt;(jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Image)" resolveInfo="SelectImageFileButton" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721948">
-                      <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1176476522569" />
-                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1176476527315" />
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213036006572">
+                    <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213036006574">
+                      <link role="baseMethodDeclaration" targetNodeId="13.~SelectImageFileButton.&lt;init&gt;(jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Image)" resolveInfo="SelectImageFileButton" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721948">
+                        <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1176476522569" />
+                        <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1176476527315" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -8200,16 +8203,18 @@
           </node>
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1176888947601">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1176889028394">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1176889034209">
-                <link role="baseMethodDeclaration" targetNodeId="20.~Color.&lt;init&gt;(int,int,int)" resolveInfo="Color" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1176889041394">
-                  <property name="value" value="230" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1176889044990">
-                  <property name="value" value="230" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1176889048008">
-                  <property name="value" value="230" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213035983289">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213035983291">
+                  <link role="baseMethodDeclaration" targetNodeId="20.~Color.&lt;init&gt;(int,int,int)" resolveInfo="Color" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1176889041394">
+                    <property name="value" value="230" />
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1176889044990">
+                    <property name="value" value="230" />
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1176889048008">
+                    <property name="value" value="230" />
+                  </node>
                 </node>
               </node>
             </node>

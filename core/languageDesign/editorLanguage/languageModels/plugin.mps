@@ -18,6 +18,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="10" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
@@ -224,8 +225,10 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207844406263">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207844454228">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1207844456560">
-            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1207844462407">
-              <link role="baseMethodDeclaration" targetNodeId="6.~AutoResolver.&lt;init&gt;()" resolveInfo="AutoResolver" />
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213036006746">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213036006748">
+                <link role="baseMethodDeclaration" targetNodeId="6.~AutoResolver.&lt;init&gt;()" resolveInfo="AutoResolver" />
+              </node>
             </node>
             <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207844454229">
               <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1207844454230" />
