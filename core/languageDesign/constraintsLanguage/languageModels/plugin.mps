@@ -20,6 +20,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="30" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.smodel.constraints@java_stub" version="-1" />
@@ -58,8 +59,10 @@
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208436368966">
         <link role="classifier" targetNodeId="2.~ConstraintsChecker" resolveInfo="ConstraintsChecker" />
       </node>
-      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1208436372437">
-        <link role="baseMethodDeclaration" targetNodeId="2.~ConstraintsChecker.&lt;init&gt;()" resolveInfo="ConstraintsChecker" />
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213047804595">
+        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213047804597">
+          <link role="baseMethodDeclaration" targetNodeId="2.~ConstraintsChecker.&lt;init&gt;()" resolveInfo="ConstraintsChecker" />
+        </node>
       </node>
     </node>
     <node role="initBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.InitBlock" id="1208436374875">
