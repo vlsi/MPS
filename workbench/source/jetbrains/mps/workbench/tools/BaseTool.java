@@ -176,8 +176,9 @@ public abstract class BaseTool {
     toolWindow.setToHideOnEmptyContent(true);
     toolWindow.installWatcher(toolWindow.getContentManager());
 
-    if (getComponent() != null) {
-      addContent(getComponent(), null, false);
+    JComponent component = getComponent();
+    if (component != null) {
+      addContent(component, null, false);
     }
   }
 
@@ -207,6 +208,10 @@ public abstract class BaseTool {
 
   public JComponent getComponent() {
     return null;
+  }
+
+  protected boolean hasCloseButton() {
+    return true;
   }
 
   protected Content addContent(JComponent component, String name, boolean isLockable) {
