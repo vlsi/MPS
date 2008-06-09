@@ -14,10 +14,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.tree.TreePath;
 import java.util.HashSet;
 import java.util.Set;
-import java.awt.BorderLayout;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Color;
+import java.awt.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -51,7 +48,8 @@ public class HierarchicalChooseNodeComponent extends JPanel implements IChooseCo
     constraints.weightx = 1;
     constraints.weighty = 1;
     add(new JScrollPane(myHierarchyTree), constraints);
-
+    setMinimumSize(new Dimension(350, 350));
+    setPreferredSize(new Dimension(350, 350));
     showHierarchy(initialNode, myActionContext.getOperationContext());
   }
 
