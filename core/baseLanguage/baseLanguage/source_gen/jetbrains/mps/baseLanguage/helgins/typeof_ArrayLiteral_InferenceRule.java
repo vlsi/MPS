@@ -14,7 +14,7 @@ public class typeof_ArrayLiteral_InferenceRule implements InferenceRule_Runtime 
   }
 
   public void applyRule(final SNode arrayLiteral) {
-    final SNode elementType_typevar_1188221443596 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    final SNode elementType_typevar_1188221443596 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
     for(SNode item : SLinkOperations.getTargets(arrayLiteral, "item", true)) {
       TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1188221443596), TypeChecker.getInstance().getRuntimeSupport().typeOf(item, "jetbrains.mps.baseLanguage.helgins", "1188221461717", true), item, null, "jetbrains.mps.baseLanguage.helgins", "1188221461712", false, 0);
     }

@@ -30,7 +30,7 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
     Iterable<SNode> returnStatements = RulesFunctions_BaseLanguage.collectReturnStatements(SLinkOperations.getTarget(func, "body", true));
     boolean somethingReturned = Sequence.fromIterable(returnStatements).isNotEmpty();
     // =============
-    final SNode LCS_typevar_1186052624152 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    final SNode LCS_typevar_1186052624152 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
     if (noReturnExpected) {
       // shouldn't return any values
       for(SNode returnStatement : returnStatements) {
