@@ -67,6 +67,8 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <maxImportIndex value="29" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
@@ -2499,7 +2501,7 @@
     <property name="migrationFromBuild" value="718" />
     <property name="name" value="ConvertNewExpressionToGenericNewExpression" />
     <property name="category" value="baseLang-newExpr" />
-    <property name="title" value="Convert old NewExpression" />
+    <property name="title" value="(!Dont use - tmp disabled!) Convert old NewExpression" />
     <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1213033738119">
       <property name="description" value="old NewExpression --&gt; GenericNewExpression" />
       <link role="affectedInstanceConcept" targetNodeId="1.1068581242872" resolveInfo="NewExpression" />
@@ -2667,6 +2669,15 @@
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213034150511">
                 <link role="variableDeclaration" targetNodeId="1213034150492" resolveInfo="constructorRefMacro" />
               </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="affectedInstancePredicate" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Predicate" id="1213039238181">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213039238182">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213039244602">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1213039244603">
+              <property name="value" value="false" />
             </node>
           </node>
         </node>

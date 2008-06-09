@@ -682,7 +682,7 @@ public final class SNode {
       myProperties = new ListMap<String, String>();
     }
     if (ourMemberAccessModifier != null) {
-       propertyName = ourMemberAccessModifier.getNewPropertyName(myModel, myConceptFqName, propertyName);
+      propertyName = ourMemberAccessModifier.getNewPropertyName(myModel, myConceptFqName, propertyName);
     }
     final String propertyName_ = propertyName;
     final String oldValue = myProperties.get(propertyName_);
@@ -767,14 +767,14 @@ public final class SNode {
   }
 
   public void addChild(String role, SNode child) {
-    insertChildAt(myChildren == null? 0 : myChildren.length, role, child);
+    insertChildAt(myChildren == null ? 0 : myChildren.length, role, child);
   }
 
-  public void insertChild(SNode anchorChild,  String role, SNode child) {
+  public void insertChild(SNode anchorChild, String role, SNode child) {
     insertChild(anchorChild, role, child, false);
   }
 
-  public void insertChild(SNode anchorChild,  String role,  SNode child, boolean insertBefore) {
+  public void insertChild(SNode anchorChild, String role, SNode child, boolean insertBefore) {
     int index = 0;
     if (anchorChild != null) {
       int anchorIndex = _children().indexOf(anchorChild);
@@ -799,7 +799,7 @@ public final class SNode {
           count++;
         }
       }
-    }    
+    }
     return count;
   }
 
@@ -840,7 +840,7 @@ public final class SNode {
     fireNodeUnclassifiedReadAccess();
 
     if (includeAttributes) {
-      return Collections.unmodifiableList(_children());      
+      return Collections.unmodifiableList(_children());
     } else {
       List<SNode> result = new ArrayList<SNode>(_children());
       Iterator<SNode> it = result.iterator();
@@ -1570,7 +1570,10 @@ public final class SNode {
   public boolean isReferentRequired(String role) {
     AbstractConceptDeclaration conceptDeclaration = getConceptDeclarationAdapter();
     LinkDeclaration linkDeclaration = SModelSearchUtil.findLinkDeclaration(conceptDeclaration, role);
-    LOG.assertLog(linkDeclaration != null, "couldn't find link declaration for role \"" + role + "\" in hierarchy of concept " + conceptDeclaration.getDebugText());
+    if (linkDeclaration == null) {
+      LOG.error("couldn't find link declaration for role \"" + role + "\" in hierarchy of concept " + conceptDeclaration.getDebugText());
+      return false;
+    }
     Cardinality cardinality = SModelUtil_new.getGenuineLinkSourceCardinality(linkDeclaration);
     if (cardinality == Cardinality._1 || cardinality == Cardinality._1__n) {
       return true;
