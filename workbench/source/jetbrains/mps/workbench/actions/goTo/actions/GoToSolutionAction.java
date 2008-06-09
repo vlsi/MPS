@@ -3,7 +3,6 @@ package jetbrains.mps.workbench.actions.goTo.actions;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.navigation.NavigationItem;
-import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.application.ModalityState;
@@ -22,7 +21,7 @@ import jetbrains.mps.workbench.actions.goTo.framework.modules.BaseSolutionModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GoToSolutionAction extends AnAction {
+public class GoToSolutionAction extends BaseProjectAction {
   public void actionPerformed(AnActionEvent e) {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;
