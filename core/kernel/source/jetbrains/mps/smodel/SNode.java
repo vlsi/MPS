@@ -131,17 +131,16 @@ public final class SNode {
     return getModel().isRoot(this);
   }
 
-  public void addNextSibling(@NotNull SNode newSibling) {
+  public void addNextSibling(SNode newSibling) {
     assert myParent != null && myRoleInParent != null;
     myParent.insertChild(this, myRoleInParent, newSibling);
   }
 
-  public void addPrevSibling(@NotNull SNode newSibling) {
+  public void addPrevSibling(SNode newSibling) {
     assert myParent != null && myRoleInParent != null;
     myParent.insertChild(this, myRoleInParent, newSibling, true);
   }
 
-  @NotNull
   public SModel getModel() {
     ModelAccess.assertLegalRead(this);
 
@@ -149,8 +148,7 @@ public final class SNode {
     return myModel;
   }
 
-  @NotNull
-  public String getRoleOf(@NotNull SNode node) {
+  public String getRoleOf(SNode node) {
     ModelAccess.assertLegalRead(this);
 
     fireNodeReadAccess();
@@ -169,7 +167,6 @@ public final class SNode {
     return "<no role>";
   }
 
-  @NotNull
   public Set<String> getChildRoles(boolean includeAttributeRoles) {
     ModelAccess.assertLegalRead(this);
 
@@ -188,8 +185,7 @@ public final class SNode {
     return result;
   }
 
-  @NotNull
-  public Set<String> addChildRoles(@NotNull final Set<String> augend, boolean includeAttributeRoles) {
+  public Set<String> addChildRoles(final Set<String> augend, boolean includeAttributeRoles) {
     ModelAccess.assertLegalRead(this);
 
     fireNodeReadAccess();
@@ -206,17 +202,14 @@ public final class SNode {
     return augend;
   }
 
-  @NotNull
   public Set<String> getChildRoles() {
     return getChildRoles(false);
   }
 
-  @NotNull
-  public Set<String> addChildRoles(@NotNull final Set<String> augend) {
+  public Set<String> addChildRoles(final Set<String> augend) {
     return addChildRoles(augend, false);
   }
 
-  @NotNull
   public Set<String> getReferenceRoles() {
     ModelAccess.assertLegalRead(this);
 
@@ -231,7 +224,7 @@ public final class SNode {
     return result;
   }
 
-  public boolean isAncestorOf(@NotNull SNode child) {
+  public boolean isAncestorOf(SNode child) {
     ModelAccess.assertLegalRead(this);
 
     fireNodeReadAccess();
@@ -274,8 +267,7 @@ public final class SNode {
     return result;
   }
 
-  public void replaceChild(@NotNull SNode oldChild,
-                           @NotNull SNode newChild) {
+  public void replaceChild(SNode oldChild, SNode newChild) {
     int index = _children().indexOf(oldChild);
     assert index >= 0;
     String role = oldChild.getRole_();
@@ -286,8 +278,7 @@ public final class SNode {
     insertChildAt(index, role, newChild);
   }
 
-  public void replaceChild(@NotNull SNode oldChild,
-                           @NotNull List<SNode> newChildren) {
+  public void replaceChild(SNode oldChild, List<SNode> newChildren) {
     assert _children().contains(oldChild);
     String oldChildRole = oldChild.getRole_();
     assert oldChildRole != null;
@@ -300,8 +291,7 @@ public final class SNode {
   }
 
 
-  @Nullable
-  public Object getUserObject(@NotNull Object key) {
+  public Object getUserObject(Object key) {
     ModelAccess.assertLegalRead(this);
 
     fireNodeReadAccess();
@@ -309,8 +299,7 @@ public final class SNode {
     return myUserObjects.get(key);
   }
 
-  public void putUserObject(@NotNull Object key,
-                            @Nullable Object value) {
+  public void putUserObject(Object key, Object value) {
     ModelAccess.assertLegalRead(this);
 
     if (myUserObjects == null) {
@@ -319,7 +308,7 @@ public final class SNode {
     myUserObjects.put(key, value);
   }
 
-  public void removeUserObject(@NotNull Object key) {
+  public void removeUserObject(Object key) {
     if (myUserObjects == null) return;
     myUserObjects.remove(key);
   }
@@ -329,11 +318,10 @@ public final class SNode {
     myUserObjects.clear();
   }
 
-  public void setName(@Nullable String name) {
+  public void setName(String name) {
     setProperty(INamedConcept.NAME, name);
   }
 
-  @Nullable
   public String getName() {
     return getProperty(INamedConcept.NAME);
   }
@@ -347,7 +335,6 @@ public final class SNode {
     return getProperty(INamedConcept.NAME);
   }
 
-  @Nullable
   public String getRole_() {
     return myRoleInParent;
   }
@@ -358,7 +345,6 @@ public final class SNode {
 
   //node attributes
 
-  @Nullable
   @Deprecated
   public SNode getAttribute() {
     // default (?) attribute
@@ -376,7 +362,6 @@ public final class SNode {
     setAttribute(null, attributeConcept);
   }
 
-  @NotNull
   public List<SNode> getNodeAttributes() {
     List<SNode> attributes = new ArrayList<SNode>(0);
     if (myChildren != null) {
@@ -389,7 +374,6 @@ public final class SNode {
     return attributes;
   }
 
-  @NotNull
   public List<SNode> getAllAttributes() {
     List<SNode> attributes = new ArrayList<SNode>(0);
     if (myChildren != null) {
@@ -410,13 +394,11 @@ public final class SNode {
     return (role_ != null && AttributesRolesUtil.isAttributeRole(role_));
   }
 
-  @Nullable
   public SNode getAttribute(String role) {
     String attributeRole = AttributesRolesUtil.childRoleFromAttributeRole(role);
     return getChild(attributeRole);
   }
 
-  @NotNull
   public List<SNode> getAttributes(String role) {
     String attributeRole = AttributesRolesUtil.childRoleFromAttributeRole(role);
     return getChildren(attributeRole);
@@ -438,7 +420,6 @@ public final class SNode {
     setPropertyAttribute(null, propertyName, propertyAttribute);
   }
 
-  @Nullable
   @Deprecated
   public SNode getPropertyAttribute(String propertyName) {
     // 'default' property attr
@@ -467,17 +448,14 @@ public final class SNode {
     addChild(AttributesRolesUtil.childRoleFromPropertyAttributeRole(role, propertyName), propertyAttribute);
   }
 
-  @Nullable
   public SNode getPropertyAttribute(String role, String propertyName) {
     return getChild(AttributesRolesUtil.childRoleFromPropertyAttributeRole(role, propertyName));
   }
 
-  @NotNull
   public List<SNode> getPropertyAttributes(String role, String propertyName) {
     return getChildren(AttributesRolesUtil.childRoleFromPropertyAttributeRole(role, propertyName));
   }
 
-  @NotNull
   public Set<SNode> getPropertyAttributesForPropertyName(String propertyName) {
     Set<SNode> result = new HashSet<SNode>();
     for (String role : getChildRoles(true)) {
@@ -499,7 +477,6 @@ public final class SNode {
     setLinkAttribute(null, role, linkAttribute);
   }
 
-  @Nullable
   @Deprecated
   public SNode getLinkAttribute(String role) {
     // 'default' link attr
@@ -527,17 +504,14 @@ public final class SNode {
     addChild(AttributesRolesUtil.childRoleFromLinkAttributeRole(role, linkRole), linkAttribute);
   }
 
-  @Nullable
   public SNode getLinkAttribute(String role, String linkRole) {
     return getChild(AttributesRolesUtil.childRoleFromLinkAttributeRole(role, linkRole));
   }
 
-  @NotNull
   public List<SNode> getLinkAttributes(String role, String linkRole) {
     return getChildren(AttributesRolesUtil.childRoleFromLinkAttributeRole(role, linkRole));
   }
 
-  @NotNull
   public Set<SNode> getLinkAttributesForLinkRole(String linkRole) {
     Set<SNode> result = new HashSet<SNode>();
     if (linkRole == null) return result;
@@ -554,7 +528,6 @@ public final class SNode {
   // ----- properties -----
   //
 
-  @NotNull
   public Map<String, String> getProperties() {
     ModelAccess.assertLegalRead(this);
 
@@ -572,7 +545,6 @@ public final class SNode {
     myProperties.putAll(fromNode.myProperties);
   }
 
-  @NotNull
   public Set<String> getPropertyNames() {
     ModelAccess.assertLegalRead(this);
 
@@ -604,16 +576,16 @@ public final class SNode {
     return result;
   }
 
-  public boolean getBooleanProperty(@NotNull String propertyName) {
+  public boolean getBooleanProperty(String propertyName) {
     String value = getProperty(propertyName);
     return "true".equals(value);
   }
 
-  public void setBooleanProperty(@NotNull String propertyName, boolean value) {
+  public void setBooleanProperty(String propertyName, boolean value) {
     setProperty(propertyName, value ? "" + value : null);
   }
 
-  public int getIntegerProperty(@NotNull String propertyName) {
+  public int getIntegerProperty(String propertyName) {
     String value = getProperty(propertyName);
     try {
       return Integer.parseInt(value);
@@ -622,11 +594,11 @@ public final class SNode {
     }
   }
 
-  public void setIntegerProperty(@NotNull String propertyName, int value) {
+  public void setIntegerProperty(String propertyName, int value) {
     setProperty(propertyName, "" + value);
   }
 
-  public final boolean hasProperty(@NotNull String propertyName) {
+  public final boolean hasProperty(String propertyName) {
     ModelAccess.assertLegalRead(this);
 
     NodeReadAccessCaster.firePropertyReadAccessed(this, propertyName, true);
@@ -634,7 +606,7 @@ public final class SNode {
     return !SModelUtil_new.isEmptyPropertyValue(property_internal);
   }
 
-  public final String getProperty(@NotNull String propertyName) {
+  public final String getProperty(String propertyName) {
     ModelAccess.assertLegalRead(this);
 
     NodeReadAccessCaster.firePropertyReadAccessed(this, propertyName, false);
@@ -644,7 +616,13 @@ public final class SNode {
   }
 
   private String getProperty_internal(String propertyName) {
-    String propertyValue = null;
+    String propertyValue;
+
+    propertyValue = getPersistentProperty(propertyName);
+    if (propertyValue != null) {
+      return propertyValue;
+    }
+
     if (!ourPropertyGettersInProgress.contains(new Pair<SNode, String>(this, propertyName))) {
       INodePropertyGetter getter = CONSTRAINTS_MANAGER.getNodePropertyGetter(this, propertyName);
       if (getter != null) {
@@ -655,17 +633,14 @@ public final class SNode {
         } finally {
           ourPropertyGettersInProgress.remove(new Pair<SNode, String>(this, propertyName));
         }
-      } else {
-        propertyValue = getPersistentProperty(propertyName);
       }
     } else {
-      propertyValue = getPersistentProperty(propertyName);
+      LOG.warning("It's not recommended to access property from its getter (property = " + propertyName + ")", this);
     }
     return propertyValue;
   }
 
-  @Nullable
-  public String getPersistentProperty(@NotNull String propertyName) {
+  public String getPersistentProperty(String propertyName) {
     if (myProperties == null) return null;
     if (ourMemberAccessModifier != null) {
       propertyName = ourMemberAccessModifier.getNewPropertyName(myModel, myConceptFqName, propertyName);
@@ -673,18 +648,18 @@ public final class SNode {
     return myProperties.get(propertyName);
   }
 
-  /*package*/ void changePropertyName(@NotNull String oldPropertyName, @NotNull String newPropertyName) {
+  /*package*/ void changePropertyName(String oldPropertyName, String newPropertyName) {
     //todo make undo?
     if (myProperties == null) return;
     String value = myProperties.remove(oldPropertyName);
     myProperties.put(newPropertyName, value);
   }
 
-  public void setProperty(@NotNull final String propertyName, String propertyValue) {
+  public void setProperty(final String propertyName, String propertyValue) {
     setProperty(propertyName, propertyValue, true);
   }
 
-  public void setProperty(@NotNull String propertyName, String propertyValue, boolean usePropertySetter) {
+  public void setProperty(String propertyName, String propertyValue, boolean usePropertySetter) {
     propertyName = InternUtil.intern(propertyName);
     ModelChange.assertLegalNodeChange(this);
     propertyValue = InternUtil.intern(propertyValue);
@@ -746,7 +721,7 @@ public final class SNode {
     return myParent;
   }
 
-  public void setChild(@NotNull String role, SNode childNode) {
+  public void setChild(String role, SNode childNode) {
     SNode oldChild = getChild(role);
     if (oldChild != null) {
       removeChild(oldChild);
@@ -756,8 +731,7 @@ public final class SNode {
     }
   }
 
-  @Nullable
-  public SNode getChild(@NotNull String role) {
+  public SNode getChild(String role) {
     ModelAccess.assertLegalRead(this);
     if (ourMemberAccessModifier != null) {
       role = ourMemberAccessModifier.getNewChildRole(myModel, myConceptFqName, role);
@@ -786,27 +760,21 @@ public final class SNode {
     return myChildren[index];
   }
 
-  public void removeChild(@NotNull SNode child) {
+  public void removeChild(SNode child) {
     List<SNode> children = _children();
     if (!children.contains(child)) return;
     removeChildAt(children.indexOf(child));
   }
 
-  public void addChild(@NotNull String role,
-                       @NotNull SNode child) {
+  public void addChild(String role, SNode child) {
     insertChildAt(myChildren == null? 0 : myChildren.length, role, child);
   }
 
-  public void insertChild(@Nullable SNode anchorChild,
-                          @NotNull String role,
-                          @NotNull SNode child) {
+  public void insertChild(SNode anchorChild,  String role, SNode child) {
     insertChild(anchorChild, role, child, false);
   }
 
-  public void insertChild(@Nullable SNode anchorChild,
-                          @NotNull String role,
-                          @NotNull SNode child,
-                          boolean insertBefore) {
+  public void insertChild(SNode anchorChild,  String role,  SNode child, boolean insertBefore) {
     int index = 0;
     if (anchorChild != null) {
       int anchorIndex = _children().indexOf(anchorChild);
@@ -820,7 +788,7 @@ public final class SNode {
     insertChildAt(index, role, child);
   }
 
-  public int getChildCount(@NotNull String role) {
+  public int getChildCount(String role) {
     if (ourMemberAccessModifier != null) {
       role = ourMemberAccessModifier.getNewChildRole(myModel, myConceptFqName, role);
     }
@@ -831,11 +799,11 @@ public final class SNode {
           count++;
         }
       }
-    }
+    }    
     return count;
   }
 
-  public int getIndexOfChild(@NotNull SNode child_) {
+  public int getIndexOfChild(SNode child_) {
     String role_ = child_.getRole_();
     if (role_ == null) return -1;
     int count = 0;
@@ -850,7 +818,6 @@ public final class SNode {
     return -1;
   }
 
-  @NotNull
   public List<SNode> getChildren() {
     return getChildren(true);
   }
@@ -867,7 +834,6 @@ public final class SNode {
     return nodes;
   }
 
-  @NotNull
   public List<SNode> getChildren(boolean includeAttributes) {
     ModelAccess.assertLegalRead(this);
     fireNodeReadAccess();
@@ -930,8 +896,7 @@ public final class SNode {
     return children.toArray(new SNode[children.size()]);
   }
 
-  @Nullable
-  public SNode getNextChild(@NotNull SNode child) {
+  public SNode getNextChild(SNode child) {
     String childRole = child.getRole_();
     assert childRole != null : "role must be not null";
     List<SNode> children = getChildren(childRole);
@@ -940,8 +905,7 @@ public final class SNode {
     return children.get(index + 1);
   }
 
-  @Nullable
-  public SNode getPrevChild(@NotNull SNode child) {
+  public SNode getPrevChild(SNode child) {
     String childRole = child.getRole_();
     assert childRole != null : "role must be not null";
     List<SNode> children = getChildren(childRole);
@@ -975,7 +939,7 @@ public final class SNode {
     }
   }
 
-  void insertChildAt(final int index, @NotNull String _role, final @NotNull SNode child) {
+  void insertChildAt(final int index, String _role, final SNode child) {
     if (ourMemberAccessModifier != null) {
       _role = ourMemberAccessModifier.getNewChildRole(myModel, myConceptFqName, _role);
     }
@@ -1064,7 +1028,6 @@ public final class SNode {
   //    references
   // ---------------------------------
 
-  @NotNull
   public List<SReference> getReferences() {
     ModelAccess.assertLegalRead(this);
 
@@ -1073,13 +1036,11 @@ public final class SNode {
     return Collections.unmodifiableList(_references());
   }
 
-  @Nullable
-  public SReference setReferent(@NotNull String role, SNode newReferent) {
+  public SReference setReferent(String role, SNode newReferent) {
     return setReferent(role, newReferent, true);
   }
 
-  @Nullable
-  public SReference setReferent(@NotNull String role, SNode newReferent, boolean useHandler) {
+  public SReference setReferent(String role, SNode newReferent, boolean useHandler) {
     if (ourMemberAccessModifier != null) {
       role = ourMemberAccessModifier.getNewReferentRole(myModel, myConceptFqName, role);
     }
@@ -1128,13 +1089,12 @@ public final class SNode {
     return resultReference;
   }
 
-  @Nullable
   public SNode getReferent(String role) {
     SReference reference = getReference(role);
     return reference == null ? null : reference.getTargetNode();
   }
 
-  public SReference getReference(@NotNull String role) {
+  public SReference getReference(String role) {
     ModelAccess.assertLegalRead(this);
     if (ourMemberAccessModifier != null) {
       role = ourMemberAccessModifier.getNewReferentRole(myModel, myConceptFqName, role);
@@ -1160,11 +1120,11 @@ public final class SNode {
     return result;
   }
 
-  public void addReference(@NotNull SReference reference) {
+  public void addReference(SReference reference) {
     insertReferenceAt(myReferences == null ? 0 : myReferences.length, reference);
   }
 
-  public void removeReferent(@NotNull String role) {
+  public void removeReferent(String role) {
     if (ourMemberAccessModifier != null) {
       role = ourMemberAccessModifier.getNewReferentRole(myModel, myConceptFqName, role);
     }
@@ -1179,7 +1139,7 @@ public final class SNode {
     }
   }
 
-  public void removeReference(@NotNull SReference referenceToRemove) {
+  public void removeReference(SReference referenceToRemove) {
     if (myReferences != null) {
       for (SReference reference : myReferences) {
         if (reference.equals(referenceToRemove)) {
@@ -1191,7 +1151,6 @@ public final class SNode {
     }
   }
 
-  @NotNull
   public List<SNode> getReferents() {
     ModelAccess.assertLegalRead(this);
 
@@ -1207,7 +1166,7 @@ public final class SNode {
     return result;
   }
 
-  void insertReferenceAt(final int i, @NotNull final SReference reference) {
+  void insertReferenceAt(final int i, final SReference reference) {
     ModelChange.assertLegalNodeChange(this);
     _references().add(i, reference);
 
@@ -1276,7 +1235,6 @@ public final class SNode {
   // -----------------------
   //
 
-  @NotNull
   public String getDebugText() {
     String roleText = "";
     if (isRegistered()) {
@@ -1308,7 +1266,6 @@ public final class SNode {
     return myId != null;
   }
 
-  @NotNull
   public String getId() {
     return getSNodeId().toString();
   }
@@ -1326,7 +1283,6 @@ public final class SNode {
     return myId;
   }
 
-  @NotNull
   public static SNodeId generateUniqueId() {
     long id = System.currentTimeMillis() + ourCounter;
     ourCounter++;
@@ -1356,7 +1312,6 @@ public final class SNode {
     }
   }
 
-  @NotNull
   public String toString() {
     ModelAccess.assertLegalRead(this);
     fireNodeReadAccess();
@@ -1377,12 +1332,10 @@ public final class SNode {
     return s;
   }
 
-  @NotNull
   public List<SNode> getDescendants() {
     return getDescendants(null);
   }
 
-  @NotNull
   public List<SNode> getDescendants(Condition<SNode> condition) {
     ModelAccess.assertLegalRead(this);
     fireNodeReadAccess();
@@ -1393,8 +1346,7 @@ public final class SNode {
     return list;
   }
 
-  private void collectDescendants(@Nullable Condition<SNode> condition,
-                                  @NotNull List<SNode> list) {
+  private void collectDescendants(Condition<SNode> condition, List<SNode> list) {
     // depth-first traversal
     if (myChildren != null) {
       for (SNode child : myChildren) {
@@ -1441,12 +1393,10 @@ public final class SNode {
     UndoUtil.addUndoableAction(new RemoveRTHintUndoableAction(this));
   }
 
-  @Nullable
   public Language getNodeLanguage() {
     AbstractConceptDeclaration concept = getConceptDeclarationAdapter();
     return SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
   }
-
 
   public String getConceptFqName() {
     ModelAccess.assertLegalRead(this);
@@ -1455,7 +1405,6 @@ public final class SNode {
     return myConceptFqName;
   }
 
-  @NotNull
   public String getConceptShortName() {
     ModelAccess.assertLegalRead(this);
 

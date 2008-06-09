@@ -63,20 +63,19 @@ public class ProjectTester {
 
     final IMessageHandler handler = new IMessageHandler() {
       public void handle(Message msg) {
-        final String message = msg.getText();
         switch (msg.getKind()) {
           case ERROR:
+            System.out.println("error: " + msg.getText());
             errors.add(msg.getText());
-            LOG.error(message);
             break;
 
           case WARNING:
+            System.out.println("warn:  " + msg.getText());
             warnings.add(msg.getText());
-            LOG.warning(message);
             break;
 
           case INFORMATION:
-            LOG.info(message);
+            System.out.println("info:  " + msg.getText());
             break;
 
         }
@@ -85,7 +84,6 @@ public class ProjectTester {
 
     final ILoggingHandler loggingHandler = new ILoggingHandler() {
       public void info(LogEntry e) {
-
       }
 
       public void warning(LogEntry e) {
