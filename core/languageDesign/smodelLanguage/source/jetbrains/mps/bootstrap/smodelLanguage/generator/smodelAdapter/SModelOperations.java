@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.util.Condition;
 
@@ -69,11 +70,7 @@ public class SModelOperations {
     final AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFqName, scope);
     if (concept == null) return Collections.EMPTY_LIST;
 
-    return model.allNodesIncludingImported(scope, new Condition<SNode>() {
-      public boolean met(SNode n) {
-        return n.isInstanceOfConcept(concept);
-      }
-    });
+    return model.allNodesIncludingImported(scope, new IsInstanceCondition(concept));
   }
 
   public static List<SNode> getNodes(SModel model, String conceptFqName) {

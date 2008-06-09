@@ -10,6 +10,8 @@ import java.util.HashMap;
  * Sep 21, 2007
  */
 public class SNodePointer {
+  private static final SModelRepository SMODEL_REPOSITORY = SModelRepository.getInstance();
+
   private SModelUID myModelUID;
   private SNodeId myNodeId;
   private int myTimestamp;
@@ -55,7 +57,7 @@ public class SNodePointer {
   public SModelDescriptor getModel() {
     SModelUID modelUID = getCurrentModelUID(myModelUID, myTimestamp);
     if (modelUID == null) return null;
-    return SModelRepository.getInstance().getModelDescriptor(modelUID);
+    return SMODEL_REPOSITORY.getModelDescriptor(modelUID);
   }
 
   public SModelUID getModelUID() {

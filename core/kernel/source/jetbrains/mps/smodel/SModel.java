@@ -8,6 +8,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.ForDebug;
 import jetbrains.mps.util.annotation.UseCarefully;
@@ -1278,6 +1279,11 @@ public class SModel implements Iterable<SNode> {
   }
 
   public List<SNode> allNodes(Condition<SNode> condition) {
+    if (condition instanceof IsInstanceCondition) {
+      IsInstanceCondition c = (IsInstanceCondition) condition;
+      return getModelDescriptor().getFastNodeFinder().getNodes(c.getConceptDeclaration(), true);
+    }
+
     List<SNode> resultNodes = new ArrayList<SNode>();
 
     for (SNode node : getRoots()) {
