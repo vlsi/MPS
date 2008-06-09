@@ -20,6 +20,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="14" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="5" modelUID="jetbrains.mps.bootstrap.structureLanguage.findUsages" version="-1" />
@@ -1573,10 +1574,12 @@
                 <link role="concept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
               </node>
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1200503466137">
-              <link role="baseMethodDeclaration" targetNodeId="7.~HashSet.&lt;init&gt;()" resolveInfo="HashSet" />
-              <node role="typeParameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1200503635926">
-                <link role="concept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213034544036">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213034544054">
+                <link role="baseMethodDeclaration" targetNodeId="7.~HashSet.&lt;init&gt;()" resolveInfo="HashSet" />
+                <node role="typeParameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1200503635926">
+                  <link role="concept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
+                </node>
               </node>
             </node>
           </node>
@@ -2681,10 +2684,12 @@
                 <link role="classifier" targetNodeId="14.~SearchResult" resolveInfo="SearchResult" />
               </node>
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1204900790418">
-              <link role="baseMethodDeclaration" targetNodeId="7.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
-              <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208349593133">
-                <link role="classifier" targetNodeId="14.~SearchResult" resolveInfo="SearchResult" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213034572483">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213034572485">
+                <link role="baseMethodDeclaration" targetNodeId="7.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
+                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208349593133">
+                  <link role="classifier" targetNodeId="14.~SearchResult" resolveInfo="SearchResult" />
+                </node>
               </node>
             </node>
           </node>
