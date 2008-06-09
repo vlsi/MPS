@@ -80,8 +80,12 @@ public class RuntimeSupport {
     return type;
   }
 
-
+  @Deprecated
   public SNode createNewRuntimeTypesVariable(boolean isNullable) {
+    return createNewRuntimeTypesVariable();
+  }
+
+  public SNode createNewRuntimeTypesVariable() {
     SNode typeVar = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable", myTypeChecker.getRuntimeTypesModel(), GlobalScope.getInstance(), false);
     typeVar.setName(getNewVarName());
     registerTypeVariable(typeVar);

@@ -194,10 +194,6 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name") + "_typevar_" + _context.getNode().getId();
   }
 
-  public static Object propertyMacro_GetPropertyValue_1174666030638(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getBoolean(_context.getNode(), "nullable") + "";
-  }
-
   public static Object propertyMacro_GetPropertyValue_1174916988756(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), "result") + "";
   }
