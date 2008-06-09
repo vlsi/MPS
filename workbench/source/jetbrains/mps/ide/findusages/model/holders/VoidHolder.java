@@ -1,9 +1,9 @@
 package jetbrains.mps.ide.findusages.model.holders;
 
-import org.jdom.Element;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
+import jetbrains.mps.project.MPSProject;
+import org.jdom.Element;
 
 import javax.swing.Icon;
 
@@ -37,10 +37,10 @@ public class VoidHolder implements IHolder {
   }
 
   public void read(Element element, MPSProject project) throws CantLoadSomethingException {
-    throw new UnsupportedOperationException();
+    throw new CantLoadSomethingException("VoidHolder is not loadable");
   }
 
   public void write(Element element, MPSProject project) throws CantSaveSomethingException {
-    throw new UnsupportedOperationException();
+    throw new CantSaveSomethingException("VoidHolder is not saveable");
   }
 }
