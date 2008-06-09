@@ -69,6 +69,8 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <maxImportIndex value="29" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
@@ -2678,6 +2680,54 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213039244602">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1213039244603">
               <property name="value" value="false" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1213041839717">
+      <property name="description" value="fix problems caused by convertion" />
+      <link role="affectedInstanceConcept" targetNodeId="1.1145552977093" resolveInfo="GenericNewExpression" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Updater" id="1213041839718">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213041839719">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213041940780">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213041947289">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213041940783">
+                <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1213041940784" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1213041940785">
+                  <node role="attributeQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkAttributeAccessQualifier" id="1213041940786">
+                    <link role="annotationLink" targetNodeId="29.1149694518242" resolveInfo="referenceMacro" />
+                    <node role="linkQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression" id="1213041940787">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213041940788">
+                        <property name="value" value="baseMethodDeclaration" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_DeleteChildOperation" id="1213041974903" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="affectedInstancePredicate" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Predicate" id="1213041868736">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213041868737">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213041874004">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1213041922057">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1213041923091" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213041874303">
+                <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1213041874005" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1213041878505">
+                  <node role="attributeQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkAttributeAccessQualifier" id="1213041896600">
+                    <link role="annotationLink" targetNodeId="29.1149694518242" resolveInfo="referenceMacro" />
+                    <node role="linkQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression" id="1213041905179">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213041911525">
+                        <property name="value" value="baseMethodDeclaration" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>

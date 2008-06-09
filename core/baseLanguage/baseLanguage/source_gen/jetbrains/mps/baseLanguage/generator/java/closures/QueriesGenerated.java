@@ -124,14 +124,6 @@ public class QueriesGenerated {
     return _QueriesUtil.resolve_VariableReference_Variable_ClosureContext_generatedField(_context.getNode(), _context.getGenerator());
   }
 
-  public static Object referenceMacro_GetReferent_1213035359960(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _QueriesUtil.find_Closure_generatedClosureAdapter_constructor(_context.getNode(), _context.getGenerator());
-  }
-
-  public static Object referenceMacro_GetReferent_1213035359986(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _QueriesUtil.find_ContextOwner_ClosureContext_generatedClass_constructor(_context.getNode(), _context.getGenerator());
-  }
-
   public static SNode sourceNodeQuery_1170294125679(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperations.getParent(_context.getNode(), null, false, false);
   }
