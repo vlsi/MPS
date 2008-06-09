@@ -51,11 +51,11 @@ import java.util.List;
 @State(
   name = "UsagesViewTool",
   storages = {
-    @Storage(
-      id = "other",
-      file = "$WORKSPACE_FILE$"
-    )
-  }
+  @Storage(
+    id = "other",
+    file = "$WORKSPACE_FILE$"
+  )
+    }
 )
 public class UsagesViewTool extends BaseMPSTool implements PersistentStateComponent<Element> {
   private static Logger LOG = Logger.getLogger(UsagesViewTool.class);
@@ -103,9 +103,10 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
 
   //----TOOL STUFF----
 
-  public void showToolLater() {
+  @Override
+  public void makeAvailableLater() {
     if (myUsageViewsData.size() > 0) {
-      super.showToolLater();
+      super.makeAvailableLater();
     }
   }
 
@@ -131,7 +132,7 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
 
     myTabbedPane.remove(index);
     myUsageViewsData.remove(index);
-    if (myUsageViewsData.isEmpty()) hideTool();
+    if (myUsageViewsData.isEmpty()) makeUnavailable();
   }
 
   public void closeAll() {
@@ -139,7 +140,7 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
 
     myUsageViewsData.clear();
     myTabbedPane.removeAll();
-    hideTool();
+    makeUnavailable();
   }
 
   private void closeAllBut(int tabIndex) {
@@ -162,7 +163,7 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
     LOG.checkEDT();
 
     closeAll();
-    hideTool();
+    makeUnavailable();
   }
 
   //---FIND USAGES STUFF----

@@ -1,33 +1,19 @@
 package jetbrains.mps.refactoring;
 
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder;
-import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.ide.findusages.view.UsagesView;
-import jetbrains.mps.ide.findusages.view.UsagesView.ButtonConfiguration;
-import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
-import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.ide.toolsPane.DefaultTool;
-import jetbrains.mps.ide.toolsPane.ToolsPane;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.RefactoringProcessor;
-import jetbrains.mps.workbench.tools.BaseMPSTool;
-import org.jdom.Element;
-import org.jetbrains.annotations.NotNull;
-
-import javax.swing.*;
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-import java.awt.event.ActionEvent;
-import java.util.Map;
-import java.util.WeakHashMap;
-
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.workbench.tools.BaseMPSTool;
+import org.jetbrains.annotations.NotNull;
+
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
+import java.awt.BorderLayout;
 
 /**
  * Created by IntelliJ IDEA.
@@ -69,7 +55,7 @@ public class NewRefactoringView extends BaseMPSTool {
         myLabel = new JLabel("no refactoring");
         myPanel.add(myLabel);
         myRefactoringViewItem = null;
-        closeTool();
+        close();
       }
     });
 

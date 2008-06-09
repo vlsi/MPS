@@ -78,7 +78,7 @@ public abstract class BaseTool {
 
   public void openTool(boolean setActive) {
     ToolWindow window = checkRegistered();
-    if (!toolIsShown()) showToolLater();
+    if (!isShown()) makeAvailableLater();
     if (!toolIsOpened()) window.show(null);
     if (setActive) window.activate(null);
   }
@@ -86,23 +86,23 @@ public abstract class BaseTool {
   /**
    * Minimizes the window, doesn't remove tool from panel
    */
-  public void closeToolLater() {
+  public void closeLater() {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        closeTool();
+        close();
       }
     });
   }
 
-  public void closeTool() {
+  public void close() {
     ToolWindow window = checkRegistered();
-    if (toolIsShown() && toolIsOpened()) window.hide(null);
+    if (isShown() && toolIsOpened()) window.hide(null);
   }
 
   /**
    * @return whether the tool is visible by user (in the panel)
    */
-  public boolean toolIsShown() {
+  public boolean isShown() {
     LOG.checkEDT();
 
     ToolWindow window = checkRegistered();
@@ -112,39 +112,39 @@ public abstract class BaseTool {
   /**
    * If the tool is visible, does nothing, else show the tool in panel in minimized state
    */
-  public void showToolLater() {
+  public void makeAvailableLater() {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        showTool();
+        makeAvailable();
       }
     });
   }
 
-  public void showTool() {
+  public void makeAvailable() {
     ToolWindow window = checkRegistered();
-    if (!toolIsShown()) window.setAvailable(true, null);
+    if (!isShown()) window.setAvailable(true, null);
   }
 
   /**
    * Removes the tool from the panel
    */
-  public void hideToolLater() {
+  public void makeUnavailableLater() {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        hideTool();
+        makeUnavailable();
       }
     });
   }
 
-  public void hideTool() {
+  public void makeUnavailable() {
     ToolWindow window = checkRegistered();
-    if (toolIsShown()) window.setAvailable(false, null);
+    if (isShown()) window.setAvailable(false, null);
   }
 
   @Nullable
   public ToolWindow getToolWindow() {
     LOG.checkEDT();
-    
+
     if (myProject.isDisposed()) return null;
     return ToolWindowManager.getInstance(myProject).getToolWindow(myId);
   }
