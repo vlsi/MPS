@@ -3,9 +3,11 @@ package jetbrains.mps.bootstrap.helgins.runtime;
 import jetbrains.mps.helgins.inference.*;
 import jetbrains.mps.helgins.inference.EquationInfo;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.patterns.IMatchingPattern;
 import jetbrains.mps.patterns.util.MatchingUtil;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
+import jetbrains.mps.project.GlobalScope;
 
 import java.util.Map;
 import java.util.Set;
@@ -80,14 +82,10 @@ public class RuntimeSupport {
 
 
   public SNode createNewRuntimeTypesVariable(boolean isNullable) {
-    RuntimeTypeVariable typeVar = RuntimeTypeVariable.newInstance(myTypeChecker.getRuntimeTypesModel());
-    typeVar.setNullable(isNullable);
+    SNode typeVar = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable", myTypeChecker.getRuntimeTypesModel(), GlobalScope.getInstance(), false);
     typeVar.setName(getNewVarName());
-    registerTypeVariable(typeVar.getNode());
-    /* if ("n".equals(typeVar.getName())) {
-      System.err.println("oy vey!");
-    }*/
-    return typeVar.getNode();
+    registerTypeVariable(typeVar);
+    return typeVar;
   }
 
   private String getNewVarName() {
