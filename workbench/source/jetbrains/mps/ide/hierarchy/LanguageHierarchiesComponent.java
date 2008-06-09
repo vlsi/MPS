@@ -83,7 +83,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
         if (myScale < 6) {
           myScale += 0.2;
           if (myScale > 6) myScale = 6;
-          myScaleField.setText( (int) (myScale*100) + "%");
+          myScaleField.setText((int) (myScale * 100) + "%");
           relayout();
           LanguageHierarchiesComponent.this.invalidate();
           getExternalComponent().revalidate();
@@ -96,7 +96,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
         if (myScale > 0.2) {
           myScale -= 0.2;
           if (myScale < 0.2) myScale = 0.2f;
-          myScaleField.setText( (int) (myScale*100) + "%");
+          myScaleField.setText((int) (myScale * 100) + "%");
           relayout();
           LanguageHierarchiesComponent.this.invalidate();
           getExternalComponent().revalidate();
@@ -108,7 +108,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
       public void actionPerformed(ActionEvent e) {
         if (myScale != 1) {
           myScale = 1;
-          myScaleField.setText( (int) (myScale*100) + "%");
+          myScaleField.setText((int) (myScale * 100) + "%");
           relayout();
           LanguageHierarchiesComponent.this.invalidate();
           getExternalComponent().revalidate();
@@ -180,7 +180,8 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     java.util.List<ConceptContainer> result = new ArrayList<ConceptContainer>();
     Map<ConceptDeclaration, ConceptContainer> processed = new HashMap<ConceptDeclaration, ConceptContainer>();
     SModel structureModel = myLanguage.getStructureModelDescriptor().getSModel();
-    outer : for (ConceptDeclaration concept : structureModel.getRootsAdapters(ConceptDeclaration.class)) {
+    outer:
+    for (ConceptDeclaration concept : structureModel.getRootsAdapters(ConceptDeclaration.class)) {
       ConceptDeclaration parentConcept = concept;
       ConceptContainer prevConceptContainer = null;
       while (parentConcept != null && parentConcept != SModelUtil_new.getBaseConcept() &&
@@ -224,7 +225,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     int y_ = y;
     for (ConceptContainer root : currentChildren) {
       int subtreeWidth = root.getSubtreeWidth();
-      root.setX(x + (subtreeWidth - root.getWidth())/2);
+      root.setX(x + (subtreeWidth - root.getWidth()) / 2);
       root.setY((int) (y + SPACING * myScale));
       int newY = relayoutChildren(root.getChildren(), x, (int) (y + SPACING * myScale + root.getHeight()), false);
       if (vertical) {
@@ -261,7 +262,6 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     return new Dimension(Math.max(viewRect.width, myWidth),
       Math.max(viewRect.height, myHeight));
   }
-
 
 
   protected void paintComponent(final Graphics g) {
@@ -378,13 +378,13 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
       }
       g.drawRect(myX, myY, myWidth, myHeight);
       Font font = myFont.deriveFont(myIsAbstract ? Font.ITALIC : Font.PLAIN, (float) myFont.getSize() * myComponent.myScale);
-      FontMetrics metrics =  myComponent.getFontMetrics(font);
+      FontMetrics metrics = myComponent.getFontMetrics(font);
       String text = getText();
       int padding1 = (myWidth - metrics.charsWidth(text.toCharArray(), 0, text.length())) / 2;
       int padding2 = (myWidth - metrics.charsWidth(myNamespace.toCharArray(), 0, myNamespace.length())) / 2;
       int x1 = (int) (myX + padding1);
       int x2 = (int) (myX + padding2);
-      int y = (int) (myY + (myHeight - metrics.getHeight())/2);
+      int y = (int) (myY + (myHeight - metrics.getHeight()) / 2);
       Font oldfont = g.getFont();
       g.setFont(font);
       g.drawString(text, x1, y + metrics.getAscent());
@@ -396,10 +396,12 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
       g.setStroke(oldStroke);
     }
 
+    @NotNull
     public String getText() {
       ConceptDeclaration conceptDeclaration = getNode();
       if (conceptDeclaration == null) return "";
-      return conceptDeclaration.getName();
+      String name = conceptDeclaration.getName();
+      return name != null ? name : "";
     }
 
     public java.util.List<ConceptContainer> getChildren() {
@@ -464,15 +466,15 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     }
 
     public void updateSize() {
-      Font font = myFont.deriveFont( (float) myFont.getSize() * myComponent.myScale);
-      FontMetrics metrics =  myComponent.getFontMetrics(font);
+      Font font = myFont.deriveFont((float) myFont.getSize() * myComponent.myScale);
+      FontMetrics metrics = myComponent.getFontMetrics(font);
       String text = getText();
       int charsWidth1 = metrics.charsWidth(text.toCharArray(), 0, text.length());
-      int charWidth2 = myIsOtherLanguage ? metrics.charsWidth(myNamespace.toCharArray(), 0, myNamespace.length()): 0;
+      int charWidth2 = myIsOtherLanguage ? metrics.charsWidth(myNamespace.toCharArray(), 0, myNamespace.length()) : 0;
       int charsHeight = metrics.getHeight();
       if (myIsOtherLanguage) charsHeight = charsHeight * 2 + metrics.getAscent();
       myHeight = (int) ((2 * PADDING_Y * myComponent.myScale) + charsHeight);
-      myWidth =  (int) ((2 * PADDING_X * myComponent.myScale) + Math.max(charsWidth1, charWidth2));
+      myWidth = (int) ((2 * PADDING_X * myComponent.myScale) + Math.max(charsWidth1, charWidth2));
     }
 
     public int getWidth() {
@@ -487,7 +489,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
       return myX;
     }
 
-    public int  getY() {
+    public int getY() {
       return myY;
     }
 
@@ -510,11 +512,11 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     }
 
     public Point getEntryPoint() {
-      return new Point(myX + myWidth/2, myY);
+      return new Point(myX + myWidth / 2, myY);
     }
 
     public Point getOutPoint() {
-      return new Point(myX + myWidth/2, myY + myHeight);
+      return new Point(myX + myWidth / 2, myY + myHeight);
     }
 
     public void paintTree(Graphics g) {
@@ -532,7 +534,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
         if (x > lastX) lastX = x;
         y = childEntryPoint.y;
       }
-      y = (y + outY)/2;
+      y = (y + outY) / 2;
       g.setColor(Color.BLACK);
       g.drawLine(firstX, y, lastX, y);
       g.drawLine(outX, outY, outX, y);
