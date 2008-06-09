@@ -50,7 +50,7 @@ public final class BehaviorManager implements ApplicationComponent {
 
   private Map<String, Method> myCanBeChildMethods = new HashMap<String, Method>();
   private Map<String, Method> myCanBeParentMethods = new HashMap<String, Method>();
-  private Map<String, Method> myDefaultConceptNameMethods = new HashMap<String, Method>();
+  private Map<String, String> myDefaultConceptNames = new HashMap<String, String>();
   private Map<MethodInfo, Method> myMethods = new HashMap<MethodInfo, Method>();
   private Map<String, List<Method>> myConstructors = new HashMap<String, List<Method>>();
 
@@ -83,7 +83,7 @@ public final class BehaviorManager implements ApplicationComponent {
     myConstructors.clear();
     myCanBeChildMethods.clear();
     myCanBeParentMethods.clear();
-    myDefaultConceptNameMethods.clear();
+    myDefaultConceptNames.clear();
   }
 
 
@@ -135,38 +135,30 @@ public final class BehaviorManager implements ApplicationComponent {
   }
 
   public String getDefaultConcreteConceptFqName(String fqName, IScope scope) {
-    String result = fqName;
-    String behaviorClass = behaviorClassByConceptFqName(fqName);
-    String namespace = NameUtil.namespaceFromConceptFQName(fqName);
-    Language language = scope.getLanguage(namespace);
-    if (language != null) {
-      Class cls = language.getClass(behaviorClass);
-      if (cls != null) {
-        try {
-          Method method;
-          if (myDefaultConceptNameMethods.containsKey(fqName)) {
-            method = myDefaultConceptNameMethods.get(fqName);
-          } else {
-            method = cls.getMethod(BehaviorConstants.GET_DEFAULT_CONCRETE_CONCEPT_FQ_NAME);
-            myDefaultConceptNameMethods.put(fqName, method);
-          }
+    if (!myDefaultConceptNames.containsKey(fqName)) {
+      String result = fqName;
+      String behaviorClass = behaviorClassByConceptFqName(fqName);
+      String namespace = NameUtil.namespaceFromConceptFQName(fqName);
+      Language language = scope.getLanguage(namespace);
+      if (language != null) {
+        Class cls = language.getClass(behaviorClass);
+        if (cls != null) {
           try {
-            if (method != null) {
+            Method method = cls.getMethod(BehaviorConstants.GET_DEFAULT_CONCRETE_CONCEPT_FQ_NAME);
+            try {
               result = (String) method.invoke(null);
+            } catch (IllegalAccessException e) {
+              LOG.error(e);
+            } catch (InvocationTargetException e) {
+              LOG.error(e);
             }
-          } catch (IllegalAccessException e) {
-            LOG.error(e);
-            myDefaultConceptNameMethods.put(fqName, null);
-          } catch (InvocationTargetException e) {
-            LOG.error(e);
-            myDefaultConceptNameMethods.put(fqName, null);
+          } catch (NoSuchMethodException e) {
           }
-        } catch (NoSuchMethodException e) {
-          myDefaultConceptNameMethods.put(fqName, null);
         }
+        myDefaultConceptNames.put(fqName, result);
       }
     }
-    return result;
+    return myDefaultConceptNames.get(fqName);
   }
 
   public boolean isApplicableInContext(String fqName, IOperationContext context, SNode parentNode, SNode link) {
