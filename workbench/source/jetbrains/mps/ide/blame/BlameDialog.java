@@ -1,5 +1,6 @@
 package jetbrains.mps.ide.blame;
 
+import com.intellij.openapi.application.ApplicationInfo;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
@@ -136,7 +137,7 @@ public class BlameDialog extends BaseDialog implements PersistentStateComponent<
 
     try {
       if (login(c)) {
-        postIssue(c, myMessage, description);
+        postIssue(c, myMessage + getBuildString(), description);
       }
     } catch (Throwable e) {
       myStatusCode = 500;
@@ -145,6 +146,11 @@ public class BlameDialog extends BaseDialog implements PersistentStateComponent<
 
     mySent = true;
     setVisible(false);
+  }
+
+  private String getBuildString() {
+    String build = ApplicationInfo.getInstance().getBuildNumber();
+    return " (build:" + build + ")";
   }
 
   @Button(position = 1, name = "Cancel")
