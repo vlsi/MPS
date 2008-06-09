@@ -3,8 +3,11 @@ package jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.logging.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +17,7 @@ import java.util.List;
  * Feb 10, 2006
  */
 public class SNodeOperations {
+  private static final Logger LOG = Logger.getLogger(SNodeOperations.class);
 
   public static INodeAdapter getAdapter(SNode node) {
     if (node == null) return null;
@@ -363,9 +367,25 @@ public class SNodeOperations {
 
   private static void copyAllAttributes(SNode oldChild, SNode newChild) {
     for (SNode attribute : oldChild.getAllAttributes()) {
-      SNode newAttribute = CopyUtil.copy(attribute);
       String role = attribute.getRole_();
-      assert role != null;
+      if (AttributesRolesUtil.isPropertyAttributeRole(role)) {
+        String propertyName = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(role);
+        if (SModelSearchUtil.findPropertyDeclaration(newChild.getConceptDeclarationAdapter(), propertyName) == null) {
+          // no such property in new child : don't copy the attribute
+          LOG.error("couldn't copy attribute " + attribute.getConceptShortName() + " for property '" + propertyName + "' : so such property in concept " + newChild.getConceptShortName(), newChild);
+          continue;
+        }
+      }
+      if (AttributesRolesUtil.isLinkAttributeRole(role)) {
+        String linkRole = AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(role);
+        if (SModelSearchUtil.findLinkDeclaration(newChild.getConceptDeclarationAdapter(), linkRole) == null) {
+          // no such link in new child : don't copy the attribute
+          LOG.error("couldn't copy attribute " + attribute.getConceptShortName() + " for link '" + linkRole + "' : so such link in concept " + newChild.getConceptShortName(), newChild);
+          continue;
+        }
+      }
+
+      SNode newAttribute = CopyUtil.copy(attribute);
       newChild.addChild(role, newAttribute);
     }
   }
@@ -379,9 +399,6 @@ public class SNodeOperations {
       if (anotherNodeParent != null) {
         anotherNodeParent.removeChild(anotherNode);
       }
-//      String role = node.getRole_();
-//      assert role != null;
-//      nodeParent.insertChild(node, role, anotherNode);
       nodeParent.replaceChild(node, anotherNode);
     } else {
       nodeParent.removeChild(node);

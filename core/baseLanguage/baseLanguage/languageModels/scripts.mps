@@ -71,6 +71,12 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <maxImportIndex value="29" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
@@ -2503,7 +2509,7 @@
     <property name="migrationFromBuild" value="718" />
     <property name="name" value="ConvertNewExpressionToGenericNewExpression" />
     <property name="category" value="baseLang-newExpr" />
-    <property name="title" value="(!Dont use - tmp disabled!) Convert old NewExpression" />
+    <property name="title" value="Convert old NewExpression" />
     <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1213033738119">
       <property name="description" value="old NewExpression --&gt; GenericNewExpression" />
       <link role="affectedInstanceConcept" targetNodeId="1.1068581242872" resolveInfo="NewExpression" />
@@ -2526,6 +2532,31 @@
                 <property name="value" value="ignore new-expression in quotation" />
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213034111741" />
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1213047195759">
+            <property name="value" value="strip attribute which can not be converted automatically" />
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213047195760">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213047195761">
+              <property name="name" value="constructorRefMacro" />
+              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1213047195762">
+                <link role="concept" targetNodeId="29.1088761943574" resolveInfo="ReferenceMacro" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213047195763">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213047195764">
+                  <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1213047205626" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1213047195766">
+                    <node role="attributeQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkAttributeAccessQualifier" id="1213047195767">
+                      <link role="annotationLink" targetNodeId="29.1149694518242" resolveInfo="referenceMacro" />
+                      <node role="linkQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkRefQualifier" id="1213047195768">
+                        <link role="link" targetNodeId="1.1135374435992" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_DeleteChildOperation" id="1213047195769" />
+              </node>
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1213034117899">
@@ -2624,106 +2655,26 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213034150491">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213034150492">
-              <property name="name" value="constructorRefMacro" />
-              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1213034150493">
-                <link role="concept" targetNodeId="29.1088761943574" resolveInfo="ReferenceMacro" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1213047224018">
+            <property name="value" value="---" />
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1213047224019">
+            <property name="value" value="add attribute which can not be converted automatically" />
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213034150501">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1213034150502">
+              <node role="rValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213034150503">
+                <link role="variableDeclaration" targetNodeId="1213047195761" resolveInfo="constructorRefMacro" />
               </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213034150494">
-                <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1213034205719" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1213034150496">
-                  <node role="attributeQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkAttributeAccessQualifier" id="1213034150497">
-                    <link role="annotationLink" targetNodeId="29.1149694518242" resolveInfo="referenceMacro" />
-                    <node role="linkQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkRefQualifier" id="1213034150498">
-                      <link role="link" targetNodeId="1.1135374435992" />
-                    </node>
-                  </node>
+              <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213034150504">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213034150505">
+                  <link role="variableDeclaration" targetNodeId="1213034150458" resolveInfo="creator" />
                 </node>
-              </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1213034150499">
-            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213034150500">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213034150501">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1213034150502">
-                  <node role="rValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213034150503">
-                    <link role="variableDeclaration" targetNodeId="1213034150492" resolveInfo="constructorRefMacro" />
-                  </node>
-                  <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213034150504">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213034150505">
-                      <link role="variableDeclaration" targetNodeId="1213034150458" resolveInfo="creator" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1213034150506">
-                      <node role="attributeQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkAttributeAccessQualifier" id="1213034150507">
-                        <link role="annotationLink" targetNodeId="29.1149694518242" resolveInfo="referenceMacro" />
-                        <node role="linkQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkRefQualifier" id="1213034150508">
-                          <link role="link" targetNodeId="1.1212686240295" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1213034150509">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1213034150510" />
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213034150511">
-                <link role="variableDeclaration" targetNodeId="1213034150492" resolveInfo="constructorRefMacro" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="affectedInstancePredicate" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Predicate" id="1213039238181">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213039238182">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213039244602">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1213039244603">
-              <property name="value" value="false" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1213041839717">
-      <property name="description" value="fix problems caused by convertion" />
-      <link role="affectedInstanceConcept" targetNodeId="1.1145552977093" resolveInfo="GenericNewExpression" />
-      <node role="affectedInstanceUpdater" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Updater" id="1213041839718">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213041839719">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213041940780">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213041947289">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213041940783">
-                <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1213041940784" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1213041940785">
-                  <node role="attributeQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkAttributeAccessQualifier" id="1213041940786">
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1213034150506">
+                  <node role="attributeQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkAttributeAccessQualifier" id="1213034150507">
                     <link role="annotationLink" targetNodeId="29.1149694518242" resolveInfo="referenceMacro" />
-                    <node role="linkQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression" id="1213041940787">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213041940788">
-                        <property name="value" value="baseMethodDeclaration" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_DeleteChildOperation" id="1213041974903" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="affectedInstancePredicate" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Predicate" id="1213041868736">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213041868737">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213041874004">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1213041922057">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1213041923091" />
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213041874303">
-                <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1213041874005" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1213041878505">
-                  <node role="attributeQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkAttributeAccessQualifier" id="1213041896600">
-                    <link role="annotationLink" targetNodeId="29.1149694518242" resolveInfo="referenceMacro" />
-                    <node role="linkQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression" id="1213041905179">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213041911525">
-                        <property name="value" value="baseMethodDeclaration" />
-                      </node>
+                    <node role="linkQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkRefQualifier" id="1213034150508">
+                      <link role="link" targetNodeId="1.1212686240295" />
                     </node>
                   </node>
                 </node>
