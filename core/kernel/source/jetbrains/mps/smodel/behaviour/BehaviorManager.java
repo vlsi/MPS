@@ -18,6 +18,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
@@ -26,6 +28,9 @@ import org.jetbrains.annotations.NotNull;
 
 public final class BehaviorManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(BehaviorManager.class);
+
+  private static final Pattern CONCEPT_FQNAME = Pattern.compile("(.*)\\.structure\\.(\\w+)$");
+
   private static Map<Class, Object> ourDefaultValue = new HashMap<Class, Object>();
 
   static {
@@ -46,7 +51,6 @@ public final class BehaviorManager implements ApplicationComponent {
   private Map<String, Method> myCanBeChildMethods = new HashMap<String, Method>();
   private Map<String, Method> myCanBeParentMethods = new HashMap<String, Method>();
   private Map<String, Method> myDefaultConceptNameMethods = new HashMap<String, Method>();
-
   private Map<MethodInfo, Method> myMethods = new HashMap<MethodInfo, Method>();
   private Map<String, List<Method>> myConstructors = new HashMap<String, List<Method>>();
 
@@ -262,8 +266,12 @@ public final class BehaviorManager implements ApplicationComponent {
   }
 
   private String behaviorClassByConceptFqName(String fqName) {
-    String behaviorClass = fqName.replaceAll("(.*)\\.structure\\.(\\w+)$", "$1.constraints.$2_Behavior");
-    return behaviorClass;
+    Matcher m = CONCEPT_FQNAME.matcher(fqName);
+    if (m.matches()) {
+      return m.group(1) + ".constraints." + m.group(2) + "_Behavior";
+    } else {
+      throw new RuntimeException();
+    }
   }
 
   public void reloadAll() {
