@@ -274,6 +274,7 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Conf
         GenerationController gc = new GenerationController(GeneratorManager.this, inputModels, generationType, progress, messages, saveTransientModels);
         result[0] = gc.generate();
         project.getComponentSafe(GenerationTracer.class).finishTracing();
+        fireAfterGeneration(inputModels);
 
         CleanupManager.getInstance().cleanup();
       }
@@ -299,6 +300,16 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Conf
     for (GenerationListener l : myGenerationListeners) {
       try {
         l.beforeGeneration(inputModels);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
+  private void fireAfterGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
+    for (GenerationListener l : myGenerationListeners) {
+      try {
+        l.afterGeneration(inputModels);
       } catch (Throwable t) {
         LOG.error(t);
       }
