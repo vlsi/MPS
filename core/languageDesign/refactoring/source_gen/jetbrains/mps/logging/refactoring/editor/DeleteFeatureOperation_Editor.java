@@ -25,7 +25,6 @@ public class DeleteFeatureOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_featureRefNodeCell20498_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_featureRefNodeCell20498_0");
   }
 
   private static void setupBasic_ConstantCell20498_01(EditorCell editorCell, SNode node, EditorContext context) {

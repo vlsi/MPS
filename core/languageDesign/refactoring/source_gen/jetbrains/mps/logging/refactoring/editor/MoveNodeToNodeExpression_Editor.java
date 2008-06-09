@@ -6,6 +6,7 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
@@ -22,30 +23,26 @@ public class MoveNodeToNodeExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell6825_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6825_0");
+    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
   }
 
   private static void setupBasic_whatToMoveRefNodeCell6825_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_whatToMoveRefNodeCell6825_0");
   }
 
   private static void setupBasic_ConstantCell6825_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6825_01");
+    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
   }
 
   private static void setupBasic_destinationRefNodeCell6825_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_destinationRefNodeCell6825_0");
   }
 
   private static void setupBasic_ConstantCell6825_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6825_02");
+    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
   }
 
   private static void setupBasic_roleInTargetRefNodeCell6825_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_roleInTargetRefNodeCell6825_0");
-  }
-
-  private static void setupBasic_ConstantCell6825_03(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6825_03");
   }
 
   private static void setupLabel_ConstantCell6825_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -66,9 +63,6 @@ public class MoveNodeToNodeExpression_Editor extends DefaultNodeEditor {
   private static void setupLabel_roleInTargetRefNodeCell6825_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell6825_03(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.create_CollectionCell6825_0(context, node);
@@ -80,13 +74,12 @@ public class MoveNodeToNodeExpression_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.create_ConstantCell6825_0(context, node, "moveNode("));
+    editorCell.addEditorCell(this.create_ConstantCell6825_0(context, node, "moveNode"));
     editorCell.addEditorCell(this.create_whatToMoveRefNodeCell6825_0(context, node));
-    editorCell.addEditorCell(this.create_ConstantCell6825_01(context, node, "->"));
+    editorCell.addEditorCell(this.create_ConstantCell6825_01(context, node, "to"));
     editorCell.addEditorCell(this.create_destinationRefNodeCell6825_0(context, node));
-    editorCell.addEditorCell(this.create_ConstantCell6825_02(context, node, "as"));
+    editorCell.addEditorCell(this.create_ConstantCell6825_02(context, node, "withRole"));
     editorCell.addEditorCell(this.create_roleInTargetRefNodeCell6825_0(context, node));
-    editorCell.addEditorCell(this.create_ConstantCell6825_03(context, node, ")"));
     return editorCell;
   }
 
@@ -110,14 +103,6 @@ public class MoveNodeToNodeExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell6825_02(editorCell, node, context);
     setupLabel_ConstantCell6825_02(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public EditorCell create_ConstantCell6825_03(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_ConstantCell6825_03(editorCell, node, context);
-    setupLabel_ConstantCell6825_03(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }

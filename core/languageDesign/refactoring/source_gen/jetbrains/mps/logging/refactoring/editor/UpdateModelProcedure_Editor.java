@@ -25,7 +25,6 @@ public class UpdateModelProcedure_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_argumentRefNodeCell18949_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_argumentRefNodeCell18949_0");
   }
 
   private static void setupBasic_ConstantCell18949_01(EditorCell editorCell, SNode node, EditorContext context) {

@@ -25,7 +25,6 @@ public class ChangeFeatureNameOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_featureRefNodeCell19424_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_featureRefNodeCell19424_0");
   }
 
   private static void setupBasic_ConstantCell19424_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -33,7 +32,6 @@ public class ChangeFeatureNameOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_newConceptFQNameRefNodeCell19424_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_newConceptFQNameRefNodeCell19424_0");
   }
 
   private static void setupBasic_ConstantCell19424_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -41,7 +39,6 @@ public class ChangeFeatureNameOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_newFeatureNameRefNodeCell19424_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_newFeatureNameRefNodeCell19424_0");
   }
 
   private static void setupBasic_ConstantCell19424_03(EditorCell editorCell, SNode node, EditorContext context) {
