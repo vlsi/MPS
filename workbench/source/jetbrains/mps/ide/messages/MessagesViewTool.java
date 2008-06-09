@@ -301,6 +301,10 @@ public class MessagesViewTool extends BaseMPSTool implements PersistentStateComp
     return true;
   }
 
+  protected boolean hasCloseButton() {
+    return false;
+  }
+
   private void rebuildModel() {
     myModel.clear();
     myList.setFixedCellWidth(myList.getWidth());

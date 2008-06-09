@@ -1,7 +1,7 @@
 package jetbrains.mps.workbench.tools;
 
 import com.intellij.ide.actions.ActivateToolWindowAction;
-import com.intellij.openapi.actionSystem.KeyboardShortcut;
+import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindow;
@@ -11,15 +11,14 @@ import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentFactoryImpl;
 import com.intellij.ui.content.ContentManager;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.ide.findusages.view.icons.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.Icon;
-import javax.swing.JComponent;
-import javax.swing.KeyStroke;
-import javax.swing.SwingUtilities;
+import javax.swing.*;
+import java.awt.BorderLayout;
 
 public abstract class BaseTool {
   private static Logger LOG = Logger.getLogger(BaseTool.class);
@@ -178,8 +177,26 @@ public abstract class BaseTool {
 
     JComponent component = getComponent();
     if (component != null) {
-      addContent(component, null, false);
+      if (!hasCloseButton()) {
+        addContent(component, null, false);
+      } else {
+        DefaultActionGroup group = new DefaultActionGroup();
+        group.add(new AnAction("", "Close", Icons.CLOSE_ICON) {
+          public void actionPerformed(AnActionEvent e) {
+            getContentManager().removeAllContents(true);
+          }
+        });
+
+        JPanel panel = new JPanel(new BorderLayout());
+        panel.add(component, BorderLayout.CENTER);
+        panel.add(ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent(), BorderLayout.WEST);
+        addContent(panel, null, false);
+      }
     }
+  }
+
+  protected boolean hasCloseButton() {
+    return true;
   }
 
   public void unregisterLater() {
@@ -208,10 +225,6 @@ public abstract class BaseTool {
 
   public JComponent getComponent() {
     return null;
-  }
-
-  protected boolean hasCloseButton() {
-    return true;
   }
 
   protected Content addContent(JComponent component, String name, boolean isLockable) {
