@@ -42,13 +42,20 @@ public class PasteNodeUtil {
     paste_internal(pasteTarget, pasteNode, operationContext, role_, pasteToRoot);
   }
 
-  public static void pasteAsRoot(SNode pasteNode, SModel model) {
-    model.addRoot(pasteNode);
+  public static void pasteAsRoot(List<SNode> pasteNodes, SModel model) {
+    for (SNode pasteNode : pasteNodes) {
+      model.addRoot(pasteNode);
+    }
   }
 
-  public static boolean canPasteAsRoot(SNode pasteNode) {
-    AbstractConceptDeclaration nodeConcept = pasteNode.getConceptDeclarationAdapter();
-    return nodeConcept instanceof ConceptDeclaration && ((ConceptDeclaration) nodeConcept).getRootable();
+  public static boolean canPasteAsRoot(List<SNode> pasteNodes) {
+    for (SNode pasteNode : pasteNodes) {
+      AbstractConceptDeclaration nodeConcept = pasteNode.getConceptDeclarationAdapter();
+      if (!(nodeConcept instanceof ConceptDeclaration && ((ConceptDeclaration) nodeConcept).getRootable())) {
+        return false;
+      }
+    }
+    return true;
   }
 
 

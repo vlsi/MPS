@@ -11,6 +11,7 @@
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.bootstrap.smodelLanguage</usedLanguages>
+    <usedLanguages>jetbrains.mps.transformationTest</usedLanguages>
   </usedLanguages>
 </solution>
 
