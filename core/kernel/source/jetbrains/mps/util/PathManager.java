@@ -192,6 +192,10 @@ public class PathManager {
     return getHomePath() + File.separator + "core" + File.separator + "baseLanguage";
   }
 
+  public static String getBaseAppPath() {
+    return getHomePath() + File.separator + "app";
+  }
+
   public static String getVCSPath() {
     return getHomePath() + File.separator + "core" + File.separator + "kernel" + File.separator + "vcs" + File.separator + "generic";
   }
