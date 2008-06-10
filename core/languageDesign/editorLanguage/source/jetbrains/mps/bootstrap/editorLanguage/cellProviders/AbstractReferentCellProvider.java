@@ -98,6 +98,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
       noRefCell.setEditable(true);
       noRefCell.setDefaultText(myNoTargetText);
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+      noRefCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_" + myLinkDeclaration.getRole());
       return noRefCell;
     }
 

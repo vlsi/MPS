@@ -15,7 +15,8 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <maxImportIndex value="13" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <maxImportIndex value="14" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="2" modelUID="jetbrains.mps.project@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.util@java_stub" version="-1" />
@@ -23,7 +24,6 @@
   <import index="5" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <import index="6" modelUID="jetbrains.mps.projectLanguage.structure" version="-1" />
   <import index="8" modelUID="jetbrains.mps.projectLanguage.structure@java_stub" version="-1" />
-  <import index="10" modelUID="jetbrains.mps.ide.command@java_stub" version="-1" />
   <import index="11" modelUID="java.awt@java_stub" version="-1" />
   <import index="13" modelUID="jetbrains.mps.ide.common" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.uiLanguage.components" />
@@ -287,12 +287,12 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203688646745">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205834599173">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1203688647669">
-              <link role="baseMethodDeclaration" targetNodeId="10.~CommandProcessor.instance():jetbrains.mps.ide.command.CommandProcessor" resolveInfo="instance" />
-              <link role="classConcept" targetNodeId="10.~CommandProcessor" resolveInfo="CommandProcessor" />
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1213109642607">
+              <link role="baseMethodDeclaration" targetNodeId="5.~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolveInfo="instance" />
+              <link role="classConcept" targetNodeId="5.~ModelAccess" resolveInfo="ModelAccess" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205834599174">
-              <link role="baseMethodDeclaration" targetNodeId="10.~CommandProcessor.executeCommand(java.lang.Runnable):void" resolveInfo="executeCommand" />
+              <link role="baseMethodDeclaration" targetNodeId="5.~ModelAccess.runWriteActionInCommand(java.lang.Runnable):void" resolveInfo="runWriteActionInCommand" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1203688708536">
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1203688708537">
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1203688708538">
