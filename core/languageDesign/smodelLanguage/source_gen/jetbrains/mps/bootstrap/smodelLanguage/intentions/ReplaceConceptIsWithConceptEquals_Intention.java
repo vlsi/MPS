@@ -8,10 +8,10 @@ import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ReplaceConceptIsWithConceptEquals_Intention extends BaseIntention implements Intention {
 
@@ -30,15 +30,13 @@ public class ReplaceConceptIsWithConceptEquals_Intention extends BaseIntention i
   }
 
   public boolean isApplicable(SNode node, EditorContext editorContext) {
-    return true;
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "conceptArgument", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference");
   }
 
   public void execute(SNode node, EditorContext editorContext) {
-    SNode listNode = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_ConceptList", null);
-    SNode conceptRef = SNodeOperations.replaceWithNewChild(ListSequence.fromList(SLinkOperations.getTargets(listNode, "concept", true)).first(), "jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptReference");
-    SLinkOperations.setTarget(conceptRef, "concept", SLinkOperations.getTarget(node, "concept", false), false);
-    SNodeOperations.replaceWithAnother(node, listNode);
-    SNodeOperations.deleteNode(node);
+    SNode conceptList = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_ConceptList", null);
+    SLinkOperations.setTarget(ListSequence.fromList(SLinkOperations.getTargets(conceptList, "concept", true)).first(), "concept", SLinkOperations.getTarget(SLinkOperations.getTarget(node, "conceptArgument", true), "conceptDeclaration", false), false);
+    SNodeOperations.replaceWithAnother(node, conceptList);
   }
 
   public Object[] getField(String key) {
