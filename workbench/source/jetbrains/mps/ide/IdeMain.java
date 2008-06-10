@@ -14,6 +14,9 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ex.ApplicationManagerEx;
+
 public class IdeMain {
 
 
@@ -30,6 +33,10 @@ public class IdeMain {
 
   public static void setTestMode(boolean testMode) {
     ourTestMode = testMode;
+
+    if (testMode) {
+      ApplicationManagerEx.getApplicationEx().doNotSave();
+    }
   }
 
 }
