@@ -1073,6 +1073,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private void doRelayout(boolean updateFolding) {
+    if (myRootCell == null) return;
+
     myRootCell.setX(myShiftX);
     myRootCell.setY(myShiftY);
     myRootCell.relayout();
