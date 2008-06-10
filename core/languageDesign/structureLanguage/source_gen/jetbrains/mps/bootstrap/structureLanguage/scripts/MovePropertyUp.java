@@ -171,7 +171,7 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
   public IChooseComponent<SNode> targetConcept_componentCreator(ActionContext actionContext) {
     SNode node = actionContext.getNode();
     SNode abstractConceptDeclaration = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration", false, false);
-    return new HierarchicalChooseNodeComponent("choose target concept", "targetConcept", actionContext, new ConceptAncestorsProvider(), abstractConceptDeclaration);
+    return new HierarchicalChooseNodeComponent(actionContext, new ConceptAncestorsProvider(), abstractConceptDeclaration);
   }
 
   public boolean askForInfo(ActionContext actionContext, RefactoringContext refactoringContext) {

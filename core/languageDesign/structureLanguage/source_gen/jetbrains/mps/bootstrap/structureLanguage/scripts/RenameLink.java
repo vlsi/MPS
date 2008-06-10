@@ -162,7 +162,7 @@ public class RenameLink extends AbstractLoggableRefactoring {
       List<IChooseComponent> components = new ArrayList<IChooseComponent>();
       {
         IChooseComponent<String> chooseComponent;
-        chooseComponent = new ChooseStringComponent("enter new name", "newName");
+        chooseComponent = new ChooseStringComponent();
         chooseComponent.setInitialValue(this.newName_initialValue(actionContext));
         chooseComponent.setPropertyName("newName");
         components.add(chooseComponent);

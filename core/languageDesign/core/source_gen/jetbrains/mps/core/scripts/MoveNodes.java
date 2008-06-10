@@ -178,8 +178,9 @@ public class MoveNodes extends AbstractLoggableRefactoring {
         movedNodes = refactoringContext.moveNodesToModel(nodes, targetModel);
       }
       if (((Object)refactoringContext.getParameter("target")) instanceof SNode) {
-        movedNodes = refactoringContext.moveNodesToNode(nodes, ListSequence.fromList(nodes).getElement(0).getRole_(), (SNode)((Object)refactoringContext.getParameter("target")));
-        targetModel = ((SNode)((Object)refactoringContext.getParameter("target"))).getModel();
+        SNode targetNode = (SNode)((Object)refactoringContext.getParameter("target"));
+        movedNodes = refactoringContext.moveNodesToNode(nodes, ListSequence.fromList(nodes).getElement(0).getRole_(), targetNode);
+        targetModel = targetNode.getModel();
       }
       if (targetModel != null) {
         IModule module = targetModel.getModelDescriptor().getModule();
@@ -216,7 +217,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
   }
 
   public IChooseComponent<Object> target_componentCreator(ActionContext actionContext) {
-    return new ChooseNodeOrModelComponent("choose target", actionContext, null, true, true);
+    return new ChooseNodeOrModelComponent(actionContext, null, true, true);
   }
 
   public boolean askForInfo(ActionContext actionContext, RefactoringContext refactoringContext) {
@@ -227,6 +228,8 @@ public class MoveNodes extends AbstractLoggableRefactoring {
         IChooseComponent<Object> chooseComponent;
         chooseComponent = this.target_componentCreator(actionContext);
         chooseComponent.setPropertyName("target");
+        chooseComponent.setCaption("choose target");
+        chooseComponent.initComponent();
         components.add(chooseComponent);
       }
       ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, actionContext, refactoringContext, components);

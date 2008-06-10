@@ -12,22 +12,30 @@ import java.awt.GridLayout;
 public class ChooseStringComponent extends JPanel implements IChooseComponent<String>  {
   private JTextField myTextField;
   private String myPropertyName;
+  private String myCaption;
   private Condition<String> myCondition = Condition.TRUE_CONDITION;
 
-  public ChooseStringComponent(String caption, String propetyName) {
-    myPropertyName = propetyName;
+  public ChooseStringComponent() {
+    initComponent();
+  }
+
+  public void initComponent() {
     myTextField = new JTextField();
     setLayout(new GridLayout(1, 2));
-    add(new JLabel(caption), BorderLayout.NORTH);
+    add(new JLabel(myCaption), BorderLayout.NORTH);
     add(myTextField);
+  }
+
+  public void setCaption(String caption) {
+    myCaption = caption;
   }
 
   public JComponent getComponentToFocus() {
     return myTextField;
   }
 
-  public ChooseStringComponent(String caption, String propetyName, Condition condition) {
-    this(caption, propetyName);
+  public ChooseStringComponent(Condition condition) {
+    this();
     myCondition = condition;
   }
 

@@ -21,12 +21,8 @@ import java.awt.GridBagConstraints;
 public class ChooseModelDescriptorComponent implements IChooseComponent<SModelDescriptor> {
   private ChooseNodeOrModelComponent myChooseNodeOrModelComponent;
 
-  public ChooseModelDescriptorComponent(String caption, String propertyName, ActionContext actionContext) {
-    myChooseNodeOrModelComponent = new ChooseNodeOrModelComponent(caption, propertyName, actionContext, null, true, false);
-  }
-
-   public ChooseModelDescriptorComponent(String caption, ActionContext actionContext) {
-    myChooseNodeOrModelComponent = new ChooseNodeOrModelComponent(caption, actionContext, null, true, false);
+  public ChooseModelDescriptorComponent(ActionContext actionContext) {
+    myChooseNodeOrModelComponent = new ChooseNodeOrModelComponent(actionContext, null, true, false);
   }
 
   public SModelDescriptor submit() throws InvalidInputValueException {
@@ -55,5 +51,13 @@ public class ChooseModelDescriptorComponent implements IChooseComponent<SModelDe
 
   public JComponent getMainComponent() {
     return myChooseNodeOrModelComponent;
+  }
+
+  public void setCaption(String caption) {
+    myChooseNodeOrModelComponent.setCaption(caption);
+  }
+
+  public void initComponent() {
+    myChooseNodeOrModelComponent.initComponent();
   }
 }

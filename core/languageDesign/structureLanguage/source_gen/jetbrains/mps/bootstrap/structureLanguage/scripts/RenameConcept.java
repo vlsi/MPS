@@ -164,7 +164,7 @@ public class RenameConcept extends AbstractLoggableRefactoring {
       List<IChooseComponent> components = new ArrayList<IChooseComponent>();
       {
         IChooseComponent<String> chooseComponent;
-        chooseComponent = new ChooseStringComponent("new concept name", "newName");
+        chooseComponent = new ChooseStringComponent();
         chooseComponent.setInitialValue(this.newName_initialValue(actionContext));
         chooseComponent.setPropertyName("newName");
         components.add(chooseComponent);

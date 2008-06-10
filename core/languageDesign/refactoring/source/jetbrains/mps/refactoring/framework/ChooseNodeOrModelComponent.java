@@ -34,22 +34,16 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
 
   private Condition myCondition = Condition.TRUE_CONDITION;
 
-  public ChooseNodeOrModelComponent(String caption, String propertyName, ActionContext actionContext, String conceptFQName, boolean mayBeModel, boolean mayBeNode) {
-    this(caption, actionContext, conceptFQName, mayBeModel, mayBeNode);
-  }
-
-  public ChooseNodeOrModelComponent(String caption, ActionContext actionContext, String conceptFQName, boolean mayBeModel, boolean mayBeNode) {
+  public ChooseNodeOrModelComponent(ActionContext actionContext, String conceptFQName, boolean mayBeModel, boolean mayBeNode) {
     //setLayout(new BorderLayout());
-    myCaption = caption;
     myActionContext = actionContext;
     myOperationContext = myActionContext.getOperationContext();
     myMayBeModel = mayBeModel;
     myMayBeNode = mayBeNode;
-
     myConceptFQName = conceptFQName;
+  }
 
-    // JPanel panel = new JPanel();
-    //BoxLayout layout = new BoxLayout(this, BoxLayout.Y_AXIS);
+  public void initComponent() {
     setLayout(new GridBagLayout());
     GridBagConstraints constraints = new GridBagConstraints();
     constraints.gridx = 0;
@@ -75,9 +69,13 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
   }
 
 
-  public ChooseNodeOrModelComponent(String caption, String propertyName, ActionContext actionContext, String conceptFQName, boolean mayBeModel, boolean mayBeNode, boolean useLoadedModels) {
-    this(caption, propertyName, actionContext, conceptFQName, mayBeModel, mayBeNode);
+  public ChooseNodeOrModelComponent(ActionContext actionContext, String conceptFQName, boolean mayBeModel, boolean mayBeNode, boolean useLoadedModels) {
+    this(actionContext, conceptFQName, mayBeModel, mayBeNode);
     myReturnLoadedModels = useLoadedModels;
+  }
+
+  public void setCaption(String caption) {
+    myCaption = caption;
   }
 
   public JComponent getComponentToFocus() {

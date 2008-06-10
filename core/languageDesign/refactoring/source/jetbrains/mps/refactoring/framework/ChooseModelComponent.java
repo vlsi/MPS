@@ -21,8 +21,8 @@ import java.awt.GridBagConstraints;
 public class ChooseModelComponent implements IChooseComponent<SModel> {
   private ChooseNodeOrModelComponent myChooseNodeOrModelComponent;
 
-  public ChooseModelComponent(String caption, String propertyName, ActionContext actionContext) {
-    myChooseNodeOrModelComponent = new ChooseNodeOrModelComponent(caption, propertyName, actionContext, null, true, false, true);
+  public ChooseModelComponent(ActionContext actionContext) {
+    myChooseNodeOrModelComponent = new ChooseNodeOrModelComponent(actionContext, null, true, false, true);
   }
 
   public SModel submit() throws InvalidInputValueException {
@@ -51,5 +51,13 @@ public class ChooseModelComponent implements IChooseComponent<SModel> {
 
   public JComponent getMainComponent() {
     return myChooseNodeOrModelComponent;
+  }
+
+  public void setCaption(String caption) {
+    myChooseNodeOrModelComponent.setCaption(caption);
+  }
+
+  public void initComponent() {
+    myChooseNodeOrModelComponent.initComponent();
   }
 }

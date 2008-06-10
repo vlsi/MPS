@@ -19,4 +19,6 @@ public interface IChooseComponent<T> {
   public JComponent getMainComponent();
   public String getPropertyName();
   public void setPropertyName(String propertyName);
+  public void setCaption(String caption);
+  public void initComponent();
 }

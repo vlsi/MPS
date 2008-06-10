@@ -133,9 +133,11 @@ public class Rename extends AbstractLoggableRefactoring {
       List<IChooseComponent> components = new ArrayList<IChooseComponent>();
       {
         IChooseComponent<String> chooseComponent;
-        chooseComponent = new ChooseStringComponent("new name:", "newName");
+        chooseComponent = new ChooseStringComponent();
         chooseComponent.setInitialValue(this.newName_initialValue(actionContext));
         chooseComponent.setPropertyName("newName");
+        chooseComponent.setCaption("new name:");
+        chooseComponent.initComponent();
         components.add(chooseComponent);
       }
       ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, actionContext, refactoringContext, components);

@@ -26,14 +26,21 @@ import java.awt.*;
 public class HierarchicalChooseNodeComponent extends JPanel implements IChooseComponent<SNode> {
   private MyHierarchyTree myHierarchyTree;
   private ActionContext myActionContext;
+  private IDescendantsProvider myDescendantsProvider;
+  private SNode myInitialNode;
   private String myPropertyName;
   private String myCaption;
 
-  public HierarchicalChooseNodeComponent(String caption, String propertyName, ActionContext actionContext, IDescendantsProvider descendantsProvider, SNode initialNode) {
+  public HierarchicalChooseNodeComponent(ActionContext actionContext, IDescendantsProvider descendantsProvider, SNode initialNode) {
     myActionContext = actionContext;
-    myPropertyName = propertyName;
-    myCaption = caption;
-    myHierarchyTree = new MyHierarchyTree(descendantsProvider);
+    myDescendantsProvider = descendantsProvider;
+    myInitialNode = initialNode;
+
+    initComponent();
+  }
+
+  public void initComponent() {
+    myHierarchyTree = new MyHierarchyTree(myDescendantsProvider);
     setLayout(new GridBagLayout());
     GridBagConstraints constraints = new GridBagConstraints();
     constraints.gridx = 0;
@@ -50,7 +57,11 @@ public class HierarchicalChooseNodeComponent extends JPanel implements IChooseCo
     add(new JScrollPane(myHierarchyTree), constraints);
     setMinimumSize(new Dimension(350, 350));
     setPreferredSize(new Dimension(350, 350));
-    showHierarchy(initialNode, myActionContext.getOperationContext());
+    showHierarchy(myInitialNode, myActionContext.getOperationContext());
+  }
+
+  public void setCaption(String caption) {
+    myCaption = caption;
   }
 
   private void showHierarchy(SNode node, IOperationContext operationContext) {
