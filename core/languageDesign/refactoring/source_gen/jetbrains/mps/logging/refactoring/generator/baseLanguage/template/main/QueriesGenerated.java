@@ -331,7 +331,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1213094581843(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "nodesToOpenClause", true) != null);
+    return (SLinkOperations.getTarget(_context.getNode(), "nodesToOpenClause", true) == null);
   }
 
   public static boolean ifMacro_Condition_1213094585848(final IOperationContext operationContext, final IfMacroContext _context) {

@@ -235,6 +235,8 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
         chooseComponent = new ChooseModelDescriptorComponent(actionContext);
         chooseComponent.setCondition(new MoveConcepts.My_targetModel_Condition(actionContext));
         chooseComponent.setPropertyName("targetModel");
+        chooseComponent.setCaption("choose target model");
+        chooseComponent.initComponent();
         components.add(chooseComponent);
       }
       ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, actionContext, refactoringContext, components);
@@ -242,6 +244,10 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
       result = dialog.getResult();
       return result;
     }
+  }
+
+  public List<SNode> getNodesToOpen(ActionContext actionContext, RefactoringContext refactoringContext) {
+    return new ArrayList<SNode>();
   }
 
   public static class My_targetModel_Condition implements Condition<SModelDescriptor> {

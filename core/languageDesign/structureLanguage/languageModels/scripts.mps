@@ -44,6 +44,8 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <maxImportIndex value="28" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.ide.action@java_stub" version="-1" />
@@ -1793,20 +1795,18 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1198689023328">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1198689027174">
-              <link role="baseMethodDeclaration" targetNodeId="24.~HierarchicalChooseNodeComponent.&lt;init&gt;(java.lang.String,java.lang.String,jetbrains.mps.ide.action.ActionContext,jetbrains.mps.refactoring.framework.IDescendantsProvider,jetbrains.mps.smodel.SNode)" resolveInfo="HierarchicalChooseNodeComponent" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198689038328">
-                <property name="value" value="choose target concept" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198689051487">
-                <property name="value" value="targetConcept" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_ActionContext" id="1198689063473" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1198760075273">
-                <link role="baseMethodDeclaration" targetNodeId="24.~ConceptAncestorsProvider.&lt;init&gt;()" resolveInfo="ConceptAncestorsProvider" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198759376345">
-                <link role="variableDeclaration" targetNodeId="1198759274436" resolveInfo="abstractConceptDeclaration" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213097219002">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213097219004">
+                <link role="baseMethodDeclaration" targetNodeId="24.~HierarchicalChooseNodeComponent.&lt;init&gt;(jetbrains.mps.ide.action.ActionContext,jetbrains.mps.refactoring.framework.IDescendantsProvider,jetbrains.mps.smodel.SNode)" resolveInfo="HierarchicalChooseNodeComponent" />
+                <node role="actualArgument" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_ActionContext" id="1198689063473" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213097221833">
+                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213097221835">
+                    <link role="baseMethodDeclaration" targetNodeId="24.~ConceptAncestorsProvider.&lt;init&gt;()" resolveInfo="ConceptAncestorsProvider" />
+                  </node>
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198759376345">
+                  <link role="variableDeclaration" targetNodeId="1198759274436" resolveInfo="abstractConceptDeclaration" />
+                </node>
               </node>
             </node>
           </node>
@@ -2667,20 +2667,18 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1198776978577">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1198776978578">
-              <link role="baseMethodDeclaration" targetNodeId="24.~HierarchicalChooseNodeComponent.&lt;init&gt;(java.lang.String,java.lang.String,jetbrains.mps.ide.action.ActionContext,jetbrains.mps.refactoring.framework.IDescendantsProvider,jetbrains.mps.smodel.SNode)" resolveInfo="HierarchicalChooseNodeComponent" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198776978579">
-                <property name="value" value="choose target concept" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198776978580">
-                <property name="value" value="targetConcept" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_ActionContext" id="1198776978581" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1198776978582">
-                <link role="baseMethodDeclaration" targetNodeId="24.~ConceptAncestorsProvider.&lt;init&gt;()" resolveInfo="ConceptAncestorsProvider" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198776978583">
-                <link role="variableDeclaration" targetNodeId="1198776978571" resolveInfo="abstractConceptDeclaration" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213097137342">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213097137344">
+                <link role="baseMethodDeclaration" targetNodeId="24.~HierarchicalChooseNodeComponent.&lt;init&gt;(jetbrains.mps.ide.action.ActionContext,jetbrains.mps.refactoring.framework.IDescendantsProvider,jetbrains.mps.smodel.SNode)" resolveInfo="HierarchicalChooseNodeComponent" />
+                <node role="actualArgument" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_ActionContext" id="1198776978581" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213097141172">
+                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213097141174">
+                    <link role="baseMethodDeclaration" targetNodeId="24.~ConceptAncestorsProvider.&lt;init&gt;()" resolveInfo="ConceptAncestorsProvider" />
+                  </node>
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198776978583">
+                  <link role="variableDeclaration" targetNodeId="1198776978571" resolveInfo="abstractConceptDeclaration" />
+                </node>
               </node>
             </node>
           </node>

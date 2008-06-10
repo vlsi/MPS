@@ -189,4 +189,8 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
     return this.isApplicable(actionContext, refactoringContext);
   }
 
+  public List<SNode> getNodesToOpen(ActionContext actionContext, RefactoringContext refactoringContext) {
+    return new ArrayList<SNode>();
+  }
+
 }

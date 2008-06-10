@@ -184,6 +184,8 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
         IChooseComponent<SNode> chooseComponent;
         chooseComponent = this.targetConcept_componentCreator(actionContext);
         chooseComponent.setPropertyName("targetConcept");
+        chooseComponent.setCaption("chooseTargetConcept");
+        chooseComponent.initComponent();
         components.add(chooseComponent);
       }
       ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, actionContext, refactoringContext, components);
@@ -191,6 +193,10 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
       result = dialog.getResult();
       return result;
     }
+  }
+
+  public List<SNode> getNodesToOpen(ActionContext actionContext, RefactoringContext refactoringContext) {
+    return new ArrayList<SNode>();
   }
 
 }
