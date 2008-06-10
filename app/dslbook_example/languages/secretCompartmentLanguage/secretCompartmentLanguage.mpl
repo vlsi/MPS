@@ -1,30 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="secretCompartmentLanguage" compileInMPS="false">
-  <structure>
-    <model modelUID="secretCompartmentLanguage.structure" />
-  </structure>
-  <constraints>
-    <model modelUID="secretCompartmentLanguage.constraints" />
-  </constraints>
-  <editor>
-    <model modelUID="secretCompartmentLanguage.editor" />
-  </editor>
   <models>
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="secretCompartmentLanguage" />
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="secretCompartmentLanguage" />
   </models>
-  <module />
   <accessoryModels />
   <generators>
-    <generator generatorUID="secretCompartmentLanguage#1197167152697" targetLanguage="jetbrains.mps.baseLanguage">
+    <generator generatorUID="secretCompartmentLanguage#1197167152697">
       <models>
         <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="secretCompartmentLanguage.generator.baseLanguage.template" />
       </models>
-      <module />
       <external-templates />
       <dependencies>
-        <dependency>jetbrains.mps.baseLanguage</dependency>
-        <dependency>jetbrains.mps.baseLanguage.unitTest</dependency>
+        <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
+        <dependency reexport="true">jetbrains.mps.baseLanguage.unitTest</dependency>
       </dependencies>
       <mapping-priorities />
     </generator>
@@ -32,13 +21,8 @@
   <classPath>
     <entry path="${mps_home}\app\dslbook_example\classes" />
   </classPath>
-  <runtimeClassPath>
-    <entry path="${mps_home}\app\dslbook_example\classes" />
-  </runtimeClassPath>
+  <languageRuntimeClassPath />
   <sourcePath />
-  <osgiOptions>
-    <requiredBundles />
-    <exportedPackage />
-  </osgiOptions>
+  <extendedLanguages />
 </language>
 

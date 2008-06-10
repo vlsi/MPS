@@ -11,6 +11,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.behaviour.BehaviorConstants;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
 import jetbrains.mps.ide.BootstrapLanguagesManager;
@@ -18,12 +19,18 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
 
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.lang.reflect.Method;
+import java.lang.reflect.InvocationTargetException;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.application.ApplicationManager;
 
 public class ModelConstraintsManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(ModelConstraintsManager.class);
+
+  private static final Pattern CONCEPT_FQNAME = Pattern.compile("(.*)\\.structure\\.(\\w+)$");
 
   public static ModelConstraintsManager getInstance() {
     return ApplicationManager.getApplication().getComponent(ModelConstraintsManager.class);
@@ -39,6 +46,10 @@ public class ModelConstraintsManager implements ApplicationComponent {
   private Map<String, INodeReferentSetEventHandler> myNodeReferentSetEventHandlersMap = new HashMap<String, INodeReferentSetEventHandler>();
   private Map<String, INodeReferentSearchScopeProvider> myNodeReferentSearchScopeProvidersMap = new HashMap<String, INodeReferentSearchScopeProvider>();
   private Map<String, INodeReferentSearchScopeProvider> myNodeDefaultSearchScopeProvidersMap = new HashMap<String, INodeReferentSearchScopeProvider>();
+
+  private Map<String, Method> myCanBeChildMethods = new HashMap<String, Method>();
+  private Map<String, Method> myCanBeParentMethods = new HashMap<String, Method>();
+  private Map<String, String> myDefaultConceptNames = new HashMap<String, String>();
 
   public ModelConstraintsManager(ClassLoaderManager cm) {
   }
@@ -447,5 +458,137 @@ public class ModelConstraintsManager implements ApplicationComponent {
     } catch (Throwable t) {
       LOG.error(t);
     }
+  }
+
+  public String getDefaultConcreteConceptFqName(String fqName, IScope scope) {
+    if (!myDefaultConceptNames.containsKey(fqName)) {
+      String result = fqName;
+      String behaviorClass = behaviorClassByConceptFqName(fqName);
+      String namespace = NameUtil.namespaceFromConceptFQName(fqName);
+      Language language = scope.getLanguage(namespace);
+      if (language != null) {
+        Class cls = language.getClass(behaviorClass);
+        if (cls != null) {
+          try {
+            Method method = cls.getMethod(BehaviorConstants.GET_DEFAULT_CONCRETE_CONCEPT_FQ_NAME);
+            try {
+              result = (String) method.invoke(null);
+            } catch (IllegalAccessException e) {
+              LOG.error(e);
+            } catch (InvocationTargetException e) {
+              LOG.error(e);
+            }
+          } catch (NoSuchMethodException e) {
+          }
+        }
+        myDefaultConceptNames.put(fqName, result);
+      }
+    }
+    return myDefaultConceptNames.get(fqName);
+  }
+
+  private Method getCanBeChildMethod(String conceptFqName, IOperationContext context) {
+    if (myCanBeChildMethods.containsKey(conceptFqName)) {
+      return myCanBeChildMethods.get(conceptFqName);
+    }
+
+    IScope scope = context.getScope();
+    AbstractConceptDeclaration topConcept = SModelUtil_new.findConceptDeclaration(conceptFqName, scope);
+
+    if (topConcept == null) {
+      LOG.error("Can't find a concept " + conceptFqName);
+      myCanBeChildMethods.put(conceptFqName, null);
+      return null;
+    }
+
+    List<AbstractConceptDeclaration> conceptAndSuperConcepts = SModelUtil_new.getConceptAndSuperConcepts(topConcept);
+
+    for (AbstractConceptDeclaration concept : conceptAndSuperConcepts) {
+      String fqName = NameUtil.nodeFQName(concept);
+      String namespace = NameUtil.namespaceFromConcept(concept);
+      Language language = scope.getLanguage(namespace);
+      if (language == null) {
+        LOG.error("Can't find a language " + namespace);
+        continue;
+      }
+
+      String behaviorClassName = behaviorClassByConceptFqName(fqName);
+      Class behaviorClass = language.getClass(behaviorClassName);
+
+      if (behaviorClass == null) {
+        continue;
+      }
+
+      try {
+        Method method = behaviorClass.getMethod(BehaviorConstants.CAN_BE_A_CHILD_METHOD_NAME, IOperationContext.class, CanBeAChildContext.class);
+        myCanBeChildMethods.put(conceptFqName, method);
+        return method;
+      } catch (NoSuchMethodException e) {
+        //it's ok
+      }
+    }
+
+    myCanBeChildMethods.put(conceptFqName, null);
+    return null;
+  }
+
+  public boolean canHaveAChild(SNode parentNode, SNode childConcept, SNode link, IOperationContext context) {
+    IScope scope = context.getScope();
+    String fqName = parentNode.getConceptFqName();
+    String behaviorClass = behaviorClassByConceptFqName(fqName);
+    String namespace = NameUtil.namespaceFromConceptFQName(fqName);
+    Language language = scope.getLanguage(namespace);
+
+    if (language != null) {
+      Class cls = language.getClass(behaviorClass);
+      if (cls != null) {
+        try {
+          Method m;
+          if (myCanBeParentMethods.containsKey(fqName)) {
+            m = myCanBeParentMethods.get(fqName);
+          } else {
+            m = cls.getMethod(BehaviorConstants.CAN_BE_A_PARENT_METHOD_NAME, IOperationContext.class, CanBeAParentContext.class);
+            myCanBeParentMethods.put(fqName, m);
+          }
+
+          try {
+            if (m != null) {
+              return (Boolean) m.invoke(null, context, new CanBeAParentContext(parentNode, childConcept, link));
+            }
+          } catch (IllegalAccessException e) {
+            LOG.error(e);
+          } catch (InvocationTargetException e) {
+            LOG.error(e);
+          }
+        } catch (NoSuchMethodException e) {
+          myCanBeParentMethods.put(fqName, null);
+        }
+      }
+    }
+
+    return true;
+  }
+
+  private String behaviorClassByConceptFqName(String fqName) {
+    Matcher m = CONCEPT_FQNAME.matcher(fqName);
+    if (m.matches()) {
+      return m.group(1) + ".constraints." + m.group(2) + "_Behavior";
+    } else {
+      throw new RuntimeException();
+    }
+  }
+
+  public boolean isApplicableInContext(String fqName, IOperationContext context, SNode parentNode, SNode link) {
+    Method method = getCanBeChildMethod(fqName, context);
+    if (method != null) {
+      try {
+        return (Boolean) method.invoke(null, context, new CanBeAChildContext(parentNode, link));
+      } catch (IllegalAccessException e) {
+        LOG.error(e);
+      } catch (InvocationTargetException e) {
+        LOG.error(e);
+      }
+    }
+    return true;
   }
 }

@@ -9,10 +9,9 @@
     </refactoringContext>
   </refactoringHistory>
   <language namespace="testRefactoring">
-    <languageAspect modelUID="testRefactoring.actions" version="-1" />
-    <languageAspect modelUID="testRefactoring.editor" version="-1" />
-    <languageAspect modelUID="testRefactoring.structure" version="-1" />
+    <languageAspect modelUID="testRefactoring.structure" version="0" />
   </language>
+  <languageAspect modelUID="testRefactoringTargetLang.structure" version="0" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="testRefactoring.sandbox2" version="-1" />
   <node type="testRefactoring.structure.MyVeryGoodConcept1" id="1198157680448">

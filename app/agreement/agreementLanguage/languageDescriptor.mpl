@@ -8,7 +8,7 @@
     <model modelUID="agreementLanguage.declarations" />
   </accessoryModels>
   <generators>
-    <generator name="java" generatorUID="agreementLanguage#1130266708218" targetLanguage="jetbrains.mps.baseLanguage">
+    <generator generatorUID="agreementLanguage#1130266708218">
       <models>
         <modelRoot path="${language_descriptor}\generator" namespacePrefix="agreementLanguage.generator" />
       </models>
@@ -22,16 +22,11 @@
   <classPath>
     <entry path="${mps_home}\app\agreement\classes" />
   </classPath>
-  <runtimeClassPath>
-    <entry path="${mps_home}\app\agreement\classes" />
-  </runtimeClassPath>
+  <languageRuntimeClassPath />
   <sourcePath />
-  <osgiOptions>
-    <requiredBundles />
-    <exportedPackage />
-  </osgiOptions>
   <dependencies>
     <dependency reexport="false">jetbrains.mps.formulaLanguage</dependency>
   </dependencies>
+  <extendedLanguages />
 </language>
 

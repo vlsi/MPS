@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
+import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.smodel.search.ISearchScope;
@@ -187,7 +188,7 @@ public class ChildSubstituteActionsHelper {
           continue;
         }
 
-        if (!BehaviorManager.getInstance().canHaveAChild(parentNode, conceptNode, settter.myLinkDeclaration.getNode(), context)) {
+        if (!ModelConstraintsManager.getInstance().canHaveAChild(parentNode, conceptNode, settter.myLinkDeclaration.getNode(), context)) {
           it.remove();
         }
       }
@@ -261,7 +262,7 @@ public class ChildSubstituteActionsHelper {
 
     IScope scope = operationContext.getScope();
 
-    if (!BehaviorManager.getInstance().isApplicableInContext(conceptFqName, operationContext, parentNode, link)) {
+    if (!ModelConstraintsManager.getInstance().isApplicableInContext(conceptFqName, operationContext, parentNode, link)) {
       return new ArrayList<INodeSubstituteAction>();
     }
 
