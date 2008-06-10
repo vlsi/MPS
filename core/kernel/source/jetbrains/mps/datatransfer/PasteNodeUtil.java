@@ -14,7 +14,6 @@ import java.util.List;
  * Time: Nov 25, 2003 7:27:37 PM
  */
 public class PasteNodeUtil {
-//  private static final Logger LOG = Logger.getLogger(PasteNodeUtil.class);
 
   private static final int PASTE_N_A = 0;
   private static final int PASTE_TO_TARGET = 1;
@@ -47,9 +46,9 @@ public class PasteNodeUtil {
     model.addRoot(pasteNode);
   }
 
-  public static boolean canPasteAsRoot(SNode pasteNode, IOperationContext operationContext) {
-    final ConceptDeclaration conceptDeclaration = (ConceptDeclaration) SModelUtil_new.findConceptDeclaration(pasteNode.getConceptFqName(), operationContext.getScope());
-    return conceptDeclaration.getRootable();
+  public static boolean canPasteAsRoot(SNode pasteNode) {
+    AbstractConceptDeclaration nodeConcept = pasteNode.getConceptDeclarationAdapter();
+    return nodeConcept instanceof ConceptDeclaration && ((ConceptDeclaration) nodeConcept).getRootable();
   }
 
 
