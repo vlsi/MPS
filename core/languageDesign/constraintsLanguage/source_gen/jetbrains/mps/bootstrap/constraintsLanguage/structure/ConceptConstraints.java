@@ -8,6 +8,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import java.util.Iterator;
+import java.util.List;
 
 public class ConceptConstraints extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints";
@@ -15,6 +17,7 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept {
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String PROPERTIES = "properties";
 
   public ConceptConstraints(SNode node) {
     super(node);
@@ -59,6 +62,26 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(ConceptConstraints.VIRTUAL_PACKAGE, value);
+  }
+
+  public int getPropertiesesCount() {
+    return this.getChildCount(ConceptConstraints.PROPERTIES);
+  }
+
+  public Iterator<NodePropertyConstraint> propertieses() {
+    return this.children(ConceptConstraints.PROPERTIES);
+  }
+
+  public List<NodePropertyConstraint> getPropertieses() {
+    return this.getChildren(ConceptConstraints.PROPERTIES);
+  }
+
+  public void addProperties(NodePropertyConstraint node) {
+    this.addChild(ConceptConstraints.PROPERTIES, node);
+  }
+
+  public void insertProperties(NodePropertyConstraint prev, NodePropertyConstraint node) {
+    this.insertChild(prev, ConceptConstraints.PROPERTIES, node);
   }
 
 }

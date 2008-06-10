@@ -22,6 +22,9 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="14" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -1834,7 +1837,7 @@
         <property name="selectable" value="false" />
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1213094087766">
-          <property name="text" value="concept constraints" />
+          <property name="text" value="concepts constraints abcx" />
           <link role="styleClass" targetNodeId="11.1186415544875" resolveInfo="KeyWord" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1213094094190">
@@ -1858,8 +1861,16 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1213094139144">
           <property name="selectable" value="false" />
           <property name="vertical" value="true" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1213094141678">
-            <property name="text" value="todo" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1213098043014">
+            <property name="selectable" value="false" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1213098043015">
+            <property name="vertical" value="true" />
+            <link role="relationDeclaration" targetNodeId="1.1213098023997" />
+            <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1213098043016">
+              <property name="text" value="&lt;&lt;property constraints&gt;&gt;" />
+              <property name="textFgColor" value="lightGray" />
+            </node>
           </node>
         </node>
       </node>

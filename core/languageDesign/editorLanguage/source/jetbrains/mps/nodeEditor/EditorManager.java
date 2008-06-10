@@ -357,7 +357,7 @@ public class EditorManager {
   private INodeEditor getEditor(EditorContext context, SNode node) {
     INodeEditor editor = null;
 
-    editor = EditorsFinderManager.loadEditor(context, node);
+    editor = EditorsFinderManager.getInstance().loadEditor(context, node);
     if (editor == null) {
       editor = new DefaultNodeEditor();
     }

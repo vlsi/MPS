@@ -18,7 +18,14 @@ public class BundleClassLoader extends BaseClassLoader {
   }
 
 
+  protected synchronized Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
+    checkDisposed();
+    return super.loadClass(name, resolve);
+  }
+
   public Class getClass(String fqName) {
+    checkDisposed();
+
     synchronized (myLock) {
       if (myClassesCache.containsKey(fqName)) {
         return myClassesCache.get(fqName);
@@ -80,11 +87,18 @@ public class BundleClassLoader extends BaseClassLoader {
     myDisposed = true;
   }
 
+  private void checkDisposed() {
+    if (myDisposed != null && myDisposed) {
+      throw new IllegalStateException("Attempt to load class from disposed class loader");
+    }
+  }
+
   public boolean isDisposed() {
     return myDisposed;
   }
 
   public RBundle getBundle() {
+    checkDisposed();
     return myBundle;
   }
 

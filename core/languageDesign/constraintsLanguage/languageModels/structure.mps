@@ -50,6 +50,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="11" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
@@ -750,6 +751,12 @@
       <property name="role" value="concept" />
       <property name="sourceCardinality" value="0..1" />
       <link role="target" targetNodeId="2.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1213098023997">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="properties" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1147467115080" resolveInfo="NodePropertyConstraint" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1213093989916">
       <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
