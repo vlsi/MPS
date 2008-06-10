@@ -77,7 +77,8 @@ import org.jetbrains.annotations.Nullable;
     // external
     SModelUID targetModelUID = getTargetModelUID();
     if (targetModelUID == null) {
-      // 'unresolved' actually
+      // 'unresolved' actually.
+      // It can be tmp reference created while copy/pasting a node
       return null;
     }
 

@@ -1058,7 +1058,7 @@ public final class SNode {
       oldReferent = toDelete.get(0).getTargetNode();
     }
     if (toDelete.size() > 1) {
-      LOG.errorWithTrace("ERROR! " + toDelete.size() + " references found for role: " + role + " node: " + this.getDebugText());
+      LOG.errorWithTrace("ERROR! " + toDelete.size() + " references found for role '" + role + "' in " + this.getDebugText());
     }
     for (SReference reference : toDelete) {
       int index = _references().indexOf(reference);

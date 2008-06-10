@@ -62,7 +62,8 @@ public class StaticReference extends SReferenceBase {
 
     SNodeId targetNodeId = getTargetNodeId();
     if (targetNodeId == null) {
-      error("target node id is NULL");
+      // 'unresolved' actually.
+      // It can be tmp reference created while copy/pasting a node
       return null;
     }
 
