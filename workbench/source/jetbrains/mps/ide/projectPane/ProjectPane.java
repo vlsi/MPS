@@ -134,11 +134,6 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
     }
 
     public void modelsGenerated(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
-//      ModelAccess.instance().runReadInEDT(new Runnable() {
-//        public void run() {
-//          rebuild();
-//        }
-//      });
     }
 
     public void afterGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
@@ -153,6 +148,10 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
 
   public ProjectPane(Project project) {
     super(project, "Project Pane", 1, Icons.MPS_SMALL_ICON, ToolWindowAnchor.LEFT, false);
+  }
+
+  protected boolean hasCloseButton() {
+    return false;
   }
 
   public void initComponent() {
