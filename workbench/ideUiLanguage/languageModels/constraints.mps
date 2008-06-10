@@ -15,28 +15,14 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="0" />
   <visible index="2" modelUID="jetbrains.mps.ide.uiLanguage.structure" />
-  <visible index="3" modelUID="jetbrains.mps.uiLanguage.structure" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1203592997051">
     <property name="package" value="IDEDialog" />
     <link role="concept" targetNodeId="2v.1203592595174" resolveInfo="IDEDialog" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1203592997052">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203592997053" />
-    </node>
-    <node role="canBeAChild" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_CanBeAChild" id="1203592999068">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203592999069">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203593001615">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227908051">
-            <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_parentNode" id="1203593001616" />
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1203593004415">
-              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1203593007728">
-                <link role="conceptDeclaration" targetNodeId="3v.1202387718766" resolveInfo="ComponentDeclaration" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1203606271221">
@@ -45,18 +31,8 @@
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1203606271222">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203606271223" />
     </node>
-    <node role="canBeAChild" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_CanBeAChild" id="1203606276412">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203606276413">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203606593313">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1203606594940">
-            <link role="baseMethodDeclaration" targetNodeId="1203606524471" resolveInfo="dialogAccessible" />
-            <link role="classConcept" targetNodeId="1203606392881" resolveInfo="DialogUtil" />
-            <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_parentNode" id="1203606597317" />
-          </node>
-        </node>
-      </node>
-    </node>
   </node>
+  <visible index="3" modelUID="jetbrains.mps.uiLanguage.structure" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1203606392881">
     <property name="package" value="IDEDialog" />
     <property name="name" value="DialogUtil" />
@@ -220,17 +196,6 @@
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1203607642085">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203607642086" />
     </node>
-    <node role="canBeAChild" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_CanBeAChild" id="1203607643822">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203607643823">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203607646814">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1203607648378">
-            <link role="baseMethodDeclaration" targetNodeId="1203606524471" resolveInfo="dialogAccessible" />
-            <link role="classConcept" targetNodeId="1203606392881" resolveInfo="DialogUtil" />
-            <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_parentNode" id="1203607649083" />
-          </node>
-        </node>
-      </node>
-    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1203610537522">
     <property name="package" value="IDEDialog" />
@@ -238,13 +203,61 @@
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1203610537523">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203610537524" />
     </node>
-    <node role="canBeAChild" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_CanBeAChild" id="1203610539338">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203610539339">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203610540980">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1203610542404">
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213107434865">
+    <link role="concept" targetNodeId="2v.1203606241544" resolveInfo="DisposeDialogExpression" />
+    <node role="canBeChild" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_CanBeAChild" id="1213107434866">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213107434867">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213107434868">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1213107434869">
             <link role="baseMethodDeclaration" targetNodeId="1203606524471" resolveInfo="dialogAccessible" />
             <link role="classConcept" targetNodeId="1203606392881" resolveInfo="DialogUtil" />
-            <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_parentNode" id="1203610543140" />
+            <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_parentNode" id="1213107434870" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213107435816">
+    <link role="concept" targetNodeId="2v.1203610466731" resolveInfo="DialogExpression" />
+    <node role="canBeChild" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_CanBeAChild" id="1213107435817">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213107435818">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213107435819">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1213107435820">
+            <link role="baseMethodDeclaration" targetNodeId="1203606524471" resolveInfo="dialogAccessible" />
+            <link role="classConcept" targetNodeId="1203606392881" resolveInfo="DialogUtil" />
+            <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_parentNode" id="1213107435821" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213107437576">
+    <link role="concept" targetNodeId="2v.1203607523033" resolveInfo="ReportErrorExpression" />
+    <node role="canBeChild" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_CanBeAChild" id="1213107437577">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213107437578">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213107437579">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1213107437580">
+            <link role="baseMethodDeclaration" targetNodeId="1203606524471" resolveInfo="dialogAccessible" />
+            <link role="classConcept" targetNodeId="1203606392881" resolveInfo="DialogUtil" />
+            <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_parentNode" id="1213107437581" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213107437873">
+    <link role="concept" targetNodeId="2v.1203592595174" resolveInfo="IDEDialog" />
+    <node role="canBeChild" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_CanBeAChild" id="1213107437874">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213107437875">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213107437876">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213107437877">
+            <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_parentNode" id="1213107437878" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1213107437879">
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1213107437880">
+                <link role="conceptDeclaration" targetNodeId="3v.1202387718766" resolveInfo="ComponentDeclaration" />
+              </node>
+            </node>
           </node>
         </node>
       </node>

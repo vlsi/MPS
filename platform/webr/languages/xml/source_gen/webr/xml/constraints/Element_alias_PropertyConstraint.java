@@ -12,7 +12,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class Element_alias_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
 
-  public  Element_alias_PropertyConstraint() {
+  public Element_alias_PropertyConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {

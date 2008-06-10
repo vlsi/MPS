@@ -13,16 +13,16 @@ public class ConstraintsDescriptor implements IModelConstraints {
 
   public ConstraintsDescriptor() {
     this.myConstraints.add(new ConceptEditorDeclaration_name_PropertyConstraint());
-    this.myConstraints.add(new CellMenuComponentFeature_Property_propertyDeclaration_ReferentConstraint());
-    this.myConstraints.add(new CellMenuPart_ReplaceNode_CustomNodeConcept_replacementConcept_ReferentConstraint());
-    this.myConstraints.add(new CellMenuComponentFeature_Link_linkDeclaration_ReferentConstraint());
-    this.myConstraints.add(new QueryMethodIdEditorProviderExpression_queryIdProperty_ReferentConstraint());
-    this.myConstraints.add(new CellModel_RefCell_linkDeclaration_ReferentConstraint());
-    this.myConstraints.add(new CellModel_WithRole_relationDeclaration_ReferentConstraint());
-    this.myConstraints.add(new CellModel_RefNode_linkDeclaration_ReferentConstraint());
-    this.myConstraints.add(new CellModel_RefNodeList_linkDeclaration_ReferentConstraint());
     this.myConstraints.add(new CellModel_Component_editorComponent_ReferentConstraint());
+    this.myConstraints.add(new QueryMethodIdEditorProviderExpression_queryIdProperty_ReferentConstraint());
+    this.myConstraints.add(new CellMenuComponentFeature_Link_linkDeclaration_ReferentConstraint());
+    this.myConstraints.add(new CellModel_RefCell_linkDeclaration_ReferentConstraint());
     this.myConstraints.add(new CellModel_Property_propertyDeclaration_ReferentConstraint());
+    this.myConstraints.add(new CellMenuComponentFeature_Property_propertyDeclaration_ReferentConstraint());
+    this.myConstraints.add(new CellModel_WithRole_relationDeclaration_ReferentConstraint());
+    this.myConstraints.add(new CellMenuPart_ReplaceNode_CustomNodeConcept_replacementConcept_ReferentConstraint());
+    this.myConstraints.add(new CellModel_RefNodeList_linkDeclaration_ReferentConstraint());
+    this.myConstraints.add(new CellModel_RefNode_linkDeclaration_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

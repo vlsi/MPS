@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import java.util.Iterator;
 import java.util.List;
 
@@ -19,7 +20,10 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept {
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String CONCEPT = "concept";
+  public static String DEFAULT_CONCRETE_CONCEPT = "defaultConcreteConcept";
   public static String DEFAULT_SCOPE = "defaultScope";
+  public static String CAN_BE_CHILD = "canBeChild";
+  public static String CAN_BE_PARENT = "canBeParent";
   public static String PROPERTY = "property";
   public static String REFERENT = "referent";
 
@@ -76,12 +80,36 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept {
     super.setReferent(ConceptConstraints.CONCEPT, node);
   }
 
+  public ConceptDeclaration getDefaultConcreteConcept() {
+    return (ConceptDeclaration)this.getReferent(ConceptConstraints.DEFAULT_CONCRETE_CONCEPT);
+  }
+
+  public void setDefaultConcreteConcept(ConceptDeclaration node) {
+    super.setReferent(ConceptConstraints.DEFAULT_CONCRETE_CONCEPT, node);
+  }
+
   public NodeDefaultSearchScope getDefaultScope() {
     return (NodeDefaultSearchScope)this.getChild(ConceptConstraints.DEFAULT_SCOPE);
   }
 
   public void setDefaultScope(NodeDefaultSearchScope node) {
     super.setChild(ConceptConstraints.DEFAULT_SCOPE, node);
+  }
+
+  public ConstraintFunction_CanBeAChild getCanBeChild() {
+    return (ConstraintFunction_CanBeAChild)this.getChild(ConceptConstraints.CAN_BE_CHILD);
+  }
+
+  public void setCanBeChild(ConstraintFunction_CanBeAChild node) {
+    super.setChild(ConceptConstraints.CAN_BE_CHILD, node);
+  }
+
+  public ConstraintFunction_CanBeAParent getCanBeParent() {
+    return (ConstraintFunction_CanBeAParent)this.getChild(ConceptConstraints.CAN_BE_PARENT);
+  }
+
+  public void setCanBeParent(ConstraintFunction_CanBeAParent node) {
+    super.setChild(ConceptConstraints.CAN_BE_PARENT, node);
   }
 
   public int getPropertysCount() {

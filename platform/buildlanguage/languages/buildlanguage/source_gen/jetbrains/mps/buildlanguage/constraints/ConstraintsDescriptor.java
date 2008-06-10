@@ -12,15 +12,15 @@ public class ConstraintsDescriptor implements IModelConstraints {
   private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
 
   public ConstraintsDescriptor() {
-    this.myConstraints.add(new StringLiteral_name_PropertyConstraint());
     this.myConstraints.add(new GenericCall_name_PropertyConstraint());
+    this.myConstraints.add(new StringLiteral_name_PropertyConstraint());
     this.myConstraints.add(new TargetReference_targetDeclaration_ReferentConstraint());
-    this.myConstraints.add(new PropertyReference_propertyDeclaration_ReferentConstraint());
     this.myConstraints.add(new GenericCall_declaration_ReferentConstraint());
-    this.myConstraints.add(new GenericAttribute_attributeDeclaration_ReferentConstraint());
-    this.myConstraints.add(new Reference_declaration_ReferentConstraint());
     this.myConstraints.add(new PathReference_call_ReferentConstraint());
     this.myConstraints.add(new TagetReferencePropertyValueExpression_declaration_ReferentConstraint());
+    this.myConstraints.add(new Reference_declaration_ReferentConstraint());
+    this.myConstraints.add(new GenericAttribute_attributeDeclaration_ReferentConstraint());
+    this.myConstraints.add(new PropertyReference_propertyDeclaration_ReferentConstraint());
     this.myConstraints.add(new GenericCall_DefaultSearchScope());
   }
 

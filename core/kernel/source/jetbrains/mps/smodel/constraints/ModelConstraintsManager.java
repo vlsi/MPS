@@ -8,13 +8,11 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.behaviour.BehaviorConstants;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
-import jetbrains.mps.ide.BootstrapLanguagesManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
 
@@ -463,7 +461,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
   public String getDefaultConcreteConceptFqName(String fqName, IScope scope) {
     if (!myDefaultConceptNames.containsKey(fqName)) {
       String result = fqName;
-      String behaviorClass = behaviorClassByConceptFqName(fqName);
+      String behaviorClass = constraintsClassByConceptFqName(fqName);
       String namespace = NameUtil.namespaceFromConceptFQName(fqName);
       Language language = scope.getLanguage(namespace);
       if (language != null) {
@@ -512,7 +510,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
         continue;
       }
 
-      String behaviorClassName = behaviorClassByConceptFqName(fqName);
+      String behaviorClassName = constraintsClassByConceptFqName(fqName);
       Class behaviorClass = language.getClass(behaviorClassName);
 
       if (behaviorClass == null) {
@@ -535,7 +533,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
   public boolean canHaveAChild(SNode parentNode, SNode childConcept, SNode link, IOperationContext context) {
     IScope scope = context.getScope();
     String fqName = parentNode.getConceptFqName();
-    String behaviorClass = behaviorClassByConceptFqName(fqName);
+    String behaviorClass = constraintsClassByConceptFqName(fqName);
     String namespace = NameUtil.namespaceFromConceptFQName(fqName);
     Language language = scope.getLanguage(namespace);
 
@@ -569,10 +567,10 @@ public class ModelConstraintsManager implements ApplicationComponent {
     return true;
   }
 
-  private String behaviorClassByConceptFqName(String fqName) {
+  private String constraintsClassByConceptFqName(String fqName) {
     Matcher m = CONCEPT_FQNAME.matcher(fqName);
     if (m.matches()) {
-      return m.group(1) + ".constraints." + m.group(2) + "_Behavior";
+      return m.group(1) + ".constraints." + m.group(2) + "_Constraints";
     } else {
       throw new RuntimeException();
     }

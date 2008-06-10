@@ -60,6 +60,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "propertyValidator", true) != null;
   }
 
+  public static boolean baseMappingRule_Condition_1213107427185(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "canBeChild", true) != null) || (SLinkOperations.getTarget(_context.getNode(), "canBeParent", true) != null) || (SLinkOperations.getTarget(_context.getNode(), "defaultConcreteConcept", false) != null);
+  }
+
   public static Object propertyMacro_GetPropertyValue_1177676953415(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
@@ -244,6 +248,26 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "applicableProperty", false), "name");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1213106242798(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1213106765283(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BehaviorConstants.CAN_BE_A_CHILD_METHOD_NAME;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1213106765314(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BehaviorConstants.CAN_BE_A_PARENT_METHOD_NAME;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1213107130438(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return INamedConcept_Behavior.call_getFqName_1184686272576(SLinkOperations.getTarget(_context.getNode(), "defaultConcreteConcept", false));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1213107130456(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BehaviorConstants.GET_DEFAULT_CONCRETE_CONCEPT_FQ_NAME;
+  }
+
   public static Object referenceMacro_GetReferent_1194605811159(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "parameters");
   }
@@ -346,6 +370,18 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1203004849002(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "canBeAParent", true) != null;
+  }
+
+  public static boolean ifMacro_Condition_1213106765274(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "canBeChild", true) != null;
+  }
+
+  public static boolean ifMacro_Condition_1213106765305(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "canBeParent", true) != null;
+  }
+
+  public static boolean ifMacro_Condition_1213107130447(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "defaultConcreteConcept", false) != null);
   }
 
   public static SNode sourceNodeQuery_1177676686820(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -462,6 +498,14 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1212101471559(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "propertyValidator", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1213106765261(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "canBeChild", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1213106765292(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "canBeParent", true), "body", true);
   }
 
   public static List sourceNodesQuery_1177676783297(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

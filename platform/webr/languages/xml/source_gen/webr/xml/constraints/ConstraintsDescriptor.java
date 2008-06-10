@@ -11,11 +11,11 @@ public class ConstraintsDescriptor implements IModelConstraints {
 
   private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
 
-  public  ConstraintsDescriptor() {
-    this.myConstraints.add(new ContentList_isHorizontal_PropertyConstraint());
+  public ConstraintsDescriptor() {
     this.myConstraints.add(new Element_alias_PropertyConstraint());
-    this.myConstraints.add(new Attribute_attributeDeclaration_ReferentConstraint());
+    this.myConstraints.add(new ContentList_isHorizontal_PropertyConstraint());
     this.myConstraints.add(new Element_elementDeclaration_ReferentConstraint());
+    this.myConstraints.add(new Attribute_attributeDeclaration_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

@@ -49,6 +49,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="16" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.strings.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.buildlanguage.constraints" version="6" />
@@ -3122,43 +3123,12 @@
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1204117371281">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204117371282" />
     </node>
-    <node role="canBeAChild" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_CanBeAChild" id="1204117376877">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204117376878">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1204117381488">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204117385694">
-            <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_parentNode" id="1204117384490" />
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1204117388540">
-              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1204117391370">
-                <link role="conceptDeclaration" targetNodeId="15.1202916958754" resolveInfo="MPSLayout" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1204122833964">
     <property name="package" value="projectComponents" />
     <link role="concept" targetNodeId="15.1204122781510" resolveInfo="Delete" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1204122833965">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204122833966" />
-    </node>
-    <node role="canBeAChild" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_CanBeAChild" id="1204122838139">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204122838140">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204123763075">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1204123843363">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1204123846022">
-              <property name="value" value="delete" />
-            </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204123764171">
-              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_link" id="1204123763076" />
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1204123835643">
-                <link role="property" targetNodeId="12.1071599776563" resolveInfo="role" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1204815459447">
@@ -4091,6 +4061,43 @@
               <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintsFunctionParameter_node" id="1213104859538" />
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1213104859539">
                 <link role="property" targetNodeId="5.1169194664001" resolveInfo="name" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213107435807">
+    <link role="concept" targetNodeId="15.1204122781510" resolveInfo="Delete" />
+    <node role="canBeChild" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_CanBeAChild" id="1213107435808">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213107435809">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213107435810">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1213107435811">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213107435812">
+              <property name="value" value="delete" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213107435813">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_link" id="1213107435814" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1213107435815">
+                <link role="property" targetNodeId="12.1071599776563" resolveInfo="role" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213107436317">
+    <link role="concept" targetNodeId="15.1204115658627" resolveInfo="Configuration" />
+    <node role="canBeChild" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_CanBeAChild" id="1213107436318">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213107436319">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213107436320">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213107436321">
+            <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_parentNode" id="1213107436322" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1213107436323">
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1213107436324">
+                <link role="conceptDeclaration" targetNodeId="15.1202916958754" resolveInfo="MPSLayout" />
               </node>
             </node>
           </node>

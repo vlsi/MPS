@@ -27,6 +27,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="20" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
@@ -1750,18 +1751,6 @@
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1204919875515">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204919875516" />
     </node>
-    <node role="canBeAChild" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_CanBeAChild" id="1204919938564">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204919938565">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1204919938566">
-          <property name="value" value="transient node" />
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204919938567">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1204919938568">
-            <property name="value" value="false" />
-          </node>
-        </node>
-      </node>
-    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1206019781774">
     <link role="concept" targetNodeId="1.1206019730951" resolveInfo="StaticConceptMethodCall" />
@@ -3333,6 +3322,21 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213107436091">
+    <link role="concept" targetNodeId="1.1204919674986" resolveInfo="_LinkAccessT" />
+    <node role="canBeChild" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_CanBeAChild" id="1213107436092">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213107436093">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1213107436094">
+          <property name="value" value="transient node" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213107436095">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1213107436096">
+            <property name="value" value="false" />
           </node>
         </node>
       </node>
