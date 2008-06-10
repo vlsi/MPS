@@ -30,6 +30,7 @@ public abstract class BaseTool {
   private ToolWindowAnchor myAnchor;
   private boolean myCanCloseContent;
   private boolean myIsRegistered;
+  private ToolWindowManager myWindowManager;
 
   public BaseTool(Project project, String id, int number, Icon icon, ToolWindowAnchor anchor, boolean canCloseContent) {
     myAnchor = anchor;
@@ -79,7 +80,7 @@ public abstract class BaseTool {
 
   public void openTool(boolean setActive) {
     ToolWindow window = getToolWindow();
-    if (!isShown()) makeAvailableLater();
+    if (!isAvailable()) makeAvailableLater();
     if (!toolIsOpened()) window.show(null);
     if (setActive) window.activate(null);
   }
@@ -96,15 +97,20 @@ public abstract class BaseTool {
   }
 
   public void close() {
-    if (isShown() && toolIsOpened()) getToolWindow().hide(null);
+    if (isAvailable() && toolIsOpened()) getToolWindow().hide(null);
   }
 
   /**
    * @return whether the tool is visible by user (in the panel)
    */
-  public boolean isShown() {
+  public boolean isAvailable() {
     LOG.checkEDT();
     return getToolWindow().isAvailable();
+  }
+
+  public void setAvailable(boolean state) {
+    if (state) makeAvailableLater();
+    else makeUnavailableLater();
   }
 
   /**
@@ -119,7 +125,7 @@ public abstract class BaseTool {
   }
 
   public void makeAvailable() {
-    if (!isShown()) getToolWindow().setAvailable(true, null);
+    if (!isAvailable()) getToolWindow().setAvailable(true, null);
   }
 
   /**
@@ -134,7 +140,7 @@ public abstract class BaseTool {
   }
 
   public void makeUnavailable() {
-    if (isShown()) getToolWindow().setAvailable(false, null);
+    if (isAvailable()) getToolWindow().setAvailable(false, null);
   }
 
   @NotNull
@@ -142,7 +148,7 @@ public abstract class BaseTool {
     LOG.checkEDT();
 
     if (!isRegistered()) register();
-    return ToolWindowManager.getInstance(myProject).getToolWindow(myId);
+    return myWindowManager.getToolWindow(myId);
   }
 
   @NonNls
@@ -163,6 +169,8 @@ public abstract class BaseTool {
     if (isRegistered()) return;
     setIsRegistered(true);
 
+    myWindowManager = ToolWindowManager.getInstance(myProject);
+
     if (myNumber != -1) {
       KeymapManager.getInstance().getActiveKeymap().addShortcut(
         ActivateToolWindowAction.getActionIdForToolWindow(myId),
@@ -170,7 +178,7 @@ public abstract class BaseTool {
       );
     }
 
-    ToolWindow toolWindow = ToolWindowManager.getInstance(myProject).registerToolWindow(myId, myCanCloseContent, myAnchor);
+    ToolWindow toolWindow = myWindowManager.registerToolWindow(myId, myCanCloseContent, myAnchor);
     toolWindow.setIcon(myIcon);
     toolWindow.setToHideOnEmptyContent(true);
     toolWindow.installWatcher(toolWindow.getContentManager());
@@ -220,7 +228,7 @@ public abstract class BaseTool {
       contentManager.removeAllContents(true);
     }
 
-    ToolWindowManager.getInstance(myProject).unregisterToolWindow(myId);
+    myWindowManager.unregisterToolWindow(myId);
   }
 
   public JComponent getComponent() {
