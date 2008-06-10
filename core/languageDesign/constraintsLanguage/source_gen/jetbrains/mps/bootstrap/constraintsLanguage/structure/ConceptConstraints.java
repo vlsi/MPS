@@ -17,7 +17,9 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept {
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String PROPERTIES = "properties";
+  public static String DEFAULT_SCOPE = "defaultScope";
+  public static String PROPERTY = "property";
+  public static String REFERENT = "referent";
 
   public ConceptConstraints(SNode node) {
     super(node);
@@ -64,24 +66,52 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept {
     this.setProperty(ConceptConstraints.VIRTUAL_PACKAGE, value);
   }
 
-  public int getPropertiesesCount() {
-    return this.getChildCount(ConceptConstraints.PROPERTIES);
+  public NodeDefaultSearchScope getDefaultScope() {
+    return (NodeDefaultSearchScope)this.getChild(ConceptConstraints.DEFAULT_SCOPE);
   }
 
-  public Iterator<NodePropertyConstraint> propertieses() {
-    return this.children(ConceptConstraints.PROPERTIES);
+  public void setDefaultScope(NodeDefaultSearchScope node) {
+    super.setChild(ConceptConstraints.DEFAULT_SCOPE, node);
   }
 
-  public List<NodePropertyConstraint> getPropertieses() {
-    return this.getChildren(ConceptConstraints.PROPERTIES);
+  public int getPropertysCount() {
+    return this.getChildCount(ConceptConstraints.PROPERTY);
   }
 
-  public void addProperties(NodePropertyConstraint node) {
-    this.addChild(ConceptConstraints.PROPERTIES, node);
+  public Iterator<NodePropertyConstraint> propertys() {
+    return this.children(ConceptConstraints.PROPERTY);
   }
 
-  public void insertProperties(NodePropertyConstraint prev, NodePropertyConstraint node) {
-    this.insertChild(prev, ConceptConstraints.PROPERTIES, node);
+  public List<NodePropertyConstraint> getPropertys() {
+    return this.getChildren(ConceptConstraints.PROPERTY);
+  }
+
+  public void addProperty(NodePropertyConstraint node) {
+    this.addChild(ConceptConstraints.PROPERTY, node);
+  }
+
+  public void insertProperty(NodePropertyConstraint prev, NodePropertyConstraint node) {
+    this.insertChild(prev, ConceptConstraints.PROPERTY, node);
+  }
+
+  public int getReferentsCount() {
+    return this.getChildCount(ConceptConstraints.REFERENT);
+  }
+
+  public Iterator<NodeReferentConstraint> referents() {
+    return this.children(ConceptConstraints.REFERENT);
+  }
+
+  public List<NodeReferentConstraint> getReferents() {
+    return this.getChildren(ConceptConstraints.REFERENT);
+  }
+
+  public void addReferent(NodeReferentConstraint node) {
+    this.addChild(ConceptConstraints.REFERENT, node);
+  }
+
+  public void insertReferent(NodeReferentConstraint prev, NodeReferentConstraint node) {
+    this.insertChild(prev, ConceptConstraints.REFERENT, node);
   }
 
 }

@@ -620,7 +620,7 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
 
   public EditorCell create_conceptRefCell15551_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new ConceptBehavior_Editor._Inline5());
+    provider.setAuxiliaryCellProvider(new ConceptBehavior_Editor._Inline2());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_conceptRefCell15551_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -707,7 +707,7 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
 
   public EditorCell create_defaultConcreteConceptRefCell15551_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new ConceptBehavior_Editor._Inline8());
+    provider.setAuxiliaryCellProvider(new ConceptBehavior_Editor._Inline5());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_defaultConcreteConceptRefCell15551_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -850,9 +850,9 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline5 extends AbstractCellProvider {
+  public static class _Inline2 extends AbstractCellProvider {
 
-    public _Inline5() {
+    public _Inline2() {
       super();
     }
 
@@ -903,9 +903,9 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _Inline8 extends AbstractCellProvider {
+  public static class _Inline5 extends AbstractCellProvider {
 
-    public _Inline8() {
+    public _Inline5() {
       super();
     }
 

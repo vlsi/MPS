@@ -7,13 +7,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 
 public class NodeReferentConstraint extends BaseConcept {
   public static final String concept = "jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint";
   public static String SEARCH_SCOPE_DESCRIPTION = "searchScopeDescription";
-  public static String APPLICABLE_CONCEPT = "applicableConcept";
   public static String APPLICABLE_LINK = "applicableLink";
   public static String SEARCH_SCOPE_CAN_CREATE = "searchScopeCanCreate";
   public static String SEARCH_SCOPE_FACTORY = "searchScopeFactory";
@@ -38,14 +36,6 @@ public class NodeReferentConstraint extends BaseConcept {
 
   public void setSearchScopeDescription(String value) {
     this.setProperty(NodeReferentConstraint.SEARCH_SCOPE_DESCRIPTION, value);
-  }
-
-  public ConceptDeclaration getApplicableConcept() {
-    return (ConceptDeclaration)this.getReferent(NodeReferentConstraint.APPLICABLE_CONCEPT);
-  }
-
-  public void setApplicableConcept(ConceptDeclaration node) {
-    super.setReferent(NodeReferentConstraint.APPLICABLE_CONCEPT, node);
   }
 
   public LinkDeclaration getApplicableLink() {

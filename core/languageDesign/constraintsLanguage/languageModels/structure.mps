@@ -51,6 +51,10 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="11" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
@@ -63,11 +67,6 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1147467115080">
     <property name="name" value="NodePropertyConstraint" />
     <link role="extends" targetNodeId="1.1133920641626" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1147467194506">
-      <property name="role" value="applicableConcept" />
-      <property name="sourceCardinality" value="0..1" />
-      <link role="target" targetNodeId="2.1169125787135" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1147467295099">
       <property name="role" value="applicableProperty" />
       <property name="sourceCardinality" value="1" />
@@ -209,11 +208,6 @@
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1163536952540">
       <property name="name" value="searchScopeDescription" />
       <link role="dataType" targetNodeId="1.1082983041843" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1148687201775">
-      <property name="role" value="applicableConcept" />
-      <property name="sourceCardinality" value="0..1" />
-      <link role="target" targetNodeId="2.1071489090640" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1148687202698">
       <property name="role" value="applicableLink" />
@@ -357,11 +351,6 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1159285995602">
     <property name="name" value="NodeDefaultSearchScope" />
     <link role="extends" targetNodeId="1.1133920641626" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1159286114223">
-      <property name="role" value="referentConcept" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="2.1071489090640" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1159286114226">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="searchScopeCanCreate" />
@@ -754,9 +743,20 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1213098023997">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="properties" />
+      <property name="role" value="property" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1147467115080" resolveInfo="NodePropertyConstraint" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1213100494875">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="referent" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1148687176410" resolveInfo="NodeReferentConstraint" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1213101058038">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="defaultScope" />
+      <link role="target" targetNodeId="1159285995602" resolveInfo="NodeDefaultSearchScope" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1213093989916">
       <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
