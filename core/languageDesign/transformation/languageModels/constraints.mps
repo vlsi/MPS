@@ -25,6 +25,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="16" />
   <import index="1" modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
   <import index="2" modelUID="jetbrains.mps.transformation.TLBase.constraints@java_stub" version="-1" />
@@ -64,20 +65,6 @@
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178192141232">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178192141233" />
-    </node>
-    <node role="references" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1167515244838">
-      <link role="applicableLink" targetNodeId="1.1167514355421" />
-      <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1167515244839">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1167515244840">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1167515244841">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1167515244842">
-              <link role="baseMethodDeclaration" targetNodeId="2.~MappingRuleTemplateNodeSearchScope.&lt;init&gt;(jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.IScope)" resolveInfo="MappingRuleTemplateNodeSearchScope" />
-              <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_model" id="1167515244843" />
-              <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_scope" id="1167515244844" />
-            </node>
-          </node>
-        </node>
-      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178192141381">
@@ -231,20 +218,6 @@
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178192141382">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178192141383" />
-    </node>
-    <node role="references" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1167087940296">
-      <link role="applicableLink" targetNodeId="1.1167087469901" />
-      <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1167087940297">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1167087940298">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1167087940299">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1167087940300">
-              <link role="baseMethodDeclaration" targetNodeId="2.~MappingRuleTemplateNodeSearchScope.&lt;init&gt;(jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.IScope)" resolveInfo="MappingRuleTemplateNodeSearchScope" />
-              <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_model" id="1167087940301" />
-              <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_scope" id="1167087940302" />
-            </node>
-          </node>
-        </node>
-      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1182451372358">
@@ -1657,6 +1630,40 @@
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1203350691961">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203350691962" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213104837507">
+    <link role="concept" targetNodeId="1.1167514355419" resolveInfo="Root_MappingRule" />
+    <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1213104837919">
+      <link role="applicableLink" targetNodeId="1.1167514355421" />
+      <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104837920">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104837921">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213104837922">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1213104837923">
+              <link role="baseMethodDeclaration" targetNodeId="2.~MappingRuleTemplateNodeSearchScope.&lt;init&gt;(jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.IScope)" resolveInfo="MappingRuleTemplateNodeSearchScope" />
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_model" id="1213104837924" />
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_scope" id="1213104837925" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213104840277">
+    <link role="concept" targetNodeId="1.1167087469898" resolveInfo="CreateRootRule" />
+    <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1213104840278">
+      <link role="applicableLink" targetNodeId="1.1167087469901" />
+      <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104840279">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104840280">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213104840281">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1213104840282">
+              <link role="baseMethodDeclaration" targetNodeId="2.~MappingRuleTemplateNodeSearchScope.&lt;init&gt;(jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.IScope)" resolveInfo="MappingRuleTemplateNodeSearchScope" />
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_model" id="1213104840283" />
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_scope" id="1213104840284" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>

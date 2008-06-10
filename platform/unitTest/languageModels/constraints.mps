@@ -18,6 +18,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="3" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.unitTest.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -27,20 +28,29 @@
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178187486783">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178187486784" />
     </node>
-    <node role="properties" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint" id="1177112030697">
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178187486829">
+    <link role="concept" targetNodeId="1.1171931851043" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178187486830">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178187486831" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213104846868">
+    <link role="concept" targetNodeId="1.1171931851043" resolveInfo="BTestCase" />
+    <node role="property" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint" id="1213104846869">
       <link role="applicableProperty" targetNodeId="2.1169194664001" resolveInfo="name" />
-      <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertyGetter" id="1177112055027">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177112055028">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1177112063368">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1177112069513">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227852616">
-                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintsFunctionParameter_node" id="1177112071020" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1177112074891">
-                  <link role="property" targetNodeId="1.1171931690128" />
-                </node>
+      <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertyGetter" id="1213104846870">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104846871">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213104846872">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1213104846873">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213104846874">
+                <property name="value" value="_Test" />
               </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1177112063369">
-                <property name="value" value="test_" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213104846875">
+                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintsFunctionParameter_node" id="1213104846876" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1213104846877">
+                  <link role="property" targetNodeId="1.1171931851045" resolveInfo="testCaseName" />
+                </node>
               </node>
             </node>
           </node>
@@ -48,25 +58,22 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178187486829">
-    <link role="concept" targetNodeId="1.1171931851043" />
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178187486830">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178187486831" />
-    </node>
-    <node role="properties" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint" id="1171931968234">
-      <link role="applicableProperty" targetNodeId="2.1169194664001" />
-      <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertyGetter" id="1171931968235">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1171931968236">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1177112057313">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1171984465717">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1171984466532">
-                <property name="value" value="_Test" />
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227903141">
-                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintsFunctionParameter_node" id="1171931968239" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1171931968240">
-                  <link role="property" targetNodeId="1.1171931851045" />
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213104847596">
+    <link role="concept" targetNodeId="1.1171931690126" resolveInfo="TestMethod" />
+    <node role="property" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint" id="1213104847597">
+      <link role="applicableProperty" targetNodeId="2.1169194664001" resolveInfo="name" />
+      <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertyGetter" id="1213104847598">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104847599">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213104847600">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1213104847601">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213104847602">
+                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintsFunctionParameter_node" id="1213104847603" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1213104847604">
+                  <link role="property" targetNodeId="1.1171931690128" resolveInfo="methodName" />
                 </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213104847605">
+                <property name="value" value="test_" />
               </node>
             </node>
           </node>
