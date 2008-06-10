@@ -61,12 +61,12 @@ public class Properties {
   }
 
   public void enumProperty2_string(SNode link1, SNode link2) {
-    if (SPropertyOperations.getString_def(link1, "metaClass", null) != SPropertyOperations.getString_def(link2, "metaClass", null)) {
-      SPropertyOperations.set(link1, "metaClass", SPropertyOperations.getString_def(link2, "metaClass", null));
+    if (SPropertyOperations.getString_def(link1, "metaClass", "reference") != SPropertyOperations.getString_def(link2, "metaClass", "reference")) {
+      SPropertyOperations.set(link1, "metaClass", SPropertyOperations.getString_def(link2, "metaClass", "reference"));
     }
-    boolean ok1 = SPropertyOperations.getString_def(link1, "metaClass", null) == SPropertyOperations.getString_def(link2, "metaClass", null);
-    if (SPropertyOperations.hasValue(link1, "metaClass", "aggregation", null)) {
-      boolean ok2 = SPropertyOperations.hasValue(link2, "metaClass", "aggregation", null);
+    boolean ok1 = SPropertyOperations.getString_def(link1, "metaClass", "reference") == SPropertyOperations.getString_def(link2, "metaClass", "reference");
+    if (SPropertyOperations.hasValue(link1, "metaClass", "aggregation", "reference")) {
+      boolean ok2 = SPropertyOperations.hasValue(link2, "metaClass", "aggregation", "reference");
     }
   }
 
