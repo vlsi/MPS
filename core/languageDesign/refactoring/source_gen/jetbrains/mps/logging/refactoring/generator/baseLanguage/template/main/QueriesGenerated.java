@@ -330,6 +330,14 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "searchScope", true) == null;
   }
 
+  public static boolean ifMacro_Condition_1213094581843(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "nodesToOpenClause", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1213094585848(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "nodesToOpenClause", true) != null);
+  }
+
   public static SNode sourceNodeQuery_1190724923720(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "updateModelClause", true), "body", true);
   }
@@ -476,6 +484,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1212243880040(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "searchScope", true);
+  }
+
+  public static SNode sourceNodeQuery_1213094470425(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "nodesToOpenClause", true);
   }
 
   public static List sourceNodesQuery_1189698183859(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

@@ -4,10 +4,10 @@ package jetbrains.mps.logging.refactoring.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.IResolveInfo;
-import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.project.GlobalScope;
 
 public class FinderReference extends BaseConcept implements IResolveInfo {
   public static final String concept = "jetbrains.mps.logging.refactoring.structure.FinderReference";
@@ -21,7 +21,7 @@ public class FinderReference extends BaseConcept implements IResolveInfo {
   }
 
   public static FinderReference newInstance(SModel sm, boolean init) {
-    return (FinderReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.logging.refactoring.structure.FinderReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FinderReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.logging.refactoring.structure.FinderReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FinderReference newInstance(SModel sm) {

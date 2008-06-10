@@ -89,4 +89,8 @@ public abstract class AbstractLoggableRefactoring implements ILoggableRefactorin
   public SearchResults getAffectedNodes(ActionContext actionContext, RefactoringContext refactoringContext) {
     return null;
   }
+
+  public List<SNode> getNodesToOpen(ActionContext actionContext, RefactoringContext refactoringContext) {
+    return new ArrayList<SNode>();
+  }
 }

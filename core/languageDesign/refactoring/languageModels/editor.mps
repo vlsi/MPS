@@ -20,6 +20,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="5" />
   <import index="1" modelUID="jetbrains.mps.logging.refactoring.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -316,6 +317,16 @@
         <property name="noTargetText" value="none" />
         <link role="relationDeclaration" targetNodeId="1.1189695170518" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1213091827443">
+        <property name="text" value="" />
+        <property name="selectable" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1213091817425">
+        <property name="text" value="nodes to open:" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1213091841992">
+        <link role="relationDeclaration" targetNodeId="1.1213091780734" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1191591986713">
         <property name="selectable" value="false" />
       </node>
@@ -327,7 +338,9 @@
         <property name="noTargetText" value="none" />
         <link role="relationDeclaration" targetNodeId="1.1191591935289" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1210941502640" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1210941502640">
+        <property name="selectable" value="false" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1210941505002">
         <property name="text" value="get additional models to update:" />
         <link role="styleClass" targetNodeId="4.1186415544875" resolveInfo="KeyWord" />
