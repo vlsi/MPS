@@ -30,7 +30,7 @@ public class ModelWriter1 implements IModelWriter {
     rootElement.addContent(history.toElement());
 
     // languages
-    Set<SModelUID> allDirectAspectModelDescriptors = new HashSet<SModelUID>();
+    Set<String> writtenAspects = new HashSet<String>();
     for (String languageNamespace : sourceModel.getExplicitlyImportedLanguages()) {
       Element languageElem = new Element(ModelPersistence.LANGUAGE);
       languageElem.setAttribute(ModelPersistence.NAMESPACE, languageNamespace);
@@ -38,9 +38,6 @@ public class ModelWriter1 implements IModelWriter {
       if (l != null) {
         sourceModel.addAspectModelsVersions(/*languageNamespace, */l);
         List<SModelDescriptor> aspectModelDescriptors = new ArrayList<SModelDescriptor>(l.getAspectModelDescriptors());
-        for (SModelDescriptor aspectModelDescriptor : aspectModelDescriptors) {
-          allDirectAspectModelDescriptors.add(aspectModelDescriptor.getModelUID());
-        }
         Collections.sort(aspectModelDescriptors, new Comparator<SModelDescriptor>() {
           public int compare(SModelDescriptor o1, SModelDescriptor o2) {
             return o1.toString().compareTo(o2.toString());
@@ -48,17 +45,20 @@ public class ModelWriter1 implements IModelWriter {
         });
         for (SModelDescriptor sModelDescriptor : aspectModelDescriptors) {
           SModelUID uid = sModelDescriptor.getModelUID();
-          writeAspect(sourceModel, languageElem, uid);
+          if (!writtenAspects.contains(uid.toString())) {
+            writtenAspects.add(uid.toString());
+            writeAspect(sourceModel, languageElem, uid);
+          }
         }
       }
       rootElement.addContent(languageElem);
     }
     for (ImportElement aspectElement : sourceModel.getLanguageAspectModelElements()) {
       SModelUID modelUID = aspectElement.getModelUID();
-      if (allDirectAspectModelDescriptors.contains(modelUID)) {
-        continue;
+      if (!writtenAspects.contains(modelUID.toString())) {
+        writtenAspects.add(modelUID.toString());
+        writeAspect(sourceModel, rootElement, modelUID);
       }
-      writeAspect(sourceModel, rootElement, modelUID);
     }
 
     // languages engaged on generation
