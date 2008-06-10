@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class InternUtil {
 
-  private static final ObjectCache<String,String> internCache = new ObjectCache<String, String>(10000);
+  private static final ObjectCache<String,String> internCache = new ObjectCache<String, String>(20000);
 
   public static String intern(String s) {
     if (s == null) {
