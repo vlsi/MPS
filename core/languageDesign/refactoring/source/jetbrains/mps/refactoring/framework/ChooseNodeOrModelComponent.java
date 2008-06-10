@@ -61,7 +61,7 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
     constraints.weighty = 1;
     add(new JScrollPane(myTree), constraints);
 
-    myTree.setRootVisible(false);
+    myTree.setRootVisible(true);
     updateModels(myCondition);
     myTree.rebuildNow();
     myChooseItemComponent.rebuild();
