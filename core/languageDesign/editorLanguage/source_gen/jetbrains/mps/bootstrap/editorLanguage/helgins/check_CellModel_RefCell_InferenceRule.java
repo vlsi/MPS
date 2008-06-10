@@ -15,7 +15,7 @@ public class check_CellModel_RefCell_InferenceRule implements InferenceRule_Runt
   }
 
   public void applyRule(final SNode refCell) {
-    if (!(SPropertyOperations.hasValue(SLinkOperations.getTarget(refCell, "relationDeclaration", false), "metaClass", null, null))) {
+    if (!(SPropertyOperations.hasValue(SLinkOperations.getTarget(refCell, "relationDeclaration", false), "metaClass", "reference", "reference"))) {
       TypeChecker.getInstance().reportTypeError(refCell, "reference link expected", "jetbrains.mps.bootstrap.editorLanguage.helgins", "1180280232711");
     }
   }

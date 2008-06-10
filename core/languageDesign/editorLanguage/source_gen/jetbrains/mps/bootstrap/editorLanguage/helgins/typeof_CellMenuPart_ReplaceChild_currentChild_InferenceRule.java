@@ -8,6 +8,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.bootstrap.editorLanguage.CellMenuUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_CellMenuPart_ReplaceChild_currentChild_InferenceRule implements InferenceRule_Runtime {
@@ -23,7 +24,10 @@ public class typeof_CellMenuPart_ReplaceChild_currentChild_InferenceRule impleme
       TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_3().createNode(conceptOfChild), node, "jetbrains.mps.bootstrap.editorLanguage.helgins", "1179782398208");
       return;
     }
-    TypeChecker.getInstance().reportTypeError(node, "couldn't define concept of child node", "jetbrains.mps.bootstrap.editorLanguage.helgins", "1179782438058");
+    {
+      BaseIntentionProvider intentionProvider = null;
+      TypeChecker.getInstance().reportTypeError(node, "couldn't define concept of child node", "jetbrains.mps.bootstrap.editorLanguage.helgins", "1179782438058", intentionProvider);
+    }
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_4().createNode(), node, "jetbrains.mps.bootstrap.editorLanguage.helgins", "1179766709137");
   }
 

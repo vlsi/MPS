@@ -14,7 +14,7 @@ public class typeof_SelectLaterOperation_InferenceRule implements InferenceRule_
   }
 
   public void applyRule(final SNode nodeToCheck) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "editorContext", true), "jetbrains.mps.bootstrap.editorLanguage.helgins", "1201270098250", true), new QuotationClass_8().createNode(), SLinkOperations.getTarget(nodeToCheck, "editorContext", true), null, "jetbrains.mps.bootstrap.editorLanguage.helgins", "1201270048564", false);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "editorContext", true), "jetbrains.mps.bootstrap.editorLanguage.helgins", "1201270098250", true), new QuotationClass_8().createNode(), SLinkOperations.getTarget(nodeToCheck, "editorContext", true), null, "jetbrains.mps.bootstrap.editorLanguage.helgins", "1201270048564", false, 0);
   }
 
   public String getApplicableConceptFQName() {
