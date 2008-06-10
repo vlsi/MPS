@@ -181,6 +181,10 @@ public class MessagesViewTool extends BaseMPSTool implements PersistentStateComp
     myBlameDialog.loadState(myDialogState);
   }
 
+  protected boolean isInitiallyAvailable() {
+    return true;
+  }
+
   public void projectOpened() {
     super.projectOpened();
     myLoggingHandler = new MessageViewLoggingHandler(this);

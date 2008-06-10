@@ -154,6 +154,10 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
     return false;
   }
 
+  protected boolean isInitiallyAvailable() {
+    return true;
+  }
+
   public void initComponent() {
     addListeners();
 

@@ -201,10 +201,16 @@ public abstract class BaseTool {
         addContent(panel, null, false);
       }
     }
+
+    setAvailable(isInitiallyAvailable());
   }
 
   protected boolean hasCloseButton() {
     return true;
+  }
+
+  protected boolean isInitiallyAvailable() {
+    return false;
   }
 
   public void unregisterLater() {

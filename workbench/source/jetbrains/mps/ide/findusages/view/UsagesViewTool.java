@@ -124,6 +124,10 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
     return data.myUsagesView;
   }
 
+  protected boolean isInitiallyAvailable() {
+    return true;
+  }
+
   public void closeTab(int index) {
     LOG.checkEDT();
 
