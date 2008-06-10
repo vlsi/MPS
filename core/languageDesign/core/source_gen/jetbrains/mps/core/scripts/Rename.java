@@ -119,6 +119,10 @@ public class Rename extends AbstractLoggableRefactoring {
   public void updateModel(SModel model, RefactoringContext refactoringContext) {
   }
 
+  public List<SNode> getNodesToOpen(ActionContext actionContext, RefactoringContext refactoringContext) {
+    return new ArrayList<SNode>();
+  }
+
   public boolean doesUpdateModel() {
     return false;
   }

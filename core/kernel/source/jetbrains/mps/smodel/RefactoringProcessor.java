@@ -18,6 +18,7 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.refactoring.framework.RefactoringNodeMembersAccessModifier;
 import jetbrains.mps.util.Calculable;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
@@ -29,6 +30,7 @@ import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.Task.Modal;
+import com.intellij.openapi.application.ApplicationManager;
 
 public class RefactoringProcessor {
   private static final Logger LOG = Logger.getLogger(RefactoringProcessor.class);
@@ -114,6 +116,17 @@ public class RefactoringProcessor {
             SModelDescriptor modelDescriptor = context.getModel();
             SModelUID initialModelUID = modelDescriptor.getModelUID();
             refactoring.doRefactor(context, refactoringContext);
+            final List<SNode> nodesToOpen = refactoring.getNodesToOpen(context, refactoringContext);
+            if (!nodesToOpen.isEmpty()) {
+              ApplicationManager.getApplication().invokeLater(new Runnable() {
+                public void run() {
+                  for (SNode nodeToOpen : nodesToOpen) {
+                    // we can't open node outside of EDT
+                    context.getOperationContext().getComponent(MPSEditorOpener.class).openNode(nodeToOpen);
+                  }
+                }
+              });
+            }
             SModel model = modelDescriptor.getSModel();
             refactoringContext.computeCaches();
             SearchResults usages = refactoringContext.getUsages();

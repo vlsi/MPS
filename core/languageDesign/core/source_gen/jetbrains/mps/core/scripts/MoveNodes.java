@@ -31,8 +31,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ModuleContext;
-import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.ArrayList;
@@ -43,12 +41,14 @@ import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
 public class MoveNodes extends AbstractLoggableRefactoring {
   public static final String target = "target";
   public static final String role = "role";
+  public static final String nodeToOpen = "nodeToOpen";
 
   private Set<String> myTransientParameters = new HashSet<String>();
 
   public MoveNodes() {
     this.myTransientParameters.add("target");
     this.myTransientParameters.add("role");
+    this.myTransientParameters.add("nodeToOpen");
   }
 
   public static String getKeyStroke_static() {
@@ -186,15 +186,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
         IModule module = targetModel.getModelDescriptor().getModule();
         final IOperationContext operationContext = new ModuleContext(module, actionContext.getOperationContext().getMPSProject());
         if (operationContext != null) {
-          final List<SNode> movedNodes1 = movedNodes;
-          ApplicationManager.getApplication().invokeLater(new Runnable() {
-
-            public void run() {
-              // we can't open node outside of EDT
-              operationContext.getComponent(MPSEditorOpener.class).openNode(ListSequence.fromList(movedNodes1).first());
-            }
-
-          });
+          refactoringContext.setParameter("nodeToOpen", ListSequence.fromList(movedNodes).first());
         }
       }
     }
@@ -210,6 +202,14 @@ public class MoveNodes extends AbstractLoggableRefactoring {
 
   public void updateModel(SModel model, RefactoringContext refactoringContext) {
     refactoringContext.updateModelWithMaps(model);
+  }
+
+  public List<SNode> getNodesToOpen(ActionContext actionContext, RefactoringContext refactoringContext) {
+    {
+      ArrayList<SNode> result = new ArrayList<SNode>(1);
+      result.add(((SNode)refactoringContext.getParameter("nodeToOpen")));
+      return result;
+    }
   }
 
   public boolean doesUpdateModel() {

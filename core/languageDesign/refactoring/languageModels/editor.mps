@@ -21,6 +21,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="5" />
   <import index="1" modelUID="jetbrains.mps.logging.refactoring.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -323,8 +324,10 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1213091817425">
         <property name="text" value="nodes to open:" />
+        <link role="styleClass" targetNodeId="4.1186415544875" resolveInfo="KeyWord" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1213091841992">
+        <property name="noTargetText" value="none" />
         <link role="relationDeclaration" targetNodeId="1.1213091780734" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1191591986713">
