@@ -8,8 +8,8 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.helgins.inference.TypeChecker;
 import java.util.List;
 import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.structureLanguage.constraints.DataTypeDeclaration_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -21,7 +21,7 @@ public class typeof_SPropertyAccess_InferenceRule implements InferenceRule_Runti
   public void applyRule(final SNode op) {
     RulesUtil.checkAppliedCorrectly_generic(op);
     if ((SLinkOperations.getTarget(op, "property", false) != null)) {
-      final SNode Concept_typevar_1186062582563 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+      final SNode Concept_typevar_1186062582563 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
       RulesUtil.equate_inputNodeConcept(op, TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1186062582563));
       {
         final SNode C = TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1186062582563);
@@ -31,8 +31,9 @@ public class typeof_SPropertyAccess_InferenceRule implements InferenceRule_Runti
             SNode inputNodeConcept = TypeChecker.getInstance().getEquationManager().getRepresentator(C);
             List<SNode> declaredProperties = AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1203539034160(inputNodeConcept);
             SNode property = SLinkOperations.getTarget(op, "property", false);
+            String conceptName = SPropertyOperations.getString(inputNodeConcept, "name");
             if (!(ListSequence.fromList(declaredProperties).contains(property))) {
-              TypeChecker.getInstance().reportTypeError(op, "access to property '" + SPropertyOperations.getString(property, "name") + "' is not expected here", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062616321");
+              TypeChecker.getInstance().reportTypeError(op, "access to property '" + SPropertyOperations.getString(property, "name") + "' is not expected for an instance of " + conceptName, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062616321");
             }
           }
 

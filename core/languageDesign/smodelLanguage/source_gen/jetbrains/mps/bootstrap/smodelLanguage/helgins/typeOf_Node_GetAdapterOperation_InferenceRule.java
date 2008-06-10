@@ -15,7 +15,7 @@ public class typeOf_Node_GetAdapterOperation_InferenceRule implements InferenceR
 
   public void applyRule(final SNode node) {
     RulesUtil.checkAppliedCorrectly_generic(node);
-    final SNode Concept_typevar_1205967245422 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    final SNode Concept_typevar_1205967245422 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
     RulesUtil.equate_inputNodeConcept(node, TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1205967245422));
     {
       final SNode C = TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1205967245422);

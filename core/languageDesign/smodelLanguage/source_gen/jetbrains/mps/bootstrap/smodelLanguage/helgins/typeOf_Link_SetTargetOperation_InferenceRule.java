@@ -17,7 +17,7 @@ public class typeOf_Link_SetTargetOperation_InferenceRule implements InferenceRu
     RulesUtil.checkAppliedCorrectly_generic(op);
     SNode parameter = SLinkOperations.getTarget(op, "parameter", true);
     if ((parameter != null)) {
-      final SNode ExpectedType_typevar_1206101371703 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+      final SNode ExpectedType_typevar_1206101371703 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
       RulesUtil.equate_inputNodeType(op, TypeChecker.getInstance().getEquationManager().getRepresentator(ExpectedType_typevar_1206101371703));
       SNode parmType = TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186060393994", true);
       TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(parmType, TypeChecker.getInstance().getEquationManager().getRepresentator(ExpectedType_typevar_1206101371703), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186060404653", false, 0);

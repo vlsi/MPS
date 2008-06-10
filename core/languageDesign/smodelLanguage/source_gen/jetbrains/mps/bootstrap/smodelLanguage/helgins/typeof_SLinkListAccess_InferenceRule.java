@@ -26,7 +26,7 @@ public class typeof_SLinkListAccess_InferenceRule implements InferenceRule_Runti
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206103737722", true), new QuotationClass_78().createNode(SLinkOperations.getTarget(linkDecl, "target", false), "" + SPropertyOperations.hasValue(linkDecl, "metaClass", "aggregation", "reference")), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206103745585");
     // ---
     RulesUtil.checkAppliedCorrectly_generic(op);
-    final SNode Concept_typevar_1186062842230 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    final SNode Concept_typevar_1186062842230 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
     RulesUtil.equate_inputNodeConcept(op, TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1186062842230));
     {
       final SNode C = TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1186062842230);

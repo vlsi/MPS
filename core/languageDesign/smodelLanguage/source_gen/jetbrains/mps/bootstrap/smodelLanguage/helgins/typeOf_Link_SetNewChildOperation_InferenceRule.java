@@ -18,7 +18,7 @@ public class typeOf_Link_SetNewChildOperation_InferenceRule implements Inference
 
   public void applyRule(final SNode op) {
     RulesUtil.checkAppliedTo_LinkAccess_aggregation(op);
-    final SNode Concept_typevar_1206099875685 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    final SNode Concept_typevar_1206099875685 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
     RulesUtil.equate_inputNodeConcept(op, TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1206099875685));
     {
       final SNode concreteConcept = TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1206099875685);
