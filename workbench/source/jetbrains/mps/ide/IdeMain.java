@@ -33,10 +33,6 @@ public class IdeMain {
 
   public static void setTestMode(boolean testMode) {
     ourTestMode = testMode;
-
-    if (testMode) {
-      ApplicationManagerEx.getApplicationEx().doNotSave();
-    }
   }
 
 }

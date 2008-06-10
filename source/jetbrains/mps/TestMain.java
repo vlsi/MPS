@@ -24,6 +24,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectUtil;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.idea.IdeaTestApplication;
 
@@ -62,6 +63,9 @@ public class TestMain {
     if (!projectFile.exists()) {
       throw new RuntimeException("Can't find a project in file " + projectFile.getAbsolutePath());
     }
+
+
+    ApplicationManagerEx.getApplicationEx().doNotSave();
 
     final ProjectManagerEx projectManager = ProjectManagerEx.getInstanceEx();
 
