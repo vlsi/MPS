@@ -28,27 +28,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213107277889">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213107277890">
-            <property name="name" value="abc" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ArrayType" id="1213107280361">
-              <node role="componentType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1213107277891" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213107282895">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213107282896">
-            <link role="variableDeclaration" targetNodeId="1213107277890" resolveInfo="abc" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213107286183">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213107286435">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213107286184">
-              <link role="variableDeclaration" targetNodeId="1203331654522" resolveInfo="list" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.AbstractOperation" id="1213107286437" />
-          </node>
-        </node>
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1203331622063" />
