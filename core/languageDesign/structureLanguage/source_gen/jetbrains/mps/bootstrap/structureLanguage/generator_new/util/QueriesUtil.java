@@ -56,7 +56,7 @@ public class QueriesUtil {
   }
 
   public static boolean isRefLink_card_1_nospec(SNode link) {
-    if (SPropertyOperations.hasValue(link, "metaClass", null, null)) {
+    if (SPropertyOperations.hasValue(link, "metaClass", "reference", "reference")) {
       if (SPropertyOperations.hasValue(link, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(link, "sourceCardinality", "1", "0..1")) {
         return SLinkOperations.getTarget(link, "specializedLink", false) == null;
       }
@@ -67,7 +67,7 @@ public class QueriesUtil {
   public static boolean isRefLink_card_1_spec(SNode link) {
     if (SLinkOperations.getTarget(link, "specializedLink", false) != null) {
       SNode genuineLink = (SNode)SModelUtil_new.getGenuineLinkDeclaration(((LinkDeclaration)SNodeOperations.getAdapter(link))).getNode();
-      if (SPropertyOperations.hasValue(genuineLink, "metaClass", null, null)) {
+      if (SPropertyOperations.hasValue(genuineLink, "metaClass", "reference", "reference")) {
         if (SPropertyOperations.hasValue(genuineLink, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(genuineLink, "sourceCardinality", "1", "0..1")) {
           return true;
         }
@@ -77,7 +77,7 @@ public class QueriesUtil {
   }
 
   public static boolean isAggLink_card_1_nospec(SNode link) {
-    if (SPropertyOperations.hasValue(link, "metaClass", "aggregation", null)) {
+    if (SPropertyOperations.hasValue(link, "metaClass", "aggregation", "reference")) {
       if (SPropertyOperations.hasValue(link, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(link, "sourceCardinality", "1", "0..1")) {
         return SLinkOperations.getTarget(link, "specializedLink", false) == null;
       }
@@ -86,7 +86,7 @@ public class QueriesUtil {
   }
 
   public static boolean isAggLink_card_n_nospec(SNode link) {
-    if (SPropertyOperations.hasValue(link, "metaClass", "aggregation", null)) {
+    if (SPropertyOperations.hasValue(link, "metaClass", "aggregation", "reference")) {
       if (SPropertyOperations.hasValue(link, "sourceCardinality", "0..n", "0..1") || SPropertyOperations.hasValue(link, "sourceCardinality", "1..n", "0..1")) {
         return SLinkOperations.getTarget(link, "specializedLink", false) == null;
       }
@@ -97,7 +97,7 @@ public class QueriesUtil {
   public static boolean isAggLink_card_1_spec(SNode link) {
     if (SLinkOperations.getTarget(link, "specializedLink", false) != null) {
       SNode genuineLink = (SNode)SModelUtil_new.getGenuineLinkDeclaration(((LinkDeclaration)SNodeOperations.getAdapter(link))).getNode();
-      if (SPropertyOperations.hasValue(genuineLink, "metaClass", "aggregation", null)) {
+      if (SPropertyOperations.hasValue(genuineLink, "metaClass", "aggregation", "reference")) {
         if (SPropertyOperations.hasValue(genuineLink, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(genuineLink, "sourceCardinality", "1", "0..1")) {
           return true;
         }

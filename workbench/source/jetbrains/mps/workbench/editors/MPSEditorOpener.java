@@ -18,6 +18,7 @@ import jetbrains.mps.util.Calculable;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration;
 import jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior;
+import jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints;
 import jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
@@ -63,6 +64,8 @@ public class MPSEditorOpener implements ProjectComponent {
         AbstractConceptDeclaration baseNode = null;
         if (node.getAdapter() instanceof ConceptEditorDeclaration) {
           baseNode = ((ConceptEditorDeclaration) node.getAdapter()).getConceptDeclaration();
+        } else if (node.getAdapter() instanceof ConceptConstraints) {
+          baseNode = ((ConceptConstraints) node.getAdapter()).getConcept();
         } else if (node.getAdapter() instanceof ConceptBehavior) {
           baseNode = ((ConceptBehavior) node.getAdapter()).getConcept();
         } else if (node.getAdapter() instanceof DataFlowBuilderDeclaration) {

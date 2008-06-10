@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import java.util.Iterator;
 import java.util.List;
 
@@ -17,6 +18,7 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept {
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String CONCEPT = "concept";
   public static String DEFAULT_SCOPE = "defaultScope";
   public static String PROPERTY = "property";
   public static String REFERENT = "referent";
@@ -64,6 +66,14 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(ConceptConstraints.VIRTUAL_PACKAGE, value);
+  }
+
+  public AbstractConceptDeclaration getConcept() {
+    return (AbstractConceptDeclaration)this.getReferent(ConceptConstraints.CONCEPT);
+  }
+
+  public void setConcept(AbstractConceptDeclaration node) {
+    super.setReferent(ConceptConstraints.CONCEPT, node);
   }
 
   public NodeDefaultSearchScope getDefaultScope() {
