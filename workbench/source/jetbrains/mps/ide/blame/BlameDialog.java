@@ -137,7 +137,7 @@ public class BlameDialog extends BaseDialog implements PersistentStateComponent<
 
     try {
       if (login(c)) {
-        postIssue(c, myMessage + getBuildString(), description);
+        postIssue(c, getBuildString() + myMessage, description);
       }
     } catch (Throwable e) {
       myStatusCode = 500;
@@ -150,7 +150,7 @@ public class BlameDialog extends BaseDialog implements PersistentStateComponent<
 
   private String getBuildString() {
     String build = ApplicationInfo.getInstance().getBuildNumber();
-    return " (build:" + build + ")";
+    return "[build:" + build + "] ";
   }
 
   @Button(position = 1, name = "Cancel")
