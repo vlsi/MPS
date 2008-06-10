@@ -132,7 +132,7 @@ public class BlameDialog extends BaseDialog implements PersistentStateComponent<
   public void onSend() {
     HttpClient c = new HttpClient();
     String description = myDescription.getText();
-    description = description == null || description.length() == 0 ? "" : description + "\n\n\n";
+    description = description == null || description.length() == 0 ? getAdditionalInfo() : description + "\n\n" + getAdditionalInfo() + "\n\n\n";
     description = description + ex2str(myEx);
 
     try {
@@ -151,6 +151,14 @@ public class BlameDialog extends BaseDialog implements PersistentStateComponent<
   private String getBuildString() {
     String build = ApplicationInfo.getInstance().getBuildNumber();
     return "[build:" + build + "] ";
+  }
+
+  private String getAdditionalInfo() {
+    ApplicationInfo ai = ApplicationInfo.getInstance();
+    return "[Build info]\n" +
+      "build number: " + ai.getBuildNumber() + "\n" +
+      "version name: " + ai.getVersionName() + "\n" +
+      "build date: " + ai.getBuildDate().getTime().toString() + "\n";
   }
 
   @Button(position = 1, name = "Cancel")
