@@ -289,6 +289,18 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
 
     Element defaultViewOptionsXML = element.getChild(DEFAULT_VIEW_OPTIONS);
     myDefaultViewOptions.read(defaultViewOptionsXML, project);
+
+    StartupManager.getInstance(getProject()).registerPostStartupActivity(new Runnable() {
+      public void run() {
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            if (getContentManager().getContentCount() == 0) {
+              makeUnavailableLater();
+            }
+          }
+        });
+      }
+    });
   }
 
   private void write(Element element, MPSProject project) {

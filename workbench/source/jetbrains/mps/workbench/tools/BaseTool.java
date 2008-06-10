@@ -179,9 +179,6 @@ public abstract class BaseTool {
     }
 
     ToolWindow toolWindow = myWindowManager.registerToolWindow(myId, myCanCloseContent, myAnchor);
-    toolWindow.setIcon(myIcon);
-    toolWindow.setToHideOnEmptyContent(true);
-    toolWindow.installWatcher(toolWindow.getContentManager());
 
     JComponent component = getComponent();
     if (component != null) {
@@ -202,7 +199,12 @@ public abstract class BaseTool {
       }
     }
 
-    setAvailable(isInitiallyAvailable());
+    toolWindow.setIcon(myIcon);
+    toolWindow.setToHideOnEmptyContent(true);
+    toolWindow.installWatcher(toolWindow.getContentManager());
+    if (!isInitiallyAvailable()) {
+      setAvailable(false);
+    }
   }
 
   protected boolean hasCloseButton() {
