@@ -62,8 +62,7 @@ public abstract class SNodeId {
       if (!id.startsWith(ID_PREFIX)) {
         throw new IllegalArgumentException("foreign node id must begin with '" + ID_PREFIX + "'");
       }
-//      myId = InternUtil.intern(id); it might lead to out of perm gen space!
-      myId = id;
+      myId = InternUtil.intern(id);
     }
 
     public boolean equals(Object o) {
