@@ -22,25 +22,25 @@ public class PasteNodeUtil {
   private static final int PASTE_TO_ROOT = 3;
 
 
-  public static boolean canPaste(SNode pasteTarget, List<SNode> pasteNodes, IOperationContext operationContext, boolean pasteToRoot) {
-    return (canPaste_internal(pasteTarget, pasteNodes, operationContext, null, pasteToRoot) != PASTE_N_A);
+  public static boolean canPaste(SNode pasteTarget, List<SNode> pasteNodes, PasteEnv pasteEnv) {
+    return (canPaste_internal(pasteTarget, pasteNodes, null, pasteEnv) != PASTE_N_A);
   }
 
-  public static boolean canPaste(EditorCell targetCell, List<SNode> pasteNodes, IOperationContext operationContext, boolean pasteToRoot) {
+  public static boolean canPaste(EditorCell targetCell, List<SNode> pasteNodes) {
     String role = getRoleFromCell(targetCell);
     SNode pasteTarget = targetCell.getSNode();
-    return (canPaste_internal(pasteTarget, pasteNodes, operationContext, role, pasteToRoot) != PASTE_N_A);
+    return (canPaste_internal(pasteTarget, pasteNodes, role, PasteEnv.NODE_EDITOR) != PASTE_N_A);
   }
 
-  public static void paste(EditorCell targetCell, List<SNode> pasteNodes, IOperationContext operationContext, boolean pasteToRoot) {
+  public static void paste(EditorCell targetCell, List<SNode> pasteNodes) {
     String role = getRoleFromCell(targetCell);
     SNode pasteTarget = targetCell.getSNode();
-    paste_internal(pasteTarget, pasteNodes, operationContext, role, pasteToRoot);
+    paste_internal(pasteTarget, pasteNodes, role, PasteEnv.NODE_EDITOR);
   }
 
-  public static void paste(SNode pasteTarget, List<SNode> pasteNodes, IOperationContext operationContext, boolean pasteToRoot) {
+  public static void paste(SNode pasteTarget, List<SNode> pasteNodes, PasteEnv pasteEnv) {
     String role_ = pasteTarget.getRole_();
-    paste_internal(pasteTarget, pasteNodes, operationContext, role_, pasteToRoot);
+    paste_internal(pasteTarget, pasteNodes, role_, pasteEnv);
   }
 
   public static void pasteAsRoots(List<SNode> pasteNodes, SModel model) {
@@ -60,9 +60,9 @@ public class PasteNodeUtil {
   }
 
 
-  private static void paste_internal(SNode pasteTarget, List<SNode> pasteNodes, IOperationContext operationContext, String role, boolean pasteToRoot) {
+  private static void paste_internal(SNode pasteTarget, List<SNode> pasteNodes, String role, PasteEnv pasteEnv) {
     String role_ = role != null ? role : pasteTarget.getRole_();
-    int status = canPaste_internal(pasteTarget, pasteNodes, operationContext, role_, pasteToRoot);
+    int status = canPaste_internal(pasteTarget, pasteNodes, role_, pasteEnv);
 
     if (status == PASTE_TO_TARGET) {
       pasteToTarget(pasteTarget, pasteNodes, null, role_, PastePlaceHint.DEFAULT);
@@ -76,10 +76,7 @@ public class PasteNodeUtil {
   }
 
 
-  private static int canPaste_internal(SNode pasteTarget, List<SNode> pasteNodes, IOperationContext operationContext, String role, boolean pasteToRoot) {
-//    if (pasteTarget.getModel() != pasteNode.getModel()) {
-//      return PASTE_N_A;
-//    }
+  private static int canPaste_internal(SNode pasteTarget, List<SNode> pasteNodes, String role, PasteEnv pasteEnv) {
     if (pasteNodes == null || pasteNodes.isEmpty()) {
       return PASTE_N_A;
     }
@@ -89,7 +86,7 @@ public class PasteNodeUtil {
     boolean canPasteAsRoot = (pasteTarget.getParent() == null) && canPasteAsRoots(pasteNodes); // root selected and ..
     boolean canPasteToTarget = canPasteToTarget(pasteTarget, pasteNodes, role_);
 
-    if (operationContext.getComponent(ProjectPane.class) != null && pasteToRoot) {
+    if (pasteEnv == PasteEnv.PROJECT_TREE) {
       // project pane
       if (canPasteAsRoot) {
         return PASTE_TO_ROOT;
@@ -149,24 +146,6 @@ public class PasteNodeUtil {
             _anchorNode = pasteNode;
             insertBefore = false;
           }
-
-//          if (_anchorNode == null) {
-//            // anchorNode is NULL: either no children or list is filtered
-//            List<SNode> children = pasteTarget.getChildren(link.getRole());
-//            if (children.isEmpty()) { // no children
-//              pasteTarget.setChild(link.getRole(), pasteNode);
-//              return;
-//            }
-//            _anchorNode = children.get(0);
-//          }
-
-//          boolean deleteOldChild =
-//            (placeHint == PastePlaceHint.DEFAULT) &&
-//            _anchorNode.getConceptDeclarationAdapter().hasConceptProperty(AbstractConceptDeclaration.CPR_Abstract);
-//          pasteTarget.insertChild(_anchorNode, link.getRole(), pasteNode, placeHint == PastePlaceHint.BEFORE_ANCHOR);
-//          if (deleteOldChild) {
-//            _anchorNode.delete();
-//          }
 
           // delete original anchor if it was abstract concept
           if (anchorNode != null && placeHint == PastePlaceHint.DEFAULT &&

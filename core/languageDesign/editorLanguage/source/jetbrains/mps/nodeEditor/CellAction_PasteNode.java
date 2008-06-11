@@ -29,8 +29,7 @@ public class CellAction_PasteNode extends EditorCellAction {
       return false;
     }
 
-    IOperationContext operationContext = context.getOperationContext();
-    if (!PasteNodeUtil.canPaste(selectedCell, pasteNodes, operationContext, false)) {
+    if (!PasteNodeUtil.canPaste(selectedCell, pasteNodes)) {
       LOG.debug("Couldn't paste node here");
       return false;
     }
@@ -54,8 +53,8 @@ public class CellAction_PasteNode extends EditorCellAction {
     List<SNode> pasteNodes = pasteNodeData.getNodes();
     Set<SReference> requireResolveReferences = pasteNodeData.getRequireResolveReferences();
 
+    PasteNodeUtil.paste(selectedCell, pasteNodes);
     IOperationContext operationContext = context.getOperationContext();
-    PasteNodeUtil.paste(selectedCell, pasteNodes, operationContext, false);
     Resolver.resolveReferences(requireResolveReferences, operationContext);
   }
 }
