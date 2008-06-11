@@ -264,6 +264,11 @@
     </component>
 
     <component>
+      <interface-class>com.intellij.psi.PsiDocumentManager</interface-class>
+      <implementation-class>jetbrains.mps.workbench.psi.NullPsiDocumentManager</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.ide.findusages.view.UsagesViewTool</implementation-class>
       <skipForDummyProject/>
     </component>
