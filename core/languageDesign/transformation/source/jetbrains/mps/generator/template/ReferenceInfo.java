@@ -35,7 +35,6 @@ public abstract class ReferenceInfo {
   public SModelUID getTargetModelUID(TemplateGenerator generator) {
     // local references only
     return generator.getOutputModel().getUID();
-//    return myOutputSourceNode.getModel().getUID();
   }
 
   public String getReferenceRole() {
@@ -65,46 +64,4 @@ public abstract class ReferenceInfo {
   }
 
   public abstract void showErrorMessage(ITemplateGenerator generator);
-
-  /**
-   * todo: this method will go as soon as dynamic references work
-   */
-  public SNode doResolve_WithCustomReferenceResolver() {
-    IReferenceResolver referenceResolver = loadReferenceResolver(getOutputSourceNode());
-    if (referenceResolver != null) {
-      try {
-        TypeChecker.getInstance().setTypeCheckingMode(TypeCheckingMode.RESOLVE);
-        return referenceResolver.resolve(getOutputSourceNode(), myReferenceRole, getInputTargetNode());
-      } finally {
-        TypeChecker.getInstance().resetTypeCheckingMode();
-      }
-    }
-    return null;
-  }
-
-  protected static IReferenceResolver loadReferenceResolver(SNode node) {
-    ConceptDeclaration conceptDeclaration = (ConceptDeclaration) node.getConceptDeclarationAdapter();
-    while (conceptDeclaration != null) {
-      String modelPackageName = JavaNameUtil.packageNameForModelUID(conceptDeclaration.getModel().getUID());
-      String buildersPackageName = JavaNameUtil.withoutStructure(modelPackageName) + ".builder";
-      String resolverClassName = buildersPackageName + "." + conceptDeclaration.getName() + "_ReferenceResolver";
-
-      Language l = SModelUtil_new.getDeclaringLanguage(conceptDeclaration, GlobalScope.getInstance());
-
-      try {
-        Class resolverClass = l.getClass(resolverClassName);
-        if (resolverClass != null) {
-          return (IReferenceResolver) resolverClass.newInstance();
-        }
-      } catch (IllegalAccessException e) {
-        throw new RuntimeException(e);
-      } catch (InstantiationException e) {
-        throw new RuntimeException(e);
-      }
-
-      conceptDeclaration = conceptDeclaration.getExtends();
-    }
-    return null;
-  }
-
 }

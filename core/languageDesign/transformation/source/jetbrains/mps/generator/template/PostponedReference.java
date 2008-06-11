@@ -78,10 +78,7 @@ public class PostponedReference extends SReference {
         targetModelUID,
         myReferenceInfo.getResolveInfoForDynamicResolve());
     } else {
-      outputTargetNode = myReferenceInfo.doResolve_WithCustomReferenceResolver();
-      if (outputTargetNode == null) {
-        outputTargetNode = myReferenceInfo.doResolve_Tricky(myGenerator);
-      }
+      outputTargetNode = myReferenceInfo.doResolve_Tricky(myGenerator);
       if (outputTargetNode != null) {
         if (checkResolvedTarget(outputSourceNode, role, outputTargetNode)) {
           // ok
