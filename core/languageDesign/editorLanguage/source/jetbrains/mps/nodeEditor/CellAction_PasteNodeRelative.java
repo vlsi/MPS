@@ -42,7 +42,7 @@ public class CellAction_PasteNodeRelative extends EditorCellAction {
 
     if (pasteNodes.isEmpty()) return false;
 
-    if (!PasteNodeUtil.canPasteRelative(anchorNode, pasteNodes.get(0))) {
+    if (!PasteNodeUtil.canPasteRelative(anchorNode, pasteNodes)) {
       LOG.debug("Couldn't paste node relative");
       return false;
     }
@@ -61,14 +61,7 @@ public class CellAction_PasteNodeRelative extends EditorCellAction {
     Set<SReference> requireResolveReferences = pasteNodeData.getRequireResolveReferences();
 
 
-    PasteNodeUtil.pasteRelative(anchorNode, pasteNodes.get(0), myPastePlaceHint);
-    anchorNode = pasteNodes.get(0);
-    for (int i = 1; i < pasteNodes.size(); i++) {
-      SNode node = pasteNodes.get(i);
-      PasteNodeUtil.pasteRelative(anchorNode, node, PastePlaceHint.AFTER_ANCHOR);
-      anchorNode = node;
-    }
-
+    PasteNodeUtil.pasteRelative(anchorNode, pasteNodes, myPastePlaceHint);
     Resolver.resolveReferences(requireResolveReferences, operationContext);
   }
 }

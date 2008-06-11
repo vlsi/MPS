@@ -1,12 +1,11 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.datatransfer.PasteNodeUtil;
 import jetbrains.mps.datatransfer.CopyPasteUtil;
 import jetbrains.mps.datatransfer.PasteNodeData;
-import jetbrains.mps.datatransfer.PastePlaceHint;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.datatransfer.PasteNodeUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.resolve.Resolver;
+import jetbrains.mps.smodel.*;
 
 import java.util.List;
 import java.util.Set;
@@ -31,7 +30,7 @@ public class CellAction_PasteNode extends EditorCellAction {
     }
 
     IOperationContext operationContext = context.getOperationContext();
-    if (!PasteNodeUtil.canPaste(selectedCell, pasteNodes.get(0), operationContext, false)) {
+    if (!PasteNodeUtil.canPaste(selectedCell, pasteNodes, operationContext, false)) {
       LOG.debug("Couldn't paste node here");
       return false;
     }
@@ -55,15 +54,8 @@ public class CellAction_PasteNode extends EditorCellAction {
     List<SNode> pasteNodes = pasteNodeData.getNodes();
     Set<SReference> requireResolveReferences = pasteNodeData.getRequireResolveReferences();
 
-    SNode anchor = pasteNodes.get(0);
     IOperationContext operationContext = context.getOperationContext();
-    PasteNodeUtil.paste(selectedCell, anchor, operationContext, false);
-    for (int i = 1; i < pasteNodes.size(); i++) {
-      SNode node = pasteNodes.get(i);
-      PasteNodeUtil.pasteRelative(anchor, node, PastePlaceHint.AFTER_ANCHOR);
-      anchor = node;
-    }
-
+    PasteNodeUtil.paste(selectedCell, pasteNodes, operationContext, false);
     Resolver.resolveReferences(requireResolveReferences, operationContext);
   }
 }
