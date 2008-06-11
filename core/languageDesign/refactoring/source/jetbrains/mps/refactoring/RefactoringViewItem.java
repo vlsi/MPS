@@ -32,7 +32,7 @@ import java.awt.event.ActionEvent;
  * To change this template use File | Settings | File Templates.
  */
 public class RefactoringViewItem {
-  private RefactoringContext myRefactoringContext;
+  private RefactoringViewAction myRefactoringViewAction;
   private ActionContext myActionContext;
   private SearchResults mySearchResults;
   private UsagesView myUsagesView;
@@ -43,15 +43,16 @@ public class RefactoringViewItem {
   private NewRefactoringView myNewRefactoringView;
 
   public RefactoringViewItem(@NotNull ActionContext actionContext,
-                             @NotNull RefactoringContext refactoringContext, NewRefactoringView refactoringView) {
+                             @NotNull RefactoringViewAction refactoringViewAction,
+                             SearchResults searchResults,
+                             NewRefactoringView refactoringView) {
     myNewRefactoringView = refactoringView;
-    mySearchResults = refactoringContext.getUsages();
+    myRefactoringViewAction = refactoringViewAction;
+    mySearchResults = searchResults;
     if (mySearchResults == null) {
       throw new IllegalArgumentException("search result is null");
     }
     myActionContext = actionContext;
-    myRefactoringContext = refactoringContext;
-
     myPanel = new JPanel(new BorderLayout());
     myUsagesView = new UsagesView(actionContext.get(MPSProject.class), new ViewOptions()) {
       public void close() {
@@ -115,12 +116,7 @@ public class RefactoringViewItem {
   }
 
   private void doRefactor() {
-    new Thread() {
-      public void run() {
-        new RefactoringProcessor().doExecuteInThread(myActionContext, myRefactoringContext);
-        myNewRefactoringView.closeRefactoringView();
-      }
-    }.start();
+    myRefactoringViewAction.performAction(myActionContext, myNewRefactoringView);
   }
 
 }

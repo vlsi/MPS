@@ -13,6 +13,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.refactoring.NewRefactoringView;
+import jetbrains.mps.refactoring.LoggableRefactoringViewAction;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
@@ -70,7 +71,7 @@ public class RefactoringProcessor {
               public void run() {
                 ModelAccess.instance().runReadAction(new Runnable() {
                   public void run() {
-                    context.getOperationContext().getComponent(NewRefactoringView.class).showRefactoringView(context, refactoringContext);
+                    context.getOperationContext().getComponent(NewRefactoringView.class).showRefactoringView(context, new LoggableRefactoringViewAction(refactoringContext), refactoringContext.getUsages());
                   }
                 });
               }

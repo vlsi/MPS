@@ -4,6 +4,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.workbench.tools.BaseMPSTool;
@@ -40,8 +41,9 @@ public class NewRefactoringView extends BaseMPSTool {
   }
 
   public void showRefactoringView(@NotNull ActionContext actionContext,
-                                  @NotNull RefactoringContext refactoringContext) {
-    myRefactoringViewItem = new RefactoringViewItem(actionContext, refactoringContext, this);
+                                  @NotNull RefactoringViewAction refactoringViewAction,
+                                  SearchResults searchResults) {
+    myRefactoringViewItem = new RefactoringViewItem(actionContext, refactoringViewAction, searchResults, this);
     myPanel.remove(myLabel);
     myPanel.add(myRefactoringViewItem.getComponent(), BorderLayout.CENTER);
     myRefactoringViewItem.initUsagesView();

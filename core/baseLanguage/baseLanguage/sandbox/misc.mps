@@ -240,14 +240,14 @@
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1213184464731" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1213199330588">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1213199330589" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1213199330590" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213199330591" />
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1213199242548">
     <property name="name" value="Lehitraot" />
-    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1213199249535">
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1213199249536" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1213199249537" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213199249538" />
-    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1213199242549" />
   </node>
 </model>
