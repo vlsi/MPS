@@ -66,12 +66,12 @@ public class TestOutputComponent {
   private void append(TestOutputComponent.Message message) {
     if (message.matches(this.filterClass, this.filterMethod)) {
       if (message.isError()) {
-        this.consoleView.print(message.getMessage(), ConsoleViewContentType.ERROR_OUTPUT);
+        this.consoleView.print(message.getMessage() + "\n", ConsoleViewContentType.ERROR_OUTPUT);
       } else if (message.isInternal()) {
-        this.consoleView.print(message.getMessage(), ConsoleViewContentType.SYSTEM_OUTPUT);
+        this.consoleView.print(message.getMessage() + "\n", ConsoleViewContentType.SYSTEM_OUTPUT);
       } else
       {
-        this.consoleView.print(message.getMessage(), ConsoleViewContentType.NORMAL_OUTPUT);
+        this.consoleView.print(message.getMessage() + "\n", ConsoleViewContentType.NORMAL_OUTPUT);
       }
     }
   }

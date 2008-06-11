@@ -408,6 +408,10 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   private void reloadAll() {
+    myCanBeChildMethods.clear();
+    myCanBeParentMethods.clear();
+    myDefaultConceptNames.clear();
+
     myNodePropertyGettersMap.clear();
     myNodePropertySettersMap.clear();
     myNodeReferentSearchScopeProvidersMap.clear();
