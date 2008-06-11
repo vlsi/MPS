@@ -7,6 +7,7 @@ import jetbrains.mps.ide.tabbedEditor.tabs.BaseMultitabbedTab;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -16,6 +17,9 @@ import javax.swing.event.ChangeListener;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.util.*;
+
+import com.intellij.openapi.fileEditor.FileEditorState;
+import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 
 public class TabbedEditor implements IEditor {
   public static final Logger LOG = Logger.getLogger(ConceptDeclarationEditor.class);
@@ -209,6 +213,21 @@ public class TabbedEditor implements IEditor {
     return false;
   }
 
+  public FileEditorState saveState(FileEditorStateLevel level) {
+    MyFileEditorState result = new MyFileEditorState();
+    result.myMemento = getEditorContext().createMemento();
+    return result;
+  }
+
+  public void loadState(FileEditorState state) {
+    if (!(state instanceof MyFileEditorState)) {
+      return;
+    }
+
+    MyFileEditorState s = (MyFileEditorState) state;
+    getEditorContext().setMemento(s.myMemento);
+  }
+
   public void selectMainEditor() {
     selectTab(0);
   }
@@ -242,6 +261,27 @@ public class TabbedEditor implements IEditor {
 
   public LazyTabbedPane getTabbedPane() {
     return myTabbedPane;
+  }
+
+  private class MyFileEditorState implements FileEditorState {
+    private Object myMemento;
+
+    public boolean canBeMergedWith(FileEditorState otherState, FileEditorStateLevel level) {
+      return false;
+    }
+
+    public int hashCode() {
+      return myMemento.hashCode();
+    }
+
+    public boolean equals(Object obj) {
+      if (!(obj instanceof MyFileEditorState)) {
+        return false;
+      }
+
+      MyFileEditorState state = (MyFileEditorState) obj;
+      return EqualUtil.equals(state.myMemento, myMemento);
+    }
   }
 
   private class MyLazyTabbedPane extends LazyTabbedPane implements IActionDataProvider {

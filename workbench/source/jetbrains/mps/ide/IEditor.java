@@ -11,6 +11,9 @@ import jetbrains.mps.smodel.SNodePointer;
 import javax.swing.JComponent;
 import javax.swing.event.ChangeListener;
 
+import com.intellij.openapi.fileEditor.FileEditorState;
+import com.intellij.openapi.fileEditor.FileEditorStateLevel;
+
 public interface IEditor {
   JComponent getComponent();
 
@@ -39,4 +42,7 @@ public interface IEditor {
 
   AbstractEditorComponent getCurrentEditorComponent();
   boolean removeFromRecentEditorsOnClose();
+
+  FileEditorState saveState(FileEditorStateLevel level);
+  void loadState(FileEditorState state);
 }

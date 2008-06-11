@@ -5,6 +5,7 @@ import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -12,6 +13,9 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.event.ChangeListener;
 import java.awt.BorderLayout;
+
+import com.intellij.openapi.fileEditor.FileEditorState;
+import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 
 public class NodeEditor implements IEditor {
 
@@ -102,6 +106,42 @@ public class NodeEditor implements IEditor {
 
   public void requestFocus() {
     myEditorComponent.requestFocus();
+  }
+
+  public FileEditorState saveState(FileEditorStateLevel level) {
+    MyFileEditorState result = new MyFileEditorState();
+    result.myMemento = getEditorContext().createMemento();
+    return result;
+  }
+
+  public void loadState(FileEditorState state) {
+    if (!(state instanceof MyFileEditorState)) {
+      return;
+    }
+
+    MyFileEditorState s = (MyFileEditorState) state;
+    getEditorContext().setMemento(s.myMemento);
+  }
+
+  private class MyFileEditorState implements FileEditorState {
+    private Object myMemento;
+
+    public boolean canBeMergedWith(FileEditorState otherState, FileEditorStateLevel level) {
+      return false;
+    }
+
+    public int hashCode() {
+      return myMemento.hashCode();
+    }
+
+    public boolean equals(Object obj) {
+      if (!(obj instanceof MyFileEditorState)) {
+        return false;
+      }
+
+      MyFileEditorState state = (MyFileEditorState) obj;
+      return EqualUtil.equals(state.myMemento, myMemento);
+    }
   }
 
   private class MyPanel extends JPanel implements IActionDataProvider {
