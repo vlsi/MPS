@@ -9,6 +9,9 @@
     <extensionPoint name="customScopesProvider"
                     interface="com.intellij.psi.search.scope.packageSet.CustomScopesProvider"
                     area="IDEA_PROJECT"/>
+
+    <extensionPoint name="consoleFilterProvider"
+                    interface="com.intellij.execution.filters.ConsoleFilterProvider"/>
   </extensionPoints>
 
   <extensions defaultExtensionNs="com.intellij">
