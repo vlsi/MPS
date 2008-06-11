@@ -29,6 +29,7 @@
     <dependency reexport="false">jetbrains.mps.bootstrap.pluginLanguage</dependency>
     <dependency reexport="false">jetbrains.mps.bootstrap.dataFlow</dependency>
     <dependency reexport="false">jetbrains.mps.quotation</dependency>
+    <dependency reexport="false">MPS.Classpath</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.regexp</usedLanguages>
