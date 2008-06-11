@@ -15,16 +15,6 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="7" />
   <import index="1" modelUID="jetbrains.mps.transformationTest.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.core.constraints" version="-1" />
@@ -119,11 +109,13 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213104844754">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1213104844755">
-              <link role="baseMethodDeclaration" targetNodeId="5.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104844756">
-                <link role="variableDeclaration" targetNodeId="1213104844730" resolveInfo="result" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213172407587">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213172409559">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213172419557">
+                <link role="baseMethodDeclaration" targetNodeId="5.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213172421857">
+                  <link role="variableDeclaration" targetNodeId="1213104844730" resolveInfo="result" />
+                </node>
               </node>
             </node>
           </node>
