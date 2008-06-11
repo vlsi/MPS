@@ -66,15 +66,6 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
   }
 
   public SNode doResolve_Tricky(TemplateGenerator generator) {
-//    // resolve anyhow
-//    SNode outputTargetNode = generator.findOutputNodeByTemplateNode(myTemplateTargetNode, false);
-////    if (outputTargetNode != null) {
-////      generator.showWarningMessage(myTemplateSourceNode, "!RESOLVED SUPER TRICKY!!");
-////      generator.showWarningMessage(getOutputSourceNode(), "-- in output ---");
-////    }
-//    return outputTargetNode;
-
-    // do not use 'template->output' if this mapping is not unique
     return null;
   }
 
