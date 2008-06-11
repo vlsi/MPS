@@ -216,6 +216,7 @@ public class TabbedEditor implements IEditor {
   public FileEditorState saveState(FileEditorStateLevel level) {
     MyFileEditorState result = new MyFileEditorState();
     result.myMemento = getEditorContext().createMemento();
+    result.myTab = myTabbedPane.getCurrentTabIndex();
     return result;
   }
 
@@ -225,6 +226,7 @@ public class TabbedEditor implements IEditor {
     }
 
     MyFileEditorState s = (MyFileEditorState) state;
+    myTabbedPane.selectTab(s.myTab);
     getEditorContext().setMemento(s.myMemento);
   }
 
@@ -265,6 +267,7 @@ public class TabbedEditor implements IEditor {
 
   private class MyFileEditorState implements FileEditorState {
     private Object myMemento;
+    private int myTab;
 
     public boolean canBeMergedWith(FileEditorState otherState, FileEditorStateLevel level) {
       return false;
