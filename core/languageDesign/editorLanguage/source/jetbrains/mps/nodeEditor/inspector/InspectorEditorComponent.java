@@ -13,7 +13,7 @@ import javax.swing.JComponent;
 import javax.swing.event.ChangeListener;
 import java.util.List;
 
-public class InspectorEditorComponent extends AbstractEditorComponent implements IEditor {
+public class InspectorEditorComponent extends AbstractEditorComponent {
   private NodeEditorComponent myContainer;
 
   public InspectorEditorComponent() {
@@ -35,18 +35,6 @@ public class InspectorEditorComponent extends AbstractEditorComponent implements
     }
     rebuildEditorContent();
   }
-
-  public void addChangeListener(@NotNull ChangeListener listener) {
-  }
-
-  public void removeChangeListener(@NotNull ChangeListener listener) {
-  }
-
-
-  public boolean removeFromRecentEditorsOnClose() {
-    return false;
-  }
-
 
   public void editNode(SNode semanticNode, IOperationContext operationContext) {
     inspectNode(semanticNode, operationContext);
@@ -94,14 +82,6 @@ public class InspectorEditorComponent extends AbstractEditorComponent implements
 
   public EditorCell createRootCell() {
     return createRootCell(null);
-  }
-
-  public AbstractEditorComponent getCurrentEditorComponent() {
-    return this;
-  }
-
-  public JComponent getComponent() {
-    return this;
   }
 
   public <T> T get(Class<T> cls) {
