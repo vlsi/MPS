@@ -7,9 +7,11 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.baseLanguage.refactoring.inlineMethod.InlineMethodDialog;
+import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.refactoring.inlineMethod.InlineMethodDialog;
 
 public class InlineMethod_Action extends CurrentProjectMPSAction {
   public static final Logger LOG = Logger.getLogger(InlineMethod_Action.class);
@@ -33,7 +35,24 @@ public class InlineMethod_Action extends CurrentProjectMPSAction {
         this.setVisible(this.isAlwaysVisible);
         return;
       }
-      this.setVisible(this.isMethod(context.getNode()));
+      {
+        final MPSAction action = this;
+        final SNode node = context.getNode();
+        ModelAccess.instance().runReadAction(new Runnable() {
+
+          public void run() {
+            boolean b = false;
+            if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
+              b = true;
+            }
+            if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BaseMethodCall")) {
+              b = true;
+            }
+            action.setVisible(b);
+          }
+
+        });
+      }
     } catch (Throwable t) {
       LOG.error("User's action doUpdate method failed. Action:" + "InlineMethod", t);
       this.setEnabled(false);
@@ -62,7 +81,7 @@ public class InlineMethod_Action extends CurrentProjectMPSAction {
 
   private void performExecution(ActionContext context) {
     InlineMethodDialog dialog = new InlineMethodDialog(context);
-    dialog.showDialog();
+    dialog.tryToShow();
   }
 
   /* package */boolean isMethod(SNode node) {
@@ -72,6 +91,10 @@ public class InlineMethod_Action extends CurrentProjectMPSAction {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BaseMethodCall")) {
       return true;
     }
+    return false;
+  }
+
+  public boolean executeInsideCommand() {
     return false;
   }
 
