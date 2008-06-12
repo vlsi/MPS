@@ -11,7 +11,6 @@ import java.util.List;
 
 public class EnumClass extends ClassConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.EnumClass";
-  public static String NAME = "name";
   public static String ENUM_CONSTANT = "enumConstant";
 
   public EnumClass(SNode node) {
@@ -26,14 +25,6 @@ public class EnumClass extends ClassConcept {
     return EnumClass.newInstance(sm, false);
   }
 
-
-  public String getName() {
-    return this.getProperty(EnumClass.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(EnumClass.NAME, value);
-  }
 
   public int getEnumConstantsCount() {
     return this.getChildCount(EnumClass.ENUM_CONSTANT);

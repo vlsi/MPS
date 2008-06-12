@@ -11,7 +11,6 @@ import java.util.List;
 
 public class ClassConcept extends Classifier {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ClassConcept";
-  public static String NAME = "name";
   public static String ABSTRACT_CLASS = "abstractClass";
   public static String SUPERCLASS = "superclass";
   public static String INSTANCE_INITIALIZER = "instanceInitializer";
@@ -35,14 +34,6 @@ public class ClassConcept extends Classifier {
     return ClassConcept.newInstance(sm, false);
   }
 
-
-  public String getName() {
-    return this.getProperty(ClassConcept.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(ClassConcept.NAME, value);
-  }
 
   public boolean getAbstractClass() {
     return this.getBooleanProperty(ClassConcept.ABSTRACT_CLASS);
