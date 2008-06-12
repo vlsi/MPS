@@ -3,13 +3,13 @@
   <models>
     <modelRoot path="${solution_descriptor}\" namespacePrefix="" />
   </models>
-  <module />
-  <languages />
   <classPath />
-  <runtimeClassPath />
   <sourcePath />
   <dependencies>
-    <dependency>testRefactoring</dependency>
+    <dependency reexport="true">testRefactoring</dependency>
   </dependencies>
+  <usedLanguages>
+    <usedLanguages>testRefactoring</usedLanguages>
+  </usedLanguages>
 </solution>
 

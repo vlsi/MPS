@@ -15,6 +15,8 @@
       <external-templates />
       <dependencies>
         <dependency reexport="true">jetbrains.mps.formulaLanguage#1130266266255</dependency>
+        <dependency reexport="false">jetbrains.mps.formulaLanguage</dependency>
+        <dependency reexport="false">jetbrains.mps.formulaLanguage</dependency>
       </dependencies>
       <mapping-priorities />
     </generator>

@@ -3,13 +3,13 @@
   <models>
     <modelRoot path="${solution_descriptor}\" namespacePrefix="" />
   </models>
-  <module />
-  <languages />
   <classPath />
-  <runtimeClassPath />
   <sourcePath />
   <dependencies>
-    <dependency>secretCompartmentLanguage</dependency>
+    <dependency reexport="true">secretCompartmentLanguage</dependency>
   </dependencies>
+  <usedLanguages>
+    <usedLanguages>secretCompartmentLanguage</usedLanguages>
+  </usedLanguages>
 </solution>
 

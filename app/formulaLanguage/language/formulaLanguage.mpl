@@ -21,6 +21,9 @@
   <dependencies>
     <dependency reexport="true">jetbrains.mps.regexp</dependency>
   </dependencies>
+  <usedLanguages>
+    <usedLanguages>jetbrains.mps.regexp</usedLanguages>
+  </usedLanguages>
   <extendedLanguages />
 </language>
 
