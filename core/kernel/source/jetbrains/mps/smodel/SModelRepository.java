@@ -350,19 +350,15 @@ public class SModelRepository implements ApplicationComponent {
   }
 
   public void saveAll() {
-    ModelAccess.instance().runReadInEDT(new Runnable() {
-      public void run() {
-        List<SModelDescriptor> descriptors = new ArrayList(myChangedModels.keySet());
-        for (SModelDescriptor modelDescriptor : descriptors) {
-          try {
-            modelDescriptor.save();
-          } catch (Throwable t) {
-            LOG.error(t);
-          }
-        }
-        myChangedModels.clear();
+    List<SModelDescriptor> descriptors = new ArrayList(myChangedModels.keySet());
+    for (SModelDescriptor modelDescriptor : descriptors) {
+      try {
+        modelDescriptor.save();
+      } catch (Throwable t) {
+        LOG.error(t);
       }
-    });
+    }
+    myChangedModels.clear();
   }
 
   public void reloadAll() {

@@ -10,6 +10,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.GeneratorManager.MyState;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
@@ -215,6 +216,8 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Conf
     } else {
       saveTransientModels = false;
     }
+
+    ApplicationManager.getApplication().saveAll();
 
     showMessageView();
     IdeEventQueue.getInstance().flushQueue();
