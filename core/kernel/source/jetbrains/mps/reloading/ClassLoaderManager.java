@@ -39,6 +39,7 @@ public class ClassLoaderManager implements ApplicationComponent {
 
   public static boolean ourUseOSGI = true;
 
+  private final Object myLock = new Object();
   private RuntimeEnvironment myRuntimeEnvironment;
 
 
@@ -58,96 +59,106 @@ public class ClassLoaderManager implements ApplicationComponent {
   }
 
   private void addModule(String moduleUID) {
-    IModule module = MPSModuleRepository.getInstance().getModuleByUID(moduleUID);
+    synchronized (myLock) {
+      IModule module = MPSModuleRepository.getInstance().getModuleByUID(moduleUID);
 
-    RBundle bundle = new RBundle(moduleUID, module.getBytecodeLocator());
-    myRuntimeEnvironment.add(bundle);
+      RBundle bundle = new RBundle(moduleUID, module.getBytecodeLocator());
+      myRuntimeEnvironment.add(bundle);
+    }
   }
 
   public Class getClassFor(IModule module, String classFqName) {
-    RBundle bundle = myRuntimeEnvironment.get(module.getModuleUID());
+    synchronized (myLock) {
+      RBundle bundle = myRuntimeEnvironment.get(module.getModuleUID());
 
-    if (bundle == null) {
-      LOG.error("Can't find a bundle " + module.getModuleUID());
-      return null;
+      if (bundle == null) {
+        LOG.error("Can't find a bundle " + module.getModuleUID());
+        return null;
+      }
+
+      return bundle.getClassLoader().getClass(classFqName);
     }
-
-    return bundle.getClassLoader().getClass(classFqName);    
   }
 
   public void reloadAll(@NotNull ProgressIndicator indicator) {
-    indicator.pushState();
-    try {
-      indicator.setIndeterminate(true);
-      indicator.setText("Reloading classes...");
-      LOG.assertCanWrite();
+    synchronized (myLock) {
+      indicator.pushState();
+      try {
+        indicator.setIndeterminate(true);
+        indicator.setText("Reloading classes...");
+        LOG.assertCanWrite();
 
-      indicator.setText2("Disposing old classes...");
-      callBeforeReloadHandlers();
+        indicator.setText2("Disposing old classes...");
+        callBeforeReloadHandlers();
 
-      indicator.setText2("Updating classpath...");
-      updateClassPath();
+        indicator.setText2("Updating classpath...");
+        updateClassPath();
 
-      indicator.setText2("Refreshing models...");
-      SModelRepository.getInstance().refreshModels();
+        indicator.setText2("Refreshing models...");
+        SModelRepository.getInstance().refreshModels();
 
-      indicator.setText2("Reloading classes...");
-      callReloadHandlers();
+        indicator.setText2("Reloading classes...");
+        callReloadHandlers();
 
-      indicator.setText2("Rebuilding ui...");
-      callAfterReloadHandlers();
+        indicator.setText2("Rebuilding ui...");
+        callAfterReloadHandlers();
 
-      indicator.setText2("Collecting garbage...");
-      System.gc();
-    } finally {
-      indicator.popState();
+        indicator.setText2("Collecting garbage...");
+        System.gc();
+      } finally {
+        indicator.popState();
+      }
     }
   }
 
   public void updateClassPath() {
-    if (myRuntimeEnvironment == null) {
-      myRuntimeEnvironment = createRuntimeEnvironment();
-    }
-
-    Set<String> added = new HashSet<String>();
-    for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
-      if (!containsBundle(m.getModuleUID())) {
-        addModule(m.getModuleUID());
-        added.add(m.getModuleUID());
+    synchronized (myLock) {
+      if (myRuntimeEnvironment == null) {
+        myRuntimeEnvironment = createRuntimeEnvironment();
       }
-    }
 
-    for (String addedUID : added) {
-      IModule m = MPSModuleRepository.getInstance().getModuleByUID(addedUID);
-      RBundle b = myRuntimeEnvironment.get(addedUID);
-      for (IModule dep : m.getDesignTimeDependOnModules()) {
-        b.addDependency(dep.getModuleUID());
+      Set<String> added = new HashSet<String>();
+      for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
+        if (!containsBundle(m.getModuleUID())) {
+          addModule(m.getModuleUID());
+          added.add(m.getModuleUID());
+        }
       }
-    }
 
-    for (String addedBundle : added) {
-      RBundle bundle = myRuntimeEnvironment.get(addedBundle);
-      assert bundle != null : "Can't find " + addedBundle;
-      myRuntimeEnvironment.init(bundle);
-    }
-
-    List<RBundle> toRemove = new ArrayList<RBundle>();
-    for (RBundle b : myRuntimeEnvironment.getBundles()) {
-      if (MPSModuleRepository.getInstance().getModuleByUID(b.getName()) == null) {
-        toRemove.add(b);
+      for (String addedUID : added) {
+        IModule m = MPSModuleRepository.getInstance().getModuleByUID(addedUID);
+        RBundle b = myRuntimeEnvironment.get(addedUID);
+        for (IModule dep : m.getDesignTimeDependOnModules()) {
+          b.addDependency(dep.getModuleUID());
+        }
       }
-    }    
-    myRuntimeEnvironment.unload(toRemove.toArray(new RBundle[0]));
 
-    myRuntimeEnvironment.reloadAll();
+      for (String addedBundle : added) {
+        RBundle bundle = myRuntimeEnvironment.get(addedBundle);
+        assert bundle != null : "Can't find " + addedBundle;
+        myRuntimeEnvironment.init(bundle);
+      }
 
-    for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
-      m.updateClassPath();
+      List<RBundle> toRemove = new ArrayList<RBundle>();
+      for (RBundle b : myRuntimeEnvironment.getBundles()) {
+        if (MPSModuleRepository.getInstance().getModuleByUID(b.getName()) == null) {
+          toRemove.add(b);
+        }
+      }
+      myRuntimeEnvironment.unload(toRemove.toArray(new RBundle[0]));
+
+      myRuntimeEnvironment.reloadAll();
+
+      for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
+        m.updateClassPath();
+      }
     }
   }
 
   private boolean containsBundle(String uid) {
-    return myRuntimeEnvironment.get(uid) != null;
+    synchronized (myLock) {
+      return myRuntimeEnvironment.get(uid) != null;
+    }
   }
 
   private RuntimeEnvironment createRuntimeEnvironment() {
@@ -180,11 +191,15 @@ public class ClassLoaderManager implements ApplicationComponent {
   }
 
   public void addReloadHandler(ReloadListener handler) {
-    myReloadHandlers.add(handler);
+    synchronized (myLock) {
+      myReloadHandlers.add(handler);
+    }
   }
 
   public void removeReloadHandler(ReloadListener handler) {
-    myReloadHandlers.remove(handler);
+    synchronized (myLock) {
+      myReloadHandlers.remove(handler);
+    }
   }
 
   private void callBeforeReloadHandlers() {
