@@ -387,6 +387,21 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myIntentionsSupport = new IntentionsSupport(this);
     ToolTipManager.sharedInstance().registerComponent(this);
     CaretBlinker.getInstance().registerEditor(this);
+
+    KeyboardFocusManager.getCurrentKeyboardFocusManager().addPropertyChangeListener("focusOwner", myFocusListener = new PropertyChangeListener() {
+      public void propertyChange(PropertyChangeEvent evt) {
+        Component focusOwner = KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner();
+        if (AbstractEditorComponent.this.isAncestorOf(focusOwner)) {
+          Component current = focusOwner;
+          while (current.getParent() != AbstractEditorComponent.this) {
+            current = current.getParent();
+          }
+          selectComponentCell(current);
+        }
+      }
+    });
+    EditorSettings.getInstance().addEditorSettingsListener(mySettingsListener);
+    ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
   }
 
   protected void onEscape() {
@@ -624,32 +639,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myOperationContext = operationContext;
   }
 
-  public void addNotify() {
-    super.addNotify();
-    KeyboardFocusManager.getCurrentKeyboardFocusManager().addPropertyChangeListener("focusOwner", myFocusListener = new PropertyChangeListener() {
-      public void propertyChange(PropertyChangeEvent evt) {
-        Component focusOwner = KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner();
-        if (AbstractEditorComponent.this.isAncestorOf(focusOwner)) {
-          Component current = focusOwner;
-          while (current.getParent() != AbstractEditorComponent.this) {
-            current = current.getParent();
-          }
-          selectComponentCell(current);
-        }
-      }
-    });
-    EditorSettings.getInstance().addEditorSettingsListener(mySettingsListener);
-    ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
-  }
-
-  public void removeNotify() {
-    EditorSettings.getInstance().removeEditorSettingsListener(mySettingsListener);
-    ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
-    KeyboardFocusManager.getCurrentKeyboardFocusManager().removePropertyChangeListener("focusOwner", myFocusListener);
-    myHighlightManager.dispose();
-    super.removeNotify();
-  }
-
   protected void registerNodeAction(MPSAction action) {
     for (String keyStroke : action.getKeyStrokes()) {
       registerNodeAction(action, keyStroke);
@@ -827,7 +816,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public void dispose() {
+    myHighlightManager.dispose();
+
     removeOurListeners();
+
+    EditorSettings.getInstance().removeEditorSettingsListener(mySettingsListener);
+    ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
+    KeyboardFocusManager.getCurrentKeyboardFocusManager().removePropertyChangeListener("focusOwner", myFocusListener);
+    
     clearCaches();
 
     myEventsCollector.dispose();
