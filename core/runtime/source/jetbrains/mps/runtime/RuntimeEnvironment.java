@@ -4,6 +4,7 @@ import java.util.*;
 import java.util.regex.Pattern;
 
 public class RuntimeEnvironment {
+  private final Object myLock = new Object();
 
   private List<RuntimeListener> myListeners = new ArrayList<RuntimeListener>();
   private Map<String, RBundle> myBundles = new HashMap<String, RBundle>();
@@ -46,47 +47,55 @@ public class RuntimeEnvironment {
   }
 
   public RBundle get(String name) {
-    return myBundles.get(name);
+    synchronized (myLock) {
+      return myBundles.get(name);
+    }
   }
 
   public Set<RBundle> getBundles() {
-    return new HashSet<RBundle>(myBundles.values());
+    synchronized (myLock) {
+      return new HashSet<RBundle>(myBundles.values());
+    }
   }
 
   public RuntimeEnvironment add(RBundle... bundles) {
-    for (RBundle bundle : bundles) {
-      assert !myBundles.containsKey(bundle.getName());
-      myBundles.put(bundle.getName(), bundle);      
-      fireBundleAdded(bundle);
-    }
+    synchronized (myLock) {
+      for (RBundle bundle : bundles) {
+        assert !myBundles.containsKey(bundle.getName());
+        myBundles.put(bundle.getName(), bundle);
+        fireBundleAdded(bundle);
+      }
 
-    return this;
+      return this;
+    }
   }
 
   public RuntimeEnvironment init(RBundle... bundles) {
-    Set<String> deps = new HashSet<String>();
-    for (RBundle bundle : bundles) {
-      assert myBundles.containsKey(bundle.getName());
-      collectDependencies(bundle, deps);
-    }
-
-    List<RBundle> initializedBundles = new ArrayList<RBundle>();
-    for (String dep : deps) {
-      if (!myBundles.containsKey(dep)) {
-        throw new UnsatisfiedDependencyException("Can't satisfy " + Arrays.asList(bundles) + "'s dependency on " + dep);
+    synchronized (myLock) {
+      Set<String> deps = new HashSet<String>();
+      for (RBundle bundle : bundles) {
+        assert myBundles.containsKey(bundle.getName());
+        collectDependencies(bundle, deps);
       }
-      RBundle b = myBundles.get(dep);
-      if (!b.isInitialized()) {
-        b.init(this);
-        initializedBundles.add(b);
+
+      List<RBundle> initializedBundles = new ArrayList<RBundle>();
+      for (String dep : deps) {
+        if (!myBundles.containsKey(dep)) {
+          throw new UnsatisfiedDependencyException("Can't satisfy " + Arrays.asList(bundles) + "'s dependency on " + dep);
+        }
+        RBundle b = myBundles.get(dep);
+        if (!b.isInitialized()) {
+          b.init(this);
+          initializedBundles.add(b);
+        }
       }
-    }
 
-    for (RBundle b : initializedBundles) {
-      fireBundleInitialized(b);
-    }
+      for (RBundle b : initializedBundles) {
+        fireBundleInitialized(b);
+      }
 
-    return this;
+      return this;
+    }
   }
 
   public RuntimeEnvironment unload(String... bundleNames) {
@@ -94,45 +103,49 @@ public class RuntimeEnvironment {
   }
 
   public RuntimeEnvironment unload(RBundle... bundles) {
-    Set<RBundle> deps = getBundlesWhichDependOn(bundles);
-    deps.removeAll(Arrays.asList(bundles));
-    if (!deps.isEmpty()) {
-      String message = "Can't unload bundles " + Arrays.asList(bundles) + " because bundles " + deps + " depend on them\n";
-      Set<RBundle> bundlesSet = new HashSet<RBundle>(Arrays.asList(bundles));
-      for (RBundle b : deps) {
-        message += "bundle " + b + " depends on ";
-        for (String depName: b.getDependencies()) {
-          if (bundlesSet.contains(get(depName))) {
-            message += depName + " ";
+    synchronized (myLock) {
+      Set<RBundle> deps = getBundlesWhichDependOn(bundles);
+      deps.removeAll(Arrays.asList(bundles));
+      if (!deps.isEmpty()) {
+        String message = "Can't unload bundles " + Arrays.asList(bundles) + " because bundles " + deps + " depend on them\n";
+        Set<RBundle> bundlesSet = new HashSet<RBundle>(Arrays.asList(bundles));
+        for (RBundle b : deps) {
+          message += "bundle " + b + " depends on ";
+          for (String depName: b.getDependencies()) {
+            if (bundlesSet.contains(get(depName))) {
+              message += depName + " ";
+            }
           }
+          message += "\n";
         }
-        message += "\n";
+
+        throw new RuntimeEnvironmentException(message);
       }
 
-      throw new RuntimeEnvironmentException(message);
-    }
+      for (RBundle b : bundles) {
+        b.unload();
+        myBundles.remove(b.getName());
+        fireBundleRemoved(b);
+      }
 
-    for (RBundle b : bundles) {
-      b.unload();
-      myBundles.remove(b.getName());
-      fireBundleRemoved(b);
+      return this;
     }
-
-    return this;
   }
 
   public RuntimeEnvironment reload(RBundle... bundles) {
-    Set<RBundle> bundlesToReload = new HashSet<RBundle>(Arrays.asList(bundles));
-    bundlesToReload.addAll(getBundlesWhichDependOn(bundles));
-    for (RBundle db : bundlesToReload) {
-      db.reload();
-    }
+    synchronized (myLock) {
+      Set<RBundle> bundlesToReload = new HashSet<RBundle>(Arrays.asList(bundles));
+      bundlesToReload.addAll(getBundlesWhichDependOn(bundles));
+      for (RBundle db : bundlesToReload) {
+        db.reload();
+      }
 
-    for (RBundle b : bundlesToReload) {
-      fireBundleReloaded(b);
-    }
+      for (RBundle b : bundlesToReload) {
+        fireBundleReloaded(b);
+      }
 
-    return this;
+      return this;
+    }
   }
 
   private RBundle[] toBundles(String... bundleNames) {
@@ -151,22 +164,24 @@ public class RuntimeEnvironment {
   }
 
   public RuntimeEnvironment replace(RBundle... bundles) {
-    Set<RBundle> bundlesToReload = getBundlesWhichDependOn(bundles);
-    bundlesToReload.removeAll(Arrays.asList(bundles));
+    synchronized (myLock) {
+      Set<RBundle> bundlesToReload = getBundlesWhichDependOn(bundles);
+      bundlesToReload.removeAll(Arrays.asList(bundles));
 
-    for (RBundle b : bundles) {
-      assert myBundles.containsKey(b.getName());
+      for (RBundle b : bundles) {
+        assert myBundles.containsKey(b.getName());
 
-      myBundles.remove(b.getName());
-      myBundles.put(b.getName(), b);
+        myBundles.remove(b.getName());
+        myBundles.put(b.getName(), b);
+      }
+
+      for (RBundle btr : bundlesToReload) {
+        reload(btr);
+      }
+
+
+      return this;
     }
-
-    for (RBundle btr : bundlesToReload) {
-      reload(btr);
-    }
-
-    
-    return this;
   }
 
   private Set<RBundle> getBundlesWhichDependOn(RBundle... bs) {
@@ -182,9 +197,11 @@ public class RuntimeEnvironment {
   }
 
   public Set<String> getAllDependencies(RBundle b) {
-    Set<String> result = new HashSet<String>();
-    collectDependencies(b, result);
-    return result;
+    synchronized (myLock) {
+      Set<String> result = new HashSet<String>();
+      collectDependencies(b, result);
+      return result;
+    }
   }
 
   private void collectDependencies(RBundle bundle, Set<String> result) {
@@ -209,13 +226,17 @@ public class RuntimeEnvironment {
   }
 
   public RuntimeEnvironment addRuntimeListener(RuntimeListener listener) {
-    myListeners.add(listener);
-    return this;
+    synchronized (myLock) {
+      myListeners.add(listener);
+      return this;
+    }
   }
 
   public RuntimeEnvironment removeRuntimeListener(RuntimeListener listener) {
-    myListeners.remove(listener);
-    return this;
+    synchronized (myLock) {
+      myListeners.remove(listener);
+      return this;
+    }
   }
 
   private void fireBundleAdded(RBundle b) {
