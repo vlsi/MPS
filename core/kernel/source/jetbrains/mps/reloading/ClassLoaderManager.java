@@ -21,6 +21,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.*;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.components.ApplicationComponent;
@@ -35,7 +36,7 @@ public class ClassLoaderManager implements ApplicationComponent {
     return ApplicationManager.getApplication().getComponent(ClassLoaderManager.class);
   }
 
-  private List<ReloadListener> myReloadHandlers = new ArrayList<ReloadListener>();
+  private List<ReloadListener> myReloadHandlers = new CopyOnWriteArrayList<ReloadListener>();
 
   public static boolean ourUseOSGI = true;
 
@@ -64,6 +65,16 @@ public class ClassLoaderManager implements ApplicationComponent {
 
       RBundle bundle = new RBundle(moduleUID, module.getBytecodeLocator());
       myRuntimeEnvironment.add(bundle);
+    }
+  }
+
+  public ClassLoader getClassLoaderFor(IModule m) {
+    synchronized (myLock) {
+      RBundle result = myRuntimeEnvironment.get(m.getModuleUID());
+      if (result == null) {
+        return null;
+      }
+      return result.getClassLoader();
     }
   }
 
@@ -191,19 +202,15 @@ public class ClassLoaderManager implements ApplicationComponent {
   }
 
   public void addReloadHandler(ReloadListener handler) {
-    synchronized (myLock) {
-      myReloadHandlers.add(handler);
-    }
+    myReloadHandlers.add(handler);
   }
 
   public void removeReloadHandler(ReloadListener handler) {
-    synchronized (myLock) {
-      myReloadHandlers.remove(handler);
-    }
+    myReloadHandlers.remove(handler);
   }
 
   private void callBeforeReloadHandlers() {
-    for (ReloadListener h : new ArrayList<ReloadListener>(myReloadHandlers)) {
+    for (ReloadListener h : myReloadHandlers) {
       try {
         h.onBeforeReload();
       } catch (Throwable t) {
@@ -213,7 +220,7 @@ public class ClassLoaderManager implements ApplicationComponent {
   }
 
   private void callReloadHandlers() {
-    for (ReloadListener h : new ArrayList<ReloadListener>(myReloadHandlers)) {
+    for (ReloadListener h : myReloadHandlers) {
       try {
         h.onReload();
       } catch (Throwable t) {
@@ -223,7 +230,7 @@ public class ClassLoaderManager implements ApplicationComponent {
   }
 
   private void callAfterReloadHandlers() {
-    for (ReloadListener h : new ArrayList<ReloadListener>(myReloadHandlers)) {
+    for (ReloadListener h : myReloadHandlers) {
       try {
         h.onAfterReload();
       } catch (Throwable t) {
