@@ -13,6 +13,7 @@ import javax.swing.event.ChangeListener;
 
 import com.intellij.openapi.fileEditor.FileEditorState;
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
+import org.jetbrains.annotations.NotNull;
 
 public interface IEditor {
   JComponent getComponent();
@@ -43,6 +44,6 @@ public interface IEditor {
   AbstractEditorComponent getCurrentEditorComponent();
   boolean removeFromRecentEditorsOnClose();
 
-  FileEditorState saveState(FileEditorStateLevel level);
-  void loadState(FileEditorState state);
+  MPSEditorState saveState(@NotNull FileEditorStateLevel level);
+  void loadState(@NotNull MPSEditorState state);
 }

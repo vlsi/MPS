@@ -2,6 +2,7 @@ package jetbrains.mps.ide.tabbedEditor;
 
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.ConceptDeclarationEditor;
+import jetbrains.mps.ide.MPSEditorState;
 import jetbrains.mps.ide.action.IActionDataProvider;
 import jetbrains.mps.ide.tabbedEditor.tabs.BaseMultitabbedTab;
 import jetbrains.mps.logging.Logger;
@@ -10,6 +11,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jdom.Element;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -213,14 +215,14 @@ public class TabbedEditor implements IEditor {
     return false;
   }
 
-  public FileEditorState saveState(FileEditorStateLevel level) {
+  public MPSEditorState saveState(@NotNull FileEditorStateLevel level) {
     MyFileEditorState result = new MyFileEditorState();
     result.myMemento = getEditorContext().createMemento();
     result.myTab = myTabbedPane.getCurrentTabIndex();
     return result;
   }
 
-  public void loadState(FileEditorState state) {
+  public void loadState(@NotNull MPSEditorState state) {
     if (!(state instanceof MyFileEditorState)) {
       return;
     }
@@ -265,12 +267,22 @@ public class TabbedEditor implements IEditor {
     return myTabbedPane;
   }
 
-  private class MyFileEditorState implements FileEditorState {
+  public static class MyFileEditorState implements MPSEditorState {
+    private static final String TAB = "tab";
+
     private Object myMemento;
     private int myTab;
 
-    public boolean canBeMergedWith(FileEditorState otherState, FileEditorStateLevel level) {
-      return false;
+    public void save(Element e) {
+      e.setAttribute(TAB, "" + myTab);
+    }
+
+    public void load(Element e) {
+      try {
+        myTab = Integer.parseInt(e.getAttributeValue(TAB));
+      } catch (NumberFormatException ex) {
+        myTab = 0;
+      }
     }
 
     public int hashCode() {

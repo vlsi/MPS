@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jdom.Element;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
@@ -108,13 +109,13 @@ public class NodeEditor implements IEditor {
     myEditorComponent.requestFocus();
   }
 
-  public FileEditorState saveState(FileEditorStateLevel level) {
+  public MPSEditorState saveState(@NotNull FileEditorStateLevel level) {
     MyFileEditorState result = new MyFileEditorState();
     result.myMemento = getEditorContext().createMemento();
     return result;
   }
 
-  public void loadState(FileEditorState state) {
+  public void loadState(@NotNull MPSEditorState state) {
     if (!(state instanceof MyFileEditorState)) {
       return;
     }
@@ -123,11 +124,13 @@ public class NodeEditor implements IEditor {
     getEditorContext().setMemento(s.myMemento);
   }
 
-  private class MyFileEditorState implements FileEditorState {
+  public static class MyFileEditorState implements MPSEditorState {
     private Object myMemento;
 
-    public boolean canBeMergedWith(FileEditorState otherState, FileEditorStateLevel level) {
-      return false;
+    public void save(Element e) {
+    }
+
+    public void load(Element e) {
     }
 
     public int hashCode() {

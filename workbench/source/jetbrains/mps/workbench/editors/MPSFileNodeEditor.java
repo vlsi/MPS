@@ -19,14 +19,11 @@ import java.beans.PropertyChangeListener;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.util.Calculable;
-import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.GlobalSModelEventsManager;
 
 public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor {
   private MPSNodeVirtualFile myFile;
@@ -69,14 +66,16 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor 
 
   @NotNull
   public FileEditorState getState(@NotNull FileEditorStateLevel level) {
-    return new MyStateWrapper(myNodeEditor.saveState(level));
+    MPSEditorStateWrapper state = new MPSEditorStateWrapper();
+    state.setEditorState(myNodeEditor.saveState(level));
+    return state;
   }
 
   public void setState(final @NotNull FileEditorState state) {
-    if (!(state instanceof MyStateWrapper)) return;
+    if (!(state instanceof MPSEditorStateWrapper)) return;
 
-    MyStateWrapper wrapper = (MyStateWrapper) state;
-    myNodeEditor.loadState(wrapper.myEditorState);
+    MPSEditorStateWrapper wrapper = (MPSEditorStateWrapper) state;
+    myNodeEditor.loadState(wrapper.getEditorState());
   }
 
   public boolean isModified() {
@@ -122,27 +121,4 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor 
     myNodeEditor.dispose();
   }
 
-  private class MyStateWrapper implements FileEditorState {
-    private FileEditorState myEditorState;
-
-    private MyStateWrapper(FileEditorState editorState) {
-      myEditorState = editorState;
-    }
-
-    public boolean canBeMergedWith(FileEditorState otherState, FileEditorStateLevel level) {
-      return false;
-    }
-
-
-    public int hashCode() {
-      return myEditorState.hashCode();
-    }
-
-    public boolean equals(Object obj) {
-      if (!(obj instanceof MyStateWrapper)) return false;
-
-      MyStateWrapper w = (MyStateWrapper) obj;
-      return w.myEditorState.equals(myEditorState);
-    }
-  }
 }

@@ -8,8 +8,14 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
 import org.jdom.Element;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
+import jetbrains.mps.ide.MPSEditorState;
+import jetbrains.mps.logging.Logger;
 
 public class MPSFileNodeEditorProvider implements FileEditorProvider {
+  private static final Logger LOG = Logger.getLogger(MPSFileNodeEditorProvider.class);
+
+  private static final String CLASS = "class";
+
   public boolean accept(@NotNull Project project, @NotNull VirtualFile file) {
     return file instanceof MPSNodeVirtualFile;
   }
@@ -25,15 +31,35 @@ public class MPSFileNodeEditorProvider implements FileEditorProvider {
 
   @NotNull
   public FileEditorState readState(@NotNull Element sourceElement, @NotNull Project project, @NotNull VirtualFile file) {
-    return new FileEditorState() {
-      public boolean canBeMergedWith(FileEditorState otherState, FileEditorStateLevel level) {
-        return false;
-      }
-    };
+    String className = sourceElement.getAttributeValue(CLASS);
+    if (className == null) return FileEditorState.INSTANCE;
+
+    try {
+      Class cls = Class.forName(className);
+      MPSEditorState instance = (MPSEditorState) cls.newInstance();
+      instance.load(sourceElement);
+      MPSEditorStateWrapper result = new MPSEditorStateWrapper();
+      result.setEditorState(instance);
+      return result;
+    } catch (ClassNotFoundException e) {
+      LOG.error(e);
+    } catch (IllegalAccessException e) {
+      LOG.error(e);
+    } catch (InstantiationException e) {
+      LOG.error(e);
+    }
+
+    return FileEditorState.INSTANCE;
   }
 
   public void writeState(@NotNull FileEditorState state, @NotNull Project project, @NotNull Element targetElement) {
 
+    if (!(state instanceof MPSEditorStateWrapper)) return;
+
+    MPSEditorStateWrapper wrapper = (MPSEditorStateWrapper) state;
+    MPSEditorState editorState = wrapper.getEditorState();
+    targetElement.setAttribute(CLASS, editorState.getClass().getName());    
+    editorState.save(targetElement);
   }
 
   @NotNull @NonNls
