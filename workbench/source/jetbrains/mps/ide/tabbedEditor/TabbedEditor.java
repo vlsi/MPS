@@ -217,7 +217,9 @@ public class TabbedEditor implements IEditor {
 
   public MPSEditorState saveState(@NotNull FileEditorStateLevel level) {
     MyFileEditorState result = new MyFileEditorState();
-    result.myMemento = getEditorContext().createMemento();
+    if (getEditorContext() != null) {
+      result.myMemento = getEditorContext().createMemento();
+    }
     result.myTab = myTabbedPane.getCurrentTabIndex();
     return result;
   }
