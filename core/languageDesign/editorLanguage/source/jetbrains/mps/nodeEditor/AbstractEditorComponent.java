@@ -55,7 +55,7 @@ import java.util.*;
 import java.util.List;
 
 
-public abstract class AbstractEditorComponent extends JComponent implements Scrollable, IActionDataProvider, IEditorComponent, DataProvider {
+public abstract class AbstractEditorComponent extends JComponent implements Scrollable, IActionDataProvider, DataProvider {
   private static final Logger LOG = Logger.getLogger(AbstractEditorComponent.class);
   public static final String EDITOR_POPUP_MENU_ACTIONS = EditorPopup_ActionGroup.ID;
   public static final String EDITOR_POPUP_MENU_ACTIONS_INTERNAL = EditorInternal_ActionGroup.ID;
@@ -786,6 +786,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public abstract EditorCell createRootCell();
+
+  protected abstract EditorCell createRootCell(List<SModelEvent> events);
 
   public void setFolded(EditorCell cell, boolean folded) {
     if (folded) {

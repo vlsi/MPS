@@ -1,9 +1,9 @@
 package jetbrains.mps.helgins.checking;
 
 import jetbrains.mps.nodeEditor.DefaultEditorMessage;
-import jetbrains.mps.nodeEditor.IEditorComponent;
 import jetbrains.mps.nodeEditor.IEditorMessage;
 import jetbrains.mps.nodeEditor.IEditorMessageOwner;
+import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
@@ -24,7 +24,7 @@ public abstract class EditorCheckerAdapter implements IEditorChecker, IEditorMes
 
   protected IEditorMessage createErrorMessage(SNode node, String message) {
     DefaultEditorMessage error = new DefaultEditorMessage(node, Color.RED, message, getOwner(node.getContainingRoot())) {
-      public void paint(Graphics g, IEditorComponent editorComponent) {
+      public void paint(Graphics g, AbstractEditorComponent editorComponent) {
         ColorAndGraphicsUtil.drawWaveUnderCell(g, Color.RED, getCell(editorComponent));
       }
     };

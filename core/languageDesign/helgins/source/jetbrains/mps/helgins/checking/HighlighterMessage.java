@@ -29,7 +29,7 @@ public class HighlighterMessage extends DefaultEditorMessage {
     return getStatus() == MessageStatus.WARNING;
   }
 
-  public void paint(Graphics g, IEditorComponent editorComponent) {
+  public void paint(Graphics g, AbstractEditorComponent editorComponent) {
     EditorCell cell = getCell(editorComponent);
     paintDecorations(g, cell);
   }

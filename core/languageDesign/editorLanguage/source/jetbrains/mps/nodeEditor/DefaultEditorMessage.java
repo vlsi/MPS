@@ -47,19 +47,19 @@ public class DefaultEditorMessage implements IEditorMessage {
     return myOwner;
   }
 
-  public boolean isValid(IEditorComponent editorComponent) {
+  public boolean isValid(AbstractEditorComponent editorComponent) {
     return getCell(editorComponent) != null;
   }
 
-  public int getStart(IEditorComponent editorComponent) {
+  public int getStart(AbstractEditorComponent editorComponent) {
      return getCell(editorComponent).getY();
    }
 
-  public int getHeight(IEditorComponent editorComponent) {
+  public int getHeight(AbstractEditorComponent editorComponent) {
     return getCell(editorComponent).getHeight();
   }
 
-  public void doNavigate(IEditorComponent editorComponent) {
+  public void doNavigate(AbstractEditorComponent editorComponent) {
     editorComponent.changeSelection(getCell(editorComponent));
   }
 
@@ -67,7 +67,7 @@ public class DefaultEditorMessage implements IEditorMessage {
     return myStatus;
   }
 
-  public EditorCell getCell(IEditorComponent editor) {
+  public EditorCell getCell(AbstractEditorComponent editor) {
     if (editor == null) return null;
     return editor.getBigValidCellForNode(getNode());
   }
@@ -76,7 +76,7 @@ public class DefaultEditorMessage implements IEditorMessage {
     return myNodePointer.getNode();
   }
 
-  public void paint(Graphics g, IEditorComponent editorComponent) {
+  public void paint(Graphics g, AbstractEditorComponent editorComponent) {
     EditorCell cell = getCell(editorComponent);
     int x = cell.getX();
     int y = cell.getY();

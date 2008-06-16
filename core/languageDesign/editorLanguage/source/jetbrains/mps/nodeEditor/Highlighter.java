@@ -38,7 +38,7 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
   private HashSet<IEditorChecker> myCheckers = new LinkedHashSet<IEditorChecker>(3);
   private Set<IEditorChecker> myCheckersToRemove = new LinkedHashSet<IEditorChecker>();
   private List<SModelEvent> myLastEvents = new ArrayList<SModelEvent>();
-  private Set<IEditorComponent> myCheckedOnceEditors = new WeakSet<IEditorComponent>();
+  private Set<AbstractEditorComponent> myCheckedOnceEditors = new WeakSet<AbstractEditorComponent>();
   private EditorsProvider myEditorsProvider;
 
   private ReloadListener myReloadListener = new ReloadAdapter() {
@@ -205,7 +205,7 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
     return myEditorsProvider.getCurrentEditor();
   }
 
-  private boolean updateEditorComponent(IEditorComponent component, final List<SModelEvent> events, final Set<IEditorChecker> checkers, Set<IEditorChecker> checkersToRemove) {
+  private boolean updateEditorComponent(AbstractEditorComponent component, final List<SModelEvent> events, final Set<IEditorChecker> checkers, Set<IEditorChecker> checkersToRemove) {
     final SNode editedNode = component.getEditedNode();
     if (editedNode != null) {
 
@@ -236,15 +236,15 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
     return false;
   }
 
-  private boolean wasCheckedOnce(IEditorComponent editorComponent) {
+  private boolean wasCheckedOnce(AbstractEditorComponent editorComponent) {
     return myCheckedOnceEditors.contains(editorComponent);
   }
 
-  public void resetCheckedState(IEditorComponent editorComponent) {
+  public void resetCheckedState(AbstractEditorComponent editorComponent) {
     myCheckedOnceEditors.remove(editorComponent);
   }
 
-  private boolean updateEditor(final IEditorComponent editor, Set<IEditorChecker> checkersToRecheck, Set<IEditorChecker> checkersToRemove) {
+  private boolean updateEditor(final AbstractEditorComponent editor, Set<IEditorChecker> checkersToRecheck, Set<IEditorChecker> checkersToRemove) {
     if (editor == null || editor.getRootCell() == null) {
       return false;
     }

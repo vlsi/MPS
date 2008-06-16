@@ -69,7 +69,7 @@ public class InspectorEditorComponent extends AbstractEditorComponent {
     });
   }
 
-  public IEditorComponent getEditorComponent() {
+  public AbstractEditorComponent getEditorComponent() {
     return this;
   }
 

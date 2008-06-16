@@ -1,6 +1,5 @@
 package jetbrains.mps.helgins.checking;
 
-import jetbrains.mps.nodeEditor.IEditorComponent;
 import jetbrains.mps.nodeEditor.IEditorMessageOwner;
 import jetbrains.mps.nodeEditor.IEditorMessage;
 import jetbrains.mps.helgins.checking.HighlighterMessage;

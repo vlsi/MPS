@@ -6,13 +6,13 @@ import jetbrains.mps.intentions.IntentionProvider;
 import java.awt.*;
 
 public interface IEditorMessage {
-  int getStart(IEditorComponent editorComponent);
+  int getStart(AbstractEditorComponent editorComponent);
 
-  int getHeight(IEditorComponent editorComponent);
+  int getHeight(AbstractEditorComponent editorComponent);
 
-  void doNavigate(IEditorComponent editorComponent);
+  void doNavigate(AbstractEditorComponent editorComponent);
 
-  boolean isValid(IEditorComponent editorComponent);
+  boolean isValid(AbstractEditorComponent editorComponent);
 
   String getMessage();
 
@@ -24,9 +24,9 @@ public interface IEditorMessage {
 
   IEditorMessageOwner getOwner();
 
-  EditorCell getCell(IEditorComponent editorComponent);
+  EditorCell getCell(AbstractEditorComponent editorComponent);
 
-  void paint(Graphics g, IEditorComponent editorComponent);
+  void paint(Graphics g, AbstractEditorComponent editorComponent);
 
   boolean isBackGround();
 

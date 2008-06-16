@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.IEditorMessageOwner;
 import java.awt.Color;
 import java.awt.Graphics;
-import jetbrains.mps.nodeEditor.IEditorComponent;
+import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 
 public class ToDoMessage extends DefaultEditorMessage {
 
@@ -15,7 +15,7 @@ public class ToDoMessage extends DefaultEditorMessage {
     super(node, Color.BLUE, message, owner);
   }
 
-  public void paint(Graphics graphics, IEditorComponent component) {
+  public void paint(Graphics graphics, AbstractEditorComponent component) {
   }
 
 }
