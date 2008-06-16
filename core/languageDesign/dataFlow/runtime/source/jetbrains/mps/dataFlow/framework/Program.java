@@ -128,7 +128,9 @@ public class Program {
         info.myTry = (TryInstruction) i;
         myTryFinallyInfo.add(info);
         if (!stack.isEmpty()) {
-          info.myParent = stack.peek();
+          Program.TryFinallyInfo parent = stack.peek();
+          info.myParent = parent;
+          parent.myChildren.add(info);
         }
         stack.push(info);
       }
@@ -246,12 +248,16 @@ public class Program {
   private void sanityCheck(ProgramState ps) {
     for (ProgramState pred : ps.pred()) {
       if (!pred.succ().contains(ps)) {
-        throw new RuntimeException();
+        ps.pred();
+        pred.succ();
+        throw new RuntimeException("\n" + this.toString());
       }
     }
     for (ProgramState succ : ps.succ()) {
       if (!succ.pred().contains(ps)) {
-        throw new RuntimeException(this.toString());
+        ps.succ();
+        succ.pred();
+        throw new RuntimeException("\n" + this.toString());
       }
     }
   }
@@ -261,6 +267,7 @@ public class Program {
     private FinallyInstruction myFinally;
     private EndTryInstruction myEndTry;
     private TryFinallyInfo myParent;
+    private List<TryFinallyInfo> myChildren = new ArrayList<TryFinallyInfo>();
 
     public TryInstruction getTry() {
       return myTry;
@@ -276,6 +283,10 @@ public class Program {
 
     public TryFinallyInfo getParent() {
       return myParent;
+    }
+
+    public List<TryFinallyInfo> getChildren() {
+      return Collections.unmodifiableList(myChildren);
     }
   }
 }

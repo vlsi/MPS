@@ -47,7 +47,7 @@ public abstract class Instruction {
     TryFinallyInfo bestMatch = null;
     int index = getIndex();
     for (TryFinallyInfo info : getProgram().getBlockInfos()) {
-      if (index > info.getTry().getIndex() && index < info.getFinally().getIndex()) {
+      if (index > info.getTry().getIndex() && index < info.getEndTry().getIndex()) {
         bestMatch = info;
       }
     }
@@ -105,6 +105,14 @@ public abstract class Instruction {
 
   public int getIndex() {
     return myProgram.indexOf(this);
+  }
+
+  public boolean isBefore(Instruction i) {
+    return getIndex() < i.getIndex();    
+  }
+
+  public boolean isAfter(Instruction i) {
+    return getIndex() > i.getIndex();
   }
 
   abstract String commandPresentation();

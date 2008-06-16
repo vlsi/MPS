@@ -21,7 +21,7 @@ public class FinallyInstruction extends Instruction {
     super.buildCaches();
     for (TryFinallyInfo info : getProgram().getBlockInfos()) {
       if (info.getFinally() == this) {
-        myInfo =  info;
+        myInfo = info;
         break;
       }
     }
@@ -29,7 +29,9 @@ public class FinallyInstruction extends Instruction {
     int start = myInfo.getTry().getIndex();
     int end = myInfo.getFinally().getIndex();
     for (Instruction i : getProgram().getInstructions().subList(start + 1, end)) {
-      if (i instanceof RetInstruction && i.getEnclosingBlock() == myInfo) {
+      if (i instanceof RetInstruction &&
+        i.getEnclosingBlock() == myInfo &&
+        i.isBefore(this)) {
         myReturns.add((RetInstruction) i);
       }
     }
@@ -49,7 +51,9 @@ public class FinallyInstruction extends Instruction {
         result.add(new ProgramState(ret, true));
       }
       for (TryFinallyInfo childInfo : myChildTryFinallies) {
-        result.add(new ProgramState(childInfo.getEndTry(), true));
+        if (childInfo.getEndTry().isBefore(this)) {
+          result.add(new ProgramState(childInfo.getEndTry(), true));
+        }
       }
       result.addAll(super.pred(s));
       return result;

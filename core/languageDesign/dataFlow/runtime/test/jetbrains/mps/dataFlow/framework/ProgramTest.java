@@ -49,6 +49,19 @@ public class ProgramTest {
     );
   }
 
+  @Test
+  public void tryFinallyInFinallyBlock() {
+    Program program = new SimpleProgramBuilder()
+      .emitTry()
+      .emitFinally()
+      .emitTry()
+      .emitFinally()
+      .emitEndTry()
+      .emitEndTry()
+      .buildProgram();
+        
+  }
+
   @Test(expected = IllegalStateException.class)
   public void danglingTry() {
     new SimpleProgramBuilder()

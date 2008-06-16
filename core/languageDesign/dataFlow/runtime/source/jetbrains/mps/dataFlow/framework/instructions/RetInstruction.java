@@ -17,7 +17,11 @@ public class RetInstruction extends Instruction {
     if (blockInfo == null) {
       result.add(new ProgramState(getProgram().getEnd(), true));
     } else {
-      result.add(new ProgramState(blockInfo.getFinally(), true));
+      if (isBefore(blockInfo.getFinally())) {
+        result.add(new ProgramState(blockInfo.getFinally(), true));
+      } else {
+        result.add(new ProgramState(blockInfo.getEndTry(), true));
+      }
     }
     return result;
   }
