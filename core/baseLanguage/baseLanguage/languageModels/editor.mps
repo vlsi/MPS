@@ -17,39 +17,6 @@
   <language namespace="jetbrains.mps.quotation" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="73" />
   <import index="17" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="18" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -2893,7 +2860,7 @@
       <property name="description" value="Introduce Variable..." />
       <property name="showInPopup" value="true" />
       <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapKeystroke" id="1198249027620">
-        <property name="modifiers" value="alt" />
+        <property name="modifiers" value="ctrl+alt" />
         <property name="keycode" value="VK_V" />
       </node>
       <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_ExecuteFunction" id="1198249027621">

@@ -123,8 +123,6 @@ public class Highlighter implements IEditorMessageOwner, ProjectComponent {
   }
 
   public void addChecker(IEditorChecker checker) {
-
-
     if (checker != null) {
       synchronized (CHECKERS_LOCK) {
         myCheckers.add(checker);

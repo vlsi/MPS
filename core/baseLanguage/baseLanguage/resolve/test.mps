@@ -952,7 +952,7 @@
               <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1131709227779">
-              <property name="value" value="fff" />
+              <property name="value" value="ff" />
             </node>
           </node>
         </node>
