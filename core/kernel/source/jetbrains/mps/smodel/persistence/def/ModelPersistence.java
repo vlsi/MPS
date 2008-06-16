@@ -162,7 +162,7 @@ public class ModelPersistence {
     Document document = saveModel(model);
 
     if (file.isReadOnly()) {
-      LOG.warning("Can't write to " + file.getPath());
+      LOG.error("Can't write to " + file.getPath());
       return;
     }
 
