@@ -41,6 +41,10 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor 
     });
   }
 
+  public MPSNodeVirtualFile getFile() {
+    return myFile;
+  }
+
   public IEditor getNodeEditor() {
     return myNodeEditor;
   }

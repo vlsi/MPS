@@ -4,6 +4,8 @@ import com.intellij.openapi.fileEditor.*;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.util.Disposer;
+import com.intellij.openapi.application.Application;
+import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
 import org.jdom.Element;
@@ -53,7 +55,6 @@ public class MPSFileNodeEditorProvider implements FileEditorProvider {
   }
 
   public void writeState(@NotNull FileEditorState state, @NotNull Project project, @NotNull Element targetElement) {
-
     if (!(state instanceof MPSEditorStateWrapper)) return;
 
     MPSEditorStateWrapper wrapper = (MPSEditorStateWrapper) state;

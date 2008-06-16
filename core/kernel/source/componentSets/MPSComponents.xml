@@ -376,6 +376,10 @@
       <implementation-class>jetbrains.mps.plugin.MPSProjectIDEHandler</implementation-class>
     </component>
 
+    <component>
+      <implementation-class>jetbrains.mps.workbench.editors.MPSEditorWarningsManager</implementation-class>
+    </component>
+
   </project-components>
 
 </components>
