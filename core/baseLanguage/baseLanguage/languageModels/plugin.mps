@@ -17,9 +17,6 @@
   <language namespace="jetbrains.mps.baseLanguage.classifiers" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="45" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.plugin.uiActions@java_stub" version="-1" />
@@ -4565,7 +4562,7 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1208785973389">
         <property name="name" value="component" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208785973390">
-          <link role="classifier" targetNodeId="35.~IEditorComponent" resolveInfo="IEditorComponent" />
+          <link role="classifier" targetNodeId="35.~AbstractEditorComponent" resolveInfo="AbstractEditorComponent" />
         </node>
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208785973391" />
