@@ -13,7 +13,9 @@ import org.jetbrains.annotations.NonNls;
 import javax.swing.Icon;
 
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
+import jetbrains.mps.workbench.languagesFs.MPSLanguageVirtualFile;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.projectPane.Icons;
 
 public class MPSIconProvider implements FileIconProvider, ApplicationComponent {
 
@@ -34,6 +36,9 @@ public class MPSIconProvider implements FileIconProvider, ApplicationComponent {
     if (file instanceof MPSNodeVirtualFile) {
       MPSNodeVirtualFile nodeFile = (MPSNodeVirtualFile) file;
       return IconManager.getIconFor(nodeFile.getNode());
+    }
+    if (file instanceof MPSLanguageVirtualFile) {
+      return Icons.PROJECT_LANGUAGE_ICON;
     }
     return null;
   }

@@ -1,0 +1,107 @@
+package jetbrains.mps.workbench.languagesFs;
+
+import com.intellij.openapi.vfs.DeprecatedVirtualFile;
+import com.intellij.openapi.vfs.VirtualFileSystem;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.util.Computable;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.Language;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.Nullable;
+
+import java.io.InputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: Cyril.Konopko
+ * Date: 16.06.2008
+ * Time: 15:30:54
+ * To change this template use File | Settings | File Templates.
+ */
+public class MPSLanguageVirtualFile extends DeprecatedVirtualFile {
+  private Language myLanguage;
+  private String myPath;
+  private String myName;
+
+  public MPSLanguageVirtualFile(@NotNull Language language) {
+    myLanguage = language;
+    myPath = myLanguage.getNamespace();
+    myName = myLanguage.getNamespace();
+  }
+
+  public String getPath() {
+    return myPath;
+  }
+
+  @NotNull
+  public VirtualFileSystem getFileSystem() {
+    return MPSLanguagesVirtualFileSystem.getInstance();
+  }
+
+  @NotNull @NonNls
+  public String getName() {
+    return myName;
+  }
+
+  public boolean isDirectory() {
+    return false;
+  }
+
+  public long getLength() {
+    return 0;
+  }
+
+  public InputStream getInputStream() throws IOException {
+    throw new UnsupportedOperationException();
+  }
+
+  public OutputStream getOutputStream(Object requestor, long newModificationStamp, long newTimeStamp) throws IOException {
+    throw new UnsupportedOperationException();
+  }
+
+  public byte[] contentsToByteArray() throws IOException {
+    throw new UnsupportedOperationException();
+  }
+
+  @Nullable
+  public VirtualFile getParent() {
+    return null;
+  }
+
+  public VirtualFile[] getChildren() {
+    return null;
+  }
+
+  public void refresh(boolean asynchronous, boolean recursive, Runnable postRunnable) {
+    if (postRunnable != null) {
+      postRunnable.run();
+    }
+  }
+
+  public boolean isWritable() {
+    return true;
+  }
+
+  public boolean isValid() {
+    return true;
+  }
+
+  public long getTimeStamp() {
+    return ModelAccess.instance().runReadAction(new Computable<Long>() {
+      public Long compute() {
+        return System.currentTimeMillis();
+      }
+    });
+  }
+
+  public long getModificationStamp() {
+    return getTimeStamp();
+  }
+
+  public Language getLanguage() {
+    return myLanguage;
+  }
+}

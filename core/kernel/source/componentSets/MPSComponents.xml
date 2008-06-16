@@ -204,7 +204,15 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.workbench.languagesFs.MPSLanguagesVirtualFileSystem</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.workbench.editors.MPSFileNodeEditorProvider</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.workbench.editors.MPSLanguageEditorProvider</implementation-class>
     </component>
 
     <component>
