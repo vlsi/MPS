@@ -251,7 +251,7 @@ public class Program {
     }
     for (ProgramState succ : ps.succ()) {
       if (!succ.pred().contains(ps)) {
-        throw new RuntimeException();
+        throw new RuntimeException(this.toString());
       }
     }
   }
