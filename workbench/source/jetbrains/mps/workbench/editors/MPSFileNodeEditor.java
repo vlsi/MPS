@@ -69,11 +69,14 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor 
 
   @NotNull
   public FileEditorState getState(@NotNull FileEditorStateLevel level) {
-    return myNodeEditor.saveState(level);
+    return new MyStateWrapper(myNodeEditor.saveState(level));
   }
 
   public void setState(final @NotNull FileEditorState state) {
-    myNodeEditor.loadState(state);
+    if (!(state instanceof MyStateWrapper)) return;
+
+    MyStateWrapper wrapper = (MyStateWrapper) state;
+    myNodeEditor.loadState(wrapper.myEditorState);
   }
 
   public boolean isModified() {
@@ -118,5 +121,28 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor 
   public void dispose() {
     myNodeEditor.dispose();
   }
-  
+
+  private class MyStateWrapper implements FileEditorState {
+    private FileEditorState myEditorState;
+
+    private MyStateWrapper(FileEditorState editorState) {
+      myEditorState = editorState;
+    }
+
+    public boolean canBeMergedWith(FileEditorState otherState, FileEditorStateLevel level) {
+      return false;
+    }
+
+
+    public int hashCode() {
+      return myEditorState.hashCode();
+    }
+
+    public boolean equals(Object obj) {
+      if (!(obj instanceof MyStateWrapper)) return false;
+
+      MyStateWrapper w = (MyStateWrapper) obj;
+      return w.myEditorState.equals(myEditorState);
+    }
+  }
 }
