@@ -83,6 +83,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private Set<EditorCell> myFoldedCells = new HashSet<EditorCell>();
   private Set<EditorCell> myBracesEnabledCells = new HashSet<EditorCell>();
 
+  private boolean myExecutingCommand = false;
+
   private EditorSettingsListener mySettingsListener = new EditorSettingsListener() {
     public void settingsChanged() {
       rebuildEditorContent();
@@ -1852,21 +1854,30 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       return;
     }
 
-    // all other processing should be performed inside command
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        updateMPSActionsWithKeyStrokes(createActionContext());
-        EditorContext editorContext = getEditorContext();
-        if (editorContext == null) {
-          return; //i.e. editor is disposed
-        }
+    try {
+      myExecutingCommand = true;
+      // all other processing should be performed inside command
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          updateMPSActionsWithKeyStrokes(createActionContext());
+          EditorContext editorContext = getEditorContext();
+          if (editorContext == null) {
+            return; //i.e. editor is disposed
+          }
 
-        if (peekKeyboardHandler().processKeyPressed(editorContext, keyEvent)) {
-          keyEvent.consume();
+          if (peekKeyboardHandler().processKeyPressed(editorContext, keyEvent)) {
+            keyEvent.consume();
+          }
         }
-      }
-    });
+      });
+    } finally {
+      myExecutingCommand = false;
+    }
     revalidateAndRepaint(false);
+  }
+
+  boolean isExecutingCommand() {
+    return myExecutingCommand;
   }
 
   boolean activateNodeSubstituteChooser(EditorCell editorCell, boolean resetPattern) {
@@ -2257,7 +2268,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     }
 
-    if (lastAdd != null) {
+    if (lastAdd != null && isExecutingCommand()) {
       if (lastAdd instanceof SModelChildEvent) {
         List<NodesParetoFrontier.NodeBox> frontier = NodesParetoFrontier.findParetoFrontier(childAddedEventNodes);
         SNode addedChild = frontier.get(frontier.size() - 1).getNode();
@@ -2266,7 +2277,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           changeSelectionWRTFocusPolicy(cell);
         }
         return;
-      } else //noinspection ConstantConditions
+      } else {
+        //noinspection ConstantConditions
         if (lastAdd instanceof SModelReferenceEvent) {
           SModelReferenceEvent re = (SModelReferenceEvent) lastAdd;
           selectRefCell(re.getReference());
@@ -2274,6 +2286,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         } else {
           //
         }
+      }
     }
 
     if (lastRemove != null) {
@@ -2320,7 +2333,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
 
       //noinspection ConstantConditions
-      if (lastRemove instanceof SModelReferenceEvent) {
+      if (lastRemove instanceof SModelReferenceEvent && isExecutingCommand()) {
         SModelReferenceEvent re = (SModelReferenceEvent) lastRemove;
         SReference ref = re.getReference();
         SNode sourceNode = ref.getSourceNode();
