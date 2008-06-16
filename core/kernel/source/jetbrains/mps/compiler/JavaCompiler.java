@@ -38,10 +38,11 @@ public class JavaCompiler {
     CompilerOptions options = new CompilerOptions();
     options.sourceLevel = ClassFileConstants.JDK1_5;
     options.targetJDK = ClassFileConstants.JDK1_5;
-    options.produceDebugAttributes = ClassFileConstants.ATTR_SOURCE | ClassFileConstants.ATTR_LINES | ClassFileConstants.ATTR_VARS;
+    options.produceDebugAttributes = ClassFileConstants.ATTR_SOURCE | ClassFileConstants.ATTR_LINES | ClassFileConstants.ATTR_VARS;        
 
     org.eclipse.jdt.internal.compiler.Compiler c = new Compiler(new MyNameEnvironment(), new MyErrorHandlingPolicy(), options, new MyCompilerRequestor(), new DefaultProblemFactory(), null);
     //c.options.verbose = true;
+
     c.compile(myCompilationUnits.values().toArray(new CompilationUnit[0]));
   }
 
@@ -135,7 +136,6 @@ public class JavaCompiler {
   }
 
   private class MyCompilerRequestor implements ICompilerRequestor {
-
     public void acceptResult(CompilationResult result) {
       for (ClassFile file : result.getClassFiles()) {
         String name = "";

@@ -161,6 +161,11 @@ public class ModelPersistence {
     LOG.debug("Save model " + model.getUID() + " to file " + file.getAbsolutePath());
     Document document = saveModel(model);
 
+    if (file.isReadOnly()) {
+      LOG.warning("Can't write to " + file.getPath());
+      return;
+    }
+
     try {
       JDOMUtil.writeDocument(document, file);
       SModelRepository.getInstance().markUnchanged(model);
