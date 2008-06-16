@@ -354,12 +354,6 @@
     <antcall target="pack.jetbrains.mps.core" />
     <antcall target="pack.jetbrains.mps.logging.refactoring" />
     <antcall target="pack.jetbrains.mps.transformation.TLBase" />
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/configuration">
-      <fileset dir="core/configuration" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/configurations">
-      <fileset dir="core/configurations" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
-    </copy>
     <antcall target="pack.jetbrains.mps.vcs" />
     <antcall target="pack.jetbrains.mps.projectLanguage" />
     <antcall target="pack.transform" />
