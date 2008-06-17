@@ -29,6 +29,7 @@ public class PasteNodeUtil {
   public static boolean canPaste(EditorCell targetCell, List<SNode> pasteNodes) {
     String role = getRoleFromCell(targetCell);
     SNode pasteTarget = targetCell.getSNode();
+    if(pasteTarget == null) return false;
     return (canPaste_internal(pasteTarget, pasteNodes, role, PasteEnv.NODE_EDITOR) != PASTE_N_A);
   }
 
