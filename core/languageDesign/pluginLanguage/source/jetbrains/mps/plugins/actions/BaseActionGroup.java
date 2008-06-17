@@ -47,5 +47,5 @@ public abstract class BaseActionGroup extends MPSActionGroup implements IActionG
     return true;
   }
 
-  public abstract void adjust(IActionGroupElementOwner owner);
+  public void adjust(IActionGroupElementOwner owner){}
 }

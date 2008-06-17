@@ -17,8 +17,6 @@
   <language namespace="jetbrains.mps.baseLanguage.classifiers" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="7" />
   <import index="1" modelUID="jetbrains.mps.logging.refactoring.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.refactoring.framework@java_stub" version="-1" />
@@ -35,12 +33,16 @@
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.BuildGroupBlock" id="1207494847119">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207494847120">
         <node role="statement" type="jetbrains.mps.bootstrap.pluginLanguage.structure.AddElementStatement" id="1207494861011">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1207494861732">
-            <link role="baseMethodDeclaration" targetNodeId="2.~GenericRefactoringAction.&lt;init&gt;(jetbrains.mps.refactoring.framework.ILoggableRefactoring,jetbrains.mps.project.MPSProject)" resolveInfo="GenericRefactoringAction" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1207494861733">
-              <link role="baseMethodDeclaration" targetNodeId="3.~MoveNodes.&lt;init&gt;()" resolveInfo="MoveNodes" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213722427289">
+            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213722427291">
+              <link role="baseMethodDeclaration" targetNodeId="2.~GenericRefactoringAction.&lt;init&gt;(jetbrains.mps.refactoring.framework.ILoggableRefactoring,jetbrains.mps.project.MPSProject)" resolveInfo="GenericRefactoringAction" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213722431480">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213722431482">
+                  <link role="baseMethodDeclaration" targetNodeId="3.~MoveNodes.&lt;init&gt;()" resolveInfo="MoveNodes" />
+                </node>
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ConceptFunctionParameter_MPSProject" id="1207494861734" />
             </node>
-            <node role="actualArgument" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ConceptFunctionParameter_MPSProject" id="1207494861734" />
           </node>
         </node>
       </node>

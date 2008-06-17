@@ -5,7 +5,7 @@ import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.ide.action.InternalFlag;
 import jetbrains.mps.smodel.ModelAccess;
 
-public abstract class BaseGroup extends DefaultActionGroup {
+public class BaseGroup extends DefaultActionGroup {
   private String myId = "";
   private boolean myIsInternal = false;
 
@@ -48,7 +48,7 @@ public abstract class BaseGroup extends DefaultActionGroup {
     }
   }
 
-  public abstract void adjust();
+  public void adjust(){}
 
   protected void doUpdate(AnActionEvent e) {
   }

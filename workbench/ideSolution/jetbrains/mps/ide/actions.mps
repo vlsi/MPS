@@ -1044,6 +1044,7 @@
     <property name="mnemonic" value="W" />
     <property name="isPopup" value="true" />
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement" id="1213718938865">
+      <property name="additionType" value="false" />
       <link role="modifiedGroup" targetNodeId="1204991234260" resolveInfo="MainMenu" />
       <link role="point" targetNodeId="1204982952853" resolveInfo="windows" />
     </node>

@@ -5,7 +5,10 @@ import jetbrains.mps.ide.scriptLanguage.structure.MigrationScript;
 import jetbrains.mps.ide.scriptLanguage.structure.Script;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.plugins.actions.BaseActionGroup;
+import jetbrains.mps.workbench.action.BaseGroup;
 
+import java.util.*;
 import java.util.*;
 
 public class ScriptsActionGroupHelper {
@@ -19,7 +22,7 @@ public class ScriptsActionGroupHelper {
     return migrationScripts;
   }
 
-  public static void populateByCategoryGroup(List<MigrationScript> migrationScripts, MPSActionGroup ownerGroup) {
+  public static void populateByCategoryGroup(List<MigrationScript> migrationScripts, BaseGroup ownerGroup) {
     Map<String, List<MigrationScript>> byCategory = new HashMap<String, List<MigrationScript>>();
     for (MigrationScript migrationScript : migrationScripts) {
       String cat = migrationScript.getCategory();
@@ -50,7 +53,7 @@ public class ScriptsActionGroupHelper {
     }
   }
 
-  public static void populateByBuildGroup(List<MigrationScript> migrationScripts, MPSActionGroup ownerGroup) {
+  public static void populateByBuildGroup(List<MigrationScript> migrationScripts, BaseGroup ownerGroup) {
     Map<String, List<MigrationScript>> byBuild = new HashMap<String, List<MigrationScript>>();
     for (MigrationScript migrationScript : migrationScripts) {
       String build = migrationScript.getMigrationFromBuild();
@@ -74,7 +77,7 @@ public class ScriptsActionGroupHelper {
     }
   }
 
-  public static void populateByLanguageGroup(Language language, MPSActionGroup ownerGroup) {
+  public static void populateByLanguageGroup(Language language, BaseGroup ownerGroup) {
     SModelDescriptor scriptsModel = language.getScriptsModelDescriptor();
     if (scriptsModel == null) return;
     List<MigrationScript> migrationScripts = scriptsModel.getSModel().getRootsAdapters(MigrationScript.class);
