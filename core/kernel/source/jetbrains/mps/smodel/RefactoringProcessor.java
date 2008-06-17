@@ -220,7 +220,7 @@ public class RefactoringProcessor {
     model.updateImportedModelUsedVersion(usedModel.getUID(), usedModel.getVersion());
   }
 
-  private void writeIntoLog(SModel model, RefactoringContext refactoringContext) {
+  public void writeIntoLog(SModel model, RefactoringContext refactoringContext) {
     if (refactoringContext.isLocal()) return;
     RefactoringHistory refactoringHistory = model.getRefactoringHistory();
     refactoringHistory.addRefactoringContext(refactoringContext);

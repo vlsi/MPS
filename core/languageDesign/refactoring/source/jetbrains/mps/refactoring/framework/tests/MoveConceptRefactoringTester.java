@@ -7,6 +7,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.core.scripts.MoveNodes;
 
 import java.util.List;
 
@@ -34,6 +35,7 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
         refactoringContext.setParameter(MoveConcepts.targetModel, targetStructureModelDescriptor[0]);
       }
     });
+
 
 
     System.err.println("executing a refactoring");
