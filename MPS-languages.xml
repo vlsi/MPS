@@ -245,7 +245,6 @@
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.blTypes.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.blTypes.tmp/module" />
     <mkdir dir="core/baseLanguage/baseLanguage/languages/blTypes/classes_gen" />
-    <mkdir dir="core/baseLanguage/baseLanguage/classes" />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.blTypes.tmp/module">
       <fileset file="core/baseLanguage/baseLanguage/languages/blTypes/blTypes.mpl" />
     </copy>
@@ -254,7 +253,6 @@
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.blTypes.tmp">
       <fileset dir="core/baseLanguage/baseLanguage/languages/blTypes/classes_gen" />
-      <fileset dir="core/baseLanguage/baseLanguage/classes" />
     </copy>
     <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.blTypes.mpsarch.jar" duplicate="preserve">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.blTypes.tmp" />
