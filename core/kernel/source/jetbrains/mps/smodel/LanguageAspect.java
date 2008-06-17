@@ -49,7 +49,18 @@ public enum LanguageAspect {
 
     public Icon getIcon() {
       return Icons.CONSTRAINTS_MODEL_ICON;
-    }},
+    }
+  },
+
+  BEHAVIOR("behavior") {
+    protected List<String> getLanguagesToImport(Language l) {
+      return CollectionUtil.asList(BootstrapModule.CONSTRAINTS.getUID());
+    }
+
+    public Icon getIcon() {
+      return Icons.CONSTRAINTS_MODEL_ICON;
+    }
+  },
 
   HELGINS_TYPESYSTEM("helgins") {
     protected List<String> getLanguagesToImport(Language l) {
