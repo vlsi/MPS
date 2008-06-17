@@ -24,7 +24,8 @@ public class CellAction_PasteNode extends EditorCellAction {
       return false;
     }
     SNode selectedNode = selectedCell.getSNode();
-    List<SNode> pasteNodes = CopyPasteUtil.getNodesFromClipboard(selectedNode.getModel());
+    List<SNode> pasteNodes = null;
+    if (selectedNode != null) pasteNodes = CopyPasteUtil.getNodesFromClipboard(selectedNode.getModel());
     if (pasteNodes == null || pasteNodes.size() == 0) {
       return false;
     }

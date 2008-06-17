@@ -584,10 +584,11 @@ public class SModel implements Iterable<SNode> {
 
   public void addLanguage(@NotNull String languageNamespace) {
     addLanguage_internal(languageNamespace);
-    addAspectModelsVersions(GlobalScope.getInstance().getLanguage(languageNamespace));
+    Language language = GlobalScope.getInstance().getLanguage(languageNamespace);
+    if (language!=null) addAspectModelsVersions(language);
   }
 
-  public void addAspectModelsVersions(Language language) {
+  public void addAspectModelsVersions(@NotNull Language language) {
     if (myVersionedLanguages.contains(language)) {
       return;
     }

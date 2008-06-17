@@ -10,6 +10,7 @@
     <dependency reexport="false">jetbrains.mps.logging.refactoring</dependency>
     <dependency reexport="false">jetbrains.mps.transformation.TLBase</dependency>
     <dependency reexport="false">jetbrains.mps.baseLanguage#1129914002933</dependency>
+    <dependency reexport="false">MPS.Classpath</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.uiLanguage</usedLanguages>
