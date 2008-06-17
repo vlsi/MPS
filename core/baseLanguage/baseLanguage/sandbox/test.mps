@@ -802,7 +802,7 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1178898104152">
               <link role="baseMethodDeclaration" targetNodeId="27.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
-              <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1178898110130">
+              <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213730319710">
                 <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
               </node>
             </node>
@@ -822,6 +822,23 @@
             </node>
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178898010334" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213730327185">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1213730329158">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.FieldReference" id="1213731690189">
+              <node role="instance" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213730686285">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213730686286">
+                  <link role="baseMethodDeclaration" targetNodeId="27.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
+                  <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213730686287">
+                    <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213730327186">
+              <link role="variableDeclaration" targetNodeId="1178898075316" resolveInfo="sssss" />
+            </node>
+          </node>
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1119993866157" />

@@ -3581,6 +3581,26 @@
         </node>
       </node>
     </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActionsBuilder" id="1213730817272">
+      <property name="useNewActions" value="true" />
+      <property name="description" value="apply RT to containing new-expression" />
+      <link role="applicableConcept" targetNodeId="1.1145552809883" resolveInfo="AbstractCreator" />
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.IncludeRightTransformForNodePart" id="1213730884466">
+        <node role="nodeBlock" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_NodeQuery" id="1213730884467">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213730884468">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213731380777">
+              <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1213731407189">
+                <link role="concept" targetNodeId="1.1145552977093" resolveInfo="GenericNewExpression" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213731382185">
+                  <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1213731380778" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1213731390673" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActions" id="1177507958366">
     <property name="name" value="tryCatch" />

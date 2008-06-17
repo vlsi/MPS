@@ -1737,4 +1737,20 @@ __switch__:
     return result;
   }
 
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_AbstractCreator_1213730817272(final IOperationContext operationContext, final RTActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      Calculable calc = new Calculable() {
+
+        public Object calculate() {
+          return SNodeOperations.getParent(_context.getSourceNode(), null, false, false);
+        }
+
+      };
+      SNode node = (SNode)calc.calculate();
+      result.addAll(ModelActions.createRightTransformHintSubstituteActions(node, _context.getTransformationTag(), operationContext));
+    }
+    return result;
+  }
+
 }
