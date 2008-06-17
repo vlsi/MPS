@@ -1573,6 +1573,15 @@
         <root url="jar://$PROJECT_DIR$/lib/idea-platform/idea-platform-src.zip!/" />
       </SOURCES>
     </library>
+    <library name="JUnit4">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/junit4/junit-4.1.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/junit4/junit-4.1-src.jar!/" />
+      </SOURCES>
+    </library>
   </component>
   <component name="uidesigner-configuration">
     <option name="INSTRUMENT_CLASSES" value="false" />

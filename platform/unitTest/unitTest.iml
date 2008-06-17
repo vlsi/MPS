@@ -12,17 +12,9 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPS" />
     <orderEntry type="module" module-name="collections-runtime" />
-    <orderEntry type="module-library" exported="">
-      <library>
-        <CLASSES>
-          <root url="jar://$MPS_BUILD_HOME$/lib/junit4/junit-4.1.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
     <orderEntry type="module" module-name="uiLanguage-runtime" />
     <orderEntry type="library" name="Beansbinding" level="project" />
+    <orderEntry type="library" name="JUnit4" level="project" />
     <orderEntryProperties />
   </component>
 </module>

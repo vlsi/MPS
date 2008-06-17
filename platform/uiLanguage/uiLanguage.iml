@@ -17,17 +17,7 @@
     <orderEntry type="module" module-name="uiLanguage-runtime" exported="" />
     <orderEntry type="library" name="Beansbinding" level="project" />
     <orderEntry type="module" module-name="classifiers" exported="" />
-    <orderEntry type="module-library">
-      <library name="junit4">
-        <CLASSES>
-          <root url="jar://$MPS_BUILD_HOME$/lib/junit4/junit-4.1.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="jar://$MPS_BUILD_HOME$/lib/junit4/junit-4.1-src.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
+    <orderEntry type="library" name="JUnit4" level="project" />
     <orderEntryProperties />
   </component>
 </module>
