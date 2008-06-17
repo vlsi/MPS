@@ -1,13 +1,15 @@
 package jetbrains.mps.ide.ui.smodel;
 
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.Presentation;
 import jetbrains.mps.annotations.structure.AttributeConcept;
-import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.ModelGenerationStatusListener;
-import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
+import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.action.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.ActionGroup;
-import jetbrains.mps.ide.action.ActionManager;
+import jetbrains.mps.ide.action.MPSActionGroup;
 import jetbrains.mps.ide.actions.model.CreateRootNodeGroup;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
@@ -22,6 +24,8 @@ import jetbrains.mps.util.AndCondition;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ToStringComparator;
+import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.workbench.action.BaseGroup;
 
 import javax.swing.JOptionPane;
 import javax.swing.JPopupMenu;
@@ -46,7 +50,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   private List<SNodeGroupTreeNode> myRootGroups = new ArrayList<SNodeGroupTreeNode>();
 
   private Condition<SNode> myNodesCondition = Condition.TRUE_CONDITION;
-  
+
   private DependencyRecorder<SNodeTreeNode> myDependencyRecorder = new DependencyRecorder<SNodeTreeNode>();
 
   private boolean myPackagesEnabled = true;
@@ -276,11 +280,18 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   public JPopupMenu getPopupMenu() {
-    JPopupMenu result = new JPopupMenu();
     ActionContext context = getActionContext();
     context.put(SModelDescriptor.class, getSModelDescriptor());
-    ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_MODEL_ACTIONS).add(result, context);
-    return result;
+    ActionManager manager = ActionManager.getInstance();
+    BaseGroup group = (BaseGroup) manager.getAction(ProjectPane.PROJECT_PANE_MODEL_ACTIONS);
+
+    return createMenu(context, group);
+  }
+
+  private JPopupMenu createMenu(ActionContext context, BaseGroup group) {
+    ActionManager manager = ActionManager.getInstance();
+    group.update(ActionUtils.createEvent(new Presentation(), context));
+    return manager.createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent();
   }
 
   protected ActionContext getActionContext() {
@@ -304,12 +315,9 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   public JPopupMenu getQuickCreatePopupMenu() {
-    JPopupMenu popupMenu = new JPopupMenu();
-    ActionGroup group = new CreateRootNodeGroup();
+    MPSActionGroup group = new CreateRootNodeGroup();
     ActionContext context = getActionContext();
-    group.update(context);
-    group.add(popupMenu, context);
-    return popupMenu;
+    return createMenu(context, group);
   }
 
   public String calculateText() {
@@ -561,7 +569,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
           Set<SNodeTreeNode> treeNodesToUpdate = new LinkedHashSet<SNodeTreeNode>();
           for (SNode changedNode : changedNodes) {
             treeNodesToUpdate.addAll(getDependencyRecorder().getDependOn(changedNode));
-          }          
+          }
           for (SNodeTreeNode n : treeNodesToUpdate) {
             nodesWithChangedPresentations.add(n.getSNode());
           }
@@ -671,7 +679,8 @@ public class SModelTreeNode extends MPSTreeNodeEx {
         treeModel.removeNodeFromParent(node);
       }
 
-      outer : for (SNode added : addedNodes) {
+      outer:
+      for (SNode added : addedNodes) {
         if (added.isDeleted()) continue;
         if (added.getParent() == null) continue;
         SNodeTreeNode parent = (SNodeTreeNode) findDescendantWith(added.getParent());
@@ -753,7 +762,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
         if (index == -1) {
           index = targetNode.getChildCount();
         }
-        treeModel.insertNodeInto(nodeToInsert, targetNode,  index);
+        treeModel.insertNodeInto(nodeToInsert, targetNode, index);
       }
     }
   }
@@ -772,12 +781,10 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
 
     public JPopupMenu getPopupMenu() {
-      JPopupMenu menu = new JPopupMenu();
       ActionContext context = getActionContext();
 
       CreateRootNodeGroup cg = new CreateRootNodeGroup(getPackage());
-      cg.doUpdate(context);
-      cg.add(menu, context);
+      JPopupMenu menu = createMenu(context, cg);
 
       menu.addSeparator();
       menu.add(new AbstractActionWithEmptyIcon("Rename") {
@@ -786,18 +793,18 @@ public class SModelTreeNode extends MPSTreeNodeEx {
           final String newName = JOptionPane.showInputDialog(frame, "Enter New Package Name", myName);
           if (newName != null) {
             ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-                      public void run() {
-                        for (SNode n : getNodesUnderPackage()) {
-                          String oldPackage = n.getProperty(PACK);
-                          String newPack = newName + oldPackage.substring(myName.length());
-                          if (newPack.length() > 0) {
-                            n.setProperty(PACK, newPack);
-                          } else {
-                            n.setProperty(PACK, null);
-                          }
-                        }
-                      }
-                    });
+              public void run() {
+                for (SNode n : getNodesUnderPackage()) {
+                  String oldPackage = n.getProperty(PACK);
+                  String newPack = newName + oldPackage.substring(myName.length());
+                  if (newPack.length() > 0) {
+                    n.setProperty(PACK, newPack);
+                  } else {
+                    n.setProperty(PACK, null);
+                  }
+                }
+              }
+            });
           }
         }
       });

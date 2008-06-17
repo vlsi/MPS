@@ -1,18 +1,20 @@
 package jetbrains.mps.ide.actions.nodes;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.ide.action.ActionContext;
+import com.intellij.openapi.actionSystem.Presentation;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.dialogs.YesNoToAllDialog;
-import jetbrains.mps.refactoring.framework.GenericRefactoringAction;
 import jetbrains.mps.core.scripts.SafeDelete;
+import jetbrains.mps.dialogs.YesNoToAllDialog;
+import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.refactoring.framework.GenericRefactoringAction;
+import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.workbench.action.ActionUtils;
 
-import java.util.List;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -52,7 +54,7 @@ public class DeleteNodesHelper {
     }
   }
 
-  private  void execute_internal(ProjectPane projectPane, boolean fromProjectPane, SNode node, IOperationContext context) {
+  private void execute_internal(ProjectPane projectPane, boolean fromProjectPane, SNode node, IOperationContext context) {
     if (fromProjectPane) {
       projectPane.selectNextTreeNode(node);
     }
@@ -67,7 +69,7 @@ public class DeleteNodesHelper {
         node.delete();
       } else {
         YesNoToAllDialog.ResponseValue response = YesNoToAllDialog.showDialog(context.getMainFrame(),
-                "do you want to search for usages before delete concept "+ node.getName() + " ?");
+          "do you want to search for usages before delete concept " + node.getName() + " ?");
         if (response.isPositive()) {
           if (response.isToAll()) mySafeConceptDeletion = true;
           safeDelete(context, node);
@@ -85,8 +87,9 @@ public class DeleteNodesHelper {
     final GenericRefactoringAction safeDeleteAction = new GenericRefactoringAction(new SafeDelete(), context.getMPSProject());
     final ActionContext newContext = new ActionContext(context, node);
     newContext.put(List.class, CollectionUtil.asList(node));
-    safeDeleteAction.update(newContext);
-    if (safeDeleteAction.isEnabled()) {
+    Presentation p = new Presentation();
+    safeDeleteAction.update(ActionUtils.createEvent(p, newContext));
+    if (p.isEnabled()) {
       safeDeleteAction.execute(newContext);
     }
   }

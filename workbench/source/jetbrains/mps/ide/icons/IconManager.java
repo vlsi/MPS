@@ -1,31 +1,27 @@
 package jetbrains.mps.ide.icons;
 
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.ide.action.MPSAction;
-import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.BootstrapLanguagesManager;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Macros;
-import jetbrains.mps.util.Calculable;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import java.io.File;
-import java.io.InputStream;
+import java.awt.Component;
+import java.awt.Graphics;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
-import java.awt.image.BufferedImage;
-
-import com.intellij.openapi.util.Computable;
 
 
 /**
@@ -36,6 +32,18 @@ public class IconManager {
   public static final Logger LOG = Logger.getLogger(IconManager.class);
 
   private static Map<String, Icon> ourPathsToIcons = new HashMap<String, Icon>();
+  public static final Icon EMPTY_ICON = new Icon() {
+    public void paintIcon(Component c, Graphics g, int x, int y) {
+    }
+
+    public int getIconWidth() {
+      return 18;
+    }
+
+    public int getIconHeight() {
+      return 18;
+    }
+  };
 
   public static Icon getIconFor(final SNode node) {
     return ModelAccess.instance().runReadAction(new Computable<Icon>() {
@@ -100,7 +108,7 @@ public class IconManager {
       LOG.error(e);
     }
 
-    return MPSAction.EMPTY_ICON;
+    return EMPTY_ICON;
 
   }
 

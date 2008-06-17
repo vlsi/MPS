@@ -971,8 +971,9 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
     }
 
     public boolean isCopyEnabled(DataContext dataContext) {
-      myAction.update(new ActionContext());
-      return myAction.isEnabled();
+//      myAction.update(new ActionContext());
+//      return myAction.isEnabled();
+      return true;
     }
   }
 
@@ -988,8 +989,9 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
     }
 
     public boolean isPasteEnabled(DataContext dataContext) {
-      myAction.update(new ActionContext());
-      return myAction.isEnabled();
+//      myAction.update(new ActionContext());
+//      return myAction.isEnabled();
+      return true;
     }
   }
 
@@ -1001,8 +1003,9 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
     }
 
     public boolean isCutEnabled(DataContext dataContext) {
-      myAction.update(new ActionContext());
-      return myAction.isEnabled();
+      //myAction.update(new ActionContext());
+      //return myAction.isEnabled();
+      return true;
     }
   }
 

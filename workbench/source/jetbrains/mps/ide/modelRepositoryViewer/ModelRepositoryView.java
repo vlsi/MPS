@@ -1,6 +1,10 @@
 package jetbrains.mps.ide.modelRepositoryViewer;
 
-import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
+import com.intellij.openapi.command.CommandEvent;
+import com.intellij.openapi.command.CommandListener;
+import com.intellij.openapi.command.CommandProcessor;
+import com.intellij.openapi.command.CommandProcessorEx;
+import jetbrains.mps.ide.action.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.SortUtil;
@@ -19,11 +23,6 @@ import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
-
-import com.intellij.openapi.command.CommandProcessor;
-import com.intellij.openapi.command.CommandEvent;
-import com.intellij.openapi.command.CommandProcessorEx;
-import com.intellij.openapi.command.CommandListener;
 
 /**
  * @author Kostik
@@ -65,29 +64,29 @@ public class ModelRepositoryView extends DefaultTool {
       final TextTreeNode[] root = new TextTreeNode[1];
 
       ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            root[0] = new TextTreeNode("Loaded Models") {
-              {
-                setIcon(Icons.PROJECT_MODELS_ICON);
-              }
-
-              public JPopupMenu getPopupMenu() {
-                JPopupMenu result = new JPopupMenu();
-
-                result.add(new AbstractActionWithEmptyIcon("Refresh") {
-                  public void actionPerformed(ActionEvent e) {
-                    myTree.rebuildNow();
-                  }
-                });
-
-                return result;
-              }
-            };
-            for (SModelDescriptor modelDescriptor : SortUtil.sortModels(SModelRepository.getInstance().getAllModelDescriptors())) {
-              root[0].add(new ModelTreeNode(modelDescriptor));
+        public void run() {
+          root[0] = new TextTreeNode("Loaded Models") {
+            {
+              setIcon(Icons.PROJECT_MODELS_ICON);
             }
+
+            public JPopupMenu getPopupMenu() {
+              JPopupMenu result = new JPopupMenu();
+
+              result.add(new AbstractActionWithEmptyIcon("Refresh") {
+                public void actionPerformed(ActionEvent e) {
+                  myTree.rebuildNow();
+                }
+              });
+
+              return result;
+            }
+          };
+          for (SModelDescriptor modelDescriptor : SortUtil.sortModels(SModelRepository.getInstance().getAllModelDescriptors())) {
+            root[0].add(new ModelTreeNode(modelDescriptor));
           }
-        });
+        }
+      });
 
 
       return root[0];
@@ -138,7 +137,7 @@ public class ModelRepositoryView extends DefaultTool {
           setIcon(Icons.SOLUTION_ICON);
         } else {
           setIcon(Icons.DEFAULT_ICON);
-        }        
+        }
         setNodeIdentifier(myOwner.toString());
       }
 
@@ -162,6 +161,7 @@ public class ModelRepositoryView extends DefaultTool {
       SModelRepository.getInstance().addModelRepositoryListener(myRepoListener);
       GlobalSModelEventsManager.getInstance().addGlobalModelListener(this);
     }
+
     public void unInstallListeners() {
       CommandProcessor.getInstance().removeCommandListener(this);
       SModelRepository.getInstance().removeModelRepositoryListener(myRepoListener);
@@ -169,16 +169,16 @@ public class ModelRepositoryView extends DefaultTool {
     }
 
     public void modelInitialized(SModelDescriptor modelDescriptor) {
-      if(CommandProcessorEx.getInstance().getCurrentCommand() != null) {
-         myDeferredUpdate = true;
+      if (CommandProcessorEx.getInstance().getCurrentCommand() != null) {
+        myDeferredUpdate = true;
       } else {
         myTree.rebuildLater();
       }
     }
 
     private void repositoryChanged() {
-      if(CommandProcessorEx.getInstance().getCurrentCommand() != null) {
-         myDeferredUpdate = true;
+      if (CommandProcessorEx.getInstance().getCurrentCommand() != null) {
+        myDeferredUpdate = true;
       } else {
         myTree.rebuildLater();
       }
@@ -188,7 +188,7 @@ public class ModelRepositoryView extends DefaultTool {
     }
 
     public void commandFinished(CommandEvent event) {
-      if(myDeferredUpdate) {
+      if (myDeferredUpdate) {
         myDeferredUpdate = false;
         myTree.rebuildLater();
       }

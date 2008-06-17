@@ -1,13 +1,12 @@
 package jetbrains.mps.ide.actions.nodes;
 
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.helgins.structure.AbstractRule;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.bootstrap.helgins.structure.PatternCondition;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.core.structure.BaseConcept;
-import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.MPSAction;
+import jetbrains.mps.ide.action.MPSActionAdapter;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.*;
@@ -21,7 +20,6 @@ import javax.swing.JLabel;
 import javax.swing.JPopupMenu;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +31,7 @@ import java.util.List;
  * Time: 13:30:35
  * To change this template use File | Settings | File Templates.
  */
-public class GoToRulesAction extends MPSAction {
+public class GoToRulesAction extends MPSActionAdapter {
 
   public GoToRulesAction() {
     super("Go To Typesystem Rules");
@@ -56,7 +54,7 @@ public class GoToRulesAction extends MPSAction {
     final AbstractConceptDeclaration conceptDeclaration = (AbstractConceptDeclaration) BaseAdapter.fromNode(context.getNode());
     final IOperationContext operationContext = context.getOperationContext();
     List<SNode> rules = getHelginsRules(conceptDeclaration, operationContext);
-    
+
     if (rules.size() == 1) {// single rule
       operationContext.getComponent(MPSEditorOpener.class).openNode(rules.get(0));
       return;
@@ -98,10 +96,10 @@ public class GoToRulesAction extends MPSAction {
   private static boolean maybeApplicable_new(AbstractConceptDeclaration conceptDeclaration, ApplicableNodeCondition applicableNode, IScope scope) {
     if (applicableNode instanceof jetbrains.mps.bootstrap.helgins.structure.ConceptReference) {
       jetbrains.mps.bootstrap.helgins.structure.ConceptReference conceptReference =
-              (jetbrains.mps.bootstrap.helgins.structure.ConceptReference) applicableNode;
+        (jetbrains.mps.bootstrap.helgins.structure.ConceptReference) applicableNode;
       return SModelUtil_new.isAssignableConcept(conceptDeclaration, conceptReference.getConcept());
     } else if (applicableNode instanceof PatternCondition) {
-      BaseConcept baseConcept = ((PatternCondition)applicableNode).getPattern().getPatternNode();
+      BaseConcept baseConcept = ((PatternCondition) applicableNode).getPattern().getPatternNode();
       if (baseConcept == null) return false;
       return SModelUtil_new.isAssignableConcept(conceptDeclaration, baseConcept.getConceptDeclarationAdapter());
     }
@@ -119,7 +117,7 @@ public class GoToRulesAction extends MPSAction {
       label.setBackground(Color.LIGHT_GRAY);
       add(label);
       for (final SNode node : list) {
-        if(node == null) continue;
+        if (node == null) continue;
         String nodeName = node.getName();
         if (nodeName == null || nodeName.equals("")) nodeName = node.getConceptShortName();
         add(new AbstractAction(nodeName + " (" + node.getModel() + ")") {

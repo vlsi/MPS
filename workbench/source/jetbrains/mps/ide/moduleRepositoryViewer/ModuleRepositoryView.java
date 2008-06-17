@@ -1,6 +1,10 @@
 package jetbrains.mps.ide.moduleRepositoryViewer;
 
-import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
+import com.intellij.openapi.command.CommandAdapter;
+import com.intellij.openapi.command.CommandEvent;
+import com.intellij.openapi.command.CommandProcessor;
+import com.intellij.openapi.command.CommandProcessorEx;
+import jetbrains.mps.ide.action.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.SortUtil;
@@ -9,16 +13,16 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.RepositoryListener;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import java.awt.event.ActionEvent;
-
-import com.intellij.openapi.command.*;
-import com.intellij.openapi.command.CommandProcessor;
 
 public class ModuleRepositoryView extends DefaultTool {
   private MPSTree myTree = new MyTree();
@@ -56,30 +60,30 @@ public class ModuleRepositoryView extends DefaultTool {
       final TextTreeNode[] root = new TextTreeNode[1];
 
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-          public void run() {
-            root[0] = new TextTreeNode("Loaded Modules") {
-              {
-                setIcon(Icons.PROJECT_ICON);
-              }
-
-              public JPopupMenu getPopupMenu() {
-                JPopupMenu result = new JPopupMenu();
-
-                result.add(new AbstractActionWithEmptyIcon("Refresh") {
-                  public void actionPerformed(ActionEvent e) {
-                    myTree.rebuildNow();
-                  }
-                });
-
-                return result;
-              }
-
-            };
-            for (IModule module : SortUtil.sortModules(MPSModuleRepository.getInstance().getAllModules())) {
-              root[0].add(new LanguageTreeNode(module));
+        public void run() {
+          root[0] = new TextTreeNode("Loaded Modules") {
+            {
+              setIcon(Icons.PROJECT_ICON);
             }
+
+            public JPopupMenu getPopupMenu() {
+              JPopupMenu result = new JPopupMenu();
+
+              result.add(new AbstractActionWithEmptyIcon("Refresh") {
+                public void actionPerformed(ActionEvent e) {
+                  myTree.rebuildNow();
+                }
+              });
+
+              return result;
+            }
+
+          };
+          for (IModule module : SortUtil.sortModules(MPSModuleRepository.getInstance().getAllModules())) {
+            root[0].add(new LanguageTreeNode(module));
           }
-        });
+        }
+      });
 
       return root[0];
     }

@@ -1,13 +1,15 @@
 package jetbrains.mps.ide.actions.tools;
 
-import jetbrains.mps.baseLanguage.structure.*;
+import jetbrains.mps.baseLanguage.structure.EnumConstantReference;
+import jetbrains.mps.baseLanguage.structure.StaticFieldReference;
+import jetbrains.mps.baseLanguage.structure.StaticMethodCall;
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.MPSAction;
+import jetbrains.mps.ide.action.MPSActionAdapter;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
 
@@ -17,7 +19,7 @@ import java.util.List;
 /**
  * serves as template: just loads all models from MPSFileModelDescriptor and "process" them.
  */
-public class InternalRefactoringAction extends MPSAction {
+public class InternalRefactoringAction extends MPSActionAdapter {
   public static final boolean SHOW = false;
 
   public InternalRefactoringAction() {

@@ -1,13 +1,11 @@
 package jetbrains.mps.ide.dependency;
 
-import jetbrains.mps.ide.toolsPane.DefaultTool;
-import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.smodel.ModuleRepositoryListener;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryListener;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -69,6 +67,6 @@ public class DependencyViewer extends DefaultTool {
     MPSModuleRepository.getInstance().removeModuleRepositoryListener(myListener);
   }
 
-  
+
 }
 

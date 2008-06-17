@@ -1,9 +1,10 @@
 package jetbrains.mps.ide.actions.module;
 
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.MPSAction;
+import jetbrains.mps.ide.action.MPSActionAdapter;
 import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.ide.genconf.GeneratorConfigUtil;
 import jetbrains.mps.project.IModule;
@@ -12,15 +13,12 @@ import jetbrains.mps.projectLanguage.structure.BaseGeneratorConfiguration;
 import jetbrains.mps.projectLanguage.structure.LanguageGeneratorConfiguration;
 import jetbrains.mps.projectLanguage.structure.SolutionGeneratorConfiguration;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.Calculable;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
 
-import com.intellij.openapi.util.Computable;
-
-public class GenerateAllModelsInModuleAction extends MPSAction {
+public class GenerateAllModelsInModuleAction extends MPSActionAdapter {
   private boolean myRegenerate;
 
   public GenerateAllModelsInModuleAction(boolean regenerate) {
@@ -42,8 +40,8 @@ public class GenerateAllModelsInModuleAction extends MPSAction {
   }
 
 
-  public void update(ActionContext context) {
-    super.update(context);
+  public void doUpdate(ActionContext context) {
+    super.doUpdate(context);
     IOperationContext opContext = context.getOperationContext();
     boolean isEnabled = opContext != null && opContext.getModule() != null;
     setVisible(isEnabled);

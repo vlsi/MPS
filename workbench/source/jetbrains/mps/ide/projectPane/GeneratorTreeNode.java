@@ -1,13 +1,13 @@
 package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.workbench.action.ActionUtils;
 
-import javax.swing.*;
+import javax.swing.JPopupMenu;
 
 class GeneratorTreeNode extends MPSTreeNode {
 
@@ -30,12 +30,10 @@ class GeneratorTreeNode extends MPSTreeNode {
   }
 
   public JPopupMenu getQuickCreatePopupMenu() {
-    JPopupMenu result = new JPopupMenu();
     ActionContext context = new ActionContext(getOperationContext());
     context.put(MPSProject.class, getOperationContext().getMPSProject());
     context.put(Generator.class, getGenerator());
-    ActionManager.instance().getGroup(ProjectPane.GENERATOR_NEW_ACTIONS).add(result, context);
-    return result;
+    return ActionUtils.createPopup(context, ProjectPane.GENERATOR_NEW_ACTIONS);
   }
 
   public JPopupMenu getPopupMenu() {
@@ -43,8 +41,7 @@ class GeneratorTreeNode extends MPSTreeNode {
     ActionContext context = new ActionContext(getOperationContext());
     context.put(MPSProject.class, getOperationContext().getMPSProject());
     context.put(Generator.class, getGenerator());
-    ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_GENERATOR_ACTIONS).add(result, context);
-    return result;
+    return ActionUtils.createPopup(context, ProjectPane.PROJECT_PANE_GENERATOR_ACTIONS);
   }
 
 

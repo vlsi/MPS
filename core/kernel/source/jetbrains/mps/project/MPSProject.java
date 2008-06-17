@@ -1,14 +1,19 @@
 package jetbrains.mps.project;
 
+import com.intellij.ide.impl.ProjectUtil;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.wm.WindowManager;
+import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.Highlighter;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.plugins.PluginManager;
-import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
@@ -17,23 +22,12 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.nodeEditor.Highlighter;
-import jetbrains.mps.cleanup.CleanupManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.awt.Frame;
 import java.io.File;
 import java.util.*;
-import java.awt.Frame;
-import java.lang.reflect.InvocationTargetException;
-
-import com.intellij.openapi.progress.EmptyProgressIndicator;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.wm.WindowManager;
-import com.intellij.openapi.util.EmptyRunnable;
-import com.intellij.ide.impl.ProjectUtil;
-
-import javax.swing.SwingUtilities;
 
 public class MPSProject implements ModelOwner, MPSModuleOwner {
   public static final String COMPONENTS = "components";
@@ -474,7 +468,12 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
         SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
 
         TypeChecker.getInstance().clearForReload();
-        ActionManager.instance().clearAll();
+
+        //todo: it's very slow
+        ActionManager manager = ActionManager.getInstance();
+        for (String id : manager.getActionIds("")) {
+          manager.unregisterAction(id);
+        }
 
         MPSModuleRepository.getInstance().removeUnusedModules();
         SModelRepository.getInstance().removeUnusedDescriptors();
@@ -500,7 +499,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   public boolean isDisposed() {
     return myDisposed;
   }
-  
+
   public void invalidateCaches() {
     myScope.invalidateCaches();
   }

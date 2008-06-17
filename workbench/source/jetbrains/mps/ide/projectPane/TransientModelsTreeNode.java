@@ -1,20 +1,17 @@
 package jetbrains.mps.ide.projectPane;
 
-import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.ide.action.ActionManager;
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.generator.GenerationSessionContext;
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.Presentation;
 import jetbrains.mps.generator.TransientModelsModule;
-import jetbrains.mps.util.ToStringComparator;
+import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.workbench.action.ActionUtils;
 
 import javax.swing.JPopupMenu;
-import java.util.List;
-import java.util.Collections;
 
 public class TransientModelsTreeNode extends ProjectModuleTreeNode {
   private IModule myTransientModule;
@@ -47,11 +44,9 @@ public class TransientModelsTreeNode extends ProjectModuleTreeNode {
   }
 
   public JPopupMenu getPopupMenu() {
-    JPopupMenu result = new JPopupMenu();
-
-    ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_TRANSIENT_MODULES_ACTIONS)
-      .add(result, new ActionContext());
-
-    return result;
+    ActionGroup g = ActionUtils.getGroup(ProjectPane.PROJECT_PANE_TRANSIENT_MODULES_ACTIONS);
+    Presentation p = new Presentation();
+    g.update(ActionUtils.createEvent(p, new ActionContext()));
+    return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, g).getComponent();
   }
 }

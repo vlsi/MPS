@@ -1,15 +1,15 @@
 package jetbrains.mps.ide.ui.smodel;
 
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Condition;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Condition;
+import jetbrains.mps.workbench.action.ActionUtils;
 
 import javax.swing.JPopupMenu;
 import javax.swing.tree.DefaultTreeModel;
@@ -110,20 +110,19 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   }
 
   public JPopupMenu getPopupMenu() {
-    JPopupMenu result = new JPopupMenu();
     ProjectPane pane = getOperationContext().getComponent(ProjectPane.class);
     if (pane == null) return null;
 
     //todo hack
-    List<SNode> selection; 
+    List<SNode> selection;
     if (getTree() == pane.getTree()) {
       selection = pane.getNormalizedSelectedNodes();
     } else {
       selection = Arrays.asList(getSNode());
     }
 
-    ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_NODE_ACTIONS).add(result, new ActionContext(getOperationContext(), getSNode(), selection));
-    return result;
+    ActionContext context = new ActionContext(getOperationContext(), getSNode(), selection);
+    return ActionUtils.createPopup(context, ProjectPane.PROJECT_PANE_NODE_ACTIONS);
   }
 
   public Object getUserObject() {
@@ -170,11 +169,11 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
 
   private boolean showPropertiesAndReferences() {
     return getTree() instanceof ProjectPane.MyTree &&
-            getOperationContext().getComponent(ProjectPane.class).isShowPropertiesAndReferences();
+      getOperationContext().getComponent(ProjectPane.class).isShowPropertiesAndReferences();
   }
 
   public void doubleClick() {
-    if (getTree() instanceof ProjectPane.MyTree) {      
+    if (getTree() instanceof ProjectPane.MyTree) {
       ((ProjectPane.MyTree) getTree()).editNode(myNode, getOperationContext());
     }
   }

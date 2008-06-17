@@ -1,12 +1,14 @@
 package jetbrains.mps.plugins.actions;
 
-import jetbrains.mps.ide.action.ActionGroup;
-import jetbrains.mps.ide.action.ActionManager;
-import jetbrains.mps.ide.action.IActionGroupElementOwner;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.action.IActionGroupElementOwner;
+import jetbrains.mps.ide.action.MPSActionGroup;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.workbench.action.BaseGroup;
 
-public abstract class BaseActionGroup extends ActionGroup implements IActionGroupElementOwner {
+public abstract class BaseActionGroup extends MPSActionGroup implements IActionGroupElementOwner {
   private MPSProject myProject = null;
 
   public BaseActionGroup(String name, String id, MPSProject project) {
@@ -18,23 +20,31 @@ public abstract class BaseActionGroup extends ActionGroup implements IActionGrou
     return myProject;
   }
 
-  protected ActionGroup getGroup(String id) {
-    ActionGroup group = ActionManager.instance().getGroup(id);
+
+  protected BaseGroup getGroup(String id) {
+    MPSActionGroup group = (MPSActionGroup) ActionManager.getInstance().getAction(id);
     if (group != null) return group;
     return getProject().getPluginManager().getGroup(id);
   }
 
-  protected void checkProject(ActionContext context) {
-    if (myProject != null) {
-      if (myProject != context.get(MPSProject.class)) {
-        setVisible(false);
-      }
-    }
-  }
 
   protected void doUpdate(ActionContext context) {
-    super.doUpdate(context);
-    checkProject(context);
+  }
+
+  public void update(AnActionEvent e) {
+    if (!checkProject(e)) return;
+    super.update(e);
+  }
+
+  protected boolean checkProject(AnActionEvent e) {
+    if (myProject != null) {
+      if (myProject != createContext(e).get(MPSProject.class)) {
+        e.getPresentation().setVisible(false);
+        return false;
+      }
+      return true;
+    }
+    return true;
   }
 
   public abstract void adjust(IActionGroupElementOwner owner);

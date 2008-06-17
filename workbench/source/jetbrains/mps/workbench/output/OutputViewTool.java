@@ -2,7 +2,7 @@ package jetbrains.mps.workbench.output;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
-import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
+import jetbrains.mps.ide.action.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.tools.BaseMPSTool;

@@ -1,19 +1,14 @@
 package jetbrains.mps.ide.projectPane;
 
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.ide.projectPane.SModelsSubtree.JavaStubsTreeNode;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ToStringComparator;
 
-import javax.swing.JPopupMenu;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public abstract class NamespaceTreeBuilder<N extends MPSTreeNode> {
   private NamespaceNode myRootNamespace = new NamespaceNode("");
@@ -26,7 +21,7 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode> {
   public void addNode(N node) {
     String namespace = getNamespace(node);
     List<String> pathElements = new ArrayList<String>(Arrays.asList(namespace.split("\\.")));
-        
+
     if (pathElements.size() == 1 && pathElements.get(0).equals("")) {
       pathElements.remove(0);
     }
@@ -87,7 +82,7 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode> {
 
 
     if (node.getParent() != null && //skip root
-            node.getChildCount() == 1 && node.getChildAt(0) instanceof NamespaceNode) {
+      node.getChildCount() == 1 && node.getChildAt(0) instanceof NamespaceNode) {
       NamespaceNode child = (NamespaceNode) node.getChildAt(0);
       node.setName(node.getName() + "." + child.getName());
 
@@ -123,7 +118,7 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode> {
       String first = pathElements.get(0);
       List<String> otherElements = pathElements.subList(1, pathElements.size());
 
-      for (int i = 0; i < getChildCount(); i++) {        
+      for (int i = 0; i < getChildCount(); i++) {
         if (getChildAt(i) instanceof NamespaceNode) {
           NamespaceNode child = (NamespaceNode) getChildAt(i);
           if (first.equals(child.getName())) {

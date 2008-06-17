@@ -1,13 +1,13 @@
 package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.workbench.action.ActionUtils;
 
 import javax.swing.JPopupMenu;
 
@@ -47,21 +47,17 @@ class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
   }
 
   public JPopupMenu getQuickCreatePopupMenu() {
-    JPopupMenu result = new JPopupMenu();
     Solution solution = getSolution();
     ActionContext context = new ActionContext(getOperationContext());
     context.put(Solution.class, solution);
-    ActionManager.instance().getGroup(ProjectPane.SOLUTION_NEW_ACTIONS).add(result, context);
-    return result;
+    return ActionUtils.createPopup(context, ProjectPane.SOLUTION_NEW_ACTIONS);
   }
 
   public JPopupMenu getPopupMenu() {
-    JPopupMenu result = new JPopupMenu();
     Solution solution = getSolution();
     ActionContext context = new ActionContext(getOperationContext());
     context.put(Solution.class, solution);
-    ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_PROJECT_SOLUTION_ACTIONS).add(result, context);
-    return result;
+    return ActionUtils.createPopup(context, ProjectPane.PROJECT_PANE_PROJECT_SOLUTION_ACTIONS);
   }
 
   protected String getModulePresentation() {

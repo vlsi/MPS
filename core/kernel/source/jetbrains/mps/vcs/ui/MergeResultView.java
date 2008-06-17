@@ -1,28 +1,28 @@
 package jetbrains.mps.vcs.ui;
 
+import jetbrains.mps.ide.action.AbstractActionWithEmptyIcon;
+import jetbrains.mps.ide.ui.MPSTree;
+import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.vcs.*;
-import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.MPSTree;
-import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.Pair;
+import jetbrains.mps.vcs.*;
 
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.tree.TreeNode;
-import java.util.*;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
+import java.util.*;
 
-public class MergeResultView extends JPanel {  
+public class MergeResultView extends JPanel {
   private MPSTree myResultTree = new MPSTree() {
     protected MPSTreeNode rebuild() {
       return new MySModelTreeNode(myResultModel, "", null);
@@ -84,7 +84,7 @@ public class MergeResultView extends JPanel {
     setLayout(new BorderLayout());
 
     JSplitPane splitter =
-            new JSplitPane(JSplitPane.VERTICAL_SPLIT, new JScrollPane(myResultTree), new JScrollPane(myConflictsAndWarningsTree));
+      new JSplitPane(JSplitPane.VERTICAL_SPLIT, new JScrollPane(myResultTree), new JScrollPane(myConflictsAndWarningsTree));
 
     splitter.setDividerLocation(500);
 
@@ -150,10 +150,10 @@ public class MergeResultView extends JPanel {
       changesMap.put(c.getNodeId(), c);
     }
 
-    for (NewNodeChange c : newNodeChanges) {      
+    for (NewNodeChange c : newNodeChanges) {
       applyNewNodeChange(c, changesMap);
     }
-  }                                 
+  }
 
   private void applyNewNodeChange(NewNodeChange c, Map<SNodeId, NewNodeChange> map) {
     if (myExcludedChanges.contains(c)) {
@@ -219,12 +219,12 @@ public class MergeResultView extends JPanel {
 
   private void applyDeletes() {
     for (DeleteNodeChange del : getChanges(DeleteNodeChange.class)) {
-      if (myExcludedChanges.contains(del)) continue;      
+      if (myExcludedChanges.contains(del)) continue;
       del.apply(myResultModel);
     }
 
     for (SetNodeChange snc : getChanges(SetNodeChange.class)) {
-      snc.secondApply(myResultModel);      
+      snc.secondApply(myResultModel);
     }
   }
 
@@ -329,7 +329,7 @@ public class MergeResultView extends JPanel {
       String newRole = mnc.getNewRole();
 
       for (SNode newParent : CollectionUtil.asSet(myChange1.getNodeById(mnc.getNewParent()),
-                                                  myChange2.getNodeById(mnc.getNewParent()))) {      
+        myChange2.getNodeById(mnc.getNewParent()))) {
         while (newParent != null) {
           if (changes.containsKey(new Pair(newParent.getId(), newRole))) {
             List<SetNodeChange> cs = new ArrayList<SetNodeChange>(changes.get(new Pair(newParent.getId(), newRole)));
@@ -341,7 +341,7 @@ public class MergeResultView extends JPanel {
       }
     }
 
-    for (Pair<SNodeId, String> p: changes.keySet()) {
+    for (Pair<SNodeId, String> p : changes.keySet()) {
       if (changes.get(p).size() > 1) {
         List<SetNodeChange> cs = new ArrayList<SetNodeChange>(changes.get(p));
         assert cs.size() == 2;
@@ -362,7 +362,7 @@ public class MergeResultView extends JPanel {
     for (SetNodeChange c : getChanges(SetNodeChange.class)) {
       SNode oldParent = myBaseModel.getNodeById(c.getNodeParent());
       if (oldParent == null) {
-        continue; 
+        continue;
       }
       SNode child = oldParent.getChild(c.getNodeRole());
       if (child == null) {
@@ -395,7 +395,7 @@ public class MergeResultView extends JPanel {
     return myResultModel;
   }
 
-  private<C extends Change> List<C> getChanges(Class<C> changeClass) {
+  private <C extends Change> List<C> getChanges(Class<C> changeClass) {
     List<C> result = new ArrayList<C>();
     result.addAll(CollectionUtil.filter(changeClass, myDelta1));
     result.addAll(CollectionUtil.filter(changeClass, myDelta2));
@@ -549,7 +549,7 @@ public class MergeResultView extends JPanel {
     public String calculateText() {
       String result;
       if (myExcludedChanges.contains(myChange)) {
-        result = "<html><s>" + myChange +  "</s>";
+        result = "<html><s>" + myChange + "</s>";
 
       } else {
         result = "" + myChange;

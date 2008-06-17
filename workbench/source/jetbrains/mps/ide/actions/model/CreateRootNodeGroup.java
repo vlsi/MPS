@@ -1,12 +1,13 @@
 package jetbrains.mps.ide.actions.model;
 
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.action.MPSActionAdapter;
+import jetbrains.mps.ide.action.MPSActionGroup;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.ActionGroup;
-import jetbrains.mps.ide.action.MPSAction;
-import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
@@ -17,12 +18,10 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.Icon;
 import java.util.*;
 
-import com.intellij.openapi.util.Computable;
-
 /**
  * @author Kostik
  */
-public class CreateRootNodeGroup extends ActionGroup {
+public class CreateRootNodeGroup extends MPSActionGroup {
 
   private Set<String> myAllowedLanguages = null;
   private String myPackage;
@@ -35,21 +34,24 @@ public class CreateRootNodeGroup extends ActionGroup {
     this();
     myAllowedLanguages = new HashSet<String>();
     myAllowedLanguages.addAll(allowed);
+    setPopup(true);
   }
 
   public CreateRootNodeGroup(String pack) {
     this();
     myPackage = pack;
+    setPopup(true);
   }
 
   public void doUpdate(ActionContext context) {
-    clear();
+    setPopup(true);
+    removeAll();
     SModelDescriptor modelDescriptor = context.get(SModelDescriptor.class);
     IOperationContext operationContext = context.get(IOperationContext.class);
 
     List<Language> modelLanguages = modelDescriptor == null ? new ArrayList<Language>() : modelDescriptor.getSModel().getLanguages(operationContext.getScope());
     if (modelLanguages.size() == 0) {
-      add(new MPSAction("<NO LANGUAGES>") {
+      add(new MPSActionAdapter("<NO LANGUAGES>") {
         public void doExecute(@NotNull ActionContext c) {
         }
       });
@@ -64,18 +66,20 @@ public class CreateRootNodeGroup extends ActionGroup {
         if (!myAllowedLanguages.contains(language.getNamespace())) continue;
       }
 
-      ActionGroup langRootsGroup = new ActionGroup(language.getNamespace()) {
+      MPSActionGroup langRootsGroup = new MPSActionGroup(language.getNamespace()) {
         public Icon getIcon() {
           return IconManager.getIconFor(language.getNamespace());
         }
       };
+
+      langRootsGroup.setPopup(true);
 
       for (ConceptDeclaration conceptDeclaration : language.getConceptDeclarations()) {
         if (conceptDeclaration.getRootable()) {
           langRootsGroup.add(newRootNodeAction(new SNodePointer(conceptDeclaration), modelDescriptor));
         }
       }
-      if (langRootsGroup.getElements().size() > 0) {
+      if (langRootsGroup.getChildren(null).length > 0) {
         this.add(langRootsGroup);
       }
     }
@@ -83,8 +87,8 @@ public class CreateRootNodeGroup extends ActionGroup {
     setVisible(context.hasOneSelectedItem());
   }
 
-  private MPSAction newRootNodeAction(final SNodePointer nodeConcept, final SModelDescriptor modelDescriptor) {
-    return new MPSAction(NodePresentationUtil.matchingText(nodeConcept.getNode())) {
+  private MPSActionAdapter newRootNodeAction(final SNodePointer nodeConcept, final SModelDescriptor modelDescriptor) {
+    return new MPSActionAdapter(NodePresentationUtil.matchingText(nodeConcept.getNode())) {
       public Icon getIcon() {
         return ModelAccess.instance().runReadAction(new Computable<Icon>() {
           public Icon compute() {

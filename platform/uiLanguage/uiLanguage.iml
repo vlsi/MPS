@@ -20,11 +20,11 @@
     <orderEntry type="module-library">
       <library name="junit4">
         <CLASSES>
-          <root url="jar://$MPS_HOME$/lib/junit4/junit-4.1.jar!/" />
+          <root url="jar://$MPS_BUILD_HOME$/lib/junit4/junit-4.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>
-          <root url="jar://$MPS_HOME$/lib/junit4/junit-4.1-src.jar!/" />
+          <root url="jar://$MPS_BUILD_HOME$/lib/junit4/junit-4.1-src.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>

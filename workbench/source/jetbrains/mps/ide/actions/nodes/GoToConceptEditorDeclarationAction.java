@@ -4,7 +4,7 @@ import jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.MPSAction;
+import jetbrains.mps.ide.action.MPSActionAdapter;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
 /**
  * @author Kostik
  */
-public class GoToConceptEditorDeclarationAction extends MPSAction {
+public class GoToConceptEditorDeclarationAction extends MPSActionAdapter {
 
   public GoToConceptEditorDeclarationAction() {
     super("Go To Concept Editor Declaration");
@@ -85,14 +85,14 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     String message;
     if (languageEditor == null) {
       message = "Language \"" + language.getModuleUID() + "\" has no editor model.\n" +
-              "Create new editor model?";
+        "Create new editor model?";
     } else {
       message = "Concept \"" + NameUtil.nodeFQName(node) + "\" has no editor.\n" +
-              "Create new editor?";
+        "Create new editor?";
     }
     int option = JOptionPane.showConfirmDialog(null, message, "Editor not found",
-            JOptionPane.YES_NO_OPTION,
-            JOptionPane.QUESTION_MESSAGE);
+      JOptionPane.YES_NO_OPTION,
+      JOptionPane.QUESTION_MESSAGE);
     if (option != JOptionPane.YES_OPTION) {
       return;
     }

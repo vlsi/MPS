@@ -1,17 +1,17 @@
 package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.workbench.action.ActionUtils;
 
-import javax.swing.*;
+import javax.swing.JPopupMenu;
 import java.util.List;
 
 /**
@@ -58,21 +58,17 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
   }
 
   public JPopupMenu getQuickCreatePopupMenu() {
-    JPopupMenu result = new JPopupMenu();
     final Language language = getLanguage();
     ActionContext context = new ActionContext(getOperationContext());
     context.put(Language.class, language);
-    ActionManager.instance().getGroup(ProjectPane.LANGUAGE_NEW_ACTIONS).add(result, context);
-    return result;
+    return ActionUtils.createPopup(context, ProjectPane.LANGUAGE_NEW_ACTIONS);
   }
 
   public JPopupMenu getPopupMenu() {
-    JPopupMenu result = new JPopupMenu();
     final Language language = getLanguage();
     ActionContext context = new ActionContext(getOperationContext());
     context.put(Language.class, language);
-    ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_LANGUAGE_ACTIONS).add(result, context);
-    return result;
+    return ActionUtils.createPopup(context, ProjectPane.PROJECT_PANE_LANGUAGE_ACTIONS);
   }
 
   protected String getModulePresentation() {

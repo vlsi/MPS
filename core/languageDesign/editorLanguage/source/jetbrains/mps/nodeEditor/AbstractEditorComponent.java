@@ -3,9 +3,8 @@ package jetbrains.mps.nodeEditor;
 import com.intellij.ide.CopyProvider;
 import com.intellij.ide.CutProvider;
 import com.intellij.ide.PasteProvider;
-import com.intellij.openapi.actionSystem.DataContext;
-import com.intellij.openapi.actionSystem.DataProvider;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.command.undo.UndoManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
@@ -21,6 +20,7 @@ import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.nodes.GoByFirstReferenceAction;
 import jetbrains.mps.ide.findusages.view.UsagesView;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.CellSpeedSearch;
 import jetbrains.mps.ide.ui.JMultiLineToolTip;
 import jetbrains.mps.ide.ui.MPSErrorDialog;
@@ -30,6 +30,7 @@ import jetbrains.mps.nodeEditor.folding.CellAction_FoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
@@ -39,6 +40,8 @@ import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.workbench.action.BaseGroup;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -69,7 +72,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
   }
 
-  private Set<MPSAction> myMPSActionsWithShortcuts = new HashSet<MPSAction>();
+  private Set<MPSActionAdapter> myMPSActionsWithShortcuts = new HashSet<MPSActionAdapter>();
   private WeakHashMap<EditorCell, Set<SNode>> myCellsToNodesToDependOnMap = new WeakHashMap<EditorCell, Set<SNode>>();
 
   private WeakHashMap<SNode, WeakReference<EditorCell>> myNodesToBigCellsMap = new WeakHashMap<SNode, WeakReference<EditorCell>>();
@@ -447,14 +450,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private void updateMPSActionsWithKeyStrokes(@Nullable ActionContext actionContext) {
     myActionProxies.clear();
-    for (MPSAction a : myMPSActionsWithShortcuts) {
+    for (MPSActionAdapter a : myMPSActionsWithShortcuts) {
       KeyStroke keyStroke = KeyStroke.getKeyStroke(a.getKeyStroke());
       if (keyStroke != null) {
         unregisterKeyboardAction(keyStroke);
       }
     }
     myMPSActionsWithShortcuts.clear();
-    ActionGroup group = ActionManager.instance().getGroup(EDITOR_POPUP_MENU_ACTIONS);
+    BaseGroup group = (BaseGroup) ActionManager.getInstance().getAction(EDITOR_POPUP_MENU_ACTIONS);
     registerKeyStrokes(group, actionContext);
   }
 
@@ -462,22 +465,23 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return myOwner;
   }
 
-  private void registerKeyStrokes(ActionGroup group, @Nullable ActionContext actionContext) {
+  private void registerKeyStrokes(BaseGroup group, @Nullable ActionContext actionContext) {
     if (group != null) {
-      for (ActionGroupElement e : group.getElements()) {
-        if (e instanceof MPSAction) {
-          MPSAction action = (MPSAction) e;
-          if (action.hasKeystroke()) {
+      for (AnAction e : group.getChildren(null)) {
+        if (e instanceof MPSActionAdapter) {
+          MPSActionAdapter action = (MPSActionAdapter) e;
+          if (action.getShortcutSet().getShortcuts().length > 0) {
             registerNodeAction(action);
             myMPSActionsWithShortcuts.add(action);
           }
         }
-        if (e instanceof ActionGroup) {
+        if (e instanceof MPSActionGroup) {
           try {
             if (actionContext != null) {
-              e.update(actionContext);
+              Presentation p = new Presentation();
+              e.update(ActionUtils.createEvent(p, actionContext));
             }
-            registerKeyStrokes((ActionGroup) e, actionContext);
+            registerKeyStrokes((MPSActionGroup) e, actionContext);
           } catch (Throwable t) {
             LOG.error(t);
           }
@@ -641,13 +645,13 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myOperationContext = operationContext;
   }
 
-  protected void registerNodeAction(MPSAction action) {
+  protected void registerNodeAction(MPSActionAdapter action) {
     for (String keyStroke : action.getKeyStrokes()) {
       registerNodeAction(action, keyStroke);
     }
   }
 
-  protected AbstractAction registerNodeAction(final MPSAction action, String keyStroke) {
+  protected AbstractAction registerNodeAction(final MPSActionAdapter action, String keyStroke) {
     KeyStroke stroke = KeyStroke.getKeyStroke(keyStroke);
     if (stroke != null) {
       if (!myActionProxies.containsKey(stroke)) {
@@ -694,14 +698,13 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private void showPopupMenu(int x, int y) {
-    ActionGroup group = ActionManager.instance().getGroup(EDITOR_POPUP_MENU_ACTIONS);
+    BaseGroup group = ActionUtils.getGroup(EDITOR_POPUP_MENU_ACTIONS);
     if (group == null) return;
 
     ActionContext context = createActionContext();
 
     if (context == null) return;
-    JPopupMenu popupMenu = new JPopupMenu();
-    group.add(popupMenu, context);
+    JPopupMenu popupMenu = ActionUtils.createPopup(context, group);
 
     EditorCell cell = getSelectedCell();
     { // keymaps
@@ -720,10 +723,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
       JMenu keyMapActions = new JMenu("KeyMap Actions");
       keyMapActions.setBorder(null);
-      keyMapActions.setIcon(MPSAction.EMPTY_ICON);
+      keyMapActions.setIcon(IconManager.EMPTY_ICON);
 
       for (final EditorCellKeyMapAction action : actions) {
-        MPSAction mpsAction = new MPSAction("" + action.getDescriptionText()) {
+        MPSActionAdapter mpsAction = new MPSActionAdapter("" + action.getDescriptionText()) {
           private EditorCellKeyMapAction myAction = action;
 
           @NotNull
@@ -734,8 +737,13 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           public void doExecute(@NotNull ActionContext context) {
             myAction.execute(null, editorContext);
           }
+
+          protected void doUpdate(ActionContext context) {
+          }
         };
-        mpsAction.add(keyMapActions, context);
+//        mpsAction.setVisible(true);
+//        mpsAction.setEnabled(true);
+        keyMapActions.add(ActionUtils.createComponent(context, mpsAction));
       }
 
       popupMenu.add(keyMapActions);
@@ -748,6 +756,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return ModelAccess.instance().runReadAction(new Computable<ActionContext>() {
       public ActionContext compute() {
         ActionContext context = new ActionContext(getOperationContext());
+        context.put(Project.class, getOperationContext().getProject());
+        context.put(MPSProject.class, getOperationContext().getMPSProject());
         EditorCell cell_ = getSelectedCell();
         if (cell_ != null) {
           final SNode selectedNode = cell_.getSNode();
@@ -2372,18 +2382,19 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private class MPSActionProxy extends AbstractAction {
-    private List<MPSAction> myActions = new ArrayList<MPSAction>();
+    private List<MPSActionAdapter> myActions = new ArrayList<MPSActionAdapter>();
 
-    public void add(MPSAction a) {
+    public void add(MPSActionAdapter a) {
       myActions.add(a);
     }
 
     public void actionPerformed(ActionEvent e) {
-      for (final MPSAction action : myActions) {
+      for (final MPSActionAdapter action : myActions) {
         if (mySelectedCell != null && mySelectedCell.getSNode() != null) {
           final ActionContext context = createActionContext();
-          action.update(context);
-          if (!action.isVisible() || !action.isEnabled()) {
+          Presentation p = new Presentation();
+          action.update(ActionUtils.createEvent(p, context));
+          if (!p.isVisible() || !p.isEnabled()) {
             continue;
           }
 
@@ -2391,7 +2402,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           return;
         }
       }
-
     }
   }
 

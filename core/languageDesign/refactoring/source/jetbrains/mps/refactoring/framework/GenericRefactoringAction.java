@@ -1,11 +1,11 @@
 package jetbrains.mps.refactoring.framework;
 
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.plugins.CurrentProjectMPSAction;
+import jetbrains.mps.ide.action.CurrentProjectMPSAction;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.RefactoringProcessor;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 
 /**

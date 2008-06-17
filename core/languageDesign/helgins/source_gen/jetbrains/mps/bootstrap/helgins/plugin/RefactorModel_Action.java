@@ -4,8 +4,8 @@ package jetbrains.mps.bootstrap.helgins.plugin;
 
 import jetbrains.mps.helgins.uiActions.RefactorModelUtil;
 import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.action.CurrentProjectMPSAction;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.plugins.CurrentProjectMPSAction;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;

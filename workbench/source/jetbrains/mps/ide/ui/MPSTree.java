@@ -1,25 +1,27 @@
 package jetbrains.mps.ide.ui;
 
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.MPSAction;
+import com.intellij.openapi.util.Computable;
+import com.intellij.ui.TreeToolTipHandler;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.action.MPSActionAdapter;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.util.Calculable;
-import jetbrains.mps.util.ColorAndGraphicsUtil;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.ColorAndGraphicsUtil;
 import org.jdom.Element;
 
 import javax.swing.*;
+import javax.swing.event.TreeExpansionEvent;
+import javax.swing.event.TreeExpansionListener;
+import javax.swing.event.TreeWillExpandListener;
 import javax.swing.plaf.basic.BasicGraphicsUtils;
-import javax.swing.event.*;
 import javax.swing.tree.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.List;
-
-import com.intellij.openapi.util.Computable;
-import com.intellij.ui.TreeToolTipHandler;
 
 public abstract class MPSTree extends JTree {
   public static final String MPS_TREE = "mps-tree";
@@ -121,7 +123,7 @@ public abstract class MPSTree extends JTree {
         }
         final KeyStroke eventKeyStroke = KeyStroke.getKeyStrokeForEvent(e);
         Pair pair = new Pair(eventKeyStroke, selNode.getClass());
-        final MPSAction action = myKeyStrokesToActionsMap.get(pair);
+        final MPSActionAdapter action = myKeyStrokesToActionsMap.get(pair);
         if (action != null) {
           final ActionContext context = getActionContext(selNode, nodes);
           action.execute(context);
@@ -318,9 +320,9 @@ public abstract class MPSTree extends JTree {
   }
 
 
-  private HashMap<Pair, MPSAction> myKeyStrokesToActionsMap = new HashMap<Pair, MPSAction>();
+  private HashMap<Pair, MPSActionAdapter> myKeyStrokesToActionsMap = new HashMap<Pair, MPSActionAdapter>();
 
-  public final void registerMPSAction(MPSAction action, Class<? extends MPSTreeNode> nodeClass) {
+  public final void registerMPSAction(MPSActionAdapter action, Class<? extends MPSTreeNode> nodeClass) {
     for (String keyStroke : action.getKeyStrokes()) {
       Pair pair = new Pair(KeyStroke.getKeyStroke(keyStroke), nodeClass);
       myKeyStrokesToActionsMap.put(pair, action);
@@ -403,7 +405,7 @@ public abstract class MPSTree extends JTree {
   public void collapseAll(MPSTreeNode node) {
     boolean wasAutoExpandEnabled = myAutoExpandEnabled;
     try {
-      myAutoExpandEnabled = false;                                              
+      myAutoExpandEnabled = false;
       for (int i = 0; i < node.getChildCount(); i++) {
         collapseAll((MPSTreeNode) node.getChildAt(i));
       }
@@ -698,7 +700,7 @@ public abstract class MPSTree extends JTree {
       expandPaths(expansionPaths);
     }
   }
-  
+
   public TreeState saveState() {
     TreeState result = new TreeState();
     result.myExpansion.addAll(getExpandedPaths());

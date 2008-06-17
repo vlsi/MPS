@@ -1,12 +1,16 @@
 package jetbrains.mps.ide.projectPane;
 
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.Presentation;
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.*;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.workbench.action.ActionUtils;
 
 import javax.swing.JPopupMenu;
 
@@ -49,12 +53,13 @@ class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
   }
 
   public JPopupMenu getPopupMenu() {
-    JPopupMenu result = new JPopupMenu();
     DevKit devKit = getDevKit();
     ActionContext context = new ActionContext(getOperationContext());
     context.put(DevKit.class, devKit);
-    ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_DEVKIT_ACTIONS).add(result, context);
-    return result;
+    ActionGroup g = ActionUtils.getGroup(ProjectPane.PROJECT_PANE_DEVKIT_ACTIONS);
+    Presentation p = new Presentation();
+    g.update(ActionUtils.createEvent(p, context));
+    return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, g).getComponent();
   }
 
   protected String getModulePresentation() {
@@ -64,7 +69,7 @@ class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
       name = NameUtil.shortNameFromLongName(name);
     }
 
-    if(name != null) {
+    if (name != null) {
       return name;
     }
     return "devKit";

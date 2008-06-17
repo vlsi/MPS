@@ -1,17 +1,16 @@
 package jetbrains.mps.ide.structure;
 
+import jetbrains.mps.bootstrap.structureLanguage.structure.*;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.ide.toolsPane.ToolsPane;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.ide.action.MPSAction;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.bootstrap.structureLanguage.structure.*;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 import javax.swing.Icon;
@@ -48,7 +47,7 @@ public class StructureView extends DefaultTool {
   }
 
   public Icon getIcon() {
-    return MPSAction.EMPTY_ICON;
+    return IconManager.EMPTY_ICON;
   }
 
   public JComponent getComponent() {
@@ -57,7 +56,7 @@ public class StructureView extends DefaultTool {
 
   public void updateView() {
     myTree.rebuildNow();
-    
+
   }
 
   private MPSTreeNode buildTree() {
@@ -91,7 +90,7 @@ public class StructureView extends DefaultTool {
     root.add(children);
     for (LinkDeclaration ld : scope.getAdapters(LinkDeclaration.class)) {
       if (ld.getMetaClass() == LinkMetaclass.aggregation) {
-        children.add(new LinkTreeNode(ld));        
+        children.add(new LinkTreeNode(ld));
       }
     }
 

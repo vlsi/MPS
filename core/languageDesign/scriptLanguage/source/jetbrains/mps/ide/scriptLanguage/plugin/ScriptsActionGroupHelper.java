@@ -1,12 +1,8 @@
 package jetbrains.mps.ide.scriptLanguage.plugin;
 
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.ActionGroup;
+import jetbrains.mps.ide.action.MPSActionGroup;
 import jetbrains.mps.ide.scriptLanguage.structure.MigrationScript;
 import jetbrains.mps.ide.scriptLanguage.structure.Script;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
 
@@ -23,7 +19,7 @@ public class ScriptsActionGroupHelper {
     return migrationScripts;
   }
 
-  public static void populateByCategoryGroup(List<MigrationScript> migrationScripts, ActionGroup ownerGroup) {
+  public static void populateByCategoryGroup(List<MigrationScript> migrationScripts, MPSActionGroup ownerGroup) {
     Map<String, List<MigrationScript>> byCategory = new HashMap<String, List<MigrationScript>>();
     for (MigrationScript migrationScript : migrationScripts) {
       String cat = migrationScript.getCategory();
@@ -45,7 +41,7 @@ public class ScriptsActionGroupHelper {
     });
     sorted.addAll(byCategory.keySet());
     for (String cat : sorted) {
-      ActionGroup categoryGroup = new ActionGroup(cat);
+      MPSActionGroup categoryGroup = new MPSActionGroup(cat, "");
       for (MigrationScript script : byCategory.get(cat)) {
         categoryGroup.add(new RunMigrationScriptAction(script,
           makeScriptActionName(null, script.getTitle(), script.getMigrationFromBuild())));
@@ -54,7 +50,7 @@ public class ScriptsActionGroupHelper {
     }
   }
 
-  public static void populateByBuildGroup(List<MigrationScript> migrationScripts, ActionGroup ownerGroup) {
+  public static void populateByBuildGroup(List<MigrationScript> migrationScripts, MPSActionGroup ownerGroup) {
     Map<String, List<MigrationScript>> byBuild = new HashMap<String, List<MigrationScript>>();
     for (MigrationScript migrationScript : migrationScripts) {
       String build = migrationScript.getMigrationFromBuild();
@@ -69,7 +65,7 @@ public class ScriptsActionGroupHelper {
 
     Set<String> sorted = new TreeSet<String>(byBuild.keySet());
     for (String build : sorted) {
-      ActionGroup categoryGroup = new ActionGroup("migrate from b." + build);
+      MPSActionGroup categoryGroup = new MPSActionGroup("migrate from b." + build, "");
       for (MigrationScript script : byBuild.get(build)) {
         categoryGroup.add(new RunMigrationScriptAction(script,
           makeScriptActionName(script.getCategory(), script.getTitle(), null)));
@@ -78,13 +74,13 @@ public class ScriptsActionGroupHelper {
     }
   }
 
-  public static void populateByLanguageGroup(Language language, ActionGroup ownerGroup) {
+  public static void populateByLanguageGroup(Language language, MPSActionGroup ownerGroup) {
     SModelDescriptor scriptsModel = language.getScriptsModelDescriptor();
     if (scriptsModel == null) return;
     List<MigrationScript> migrationScripts = scriptsModel.getSModel().getRootsAdapters(MigrationScript.class);
     List<Script> genericScripts = scriptsModel.getSModel().getRootsAdapters(Script.class);
     if (migrationScripts.isEmpty() && genericScripts.isEmpty()) return;
-    ActionGroup languageScriptsGroup = new ActionGroup(language.getNamespace());
+    MPSActionGroup languageScriptsGroup = new MPSActionGroup(language.getNamespace(), "");
     for (MigrationScript script : migrationScripts) {
       languageScriptsGroup.add(new RunMigrationScriptAction(script,
         makeScriptActionName(script.getCategory(), script.getTitle(), script.getMigrationFromBuild())));

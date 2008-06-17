@@ -2,18 +2,18 @@ package jetbrains.mps.ide.hierarchy;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
-import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.ChooseItemWindow;
 import jetbrains.mps.ide.GoToNodeWindow.GoToNodeComponent;
+import jetbrains.mps.ide.action.AbstractActionWithEmptyIcon;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.workbench.tools.BaseMPSTool;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.workbench.tools.BaseMPSTool;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
-import java.awt.GridLayout;
 import java.awt.Frame;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 

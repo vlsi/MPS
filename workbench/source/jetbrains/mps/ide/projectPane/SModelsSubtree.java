@@ -1,18 +1,16 @@
 package jetbrains.mps.ide.projectPane;
 
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.ActionManager;
-import jetbrains.mps.ide.action.MPSAction;
-import jetbrains.mps.ide.actions.model.NewModelAction;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ProjectModels;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelStereotype;
 
-import javax.swing.JPopupMenu;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SModelsSubtree {
   public static void create(MPSTreeNode rootTreeNode, IOperationContext operationContext) {
@@ -52,7 +50,7 @@ public class SModelsSubtree {
 
       JavaStubsTreeNode javaStubsNode = new JavaStubsTreeNode(operationContext);
       builder.fillNode(javaStubsNode);
-      
+
       rootTreeNode.add(javaStubsNode);
     }
   }

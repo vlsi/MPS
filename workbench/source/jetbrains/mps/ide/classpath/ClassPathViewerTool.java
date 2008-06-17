@@ -2,14 +2,12 @@ package jetbrains.mps.ide.classpath;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
-import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.ClasspathCollector;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ToStringComparator;
@@ -27,7 +25,7 @@ public class ClassPathViewerTool extends BaseMPSTool {
   private IModule myInspectedModule;
 
   public ClassPathViewerTool(Project project) {
-    super(project, "Classpath Explorer", -1, MPSAction.EMPTY_ICON, ToolWindowAnchor.BOTTOM, true);
+    super(project, "Classpath Explorer", -1, IconManager.EMPTY_ICON, ToolWindowAnchor.BOTTOM, true);
   }
 
   public void initComponent() {

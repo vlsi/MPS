@@ -1,9 +1,10 @@
 package jetbrains.mps.ide.hierarchy;
 
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.Presentation;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.ActionGroup;
-import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionDataProvider;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.nodeEditor.EditorSettings;
@@ -11,6 +12,8 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
+import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import org.jetbrains.annotations.NotNull;
 
@@ -166,14 +169,12 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
   }
 
   private void processPopupMenu(MouseEvent e) {
-    ActionGroup group = ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_NODE_ACTIONS);
-    if (group == null) return;
-    JPopupMenu popupMenu = new JPopupMenu();
     ActionContext context = new ActionContext(myOperationContext);
     context.put(SNode.class, BaseAdapter.fromAdapter(getSelectedConcept()));
     context.put(List.class, CollectionUtil.asList(getSelectedConcept()));
-    group.add(popupMenu, context);
-    popupMenu.show(this, e.getX(), e.getY());
+    BaseGroup group = ActionUtils.getGroup(ProjectPane.PROJECT_PANE_NODE_ACTIONS);
+    group.update(ActionUtils.createEvent(new Presentation(), context));
+    ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent().show(this, e.getX(), e.getY());
   }
 
   public java.util.List<ConceptContainer> createHierarchyForest() {

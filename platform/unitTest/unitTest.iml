@@ -15,7 +15,7 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$MPS_HOME$/lib/junit4/junit-4.1.jar!/" />
+          <root url="jar://$MPS_BUILD_HOME$/lib/junit4/junit-4.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

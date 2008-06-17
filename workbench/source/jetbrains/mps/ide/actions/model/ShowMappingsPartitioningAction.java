@@ -3,7 +3,7 @@ package jetbrains.mps.ide.actions.model;
 import jetbrains.mps.generator.plan.GenerationPartitioner;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.MPSAction;
+import jetbrains.mps.ide.action.MPSActionAdapter;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.MessagesViewTool;
@@ -24,7 +24,7 @@ import java.util.List;
  * Igor Alshannikov
  * Mar 11, 2008
  */
-public class ShowMappingsPartitioningAction extends MPSAction {
+public class ShowMappingsPartitioningAction extends MPSActionAdapter {
   public ShowMappingsPartitioningAction() {
     super("Show mappings partitioning");
   }

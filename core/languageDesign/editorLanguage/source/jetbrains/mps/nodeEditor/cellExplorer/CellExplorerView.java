@@ -1,6 +1,6 @@
 package jetbrains.mps.nodeEditor.cellExplorer;
 
-import jetbrains.mps.ide.*;
+import jetbrains.mps.ide.action.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
-import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultTreeModel;
@@ -308,7 +307,7 @@ public class CellExplorerView extends DefaultTool {
         }
         result += " text = \"" + text + "\"";
       }
-      if (myCell.isErrorState() ) {
+      if (myCell.isErrorState()) {
         result += " (error state)";
       }
       return result;
@@ -317,8 +316,10 @@ public class CellExplorerView extends DefaultTool {
     public String calculateNodeIdentifier() {
       String result = myCell.getClass().getName();
       if (myCell.getSNode() != null) result += "[" + myCell.getSNode().getId() + "]";
-      if (myCell.getUserObject(EditorCell.CELL_ID) != null) result += "[" + myCell.getUserObject(EditorCell.CELL_ID).toString() + "]";
-      if (myCell.getUserObject(EditorCell.NUMBER) != null) result += "[" + myCell.getUserObject(EditorCell.NUMBER) + "]";
+      if (myCell.getUserObject(EditorCell.CELL_ID) != null)
+        result += "[" + myCell.getUserObject(EditorCell.CELL_ID).toString() + "]";
+      if (myCell.getUserObject(EditorCell.NUMBER) != null)
+        result += "[" + myCell.getUserObject(EditorCell.NUMBER) + "]";
       return result;
     }
   }
@@ -342,7 +343,7 @@ public class CellExplorerView extends DefaultTool {
 
 
       List<Pair<EditorCellKeyMapAction, EditorCellKeyMap.ActionKey>> list =
-              new ArrayList<Pair<EditorCellKeyMapAction, EditorCellKeyMap.ActionKey>>(keyMap.getAllActionsAndKeys());
+        new ArrayList<Pair<EditorCellKeyMapAction, EditorCellKeyMap.ActionKey>>(keyMap.getAllActionsAndKeys());
 
 
       Collections.sort(list, new Comparator<Pair<EditorCellKeyMapAction, EditorCellKeyMap.ActionKey>>() {
@@ -357,7 +358,7 @@ public class CellExplorerView extends DefaultTool {
         if (key.o1.getDescriptionText() != null && key.o1.getDescriptionText().length() != 0) {
           text += " (" + key.o1.getDescriptionText() + ")";
         }
-        
+
         add(new TextTreeNode(text) {
           {
             setIcon(Icons.CELL_ACTION_KEY_ICON);
