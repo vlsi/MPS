@@ -17,7 +17,6 @@ import com.intellij.ui.content.ContentManagerEvent;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.ConceptInstances_Finder;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder;
-import jetbrains.mps.ide.HintDialog;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
@@ -211,7 +210,7 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
       public void run() {
         int resCount = searchResults.getSearchResults().size();
         if (resCount == 0) {
-          new HintDialog(JOptionPane.getFrameForComponent(getContentManager().getComponent()), "Not found", "No usages for that node").showDialog();
+          JOptionPane.showMessageDialog(getContentManager().getComponent(), "No usages for that node", "Not found", JOptionPane.INFORMATION_MESSAGE);
         } else if (resCount == 1 && !showOne) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
