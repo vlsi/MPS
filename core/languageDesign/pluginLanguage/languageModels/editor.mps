@@ -101,8 +101,8 @@
             <property name="text" value="description:" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1213273196784">
-            <property name="allowEmptyText" value="false" />
-            <property name="noTargetText" value="&lt;no caption&gt;" />
+            <property name="allowEmptyText" value="true" />
+            <property name="noTargetText" value="&lt;no description&gt;" />
             <link role="relationDeclaration" targetNodeId="1.1213273179528" resolveInfo="description" />
           </node>
         </node>

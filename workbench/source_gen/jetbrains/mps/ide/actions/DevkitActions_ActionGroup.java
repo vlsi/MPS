@@ -18,7 +18,7 @@ public class DevkitActions_ActionGroup extends CurrentProjectGroup {
   public static final String LABEL_ID_VCS = "VCS";
 
   public DevkitActions_ActionGroup(Project project) {
-    super("", ID, false, null, project);
+    super("", ID, true, false, null, project);
     this.setPopup(false);
     try {
       this.add(new SetModuleFolderAction());

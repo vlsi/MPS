@@ -11,7 +11,7 @@ import jetbrains.mps.ide.actions.cells.ShowCellInCellExplorerAction;
 import jetbrains.mps.ide.actions.nodes.PrintNodeIDAction;
 import jetbrains.mps.ide.actions.nodes.PrintTextPresentationAction;
 import jetbrains.mps.ide.actions.nodes.HighlightCellDependenciesAction;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 
 public class EditorInternal_ActionGroup extends CurrentProjectGroup {
@@ -19,7 +19,7 @@ public class EditorInternal_ActionGroup extends CurrentProjectGroup {
   public static final String ID = "jetbrains.mps.ide.actions.EditorInternal";
 
   public EditorInternal_ActionGroup(Project project) {
-    super("Internal", ID, true, null, project);
+    super("Internal", ID, true, true, null, project);
     this.setPopup(true);
     try {
       this.add(new TestNodePathAction());
@@ -37,8 +37,8 @@ public class EditorInternal_ActionGroup extends CurrentProjectGroup {
 
   public void adjust() {
     {
-      DefaultActionGroup gTo = ActionUtils.getGroup(EditorPopup_ActionGroup.ID);
-      DefaultActionGroup gWhat = ActionUtils.getGroup(EditorInternal_ActionGroup.ID);
+      BaseGroup gTo = ActionUtils.getGroup(EditorPopup_ActionGroup.ID);
+      BaseGroup gWhat = ActionUtils.getGroup(EditorInternal_ActionGroup.ID);
       if (gTo == null || gWhat == null) {
         return;
       }

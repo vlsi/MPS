@@ -27,7 +27,7 @@ public class LanguageActions_ActionGroup extends CurrentProjectGroup {
   public static final String LABEL_ID_VCS = "VCS";
 
   public LanguageActions_ActionGroup(Project project) {
-    super("", ID, false, null, project);
+    super("", ID, true, false, null, project);
     this.setPopup(false);
     try {
       this.add(new LabelledAnchor(LanguageActions_ActionGroup.LABEL_ID_newGroup));

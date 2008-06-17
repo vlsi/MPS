@@ -17,6 +17,8 @@ import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.tools.BaseMPSTool;
+import jetbrains.mps.workbench.action.BaseGroup;
+import jetbrains.mps.workbench.action.DefaultGroup;
 
 import javax.swing.*;
 import java.awt.*;
@@ -83,7 +85,7 @@ public class MessagesViewTool extends BaseMPSTool implements PersistentStateComp
     JPanel panel = new JPanel(new BorderLayout());
     panel.add(new JPanel(), BorderLayout.CENTER);
 
-    DefaultActionGroup group = new DefaultActionGroup();
+    DefaultGroup group = new DefaultGroup();
     group.add(myErrorsAction);
     group.add(myWarningsAction);
     group.add(myInfoAction);

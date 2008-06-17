@@ -1,39 +1,57 @@
 package jetbrains.mps.workbench.action;
 
+import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.Presentation;
 import jetbrains.mps.ide.action.InternalFlag;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Condition;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-public class BaseGroup extends DefaultActionGroup {
+import java.util.Arrays;
+
+public class BaseGroup extends DefaultGroup {
   private String myId = "";
   private boolean myIsInternal = false;
+  private boolean myIsAlwaysVisible = true;
 
-  public BaseGroup(String name) {
-    this(name, name, false, 'a');
-  }
-
-  public BaseGroup(String text, String id, boolean isInternal, char mnemonic) {
+  public BaseGroup(String text, String id, boolean isAlwaysVisible, boolean isInternal, Object mnemonic) {
     super(text, false);
     myId = id;
     myIsInternal = isInternal;
+  }
+
+  public BaseGroup(String name) {
+    this(name, name, true, false, 'a');
   }
 
   public String getId() {
     return myId;
   }
 
-  public void setVisible(AnActionEvent e, boolean isVisible) {
-    e.getPresentation().setVisible(isVisible);
+  public void setVisible(Presentation p, boolean isVisible) {
+    p.setVisible(isVisible);
   }
 
-  public void setEnabled(AnActionEvent e, boolean isEnabled) {
-    e.getPresentation().setEnabled(isEnabled);
+  public void setEnabled(Presentation p, boolean isEnabled) {
+    p.setEnabled(isEnabled);
   }
 
-  public void disable(AnActionEvent e) {
-    setEnabled(e, false);
-    setVisible(e, false);
+  public void disable(Presentation p) {
+    setEnabled(p, false);
+    setVisible(p, myIsAlwaysVisible);
+  }
+
+  public void enable(Presentation p) {
+    setEnabled(p, true);
+    setVisible(p, true);
+  }
+
+  protected void setEnabledState(Presentation p, boolean state) {
+    if (state) enable(p);
+    else disable(p);
   }
 
   public void update(final AnActionEvent e) {
@@ -43,13 +61,23 @@ public class BaseGroup extends DefaultActionGroup {
         doUpdate(e);
       }
     });
-    if (myIsInternal && !InternalFlag.isInternalModel()) {
-      e.getPresentation().setVisible(false);
-    }
+    if (myIsInternal && !InternalFlag.isInternalModel()) disable(e.getPresentation());
   }
 
-  public void adjust(){}
+  @NotNull
+  public AnAction[] getChildren(@Nullable AnActionEvent e) {
+    return CollectionUtil.filter(Arrays.asList(super.getChildren(e)), new Condition<AnAction>() {
+      public boolean met(AnAction action) {
+        return !(action instanceof LabelledAnchor);
+      }
+    }).toArray(new AnAction[0]);
+  }
+
+  public void adjust() {
+
+  }
 
   protected void doUpdate(AnActionEvent e) {
+
   }
 }

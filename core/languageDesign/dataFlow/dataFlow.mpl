@@ -27,12 +27,9 @@
     <entry path="${language_descriptor}\runtime\classes" />
   </languageRuntimeClassPath>
   <sourcePath />
-  <osgiOptions>
-    <requiredBundles />
-    <exportedPackage />
-  </osgiOptions>
   <dependencies>
     <dependency reexport="false">jetbrains.mps.ide</dependency>
+    <dependency reexport="false">MPS.Classpath</dependency>
   </dependencies>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>

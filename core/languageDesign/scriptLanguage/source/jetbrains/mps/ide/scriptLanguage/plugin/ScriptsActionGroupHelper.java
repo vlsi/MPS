@@ -9,7 +9,7 @@ import jetbrains.mps.plugins.actions.BaseActionGroup;
 import jetbrains.mps.workbench.action.BaseGroup;
 
 import java.util.*;
-import java.util.*;
+
 
 public class ScriptsActionGroupHelper {
   public static List<MigrationScript> getMigrationScripts(List<Language> languages) {

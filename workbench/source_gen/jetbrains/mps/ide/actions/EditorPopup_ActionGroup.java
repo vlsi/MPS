@@ -34,7 +34,7 @@ public class EditorPopup_ActionGroup extends CurrentProjectGroup {
   public static final String ID = "jetbrains.mps.ide.actions.EditorPopup";
 
   public EditorPopup_ActionGroup(Project project) {
-    super("", ID, false, null, project);
+    super("", ID, true, false, null, project);
     this.setPopup(false);
     try {
       this.add(new GoByReferenceGroup());

@@ -43,7 +43,7 @@ public abstract class BaseAction extends AnAction {
   public void update(final AnActionEvent e) {
     super.update(e);
     if (!fillFieldsIfNecessary(e)) {
-      disable(e);
+      disable(e.getPresentation());
       return;
     }
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -79,39 +79,39 @@ public abstract class BaseAction extends AnAction {
     else commander.run();
   }
 
-  protected void disable(AnActionEvent e) {
-    setEnabled(e, false);
-    setVisible(e, myIsAlwaysVisible);
+  protected void disable(Presentation p) {
+    setEnabled(p, false);
+    setVisible(p, myIsAlwaysVisible);
   }
 
-  protected void enable(AnActionEvent e) {
-    setEnabled(e, true);
-    setVisible(e, true);
+  protected void enable(Presentation p) {
+    setEnabled(p, true);
+    setVisible(p, true);
   }
 
-  protected void setEnabledState(AnActionEvent e, boolean state) {
-    if (state) enable(e);
-    else disable(e);
+  protected void setEnabledState(Presentation p, boolean state) {
+    if (state) enable(p);
+    else disable(p);
   }
 
-  @Deprecated
-  protected void setEnabled(AnActionEvent e, boolean isEnabled) {
-    e.getPresentation().setEnabled(isEnabled);
+  protected void setEnabled(Presentation p, boolean isEnabled) {
+    p.setEnabled(isEnabled);
   }
 
-  @Deprecated
-  protected void setVisible(AnActionEvent e, boolean isVisible) {
-    e.getPresentation().setVisible(isVisible);
+  protected void setVisible(Presentation p, boolean isVisible) {
+    p.setVisible(isVisible);
   }
 
   protected boolean fillFieldsIfNecessary(AnActionEvent e) {
     return true;
   }
 
+  protected void doUpdate(AnActionEvent e){
+
+  }
+
   @NotNull
   protected abstract String getKeyStroke();
-
-  protected abstract void doUpdate(AnActionEvent e);
 
   protected abstract void doExecute(AnActionEvent e);
 }

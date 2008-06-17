@@ -6,7 +6,7 @@ import jetbrains.mps.workbench.action.CurrentProjectGroup;
 import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.actions.model.NewModelAction;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.Constraints;
 import com.intellij.openapi.actionSystem.Anchor;
@@ -16,7 +16,7 @@ public class GeneratorNewActions_ActionGroup extends CurrentProjectGroup {
   public static final String ID = "jetbrains.mps.ide.actions.GeneratorNewActions";
 
   public GeneratorNewActions_ActionGroup(Project project) {
-    super("New", ID, false, null, project);
+    super("New", ID, true, false, null, project);
     this.setPopup(true);
     try {
       this.add(new NewModelAction());
@@ -27,8 +27,8 @@ public class GeneratorNewActions_ActionGroup extends CurrentProjectGroup {
 
   public void adjust() {
     {
-      DefaultActionGroup gTo = ActionUtils.getGroup(GeneratorActions_ActionGroup.ID);
-      DefaultActionGroup gWhat = ActionUtils.getGroup(GeneratorNewActions_ActionGroup.ID);
+      BaseGroup gTo = ActionUtils.getGroup(GeneratorActions_ActionGroup.ID);
+      BaseGroup gWhat = ActionUtils.getGroup(GeneratorNewActions_ActionGroup.ID);
       if (gTo == null || gWhat == null) {
         return;
       }

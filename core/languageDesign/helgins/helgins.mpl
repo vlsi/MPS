@@ -35,6 +35,7 @@
     <dependency reexport="false">jetbrains.mps.bootstrap.actionsLanguage</dependency>
     <dependency reexport="false">jetbrains.mps.ide</dependency>
     <dependency reexport="false">jetbrains.mps.bootstrap.pluginLanguage</dependency>
+    <dependency reexport="false">MPS.Classpath</dependency>
   </dependencies>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>

@@ -18,7 +18,7 @@ public class ProjectActions_ActionGroup extends CurrentProjectGroup {
   public static final String LABEL_ID_miscMenu = "miscMenu";
 
   public ProjectActions_ActionGroup(Project project) {
-    super("", ID, false, null, project);
+    super("", ID, true, false, null, project);
     this.setPopup(false);
     try {
       this.add(new LabelledAnchor(ProjectActions_ActionGroup.LABEL_ID_projectNew));

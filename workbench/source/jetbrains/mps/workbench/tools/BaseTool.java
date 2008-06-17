@@ -11,6 +11,8 @@ import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentFactoryImpl;
 import com.intellij.ui.content.ContentManager;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.workbench.action.BaseGroup;
+import jetbrains.mps.workbench.action.DefaultGroup;
 import jetbrains.mps.ide.findusages.view.icons.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
@@ -185,7 +187,7 @@ public abstract class BaseTool {
       if (!hasCloseButton()) {
         addContent(component, null, false);
       } else {
-        DefaultActionGroup group = new DefaultActionGroup();
+        DefaultGroup group = new DefaultGroup();
         group.add(new AnAction("", "Close", Icons.CLOSE_ICON) {
           public void actionPerformed(AnActionEvent e) {
             getContentManager().removeAllContents(true);

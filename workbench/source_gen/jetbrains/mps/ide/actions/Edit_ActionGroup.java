@@ -10,7 +10,7 @@ import jetbrains.mps.ide.actions.nodes.CopyNodeReferenceAction;
 import jetbrains.mps.ide.actions.nodes.PasteNodeAction;
 import jetbrains.mps.ide.actions.nodes.CutNodeAction;
 import jetbrains.mps.workbench.action.LabelledAnchor;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.Constraints;
 import com.intellij.openapi.actionSystem.Anchor;
@@ -21,7 +21,7 @@ public class Edit_ActionGroup extends CurrentProjectGroup {
   public static final String LABEL_ID_custom = "custom";
 
   public Edit_ActionGroup(Project project) {
-    super("Edit", ID, false, "E".charAt(0), project);
+    super("Edit", ID, true, false, "E".charAt(0), project);
     this.setPopup(true);
     try {
       this.add(new CopyNodeAction());
@@ -37,8 +37,8 @@ public class Edit_ActionGroup extends CurrentProjectGroup {
 
   public void adjust() {
     {
-      DefaultActionGroup gTo = ActionUtils.getGroup(MainMenu_ActionGroup.ID);
-      DefaultActionGroup gWhat = ActionUtils.getGroup(Edit_ActionGroup.ID);
+      BaseGroup gTo = ActionUtils.getGroup(MainMenu_ActionGroup.ID);
+      BaseGroup gWhat = ActionUtils.getGroup(Edit_ActionGroup.ID);
       if (gTo == null || gWhat == null) {
         return;
       }

@@ -8,7 +8,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.actions.project.NewSolutionAction;
 import jetbrains.mps.ide.actions.project.NewLanguageAction;
 import jetbrains.mps.ide.actions.project.NewDevKitAction;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.Constraints;
 import com.intellij.openapi.actionSystem.Anchor;
@@ -18,7 +18,7 @@ public class ProjectNewActions_ActionGroup extends CurrentProjectGroup {
   public static final String ID = "jetbrains.mps.ide.actions.ProjectNewActions";
 
   public ProjectNewActions_ActionGroup(Project project) {
-    super("New", ID, false, null, project);
+    super("New", ID, true, false, null, project);
     this.setPopup(true);
     try {
       this.add(new NewSolutionAction());
@@ -31,8 +31,8 @@ public class ProjectNewActions_ActionGroup extends CurrentProjectGroup {
 
   public void adjust() {
     {
-      DefaultActionGroup gTo = ActionUtils.getGroup(ProjectActions_ActionGroup.ID);
-      DefaultActionGroup gWhat = ActionUtils.getGroup(ProjectNewActions_ActionGroup.ID);
+      BaseGroup gTo = ActionUtils.getGroup(ProjectActions_ActionGroup.ID);
+      BaseGroup gWhat = ActionUtils.getGroup(ProjectNewActions_ActionGroup.ID);
       if (gTo == null || gWhat == null) {
         return;
       }

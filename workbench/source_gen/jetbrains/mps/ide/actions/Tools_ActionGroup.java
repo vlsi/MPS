@@ -11,7 +11,7 @@ import jetbrains.mps.ide.actions.tools.RebuildAllModulesAction;
 import jetbrains.mps.ide.actions.tools.CleanAllModulesAction;
 import jetbrains.mps.workbench.action.LabelledAnchor;
 import jetbrains.mps.svn.ui.SVNCheckOutAction;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.Constraints;
 import com.intellij.openapi.actionSystem.Anchor;
@@ -23,7 +23,7 @@ public class Tools_ActionGroup extends CurrentProjectGroup {
   public static final String INTERNAL_LABEL_ID_VersionControl = "VersionControl";
 
   public Tools_ActionGroup(Project project) {
-    super("Tools", ID, false, "T".charAt(0), project);
+    super("Tools", ID, true, false, "T".charAt(0), project);
     this.setPopup(true);
     try {
       this.add(new InstallIDEAPluginAction());
@@ -42,8 +42,8 @@ public class Tools_ActionGroup extends CurrentProjectGroup {
 
   public void adjust() {
     {
-      DefaultActionGroup gTo = ActionUtils.getGroup(MainMenu_ActionGroup.ID);
-      DefaultActionGroup gWhat = ActionUtils.getGroup(Tools_ActionGroup.ID);
+      BaseGroup gTo = ActionUtils.getGroup(MainMenu_ActionGroup.ID);
+      BaseGroup gWhat = ActionUtils.getGroup(Tools_ActionGroup.ID);
       if (gTo == null || gWhat == null) {
         return;
       }

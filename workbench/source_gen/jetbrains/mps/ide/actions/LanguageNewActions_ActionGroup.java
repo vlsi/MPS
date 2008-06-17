@@ -7,7 +7,7 @@ import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.actions.language.NewGeneratorAction;
 import jetbrains.mps.ide.actions.language.NewAccessoryModelAction;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.Constraints;
 import com.intellij.openapi.actionSystem.Anchor;
@@ -17,7 +17,7 @@ public class LanguageNewActions_ActionGroup extends CurrentProjectGroup {
   public static final String ID = "jetbrains.mps.ide.actions.LanguageNewActions";
 
   public LanguageNewActions_ActionGroup(Project project) {
-    super("New", ID, false, null, project);
+    super("New", ID, true, false, null, project);
     this.setPopup(true);
     try {
       this.add(new NewGeneratorAction());
@@ -31,8 +31,8 @@ public class LanguageNewActions_ActionGroup extends CurrentProjectGroup {
 
   public void adjust() {
     {
-      DefaultActionGroup gTo = ActionUtils.getGroup(LanguageActions_ActionGroup.ID);
-      DefaultActionGroup gWhat = ActionUtils.getGroup(LanguageNewActions_ActionGroup.ID);
+      BaseGroup gTo = ActionUtils.getGroup(LanguageActions_ActionGroup.ID);
+      BaseGroup gWhat = ActionUtils.getGroup(LanguageNewActions_ActionGroup.ID);
       if (gTo == null || gWhat == null) {
         return;
       }

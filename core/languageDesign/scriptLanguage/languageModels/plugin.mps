@@ -71,7 +71,7 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207492365541">
             <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1207492364649" />
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207492366480">
-              <link role="baseMethodDeclaration" targetNodeId="9.~DefaultActionGroup.removeAll():void" resolveInfo="removeAll" />
+              <link role="baseMethodDeclaration" targetNodeId="12.~DefaultGroup.removeAll():void" resolveInfo="removeAll" />
             </node>
           </node>
         </node>

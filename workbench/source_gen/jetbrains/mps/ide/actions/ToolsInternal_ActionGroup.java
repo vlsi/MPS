@@ -17,7 +17,7 @@ public class ToolsInternal_ActionGroup extends CurrentProjectGroup {
   public static final String ID = "jetbrains.mps.ide.actions.Internal";
 
   public ToolsInternal_ActionGroup(Project project) {
-    super("Internal", ID, true, null, project);
+    super("Internal", ID, true, true, null, project);
     this.setPopup(false);
     try {
       this.add(new RemoveTransientModulesAction());

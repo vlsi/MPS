@@ -15,7 +15,7 @@ import jetbrains.mps.ide.actions.nodes.GoToRulesAction;
 import jetbrains.mps.ide.actions.gotoMenu.GoToProjectPaneAction;
 import jetbrains.mps.ide.actions.gotoMenu.GoToLanguageAction;
 import jetbrains.mps.ide.actions.gotoMenu.GoToModelAction;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.Constraints;
 import com.intellij.openapi.actionSystem.Anchor;
@@ -25,7 +25,7 @@ public class Goto_ActionGroup extends CurrentProjectGroup {
   public static final String ID = "jetbrains.mps.ide.actions.Goto";
 
   public Goto_ActionGroup(Project project) {
-    super("Go To", ID, false, "O".charAt(0), project);
+    super("Go To", ID, true, false, "O".charAt(0), project);
     this.setPopup(true);
     try {
       this.add(new GoToRootAction());
@@ -48,8 +48,8 @@ public class Goto_ActionGroup extends CurrentProjectGroup {
 
   public void adjust() {
     {
-      DefaultActionGroup gTo = ActionUtils.getGroup(MainMenu_ActionGroup.ID);
-      DefaultActionGroup gWhat = ActionUtils.getGroup(Goto_ActionGroup.ID);
+      BaseGroup gTo = ActionUtils.getGroup(MainMenu_ActionGroup.ID);
+      BaseGroup gWhat = ActionUtils.getGroup(Goto_ActionGroup.ID);
       if (gTo == null || gWhat == null) {
         return;
       }

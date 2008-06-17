@@ -16,9 +16,7 @@
   </language>
   <language namespace="jetbrains.mps.baseLanguage.classifiers" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <maxImportIndex value="15" />
+  <maxImportIndex value="16" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.dataFlow.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.dataFlow@java_stub" version="-1" />
   <import index="4" modelUID="java.lang@java_stub" version="-1" />
@@ -31,10 +29,11 @@
   <import index="11" modelUID="java.util@java_stub" version="-1" />
   <import index="14" modelUID="jetbrains.mps.plugins@java_stub" version="-1" />
   <import index="15" modelUID="jetbrains.mps.dataFlow.framework.instructions@java_stub" version="-1" />
+  <import index="16" modelUID="jetbrains.mps.workbench.action@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1206459480619">
     <property name="name" value="PrintDFAResult" />
     <property name="caption" value="Print DFA" />
-    <link role="extendedAction" targetNodeId="14.~CurrentProjectMPSAction" resolveInfo="CurrentProjectMPSAction" />
+    <link role="extendedAction" targetNodeId="16.~CurrentProjectAction" resolveInfo="CurrentProjectAction" />
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock" id="1206459480620">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206459480621">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206459712472">
@@ -113,7 +112,7 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1206642260578">
     <property name="name" value="ShowDFA" />
     <property name="caption" value="Show DFA (under construction)" />
-    <link role="extendedAction" targetNodeId="14.~CurrentProjectMPSAction" resolveInfo="CurrentProjectMPSAction" />
+    <link role="extendedAction" targetNodeId="16.~CurrentProjectAction" resolveInfo="CurrentProjectAction" />
     <node role="parameterDeclaration" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterDeclaration" id="1206642293488">
       <property name="name" value="node" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206642293489" />
@@ -164,7 +163,7 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1207219950955">
     <property name="name" value="PrintReachingDefinintionsInformation" />
     <property name="caption" value="Print DFA Reaching Definitions Information" />
-    <link role="extendedAction" targetNodeId="14.~CurrentProjectMPSAction" resolveInfo="CurrentProjectMPSAction" />
+    <link role="extendedAction" targetNodeId="16.~CurrentProjectAction" resolveInfo="CurrentProjectAction" />
     <node role="parameterDeclaration" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterDeclaration" id="1207219987386">
       <property name="name" value="node" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1207219987387" />
@@ -245,7 +244,7 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1211451948539">
     <property name="name" value="PrintInitializationInformation" />
     <property name="caption" value="Print DFA Initialization Information" />
-    <link role="extendedAction" targetNodeId="14.~CurrentProjectMPSAction" resolveInfo="CurrentProjectMPSAction" />
+    <link role="extendedAction" targetNodeId="16.~CurrentProjectAction" resolveInfo="CurrentProjectAction" />
     <node role="parameterDeclaration" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterDeclaration" id="1211451948540">
       <property name="name" value="node" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1211451948541" />
@@ -291,8 +290,10 @@
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1211451948559">
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1211451948560">
                 <link role="baseMethodDeclaration" targetNodeId="5.~Program.analyze(jetbrains.mps.dataFlow.framework.DataFlowAnalyzer):jetbrains.mps.dataFlow.framework.AnalysisResult" resolveInfo="analyze" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1211451948561">
-                  <link role="baseMethodDeclaration" targetNodeId="10.~InitializedVariablesAnalyzer.&lt;init&gt;()" resolveInfo="InitializedVariablesAnalyzer" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213727358714">
+                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213727358716">
+                    <link role="baseMethodDeclaration" targetNodeId="10.~InitializedVariablesAnalyzer.&lt;init&gt;()" resolveInfo="InitializedVariablesAnalyzer" />
+                  </node>
                 </node>
               </node>
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1211451948562">

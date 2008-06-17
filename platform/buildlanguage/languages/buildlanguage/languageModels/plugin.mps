@@ -18,13 +18,7 @@
   <languageAspect modelUID="jetbrains.mps.buildlanguage.structure" version="16" />
   <languageAspect modelUID="jetbrains.mps.buildlanguage.constraints" version="6" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <maxImportIndex value="17" />
+  <maxImportIndex value="18" />
   <import index="1" modelUID="jetbrains.mps.buildlanguage.structure" version="16" />
   <import index="2" modelUID="jetbrains.mps.mpsLayoutLanguage@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.ide.actions" version="-1" />
@@ -41,6 +35,7 @@
   <import index="15" modelUID="jetbrains.mps.buildlanguage.tasksfromjar@java_stub" version="-1" />
   <import index="16" modelUID="jetbrains.mps.plugins@java_stub" version="-1" />
   <import index="17" modelUID="com.intellij.openapi.progress@java_stub" version="-1" />
+  <import index="18" modelUID="jetbrains.mps.workbench.action@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1207326375796">
     <property name="name" value="ProjectPaneModelAddition" />
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1207326387469">
@@ -59,7 +54,7 @@
     <property name="name" value="GenerateMPSBuildAction" />
     <property name="caption" value="Generate MPS Build" />
     <property name="outsideCommandExecution" value="true" />
-    <link role="extendedAction" targetNodeId="16.~CurrentProjectMPSAction" resolveInfo="CurrentProjectMPSAction" />
+    <link role="extendedAction" targetNodeId="18.~CurrentProjectAction" resolveInfo="CurrentProjectAction" />
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock" id="1207326603098">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207326603099">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1207326868545">

@@ -46,7 +46,7 @@ public class ActionUtils {
   }
 
   public static ActionGroup groupFromActions(AnAction... actions) {
-    DefaultActionGroup g = new DefaultActionGroup();
+    DefaultGroup g = new DefaultGroup();
     for (AnAction action : actions) {
       g.add(action);
     }
@@ -141,8 +141,8 @@ public class ActionUtils {
       }
     }
 
-    if (group instanceof DefaultActionGroup) {
-      ((DefaultActionGroup) group).remove(action);
+    if (group instanceof DefaultGroup) {
+      ((DefaultGroup) group).remove(action);
     }
   }
 }

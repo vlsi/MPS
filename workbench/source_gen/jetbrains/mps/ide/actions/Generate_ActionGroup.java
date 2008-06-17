@@ -9,7 +9,7 @@ import jetbrains.mps.ide.actions.module.GenerateAllModelsInModuleAction_false;
 import jetbrains.mps.ide.actions.generate.ToggleTransientModelsSavingAction;
 import jetbrains.mps.ide.actions.generate.GenerateFilesFromCurrentModelAction;
 import jetbrains.mps.ide.actions.generate.GenerateTextFromCurrentModelAction;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.Constraints;
 import com.intellij.openapi.actionSystem.Anchor;
@@ -19,7 +19,7 @@ public class Generate_ActionGroup extends CurrentProjectGroup {
   public static final String ID = "jetbrains.mps.ide.actions.Generate";
 
   public Generate_ActionGroup(Project project) {
-    super("Generate", ID, false, "G".charAt(0), project);
+    super("Generate", ID, true, false, "G".charAt(0), project);
     this.setPopup(true);
     try {
       this.add(new GenerateAllModelsInModuleAction_false());
@@ -35,8 +35,8 @@ public class Generate_ActionGroup extends CurrentProjectGroup {
 
   public void adjust() {
     {
-      DefaultActionGroup gTo = ActionUtils.getGroup(MainMenu_ActionGroup.ID);
-      DefaultActionGroup gWhat = ActionUtils.getGroup(Generate_ActionGroup.ID);
+      BaseGroup gTo = ActionUtils.getGroup(MainMenu_ActionGroup.ID);
+      BaseGroup gWhat = ActionUtils.getGroup(Generate_ActionGroup.ID);
       if (gTo == null || gWhat == null) {
         return;
       }

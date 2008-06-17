@@ -1054,7 +1054,7 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213719017086">
             <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1213719016304" />
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1213719444429">
-              <link role="baseMethodDeclaration" targetNodeId="47.~DefaultActionGroup.removeAll():void" resolveInfo="removeAll" />
+              <link role="baseMethodDeclaration" targetNodeId="51.~DefaultGroup.removeAll():void" resolveInfo="removeAll" />
             </node>
           </node>
         </node>

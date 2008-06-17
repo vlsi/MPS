@@ -19,7 +19,7 @@ public class GeneratorActions_ActionGroup extends CurrentProjectGroup {
   public static final String LABEL_ID_VCS = "VCS";
 
   public GeneratorActions_ActionGroup(Project project) {
-    super("", ID, false, null, project);
+    super("", ID, true, false, null, project);
     this.setPopup(false);
     try {
       this.add(new LabelledAnchor(GeneratorActions_ActionGroup.LABEL_ID_generatorNew));

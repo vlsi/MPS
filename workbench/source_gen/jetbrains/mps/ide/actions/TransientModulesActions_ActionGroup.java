@@ -12,7 +12,7 @@ public class TransientModulesActions_ActionGroup extends CurrentProjectGroup {
   public static final String ID = "jetbrains.mps.ide.actions.TransientModulesActions";
 
   public TransientModulesActions_ActionGroup(Project project) {
-    super("", ID, false, null, project);
+    super("", ID, true, false, null, project);
     this.setPopup(false);
     try {
       this.add(new RemoveTransientModulesAction());

@@ -7,7 +7,7 @@ import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.ide.actions.language.NewAspectModelAction;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 
 public class LanguageNewCustomPartActions_ActionGroup extends CurrentProjectGroup {
@@ -15,7 +15,7 @@ public class LanguageNewCustomPartActions_ActionGroup extends CurrentProjectGrou
   public static final String ID = "jetbrains.mps.ide.actions.LanguageNewCustomPartActions";
 
   public LanguageNewCustomPartActions_ActionGroup(Project project) {
-    super("", ID, false, null, project);
+    super("", ID, true, false, null, project);
     this.setPopup(false);
     try {
       for(LanguageAspect aspect : LanguageAspect.values()) {
@@ -28,8 +28,8 @@ public class LanguageNewCustomPartActions_ActionGroup extends CurrentProjectGrou
 
   public void adjust() {
     {
-      DefaultActionGroup gTo = ActionUtils.getGroup(LanguageNewActions_ActionGroup.ID);
-      DefaultActionGroup gWhat = ActionUtils.getGroup(LanguageNewCustomPartActions_ActionGroup.ID);
+      BaseGroup gTo = ActionUtils.getGroup(LanguageNewActions_ActionGroup.ID);
+      BaseGroup gWhat = ActionUtils.getGroup(LanguageNewCustomPartActions_ActionGroup.ID);
       if (gTo == null || gWhat == null) {
         return;
       }
