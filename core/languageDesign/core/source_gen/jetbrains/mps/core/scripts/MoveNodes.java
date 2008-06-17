@@ -29,6 +29,7 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ModuleContext;
 import java.util.Map;
@@ -184,9 +185,12 @@ public class MoveNodes extends AbstractLoggableRefactoring {
       }
       if (targetModel != null) {
         IModule module = targetModel.getModelDescriptor().getModule();
-        final IOperationContext operationContext = new ModuleContext(module, actionContext.getOperationContext().getMPSProject());
-        if (operationContext != null) {
-          refactoringContext.setParameter("nodeToOpen", ListSequence.fromList(movedNodes).first());
+        MPSProject project = actionContext.getMPSProject();
+        if (project != null) {
+          final IOperationContext operationContext = new ModuleContext(module, project);
+          if (operationContext != null) {
+            refactoringContext.setParameter("nodeToOpen", ListSequence.fromList(movedNodes).first());
+          }
         }
       }
     }
