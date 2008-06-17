@@ -135,20 +135,7 @@ public class RefactoringProcessor {
             List<SModel> modelsToUpdate = refactoring.getModelsToUpdate(context, refactoringContext);
             if (!refactoringContext.isLocal()) {
               if (refactoring.doesUpdateModel()) {
-                writeIntoLog(model, refactoringContext);
-                for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getAllModelDescriptors()) {
-                  String stereotype = anotherDescriptor.getStereotype();
-                  if (!stereotype.equals(SModelStereotype.NONE) && !stereotype.equals(SModelStereotype.TEMPLATES)) {
-                    continue;
-                  }
-                  if (!anotherDescriptor.isInitialized()) continue;
-                  SModel anotherModel = anotherDescriptor.getSModel();
-
-                  Set<SModelUID> dependenciesModels = anotherModel.getDependenciesModelUIDs();
-                  if (model != anotherModel
-                    && !dependenciesModels.contains(initialModelUID)) continue;
-                  processModel(anotherModel, model, refactoringContext);
-                }
+                writeInLogAndUpdateModels(initialModelUID, model, refactoringContext);
               }
             } else {
               if (refactoring.doesUpdateModel()) {
@@ -182,6 +169,23 @@ public class RefactoringProcessor {
       }
     };
     ThreadUtils.runInUIThreadNoWait(runnable);
+  }
+
+  public void writeInLogAndUpdateModels(SModelUID initialModelUID, SModel model, RefactoringContext refactoringContext) {
+    writeIntoLog(model, refactoringContext);
+    for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getAllModelDescriptors()) {
+      String stereotype = anotherDescriptor.getStereotype();
+      if (!stereotype.equals(SModelStereotype.NONE) && !stereotype.equals(SModelStereotype.TEMPLATES)) {
+        continue;
+      }
+      if (!anotherDescriptor.isInitialized()) continue;
+      SModel anotherModel = anotherDescriptor.getSModel();
+
+      Set<SModelUID> dependenciesModels = anotherModel.getDependenciesModelUIDs();
+      if (model != anotherModel
+        && !dependenciesModels.contains(initialModelUID)) continue;
+      processModel(anotherModel, model, refactoringContext);
+    }
   }
 
   private void generateModels(final ActionContext context, final Map<IModule, List<SModel>> sourceModels, final RefactoringContext refactoringContext, final ProgressIndicator progressIndicator) {
@@ -220,7 +224,7 @@ public class RefactoringProcessor {
     model.updateImportedModelUsedVersion(usedModel.getUID(), usedModel.getVersion());
   }
 
-  public void writeIntoLog(SModel model, RefactoringContext refactoringContext) {
+  private void writeIntoLog(SModel model, RefactoringContext refactoringContext) {
     if (refactoringContext.isLocal()) return;
     RefactoringHistory refactoringHistory = model.getRefactoringHistory();
     refactoringHistory.addRefactoringContext(refactoringContext);
