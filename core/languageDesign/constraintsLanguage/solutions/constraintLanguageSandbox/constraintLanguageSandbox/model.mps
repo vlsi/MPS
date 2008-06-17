@@ -28,6 +28,16 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213708520543">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213708521374">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213708520904">
+              <link role="variableDeclaration" targetNodeId="1203331654522" resolveInfo="list" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1213708522799">
+              <link role="baseMethodDeclaration" targetNodeId="2.~List.add(java.lang.Object):boolean" resolveInfo="add" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1203331622063" />
