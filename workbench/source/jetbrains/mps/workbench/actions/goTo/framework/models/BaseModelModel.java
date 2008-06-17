@@ -15,7 +15,10 @@ public abstract class BaseModelModel extends BaseMPSChooseModel<SModelDescriptor
 
   public String doGetFullName(Object element) {
     BaseModelItem navigationItem = (BaseModelItem) element;
-    return navigationItem.getModelDescriptor().getLongName();
+    SModelDescriptor modelDescriptor = navigationItem.getModelDescriptor();
+    String modelName = modelDescriptor.getLongName();
+    boolean javaStub = modelDescriptor.getStereotype().equals(SModelStereotype.JAVA_STUB);
+    return modelName + (javaStub ? "@java_stub" : "");
   }
 
   public String doGetObjectName(SModelDescriptor modelDescriptor) {
