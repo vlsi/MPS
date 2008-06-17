@@ -3,7 +3,6 @@ package jetbrains.mps.ide.ui;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.ui.tooltip.TreeToolTipHandler;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
@@ -20,6 +19,7 @@ import java.util.*;
 import java.util.List;
 
 import com.intellij.openapi.util.Computable;
+import com.intellij.ui.TreeToolTipHandler;
 
 public abstract class MPSTree extends JTree {
   public static final String MPS_TREE = "mps-tree";
