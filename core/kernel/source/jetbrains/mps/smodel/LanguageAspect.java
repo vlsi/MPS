@@ -22,7 +22,8 @@ public enum LanguageAspect {
 
     public Icon getIcon() {
       return Icons.STRUCTURE_MODEL_ICON;
-    }},
+    }
+  },
 
   EDITOR("editor") {
     protected List<String> getLanguagesToImport(Language l) {
@@ -31,7 +32,8 @@ public enum LanguageAspect {
 
     public Icon getIcon() {
       return Icons.EDITOR_MODEL_ICON;
-    }},
+    }
+  },
 
   ACTIONS("actions") {
     protected List<String> getLanguagesToImport(Language l) {
@@ -40,7 +42,8 @@ public enum LanguageAspect {
 
     public Icon getIcon() {
       return Icons.ACTIONS_MODEL_ICON;
-    }},
+    }
+  },
 
   CONSTRAINTS("constraints") {
     protected List<String> getLanguagesToImport(Language l) {
@@ -69,7 +72,8 @@ public enum LanguageAspect {
 
     public Icon getIcon() {
       return Icons.TYPESYSTEM_MODEL_ICON;
-    }},
+    }
+  },
 
   SCRIPTS("scripts") {
     protected List<String> getLanguagesToImport(Language l) {
@@ -86,7 +90,8 @@ public enum LanguageAspect {
 
     public Icon getIcon() {
       return Icons.INTENTIONS_MODEL_ICON;
-    }},
+    }
+  },
 
   FIND_USAGES("findUsages") {
     protected List<String> getLanguagesToImport(Language l) {
