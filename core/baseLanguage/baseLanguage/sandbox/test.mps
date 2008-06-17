@@ -825,13 +825,11 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213730327185">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1213730329158">
-            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.FieldReference" id="1213731690189">
-              <node role="instance" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213730686285">
-                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213730686286">
-                  <link role="baseMethodDeclaration" targetNodeId="27.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
-                  <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213730686287">
-                    <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
-                  </node>
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213730686285">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213730686286">
+                <link role="baseMethodDeclaration" targetNodeId="27.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
+                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213730686287">
+                  <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
                 </node>
               </node>
             </node>

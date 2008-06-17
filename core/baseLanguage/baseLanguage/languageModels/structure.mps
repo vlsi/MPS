@@ -401,6 +401,9 @@
       <property name="value" value="this concept has been replaced with DotExpression + FieldReferenceOperation" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1193783916915" resolveInfo="deprecated_next_after_470" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1213734004698">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1080137532343">
       <property name="targetCardinality" value="1" />
       <property name="sourceCardinality" value="1" />
@@ -467,6 +470,9 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1204324165593">
       <property name="value" value="this concept has been replaced with DotExpression + InstanceMethodCallOperation" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1193783916915" resolveInfo="deprecated_next_after_470" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1213734040911">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1068580123164">
       <property name="targetCardinality" value="1" />
