@@ -198,6 +198,11 @@ public class GenerationController {
       TypeChecker.getInstance().setIncrementalMode(false);
       TypeChecker.getInstance().setTypeCheckingMode(TypeCheckingMode.GENERATION);
       for (SModelDescriptor inputModel : descriptors) {
+        if (!myGenerationType.isApplicable(inputModel)) {
+          LOG.error("Can't apply generation type " + myGenerationType + " to " + inputModel.getModelUID());
+          continue;
+        }
+
         info("");
         String taskName = ModelsProgressUtil.generationModelTaskName(inputModel);
 
