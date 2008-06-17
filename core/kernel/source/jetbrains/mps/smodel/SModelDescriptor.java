@@ -63,6 +63,8 @@ public interface SModelDescriptor {
 
   IFile getModelFile();
 
+  boolean isPackaged();
+
   Set<SReference> findUsages(Set<SNode> node);
 
   Set<SReference> findUsages(SNode node);

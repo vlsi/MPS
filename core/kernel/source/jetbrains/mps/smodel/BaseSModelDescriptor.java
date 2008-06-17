@@ -2,6 +2,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.JarFileEntryFile;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.PathManager;
@@ -42,6 +43,10 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
   public IFile getModelFile() {
     return myModelFile;
+  }
+
+  public boolean isPackaged() {
+    return getModelFile() instanceof JarFileEntryFile;
   }
 
   public SModelUID getModelUID() {

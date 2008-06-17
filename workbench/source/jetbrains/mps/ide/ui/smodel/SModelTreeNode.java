@@ -107,6 +107,8 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
     if (generationRequired()) {
       setAdditionalText("generation required");
+    } else if (sm != null && sm.isPackaged()) {
+      setAdditionalText("packaged");      
     } else {
       setAdditionalText(null);
     }

@@ -23,6 +23,10 @@ public class ModelGenerationStatusManager {
   private List<ModelGenerationStatusListener> myListeners = new ArrayList<ModelGenerationStatusListener>();
 
   public boolean generationRequired(SModelDescriptor sm) {
+    if (sm.isPackaged()) {
+      return false;
+    }
+
     if (SModelStereotype.JAVA_STUB.equals(sm.getStereotype())) {
       return false;
     }

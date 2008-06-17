@@ -40,6 +40,8 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
   protected void updatePresentation() {
     if (generationRequired()) {
       setAdditionalText("generation required");
+    } else if (getModule().isPackaged()) {
+      setAdditionalText("packaged");
     } else {
       setAdditionalText(null);
     }
@@ -69,6 +71,10 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
   }
 
   private boolean generationRequired(MPSTreeNode node) {
+    if (getModule().isPackaged()) {
+      return false;
+    }
+
     if (node instanceof SModelTreeNode) {
       SModelTreeNode smodelTreeNode = (SModelTreeNode) node;
       return smodelTreeNode.generationRequired();
