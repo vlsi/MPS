@@ -2,6 +2,7 @@ package jetbrains.mps.workbench.actions.goTo.framework.models;
 
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.workbench.actions.goTo.framework.base.BasePresentation;
 
 import javax.swing.Icon;
@@ -14,7 +15,9 @@ public class ModelPresentation extends BasePresentation {
   }
 
   public String doGetPresentableText() {
-    return myModelDescriptor.getModelUID().getShortName();
+    String modelName = myModelDescriptor.getModelUID().getLongName();
+    boolean javaStub = myModelDescriptor.getStereotype().equals(SModelStereotype.JAVA_STUB);
+    return modelName + (javaStub ? "@java_stub" : "");
   }
 
   public String getParentLocation() {
@@ -22,7 +25,7 @@ public class ModelPresentation extends BasePresentation {
   }
 
   public String doGetLocationString() {
-    return "(" + getParentLocation() + ")";
+    return "(" + myModelDescriptor.getModule().getModuleUID() + ")";
   }
 
   public Icon doGetIcon() {

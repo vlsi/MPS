@@ -15,10 +15,12 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.actions.goTo.framework.models.BaseModelItem;
 import jetbrains.mps.workbench.actions.goTo.framework.models.BaseModelModel;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class GoToModelAction extends BaseProjectAction {
@@ -47,13 +49,19 @@ public class GoToModelAction extends BaseProjectAction {
       }
 
       public SModelDescriptor[] find(IScope scope) {
-        List<SModelDescriptor> modelDescriptors = scope.getModelDescriptors();
-        List<SModelDescriptor> res = new ArrayList<SModelDescriptor>(modelDescriptors.size());
-        for (SModelDescriptor modelDescriptor : modelDescriptors) {
-          if (modelDescriptor.getModule() == null) continue;
-          res.add(modelDescriptor);
-        }
-        return res.toArray(new SModelDescriptor[0]);
+        List<SModelDescriptor> modelDescriptors =
+          CollectionUtil.filter(scope.getModelDescriptors(), new Condition<SModelDescriptor>() {
+            public boolean met(SModelDescriptor modelDescriptor) {
+              String stereotype = modelDescriptor.getStereotype();
+              boolean rightStereotype = stereotype.equals(SModelStereotype.NONE)
+                || stereotype.equals(SModelStereotype.TEMPLATES)
+                || stereotype.equals(SModelStereotype.JAVA_STUB);
+              boolean hasModule = modelDescriptor.getModule() != null;
+              return rightStereotype && hasModule;
+            }
+          });
+
+        return modelDescriptors.toArray(new SModelDescriptor[0]);
       }
     };
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModelModel, fakePsiContext);

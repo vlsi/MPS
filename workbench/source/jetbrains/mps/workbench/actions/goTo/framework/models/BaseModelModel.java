@@ -2,6 +2,7 @@ package jetbrains.mps.workbench.actions.goTo.framework.models;
 
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.workbench.actions.goTo.framework.base.BaseMPSChooseModel;
 import org.jetbrains.annotations.Nullable;
 
@@ -18,7 +19,9 @@ public abstract class BaseModelModel extends BaseMPSChooseModel<SModelDescriptor
   }
 
   public String doGetObjectName(SModelDescriptor modelDescriptor) {
-    return modelDescriptor.getModelUID().getShortName();
+    String modelName = modelDescriptor.getModelUID().getShortName();
+    boolean javaStub = modelDescriptor.getStereotype().equals(SModelStereotype.JAVA_STUB);
+    return modelName + (javaStub ? "@java_stub" : "");
   }
 
   //---------------------INTERFACE STUFF------------------------

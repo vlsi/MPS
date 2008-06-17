@@ -18,7 +18,8 @@ public abstract class BaseModelItem implements NavigationItem {
   }
 
   public String getName() {
-    return myModelDescriptor.getModelUID().getShortName();
+    //noinspection ConstantConditions
+    return getPresentation().getPresentableText();
   }
 
   @Nullable
