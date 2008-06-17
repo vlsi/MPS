@@ -397,8 +397,8 @@
     <echo file="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/build.number">build.number=${build.number}${line.separator}revision.number=${build.vcs.number.1}${line.separator}configuration.name=${teamcity.buildConfName}</echo>
     <copy file="entryPoints.xml" tofile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/entryPoints.xml" />
     <copy file="readme.txt" tofile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/readme.txt" />
-    <copy file="mps.bat" tofile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/mps.bat" />
     <copy file="mps.sh" tofile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/mps.sh" />
+    <copy file="mps.bat" tofile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/mps.bat" />
     <zip destfile="${deploy.dir}/MPS-${build.number}.zip" duplicate="preserve" filesonly="true">
       <zipfileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp" excludes="**/*.iml, **/*.ipr" includes="" filemode="755" />
     </zip>

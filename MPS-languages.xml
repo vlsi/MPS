@@ -16,7 +16,7 @@
       <fileset dir="core/baseLanguage/baseLanguageInternal/classes_gen" />
       <fileset dir="core/baseLanguage/baseLanguageInternal/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguageInternal.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguageInternal.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguageInternal.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguageInternal.tmp" />
@@ -38,10 +38,10 @@
       <fileset dir="core/baseLanguage/closures/runtime/classes" />
       <fileset dir="core/baseLanguage/closures/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.closures.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.closures.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.closures.tmp" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.closures.runtime.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.closures.runtime.jar" duplicate="preserve" filesonly="true">
       <fileset dir="core/baseLanguage/closures/runtime/classes" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.closures.tmp" />
@@ -63,10 +63,10 @@
       <fileset dir="core/baseLanguage/collections/classes" />
       <fileset dir="core/baseLanguage/collections/runtime/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.collections.lang.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.collections.lang.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.collections.lang.tmp" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.collections.lang.runtime.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.collections.lang.runtime.jar" duplicate="preserve" filesonly="true">
       <fileset dir="core/baseLanguage/collections/runtime/classes" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.collections.lang.tmp" />
@@ -86,7 +86,7 @@
       <fileset dir="core/baseLanguage/collections/solutions/collections/samples/classes_gen" />
       <fileset dir="core/baseLanguage/collections/solutions/collections/samples/classes_gen" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/collections_samples.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/collections_samples.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/collections_samples.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/collections_samples.tmp" />
@@ -108,10 +108,10 @@
       <fileset dir="core/baseLanguage/csharp/classes" />
       <fileset dir="core/baseLanguage/csharp/runtime/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.csharp.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.csharp.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.csharp.tmp" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.csharp.runtime.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.csharp.runtime.jar" duplicate="preserve" filesonly="true">
       <fileset dir="core/baseLanguage/csharp/runtime/classes" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.csharp.tmp" />
@@ -129,7 +129,7 @@
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.lang.tmp">
       <fileset dir="core/baseLanguage/dates/classes_gen" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.dates.lang.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.dates.lang.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.dates.lang.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.dates.lang.tmp" />
@@ -147,7 +147,7 @@
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.internal.tmp">
       <fileset dir="core/baseLanguage/dates/internal/classes_gen" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.dates.internal.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.dates.internal.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.dates.internal.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.dates.internal.tmp" />
@@ -169,7 +169,7 @@
       <fileset dir="core/baseLanguage/dates/runtime/classes_gen" />
       <fileset dir="core/baseLanguage/dates/runtime/classes_gen" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.dates.runtime.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.dates.runtime.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.dates.runtime.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.dates.runtime.tmp" />
@@ -191,10 +191,10 @@
       <fileset dir="core/baseLanguage/internalCollections/languages/collections/runtime/classes" />
       <fileset dir="core/baseLanguage/internalCollections/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.internal.collections.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.internal.collections.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.internal.collections.tmp" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.internal.collections.runtime.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.internal.collections.runtime.jar" duplicate="preserve" filesonly="true">
       <fileset dir="core/baseLanguage/internalCollections/languages/collections/runtime/classes" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.internal.collections.tmp" />
@@ -216,7 +216,7 @@
       <fileset dir="core/baseLanguage/money/classes" />
       <fileset dir="core/baseLanguage/money/runtime/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.accounting.money.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.accounting.money.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.accounting.money.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.accounting.money.tmp" />
@@ -236,7 +236,7 @@
       <fileset dir="core/baseLanguage/baseLanguage/solutions/JDK/classes_gen" />
       <fileset dir="core/baseLanguage/baseLanguage/solutions/JDK/classes_gen" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/JDK.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/JDK.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/JDK.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/JDK.tmp" />
@@ -254,7 +254,7 @@
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.blTypes.tmp">
       <fileset dir="core/baseLanguage/baseLanguage/languages/blTypes/classes_gen" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.blTypes.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.blTypes.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.blTypes.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.blTypes.tmp" />
@@ -274,7 +274,7 @@
       <fileset dir="core/baseLanguage/baseLanguage/classes_gen" />
       <fileset dir="core/baseLanguage/baseLanguage/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.tmp" />
@@ -294,7 +294,7 @@
       <fileset dir="core/baseLanguage/strings/classes_gen" />
       <fileset dir="core/baseLanguage/strings/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.strings.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.strings.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.strings.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.strings.tmp" />
@@ -314,7 +314,7 @@
       <fileset dir="core/baseLanguage/baseLanguage/solutions/MPS.Classpath/classes_gen" />
       <fileset dir="core/baseLanguage/baseLanguage/solutions/MPS.Classpath/classes_gen" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/MPS.Classpath.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/MPS.Classpath.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/MPS.Classpath.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/MPS.Classpath.tmp" />
@@ -334,7 +334,7 @@
       <fileset dir="core/baseLanguage/baseLanguage/refactoring/classes_gen" />
       <fileset dir="core/baseLanguage/baseLanguage/refactoring/classes_gen" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/refactoring.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/refactoring.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/refactoring.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/refactoring.tmp" />
@@ -354,7 +354,7 @@
       <fileset dir="core/baseLanguage/classifiers/classes_gen" />
       <fileset dir="core/baseLanguage/classifiers/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.classifiers.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.classifiers.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.classifiers.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.classifiers.tmp" />
@@ -374,7 +374,7 @@
       <fileset dir="core/languageDesign/actionsLanguage/classes_gen" />
       <fileset dir="core/languageDesign/actionsLanguage/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.actionsLanguage.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.actionsLanguage.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.actionsLanguage.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.actionsLanguage.tmp" />
@@ -394,7 +394,7 @@
       <fileset dir="core/languageDesign/annotations/languages/annotations/classes_gen" />
       <fileset dir="core/languageDesign/annotations/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.annotations.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.annotations.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.annotations.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.annotations.tmp" />
@@ -414,7 +414,7 @@
       <fileset dir="core/languageDesign/constraintsLanguage/classes_gen" />
       <fileset dir="core/languageDesign/constraintsLanguage/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.constraintsLanguage.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.constraintsLanguage.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.constraintsLanguage.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.constraintsLanguage.tmp" />
@@ -434,10 +434,10 @@
       <fileset dir="core/languageDesign/editorLanguage/classes_gen" />
       <fileset dir="core/languageDesign/editorLanguage/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.editorLanguage.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.editorLanguage.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.editorLanguage.tmp" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.editorLanguage.runtime.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.editorLanguage.runtime.jar" duplicate="preserve" filesonly="true">
       <fileset dir="core/languageDesign/editorLanguage/classes" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.editorLanguage.tmp" />
@@ -457,7 +457,7 @@
       <fileset dir="core/languageDesign/findUsagesLanguage/classes_gen" />
       <fileset dir="core/languageDesign/findUsagesLanguage/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.findUsagesLanguage.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.findUsagesLanguage.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.findUsagesLanguage.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.findUsagesLanguage.tmp" />
@@ -477,10 +477,10 @@
       <fileset dir="core/languageDesign/helgins/classes_gen" />
       <fileset dir="core/languageDesign/helgins/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.helgins.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.helgins.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.helgins.tmp" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.helgins.runtime.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.helgins.runtime.jar" duplicate="preserve" filesonly="true">
       <fileset dir="core/languageDesign/helgins/classes" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.helgins.tmp" />
@@ -500,10 +500,10 @@
       <fileset dir="core/languageDesign/intentionsLanguage/classes_gen" />
       <fileset dir="core/languageDesign/intentionsLanguage/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.intentionsLanguage.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.intentionsLanguage.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.intentionsLanguage.tmp" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.intentionsLanguage.runtime.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.intentionsLanguage.runtime.jar" duplicate="preserve" filesonly="true">
       <fileset dir="core/languageDesign/intentionsLanguage/classes" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.intentionsLanguage.tmp" />
@@ -525,10 +525,10 @@
       <fileset dir="core/languageDesign/dataFlow/classes" />
       <fileset dir="core/languageDesign/dataFlow/runtime/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.dataFlow.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.dataFlow.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.dataFlow.tmp" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.dataFlow.runtime.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.dataFlow.runtime.jar" duplicate="preserve" filesonly="true">
       <fileset dir="core/languageDesign/dataFlow/classes" />
       <fileset dir="core/languageDesign/dataFlow/runtime/classes" />
     </jar>
@@ -549,7 +549,7 @@
       <fileset dir="core/languageDesign/mps-lite/languages/mpslite/classes_gen" />
       <fileset dir="core/languageDesign/mps-lite/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mpslite.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mpslite.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mpslite.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mpslite.tmp" />
@@ -569,7 +569,7 @@
       <fileset dir="core/languageDesign/mps-lite/languages/nanoj/classes_gen" />
       <fileset dir="core/languageDesign/mps-lite/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.nanoj.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.nanoj.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.nanoj.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.nanoj.tmp" />
@@ -589,10 +589,10 @@
       <fileset dir="core/languageDesign/patternLanguage/classes_gen" />
       <fileset dir="core/languageDesign/patternLanguage/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.patterns.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.patterns.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.patterns.tmp" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.patterns.runtime.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.patterns.runtime.jar" duplicate="preserve" filesonly="true">
       <fileset dir="core/languageDesign/patternLanguage/classes" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.patterns.tmp" />
@@ -612,7 +612,7 @@
       <fileset dir="core/languageDesign/quotation/classes_gen" />
       <fileset dir="core/languageDesign/quotation/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.quotation.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.quotation.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.quotation.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.quotation.tmp" />
@@ -632,10 +632,10 @@
       <fileset dir="core/languageDesign/pluginLanguage/classes_gen" />
       <fileset dir="core/languageDesign/pluginLanguage/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.pluginLanguage.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.pluginLanguage.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.pluginLanguage.tmp" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.pluginLanguage.runtime.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.pluginLanguage.runtime.jar" duplicate="preserve" filesonly="true">
       <fileset dir="core/languageDesign/pluginLanguage/classes" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.pluginLanguage.tmp" />
@@ -655,7 +655,7 @@
       <fileset dir="core/languageDesign/sharedConcepts/classes_gen" />
       <fileset dir="core/languageDesign/sharedConcepts/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.sharedConcepts.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.sharedConcepts.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.sharedConcepts.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.sharedConcepts.tmp" />
@@ -675,10 +675,10 @@
       <fileset dir="core/languageDesign/smodelLanguage/classes_gen" />
       <fileset dir="core/languageDesign/smodelLanguage/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.smodelLanguage.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.smodelLanguage.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.smodelLanguage.tmp" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.smodelLanguage.runtime.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.smodelLanguage.runtime.jar" duplicate="preserve" filesonly="true">
       <fileset dir="core/languageDesign/smodelLanguage/classes" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.smodelLanguage.tmp" />
@@ -700,10 +700,10 @@
       <fileset dir="core/languageDesign/scriptLanguage/classes" />
       <fileset dir="core/languageDesign/scriptLanguage/runtime/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.ide.scriptLanguage.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.ide.scriptLanguage.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.ide.scriptLanguage.tmp" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.ide.scriptLanguage.runtime.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.ide.scriptLanguage.runtime.jar" duplicate="preserve" filesonly="true">
       <fileset dir="core/languageDesign/scriptLanguage/runtime/classes" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.ide.scriptLanguage.tmp" />
@@ -723,7 +723,7 @@
       <fileset dir="core/languageDesign/scriptLanguageInternal/classes_gen" />
       <fileset dir="core/languageDesign/scriptLanguageInternal/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.ide.scriptLanguageInternal.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.ide.scriptLanguageInternal.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.ide.scriptLanguageInternal.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.ide.scriptLanguageInternal.tmp" />
@@ -743,7 +743,7 @@
       <fileset dir="core/languageDesign/structureLanguage/classes_gen" />
       <fileset dir="core/languageDesign/structureLanguage/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.structureLanguage.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.structureLanguage.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.structureLanguage.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.structureLanguage.tmp" />
@@ -763,7 +763,7 @@
       <fileset dir="core/languageDesign/core/classes_gen" />
       <fileset dir="core/languageDesign/core/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.core.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.core.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.core.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.core.tmp" />
@@ -783,10 +783,10 @@
       <fileset dir="core/languageDesign/refactoring/classes_gen" />
       <fileset dir="core/languageDesign/refactoring/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.logging.refactoring.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.logging.refactoring.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.logging.refactoring.tmp" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.logging.refactoring.runtime.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.logging.refactoring.runtime.jar" duplicate="preserve" filesonly="true">
       <fileset dir="core/languageDesign/refactoring/classes" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.logging.refactoring.tmp" />
@@ -806,7 +806,7 @@
       <fileset dir="core/languageDesign/transformation/classes_gen" />
       <fileset dir="core/languageDesign/transformation/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.transformation.TLBase.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.transformation.TLBase.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.transformation.TLBase.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.transformation.TLBase.tmp" />
@@ -826,7 +826,7 @@
       <fileset dir="core/kernel/vcs/generic/solutions/jetbrains.mps.vcs/classes_gen" />
       <fileset dir="core/kernel/vcs/generic/solutions/jetbrains.mps.vcs/classes_gen" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/kernel/vcs/generic/jetbrains.mps.vcs.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/kernel/vcs/generic/jetbrains.mps.vcs.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/kernel/vcs/generic/jetbrains.mps.vcs.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/kernel/vcs/generic/jetbrains.mps.vcs.tmp" />
@@ -846,7 +846,7 @@
       <fileset dir="core/projectLanguage/classes_gen" />
       <fileset dir="core/projectLanguage/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/jetbrains.mps.projectLanguage.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/jetbrains.mps.projectLanguage.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/jetbrains.mps.projectLanguage.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/jetbrains.mps.projectLanguage.tmp" />
@@ -866,7 +866,7 @@
       <fileset dir="platform/panacea/languages/transform/classes_gen" />
       <fileset dir="platform/panacea/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/transform.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/transform.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/transform.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/transform.tmp" />
@@ -888,7 +888,7 @@
       <fileset dir="platform/ypath/solutions/main/classes_gen" />
       <fileset dir="platform/ypath/solutions/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/ypath.main.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/ypath.main.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/ypath.main.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/ypath.main.tmp" />
@@ -910,7 +910,7 @@
       <fileset dir="platform/ypath/solutions/test/classes_gen" />
       <fileset dir="platform/ypath/solutions/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/ypath.test.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/ypath.test.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/ypath.test.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/ypath.test.tmp" />
@@ -932,10 +932,10 @@
       <fileset dir="platform/ypath/classes" />
       <fileset dir="platform/ypath/runtime/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.ypath.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.ypath.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.ypath.tmp" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.ypath.runtime.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.ypath.runtime.jar" duplicate="preserve" filesonly="true">
       <fileset dir="platform/ypath/runtime/classes" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.ypath.tmp" />
@@ -955,7 +955,7 @@
       <fileset dir="platform/buildlanguage/languages/buildlanguage/classes_gen" />
       <fileset dir="platform/buildlanguage/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.buildlanguage.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.buildlanguage.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.buildlanguage.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.buildlanguage.tmp" />
@@ -975,7 +975,7 @@
       <fileset dir="platform/buildlanguage/languages/mpsLayoutLanguage/classes_gen" />
       <fileset dir="platform/buildlanguage/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.mpsLayoutLanguage.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.mpsLayoutLanguage.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.mpsLayoutLanguage.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.mpsLayoutLanguage.tmp" />
@@ -995,7 +995,7 @@
       <fileset dir="platform/buildlanguage/languages/mpsProjectLanguage/classes_gen" />
       <fileset dir="platform/buildlanguage/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.mpsProjectLanguage.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.mpsProjectLanguage.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.mpsProjectLanguage.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.mpsProjectLanguage.tmp" />
@@ -1015,7 +1015,7 @@
       <fileset dir="platform/buildlanguage/languages/propertylanguage/classes_gen" />
       <fileset dir="platform/buildlanguage/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.propertylanguage.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.propertylanguage.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.propertylanguage.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.propertylanguage.tmp" />
@@ -1035,7 +1035,7 @@
       <fileset dir="platform/textLanguage/languages/bookLanguage/classes_gen" />
       <fileset dir="platform/textLanguage/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.bookLanguage.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.bookLanguage.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.bookLanguage.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.bookLanguage.tmp" />
@@ -1057,10 +1057,10 @@
       <fileset dir="platform/regexp/classes" />
       <fileset dir="platform/regexp/runtime/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.regexp.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.regexp.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.regexp.tmp" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.regexp.runtime.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.regexp.runtime.jar" duplicate="preserve" filesonly="true">
       <fileset dir="platform/regexp/runtime/classes" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.regexp.tmp" />
@@ -1080,7 +1080,7 @@
       <fileset dir="platform/regexp/solutions/jetbrains.mps.regexp.examples/classes_gen" />
       <fileset dir="platform/regexp/solutions/jetbrains.mps.regexp.examples/classes_gen" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.regexp.examples.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.regexp.examples.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.regexp.examples.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.regexp.examples.tmp" />
@@ -1100,7 +1100,7 @@
       <fileset dir="platform/textLanguage/languages/textLanguage/classes_gen" />
       <fileset dir="platform/textLanguage/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.textLanguage.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.textLanguage.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.textLanguage.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.textLanguage.tmp" />
@@ -1120,7 +1120,7 @@
       <fileset dir="platform/textLanguage/languages/formula/classes_gen" />
       <fileset dir="platform/textLanguage/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.textLanguage.formula.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.textLanguage.formula.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.textLanguage.formula.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.textLanguage.formula.tmp" />
@@ -1140,7 +1140,7 @@
       <fileset dir="platform/textLanguage/languages/table/classes_gen" />
       <fileset dir="platform/textLanguage/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.textLanguage.table.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.textLanguage.table.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.textLanguage.table.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.textLanguage.table.tmp" />
@@ -1162,10 +1162,10 @@
       <fileset dir="platform/uiLanguage/classes" />
       <fileset dir="platform/uiLanguage/runtime/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.uiLanguage.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.uiLanguage.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.uiLanguage.tmp" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.uiLanguage.runtime.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.uiLanguage.runtime.jar" duplicate="preserve" filesonly="true">
       <fileset dir="platform/uiLanguage/runtime/classes" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.uiLanguage.tmp" />
@@ -1183,7 +1183,7 @@
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.baseLanguage.unitTest.tmp">
       <fileset dir="platform/unitTest/classes_gen" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.baseLanguage.unitTest.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.baseLanguage.unitTest.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.baseLanguage.unitTest.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.baseLanguage.unitTest.tmp" />
@@ -1203,7 +1203,7 @@
       <fileset dir="platform/unitTest/solutions/runtime/classes_gen" />
       <fileset dir="platform/unitTest/solutions/runtime/classes_gen" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.baseLanguage.unitTest.runtime.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.baseLanguage.unitTest.runtime.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.baseLanguage.unitTest.runtime.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.baseLanguage.unitTest.runtime.tmp" />
@@ -1223,7 +1223,7 @@
       <fileset dir="platform/xml/classes_gen" />
       <fileset dir="platform/xml/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.xml.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.xml.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.xml.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.xml.tmp" />
@@ -1241,7 +1241,7 @@
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.springframework.configuration.tmp">
       <fileset dir="platform/springframework/languages/configuration/classes_gen" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.springframework.configuration.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.springframework.configuration.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.springframework.configuration.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.springframework.configuration.tmp" />
@@ -1259,7 +1259,7 @@
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.springframework.configurationInternal.tmp">
       <fileset dir="platform/springframework/languages/configurationInternal/classes_gen" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.springframework.configurationInternal.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.springframework.configurationInternal.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.springframework.configurationInternal.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.springframework.configurationInternal.tmp" />
@@ -1279,7 +1279,7 @@
       <fileset dir="platform/springframework/runtime/classes_gen" />
       <fileset dir="platform/springframework/runtime/classes_gen" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.springframework.configuration.runtime.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.springframework.configuration.runtime.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.springframework.configuration.runtime.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.springframework.configuration.runtime.tmp" />
@@ -1297,7 +1297,7 @@
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp\MPS\platform\webr.logging.tmp">
       <fileset dir="platform/webr/languages/logging/classes_gen" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.logging.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.logging.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.logging.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.logging.tmp" />
@@ -1315,7 +1315,7 @@
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp\MPS\platform\webr.xml.tmp">
       <fileset dir="platform/webr/languages/xml/classes_gen" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xml.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xml.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xml.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xml.tmp" />
@@ -1335,7 +1335,7 @@
       <fileset dir="platform/webr/languages/gtext/classes_gen" />
       <fileset dir="platform/webr/languages/gtext/classes_gen" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.gtext.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.gtext.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.gtext.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.gtext.tmp" />
@@ -1353,7 +1353,7 @@
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp\MPS\platform\webr.xmlInternal.tmp">
       <fileset dir="platform/webr/languages/xmlInternal/classes_gen" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xmlInternal.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xmlInternal.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xmlInternal.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xmlInternal.tmp" />
@@ -1371,7 +1371,7 @@
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp\MPS\platform\webr.xmlSchema.tmp">
       <fileset dir="platform/webr/languages/xmlSchema/classes_gen" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xmlSchema.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xmlSchema.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xmlSchema.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xmlSchema.tmp" />
@@ -1393,7 +1393,7 @@
       <fileset dir="platform/webr/languages/gtext/runtime/classes_gen" />
       <fileset dir="platform/webr/languages/gtext/runtime/classes_gen" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.gtext.runtime.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.gtext.runtime.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.gtext.runtime.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.gtext.runtime.tmp" />
@@ -1411,10 +1411,10 @@
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.transformationTest.tmp">
       <fileset dir="platform/transformationTest/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.transformationTest.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.transformationTest.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.transformationTest.tmp" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.transformationTest.runtime.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.transformationTest.runtime.jar" duplicate="preserve" filesonly="true">
       <fileset dir="platform/transformationTest/classes" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.transformationTest.tmp" />
@@ -1434,7 +1434,7 @@
       <fileset dir="workbench/ideUiLanguage/classes_gen" />
       <fileset dir="workbench/ideUiLanguage/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/workbench/jetbrains.mps.ide.uiLanguage.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/workbench/jetbrains.mps.ide.uiLanguage.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/workbench/jetbrains.mps.ide.uiLanguage.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/workbench/jetbrains.mps.ide.uiLanguage.tmp" />
@@ -1454,7 +1454,7 @@
       <fileset dir="workbench/monitorLanguage/languages/monitorLanguage/classes_gen" />
       <fileset dir="workbench/monitorLanguage/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/workbench/jetbrains.mps.monitorLanguage.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/workbench/jetbrains.mps.monitorLanguage.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/workbench/jetbrains.mps.monitorLanguage.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/workbench/jetbrains.mps.monitorLanguage.tmp" />
@@ -1474,7 +1474,7 @@
       <fileset dir="workbench/ideSolution/classes_gen" />
       <fileset dir="workbench/ideSolution/classes_gen" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/workbench/jetbrains.mps.ide.mpsarch.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/workbench/jetbrains.mps.ide.mpsarch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/workbench/jetbrains.mps.ide.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/workbench/jetbrains.mps.ide.tmp" />
