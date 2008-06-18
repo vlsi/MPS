@@ -60,7 +60,7 @@ import java.util.*;
         removesByCondition.add(rp);
       }
 
-      List<INodeSubstituteAction> addActions = invokeActionFactory(builder, mySourceNode, myContext);
+      List<INodeSubstituteAction> addActions = invokeActionFactory(builder);
       resultActions.addAll(addActions);
     }
 
