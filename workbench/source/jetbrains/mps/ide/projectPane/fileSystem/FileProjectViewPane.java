@@ -3,6 +3,7 @@ package jetbrains.mps.ide.projectPane.fileSystem;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.SelectInTarget;
+import com.intellij.ide.util.treeView.NodeDescriptor;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
@@ -11,10 +12,15 @@ import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vcs.FileStatusListener;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.IdeActions;
+import com.intellij.openapi.actionSystem.DataProvider;
+import com.intellij.openapi.actionSystem.DataConstants;
+import com.intellij.util.ReflectionCache;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
+import javax.swing.tree.TreePath;
+import javax.swing.tree.DefaultMutableTreeNode;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
@@ -34,7 +40,12 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 
-public class FileProjectViewPane extends AbstractProjectViewPane {
+import java.util.List;
+import java.util.Collections;
+import java.util.ArrayList;
+import java.util.LinkedList;
+
+public class FileProjectViewPane extends AbstractProjectViewPane implements DataProvider {
   @NonNls
   public static final String ID = "FileSystem";
   public static final String TITLE = "File System";
@@ -147,4 +158,19 @@ public class FileProjectViewPane extends AbstractProjectViewPane {
   public void disposeComponent() {
 
   }
+
+  public Object getData(String dataId){
+    if (dataId.equals(DataConstants.VIRTUAL_FILE_ARRAY)){
+      List<VirtualFile> files = new LinkedList<VirtualFile>();
+      TreePath[] treePaths = getSelectionPaths();
+      for (TreePath tp : treePaths){
+        Object lastPathComponent = tp.getLastPathComponent();
+        AbstractFileTreeNode node = (AbstractFileTreeNode) lastPathComponent;
+        files.add(VFileSystem.getFile(node.getFile()));
+      }
+      return files.toArray(new VirtualFile[files.size()]);
+    }
+    return super.getData(dataId);
+  }
+
 }
