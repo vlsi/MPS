@@ -243,11 +243,30 @@
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1213199330588">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1213199330589" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1213199330590" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213199330591" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213199330591">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213790659340">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1213790661654">
+            <link role="baseMethodDeclaration" targetNodeId="1213790647248" resolveInfo="foooo" />
+            <link role="classConcept" targetNodeId="1213199242548" resolveInfo="Lehitraot" />
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1213199242548">
     <property name="name" value="Lehitraot" />
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1213790647248">
+      <property name="name" value="foooo" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1213790647249" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1213790647250" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213790647251" />
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1213790392168">
+      <property name="name" value="pysh" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1213790392169" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1213790392170" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213790392171" />
+    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1213199242549" />
   </node>
 </model>
