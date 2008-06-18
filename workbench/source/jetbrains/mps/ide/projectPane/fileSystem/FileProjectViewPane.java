@@ -4,7 +4,7 @@ import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.SelectInTarget;
 import com.intellij.ide.util.treeView.NodeDescriptor;
-import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.*;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
@@ -74,12 +74,36 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
     };
     myTree = myMPSTree;
 
+    // adding listeners
+
     FileStatusManager.getInstance(myProject).addFileStatusListener(new FileStatusListener() {
       public void fileStatusesChanged() {
         rebuildTree();
       }
 
       public void fileStatusChanged(@NotNull VirtualFile virtualFile) {
+        rebuildTree();
+      }
+    });
+
+    VirtualFileManager.getInstance().addVirtualFileListener(new VirtualFileAdapter() {
+      @Override
+      public void fileCreated(VirtualFileEvent event) {
+        rebuildTree();
+      }
+
+      @Override
+      public void fileDeleted(VirtualFileEvent event) {
+        rebuildTree();
+      }
+
+      @Override
+      public void fileMoved(VirtualFileMoveEvent event) {
+        rebuildTree();
+      }
+
+      @Override
+      public void fileCopied(VirtualFileCopyEvent event) {
         rebuildTree();
       }
     });
