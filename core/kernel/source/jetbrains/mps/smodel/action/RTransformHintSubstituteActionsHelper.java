@@ -9,30 +9,30 @@ import jetbrains.mps.util.QueryMethodGenerated;
 
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Jan 24, 2006
- * Time: 8:58:32 PM
- * To change this template use File | Settings | File Templates.
- */
-/*package*/ class RTransformHintSubstituteActionsHelper {
-
+ class RTransformHintSubstituteActionsHelper {
   private static final Logger LOG = Logger.getLogger(RTransformHintSubstituteActionsHelper.class);
 
-  public static boolean canCreateActions(SNode sourceNode, String transformTag, IOperationContext context) {
-    return getActionBuilders(sourceNode, transformTag, context).size() > 0;
+   private IOperationContext myContext;
+   private SNode mySourceNode;
+   private String myTransformTag;
+
+   RTransformHintSubstituteActionsHelper(SNode sourceNode, String transformTag, IOperationContext context) {
+     myContext = context;
+     mySourceNode = sourceNode;
+     myTransformTag = transformTag;
+   }
+
+   public boolean canCreateActions() {
+    return getActionBuilders().size() > 0;
   }
 
-  public static List<INodeSubstituteAction> createActions(final SNode sourceNode,
-                                                          final String transformTag,
-                                                          final IOperationContext context) {
+  public List<INodeSubstituteAction> createActions() {
     final List<INodeSubstituteAction>[] result = new List[1];
     // enable R/O access
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         try {
-          result[0] = createActions_internal(sourceNode, transformTag, context);
+          result[0] = createActions_internal();
         } catch (Throwable t) {
           LOG.error(t);
           result[0] = new ArrayList<INodeSubstituteAction>();
@@ -43,9 +43,9 @@ import java.util.*;
     return result[0];
   }
 
-  public static List<INodeSubstituteAction> createActions_internal(SNode sourceNode, String transformTag, IOperationContext context) {
+  private List<INodeSubstituteAction> createActions_internal() {
     List<INodeSubstituteAction> resultActions = new LinkedList<INodeSubstituteAction>();
-    List<RTransformHintSubstituteActionsBuilder> actionsBuilders = getActionBuilders(sourceNode, transformTag, context);
+    List<RTransformHintSubstituteActionsBuilder> actionsBuilders = getActionBuilders();
 
     List<RemoveRTByConditionPart> removesByCondition = new ArrayList<RemoveRTByConditionPart>();
 
@@ -60,13 +60,13 @@ import java.util.*;
         removesByCondition.add(rp);
       }
 
-      List<INodeSubstituteAction> addActions = invokeActionFactory(builder, sourceNode, context);
+      List<INodeSubstituteAction> addActions = invokeActionFactory(builder, mySourceNode, myContext);
       resultActions.addAll(addActions);
     }
 
     //remove with conditions
     for (RemoveRTByConditionPart rbc : removesByCondition) {
-      invokeRemoveByCondition(rbc, resultActions.iterator(), sourceNode, context);
+      invokeRemoveByCondition(rbc, resultActions.iterator());
     }
 
     //remove with remove concept
@@ -87,13 +87,13 @@ import java.util.*;
     return resultActions;
   }
 
-  private static List<RTransformHintSubstituteActionsBuilder> getActionBuilders(final SNode sourceNode, String transformTag, final IOperationContext context) {
+  private List<RTransformHintSubstituteActionsBuilder> getActionBuilders() {
     List<RTransformHintSubstituteActionsBuilder> actionsBuilders = new LinkedList<RTransformHintSubstituteActionsBuilder>();
-    IScope scope = context.getScope();
-    final AbstractConceptDeclaration sourceConcept = sourceNode.getConceptDeclarationAdapter();
-    final RTransformTag tag = RTransformTag.parseValue(transformTag);
+    IScope scope = myContext.getScope();
+    final AbstractConceptDeclaration sourceConcept = mySourceNode.getConceptDeclarationAdapter();
+    final RTransformTag tag = RTransformTag.parseValue(myTransformTag);
 
-    List<Language> languages = sourceNode.getModel().getLanguages(scope);
+    List<Language> languages = mySourceNode.getModel().getLanguages(scope);
     for (Language language : languages) {
       SModelDescriptor actionsModel = language.getActionsModelDescriptor();
       if (actionsModel != null && actionsModel.getSModel() != null) {
@@ -107,7 +107,7 @@ import java.util.*;
               }
               // is applicable ?
               return SModelUtil_new.isAssignableConcept(sourceConcept, actionsBuilder.getApplicableConcept()) &&
-                      satisfiesPrecondition(actionsBuilder, sourceNode, context);
+                      satisfiesPrecondition(actionsBuilder);
             }
             return false;
           }
@@ -118,21 +118,16 @@ import java.util.*;
     return actionsBuilders;
   }
 
-  // --------------------------------
-  // Query methods invocation...
-  // --------------------------------
-
-
-  private static void invokeRemoveByCondition(RemoveRTByConditionPart removeByCondition, Iterator<INodeSubstituteAction> actions, SNode sourceNode, IOperationContext context) {
+  private void invokeRemoveByCondition(RemoveRTByConditionPart removeByCondition, Iterator<INodeSubstituteAction> actions) {
     String methodName = "removeRTActionsByCondition_" + removeByCondition.getId();
     try {
-      QueryMethodGenerated.invoke(methodName, context, new RemoveRTActionByConditionContext(actions, sourceNode), removeByCondition.getModel());
+      QueryMethodGenerated.invoke(methodName, myContext, new RemoveRTActionByConditionContext(actions, mySourceNode), removeByCondition.getModel());
     } catch (Throwable t) {
       LOG.error(t);
     }
   }
 
-  private static boolean satisfiesPrecondition(RTransformHintSubstituteActionsBuilder actionsBuilder, SNode sourceNode, IOperationContext context) {
+  private boolean satisfiesPrecondition(RTransformHintSubstituteActionsBuilder actionsBuilder) {
     // try generatred query method
     RTransformHintSubstitutePreconditionFunction precondition = actionsBuilder.getPrecondition();
     // precondition is optional
@@ -140,7 +135,7 @@ import java.util.*;
       String methodName = ActionQueryMethodName.rTransformHintSubstituteActionsBuilder_Precondition(actionsBuilder);
       SModel model = actionsBuilder.getModel();
       try {
-        return (Boolean) QueryMethodGenerated.invoke(methodName, context, new RTransformPreconditionContext(sourceNode), model);
+        return (Boolean) QueryMethodGenerated.invoke(methodName, myContext, new RTransformPreconditionContext(mySourceNode), model);
       } catch (Exception e) {
         LOG.error(e);
         return false;
@@ -150,11 +145,11 @@ import java.util.*;
     return true;
   }
 
-  private static List<INodeSubstituteAction> invokeActionFactory(RTransformHintSubstituteActionsBuilder substituteActionsBuilder, SNode sourceNode, IOperationContext context) {
+  private List<INodeSubstituteAction> invokeActionFactory(RTransformHintSubstituteActionsBuilder substituteActionsBuilder) {
     String methodName = ActionQueryMethodName.nodeFactory_RightTransformActionBuilder(substituteActionsBuilder);
     SModel model = substituteActionsBuilder.getModel();
     try {
-      return (List<INodeSubstituteAction>) QueryMethodGenerated.invoke(methodName, context, new RTActionsBuilderContext(sourceNode, sourceNode.getModel(), null), model);
+      return (List<INodeSubstituteAction>) QueryMethodGenerated.invoke(methodName, myContext, new RTActionsBuilderContext(mySourceNode, mySourceNode.getModel(), null), model);
     } catch (Exception e) {
       return new ArrayList<INodeSubstituteAction>();
     }

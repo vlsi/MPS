@@ -50,10 +50,10 @@ public class ModelActions {
   //-------------------
 
   public static boolean canCreateRightTransformHintSubstituteActions(SNode sourceNode, String transformTag, IOperationContext context) {
-    return RTransformHintSubstituteActionsHelper.canCreateActions(sourceNode, transformTag, context);
+    return new RTransformHintSubstituteActionsHelper(sourceNode, transformTag, context).canCreateActions();
   }
 
   public static List<INodeSubstituteAction> createRightTransformHintSubstituteActions(SNode sourceNode, String transformTag, IOperationContext context) {
-    return RTransformHintSubstituteActionsHelper.createActions(sourceNode, transformTag, context);
+    return new RTransformHintSubstituteActionsHelper(sourceNode, transformTag, context).createActions();
   }
 }
