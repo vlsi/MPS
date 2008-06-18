@@ -584,7 +584,8 @@ public class ModelConstraintsManager implements ApplicationComponent {
     Method method = getCanBeChildMethod(fqName, context);
     if (method != null) {
       try {
-        return (Boolean) method.invoke(null, context, new CanBeAChildContext(parentNode, link));
+        SNode concept = BaseAdapter.fromAdapter(SModelUtil_new.findConceptDeclaration(fqName, context.getScope()));
+        return (Boolean) method.invoke(null, context, new CanBeAChildContext(parentNode, link, concept));
       } catch (IllegalAccessException e) {
         LOG.error(e);
       } catch (InvocationTargetException e) {
