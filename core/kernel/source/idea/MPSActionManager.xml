@@ -105,5 +105,11 @@
 
       <add-to-group anchor="last" group-id="EditMenu"/>
     </group>
+
+    <group id="FileSystemViewPopupMenu">
+      <reference ref="CutCopyPasteGroup"/>
+      <separator/>
+      <reference ref="VcsGroup"/>
+    </group>
   </actions>
 </component>

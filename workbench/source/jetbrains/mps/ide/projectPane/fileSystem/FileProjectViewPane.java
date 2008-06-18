@@ -7,6 +7,10 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
+import com.intellij.openapi.vcs.FileStatusManager;
+import com.intellij.openapi.vcs.FileStatusListener;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.IdeActions;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -57,8 +61,17 @@ public class FileProjectViewPane extends AbstractProjectViewPane {
         }
       }
     };
-
     myTree = myMPSTree;
+
+    FileStatusManager.getInstance(myProject).addFileStatusListener(new FileStatusListener() {
+      public void fileStatusesChanged() {
+        rebuildTree();
+      }
+
+      public void fileStatusChanged(@NotNull VirtualFile virtualFile) {
+        rebuildTree();
+      }
+    });
   }
 
   private void rebuildTree() {
@@ -134,19 +147,4 @@ public class FileProjectViewPane extends AbstractProjectViewPane {
   public void disposeComponent() {
 
   }
-
-  private static class DummyFileStatusProvider implements IFileController {
-    public Status getStatus(IFile file) {
-      return Status.DEFAULT;
-    }
-
-    public void removeListener(IWorkspaceListener l) {
-
-    }
-
-    public void addListener(IWorkspaceListener l) {
-
-    }
-  }
-
 }
