@@ -380,6 +380,13 @@
       <implementation-class>jetbrains.mps.workbench.editors.MPSEditorWarningsManager</implementation-class>
     </component>
 
+    <component>
+      <interface-class>com.intellij.ide.projectView.ProjectView</interface-class>
+      <implementation-class>com.intellij.ide.projectView.impl.ProjectViewImpl</implementation-class>
+      <option name="workspace" value="true"/>
+      <skipForDummyProject/>
+    </component>
+
   </project-components>
 
 </components>
