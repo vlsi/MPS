@@ -2,6 +2,7 @@ package jetbrains.mps.ide.ui;
 
 import com.intellij.openapi.util.Computable;
 import com.intellij.ui.TreeToolTipHandler;
+import com.intellij.ide.dnd.aware.DnDAwareTree;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSActionAdapter;
@@ -23,7 +24,7 @@ import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 
-public abstract class MPSTree extends JTree {
+public abstract class MPSTree extends DnDAwareTree {
   public static final String MPS_TREE = "mps-tree";
   public static final String PATH = "path";
   public static final String SELECTION = "selection";
