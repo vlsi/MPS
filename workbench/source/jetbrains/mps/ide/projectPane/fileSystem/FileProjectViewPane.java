@@ -53,6 +53,8 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
   private Project myProject;
   private ProjectView myProjectView;
   private MPSTree myMPSTree;
+  private FileStatusListener myFileStatusListener;
+  private VirtualFileAdapter myFileListener;
 
   protected FileProjectViewPane(Project project, final ProjectView projectView) {
     super(project);
@@ -76,7 +78,7 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
 
     // adding listeners
 
-    FileStatusManager.getInstance(myProject).addFileStatusListener(new FileStatusListener() {
+    myFileStatusListener = new FileStatusListener() {
       public void fileStatusesChanged() {
         rebuildTree();
       }
@@ -84,9 +86,9 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
       public void fileStatusChanged(@NotNull VirtualFile virtualFile) {
         rebuildTree();
       }
-    });
+    };
 
-    VirtualFileManager.getInstance().addVirtualFileListener(new VirtualFileAdapter() {
+    myFileListener = new VirtualFileAdapter() {
       @Override
       public void fileCreated(VirtualFileEvent event) {
         rebuildTree();
@@ -106,7 +108,7 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
       public void fileCopied(VirtualFileCopyEvent event) {
         rebuildTree();
       }
-    });
+    };
   }
 
   private void rebuildTree() {
@@ -163,10 +165,14 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
         myProjectView.addProjectPane(FileProjectViewPane.this);
       }
     });
+
+    FileStatusManager.getInstance(myProject).addFileStatusListener(myFileStatusListener);
+    VirtualFileManager.getInstance().addVirtualFileListener(myFileListener);
   }
 
   public void projectClosed() {
-
+    FileStatusManager.getInstance(myProject).removeFileStatusListener(myFileStatusListener);
+    VirtualFileManager.getInstance().removeVirtualFileListener(myFileListener);
   }
 
   @NonNls
