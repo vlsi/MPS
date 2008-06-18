@@ -63,11 +63,11 @@ import java.util.List;
 @State(
   name = "MPSProjectPane",
   storages = {
-  @Storage(
-    id = "other",
-    file = "$WORKSPACE_FILE$"
-  )
-    }
+    @Storage(
+      id = "other",
+      file = "$WORKSPACE_FILE$"
+    )
+  }
 )
 public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPane, PersistentStateComponent<MyState> {
   private static final Logger LOG = Logger.getLogger(ProjectPane.class);

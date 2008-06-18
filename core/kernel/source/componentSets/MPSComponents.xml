@@ -387,6 +387,12 @@
       <skipForDummyProject/>
     </component>
 
+    <component>
+      <implementation-class>jetbrains.mps.ide.projectPane.TestProjectViewPane</implementation-class>
+      <option name="workspace" value="true"/>
+      <skipForDummyProject/>
+    </component>
+
   </project-components>
 
 </components>
