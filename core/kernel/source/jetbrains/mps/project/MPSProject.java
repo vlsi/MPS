@@ -469,11 +469,10 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
 
         TypeChecker.getInstance().clearForReload();
 
-        //todo: it's very slow
-        ActionManager manager = ActionManager.getInstance();
-        for (String id : manager.getActionIds("")) {
-          manager.unregisterAction(id);
-        }
+//        ActionManager manager = ActionManager.getInstance();
+//        for (String id : manager.getActionIds("")) {
+//          manager.unregisterAction(id);
+//        }
 
         MPSModuleRepository.getInstance().removeUnusedModules();
         SModelRepository.getInstance().removeUnusedDescriptors();
