@@ -2167,7 +2167,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   @Nullable
   public Object getData(@NonNls String dataId) {
     if (dataId.equals(MPSDataKeys.SNODE.getName())) {
-      return getRootCell().getSNode();
+      if (getSelectedCell() != null) {
+        return getSelectedCell().getSNode();
+      } else {
+        return getRootCell().getSNode();
+      }
     }
 
     if (dataId.equals(MPSDataKeys.SMODEL_DESCRIPTOR.getName())) {
