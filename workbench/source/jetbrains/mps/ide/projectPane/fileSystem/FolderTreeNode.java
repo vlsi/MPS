@@ -1,15 +1,14 @@
-package jetbrains.mps.vcs.ui.view;
+package jetbrains.mps.ide.projectPane.fileSystem;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vcs.ui.IFileController;
-import jetbrains.mps.vcs.ui.view.AbstractFileTreeNode;
-import jetbrains.mps.vcs.ui.view.FileTreeNode;
-import jetbrains.mps.vcs.Status;
+import jetbrains.mps.ide.projectPane.fileSystem.AbstractFileTreeNode;
+import jetbrains.mps.ide.projectPane.fileSystem.FileTreeNode;
 
-import javax.swing.tree.TreeNode;
 import java.util.*;
+
+import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 
 public class FolderTreeNode extends AbstractFileTreeNode {
   private static final Set<String> myExcluded = new HashSet<String>();
@@ -18,7 +17,7 @@ public class FolderTreeNode extends AbstractFileTreeNode {
     myExcluded.add(".svn");
   }
 
-  public FolderTreeNode(IOperationContext operationContext, IFileController provider, IFile folder) {
+  public FolderTreeNode(IOperationContext operationContext, VcsFileStatusProvider provider, IFile folder) {
     super(operationContext, provider, folder);
 
     for (IFile f : myFile.list()) {
@@ -33,7 +32,7 @@ public class FolderTreeNode extends AbstractFileTreeNode {
     }
   }
 
-  private static MPSTreeNode createNode(IOperationContext operationContext, IFileController provider, IFile file) {
+  private static MPSTreeNode createNode(IOperationContext operationContext, VcsFileStatusProvider provider, IFile file) {
     if (file.isDirectory()) {
       return new FolderTreeNode(operationContext, provider, file);
     } else {

@@ -1,34 +1,23 @@
-package jetbrains.mps.ide.projectPane;
+package jetbrains.mps.ide.projectPane.fileSystem;
 
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.SelectInTarget;
-import com.intellij.ide.dnd.aware.DnDAwareTree;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
-import com.intellij.packageDependencies.ui.DirectoryNode;
-import com.intellij.psi.impl.file.PsiDirectoryImpl;
+import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
-import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.event.TreeModelListener;
-import javax.swing.tree.TreeModel;
-import javax.swing.tree.TreeNode;
-import javax.swing.tree.TreePath;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
 
-import java.util.Enumeration;
-import java.io.File;
-
 import jetbrains.mps.vfs.VFileSystem;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vcs.ui.view.FolderTreeNode;
+import jetbrains.mps.ide.projectPane.fileSystem.FolderTreeNode;
 import jetbrains.mps.vcs.ui.IFileController;
 import jetbrains.mps.vcs.ui.IFileController.IWorkspaceListener;
 import jetbrains.mps.vcs.Status;
@@ -57,25 +46,11 @@ public class FileProjectViewPane extends AbstractProjectViewPane {
     myProjectView = projectView;
 
     myMPSTree = new MPSTree() {
-      public IWorkspaceListener myListener = new IWorkspaceListener() {
-        public void workingCopyChanged() {
-          ModelAccess.instance().runReadInEDT(new Runnable() {
-            public void run() {
-              myMPSTree.rebuildLater();
-            }
-          });
-        }
-      };
-
       protected MPSTreeNode rebuild() {
         if (myProject != null) {
-          ProjectVCSManager projectVCSManager = myProject.getComponent(ProjectVCSManager.class);
-          IFileController provider = projectVCSManager == null ? new DummyFileStatusProvider() : projectVCSManager.getController();
-          provider.addListener(myListener);
           final IFile root = VFileSystem.toIFile(myProject.getBaseDir());
-          System.out.println(root);
           return new FolderTreeNode(new ProjectOperationContext(getProject()),
-            provider,
+            myProject.getComponent(VcsFileStatusProvider.class),
             root);
         } else {
           return new TextTreeNode("No Project");
@@ -134,12 +109,12 @@ public class FileProjectViewPane extends AbstractProjectViewPane {
   }
 
   public void projectOpened() {
+    rebuildTree();
     StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
       public void run() {
         myProjectView.addProjectPane(FileProjectViewPane.this);
       }
     });
-    rebuildTree();
   }
 
   public void projectClosed() {

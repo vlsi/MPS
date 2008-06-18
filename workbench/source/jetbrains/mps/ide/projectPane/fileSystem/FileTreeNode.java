@@ -1,14 +1,15 @@
-package jetbrains.mps.vcs.ui.view;
+package jetbrains.mps.ide.projectPane.fileSystem;
 
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.vcs.ui.IFileController;
 import jetbrains.mps.vcs.ui.VCSIcons;
-import jetbrains.mps.vcs.ui.view.AbstractFileTreeNode;
+import jetbrains.mps.ide.projectPane.fileSystem.AbstractFileTreeNode;
 import jetbrains.mps.ide.projectPane.Icons;
 
 import javax.swing.Icon;
 import java.util.*;
+
+import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 
 public class FileTreeNode extends AbstractFileTreeNode {
   private static final Map<String, Icon> ICONS = new HashMap<String, Icon>();
@@ -24,7 +25,7 @@ public class FileTreeNode extends AbstractFileTreeNode {
     ICONS.put("", VCSIcons.FILE_ICON);
   }
 
-  public FileTreeNode(IOperationContext operationContext, IFileController provider, IFile file) {
+  public FileTreeNode(IOperationContext operationContext, VcsFileStatusProvider provider, IFile file) {
     super(operationContext, provider, file);
   }
 
