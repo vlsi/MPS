@@ -411,6 +411,10 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   }
 
   public void setLanguageDescriptor(final LanguageDescriptor newDescriptor) {
+    setLanguageDescriptor(newDescriptor, true);
+  }
+
+  public void setLanguageDescriptor(final LanguageDescriptor newDescriptor, boolean reloadClasses) {
     // release modules and models (except descriptor model)
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), Language.this);
 
@@ -420,7 +424,9 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
     reload();
 
-    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+    if (reloadClasses) {
+      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+    }
 
     MPSModuleRepository.getInstance().invalidateCaches();
   }

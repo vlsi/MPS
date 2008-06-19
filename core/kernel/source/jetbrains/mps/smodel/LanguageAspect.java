@@ -164,7 +164,7 @@ public enum LanguageAspect {
       Model m = Model.newInstance(sm);
       m.setName(model.getModelUID().toString());
 
-      l.setLanguageDescriptor(l.getLanguageDescriptor());
+      l.setLanguageDescriptor(l.getLanguageDescriptor(), false);
 
       l.save();
     }
