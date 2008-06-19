@@ -3,6 +3,7 @@ package jetbrains.mps.ide.scriptLanguage.plugin;
 import jetbrains.mps.refactoring.common.RefactoringAction;
 import jetbrains.mps.refactoring.ObsoleteRefactoringContext;
 import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.action.MPSActionAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
