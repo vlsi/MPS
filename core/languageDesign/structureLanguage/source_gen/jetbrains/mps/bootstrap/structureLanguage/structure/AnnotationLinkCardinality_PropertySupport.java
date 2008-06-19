@@ -12,7 +12,7 @@ public class AnnotationLinkCardinality_PropertySupport extends PropertySupport {
       return true;
     }
     Iterator<AnnotationLinkCardinality> constants = AnnotationLinkCardinality.getConstants().iterator();
-    while(constants.hasNext()) {
+    while (constants.hasNext()) {
       AnnotationLinkCardinality constant = constants.next();
       if (value.equals(constant.getName())) {
         return true;
@@ -26,7 +26,7 @@ public class AnnotationLinkCardinality_PropertySupport extends PropertySupport {
       return null;
     }
     Iterator<AnnotationLinkCardinality> constants = AnnotationLinkCardinality.getConstants().iterator();
-    while(constants.hasNext()) {
+    while (constants.hasNext()) {
       AnnotationLinkCardinality constant = constants.next();
       if (value.equals(constant.getName())) {
         return constant.getValueAsString();

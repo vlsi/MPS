@@ -767,7 +767,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198521635840">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198521635841">
-            <property name="name" value="constraintsModelDescriptor" />
+            <property name="name" value="behaviorModelDescriptor" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198521635842">
               <link role="classifier" targetNodeId="5.~SModelDescriptor" resolveInfo="SModelDescriptor" />
             </node>
@@ -776,7 +776,7 @@
                 <link role="variableDeclaration" targetNodeId="1198521027978" resolveInfo="sourceLanguage" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204740202628">
-                <link role="baseMethodDeclaration" targetNodeId="5.~Language.getConstraintsModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getConstraintsModelDescriptor" />
+                <link role="baseMethodDeclaration" targetNodeId="5.~Language.getBehaviorModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getBehaviorModelDescriptor" />
               </node>
             </node>
           </node>
@@ -3378,7 +3378,7 @@
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201283912536">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201283912537">
-                <property name="name" value="constraintsModelDescriptor" />
+                <property name="name" value="behaviorModelDescriptor" />
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201283912538">
                   <link role="classifier" targetNodeId="5.~SModelDescriptor" resolveInfo="SModelDescriptor" />
                 </node>
@@ -3387,7 +3387,7 @@
                     <link role="argument" targetNodeId="1201265952539" resolveInfo="sourceLanguage" />
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204740202221">
-                    <link role="baseMethodDeclaration" targetNodeId="5.~Language.getConstraintsModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getConstraintsModelDescriptor" />
+                    <link role="baseMethodDeclaration" targetNodeId="5.~Language.getBehaviorModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getBehaviorModelDescriptor" />
                   </node>
                 </node>
               </node>

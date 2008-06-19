@@ -123,9 +123,9 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
             }
           }
         }
-        SModelDescriptor constraintsModelDescriptor = ((Language)refactoringContext.getParameter("sourceLanguage")).getConstraintsModelDescriptor();
-        if (constraintsModelDescriptor != null) {
-          refactoringContext.setParameter("conceptBehavior", SModelUtil_new.findBehaviorDeclaration(constraintsModelDescriptor.getSModel(), ((AbstractConceptDeclaration)SNodeOperations.getAdapter(node))));
+        SModelDescriptor behaviorModelDescriptor = ((Language)refactoringContext.getParameter("sourceLanguage")).getBehaviorModelDescriptor();
+        if (behaviorModelDescriptor != null) {
+          refactoringContext.setParameter("conceptBehavior", SModelUtil_new.findBehaviorDeclaration(behaviorModelDescriptor.getSModel(), ((AbstractConceptDeclaration)SNodeOperations.getAdapter(node))));
           if (((ConceptBehavior)refactoringContext.getParameter("conceptBehavior")) != null) {
             SNode behaviorNode = ((ConceptBehavior)refactoringContext.getParameter("conceptBehavior")).getNode();
             for(SearchResult<SNode> searchResult : new ArrayList<SearchResult<SNode>>((Collection)searchResultsList)) {
@@ -181,16 +181,16 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
   public void updateModel(SModel model, RefactoringContext refactoringContext) {
   }
 
+  public List<SNode> getNodesToOpen(ActionContext actionContext, RefactoringContext refactoringContext) {
+    return new ArrayList<SNode>();
+  }
+
   public boolean doesUpdateModel() {
     return false;
   }
 
   public boolean askForInfo(ActionContext actionContext, RefactoringContext refactoringContext) {
     return this.isApplicable(actionContext, refactoringContext);
-  }
-
-  public List<SNode> getNodesToOpen(ActionContext actionContext, RefactoringContext refactoringContext) {
-    return new ArrayList<SNode>();
   }
 
 }

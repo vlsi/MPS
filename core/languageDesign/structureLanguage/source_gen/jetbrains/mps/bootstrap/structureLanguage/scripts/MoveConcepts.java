@@ -146,10 +146,10 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
         }
       }
       // collecting behaviors:
-      SModelDescriptor constraintsModelDescriptor = sourceLanguage.getConstraintsModelDescriptor();
-      if (constraintsModelDescriptor != null) {
+      SModelDescriptor behaviorModelDescriptor = sourceLanguage.getBehaviorModelDescriptor();
+      if (behaviorModelDescriptor != null) {
         for(SNode node : nodes) {
-          ConceptBehavior conceptBehavior = SModelUtil_new.findBehaviorDeclaration(constraintsModelDescriptor.getSModel(), ((AbstractConceptDeclaration)SNodeOperations.getAdapter(node)));
+          ConceptBehavior conceptBehavior = SModelUtil_new.findBehaviorDeclaration(behaviorModelDescriptor.getSModel(), ((AbstractConceptDeclaration)SNodeOperations.getAdapter(node)));
           if (conceptBehavior != null) {
             SNode behavior = (SNode)conceptBehavior.getNode();
             ListSequence.fromList(behaviors).addElement(behavior);
@@ -222,6 +222,10 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
     refactoringContext.updateModelWithMaps(model);
   }
 
+  public List<SNode> getNodesToOpen(ActionContext actionContext, RefactoringContext refactoringContext) {
+    return new ArrayList<SNode>();
+  }
+
   public boolean doesUpdateModel() {
     return true;
   }
@@ -244,10 +248,6 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
       result = dialog.getResult();
       return result;
     }
-  }
-
-  public List<SNode> getNodesToOpen(ActionContext actionContext, RefactoringContext refactoringContext) {
-    return new ArrayList<SNode>();
   }
 
   public static class My_targetModel_Condition implements Condition<SModelDescriptor> {

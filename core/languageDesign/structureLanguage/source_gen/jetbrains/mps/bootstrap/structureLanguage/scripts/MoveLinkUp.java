@@ -166,6 +166,10 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
     refactoringContext.updateModelWithMaps(model);
   }
 
+  public List<SNode> getNodesToOpen(ActionContext actionContext, RefactoringContext refactoringContext) {
+    return new ArrayList<SNode>();
+  }
+
   public boolean doesUpdateModel() {
     return true;
   }
@@ -193,10 +197,6 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
       result = dialog.getResult();
       return result;
     }
-  }
-
-  public List<SNode> getNodesToOpen(ActionContext actionContext, RefactoringContext refactoringContext) {
-    return new ArrayList<SNode>();
   }
 
 }

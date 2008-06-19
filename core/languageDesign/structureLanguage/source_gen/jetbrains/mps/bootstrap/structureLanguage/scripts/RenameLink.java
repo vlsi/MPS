@@ -144,6 +144,10 @@ public class RenameLink extends AbstractLoggableRefactoring {
     refactoringContext.updateModelWithMaps(model);
   }
 
+  public List<SNode> getNodesToOpen(ActionContext actionContext, RefactoringContext refactoringContext) {
+    return new ArrayList<SNode>();
+  }
+
   public boolean doesUpdateModel() {
     return true;
   }
@@ -174,10 +178,6 @@ public class RenameLink extends AbstractLoggableRefactoring {
       result = dialog.getResult();
       return result;
     }
-  }
-
-  public List<SNode> getNodesToOpen(ActionContext actionContext, RefactoringContext refactoringContext) {
-    return new ArrayList<SNode>();
   }
 
 }

@@ -12,7 +12,7 @@ public class EnumerationMemberIdentifierPolicy_PropertySupport extends PropertyS
       return true;
     }
     Iterator<EnumerationMemberIdentifierPolicy> constants = EnumerationMemberIdentifierPolicy.getConstants().iterator();
-    while(constants.hasNext()) {
+    while (constants.hasNext()) {
       EnumerationMemberIdentifierPolicy constant = constants.next();
       if (value.equals(constant.getName())) {
         return true;
@@ -26,7 +26,7 @@ public class EnumerationMemberIdentifierPolicy_PropertySupport extends PropertyS
       return null;
     }
     Iterator<EnumerationMemberIdentifierPolicy> constants = EnumerationMemberIdentifierPolicy.getConstants().iterator();
-    while(constants.hasNext()) {
+    while (constants.hasNext()) {
       EnumerationMemberIdentifierPolicy constant = constants.next();
       if (value.equals(constant.getName())) {
         return constant.getValueAsString();

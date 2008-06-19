@@ -12,7 +12,7 @@ public class AnnotationLinkStereotype_PropertySupport extends PropertySupport {
       return true;
     }
     Iterator<AnnotationLinkStereotype> constants = AnnotationLinkStereotype.getConstants().iterator();
-    while(constants.hasNext()) {
+    while (constants.hasNext()) {
       AnnotationLinkStereotype constant = constants.next();
       if (value.equals(constant.getName())) {
         return true;
@@ -26,7 +26,7 @@ public class AnnotationLinkStereotype_PropertySupport extends PropertySupport {
       return null;
     }
     Iterator<AnnotationLinkStereotype> constants = AnnotationLinkStereotype.getConstants().iterator();
-    while(constants.hasNext()) {
+    while (constants.hasNext()) {
       AnnotationLinkStereotype constant = constants.next();
       if (value.equals(constant.getName())) {
         return constant.getValueAsString();

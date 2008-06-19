@@ -12,7 +12,7 @@ public class LinkMetaclass_PropertySupport extends PropertySupport {
       return true;
     }
     Iterator<LinkMetaclass> constants = LinkMetaclass.getConstants().iterator();
-    while(constants.hasNext()) {
+    while (constants.hasNext()) {
       LinkMetaclass constant = constants.next();
       if (value.equals(constant.getName())) {
         return true;
@@ -26,7 +26,7 @@ public class LinkMetaclass_PropertySupport extends PropertySupport {
       return null;
     }
     Iterator<LinkMetaclass> constants = LinkMetaclass.getConstants().iterator();
-    while(constants.hasNext()) {
+    while (constants.hasNext()) {
       LinkMetaclass constant = constants.next();
       if (value.equals(constant.getName())) {
         return constant.getValueAsString();

@@ -12,7 +12,7 @@ public class Cardinality_PropertySupport extends PropertySupport {
       return true;
     }
     Iterator<Cardinality> constants = Cardinality.getConstants().iterator();
-    while(constants.hasNext()) {
+    while (constants.hasNext()) {
       Cardinality constant = constants.next();
       if (value.equals(constant.getName())) {
         return true;
@@ -26,7 +26,7 @@ public class Cardinality_PropertySupport extends PropertySupport {
       return null;
     }
     Iterator<Cardinality> constants = Cardinality.getConstants().iterator();
-    while(constants.hasNext()) {
+    while (constants.hasNext()) {
       Cardinality constant = constants.next();
       if (value.equals(constant.getName())) {
         return constant.getValueAsString();
