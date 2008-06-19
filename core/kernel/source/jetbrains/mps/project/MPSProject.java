@@ -1,6 +1,7 @@
 package jetbrains.mps.project;
 
 import com.intellij.ide.impl.ProjectUtil;
+import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
@@ -8,6 +9,7 @@ import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.Highlighter;
@@ -457,6 +459,12 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   }
 
   public void dispose(final boolean reloadAll) {
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      public void run() {
+        IdeEventQueue.getInstance().flushQueue();
+      }
+    });
+
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         MPSProjects projects = MPSProjects.instance();
@@ -469,10 +477,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
 
         TypeChecker.getInstance().clearForReload();
 
-//        ActionManager manager = ActionManager.getInstance();
-//        for (String id : manager.getActionIds("")) {
-//          manager.unregisterAction(id);
-//        }
 
         MPSModuleRepository.getInstance().removeUnusedModules();
         SModelRepository.getInstance().removeUnusedDescriptors();
