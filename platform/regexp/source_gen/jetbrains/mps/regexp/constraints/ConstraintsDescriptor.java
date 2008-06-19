@@ -12,8 +12,8 @@ public class ConstraintsDescriptor implements IModelConstraints {
   private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
 
   public ConstraintsDescriptor() {
-    this.myConstraints.add(new MatchVariableReferenceRegexp_match_ReferentConstraint());
     this.myConstraints.add(new MatchVariableReference_match_ReferentConstraint());
+    this.myConstraints.add(new MatchVariableReferenceRegexp_match_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

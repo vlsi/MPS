@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.core.constraints.INamedConcept_Behavior;
+import jetbrains.mps.core.behavior.INamedConcept_Behavior;
 import org.apache.commons.lang.ObjectUtils;
 
 public class TestCaseRow extends TestContainerRow {
@@ -14,7 +14,7 @@ public class TestCaseRow extends TestContainerRow {
 
   public TestCaseRow(SNode testCase) {
     super(SPropertyOperations.getString(testCase, "name"), SNodeOperations.getModel(testCase).getLongName());
-    this.testCaseName = INamedConcept_Behavior.call_getFqName_1184686272576(testCase);
+    this.testCaseName = INamedConcept_Behavior.call_getFqName_1213877404258(testCase);
   }
 
   public boolean matches(String testCase, String testMethod) {

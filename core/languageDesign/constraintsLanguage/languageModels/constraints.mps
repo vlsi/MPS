@@ -2321,9 +2321,6 @@
         </node>
       </node>
     </node>
-    <node role="canBeChild" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_CanBeAChild" id="1213804641600">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213804641601" />
-    </node>
   </node>
 </model>
 

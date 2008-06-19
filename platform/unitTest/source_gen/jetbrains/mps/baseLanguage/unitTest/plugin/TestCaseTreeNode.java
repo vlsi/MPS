@@ -10,7 +10,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.core.constraints.INamedConcept_Behavior;
+import jetbrains.mps.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class TestCaseTreeNode extends MPSTreeNode {
@@ -40,7 +40,7 @@ public class TestCaseTreeNode extends MPSTreeNode {
     ModelAccess.instance().runReadAction(new Runnable() {
 
       public void run() {
-        className.value = INamedConcept_Behavior.call_getFqName_1184686272576(TestCaseTreeNode.this.testCase);
+        className.value = INamedConcept_Behavior.call_getFqName_1213877404258(TestCaseTreeNode.this.testCase);
       }
 
     });

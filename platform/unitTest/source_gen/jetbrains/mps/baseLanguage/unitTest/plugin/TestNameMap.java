@@ -6,7 +6,7 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.core.constraints.INamedConcept_Behavior;
+import jetbrains.mps.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 
 public class TestNameMap <C, M> {
@@ -20,7 +20,7 @@ public class TestNameMap <C, M> {
   }
 
   public void put(SNode testCaseNode, C testCase) {
-    MapSequence.fromMap(this.classToTestCase).put(INamedConcept_Behavior.call_getFqName_1184686272576(testCaseNode), testCase);
+    MapSequence.fromMap(this.classToTestCase).put(INamedConcept_Behavior.call_getFqName_1213877404258(testCaseNode), testCase);
   }
 
   public C get(String testCaseName) {
@@ -28,7 +28,7 @@ public class TestNameMap <C, M> {
   }
 
   public void put(SNode testCaseNode, SNode testMethodNode, M testMethod) {
-    String testCaseName = INamedConcept_Behavior.call_getFqName_1184686272576(testCaseNode);
+    String testCaseName = INamedConcept_Behavior.call_getFqName_1213877404258(testCaseNode);
     Map<String, M> testMethods = MapSequence.fromMap(this.classToMethodToMethodTest).get(testCaseName);
     if (testMethods == null) {
       testMethods = MapSequence.fromMap(new HashMap<String, M>());

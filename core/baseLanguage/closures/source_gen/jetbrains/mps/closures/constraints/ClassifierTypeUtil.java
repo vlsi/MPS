@@ -37,9 +37,9 @@ public class ClassifierTypeUtil {
 
   public static SNode getClassifierType(SNode ft) {
     String rtSig = "FunctionTypes." + FunctionTypeUtil.getRuntimeSignature(ft);
-    for(SNode ice : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new QuotationClass_2().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface")) {
+    for(SNode ice : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new QuotationClass_1().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface")) {
       if (rtSig.equals(SPropertyOperations.getString(ice, "name"))) {
-        SNode ct = new QuotationClass_1().createNode(ice);
+        SNode ct = new QuotationClass_().createNode(ice);
         if ((SLinkOperations.getTarget(ft, "resultType", true) != null) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ft, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
           SLinkOperations.addChild(ct, "parameter", copyTypeRecursively(getTypeCoercedToClassifierType(SLinkOperations.getTarget(ft, "resultType", true)), true));
         }
@@ -53,7 +53,7 @@ public class ClassifierTypeUtil {
   }
 
   public static boolean isFunctionTypeClassifier(SNode classifier) {
-    for(SNode ice : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new QuotationClass_7().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface")) {
+    for(SNode ice : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new QuotationClass_6().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface")) {
       if (ice == classifier) {
         return true;
       }
@@ -62,7 +62,7 @@ public class ClassifierTypeUtil {
   }
 
   public static boolean isFunctionTypeClassifierReturningValue(SNode classifier) {
-    for(SNode ice : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new QuotationClass_8().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface")) {
+    for(SNode ice : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new QuotationClass_7().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface")) {
       if (ice == classifier) {
         String cname = SPropertyOperations.getString(classifier, "name");
         int ldi = cname.lastIndexOf(".");
@@ -89,10 +89,10 @@ public class ClassifierTypeUtil {
       visitedClassifiers.add(SLinkOperations.getTarget(ct, "classifier", false));
       for(SNode sup : TypeChecker.getInstance().getSubtypingManager().collectImmediateSupertypes(ct)) {
         {
-          IMatchingPattern pattern_1 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
-          SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce(sup, pattern_1);
-          if (coercedNode_1 != null) {
-            concretes.addLast(coercedNode_1);
+          IMatchingPattern pattern_ = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
+          SNode coercedNode_ = TypeChecker.getInstance().getRuntimeSupport().coerce(sup, pattern_);
+          if (coercedNode_ != null) {
+            concretes.addLast(coercedNode_);
           }
         }
       }
@@ -144,14 +144,14 @@ public class ClassifierTypeUtil {
         covariantParam = false;
       }
       return (covariant || isFunctionTypeClassifier(SLinkOperations.getTarget(type, "classifier", false)) ?
-        new QuotationClass_3().createNode(copy) :
-        new QuotationClass_4().createNode(copy)
+        new QuotationClass_2().createNode(copy) :
+        new QuotationClass_3().createNode(copy)
       );
     } else
     {
       return (covariant ?
-        new QuotationClass_5().createNode(SNodeOperations.copyNode(type)) :
-        new QuotationClass_6().createNode(SNodeOperations.copyNode(type))
+        new QuotationClass_4().createNode(SNodeOperations.copyNode(type)) :
+        new QuotationClass_5().createNode(SNodeOperations.copyNode(type))
       );
     }
   }

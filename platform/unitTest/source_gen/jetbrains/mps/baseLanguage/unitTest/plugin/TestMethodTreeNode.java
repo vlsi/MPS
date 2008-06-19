@@ -9,7 +9,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.closures.runtime.Wrappers;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.core.constraints.INamedConcept_Behavior;
+import jetbrains.mps.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class TestMethodTreeNode extends MPSTreeNode {
@@ -52,7 +52,7 @@ public class TestMethodTreeNode extends MPSTreeNode {
       public void run() {
         SNode classConcept = SNodeOperations.getAncestor(TestMethodTreeNode.this.testMethod, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
         if (classConcept != null) {
-          className.value = INamedConcept_Behavior.call_getFqName_1184686272576(classConcept);
+          className.value = INamedConcept_Behavior.call_getFqName_1213877404258(classConcept);
         }
       }
 
