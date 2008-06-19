@@ -97,7 +97,8 @@ public class GenerationController {
     try {
       boolean generationOK = true;
       for (Pair<IModule, List<SModelDescriptor>> moduleAndDescriptors : myModuleSequence) {
-        generationOK = generationOK && generateModelsInModule(moduleAndDescriptors.o1, moduleAndDescriptors.o2, totalJob, startJobTime);
+        boolean result = generateModelsInModule(moduleAndDescriptors.o1, moduleAndDescriptors.o2, totalJob, startJobTime);
+        generationOK = generationOK && result;
       }
       if (generationOK) {
         boolean compiledSuccessfully = true;
