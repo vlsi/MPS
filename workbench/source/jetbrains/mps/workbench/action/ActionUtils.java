@@ -25,19 +25,19 @@ public class ActionUtils {
     return ((BaseGroup) ActionManager.getInstance().getAction(id));
   }
 
-  public static JPopupMenu createPopup(ActionContext context, String groupId) {
-    return createPopup(context, getGroup(groupId));
+  public static JPopupMenu createPopup(String groupId) {
+    return createPopup(getGroup(groupId));
   }
 
-  public static JPopupMenu createPopup(ActionContext context, ActionGroup g) {
+  public static JPopupMenu createPopup(ActionGroup g) {
     return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, g).getComponent();
   }
 
-  public static JComponent createComponent(ActionContext context, AnAction... actions) {
-    return createComponent(context, groupFromActions(actions));
+  public static JComponent createComponent(AnAction... actions) {
+    return createComponent(groupFromActions(actions));
   }
 
-  public static JComponent createComponent(ActionContext context, ActionGroup g) {
+  public static JComponent createComponent(ActionGroup g) {
     return ActionManager.getInstance().createButtonToolbar(ActionPlaces.UNKNOWN, g);
   }
 
@@ -109,7 +109,7 @@ public class ActionUtils {
 
       for (AnAction innerAction : children) {
         String id = manager.getId(innerAction);
-        if (id !=null) unregisterAction(id);
+        if (id != null) unregisterAction(id);
       }
     }
 

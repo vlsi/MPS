@@ -1,6 +1,5 @@
 package jetbrains.mps.ide.projectPane;
 
-import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
@@ -47,17 +46,11 @@ class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
   }
 
   public JPopupMenu getQuickCreatePopupMenu() {
-    Solution solution = getSolution();
-    ActionContext context = new ActionContext(getOperationContext());
-    context.put(Solution.class, solution);
-    return ActionUtils.createPopup(context, ProjectPane.SOLUTION_NEW_ACTIONS);
+    return ActionUtils.createPopup(ProjectPane.SOLUTION_NEW_ACTIONS);
   }
 
   public JPopupMenu getPopupMenu() {
-    Solution solution = getSolution();
-    ActionContext context = new ActionContext(getOperationContext());
-    context.put(Solution.class, solution);
-    return ActionUtils.createPopup(context, ProjectPane.PROJECT_PANE_PROJECT_SOLUTION_ACTIONS);
+    return ActionUtils.createPopup(ProjectPane.PROJECT_PANE_PROJECT_SOLUTION_ACTIONS);
   }
 
   protected String getModulePresentation() {

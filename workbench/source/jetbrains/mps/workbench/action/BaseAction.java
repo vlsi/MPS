@@ -111,7 +111,9 @@ public abstract class BaseAction extends AnAction {
   }
 
   @NotNull
-  protected abstract String getKeyStroke();
+  protected String getKeyStroke(){
+    return "";
+  }
 
   protected abstract void doExecute(AnActionEvent e);
 }

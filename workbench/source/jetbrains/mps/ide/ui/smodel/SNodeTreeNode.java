@@ -110,19 +110,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   }
 
   public JPopupMenu getPopupMenu() {
-    ProjectPane pane = getOperationContext().getComponent(ProjectPane.class);
-    if (pane == null) return null;
-
-    //todo hack
-    List<SNode> selection;
-    if (getTree() == pane.getTree()) {
-      selection = pane.getNormalizedSelectedNodes();
-    } else {
-      selection = Arrays.asList(getSNode());
-    }
-
-    ActionContext context = new ActionContext(getOperationContext(), getSNode(), selection);
-    return ActionUtils.createPopup(context, ProjectPane.PROJECT_PANE_NODE_ACTIONS);
+    return ActionUtils.createPopup(ProjectPane.PROJECT_PANE_NODE_ACTIONS);
   }
 
   public Object getUserObject() {

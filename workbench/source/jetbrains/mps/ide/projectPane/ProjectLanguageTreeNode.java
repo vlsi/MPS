@@ -58,17 +58,11 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
   }
 
   public JPopupMenu getQuickCreatePopupMenu() {
-    final Language language = getLanguage();
-    ActionContext context = new ActionContext(getOperationContext());
-    context.put(Language.class, language);
-    return ActionUtils.createPopup(context, ProjectPane.LANGUAGE_NEW_ACTIONS);
+    return ActionUtils.createPopup(ProjectPane.LANGUAGE_NEW_ACTIONS);
   }
 
   public JPopupMenu getPopupMenu() {
-    final Language language = getLanguage();
-    ActionContext context = new ActionContext(getOperationContext());
-    context.put(Language.class, language);
-    return ActionUtils.createPopup(context, ProjectPane.PROJECT_PANE_LANGUAGE_ACTIONS);
+    return ActionUtils.createPopup(ProjectPane.PROJECT_PANE_LANGUAGE_ACTIONS);
   }
 
   protected String getModulePresentation() {

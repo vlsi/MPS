@@ -18,12 +18,10 @@ class ProjectTreeNode extends MPSTreeNode {
   }
 
   public JPopupMenu getQuickCreatePopupMenu() {
-    ActionContext context = new ActionContext(getOperationContext());
-    return ActionUtils.createPopup(context, ProjectPane.PROJECT_NEW_ACTIONS);
+    return ActionUtils.createPopup(ProjectPane.PROJECT_NEW_ACTIONS);
   }
 
   public JPopupMenu getPopupMenu() {
-    ActionContext context = new ActionContext(getOperationContext());
-    return ActionUtils.createPopup(context, ProjectPane.PROJECT_PANE_PROJECT_ACTIONS);
+    return ActionUtils.createPopup(ProjectPane.PROJECT_PANE_PROJECT_ACTIONS);
   }
 }

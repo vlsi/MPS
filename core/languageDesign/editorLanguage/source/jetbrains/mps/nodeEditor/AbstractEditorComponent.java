@@ -701,10 +701,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     BaseGroup group = ActionUtils.getGroup(EDITOR_POPUP_MENU_ACTIONS);
     if (group == null) return;
 
-    ActionContext context = createActionContext();
-
-    if (context == null) return;
-    JPopupMenu popupMenu = ActionUtils.createPopup(context, group);
+    JPopupMenu popupMenu = ActionUtils.createPopup(group);
 
     EditorCell cell = getSelectedCell();
     { // keymaps
@@ -743,7 +740,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         };
 //        mpsAction.setVisible(true);
 //        mpsAction.setEnabled(true);
-        keyMapActions.add(ActionUtils.createComponent(context, mpsAction));
+        keyMapActions.add(ActionUtils.createComponent(mpsAction));
       }
 
       popupMenu.add(keyMapActions);
@@ -837,7 +834,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     EditorSettings.getInstance().removeEditorSettingsListener(mySettingsListener);
     ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
     KeyboardFocusManager.getCurrentKeyboardFocusManager().removePropertyChangeListener("focusOwner", myFocusListener);
-    
+
     clearCaches();
 
     myEventsCollector.dispose();
