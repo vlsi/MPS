@@ -45,8 +45,6 @@ public class TransientModelsTreeNode extends ProjectModuleTreeNode {
 
   public JPopupMenu getPopupMenu() {
     ActionGroup g = ActionUtils.getGroup(ProjectPane.PROJECT_PANE_TRANSIENT_MODULES_ACTIONS);
-    Presentation p = new Presentation();
-    g.update(ActionUtils.createEvent(p, new ActionContext()));
     return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, g).getComponent();
   }
 }

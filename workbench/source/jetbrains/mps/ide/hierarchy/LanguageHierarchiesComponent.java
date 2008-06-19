@@ -173,7 +173,6 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     context.put(SNode.class, BaseAdapter.fromAdapter(getSelectedConcept()));
     context.put(List.class, CollectionUtil.asList(getSelectedConcept()));
     BaseGroup group = ActionUtils.getGroup(ProjectPane.PROJECT_PANE_NODE_ACTIONS);
-    group.update(ActionUtils.createEvent(new Presentation(), context));
     ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent().show(this, e.getX(), e.getY());
   }
 

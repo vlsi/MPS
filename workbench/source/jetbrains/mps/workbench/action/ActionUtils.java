@@ -30,8 +30,6 @@ public class ActionUtils {
   }
 
   public static JPopupMenu createPopup(ActionContext context, ActionGroup g) {
-    Presentation p = new Presentation();
-    g.update(createEvent(p, context));
     return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, g).getComponent();
   }
 
@@ -40,8 +38,6 @@ public class ActionUtils {
   }
 
   public static JComponent createComponent(ActionContext context, ActionGroup g) {
-    Presentation p = new Presentation();
-    g.update(createEvent(p, context));
     return ActionManager.getInstance().createButtonToolbar(ActionPlaces.UNKNOWN, g);
   }
 

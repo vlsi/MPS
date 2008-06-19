@@ -53,12 +53,7 @@ class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
   }
 
   public JPopupMenu getPopupMenu() {
-    DevKit devKit = getDevKit();
-    ActionContext context = new ActionContext(getOperationContext());
-    context.put(DevKit.class, devKit);
     ActionGroup g = ActionUtils.getGroup(ProjectPane.PROJECT_PANE_DEVKIT_ACTIONS);
-    Presentation p = new Presentation();
-    g.update(ActionUtils.createEvent(p, context));
     return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, g).getComponent();
   }
 

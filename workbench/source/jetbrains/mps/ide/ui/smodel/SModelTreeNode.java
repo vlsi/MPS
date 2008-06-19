@@ -290,7 +290,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
   private JPopupMenu createMenu(ActionContext context, BaseGroup group) {
     ActionManager manager = ActionManager.getInstance();
-    group.update(ActionUtils.createEvent(new Presentation(), context));
     return manager.createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent();
   }
 
