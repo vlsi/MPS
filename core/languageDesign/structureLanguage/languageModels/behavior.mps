@@ -522,7 +522,7 @@
                 <link role="variableDeclaration" targetNodeId="1213877394035" resolveInfo="language" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1213877394054">
-                <link role="baseMethodDeclaration" targetNodeId="3.~Language.getConstraintsModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getConstraintsModelDescriptor" />
+                <link role="baseMethodDeclaration" targetNodeId="3.~Language.getBehaviorModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getBehaviorModelDescriptor" />
               </node>
             </node>
           </node>

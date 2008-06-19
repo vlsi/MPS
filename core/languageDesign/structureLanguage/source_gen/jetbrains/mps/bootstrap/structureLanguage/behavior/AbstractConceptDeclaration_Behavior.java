@@ -40,7 +40,7 @@ public class AbstractConceptDeclaration_Behavior {
     if (language == null) {
       return null;
     }
-    SModelDescriptor constraints = language.getConstraintsModelDescriptor();
+    SModelDescriptor constraints = language.getBehaviorModelDescriptor();
     if (constraints == null) {
       return null;
     }
