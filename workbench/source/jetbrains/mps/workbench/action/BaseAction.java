@@ -34,8 +34,13 @@ public abstract class BaseAction extends AnAction {
     myExecuteOutsideCommand = executeOutsideCommand;
     setShortcutSet(new ShortcutSet() {
       public Shortcut[] getShortcuts() {
-        KeyboardShortcut keyboardShortcut = new KeyboardShortcut(KeyStroke.getKeyStroke(getKeyStroke()), null);
-        return new Shortcut[]{keyboardShortcut};
+        KeyStroke keyStroke = KeyStroke.getKeyStroke(getKeyStroke());
+        if (keyStroke != null) {
+          KeyboardShortcut keyboardShortcut = new KeyboardShortcut(keyStroke, null);
+          return new Shortcut[]{keyboardShortcut};
+        }else{
+          return new Shortcut[0];
+        }
       }
     });
   }
@@ -106,12 +111,12 @@ public abstract class BaseAction extends AnAction {
     return true;
   }
 
-  protected void doUpdate(AnActionEvent e){
+  protected void doUpdate(AnActionEvent e) {
 
   }
 
   @NotNull
-  protected String getKeyStroke(){
+  protected String getKeyStroke() {
     return "";
   }
 
