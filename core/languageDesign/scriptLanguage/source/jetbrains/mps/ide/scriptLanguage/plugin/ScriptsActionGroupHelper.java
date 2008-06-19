@@ -49,6 +49,7 @@ public class ScriptsActionGroupHelper {
         categoryGroup.add(new RunMigrationScriptAction(script,
           makeScriptActionName(null, script.getTitle(), script.getMigrationFromBuild())));
       }
+      categoryGroup.setPopup(true);
       ownerGroup.add(categoryGroup);
     }
   }
@@ -73,6 +74,7 @@ public class ScriptsActionGroupHelper {
         categoryGroup.add(new RunMigrationScriptAction(script,
           makeScriptActionName(script.getCategory(), script.getTitle(), null)));
       }
+      categoryGroup.setPopup(true);
       ownerGroup.add(categoryGroup);
     }
   }
@@ -95,6 +97,7 @@ public class ScriptsActionGroupHelper {
       languageScriptsGroup.add(new RunGenericScriptAction(script.getNode()));
     }
 
+    languageScriptsGroup.setPopup(true);
     ownerGroup.add(languageScriptsGroup);
   }
 
