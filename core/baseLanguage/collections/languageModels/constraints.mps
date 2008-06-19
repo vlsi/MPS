@@ -1,608 +1,1079 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.ext.collections.lang.constraints">
   <persistence version="1" />
-  <refactoringHistory />
+  <refactoringHistory>
+    <refactoringContext modelVersion="0">
+      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
+      <moveMap>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1178181705025" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245174" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1178181705026" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245175" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1178181705027" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245176" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061132398" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245190" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061132400" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245191" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061158201" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245192" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061158202" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245193" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061158203" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245194" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061160624" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245195" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061187536" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245196" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061188549" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245197" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061190433" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245198" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061194430" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245199" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061205597" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245200" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061205598" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245201" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061206999" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245218" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061211852" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245219" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061214063" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245220" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061243030" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245202" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061243031" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245203" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061243033" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245209" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061246044" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245206" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061248552" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245207" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061252900" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245208" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061280738" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245210" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061280739" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245212" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061283044" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245213" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061317288" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245214" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061319444" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245215" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1187947295437" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245225" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1187947295439" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245226" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1187947330646" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245227" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1190026806685" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245223" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1190026806686" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245224" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1190026806687" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245231" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892760259" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245177" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892760261" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245178" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892777046" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245180" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892777047" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245181" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892777048" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245182" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892777053" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245188" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892784319" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245185" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892789167" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245186" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892792890" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245187" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892856016" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245228" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892856017" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245229" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892856018" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245230" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892867816" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245221" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892867817" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245222" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892873240" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245179" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1199316598539" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245189" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1204227821081" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245205" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1204227882271" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245217" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1204227886209" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245184" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1204227910695" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245183" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1204227911134" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245216" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1204227926648" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245204" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1207844116165" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877245211" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap />
+    </refactoringContext>
+    <refactoringContext modelVersion="1">
+      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
+      <moveMap>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1203966719906" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877281394" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1203966719907" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877281411" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1203966719908" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877281412" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1203966722225" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877281395" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1203966722227" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877281397" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1203966726961" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877281396" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1203966911784" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877281398" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1203966923765" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877281399" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1203966924900" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877281402" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1203966925252" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877281401" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1203966927769" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877281400" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1203966929092" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877281404" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1203966932369" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877281406" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1203966932383" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877281405" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1203966935910" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877281409" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1203978653805" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877281403" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1203978657421" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877281407" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1205082489589" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877281408" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1205082491791" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877281410" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap />
+    </refactoringContext>
+    <refactoringContext modelVersion="2">
+      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
+      <moveMap>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1178192141110" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877282275" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1178192141111" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877282276" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1178192141112" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877282277" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap />
+    </refactoringContext>
+    <refactoringContext modelVersion="3">
+      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
+      <moveMap>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1197471443675" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877497462" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1197471443676" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877497494" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1197471443677" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877497495" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1197471523275" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877497463" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1197471523277" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877497465" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1197471524871" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877497464" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1205249280539" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877497492" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1205344843555" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877497475" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1205344843556" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877497476" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1205344846976" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877497488" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1205344847711" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877497487" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1205344849136" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877497489" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1205344862795" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877497466" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1205344862796" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877497467" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1205344862797" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877497468" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1205344862798" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877497469" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1205344862799" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877497470" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1205344862800" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877497471" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1205344862801" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877497472" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1205344862802" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877497473" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1205344862803" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877497474" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1205344862805" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877497493" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1205344871287" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877497486" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1205344874108" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877497490" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1205344881335" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877497491" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1205344883587" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877497477" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1205344883588" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877497485" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1205344885005" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877497478" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1205344887453" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877497482" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1205344888195" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877497481" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1205344893336" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877497483" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1205344894088" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877497480" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1205344896459" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877497479" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1205344898733" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877497484" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap />
+    </refactoringContext>
+    <refactoringContext modelVersion="4">
+      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
+      <moveMap>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1178181704967" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511286" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1178181704968" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511287" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1178181704969" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511288" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061352090" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511302" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061352092" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511303" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061366134" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511304" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061366135" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511305" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061366136" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511306" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061366137" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511307" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061366138" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511308" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061366139" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511309" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061366140" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511310" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061366141" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511311" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061366142" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511312" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061366143" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511313" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061366144" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511314" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061366145" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511315" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061366147" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511320" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061366150" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511318" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061366151" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511321" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061366152" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511322" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061366154" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511324" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061366155" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511325" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061366156" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511326" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061366157" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511327" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061366159" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511332" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061366162" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511330" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061366163" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511333" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061366164" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511334" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061368486" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511331" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1186061370384" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511319" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1187947134659" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511337" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1187947134661" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511338" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1187947158876" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511339" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1187947158877" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511340" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1187947158878" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511341" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1187947183516" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511342" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1187947188481" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511343" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1187947188482" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511344" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1187947195325" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511356" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1187947195326" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511357" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1187947213541" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511345" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1187947213542" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511348" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1187947215441" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511349" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1187947218534" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511350" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1187947220183" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511353" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1187947222401" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511354" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1187947224478" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511355" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1190026806682" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511335" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1190026806683" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511336" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1190026806684" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511358" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198891824010" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511289" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198891824012" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511290" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892025501" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511292" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892025502" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511293" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892025503" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511294" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892025505" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511299" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892025508" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511298" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892025509" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511300" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892036947" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511297" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892042041" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511291" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1199316559943" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511301" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1204227838995" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511296" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1204227846345" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511328" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1204227867825" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511317" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1204227902491" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511295" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1204227903996" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511351" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1204227906291" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511347" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1204227912175" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511352" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1204227923407" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511346" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1204227924694" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511329" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1204227936851" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511316" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1207844116109" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877511323" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap />
+    </refactoringContext>
+    <refactoringContext modelVersion="5">
+      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
+      <moveMap>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1197928395835" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520358" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1197928395836" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520413" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1197928395837" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520414" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1197928398416" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520380" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1197928398418" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520381" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1197928401419" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520412" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1197928423218" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520385" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1197928425142" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520386" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1197928425143" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520387" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1197928435409" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520382" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1197928435410" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520383" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1197928435411" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520384" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1197928437304" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520410" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1197928437305" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520411" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1197928443119" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520388" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1197928443120" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520391" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1197928450390" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520392" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1197928452285" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520393" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1197928459693" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520396" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1197928462291" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520397" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1197928463951" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520398" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1197928468312" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520399" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1197928468313" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520402" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1197928470692" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520403" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1197928473056" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520404" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1197928473995" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520407" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1197928477046" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520408" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1197928478378" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520409" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892067162" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520359" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892067164" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520360" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892594775" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520361" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892594776" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520362" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892594777" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520363" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892594778" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520364" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892594779" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520365" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892594780" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520366" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892594785" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520372" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892594790" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520378" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892619494" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520375" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892624717" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520376" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892629706" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520377" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892649536" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520371" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892649539" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520369" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1198892661649" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520370" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1199316574475" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520379" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1204227833284" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520406" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1204227837559" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520374" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1204227850256" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520394" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1204227852591" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520401" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1204227891846" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520389" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1204227902587" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520373" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1204227904648" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520395" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1204227907016" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520405" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1204227914829" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520367" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1204227922122" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520400" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1204227929433" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520390" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1204227943732" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877520368" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap />
+    </refactoringContext>
+    <refactoringContext modelVersion="6">
+      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
+      <moveMap>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1207234501860" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877532555" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1207234501861" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877532556" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" nodeId="1207234501862" />
+          <value modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.behavior" nodeId="1213877532557" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap />
+    </refactoringContext>
+  </refactoringHistory>
   <language namespace="jetbrains.mps.bootstrap.constraintsLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.constraints" version="9" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   </language>
-  <language namespace="jetbrains.mps.bootstrap.helgins" />
-  <language namespace="jetbrains.mps.bootstrap.actionsLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.helgins">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.constraints" version="17" />
+  </language>
+  <language namespace="jetbrains.mps.bootstrap.actionsLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.actionsLanguage.constraints" version="16" />
+  </language>
   <language namespace="jetbrains.mps.quotation" />
-  <language namespace="jetbrains.mps.core" />
+  <language namespace="jetbrains.mps.core">
+    <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
+  </language>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <maxImportIndex value="9" />
+  <languageAspect modelUID="jetbrains.mps.patterns.constraints" version="2" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.sharedConcepts.constraints" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
+  <maxImportIndex value="11" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   <import index="2" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />
   <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="5" modelUID="java.lang@java_stub" version="-1" />
   <import index="7" modelUID="jetbrains.mps.util@java_stub" version="-1" />
-  <import index="8" modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
-  <import index="9" modelUID="jetbrains.mps.core.constraints" version="-1" />
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178181704967">
-    <link role="concept" targetNodeId="1.1151688443754" />
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178181704968">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178181704969" />
-    </node>
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1198891824010">
-      <property name="name" value="getPresentation" />
-      <link role="overriddenMethod" targetNodeId="9.1180102203531" resolveInfo="getPresentation" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198891824012">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198892042041">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1198892025501">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1198892025502">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198892025503">
-                <property name="value" value="&gt;" />
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227902491">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227838995">
-                  <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1198892036947" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1198892025508">
-                    <link role="link" targetNodeId="1.1151688676805" />
-                  </node>
-                </node>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1198892025505">
-                  <link role="conceptMethodDeclaration" targetNodeId="9.1180102203531" resolveInfo="getPresentation" />
-                </node>
-              </node>
-            </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198892025509">
-              <property name="value" value="list&lt;" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1199316559943">
-        <link role="classifier" targetNodeId="5.~String" resolveInfo="String" />
-      </node>
-    </node>
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1186061352090">
-      <property name="name" value="getVariableSuffixes" />
-      <link role="overriddenMethod" targetNodeId="8.1182416669983" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186061352092">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1186061366134">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1186061366135">
-            <property name="name" value="variableSuffixes" />
-            <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType" id="1186061366136">
-              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1186061366137">
-                <link role="classifier" targetNodeId="5.~String" resolveInfo="String" />
-              </node>
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1186061366138">
-              <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListCreatorWithInit" id="1186061366139">
-                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1186061366140">
-                  <link role="classifier" targetNodeId="5.~String" resolveInfo="String" />
-                </node>
-                <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1186061366141">
-                  <property name="value" value="list" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1186061366142">
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186061366143">
-            <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachStatement" id="1186061366144">
-              <node role="variable" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariable" id="1186061366145">
-                <property name="name" value="suffix" />
-              </node>
-              <node role="inputSequence" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227936851">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227867825">
-                  <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1186061366150" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1186061370384">
-                    <link role="link" targetNodeId="1.1151688676805" />
-                  </node>
-                </node>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1186061366147">
-                  <link role="conceptMethodDeclaration" targetNodeId="8.1182416669983" />
-                </node>
-              </node>
-              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186061366151">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186061366152">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207844116109">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1186061366154">
-                      <link role="variableDeclaration" targetNodeId="1186061366135" resolveInfo="variableSuffixes" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation" id="1186061366155">
-                      <node role="argument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186061366156">
-                        <link role="classConcept" targetNodeId="7.~NameUtil" resolveInfo="NameUtil" />
-                        <link role="baseMethodDeclaration" targetNodeId="7.~NameUtil.pluralize(java.lang.String):java.lang.String" resolveInfo="pluralize" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference" id="1186061366157">
-                          <link role="variable" targetNodeId="1186061366145" resolveInfo="suffix" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227846345">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227924694">
-              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1186061366162" />
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1186061368486">
-                <link role="link" targetNodeId="1.1151688676805" />
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNotNullOperation" id="1186061366159" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186061366163">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1186061366164">
-            <link role="variableDeclaration" targetNodeId="1186061366135" resolveInfo="variableSuffixes" />
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType" id="1190026806682">
-        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1190026806683">
-          <link role="classifier" targetNodeId="5.~String" resolveInfo="String" />
-        </node>
-      </node>
-    </node>
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1187947134659">
-      <property name="name" value="getAbstractCreator" />
-      <link role="overriddenMethod" targetNodeId="8.1187945523562" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1187947134661">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1187947158876">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1187947158877">
-            <property name="name" value="creator" />
-            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1187947158878">
-              <link role="concept" targetNodeId="1.1160600644654" />
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1187947183516">
-              <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1187947188481">
-                <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1187947188482">
-                  <link role="concept" targetNodeId="1.1160600644654" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1187947213541">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227923407">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227906291">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1187947213542">
-                <link role="variableDeclaration" targetNodeId="1187947158877" resolveInfo="creator" />
-              </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1187947215441">
-                <link role="link" targetNodeId="1.1160602447121" />
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1187947218534">
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227903996">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227912175">
-                  <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1187947220183" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1187947222401">
-                    <link role="link" targetNodeId="1.1151688676805" />
-                  </node>
-                </node>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_CopyOperation" id="1187947224478" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1187947195325">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1187947195326">
-            <link role="variableDeclaration" targetNodeId="1187947158877" resolveInfo="creator" />
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1190026806684">
-        <link role="concept" targetNodeId="4.1145552809883" />
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178181705025">
-    <link role="concept" targetNodeId="1.1151689724996" />
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178181705026">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178181705027" />
-    </node>
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1198892760259">
-      <property name="name" value="getPresentation" />
-      <link role="overriddenMethod" targetNodeId="9.1180102203531" resolveInfo="getPresentation" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198892760261">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198892873240">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1198892777046">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1198892777047">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198892777048">
-                <property name="value" value="&gt;" />
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227910695">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227886209">
-                  <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1198892784319" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1198892789167">
-                    <link role="link" targetNodeId="1.1151689745422" />
-                  </node>
-                </node>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1198892792890">
-                  <link role="conceptMethodDeclaration" targetNodeId="9.1180102203531" resolveInfo="getPresentation" />
-                </node>
-              </node>
-            </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198892777053">
-              <property name="value" value="sequence&lt;" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1199316598539">
-        <link role="classifier" targetNodeId="5.~String" resolveInfo="String" />
-      </node>
-    </node>
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1186061132398">
-      <property name="name" value="getVariableSuffixes" />
-      <link role="overriddenMethod" targetNodeId="8.1182416669983" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186061132400">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1186061158201">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1186061158202">
-            <property name="name" value="variableSuffixes" />
-            <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType" id="1186061158203">
-              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1186061160624">
-                <link role="classifier" targetNodeId="5.~String" resolveInfo="String" />
-              </node>
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1186061187536">
-              <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListCreatorWithInit" id="1186061188549">
-                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1186061190433">
-                  <link role="classifier" targetNodeId="5.~String" resolveInfo="String" />
-                </node>
-                <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1186061194430">
-                  <property name="value" value="seq" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1186061205597">
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186061205598">
-            <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachStatement" id="1186061243030">
-              <node role="variable" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariable" id="1186061243031">
-                <property name="name" value="suffix" />
-              </node>
-              <node role="inputSequence" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227926648">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227821081">
-                  <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1186061246044" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1186061248552">
-                    <link role="link" targetNodeId="1.1151689745422" />
-                  </node>
-                </node>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1186061252900">
-                  <link role="conceptMethodDeclaration" targetNodeId="8.1182416669983" />
-                </node>
-              </node>
-              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186061243033">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186061280738">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207844116165">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1186061280739">
-                      <link role="variableDeclaration" targetNodeId="1186061158202" resolveInfo="variableSuffixes" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation" id="1186061283044">
-                      <node role="argument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186061317288">
-                        <link role="baseMethodDeclaration" targetNodeId="7.~NameUtil.pluralize(java.lang.String):java.lang.String" resolveInfo="pluralize" />
-                        <link role="classConcept" targetNodeId="7.~NameUtil" resolveInfo="NameUtil" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference" id="1186061319444">
-                          <link role="variable" targetNodeId="1186061243031" resolveInfo="suffix" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227911134">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227882271">
-              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1186061206999" />
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1186061211852">
-                <link role="link" targetNodeId="1.1151689745422" />
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNotNullOperation" id="1186061214063" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1198892867816">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198892867817">
-            <link role="variableDeclaration" targetNodeId="1186061158202" resolveInfo="variableSuffixes" />
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType" id="1190026806685">
-        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1190026806686">
-          <link role="classifier" targetNodeId="5.~String" resolveInfo="String" />
-        </node>
-      </node>
-    </node>
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1187947295437">
-      <property name="name" value="getAbstractCreator" />
-      <link role="overriddenMethod" targetNodeId="8.1187945523562" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1187947295439">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1187947330646">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1198892856016">
-            <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1198892856017">
-              <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198892856018">
-                <link role="concept" targetNodeId="1.1152141311721" resolveInfo="SequenceCreatorWithSupplier" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1190026806687">
-        <link role="concept" targetNodeId="4.1145552809883" />
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178192141110">
-    <link role="concept" targetNodeId="1.1153944233411" />
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178192141111">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178192141112" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1197471443675">
-    <link role="concept" targetNodeId="1.1151701983961" resolveInfo="SequenceOperation" />
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1197471523275">
-      <property name="name" value="getLeft" />
-      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1197471524871">
-        <link role="concept" targetNodeId="4.1068431790191" resolveInfo="Expression" />
-      </node>
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197471523277">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1205344862795">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1205344862796">
-            <property name="name" value="operand" />
-            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1205344862797">
-              <link role="concept" targetNodeId="4.1068431790191" resolveInfo="Expression" />
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205344862798">
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1205344862799">
-                <link role="link" targetNodeId="4.1197027771414" />
-              </node>
-              <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1205344862800">
-                <link role="concept" targetNodeId="4.1197027756228" resolveInfo="DotExpression" />
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205344862801">
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1205344862802" />
-                  <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1205344862803" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1205344843555">
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205344843556">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205344883587">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1205344885005">
-                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205344896459">
-                  <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1205344894088">
-                    <link role="concept" targetNodeId="1.1151701773464" resolveInfo="SequenceOperationExpression" />
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205344888195">
-                      <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1205344887453" />
-                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1205344893336" />
-                    </node>
-                  </node>
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1205344898733">
-                    <link role="conceptMethodDeclaration" targetNodeId="1203966722225" resolveInfo="getOperand" />
-                  </node>
-                </node>
-                <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205344883588">
-                  <link role="variableDeclaration" targetNodeId="1205344862796" resolveInfo="operand" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205344871287">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205344847711">
-              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1205344846976" />
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1205344849136" />
-            </node>
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1205344874108">
-              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1205344881335">
-                <link role="conceptDeclaration" targetNodeId="1.1151701773464" resolveInfo="SequenceOperationExpression" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1205249280539">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205344862805">
-            <link role="variableDeclaration" targetNodeId="1205344862796" resolveInfo="operand" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1197471443676">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197471443677" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1197928395835">
-    <property name="package" value="mapType" />
-    <link role="concept" targetNodeId="1.1197683403723" resolveInfo="MapType" />
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1198892067162">
-      <property name="name" value="getPresentation" />
-      <link role="overriddenMethod" targetNodeId="9.1180102203531" resolveInfo="getPresentation" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198892067164">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198892594775">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1198892594776">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1198892594777">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1198892594778">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1198892594779">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198892594780">
-                    <property name="value" value="&gt;" />
-                  </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227914829">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227943732">
-                      <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1198892649539" />
-                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1198892661649">
-                        <link role="link" targetNodeId="1.1197683475734" />
-                      </node>
-                    </node>
-                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1198892649536">
-                      <link role="conceptMethodDeclaration" targetNodeId="9.1180102203531" resolveInfo="getPresentation" />
-                    </node>
-                  </node>
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198892594785">
-                  <property name="value" value="," />
-                </node>
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227902587">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227837559">
-                  <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1198892619494" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1198892624717">
-                    <link role="link" targetNodeId="1.1197683466920" />
-                  </node>
-                </node>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1198892629706">
-                  <link role="conceptMethodDeclaration" targetNodeId="9.1180102203531" resolveInfo="getPresentation" />
-                </node>
-              </node>
-            </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198892594790">
-              <property name="value" value="map&lt;" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1199316574475">
-        <link role="classifier" targetNodeId="5.~String" resolveInfo="String" />
-      </node>
-    </node>
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1197928398416">
-      <property name="name" value="getAbstractCreator" />
-      <link role="overriddenMethod" targetNodeId="8.1187945523562" resolveInfo="getAbstractCreator" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197928398418">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1197928435409">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1197928435410">
-            <property name="name" value="mapCreator" />
-            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1197928435411">
-              <link role="concept" targetNodeId="1.1197686869805" resolveInfo="MapCreator" />
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1197928423218">
-              <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1197928425142">
-                <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1197928425143">
-                  <link role="concept" targetNodeId="1.1197686869805" resolveInfo="MapCreator" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197928443119">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227891846">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227929433">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197928443120">
-                <link role="variableDeclaration" targetNodeId="1197928435410" resolveInfo="mapCreator" />
-              </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1197928450390">
-                <link role="link" targetNodeId="1.1197687026896" />
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1197928452285">
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227850256">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227904648">
-                  <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1197928459693" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1197928462291">
-                    <link role="link" targetNodeId="1.1197683466920" />
-                  </node>
-                </node>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_CopyOperation" id="1197928463951" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197928468312">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227922122">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227852591">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197928468313">
-                <link role="variableDeclaration" targetNodeId="1197928435410" resolveInfo="mapCreator" />
-              </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1197928470692">
-                <link role="link" targetNodeId="1.1197687035757" />
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1197928473056">
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227907016">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227833284">
-                  <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1197928473995" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1197928477046">
-                    <link role="link" targetNodeId="1.1197683475734" />
-                  </node>
-                </node>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_CopyOperation" id="1197928478378" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197928437304">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197928437305">
-            <link role="variableDeclaration" targetNodeId="1197928435410" resolveInfo="mapCreator" />
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1197928401419">
-        <link role="concept" targetNodeId="4.1145552809883" resolveInfo="AbstractCreator" />
-      </node>
-    </node>
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1197928395836">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197928395837" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1203966719906">
-    <link role="concept" targetNodeId="1.1151701773464" resolveInfo="SequenceOperationExpression" />
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1203966722225">
-      <property name="name" value="getOperand" />
-      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1203966726961">
-        <link role="concept" targetNodeId="4.1068431790191" resolveInfo="Expression" />
-      </node>
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203966722227">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1203966911784">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1203966923765">
-            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203966927769">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203966925252">
-                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1203966924900" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1203978653805">
-                  <link role="link" targetNodeId="4.1197027771414" />
-                </node>
-              </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNotNullOperation" id="1203966929092" />
-            </node>
-            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203966932383">
-              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1203966932369" />
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1203978657421">
-                <link role="link" targetNodeId="4.1197027771414" />
-              </node>
-            </node>
-            <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205082489589">
-              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1203966935910" />
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1205082491791">
-                <link role="link" targetNodeId="1.1151701835028" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1203966719907">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203966719908" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1207234501860">
-    <property name="package" value="mapType" />
-    <link role="concept" targetNodeId="1.1201225890326" resolveInfo="MapOperation" />
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1207234501861">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207234501862" />
-    </node>
-  </node>
+  <import index="8" modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
+  <import index="9" modelUID="jetbrains.mps.core.constraints" version="2" />
+  <import index="10" modelUID="jetbrains.mps.core.behavior" version="-1" />
+  <import index="11" modelUID="jetbrains.mps.baseLanguage.behavior" version="-1" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213104847098">
     <link role="concept" targetNodeId="1.1153944233411" resolveInfo="ForEachVariableReference" />
     <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1213104847099">

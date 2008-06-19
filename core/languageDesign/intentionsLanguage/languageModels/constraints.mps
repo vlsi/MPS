@@ -1,89 +1,149 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.bootstrap.intentionsLanguage.constraints">
   <persistence version="1" />
-  <refactoringHistory />
+  <refactoringHistory>
+    <refactoringContext modelVersion="0">
+      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
+      <moveMap>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.intentionsLanguage.constraints" nodeId="1193141220087" />
+          <value modelUID="jetbrains.mps.bootstrap.intentionsLanguage.behavior" nodeId="1213877237627" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.intentionsLanguage.constraints" nodeId="1193141220088" />
+          <value modelUID="jetbrains.mps.bootstrap.intentionsLanguage.behavior" nodeId="1213877237647" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.intentionsLanguage.constraints" nodeId="1193141220089" />
+          <value modelUID="jetbrains.mps.bootstrap.intentionsLanguage.behavior" nodeId="1213877237648" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.intentionsLanguage.constraints" nodeId="1193141280918" />
+          <value modelUID="jetbrains.mps.bootstrap.intentionsLanguage.behavior" nodeId="1213877237628" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.intentionsLanguage.constraints" nodeId="1193141280920" />
+          <value modelUID="jetbrains.mps.bootstrap.intentionsLanguage.behavior" nodeId="1213877237630" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.intentionsLanguage.constraints" nodeId="1193141299354" />
+          <value modelUID="jetbrains.mps.bootstrap.intentionsLanguage.behavior" nodeId="1213877237629" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.intentionsLanguage.constraints" nodeId="1193141304002" />
+          <value modelUID="jetbrains.mps.bootstrap.intentionsLanguage.behavior" nodeId="1213877237631" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.intentionsLanguage.constraints" nodeId="1193142194523" />
+          <value modelUID="jetbrains.mps.bootstrap.intentionsLanguage.behavior" nodeId="1213877237638" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.intentionsLanguage.constraints" nodeId="1193142194525" />
+          <value modelUID="jetbrains.mps.bootstrap.intentionsLanguage.behavior" nodeId="1213877237640" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.intentionsLanguage.constraints" nodeId="1193142206651" />
+          <value modelUID="jetbrains.mps.bootstrap.intentionsLanguage.behavior" nodeId="1213877237639" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.intentionsLanguage.constraints" nodeId="1193142292995" />
+          <value modelUID="jetbrains.mps.bootstrap.intentionsLanguage.behavior" nodeId="1213877237641" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.intentionsLanguage.constraints" nodeId="1193142304497" />
+          <value modelUID="jetbrains.mps.bootstrap.intentionsLanguage.behavior" nodeId="1213877237644" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.intentionsLanguage.constraints" nodeId="1193142308251" />
+          <value modelUID="jetbrains.mps.bootstrap.intentionsLanguage.behavior" nodeId="1213877237645" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.intentionsLanguage.constraints" nodeId="1193145865817" />
+          <value modelUID="jetbrains.mps.bootstrap.intentionsLanguage.behavior" nodeId="1213877237646" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.intentionsLanguage.constraints" nodeId="1193399660577" />
+          <value modelUID="jetbrains.mps.bootstrap.intentionsLanguage.behavior" nodeId="1213877237632" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.intentionsLanguage.constraints" nodeId="1193399660578" />
+          <value modelUID="jetbrains.mps.bootstrap.intentionsLanguage.behavior" nodeId="1213877237633" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.intentionsLanguage.constraints" nodeId="1193399660580" />
+          <value modelUID="jetbrains.mps.bootstrap.intentionsLanguage.behavior" nodeId="1213877237636" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.intentionsLanguage.constraints" nodeId="1193399660581" />
+          <value modelUID="jetbrains.mps.bootstrap.intentionsLanguage.behavior" nodeId="1213877237635" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.intentionsLanguage.constraints" nodeId="1193399660582" />
+          <value modelUID="jetbrains.mps.bootstrap.intentionsLanguage.behavior" nodeId="1213877237637" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.intentionsLanguage.constraints" nodeId="1204227907819" />
+          <value modelUID="jetbrains.mps.bootstrap.intentionsLanguage.behavior" nodeId="1213877237643" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.intentionsLanguage.constraints" nodeId="1204227935529" />
+          <value modelUID="jetbrains.mps.bootstrap.intentionsLanguage.behavior" nodeId="1213877237634" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.intentionsLanguage.constraints" nodeId="1204227945542" />
+          <value modelUID="jetbrains.mps.bootstrap.intentionsLanguage.behavior" nodeId="1213877237642" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap />
+    </refactoringContext>
+    <refactoringContext modelVersion="1">
+      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
+      <moveMap>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.intentionsLanguage.constraints" nodeId="1210781944850" />
+          <value modelUID="jetbrains.mps.bootstrap.intentionsLanguage.behavior" nodeId="1213877334673" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.intentionsLanguage.constraints" nodeId="1210781944851" />
+          <value modelUID="jetbrains.mps.bootstrap.intentionsLanguage.behavior" nodeId="1213877334674" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.intentionsLanguage.constraints" nodeId="1210781944852" />
+          <value modelUID="jetbrains.mps.bootstrap.intentionsLanguage.behavior" nodeId="1213877334675" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap />
+    </refactoringContext>
+  </refactoringHistory>
   <language namespace="jetbrains.mps.bootstrap.constraintsLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.constraints" version="9" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   </language>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.sharedConcepts.constraints" version="0" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.intentionsLanguage.constraints" version="1" />
+  <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
+  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <maxImportIndex value="7" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.intentionsLanguage.structure" version="-1" />
   <import index="4" modelUID="jetbrains.mps.core.structure" version="-1" />
-  <import index="5" modelUID="jetbrains.mps.core.constraints" version="-1" />
+  <import index="5" modelUID="jetbrains.mps.core.constraints" version="2" />
   <import index="6" modelUID="jetbrains.mps.util@java_stub" version="-1" />
   <import index="7" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1193141220087">
-    <link role="concept" targetNodeId="2.1192794744107" resolveInfo="IntentionDeclaration" />
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1193141280918">
-      <property name="name" value="getGeneratedName" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1193141299354">
-        <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
-      </node>
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1193141280920">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1193141304002">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1193399660577">
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1193399660578">
-              <link role="baseMethodDeclaration" targetNodeId="6.~NameUtil.toValidIdentifier(java.lang.String):java.lang.String" resolveInfo="toValidIdentifier" />
-              <link role="classConcept" targetNodeId="6.~NameUtil" resolveInfo="NameUtil" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227935529">
-                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1193399660581" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1193399660580">
-                  <link role="property" targetNodeId="4.1169194664001" resolveInfo="name" />
-                </node>
-              </node>
-            </node>
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1193399660582">
-              <property name="value" value="_Intention" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1193142194523">
-      <property name="name" value="getConceptName" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1193142206651">
-        <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
-      </node>
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1193142194525">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1193142292995">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227945542">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227907819">
-              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1193142304497" />
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1193142308251">
-                <link role="link" targetNodeId="2.1192796383601" />
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1193145865817">
-              <link role="conceptMethodDeclaration" targetNodeId="5.1184686272576" resolveInfo="getFqName" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1193141220088">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1193141220089" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1210781944850">
-    <link role="concept" targetNodeId="2.1210781835992" resolveInfo="IntentionArgumentReference" />
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1210781944851">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210781944852" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213104837442">
     <link role="concept" targetNodeId="2.1210781835992" resolveInfo="IntentionArgumentReference" />
     <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1213104837443">

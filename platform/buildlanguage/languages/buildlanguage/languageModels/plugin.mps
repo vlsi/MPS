@@ -3,22 +3,31 @@
   <persistence version="1" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.pluginLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.constraints" version="19" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="1" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
-  <language namespace="jetbrains.mps.baseLanguage.classifiers" />
+  <language namespace="jetbrains.mps.baseLanguage.classifiers">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.classifiers.constraints" version="7" />
+  </language>
   <languageAspect modelUID="jetbrains.mps.buildlanguage.structure" version="16" />
-  <languageAspect modelUID="jetbrains.mps.buildlanguage.constraints" version="6" />
+  <languageAspect modelUID="jetbrains.mps.buildlanguage.constraints" version="32" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <maxImportIndex value="18" />
+  <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
+  <languageAspect modelUID="jetbrains.mps.propertylanguage.constraints" version="0" />
+  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
+  <maxImportIndex value="19" />
   <import index="1" modelUID="jetbrains.mps.buildlanguage.structure" version="16" />
   <import index="2" modelUID="jetbrains.mps.mpsLayoutLanguage@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.ide.actions" version="-1" />
@@ -36,6 +45,7 @@
   <import index="16" modelUID="jetbrains.mps.plugins@java_stub" version="-1" />
   <import index="17" modelUID="com.intellij.openapi.progress@java_stub" version="-1" />
   <import index="18" modelUID="jetbrains.mps.workbench.action@java_stub" version="-1" />
+  <import index="19" modelUID="jetbrains.mps.propertylanguage.behavior" version="-1" />
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1207326375796">
     <property name="name" value="ProjectPaneModelAddition" />
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1207326387469">
@@ -48,8 +58,7 @@
     </node>
   </node>
   <visible index="2" modelUID="jetbrains.mps.propertylanguage.structure" />
-  <visible index="3" modelUID="jetbrains.mps.propertylanguage.constraints" />
-  <visible index="4" modelUID="jetbrains.mps.buildlanguage.constraints" />
+  <visible index="3" modelUID="jetbrains.mps.buildlanguage.behavior" />
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1207326603097">
     <property name="name" value="GenerateMPSBuildAction" />
     <property name="caption" value="Generate MPS Build" />
@@ -172,7 +181,7 @@
                                       </node>
                                     </node>
                                     <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1207328413765">
-                                      <link role="conceptMethodDeclaration" targetNodeId="3v.1200508798722" resolveInfo="getFileName" />
+                                      <link role="conceptMethodDeclaration" targetNodeId="19.1213877341757" resolveInfo="getFileName" />
                                     </node>
                                   </node>
                                   <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207328468524">
@@ -207,7 +216,7 @@
                                           </node>
                                         </node>
                                         <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1207328441260">
-                                          <link role="conceptMethodDeclaration" targetNodeId="4v.1201709888730" resolveInfo="getDocumentName" />
+                                          <link role="conceptMethodDeclaration" targetNodeId="3v.1213877351812" resolveInfo="getDocumentName" />
                                         </node>
                                       </node>
                                     </node>

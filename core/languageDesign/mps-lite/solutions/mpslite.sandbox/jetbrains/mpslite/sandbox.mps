@@ -2,7 +2,11 @@
 <model name="jetbrains.mpslite.sandbox">
   <persistence version="1" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.nanoj" />
+  <language namespace="jetbrains.mps.nanoj">
+    <languageAspect modelUID="jetbrains.mps.nanoj.constraints" version="45" />
+  </language>
+  <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
+  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <maxImportIndex value="1" />
   <node type="jetbrains.mps.nanoj.structure.ClassConcept" id="1197634682459">
     <property name="name" value="ABCDEF" />

@@ -1,24 +1,262 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.regexp.constraints">
   <persistence version="1" />
-  <refactoringHistory />
+  <refactoringHistory>
+    <refactoringContext modelVersion="0">
+      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
+      <moveMap>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1178192141362" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877239660" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1178192141363" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877239661" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1178192141364" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877239662" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap />
+    </refactoringContext>
+    <refactoringContext modelVersion="1">
+      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
+      <moveMap>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1177760131140" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877429450" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1177760131141" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877429459" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1177760131142" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877429460" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1177760132955" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877429451" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1177760132957" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877429453" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1177760144630" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877429452" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1177765723306" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877429454" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1177765735896" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877429455" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1177765737398" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877429457" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1177765740838" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877429458" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1204672721380" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877429456" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap />
+    </refactoringContext>
+    <refactoringContext modelVersion="2">
+      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
+      <moveMap>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1188912088558" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877475221" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1188912088559" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877475254" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1188912088560" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877475255" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1188912090483" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877475222" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1188912090485" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877475224" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1188912104259" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877475223" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1188912109182" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877475225" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1188912109183" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877475226" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1188912109184" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877475227" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1188912116030" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877475229" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1188912117644" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877475230" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1188912119395" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877475231" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1188912126381" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877475233" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1188912126382" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877475234" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1188912126383" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877475235" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1188912155371" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877475236" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1188912159280" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877475237" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1188912171232" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877475238" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1188912175875" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877475239" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1188912177252" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877475240" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1188912179597" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877475242" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1188912181366" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877475243" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1188912187306" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877475244" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1188912207199" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877475245" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1188912220639" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877475249" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1188912223706" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877475252" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1188912224913" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877475253" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1188912337161" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877475246" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1188912340033" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877475247" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1204227842404" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877475228" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1204672721912" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877475241" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1204672721970" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877475251" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1210020851098" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877475248" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1210020851099" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877475250" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1210020865549" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877475232" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap />
+    </refactoringContext>
+    <refactoringContext modelVersion="3">
+      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
+      <moveMap>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1178192141318" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877492182" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1178192141319" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877492183" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.regexp.constraints" nodeId="1178192141320" />
+          <value modelUID="jetbrains.mps.regexp.behavior" nodeId="1213877492184" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap />
+    </refactoringContext>
+  </refactoringHistory>
   <language namespace="jetbrains.mps.bootstrap.constraintsLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.constraints" version="9" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   </language>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.sharedConcepts.constraints" version="0" />
+  <languageAspect modelUID="jetbrains.mps.regexp.constraints" version="3" />
+  <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
+  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <maxImportIndex value="7" />
   <import index="1" modelUID="jetbrains.mps.regexp.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />
@@ -26,126 +264,6 @@
   <import index="5" modelUID="java.lang@java_stub" version="-1" />
   <import index="6" modelUID="jetbrains.mps.regexp@java_stub" version="-1" />
   <import index="7" modelUID="jetbrains.mps.regexp.structure@java_stub" version="-1" />
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1177760131140">
-    <link role="concept" targetNodeId="1.1174482743037" />
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1177760132955">
-      <property name="isVirtual" value="true" />
-      <property name="isAbstract" value="false" />
-      <property name="name" value="toString" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1177760144630">
-        <link role="classifier" targetNodeId="5.~String" resolveInfo="String" />
-      </node>
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177760132957">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177765723306">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1177765735896">
-            <link role="baseMethodDeclaration" targetNodeId="6.~RegexpProcessor.toString(jetbrains.mps.regexp.structure.Regexp):java.lang.String" resolveInfo="toString" />
-            <link role="classConcept" targetNodeId="6.~RegexpProcessor" resolveInfo="RegexpProcessor" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721380">
-              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1177765737398" />
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1177765740838" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1177760131141">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177760131142" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178192141318">
-    <link role="concept" targetNodeId="1.1174909099093" />
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178192141319">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178192141320" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178192141362">
-    <link role="concept" targetNodeId="1.1174565027678" />
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178192141363">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178192141364" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1188912088558">
-    <property name="package" value="Regexps" />
-    <link role="concept" targetNodeId="1.1174564062919" />
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1188912090483">
-      <property name="name" value="getIndex" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1188912104259" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1188912090485">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1188912109182">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1188912109183">
-            <property name="name" value="container" />
-            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1188912109184">
-              <link role="concept" targetNodeId="1.1174482743037" />
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227842404">
-              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1188912116030" />
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1188912117644">
-                <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1188912119395">
-                  <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1210020865549">
-                    <link role="conceptDeclaration" targetNodeId="1.1174482743037" resolveInfo="Regexp" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1188912126381">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1188912126382">
-            <property name="name" value="parens" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1188912126383">
-              <link role="classifier" targetNodeId="4.~List" resolveInfo="List" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1188912155371">
-                <link role="classifier" targetNodeId="7.~MatchParensRegexp" resolveInfo="MatchParensRegexp" />
-              </node>
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1188912159280">
-              <link role="baseMethodDeclaration" targetNodeId="4.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
-              <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1188912171232">
-                <link role="classifier" targetNodeId="7.~MatchParensRegexp" resolveInfo="MatchParensRegexp" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1188912175875">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1188912177252">
-            <link role="classConcept" targetNodeId="6.~RegexpProcessor" resolveInfo="RegexpProcessor" />
-            <link role="baseMethodDeclaration" targetNodeId="6.~RegexpProcessor.toString(jetbrains.mps.regexp.structure.Regexp,java.util.List):java.lang.String" resolveInfo="toString" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721912">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1188912179597">
-                <link role="variableDeclaration" targetNodeId="1188912109183" resolveInfo="container" />
-              </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1188912181366" />
-            </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1188912187306">
-              <link role="variableDeclaration" targetNodeId="1188912126382" resolveInfo="parens" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1188912207199">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1188912337161">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1188912340033">
-              <property name="value" value="1" />
-            </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210020851098">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1188912220639">
-                <link role="variableDeclaration" targetNodeId="1188912126382" resolveInfo="parens" />
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1210020851099">
-                <link role="baseMethodDeclaration" targetNodeId="4.~List.indexOf(java.lang.Object):int" resolveInfo="indexOf" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721970">
-                  <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1188912223706" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1188912224913" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1188912088559">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1188912088560" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213104858749">
     <link role="concept" targetNodeId="1.1174565027678" resolveInfo="MatchVariableReference" />
     <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1213104858750">

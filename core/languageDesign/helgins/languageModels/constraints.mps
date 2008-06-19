@@ -1,37 +1,1415 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.bootstrap.helgins.constraints">
   <persistence version="1" />
-  <refactoringHistory />
+  <refactoringHistory>
+    <refactoringContext modelVersion="0">
+      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
+      <moveMap>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1178192141211" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877218089" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1178192141212" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877218090" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1178192141213" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877218091" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap />
+    </refactoringContext>
+    <refactoringContext modelVersion="1">
+      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
+      <moveMap>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1212577489565" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877256119" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1212577489566" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877256120" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1212577489567" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877256121" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap />
+    </refactoringContext>
+    <refactoringContext modelVersion="2">
+      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
+      <moveMap>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1178192141385" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877258153" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1178192141386" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877258154" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1178192141387" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877258155" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap />
+    </refactoringContext>
+    <refactoringContext modelVersion="3">
+      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
+      <moveMap>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1212763748069" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877260164" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1212763748070" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877260165" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1212763748071" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877260166" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap />
+    </refactoringContext>
+    <refactoringContext modelVersion="4">
+      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
+      <moveMap>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1212576933954" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877307632" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1212576933955" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877307636" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1212576933956" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877307637" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1212576937269" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877307633" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1212576937271" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877307635" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1212576947616" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877307634" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap />
+    </refactoringContext>
+    <refactoringContext modelVersion="5">
+      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
+      <moveMap>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1187076618270" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877311686" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1187076618271" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877311694" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1187076618272" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877311695" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1212576990570" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877311687" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1212576990572" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877311688" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1212577021682" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877311693" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1212577027761" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877311689" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1212577032575" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877311691" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1212577033357" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877311690" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1212577038657" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877311692" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap />
+    </refactoringContext>
+    <refactoringContext modelVersion="6">
+      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
+      <moveMap>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1212577045471" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877316631" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1212577045472" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877316643" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1212577045473" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877316644" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1212577047474" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877316632" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1212577047476" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877316633" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1212577053133" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877316642" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1212577055571" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877316634" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1212577056573" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877316638" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1212577057199" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877316637" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1212577062812" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877316639" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1212577079000" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877316636" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1212577080440" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877316640" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1212577106363" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877316635" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1212577107631" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877316641" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap />
+    </refactoringContext>
+    <refactoringContext modelVersion="7">
+      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
+      <moveMap>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182937621519" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321556" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182937621520" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321557" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182937621521" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321558" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182937627460" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321559" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182937627462" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321561" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182937634439" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321560" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182946460390" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321582" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182946460391" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321583" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182946464409" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321597" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182946471651" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321598" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182946471653" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321575" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182946471658" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321581" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182946471659" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321580" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182946476238" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321584" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182946479333" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321585" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182946571921" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321587" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182946578911" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321586" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182946622978" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321562" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182946622979" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321563" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182946622980" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321564" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182946622981" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321574" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182946635233" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321570" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182946635234" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321571" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182946635235" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321572" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182946635236" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321599" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182946652144" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321576" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182946652145" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321577" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182946652146" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321578" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182946652147" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321600" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182946659180" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321596" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182946661865" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321588" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182946664966" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321595" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182946683447" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321589" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182946685551" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321594" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182946689484" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321590" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182946690857" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321593" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182946731734" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321591" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182946733689" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321592" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182952757069" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321565" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182952757071" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321568" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182952757072" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321567" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182952762310" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321569" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182960238941" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321601" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182960238942" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321602" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182960262953" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321603" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182960262954" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321605" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182960271930" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321604" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182960280297" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321606" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1204227879924" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321566" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1204227931502" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321573" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1204227941334" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877321579" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap />
+    </refactoringContext>
+    <refactoringContext modelVersion="8">
+      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
+      <moveMap>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182938219133" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877337955" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182938219134" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877337956" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182938219135" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877337957" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182938229152" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877337958" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182938229154" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877337960" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182938238905" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877337959" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182938292015" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877337961" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182938292017" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877337965" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182938292019" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877337967" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182939522645" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877337966" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182939543116" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877337963" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182939550061" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877337964" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182939567244" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877337968" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182939567245" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877337970" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1182939577404" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877337971" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1204227835958" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877337969" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1204227889896" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877337962" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap />
+    </refactoringContext>
+    <refactoringContext modelVersion="9">
+      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
+      <moveMap>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1178192141173" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877357223" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1178192141174" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877357224" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1178192141175" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877357225" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap />
+    </refactoringContext>
+    <refactoringContext modelVersion="10">
+      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
+      <moveMap>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1203432913915" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877370443" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1203432913916" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877370444" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1203432913917" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877370445" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap />
+    </refactoringContext>
+    <refactoringContext modelVersion="11">
+      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
+      <moveMap>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1210784760180" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877387420" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1210784760181" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877387421" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1210784760182" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877387422" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap />
+    </refactoringContext>
+    <refactoringContext modelVersion="12">
+      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
+      <moveMap>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1188476344395" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428165" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1188476344396" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428166" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1188476344397" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428167" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1188476348398" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428168" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1188476348400" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428169" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1190026813596" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428218" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551110" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428170" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551111" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428171" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551112" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428172" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551113" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428173" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551114" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428174" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551131" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428175" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551132" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428176" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551133" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428177" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551134" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428178" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551136" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428180" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551137" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428181" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551138" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428182" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551139" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428183" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551140" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428184" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551141" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428185" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551142" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428186" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551143" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428187" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551144" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428188" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551145" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428189" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551146" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428190" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551147" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428191" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551148" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428192" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551149" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428193" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551150" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428194" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551151" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428195" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551152" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428196" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551153" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428197" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551154" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428198" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551155" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428199" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551156" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428200" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551157" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428201" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551158" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428202" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551159" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428203" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551160" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428204" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551161" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428205" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551162" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428206" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551163" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428207" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551164" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428208" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551165" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428209" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551166" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428210" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551167" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428211" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551168" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428212" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551169" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428213" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551170" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428214" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551171" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428215" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551172" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428216" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026551173" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428217" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026558145" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877428179" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap />
+    </refactoringContext>
+    <refactoringContext modelVersion="13">
+      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
+      <moveMap>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1178192141179" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877480052" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1178192141180" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877480053" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1178192141181" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877480054" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap />
+    </refactoringContext>
+    <refactoringContext modelVersion="14">
+      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
+      <moveMap>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1205762808765" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877482046" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1205762808766" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877482047" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1205762808767" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877482048" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap />
+    </refactoringContext>
+    <refactoringContext modelVersion="15">
+      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
+      <moveMap>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1178192141201" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877483508" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1178192141202" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877483509" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1178192141203" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877483510" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap />
+    </refactoringContext>
+    <refactoringContext modelVersion="16">
+      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
+      <moveMap>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1188476084021" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496034" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1188476084022" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496086" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1188476084023" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496087" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1188476088508" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496035" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1188476088510" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496036" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1188476121920" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496081" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1188476144289" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496037" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1188476144290" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496038" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1188476144291" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496039" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1188476147809" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496040" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1188476169844" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496041" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1188476184923" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496083" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1188476194131" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496048" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1188476194133" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496050" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1188476194135" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496052" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1188476206605" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496051" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1188476232314" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496053" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1188476232315" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496055" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1188476243538" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496058" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1188476246604" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496059" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1188476290324" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496062" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1188476290325" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496064" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1188476316907" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496066" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1188476429685" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496076" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1188476429686" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496078" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1188476435378" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496080" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1190026813595" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496085" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1204227908205" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496057" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026231873" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496054" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026231874" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496056" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026236751" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496063" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026236752" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496065" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026240645" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496077" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026240646" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496079" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026245570" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496082" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026245571" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496084" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026397624" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496060" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026397625" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496061" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026404160" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496074" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026493368" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496073" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026494684" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496075" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026499936" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496067" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026515364" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496042" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026515365" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496043" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026515366" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496044" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026515367" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496045" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026515368" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496046" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026515369" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496047" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026515370" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496049" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026521716" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496071" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026524421" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496070" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026527737" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496072" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026532771" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496068" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1206026533665" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877496069" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap />
+    </refactoringContext>
+    <refactoringContext modelVersion="17">
+      <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
+      <moveMap>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207651451271" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521567" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207651451272" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521645" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207651451273" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521646" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207651457602" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521568" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207651457604" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521569" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207651465964" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521576" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207651471835" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521570" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207651502399" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521571" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207651503886" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521572" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207651515559" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521573" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207651549048" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521574" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207651552972" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521575" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207651579255" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521577" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207651579257" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521579" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207651604555" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521578" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207652169423" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521614" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207652169424" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521615" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207652186001" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521624" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207652190693" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521626" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207652193258" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521627" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207652216565" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521586" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207652216566" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521587" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207652216567" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521588" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207652216568" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521589" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207652216569" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521590" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207652216570" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521591" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207652216571" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521592" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207652216572" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521593" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207652216573" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521594" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207652216574" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521595" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207652216575" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521625" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207652355922" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521580" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207652355923" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521581" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207652355924" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521582" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207652355925" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521583" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207652355926" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521584" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207652355927" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521585" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207652829414" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521616" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207652830511" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521617" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207652895280" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521619" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207652974712" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521596" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207652974713" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521597" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207652974714" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521598" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207652979859" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521599" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207652988534" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521618" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207652994241" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521600" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207653002026" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521601" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207653177124" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521622" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207653178876" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521621" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207653227146" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521620" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207653228462" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521623" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207653245106" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521602" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207653245107" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521603" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207653245110" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521612" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207653248475" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521613" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207653274625" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521611" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207653278129" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521604" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207653278130" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521606" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207653279259" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521605" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207653281640" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521607" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207653283456" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521609" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207653284398" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521608" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207653285215" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521610" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207653899493" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521628" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207653899494" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521629" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207653899497" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521641" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207653908441" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521642" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207653918510" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521640" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207653921500" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521630" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207653921501" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521631" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207653929000" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521634" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207653931664" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521636" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207653933373" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521635" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207653934099" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521637" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207653936964" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521638" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207653943104" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521639" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207653947970" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521632" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207653952852" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521633" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207653956410" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521643" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.bootstrap.helgins.constraints" nodeId="1207653957553" />
+          <value modelUID="jetbrains.mps.bootstrap.helgins.behavior" nodeId="1213877521644" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap />
+    </refactoringContext>
+  </refactoringHistory>
   <language namespace="jetbrains.mps.bootstrap.constraintsLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.constraints" version="9" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   </language>
-  <language namespace="jetbrains.mps.bootstrap.helgins" />
+  <language namespace="jetbrains.mps.bootstrap.helgins">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.constraints" version="17" />
+  </language>
   <language namespace="jetbrains.mps.quotation" />
-  <language namespace="jetbrains.mps.core" />
+  <language namespace="jetbrains.mps.core">
+    <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
+  </language>
   <language namespace="jetbrains.mps.transformation.TLBase">
+    <languageAspect modelUID="jetbrains.mps.transformation.TLBase.constraints" version="16" />
     <languageAspect modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
   </language>
-  <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
+  <language namespace="jetbrains.mps.bootstrap.sharedConcepts">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.sharedConcepts.constraints" version="0" />
+  </language>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <maxImportIndex value="15" />
+  <languageAspect modelUID="jetbrains.mps.patterns.constraints" version="2" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
+  <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
+  <maxImportIndex value="17" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.helgins.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.bootstrap.helgins.search@java_stub" version="-1" />
@@ -42,755 +1420,12 @@
   <import index="9" modelUID="java.lang@java_stub" version="-1" />
   <import index="10" modelUID="java.io@java_stub" version="-1" />
   <import index="11" modelUID="jetbrains.mps.util@java_stub" version="-1" />
-  <import index="12" modelUID="jetbrains.mps.core.constraints" version="-1" />
+  <import index="12" modelUID="jetbrains.mps.core.constraints" version="2" />
   <import index="13" modelUID="java.util@java_stub" version="-1" />
   <import index="14" modelUID="jetbrains.mps.baseLanguage.helgins" version="-1" />
   <import index="15" modelUID="jetbrains.mps.bootstrap.intentionsLanguage.structure" version="-1" />
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178192141173">
-    <link role="concept" targetNodeId="1.1174989799417" />
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178192141174">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178192141175" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178192141179">
-    <link role="concept" targetNodeId="1.1174989242422" />
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178192141180">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178192141181" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178192141201">
-    <link role="concept" targetNodeId="1.1174666260556" />
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178192141202">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178192141203" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178192141211">
-    <link role="concept" targetNodeId="1.1174989777619" />
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178192141212">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178192141213" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178192141385">
-    <link role="concept" targetNodeId="1.1174650418652" />
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178192141386">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178192141387" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1182937621519">
-    <link role="concept" targetNodeId="1.1182937366968" />
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1182937621520">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1182937621521" />
-    </node>
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1182937627460">
-      <property name="name" value="doTest" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1182937634439" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1182937627462">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1182946622978">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1182946622979">
-            <property name="name" value="term" />
-            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1182946622980">
-              <link role="concept" targetNodeId="8.1133920641626" />
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1182952757069">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227879924">
-                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1182952757072" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1182952757071" />
-              </node>
-              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1182952762310">
-                <link role="concept" targetNodeId="8.1133920641626" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1182946635233">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1182946635234">
-            <property name="name" value="computedType" />
-            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1182946635235" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227931502">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1182946622981">
-                <link role="variableDeclaration" targetNodeId="1182946622979" resolveInfo="term" />
-              </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1182946471653" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1182946652144">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1182946652145">
-            <property name="name" value="correctType" />
-            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1182946652146">
-              <link role="concept" targetNodeId="8.1133920641626" />
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227941334">
-              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1182946471659" />
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1182946471658">
-                <link role="link" targetNodeId="1.1182937420689" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1182946460390">
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1182946460391">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ThrowStatement" id="1182946476238">
-              <node role="throwable" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1182946479333">
-                <link role="baseMethodDeclaration" targetNodeId="9.~RuntimeException.&lt;init&gt;(java.lang.String)" resolveInfo="RuntimeException" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1182946578911">
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1182946571921">
-                    <property name="value" value="node " />
-                  </node>
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1182946661865">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1182946683447">
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1182946689484">
-                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1182946731734">
-                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1182946733689">
-                            <link role="variableDeclaration" targetNodeId="1182946652145" resolveInfo="correctType" />
-                          </node>
-                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1182946690857">
-                            <property name="value" value=" but should have type " />
-                          </node>
-                        </node>
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1182946685551">
-                          <link role="variableDeclaration" targetNodeId="1182946635234" resolveInfo="computedType" />
-                        </node>
-                      </node>
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1182946664966">
-                        <property name="value" value=" has type " />
-                      </node>
-                    </node>
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1182946659180">
-                      <link role="variableDeclaration" targetNodeId="1182946622979" resolveInfo="term" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1182946464409">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1182946471651">
-              <link role="baseMethodDeclaration" targetNodeId="6.~MatchingUtil.matchNodes(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode):boolean" resolveInfo="matchNodes" />
-              <link role="classConcept" targetNodeId="6.~MatchingUtil" resolveInfo="MatchingUtil" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1182946635236">
-                <link role="variableDeclaration" targetNodeId="1182946635234" resolveInfo="computedType" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1182946652147">
-                <link role="variableDeclaration" targetNodeId="1182946652145" resolveInfo="correctType" />
-              </node>
-            </node>
-          </node>
-          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1182960238941">
-            <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1182960238942">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1182960262953">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1182960271930">
-                  <link role="baseMethodDeclaration" targetNodeId="10.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
-                  <node role="instance" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1182960262954">
-                    <link role="classifier" targetNodeId="9.~System" resolveInfo="System" />
-                    <link role="variableDeclaration" targetNodeId="9.~System.out" resolveInfo="out" />
-                  </node>
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1182960280297">
-                    <property name="value" value="ok" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1182938219133">
-    <link role="concept" targetNodeId="1.1182937959055" />
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1182938219134">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1182938219135" />
-    </node>
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1182938229152">
-      <property name="name" value="doTest" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1182938238905" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1182938229154">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1182938292015">
-          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227889896">
-            <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1182939543116" />
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1182939550061">
-              <link role="link" targetNodeId="1.1182937980212" />
-            </node>
-          </node>
-          <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1182938292017">
-            <property name="name" value="judgement" />
-            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1182939522645">
-              <link role="concept" targetNodeId="1.1182937366968" />
-            </node>
-          </node>
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1182938292019">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1182939567244">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227835958">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1182939567245">
-                  <link role="variableDeclaration" targetNodeId="1182938292017" resolveInfo="judgement" />
-                </node>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1182939577404">
-                  <link role="conceptMethodDeclaration" targetNodeId="1182937627460" resolveInfo="doTest" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <visible index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1187076618270">
-    <link role="concept" targetNodeId="1.1174642788531" />
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1212576990570">
-      <property name="name" value="getApplicableConcept" />
-      <link role="overriddenMethod" targetNodeId="1212576937269" resolveInfo="getApplicableConcept" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212576990572">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1212577027761">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212577033357">
-            <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1212577032575" />
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1212577038657">
-              <link role="link" targetNodeId="1.1174642800329" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1212577021682">
-        <link role="concept" targetNodeId="2v.1169125787135" resolveInfo="AbstractConceptDeclaration" />
-      </node>
-    </node>
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1187076618271">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1187076618272" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1188476084021">
-    <link role="concept" targetNodeId="1.1179479408386" />
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1188476088508">
-      <property name="name" value="getPresentation" />
-      <link role="overriddenMethod" targetNodeId="12.1180102203531" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1188476088510">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1188476144289">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1188476144290">
-            <property name="name" value="sb" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1188476144291">
-              <link role="classifier" targetNodeId="9.~StringBuilder" resolveInfo="StringBuilder" />
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1188476147809">
-              <link role="baseMethodDeclaration" targetNodeId="9.~StringBuilder.&lt;init&gt;(java.lang.String)" resolveInfo="StringBuilder" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1188476169844">
-                <property name="value" value="JOIN(" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206026515364">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206026515365">
-            <property name="name" value="nodes" />
-            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType" id="1206026515366">
-              <link role="elementConcept" targetNodeId="8.1133920641626" resolveInfo="BaseConcept" />
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206026515367">
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1206026515368">
-                <link role="link" targetNodeId="1.1179479418730" />
-              </node>
-              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1206026515369" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1188476194131">
-          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206026515370">
-            <link role="variableDeclaration" targetNodeId="1206026515365" resolveInfo="nodes" />
-          </node>
-          <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1188476194133">
-            <property name="name" value="arg" />
-            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1188476206605">
-              <link role="concept" targetNodeId="8.1133920641626" />
-            </node>
-          </node>
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1188476194135">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1188476232314">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206026231873">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1188476232315">
-                  <link role="variableDeclaration" targetNodeId="1188476144290" resolveInfo="sb" />
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206026231874">
-                  <link role="baseMethodDeclaration" targetNodeId="9.~StringBuilder.append(java.lang.CharSequence):java.lang.StringBuilder" resolveInfo="append" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227908205">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1188476243538">
-                      <link role="variableDeclaration" targetNodeId="1188476194133" resolveInfo="arg" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1188476246604">
-                      <link role="conceptMethodDeclaration" targetNodeId="12.1180102203531" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1206026397624">
-              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206026397625">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1188476290324">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206026236751">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1188476290325">
-                      <link role="variableDeclaration" targetNodeId="1188476144290" resolveInfo="sb" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206026236752">
-                      <link role="baseMethodDeclaration" targetNodeId="9.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1188476316907">
-                        <property name="value" value=" | " />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node role="condition" type="jetbrains.mps.baseLanguage.structure.LessThanExpression" id="1206026499936">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="1206026532771">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1206026533665">
-                    <property name="value" value="1" />
-                  </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206026524421">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206026521716">
-                      <link role="variableDeclaration" targetNodeId="1206026515365" resolveInfo="nodes" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetSizeOperation" id="1206026527737" />
-                  </node>
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206026493368">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206026404160">
-                    <link role="variableDeclaration" targetNodeId="1188476194133" resolveInfo="arg" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetIndexInParentOperation" id="1206026494684" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1188476429685">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206026240645">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1188476429686">
-              <link role="variableDeclaration" targetNodeId="1188476144290" resolveInfo="sb" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206026240646">
-              <link role="baseMethodDeclaration" targetNodeId="9.~StringBuilder.append(java.lang.CharSequence):java.lang.StringBuilder" resolveInfo="append" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1188476435378">
-                <property name="value" value=")" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1188476121920">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206026245570">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1188476184923">
-              <link role="variableDeclaration" targetNodeId="1188476144290" resolveInfo="sb" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206026245571">
-              <link role="baseMethodDeclaration" targetNodeId="9.~StringBuilder.toString():java.lang.String" resolveInfo="toString" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1190026813595">
-        <link role="classifier" targetNodeId="9.~String" resolveInfo="String" />
-      </node>
-    </node>
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1188476084022">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1188476084023" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1188476344395">
-    <link role="concept" targetNodeId="1.1188473524530" />
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1188476344396">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1188476344397" />
-    </node>
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1188476348398">
-      <property name="name" value="getPresentation" />
-      <link role="overriddenMethod" targetNodeId="12.1180102203531" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1188476348400">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206026551110">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206026551111">
-            <property name="name" value="sb" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206026551112">
-              <link role="classifier" targetNodeId="9.~StringBuilder" resolveInfo="StringBuilder" />
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1206026551113">
-              <link role="baseMethodDeclaration" targetNodeId="9.~StringBuilder.&lt;init&gt;(java.lang.String)" resolveInfo="StringBuilder" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206026551114">
-                <property name="value" value="MEET(" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206026551131">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206026551132">
-            <property name="name" value="nodes" />
-            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType" id="1206026551133">
-              <link role="elementConcept" targetNodeId="8.1133920641626" resolveInfo="BaseConcept" />
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206026551134">
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1206026558145">
-                <link role="link" targetNodeId="1.1188473537547" />
-              </node>
-              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1206026551136" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1206026551137">
-          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206026551138">
-            <link role="variableDeclaration" targetNodeId="1206026551132" resolveInfo="nodes" />
-          </node>
-          <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206026551139">
-            <property name="name" value="arg" />
-            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1206026551140">
-              <link role="concept" targetNodeId="8.1133920641626" resolveInfo="BaseConcept" />
-            </node>
-          </node>
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206026551141">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206026551142">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206026551143">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206026551144">
-                  <link role="variableDeclaration" targetNodeId="1206026551111" resolveInfo="sb" />
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206026551145">
-                  <link role="baseMethodDeclaration" targetNodeId="9.~StringBuilder.append(java.lang.CharSequence):java.lang.StringBuilder" resolveInfo="append" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206026551146">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206026551147">
-                      <link role="variableDeclaration" targetNodeId="1206026551139" resolveInfo="arg" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1206026551148">
-                      <link role="conceptMethodDeclaration" targetNodeId="12.1180102203531" resolveInfo="getPresentation" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1206026551149">
-              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206026551150">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206026551151">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206026551152">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206026551153">
-                      <link role="variableDeclaration" targetNodeId="1206026551111" resolveInfo="sb" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206026551154">
-                      <link role="baseMethodDeclaration" targetNodeId="9.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206026551155">
-                        <property name="value" value=" &amp; " />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node role="condition" type="jetbrains.mps.baseLanguage.structure.LessThanExpression" id="1206026551156">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="1206026551157">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1206026551158">
-                    <property name="value" value="1" />
-                  </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206026551159">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206026551160">
-                      <link role="variableDeclaration" targetNodeId="1206026551132" resolveInfo="nodes" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetSizeOperation" id="1206026551161" />
-                  </node>
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206026551162">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206026551163">
-                    <link role="variableDeclaration" targetNodeId="1206026551139" resolveInfo="arg" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetIndexInParentOperation" id="1206026551164" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206026551165">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206026551166">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206026551167">
-              <link role="variableDeclaration" targetNodeId="1206026551111" resolveInfo="sb" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206026551168">
-              <link role="baseMethodDeclaration" targetNodeId="9.~StringBuilder.append(java.lang.CharSequence):java.lang.StringBuilder" resolveInfo="append" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206026551169">
-                <property name="value" value=")" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1206026551170">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206026551171">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206026551172">
-              <link role="variableDeclaration" targetNodeId="1206026551111" resolveInfo="sb" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206026551173">
-              <link role="baseMethodDeclaration" targetNodeId="9.~StringBuilder.toString():java.lang.String" resolveInfo="toString" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1190026813596">
-        <link role="classifier" targetNodeId="9.~String" resolveInfo="String" />
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1203432913915">
-    <link role="concept" targetNodeId="1.1203432734351" resolveInfo="ListVarReference" />
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1203432913916">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203432913917" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1205762808765">
-    <link role="concept" targetNodeId="1.1205762656241" resolveInfo="WhenConcreteVariableReference" />
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1205762808766">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205762808767" />
-    </node>
-  </node>
-  <visible index="3" modelUID="jetbrains.mps.baseLanguage.constraints" />
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1207651451271">
-    <link role="concept" targetNodeId="1.1193733783530" resolveInfo="FindSourceBlock" />
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1207651457602">
-      <property name="name" value="getExpectedReturnType" />
-      <link role="overriddenMethod" targetNodeId="3v.1178571276073" resolveInfo="getExpectedReturnType" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207651457604">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1207651471835">
-          <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1207651502399">
-            <node role="quotedNode" type="jetbrains.mps.bootstrap.helgins.structure.JoinType" id="1207651503886">
-              <node role="argument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1207651515559" />
-              <node role="argument" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207651549048">
-                <link role="classifier" targetNodeId="13.~Set" resolveInfo="Set" />
-                <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1207651552972" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1207651465964">
-        <link role="concept" targetNodeId="4.1068431790189" resolveInfo="Type" />
-      </node>
-    </node>
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1207651579255">
-      <property name="name" value="isSet" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1207651604555" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207651579257">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1207652355922">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1207652355923">
-            <property name="name" value="returnStatements" />
-            <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType" id="1207652355924">
-              <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1207652355925">
-                <link role="concept" targetNodeId="4.1068581242878" resolveInfo="ReturnStatement" />
-              </node>
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1207652355926">
-              <link role="baseMethodDeclaration" targetNodeId="14.1178588381110" resolveInfo="collectReturnStatements" />
-              <link role="classConcept" targetNodeId="14.1176897069499" resolveInfo="RulesFunctions_BaseLanguage" />
-              <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1207652355927" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1207652216565">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1207652216566">
-            <property name="name" value="lastStatement" />
-            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1207652216567">
-              <link role="concept" targetNodeId="4.1068580123157" resolveInfo="Statement" />
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207652216568">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207652216569">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207652216570">
-                  <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1207652216571" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1207652216572">
-                    <link role="link" targetNodeId="4.1137022507850" />
-                  </node>
-                </node>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1207652216573">
-                  <link role="link" targetNodeId="4.1068581517665" />
-                </node>
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetLastOperation" id="1207652216574" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1207652974712">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1207652974713">
-            <property name="name" value="expressions" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207652974714">
-              <link role="classifier" targetNodeId="13.~Set" resolveInfo="Set" />
-              <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1207652979859">
-                <link role="concept" targetNodeId="4.1068431790191" resolveInfo="Expression" />
-              </node>
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1207652994241">
-              <link role="baseMethodDeclaration" targetNodeId="13.~HashSet.&lt;init&gt;()" resolveInfo="HashSet" />
-              <node role="typeParameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1207653002026">
-                <link role="concept" targetNodeId="4.1068431790191" resolveInfo="Expression" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1207653245106">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207653245107">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207653278129">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207653279259">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207653278130">
-                  <link role="variableDeclaration" targetNodeId="1207652974713" resolveInfo="expressions" />
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207653281640">
-                  <link role="baseMethodDeclaration" targetNodeId="13.~Set.add(java.lang.Object):boolean" resolveInfo="add" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207653284398">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207653283456">
-                      <link role="variableDeclaration" targetNodeId="1207653245110" resolveInfo="returnStatement" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1207653285215">
-                      <link role="link" targetNodeId="4.1068581517676" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207653274625">
-            <link role="variableDeclaration" targetNodeId="1207652355923" resolveInfo="returnStatements" />
-          </node>
-          <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1207653245110">
-            <property name="name" value="returnStatement" />
-            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1207653248475">
-              <link role="concept" targetNodeId="4.1068581242878" resolveInfo="ReturnStatement" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1207652169423">
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207652169424">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207652829414">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207652830511">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207652988534">
-                  <link role="variableDeclaration" targetNodeId="1207652974713" resolveInfo="expressions" />
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207652895280">
-                  <link role="baseMethodDeclaration" targetNodeId="13.~Set.add(java.lang.Object):boolean" resolveInfo="add" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207653227146">
-                    <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1207653178876">
-                      <link role="concept" targetNodeId="4.1068580123155" resolveInfo="ExpressionStatement" />
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207653177124">
-                        <link role="variableDeclaration" targetNodeId="1207652216566" resolveInfo="lastStatement" />
-                      </node>
-                    </node>
-                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1207653228462">
-                      <link role="link" targetNodeId="4.1068580123156" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207652186001">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207652216575">
-              <link role="variableDeclaration" targetNodeId="1207652216566" resolveInfo="node" />
-            </node>
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1207652190693">
-              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1207652193258">
-                <link role="conceptDeclaration" targetNodeId="4.1068580123155" resolveInfo="ExpressionStatement" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1207653899493">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207653899494">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1207653921500">
-              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207653921501">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1207653947970">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1207653952852">
-                    <property name="value" value="true" />
-                  </node>
-                </node>
-              </node>
-              <node role="condition" type="jetbrains.mps.bootstrap.helgins.structure.IsSubtypeExpression" id="1207653929000">
-                <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207653933373">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207653931664">
-                    <link role="variableDeclaration" targetNodeId="1207653899497" resolveInfo="expr" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1207653934099" />
-                </node>
-                <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1207653936964">
-                  <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207653943104">
-                    <link role="classifier" targetNodeId="13.~Set" resolveInfo="Set" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207653918510">
-            <link role="variableDeclaration" targetNodeId="1207652974713" resolveInfo="expressions" />
-          </node>
-          <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1207653899497">
-            <property name="name" value="expr" />
-            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1207653908441" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1207653956410">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1207653957553">
-            <property name="value" value="false" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1207651451272">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207651451273" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1210784760180">
-    <link role="concept" targetNodeId="1.1210784384552" resolveInfo="HelginsIntentionArgument" />
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1210784760181">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210784760182" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1212576933954">
-    <link role="concept" targetNodeId="1.1174642743670" resolveInfo="ApplicableNodeCondition" />
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1212576937269">
-      <property name="name" value="getApplicableConcept" />
-      <property name="isAbstract" value="true" />
-      <property name="isVirtual" value="true" />
-      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1212576947616">
-        <link role="concept" targetNodeId="2v.1169125787135" resolveInfo="AbstractConceptDeclaration" />
-      </node>
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212576937271" />
-    </node>
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1212576933955">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212576933956" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1212577045471">
-    <link role="concept" targetNodeId="1.1174642900584" resolveInfo="PatternCondition" />
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1212577047474">
-      <property name="name" value="getApplicableConcept" />
-      <link role="overriddenMethod" targetNodeId="1212576937269" resolveInfo="getApplicableConcept" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212577047476">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1212577055571">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212577106363">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212577079000">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212577057199">
-                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1212577056573" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1212577062812">
-                  <link role="link" targetNodeId="1.1174642936809" />
-                </node>
-              </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1212577080440">
-                <link role="link" targetNodeId="5.1136720037778" />
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetConceptOperation" id="1212577107631" />
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1212577053133">
-        <link role="concept" targetNodeId="2v.1169125787135" resolveInfo="AbstractConceptDeclaration" />
-      </node>
-    </node>
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1212577045472">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212577045473" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1212577489565">
-    <link role="concept" targetNodeId="1.1212573344738" resolveInfo="ChildTypeRestriction" />
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1212577489566">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212577489567" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1212763748069">
-    <link role="concept" targetNodeId="1.1212763614690" resolveInfo="ChildTypeRestrictionReference" />
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1212763748070">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212763748071" />
-    </node>
-  </node>
+  <import index="16" modelUID="jetbrains.mps.baseLanguage.behavior" version="-1" />
+  <import index="17" modelUID="jetbrains.mps.core.behavior" version="-1" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213104837334">
     <link role="concept" targetNodeId="1.1212763614690" resolveInfo="ChildTypeRestrictionReference" />
     <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1213104837335">
@@ -1943,6 +2578,8 @@
       </node>
     </node>
   </node>
+  <visible index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
+  <visible index="3" modelUID="jetbrains.mps.bootstrap.helgins.behavior" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213104847820">
     <link role="concept" targetNodeId="1.1212573344738" resolveInfo="ChildTypeRestriction" />
     <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1213104847821">
@@ -1980,7 +2617,7 @@
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1213104847838">
-                  <link role="conceptMethodDeclaration" targetNodeId="1212576937269" resolveInfo="getApplicableConcept" />
+                  <link role="conceptMethodDeclaration" targetNodeId="3v.1213877307633" resolveInfo="getApplicableConcept" />
                 </node>
               </node>
             </node>

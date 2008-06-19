@@ -3,21 +3,33 @@
   <persistence version="1" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.pluginLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.constraints" version="19" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="1" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
-  <language namespace="jetbrains.mps.baseLanguage.classifiers" />
-  <language namespace="jetbrains.mps.bootstrap.helgins" />
+  <language namespace="jetbrains.mps.baseLanguage.classifiers">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.classifiers.constraints" version="7" />
+  </language>
+  <language namespace="jetbrains.mps.bootstrap.helgins">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.constraints" version="17" />
+  </language>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <maxImportIndex value="47" />
+  <languageAspect modelUID="jetbrains.mps.patterns.constraints" version="2" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
+  <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
+  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
+  <maxImportIndex value="48" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.plugin.uiActions@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.ide.actions" version="-1" />
@@ -64,6 +76,7 @@
   <import index="45" modelUID="com.intellij.openapi.ui@java_stub" version="-1" />
   <import index="46" modelUID="jetbrains.mps.workbench.action@java_stub" version="-1" />
   <import index="47" modelUID="com.intellij.openapi.actionSystem@java_stub" version="-1" />
+  <import index="48" modelUID="jetbrains.mps.core.behavior" version="-1" />
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1205247197267">
     <property name="name" value="BaseLanguageEditorPopup" />
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement" id="1205247338363">
@@ -315,7 +328,7 @@
       </node>
     </node>
   </node>
-  <visible index="3" modelUID="jetbrains.mps.baseLanguage.constraints" />
+  <visible index="3" modelUID="jetbrains.mps.baseLanguage.behavior" />
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1205836731341">
     <property name="package" value="Actions" />
     <property name="name" value="RunClassConcept" />
@@ -461,7 +474,7 @@
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNotNullOperation" id="1206094843035" />
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206094843036">
                     <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1206094843037">
-                      <link role="conceptMethodDeclaration" targetNodeId="3v.1205837873246" resolveInfo="getMainMethod" />
+                      <link role="conceptMethodDeclaration" targetNodeId="3v.1213877355884" resolveInfo="getMainMethod" />
                     </node>
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206094843038">
                       <link role="variableDeclaration" targetNodeId="1206094805583" resolveInfo="classConcept" />
@@ -1705,7 +1718,7 @@
                     <link role="variableDeclaration" targetNodeId="1207231525227" resolveInfo="output" />
                   </node>
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1207236345419">
-                    <link role="conceptMethodDeclaration" targetNodeId="3v.1207235870860" resolveInfo="createReference" />
+                    <link role="conceptMethodDeclaration" targetNodeId="3v.1213877517482" resolveInfo="createReference" />
                   </node>
                 </node>
               </node>
@@ -2091,7 +2104,7 @@
                       <link role="variable" targetNodeId="1207234969704" resolveInfo="iv" />
                     </node>
                     <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1207236372166">
-                      <link role="conceptMethodDeclaration" targetNodeId="3v.1207235870860" resolveInfo="createReference" />
+                      <link role="conceptMethodDeclaration" targetNodeId="3v.1213877517482" resolveInfo="createReference" />
                     </node>
                   </node>
                 </node>
@@ -2184,7 +2197,7 @@
                       <link role="variableDeclaration" targetNodeId="1207231525227" resolveInfo="output" />
                     </node>
                     <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1207236386457">
-                      <link role="conceptMethodDeclaration" targetNodeId="3v.1207235870860" resolveInfo="createReference" />
+                      <link role="conceptMethodDeclaration" targetNodeId="3v.1213877517482" resolveInfo="createReference" />
                     </node>
                   </node>
                 </node>
@@ -2775,7 +2788,6 @@
       <property name="keycode" value="VK_M" />
     </node>
   </node>
-  <visible index="4" modelUID="jetbrains.mps.core.constraints" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1208521059570">
     <property name="package" value="Actions.Runner" />
     <property name="name" value="ClassRunner" />
@@ -2840,7 +2852,7 @@
               <link role="baseMethodDeclaration" targetNodeId="1208521105878" resolveInfo="run" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208521105865">
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1208521105867">
-                  <link role="conceptMethodDeclaration" targetNodeId="4v.1184686272576" resolveInfo="getFqName" />
+                  <link role="conceptMethodDeclaration" targetNodeId="48.1213877404258" resolveInfo="getFqName" />
                 </node>
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208521105866">
                   <link role="variableDeclaration" targetNodeId="1208521105855" resolveInfo="classConcept" />
@@ -4414,7 +4426,7 @@
                   <link role="variableDeclaration" targetNodeId="1208786989916" resolveInfo="remark" />
                 </node>
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1208787147794">
-                  <link role="conceptMethodDeclaration" targetNodeId="3v.1208784222268" resolveInfo="isTodo" />
+                  <link role="conceptMethodDeclaration" targetNodeId="3v.1213877427548" resolveInfo="isTodo" />
                 </node>
               </node>
             </node>

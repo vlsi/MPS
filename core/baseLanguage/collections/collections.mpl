@@ -40,10 +40,6 @@
     <entry path="${language_descriptor}\runtime\classes" />
   </languageRuntimeClassPath>
   <sourcePath />
-  <osgiOptions>
-    <requiredBundles />
-    <exportedPackage />
-  </osgiOptions>
   <dependencies>
     <dependency reexport="false">jetbrains.mps.transformation.TLBase</dependency>
     <dependency reexport="true">jetbrains.mps.internal.collections</dependency>

@@ -6,15 +6,11 @@
   </models>
   <accessoryModels />
   <generators />
-  <classPath />
-  <runtimeClassPath>
+  <classPath>
     <entry path="${mps_home}\core\languageDesign\mps-lite\classes" />
-  </runtimeClassPath>
+  </classPath>
+  <languageRuntimeClassPath />
   <sourcePath />
-  <osgiOptions>
-    <requiredBundles />
-    <exportedPackage />
-  </osgiOptions>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.regexp</usedLanguages>
     <usedLanguages>jetbrains.mpslite</usedLanguages>

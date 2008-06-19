@@ -2,8 +2,12 @@
 <model name="jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors">
   <persistence version="1" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.baseLanguage.blTypes" />
+  <language namespace="jetbrains.mps.baseLanguage.blTypes">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.blTypes.constraints" version="0" />
+  </language>
   <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
+  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.helgins" version="-1" />
   <node type="jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor" id="1196683481013">

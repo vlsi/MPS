@@ -3,32 +3,41 @@
   <persistence version="1" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.findUsagesLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.constraints" version="4" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
-  <language namespace="jetbrains.mps.bootstrap.helgins" />
+  <language namespace="jetbrains.mps.bootstrap.helgins">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.constraints" version="17" />
+  </language>
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.patterns.constraints" version="2" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.sharedConcepts.constraints" version="0" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.intentionsLanguage.constraints" version="1" />
+  <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
+  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <maxImportIndex value="14" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="5" modelUID="jetbrains.mps.bootstrap.structureLanguage.findUsages" version="-1" />
   <import index="7" modelUID="java.util@java_stub" version="-1" />
-  <import index="9" modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
+  <import index="9" modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
   <import index="10" modelUID="java.lang@java_stub" version="-1" />
   <import index="14" modelUID="jetbrains.mps.ide.findusages.model@java_stub" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.core.structure" />
+  <visible index="3" modelUID="jetbrains.mps.baseLanguage.behavior" />
   <node type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.FinderDeclaration" id="1200309609796">
     <property name="name" value="OverridingMethods" />
     <property name="description" value="Overriding Methods" />
@@ -235,7 +244,7 @@
                           <link role="variable" targetNodeId="1200413471960" resolveInfo="sMethod" />
                         </node>
                         <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1204901344954">
-                          <link role="conceptMethodDeclaration" targetNodeId="9.1204901126405" resolveInfo="overridesMethod" />
+                          <link role="conceptMethodDeclaration" targetNodeId="3v.1213877350435" resolveInfo="overridesMethod" />
                           <node role="actualArgument" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ConceptFunctionParameter_node" id="1206445035142" />
                         </node>
                       </node>
@@ -1414,7 +1423,7 @@
                           </node>
                         </node>
                         <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1200499549085">
-                          <link role="conceptMethodDeclaration" targetNodeId="9.1199318924019" resolveInfo="getErasureSignature" />
+                          <link role="conceptMethodDeclaration" targetNodeId="3v.1213877337313" resolveInfo="getErasureSignature" />
                         </node>
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332444250">
@@ -1427,7 +1436,7 @@
                             </node>
                           </node>
                           <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1200499562551">
-                            <link role="conceptMethodDeclaration" targetNodeId="9.1199318924019" resolveInfo="getErasureSignature" />
+                            <link role="conceptMethodDeclaration" targetNodeId="3v.1213877337313" resolveInfo="getErasureSignature" />
                           </node>
                         </node>
                       </node>
@@ -1637,7 +1646,7 @@
                       <link role="variable" targetNodeId="1200425863013" resolveInfo="sMethod" />
                     </node>
                     <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1204901471067">
-                      <link role="conceptMethodDeclaration" targetNodeId="9.1204901126405" resolveInfo="hasSameSignature" />
+                      <link role="conceptMethodDeclaration" targetNodeId="3v.1213877350435" resolveInfo="hasSameSignature" />
                       <node role="actualArgument" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ConceptFunctionParameter_node" id="1206444905148" />
                     </node>
                   </node>

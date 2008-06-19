@@ -3,9 +3,11 @@
   <persistence version="1" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.baseLanguage">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.annotations" />
+  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <maxImportIndex value="234" />
   <import index="1" modelUID="jetbrains.mps.resolve@java_stub" version="-1" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />

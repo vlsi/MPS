@@ -2,10 +2,14 @@
 <model name="jetbrains.mps.regex.samples">
   <persistence version="1" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.regexp" />
+  <language namespace="jetbrains.mps.regexp">
+    <languageAspect modelUID="jetbrains.mps.regexp.constraints" version="3" />
+  </language>
   <language namespace="jetbrains.mps.baseLanguage">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
+  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <maxImportIndex value="4" />
   <import index="1" modelUID="java.util@java_stub" version="-1" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />

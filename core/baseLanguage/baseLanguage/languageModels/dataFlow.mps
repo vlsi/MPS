@@ -2,25 +2,24 @@
 <model name="jetbrains.mps.baseLanguage.dataFlow">
   <persistence version="1" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.bootstrap.dataFlow" />
+  <language namespace="jetbrains.mps.bootstrap.dataFlow">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.dataFlow.constraints" version="4" />
+  </language>
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
+  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <maxImportIndex value="3" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage@java_stub" version="-1" />
@@ -809,7 +808,7 @@
       </node>
     </node>
   </node>
-  <visible index="2" modelUID="jetbrains.mps.baseLanguage.constraints" />
+  <visible index="2" modelUID="jetbrains.mps.baseLanguage.behavior" />
   <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1206465225322">
     <link role="conceptDeclaration" targetNodeId="1.1081855346303" resolveInfo="BreakStatement" />
     <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1206465225323">
@@ -819,7 +818,7 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206465245032">
               <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1206465244469" />
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1206465246425">
-                <link role="conceptMethodDeclaration" targetNodeId="2v.1206464967689" resolveInfo="getLoop" />
+                <link role="conceptMethodDeclaration" targetNodeId="2v.1213877377001" resolveInfo="getLoop" />
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNotNullOperation" id="1206465250069" />
@@ -830,7 +829,7 @@
                 <node role="relativeTo" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206465268811">
                   <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1206465268404" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1206465270141">
-                    <link role="conceptMethodDeclaration" targetNodeId="2v.1206464967689" resolveInfo="getLoop" />
+                    <link role="conceptMethodDeclaration" targetNodeId="2v.1213877377001" resolveInfo="getLoop" />
                   </node>
                 </node>
               </node>
@@ -843,7 +842,7 @@
                   <node role="relativeTo" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207558779237">
                     <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1207558778970" />
                     <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1207558780661">
-                      <link role="conceptMethodDeclaration" targetNodeId="2v.1207557694904" resolveInfo="getSwitch" />
+                      <link role="conceptMethodDeclaration" targetNodeId="2v.1213877377021" resolveInfo="getSwitch" />
                     </node>
                   </node>
                 </node>
@@ -853,7 +852,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207558771366">
                 <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1207558771021" />
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1207558774181">
-                  <link role="conceptMethodDeclaration" targetNodeId="2v.1207557694904" resolveInfo="getSwitch" />
+                  <link role="conceptMethodDeclaration" targetNodeId="2v.1213877377021" resolveInfo="getSwitch" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNotNullOperation" id="1207558775793" />
@@ -877,7 +876,7 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206465288366">
               <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1206465288367" />
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1206465288368">
-                <link role="conceptMethodDeclaration" targetNodeId="2v.1206465092861" resolveInfo="getLoop" />
+                <link role="conceptMethodDeclaration" targetNodeId="2v.1213877346346" resolveInfo="getLoop" />
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNotNullOperation" id="1206465288369" />
@@ -888,7 +887,7 @@
                 <node role="relativeTo" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206465294959">
                   <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1206465294583" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1206465296336">
-                    <link role="conceptMethodDeclaration" targetNodeId="2v.1206465092861" resolveInfo="getLoop" />
+                    <link role="conceptMethodDeclaration" targetNodeId="2v.1213877346346" resolveInfo="getLoop" />
                   </node>
                 </node>
               </node>
@@ -934,7 +933,7 @@
             <node role="relativeTo" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206536824173">
               <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1206536823734" />
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1206536825378">
-                <link role="conceptMethodDeclaration" targetNodeId="2v.1206536734450" resolveInfo="getIfStatement" />
+                <link role="conceptMethodDeclaration" targetNodeId="2v.1213877360521" resolveInfo="getIfStatement" />
               </node>
             </node>
           </node>

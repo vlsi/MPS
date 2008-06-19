@@ -1,34 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.bootstrap.findUsagesLanguage" compileInMPS="false">
   <models>
-    <modelRoot path="${language_descriptor}\languageModels"
-               namespacePrefix="jetbrains.mps.bootstrap.findUsagesLanguage"/>
-    <modelRoot path="${language_descriptor}\languageAccessories"
-               namespacePrefix="jetbrains.mps.bootstrap.findUsagesLanguage"/>
+    <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.bootstrap.findUsagesLanguage" />
+    <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.bootstrap.findUsagesLanguage" />
   </models>
-  <accessoryModels/>
+  <accessoryModels />
   <generators>
     <generator generatorUID="jetbrains.mps.bootstrap.findUsagesLanguage#1197044805809">
       <models>
-        <modelRoot path="${language_descriptor}\generator\baseLanguage\template"
-                   namespacePrefix="jetbrains.mps.bootstrap.findUsagesLanguage.generator.baseLanguage.template"/>
+        <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.bootstrap.findUsagesLanguage.generator.baseLanguage.template" />
       </models>
-      <external-templates/>
+      <external-templates />
       <dependencies>
         <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
       </dependencies>
       <usedLanguages>
         <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
       </usedLanguages>
-      <mapping-priorities/>
+      <mapping-priorities />
     </generator>
   </generators>
   <classPath>
-    <entry path="${mps_home}\lib\jdom\jdom-1.0.jar"/>
-    <entry path="${language_descriptor}\classes"/>
+    <entry path="${mps_home}\lib\jdom\jdom-1.0.jar" />
+    <entry path="${language_descriptor}\classes" />
   </classPath>
-  <languageRuntimeClassPath/>
-  <sourcePath/>
+  <languageRuntimeClassPath />
+  <sourcePath />
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>
     <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>
