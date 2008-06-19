@@ -11,7 +11,7 @@ import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.constraints.ConceptFunction_Behavior;
+import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
 
 public class ConceptFunction_Editor extends DefaultNodeEditor {
 
@@ -64,7 +64,7 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
         }
         collection.addEditorCell(new EditorCell_Constant(editorContext, node, ""));
         collection.addEditorCell(new EditorCell_Constant(editorContext, node, "Parameter help:"));
-        for(SNode cfp : ConceptFunction_Behavior.call_getParameters_1197312191473(node)) {
+        for(SNode cfp : ConceptFunction_Behavior.call_getParameters_1213877374450(node)) {
           String alias = SConceptPropertyOperations.getString(cfp, "alias");
           String description = SConceptPropertyOperations.getString(cfp, "short_description");
           if (description == null) {

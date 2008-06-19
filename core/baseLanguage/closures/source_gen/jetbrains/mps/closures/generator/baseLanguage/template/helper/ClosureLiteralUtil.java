@@ -12,13 +12,13 @@ import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import java.util.Map;
-import jetbrains.mps.closures.constraints.FunctionType_Behavior;
+import jetbrains.mps.closures.behavior.FunctionType_Behavior;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.LinkedList;
-import jetbrains.mps.core.constraints.BaseConcept_Behavior;
+import jetbrains.mps.core.behavior.BaseConcept_Behavior;
 import java.util.HashMap;
 
 public class ClosureLiteralUtil {
@@ -69,14 +69,14 @@ public class ClosureLiteralUtil {
       SNode method = imds.get(0);
       if ((SLinkOperations.getTarget(method, "returnType", true) != null) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
         /*
-          map = matchType(SLinkOperations.getTarget(method, "returnType", true), FunctionType_Behavior.call_getNormalizedReturnType_1201526153722(ft), map);
+          map = matchType(SLinkOperations.getTarget(method, "returnType", true), FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(ft), map);
         */
-        map = matchReturnType(SLinkOperations.getTarget(method, "returnType", true), FunctionType_Behavior.call_getNormalizedReturnType_1201526153722(ft), map);
+        map = matchReturnType(SLinkOperations.getTarget(method, "returnType", true), FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(ft), map);
         if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
           absRetCT = SNodeOperations.copyNode(SLinkOperations.getTarget(method, "returnType", true));
         }
       }
-      List<SNode> ptypes = FunctionType_Behavior.call_getNormalizedParameterTypes_1201526194584(ft);
+      List<SNode> ptypes = FunctionType_Behavior.call_getNormalizedParameterTypes_1213877405276(ft);
       int idx = 0;
       for(SNode pd : SLinkOperations.getTargets(method, "parameter", true)) {
         if (idx >= ptypes.size()) {
@@ -89,7 +89,7 @@ public class ClosureLiteralUtil {
     }
     ((SNode)ctNoParams).putUserObject("typeMap", map);
     if ((absRetCT != null)) {
-      SNode ftResCT = FunctionType_Behavior.call_getNormalizedReturnType_1201526153722(ft);
+      SNode ftResCT = FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(ft);
       String adapterName = JavaNameUtil.shortName(SPropertyOperations.getString(SLinkOperations.getTarget(absRetCT, "classifier", false), "name")) + JavaNameUtil.shortName(SPropertyOperations.getString(SLinkOperations.getTarget(ftResCT, "classifier", false), "name")) + "Adapter";
       for(SNode cls : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(absRetCT, "classifier", false)), "jetbrains.mps.baseLanguage.structure.Classifier")) {
         if (adapterName.equals(JavaNameUtil.shortName(SPropertyOperations.getString(cls, "name")))) {
@@ -141,12 +141,12 @@ public class ClosureLiteralUtil {
     queue.addLast(absType);
     while(!(queue.isEmpty())) {
       SNode candidate = queue.removeFirst();
-      if (!(visited.contains(BaseConcept_Behavior.call_getPresentation_1180102203531(candidate)))) {
+      if (!(visited.contains(BaseConcept_Behavior.call_getPresentation_1213877396640(candidate)))) {
         if (SNodeOperations.isInstanceOf(candidate, "jetbrains.mps.baseLanguage.structure.TypeVariableReference") || (SNodeOperations.getConceptDeclaration(realType) == SNodeOperations.getConceptDeclaration(candidate) && (!(SNodeOperations.isInstanceOf(realType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) || (SLinkOperations.getTarget(realType, "classifier", false) == SLinkOperations.getTarget(candidate, "classifier", false) && SLinkOperations.getCount(realType, "parameter") == SLinkOperations.getCount(candidate, "parameter"))))) {
           map = matchType(candidate, realType, map);
           return map;
         }
-        visited.add(BaseConcept_Behavior.call_getPresentation_1180102203531(candidate));
+        visited.add(BaseConcept_Behavior.call_getPresentation_1213877396640(candidate));
         for(SNode superType : TypeChecker.getInstance().getSubtypingManager().collectImmediateSupertypes(candidate)) {
           queue.addLast(superType);
         }

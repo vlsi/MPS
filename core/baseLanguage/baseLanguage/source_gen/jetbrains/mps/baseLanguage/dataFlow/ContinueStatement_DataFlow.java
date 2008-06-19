@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.dataFlow;
 import jetbrains.mps.dataFlow.DataFlowBuilder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.dataFlow.DataFlowBuilderContext;
-import jetbrains.mps.baseLanguage.constraints.ContinueStatement_Behavior;
+import jetbrains.mps.baseLanguage.behavior.ContinueStatement_Behavior;
 
 public class ContinueStatement_DataFlow extends DataFlowBuilder {
 
@@ -13,8 +13,8 @@ public class ContinueStatement_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    if ((ContinueStatement_Behavior.call_getLoop_1206465092861(_context.getNode()) != null)) {
-      _context.getBuilder().emitJump(_context.getBuilder().before(ContinueStatement_Behavior.call_getLoop_1206465092861(_context.getNode())));
+    if ((ContinueStatement_Behavior.call_getLoop_1213877346346(_context.getNode()) != null)) {
+      _context.getBuilder().emitJump(_context.getBuilder().before(ContinueStatement_Behavior.call_getLoop_1213877346346(_context.getNode())));
     } else
     {
       _context.getBuilder().emitNop();

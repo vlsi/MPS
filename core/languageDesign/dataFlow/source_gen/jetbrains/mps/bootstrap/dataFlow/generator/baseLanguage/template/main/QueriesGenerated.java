@@ -5,7 +5,7 @@ package jetbrains.mps.bootstrap.dataFlow.generator.baseLanguage.template.main;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.core.constraints.INamedConcept_Behavior;
+import jetbrains.mps.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.smodel.SNode;
@@ -21,7 +21,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1206456545048(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return INamedConcept_Behavior.call_getFqName_1184686272576(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false));
+    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_1207063014986(final IOperationContext operationContext, final PropertyMacroContext _context) {

@@ -1,7 +1,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.*;
-import jetbrains.mps.core.constraints.BaseConcept_Behavior;
+import jetbrains.mps.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.core.structure.IResolveInfo;
@@ -1305,7 +1305,7 @@ public final class SNode {
 
   public String getPresentation() {
     try {
-      return BaseConcept_Behavior.call_getPresentation_1180102203531(this);
+      return BaseConcept_Behavior.call_getPresentation_1213877396640(this);
     } catch (Throwable t) {
       LOG.error(t);
       return "[can't calculate presentation : " + t.getMessage() + "]";
@@ -1320,7 +1320,7 @@ public final class SNode {
     try {
       s = getProperty(BaseConcept.ALIAS);
       if (s == null) {
-        s = BaseConcept_Behavior.call_getPresentation_1180102203531(this);
+        s = BaseConcept_Behavior.call_getPresentation_1213877396640(this);
       }
     } catch (Throwable t) {
       LOG.error(t, this);

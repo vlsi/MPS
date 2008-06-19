@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.dataFlow;
 import jetbrains.mps.dataFlow.DataFlowBuilder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.dataFlow.DataFlowBuilderContext;
-import jetbrains.mps.baseLanguage.constraints.BreakStatement_Behavior;
+import jetbrains.mps.baseLanguage.behavior.BreakStatement_Behavior;
 
 public class BreakStatement_DataFlow extends DataFlowBuilder {
 
@@ -13,11 +13,11 @@ public class BreakStatement_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    if ((BreakStatement_Behavior.call_getLoop_1206464967689(_context.getNode()) != null)) {
-      _context.getBuilder().emitJump(_context.getBuilder().after(BreakStatement_Behavior.call_getLoop_1206464967689(_context.getNode())));
+    if ((BreakStatement_Behavior.call_getLoop_1213877377001(_context.getNode()) != null)) {
+      _context.getBuilder().emitJump(_context.getBuilder().after(BreakStatement_Behavior.call_getLoop_1213877377001(_context.getNode())));
     } else
-    if ((BreakStatement_Behavior.call_getSwitch_1207557694904(_context.getNode()) != null)) {
-      _context.getBuilder().emitJump(_context.getBuilder().after(BreakStatement_Behavior.call_getSwitch_1207557694904(_context.getNode())));
+    if ((BreakStatement_Behavior.call_getSwitch_1213877377021(_context.getNode()) != null)) {
+      _context.getBuilder().emitJump(_context.getBuilder().after(BreakStatement_Behavior.call_getSwitch_1213877377021(_context.getNode())));
     } else
     {
       _context.getBuilder().emitNop();

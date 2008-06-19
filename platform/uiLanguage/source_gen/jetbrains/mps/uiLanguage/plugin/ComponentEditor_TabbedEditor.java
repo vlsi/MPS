@@ -11,7 +11,7 @@ import jetbrains.mps.ide.tabbedEditor.tabs.SimpleLazyTab;
 import jetbrains.mps.plugins.tabbedEditor.BaseSingleTab;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.uiLanguage.constraints.ComponentDeclaration_Behavior;
+import jetbrains.mps.uiLanguage.behavior.ComponentDeclaration_Behavior;
 import jetbrains.mps.uiLanguage.structure.ComponentController;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.uiLanguage.structure.ComponentDeclaration;
@@ -72,7 +72,7 @@ public class ComponentEditor_TabbedEditor extends BaseTabbedEditor {
     }
 
     public SNode getNode(SNode node) {
-      return ComponentDeclaration_Behavior.call_getController_1202390006489(node);
+      return ComponentDeclaration_Behavior.call_getController_1213877495364(node);
     }
 
     public boolean allowsToCreateNewNode() {

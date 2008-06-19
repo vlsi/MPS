@@ -6,7 +6,7 @@ import jetbrains.mps.bootstrap.helgins.dependencies.InferenceMethod;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.constraints.SNodeOperation_Behavior;
+import jetbrains.mps.bootstrap.smodelLanguage.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
@@ -27,7 +27,7 @@ public class RulesUtil {
       // don't check - it is red anyway
       return;
     }
-    final SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1200920411564(op);
+    final SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(op);
     {
       final SNode LeftType = TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206099323449", false);
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(LeftType, new Runnable() {
@@ -69,7 +69,7 @@ public class RulesUtil {
             }
           }
           // ===========
-          SNode leftOperation = SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(op);
+          SNode leftOperation = SNodeOperation_Behavior.call_getLeftExpressionOperation_1213877508946(op);
           if (SConceptPropertyOperations.getBoolean(op, "applicable_to_simple_property")) {
             if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOperation), "jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess")) {
               SNode propertyDecl = SLinkOperations.getTarget(leftOperation, "property", false);
@@ -104,7 +104,7 @@ public class RulesUtil {
   public static void checkAppliedTo_LinkListAccess_aggregation(final SNode op) {
     // expect access to an aggregation link with plural cardinality
     // ------------------- new (duplicates checkAppliedCorrectly_generic)
-    SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1200920411564(op);
+    SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(op);
     {
       final SNode LeftType = TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206099228546", false);
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(LeftType, new Runnable() {
@@ -130,7 +130,7 @@ public class RulesUtil {
   public static void checkAppliedTo_LinkAccess_aggregation(final SNode op) {
     // expect access to an aggregation link with singular cardinality
     // ------------------- new (duplicates checkAppliedCorrectly_generic)
-    final SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1200920411564(op);
+    final SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(op);
     {
       final SNode LeftType = TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206099156468", false);
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(LeftType, new Runnable() {
@@ -191,7 +191,7 @@ public class RulesUtil {
 
   @InferenceMethod()
   private static void equate_inputNodeConcept_internal(SNode op, final SNode TypeToEquate, final boolean conceptOfConceptIfInputConcept) {
-    final SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1200920411564(op);
+    final SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(op);
     {
       final SNode LeftType = TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1208202100499", false);
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(LeftType, new Runnable() {
@@ -231,7 +231,7 @@ public class RulesUtil {
 
   @InferenceMethod()
   public static void equate_conceptFromOpParm(SNode op, final SNode TypeToEquate) {
-    SNode opParm = SNodeOperation_Behavior.call_getParameter_1207352678202(op, SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept"));
+    SNode opParm = SNodeOperation_Behavior.call_getParameter_1213877508972(op, SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept"));
     if (opParm == null) {
       TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept"), null, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207352395113");
     } else

@@ -12,17 +12,17 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.ypath.constraints.TreeNodeKind_Behavior;
-import jetbrains.mps.ypath.constraints.TreeNodeKindProperty_Behavior;
-import jetbrains.mps.ypath.constraints.MatchDefaultPropertyOperation_Behavior;
-import jetbrains.mps.ypath.constraints.MatchKindOperation_Behavior;
-import jetbrains.mps.ypath.constraints.IFeature_Behavior;
+import jetbrains.mps.ypath.behavior.TreeNodeKind_Behavior;
+import jetbrains.mps.ypath.behavior.TreeNodeKindProperty_Behavior;
+import jetbrains.mps.ypath.behavior.MatchDefaultPropertyOperation_Behavior;
+import jetbrains.mps.ypath.behavior.MatchKindOperation_Behavior;
+import jetbrains.mps.ypath.behavior.IFeature_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.generator.template.IfMacroContext;
-import jetbrains.mps.ypath.constraints.ChildrenBlock_Behavior;
+import jetbrains.mps.ypath.behavior.ChildrenBlock_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
-import jetbrains.mps.ypath.constraints.TreePath_Behavior;
+import jetbrains.mps.ypath.behavior.TreePath_Behavior;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
@@ -125,7 +125,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1179332034252(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return TreeNodeKind_Behavior.call_getTriggerClassName_1179337009627(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    return TreeNodeKind_Behavior.call_getTriggerClassName_1213877375194(SNodeOperations.getParent(_context.getNode(), null, false, false));
   }
 
   public static Object propertyMacro_GetPropertyValue_1179332193000(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -133,15 +133,15 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1179343146108(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return TreeNodeKindProperty_Behavior.call_getClassName_1179394820016(_context.getNode());
+    return TreeNodeKindProperty_Behavior.call_getClassName_1213877513203(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1179398689071(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return TreeNodeKindProperty_Behavior.call_getFQClassName_1179398802547(SLinkOperations.getTarget(_context.getNode(), "property", false));
+    return TreeNodeKindProperty_Behavior.call_getFQClassName_1213877513221(SLinkOperations.getTarget(_context.getNode(), "property", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_1179398930392(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return TreeNodeKindProperty_Behavior.call_getFQClassName_1179398802547(MatchDefaultPropertyOperation_Behavior.call_getDefaultProperty_1179336363244(_context.getNode()));
+    return TreeNodeKindProperty_Behavior.call_getFQClassName_1213877513221(MatchDefaultPropertyOperation_Behavior.call_getDefaultProperty_1213877365175(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1179399762486(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -149,19 +149,19 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1179739599857(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return TreeNodeKind_Behavior.call_getTriggerFQClassName_1179337569969(MatchKindOperation_Behavior.call_getTreeNodeKind_1179341925025(_context.getNode()));
+    return TreeNodeKind_Behavior.call_getTriggerFQClassName_1213877375203(MatchKindOperation_Behavior.call_getTreeNodeKind_1213877332973(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1179739700829(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return TreeNodeKind_Behavior.call_getTriggerFQClassName_1179337569969(SNodeOperations.getAncestor(MatchDefaultPropertyOperation_Behavior.call_getDefaultProperty_1179336363244(_context.getNode()), "jetbrains.mps.ypath.structure.TreeNodeKind", false, false));
+    return TreeNodeKind_Behavior.call_getTriggerFQClassName_1213877375203(SNodeOperations.getAncestor(MatchDefaultPropertyOperation_Behavior.call_getDefaultProperty_1213877365175(_context.getNode()), "jetbrains.mps.ypath.structure.TreeNodeKind", false, false));
   }
 
   public static Object propertyMacro_GetPropertyValue_1179739767004(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return TreeNodeKind_Behavior.call_getTriggerFQClassName_1179337569969(SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "property", false), "jetbrains.mps.ypath.structure.TreeNodeKind", false, false));
+    return TreeNodeKind_Behavior.call_getTriggerFQClassName_1213877375203(SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "property", false), "jetbrains.mps.ypath.structure.TreeNodeKind", false, false));
   }
 
   public static Object propertyMacro_GetPropertyValue_1179741172865(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return TreeNodeKind_Behavior.call_getTriggerFQClassName_1179337569969(SLinkOperations.getTarget(_context.getNode(), "treeNodeKind", false));
+    return TreeNodeKind_Behavior.call_getTriggerFQClassName_1213877375203(SLinkOperations.getTarget(_context.getNode(), "treeNodeKind", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_1180087156933(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -169,7 +169,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1180087820031(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return TreeNodeKind_Behavior.call_getTriggerFQClassName_1179337569969(SLinkOperations.getTarget(_context.getNode(), "treeNodeKind", false));
+    return TreeNodeKind_Behavior.call_getTriggerFQClassName_1213877375203(SLinkOperations.getTarget(_context.getNode(), "treeNodeKind", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_1180088520623(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -197,11 +197,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1184069474856(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IFeature_Behavior.call_getFullName_1184069386479(_context.getNode());
+    return IFeature_Behavior.call_getFullName_1213877499608(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1184069490704(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IFeature_Behavior.call_getFullName_1184069386479(_context.getNode());
+    return IFeature_Behavior.call_getFullName_1213877499608(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1184166962487(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -217,7 +217,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1184238341011(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "Desc_" + IFeature_Behavior.call_getFullName_1184069386479(_context.getNode());
+    return "Desc_" + IFeature_Behavior.call_getFullName_1213877499608(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1184679938240(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -229,7 +229,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1184762184639(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "Design_" + IFeature_Behavior.call_getFullName_1184069386479(_context.getNode());
+    return "Design_" + IFeature_Behavior.call_getFullName_1213877499608(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1185026993008(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -247,7 +247,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1196881635656(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "Design_" + IFeature_Behavior.call_getFullName_1184069386479(_context.getNode());
+    return "Design_" + IFeature_Behavior.call_getFullName_1213877499608(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1198197077821(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -421,27 +421,27 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1179318923021(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ChildrenBlock_Behavior.call_returnsArray_1179319917738(_context.getNode());
+    return ChildrenBlock_Behavior.call_returnsArray_1213877442101(_context.getNode());
   }
 
   public static boolean ifMacro_Condition_1179319612012(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ChildrenBlock_Behavior.call_returnsSequence_1179319962780(_context.getNode());
+    return ChildrenBlock_Behavior.call_returnsSequence_1213877442111(_context.getNode());
   }
 
   public static boolean ifMacro_Condition_1179320416907(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ChildrenBlock_Behavior.call_returnsArray_1179319917738(SLinkOperations.getTarget(_context.getNode(), "childrenBlock", true));
+    return ChildrenBlock_Behavior.call_returnsArray_1213877442101(SLinkOperations.getTarget(_context.getNode(), "childrenBlock", true));
   }
 
   public static boolean ifMacro_Condition_1179320446084(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ChildrenBlock_Behavior.call_returnsSequence_1179319962780(SLinkOperations.getTarget(_context.getNode(), "childrenBlock", true));
+    return ChildrenBlock_Behavior.call_returnsSequence_1213877442111(SLinkOperations.getTarget(_context.getNode(), "childrenBlock", true));
   }
 
   public static boolean ifMacro_Condition_1179324381907(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ChildrenBlock_Behavior.call_returnsArray_1179319917738(SLinkOperations.getTarget(_context.getNode(), "childrenBlock", true));
+    return ChildrenBlock_Behavior.call_returnsArray_1213877442101(SLinkOperations.getTarget(_context.getNode(), "childrenBlock", true));
   }
 
   public static boolean ifMacro_Condition_1179324381948(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ChildrenBlock_Behavior.call_returnsSequence_1179319962780(SLinkOperations.getTarget(_context.getNode(), "childrenBlock", true));
+    return ChildrenBlock_Behavior.call_returnsSequence_1213877442111(SLinkOperations.getTarget(_context.getNode(), "childrenBlock", true));
   }
 
   public static boolean ifMacro_Condition_1180089067786(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1000,19 +1000,19 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1172646749760(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(_context.getNode());
+    return TreePath_Behavior.call_getNodeType_1213877481303(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1172647340018(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(_context.getNode());
+    return TreePath_Behavior.call_getNodeType_1213877481303(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1172647352619(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(_context.getNode());
+    return TreePath_Behavior.call_getNodeType_1213877481303(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1172648172668(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(_context.getNode());
+    return TreePath_Behavior.call_getNodeType_1213877481303(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1172650748986(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1066,11 +1066,11 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1179315519284(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(_context.getNode());
+    return TreePath_Behavior.call_getNodeType_1213877481303(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1179315588342(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(_context.getNode());
+    return TreePath_Behavior.call_getNodeType_1213877481303(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1179315905821(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1110,35 +1110,35 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1179320575763(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(_context.getNode());
+    return TreePath_Behavior.call_getNodeType_1213877481303(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1179320582842(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(_context.getNode());
+    return TreePath_Behavior.call_getNodeType_1213877481303(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1179324381860(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(_context.getNode());
+    return TreePath_Behavior.call_getNodeType_1213877481303(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1179324381867(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(_context.getNode());
+    return TreePath_Behavior.call_getNodeType_1213877481303(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1179324381892(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(_context.getNode());
+    return TreePath_Behavior.call_getNodeType_1213877481303(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1179324381900(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(_context.getNode());
+    return TreePath_Behavior.call_getNodeType_1213877481303(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1179324381933(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(_context.getNode());
+    return TreePath_Behavior.call_getNodeType_1213877481303(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1179324381941(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(_context.getNode());
+    return TreePath_Behavior.call_getNodeType_1213877481303(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1179324459190(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1174,31 +1174,31 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1179337232899(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "property", false), "jetbrains.mps.ypath.structure.TreePathAspect", false, false));
+    return TreePath_Behavior.call_getNodeType_1213877481303(SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "property", false), "jetbrains.mps.ypath.structure.TreePathAspect", false, false));
   }
 
   public static SNode sourceNodeQuery_1179395493888(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false));
+    return TreePath_Behavior.call_getNodeType_1213877481303(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false));
   }
 
   public static SNode sourceNodeQuery_1179397308450(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false));
+    return TreePath_Behavior.call_getNodeType_1213877481303(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false));
   }
 
   public static SNode sourceNodeQuery_1179397308456(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false));
+    return TreePath_Behavior.call_getNodeType_1213877481303(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false));
   }
 
   public static SNode sourceNodeQuery_1179397532467(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false));
+    return TreePath_Behavior.call_getNodeType_1213877481303(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false));
   }
 
   public static SNode sourceNodeQuery_1179397532473(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false));
+    return TreePath_Behavior.call_getNodeType_1213877481303(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false));
   }
 
   public static SNode sourceNodeQuery_1179397960216(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false));
+    return TreePath_Behavior.call_getNodeType_1213877481303(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false));
   }
 
   public static SNode sourceNodeQuery_1179398698394(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

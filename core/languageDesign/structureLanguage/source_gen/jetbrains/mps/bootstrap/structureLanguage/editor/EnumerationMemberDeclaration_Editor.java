@@ -11,7 +11,7 @@ import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
 import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.bootstrap.structureLanguage.constraints.EnumerationDataTypeDeclaration_Behavior;
+import jetbrains.mps.bootstrap.structureLanguage.behavior.EnumerationDataTypeDeclaration_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
@@ -108,7 +108,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static boolean renderingCondition15113_0(SNode node, EditorContext editorContext, IScope scope) {
-    return node == EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1197509213196(SNodeOperations.getParent(node, null, false, false));
+    return node == EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1213877397785(SNodeOperations.getParent(node, null, false, false));
   }
 
   public static boolean renderingCondition15113_01(SNode node, EditorContext editorContext, IScope scope) {

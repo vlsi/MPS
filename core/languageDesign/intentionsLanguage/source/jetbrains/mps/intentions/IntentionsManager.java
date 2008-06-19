@@ -1,6 +1,6 @@
 package jetbrains.mps.intentions;
 
-import jetbrains.mps.bootstrap.intentionsLanguage.constraints.IntentionDeclaration_Behavior;
+import jetbrains.mps.bootstrap.intentionsLanguage.behavior.IntentionDeclaration_Behavior;
 import jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -177,8 +177,8 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       if (intentionsModelDescriptor != null) {
         SModel smodel = intentionsModelDescriptor.getSModel();
         for (IntentionDeclaration intentionDeclaration : smodel.getRootsAdapters(IntentionDeclaration.class)) {
-          String className = smodel.getUID().getLongName() + "." + IntentionDeclaration_Behavior.call_getGeneratedName_1193141280918(intentionDeclaration.getNode());
-          String conceptName = IntentionDeclaration_Behavior.call_getConceptName_1193142194523(intentionDeclaration.getNode());
+          String className = smodel.getUID().getLongName() + "." + IntentionDeclaration_Behavior.call_getGeneratedName_1213877237628(intentionDeclaration.getNode());
+          String conceptName = IntentionDeclaration_Behavior.call_getConceptName_1213877237638(intentionDeclaration.getNode());
           try {
             Class<?> cls = l.getClass(className);
 

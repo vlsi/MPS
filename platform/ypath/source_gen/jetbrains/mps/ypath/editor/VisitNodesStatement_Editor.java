@@ -14,37 +14,36 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class VisitNodesStatement_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_VisitBlockCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1180024976538");
+  private static void setupBasic_visitBlockRefNodeCell1766_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_VisitBlockCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_visitBlockRefNodeCell1766_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createVisitBlockCell(context, node);
+    return this.create_visitBlockRefNodeCell1766_0(context, node);
   }
 
-  public EditorCell createVisitBlockCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_visitBlockRefNodeCell1766_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    VisitNodesStatement_Editor.setupBasic_VisitBlockCell(editorCell, node, context);
+    setupBasic_visitBlockRefNodeCell1766_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      VisitNodesStatement_Editor.setupLabel_VisitBlockCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_visitBlockRefNodeCell1766_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createVisitBlockCell(EditorContext context, SNode node) {
+  public EditorCell create_visitBlockRefNodeCell1766_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("visitBlock");
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createVisitBlockCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_visitBlockRefNodeCell1766_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

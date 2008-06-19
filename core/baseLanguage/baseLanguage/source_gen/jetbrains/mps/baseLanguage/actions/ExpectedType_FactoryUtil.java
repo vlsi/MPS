@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.actions;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.constraints.TypeDerivable_Behavior;
+import jetbrains.mps.baseLanguage.behavior.TypeDerivable_Behavior;
 import jetbrains.mps.patterns.util.MatchingUtil;
 
 public class ExpectedType_FactoryUtil {
@@ -16,7 +16,7 @@ public class ExpectedType_FactoryUtil {
   public static SNode createExpectedType(SNode contextNode) {
     SNode castType = null;
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(contextNode, null, false, false), "jetbrains.mps.baseLanguage.structure.TypeDerivable")) {
-      castType = TypeDerivable_Behavior.call_deriveType_1201184092299(SNodeOperations.getParent(contextNode, null, false, false), contextNode);
+      castType = TypeDerivable_Behavior.call_deriveType_1213877435747(SNodeOperations.getParent(contextNode, null, false, false), contextNode);
     }
     return castType;
   }

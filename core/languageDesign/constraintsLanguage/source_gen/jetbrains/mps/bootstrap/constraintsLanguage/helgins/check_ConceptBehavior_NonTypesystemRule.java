@@ -5,7 +5,7 @@ package jetbrains.mps.bootstrap.constraintsLanguage.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.bootstrap.structureLanguage.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
@@ -22,7 +22,7 @@ public class check_ConceptBehavior_NonTypesystemRule implements NonTypesystemRul
   }
 
   public void applyRule(final SNode nodeToCheck) {
-    List<SNode> methodDeclarations = AbstractConceptDeclaration_Behavior.call_getNotImplementedConceptMethods_1198232898469(SLinkOperations.getTarget(nodeToCheck, "concept", false), GlobalScope.getInstance());
+    List<SNode> methodDeclarations = AbstractConceptDeclaration_Behavior.call_getNotImplementedConceptMethods_1213877394339(SLinkOperations.getTarget(nodeToCheck, "concept", false), GlobalScope.getInstance());
     if (SConceptPropertyOperations.getBoolean(SLinkOperations.getTarget(nodeToCheck, "concept", false), "abstract")) {
       return;
     }

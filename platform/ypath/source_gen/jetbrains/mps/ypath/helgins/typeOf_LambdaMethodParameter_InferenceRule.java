@@ -14,7 +14,7 @@ public class typeOf_LambdaMethodParameter_InferenceRule implements InferenceRule
   }
 
   public void applyRule(final SNode parameter) {
-    final SNode T_typevar_1178551166899 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    final SNode T_typevar_1178551166899 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
     TypeChecker.getInstance().getRuntimeSupport().createEquation(new QuotationClass_2().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1178551166899)), TypeChecker.getInstance().getRuntimeSupport().typeOf(SNodeOperations.getParent(SNodeOperations.getParent(parameter, null, false, false), null, false, false), "jetbrains.mps.ypath.helgins", "1179327748294", true), SNodeOperations.getParent(SNodeOperations.getParent(parameter, null, false, false), null, false, false), null, "jetbrains.mps.ypath.helgins", "1179327739073");
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter, "jetbrains.mps.ypath.helgins", "1179326834794", true), TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1178551166899), parameter, null, "jetbrains.mps.ypath.helgins", "1179326842470");
   }

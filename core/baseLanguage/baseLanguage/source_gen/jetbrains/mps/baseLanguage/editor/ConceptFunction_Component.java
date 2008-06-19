@@ -18,8 +18,8 @@ import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import java.util.List;
-import jetbrains.mps.baseLanguage.constraints.ConceptFunction_Behavior;
-import jetbrains.mps.core.constraints.BaseConcept_Behavior;
+import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
+import jetbrains.mps.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -180,7 +180,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
           result.append(SConceptPropertyOperations.getString(node, "conceptFunctionName"));
         }
         result.append("(");
-        List<SNode> parameters = ConceptFunction_Behavior.call_getParameters_1197312191473(node);
+        List<SNode> parameters = ConceptFunction_Behavior.call_getParameters_1213877374450(node);
         boolean isFirst = true;
         for(SNode cfp : parameters) {
           if (!(isFirst)) {
@@ -190,12 +190,12 @@ public class ConceptFunction_Component extends AbstractCellProvider {
           result.append(SConceptPropertyOperations.getString(cfp, "alias"));
         }
         result.append(")->");
-        SNode expectedReturnType = (SNode)ConceptFunction_Behavior.call_getExpectedReturnType_1178571276073(node);
+        SNode expectedReturnType = (SNode)ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(node);
         if (expectedReturnType == null) {
           result.append("void");
         } else
         {
-          result.append(BaseConcept_Behavior.call_getPresentation_1180102203531(expectedReturnType));
+          result.append(BaseConcept_Behavior.call_getPresentation_1213877396640(expectedReturnType));
         }
         return result.toString();
       }

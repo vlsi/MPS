@@ -36,14 +36,14 @@ import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.ypath.structure.FragmentTypeEnum;
 import jetbrains.mps.smodel.action.RTActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
-import jetbrains.mps.ypath.constraints.ITreePathExpression_Behavior;
+import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.ypath.constraints.IFeature_Behavior;
+import jetbrains.mps.ypath.behavior.IFeature_Behavior;
 import jetbrains.mps.util.Triplet;
 import jetbrains.mps.ypath.runtime.TraversalAxis;
-import jetbrains.mps.ypath.constraints.TreePath_Behavior;
-import jetbrains.mps.ypath.constraints.IParamFeature_Behavior;
+import jetbrains.mps.ypath.behavior.TreePath_Behavior;
+import jetbrains.mps.ypath.behavior.IParamFeature_Behavior;
 import jetbrains.mps.util.Quadruplet;
 import jetbrains.mps.smodel.action.RemoveSubstituteActionByConditionContext;
 import java.util.Iterator;
@@ -566,7 +566,7 @@ public class QueriesGenerated {
 
         public Object calculate() {
           SNode tpoe = SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression", true, false);
-          return ListSequence.fromList(SNodeOperations.getDescendants(ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe), null, false)).where(new IWhereFilter <SNode>() {
+          return ListSequence.fromList(SNodeOperations.getDescendants(ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe), null, false)).where(new IWhereFilter <SNode>() {
 
             public boolean accept(SNode it) {
               return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.TreeNodeKindProperty");
@@ -709,7 +709,7 @@ public class QueriesGenerated {
           public SNode doSubstitute(String pattern) {
             SNode fe = (SNode)(item).o1;
             Boolean mu = (Boolean)(item).o2;
-            IFeature_Behavior.call_setOpposite_1197913839765(_context.getSourceNode(), fe, mu);
+            IFeature_Behavior.call_setOpposite_1213877499629(_context.getSourceNode(), fe, mu);
             return _context.getSourceNode();
           }
 
@@ -756,13 +756,13 @@ public class QueriesGenerated {
           SNode nodeType = SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), "nodeType", true);
           for(TraversalAxis axis : TraversalAxis.getConstants()) {
             ListSequence.fromList(res).addElement(new Triplet(axis, null, null));
-            for(SNode feat : TreePath_Behavior.call_getFeature_1184591220431(ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe), nodeType)) {
+            for(SNode feat : TreePath_Behavior.call_getFeature_1213877481312(ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe), nodeType)) {
               if (TraversalAxisUtil.isAcceptableFeatureForAxis(feat, axis)) {
                 if (SPropertyOperations.getBoolean(feat, "default")) {
                   ListSequence.fromList(res).addElement(new Triplet(axis, feat, null));
                 } else
                 if (SNodeOperations.isInstanceOf(feat, "jetbrains.mps.ypath.structure.IParamFeature")) {
-                  for(SNode pw : IParamFeature_Behavior.call_getParameterObjects_1197461148674(feat, nodeType)) {
+                  for(SNode pw : IParamFeature_Behavior.call_getParameterObjects_1213877340242(feat, nodeType)) {
                     ListSequence.fromList(res).addElement(new Triplet(axis, feat, pw));
                   }
                 } else
@@ -881,7 +881,7 @@ public class QueriesGenerated {
 
         public Object calculate() {
           SNode tpoe = SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression", true, false);
-          return ListSequence.fromList(SNodeOperations.getDescendants(ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe), null, false)).where(new IWhereFilter <SNode>() {
+          return ListSequence.fromList(SNodeOperations.getDescendants(ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe), null, false)).where(new IWhereFilter <SNode>() {
 
             public boolean accept(SNode it) {
               return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.TreeNodeKind");
@@ -925,7 +925,7 @@ public class QueriesGenerated {
 
         public Object calculate() {
           SNode tpoe = SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression", true, false);
-          return ListSequence.fromList(SNodeOperations.getDescendants(ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe), null, false)).where(new IWhereFilter <SNode>() {
+          return ListSequence.fromList(SNodeOperations.getDescendants(ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe), null, false)).where(new IWhereFilter <SNode>() {
 
             public boolean accept(SNode it) {
               return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.TreeNodeKindProperty") && SPropertyOperations.getBoolean(it, "default");
@@ -1025,13 +1025,13 @@ public class QueriesGenerated {
           for(SNode aspect : TreePathAspectUtil.getTreePathAspects(_context.getSourceNode(), operationContext.getScope())) {
             for(TraversalAxis axis : TraversalAxis.getConstants()) {
               ListSequence.fromList(res).addElement(new Quadruplet(aspect, axis, null, null));
-              for(SNode feat : TreePath_Behavior.call_getFeature_1184591220431(aspect, nodeType)) {
+              for(SNode feat : TreePath_Behavior.call_getFeature_1213877481312(aspect, nodeType)) {
                 if (TraversalAxisUtil.isAcceptableFeatureForAxis(feat, axis)) {
                   if (SPropertyOperations.getBoolean(feat, "default")) {
                     ListSequence.fromList(res).addElement(new Quadruplet(aspect, axis, feat, null));
                   } else
                   if (SNodeOperations.isInstanceOf(feat, "jetbrains.mps.ypath.structure.IParamFeature")) {
-                    for(SNode pw : IParamFeature_Behavior.call_getParameterObjects_1197461148674(feat, nodeType)) {
+                    for(SNode pw : IParamFeature_Behavior.call_getParameterObjects_1213877340242(feat, nodeType)) {
                       ListSequence.fromList(res).addElement(new Quadruplet(aspect, axis, feat, pw));
                     }
                   } else

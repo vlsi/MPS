@@ -1,6 +1,6 @@
 package jetbrains.mps.ide.findusages;
 
-import jetbrains.mps.bootstrap.findUsagesLanguage.constraints.FinderDeclaration_Behavior;
+import jetbrains.mps.bootstrap.findUsagesLanguage.behavior.FinderDeclaration_Behavior;
 import jetbrains.mps.bootstrap.findUsagesLanguage.structure.FinderDeclaration;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
@@ -101,8 +101,8 @@ public class FindersManager implements ApplicationComponent {
       if (findUsagesModelDescriptor != null) {
         SModel smodel = findUsagesModelDescriptor.getSModel();
         for (FinderDeclaration finderDeclaration : smodel.getRootsAdapters(FinderDeclaration.class)) {
-          String className = smodel.getUID().getLongName() + "." + FinderDeclaration_Behavior.call_getGeneratedClassName_1197390200701(finderDeclaration.getNode());
-          String conceptName = FinderDeclaration_Behavior.call_getConceptName_1197390200711(finderDeclaration.getNode());
+          String className = smodel.getUID().getLongName() + "." + FinderDeclaration_Behavior.call_getGeneratedClassName_1213877240101(finderDeclaration.getNode());
+          String conceptName = FinderDeclaration_Behavior.call_getConceptName_1213877240111(finderDeclaration.getNode());
           try {
             Class<?> cls = l.getClass(className);
 

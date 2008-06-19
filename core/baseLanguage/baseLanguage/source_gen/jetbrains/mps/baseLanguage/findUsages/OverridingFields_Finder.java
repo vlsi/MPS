@@ -12,7 +12,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.constraints.Type_Behavior;
+import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import org.jetbrains.annotations.Nullable;
 
@@ -55,7 +55,7 @@ public class OverridingFields_Finder extends GeneratedFinder {
         fieldsOfSameKind = SLinkOperations.getTargets(classNode, "staticField", true);
       }
       for(SNode field : fieldsOfSameKind) {
-        if (SPropertyOperations.getString(field, "name").equals(SPropertyOperations.getString(node, "name")) && Type_Behavior.call_getErasureSignature_1199318924019(SLinkOperations.getTarget(field, "type", true)).equals(Type_Behavior.call_getErasureSignature_1199318924019(SLinkOperations.getTarget(node, "type", true)))) {
+        if (SPropertyOperations.getString(field, "name").equals(SPropertyOperations.getString(node, "name")) && Type_Behavior.call_getErasureSignature_1213877337313(SLinkOperations.getTarget(field, "type", true)).equals(Type_Behavior.call_getErasureSignature_1213877337313(SLinkOperations.getTarget(node, "type", true)))) {
           ListOperations.addElement(_results, field);
         }
       }

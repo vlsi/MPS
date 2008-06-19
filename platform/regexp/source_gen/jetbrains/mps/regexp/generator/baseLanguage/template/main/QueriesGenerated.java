@@ -18,7 +18,7 @@ import jetbrains.mps.regexp.structure.MatchParensRegexp;
 import java.util.ArrayList;
 import jetbrains.mps.regexp.RegexpProcessor;
 import jetbrains.mps.regexp.structure.Regexp;
-import jetbrains.mps.regexp.constraints.Regexp_Behavior;
+import jetbrains.mps.regexp.behavior.Regexp_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import java.util.regex.Pattern;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -115,7 +115,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1194610282338(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Regexp_Behavior.call_toString_1177760132955(SLinkOperations.getTarget(_context.getNode(), "regexp", true));
+    return Regexp_Behavior.call_toString_1213877429451(SLinkOperations.getTarget(_context.getNode(), "regexp", true));
   }
 
   public static Object propertyMacro_GetPropertyValue_1194610282348(final IOperationContext operationContext, final PropertyMacroContext _context) {

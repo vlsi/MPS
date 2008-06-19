@@ -23,7 +23,7 @@ import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.util.Calculable;
-import jetbrains.mps.bootstrap.editorLanguage.constraints.BaseEditorComponent_Behavior;
+import jetbrains.mps.bootstrap.editorLanguage.behavior.BaseEditorComponent_Behavior;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.bootstrap.editorLanguage.structure.CellActionId;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
@@ -446,7 +446,7 @@ public class QueriesGenerated {
 
           public Object calculate() {
             SNode container = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.BaseEditorComponent", true, false);
-            return BaseEditorComponent_Behavior.call_getApplicableComponents_1199449552893(container, operationContext.getScope());
+            return BaseEditorComponent_Behavior.call_getApplicableComponents_1213877372457(container, operationContext.getScope());
           }
 
         };

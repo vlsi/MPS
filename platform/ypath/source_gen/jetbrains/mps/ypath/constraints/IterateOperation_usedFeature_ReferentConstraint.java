@@ -12,6 +12,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.ypath.behavior.TreePath_Behavior;
+import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 
@@ -40,7 +42,7 @@ public class IterateOperation_usedFeature_ReferentConstraint implements IModelCo
     {
       tpoe = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
     }
-    return new SimpleSearchScope(Sequence.fromIterable(TreePath_Behavior.call_getFeature_1184591220431(ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe), SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(tpoe), "nodeType", true))).toListSequence());
+    return new SimpleSearchScope(Sequence.fromIterable(TreePath_Behavior.call_getFeature_1213877481312(ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe), SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(tpoe), "nodeType", true))).toListSequence());
   }
 
   public String getNodeReferentSearchScopeDescription() {

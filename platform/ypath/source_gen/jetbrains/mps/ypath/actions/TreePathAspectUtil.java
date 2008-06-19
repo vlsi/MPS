@@ -16,7 +16,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOper
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.ypath.constraints.TreePath_Behavior;
+import jetbrains.mps.ypath.behavior.TreePath_Behavior;
 
 public class TreePathAspectUtil {
 
@@ -33,7 +33,7 @@ public class TreePathAspectUtil {
       ListSequence.fromList(treePathAspects).addSequence(Sequence.fromIterable(instances).where(new IWhereFilter <SNode>() {
 
         public boolean accept(SNode it) {
-          SNode type = TreePath_Behavior.call_getNodeType_1179306333014(it);
+          SNode type = TreePath_Behavior.call_getNodeType_1213877481303(it);
           boolean result = false;
           if ((type != null)) {
             result = TypeChecker.getInstance().getSubtypingManager().isSubtype(expType.value, type, false, false);

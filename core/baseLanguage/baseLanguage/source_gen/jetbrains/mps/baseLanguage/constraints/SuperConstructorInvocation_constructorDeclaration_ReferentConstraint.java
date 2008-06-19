@@ -35,7 +35,7 @@ public class SuperConstructorInvocation_constructorDeclaration_ReferentConstrain
     SNode thisConcept = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
     SNode superClass = SLinkOperations.getTarget(SLinkOperations.getTarget(thisConcept, "superclass", true), "classifier", false);
     if (superClass == null) {
-      superClass = SLinkOperations.getTarget(new QuotationClass_19().createNode(), "classifier", false);
+      superClass = SLinkOperations.getTarget(new QuotationClass_().createNode(), "classifier", false);
     }
     return new SimpleSearchScope(SLinkOperations.getTargets(superClass, "constructor", true));
   }

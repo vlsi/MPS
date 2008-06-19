@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.classifiers.constraints.ThisClassifierExpresson_Behavior;
+import jetbrains.mps.baseLanguage.classifiers.behavior.ThisClassifierExpresson_Behavior;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
@@ -14,7 +14,7 @@ import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.uiLanguage.constraints.DialogUtil;
 import jetbrains.mps.generator.template.IfMacroContext;
-import jetbrains.mps.uiLanguage.constraints.ComponentDeclaration_Behavior;
+import jetbrains.mps.uiLanguage.behavior.ComponentDeclaration_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -41,7 +41,7 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1203599879180(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     // todo find a better way to express this
-    return ThisClassifierExpresson_Behavior.call_getClassifier_1205753961441(_context.getNode()) == null;
+    return ThisClassifierExpresson_Behavior.call_getClassifier_1213877512819(_context.getNode()) == null;
   }
 
   public static Object propertyMacro_GetPropertyValue_1203593674593(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -100,7 +100,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1203596134290(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ComponentDeclaration_Behavior.call_getConstructor_1203080456035(_context.getNode()) != null;
+    return ComponentDeclaration_Behavior.call_getConstructor_1213877495346(_context.getNode()) != null;
   }
 
   public static boolean ifMacro_Condition_1203596721114(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -112,7 +112,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1203596175049(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(ComponentDeclaration_Behavior.call_getConstructor_1203080456035(_context.getNode()), "body", true);
+    return SLinkOperations.getTarget(ComponentDeclaration_Behavior.call_getConstructor_1213877495346(_context.getNode()), "body", true);
   }
 
   public static SNode sourceNodeQuery_1203596713463(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -132,11 +132,11 @@ public class QueriesGenerated {
   }
 
   public static List sourceNodesQuery_1203593881811(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ComponentDeclaration_Behavior.call_getDeclaredMethods_1202749020955(_context.getNode());
+    return ComponentDeclaration_Behavior.call_getDeclaredMethods_1213877495451(_context.getNode());
   }
 
   public static List sourceNodesQuery_1203593896904(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ComponentDeclaration_Behavior.call_getDeclaredAttributes_1202465971016(_context.getNode());
+    return ComponentDeclaration_Behavior.call_getDeclaredAttributes_1213877495390(_context.getNode());
   }
 
   public static List sourceNodesQuery_1203596481953(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -144,11 +144,11 @@ public class QueriesGenerated {
   }
 
   public static List sourceNodesQuery_1203600911916(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ComponentDeclaration_Behavior.call_getDeclaredAttributes_1202465971016(_context.getNode());
+    return ComponentDeclaration_Behavior.call_getDeclaredAttributes_1213877495390(_context.getNode());
   }
 
   public static List sourceNodesQuery_1203600943591(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ComponentDeclaration_Behavior.call_getDeclaredAttributes_1202465971016(_context.getNode());
+    return ComponentDeclaration_Behavior.call_getDeclaredAttributes_1213877495390(_context.getNode());
   }
 
   public static void mappingScript_CodeBlock_1203594547726(final IOperationContext operationContext, final MappingScriptContext _context) {

@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
-import webr.xmlSchema.constraints.ElementDeclaration_Behavior;
+import webr.xmlSchema.behavior.ElementDeclaration_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
 public class Attribute_attributeDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
@@ -39,7 +39,7 @@ public class Attribute_attributeDeclaration_ReferentConstraint implements IModel
       searchScope = SModelSearchUtil.createModelAndImportedModelsScope(_context.getModel(), operationContext.getScope());
     } else
     {
-      searchScope = new SimpleSearchScope(ElementDeclaration_Behavior.call_getAttributeDeclarations_1183587644932(SLinkOperations.getTarget(element, "elementDeclaration", false)));
+      searchScope = new SimpleSearchScope(ElementDeclaration_Behavior.call_getAttributeDeclarations_1213877429821(SLinkOperations.getTarget(element, "elementDeclaration", false)));
     }
     return searchScope;
   }

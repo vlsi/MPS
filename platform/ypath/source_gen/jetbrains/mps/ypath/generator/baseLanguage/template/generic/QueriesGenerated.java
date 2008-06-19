@@ -9,10 +9,10 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.ypath.constraints.TreePathOperationExpression_Behavior;
-import jetbrains.mps.ypath.constraints.TreePathAdapterExpression_Behavior;
-import jetbrains.mps.ypath.constraints.IRange_Behavior;
-import jetbrains.mps.ypath.constraints.IGenericFeature_Behavior;
+import jetbrains.mps.ypath.behavior.TreePathOperationExpression_Behavior;
+import jetbrains.mps.ypath.behavior.TreePathAdapterExpression_Behavior;
+import jetbrains.mps.ypath.behavior.IRange_Behavior;
+import jetbrains.mps.ypath.behavior.IGenericFeature_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ypath.generator.baseLanguage.template.helper.AggregatorUtil;
@@ -22,12 +22,13 @@ import jetbrains.mps.ypath.actions.TraversalAxisUtil;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
-import jetbrains.mps.internal.collections.runtime.SelectComparator;
+import java.util.Comparator;
+import jetbrains.mps.internal.collections.runtime.CaseInsensitiveStringComparison;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.patterns.IMatchingPattern;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.ypath.generator.baseLanguage.template.helper.OperationsUtil;
-import jetbrains.mps.ypath.constraints.ITreePathExpression_Behavior;
+import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
 import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.ITranslator;
@@ -81,43 +82,43 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1196092584522(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.ypath.structure.IterateOperation") && TreePathOperationExpression_Behavior.call_isGeneric_1200062726487(_context.getNode());
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.ypath.structure.IterateOperation") && TreePathOperationExpression_Behavior.call_isGeneric_1213877409257(_context.getNode());
   }
 
   public static boolean baseMappingRule_Condition_1196100060391(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return TreePathAdapterExpression_Behavior.call_isGeneric_1200062663218(_context.getNode());
+    return TreePathAdapterExpression_Behavior.call_isGeneric_1213877411663(_context.getNode());
   }
 
   public static boolean baseMappingRule_Condition_1196598097973(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.IndexRange") && IRange_Behavior.call_isSelection_1194716132256(SLinkOperations.getTarget(_context.getNode(), "range", true)) && IGenericFeature_Behavior.call_hasModifyStatement_1196599220969(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true));
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.IndexRange") && IRange_Behavior.call_isSelection_1213877238169(SLinkOperations.getTarget(_context.getNode(), "range", true)) && IGenericFeature_Behavior.call_hasModifyStatement_1213877249198(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true));
   }
 
   public static boolean baseMappingRule_Condition_1196599064098(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression") && IRange_Behavior.call_isAll_1196442108666(SLinkOperations.getTarget(_context.getNode(), "range", true)) && IGenericFeature_Behavior.call_hasModifyStatement_1196599220969(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true));
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression") && IRange_Behavior.call_isAll_1213877238199(SLinkOperations.getTarget(_context.getNode(), "range", true)) && IGenericFeature_Behavior.call_hasModifyStatement_1213877249198(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true));
   }
 
   public static boolean baseMappingRule_Condition_1196600366364(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.ElementRange") && IRange_Behavior.call_isSelection_1194716132256(SLinkOperations.getTarget(_context.getNode(), "range", true)) && IGenericFeature_Behavior.call_hasModifyStatement_1196599220969(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true));
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.ElementRange") && IRange_Behavior.call_isSelection_1213877238169(SLinkOperations.getTarget(_context.getNode(), "range", true)) && IGenericFeature_Behavior.call_hasModifyStatement_1213877249198(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true));
   }
 
   public static boolean baseMappingRule_Condition_1196615259322(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression")) && IRange_Behavior.call_isAll_1196442108666(SLinkOperations.getTarget(_context.getNode(), "range", true)) && IGenericFeature_Behavior.call_hasModifyStatement_1196599220969(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true));
+    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression")) && IRange_Behavior.call_isAll_1213877238199(SLinkOperations.getTarget(_context.getNode(), "range", true)) && IGenericFeature_Behavior.call_hasModifyStatement_1213877249198(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true));
   }
 
   public static boolean baseMappingRule_Condition_1196615277190(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.IndexRange") && IRange_Behavior.call_isSelection_1194716132256(SLinkOperations.getTarget(_context.getNode(), "range", true)) && IGenericFeature_Behavior.call_hasModifyStatement_1196599220969(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true));
+    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.IndexRange") && IRange_Behavior.call_isSelection_1213877238169(SLinkOperations.getTarget(_context.getNode(), "range", true)) && IGenericFeature_Behavior.call_hasModifyStatement_1213877249198(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true));
   }
 
   public static boolean baseMappingRule_Condition_1196615333614(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.ElementRange") && IRange_Behavior.call_isSelection_1194716132256(SLinkOperations.getTarget(_context.getNode(), "range", true)) && IGenericFeature_Behavior.call_hasModifyStatement_1196599220969(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true));
+    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.ElementRange") && IRange_Behavior.call_isSelection_1213877238169(SLinkOperations.getTarget(_context.getNode(), "range", true)) && IGenericFeature_Behavior.call_hasModifyStatement_1213877249198(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true));
   }
 
   public static boolean baseMappingRule_Condition_1196619372541(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.IndexRange") && IRange_Behavior.call_isInsertionPoint_1194716377388(SLinkOperations.getTarget(_context.getNode(), "range", true)) && IGenericFeature_Behavior.call_hasModifyStatement_1196599220969(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true));
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.IndexRange") && IRange_Behavior.call_isInsertionPoint_1213877238219(SLinkOperations.getTarget(_context.getNode(), "range", true)) && IGenericFeature_Behavior.call_hasModifyStatement_1213877249198(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true));
   }
 
   public static boolean baseMappingRule_Condition_1196621431671(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.ElementRange") && IRange_Behavior.call_isInsertionPoint_1194716377388(SLinkOperations.getTarget(_context.getNode(), "range", true)) && IGenericFeature_Behavior.call_hasModifyStatement_1196599220969(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true));
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.ElementRange") && IRange_Behavior.call_isInsertionPoint_1213877238219(SLinkOperations.getTarget(_context.getNode(), "range", true)) && IGenericFeature_Behavior.call_hasModifyStatement_1213877249198(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true));
   }
 
   public static boolean baseMappingRule_Condition_1196714937715(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -144,128 +145,128 @@ public class QueriesGenerated {
     if (!(AggregatorUtil.accept(_context.getNode(), "aggregate_byIndex", 50, _context.getGenerator()))) {
       return false;
     }
-    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.ElementRange") && (IRange_Behavior.call_isSelection_1194716132256(SLinkOperations.getTarget(_context.getNode(), "range", true)) || IRange_Behavior.call_isSingle_1194716995764(SLinkOperations.getTarget(_context.getNode(), "range", true)));
+    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.ElementRange") && (IRange_Behavior.call_isSelection_1213877238169(SLinkOperations.getTarget(_context.getNode(), "range", true)) || IRange_Behavior.call_isSingle_1213877238256(SLinkOperations.getTarget(_context.getNode(), "range", true)));
   }
 
   public static boolean baseMappingRule_Condition_1197288625940(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     if (!(AggregatorUtil.accept(_context.getNode(), "aggregate_byIndex", 50, _context.getGenerator()))) {
       return false;
     }
-    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.ElementRange") && IRange_Behavior.call_isAll_1196442108666(SLinkOperations.getTarget(_context.getNode(), "range", true));
+    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.ElementRange") && IRange_Behavior.call_isAll_1213877238199(SLinkOperations.getTarget(_context.getNode(), "range", true));
   }
 
   public static boolean baseMappingRule_Condition_1197288626007(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     if (!(AggregatorUtil.accept(_context.getNode(), "aggregate_byIndex", 50, _context.getGenerator()))) {
       return false;
     }
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.ElementRange") && (IRange_Behavior.call_isSelection_1194716132256(SLinkOperations.getTarget(_context.getNode(), "range", true)) || IRange_Behavior.call_isSingle_1194716995764(SLinkOperations.getTarget(_context.getNode(), "range", true)));
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.ElementRange") && (IRange_Behavior.call_isSelection_1213877238169(SLinkOperations.getTarget(_context.getNode(), "range", true)) || IRange_Behavior.call_isSingle_1213877238256(SLinkOperations.getTarget(_context.getNode(), "range", true)));
   }
 
   public static boolean baseMappingRule_Condition_1197288626337(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     if (!(AggregatorUtil.accept(_context.getNode(), "aggregate_byIndex", 50, _context.getGenerator()))) {
       return false;
     }
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.ElementRange") && IRange_Behavior.call_isAll_1196442108666(SLinkOperations.getTarget(_context.getNode(), "range", true));
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.ElementRange") && IRange_Behavior.call_isAll_1213877238199(SLinkOperations.getTarget(_context.getNode(), "range", true));
   }
 
   public static boolean baseMappingRule_Condition_1197288626403(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     if (!(AggregatorUtil.accept(_context.getNode(), "aggregate_byIndex", 50, _context.getGenerator()))) {
       return false;
     }
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.ElementRange") && IRange_Behavior.call_isInsertionPoint_1194716377388(SLinkOperations.getTarget(_context.getNode(), "range", true)) && SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "range", true), "includes_start");
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.ElementRange") && IRange_Behavior.call_isInsertionPoint_1213877238219(SLinkOperations.getTarget(_context.getNode(), "range", true)) && SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "range", true), "includes_start");
   }
 
   public static boolean baseMappingRule_Condition_1197288626468(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     if (!(AggregatorUtil.accept(_context.getNode(), "aggregate_byIndex", 50, _context.getGenerator()))) {
       return false;
     }
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.ElementRange") && IRange_Behavior.call_isInsertionPoint_1194716377388(SLinkOperations.getTarget(_context.getNode(), "range", true)) && SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "range", true), "includes_end");
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.ElementRange") && IRange_Behavior.call_isInsertionPoint_1213877238219(SLinkOperations.getTarget(_context.getNode(), "range", true)) && SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "range", true), "includes_end");
   }
 
   public static boolean baseMappingRule_Condition_1197288626533(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     if (!(AggregatorUtil.accept(_context.getNode(), "aggregate_byIndex", 50, _context.getGenerator()))) {
       return false;
     }
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.ElementRange") && IRange_Behavior.call_isInsertionPoint_1194716377388(SLinkOperations.getTarget(_context.getNode(), "range", true)) && (SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "range", true), "has_start") || SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "range", true), "has_end"));
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.ElementRange") && IRange_Behavior.call_isInsertionPoint_1213877238219(SLinkOperations.getTarget(_context.getNode(), "range", true)) && (SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "range", true), "has_start") || SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "range", true), "has_end"));
   }
 
   public static boolean baseMappingRule_Condition_1197299882426(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     if (!(AggregatorUtil.accept(_context.getNode(), "aggregate_replaceDemux", 30, _context.getGenerator()))) {
       return false;
     }
-    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.ElementRange") && (IRange_Behavior.call_isSelection_1194716132256(SLinkOperations.getTarget(_context.getNode(), "range", true)) || IRange_Behavior.call_isSingle_1194716995764(SLinkOperations.getTarget(_context.getNode(), "range", true)));
+    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.ElementRange") && (IRange_Behavior.call_isSelection_1213877238169(SLinkOperations.getTarget(_context.getNode(), "range", true)) || IRange_Behavior.call_isSingle_1213877238256(SLinkOperations.getTarget(_context.getNode(), "range", true)));
   }
 
   public static boolean baseMappingRule_Condition_1197299882617(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     if (!(AggregatorUtil.accept(_context.getNode(), "aggregate_replaceDemux", 30, _context.getGenerator()))) {
       return false;
     }
-    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.IndexRange") && (IRange_Behavior.call_isSelection_1194716132256(SLinkOperations.getTarget(_context.getNode(), "range", true)) || IRange_Behavior.call_isSingle_1194716995764(SLinkOperations.getTarget(_context.getNode(), "range", true)));
+    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.IndexRange") && (IRange_Behavior.call_isSelection_1213877238169(SLinkOperations.getTarget(_context.getNode(), "range", true)) || IRange_Behavior.call_isSingle_1213877238256(SLinkOperations.getTarget(_context.getNode(), "range", true)));
   }
 
   public static boolean baseMappingRule_Condition_1197299882809(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     if (!(AggregatorUtil.accept(_context.getNode(), "aggregate_replaceDemux", 30, _context.getGenerator()))) {
       return false;
     }
-    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.IndexRange") && IRange_Behavior.call_isAll_1196442108666(SLinkOperations.getTarget(_context.getNode(), "range", true));
+    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.IndexRange") && IRange_Behavior.call_isAll_1213877238199(SLinkOperations.getTarget(_context.getNode(), "range", true));
   }
 
   public static boolean baseMappingRule_Condition_1197299914314(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     if (!(AggregatorUtil.accept(_context.getNode(), "aggregate_insertBefore", 20, _context.getGenerator()))) {
       return false;
     }
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.IndexRange") && IRange_Behavior.call_isInsertionPoint_1194716377388(SLinkOperations.getTarget(_context.getNode(), "range", true)) && SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "range", true), "includes_start");
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.IndexRange") && IRange_Behavior.call_isInsertionPoint_1213877238219(SLinkOperations.getTarget(_context.getNode(), "range", true)) && SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "range", true), "includes_start");
   }
 
   public static boolean baseMappingRule_Condition_1197299914389(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     if (!(AggregatorUtil.accept(_context.getNode(), "aggregate_insertBefore", 20, _context.getGenerator()))) {
       return false;
     }
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.IndexRange") && IRange_Behavior.call_isInsertionPoint_1194716377388(SLinkOperations.getTarget(_context.getNode(), "range", true)) && SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "range", true), "includes_end");
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.IndexRange") && IRange_Behavior.call_isInsertionPoint_1213877238219(SLinkOperations.getTarget(_context.getNode(), "range", true)) && SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "range", true), "includes_end");
   }
 
   public static boolean baseMappingRule_Condition_1197299914520(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     if (!(AggregatorUtil.accept(_context.getNode(), "aggregate_insertBefore", 20, _context.getGenerator()))) {
       return false;
     }
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.IndexRange") && IRange_Behavior.call_isInsertionPoint_1194716377388(SLinkOperations.getTarget(_context.getNode(), "range", true)) && SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "range", true), "has_start");
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.IndexRange") && IRange_Behavior.call_isInsertionPoint_1213877238219(SLinkOperations.getTarget(_context.getNode(), "range", true)) && SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "range", true), "has_start");
   }
 
   public static boolean baseMappingRule_Condition_1197299931039(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     if (!(AggregatorUtil.accept(_context.getNode(), "aggregate_removeSingle", 10, _context.getGenerator()))) {
       return false;
     }
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.IndexRange") && IRange_Behavior.call_isLeftOpenSelection_1195414499574(SLinkOperations.getTarget(_context.getNode(), "range", true));
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.IndexRange") && IRange_Behavior.call_isLeftOpenSelection_1213877238312(SLinkOperations.getTarget(_context.getNode(), "range", true));
   }
 
   public static boolean baseMappingRule_Condition_1197299931156(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     if (!(AggregatorUtil.accept(_context.getNode(), "aggregate_removeSingle", 10, _context.getGenerator()))) {
       return false;
     }
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.IndexRange") && IRange_Behavior.call_isRightOpenSelection_1195414510642(SLinkOperations.getTarget(_context.getNode(), "range", true));
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.IndexRange") && IRange_Behavior.call_isRightOpenSelection_1213877238328(SLinkOperations.getTarget(_context.getNode(), "range", true));
   }
 
   public static boolean baseMappingRule_Condition_1197304288503(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     if (!(AggregatorUtil.accept(_context.getNode(), "aggregate_removeSingle", 10, _context.getGenerator()))) {
       return false;
     }
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.IndexRange") && IRange_Behavior.call_isAll_1196442108666(SLinkOperations.getTarget(_context.getNode(), "range", true));
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.IndexRange") && IRange_Behavior.call_isAll_1213877238199(SLinkOperations.getTarget(_context.getNode(), "range", true));
   }
 
   public static boolean baseMappingRule_Condition_1197305680563(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.ElementRange") && IRange_Behavior.call_isSingle_1194716995764(SLinkOperations.getTarget(_context.getNode(), "range", true)) && IGenericFeature_Behavior.call_hasModifyStatement_1196599220969(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true));
+    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.ElementRange") && IRange_Behavior.call_isSingle_1213877238256(SLinkOperations.getTarget(_context.getNode(), "range", true)) && IGenericFeature_Behavior.call_hasModifyStatement_1213877249198(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true));
   }
 
   public static boolean baseMappingRule_Condition_1197305766259(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.ElementRange") && IRange_Behavior.call_isSingle_1194716995764(SLinkOperations.getTarget(_context.getNode(), "range", true)) && IGenericFeature_Behavior.call_hasModifyStatement_1196599220969(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true));
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.ElementRange") && IRange_Behavior.call_isSingle_1213877238256(SLinkOperations.getTarget(_context.getNode(), "range", true)) && IGenericFeature_Behavior.call_hasModifyStatement_1213877249198(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true));
   }
 
   public static boolean baseMappingRule_Condition_1197305810026(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.IndexRange") && IRange_Behavior.call_isSingle_1194716995764(SLinkOperations.getTarget(_context.getNode(), "range", true)) && IGenericFeature_Behavior.call_hasModifyStatement_1196599220969(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true));
+    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.IndexRange") && IRange_Behavior.call_isSingle_1213877238256(SLinkOperations.getTarget(_context.getNode(), "range", true)) && IGenericFeature_Behavior.call_hasModifyStatement_1213877249198(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true));
   }
 
   public static boolean baseMappingRule_Condition_1197305842680(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.IndexRange") && IRange_Behavior.call_isSingle_1194716995764(SLinkOperations.getTarget(_context.getNode(), "range", true)) && IGenericFeature_Behavior.call_hasModifyStatement_1196599220969(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true));
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.ypath.structure.EmptySequenceExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "range", true), "jetbrains.mps.ypath.structure.IndexRange") && IRange_Behavior.call_isSingle_1213877238256(SLinkOperations.getTarget(_context.getNode(), "range", true)) && IGenericFeature_Behavior.call_hasModifyStatement_1213877249198(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true));
   }
 
   public static boolean baseMappingRule_Condition_1199729133010(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -310,7 +311,7 @@ public class QueriesGenerated {
     TraversalAxis axis = TraversalAxis.parseValue(SPropertyOperations.getString_def(_context.getNode(), "axis", "DESCENDANTS"));
     switch (axis) {
       case CHILDREN:
-        return (SLinkOperations.getTarget(_context.getNode(), "usedFeature", false) != null) && IGenericFeature_Behavior.call_isSingleCardinality_1191862685760(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "paramObject", true));
+        return (SLinkOperations.getTarget(_context.getNode(), "usedFeature", false) != null) && IGenericFeature_Behavior.call_isSingleCardinality_1213877249147(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "paramObject", true));
       default:
         return false;
     }
@@ -349,14 +350,14 @@ public class QueriesGenerated {
     TraversalAxis axis = TraversalAxis.parseValue(SPropertyOperations.getString_def(_context.getNode(), "axis", "DESCENDANTS"));
     switch (axis) {
       case CHILDREN:
-        return (SLinkOperations.getTarget(_context.getNode(), "usedFeature", false) == null) || !(IGenericFeature_Behavior.call_isSingleCardinality_1191862685760(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "paramObject", true)));
+        return (SLinkOperations.getTarget(_context.getNode(), "usedFeature", false) == null) || !(IGenericFeature_Behavior.call_isSingleCardinality_1213877249147(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "paramObject", true)));
       default:
         return false;
     }
   }
 
   public static boolean baseMappingRule_Condition_1200060681348(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.ypath.structure.IterateOperation") && TreePathOperationExpression_Behavior.call_isGeneric_1200062726487(_context.getNode());
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.ypath.structure.IterateOperation") && TreePathOperationExpression_Behavior.call_isGeneric_1213877409257(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1199806492720(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -484,19 +485,19 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1199879710014(final IOperationContext operationContext, final IfMacroContext _context) {
-    return IGenericFeature_Behavior.call_isSingleCardinality_1191862685760(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "paramObject", true));
+    return IGenericFeature_Behavior.call_isSingleCardinality_1213877249147(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "paramObject", true));
   }
 
   public static boolean ifMacro_Condition_1199880059582(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(IGenericFeature_Behavior.call_isSingleCardinality_1191862685760(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "paramObject", true)));
+    return !(IGenericFeature_Behavior.call_isSingleCardinality_1213877249147(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "paramObject", true)));
   }
 
   public static boolean ifMacro_Condition_1199881604907(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(IGenericFeature_Behavior.call_isSingleCardinality_1191862685760(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "paramObject", true)));
+    return !(IGenericFeature_Behavior.call_isSingleCardinality_1213877249147(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "paramObject", true)));
   }
 
   public static boolean ifMacro_Condition_1199881864289(final IOperationContext operationContext, final IfMacroContext _context) {
-    return IGenericFeature_Behavior.call_isSingleCardinality_1191862685760(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "paramObject", true));
+    return IGenericFeature_Behavior.call_isSingleCardinality_1213877249147(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "paramObject", true));
   }
 
   public static boolean ifMacro_Condition_1199882800816(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -509,11 +510,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1199998553589(final IOperationContext operationContext, final IfMacroContext _context) {
-    return IGenericFeature_Behavior.call_isSingleCardinality_1191862685760(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "paramObject", true));
+    return IGenericFeature_Behavior.call_isSingleCardinality_1213877249147(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "paramObject", true));
   }
 
   public static boolean ifMacro_Condition_1199998563164(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(IGenericFeature_Behavior.call_isSingleCardinality_1191862685760(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "paramObject", true)));
+    return !(IGenericFeature_Behavior.call_isSingleCardinality_1213877249147(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "paramObject", true)));
   }
 
   public static boolean ifMacro_Condition_1200060390903(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -546,11 +547,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1210075313871(final IOperationContext operationContext, final IfMacroContext _context) {
-    return IGenericFeature_Behavior.call_isSingleCardinality_1191862685760(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "paramObject", true));
+    return IGenericFeature_Behavior.call_isSingleCardinality_1213877249147(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "paramObject", true));
   }
 
   public static boolean ifMacro_Condition_1210076007212(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(IGenericFeature_Behavior.call_isSingleCardinality_1191862685760(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "paramObject", true)));
+    return !(IGenericFeature_Behavior.call_isSingleCardinality_1213877249147(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "paramObject", true)));
   }
 
   public static boolean ifMacro_Condition_1210077634627(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -638,22 +639,28 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1196716148727(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode cand = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "candidates", true)).sort(new SelectComparator<SNode>(new ISelector <SNode, Comparable<?>>() {
+    SNode cand = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "candidates", true)).sort(new Comparator <SNode>() {
 
-      public Comparable<?> select(SNode it) {
-        return SPropertyOperations.getInteger(it, "priority") * ((ListSequence.fromList(SNodeOperations.getDescendants(it, null, false)).where(new IWhereFilter <SNode>() {
+      public int compare(SNode a, SNode b) {
+        return CaseInsensitiveStringComparison.compare(a, b, new ISelector <SNode, Comparable<?>>() {
 
-          public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.NotAStatement");
+          public Comparable<?> select(SNode it) {
+            return SPropertyOperations.getInteger(it, "priority") * ((ListSequence.fromList(SNodeOperations.getDescendants(it, null, false)).where(new IWhereFilter <SNode>() {
+
+              public boolean accept(SNode it) {
+                return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.NotAStatement");
+              }
+
+            }).isNotEmpty() ?
+              0 :
+              1
+            ));
           }
 
-        }).isNotEmpty() ?
-          0 :
-          1
-        ));
+        });
       }
 
-    }), false).first();
+    }, false).first();
     if (SPropertyOperations.getInteger(cand, "priority") > 0) {
       return SLinkOperations.getTarget(cand, "statement", true);
     }
@@ -675,10 +682,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1197288625705(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     {
-      IMatchingPattern pattern_1210080396503 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_1210080396502 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_1210080396503);
-      if (coercedNode_1210080396502 != null) {
-        return SLinkOperations.getTarget(coercedNode_1210080396502, "elementType", true);
+      IMatchingPattern pattern_ = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_ = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_);
+      if (coercedNode_ != null) {
+        return SLinkOperations.getTarget(coercedNode_, "elementType", true);
       }
     }
     return null;
@@ -698,10 +705,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1197288625785(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     {
-      IMatchingPattern pattern_1210080396589 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_1210080396588 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_1210080396589);
-      if (coercedNode_1210080396588 != null) {
-        return SLinkOperations.getTarget(coercedNode_1210080396588, "elementType", true);
+      IMatchingPattern pattern_1 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_1);
+      if (coercedNode_1 != null) {
+        return SLinkOperations.getTarget(coercedNode_1, "elementType", true);
       }
     }
     return null;
@@ -747,10 +754,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1197288626102(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     {
-      IMatchingPattern pattern_1210080396808 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_1210080396807 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_1210080396808);
-      if (coercedNode_1210080396807 != null) {
-        return SLinkOperations.getTarget(coercedNode_1210080396807, "elementType", true);
+      IMatchingPattern pattern_2 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_2 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_2);
+      if (coercedNode_2 != null) {
+        return SLinkOperations.getTarget(coercedNode_2, "elementType", true);
       }
     }
     return null;
@@ -770,10 +777,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1197288626181(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     {
-      IMatchingPattern pattern_1210080396894 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_1210080396893 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_1210080396894);
-      if (coercedNode_1210080396893 != null) {
-        return SLinkOperations.getTarget(coercedNode_1210080396893, "elementType", true);
+      IMatchingPattern pattern_3 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_3 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_3);
+      if (coercedNode_3 != null) {
+        return SLinkOperations.getTarget(coercedNode_3, "elementType", true);
       }
     }
     return null;
@@ -845,10 +852,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1197288626627(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     {
-      IMatchingPattern pattern_1210080397247 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_1210080397246 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_1210080397247);
-      if (coercedNode_1210080397246 != null) {
-        return SLinkOperations.getTarget(coercedNode_1210080397246, "elementType", true);
+      IMatchingPattern pattern_4 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_4 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_4);
+      if (coercedNode_4 != null) {
+        return SLinkOperations.getTarget(coercedNode_4, "elementType", true);
       }
     }
     return null;
@@ -868,10 +875,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1197288626707(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     {
-      IMatchingPattern pattern_1210080397333 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_1210080397332 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_1210080397333);
-      if (coercedNode_1210080397332 != null) {
-        return SLinkOperations.getTarget(coercedNode_1210080397332, "elementType", true);
+      IMatchingPattern pattern_5 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_5 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_5);
+      if (coercedNode_5 != null) {
+        return SLinkOperations.getTarget(coercedNode_5, "elementType", true);
       }
     }
     return null;
@@ -980,10 +987,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1197299914489(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     {
-      IMatchingPattern pattern_1210080397863 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_1210080397862 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_1210080397863);
-      if (coercedNode_1210080397862 != null) {
-        return SLinkOperations.getTarget(coercedNode_1210080397862, "elementType", true);
+      IMatchingPattern pattern_6 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_6 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_6);
+      if (coercedNode_6 != null) {
+        return SLinkOperations.getTarget(coercedNode_6, "elementType", true);
       }
     }
     return null;
@@ -1075,7 +1082,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1200059673243(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(ITreePathExpression_Behavior.call_getTreePath_1194366873089(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false)), "treePathType", true), "nodeType", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(ITreePathExpression_Behavior.call_getTreePath_1213877496973(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false)), "treePathType", true), "nodeType", true);
   }
 
   public static SNode sourceNodeQuery_1200059774145(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1096,12 +1103,12 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1200485834660(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode op = (SNode)_context.getGenerator().getGeneratorSessionContext().getTransientObject("siblings_operation");
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(ITreePathExpression_Behavior.call_getTreePath_1194366873089(SNodeOperations.getAncestor(op, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false)), "treePathType", true), "nodeType", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(ITreePathExpression_Behavior.call_getTreePath_1213877496973(SNodeOperations.getAncestor(op, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false)), "treePathType", true), "nodeType", true);
   }
 
   public static SNode sourceNodeQuery_1200485902317(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode op = (SNode)_context.getGenerator().getGeneratorSessionContext().getTransientObject("siblings_operation");
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(ITreePathExpression_Behavior.call_getTreePath_1194366873089(SNodeOperations.getAncestor(op, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false)), "treePathType", true), "nodeType", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(ITreePathExpression_Behavior.call_getTreePath_1213877496973(SNodeOperations.getAncestor(op, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false)), "treePathType", true), "nodeType", true);
   }
 
   public static SNode sourceNodeQuery_1200745610377(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1437,7 +1444,7 @@ __switch__:
 
   public static SNode mapSrcMacro_mapper_1196598547056(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode feature = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false);
-    SNode rs = IGenericFeature_Behavior.call_removeStatement_1195432050864(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), _context.getGenerator());
+    SNode rs = IGenericFeature_Behavior.call_removeStatement_1213877249174(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), _context.getGenerator());
     return ((rs == null) ?
       SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.NotAStatement", null) :
       rs
@@ -1446,7 +1453,7 @@ __switch__:
 
   public static SNode mapSrcMacro_mapper_1196599101382(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode feature = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false);
-    SNode rs = IGenericFeature_Behavior.call_removeStatement_1195432050864(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), _context.getGenerator());
+    SNode rs = IGenericFeature_Behavior.call_removeStatement_1213877249174(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), _context.getGenerator());
     return ((rs == null) ?
       SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.NotAStatement", null) :
       rs
@@ -1455,7 +1462,7 @@ __switch__:
 
   public static SNode mapSrcMacro_mapper_1196600423556(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode feature = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false);
-    SNode rs = IGenericFeature_Behavior.call_removeStatement_1195432050864(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), _context.getGenerator());
+    SNode rs = IGenericFeature_Behavior.call_removeStatement_1213877249174(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), _context.getGenerator());
     return ((rs == null) ?
       SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.NotAStatement", null) :
       rs
@@ -1464,7 +1471,7 @@ __switch__:
 
   public static SNode mapSrcMacro_mapper_1196615259356(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode feature = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false);
-    SNode rs = IGenericFeature_Behavior.call_replaceStatement_1194808495467(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true), _context.getGenerator());
+    SNode rs = IGenericFeature_Behavior.call_replaceStatement_1213877249161(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true), _context.getGenerator());
     return ((rs == null) ?
       SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.NotAStatement", null) :
       rs
@@ -1473,7 +1480,7 @@ __switch__:
 
   public static SNode mapSrcMacro_mapper_1196615277216(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode feature = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false);
-    SNode rs = IGenericFeature_Behavior.call_replaceStatement_1194808495467(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true), _context.getGenerator());
+    SNode rs = IGenericFeature_Behavior.call_replaceStatement_1213877249161(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true), _context.getGenerator());
     return ((rs == null) ?
       SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.NotAStatement", null) :
       rs
@@ -1482,7 +1489,7 @@ __switch__:
 
   public static SNode mapSrcMacro_mapper_1196615333654(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode feature = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false);
-    SNode rs = IGenericFeature_Behavior.call_replaceStatement_1194808495467(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true), _context.getGenerator());
+    SNode rs = IGenericFeature_Behavior.call_replaceStatement_1213877249161(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true), _context.getGenerator());
     return ((rs == null) ?
       SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.NotAStatement", null) :
       rs
@@ -1491,7 +1498,7 @@ __switch__:
 
   public static SNode mapSrcMacro_mapper_1196619981661(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode feature = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false);
-    SNode is = IGenericFeature_Behavior.call_insertStatement_1195432326179(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true), _context.getGenerator());
+    SNode is = IGenericFeature_Behavior.call_insertStatement_1213877249185(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true), _context.getGenerator());
     return ((is == null) ?
       SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.NotAStatement", null) :
       is
@@ -1500,7 +1507,7 @@ __switch__:
 
   public static SNode mapSrcMacro_mapper_1196621431704(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode feature = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false);
-    SNode is = IGenericFeature_Behavior.call_insertStatement_1195432326179(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true), _context.getGenerator());
+    SNode is = IGenericFeature_Behavior.call_insertStatement_1213877249185(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true), _context.getGenerator());
     return ((is == null) ?
       SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.NotAStatement", null) :
       is
@@ -1564,8 +1571,8 @@ __switch__:
   public static SNode mapSrcMacro_mapper_1197299882513(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode protoRange = SLinkOperations.getTarget(_context.getNode(), "range", true);
     SNode insertionPoint = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.ElementRange", null);
-    SPropertyOperations.set(insertionPoint, "has_start", "" + (IRange_Behavior.call_isLeftOpenSelection_1195414499574(protoRange)));
-    SPropertyOperations.set(insertionPoint, "has_end", "" + (!(IRange_Behavior.call_isLeftOpenSelection_1195414499574(protoRange))));
+    SPropertyOperations.set(insertionPoint, "has_start", "" + (IRange_Behavior.call_isLeftOpenSelection_1213877238312(protoRange)));
+    SPropertyOperations.set(insertionPoint, "has_end", "" + (!(IRange_Behavior.call_isLeftOpenSelection_1213877238312(protoRange))));
     SPropertyOperations.set(insertionPoint, "includes_start", "" + (false));
     SPropertyOperations.set(insertionPoint, "includes_end", "" + (false));
     if (SPropertyOperations.getBoolean(insertionPoint, "has_start")) {
@@ -1580,8 +1587,8 @@ __switch__:
   public static SNode mapSrcMacro_mapper_1197299882705(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode protoRange = SLinkOperations.getTarget(_context.getNode(), "range", true);
     SNode insertionPoint = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.IndexRange", null);
-    SPropertyOperations.set(insertionPoint, "has_start", "" + (IRange_Behavior.call_isLeftOpenSelection_1195414499574(protoRange)));
-    SPropertyOperations.set(insertionPoint, "has_end", "" + (!(IRange_Behavior.call_isLeftOpenSelection_1195414499574(protoRange))));
+    SPropertyOperations.set(insertionPoint, "has_start", "" + (IRange_Behavior.call_isLeftOpenSelection_1213877238312(protoRange)));
+    SPropertyOperations.set(insertionPoint, "has_end", "" + (!(IRange_Behavior.call_isLeftOpenSelection_1213877238312(protoRange))));
     SPropertyOperations.set(insertionPoint, "includes_start", "" + (false));
     SPropertyOperations.set(insertionPoint, "includes_end", "" + (false));
     if (SPropertyOperations.getBoolean(insertionPoint, "has_start")) {
@@ -1612,7 +1619,7 @@ __switch__:
 
   public static SNode mapSrcMacro_mapper_1197305680604(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode feature = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false);
-    SNode rs = IGenericFeature_Behavior.call_replaceStatement_1194808495467(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true), _context.getGenerator());
+    SNode rs = IGenericFeature_Behavior.call_replaceStatement_1213877249161(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true), _context.getGenerator());
     return ((rs == null) ?
       SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.NotAStatement", null) :
       rs
@@ -1621,7 +1628,7 @@ __switch__:
 
   public static SNode mapSrcMacro_mapper_1197305766299(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode feature = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false);
-    SNode rs = IGenericFeature_Behavior.call_removeStatement_1195432050864(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), _context.getGenerator());
+    SNode rs = IGenericFeature_Behavior.call_removeStatement_1213877249174(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), _context.getGenerator());
     return ((rs == null) ?
       SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.NotAStatement", null) :
       rs
@@ -1630,7 +1637,7 @@ __switch__:
 
   public static SNode mapSrcMacro_mapper_1197305810067(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode feature = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false);
-    SNode rs = IGenericFeature_Behavior.call_replaceStatement_1194808495467(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true), _context.getGenerator());
+    SNode rs = IGenericFeature_Behavior.call_replaceStatement_1213877249161(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true), _context.getGenerator());
     return ((rs == null) ?
       SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.NotAStatement", null) :
       rs
@@ -1639,7 +1646,7 @@ __switch__:
 
   public static SNode mapSrcMacro_mapper_1197305842720(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode feature = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false);
-    SNode rs = IGenericFeature_Behavior.call_removeStatement_1195432050864(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), _context.getGenerator());
+    SNode rs = IGenericFeature_Behavior.call_removeStatement_1213877249174(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), _context.getGenerator());
     return ((rs == null) ?
       SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.NotAStatement", null) :
       rs
@@ -1648,7 +1655,7 @@ __switch__:
 
   public static SNode mapSrcMacro_mapper_1200052339756(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode expression = OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "expression", true));
-    return IGenericFeature_Behavior.call_getterExpression_1191865774161(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), SNodeOperations.copyNode(expression), SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
+    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), SNodeOperations.copyNode(expression), SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
   }
 
   public static SNode mapSrcMacro_mapper_1200059504866(final IOperationContext operationContext, final MapSrcMacroContext _context) {
@@ -1661,7 +1668,7 @@ __switch__:
     }).first();
     SNode ref_zzz = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
     SLinkOperations.setTarget(ref_zzz, "variableDeclaration", zzz, false);
-    return IGenericFeature_Behavior.call_getterExpression_1191865774161(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), ref_zzz, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
+    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), ref_zzz, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
   }
 
   public static SNode mapSrcMacro_mapper_1200059510402(final IOperationContext operationContext, final MapSrcMacroContext _context) {
@@ -1674,21 +1681,21 @@ __switch__:
     }).first();
     SNode ref_zzz = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
     SLinkOperations.setTarget(ref_zzz, "variableDeclaration", zzz, false);
-    return IGenericFeature_Behavior.call_getterExpression_1191865774161(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), ref_zzz, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
+    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), ref_zzz, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
   }
 
   public static SNode mapSrcMacro_mapper_1200059598735(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode cp = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapperBlock", false, false), "defaultInputElement", true);
     SNode cpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClosureParameterReference", null);
     SLinkOperations.setTarget(cpr, "closureParameter", cp, false);
-    return IGenericFeature_Behavior.call_getterExpression_1191865774161(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), cpr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
+    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), cpr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
   }
 
   public static SNode mapSrcMacro_mapper_1200059605106(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode cp = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapperBlock", false, false), "defaultInputElement", true);
     SNode cpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClosureParameterReference", null);
     SLinkOperations.setTarget(cpr, "closureParameter", cp, false);
-    return IGenericFeature_Behavior.call_getterExpression_1191865774161(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), cpr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
+    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), cpr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
   }
 
   public static SNode mapSrcMacro_mapper_1200059825971(final IOperationContext operationContext, final MapSrcMacroContext _context) {
@@ -1701,7 +1708,7 @@ __switch__:
     }).first();
     SNode ref_zzz = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterReference", null);
     SLinkOperations.setTarget(ref_zzz, "variableDeclaration", zzz, false);
-    return IGenericFeature_Behavior.call_getterExpression_1191865774161(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), ref_zzz, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
+    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), ref_zzz, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
   }
 
   public static SNode mapSrcMacro_mapper_1200059862831(final IOperationContext operationContext, final MapSrcMacroContext _context) {
@@ -1714,28 +1721,28 @@ __switch__:
     }).first();
     SNode ref_zzz = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterReference", null);
     SLinkOperations.setTarget(ref_zzz, "variableDeclaration", zzz, false);
-    return IGenericFeature_Behavior.call_getterExpression_1191865774161(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), ref_zzz, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
+    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), ref_zzz, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
   }
 
   public static SNode mapSrcMacro_mapper_1200060036685(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode cp = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapperBlock", false, false), "defaultInputElement", true);
     SNode cpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClosureParameterReference", null);
     SLinkOperations.setTarget(cpr, "closureParameter", cp, false);
-    return IGenericFeature_Behavior.call_getterExpression_1191865774161(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), cpr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
+    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), cpr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
   }
 
   public static SNode mapSrcMacro_mapper_1200060077751(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode zzz = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.structure.ForeachStatement", false, false), "variable", true);
     SNode ref_zzz = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
     SLinkOperations.setTarget(ref_zzz, "variableDeclaration", zzz, false);
-    return IGenericFeature_Behavior.call_getterExpression_1191865774161(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), ref_zzz, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
+    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), ref_zzz, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
   }
 
   public static SNode mapSrcMacro_mapper_1200060390957(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode yyy = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachStatement", true, false), "variable", true);
     SNode ref_yyy = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference", null);
     SLinkOperations.setTarget(ref_yyy, "variable", yyy, false);
-    return IGenericFeature_Behavior.call_getterExpression_1191865774161(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), ref_yyy, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
+    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), ref_yyy, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
   }
 
   public static SNode mapSrcMacro_mapper_1200060476931(final IOperationContext operationContext, final MapSrcMacroContext _context) {
@@ -1748,7 +1755,7 @@ __switch__:
     }).first();
     SNode ref_zzz = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
     SLinkOperations.setTarget(ref_zzz, "variableDeclaration", zzz, false);
-    return IGenericFeature_Behavior.call_getterExpression_1191865774161(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), ref_zzz, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
+    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), ref_zzz, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
   }
 
   public static SNode mapSrcMacro_mapper_1210075313760(final IOperationContext operationContext, final MapSrcMacroContext _context) {
@@ -1760,7 +1767,7 @@ __switch__:
       }
 
     }).first(), false);
-    return IGenericFeature_Behavior.call_getterExpression_1191865774161(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), lvr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
+    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), lvr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
   }
 
   public static SNode mapSrcMacro_mapper_1210075871503(final IOperationContext operationContext, final MapSrcMacroContext _context) {
@@ -1772,7 +1779,7 @@ __switch__:
       }
 
     }).first(), false);
-    return IGenericFeature_Behavior.call_getterExpression_1191865774161(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), lvr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
+    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), lvr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
   }
 
   public static SNode mapSrcMacro_mapper_1210076021926(final IOperationContext operationContext, final MapSrcMacroContext _context) {
@@ -1784,7 +1791,7 @@ __switch__:
       }
 
     }).first(), false);
-    return IGenericFeature_Behavior.call_getterExpression_1191865774161(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), lvr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
+    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), lvr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
   }
 
   public static SNode mapSrcMacro_mapper_1210076153986(final IOperationContext operationContext, final MapSrcMacroContext _context) {
@@ -1796,7 +1803,7 @@ __switch__:
       }
 
     }).first(), false);
-    return IGenericFeature_Behavior.call_getterExpression_1191865774161(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), lvr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
+    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), lvr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
   }
 
 }

@@ -14,8 +14,8 @@ public class typeof_GetSizeOperation_InferenceRule implements InferenceRule_Runt
 
   public void applyRule(final SNode op) {
     SNode input = RulesFunctions_Collections.getInput(op);
-    final SNode elementType_typevar_1184847379888 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(input, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184847389619", true), new QuotationClass_25().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184847379888)), input, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184847420828", false);
+    final SNode elementType_typevar_1184847379888 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(input, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184847389619", true), new QuotationClass_25().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184847379888)), input, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184847420828", false, 0);
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184847365040", true), new QuotationClass_26().createNode(), op, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184847367971");
   }
 

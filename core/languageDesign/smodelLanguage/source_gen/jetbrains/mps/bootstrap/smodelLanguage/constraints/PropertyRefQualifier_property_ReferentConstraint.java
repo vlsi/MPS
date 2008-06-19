@@ -9,14 +9,14 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.constraints.IOperation_Behavior;
+import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
-import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.bootstrap.structureLanguage.behavior.AbstractConceptDeclaration_Behavior;
 
 public class PropertyRefQualifier_property_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -36,7 +36,7 @@ public class PropertyRefQualifier_property_ReferentConstraint implements IModelC
   }
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    SNode dotOperand = IOperation_Behavior.call_getOperand_1197028596169(SNodeOperations.getParent(_context.getEnclosingNode(), null, false, false));
+    SNode dotOperand = IOperation_Behavior.call_getOperand_1213877410070(SNodeOperations.getParent(_context.getEnclosingNode(), null, false, false));
     SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(dotOperand), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), true);
     if (nodeType == null) {
       return null;
@@ -45,7 +45,7 @@ public class PropertyRefQualifier_property_ReferentConstraint implements IModelC
     if (dotOperandConcept == null) {
       dotOperandConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept");
     }
-    return new SimpleSearchScope(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1203539034160(dotOperandConcept));
+    return new SimpleSearchScope(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(dotOperandConcept));
   }
 
   public String getNodeReferentSearchScopeDescription() {

@@ -4,16 +4,16 @@ package jetbrains.mps.bootstrap.sharedConcepts.generator.baseLanguage.template.m
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
-import jetbrains.mps.baseLanguage.constraints.ConceptFunctionParameter_Behavior;
+import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_Behavior;
 
 public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1199881492477(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return !(ConceptFunctionParameter_Behavior.call_getFromParameterObject_1199878619650(_context.getNode()));
+    return !(ConceptFunctionParameter_Behavior.call_getFromParameterObject_1213877522908(_context.getNode()));
   }
 
   public static boolean baseMappingRule_Condition_1199881537813(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ConceptFunctionParameter_Behavior.call_getFromParameterObject_1199878619650(_context.getNode());
+    return ConceptFunctionParameter_Behavior.call_getFromParameterObject_1213877522908(_context.getNode());
   }
 
 }

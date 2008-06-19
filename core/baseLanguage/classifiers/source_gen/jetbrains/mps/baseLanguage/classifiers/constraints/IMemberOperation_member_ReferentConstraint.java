@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import jetbrains.mps.patterns.IMatchingPattern;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.baseLanguage.classifiers.behavior.BaseClassifierType_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -44,7 +45,7 @@ public class IMemberOperation_member_ReferentConstraint implements IModelConstra
       IMatchingPattern pattern_ = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType");
       SNode coercedNode_ = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(operand), pattern_);
       if (coercedNode_ != null) {
-        for(SNode member : BaseClassifierType_Behavior.call_getMembers_1205837324654(coercedNode_, _context.getEnclosingNode())) {
+        for(SNode member : BaseClassifierType_Behavior.call_getMembers_1213877402148(coercedNode_, _context.getEnclosingNode())) {
           if (SNodeOperations.isInstanceOf(member, NameUtil.nodeFQName(_context.getLinkTarget()))) {
             ListSequence.fromList(applicableMembers).addElement(member);
           }

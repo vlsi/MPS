@@ -17,7 +17,7 @@ import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMen
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.constraints.Type_Behavior;
+import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvider {
@@ -81,7 +81,7 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
       List<String> result;
       SNode nodeType = SLinkOperations.getTarget(node, "returnType", true);
       if (nodeType != null) {
-        result = Type_Behavior.call_getVariableSuffixes_1182416669983(nodeType);
+        result = Type_Behavior.call_getVariableSuffixes_1213877337304(nodeType);
       } else
       {
         result = ListSequence.<String>fromArray();

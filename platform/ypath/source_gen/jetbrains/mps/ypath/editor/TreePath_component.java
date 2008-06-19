@@ -19,15 +19,14 @@ public class TreePath_component extends AbstractCellProvider {
     super(node);
   }
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1179306198078");
+  private static void setupBasic_CollectionCell5335_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell5335_0");
   }
 
-  private static void setupBasic_TreePathTypeCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1179306204982");
+  private static void setupBasic_treePathTypeRefNodeCell5335_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_TreePathTypeCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_treePathTypeRefNodeCell5335_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -36,38 +35,38 @@ public class TreePath_component extends AbstractCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createRowCell(context, node);
+    return this.create_CollectionCell5335_0(context, node);
   }
 
-  public EditorCell createRowCell(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell5335_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    TreePath_component.setupBasic_RowCell(editorCell, node, context);
+    setupBasic_CollectionCell5335_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createTreePathTypeCell(context, node));
+    editorCell.addEditorCell(this.create_treePathTypeRefNodeCell5335_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createTreePathTypeCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_treePathTypeRefNodeCell5335_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    TreePath_component.setupBasic_TreePathTypeCell(editorCell, node, context);
+    setupBasic_treePathTypeRefNodeCell5335_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      TreePath_component.setupLabel_TreePathTypeCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_treePathTypeRefNodeCell5335_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createTreePathTypeCell(EditorContext context, SNode node) {
+  public EditorCell create_treePathTypeRefNodeCell5335_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("treePathType");
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createTreePathTypeCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_treePathTypeRefNodeCell5335_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

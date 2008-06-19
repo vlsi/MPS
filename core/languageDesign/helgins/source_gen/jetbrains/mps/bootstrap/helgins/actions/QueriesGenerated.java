@@ -28,7 +28,7 @@ import jetbrains.mps.util.Calculable;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.bootstrap.structureLanguage.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
 import jetbrains.mps.util.NameUtil;
 
@@ -127,7 +127,7 @@ public class QueriesGenerated {
           return ListSequence.fromList(subconcepts).where(new IWhereFilter <SNode>() {
 
             public boolean accept(SNode it) {
-              return AbstractConceptDeclaration_Behavior.call_isDefaultSubstitutableConcept_1199876309336(it, SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.AbstractEquationStatement"), scope);
+              return AbstractConceptDeclaration_Behavior.call_isDefaultSubstitutableConcept_1213877394594(it, SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.AbstractEquationStatement"), scope);
             }
 
           });

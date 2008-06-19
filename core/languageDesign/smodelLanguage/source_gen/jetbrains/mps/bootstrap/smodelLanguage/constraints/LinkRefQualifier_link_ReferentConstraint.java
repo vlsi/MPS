@@ -9,14 +9,14 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.constraints.IOperation_Behavior;
+import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
-import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.bootstrap.structureLanguage.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
@@ -40,7 +40,7 @@ public class LinkRefQualifier_link_ReferentConstraint implements IModelConstrain
   }
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    SNode dotOperand = IOperation_Behavior.call_getOperand_1197028596169(SNodeOperations.getParent(_context.getEnclosingNode(), null, false, false));
+    SNode dotOperand = IOperation_Behavior.call_getOperand_1213877410070(SNodeOperations.getParent(_context.getEnclosingNode(), null, false, false));
     SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(dotOperand), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), true);
     if (nodeType == null) {
       return null;
@@ -49,7 +49,7 @@ public class LinkRefQualifier_link_ReferentConstraint implements IModelConstrain
     if (dotOperandConcept == null) {
       dotOperandConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept");
     }
-    List<SNode> links = AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1196820678380(dotOperandConcept);
+    List<SNode> links = AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(dotOperandConcept);
     // reference only?
     links = ListSequence.fromList(links).where(new IWhereFilter <SNode>() {
 

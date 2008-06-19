@@ -7,10 +7,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import java.util.List;
-import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.bootstrap.structureLanguage.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.bootstrap.structureLanguage.constraints.DataTypeDeclaration_Behavior;
+import jetbrains.mps.bootstrap.structureLanguage.behavior.DataTypeDeclaration_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_SPropertyAccess_InferenceRule implements InferenceRule_Runtime {
@@ -29,7 +29,7 @@ public class typeof_SPropertyAccess_InferenceRule implements InferenceRule_Runti
 
           public void run() {
             SNode inputNodeConcept = TypeChecker.getInstance().getEquationManager().getRepresentator(C);
-            List<SNode> declaredProperties = AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1203539034160(inputNodeConcept);
+            List<SNode> declaredProperties = AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(inputNodeConcept);
             SNode property = SLinkOperations.getTarget(op, "property", false);
             String conceptName = SPropertyOperations.getString(inputNodeConcept, "name");
             if (!(ListSequence.fromList(declaredProperties).contains(property))) {
@@ -42,7 +42,7 @@ public class typeof_SPropertyAccess_InferenceRule implements InferenceRule_Runti
     }
     SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(op, "property", false), "dataType", false);
     if (dataType != null) {
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712090792", true), DataTypeDeclaration_Behavior.call_toBaseLanguageType_1182472765133(dataType), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712090790");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712090792", true), DataTypeDeclaration_Behavior.call_toBaseLanguageType_1213877229718(dataType), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712090790");
     }
   }
 

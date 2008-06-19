@@ -21,7 +21,7 @@ import jetbrains.mps.nodeEditor.ModelAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
-import jetbrains.mps.bootstrap.constraintsLanguage.constraints.ConceptMethodDeclaration_Behavior;
+import jetbrains.mps.bootstrap.constraintsLanguage.behavior.ConceptMethodDeclaration_Behavior;
 import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
@@ -686,14 +686,14 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     return new ModelAccessor() {
 
       public String getText() {
-        return ConceptMethodDeclaration_Behavior.call_getOverridenMethodConceptName_1206015659223(node);
+        return ConceptMethodDeclaration_Behavior.call_getOverridenMethodConceptName_1213877345485(node);
       }
 
       public void setText(String text) {
       }
 
       public boolean isValidText(String text) {
-        return this.getText().equals(ConceptMethodDeclaration_Behavior.call_getOverridenMethodConceptName_1206015659223(node));
+        return this.getText().equals(ConceptMethodDeclaration_Behavior.call_getOverridenMethodConceptName_1213877345485(node));
       }
 
     };

@@ -18,9 +18,9 @@ import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.generator.template.IfMacroContext;
 import java.util.List;
-import jetbrains.mps.bootstrap.helgins.constraints.FindSourceBlock_Behavior;
+import jetbrains.mps.bootstrap.helgins.behavior.FindSourceBlock_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
-import jetbrains.mps.bootstrap.smodelLanguage.constraints.SNodeOperation_Behavior;
+import jetbrains.mps.bootstrap.smodelLanguage.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.bootstrap.helgins.structure.InferenceRule;
 import jetbrains.mps.bootstrap.helgins.structure.SubtypingRule;
@@ -1085,11 +1085,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1207651082298(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(FindSourceBlock_Behavior.call_isSet_1207651579255(SLinkOperations.getTarget(_context.getNode(), "findSourceBlock", true)));
+    return !(FindSourceBlock_Behavior.call_isSet_1213877521577(SLinkOperations.getTarget(_context.getNode(), "findSourceBlock", true)));
   }
 
   public static boolean ifMacro_Condition_1207655469430(final IOperationContext operationContext, final IfMacroContext _context) {
-    return FindSourceBlock_Behavior.call_isSet_1207651579255(SLinkOperations.getTarget(_context.getNode(), "findSourceBlock", true));
+    return FindSourceBlock_Behavior.call_isSet_1213877521577(SLinkOperations.getTarget(_context.getNode(), "findSourceBlock", true));
   }
 
   public static boolean ifMacro_Condition_1210838003222(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1195,7 +1195,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1176544954241(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SNodeOperation_Behavior.call_getLeftExpression_1200920411564(_context.getNode());
+    return SNodeOperation_Behavior.call_getLeftExpression_1213877508894(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1176545125101(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

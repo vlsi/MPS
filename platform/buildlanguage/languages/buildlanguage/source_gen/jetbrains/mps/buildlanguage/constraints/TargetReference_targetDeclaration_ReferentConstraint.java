@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
+import jetbrains.mps.buildlanguage.behavior.Project_Behavior;
 
 public class TargetReference_targetDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -31,7 +32,7 @@ public class TargetReference_targetDeclaration_ReferentConstraint implements IMo
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode project = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.buildlanguage.structure.Project", true, false);
-    return new SimpleSearchScope(Project_Behavior.call_getAllTargets_1208515961184(project));
+    return new SimpleSearchScope(Project_Behavior.call_getAllTargets_1213877351828(project));
   }
 
   public String getNodeReferentSearchScopeDescription() {

@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.behavior.DotExpression_Behavior;
 import jetbrains.mps.smodel.search.ISearchScope;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
@@ -34,12 +35,12 @@ public class PropertyReference_property_ReferentConstraint implements IModelCons
     if (!(SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
       return false;
     }
-    return (DotExpression_Behavior.call_getClassifier_1201997214164(_context.getEnclosingNode()) != null);
+    return (DotExpression_Behavior.call_getClassifier_1213877410697(_context.getEnclosingNode()) != null);
   }
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     List<SNode> resultProperties = ListSequence.<SNode>fromArray();
-    SNode opClassifier = DotExpression_Behavior.call_getClassifier_1201997214164(_context.getEnclosingNode());
+    SNode opClassifier = DotExpression_Behavior.call_getClassifier_1213877410697(_context.getEnclosingNode());
     List<SNode> classifiers = ClassifierAndSuperClassifiersCache.getInstance(opClassifier).getClassifierNodes();
     for(SNode classifier : classifiers) {
       if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {

@@ -15,7 +15,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.ext.collections.lang.generator.baseLanguage.template.util.QueriesUtil;
-import jetbrains.mps.baseLanguage.constraints.IOperation_Behavior;
+import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
@@ -471,7 +471,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1201654487729(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return IOperation_Behavior.call_getOperand_1197028596169(_context.getNode());
+    return IOperation_Behavior.call_getOperand_1213877410070(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1201654738287(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -479,7 +479,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1201874961299(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return IOperation_Behavior.call_getOperand_1197028596169(_context.getNode());
+    return IOperation_Behavior.call_getOperand_1213877410070(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1206659143420(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -499,7 +499,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1207233911395(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return IOperation_Behavior.call_getOperand_1197028596169(_context.getNode());
+    return IOperation_Behavior.call_getOperand_1213877410070(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1207233911406(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -507,11 +507,11 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1207236345021(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return IOperation_Behavior.call_getOperand_1197028596169(_context.getNode());
+    return IOperation_Behavior.call_getOperand_1213877410070(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1208542076200(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return IOperation_Behavior.call_getOperand_1197028596169(_context.getNode());
+    return IOperation_Behavior.call_getOperand_1213877410070(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1210015273035(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

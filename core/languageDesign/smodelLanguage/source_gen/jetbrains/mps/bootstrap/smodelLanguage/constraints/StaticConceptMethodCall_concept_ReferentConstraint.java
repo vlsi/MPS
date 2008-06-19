@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
+import jetbrains.mps.bootstrap.smodelLanguage.behavior.StaticConceptMethodCall_Behavior;
 
 public class StaticConceptMethodCall_concept_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -28,7 +29,7 @@ public class StaticConceptMethodCall_concept_ReferentConstraint implements IMode
   }
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return new SimpleSearchScope(StaticConceptMethodCall_Behavior.getClassifiersWithStaticMethods_1206021753918(_context.getModel(), operationContext.getScope(), _context.getEnclosingNode()));
+    return new SimpleSearchScope(StaticConceptMethodCall_Behavior.getClassifiersWithStaticMethods_1213877485028(_context.getModel(), operationContext.getScope(), _context.getEnclosingNode()));
   }
 
   public String getNodeReferentSearchScopeDescription() {

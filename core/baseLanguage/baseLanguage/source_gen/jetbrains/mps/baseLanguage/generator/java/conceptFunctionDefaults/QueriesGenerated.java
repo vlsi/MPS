@@ -8,7 +8,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
-import jetbrains.mps.baseLanguage.constraints.ConceptFunctionParameter_Behavior;
+import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_Behavior;
 
 public class QueriesGenerated {
 
@@ -29,7 +29,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1199879109301(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(ConceptFunctionParameter_Behavior.call_getFromParameterObject_1199878619650(_context.getNode()));
+    return !(ConceptFunctionParameter_Behavior.call_getFromParameterObject_1213877522908(_context.getNode()));
   }
 
 }

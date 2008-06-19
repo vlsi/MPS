@@ -9,24 +9,24 @@ import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.bootstrap.constraintsLanguage.constraints.ConceptMethodDeclaration_Behavior;
+import jetbrains.mps.bootstrap.constraintsLanguage.behavior.ConceptMethodDeclaration_Behavior;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.bootstrap.constraintsLanguage.constraints.NodePropertyConstraint_Behavior;
-import jetbrains.mps.bootstrap.constraintsLanguage.constraints.NodeReferentConstraint_Behavior;
+import jetbrains.mps.bootstrap.constraintsLanguage.behavior.NodePropertyConstraint_Behavior;
+import jetbrains.mps.bootstrap.constraintsLanguage.behavior.NodeReferentConstraint_Behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.constraintsLanguage.constraints.NodeDefaultSearchScope_Behavior;
+import jetbrains.mps.bootstrap.constraintsLanguage.behavior.NodeDefaultSearchScope_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorConstants;
-import jetbrains.mps.core.constraints.INamedConcept_Behavior;
-import jetbrains.mps.bootstrap.constraintsLanguage.constraints.StaticConceptMethodDeclaration_Behavior;
+import jetbrains.mps.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.bootstrap.constraintsLanguage.behavior.StaticConceptMethodDeclaration_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.bootstrap.structureLanguage.constraints.DataTypeDeclaration_Behavior;
+import jetbrains.mps.bootstrap.structureLanguage.behavior.DataTypeDeclaration_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
-import jetbrains.mps.baseLanguage.constraints.Type_Behavior;
+import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -69,11 +69,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1177677003299(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ConceptMethodDeclaration_Behavior.call_getGeneratedName_1177681178696(_context.getNode());
+    return ConceptMethodDeclaration_Behavior.call_getGeneratedName_1213877345504(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1181726948102(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ConceptMethodDeclaration_Behavior.call_getCallerMethodName_1181725268250(_context.getNode());
+    return ConceptMethodDeclaration_Behavior.call_getCallerMethodName_1213877345535(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1181727126085(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -81,11 +81,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1181727149831(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ConceptMethodDeclaration_Behavior.call_getGeneratedName_1177681178696(_context.getNode());
+    return ConceptMethodDeclaration_Behavior.call_getGeneratedName_1213877345504(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1182162752919(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ConceptMethodDeclaration_Behavior.call_getGeneratedName_1177681178696(_context.getNode());
+    return ConceptMethodDeclaration_Behavior.call_getGeneratedName_1213877345504(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1182162752942(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -93,19 +93,19 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1184608713100(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.nodeFQName(NodePropertyConstraint_Behavior.call_getApplicableConcept_1178176331859(_context.getNode()));
+    return NameUtil.nodeFQName(NodePropertyConstraint_Behavior.call_getApplicableConcept_1213877292345(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1184608867617(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.nodeFQName(NodePropertyConstraint_Behavior.call_getApplicableConcept_1178176331859(_context.getNode()));
+    return NameUtil.nodeFQName(NodePropertyConstraint_Behavior.call_getApplicableConcept_1213877292345(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1184608961609(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.nodeFQName(NodePropertyConstraint_Behavior.call_getApplicableConcept_1178176331859(_context.getNode()));
+    return NameUtil.nodeFQName(NodePropertyConstraint_Behavior.call_getApplicableConcept_1213877292345(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1184608998084(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.nodeFQName(NodePropertyConstraint_Behavior.call_getApplicableConcept_1178176331859(_context.getNode()));
+    return NameUtil.nodeFQName(NodePropertyConstraint_Behavior.call_getApplicableConcept_1213877292345(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1184609127099(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -125,11 +125,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1184609665202(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.nodeFQName(NodeReferentConstraint_Behavior.call_getApplicableConcept_1178190078587(_context.getNode()));
+    return NameUtil.nodeFQName(NodeReferentConstraint_Behavior.call_getApplicableConcept_1213877399322(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1184609700758(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.nodeFQName(NodeReferentConstraint_Behavior.call_getApplicableConcept_1178190078587(_context.getNode()));
+    return NameUtil.nodeFQName(NodeReferentConstraint_Behavior.call_getApplicableConcept_1213877399322(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1184609767181(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -143,11 +143,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1184609972214(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.nodeFQName(NodeReferentConstraint_Behavior.call_getApplicableConcept_1178190078587(_context.getNode()));
+    return NameUtil.nodeFQName(NodeReferentConstraint_Behavior.call_getApplicableConcept_1213877399322(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1184609981357(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.nodeFQName(NodeReferentConstraint_Behavior.call_getApplicableConcept_1178190078587(_context.getNode()));
+    return NameUtil.nodeFQName(NodeReferentConstraint_Behavior.call_getApplicableConcept_1213877399322(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1184610007581(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -169,11 +169,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1184610547646(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.nodeFQName(NodeDefaultSearchScope_Behavior.call_getReferentConcept_1178193833041(_context.getNode()));
+    return NameUtil.nodeFQName(NodeDefaultSearchScope_Behavior.call_getReferentConcept_1213877261403(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1184610580040(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.nodeFQName(NodeDefaultSearchScope_Behavior.call_getReferentConcept_1178193833041(_context.getNode()));
+    return NameUtil.nodeFQName(NodeDefaultSearchScope_Behavior.call_getReferentConcept_1213877261403(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1184610822428(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -185,11 +185,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1193402330791(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ConceptMethodDeclaration_Behavior.call_getSuperCallerMethodName_1193402369204(_context.getNode());
+    return ConceptMethodDeclaration_Behavior.call_getSuperCallerMethodName_1213877345551(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1193402330855(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ConceptMethodDeclaration_Behavior.call_getGeneratedName_1177681178696(_context.getNode());
+    return ConceptMethodDeclaration_Behavior.call_getGeneratedName_1213877345504(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1193402330879(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -197,7 +197,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1193402330913(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ConceptMethodDeclaration_Behavior.call_getGeneratedName_1177681178696(_context.getNode());
+    return ConceptMethodDeclaration_Behavior.call_getGeneratedName_1213877345504(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1193402330937(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -213,7 +213,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1201044963790(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return INamedConcept_Behavior.call_getFqName_1184686272576(SLinkOperations.getTarget(_context.getNode(), "defaultConcreteConcept", false));
+    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "defaultConcreteConcept", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_1202992934826(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -225,7 +225,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1206018606831(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return StaticConceptMethodDeclaration_Behavior.call_getGeneratedName_1206019079060(_context.getNode());
+    return StaticConceptMethodDeclaration_Behavior.call_getGeneratedName_1213877234547(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1206018674516(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -233,7 +233,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1212101471483(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.nodeFQName(NodePropertyConstraint_Behavior.call_getApplicableConcept_1178176331859(_context.getNode()));
+    return NameUtil.nodeFQName(NodePropertyConstraint_Behavior.call_getApplicableConcept_1213877292345(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1212101471492(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -241,7 +241,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1212101471520(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.nodeFQName(NodePropertyConstraint_Behavior.call_getApplicableConcept_1178176331859(_context.getNode()));
+    return NameUtil.nodeFQName(NodePropertyConstraint_Behavior.call_getApplicableConcept_1213877292345(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1212101471529(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -261,7 +261,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1213107130438(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return INamedConcept_Behavior.call_getFqName_1184686272576(SLinkOperations.getTarget(_context.getNode(), "defaultConcreteConcept", false));
+    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "defaultConcreteConcept", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_1213107130456(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -306,7 +306,7 @@ public class QueriesGenerated {
     if (dataType == null) {
       return null;
     }
-    SNode bltype = DataTypeDeclaration_Behavior.call_toBaseLanguageType_1182472765133(dataType);
+    SNode bltype = DataTypeDeclaration_Behavior.call_toBaseLanguageType_1213877229718(dataType);
     if (SNodeOperations.isInstanceOf(bltype, "jetbrains.mps.baseLanguage.structure.IntegerType")) {
       return SLinkOperations.getTarget(new QuotationClass_().createNode(), "baseMethodDeclaration", false);
     }
@@ -413,7 +413,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1181727002179(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return Type_Behavior.call_getUnboxedType_1182580547590(SLinkOperations.getTarget(_context.getNode(), "returnType", true));
+    return Type_Behavior.call_getUnboxedType_1213877337320(SLinkOperations.getTarget(_context.getNode(), "returnType", true));
   }
 
   public static SNode sourceNodeQuery_1181727110484(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -465,7 +465,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1193402330887(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return Type_Behavior.call_getUnboxedType_1182580547590(SLinkOperations.getTarget(_context.getNode(), "returnType", true));
+    return Type_Behavior.call_getUnboxedType_1213877337320(SLinkOperations.getTarget(_context.getNode(), "returnType", true));
   }
 
   public static SNode sourceNodeQuery_1193402330923(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -473,7 +473,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1194605404279(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return Type_Behavior.call_getClassExpression_1194035415601(SLinkOperations.getTarget(_context.getNode(), "type", true));
+    return Type_Behavior.call_getClassExpression_1213877337357(SLinkOperations.getTarget(_context.getNode(), "type", true));
   }
 
   public static SNode sourceNodeQuery_1202990149752(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

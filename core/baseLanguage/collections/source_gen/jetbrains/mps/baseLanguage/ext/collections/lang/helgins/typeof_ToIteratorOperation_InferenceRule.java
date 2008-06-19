@@ -14,8 +14,8 @@ public class typeof_ToIteratorOperation_InferenceRule implements InferenceRule_R
 
   public void applyRule(final SNode toIteratorOperation) {
     SNode input = RulesFunctions_Collections.getInput(toIteratorOperation);
-    final SNode elementType_typevar_1207236221835 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(input, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1207236221844", true), new QuotationClass_65().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1207236221835)), input, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1207236221836", false);
+    final SNode elementType_typevar_1207236221835 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(input, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1207236221844", true), new QuotationClass_65().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1207236221835)), input, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1207236221836", false, 0);
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(toIteratorOperation, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1207236268944", true), new QuotationClass_66().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1207236221835)), toIteratorOperation, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1207236274687");
   }
 

@@ -15,7 +15,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.constraints.BaseMethodDeclaration_Behavior;
+import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import org.jetbrains.annotations.Nullable;
 
@@ -56,7 +56,7 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
     // 
     for(SNode classNode : implementorsAndAncestorsNodes) {
       for(SNode sMethod : SLinkOperations.getTargets(classNode, "method", true)) {
-        if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1204901126405(sMethod, node)) {
+        if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(sMethod, node)) {
           ListOperations.addElement(_results, sMethod);
         }
       }

@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.constraints.StatementList_Behavior;
+import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -15,11 +15,11 @@ public class check_BaseMethodDeclaration_UnreachableStatements_NonTypesystemRule
   }
 
   public void applyRule(final SNode nodeToCheck) {
-    StatementList_Behavior.call_checkDataFlow_1206985459773(SLinkOperations.getTarget(nodeToCheck, "body", true));
+    StatementList_Behavior.call_checkDataFlow_1213877327382(SLinkOperations.getTarget(nodeToCheck, "body", true));
     SNode parent = SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     if (!(SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.Interface"))) {
       if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(nodeToCheck, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) && !(SNodeOperations.isInstanceOf(nodeToCheck, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"))) {
-        StatementList_Behavior.call_checkReturns_1206989696423(SLinkOperations.getTarget(nodeToCheck, "body", true));
+        StatementList_Behavior.call_checkReturns_1213877327397(SLinkOperations.getTarget(nodeToCheck, "body", true));
       }
     }
   }

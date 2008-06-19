@@ -12,7 +12,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
-import jetbrains.mps.baseLanguage.constraints.Type_Behavior;
+import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -41,7 +41,7 @@ public class AddCastStatement_Intention extends BaseIntention implements Intenti
     SNode instanceOfExpression = SLinkOperations.getTarget(node, "condition", true);
     SNode declaration = SLinkOperations.getTarget(castVariable, "localVariableDeclaration", true);
     SLinkOperations.setTarget(declaration, "type", SNodeOperations.copyNode(SLinkOperations.getTarget(instanceOfExpression, "classType", true)), true);
-    List<String> variableSuffixes = Type_Behavior.call_getVariableSuffixes_1182416669983(SLinkOperations.getTarget(instanceOfExpression, "classType", true));
+    List<String> variableSuffixes = Type_Behavior.call_getVariableSuffixes_1213877337304(SLinkOperations.getTarget(instanceOfExpression, "classType", true));
     SPropertyOperations.set(declaration, "name", ListSequence.fromList(variableSuffixes).first());
     SNode castExpression = SLinkOperations.setNewChild(declaration, "initializer", "jetbrains.mps.baseLanguage.structure.CastExpression");
     SLinkOperations.setTarget(castExpression, "type", SNodeOperations.copyNode(SLinkOperations.getTarget(instanceOfExpression, "classType", true)), true);

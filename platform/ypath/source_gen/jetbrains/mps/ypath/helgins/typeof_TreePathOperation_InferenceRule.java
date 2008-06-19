@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 
 public class typeof_TreePathOperation_InferenceRule implements InferenceRule_Runtime {
 
@@ -25,7 +26,10 @@ public class typeof_TreePathOperation_InferenceRule implements InferenceRule_Run
           break;
         }
       }
-      TypeChecker.getInstance().reportTypeError(op, "Error in model structure: wrong parent type", "jetbrains.mps.ypath.helgins", "1190288908359");
+      {
+        BaseIntentionProvider intentionProvider = null;
+        TypeChecker.getInstance().reportTypeError(op, "Error in model structure: wrong parent type", "jetbrains.mps.ypath.helgins", "1190288908359", intentionProvider);
+      }
     } while(false);
   }
 

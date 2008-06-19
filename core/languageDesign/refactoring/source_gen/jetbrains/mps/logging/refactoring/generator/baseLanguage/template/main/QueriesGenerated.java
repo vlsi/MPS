@@ -9,9 +9,9 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.bootstrap.editorLanguage.constraints.CellKeyMapKeystroke_Behavior;
+import jetbrains.mps.bootstrap.editorLanguage.behavior.CellKeyMapKeystroke_Behavior;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.bootstrap.findUsagesLanguage.constraints.FinderDeclaration_Behavior;
+import jetbrains.mps.bootstrap.findUsagesLanguage.behavior.FinderDeclaration_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
@@ -20,7 +20,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.ArrayList;
-import jetbrains.mps.logging.refactoring.constraints.RequiredAdditionalArgument_Behavior;
+import jetbrains.mps.logging.refactoring.behavior.RequiredAdditionalArgument_Behavior;
 
 public class QueriesGenerated {
 
@@ -81,7 +81,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1199462157225(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return CellKeyMapKeystroke_Behavior.call_getKeyStroke_1199461571140(SLinkOperations.getTarget(_context.getNode(), "keystroke", true));
+    return CellKeyMapKeystroke_Behavior.call_getKeyStroke_1213877273475(SLinkOperations.getTarget(_context.getNode(), "keystroke", true));
   }
 
   public static Object propertyMacro_GetPropertyValue_1199462256696(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -142,7 +142,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1212245181527(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return FinderDeclaration_Behavior.call_getGeneratedClassLongName_1200410536812(SLinkOperations.getTarget(_context.getNode(), "finderDeclaration", false));
+    return FinderDeclaration_Behavior.call_getGeneratedClassLongName_1213877240120(SLinkOperations.getTarget(_context.getNode(), "finderDeclaration", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_1213085378501(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -538,12 +538,12 @@ public class QueriesGenerated {
   public static List sourceNodesQuery_1201177824403(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for(SNode argument : SLinkOperations.getTargets(_context.getNode(), "arguments", true)) {
-      if (RequiredAdditionalArgument_Behavior.call_isTransient_1201174675696(argument)) {
+      if (RequiredAdditionalArgument_Behavior.call_isTransient_1213877343864(argument)) {
         ListSequence.fromList(result).addElement(argument);
       }
     }
     for(SNode argument : SLinkOperations.getTargets(_context.getNode(), "internalArguments", true)) {
-      if (RequiredAdditionalArgument_Behavior.call_isTransient_1201174675696(argument)) {
+      if (RequiredAdditionalArgument_Behavior.call_isTransient_1213877343864(argument)) {
         ListSequence.fromList(result).addElement(argument);
       }
     }

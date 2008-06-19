@@ -4,7 +4,7 @@ package jetbrains.mps.bootstrap.constraintsLanguage.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.constraintsLanguage.constraints.NodeReferentConstraint_Behavior;
+import jetbrains.mps.bootstrap.constraintsLanguage.behavior.NodeReferentConstraint_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -15,7 +15,7 @@ public class typeof_ConstraintFunctionParameter_referenceNode_InferenceRule impl
   }
 
   public void applyRule(final SNode node) {
-    SNode applicableConcept = NodeReferentConstraint_Behavior.call_getApplicableConcept_1178190078587(SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint", false, false));
+    SNode applicableConcept = NodeReferentConstraint_Behavior.call_getApplicableConcept_1213877399322(SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint", false, false));
     if ((applicableConcept == null)) {
       TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1212097655292", true), new QuotationClass_2().createNode(), node, null, "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1212097655290");
     } else

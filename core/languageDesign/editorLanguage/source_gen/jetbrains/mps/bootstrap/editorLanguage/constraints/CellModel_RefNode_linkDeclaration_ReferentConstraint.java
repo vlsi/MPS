@@ -12,11 +12,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
-import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.bootstrap.structureLanguage.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.bootstrap.structureLanguage.constraints.LinkDeclaration_Behavior;
+import jetbrains.mps.bootstrap.structureLanguage.behavior.LinkDeclaration_Behavior;
 
 public class CellModel_RefNode_linkDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -38,11 +38,11 @@ public class CellModel_RefNode_linkDeclaration_ReferentConstraint implements IMo
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode editorComponent = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.BaseEditorComponent", true, false);
     SNode editedConcept = SLinkOperations.getTarget(editorComponent, "conceptDeclaration", false);
-    List<SNode> links = AbstractConceptDeclaration_Behavior.call_getAggregationLinkDeclarations_1212184463482(editedConcept);
+    List<SNode> links = AbstractConceptDeclaration_Behavior.call_getAggregationLinkDeclarations_1213877394521(editedConcept);
     return new SimpleSearchScope(ListSequence.fromList(links).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return LinkDeclaration_Behavior.call_isSingular_1205275061212(it);
+        return LinkDeclaration_Behavior.call_isSingular_1213877254557(it);
       }
 
     }).toListSequence());

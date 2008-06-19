@@ -7,7 +7,7 @@ import jetbrains.mps.helgins.inference.IWrapper;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.core.constraints.BaseConcept_Behavior;
+import jetbrains.mps.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType;
 
@@ -79,6 +79,6 @@ public class PresentationManager {
     if (typeAdapter instanceof RuntimeTypeVariable) {
       return toString(type);
     }
-    return BaseConcept_Behavior.call_getPresentation_1180102203531(type);
+    return BaseConcept_Behavior.call_getPresentation_1213877396640(type);
   }
 }

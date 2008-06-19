@@ -11,7 +11,7 @@ import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.baseLanguage.structure.ArrayType;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.constraints.VariableDeclaration_Behavior;
+import jetbrains.mps.baseLanguage.behavior.VariableDeclaration_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -21,7 +21,7 @@ import jetbrains.mps.internal.collections.runtime.ISequenceIterableAdapter;
 import java.util.Iterator;
 import jetbrains.mps.closures.runtime.YieldingIterator;
 import jetbrains.mps.smodel.action.NodeSetupContext;
-import jetbrains.mps.baseLanguage.constraints.Type_Behavior;
+import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
@@ -37,18 +37,18 @@ import jetbrains.mps.util.Calculable;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
-import jetbrains.mps.baseLanguage.constraints.Classifier_Behavior;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
-import jetbrains.mps.baseLanguage.constraints.ConceptFunction_Behavior;
+import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.ModelActions;
-import jetbrains.mps.baseLanguage.constraints.BaseMethodDeclaration_Behavior;
+import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
@@ -102,7 +102,7 @@ public class QueriesGenerated {
   }
 
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_VariableDeclaration_1177505054800(final IOperationContext operationContext, final RTransformPreconditionContext _context) {
-    return SLinkOperations.getTarget(_context.getSourceNode(), "initializer", true) == null && VariableDeclaration_Behavior.call_isInitializable_1198838351591(_context.getSourceNode());
+    return SLinkOperations.getTarget(_context.getSourceNode(), "initializer", true) == null && VariableDeclaration_Behavior.call_isInitializable_1213877517488(_context.getSourceNode());
   }
 
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_ClassifierType_1177505734541(final IOperationContext operationContext, final RTransformPreconditionContext _context) {
@@ -279,7 +279,7 @@ __switch__:
       if ((originalExpression != null)) {
         SNode expectedType = ExpectedType_FactoryUtil.createExpectedType(originalExpression);
         if ((expectedType != null)) {
-          SNode abstractCreator = Type_Behavior.call_getAbstractCreator_1187945523562(expectedType);
+          SNode abstractCreator = Type_Behavior.call_getAbstractCreator_1213877337340(expectedType);
           if ((abstractCreator != null)) {
             SLinkOperations.setTarget(_context.getNewNode(), "creator", abstractCreator, true);
           }
@@ -477,7 +477,7 @@ __switch__:
 
           public Object calculate() {
             SNode classConcept = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-            return ((List<SNode>)Classifier_Behavior.call_getVisibleMembers_1210616725718(classConcept, _context.getParentNode(), IClassifiersSearchScope.INSTANCE_METHOD));
+            return ((List<SNode>)Classifier_Behavior.call_getVisibleMembers_1213877306257(classConcept, _context.getParentNode(), IClassifiersSearchScope.INSTANCE_METHOD));
           }
 
         };
@@ -573,7 +573,7 @@ __switch__:
 
           }).first();
           if (parentFunction != null) {
-            return ConceptFunction_Behavior.call_getParameters_1197312191473(parentFunction);
+            return ConceptFunction_Behavior.call_getParameters_1213877374450(parentFunction);
           } else
           {
             return ListSequence.<SNode>fromArray();
@@ -663,7 +663,7 @@ __switch__:
         }
 
         public boolean returnSmallPart(SNode nodeToWrap) {
-          return Type_Behavior.call_selectOnVariableCreation_1206028811708(nodeToWrap);
+          return Type_Behavior.call_selectOnVariableCreation_1213877337352(nodeToWrap);
         }
 
         public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc) {
@@ -787,7 +787,7 @@ __switch__:
             }
 
             public String getMatchingText(String pattern) {
-              return "this" + BaseMethodDeclaration_Behavior.call_getParametersPresentation_1212604672312((item));
+              return "this" + BaseMethodDeclaration_Behavior.call_getParametersPresentation_1213877350304((item));
             }
 
             public String getDescriptionText(String pattern) {
@@ -831,7 +831,7 @@ __switch__:
             }
 
             public String getMatchingText(String pattern) {
-              return "super" + BaseMethodDeclaration_Behavior.call_getParametersPresentation_1212604672312((item));
+              return "super" + BaseMethodDeclaration_Behavior.call_getParametersPresentation_1213877350304((item));
             }
 
             public String getDescriptionText(String pattern) {
@@ -889,7 +889,7 @@ __switch__:
 
           public Object calculate() {
             SNode classConcept = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-            return ((List<SNode>)Classifier_Behavior.call_getVisibleMembers_1210616725718(classConcept, _context.getParentNode(), IClassifiersSearchScope.INSTANCE_FIELD));
+            return ((List<SNode>)Classifier_Behavior.call_getVisibleMembers_1213877306257(classConcept, _context.getParentNode(), IClassifiersSearchScope.INSTANCE_FIELD));
           }
 
         };

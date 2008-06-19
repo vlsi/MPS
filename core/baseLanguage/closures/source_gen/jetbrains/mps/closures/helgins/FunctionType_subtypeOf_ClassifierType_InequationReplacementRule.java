@@ -12,7 +12,7 @@ import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.closures.constraints.ClassifierTypeUtil;
 import java.util.Iterator;
 import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.core.constraints.BaseConcept_Behavior;
+import jetbrains.mps.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule extends InequationReplacementRule_Runtime {
@@ -28,7 +28,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
       if (methods != null && methods.size() == 1) {
         SNode md = methods.get(0);
         if (SLinkOperations.getCount(subtype, "parameterType") == SLinkOperations.getCount(md, "parameter")) {
-          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(SLinkOperations.getTarget(subtype, "resultType", true), ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(md, "returnType", true), supertype), equationInfo.getNodeWithError(), null, "jetbrains.mps.closures.helgins", "1202742499735", false);
+          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(SLinkOperations.getTarget(subtype, "resultType", true), ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(md, "returnType", true), supertype), equationInfo.getNodeWithError(), null, "jetbrains.mps.closures.helgins", "1202742499735", false, 0);
           {
             SNode fpt;
             SNode mpt;
@@ -43,7 +43,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
               }
               fpt = fpt_iterator.next();
               mpt = mpt_iterator.next();
-              TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mpt, "type", true), supertype), fpt, equationInfo.getNodeWithError(), null, "jetbrains.mps.closures.helgins", "1202746383183", false);
+              TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mpt, "type", true), supertype), fpt, equationInfo.getNodeWithError(), null, "jetbrains.mps.closures.helgins", "1202746383183", false, 0);
             }
           }
           return;
@@ -61,7 +61,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
     }
     {
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().reportTypeError(equationInfo.getNodeWithError(), BaseConcept_Behavior.call_getPresentation_1180102203531(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1180102203531(supertype) + errorMsg, "jetbrains.mps.closures.helgins", "1202742336483", intentionProvider);
+      TypeChecker.getInstance().reportTypeError(equationInfo.getNodeWithError(), BaseConcept_Behavior.call_getPresentation_1213877396640(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1213877396640(supertype) + errorMsg, "jetbrains.mps.closures.helgins", "1202742336483", intentionProvider);
     }
   }
 

@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.bootstrap.structureLanguage.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
@@ -41,7 +42,7 @@ public class LinkDeclaration_specializedLink_ReferentConstraint implements IMode
     SNode enclosingConcept = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration", true, false);
     List<SNode> directSupers = SConceptOperations.getDirectSuperConcepts(enclosingConcept, false);
     for(SNode concept : directSupers) {
-      List<SNode> links = AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1196820678380(concept);
+      List<SNode> links = AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(concept);
       ListSequence.fromList(result).addSequence(ListSequence.fromList(links).where(new IWhereFilter <SNode>() {
 
         public boolean accept(SNode it) {

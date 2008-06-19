@@ -5,7 +5,7 @@ package jetbrains.mps.ypath.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.ypath.constraints.VisitChildrenExpression_Behavior;
+import jetbrains.mps.ypath.behavior.VisitChildrenExpression_Behavior;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -19,7 +19,7 @@ public class check_VisitChildrenExpression_InferenceRule implements InferenceRul
 
   public void applyRule(final SNode visitChildrenExpression) {
     int actualCount = SLinkOperations.getCount(visitChildrenExpression, "actualArgument");
-    SNode visitBlock = VisitChildrenExpression_Behavior.call_getEnclosingVisitNodesStatement_1180014794484(visitChildrenExpression);
+    SNode visitBlock = VisitChildrenExpression_Behavior.call_getEnclosingVisitNodesStatement_1213877259423(visitChildrenExpression);
     if (!((visitBlock != null))) {
       TypeChecker.getInstance().reportTypeError(visitChildrenExpression, "visit children is unexpected here", "jetbrains.mps.ypath.helgins", "1180014856089");
     }
@@ -42,7 +42,7 @@ public class check_VisitChildrenExpression_InferenceRule implements InferenceRul
         }
         arg = arg_iterator.next();
         param = param_iterator.next();
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(arg, "jetbrains.mps.ypath.helgins", "1180014730654", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(param, "jetbrains.mps.ypath.helgins", "1180014739452", true), arg, null, "jetbrains.mps.ypath.helgins", "1180014737422", false);
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(arg, "jetbrains.mps.ypath.helgins", "1180014730654", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(param, "jetbrains.mps.ypath.helgins", "1180014739452", true), arg, null, "jetbrains.mps.ypath.helgins", "1180014737422", false, 0);
       }
     }
   }

@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.constraints.IOperation_Behavior;
+import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import java.util.Map;
 import java.util.List;
 import java.util.HashMap;
@@ -28,7 +28,7 @@ public class typeof_InstanceMethodCallOperation_InferenceRule implements Inferen
     // ---
     final SNode methodClassifier = SNodeOperations.getAncestor(SLinkOperations.getTarget(imco, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     final SNode instanceType_typevar_1204064731338 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338), TypeChecker.getInstance().getRuntimeSupport().typeOf(IOperation_Behavior.call_getOperand_1197028596169(imco), "jetbrains.mps.baseLanguage.helgins", "1204064784351", false), IOperation_Behavior.call_getOperand_1197028596169(imco), null, "jetbrains.mps.baseLanguage.helgins", "1204064763142");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338), TypeChecker.getInstance().getRuntimeSupport().typeOf(IOperation_Behavior.call_getOperand_1213877410070(imco), "jetbrains.mps.baseLanguage.helgins", "1204064784351", false), IOperation_Behavior.call_getOperand_1213877410070(imco), null, "jetbrains.mps.baseLanguage.helgins", "1204064763142");
     TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338), new QuotationClass_76().createNode(methodClassifier), imco, null, "jetbrains.mps.baseLanguage.helgins", "1204065906120", true, 0);
     // --- following piece of cake is identical for any method call ---
     {

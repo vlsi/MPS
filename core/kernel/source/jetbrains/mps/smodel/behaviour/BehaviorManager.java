@@ -131,7 +131,7 @@ public final class BehaviorManager implements ApplicationComponent {
   private String behaviorClassByConceptFqName(String fqName) {
     Matcher m = CONCEPT_FQNAME.matcher(fqName);
     if (m.matches()) {
-      return m.group(1) + ".constraints." + m.group(2) + "_Behavior";
+      return m.group(1) + ".behavior." + m.group(2) + "_Behavior";
     } else {
       throw new RuntimeException();
     }

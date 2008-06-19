@@ -6,7 +6,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.bootstrap.smodelLanguage.constraints.SNodeOperation_Behavior;
+import jetbrains.mps.bootstrap.smodelLanguage.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.patterns.IMatchingPattern;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -23,7 +23,7 @@ public class typeOf_Concept_GetAllSubConcepts_InferenceRule implements Inference
     if (SLinkOperations.getTarget(node, "smodel", true) != null) {
       TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(node, "smodel", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207683989240", true), new QuotationClass_94().createNode(), SLinkOperations.getTarget(node, "smodel", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207683989238", false, 0);
     }
-    SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1200920411564(node);
+    SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(node);
     {
       final SNode LeftType = TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207683978022", false);
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(LeftType, new Runnable() {

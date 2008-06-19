@@ -6,7 +6,7 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.ypath.constraints.IFeature_Behavior;
+import jetbrains.mps.ypath.behavior.IFeature_Behavior;
 
 public class IFeature_opposite_DELETE {
 
@@ -27,7 +27,7 @@ public class IFeature_opposite_DELETE {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      IFeature_Behavior.call_removeOpposite_1197913935418(node);
+      IFeature_Behavior.call_removeOpposite_1213877499679(node);
     }
 
 }

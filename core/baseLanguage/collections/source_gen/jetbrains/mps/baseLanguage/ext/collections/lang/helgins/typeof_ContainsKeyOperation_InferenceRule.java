@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.baseLanguage.constraints.IOperation_Behavior;
+import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -16,10 +16,10 @@ public class typeof_ContainsKeyOperation_InferenceRule implements InferenceRule_
 
   public void applyRule(final SNode containsKeyOperation) {
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(containsKeyOperation, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1201873003944", true), new QuotationClass_56().createNode(), containsKeyOperation, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1201873006966");
-    final SNode KEY_typevar_1201873088202 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-    final SNode VALUE_typevar_1201874216771 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(IOperation_Behavior.call_getOperand_1197028596169(containsKeyOperation), "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1201874242447", true), new QuotationClass_57().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(VALUE_typevar_1201874216771), TypeChecker.getInstance().getEquationManager().getRepresentator(KEY_typevar_1201873088202)), IOperation_Behavior.call_getOperand_1197028596169(containsKeyOperation), null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1201874242445", false);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(containsKeyOperation, "key", true), "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1201873021716", true), TypeChecker.getInstance().getEquationManager().getRepresentator(KEY_typevar_1201873088202), SLinkOperations.getTarget(containsKeyOperation, "key", true), null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1201873049497", false);
+    final SNode KEY_typevar_1201873088202 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
+    final SNode VALUE_typevar_1201874216771 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(IOperation_Behavior.call_getOperand_1213877410070(containsKeyOperation), "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1201874242447", true), new QuotationClass_57().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(VALUE_typevar_1201874216771), TypeChecker.getInstance().getEquationManager().getRepresentator(KEY_typevar_1201873088202)), IOperation_Behavior.call_getOperand_1213877410070(containsKeyOperation), null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1201874242445", false, 0);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(containsKeyOperation, "key", true), "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1201873021716", true), TypeChecker.getInstance().getEquationManager().getRepresentator(KEY_typevar_1201873088202), SLinkOperations.getTarget(containsKeyOperation, "key", true), null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1201873049497", false, 0);
   }
 
   public String getApplicableConceptFQName() {

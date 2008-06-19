@@ -8,7 +8,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.ypath.constraints.ITreePathExpression_Behavior;
+import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
 import jetbrains.mps.ypath.runtime.TraversalAxis;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -18,7 +18,7 @@ import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceIterableAdapter;
 import java.util.Iterator;
 import jetbrains.mps.closures.runtime.YieldingIterator;
-import jetbrains.mps.ypath.constraints.IParamFeature_Behavior;
+import jetbrains.mps.ypath.behavior.IParamFeature_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 
 public class OperationsUtil {
@@ -29,7 +29,7 @@ public class OperationsUtil {
     }
     SNode tpoe = SNodeOperations.getAncestor(wildCardOp, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
     final SNode nodeType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true));
-    SNode tp = ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe);
+    SNode tp = ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe);
     final TraversalAxis axis = TraversalAxis.parseValue(SPropertyOperations.getString_def(wildCardOp, "axis", "DESCENDANTS"));
     List<SNode> features = ((SLinkOperations.getTarget(wildCardOp, "usedFeature", false) == null) ?
       ListSequence.fromList(SLinkOperations.getTargets(tp, "features", true)).where(new IWhereFilter <SNode>() {
@@ -64,7 +64,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 6:
-                      this._6_po_it = IParamFeature_Behavior.call_getParameterObjects_1197461148674(it, nodeType).iterator();
+                      this._6_po_it = IParamFeature_Behavior.call_getParameterObjects_1213877340242(it, nodeType).iterator();
                     case 7:
                       if (!(this._6_po_it.hasNext())) {
                         this.__CP__ = 3;

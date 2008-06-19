@@ -11,17 +11,17 @@ import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Calculable;
-import jetbrains.mps.baseLanguage.classifiers.constraints.IClassifierPart_Behavior;
+import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifierPart_Behavior;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.baseLanguage.classifiers.constraints.IClassifier_Behavior;
+import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.classifiers.constraints.IMember_Behavior;
+import jetbrains.mps.baseLanguage.classifiers.behavior.IMember_Behavior;
 
 public class QueriesGenerated {
 
@@ -41,7 +41,7 @@ public class QueriesGenerated {
             return contextPart;
           } else
           {
-            return IClassifierPart_Behavior.call_getMainClassifier_1205752202019(contextPart);
+            return IClassifierPart_Behavior.call_getMainClassifier_1213877255428(contextPart);
           }
         }
 
@@ -55,7 +55,7 @@ public class QueriesGenerated {
         Calculable calc = new Calculable() {
 
           public Object calculate() {
-            return IClassifier_Behavior.call_getMembers_1205836846834(contextClassifier, _context.getParentNode());
+            return IClassifier_Behavior.call_getMembers_1213877528020(contextClassifier, _context.getParentNode());
           }
 
         };
@@ -67,7 +67,7 @@ public class QueriesGenerated {
             public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
               SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
               SLinkOperations.setNewChild(result, "operand", "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson");
-              SLinkOperations.setTarget(result, "operation", IMember_Behavior.call_createOperation_1205921963397((item)), true);
+              SLinkOperations.setTarget(result, "operation", IMember_Behavior.call_createOperation_1213877353000((item)), true);
               return result;
             }
 

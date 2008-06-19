@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.bootstrap.structureLanguage.constraints.DataTypeDeclaration_Behavior;
+import jetbrains.mps.bootstrap.structureLanguage.behavior.DataTypeDeclaration_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ConstraintsFunctionParameter_propertyValue_InferenceRule implements InferenceRule_Runtime {
@@ -20,7 +20,7 @@ public class typeof_ConstraintsFunctionParameter_propertyValue_InferenceRule imp
     SNode property = SLinkOperations.getTarget(propertyConstraint, "applicableProperty", false);
     SNode dataType = SLinkOperations.getTarget(property, "dataType", false);
     if (dataType != null) {
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1212097666659", true), DataTypeDeclaration_Behavior.call_toBaseLanguageType_1182472765133(dataType), node, null, "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1212097666657");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1212097666659", true), DataTypeDeclaration_Behavior.call_toBaseLanguageType_1213877229718(dataType), node, null, "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1212097666657");
     }
   }
 

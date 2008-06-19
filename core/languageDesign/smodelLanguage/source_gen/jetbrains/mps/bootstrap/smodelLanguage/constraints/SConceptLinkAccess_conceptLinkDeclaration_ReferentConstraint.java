@@ -12,8 +12,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
-import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.bootstrap.structureLanguage.behavior.AbstractConceptDeclaration_Behavior;
 
 public class SConceptLinkAccess_conceptLinkDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -39,9 +40,9 @@ public class SConceptLinkAccess_conceptLinkDeclaration_ReferentConstraint implem
       operandConcept = SLinkOperations.getTarget(leftType, "conceptDeclaraton", false);
     } else
     {
-      operandConcept = SNodeOperation_Behavior.getLeftNodeConcept_1208193558130(_context.getEnclosingNode());
+      operandConcept = SNodeOperation_Behavior.getLeftNodeConcept_1213877508847(_context.getEnclosingNode());
     }
-    return new SimpleSearchScope(AbstractConceptDeclaration_Behavior.call_getConceptLinkDeclarations_1208197136152(operandConcept));
+    return new SimpleSearchScope(AbstractConceptDeclaration_Behavior.call_getConceptLinkDeclarations_1213877394578(operandConcept));
   }
 
   public String getNodeReferentSearchScopeDescription() {

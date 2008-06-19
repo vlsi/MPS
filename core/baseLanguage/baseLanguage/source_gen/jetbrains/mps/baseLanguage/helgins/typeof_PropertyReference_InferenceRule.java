@@ -6,7 +6,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.baseLanguage.constraints.IOperation_Behavior;
+import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -19,7 +19,7 @@ public class typeof_PropertyReference_InferenceRule implements InferenceRule_Run
     SNode property = SLinkOperations.getTarget(propertyReference, "property", false);
     if ((property != null)) {
       TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(propertyReference, "jetbrains.mps.baseLanguage.helgins", "1201468020092", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(property, "jetbrains.mps.baseLanguage.helgins", "1201468039491", true), propertyReference, null, "jetbrains.mps.baseLanguage.helgins", "1201468036877");
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(IOperation_Behavior.call_getOperand_1197028596169(propertyReference), "jetbrains.mps.baseLanguage.helgins", "1201468086552", true), new QuotationClass_75().createNode(SNodeOperations.getAncestor(property, "jetbrains.mps.baseLanguage.structure.Classifier", false, false)), IOperation_Behavior.call_getOperand_1197028596169(propertyReference), null, "jetbrains.mps.baseLanguage.helgins", "1201468086542", false, 0);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(IOperation_Behavior.call_getOperand_1213877410070(propertyReference), "jetbrains.mps.baseLanguage.helgins", "1201468086552", true), new QuotationClass_75().createNode(SNodeOperations.getAncestor(property, "jetbrains.mps.baseLanguage.structure.Classifier", false, false)), IOperation_Behavior.call_getOperand_1213877410070(propertyReference), null, "jetbrains.mps.baseLanguage.helgins", "1201468086542", false, 0);
     }
   }
 

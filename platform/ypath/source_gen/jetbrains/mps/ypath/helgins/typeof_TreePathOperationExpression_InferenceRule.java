@@ -9,8 +9,8 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.ypath.constraints.FeatureTargetTypeUtil;
-import jetbrains.mps.ypath.constraints.ParameterWrapper_Behavior;
-import jetbrains.mps.ypath.constraints.ITreePathExpression_Behavior;
+import jetbrains.mps.ypath.behavior.ParameterWrapper_Behavior;
+import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_TreePathOperationExpression_InferenceRule implements InferenceRule_Runtime {
@@ -23,14 +23,14 @@ public class typeof_TreePathOperationExpression_InferenceRule implements Inferen
       final SNode op = SLinkOperations.getTarget(tpoe, "operation", true);
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(op, "usedFeature", false), "jetbrains.mps.ypath.structure.IParamFeature")) {
         if (SPropertyOperations.getString(SLinkOperations.getTarget(op, "paramObject", true), "name") != null) {
-          final SNode SourceType_typevar_1186145333005 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+          final SNode SourceType_typevar_1186145333005 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
           TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(SourceType_typevar_1186145333005), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(tpoe, "expression", true), "jetbrains.mps.ypath.helgins", "1186145352982", true), SLinkOperations.getTarget(tpoe, "expression", true), null, "jetbrains.mps.ypath.helgins", "1186145347351");
           {
             final SNode _representatorVar1 = TypeChecker.getInstance().getEquationManager().getRepresentator(SourceType_typevar_1186145333005);
             TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar1, new Runnable() {
 
               public void run() {
-                SNode targetType = FeatureTargetTypeUtil.getTargetType(SLinkOperations.getTarget(op, "usedFeature", false), SLinkOperations.getTarget(TypeChecker.getInstance().getEquationManager().getRepresentator(SourceType_typevar_1186145333005), "nodeType", true), ParameterWrapper_Behavior.call_getParameterValue_1194378161915(SLinkOperations.getTarget(op, "paramObject", true)));
+                SNode targetType = FeatureTargetTypeUtil.getTargetType(SLinkOperations.getTarget(op, "usedFeature", false), SLinkOperations.getTarget(TypeChecker.getInstance().getEquationManager().getRepresentator(SourceType_typevar_1186145333005), "nodeType", true), ParameterWrapper_Behavior.call_getParameterValue_1213877312166(SLinkOperations.getTarget(op, "paramObject", true)));
                 if (!((targetType != null))) {
                   TypeChecker.getInstance().reportTypeError(tpoe, "Received null target type", "jetbrains.mps.ypath.helgins", "1196269826366");
                 }
@@ -44,7 +44,7 @@ public class typeof_TreePathOperationExpression_InferenceRule implements Inferen
         }
       } else
       {
-        SNode treePath = ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe);
+        SNode treePath = ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe);
         if (treePath != null) {
           TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(treePath, "treePathType", true), tpoe, "jetbrains.mps.ypath.helgins", "1196942474384");
         } else

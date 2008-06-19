@@ -16,10 +16,10 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.ypath.constraints.TreePath_Behavior;
-import jetbrains.mps.ypath.constraints.ITreePathExpression_Behavior;
+import jetbrains.mps.ypath.behavior.TreePath_Behavior;
+import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
 import jetbrains.mps.ypath.actions.TraversalAxisUtil;
-import jetbrains.mps.ypath.constraints.IParamFeature_Behavior;
+import jetbrains.mps.ypath.behavior.IParamFeature_Behavior;
 import jetbrains.mps.smodel.SModel;
 
 public class menu_SubstituteFeatureAndParameter extends AbstractCellMenuComponent {
@@ -39,10 +39,10 @@ public class menu_SubstituteFeatureAndParameter extends AbstractCellMenuComponen
       SNode tpoe = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
       if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true)), "jetbrains.mps.ypath.structure.TreePathType")) {
         SNode nodeType = SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true)), "nodeType", true);
-        for(SNode feat : TreePath_Behavior.call_getFeature_1184591220431(ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe), nodeType)) {
+        for(SNode feat : TreePath_Behavior.call_getFeature_1213877481312(ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe), nodeType)) {
           if (TraversalAxisUtil.isAcceptableFeatureForAxis(feat, axis)) {
             if (SNodeOperations.isInstanceOf(feat, "jetbrains.mps.ypath.structure.IParamFeature")) {
-              for(SNode pw : IParamFeature_Behavior.call_getParameterObjects_1197461148674(feat, nodeType)) {
+              for(SNode pw : IParamFeature_Behavior.call_getParameterObjects_1213877340242(feat, nodeType)) {
                 ListSequence.fromList(res).addElement(new Pair(feat, pw));
               }
             } else

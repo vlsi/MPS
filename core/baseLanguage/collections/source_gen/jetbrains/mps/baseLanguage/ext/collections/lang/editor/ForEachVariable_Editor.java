@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.baseLanguage.constraints.Type_Behavior;
+import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 
 public class ForEachVariable_Editor extends DefaultNodeEditor {
 
@@ -89,7 +89,7 @@ public class ForEachVariable_Editor extends DefaultNodeEditor {
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
       List<String> postfixes = ListSequence.<String>fromArray();
       if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.structure.Type")) {
-        ListSequence.fromList(postfixes).addSequence(ListSequence.fromList(Type_Behavior.call_getVariableSuffixes_1182416669983(TypeChecker.getInstance().getTypeOf(node))));
+        ListSequence.fromList(postfixes).addSequence(ListSequence.fromList(Type_Behavior.call_getVariableSuffixes_1213877337304(TypeChecker.getInstance().getTypeOf(node))));
       }
       return postfixes;
     }

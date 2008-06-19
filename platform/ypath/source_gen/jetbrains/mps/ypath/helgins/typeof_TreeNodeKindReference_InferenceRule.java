@@ -5,7 +5,7 @@ package jetbrains.mps.ypath.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.ypath.constraints.TreePath_Behavior;
+import jetbrains.mps.ypath.behavior.TreePath_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -15,7 +15,7 @@ public class typeof_TreeNodeKindReference_InferenceRule implements InferenceRule
   }
 
   public void applyRule(final SNode treeNodeKindReference) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(treeNodeKindReference, "jetbrains.mps.ypath.helgins", "1179740518224", true), new QuotationClass_6().createNode(TreePath_Behavior.call_getNodeType_1179306333014(SLinkOperations.getTarget(treeNodeKindReference, "treePathAspect", false))), treeNodeKindReference, null, "jetbrains.mps.ypath.helgins", "1179740556071");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(treeNodeKindReference, "jetbrains.mps.ypath.helgins", "1179740518224", true), new QuotationClass_6().createNode(TreePath_Behavior.call_getNodeType_1213877481303(SLinkOperations.getTarget(treeNodeKindReference, "treePathAspect", false))), treeNodeKindReference, null, "jetbrains.mps.ypath.helgins", "1179740556071");
   }
 
   public String getApplicableConceptFQName() {

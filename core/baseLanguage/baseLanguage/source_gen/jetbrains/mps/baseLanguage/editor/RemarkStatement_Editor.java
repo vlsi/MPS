@@ -10,7 +10,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.baseLanguage.constraints.RemarkStatement_Behavior;
+import jetbrains.mps.baseLanguage.behavior.RemarkStatement_Behavior;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -58,7 +58,7 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
   }
 
   public static boolean renderingCondition3101_0(SNode node, EditorContext editorContext, IScope scope) {
-    return !(RemarkStatement_Behavior.call_isTodo_1208784222268(node));
+    return !(RemarkStatement_Behavior.call_isTodo_1213877427548(node));
   }
 
 

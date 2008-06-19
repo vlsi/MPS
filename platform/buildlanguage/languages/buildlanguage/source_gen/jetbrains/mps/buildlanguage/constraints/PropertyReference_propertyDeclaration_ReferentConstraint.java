@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.buildlanguage.behavior.IPropertyHolder_Behavior;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class PropertyReference_propertyDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
@@ -35,7 +36,7 @@ public class PropertyReference_propertyDeclaration_ReferentConstraint implements
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for(SNode holder : SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.buildlanguage.structure.IPropertyHolder", true)) {
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(IPropertyHolder_Behavior.call_getProperties_1200425502495(holder)));
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(IPropertyHolder_Behavior.call_getProperties_1213877375726(holder)));
     }
     return new SimpleSearchScope(result);
   }

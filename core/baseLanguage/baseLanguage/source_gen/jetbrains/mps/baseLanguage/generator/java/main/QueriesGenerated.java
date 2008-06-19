@@ -9,7 +9,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.baseLanguage.constraints.Property_Behavior;
+import jetbrains.mps.baseLanguage.behavior.Property_Behavior;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.IfMacroContext;
@@ -30,7 +30,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1201570306027(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Property_Behavior.call_getGetterMethodName_1206152348095(_context.getNode());
+    return Property_Behavior.call_getGetterMethodName_1213877383170(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1201571350771(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -38,41 +38,41 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1202008885748(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Property_Behavior.call_getSetterMethodName_1206152502448(_context.getNode());
+    return Property_Behavior.call_getSetterMethodName_1213877383179(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1206153259009(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode property = SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "operation", true), "property", false);
-    return Property_Behavior.call_getSetterMethodName_1206152502448(property);
+    return Property_Behavior.call_getSetterMethodName_1213877383179(property);
   }
 
   public static Object propertyMacro_GetPropertyValue_1206154728906(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode property = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "operation", true), "property", false);
-    return Property_Behavior.call_getGetterMethodName_1206152348095(property);
+    return Property_Behavior.call_getGetterMethodName_1213877383170(property);
   }
 
   public static boolean ifMacro_Condition_1201570447832(final IOperationContext operationContext, final IfMacroContext _context) {
-    return Property_Behavior.call_isCustomImplementation_1202009265236(_context.getNode());
+    return Property_Behavior.call_isCustomImplementation_1213877383144(_context.getNode());
   }
 
   public static boolean ifMacro_Condition_1201570983175(final IOperationContext operationContext, final IfMacroContext _context) {
-    return Property_Behavior.call_isDefaultImplementation_1201571498897(_context.getNode());
+    return Property_Behavior.call_isDefaultImplementation_1213877383134(_context.getNode());
   }
 
   public static boolean ifMacro_Condition_1201571423789(final IOperationContext operationContext, final IfMacroContext _context) {
-    return Property_Behavior.call_isDefaultImplementation_1201571498897(_context.getNode());
+    return Property_Behavior.call_isDefaultImplementation_1213877383134(_context.getNode());
   }
 
   public static boolean ifMacro_Condition_1202008840753(final IOperationContext operationContext, final IfMacroContext _context) {
-    return Property_Behavior.call_hasSetter_1202595424897(_context.getNode());
+    return Property_Behavior.call_hasSetter_1213877383224(_context.getNode());
   }
 
   public static boolean ifMacro_Condition_1202009182092(final IOperationContext operationContext, final IfMacroContext _context) {
-    return Property_Behavior.call_isDefaultImplementation_1201571498897(_context.getNode());
+    return Property_Behavior.call_isDefaultImplementation_1213877383134(_context.getNode());
   }
 
   public static boolean ifMacro_Condition_1202009232386(final IOperationContext operationContext, final IfMacroContext _context) {
-    return Property_Behavior.call_isCustomImplementation_1202009265236(_context.getNode());
+    return Property_Behavior.call_isCustomImplementation_1213877383144(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1201570279414(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -88,7 +88,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1202008874192(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return Property_Behavior.call_getSetterVisibility_1202090653454(_context.getNode());
+    return Property_Behavior.call_getSetterVisibility_1213877383188(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1202009151075(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -113,11 +113,11 @@ public class QueriesGenerated {
   }
 
   public static List sourceNodesQuery_1201570443454(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(Property_Behavior.call_getCustomPropertyImplementation_1202009493962(_context.getNode()), "getAccessor", true), "statementList", true), "statement", true);
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(Property_Behavior.call_getCustomPropertyImplementation_1213877383154(_context.getNode()), "getAccessor", true), "statementList", true), "statement", true);
   }
 
   public static List sourceNodesQuery_1202009237531(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(Property_Behavior.call_getCustomPropertyImplementation_1202009493962(_context.getNode()), "setAccessor", true), "statementList", true), "statement", true);
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(Property_Behavior.call_getCustomPropertyImplementation_1213877383154(_context.getNode()), "setAccessor", true), "statementList", true), "statement", true);
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1201570605396(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {

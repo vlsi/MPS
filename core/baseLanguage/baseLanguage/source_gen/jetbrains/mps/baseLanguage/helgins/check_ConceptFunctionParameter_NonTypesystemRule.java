@@ -8,7 +8,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.constraints.ConceptFunction_Behavior;
+import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
@@ -30,7 +30,7 @@ public class check_ConceptFunctionParameter_NonTypesystemRule implements NonType
     } else
     {
       final SNode parameterConcept = SNodeOperations.getConceptDeclaration(parameter);
-      Iterable<SNode> seq = ListSequence.fromList(ConceptFunction_Behavior.call_getParameters_1197312191473(conceptFunction)).where(new IWhereFilter <SNode>() {
+      Iterable<SNode> seq = ListSequence.fromList(ConceptFunction_Behavior.call_getParameters_1213877374450(conceptFunction)).where(new IWhereFilter <SNode>() {
 
         public boolean accept(SNode it) {
           return SConceptOperations.isSubConceptOf(parameterConcept, NameUtil.nodeFQName(it));

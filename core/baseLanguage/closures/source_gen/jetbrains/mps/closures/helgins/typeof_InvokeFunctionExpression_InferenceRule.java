@@ -39,7 +39,7 @@ public class typeof_InvokeFunctionExpression_InferenceRule implements InferenceR
               }
               pt = pt_iterator.next();
               p = p_iterator.next();
-              TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(p, "jetbrains.mps.closures.helgins", "1202920138888", true), pt, p, null, "jetbrains.mps.closures.helgins", "1202920135673", false);
+              TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(p, "jetbrains.mps.closures.helgins", "1202920138888", true), pt, p, null, "jetbrains.mps.closures.helgins", "1202920135673", false, 0);
             }
           }
         }

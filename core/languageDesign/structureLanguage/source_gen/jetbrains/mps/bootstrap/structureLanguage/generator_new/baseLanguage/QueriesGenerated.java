@@ -15,7 +15,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.structureLanguage.generator_new.util.QueriesUtil;
 import jetbrains.mps.bootstrap.structureLanguage.generator_new.util.LinkDeclarationUtil;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
-import jetbrains.mps.bootstrap.structureLanguage.constraints.EnumerationDataTypeDeclaration_Behavior;
+import jetbrains.mps.bootstrap.structureLanguage.behavior.EnumerationDataTypeDeclaration_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
 import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -515,7 +515,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1197509802062(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode defaultMember = EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1197509213196(_context.getNode());
+    SNode defaultMember = EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1213877397785(_context.getNode());
     SNode outputEnumConstant = _context.getGenerator().findOutputNodeByInputNodeAndMappingName(defaultMember, "outputEnumConstant");
     return (SNode)outputEnumConstant;
   }

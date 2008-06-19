@@ -22,7 +22,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.bootstrap.smodelLanguage.constraints.StaticConceptMethodCall_Behavior;
+import jetbrains.mps.bootstrap.smodelLanguage.behavior.StaticConceptMethodCall_Behavior;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
@@ -177,7 +177,7 @@ public class QueriesGenerated {
         Calculable calc = new Calculable() {
 
           public Object calculate() {
-            return StaticConceptMethodCall_Behavior.getClassifiersWithStaticMethods_1206021753918(_context.getModel(), operationContext.getScope(), _context.getParentNode());
+            return StaticConceptMethodCall_Behavior.getClassifiersWithStaticMethods_1213877485028(_context.getModel(), operationContext.getScope(), _context.getParentNode());
           }
 
         };

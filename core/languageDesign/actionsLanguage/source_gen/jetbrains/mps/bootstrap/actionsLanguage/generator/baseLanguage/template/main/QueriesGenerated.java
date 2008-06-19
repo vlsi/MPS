@@ -17,7 +17,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
-import jetbrains.mps.baseLanguage.constraints.Type_Behavior;
+import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
@@ -316,7 +316,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1179457640870(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return Type_Behavior.call_getUnboxedType_1182580547590(SLinkOperations.getTarget(_context.getNode(), "type", true));
+    return Type_Behavior.call_getUnboxedType_1213877337320(SLinkOperations.getTarget(_context.getNode(), "type", true));
   }
 
   public static SNode sourceNodeQuery_1180114556480(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -340,7 +340,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1181738985228(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return Type_Behavior.call_getUnboxedType_1182580547590(SLinkOperations.getTarget(_context.getNode(), "type", true));
+    return Type_Behavior.call_getUnboxedType_1213877337320(SLinkOperations.getTarget(_context.getNode(), "type", true));
   }
 
   public static SNode sourceNodeQuery_1182820930324(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

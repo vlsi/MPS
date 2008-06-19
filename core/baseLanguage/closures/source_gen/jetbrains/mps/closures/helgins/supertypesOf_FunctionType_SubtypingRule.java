@@ -7,7 +7,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.ISubtypingRule_Runtime;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import java.util.Collections;
-import jetbrains.mps.closures.constraints.FunctionType_Behavior;
+import jetbrains.mps.closures.behavior.FunctionType_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
@@ -20,7 +20,7 @@ public class supertypesOf_FunctionType_SubtypingRule extends SubtypingRule_Runti
 
   public List<SNode> getSubOrSuperTypes(SNode ft) {
     List<SNode> supertypes = Collections.emptyList();
-    String rtSig = "FunctionTypes." + FunctionType_Behavior.call_getRuntimeSignature_1202756382806(ft);
+    String rtSig = "FunctionTypes." + FunctionType_Behavior.call_getRuntimeSignature_1213877404927(ft);
     List<SNode> interfaces = RulesUtil_Closures.getInterfaces();
     for(SNode ice : interfaces) {
       if (rtSig.equals(SPropertyOperations.getString(ice, "name"))) {

@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
+import jetbrains.mps.bootstrap.editorLanguage.behavior.BaseEditorComponent_Behavior;
 
 public class CellModel_Component_editorComponent_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -31,7 +32,7 @@ public class CellModel_Component_editorComponent_ReferentConstraint implements I
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode container = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.BaseEditorComponent", true, false);
-    return new SimpleSearchScope(BaseEditorComponent_Behavior.call_getApplicableComponents_1199449552893(container, operationContext.getScope()));
+    return new SimpleSearchScope(BaseEditorComponent_Behavior.call_getApplicableComponents_1213877372457(container, operationContext.getScope()));
   }
 
   public String getNodeReferentSearchScopeDescription() {

@@ -6,7 +6,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
-import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.bootstrap.structureLanguage.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -19,7 +19,7 @@ public class typeof_LinkPatternVariableDeclaration_InferenceRule implements Infe
   public void applyRule(final SNode nodeToCheck) {
     SNode parent = SNodeOperations.getParent(nodeToCheck, null, false, false);
     String role = AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(nodeToCheck.getRole_());
-    SNode linkDeclaration = AbstractConceptDeclaration_Behavior.call_findLinkDeclaration_1212193671949(SNodeOperations.getConceptDeclaration(parent), role);
+    SNode linkDeclaration = AbstractConceptDeclaration_Behavior.call_findLinkDeclaration_1213877394467(SNodeOperations.getConceptDeclaration(parent), role);
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.patterns.helgins", "1202486174317", true), new QuotationClass_1().createNode(SLinkOperations.getTarget(linkDeclaration, "target", false)), nodeToCheck, null, "jetbrains.mps.patterns.helgins", "1202486181555");
   }
 

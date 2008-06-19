@@ -4,7 +4,7 @@ package jetbrains.mps.bootstrap.helgins.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.constraints.StatementList_Behavior;
+import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -14,7 +14,7 @@ public class check_AbstractSubtypingRule_NonTypesystemRule implements NonTypesys
   }
 
   public void applyRule(final SNode abstractSubtypingRule) {
-    StatementList_Behavior.call_checkDataFlow_1206985459773(SLinkOperations.getTarget(abstractSubtypingRule, "body", true));
+    StatementList_Behavior.call_checkDataFlow_1213877327382(SLinkOperations.getTarget(abstractSubtypingRule, "body", true));
   }
 
   public String getApplicableConceptFQName() {

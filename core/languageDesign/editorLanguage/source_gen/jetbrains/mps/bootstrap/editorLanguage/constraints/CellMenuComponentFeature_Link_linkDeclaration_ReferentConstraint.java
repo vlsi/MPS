@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
-import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.bootstrap.structureLanguage.behavior.AbstractConceptDeclaration_Behavior;
 
 public class CellMenuComponentFeature_Link_linkDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -34,7 +34,7 @@ public class CellMenuComponentFeature_Link_linkDeclaration_ReferentConstraint im
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode editorComponent = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuComponent", true, false);
     SNode editedConcept = SLinkOperations.getTarget(editorComponent, "conceptDeclaration", false);
-    return new SimpleSearchScope(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1196820678380(editedConcept));
+    return new SimpleSearchScope(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(editedConcept));
   }
 
   public String getNodeReferentSearchScopeDescription() {

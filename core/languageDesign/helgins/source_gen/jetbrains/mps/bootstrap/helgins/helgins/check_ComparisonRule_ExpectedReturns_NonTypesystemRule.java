@@ -4,7 +4,7 @@ package jetbrains.mps.bootstrap.helgins.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.constraints.StatementList_Behavior;
+import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -14,7 +14,7 @@ public class check_ComparisonRule_ExpectedReturns_NonTypesystemRule implements N
   }
 
   public void applyRule(final SNode comparisonRule) {
-    StatementList_Behavior.call_checkReturns_1206989696423(SLinkOperations.getTarget(comparisonRule, "body", true));
+    StatementList_Behavior.call_checkReturns_1213877327397(SLinkOperations.getTarget(comparisonRule, "body", true));
   }
 
   public String getApplicableConceptFQName() {
