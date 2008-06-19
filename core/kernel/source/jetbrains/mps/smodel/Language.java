@@ -6,6 +6,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
+import jetbrains.mps.bootstrap.pluginLanguage.generator.baseLanguage.template.util.PluginNameUtils;
 import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.logging.refactoring.structure.Refactoring;
@@ -473,7 +474,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   }
 
   public String getGeneratedPluginClassLongName() {
-    return getPluginModelDescriptor().getLongName() + "." + NameUtil.capitalize(NameUtil.shortNameFromLongName(getModuleUID())) + "_Plugin";
+    return getPluginModelDescriptor().getLongName() + "." + PluginNameUtils.getPluginName(this);
   }
 
   public List<Generator> getGenerators() {

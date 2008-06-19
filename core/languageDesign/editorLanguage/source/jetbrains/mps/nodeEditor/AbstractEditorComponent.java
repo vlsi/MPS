@@ -2171,6 +2171,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     }
 
+    if (dataId.equals(MPSDataKeys.SNODES.getName())){
+      return getSelectedNodes();
+    }
+
     if (dataId.equals(MPSDataKeys.SMODEL_DESCRIPTOR.getName())) {
       return ModelAccess.instance().runReadAction(new Computable() {
         public Object compute() {

@@ -17,7 +17,7 @@
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
-  <maxImportIndex value="51" />
+  <maxImportIndex value="52" />
   <import index="1" modelUID="jetbrains.mps.ide.actions.nodes@java_stub" version="-1" />
   <import index="2" modelUID="jetbrains.mps.ide.modelchecker@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.ide.actions.model@java_stub" version="-1" />
@@ -56,6 +56,7 @@
   <import index="49" modelUID="jetbrains.mps.workbench@java_stub" version="-1" />
   <import index="50" modelUID="jetbrains.mps.plugins.actions@java_stub" version="-1" />
   <import index="51" modelUID="jetbrains.mps.workbench.action@java_stub" version="-1" />
+  <import index="52" modelUID="jetbrains.mps.generator@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991215587">
     <property name="name" value="ProjectPaneNodeActions" />
     <property name="id" value="ProjectPaneNodeActions" />
@@ -171,11 +172,19 @@
         <link role="javaClass" targetNodeId="2.~CheckModelAction" resolveInfo="CheckModelAction" />
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204909253120" />
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204988291723">
-        <link role="javaClass" targetNodeId="3.~GenerateGroup_autoplan_files" resolveInfo="GenerateGroup_autoplan_files" />
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator" id="1213882275200">
+        <link role="constructorDeclaration" targetNodeId="3.~GenerateGroup_autoplan.&lt;init&gt;(jetbrains.mps.generator.IGenerationType)" resolveInfo="GenerateGroup_autoplan" />
+        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1213882310644">
+          <link role="classifier" targetNodeId="52.~IGenerationType" resolveInfo="IGenerationType" />
+          <link role="variableDeclaration" targetNodeId="52.~IGenerationType.FILES" resolveInfo="FILES" />
+        </node>
       </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204988291724">
-        <link role="javaClass" targetNodeId="3.~GenerateGroup_autoplan_text" resolveInfo="GenerateGroup_autoplan_text" />
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator" id="1213882316552">
+        <link role="constructorDeclaration" targetNodeId="3.~GenerateGroup_autoplan.&lt;init&gt;(jetbrains.mps.generator.IGenerationType)" resolveInfo="GenerateGroup_autoplan" />
+        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1213882316553">
+          <link role="classifier" targetNodeId="52.~IGenerationType" resolveInfo="IGenerationType" />
+          <link role="variableDeclaration" targetNodeId="52.~IGenerationType.TEXT" resolveInfo="TEXT" />
+        </node>
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1205260710593">
         <link role="javaClass" targetNodeId="3.~ShowMappingsPartitioningAction" resolveInfo="ShowMappingsPartitioningAction" />

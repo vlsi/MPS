@@ -324,8 +324,16 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
       return getSelectedNode();
     }
 
+    if (dataId.equals(MPSDataKeys.SNODES.getName())) {
+      return getSelectedNodes();
+    }
+
     if (dataId.equals(MPSDataKeys.SMODEL_DESCRIPTOR.getName())) {
       return getSelectedModel();
+    }
+
+    if (dataId.equals(MPSDataKeys.MODELS.getName())) {
+      return getSelectedModels();
     }
 
     if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {

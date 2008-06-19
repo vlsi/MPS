@@ -1,12 +1,10 @@
 package jetbrains.mps.workbench.action;
 
 import com.intellij.openapi.actionSystem.*;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -16,6 +14,7 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
 import javax.swing.JPopupMenu;
+import java.awt.Frame;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -50,19 +49,49 @@ public class ActionUtils {
   }
 
   public static ActionContext createContext(AnActionEvent e) {
-    ActionContext context = new ActionContext();
+    return createContext(new ActionEventData(e));
+  }
 
-    Project project = e.getData(PlatformDataKeys.PROJECT);
-    if (project != null) {
-      MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
-      context.put(IOperationContext.class, new ProjectOperationContext(mpsProject));
-    }
+  public static ActionContext createContext(final ActionEventData eventData) {
+    return new ActionContext() {
+      public <T> T get(Class<T> cls) {
+        return eventData.get(cls);
+      }
 
-    context.put(SModelDescriptor.class, e.getData(MPSDataKeys.SMODEL_DESCRIPTOR));
-    context.put(SNode.class, e.getData(MPSDataKeys.SNODE));
-    context.put(IOperationContext.class, e.getData(MPSDataKeys.OPERATION_CONTEXT));
+      @Nullable
+      public List<SNode> getNodes() {
+        return eventData.getNodes();
+      }
 
-    return context;
+      @Nullable
+      public List<SModelDescriptor> getModels() {
+        return eventData.getModels();
+      }
+
+      public SNode getNode() {
+        return eventData.getNode();
+      }
+
+      public SModelDescriptor getModel() {
+        return eventData.getModelDescriptor();
+      }
+
+      public IScope getScope() {
+        return eventData.getScope();
+      }
+
+      public Frame getFrame() {
+        return eventData.getFrame();
+      }
+
+      public IOperationContext getOperationContext() {
+        return eventData.getOperationContext();
+      }
+
+      public MPSProject getMPSProject() {
+        return eventData.getMPSProject();
+      }
+    };
   }
 
   public static AnActionEvent createEvent(Presentation presentation, final ActionContext context) {
@@ -141,4 +170,5 @@ public class ActionUtils {
       ((DefaultGroup) group).remove(action);
     }
   }
+
 }

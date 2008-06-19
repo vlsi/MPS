@@ -7,6 +7,7 @@ import jetbrains.mps.ide.action.IActionGroupElementOwner;
 import jetbrains.mps.ide.action.MPSActionGroup;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.action.BaseGroup;
+import jetbrains.mps.workbench.action.ActionUtils;
 
 public abstract class BaseActionGroup extends MPSActionGroup implements IActionGroupElementOwner {
   private MPSProject myProject = null;
@@ -38,7 +39,7 @@ public abstract class BaseActionGroup extends MPSActionGroup implements IActionG
 
   protected boolean checkProject(AnActionEvent e) {
     if (myProject != null) {
-      if (myProject != createContext(e).get(MPSProject.class)) {
+      if (myProject != ActionUtils.createContext(e).get(MPSProject.class)) {
         e.getPresentation().setVisible(false);
         return false;
       }

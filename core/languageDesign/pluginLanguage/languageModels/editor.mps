@@ -404,6 +404,23 @@
             <property name="text" value="curent node (same as node &lt;type&gt;)" />
           </node>
         </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1213874285216">
+          <property name="selectable" value="false" />
+          <property name="vertical" value="false" />
+          <property name="gridLayout" value="true" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1213874285217">
+            <property name="selectable" value="false" />
+            <property name="text" value="IScope" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1213874285218">
+            <property name="text" value="-" />
+            <property name="selectable" value="false" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1213874285219">
+            <property name="selectable" value="false" />
+            <property name="text" value="curent scope" />
+          </node>
+        </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1212517948439">
           <property name="selectable" value="false" />
           <property name="vertical" value="false" />

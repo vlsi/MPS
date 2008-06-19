@@ -21,11 +21,12 @@
   <language namespace="jetbrains.mps.baseLanguage.classifiers">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.classifiers.constraints" version="7" />
   </language>
+  <language namespace="" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.dataFlow.constraints" version="4" />
-  <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
-  <maxImportIndex value="16" />
+  <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.dataFlow.constraints" version="4" />
+  <maxImportIndex value="17" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.dataFlow.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.dataFlow@java_stub" version="-1" />
   <import index="4" modelUID="java.lang@java_stub" version="-1" />
@@ -39,6 +40,7 @@
   <import index="14" modelUID="jetbrains.mps.plugins@java_stub" version="-1" />
   <import index="15" modelUID="jetbrains.mps.dataFlow.framework.instructions@java_stub" version="-1" />
   <import index="16" modelUID="jetbrains.mps.workbench.action@java_stub" version="-1" />
+  <import index="17" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1206459480619">
     <property name="name" value="PrintDFAResult" />
     <property name="caption" value="Print DFA" />
@@ -127,6 +129,13 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206642293489" />
       <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1206642294882" />
     </node>
+    <node role="parameterDeclaration" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterDeclaration" id="1213875408021">
+      <property name="name" value="context" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1213875408022" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213875423273">
+        <link role="classifier" targetNodeId="17.~IOperationContext" resolveInfo="IOperationContext" />
+      </node>
+    </node>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock" id="1206642260579">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206642260580">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206642304930">
@@ -153,15 +162,17 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206642324441">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1206642324442">
-            <link role="baseMethodDeclaration" targetNodeId="8.~ShowCFGDialog.&lt;init&gt;(jetbrains.mps.dataFlow.framework.Program,jetbrains.mps.smodel.IOperationContext)" resolveInfo="ShowCFGDialog" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206642517900">
-              <link role="variableDeclaration" targetNodeId="1206642304931" resolveInfo="program" />
-            </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206957196306">
-              <node role="operand" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ConceptFunctionParameter_ActionContext" id="1206957192832" />
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206957197871">
-                <link role="baseMethodDeclaration" targetNodeId="9.~ActionContext.getOperationContext():jetbrains.mps.smodel.IOperationContext" resolveInfo="getOperationContext" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213875405924">
+            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213875405926">
+              <link role="baseMethodDeclaration" targetNodeId="8.~ShowCFGDialog.&lt;init&gt;(jetbrains.mps.dataFlow.framework.Program,jetbrains.mps.smodel.IOperationContext)" resolveInfo="ShowCFGDialog" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206642517900">
+                <link role="variableDeclaration" targetNodeId="1206642304931" resolveInfo="program" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213875432368">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1213875432369" />
+                <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterReferenceOperation" id="1213875432370">
+                  <link role="member" targetNodeId="1213875408021" resolveInfo="context" />
+                </node>
               </node>
             </node>
           </node>
@@ -218,8 +229,10 @@
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207220045713">
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207220045714">
                 <link role="baseMethodDeclaration" targetNodeId="5.~Program.analyze(jetbrains.mps.dataFlow.framework.DataFlowAnalyzer):jetbrains.mps.dataFlow.framework.AnalysisResult" resolveInfo="analyze" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1207220045715">
-                  <link role="baseMethodDeclaration" targetNodeId="10.~ReachingDefinitionsAnalyzer.&lt;init&gt;()" resolveInfo="ReachingDefinitionsAnalyzer" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213875329900">
+                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213875329902">
+                    <link role="baseMethodDeclaration" targetNodeId="10.~ReachingDefinitionsAnalyzer.&lt;init&gt;()" resolveInfo="ReachingDefinitionsAnalyzer" />
+                  </node>
                 </node>
               </node>
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207220045716">
