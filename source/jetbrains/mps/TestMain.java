@@ -7,6 +7,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.TestResult;
 import jetbrains.mps.project.ProjectTester;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.FileUtil;
@@ -332,9 +333,15 @@ public class TestMain {
       throw new RuntimeException("Can't find a project in file " + projectFile.getAbsolutePath());
     }
 
-    MPSProject project = loadProject(projectFile);
+    final MPSProject project = loadProject(projectFile);
     TestResult result = new ProjectTester(project).testProject();
-    project.dispose();
+
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        project.dispose();
+      }
+    });
+
 
     result.dump(System.out);
     String message = null;
