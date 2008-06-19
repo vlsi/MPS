@@ -540,6 +540,10 @@ public class Language extends AbstractModule implements Marshallable<Language> {
       result.add(getConstraintsModelDescriptor());
     }
 
+    if (aspect != LanguageAspect.BEHAVIOR && getBehaviorModelDescriptor() != null) {
+      result.add(getBehaviorModelDescriptor());
+    }
+
     for (Language extended : getExtendedLanguages()) {
       result.add(LanguageAspect.STRUCTURE.get(extended));
       if (LanguageAspect.CONSTRAINTS.get(extended) != null) {
