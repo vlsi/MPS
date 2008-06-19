@@ -10,4 +10,12 @@ public abstract class GeneratedTool extends BaseTool {
   protected GeneratedTool(Project project, String id, int number, Icon icon, ToolWindowAnchor anchor, boolean canCloseContent) {
     super(project, id, number, icon, anchor, canCloseContent);
   }
+
+  public void init(Project project) {
+
+  }
+
+  public void dispose() {
+
+  }
 }

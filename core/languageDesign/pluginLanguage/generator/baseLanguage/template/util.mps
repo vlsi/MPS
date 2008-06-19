@@ -40,9 +40,6 @@
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1213878920295">
     <property name="name" value="PluginNameUtils" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1213878920562" />
-    <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213878920563">
-      <link role="classifier" targetNodeId="4.~BasePlugin" resolveInfo="BasePlugin" />
-    </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1213879030228">
       <property name="name" value="getPluginName" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213879068875">

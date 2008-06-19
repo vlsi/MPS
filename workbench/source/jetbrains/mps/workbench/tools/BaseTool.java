@@ -22,7 +22,7 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.*;
 import java.awt.BorderLayout;
 
-public abstract class BaseTool {
+public abstract class BaseTool{
   private static Logger LOG = Logger.getLogger(BaseTool.class);
 
   private Project myProject;
