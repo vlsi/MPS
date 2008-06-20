@@ -1,5 +1,7 @@
 package jetbrains.mps.ide.ui;
 
+import org.apache.commons.lang.StringUtils;
+
 import java.util.HashMap;
 
 /**
@@ -11,28 +13,43 @@ import java.util.HashMap;
  */
 public class TreeTextUtil {
 
-  private static HashMap<Character, String> ourSymbols = new HashMap<Character, String>();
+  private final static String[] _charsToEntities;
+  private final static String _entitiesChars;
+
   static {
-    ourSymbols.put('<', "&lt;");
-    ourSymbols.put('>', "&gt;");
+    _charsToEntities = new String[128];
+    _charsToEntities['<'] = "&lt;";
+    _charsToEntities['>'] = "&gt;";
+    _charsToEntities['&'] = "&amp;";
+    _charsToEntities['"'] = "&quot;";
+    //_charsToEntities.put('\'', "&apos;");
+    // There is no apos entity in SGML http://www.w3.org/TR/html4/sgml/entities.html
+    _charsToEntities['\''] = "&#39;";
+
+    // _entitiesChars are exactly the keys of _charsToEntities
+    _entitiesChars = "<>&\"'";
   }
 
-  public static String toHtml(String source) {
-    if (source == null) return null;
-    StringBuffer buf = new StringBuffer(source);
-    for (int i = 0; i< buf.length(); i++) {
-      Character c = buf.charAt(i);
-      String s = ourSymbols.get(c);
-      if (s != null) {
-        buf.deleteCharAt(i);
-        buf.insert(i,  s);
-        i+= s.length() - 1;
+  public static String toHtml(final String str) {
+    if (str == null) return "";
+    if (StringUtils.indexOfAny(str, _entitiesChars) < 0) {
+      return str;
+    }
+    final int capacity = str.length();
+    final StringBuilder builder = new StringBuilder(capacity + 100);
+    for (int i = 0; i < capacity; i++) {
+      final char c = str.charAt(i);
+      final String entity = (c >= 0 && c < _charsToEntities.length) ? _charsToEntities[c] : null;
+      if (entity == null) {
+        builder.append(c);
+      } else {
+        builder.append(entity);
       }
     }
-    return new String(buf);
+    return builder.toString();
   }
 
   public static void main (String[] args) {
-    System.out.println(toHtml("<mama>papa<s s s>><<s s s>"));
+    System.out.println(toHtml("<mama>papa<s s s>><<s s s>'''&&"));
   }
 }
