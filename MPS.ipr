@@ -983,7 +983,6 @@
       <module fileurl="file://$PROJECT_DIR$/core/runtime/runtime.iml" filepath="$PROJECT_DIR$/core/runtime/runtime.iml" group="core/kernel" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/scriptLanguage/scriptLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/scriptLanguage/scriptLanguage.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/scriptLanguageInternal/scriptLanguageInternal.iml" filepath="$PROJECT_DIR$/core/languageDesign/scriptLanguageInternal/scriptLanguageInternal.iml" group="core/languageDesign" />
-      <module fileurl="file://$PROJECT_DIR$/core/languageDesign/scriptLanguage/runtime/scriptLanguage_runtime.iml" filepath="$PROJECT_DIR$/core/languageDesign/scriptLanguage/runtime/scriptLanguage_runtime.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/sharedConcepts/sharedConcepts.iml" filepath="$PROJECT_DIR$/core/languageDesign/sharedConcepts/sharedConcepts.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/smodelLanguage/smodeLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/smodelLanguage/smodeLanguage.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/platform/springframework/springframework.iml" filepath="$PROJECT_DIR$/platform/springframework/springframework.iml" group="platform/spring-framework" />
@@ -1032,7 +1031,7 @@
         <option name="LOCAL" value="true" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Profile ">
-        <option name="myExternalizedOptions" value="&#13;&#10;additional-options=&#13;&#10;snapshots-dir=&#13;&#10;" />
+        <option name="myExternalizedOptions" value="&#13;&#10;snapshots-dir=&#13;&#10;" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
