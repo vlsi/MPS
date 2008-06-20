@@ -69,7 +69,9 @@ public abstract class BaseAction extends AnAction {
       public void run() {
         final ModelAccess access = ModelAccess.instance();
         if (myExecuteOutsideCommand) {
-          access.runReadAction(action);
+          //execute outside command means no action neither read nor write
+          //otherwise it will lead to a deadlock
+          action.run();
         } else {
           SwingUtilities.invokeLater(new Runnable() {
             public void run() {
