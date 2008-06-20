@@ -957,22 +957,6 @@
       <node role="body" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1208271608559">
         <property name="vertical" value="true" />
         <property name="selectable" value="false" />
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1208271608560">
-          <property name="selectable" value="false" />
-          <property name="vertical" value="false" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1208271608561">
-            <property name="text" value="name:" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1208271608562">
-            <property name="writable" value="true" />
-            <property name="noTargetText" value="&lt;no name&gt;" />
-            <property name="defaultValue" value="&lt;no name&gt;" />
-            <property name="rightTransformAnchorTag" value="default_RTransform" />
-            <property name="drawBorder" value="false" />
-            <property name="selectable" value="true" />
-            <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name" />
-          </node>
-        </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1208271608563">
           <property name="selectable" value="false" />
           <property name="vertical" value="false" />
@@ -1193,6 +1177,18 @@
           <link role="relationDeclaration" targetNodeId="1.1213888923963" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1208271608581" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1214001892598">
+          <property name="text" value="additional fields:" />
+          <property name="textBgColor" value="orange" />
+          <property name="selectable" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1214001908916" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1214001921407">
+          <property name="vertical" value="true" />
+          <property name="separatorText" value=" " />
+          <link role="relationDeclaration" targetNodeId="1.1214001825955" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1214001910881" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1213888994014">
           <property name="text" value="additional methods:" />
           <property name="textBgColor" value="orange" />
@@ -1205,8 +1201,20 @@
           <link role="relationDeclaration" targetNodeId="1.1213888961901" />
         </node>
       </node>
-      <node role="header" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1208271608585">
-        <property name="text" value="tool" />
+      <node role="header" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1214003000081">
+        <property name="vertical" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1208271608585">
+          <property name="text" value="tool" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1214003009306">
+          <property name="writable" value="true" />
+          <property name="noTargetText" value="&lt;no name&gt;" />
+          <property name="defaultValue" value="&lt;no name&gt;" />
+          <property name="rightTransformAnchorTag" value="default_RTransform" />
+          <property name="drawBorder" value="false" />
+          <property name="selectable" value="true" />
+          <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name" />
+        </node>
       </node>
     </node>
   </node>

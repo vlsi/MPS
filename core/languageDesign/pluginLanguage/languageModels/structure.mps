@@ -173,6 +173,12 @@
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="14.1205769003971" resolveInfo="DefaultClassifierMethodDeclaration" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1214001825955">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="fieldDeclaration" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="14.1213999088275" resolveInfo="DefaultClassifierFieldDeclaration" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1204464921980">
       <property name="name" value="caption" />
       <link role="dataType" targetNodeId="6.1082983041843" resolveInfo="string" />

@@ -23,7 +23,7 @@ public class typeof_DefaultMethodCallOperation_InferenceRule implements Inferenc
       SNode argument;
       Iterator<SNode> parameter_iterator = SLinkOperations.getTargets(SLinkOperations.getTarget(nodeToCheck, "member", false), "parameter", true).iterator();
       Iterator<SNode> argument_iterator = SLinkOperations.getTargets(nodeToCheck, "actualArgument", true).iterator();
-      while(true) {
+      while (true) {
         if (!(parameter_iterator.hasNext())) {
           break;
         }

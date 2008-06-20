@@ -13,6 +13,7 @@
       <external-templates />
       <dependencies>
         <dependency reexport="false">jetbrains.mps.baseLanguage</dependency>
+        <dependency reexport="false">JDK</dependency>
       </dependencies>
       <mapping-priorities />
     </generator>

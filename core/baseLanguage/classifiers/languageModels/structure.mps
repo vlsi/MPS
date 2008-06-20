@@ -116,5 +116,31 @@
       <link role="intfc" targetNodeId="1205756064662" resolveInfo="IMemberOperation" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1213999088275">
+    <property name="name" value="DefaultClassifierFieldDeclaration" />
+    <property name="package" value="Fields" />
+    <link role="extends" targetNodeId="3v.1068390468200" resolveInfo="FieldDeclaration" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1213999088276">
+      <link role="intfc" targetNodeId="1205752032448" resolveInfo="IMember" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1213999297620">
+      <link role="conceptLinkDeclaration" targetNodeId="1205921683134" resolveInfo="operationConcept" />
+      <link role="target" targetNodeId="1213999117680" resolveInfo="DefaultClassifierFieldAccessOperation" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1213999117680">
+    <property name="name" value="DefaultClassifierFieldAccessOperation" />
+    <property name="package" value="Fields" />
+    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1213999117682">
+      <link role="intfc" targetNodeId="1205756064662" resolveInfo="IMemberOperation" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1213999117683">
+      <property name="role" value="field" />
+      <property name="sourceCardinality" value="1" />
+      <link role="specializedLink" targetNodeId="1205756909548" />
+      <link role="target" targetNodeId="1213999088275" resolveInfo="DefaultClassifierField" />
+    </node>
+  </node>
 </model>
 
