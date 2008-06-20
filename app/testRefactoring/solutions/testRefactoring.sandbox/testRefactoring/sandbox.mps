@@ -9,6 +9,7 @@
     </refactoringContext>
   </refactoringHistory>
   <language namespace="testRefactoring" />
+  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="testRefactoring.sandbox2" version="-1" />
   <node type="testRefactoring.structure.MyVeryGoodConcept1" id="1198157680448">
