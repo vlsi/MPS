@@ -13,6 +13,7 @@ public class BaseMigrationScript {
   private List<IRefactoring> myRefactorings = new ArrayList<IRefactoring>();
   private String myName;
 
+  
   public BaseMigrationScript(String name) {
     myName = name;
   }

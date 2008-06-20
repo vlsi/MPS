@@ -19,6 +19,7 @@ import java.util.Set;
  * Date: Apr 24, 2007
  */
 public abstract class AbstractMigrationRefactoring extends DefaultRefactoring {
+  
   private static final Logger LOG = Logger.getLogger(AbstractMigrationRefactoring.class);
 
   private static final String SMODEL_UID = "SMODEL_UID";
