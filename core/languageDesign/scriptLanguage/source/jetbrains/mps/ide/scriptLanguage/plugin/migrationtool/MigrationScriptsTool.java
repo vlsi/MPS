@@ -1,33 +1,33 @@
 package jetbrains.mps.ide.scriptLanguage.plugin.migrationtool;
 
-import jetbrains.mps.workbench.tools.BaseMPSTool;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.ide.findusages.view.UsagesView.ButtonConfiguration;
-import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.ide.findusages.model.IResultProvider;
-import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.findusages.model.holders.StringHolder;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.wm.ToolWindowAnchor;
-import com.intellij.openapi.startup.StartupManager;
-import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.startup.StartupManager;
+import com.intellij.openapi.wm.ToolWindowAnchor;
+import com.intellij.ui.content.Content;
+import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.ContentManagerAdapter;
 import com.intellij.ui.content.ContentManagerEvent;
-import com.intellij.ui.content.ContentManager;
-import com.intellij.ui.content.Content;
-
-import javax.swing.SwingUtilities;
-import javax.swing.JOptionPane;
-import java.util.List;
-import java.util.ArrayList;
-
+import jetbrains.mps.ide.findusages.model.IResultProvider;
+import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.ide.findusages.view.UsagesView.ButtonConfiguration;
+import jetbrains.mps.ide.scriptLanguage.structure.MigrationScript;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.workbench.tools.BaseMPSTool;
 import org.jetbrains.annotations.NotNull;
+
+import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Igor Alshannikov
@@ -36,6 +36,7 @@ import org.jetbrains.annotations.NotNull;
 public class MigrationScriptsTool extends BaseMPSTool {
   private static Logger LOG = Logger.getLogger(MigrationScriptsTool.class);
 
+  private List<SNodePointer> myScripts;
   private List<MigrationScriptsView> myViews = new ArrayList<MigrationScriptsView>();
 
   public MigrationScriptsTool(Project project) {
@@ -64,10 +65,10 @@ public class MigrationScriptsTool extends BaseMPSTool {
 //    return myViews.get(index);
 //  }
 
-  private int currentTabIndex() {
-    ContentManager contentManager = getContentManager();
-    return contentManager.getIndexOfContent(contentManager.getSelectedContent());
-  }
+//  private int currentTabIndex() {
+//    ContentManager contentManager = getContentManager();
+//    return contentManager.getIndexOfContent(contentManager.getSelectedContent());
+//  }
 
   public void closeTab(int index) {
     LOG.checkEDT();
@@ -82,11 +83,17 @@ public class MigrationScriptsTool extends BaseMPSTool {
   }
 
 
-  public void createMigrationView(BaseFinder finder, IScope scope) {
+  public void createMigrationView(List<MigrationScript> scriptNodes, IScope scope, IOperationContext context) {
     LOG.checkEDT();
 
+    myScripts = new ArrayList<SNodePointer>();
+    for (MigrationScript scriptNode : scriptNodes) {
+      myScripts.add(new SNodePointer(scriptNode));
+    }
+
+    final MigrationScriptFinder finder = new MigrationScriptFinder(myScripts, context);
     final IResultProvider provider = FindUtils.makeProvider(finder);
-    final SearchQuery query = new SearchQuery(new StringHolder("123456789"), scope);
+    final SearchQuery query = new SearchQuery(scope);
 
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
@@ -97,9 +104,9 @@ public class MigrationScriptsTool extends BaseMPSTool {
             SwingUtilities.invokeLater(new Runnable() {
               public void run() {
                 if (searchResults.getSearchResults().isEmpty()) {
-                  JOptionPane.showMessageDialog(getContentManager().getComponent(), "No obsolete elements found", "Migration Scripts", JOptionPane.INFORMATION_MESSAGE);
+                  JOptionPane.showMessageDialog(getContentManager().getComponent(), "No applicable nodes found", "Migration Scripts", JOptionPane.INFORMATION_MESSAGE);
                 } else {
-                  addTab(searchResults, provider, query);
+                  addTab(finder, searchResults, provider, query);
                   openTool(true);
                 }
               }
@@ -110,7 +117,7 @@ public class MigrationScriptsTool extends BaseMPSTool {
     });
   }
 
-  private void addTab(final SearchResults searchResults, final IResultProvider provider, final SearchQuery query) {
+  private void addTab(final MigrationScriptFinder finder, final SearchResults searchResults, final IResultProvider provider, final SearchQuery query) {
     LOG.checkEDT();
 
     // clear current tool view
@@ -121,9 +128,8 @@ public class MigrationScriptsTool extends BaseMPSTool {
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        MigrationScriptsView view = new MigrationScriptsView(MigrationScriptsTool.this, getMPSProject());
+        MigrationScriptsView view = new MigrationScriptsView(finder, provider, query, searchResults, MigrationScriptsTool.this, getMPSProject());
         myViews.add(view);
-        view.getUsagesView().setRunOptions(provider, query, new ButtonConfiguration(true, true, true), searchResults);
         Content content = addContent(view.getComponent(), "AAA???BBB", false);
 //        content.setIcon(???);
         getContentManager().setSelectedContent(content);
@@ -131,4 +137,7 @@ public class MigrationScriptsTool extends BaseMPSTool {
     });
   }
 
+  public Project getProject() {
+    return super.getProject();
+  }
 }

@@ -18,10 +18,10 @@ import java.lang.reflect.InvocationTargetException;
  * Igor Alshannikov
  * Jun 18, 2008
  */
-public class MigrationScriptUtil {
+/*package*/ class MigrationScriptUtil {
   private static final Logger LOG = Logger.getLogger(MigrationScriptUtil.class);
 
-  public static List<BaseMigrationScript> getScriptInstances(List<SNodePointer> scriptNodePointers, IOperationContext context) {
+  /*package*/ static List<BaseMigrationScript> getScriptInstances(List<SNodePointer> scriptNodePointers, IOperationContext context) {
     List<BaseMigrationScript> scriptInstances = new ArrayList<BaseMigrationScript>();
     for (SNodePointer scriptNodePointer : scriptNodePointers) {
       SNode scriptNode = scriptNodePointer.getNode();
@@ -59,10 +59,26 @@ public class MigrationScriptUtil {
     return scriptInstances;
   }
 
-  public static AbstractConceptDeclaration getApplicableConcept(AbstractMigrationRefactoring migrationRefactoring) {
+  /*package*/ static AbstractConceptDeclaration getApplicableConcept(AbstractMigrationRefactoring migrationRefactoring) {
     return SModelUtil_new.findConceptDeclaration(
       migrationRefactoring.getFqNameOfConceptToSearchInstances(),
       GlobalScope.getInstance());
   }
 
+  /*package*/ static boolean isApplicableRefactoring(SNode node, AbstractMigrationRefactoring migrationRefactoring) {
+    try {
+      return migrationRefactoring.isApplicableInstanceNode(node);
+    } catch (Throwable t) {
+      LOG.error("script failed: " + t.getMessage(), t);
+    }
+    return false;
+  }
+
+  /*package*/ static void performRefactoring(SNode node, AbstractMigrationRefactoring migrationRefactoring) {
+    try {
+      migrationRefactoring.doUpdateInstanceNode(node);
+    } catch (Throwable t) {
+      LOG.error("script failed: " + t.getMessage(), t);
+    }
+  }
 }

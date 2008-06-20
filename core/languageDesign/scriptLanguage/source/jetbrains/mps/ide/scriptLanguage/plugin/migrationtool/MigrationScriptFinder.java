@@ -16,9 +16,9 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+
+import org.apache.commons.collections.map.IdentityMap;
 
 /**
  * Igor Alshannikov
@@ -27,14 +27,14 @@ import java.util.Set;
 public class MigrationScriptFinder extends BaseFinder {
   private static final Logger LOG = Logger.getLogger(MigrationScriptFinder.class);
 
-  private List<SNodePointer> myMigrationScriptPointers = new ArrayList<SNodePointer>();
+  private List<SNodePointer> myScripts = new ArrayList<SNodePointer>();
   private IOperationContext myContext;
 
-  public MigrationScriptFinder(List<MigrationScript> scriptNodes, IOperationContext context) {
+  private Map<SearchResult<SNode>, AbstractMigrationRefactoring> myMigrationBySearchResult = new IdentityHashMap<SearchResult<SNode>, AbstractMigrationRefactoring>();
+
+  public MigrationScriptFinder(List<SNodePointer> scripts, IOperationContext context) {
+    myScripts = scripts;
     myContext = context;
-    for (MigrationScript scriptNode : scriptNodes) {
-      myMigrationScriptPointers.add(new SNodePointer(scriptNode));
-    }
   }
 
   public SearchResults find(SearchQuery query, ProgressIndicator indicator) {
@@ -42,7 +42,7 @@ public class MigrationScriptFinder extends BaseFinder {
     IScope queryScope = query.getScope();
 
     List<AbstractMigrationRefactoring> migrationRefactorings = new ArrayList<AbstractMigrationRefactoring>();
-    List<BaseMigrationScript> scriptInstances = MigrationScriptUtil.getScriptInstances(myMigrationScriptPointers, myContext);
+    List<BaseMigrationScript> scriptInstances = MigrationScriptUtil.getScriptInstances(myScripts, myContext);
     for (BaseMigrationScript scriptInstance : scriptInstances) {
       List<IRefactoring> refactorings = scriptInstance.getRefactorings();
       for (IRefactoring refactoring : refactorings) {
@@ -50,34 +50,32 @@ public class MigrationScriptFinder extends BaseFinder {
       }
     }
 
-    indicator.setText("searching models");
-    int count = 1;
+    indicator.setText("Searching applicable nodes");
+//    int count = 1;
     for (AbstractMigrationRefactoring migrationRefactoring : migrationRefactorings) {
       if (indicator.isCanceled()) {
         break;
       }
-      int donePers = Math.min(100, (int) (((float) (count++) / migrationRefactorings.size()) * 100));
-      if (donePers > 0) indicator.setText("searching models " + donePers + "%");
+//      int donePers = Math.min(100, (int) (((float) (count++) / migrationRefactorings.size()) * 100));
+//      if (donePers > 0) indicator.setText("searching models " + donePers + "%");
       indicator.setText2(migrationRefactoring.getName());
       Set<SNode> instances = FindUsagesManager.getInstance().findInstances(MigrationScriptUtil.getApplicableConcept(migrationRefactoring), queryScope, null, false);
       for (SNode instance : instances) {
-        if (isApplicableInstanceNode(instance, migrationRefactoring)) {
-          results.getSearchResults().add(new SearchResult<SNode>(instance, migrationRefactoring.getAdditionalInfo()));
+        if (MigrationScriptUtil.isApplicableRefactoring(instance, migrationRefactoring)) {
+          String category = migrationRefactoring.getAdditionalInfo();
+          SearchResult<SNode> result = new SearchResult<SNode>(instance, category);
+          myMigrationBySearchResult.put(result, migrationRefactoring);
+          results.getSearchResults().add(result);
         }
       }
     }
-    indicator.setText("searching models " + (indicator.isCanceled() ? "canceled" : "finished"));
+    indicator.setText("Searching applicable nodes " + (indicator.isCanceled() ? "canceled" : "finished"));
     indicator.setText2("");
 
     return results;
   }
 
-  private boolean isApplicableInstanceNode(SNode node, AbstractMigrationRefactoring migrationRefactoring) {
-    try {
-      return migrationRefactoring.isApplicableInstanceNode(node);
-    } catch (Throwable t) {
-      LOG.error("script failed: " + t.getMessage(), t);
-    }
-    return false;
+  public AbstractMigrationRefactoring getRefactoring(SearchResult<SNode> searchResult) {
+    return myMigrationBySearchResult.get(searchResult);
   }
 }
