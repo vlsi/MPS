@@ -1,6 +1,7 @@
 package jetbrains.mps.smodel.persistence;
 
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.project.IModule;
@@ -47,22 +48,22 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
 
       File mineFile = new File(file.getPath() + ".mine");
 
-      if (mineFile.exists()) {
+      if (mineFile.exists() && !IdeMain.isTestMode()) { 
         FileUtil.copyFile(mineFile, file);
         ThreadUtils.runInUIThreadNoWait(new Runnable() {
           public void run() {
             ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-                      public void run() {
-                        NodeReadAccessCaster.blockEvents();
-                        try {
-                          Merger.merge(file);
-                        } finally {
-                          NodeReadAccessCaster.unblockEvents();
-                        }
+              public void run() {
+                NodeReadAccessCaster.blockEvents();
+                try {
+                  Merger.merge(file);
+                } finally {
+                  NodeReadAccessCaster.unblockEvents();
+                }
 
-                        modelDescriptor.reloadFromDisk();
-                      }
-                    });
+                modelDescriptor.reloadFromDisk();
+              }
+            });
           }
         });
       }
