@@ -41,6 +41,8 @@ public class MigrationScriptsView {
     ViewOptions viewOptions = new ViewOptions();
     viewOptions.myCategory = true;
     viewOptions.myShowSearchedNodes = false;
+    viewOptions.myGroupSearchedNodes = false;
+    viewOptions.mySearchedNodesButtonsVisible = false;
 
     myUsagesVew = new UsagesView(project, viewOptions) {
       public void close() {
