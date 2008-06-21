@@ -57,20 +57,7 @@ public class MigrationScriptsTool extends BaseMPSTool {
     });
   }
 
-//  @Nullable
-//  public MigrationScriptsView getCurrentView() {
-//    LOG.checkEDT();
-//    int index = currentTabIndex();
-//    if (index == -1) return null;
-//    return myViews.get(index);
-//  }
-
-//  private int currentTabIndex() {
-//    ContentManager contentManager = getContentManager();
-//    return contentManager.getIndexOfContent(contentManager.getSelectedContent());
-//  }
-
-  public void closeTab(int index) {
+  /*package*/  void closeTab(int index) {
     LOG.checkEDT();
     ContentManager contentManager = getContentManager();
     Content content = contentManager.getContent(index);
@@ -83,7 +70,7 @@ public class MigrationScriptsTool extends BaseMPSTool {
   }
 
 
-  public void createMigrationView(List<MigrationScript> scriptNodes, IScope scope, IOperationContext context) {
+  public void startMigration(List<MigrationScript> scriptNodes, final IScope scope, final IOperationContext context) {
     LOG.checkEDT();
 
     myScripts = new ArrayList<SNodePointer>();
@@ -91,22 +78,29 @@ public class MigrationScriptsTool extends BaseMPSTool {
       myScripts.add(new SNodePointer(scriptNode));
     }
 
-    final MigrationScriptFinder finder = new MigrationScriptFinder(myScripts, context);
-    final IResultProvider provider = FindUtils.makeProvider(finder);
-    final SearchQuery query = new SearchQuery(scope);
-
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         ProgressManager.getInstance().run(new Modal(getProject(), "Searching", true) {
           public void run(@NotNull final ProgressIndicator indicator) {
             indicator.setIndeterminate(true);
-            final SearchResults searchResults = FindUtils.getSearchResults(indicator, query, provider);
+
+            final MigrationScriptFinder finder = new MigrationScriptFinder(myScripts, context);
+            final IResultProvider provider = FindUtils.makeProvider(finder);
+            final SearchQuery query = new SearchQuery(scope);
+
+            FindUtils.getSearchResults(indicator, query, provider);  // perform search, keep results in our finder
             SwingUtilities.invokeLater(new Runnable() {
               public void run() {
-                if (searchResults.getSearchResults().isEmpty()) {
+                if (finder.getLastSearchResults().getSearchResults().isEmpty()) {
                   JOptionPane.showMessageDialog(getContentManager().getComponent(), "No applicable nodes found", "Migration Scripts", JOptionPane.INFORMATION_MESSAGE);
                 } else {
-                  addTab(finder, searchResults, provider, query);
+                  // clear current tool view
+                  int count = myViews.size();
+                  for (int i = 0; i < count; i++) {
+                    closeTab(0);
+                  }
+
+                  addTab(finder, provider, query);
                   openTool(true);
                 }
               }
@@ -117,20 +111,18 @@ public class MigrationScriptsTool extends BaseMPSTool {
     });
   }
 
-  private void addTab(final MigrationScriptFinder finder, final SearchResults searchResults, final IResultProvider provider, final SearchQuery query) {
+  /*package*/ void addTab(final MigrationScriptFinder finder, final IResultProvider provider, final SearchQuery query) {
     LOG.checkEDT();
-
-    // clear current tool view
-    int count = myViews.size();
-    for (int i = 0; i < count; i++) {
-      closeTab(0);
-    }
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        MigrationScriptsView view = new MigrationScriptsView(finder, provider, query, searchResults, MigrationScriptsTool.this, getMPSProject());
+        MigrationScriptsView view = new MigrationScriptsView(finder, provider, query, MigrationScriptsTool.this, getMPSProject());
         myViews.add(view);
-        Content content = addContent(view.getComponent(), "AAA???BBB", false);
+        String tabName = "";
+        if (myViews.size() > 1) {
+          tabName = "" + (myViews.size() - 1);
+        }
+        Content content = addContent(view.getComponent(), tabName, false);
 //        content.setIcon(???);
         getContentManager().setSelectedContent(content);
       }

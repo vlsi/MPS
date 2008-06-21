@@ -2,41 +2,52 @@ package jetbrains.mps.ide.scriptLanguage.plugin.migrationtool;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.openapi.progress.Task.Modal;
+import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.UsagesView;
+import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.view.UsagesView.ButtonConfiguration;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.ide.scriptLanguage.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.AbstractAction;
-import javax.swing.JButton;
-import javax.swing.JComponent;
-import javax.swing.JPanel;
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.List;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * Igor Alshannikov
  * Jun 19, 2008
  */
 public class MigrationScriptsView {
+  private static Logger LOG = Logger.getLogger(MigrationScriptsView.class);
+
   private MigrationScriptFinder myFinder;
+  private SearchQuery myQuery;
   private MigrationScriptsTool myTool;
   private UsagesView myUsagesVew;
-  private JPanel myPanel;
+  private JPanel myMainPanel;
+  private JPanel myControlsPanel;
+  private JPanel myStatusPanel;
+  private JButton myApplyButton;
 
-  public MigrationScriptsView(MigrationScriptFinder finder, IResultProvider provider, SearchQuery query, final SearchResults<SNode> searchResults, MigrationScriptsTool tool, MPSProject project) {
+
+  public MigrationScriptsView(MigrationScriptFinder finder, IResultProvider provider, SearchQuery query, MigrationScriptsTool tool, MPSProject project) {
     myFinder = finder;
+    myQuery = query;
+    finder.setMigrationScriptsView(this);
     myTool = tool;
     ViewOptions viewOptions = new ViewOptions();
     viewOptions.myCategory = true;
@@ -50,53 +61,124 @@ public class MigrationScriptsView {
       }
     };
 
-    myUsagesVew.setRunOptions(provider, query, new ButtonConfiguration(true, true, true), searchResults);
+    myUsagesVew.setRunOptions(provider, query, new ButtonConfiguration(true, true, true), finder.getLastSearchResults());
 
-    myPanel = new JPanel(new BorderLayout());
-    myPanel.add(myUsagesVew.getComponent(), BorderLayout.CENTER);
-    JPanel buttonsPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-    buttonsPanel.add(new JButton(new AbstractAction("Apply Migrations") {
+    myMainPanel = new JPanel(new BorderLayout());
+    myMainPanel.add(myUsagesVew.getComponent(), BorderLayout.CENTER);
+    myControlsPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+    myApplyButton = new JButton(new AbstractAction("Apply Migrations") {
       public void actionPerformed(ActionEvent e) {
-        ProgressManager.getInstance().run(new Modal(myTool.getProject(), "Applying migrations...", true) {
-          public void run(@NotNull final ProgressIndicator indicator) {
-            applyMigrations(searchResults, indicator);
-          }
-        });
-        setEnabled(false);
+        applyMigrations();
       }
-    }));
-    myPanel.add(buttonsPanel, BorderLayout.SOUTH);
+    });
+    myControlsPanel.add(myApplyButton);
+    myStatusPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 5, 0));
+    myControlsPanel.add(myStatusPanel);
+    myMainPanel.add(myControlsPanel, BorderLayout.SOUTH);
   }
 
-  private void applyMigrations(final SearchResults<SNode> searchResults, final ProgressIndicator indicator) {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+  private void applyMigrations() {
+    LOG.checkEDT();
+    final int aliveResultCount = myFinder.getLastSearchResults().getAliveResults().size();
+    if (aliveResultCount == 0) {
+      updateControls(false, new JLabel("done"));
+      return;
+    }
+
+    final JProgressBar progress = new JProgressBar(0, aliveResultCount);
+    progress.setString("applying migrations...");
+    progress.setStringPainted(true);
+    progress.setBorderPainted(false);
+    updateControls(false, progress);
+
+    SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        List<SearchResult<SNode>> aliveResults = searchResults.getAliveResults();
-        if (!aliveResults.isEmpty()) {
-          indicator.setIndeterminate(false);
-          double fractionIncr = 1.0 / aliveResults.size();
-          double fraction = 0.0;
-          indicator.setFraction(fraction);
-          for (SearchResult<SNode> aliveResult : aliveResults) {
-            if(indicator.isCanceled()) break;
-            SNode node = aliveResult.getObject();
-            // still alive?
-            if (node != null && node.isRegistered()) {
-              // still applicable?
-              AbstractMigrationRefactoring migrationRefactoring = myFinder.getRefactoring(aliveResult);
-              if (MigrationScriptUtil.isApplicableRefactoring(node, migrationRefactoring)) {
-                MigrationScriptUtil.performRefactoring(node, migrationRefactoring);
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          public void run() {
+            List<SearchResult<SNode>> aliveResults = myFinder.getLastSearchResults().getAliveResults();
+            if (!aliveResults.isEmpty()) {
+              int progressCount = 0;
+              for (SearchResult<SNode> aliveResult : aliveResults) {
+                progress.setValue((progressCount++));
+                progress.paintImmediately(new Rectangle(progress.getSize()));
+                SNode node = aliveResult.getObject();
+                // still alive?
+                if (node != null && node.isRegistered()) {
+                  // still applicable?
+                  AbstractMigrationRefactoring migrationRefactoring = myFinder.getRefactoring(aliveResult);
+                  if (MigrationScriptUtil.isApplicableRefactoring(node, migrationRefactoring)) {
+//                MigrationScriptUtil.performRefactoring(node, migrationRefactoring);
+                    long curr = System.currentTimeMillis();
+                    while (System.currentTimeMillis() < curr + 100) ;
+                  }
+                }
               }
+              progress.setValue(aliveResultCount);
+              progress.paintImmediately(new Rectangle(progress.getSize()));
+
+              // ----
+              checkMigrationResults();
             }
-            fraction += fractionIncr;
-            indicator.setFraction(fraction);
           }
-        }
+        });
       }
     });
   }
 
+  private void checkMigrationResults() {
+    final MigrationScriptFinder nextFinder = new MigrationScriptFinder(myFinder.getScripts(), myFinder.getOperationContext());
+
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        ProgressManager.getInstance().run(new Modal(myTool.getProject(), "Searching", true) {
+          public void run(@NotNull final ProgressIndicator indicator) {
+            indicator.setIndeterminate(true);
+            IResultProvider provider = FindUtils.makeProvider(nextFinder);
+            FindUtils.getSearchResults(indicator, myQuery, provider);  // perform search, keep results in our finder
+            if (nextFinder.getLastSearchResults().getSearchResults().isEmpty()) {
+              updateControls(false, new JLabel("done"));
+            } else {
+              updateControls(false, new JLabel("done, but some nodes have not been converted"), createShowInNewTabButton(nextFinder, provider, myQuery));
+            }
+          }
+        });
+      }
+    });
+  }
+
+  private JButton createShowInNewTabButton(final MigrationScriptFinder finder, final IResultProvider provider, final SearchQuery query) {
+    JButton button = new JButton("Show in New Tab");
+    button.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            updateControls(false, new JLabel("done"));
+            myTool.addTab(finder, provider, query);
+          }
+        });
+      }
+    });
+    return button;
+  }
+
+  private void updateControls(boolean applyButtonEnabled, JComponent... statusComponents) {
+    myApplyButton.setEnabled(applyButtonEnabled);
+    if (statusComponents != null) {
+      myStatusPanel.removeAll();
+      for (JComponent statusComponent : statusComponents) {
+        myStatusPanel.add(statusComponent);
+      }
+    }
+
+    myStatusPanel.revalidate();
+    myStatusPanel.repaint();
+  }
+
   public JComponent getComponent() {
-    return myPanel;
+    return myMainPanel;
+  }
+
+  public void searchResultsChanged() {
+    updateControls(true, new JLabel(""));
   }
 }
