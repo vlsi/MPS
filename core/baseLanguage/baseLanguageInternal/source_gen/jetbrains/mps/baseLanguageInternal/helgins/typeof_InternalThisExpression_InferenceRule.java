@@ -24,7 +24,7 @@ public class typeof_InternalThisExpression_InferenceRule implements InferenceRul
     {
       SNode tvd;
       Iterator<SNode> tvd_iterator = SLinkOperations.getTargets(c, "typeVariableDeclaration", true).iterator();
-      while(true) {
+      while (true) {
         if (!(tvd_iterator.hasNext())) {
           break;
         }
