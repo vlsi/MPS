@@ -914,5 +914,29 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877528169" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1214047465024">
+    <property name="package" value="Fields" />
+    <link role="concept" targetNodeId="1.1213999088275" resolveInfo="DefaultClassifierFieldDeclaration" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1214047523548">
+      <property name="name" value="getVisiblity" />
+      <link role="overriddenMethod" targetNodeId="1213877352965" resolveInfo="getVisiblity" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214047523549">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214047523550">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214047523551">
+            <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1214047523552" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1214047560170">
+              <link role="link" targetNodeId="2v.1178549979242" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1214047523969">
+        <link role="concept" targetNodeId="2v.1146644584814" resolveInfo="Visibility" />
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1214047465025">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214047465026" />
+    </node>
+  </node>
 </model>
 
