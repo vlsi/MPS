@@ -289,7 +289,7 @@ public class EditorManager {
     EditorCell anchorCell = anchorId == null ? null : context.getNodeEditorComponent().findCellWithId(nodeCell, anchorId.toString());
     if (anchorCell != null && anchorCell != nodeCell) {
       EditorCell_Collection cellCollection = anchorCell.getParent();
-      cellCollection.addCellAt(cellCollection.indexOf(anchorCell) + 1, rightTransformHintCell);
+      cellCollection.addCellAt(cellCollection.indexOf(anchorCell) + 1, rightTransformHintCell, false);
       resultCell = nodeCell;
       rightTransformHintCell.setAnchor(anchorCell);
     } else {

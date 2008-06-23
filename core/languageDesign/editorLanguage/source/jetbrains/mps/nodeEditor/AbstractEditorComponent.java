@@ -991,7 +991,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
       // caret at the end of text ?
       String text = labelCell.getText();
-      int caretPosition = labelCell.getTextLine().getCaretPosition();
+      int caretPosition = labelCell.getCaretPosition();
       //System.out.println("text:" + text + " len:" + text.length() + "caret at:" + caretPosition);
       if (caretPosition == text.length()) {
         return EditorCellAction.RIGHT_TRANSFORM;
