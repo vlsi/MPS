@@ -126,19 +126,20 @@ public class MigrationScriptsView {
   }
 
   private void checkMigrationResults() {
-    final MigrationScriptFinder nextFinder = new MigrationScriptFinder(myFinder.getScripts(), myFinder.getOperationContext());
+    final MigrationScriptFinder newFinder = new MigrationScriptFinder(myFinder.getScripts(), myFinder.getOperationContext());
 
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         ProgressManager.getInstance().run(new Modal(myTool.getProject(), "Searching", true) {
           public void run(@NotNull final ProgressIndicator indicator) {
             indicator.setIndeterminate(true);
-            IResultProvider provider = FindUtils.makeProvider(nextFinder);
+            IResultProvider provider = FindUtils.makeProvider(newFinder);
             FindUtils.getSearchResults(indicator, myQuery, provider);  // perform search, keep results in our finder
-            if (nextFinder.getLastSearchResults().getSearchResults().isEmpty()) {
-              updateControls(false, new JLabel("done"));
+            int newCount = newFinder.getLastSearchResults().getSearchResults().size();
+            if (newCount > 0) {
+              updateControls(false, new JLabel("done, but there " + (newCount == 1 ? "is 1" : "are " + newCount) + " applicable node" + (newCount > 1 ? "s" : "") + " left"), createShowInNewTabButton(newFinder, provider, myQuery));
             } else {
-              updateControls(false, new JLabel("done, but some nodes have not been converted"), createShowInNewTabButton(nextFinder, provider, myQuery));
+              updateControls(false, new JLabel("done"));
             }
           }
         });
