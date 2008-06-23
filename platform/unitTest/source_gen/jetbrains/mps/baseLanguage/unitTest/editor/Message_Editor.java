@@ -27,7 +27,6 @@ public class Message_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_messageRefNodeCell13250_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_messageRefNodeCell13250_0");
     editorCell.setDrawBorder(false);
   }
 

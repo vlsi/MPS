@@ -76,6 +76,10 @@ public class TestOutputComponent {
     }
   }
 
+  public void dispose() {
+    this.consoleView.dispose();
+  }
+
   private static class Message {
 
     private String testClass;

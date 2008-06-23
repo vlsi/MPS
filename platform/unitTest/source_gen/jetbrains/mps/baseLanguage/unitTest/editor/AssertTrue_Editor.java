@@ -28,7 +28,6 @@ public class AssertTrue_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_conditionRefNodeCell20855_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_conditionRefNodeCell20855_0");
     editorCell.setDrawBorder(false);
   }
 

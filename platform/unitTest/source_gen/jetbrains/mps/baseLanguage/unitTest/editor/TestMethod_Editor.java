@@ -56,7 +56,6 @@ public class TestMethod_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_bodyRefNodeCell15632_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_bodyRefNodeCell15632_0");
     editorCell.setDrawBorder(false);
   }
 

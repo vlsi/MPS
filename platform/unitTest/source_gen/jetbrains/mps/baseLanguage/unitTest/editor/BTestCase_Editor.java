@@ -55,7 +55,6 @@ public class BTestCase_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_superclassRefNodeCell16676_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_superclassRefNodeCell16676_0");
     editorCell.setDrawBorder(false);
   }
 
@@ -66,7 +65,6 @@ public class BTestCase_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_testMethodListRefNodeCell16676_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_testMethodListRefNodeCell16676_0");
     editorCell.setDrawBorder(false);
   }
 

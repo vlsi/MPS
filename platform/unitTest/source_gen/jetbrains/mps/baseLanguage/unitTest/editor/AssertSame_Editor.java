@@ -38,12 +38,10 @@ public class AssertSame_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_expectedRefNodeCell2080_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_expectedRefNodeCell2080_0");
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_actualRefNodeCell2080_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_actualRefNodeCell2080_0");
     editorCell.setDrawBorder(false);
   }
 

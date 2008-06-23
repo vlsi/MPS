@@ -38,12 +38,10 @@ public class AssertEquals_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_expectedRefNodeCell11435_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_expectedRefNodeCell11435_0");
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_actualRefNodeCell11435_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_actualRefNodeCell11435_0");
     editorCell.setDrawBorder(false);
   }
 
