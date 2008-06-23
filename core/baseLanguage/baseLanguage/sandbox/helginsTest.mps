@@ -409,6 +409,27 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.EnumClass" id="1185980179658">
     <property name="name" value="E" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1214230887874">
+      <property name="name" value="test" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1214230887875" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1214230887876" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214230887877">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1214230894789">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1214230894790">
+            <property name="name" value="i" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1214230894791" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1214230896684">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1214230896859">
+                <property name="value" value="230" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1214230895996">
+                <property name="value" value="239" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="enumConstant" type="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration" id="1185980183785">
       <property name="name" value="e1" />
     </node>

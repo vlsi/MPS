@@ -45,16 +45,20 @@ public class Style {
     updateCache();
   }
 
+  private Style getParentStyle() {
+    return myParent;
+  }
+
   private void updateCache() {
     myCachedAttributeValues.clear();
     Set<StyleAttribute> attributes = new HashSet<StyleAttribute>();
     attributes.addAll(myAttributeValues.keySet());
-    if (myParent != null) {
-      attributes.addAll(myParent.myCachedAttributeValues.keySet());
+    if (getParentStyle() != null) {
+      attributes.addAll(getParentStyle().myCachedAttributeValues.keySet());
     }
 
     for (StyleAttribute attribute : attributes) {
-      Object parentValue = myParent == null ? null : myParent.get(attribute);
+      Object parentValue = getParentStyle() == null ? null : getParentStyle().get(attribute);
       Object currentValue = myAttributeValues.get(attribute);
       myCachedAttributeValues.put(attribute, attribute.combine(parentValue, currentValue));
     }
