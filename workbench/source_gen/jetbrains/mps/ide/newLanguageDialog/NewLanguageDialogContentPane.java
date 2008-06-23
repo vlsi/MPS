@@ -27,6 +27,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.projectLanguage.structure.LanguageDescriptor;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.vfs.FileSystem;
 
 public class NewLanguageDialogContentPane extends JPanel {
 
@@ -251,7 +252,7 @@ public class NewLanguageDialogContentPane extends JPanel {
     if (!(dir.exists())) {
       dir.mkdirs();
     }
-    Language language = Language.createLanguage(myThis.getLanguageNamespace(), descriptorFile, myThis.getProject());
+    Language language = Language.createNewLanguage(myThis.getLanguageNamespace(), FileSystem.getFile(descriptorFile), myThis.getProject());
     SNode languageDescriptor = (SNode)language.getLanguageDescriptor().getNode();
     SPropertyOperations.set(languageDescriptor, "compileInMPS", "" + (myThis.getCompileInMPS()));
     LanguageAspect.STRUCTURE.createNew(language);

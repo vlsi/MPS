@@ -247,7 +247,7 @@ public class MPSModuleRepository implements ApplicationComponent {
     IModule module = myFileToModuleMap.get(canonicalPath);
     if (module == null) {
       if (cls == Language.class) {
-        module = Language.newInstance(file, owner);
+        module = Language.loadFromDescriptor(file, owner);
       } else if (cls == Solution.class) {
         module = Solution.newInstance(file, owner);
       } else {

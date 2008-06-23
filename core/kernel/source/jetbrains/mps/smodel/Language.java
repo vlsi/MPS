@@ -49,47 +49,25 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   private Map<String, Set<String>> myAncestorsNamesMap = new HashMap<String, Set<String>>();
   private Map<String, Set<String>> myParentsNamesMap = new HashMap<String, Set<String>>();
 
-  public static Language newInstance(IFile descriptorFile, MPSModuleOwner moduleOwner) {
-    Language language = new Language();
-    SModel model = ProjectModels.createDescriptorFor(language).getSModel();
-    model.setLoading(true);
-    LanguageDescriptor languageDescriptor = DescriptorsPersistence.loadLanguageDescriptor(descriptorFile, model);
-    language.myDescriptorFile = descriptorFile;
-    language.myLanguageDescriptor = languageDescriptor;
-
-    language.reload();
-
-    MPSModuleRepository.getInstance().addModule(language, moduleOwner);
-
-    return language;
+  @NotNull
+  public static Language loadFromDescriptor(IFile descriptorFile, MPSModuleOwner moduleOwner) {
+    return createLanguage(null, descriptorFile, moduleOwner, new ExistingLanguageDescriptorProvider());
   }
 
   @NotNull
-  public static Language createLanguage(String languageNamespace, File descriptorFile, MPSModuleOwner moduleOwner) {
+  public static Language createNewLanguage(String languageNamespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
+    return createLanguage(languageNamespace, descriptorFile, moduleOwner, new NewLanguageDescriptorProvider());
+  }
+
+  private static Language createLanguage(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner, LanguageDescriptorProvider provider) {
     Language language = new Language();
     SModel descriptorModel = ProjectModels.createDescriptorFor(language).getSModel();
     descriptorModel.setLoading(true);
-    LanguageDescriptor languageDescriptor = LanguageDescriptor.newInstance(descriptorModel);
-    descriptorModel.addRoot(languageDescriptor);
-    languageDescriptor.setNamespace(languageNamespace);
-
-    // default descriptorModel roots
-    ModelRoot modelRoot = ModelRoot.newInstance(descriptorModel);
-    modelRoot.setPath(new File(descriptorFile.getParentFile(), LANGUAGE_MODELS).getAbsolutePath());
-    modelRoot.setPrefix(languageNamespace);
-    languageDescriptor.addModelRoot(modelRoot);
-    modelRoot = ModelRoot.newInstance(descriptorModel);
-    modelRoot.setPath(new File(descriptorFile.getParentFile(), LANGUAGE_ACCESSORIES).getAbsolutePath());
-    modelRoot.setPrefix(languageNamespace);
-    languageDescriptor.addModelRoot(modelRoot);
-
-    language.myDescriptorFile = FileSystem.getFile(descriptorFile);
+    LanguageDescriptor languageDescriptor = provider.provideLanguageDescriptor(namespace, descriptorFile, descriptorModel);
+    language.myDescriptorFile = descriptorFile;
     language.myLanguageDescriptor = languageDescriptor;
-
     language.reload();
-
     MPSModuleRepository.getInstance().addModule(language, moduleOwner);
-
     return language;
   }
 
@@ -892,5 +870,37 @@ public class Language extends AbstractModule implements Marshallable<Language> {
       }
     }
     return null;
+  }
+
+   private static LanguageDescriptor createNewDescriptor(String languageNamespace, IFile descriptorFile, SModel descriptorModel) {
+      LanguageDescriptor languageDescriptor = LanguageDescriptor.newInstance(descriptorModel);
+      descriptorModel.addRoot(languageDescriptor);
+      languageDescriptor.setNamespace(languageNamespace);
+      // default descriptorModel roots
+      ModelRoot modelRoot = ModelRoot.newInstance(descriptorModel);
+      modelRoot.setPath(new File(descriptorFile.getParent().toFile(), LANGUAGE_MODELS).getAbsolutePath());
+      modelRoot.setPrefix(languageNamespace);
+      languageDescriptor.addModelRoot(modelRoot);
+      modelRoot = ModelRoot.newInstance(descriptorModel);
+      modelRoot.setPath(new File(descriptorFile.getParent().toFile(), LANGUAGE_ACCESSORIES).getAbsolutePath());
+      modelRoot.setPrefix(languageNamespace);
+      languageDescriptor.addModelRoot(modelRoot);
+      return languageDescriptor;
+    }
+
+  private static interface LanguageDescriptorProvider {
+    public LanguageDescriptor provideLanguageDescriptor(String languageNamespace, IFile descriptorFile, SModel descriptorModel);
+  }
+
+  private static class NewLanguageDescriptorProvider implements LanguageDescriptorProvider {
+    public LanguageDescriptor provideLanguageDescriptor(String languageNamespace, IFile descriptorFile, SModel descriptorModel) {
+      return createNewDescriptor(languageNamespace, descriptorFile, descriptorModel);
+    }
+  }
+
+  private static class ExistingLanguageDescriptorProvider implements LanguageDescriptorProvider {
+    public LanguageDescriptor provideLanguageDescriptor(String languageNamespace, IFile descriptorFile, SModel descriptorModel) {
+      return DescriptorsPersistence.loadLanguageDescriptor(descriptorFile, descriptorModel);
+    }
   }
 }

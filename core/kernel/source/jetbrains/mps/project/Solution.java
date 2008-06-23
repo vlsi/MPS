@@ -25,6 +25,10 @@ public class Solution extends AbstractModule {
 
   // -------------------------------------------------------------------
 
+  private Solution() {
+
+  }
+
   public static Solution newInstance(IFile descriptorFile, MPSModuleOwner moduleOwner) {
     Solution solution = new Solution();
     SModel model = ProjectModels.createDescriptorFor(solution).getSModel();
