@@ -125,8 +125,6 @@ public class NodeSubstitutePatternEditor {
       AbstractEditorComponent.turnOnAliasingIfPossible((Graphics2D) g);
 
       TextLine textLine = myTextLine;
-      textLine.setSelectedBorderColor(null);
-      textLine.setBorderColor(null);
       textLine.paint(g, 0, 0, false, true);
     }
 
