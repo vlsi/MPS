@@ -162,6 +162,7 @@
                     </node>
                   </node>
                 </node>
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1214248371390" />
               </node>
             </node>
           </node>
@@ -358,6 +359,7 @@
                     </node>
                   </node>
                 </node>
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1214248373748" />
               </node>
             </node>
           </node>
@@ -791,6 +793,7 @@
                     </node>
                   </node>
                 </node>
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1214248371965" />
               </node>
             </node>
           </node>
@@ -1350,6 +1353,7 @@
                     </node>
                   </node>
                 </node>
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1214248371389" />
               </node>
             </node>
           </node>

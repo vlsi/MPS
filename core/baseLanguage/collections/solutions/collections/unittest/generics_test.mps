@@ -70,6 +70,9 @@
                   </node>
                 </node>
               </node>
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1214248373482">
+                <link role="typeVariableDeclaration" targetNodeId="1170878969084" resolveInfo="T" />
+              </node>
             </node>
           </node>
         </node>
@@ -249,8 +252,10 @@
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1172029188740">
                 <link role="classifier" targetNodeId="1170879883276" resolveInfo="BooleanSequence" />
               </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1172029188741">
-                <link role="baseMethodDeclaration" targetNodeId="1170879915003" resolveInfo="BooleanSequence" />
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1214248374159">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1214248374161">
+                  <link role="baseMethodDeclaration" targetNodeId="1170879915003" resolveInfo="BooleanSequence" />
+                </node>
               </node>
             </node>
           </node>
@@ -291,8 +296,10 @@
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1172029203864">
                 <link role="classifier" targetNodeId="1170880204174" resolveInfo="IntegerSequence" />
               </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1172029203865">
-                <link role="baseMethodDeclaration" targetNodeId="1170880204178" resolveInfo="IntegerSequence" />
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1214248374109">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1214248374111">
+                  <link role="baseMethodDeclaration" targetNodeId="1170880204178" resolveInfo="IntegerSequence" />
+                </node>
               </node>
             </node>
           </node>

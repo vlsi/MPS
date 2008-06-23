@@ -107,9 +107,9 @@ public class MigrationScriptsView {
                   // still applicable?
                   AbstractMigrationRefactoring migrationRefactoring = myFinder.getRefactoring(aliveResult);
                   if (MigrationScriptUtil.isApplicableRefactoring(node, migrationRefactoring)) {
-//                MigrationScriptUtil.performRefactoring(node, migrationRefactoring);
-                    long curr = System.currentTimeMillis();
-                    while (System.currentTimeMillis() < curr + 100) ;
+                    MigrationScriptUtil.performRefactoring(node, migrationRefactoring);
+//                    long curr = System.currentTimeMillis();
+//                    while (System.currentTimeMillis() < curr + 100) ;
                   }
                 }
               }
