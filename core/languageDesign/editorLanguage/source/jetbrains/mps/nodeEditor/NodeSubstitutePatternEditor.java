@@ -100,7 +100,7 @@ public class NodeSubstitutePatternEditor {
 
     public EditorWindow(Window owner) {
       super(owner);
-      myTextLine = new TextLine("", this);
+      myTextLine = new TextLine("");
     }
 
     public void setMinimalSize(Dimension size) {

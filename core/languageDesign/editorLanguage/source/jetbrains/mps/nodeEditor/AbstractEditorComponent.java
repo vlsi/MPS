@@ -633,7 +633,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   public JToolTip createToolTip() {
     JMultiLineToolTip toolTip = new JMultiLineToolTip();
-    toolTip.setFont(new TextLine("aaa", this).getFont());
+    toolTip.setFont(new TextLine("aaa").getFont());
     return toolTip;
   }
 
