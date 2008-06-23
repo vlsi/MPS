@@ -10,6 +10,8 @@ import jetbrains.mps.workbench.action.BaseGroup;
 
 import java.util.*;
 
+import com.intellij.openapi.project.Project;
+
 
 public class ScriptsActionGroupHelper {
   public static List<MigrationScript> getMigrationScripts(List<Language> languages) {
@@ -22,7 +24,7 @@ public class ScriptsActionGroupHelper {
     return migrationScripts;
   }
 
-  public static void populateByCategoryGroup(List<MigrationScript> migrationScripts, BaseGroup ownerGroup) {
+  public static void populateByCategoryGroup(List<MigrationScript> migrationScripts, Project project, BaseGroup ownerGroup) {
     Map<String, List<MigrationScript>> byCategory = new HashMap<String, List<MigrationScript>>();
     for (MigrationScript migrationScript : migrationScripts) {
       String cat = migrationScript.getCategory();
@@ -46,7 +48,7 @@ public class ScriptsActionGroupHelper {
     for (String cat : sorted) {
       MPSActionGroup categoryGroup = new MPSActionGroup(cat, "");
       for (MigrationScript script : byCategory.get(cat)) {
-        categoryGroup.add(new RunMigrationScriptAction(script,
+        categoryGroup.add(new RunMigrationScriptAction(script, project,
           makeScriptActionName(null, script.getTitle(), script.getMigrationFromBuild())));
       }
       categoryGroup.setPopup(true);
@@ -54,7 +56,7 @@ public class ScriptsActionGroupHelper {
     }
   }
 
-  public static void populateByBuildGroup(List<MigrationScript> migrationScripts, BaseGroup ownerGroup) {
+  public static void populateByBuildGroup(List<MigrationScript> migrationScripts, Project project, BaseGroup ownerGroup) {
     Map<String, List<MigrationScript>> byBuild = new HashMap<String, List<MigrationScript>>();
     for (MigrationScript migrationScript : migrationScripts) {
       String build = migrationScript.getMigrationFromBuild();
@@ -71,7 +73,7 @@ public class ScriptsActionGroupHelper {
     for (String build : sorted) {
       MPSActionGroup categoryGroup = new MPSActionGroup("migrate from b." + build, "");
       for (MigrationScript script : byBuild.get(build)) {
-        categoryGroup.add(new RunMigrationScriptAction(script,
+        categoryGroup.add(new RunMigrationScriptAction(script, project,
           makeScriptActionName(script.getCategory(), script.getTitle(), null)));
       }
       categoryGroup.setPopup(true);
@@ -79,7 +81,7 @@ public class ScriptsActionGroupHelper {
     }
   }
 
-  public static void populateByLanguageGroup(Language language, BaseGroup ownerGroup) {
+  public static void populateByLanguageGroup(Language language, Project project, BaseGroup ownerGroup) {
     SModelDescriptor scriptsModel = language.getScriptsModelDescriptor();
     if (scriptsModel == null) return;
     List<MigrationScript> migrationScripts = scriptsModel.getSModel().getRootsAdapters(MigrationScript.class);
@@ -87,7 +89,7 @@ public class ScriptsActionGroupHelper {
     if (migrationScripts.isEmpty() && genericScripts.isEmpty()) return;
     MPSActionGroup languageScriptsGroup = new MPSActionGroup(language.getNamespace(), "");
     for (MigrationScript script : migrationScripts) {
-      languageScriptsGroup.add(new RunMigrationScriptAction(script,
+      languageScriptsGroup.add(new RunMigrationScriptAction(script, project,
         makeScriptActionName(script.getCategory(), script.getTitle(), script.getMigrationFromBuild())));
     }
     if (!(migrationScripts.isEmpty() || genericScripts.isEmpty())) {

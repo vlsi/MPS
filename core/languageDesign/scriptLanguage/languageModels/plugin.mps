@@ -26,7 +26,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.ide.scriptLanguage.constraints" version="0" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
-  <maxImportIndex value="12" />
+  <maxImportIndex value="13" />
   <import index="1" modelUID="jetbrains.mps.ide.scriptLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.ide.scriptLanguage.plugin@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.project@java_stub" version="-1" />
@@ -39,6 +39,7 @@
   <import index="10" modelUID="jetbrains.mps.workbench@java_stub" version="-1" />
   <import index="11" modelUID="jetbrains.mps.plugins.actions@java_stub" version="-1" />
   <import index="12" modelUID="jetbrains.mps.workbench.action@java_stub" version="-1" />
+  <import index="13" modelUID="com.intellij.openapi.project@java_stub" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.ide.actions" />
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1207488852837">
     <property name="name" value="ExecuteScriptAction" />
@@ -127,6 +128,22 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1214251015257">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1214251015258">
+            <property name="name" value="project" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1214251015259">
+              <link role="classifier" targetNodeId="13.~Project" resolveInfo="Project" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214251015260">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214251015261">
+                <link role="variableDeclaration" targetNodeId="1213721811107" resolveInfo="context" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1214251015262">
+                <link role="baseMethodDeclaration" targetNodeId="5.~IOperationContext.getProject():com.intellij.openapi.project.Project" resolveInfo="getProject" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1207492387235">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207492387236">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213721152301">
@@ -149,13 +166,8 @@
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1207492441893">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1207492445411" />
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213721630280">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213721811113">
-                <link role="variableDeclaration" targetNodeId="1213721811107" resolveInfo="context" />
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1213721643988">
-                <link role="baseMethodDeclaration" targetNodeId="5.~IOperationContext.getProject():com.intellij.openapi.project.Project" resolveInfo="getProject" />
-              </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214251015263">
+              <link role="variableDeclaration" targetNodeId="1214251015258" resolveInfo="project" />
             </node>
           </node>
         </node>
@@ -316,9 +328,12 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207493245136">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1207493245137">
             <link role="classConcept" targetNodeId="2.~ScriptsActionGroupHelper" resolveInfo="ScriptsActionGroupHelper" />
-            <link role="baseMethodDeclaration" targetNodeId="2.~ScriptsActionGroupHelper.populateByCategoryGroup(java.util.List,jetbrains.mps.workbench.action.BaseGroup):void" resolveInfo="populateByCategoryGroup" />
+            <link role="baseMethodDeclaration" targetNodeId="2.~ScriptsActionGroupHelper.populateByCategoryGroup(java.util.List,com.intellij.openapi.project.Project,jetbrains.mps.workbench.action.BaseGroup):void" resolveInfo="populateByCategoryGroup" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207493245138">
               <link role="variableDeclaration" targetNodeId="1207492709947" resolveInfo="scripts" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214251055983">
+              <link role="variableDeclaration" targetNodeId="1214251015258" resolveInfo="project" />
             </node>
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207493245139">
               <link role="variableDeclaration" targetNodeId="1207493128971" resolveInfo="byCategoryGroup" />
@@ -363,9 +378,12 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207493307359">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1207493310267">
             <link role="classConcept" targetNodeId="2.~ScriptsActionGroupHelper" resolveInfo="ScriptsActionGroupHelper" />
-            <link role="baseMethodDeclaration" targetNodeId="2.~ScriptsActionGroupHelper.populateByBuildGroup(java.util.List,jetbrains.mps.workbench.action.BaseGroup):void" resolveInfo="populateByBuildGroup" />
+            <link role="baseMethodDeclaration" targetNodeId="2.~ScriptsActionGroupHelper.populateByBuildGroup(java.util.List,com.intellij.openapi.project.Project,jetbrains.mps.workbench.action.BaseGroup):void" resolveInfo="populateByBuildGroup" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207493313267">
               <link role="variableDeclaration" targetNodeId="1207492709947" resolveInfo="scripts" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214251065235">
+              <link role="variableDeclaration" targetNodeId="1214251015258" resolveInfo="project" />
             </node>
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207493317815">
               <link role="variableDeclaration" targetNodeId="1207493258909" resolveInfo="byBuildGroup" />
@@ -418,9 +436,12 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207493381401">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1207493384403">
                 <link role="classConcept" targetNodeId="2.~ScriptsActionGroupHelper" resolveInfo="ScriptsActionGroupHelper" />
-                <link role="baseMethodDeclaration" targetNodeId="2.~ScriptsActionGroupHelper.populateByLanguageGroup(jetbrains.mps.smodel.Language,jetbrains.mps.workbench.action.BaseGroup):void" resolveInfo="populateByLanguageGroup" />
+                <link role="baseMethodDeclaration" targetNodeId="2.~ScriptsActionGroupHelper.populateByLanguageGroup(jetbrains.mps.smodel.Language,com.intellij.openapi.project.Project,jetbrains.mps.workbench.action.BaseGroup):void" resolveInfo="populateByLanguageGroup" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference" id="1207493388044">
                   <link role="variable" targetNodeId="1207493362823" resolveInfo="language" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214251069879">
+                  <link role="variableDeclaration" targetNodeId="1214251015258" resolveInfo="project" />
                 </node>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207493391701">
                   <link role="variableDeclaration" targetNodeId="1207493332947" resolveInfo="byLanguageGroup" />
@@ -438,9 +459,12 @@
         <node role="statement" type="jetbrains.mps.bootstrap.pluginLanguage.structure.AddElementStatement" id="1207493412799">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213721653272">
             <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213721653274">
-              <link role="baseMethodDeclaration" targetNodeId="2.~RunMigrationScriptsAction.&lt;init&gt;(java.util.List,java.lang.String)" resolveInfo="RunMigrationScriptsAction" />
+              <link role="baseMethodDeclaration" targetNodeId="2.~RunMigrationScriptsAction.&lt;init&gt;(java.util.List,com.intellij.openapi.project.Project,java.lang.String)" resolveInfo="RunMigrationScriptsAction" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207493437794">
                 <link role="variableDeclaration" targetNodeId="1207492709947" resolveInfo="scripts" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214251079100">
+                <link role="variableDeclaration" targetNodeId="1214251015258" resolveInfo="project" />
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1207493440249">
                 <property name="value" value="More..." />
