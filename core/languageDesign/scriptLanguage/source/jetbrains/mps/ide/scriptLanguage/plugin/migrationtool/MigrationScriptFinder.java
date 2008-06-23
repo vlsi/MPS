@@ -43,11 +43,10 @@ public class MigrationScriptFinder extends BaseFinder {
     indicator.setText("Searching applicable nodes");
     for (BaseMigrationScript scriptInstance : scriptInstances) {
       if (indicator.isCanceled()) break;
-      List<IRefactoring> refactorings = scriptInstance.getRefactorings();
-      for (IRefactoring refactoring : refactorings) {
+      List<AbstractMigrationRefactoring> refactorings = scriptInstance.getRefactorings();
+      for (AbstractMigrationRefactoring migrationRefactoring : refactorings) {
         if (indicator.isCanceled()) break;
 
-        AbstractMigrationRefactoring migrationRefactoring = (AbstractMigrationRefactoring) refactoring;
         indicator.setText2(scriptInstance.getName() + " [" + migrationRefactoring.getAdditionalInfo() + "]");
         Set<SNode> instances = FindUsagesManager.getInstance().findInstances(MigrationScriptUtil.getApplicableConcept(migrationRefactoring), queryScope, null, false);
         for (SNode instance : instances) {

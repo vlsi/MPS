@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ForEachMatrixElement_InferenceRule implements InferenceRule_Runtime {
@@ -21,7 +22,10 @@ public class typeof_ForEachMatrixElement_InferenceRule implements InferenceRule_
 
         public void run() {
           if (!(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getEquationManager().getRepresentator(matrix), "jetbrains.mps.matrixLanguage.structure.MatrixType"))) {
-            TypeChecker.getInstance().reportTypeError(nodeToCheck, "Should be matrix, but " + SNodeOperations.getConceptDeclaration(TypeChecker.getInstance().getEquationManager().getRepresentator(matrix)), "jetbrains.mps.matrixLanguage.helgins", "1210240609365");
+            {
+              BaseIntentionProvider intentionProvider = null;
+              TypeChecker.getInstance().reportTypeError(nodeToCheck, "Should be matrix, but " + SNodeOperations.getConceptDeclaration(TypeChecker.getInstance().getEquationManager().getRepresentator(matrix)), "jetbrains.mps.matrixLanguage.helgins", "1210240609365", intentionProvider);
+            }
           }
           SNode t = ((SNode)TypeChecker.getInstance().getEquationManager().getRepresentator(matrix));
           TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "element", true), "jetbrains.mps.matrixLanguage.helgins", "1210241241539", true), SLinkOperations.getTarget(t, "scalarType", true), SLinkOperations.getTarget(nodeToCheck, "element", true), null, "jetbrains.mps.matrixLanguage.helgins", "1210241241537");

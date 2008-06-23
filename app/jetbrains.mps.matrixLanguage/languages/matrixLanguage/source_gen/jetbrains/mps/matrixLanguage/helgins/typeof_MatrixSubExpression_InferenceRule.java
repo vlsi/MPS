@@ -14,7 +14,7 @@ public class typeof_MatrixSubExpression_InferenceRule implements InferenceRule_R
   }
 
   public void applyRule(final SNode nodeToCheck) {
-    final SNode v_typevar_1210172571501 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    final SNode v_typevar_1210172571501 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.matrixLanguage.helgins", "1210172571506", true), TypeChecker.getInstance().getEquationManager().getRepresentator(v_typevar_1210172571501), nodeToCheck, null, "jetbrains.mps.matrixLanguage.helgins", "1210172571502");
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "leftExpression", true), "jetbrains.mps.matrixLanguage.helgins", "1210172571512", true), TypeChecker.getInstance().getEquationManager().getRepresentator(v_typevar_1210172571501), SLinkOperations.getTarget(nodeToCheck, "leftExpression", true), null, "jetbrains.mps.matrixLanguage.helgins", "1210172571508");
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "rightExpression", true), "jetbrains.mps.matrixLanguage.helgins", "1210172571520", true), TypeChecker.getInstance().getEquationManager().getRepresentator(v_typevar_1210172571501), SLinkOperations.getTarget(nodeToCheck, "rightExpression", true), null, "jetbrains.mps.matrixLanguage.helgins", "1210172571516");

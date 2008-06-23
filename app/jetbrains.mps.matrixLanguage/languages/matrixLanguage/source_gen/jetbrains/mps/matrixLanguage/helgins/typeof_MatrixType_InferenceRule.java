@@ -14,7 +14,7 @@ public class typeof_MatrixType_InferenceRule implements InferenceRule_Runtime {
   }
 
   public void applyRule(final SNode nodeToCheck) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(SLinkOperations.getTarget(nodeToCheck, "scalarType", true), SLinkOperations.getTarget(new QuotationClass_5().createNode(), "descriptor", false), nodeToCheck, null, "jetbrains.mps.matrixLanguage.helgins", "1210166478532", false);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(SLinkOperations.getTarget(nodeToCheck, "scalarType", true), SLinkOperations.getTarget(new QuotationClass_5().createNode(), "descriptor", false), nodeToCheck, null, "jetbrains.mps.matrixLanguage.helgins", "1210166478532", false, 0);
   }
 
   public String getApplicableConceptFQName() {

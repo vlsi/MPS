@@ -16,7 +16,6 @@ import mf.Currency;
 import formulaAdapter.MoneyAddOperation;
 import formulaAdapter.MoneyMultiplyOperation;
 import formulaAdapter.FeeMoney;
-import jetbrains.mps.formulaLanguage.api.DoubleConstant;
 import formulaAdapter.MoneyConstant;
 import mf.Quantity;
 import mf.Unit;
@@ -39,9 +38,9 @@ public class AgreementRegistryBuilder {
     result.setValue("BASE_RATE", 10.0, MfDate.PAST);
     result.setValue("BASE_RATE", 12.0, new MfDate(1999, 12, 1));
     result.addPostingRule(EventType.USAGE, new PostingRule_Formula(AccountType.BASE_USAGE, true, new MoneyAdapter(new MultiplyOperation(new ValueDouble("BASE_RATE"), new UsageDouble()), Currency.USD)), new MfDate(1999, 10, 1));
-    result.addPostingRule(EventType.SERVICE_CALL, new PostingRule_Formula(AccountType.SERVICE, true, new MoneyAddOperation(new MoneyMultiplyOperation(new FeeMoney(), new DoubleConstant(0.5)), new MoneyConstant(10.0, Currency.USD))), new MfDate(1999, 10, 1));
-    result.addPostingRule(EventType.SERVICE_CALL, new PostingRule_Formula(AccountType.SERVICE, true, new MoneyAddOperation(new MoneyMultiplyOperation(new FeeMoney(), new DoubleConstant(0.5)), new MoneyConstant(15.0, Currency.USD))), new MfDate(1999, 12, 1));
-    result.addPostingRule(EventType.TAX, new PostingRule_Formula(AccountType.TAX, false, new MoneyMultiplyOperation(new FeeMoney(), new DoubleConstant(0.055))), new MfDate(1999, 10, 1));
+    result.addPostingRule(EventType.SERVICE_CALL, new PostingRule_Formula(AccountType.SERVICE, true, new MoneyAddOperation(new MoneyMultiplyOperation(new FeeMoney(), null), new MoneyConstant(10.0, Currency.USD))), new MfDate(1999, 10, 1));
+    result.addPostingRule(EventType.SERVICE_CALL, new PostingRule_Formula(AccountType.SERVICE, true, new MoneyAddOperation(new MoneyMultiplyOperation(new FeeMoney(), null), new MoneyConstant(15.0, Currency.USD))), new MfDate(1999, 12, 1));
+    result.addPostingRule(EventType.TAX, new PostingRule_Formula(AccountType.TAX, false, new MoneyMultiplyOperation(new FeeMoney(), null)), new MfDate(1999, 10, 1));
     return result;
   }
 
@@ -56,7 +55,7 @@ public class AgreementRegistryBuilder {
     result.setValue("CAP", new Quantity(60.0, Unit.KWH), new MfDate(1999, 12, 1));
     result.addPostingRule(EventType.USAGE, new PostingRule_Formula(AccountType.BASE_USAGE, true, new IfFunction<Money>(new QuantityGreaterThanOperation(new UsageQuantity(), new ValueQuantity("CAP")), new MoneyAdapter(new MultiplyOperation(new ValueDouble("BASE_RATE"), new UsageDouble()), Currency.USD), new MoneyAdapter(new MultiplyOperation(new ValueDouble("REDUCED_RATE"), new UsageDouble()), Currency.USD))), new MfDate(1999, 10, 1));
     result.addPostingRule(EventType.SERVICE_CALL, new PostingRule_Formula(AccountType.SERVICE, true, new MoneyConstant(10.0, Currency.USD)), new MfDate(1999, 10, 1));
-    result.addPostingRule(EventType.TAX, new PostingRule_Formula(AccountType.TAX, false, new MoneyMultiplyOperation(new FeeMoney(), new DoubleConstant(0.055))), new MfDate(1999, 10, 1));
+    result.addPostingRule(EventType.TAX, new PostingRule_Formula(AccountType.TAX, false, new MoneyMultiplyOperation(new FeeMoney(), null)), new MfDate(1999, 10, 1));
     return result;
   }
 

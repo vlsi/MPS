@@ -20,11 +20,10 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import java.io.File;
 import jetbrains.mps.util.DirectoryUtil;
 import java.awt.Frame;
-
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;

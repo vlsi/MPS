@@ -10,7 +10,7 @@ import java.util.List;
  * Date: Apr 24, 2007
  */
 public class BaseMigrationScript {
-  private List<IRefactoring> myRefactorings = new ArrayList<IRefactoring>();
+  private List<AbstractMigrationRefactoring> myRefactorings = new ArrayList<AbstractMigrationRefactoring>();
   private String myName;
 
   
@@ -22,11 +22,11 @@ public class BaseMigrationScript {
     return myName;
   }
 
-  public void addRefactoring(IRefactoring refactoring) {
+  public void addRefactoring(AbstractMigrationRefactoring refactoring) {
     myRefactorings.add(refactoring);
   }
 
-  public List<IRefactoring> getRefactorings() {
+  public List<AbstractMigrationRefactoring> getRefactorings() {
     return myRefactorings;
   }
 }

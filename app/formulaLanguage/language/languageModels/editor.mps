@@ -470,12 +470,12 @@
       <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_ExecuteFunction" id="1154453031691">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1154453031692">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1154453067084">
-            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1154453068804">
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_FunctionParm_selectedNode" id="1154453067085" />
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithAnotherOperation" id="1154453075149">
-                <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1154453080605">
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_FunctionParm_selectedNode" id="1154453079011" />
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1154453083513">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214259269870">
+              <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_FunctionParm_selectedNode" id="1154453067085" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithAnotherOperation" id="1154453075149">
+                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214259269301">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_FunctionParm_selectedNode" id="1154453079011" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1154453083513">
                     <link role="link" targetNodeId="1.1111784647019" />
                   </node>
                 </node>
@@ -495,12 +495,12 @@
       <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_ExecuteFunction" id="1154453098792">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1154453098793">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1154453098794">
-            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1154453098795">
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_FunctionParm_selectedNode" id="1154453098796" />
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithAnotherOperation" id="1154453098797">
-                <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1154453098798">
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_FunctionParm_selectedNode" id="1154453098799" />
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1154453120082">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214259269724">
+              <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_FunctionParm_selectedNode" id="1154453098796" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithAnotherOperation" id="1154453098797">
+                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214259270066">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_FunctionParm_selectedNode" id="1154453098799" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1154453120082">
                     <link role="link" targetNodeId="1.1111784613299" />
                   </node>
                 </node>

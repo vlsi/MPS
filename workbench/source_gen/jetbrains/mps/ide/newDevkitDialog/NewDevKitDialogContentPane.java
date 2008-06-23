@@ -18,10 +18,9 @@ import org.jdesktop.beansbinding.Bindings;
 import java.io.File;
 import jetbrains.mps.util.DirectoryUtil;
 import java.awt.Frame;
-
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
