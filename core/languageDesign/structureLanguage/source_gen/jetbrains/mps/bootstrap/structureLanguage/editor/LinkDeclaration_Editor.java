@@ -88,7 +88,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupLabel_ModelAccessCell7832_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(false);
-    editorCell.getTextLine().setTextBackgroundColor(Color.lightGray);
+    editorCell.setTextBackgroundColor(Color.lightGray);
   }
 
   private static void setupLabel_ConstantCell7832_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -361,7 +361,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_namePropertyCell7832_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
+      editorCell.setTextColor(MPSColors.DARK_MAGENTA);
     }
 
 

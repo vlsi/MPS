@@ -15,64 +15,62 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class SeqRegexp_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174900567679");
+  private static void setupBasic_CollectionCell2730_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell2730_0");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_LeftCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174900570494");
+  private static void setupBasic_leftRefNodeCell2730_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setDrawBorder(false);
     BinaryRegexp_Left_Actions.setCellActions(editorCell, node, context);
   }
 
-  private static void setupBasic_RightCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174900573371");
+  private static void setupBasic_rightRefNodeCell2730_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setDrawBorder(false);
     BinaryRegexp_Right_Actions.setCellActions(editorCell, node, context);
   }
 
-  private static void setupLabel_LeftCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_leftRefNodeCell2730_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_RightCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_rightRefNodeCell2730_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createRowCell(context, node);
+    return this.create_CollectionCell2730_0(context, node);
   }
 
-  public EditorCell createRowCell(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell2730_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_RowCell(editorCell, node, context);
+    setupBasic_CollectionCell2730_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createLeftCell(context, node));
-    editorCell.addEditorCell(this.createRightCell(context, node));
+    editorCell.addEditorCell(this.create_leftRefNodeCell2730_0(context, node));
+    editorCell.addEditorCell(this.create_rightRefNodeCell2730_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createLeftCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_leftRefNodeCell2730_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_LeftCell(editorCell, node, context);
+    setupBasic_leftRefNodeCell2730_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_LeftCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_leftRefNodeCell2730_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createLeftCell(EditorContext context, SNode node) {
+  public EditorCell create_leftRefNodeCell2730_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("left");
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createLeftCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_leftRefNodeCell2730_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -83,25 +81,25 @@ public class SeqRegexp_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createRightCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_rightRefNodeCell2730_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RightCell(editorCell, node, context);
+    setupBasic_rightRefNodeCell2730_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RightCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_rightRefNodeCell2730_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createRightCell(EditorContext context, SNode node) {
+  public EditorCell create_rightRefNodeCell2730_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("right");
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRightCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_rightRefNodeCell2730_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

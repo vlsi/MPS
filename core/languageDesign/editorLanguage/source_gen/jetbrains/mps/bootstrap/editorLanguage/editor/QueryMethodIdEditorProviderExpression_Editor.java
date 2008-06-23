@@ -113,7 +113,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
   }
 
   private static void setupLabel_ConstantCell18242_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_returnTypeRefNodeCell18242_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -138,7 +138,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
   }
 
   private static void setupLabel_ConstantCell18242_04(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_ConstantCell18242_05(EditorCell_Label editorCell, SNode node, EditorContext context) {

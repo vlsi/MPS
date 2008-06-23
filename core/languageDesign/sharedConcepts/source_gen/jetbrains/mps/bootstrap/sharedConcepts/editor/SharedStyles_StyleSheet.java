@@ -21,7 +21,7 @@ public class SharedStyles_StyleSheet {
       if (cell instanceof EditorCell_Label) {
         EditorCell_Label labelCell = (EditorCell_Label)cell;
         Color color = SharedStyles_StyleSheet.calculateColor(cell);
-        labelCell.getTextLine().setTextColor(color);
+        labelCell.setTextColor(color);
       }
       cell.setFontType(MPSFonts.ITALIC);
       if (recurive) {
@@ -61,7 +61,7 @@ public class SharedStyles_StyleSheet {
       if (cell instanceof EditorCell_Label) {
         EditorCell_Label labelCell = (EditorCell_Label)cell;
         Color color = SharedStyles_StyleSheet.calculateColor1(cell);
-        labelCell.getTextLine().setTextColor(color);
+        labelCell.setTextColor(color);
       }
       if (recurive) {
         if (cell instanceof EditorCell_Collection) {

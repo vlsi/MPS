@@ -30,11 +30,11 @@ public class SortDirection_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell21011_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_ConstantCell21011_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   public static boolean renderingCondition21011_0(SNode node, EditorContext editorContext, IScope scope) {

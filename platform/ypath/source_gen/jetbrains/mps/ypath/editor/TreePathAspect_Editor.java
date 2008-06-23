@@ -379,7 +379,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell7950_020(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.lightGray);
+    editorCell.setTextColor(Color.lightGray);
   }
 
   private static void setupLabel_ConstantCell7950_021(EditorCell_Label editorCell, SNode node, EditorContext context) {

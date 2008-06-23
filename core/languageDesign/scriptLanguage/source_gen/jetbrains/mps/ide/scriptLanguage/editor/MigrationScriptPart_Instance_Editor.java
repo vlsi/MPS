@@ -87,7 +87,6 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_affectedInstancePredicateRefNodeCell14429_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_affectedInstancePredicateRefNodeCell14429_0");
   }
 
   private static void setupBasic_CollectionCell14429_05(EditorCell editorCell, SNode node, EditorContext context) {
@@ -105,54 +104,53 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_affectedInstanceUpdaterRefNodeCell14429_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_affectedInstanceUpdaterRefNodeCell14429_0");
   }
 
   private static void setupLabel_ConstantCell14429_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(false);
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_ConstantCell14429_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_ConstantCell14429_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_descriptionPropertyCell14429_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
+    editorCell.setTextColor(MPSColors.DARK_GREEN);
   }
 
   private static void setupLabel_ConstantCell14429_03(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_ConstantCell14429_04(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_affectedInstanceConceptRefCell14429_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell14429_05(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_ConstantCell14429_06(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_affectedInstancePredicateRefNodeCell14429_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell14429_07(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_ConstantCell14429_08(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_affectedInstanceUpdaterRefNodeCell14429_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -434,7 +432,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_namePropertyCell14429_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
+      editorCell.setTextColor(MPSColors.DARK_MAGENTA);
     }
 
 

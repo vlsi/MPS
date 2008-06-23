@@ -21,7 +21,7 @@ public class IntegerConstant_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_valuePropertyCell19369_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.blue);
+    editorCell.setTextColor(Color.blue);
   }
 
 

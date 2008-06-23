@@ -249,7 +249,7 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_closeBracePropertyCell10561_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.blue);
+    editorCell.setTextColor(Color.blue);
     editorCell.getNullTextLine().setTextColor(Color.blue);
   }
 

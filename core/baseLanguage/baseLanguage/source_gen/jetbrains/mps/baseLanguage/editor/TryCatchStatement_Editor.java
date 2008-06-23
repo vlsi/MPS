@@ -82,7 +82,7 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell18678_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_ConstantCell18678_01(EditorCell_Label editorCell, SNode node, EditorContext context) {

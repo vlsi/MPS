@@ -416,7 +416,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell11481_021(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.gray);
+    editorCell.setTextColor(Color.gray);
   }
 
   public static boolean renderingCondition11481_0(SNode node, EditorContext editorContext, IScope scope) {

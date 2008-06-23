@@ -15,53 +15,53 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class CharacterSymbolClassPart_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174558016484");
+  private static void setupBasic_CollectionCell1945_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell1945_0");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_CharacterCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174558018736");
+  private static void setupBasic_characterPropertyCell1945_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_characterPropertyCell1945_0");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupLabel_CharacterCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_characterPropertyCell1945_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createRowCell(context, node);
+    return this.create_CollectionCell1945_0(context, node);
   }
 
-  public EditorCell createRowCell(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell1945_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_RowCell(editorCell, node, context);
+    setupBasic_CollectionCell1945_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createCharacterCell(context, node));
+    editorCell.addEditorCell(this.create_characterPropertyCell1945_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createCharacterCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_characterPropertyCell1945_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_CharacterCell(editorCell, node, context);
+    setupBasic_characterPropertyCell1945_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_CharacterCell((EditorCell_Label)editorCell, node, context);
+      setupLabel_characterPropertyCell1945_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createCharacterCell(EditorContext context, SNode node) {
+  public EditorCell create_characterPropertyCell1945_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("character");
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createCharacterCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_characterPropertyCell1945_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

@@ -144,7 +144,7 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell14408_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_ConstantCell14408_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -157,7 +157,7 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell14408_04(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_ConstantCell14408_05(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -173,7 +173,7 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell14408_08(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_ConstantCell14408_09(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -189,7 +189,7 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell14408_012(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_ConstantCell14408_013(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -51,14 +51,14 @@ public class OperationParm_Concept_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell7071_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.lightGray);
+    editorCell.setTextColor(Color.lightGray);
   }
 
   private static void setupLabel_conceptRefCell7071_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell7071_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.red);
+    editorCell.setTextColor(Color.red);
   }
 
   private static void setupLabel_conceptArgumentRefNodeCell7071_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -184,7 +184,7 @@ public class OperationParm_Concept_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_namePropertyCell7071_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
+      editorCell.setTextColor(MPSColors.DARK_MAGENTA);
     }
 
 

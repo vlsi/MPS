@@ -75,7 +75,7 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell2350_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.red);
+    editorCell.setTextColor(Color.red);
   }
 
   private static void setupLabel_nodeKindRefCell2350_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

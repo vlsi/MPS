@@ -46,15 +46,15 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell3101_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.gray);
+    editorCell.setTextColor(Color.gray);
   }
 
   private static void setupLabel_valuePropertyCell3101_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.gray);
+    editorCell.setTextColor(Color.gray);
   }
 
   private static void setupLabel_valuePropertyCell3101_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.blue);
+    editorCell.setTextColor(Color.blue);
   }
 
   public static boolean renderingCondition3101_0(SNode node, EditorContext editorContext, IScope scope) {

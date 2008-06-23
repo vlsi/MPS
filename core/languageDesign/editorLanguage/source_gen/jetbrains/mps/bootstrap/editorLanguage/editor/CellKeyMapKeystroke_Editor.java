@@ -61,16 +61,16 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_modifiersPropertyCell1532_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextBackgroundColor(Color.yellow);
-    editorCell.getTextLine().setSelectedTextBackgroundColor(Color.cyan);
+    editorCell.setTextBackgroundColor(Color.yellow);
+    editorCell.setSelectedTextBackgroundColor(Color.cyan);
   }
 
   private static void setupLabel_ConstantCell1532_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_keycodePropertyCell1532_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextBackgroundColor(Color.yellow);
-    editorCell.getTextLine().setSelectedTextBackgroundColor(Color.cyan);
+    editorCell.setTextBackgroundColor(Color.yellow);
+    editorCell.setSelectedTextBackgroundColor(Color.cyan);
   }
 
   private static void setupLabel_ConstantCell1532_02(EditorCell_Label editorCell, SNode node, EditorContext context) {

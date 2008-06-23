@@ -239,7 +239,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_descriptionPropertyCell5981_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
+    editorCell.setTextColor(MPSColors.DARK_GREEN);
   }
 
   private static void setupLabel_ConstantCell5981_09(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -249,7 +249,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_caretPolicyPropertyCell5981_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
+    editorCell.setTextColor(MPSColors.DARK_MAGENTA);
   }
 
   private static void setupLabel_ConstantCell5981_011(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -37,7 +37,7 @@ public class ThrowStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell10418_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_throwableRefNodeCell10418_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -573,8 +573,8 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_nullTextPropertyCell19694_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextBackgroundColor(Color.yellow);
-    editorCell.getTextLine().setSelectedTextBackgroundColor(Color.cyan);
+    editorCell.setTextBackgroundColor(Color.yellow);
+    editorCell.setSelectedTextBackgroundColor(Color.cyan);
   }
 
   private static void setupLabel_ConstantCell19694_011(EditorCell_Label editorCell, SNode node, EditorContext context) {

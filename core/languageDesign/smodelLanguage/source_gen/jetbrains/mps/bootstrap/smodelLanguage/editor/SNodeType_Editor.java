@@ -53,7 +53,7 @@ public class SNodeType_Editor extends DefaultNodeEditor {
 
   private static void setupLabel_ConstantCell2853_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(true);
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_ConstantCell2853_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -148,7 +148,7 @@ public class SNodeType_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_namePropertyCell2853_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
+      editorCell.setTextColor(MPSColors.DARK_MAGENTA);
     }
 
 

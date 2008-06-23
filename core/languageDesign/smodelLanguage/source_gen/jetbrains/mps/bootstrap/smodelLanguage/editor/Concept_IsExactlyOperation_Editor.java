@@ -78,7 +78,7 @@ public class Concept_IsExactlyOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell1868_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.red);
+    editorCell.setTextColor(Color.red);
   }
 
   public static boolean renderingCondition1868_0(SNode node, EditorContext editorContext, IScope scope) {
@@ -220,7 +220,7 @@ public class Concept_IsExactlyOperation_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_namePropertyCell1868_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
+      editorCell.setTextColor(MPSColors.DARK_MAGENTA);
     }
 
 

@@ -138,7 +138,7 @@ public class ForStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell17219_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_ConstantCell17219_01(EditorCell_Label editorCell, SNode node, EditorContext context) {

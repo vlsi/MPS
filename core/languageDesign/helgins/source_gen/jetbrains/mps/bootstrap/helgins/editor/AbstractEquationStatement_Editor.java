@@ -62,7 +62,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConceptPropertyCell20705_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(_QueryFunction_Color_1206359795157(node, context));
+    editorCell.setTextColor(_QueryFunction_Color_1206359795157(node, context));
   }
 
   public static Color _QueryFunction_Color_1206359795157(SNode node, EditorContext editorContext) {

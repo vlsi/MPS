@@ -58,7 +58,7 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
 
   private static void setupLabel_ConceptPropertyCell18331_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(false);
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_ConstantCell18331_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -173,7 +173,7 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_ConstantCell18331_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.getTextLine().setTextColor(Color.lightGray);
+      editorCell.setTextColor(Color.lightGray);
     }
 
 

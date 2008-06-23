@@ -92,7 +92,7 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
 
   private static void setupLabel_ConstantCell6195_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(false);
-    editorCell.getTextLine().setTextBackgroundColor(Color.green);
+    editorCell.setTextBackgroundColor(Color.green);
   }
 
   private static void setupLabel_ConstantCell6195_02(EditorCell_Label editorCell, SNode node, EditorContext context) {

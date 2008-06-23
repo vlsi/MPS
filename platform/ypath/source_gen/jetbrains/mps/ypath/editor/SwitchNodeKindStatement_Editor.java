@@ -69,14 +69,14 @@ public class SwitchNodeKindStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell19466_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_nodeExpressionRefNodeCell19466_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell19466_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_ConstantCell19466_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -225,7 +225,7 @@ public class SwitchNodeKindStatement_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_ConstantCell19466_05(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.getTextLine().setTextColor(Color.lightGray);
+      editorCell.setTextColor(Color.lightGray);
     }
 
 

@@ -80,15 +80,15 @@ public class Node_IsInstanceOfOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell21039_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.red);
+    editorCell.setTextColor(Color.red);
   }
 
   private static void setupLabel_ConstantCell21039_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
+    editorCell.setTextColor(MPSColors.DARK_GREEN);
   }
 
   private static void setupLabel_ConstantCell21039_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.red);
+    editorCell.setTextColor(Color.red);
   }
 
   private static void setupLabel_ConstantCell21039_03(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -254,7 +254,7 @@ public class Node_IsInstanceOfOperation_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_namePropertyCell21039_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
+      editorCell.setTextColor(MPSColors.DARK_MAGENTA);
     }
 
 

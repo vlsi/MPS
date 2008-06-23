@@ -128,8 +128,8 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell7203_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.blue);
-    editorCell.getTextLine().setTextBackgroundColor(Color.lightGray);
+    editorCell.setTextColor(Color.blue);
+    editorCell.setTextBackgroundColor(Color.lightGray);
   }
 
   private static void setupLabel_ConstantCell7203_01(EditorCell_Label editorCell, SNode node, EditorContext context) {

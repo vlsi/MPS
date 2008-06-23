@@ -37,7 +37,7 @@ public class Fail_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell1057_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.blue);
+    editorCell.setTextColor(Color.blue);
   }
 
   private static void setupLabel_ConstantCell1057_01(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -34,7 +34,7 @@ public class RequiredAdditionalArgument_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_namePropertyCell5229_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
+    editorCell.setTextColor(MPSColors.DARK_MAGENTA);
   }
 
   private static void setupLabel_ConstantCell5229_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -105,7 +105,7 @@ public class VisitParameterDeclarationList_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_ConstantCell5583_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.getTextLine().setTextColor(Color.lightGray);
+      editorCell.setTextColor(Color.lightGray);
     }
 
 

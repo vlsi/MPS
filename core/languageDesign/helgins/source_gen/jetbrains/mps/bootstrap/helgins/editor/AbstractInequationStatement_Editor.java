@@ -80,7 +80,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConceptPropertyCell18424_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(_QueryFunction_Color_1212056631973(node, context));
+    editorCell.setTextColor(_QueryFunction_Color_1212056631973(node, context));
   }
 
   private static void setupLabel_rightExpressionRefNodeCell18424_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -142,7 +142,7 @@ public class LinkList_AddNewChildOperation_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_namePropertyCell21468_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
+      editorCell.setTextColor(MPSColors.DARK_MAGENTA);
     }
 
 

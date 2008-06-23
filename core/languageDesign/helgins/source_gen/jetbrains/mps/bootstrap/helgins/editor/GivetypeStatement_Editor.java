@@ -62,14 +62,14 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell21416_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
+    editorCell.setTextColor(MPSColors.DARK_GREEN);
   }
 
   private static void setupLabel_typeExpressionRefNodeCell21416_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell21416_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
+    editorCell.setTextColor(MPSColors.DARK_GREEN);
   }
 
   private static void setupLabel_termExpressionRefNodeCell21416_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -85,7 +85,7 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell21416_05(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.red);
+    editorCell.setTextColor(Color.red);
   }
 
 

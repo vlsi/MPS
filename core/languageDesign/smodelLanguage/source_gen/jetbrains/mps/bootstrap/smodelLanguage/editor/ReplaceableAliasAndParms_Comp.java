@@ -77,14 +77,14 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
   }
 
   private static void setupLabel_ConstantCell14862_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.lightGray);
+    editorCell.setTextColor(Color.lightGray);
   }
 
   private static void setupLabel_parameterRefNodeListCell14862_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell14862_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.lightGray);
+    editorCell.setTextColor(Color.lightGray);
   }
 
   public static boolean renderingCondition14862_0(SNode node, EditorContext editorContext, IScope scope) {
@@ -198,7 +198,7 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
 
     private static void setupLabel_ConstantCell14862_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
       editorCell.setEditable(true);
-      editorCell.getTextLine().setTextColor(Color.lightGray);
+      editorCell.setTextColor(Color.lightGray);
     }
 
 

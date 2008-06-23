@@ -37,7 +37,7 @@ public class Type_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConceptPropertyCell12148_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   public static boolean renderingCondition12148_0(SNode node, EditorContext editorContext, IScope scope) {

@@ -72,8 +72,8 @@ public class CellMenuPart_PropertyValues_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell13005_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.getTextLine().setTextBackgroundColor(Color.lightGray);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextBackgroundColor(Color.lightGray);
   }
 
   private static void setupLabel_ConstantCell13005_03(EditorCell_Label editorCell, SNode node, EditorContext context) {

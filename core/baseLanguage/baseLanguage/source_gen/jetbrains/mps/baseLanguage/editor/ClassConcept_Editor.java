@@ -420,7 +420,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell6031_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_namePropertyCell6031_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -460,7 +460,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell6031_012(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_implementedInterfaceRefNodeListCell6031_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -479,7 +479,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell6031_018(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_ConstantCell6031_019(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -498,7 +498,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell6031_023(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_ConstantCell6031_024(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -514,7 +514,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell6031_027(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_ConstantCell6031_028(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -563,7 +563,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell6031_039(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_superclassRefNodeCell6031_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

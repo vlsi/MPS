@@ -42,7 +42,7 @@ public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell19306_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.darkGray);
+    editorCell.setTextColor(Color.darkGray);
   }
 
 
@@ -111,7 +111,7 @@ public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_namePropertyCell19306_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
+      editorCell.setTextColor(MPSColors.DARK_MAGENTA);
     }
 
 

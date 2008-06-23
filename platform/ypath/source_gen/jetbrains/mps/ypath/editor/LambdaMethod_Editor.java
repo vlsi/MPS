@@ -41,7 +41,7 @@ public class LambdaMethod_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell16314_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.blue);
+    editorCell.setTextColor(Color.blue);
   }
 
   private static void setupLabel_bodyRefNodeCell16314_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

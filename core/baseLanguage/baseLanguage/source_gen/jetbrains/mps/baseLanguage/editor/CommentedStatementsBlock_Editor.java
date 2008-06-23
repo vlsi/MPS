@@ -53,11 +53,11 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell19947_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.gray);
+    editorCell.setTextColor(Color.gray);
   }
 
   private static void setupLabel_ConstantCell19947_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.gray);
+    editorCell.setTextColor(Color.gray);
   }
 
   private static void setupLabel_ConstantCell19947_02(EditorCell_Label editorCell, SNode node, EditorContext context) {

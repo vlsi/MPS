@@ -427,7 +427,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell12325_08(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.gray);
+    editorCell.setTextColor(Color.gray);
   }
 
   private static void setupLabel_ConstantCell12325_09(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -527,7 +527,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell12325_029(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.gray);
+    editorCell.setTextColor(Color.gray);
   }
 
   public static boolean renderingCondition12325_0(SNode node, EditorContext editorContext, IScope scope) {

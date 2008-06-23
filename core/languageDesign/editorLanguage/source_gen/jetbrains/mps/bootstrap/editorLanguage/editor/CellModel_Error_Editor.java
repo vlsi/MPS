@@ -513,8 +513,8 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_textPropertyCell2345_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextBackgroundColor(Color.pink);
-    editorCell.getTextLine().setSelectedTextBackgroundColor(Color.magenta);
+    editorCell.setTextBackgroundColor(Color.pink);
+    editorCell.setSelectedTextBackgroundColor(Color.magenta);
   }
 
   private static void setupLabel_ConstantCell2345_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -524,8 +524,8 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_textPropertyCell2345_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextBackgroundColor(Color.pink);
-    editorCell.getTextLine().setSelectedTextBackgroundColor(Color.magenta);
+    editorCell.setTextBackgroundColor(Color.pink);
+    editorCell.setSelectedTextBackgroundColor(Color.magenta);
   }
 
   private static void setupLabel_ConstantCell2345_02(EditorCell_Label editorCell, SNode node, EditorContext context) {

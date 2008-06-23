@@ -46,14 +46,14 @@ public class AssertSame_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell2080_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.blue);
+    editorCell.setTextColor(Color.blue);
   }
 
   private static void setupLabel_ConstantCell2080_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell2080_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.blue);
+    editorCell.setTextColor(Color.blue);
   }
 
   private static void setupLabel_expectedRefNodeCell2080_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

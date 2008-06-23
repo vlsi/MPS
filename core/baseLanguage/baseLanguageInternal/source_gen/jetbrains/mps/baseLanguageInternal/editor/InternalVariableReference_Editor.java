@@ -52,7 +52,7 @@ public class InternalVariableReference_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_namePropertyCell9449_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.green);
+    editorCell.setTextColor(Color.green);
   }
 
 

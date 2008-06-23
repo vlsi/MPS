@@ -73,7 +73,7 @@ public class SLinkListAccess_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_rolePropertyCell2380_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.getTextLine().setTextColor(Color.darkGray);
+      editorCell.setTextColor(Color.darkGray);
     }
 
 

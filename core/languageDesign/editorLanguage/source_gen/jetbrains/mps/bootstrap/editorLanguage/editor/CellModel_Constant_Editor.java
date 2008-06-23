@@ -554,8 +554,8 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_textPropertyCell10258_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextBackgroundColor(Color.yellow);
-    editorCell.getTextLine().setSelectedTextBackgroundColor(Color.cyan);
+    editorCell.setTextBackgroundColor(Color.yellow);
+    editorCell.setSelectedTextBackgroundColor(Color.cyan);
   }
 
   private static void setupLabel_ConstantCell10258_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -565,8 +565,8 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_textPropertyCell10258_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextBackgroundColor(Color.yellow);
-    editorCell.getTextLine().setSelectedTextBackgroundColor(Color.cyan);
+    editorCell.setTextBackgroundColor(Color.yellow);
+    editorCell.setSelectedTextBackgroundColor(Color.cyan);
   }
 
   private static void setupLabel_ConstantCell10258_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -585,8 +585,8 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_nullTextPropertyCell10258_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextBackgroundColor(Color.yellow);
-    editorCell.getTextLine().setSelectedTextBackgroundColor(Color.cyan);
+    editorCell.setTextBackgroundColor(Color.yellow);
+    editorCell.setSelectedTextBackgroundColor(Color.cyan);
   }
 
   private static void setupLabel_editablePropertyCell10258_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

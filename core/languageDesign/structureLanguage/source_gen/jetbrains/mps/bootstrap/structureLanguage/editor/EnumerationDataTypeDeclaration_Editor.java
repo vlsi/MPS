@@ -217,8 +217,8 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_namePropertyCell7131_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextBackgroundColor(Color.yellow);
-    editorCell.getTextLine().setSelectedTextBackgroundColor(Color.cyan);
+    editorCell.setTextBackgroundColor(Color.yellow);
+    editorCell.setSelectedTextBackgroundColor(Color.cyan);
   }
 
   private static void setupLabel_ConstantCell7131_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -255,11 +255,11 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_memberIdentifierPolicyPropertyCell7131_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
+    editorCell.setTextColor(MPSColors.DARK_MAGENTA);
   }
 
   private static void setupLabel_ConstantCell7131_010(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.red);
+    editorCell.setTextColor(Color.red);
   }
 
   private static void setupLabel_ConstantCell7131_011(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -281,7 +281,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_noValueTextPropertyCell7131_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
+    editorCell.setTextColor(MPSColors.DARK_GREEN);
   }
 
   public static boolean renderingCondition7131_0(SNode node, EditorContext editorContext, IScope scope) {
@@ -801,7 +801,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_externalValuePropertyCell7131_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
+      editorCell.setTextColor(MPSColors.DARK_MAGENTA);
     }
 
 

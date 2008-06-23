@@ -352,7 +352,7 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_namePropertyCell19999_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
+      editorCell.setTextColor(MPSColors.DARK_MAGENTA);
     }
 
 

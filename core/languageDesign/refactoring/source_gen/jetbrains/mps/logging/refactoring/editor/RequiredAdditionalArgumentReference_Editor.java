@@ -69,7 +69,7 @@ public class RequiredAdditionalArgumentReference_Editor extends DefaultNodeEdito
     }
 
     private static void setupLabel_namePropertyCell6335_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
+      editorCell.setTextColor(MPSColors.DARK_MAGENTA);
     }
 
 

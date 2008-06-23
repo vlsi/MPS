@@ -107,7 +107,7 @@ public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
 
   private static void setupLabel_ConstantCell15341_04(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(false);
-    editorCell.getTextLine().setTextBackgroundColor(Color.pink);
+    editorCell.setTextBackgroundColor(Color.pink);
   }
 
   private static void setupLabel_ConstantCell15341_05(EditorCell_Label editorCell, SNode node, EditorContext context) {

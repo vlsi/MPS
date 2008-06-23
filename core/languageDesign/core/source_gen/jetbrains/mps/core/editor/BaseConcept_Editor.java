@@ -19,7 +19,7 @@ public class BaseConcept_Editor extends DefaultNodeEditor {
 
   private static void setupLabel_ConstantCell5616_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(true);
-    editorCell.getTextLine().setTextColor(Color.lightGray);
+    editorCell.setTextColor(Color.lightGray);
   }
 
 

@@ -98,7 +98,7 @@ public class RequiredUserEnteredArgument_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_namePropertyCell9294_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
+    editorCell.setTextColor(MPSColors.DARK_MAGENTA);
   }
 
   private static void setupLabel_ConstantCell9294_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

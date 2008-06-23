@@ -47,7 +47,7 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell17987_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   public static boolean renderingCondition17987_0(SNode node, EditorContext editorContext, IScope scope) {

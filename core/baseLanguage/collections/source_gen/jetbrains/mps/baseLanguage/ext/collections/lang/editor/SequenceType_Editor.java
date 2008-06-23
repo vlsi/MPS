@@ -38,7 +38,7 @@ public class SequenceType_Editor extends DefaultNodeEditor {
 
   private static void setupLabel_ConstantCell423_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(false);
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_elementTypeRefNodeCell423_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -46,7 +46,7 @@ public class SequenceType_Editor extends DefaultNodeEditor {
 
   private static void setupLabel_ConstantCell423_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(false);
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
 

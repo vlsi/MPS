@@ -13,7 +13,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class _Quotation_createModel extends EditorCellKeyMap {
 
-  public  _Quotation_createModel() {
+  public _Quotation_createModel() {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
     action = new _Quotation_createModel._Quotation_createModel_Action0();
@@ -21,7 +21,7 @@ public class _Quotation_createModel extends EditorCellKeyMap {
   }
   public static class _Quotation_createModel_Action0 extends EditorCellKeyMapAction {
 
-    public  _Quotation_createModel_Action0() {
+    public _Quotation_createModel_Action0() {
       super.setCaretPolicy(EditorCellKeyMapAction.CARET_AT_LAST_POSITION);
       this.setShownInPopupMenu(false);
     }
@@ -32,14 +32,14 @@ public class _Quotation_createModel extends EditorCellKeyMap {
 
     public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
-      if((contextCell == null)) {
+      if ((contextCell == null)) {
         return false;
       }
       SNode contextNode = contextCell.getSNode();
-      if(contextNode == null) {
+      if (contextNode == null) {
         return false;
       }
-      if(contextNode.isInstanceOfConcept("jetbrains.mps.quotation.structure.Quotation")) {
+      if (contextNode.isInstanceOfConcept("jetbrains.mps.quotation.structure.Quotation")) {
         return this.canExecute_internal(keyEvent, editorContext, contextNode, this.getSelectedNodes(editorContext));
       }
       return false;

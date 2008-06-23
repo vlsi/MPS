@@ -57,7 +57,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell14674_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(_QueryFunction_Color_1195144572322(node, context));
+    editorCell.setTextColor(_QueryFunction_Color_1195144572322(node, context));
   }
 
   private static void setupLabel_termRefNodeCell14674_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

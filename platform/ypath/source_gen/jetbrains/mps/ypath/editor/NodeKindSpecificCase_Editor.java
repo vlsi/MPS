@@ -72,7 +72,7 @@ public class NodeKindSpecificCase_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell10708_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_treeNodeKindRefCell10708_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -88,7 +88,7 @@ public class NodeKindSpecificCase_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell10708_03(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_ConstantCell10708_04(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -92,11 +92,11 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_methodNamePropertyCell545_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
+    editorCell.setTextColor(MPSColors.DARK_GREEN);
   }
 
   private static void setupLabel_fqClassNamePropertyCell545_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
+    editorCell.setTextColor(MPSColors.DARK_GREEN);
   }
 
   private static void setupLabel_ConstantCell545_01(EditorCell_Label editorCell, SNode node, EditorContext context) {

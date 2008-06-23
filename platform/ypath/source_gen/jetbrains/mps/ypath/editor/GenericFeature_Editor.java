@@ -296,7 +296,7 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell234_09(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.gray);
+    editorCell.setTextColor(Color.gray);
   }
 
   private static void setupLabel_ConstantCell234_010(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -119,8 +119,8 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell19337_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.getTextLine().setTextBackgroundColor(Color.lightGray);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextBackgroundColor(Color.lightGray);
   }
 
   private static void setupLabel_ConstantCell19337_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -139,7 +139,7 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_matchingTextPropertyCell19337_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
+    editorCell.setTextColor(MPSColors.DARK_GREEN);
   }
 
   private static void setupLabel_ConstantCell19337_05(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -152,7 +152,7 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_descriptionTextPropertyCell19337_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
+    editorCell.setTextColor(MPSColors.DARK_GREEN);
   }
 
 

@@ -72,7 +72,7 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_namePropertyCell8771_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_ConstantCell8771_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -192,7 +192,7 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_namePropertyCell8771_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
+      editorCell.setTextColor(MPSColors.DARK_MAGENTA);
     }
 
 

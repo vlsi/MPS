@@ -41,7 +41,7 @@ public class SemanticDowncastExpression_Editor extends DefaultNodeEditor {
 
   private static void setupLabel_ConstantCell17183_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(false);
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
+    editorCell.setTextColor(MPSColors.DARK_MAGENTA);
   }
 
 

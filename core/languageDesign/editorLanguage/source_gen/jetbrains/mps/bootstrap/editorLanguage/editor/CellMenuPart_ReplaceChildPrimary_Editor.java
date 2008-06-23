@@ -50,15 +50,15 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell743_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.getTextLine().setTextBackgroundColor(Color.lightGray);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextBackgroundColor(Color.lightGray);
   }
 
   private static void setupLabel_ConstantCell743_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell743_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.darkGray);
+    editorCell.setTextColor(Color.darkGray);
   }
 
 

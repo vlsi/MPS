@@ -21,7 +21,7 @@ public class Styles_StyleSheet {
       if (cell instanceof EditorCell_Label) {
         EditorCell_Label labelCell = (EditorCell_Label)cell;
         Color color = Styles_StyleSheet.calculateColor(cell);
-        labelCell.getTextLine().setTextColor(color);
+        labelCell.setTextColor(color);
       }
       if (recurive) {
         if (cell instanceof EditorCell_Collection) {

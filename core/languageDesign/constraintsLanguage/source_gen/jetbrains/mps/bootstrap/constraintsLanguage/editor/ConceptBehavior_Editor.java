@@ -223,7 +223,7 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell15551_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_conceptRefCell15551_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -263,7 +263,7 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell15551_011(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_defaultScopeRefNodeCell15551_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -273,7 +273,7 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell15551_013(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_defaultConcreteConceptRefCell15551_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -1071,7 +1071,7 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_ConstantCell15551_05(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.getTextLine().setTextColor(Color.lightGray);
+      editorCell.setTextColor(Color.lightGray);
     }
 
 
@@ -1135,7 +1135,7 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_ConstantCell15551_07(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.getTextLine().setTextColor(Color.lightGray);
+      editorCell.setTextColor(Color.lightGray);
     }
 
 
@@ -1199,7 +1199,7 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_ConstantCell15551_09(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.getTextLine().setTextColor(Color.lightGray);
+      editorCell.setTextColor(Color.lightGray);
     }
 
 
@@ -1263,7 +1263,7 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_ConstantCell15551_020(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.getTextLine().setTextColor(Color.lightGray);
+      editorCell.setTextColor(Color.lightGray);
     }
 
 

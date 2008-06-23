@@ -66,7 +66,7 @@ public class StatementList_Editor extends DefaultNodeEditor {
 
     private static void setupLabel_ConstantCell6566_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
       editorCell.setEditable(true);
-      editorCell.getTextLine().setTextColor(Color.darkGray);
+      editorCell.setTextColor(Color.darkGray);
     }
 
 

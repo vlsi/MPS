@@ -79,32 +79,32 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_externalValuePropertyCell15113_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
+    editorCell.setTextColor(MPSColors.DARK_MAGENTA);
   }
 
   private static void setupLabel_internalValuePropertyCell15113_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.blue);
-    editorCell.getTextLine().setSelectedTextBackgroundColor(Color.cyan);
+    editorCell.setTextColor(Color.blue);
+    editorCell.setSelectedTextBackgroundColor(Color.cyan);
   }
 
   private static void setupLabel_ConstantCell15113_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell15113_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.darkGray);
+    editorCell.setTextColor(Color.darkGray);
   }
 
   private static void setupLabel_ConstantCell15113_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.darkGray);
+    editorCell.setTextColor(Color.darkGray);
   }
 
   private static void setupLabel_ConstantCell15113_03(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.darkGray);
+    editorCell.setTextColor(Color.darkGray);
   }
 
   private static void setupLabel_javaIdentifierPropertyCell15113_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
-    editorCell.getTextLine().setSelectedTextBackgroundColor(Color.cyan);
+    editorCell.setTextColor(MPSColors.DARK_MAGENTA);
+    editorCell.setSelectedTextBackgroundColor(Color.cyan);
   }
 
   public static boolean renderingCondition15113_0(SNode node, EditorContext editorContext, IScope scope) {

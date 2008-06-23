@@ -63,7 +63,7 @@ public class TreePathAdapterExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell8846_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.red);
+    editorCell.setTextColor(Color.red);
   }
 
   public static boolean renderingCondition8846_0(SNode node, EditorContext editorContext, IScope scope) {

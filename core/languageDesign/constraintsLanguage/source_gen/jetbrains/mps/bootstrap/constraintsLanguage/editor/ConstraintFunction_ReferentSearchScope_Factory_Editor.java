@@ -144,8 +144,8 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   }
 
   private static void setupLabel_ConstantCell19273_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.blue);
-    editorCell.getTextLine().setTextBackgroundColor(Color.lightGray);
+    editorCell.setTextColor(Color.blue);
+    editorCell.setTextBackgroundColor(Color.lightGray);
   }
 
   private static void setupLabel_ConstantCell19273_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -179,7 +179,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   }
 
   private static void setupLabel_ConstantCell19273_011(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextBackgroundColor(Color.pink);
+    editorCell.setTextBackgroundColor(Color.pink);
   }
 
   private static void setupLabel_ConstantCell19273_012(EditorCell_Label editorCell, SNode node, EditorContext context) {

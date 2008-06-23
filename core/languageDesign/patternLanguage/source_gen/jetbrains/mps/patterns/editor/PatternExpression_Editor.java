@@ -30,7 +30,6 @@ public class PatternExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_patternNodeRefNodeCell364_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_patternNodeRefNodeCell364_0");
     editorCell.setDrawBorder(true);
     editorCell.setDrawBrackets(false);
   }
@@ -43,14 +42,14 @@ public class PatternExpression_Editor extends DefaultNodeEditor {
 
   private static void setupLabel_ConstantCell364_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(false);
-    editorCell.getTextLine().setTextBackgroundColor(Color.green);
+    editorCell.setTextBackgroundColor(Color.green);
   }
 
   private static void setupLabel_patternNodeRefNodeCell364_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell364_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextBackgroundColor(Color.green);
+    editorCell.setTextBackgroundColor(Color.green);
   }
 
 

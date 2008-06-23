@@ -35,7 +35,7 @@ public class PoundExpression_Editor extends DefaultNodeEditor {
 
   private static void setupLabel_ConstantCell18647_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(false);
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
+    editorCell.setTextColor(MPSColors.DARK_MAGENTA);
   }
 
   private static void setupLabel_expressionRefNodeCell18647_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

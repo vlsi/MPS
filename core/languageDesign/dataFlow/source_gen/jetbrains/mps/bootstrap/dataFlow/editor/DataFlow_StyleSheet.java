@@ -20,7 +20,7 @@ public class DataFlow_StyleSheet {
       if (cell instanceof EditorCell_Label) {
         EditorCell_Label labelCell = (EditorCell_Label)cell;
         Color color = DataFlow_StyleSheet.calculateColor(cell);
-        labelCell.getTextLine().setTextColor(color);
+        labelCell.setTextColor(color);
       }
       if (recurive) {
         if (cell instanceof EditorCell_Collection) {
@@ -59,7 +59,7 @@ public class DataFlow_StyleSheet {
       if (cell instanceof EditorCell_Label) {
         EditorCell_Label labelCell = (EditorCell_Label)cell;
         Color color = DataFlow_StyleSheet.calculateColor1(cell);
-        labelCell.getTextLine().setTextColor(color);
+        labelCell.setTextColor(color);
       }
       if (recurive) {
         if (cell instanceof EditorCell_Collection) {
@@ -98,7 +98,7 @@ public class DataFlow_StyleSheet {
       if (cell instanceof EditorCell_Label) {
         EditorCell_Label labelCell = (EditorCell_Label)cell;
         Color color = DataFlow_StyleSheet.calculateColor2(cell);
-        labelCell.getTextLine().setTextColor(color);
+        labelCell.setTextColor(color);
       }
       if (recurive) {
         if (cell instanceof EditorCell_Collection) {
@@ -137,7 +137,7 @@ public class DataFlow_StyleSheet {
       if (cell instanceof EditorCell_Label) {
         EditorCell_Label labelCell = (EditorCell_Label)cell;
         Color color = DataFlow_StyleSheet.calculateColor3(cell);
-        labelCell.getTextLine().setTextColor(color);
+        labelCell.setTextColor(color);
       }
       if (recurive) {
         if (cell instanceof EditorCell_Collection) {

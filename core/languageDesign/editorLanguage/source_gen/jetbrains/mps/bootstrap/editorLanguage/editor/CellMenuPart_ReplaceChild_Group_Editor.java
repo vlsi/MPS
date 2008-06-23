@@ -183,8 +183,8 @@ public class CellMenuPart_ReplaceChild_Group_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell2493_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.getTextLine().setTextBackgroundColor(Color.lightGray);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextBackgroundColor(Color.lightGray);
   }
 
   private static void setupLabel_ConstantCell2493_01(EditorCell_Label editorCell, SNode node, EditorContext context) {

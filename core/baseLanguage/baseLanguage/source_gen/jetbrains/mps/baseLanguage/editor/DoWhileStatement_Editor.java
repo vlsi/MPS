@@ -121,7 +121,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell11373_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_ConstantCell11373_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -137,7 +137,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell11373_04(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_ConstantCell11373_05(EditorCell_Label editorCell, SNode node, EditorContext context) {

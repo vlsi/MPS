@@ -64,7 +64,7 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell15912_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
+    editorCell.setTextColor(MPSColors.DARK_GREEN);
   }
 
   private static void setupLabel_annotationRefCell15912_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
