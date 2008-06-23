@@ -5,6 +5,7 @@ public class InheritableStyleAttribute<T> extends StyleAttribute<T> {
 
   public InheritableStyleAttribute(String name, T defaultValue) {
     super(name);
+    myDefaultValue = defaultValue;
   }
 
   public InheritableStyleAttribute(String name) {
