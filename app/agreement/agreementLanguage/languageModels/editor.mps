@@ -286,14 +286,14 @@
         <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1146682482217">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1146682482218">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1146682507484">
-              <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1146682522410">
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1146682512705">
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1146682510861" />
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1146682520034">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214252625766">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214252625929">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1146682510861" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1146682520034">
                     <link role="property" targetNodeId="1.1111793358083" />
                   </node>
                 </node>
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1146682525286">
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1146682525286">
                   <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1146682525287">
                     <link role="enumMember" targetNodeId="1.1111793298691" />
                   </node>
@@ -316,14 +316,14 @@
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1146682771383">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1146682772915">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1146682800371">
-                <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1146682808766">
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1146682803624">
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1146682802060" />
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1146682806968">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214252624351">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214252626075">
+                    <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1146682802060" />
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1146682806968">
                       <link role="property" targetNodeId="1.1111793358083" />
                     </node>
                   </node>
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1146682810767">
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1146682810767">
                     <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1146682810768">
                       <link role="enumMember" targetNodeId="1.1111793298691" />
                     </node>
