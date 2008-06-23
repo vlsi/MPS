@@ -4,6 +4,8 @@ import com.intellij.util.containers.HashMap;
 
 import java.util.*;
 
+import jetbrains.mps.nodeEditor.EditorCell;
+
 public class Style {
   private Style myParent;
   private List<Style> myChildren = new ArrayList<Style>();
@@ -11,6 +13,10 @@ public class Style {
   private Map<StyleAttribute, Object> myCachedAttributeValues = new HashMap<StyleAttribute, Object>();
 
   public Style() {
+  }
+
+  public void apply(EditorCell cell) {
+    cell.getStyle().putAll(this);
   }
 
   public void add(Style child) {
@@ -38,7 +44,7 @@ public class Style {
     updateCache();
   }
 
-  public void setAll(Style s) {
+  public void putAll(Style s) {
     for (StyleAttribute sa : s.myAttributeValues.keySet()) {
       myAttributeValues.put(sa, s.myAttributeValues.get(sa));      
     }

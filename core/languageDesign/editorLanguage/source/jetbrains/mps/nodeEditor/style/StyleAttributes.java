@@ -4,6 +4,7 @@ import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.CaretPosition;
 
 import java.awt.Color;
+import java.awt.Font;
 
 public class StyleAttributes {
   public static final StyleAttribute<Color> BACKGROUND_COLOR = new InheritableStyleAttribute<Color>("background-color");
@@ -25,4 +26,6 @@ public class StyleAttributes {
   public static final StyleAttribute<FocusPolicy> FOCUS_POLICY = new SimpleStyleAttribute<FocusPolicy>("focus-policy", FocusPolicy.NONE);
   public static final StyleAttribute<CaretPosition> DEFAULT_CARET_POSITON = new SimpleStyleAttribute<CaretPosition>("default-caret-position");
 
+  public static final StyleAttribute<Integer> FONT_STYLE = new InheritableStyleAttribute("font-style", Font.PLAIN);
+  public static final StyleAttribute<Integer> FONT_SIZE = new InheritableStyleAttribute("font-size");
 }
