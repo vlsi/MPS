@@ -331,12 +331,12 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
 
   private static void setupLabel_openBracePropertyCell12355_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setTextColor(Color.blue);
-    editorCell.getNullTextLine().setTextColor(Color.blue);
+    editorCell.setNullTextColor(Color.blue);
   }
 
   private static void setupLabel_closeBracePropertyCell12355_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setTextColor(Color.blue);
-    editorCell.getNullTextLine().setTextColor(Color.blue);
+    editorCell.setNullTextColor(Color.blue);
   }
 
 
