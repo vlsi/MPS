@@ -2096,13 +2096,13 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       EditorCell_Label label = (EditorCell_Label) toSelect;
       if (label.getDefaultCaretPosition() != null) {
         if (label.getDefaultCaretPosition() == CaretPosition.FIRST) {
-          label.getTextLine().home();
+          label.home();
         }
         if (label.getDefaultCaretPosition() == CaretPosition.LAST) {
-          label.getTextLine().end();
+          label.end();
         }
       } else if (!toSelect.isErrorState()) {
-        label.getTextLine().end();
+        label.end();
       }
     }
 

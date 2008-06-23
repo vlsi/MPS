@@ -166,7 +166,7 @@ public class EditorContext {
 
     if (cell instanceof EditorCell_Label) {
       EditorCell_Label label = (EditorCell_Label) cell;
-      label.getTextLine().home();
+      label.home();
     }
   }
 
@@ -178,7 +178,7 @@ public class EditorContext {
 
     if (cell instanceof EditorCell_Label) {
       EditorCell_Label label = (EditorCell_Label) cell;
-      label.getTextLine().end();
+      label.end();
     }
 
   }
@@ -214,10 +214,10 @@ public class EditorContext {
     int newPosition = position;
     if (editorCell instanceof EditorCell_Label) {
       EditorCell_Label editorCell_label = (EditorCell_Label) editorCell;
-      newPosition = position - editorCell_label.getTextLine().getText().length();
+      newPosition = position - editorCell_label.getText().length();
       if (newPosition < 0) {
         getNodeEditorComponent().changeSelection(editorCell);
-        editorCell_label.getTextLine().setCaretPosition(position);
+        editorCell_label.setCaretPosition(position);
       }
     } else if (editorCell instanceof EditorCell_Collection) {
       EditorCell_Collection editorCell_iterable = (EditorCell_Collection) editorCell;

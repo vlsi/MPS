@@ -35,7 +35,7 @@ public class SplitStringIntoConcatenation_Intention extends BaseIntention implem
 
   public void execute(SNode node, EditorContext editorContext) {
     EditorCell_Property ecProperty = (EditorCell_Property)editorContext.getContextCell();
-    int caretPosition = ecProperty.getTextLine().getCaretPosition();
+    int caretPosition = ecProperty.getCaretPosition();
     String s1 = SPropertyOperations.getString(node, "value").substring(0, caretPosition);
     String s2 = SPropertyOperations.getString(node, "value").substring(caretPosition);
     SNode plusExpression = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.PlusExpression");

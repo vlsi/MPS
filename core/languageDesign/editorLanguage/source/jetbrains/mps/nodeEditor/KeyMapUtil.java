@@ -124,10 +124,9 @@ public class KeyMapUtil {
     int actualCaretPosition = EditorCellKeyMapAction.CARET_AT_ANY_POSITION;
     if (selectedCell instanceof EditorCell_Label) {
       EditorCell_Label label = (EditorCell_Label) selectedCell;
-      TextLine textLine = label.getTextLine();
-      if (textLine.isFirstCaretPosition()) {
+      if (label.isFirstCaretPosition()) {
         actualCaretPosition = EditorCellKeyMapAction.CARET_AT_FIRST_POSITION;
-      } else if (textLine.isLastCaretPosition()) {
+      } else if (label.isLastCaretPosition()) {
         actualCaretPosition = EditorCellKeyMapAction.CARET_AT_LAST_POSITION;
       } else {
         actualCaretPosition = EditorCellKeyMapAction.CARET_AT_INTERMEDIATE_POSITION;

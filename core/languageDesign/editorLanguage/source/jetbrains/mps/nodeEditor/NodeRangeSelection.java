@@ -270,14 +270,14 @@ public class NodeRangeSelection implements IKeyboardHandler {
             boolean wasCaretEnabled = false;
             if (cell instanceof EditorCell_Label && !wasSelected) {
               EditorCell_Label label = (EditorCell_Label) cell;
-              wasCaretEnabled = label.getTextLine().isCaretEnabled();
-              label.getTextLine().setCaretEnabled(false);
+              wasCaretEnabled = label.isCaretEnabled();
+              label.setCaretEnabled(false);
             }
 
             cell.paint(g);
             if (cell instanceof EditorCell_Label && !wasSelected) {
               EditorCell_Label label = (EditorCell_Label) cell;
-              label.getTextLine().setCaretEnabled(wasCaretEnabled);
+              label.setCaretEnabled(wasCaretEnabled);
             }
 
             cell.setSelected(wasSelected);

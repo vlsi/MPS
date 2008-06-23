@@ -355,16 +355,11 @@
             <property name="name" value="caretPosition" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1195647385888" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332445670">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332454799">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1195647385891">
-                  <link role="variableDeclaration" targetNodeId="1195647385880" resolveInfo="ecProperty" />
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332454800">
-                  <link role="baseMethodDeclaration" targetNodeId="6.~EditorCell_Label.getTextLine():jetbrains.mps.nodeEditor.TextLine" resolveInfo="getTextLine" />
-                </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1195647385891">
+                <link role="variableDeclaration" targetNodeId="1195647385880" resolveInfo="ecProperty" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332445671">
-                <link role="baseMethodDeclaration" targetNodeId="6.~TextLine.getCaretPosition():int" resolveInfo="getCaretPosition" />
+                <link role="baseMethodDeclaration" targetNodeId="6.~EditorCell_Label.getCaretPosition():int" resolveInfo="getCaretPosition" />
               </node>
             </node>
           </node>

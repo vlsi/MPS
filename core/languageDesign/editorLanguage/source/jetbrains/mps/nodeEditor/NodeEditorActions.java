@@ -57,8 +57,7 @@ public class NodeEditorActions {
         }
       } else
       if (target instanceof EditorCell_Label) {
-        TextLine textLine = ((EditorCell_Label) target).getTextLine();
-        textLine.setCaretPositionToLast();
+        ((EditorCell_Label) target).end();
       }
     }
 
@@ -155,8 +154,8 @@ public class NodeEditorActions {
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
       EditorCell target = findTarget(selection);
       if (target instanceof EditorCell_Label) {
-        TextLine textLine = ((EditorCell_Label) target).getTextLine();
-        textLine.moveCaret(0 - textLine.getCaretPosition(), false);
+        EditorCell_Label label = (EditorCell_Label) target;
+        label.moveCaret(0 - label.getCaretPosition(), false);
         context.getNodeEditorComponent().resetLastCaretX();
       }
       context.getNodeEditorComponent().changeSelection(target);
@@ -180,8 +179,8 @@ public class NodeEditorActions {
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
       EditorCell target = findTarget(selection);
       if (target instanceof EditorCell_Label) {
-        TextLine textLine = ((EditorCell_Label) target).getTextLine();
-        textLine.moveCaret(textLine.getText().length() - textLine.getCaretPosition(), false);
+        EditorCell_Label label = (EditorCell_Label) target;
+        label.moveCaret(label.getText().length() - label.getCaretPosition(), false);
         context.getNodeEditorComponent().resetLastCaretX();
       }
       context.getNodeEditorComponent().changeSelection(target);
@@ -206,10 +205,10 @@ public class NodeEditorActions {
       EditorCell target = findTarget(selection);
       context.getNodeEditorComponent().changeSelection(target);
       if (target.isPunctuationLayout()) {
-        ((EditorCell_Label)target).getTextLine().setCaretPosition(1);
+        ((EditorCell_Label)target).setCaretPosition(1);
       } else
       if (target instanceof EditorCell_Label) {
-        ((EditorCell_Label)target).getTextLine().setCaretPosition(0);
+        ((EditorCell_Label)target).setCaretPosition(0);
       }
     }
 

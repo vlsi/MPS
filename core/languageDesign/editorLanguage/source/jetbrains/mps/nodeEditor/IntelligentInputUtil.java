@@ -61,7 +61,7 @@ public class IntelligentInputUtil {
             EditorCell cellForNewNode = editorContext.getNodeEditorComponent().findNodeCell(newNode);
             EditorCell_Label errorCell = (EditorCell_Label) EditorUtil.findErrorCell(cellForNewNode);
             ((EditorCell_Label) errorCell).changeText(tail);
-            errorCell.getTextLine().setCaretPosition(tail.length());
+            errorCell.setCaretPosition(tail.length());
           }
         }.run();
 

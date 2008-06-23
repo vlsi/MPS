@@ -113,7 +113,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
       } else if (backspaceKeystroke) {
         if (selectedCell instanceof EditorCell_Constant &&
           !((EditorCell_Label) selectedCell).isEditable() &&
-          !((EditorCell_Label) selectedCell).getTextLine().isFirstCaretPosition()) {
+          !((EditorCell_Label) selectedCell).isFirstCaretPosition()) {
           actionType = EditorCellAction.DELETE;
           keyEvent.consume();
         }
