@@ -252,7 +252,7 @@ public class NewLanguageDialogContentPane extends JPanel {
     if (!(dir.exists())) {
       dir.mkdirs();
     }
-    Language language = Language.createNewLanguage(myThis.getLanguageNamespace(), FileSystem.getFile(descriptorFile), myThis.getProject());
+    Language language = Language.createLanguage(myThis.getLanguageNamespace(), FileSystem.getFile(descriptorFile), myThis.getProject());
     SNode languageDescriptor = (SNode)language.getLanguageDescriptor().getNode();
     SPropertyOperations.set(languageDescriptor, "compileInMPS", "" + (myThis.getCompileInMPS()));
     LanguageAspect.STRUCTURE.createNew(language);
