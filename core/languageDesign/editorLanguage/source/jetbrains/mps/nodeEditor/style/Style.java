@@ -26,11 +26,22 @@ public class Style {
   }
 
   public <T> T get(StyleAttribute<T> attribute) {
-    return (T) myCachedAttributeValues.get(attribute);    
+    if (myCachedAttributeValues.containsKey(attribute)) {
+      return (T) myCachedAttributeValues.get(attribute);
+    } else {
+      return attribute.combine(null, null);
+    }
   }
 
   public<T> void set(StyleAttribute<T> attribute, T value) {
     myAttributeValues.put(attribute, value);
+    updateCache();
+  }
+
+  public void setAll(Style s) {
+    for (StyleAttribute sa : s.myAttributeValues.keySet()) {
+      myAttributeValues.put(sa, s.myAttributeValues.get(sa));      
+    }
     updateCache();
   }
 
