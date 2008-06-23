@@ -38,7 +38,13 @@
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214253544839">
                 <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="1214253544840" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1214253544841">
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1214253958079">
+                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1214253958080" />
+                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1214253958081">
+                    <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1214253958082">
+                      <link role="conceptDeclaration" targetNodeId="1.1111790951422" resolveInfo="Plan" />
+                    </node>
+                  </node>
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1214253544842" />
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1214253544843">
                     <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1214253544844">
@@ -50,10 +56,12 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214253544845">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1214253544846">
-              <link role="baseMethodDeclaration" targetNodeId="2.~SubnodesSearchScope.&lt;init&gt;(jetbrains.mps.smodel.SNode)" resolveInfo="SubnodesSearchScope" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214253544847">
-                <link role="variableDeclaration" targetNodeId="1214253544837" resolveInfo="plan" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1214253958640">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1214253958642">
+                <link role="baseMethodDeclaration" targetNodeId="2.~SubnodesSearchScope.&lt;init&gt;(jetbrains.mps.smodel.SNode)" resolveInfo="SubnodesSearchScope" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214253544847">
+                  <link role="variableDeclaration" targetNodeId="1214253544837" resolveInfo="plan" />
+                </node>
               </node>
             </node>
           </node>
@@ -76,7 +84,13 @@
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214253611996">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214253611997">
                   <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="1214253611998" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1214253611999">
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1214253958146">
+                    <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1214253958147" />
+                    <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1214253958148">
+                      <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1214253958149">
+                        <link role="conceptDeclaration" targetNodeId="1.1111791038612" resolveInfo="Event" />
+                      </node>
+                    </node>
                     <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1214253612000" />
                     <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1214253612001">
                       <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1214253612002">
@@ -92,10 +106,12 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214253612004">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1214253612005">
-              <link role="baseMethodDeclaration" targetNodeId="2.~SubnodesSearchScope.&lt;init&gt;(jetbrains.mps.smodel.SNode)" resolveInfo="SubnodesSearchScope" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214253612006">
-                <link role="variableDeclaration" targetNodeId="1214253611994" resolveInfo="eventType" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1214253958212">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1214253958214">
+                <link role="baseMethodDeclaration" targetNodeId="2.~SubnodesSearchScope.&lt;init&gt;(jetbrains.mps.smodel.SNode)" resolveInfo="SubnodesSearchScope" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214253612006">
+                  <link role="variableDeclaration" targetNodeId="1214253611994" resolveInfo="eventType" />
+                </node>
               </node>
             </node>
           </node>
