@@ -17,7 +17,7 @@ public class ReturnStatement_Behavior {
   public static List<SNode> call_getFinallyBlocks_1213877501572(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     SNode current = thisNode;
-    while(true) {
+    while (true) {
       if (SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.TryStatement")) {
         SNode tryStatement = current;
         if ((SLinkOperations.getTarget(tryStatement, "finallyBody", true) != null) && SLinkOperations.getTarget(tryStatement, "finallyBody", true) != SNodeOperations.getParent(thisNode, null, false, false)) {

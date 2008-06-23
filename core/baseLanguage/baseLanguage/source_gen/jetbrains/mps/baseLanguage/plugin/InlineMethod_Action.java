@@ -9,11 +9,12 @@ import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.workbench.action.ActionEventData;
+import jetbrains.mps.baseLanguage.refactoring.inlineMethod.InlineMethodRefactoringAnalyzer;
 import jetbrains.mps.baseLanguage.refactoring.inlineMethod.InlineMethodDialog;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 
 public class InlineMethod_Action extends CurrentProjectAction {
   public static final Logger LOG = Logger.getLogger(InlineMethod_Action.class);
@@ -33,17 +34,13 @@ public class InlineMethod_Action extends CurrentProjectAction {
   public void doUpdate(@NotNull() AnActionEvent event) {
     try {
       {
-        final SNode node = this.node;
+        final SNode node = new ActionEventData(event).getNodes().get(0);
         final Wrappers._T<Boolean> b = new Wrappers._T<Boolean>(false);
+        b.value = this.isMethod(node);
         ModelAccess.instance().runReadAction(new Runnable() {
 
           public void run() {
-            if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
-              b.value = true;
-            }
-            if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BaseMethodCall")) {
-              b.value = true;
-            }
+            b.value = InlineMethodRefactoringAnalyzer.isMethodNode(node);
           }
 
         });
@@ -89,11 +86,13 @@ public class InlineMethod_Action extends CurrentProjectAction {
   /* package */boolean isMethod(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
       return true;
-    }
+    } else
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BaseMethodCall")) {
       return true;
+    } else
+    {
+      return false;
     }
-    return false;
   }
 
 }

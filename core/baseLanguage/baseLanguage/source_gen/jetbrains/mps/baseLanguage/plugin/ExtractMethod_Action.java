@@ -29,7 +29,7 @@ public class ExtractMethod_Action extends CurrentProjectAction {
 
   @NotNull()
   public String getKeyStroke() {
-    return "ctrl alt M";
+    return "";
   }
 
   public void doUpdate(@NotNull() AnActionEvent event) {
