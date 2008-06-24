@@ -51,12 +51,12 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
         {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+          this.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setLayoutConstraint("punctuation");
   }
 
   private static void setupBasic_ConstantCell16817_02(EditorCell editorCell, SNode node, EditorContext context) {

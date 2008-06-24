@@ -54,12 +54,12 @@ public class NodeKindDefaultCase_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setLayoutConstraint("punctuation");
   }
 
   private static void setupBasic_CollectionCell18681_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -79,7 +79,15 @@ public class NodeKindDefaultCase_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell18681_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18681_04");
-    editorCell.setLayoutConstraint("punctuation");
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_ConstantCell18681_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

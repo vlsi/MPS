@@ -57,12 +57,12 @@ public class Node_InsertPrevSiblingOperation_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+          this.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setLayoutConstraint("punctuation");
   }
 
   private static void setupLabel_parameterRefNodeCell16099_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

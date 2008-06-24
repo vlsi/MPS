@@ -1301,10 +1301,12 @@
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1180024234914">
-          <property name="layoutConstraint" value="punctuation" />
           <property name="text" value=":" />
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993751">
             <property name="flag" value="false" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutConstraintStyleSheetItem" id="1214318684998">
+            <property name="layoutConstraint" value="punctuation" />
           </node>
         </node>
       </node>
@@ -1328,8 +1330,10 @@
               <property name="textFgColor" value="DARK_BLUE" />
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1180024273789">
-              <property name="layoutConstraint" value="punctuation" />
               <property name="text" value=";" />
+              <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutConstraintStyleSheetItem" id="1214318685009">
+                <property name="layoutConstraint" value="punctuation" />
+              </node>
             </node>
           </node>
         </node>
@@ -1348,10 +1352,12 @@
           <property name="textFgColor" value="DARK_BLUE" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1180007922074">
-          <property name="layoutConstraint" value="punctuation" />
           <property name="text" value=":" />
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996995">
             <property name="flag" value="false" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutConstraintStyleSheetItem" id="1214318685035">
+            <property name="layoutConstraint" value="punctuation" />
           </node>
         </node>
       </node>
@@ -1375,8 +1381,10 @@
               <property name="textFgColor" value="DARK_BLUE" />
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1180024168761">
-              <property name="layoutConstraint" value="punctuation" />
               <property name="text" value=";" />
+              <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutConstraintStyleSheetItem" id="1214318684961">
+                <property name="layoutConstraint" value="punctuation" />
+              </node>
             </node>
           </node>
         </node>

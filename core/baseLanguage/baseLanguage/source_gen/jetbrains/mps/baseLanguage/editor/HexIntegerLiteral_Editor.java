@@ -38,7 +38,15 @@ public class HexIntegerLiteral_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_valuePropertyCell19456_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_valuePropertyCell19456_0");
-    editorCell.setLayoutConstraint("punctuation");
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_ConstantCell19456_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

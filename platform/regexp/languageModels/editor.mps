@@ -1091,8 +1091,10 @@
         <property name="text" value="\u" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1203415604492">
-        <property name="layoutConstraint" value="punctuation" />
         <link role="relationDeclaration" targetNodeId="1.1203415499835" resolveInfo="code" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutConstraintStyleSheetItem" id="1214318685006">
+          <property name="layoutConstraint" value="punctuation" />
+        </node>
       </node>
     </node>
   </node>

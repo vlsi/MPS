@@ -37,12 +37,12 @@ public class Concept_NewInstance_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+          this.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setLayoutConstraint("punctuation");
   }
 
   private static void setupBasic_prototypeNodeRefNodeCell14394_0(EditorCell editorCell, SNode node, EditorContext context) {

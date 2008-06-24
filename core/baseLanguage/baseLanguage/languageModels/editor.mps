@@ -2493,7 +2493,6 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1079623722230">
         <property name="editable" value="true" />
-        <property name="layoutConstraint" value="punctuation" />
         <property name="allowEmptyText" value="true" />
         <property name="textFgColor" value="DARK_GREEN" />
         <property name="writable" value="true" />
@@ -2505,9 +2504,11 @@
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934363">
           <property name="style" value="BOLD" />
         </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutConstraintStyleSheetItem" id="1214318685000">
+          <property name="layoutConstraint" value="punctuation" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1079623722231">
-        <property name="layoutConstraint" value="punctuation" />
         <property name="textFgColor" value="DARK_GREEN" />
         <property name="text" value="&quot;" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996642">
@@ -2515,6 +2516,9 @@
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934130">
           <property name="style" value="BOLD" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutConstraintStyleSheetItem" id="1214318685019">
+          <property name="layoutConstraint" value="punctuation" />
         </node>
       </node>
     </node>
@@ -9310,8 +9314,10 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1179360871462">
-        <property name="layoutConstraint" value="punctuation" />
         <link role="relationDeclaration" targetNodeId="17.1179360856892" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutConstraintStyleSheetItem" id="1214318684995">
+          <property name="layoutConstraint" value="punctuation" />
+        </node>
       </node>
     </node>
   </node>
@@ -10202,7 +10208,6 @@
         <property name="textFgColor" value="DARK_GREEN" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1188208083159">
-        <property name="layoutConstraint" value="punctuation" />
         <link role="relationDeclaration" targetNodeId="17.1188208074048" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1188208083160">
           <link role="conceptDeclaration" targetNodeId="17.1188206331916" />
@@ -10211,6 +10216,9 @@
             <link role="styleClass" targetNodeId="1198596447279" resolveInfo="Annotation" />
             <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
           </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutConstraintStyleSheetItem" id="1214318684979">
+          <property name="layoutConstraint" value="punctuation" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1188995299491">
@@ -14247,7 +14255,6 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Alternation" id="1208859155872">
         <property name="vertical" value="true" />
-        <property name="layoutConstraint" value="punctuation" />
         <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1208859155873">
           <link role="relationDeclaration" targetNodeId="17.1200397540847" resolveInfo="charConstant" />
           <link role="styleClass" targetNodeId="1186415563770" resolveInfo="StringLiteral" />
@@ -14291,11 +14298,16 @@
           <link role="relationDeclaration" targetNodeId="17.1200397540847" resolveInfo="charConstant" />
           <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
         </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutConstraintStyleSheetItem" id="1214318684957">
+          <property name="layoutConstraint" value="punctuation" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1200397598655">
         <property name="text" value="'" />
-        <property name="layoutConstraint" value="punctuation" />
         <link role="styleClass" targetNodeId="1186415563770" resolveInfo="StringLiteral" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.LayoutConstraintStyleSheetItem" id="1214318684991">
+          <property name="layoutConstraint" value="punctuation" />
+        </node>
       </node>
     </node>
   </node>

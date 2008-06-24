@@ -37,12 +37,12 @@ public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+          this.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setLayoutConstraint("punctuation");
   }
 
   private static void setupLabel_conceptLinkDeclarationRefCell19306_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

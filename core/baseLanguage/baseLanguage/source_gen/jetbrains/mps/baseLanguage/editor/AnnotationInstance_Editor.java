@@ -45,7 +45,15 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_annotationRefCell15912_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_annotationRefCell15912_0");
-    editorCell.setLayoutConstraint("punctuation");
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell15912_01(EditorCell editorCell, SNode node, EditorContext context) {
