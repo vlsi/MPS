@@ -15,8 +15,8 @@ import jetbrains.mps.ide.actions.language.GeneratorPropertiesAction;
 public class GeneratorActions_ActionGroup extends CurrentProjectGroup {
   public static Logger LOG = Logger.getLogger(GeneratorActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.GeneratorActions";
-  public static final String LABEL_ID_generatorNew = "generatorNew";
-  public static final String LABEL_ID_VCS = "VCS";
+  public static final String LABEL_ID_generatorNew = ID + "generatorNew";
+  public static final String LABEL_ID_VCS = ID + "VCS";
 
   public GeneratorActions_ActionGroup(Project project) {
     super("", ID, true, false, null, project);

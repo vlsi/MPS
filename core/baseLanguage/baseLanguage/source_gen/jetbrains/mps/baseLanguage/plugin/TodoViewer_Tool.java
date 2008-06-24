@@ -11,17 +11,12 @@ import javax.swing.JComponent;
 
 public class TodoViewer_Tool extends GeneratedTool {
 
-  private TodoViewer component = null;
-
   public TodoViewer_Tool(Project project) {
     super(project, "TODO", 2, IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}\\source\\jetbrains\\mps\\baseLanguage\\plugin\\todo.png", "jetbrains.mps.baseLanguage"), true), ToolWindowAnchor.BOTTOM, false);
   }
 
-  public JComponent getComponent() {
-    if (this.component == null) {
-      this.component = new TodoViewer(this.getMPSProject());
-    }
-    return this.component;
+  private JComponent getComponent() {
+    return new TodoViewer(this.getMPSProject());
   }
 
 }

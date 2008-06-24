@@ -18,7 +18,7 @@ import com.intellij.openapi.actionSystem.Anchor;
 public class Edit_ActionGroup extends CurrentProjectGroup {
   public static Logger LOG = Logger.getLogger(Edit_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.Edit";
-  public static final String LABEL_ID_custom = "custom";
+  public static final String LABEL_ID_custom = ID + "custom";
 
   public Edit_ActionGroup(Project project) {
     super("Edit", ID, true, false, "E".charAt(0), project);

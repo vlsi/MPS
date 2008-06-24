@@ -14,8 +14,8 @@ import jetbrains.mps.ide.actions.project.OptimizeProjectImportsAction;
 public class ProjectActions_ActionGroup extends CurrentProjectGroup {
   public static Logger LOG = Logger.getLogger(ProjectActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.ProjectActions";
-  public static final String LABEL_ID_projectNew = "projectNew";
-  public static final String LABEL_ID_miscMenu = "miscMenu";
+  public static final String LABEL_ID_projectNew = ID + "projectNew";
+  public static final String LABEL_ID_miscMenu = ID + "miscMenu";
 
   public ProjectActions_ActionGroup(Project project) {
     super("", ID, true, false, null, project);

@@ -29,13 +29,15 @@
   <languageAspect modelUID="jetbrains.mps.logging.refactoring.constraints" version="4" />
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
-  <maxImportIndex value="7" />
+  <maxImportIndex value="9" />
   <import index="1" modelUID="jetbrains.mps.logging.refactoring.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.refactoring.framework@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.logging.refactoring.samples@java_stub" version="-1" />
   <import index="4" modelUID="jetbrains.mps.ide.action@java_stub" version="-1" />
   <import index="5" modelUID="jetbrains.mps.ide.projectPane@java_stub" version="-1" />
   <import index="7" modelUID="java.lang@java_stub" version="-1" />
+  <import index="8" modelUID="jetbrains.mps.project@java_stub" version="-1" />
+  <import index="9" modelUID="jetbrains.mps@java_stub" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.ide.actions" />
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1207494806291">
     <property name="name" value="NodeActionsAddition" />
@@ -53,7 +55,20 @@
                   <link role="baseMethodDeclaration" targetNodeId="3.~MoveNodes.&lt;init&gt;()" resolveInfo="MoveNodes" />
                 </node>
               </node>
-              <node role="actualArgument" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ConceptFunctionParameter_MPSProject" id="1207494861734" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214316360906">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214316247872">
+                  <node role="operand" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ConceptFunctionParameter_MPSProject" id="1207494861734" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1214316254410">
+                    <link role="baseMethodDeclaration" targetNodeId="8.~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1214316353532">
+                      <link role="classifier" targetNodeId="9.~MPSProjectHolder" resolveInfo="MPSProjectHolder" />
+                    </node>
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1214316363567">
+                  <link role="baseMethodDeclaration" targetNodeId="9.~MPSProjectHolder.getMPSProject():jetbrains.mps.project.MPSProject" resolveInfo="getMPSProject" />
+                </node>
+              </node>
             </node>
           </node>
         </node>

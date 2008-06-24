@@ -15,7 +15,7 @@ import jetbrains.mps.workbench.action.LabelledAnchor;
 public class DevkitActions_ActionGroup extends CurrentProjectGroup {
   public static Logger LOG = Logger.getLogger(DevkitActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.DevkitActions";
-  public static final String LABEL_ID_VCS = "VCS";
+  public static final String LABEL_ID_VCS = ID + "VCS";
 
   public DevkitActions_ActionGroup(Project project) {
     super("", ID, true, false, null, project);

@@ -23,8 +23,8 @@ import jetbrains.mps.ide.actions.solution.SolutionPropertiesAction;
 public class SolutionActions_ActionGroup extends CurrentProjectGroup {
   public static Logger LOG = Logger.getLogger(SolutionActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.SolutionActions";
-  public static final String LABEL_ID_solutionNew = "solutionNew";
-  public static final String LABEL_ID_VCS = "VCS";
+  public static final String LABEL_ID_solutionNew = ID + "solutionNew";
+  public static final String LABEL_ID_VCS = ID + "VCS";
 
   public SolutionActions_ActionGroup(Project project) {
     super("", ID, true, false, null, project);

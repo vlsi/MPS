@@ -23,8 +23,8 @@ import jetbrains.mps.ide.actions.module.SetModuleFolderAction;
 public class LanguageActions_ActionGroup extends CurrentProjectGroup {
   public static Logger LOG = Logger.getLogger(LanguageActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.LanguageActions";
-  public static final String LABEL_ID_newGroup = "newGroup";
-  public static final String LABEL_ID_VCS = "VCS";
+  public static final String LABEL_ID_newGroup = ID + "newGroup";
+  public static final String LABEL_ID_VCS = ID + "VCS";
 
   public LanguageActions_ActionGroup(Project project) {
     super("", ID, true, false, null, project);

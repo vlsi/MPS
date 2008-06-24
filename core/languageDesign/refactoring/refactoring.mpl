@@ -45,6 +45,9 @@
     <entry path="${language_descriptor}\classes" />
   </languageRuntimeClassPath>
   <sourcePath />
+  <dependencies>
+    <dependency reexport="false">MPS.Classpath</dependency>
+  </dependencies>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>
     <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>
