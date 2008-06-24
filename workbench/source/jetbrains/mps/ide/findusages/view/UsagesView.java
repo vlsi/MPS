@@ -23,6 +23,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
@@ -148,6 +149,24 @@ public abstract class UsagesView implements IExternalizeable {
   }
 
   public abstract void close();
+
+  //----RESULTS MANIPUALTION STUFF----
+
+  public List<SModelDescriptor> getIncludedModels() {
+    return myTreeHolder.getIncludedModels();
+  }
+
+  public List<SModelDescriptor> getAllModels() {
+    return myTreeHolder.getAllModels();
+  }
+
+  public List<SNodePointer> getIncludedNodes() {
+    return myTreeHolder.getIncludedNodes();
+  }
+
+  public List<SNodePointer> getAllNodes() {
+    return myTreeHolder.getAllNodes();
+  }
 
   //----SAVE/LOAD STUFF----
 
