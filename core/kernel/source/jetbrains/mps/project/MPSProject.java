@@ -2,7 +2,6 @@ package jetbrains.mps.project;
 
 import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.ide.IdeEventQueue;
-import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
@@ -116,7 +115,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
       } else if (descriptorFile.exists()) {
         mySolutions.add((Solution) MPSModuleRepository.getInstance().registerSolution(descriptorFile, this));
       } else {
-        if (!tryToReadStub(path)) {
+        if (!MPSModuleRepository.getInstance().tryToReadStub(descriptorFile, this)) {
           LOG.error("Couldn't load solution from: " + descriptorFile.getPath() + " : file doesn't exist");
         }
       }
@@ -132,7 +131,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
       } else if (descriptorFile.exists()) {
         myLanguages.add(MPSModuleRepository.getInstance().registerLanguage(descriptorFile, this));
       } else {
-        if (!tryToReadStub(path)) {
+        if (!MPSModuleRepository.getInstance().tryToReadStub(descriptorFile, this)) {
           LOG.error("Couldn't load language from: " + descriptorFile.getPath() + " : file doesn't exist");
         }
       }
@@ -150,7 +149,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
       } else if (devKit.exists()) {
         myDevKits.add(MPSModuleRepository.getInstance().registerDevKit(devKit, this));
       } else {
-        if (!tryToReadStub(path)) {
+        if (!MPSModuleRepository.getInstance().tryToReadStub(devKit, this)) {
           LOG.error("Couldn't load devkit from: " + devKit.getPath() + " : file doesn't exist");
         }
       }
@@ -165,19 +164,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
       } else {
         LOG.error("Can't find a global library " + name);
       }
-    }
-  }
-
-  private boolean tryToReadStub(String path) {
-    int index = path.lastIndexOf('.');
-    if (index < 0) return false;
-    String stubPath = path.substring(0, index) + ModuleStub.MODULE_STUB_EXTENSION;
-    IFile stubDescriptorFile = FileSystem.getFile(stubPath);
-    if (stubDescriptorFile.exists()) {
-      MPSModuleRepository.getInstance().registerModuleStub(stubDescriptorFile, this);
-      return true;
-    } else {
-      return false;
     }
   }
 

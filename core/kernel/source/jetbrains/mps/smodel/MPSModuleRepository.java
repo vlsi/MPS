@@ -429,6 +429,8 @@ public class MPSModuleRepository implements ApplicationComponent {
         if (module != null) {
           result.add(module);
         }
+      } else if (hasStubExtension(dirName)) {
+        tryToReadStub(dir, owner);
       }
       return result;
     }
@@ -439,6 +441,8 @@ public class MPSModuleRepository implements ApplicationComponent {
         if (module != null) {
           result.add(module);
         }
+      } else if (hasStubExtension(file.getName()))  {
+        tryToReadStub(file, owner);
       } else if (file.getName().endsWith(AbstractModule.PACKAGE_SUFFIX)) {
         IFile dirInJar = FileSystem.getFile(file.getAbsolutePath() + "!/" + AbstractModule.MODULE_DIR);
         result.addAll(readModuleDescriptors(dirInJar, owner));
@@ -454,6 +458,10 @@ public class MPSModuleRepository implements ApplicationComponent {
 
   private boolean hasModuleExtension(String name) {
     return getModuleExtension(name) != null;
+  }
+
+  private boolean hasStubExtension(String name) {
+    return name.endsWith(ModuleStub.MODULE_STUB_EXTENSION);
   }
 
   private String getModuleExtension(String name) {
@@ -508,28 +516,6 @@ public class MPSModuleRepository implements ApplicationComponent {
 
   public Solution getSolution(String namespace) {
     return (Solution) myUIDToModulesMap.get(namespace);
-  }
-
-  private<M extends IModule> M  modulesAs(Class<? extends M> cls, List<IModule> modules) {
-    M result = null;
-    for (IModule module : modules) {
-      if (cls.isInstance(module)) {
-        result = (M) module;
-      }
-    }
-    if (result != null && modules.size() > 1) {
-      LOG.error("more than 1 result registered with the same namespace: " + result.getModuleUID());
-      for (IModule m : modules) {
-        IFile descriptorFile = m.getDescriptorFile();
-        if (descriptorFile == null) {
-          LOG.error("module without descriptor");
-        } else {
-          LOG.error(descriptorFile.getAbsolutePath());
-        }
-      }
-
-    }
-    return result;
   }
 
   public <MT extends IModule> List<MT> getModules(MPSModuleOwner moduleOwner, Class<MT> cls) {
@@ -597,5 +583,14 @@ public class MPSModuleRepository implements ApplicationComponent {
       }
     }
     return result;
+  }
+
+  public boolean tryToReadStub(IFile descriptorFile, MPSModuleOwner owner) {
+    if (descriptorFile.exists()) {
+      registerModuleStub(descriptorFile, owner);
+      return true;
+    } else {
+      return false;
+    }
   }
 }
