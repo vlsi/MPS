@@ -283,8 +283,10 @@
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1177583946142">
               <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1177583946143">
                 <property name="text" value="use new actions" />
-                <property name="fontSize" value="12" />
                 <property name="textFgColor" value="red" />
+                <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontSizeStyleSheetItem" id="1214317283304">
+                  <property name="size" value="12" />
+                </node>
               </node>
               <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1177583946144">
                 <property name="text" value=":" />

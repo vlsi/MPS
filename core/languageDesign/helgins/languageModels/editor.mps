@@ -2406,8 +2406,10 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_NonEmptyProperty" id="1212056656052">
-        <property name="fontSize" value="8" />
         <link role="relationDeclaration" targetNodeId="1.1212056105818" resolveInfo="inequationPriority" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontSizeStyleSheetItem" id="1214317283303">
+          <property name="size" value="8" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1212056631986">
         <link role="relationDeclaration" targetNodeId="1.1174660783414" />

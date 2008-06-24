@@ -1033,6 +1033,10 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
   }
 
   public static boolean renderingCondition17023_04(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.hasValue(node, "fontSize", null));
+  }
+
+  public static boolean renderingCondition17023_05(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "fontStyle", null, null));
   }
 
@@ -1105,10 +1109,12 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.create_CollectionCell17023_012(context, node));
     }
     editorCell.addEditorCell(this.create_CollectionCell17023_013(context, node));
-    if (renderingCondition17023_04(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition17023_05(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell17023_014(context, node));
     }
-    editorCell.addEditorCell(this.create_CollectionCell17023_015(context, node));
+    if (renderingCondition17023_04(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.create_CollectionCell17023_015(context, node));
+    }
     editorCell.addEditorCell(this.create_CollectionCell17023_016(context, node));
     editorCell.addEditorCell(this.create_ConstantCell17023_013(context, node, ""));
     editorCell.addEditorCell(this.create_ConstantCell17023_05(context, node, "query methods:"));
