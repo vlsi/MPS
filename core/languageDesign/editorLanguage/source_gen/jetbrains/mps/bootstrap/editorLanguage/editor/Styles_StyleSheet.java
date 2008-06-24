@@ -11,6 +11,18 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class Styles_StyleSheet {
+  public static final Style STYLE = new Style() {
+    {
+      this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+        public Color calculate(EditorCell cell) {
+          return Styles_StyleSheet.calculateColor2(cell);
+        }
+
+      });
+    }
+
+  };
   public static final Style REFERENCE = new Style() {
     {
       this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
@@ -45,6 +57,12 @@ public class Styles_StyleSheet {
   }
 
   private static Color calculateColor1(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_GREEN;
+    return result;
+  }
+
+  private static Color calculateColor2(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_GREEN;
     return result;

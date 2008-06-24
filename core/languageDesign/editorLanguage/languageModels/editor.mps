@@ -8932,6 +8932,10 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1186402441291">
         <property name="vertical" value="false" />
         <property name="selectable" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1214310593191">
+          <property name="text" value="style" />
+          <link role="styleClass" targetNodeId="1214310532702" resolveInfo="style" />
+        </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1186402447779">
           <link role="relationDeclaration" targetNodeId="3.1169194664001" />
           <link role="actionMap" targetNodeId="1198252451584" resolveInfo="StyleSheetClass_RT" />
@@ -9102,6 +9106,12 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheet" id="1194569476147">
     <property name="name" value="Styles" />
+    <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1214310532702">
+      <property name="name" value="style" />
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214310536160">
+        <property name="color" value="DARK_GREEN" />
+      </node>
+    </node>
     <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1194569489648">
       <property name="name" value="reference" />
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1194569500305">
@@ -10211,6 +10221,7 @@
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1214306226952">
           <property name="text" value="style" />
+          <link role="styleClass" targetNodeId="1214310532702" resolveInfo="style" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1214306234345">
           <property name="noTargetText" value="&lt;no style&gt;" />

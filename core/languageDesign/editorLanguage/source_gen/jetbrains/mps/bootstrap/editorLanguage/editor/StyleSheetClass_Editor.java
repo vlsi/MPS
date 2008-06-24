@@ -79,6 +79,11 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
   private static void setupBasic_extendedClassRefNodeCell13915_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupBasic_ConstantCell13915_04(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell13915_04");
+    Styles_StyleSheet.STYLE.apply(editorCell);
+  }
+
   private static void setupLabel_namePropertyCell13915_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -98,6 +103,9 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_extendedClassRefNodeCell13915_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ConstantCell13915_04(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition13915_0(SNode node, EditorContext editorContext, IScope scope) {
@@ -127,6 +135,7 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.create_ConstantCell13915_04(context, node, "style"));
     editorCell.addEditorCell(this.create_namePropertyCell13915_0(context, node));
     if (renderingCondition13915_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell13915_03(context, node));
@@ -185,6 +194,14 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell13915_03(editorCell, node, context);
     setupLabel_ConstantCell13915_03(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell create_ConstantCell13915_04(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_ConstantCell13915_04(editorCell, node, context);
+    setupLabel_ConstantCell13915_04(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
