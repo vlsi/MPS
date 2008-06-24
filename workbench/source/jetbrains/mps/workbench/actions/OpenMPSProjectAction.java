@@ -13,12 +13,13 @@ import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.IFileFilter;
 import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.workbench.action.BaseAction;
 
 import java.io.File;
 import java.awt.Frame;
 
-public class OpenMPSProjectAction extends AnAction {
-  public void actionPerformed(AnActionEvent e) {
+public class OpenMPSProjectAction extends BaseAction {
+  public void doExecute(AnActionEvent e) {
     final ProjectManagerEx projectManager = ProjectManagerEx.getInstanceEx();
 
     TreeFileChooser chooser = new TreeFileChooser();

@@ -34,8 +34,8 @@ public class GoToConceptEditorDeclarationAction extends MPSActionAdapter {
     return jetbrains.mps.bootstrap.editorLanguage.icons.Icons.EDITOR_ICON;
   }
 
-  public void doUpdate(@NotNull ActionContext context) {
-    super.doUpdate(context);
+  public void dodoUpdate(@NotNull ActionContext context) {
+    super.dodoUpdate(context);
     boolean visible = BaseAdapter.fromNode(context.getNode()) instanceof ConceptDeclaration;
     setVisible(visible);
     setEnabled(visible);
@@ -45,7 +45,7 @@ public class GoToConceptEditorDeclarationAction extends MPSActionAdapter {
     return false;
   }
 
-  public void doExecute(@NotNull ActionContext context) {
+  public void dodoExecute(@NotNull ActionContext context) {
     final SNode node = context.get(SNode.class);
     if (!(BaseAdapter.fromNode(node) instanceof ConceptDeclaration)) return;
 

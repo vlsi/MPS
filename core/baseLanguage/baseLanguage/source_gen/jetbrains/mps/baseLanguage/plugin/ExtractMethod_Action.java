@@ -32,7 +32,7 @@ public class ExtractMethod_Action extends CurrentProjectAction {
     return "";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void dodoUpdate(@NotNull() AnActionEvent event) {
     try {
       if (!(this.isExpression(this.nodes)) && !(this.isStatements(this.nodes))) {
         this.setVisible(event.getPresentation(), false);

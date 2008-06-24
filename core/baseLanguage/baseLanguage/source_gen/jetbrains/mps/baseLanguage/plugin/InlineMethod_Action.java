@@ -31,7 +31,7 @@ public class InlineMethod_Action extends CurrentProjectAction {
     return "ctrl alt N";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void dodoUpdate(@NotNull() AnActionEvent event) {
     try {
       {
         final SNode node = new ActionEventData(event).getNodes().get(0);

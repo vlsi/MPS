@@ -19,7 +19,7 @@ import jetbrains.mps.workbench.actions.goTo.framework.modules.BaseLanguageModel;
 import jetbrains.mps.workbench.actions.goTo.framework.modules.BaseNavigationItem;
 
 public class GoToLanguageAction extends BaseProjectAction {
-  public void actionPerformed(AnActionEvent e) {
+  public void doExecute(AnActionEvent e) {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;
     final MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();

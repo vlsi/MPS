@@ -52,7 +52,7 @@ public class CreateRootNodeGroup extends MPSActionGroup {
     List<Language> modelLanguages = modelDescriptor == null ? new ArrayList<Language>() : modelDescriptor.getSModel().getLanguages(operationContext.getScope());
     if (modelLanguages.size() == 0) {
       add(new MPSActionAdapter("<NO LANGUAGES>") {
-        public void doExecute(@NotNull ActionContext c) {
+        public void dodoExecute(@NotNull ActionContext c) {
         }
       });
     }
@@ -101,7 +101,7 @@ public class CreateRootNodeGroup extends MPSActionGroup {
         return false;
       }
 
-      public void doExecute(@NotNull final ActionContext context) {
+      public void dodoExecute(@NotNull final ActionContext context) {
         SNode node = ModelAccess.instance().runWriteActionInCommand(new Computable<SNode>() {
           public SNode compute() {
             SNode result = NodeFactoryManager.createNode((ConceptDeclaration) nodeConcept.getNode().getAdapter(), null, null, modelDescriptor.getSModel(), context.getScope());

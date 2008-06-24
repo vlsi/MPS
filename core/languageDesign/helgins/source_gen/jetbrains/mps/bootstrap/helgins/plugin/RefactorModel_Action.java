@@ -34,7 +34,7 @@ public class RefactorModel_Action extends CurrentProjectAction {
     return languageAspect == LanguageAspect.HELGINS_TYPESYSTEM;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void dodoUpdate(@NotNull() AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);

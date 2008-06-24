@@ -29,7 +29,7 @@ public class ShowMappingsPartitioningAction extends MPSActionAdapter {
     super("Show mappings partitioning");
   }
 
-  public void doUpdate(@NotNull ActionContext context) {
+  public void dodoUpdate(@NotNull ActionContext context) {
     List<SModelDescriptor> selectedModels = GenerateGroup_autoplan.getModelsToGenerate(context);
     if (selectedModels.size() != 1) {
       setEnabled(false);
@@ -38,7 +38,7 @@ public class ShowMappingsPartitioningAction extends MPSActionAdapter {
     }
   }
 
-  public void doExecute(@NotNull ActionContext context) {
+  public void dodoExecute(@NotNull ActionContext context) {
     IOperationContext operationContext = context.getSafe(IOperationContext.class);
     List<SModelDescriptor> selectedModels = GenerateGroup_autoplan.getModelsToGenerate(context);
 

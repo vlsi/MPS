@@ -1,6 +1,7 @@
 package jetbrains.mps.workbench.action;
 
 import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
@@ -108,7 +109,8 @@ public class ActionUtils {
           return context.getOperationContext();
         }
         if (dataId.equals(PlatformDataKeys.PROJECT.getName())) {
-          return context.getOperationContext().getProject();
+          Project project = context.getOperationContext().getProject();
+          return project;
         }
         throw new UnsupportedOperationException(dataId);
       }

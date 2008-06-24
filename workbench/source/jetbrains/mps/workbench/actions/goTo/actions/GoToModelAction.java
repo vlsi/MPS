@@ -24,7 +24,7 @@ import jetbrains.mps.workbench.actions.goTo.framework.models.BaseModelModel;
 import java.util.List;
 
 public class GoToModelAction extends BaseProjectAction {
-  public void actionPerformed(AnActionEvent e) {
+  public void doExecute(AnActionEvent e) {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;
     final MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();

@@ -43,14 +43,14 @@ public class GoToRulesAction extends MPSActionAdapter {
   }
 
 
-  public void doUpdate(@NotNull ActionContext context) {
+  public void dodoUpdate(@NotNull ActionContext context) {
     boolean enabled = BaseAdapter.fromNode(context.getNode()) instanceof AbstractConceptDeclaration;
     setEnabled(enabled);
     setVisible(enabled);
   }
 
 
-  public void doExecute(@NotNull ActionContext context) {
+  public void dodoExecute(@NotNull ActionContext context) {
     final AbstractConceptDeclaration conceptDeclaration = (AbstractConceptDeclaration) BaseAdapter.fromNode(context.getNode());
     final IOperationContext operationContext = context.getOperationContext();
     List<SNode> rules = getHelginsRules(conceptDeclaration, operationContext);

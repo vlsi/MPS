@@ -18,12 +18,12 @@ public abstract class GenerateCurrentModelAction extends MPSActionAdapter {
     return false;
   }
 
-  public void doUpdate(@NotNull ActionContext context) {
-    super.doUpdate(context);
+  public void dodoUpdate(@NotNull ActionContext context) {
+    super.dodoUpdate(context);
     setEnabled(context.getModel() != null && getGenerationType().isApplicable(context.getModel()));
   }
 
-  public void doExecute(@NotNull ActionContext context) {
+  public void dodoExecute(@NotNull ActionContext context) {
     context.get(GeneratorManager.class).generateModelsWithProgressWindow(
       CollectionUtil.asList(context.getModel()),
       context.getOperationContext(),

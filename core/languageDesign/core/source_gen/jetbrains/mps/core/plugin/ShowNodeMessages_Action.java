@@ -35,7 +35,7 @@ public class ShowNodeMessages_Action extends CurrentProjectAction {
     return !(this.editorComponent.getHighlightManager().getMessagesFor(this.node).isEmpty());
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void dodoUpdate(@NotNull() AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);

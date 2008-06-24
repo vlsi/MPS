@@ -3,7 +3,7 @@ package jetbrains.mps.workbench.action;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 
-public class LabelledAnchor extends AnAction {
+public class LabelledAnchor extends BaseAction {
   private String myId;
 
   public LabelledAnchor(String id) {
@@ -15,7 +15,7 @@ public class LabelledAnchor extends AnAction {
     return myId;
   }
 
-  public void actionPerformed(AnActionEvent e) {
+  public void doExecute(AnActionEvent e) {
 
   }
 }

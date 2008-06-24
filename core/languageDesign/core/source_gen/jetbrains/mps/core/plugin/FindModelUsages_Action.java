@@ -36,7 +36,7 @@ public class FindModelUsages_Action extends CurrentProjectAction {
     return "alt F7";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void dodoUpdate(@NotNull() AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {

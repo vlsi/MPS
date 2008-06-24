@@ -41,7 +41,7 @@ public class FindLanguageUsages_Action extends CurrentProjectAction {
     return this.module instanceof Language;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void dodoUpdate(@NotNull() AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);

@@ -32,7 +32,7 @@ public class UncommentStatements_Action extends CurrentProjectAction {
     return (SNodeOperations.getAncestor(this.node, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", false, false) != null);
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void dodoUpdate(@NotNull() AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);

@@ -1,6 +1,7 @@
 package jetbrains.mps.ide.ui;
 
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.actionSystem.Presentation;
 import com.intellij.ui.TreeToolTipHandler;
 import com.intellij.ide.dnd.aware.DnDAwareTree;
 import jetbrains.mps.ide.ThreadUtils;
@@ -9,6 +10,7 @@ import jetbrains.mps.ide.action.MPSActionAdapter;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
+import jetbrains.mps.workbench.action.ActionUtils;
 import org.jdom.Element;
 
 import javax.swing.*;
@@ -127,7 +129,7 @@ public abstract class MPSTree extends DnDAwareTree {
         final MPSActionAdapter action = myKeyStrokesToActionsMap.get(pair);
         if (action != null) {
           final ActionContext context = getActionContext(selNode, nodes);
-          action.execute(context);
+          action.actionPerformed(ActionUtils.createEvent(new Presentation(),context));
         } else {
           KeyStroke stroke = KeyStroke.getKeyStrokeForEvent(e);
           if (stroke.getKeyCode() == KeyEvent.VK_CONTROL ||

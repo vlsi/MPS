@@ -977,7 +977,7 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
     private CopyNodeAction myAction = new CopyNodeAction();
 
     public void performCopy(DataContext dataContext) {
-      myAction.execute(new ActionContext());
+      myAction.dodoExecute(new ActionContext());
     }
 
     public boolean isCopyEnabled(DataContext dataContext) {
@@ -991,7 +991,7 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
     private PasteNodeAction myAction = new PasteNodeAction();
 
     public void performPaste(DataContext dataContext) {
-      myAction.execute(new ActionContext());
+      myAction.dodoExecute(new ActionContext());
     }
 
     public boolean isPastePossible(DataContext dataContext) {
@@ -1009,7 +1009,7 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
     private CutNodeAction myAction = new CutNodeAction();
 
     public void performCut(DataContext dataContext) {
-      myAction.execute(new ActionContext());
+      myAction.dodoExecute(new ActionContext());
     }
 
     public boolean isCutEnabled(DataContext dataContext) {

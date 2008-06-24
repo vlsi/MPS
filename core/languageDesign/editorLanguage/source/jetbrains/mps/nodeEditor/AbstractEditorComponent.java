@@ -18,8 +18,6 @@ import jetbrains.mps.ide.action.*;
 import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.nodes.GoByFirstReferenceAction;
-import jetbrains.mps.ide.findusages.view.UsagesView;
-import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.CellSpeedSearch;
 import jetbrains.mps.ide.ui.JMultiLineToolTip;
@@ -472,11 +470,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
             LOG.error(t);
           }
         }
-
-        if (e instanceof GroupToElementsAdapter) {
-          GroupToElementsAdapter adapter = (GroupToElementsAdapter) e;
-          registerKeyStrokes(adapter.getGroup(), actionContext);
-        }
       }
     }
   }
@@ -716,11 +709,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
             return action.getKeyStroke();
           }
 
-          public void doExecute(@NotNull ActionContext context) {
+          public void dodoExecute(@NotNull ActionContext context) {
             myAction.execute(null, editorContext);
           }
 
-          protected void doUpdate(ActionContext context) {
+          protected void dodoUpdate(ActionContext context) {
           }
         };
 //        mpsAction.setVisible(true);
@@ -1457,7 +1450,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private void goByFirstReference() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        new GoByFirstReferenceAction().doExecute(createActionContext());
+        new GoByFirstReferenceAction().dodoExecute(createActionContext());
       }
     });
   }

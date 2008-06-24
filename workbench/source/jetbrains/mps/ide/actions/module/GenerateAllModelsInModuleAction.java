@@ -40,8 +40,8 @@ public class GenerateAllModelsInModuleAction extends MPSActionAdapter {
   }
 
 
-  public void doUpdate(ActionContext context) {
-    super.doUpdate(context);
+  public void dodoUpdate(ActionContext context) {
+    super.dodoUpdate(context);
     IOperationContext opContext = context.getOperationContext();
     boolean isEnabled = opContext != null && opContext.getModule() != null;
     setVisible(isEnabled);
@@ -51,7 +51,7 @@ public class GenerateAllModelsInModuleAction extends MPSActionAdapter {
     }
   }
 
-  public void doExecute(@NotNull final ActionContext context) {
+  public void dodoExecute(@NotNull final ActionContext context) {
     final IOperationContext operationContext = context.get(IOperationContext.class);
     IModule module = operationContext.getModule();
 

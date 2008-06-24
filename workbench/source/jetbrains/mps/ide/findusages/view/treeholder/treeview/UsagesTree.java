@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.workbench.action.BaseAction;
 
 import javax.swing.AbstractAction;
 import javax.swing.JPopupMenu;
@@ -378,14 +379,14 @@ public abstract class UsagesTree extends MPSTree {
     final UsagesTreeNode current = getCurrentNode();
     final DataNode dataNode = current.getUserObject();
 
-    ag.add(new AnAction("Include") {
-      public void actionPerformed(AnActionEvent e) {
+    ag.add(new BaseAction("Include") {
+      public void doExecute(AnActionEvent e) {
         setExcluded(dataNode, false, true);
       }
     });
 
-    ag.add(new AnAction("Exclude") {
-      public void actionPerformed(AnActionEvent e) {
+    ag.add(new BaseAction("Exclude") {
+      public void doExecute(AnActionEvent e) {
         setExcluded(dataNode, true, true);
       }
     });

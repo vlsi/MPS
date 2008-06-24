@@ -11,9 +11,10 @@ import javax.swing.JFrame;
 
 import jetbrains.mps.ide.newProjectDialog.NewProjectDialog;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.workbench.action.BaseAction;
 
-public class NewMPSProjectAction extends AnAction {
-  public void actionPerformed(AnActionEvent e) {
+public class NewMPSProjectAction extends BaseAction {
+  public void doExecute(AnActionEvent e) {
     Project project = e.getData(PlatformDataKeys.PROJECT);
     JFrame frame = WindowManager.getInstance().getFrame(project);
 

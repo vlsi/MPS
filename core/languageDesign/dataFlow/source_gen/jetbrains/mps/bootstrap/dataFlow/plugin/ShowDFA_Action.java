@@ -31,7 +31,7 @@ public class ShowDFA_Action extends CurrentProjectAction {
     return "";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void dodoUpdate(@NotNull() AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {

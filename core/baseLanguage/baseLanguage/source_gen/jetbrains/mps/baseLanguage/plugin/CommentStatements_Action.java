@@ -37,7 +37,7 @@ public class CommentStatements_Action extends CurrentProjectAction {
     return (SNodeOperations.getAncestor(ListSequence.fromList(this.nodes).getElement(0), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", false, false) == null);
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void dodoUpdate(@NotNull() AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);

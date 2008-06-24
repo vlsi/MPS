@@ -28,11 +28,11 @@ public class GenericRefactoringAction extends CurrentProjectMPSAction {
     return myRefactoring.getKeyStroke();
   }
 
-  public void doExecute(@NotNull ActionContext context) {
+  public void dodoExecute(@NotNull ActionContext context) {
     new RefactoringProcessor().execute(context, myRefactoring);
   }
 
-  public void doUpdate(@NotNull ActionContext context) {
+  public void dodoUpdate(@NotNull ActionContext context) {
     boolean enabled = false;
     if (myRefactoring.getRefactoringTarget() == RefactoringTarget.MODEL) {
       SModelDescriptor modelDescriptor = context.getModel();

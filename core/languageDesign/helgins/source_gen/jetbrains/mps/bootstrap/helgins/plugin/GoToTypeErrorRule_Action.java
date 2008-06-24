@@ -37,7 +37,7 @@ public class GoToTypeErrorRule_Action extends CurrentProjectAction {
     return !(error == null || error.getRuleId() == null || error.getRuleModel() == null);
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void dodoUpdate(@NotNull() AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);

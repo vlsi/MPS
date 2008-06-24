@@ -13,6 +13,7 @@ import com.intellij.ui.content.ContentManager;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.DefaultGroup;
+import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.ide.findusages.view.icons.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
@@ -188,8 +189,8 @@ public abstract class BaseTool{
         addContent(component, null, false);
       } else {
         DefaultGroup group = new DefaultGroup();
-        group.add(new AnAction("", "Close", Icons.CLOSE_ICON) {
-          public void actionPerformed(AnActionEvent e) {
+        group.add(new BaseAction("", "Close", Icons.CLOSE_ICON) {
+          public void doExecute(AnActionEvent e) {
             getContentManager().removeAllContents(true);
           }
         });

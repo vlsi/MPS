@@ -28,6 +28,10 @@ public abstract class BaseAction extends AnAction {
     doConstruct(true, false, false);
   }
 
+  protected BaseAction() {
+    doConstruct(true, false, false);
+  }
+
   protected void doConstruct(boolean isAlwaysVisible, boolean executeInSeparateThread, boolean executeOutsideCommand) {
     myIsAlwaysVisible = isAlwaysVisible;
     myExecuteInSeparateThread = executeInSeparateThread;
@@ -45,7 +49,7 @@ public abstract class BaseAction extends AnAction {
     });
   }
 
-  public void update(final AnActionEvent e) {
+  public final void update(final AnActionEvent e) {
     super.update(e);
     if (!fillFieldsIfNecessary(e)) {
       disable(e.getPresentation());
@@ -58,7 +62,7 @@ public abstract class BaseAction extends AnAction {
     });
   }
 
-  public void actionPerformed(final AnActionEvent e) {
+  public final void actionPerformed(final AnActionEvent e) {
     final Runnable action = new Runnable() {
       public void run() {
         doExecute(e);

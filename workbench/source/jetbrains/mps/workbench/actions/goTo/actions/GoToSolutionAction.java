@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GoToSolutionAction extends BaseProjectAction {
-  public void actionPerformed(AnActionEvent e) {
+  public void doExecute(AnActionEvent e) {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;
     final MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
