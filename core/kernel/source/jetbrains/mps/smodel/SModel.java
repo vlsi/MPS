@@ -486,7 +486,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   void fireSModelChangedInCommandEvent(@NotNull final List<SModelEvent> events) {
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (SModelCommandListener l : copyCommandListeners()) {
           try {
