@@ -4,8 +4,6 @@ package jetbrains.mps.baseLanguage.ext.collections.samples.java_collections;
 
 import java.util.List;
 import java.util.LinkedList;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 
 /* package */class Main_javaList_as_sequence {
 
@@ -16,29 +14,13 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
     }
     System.out.println("java-list as sequence");
     Iterable<Integer> sequence = javaList;
-    {
-      ICursor<Integer> _zCursor1 = CursorFactory.createCursor(sequence);
-      try {
-        while(_zCursor1.moveToNext()) {
-          Integer n = _zCursor1.getCurrent();
-          System.out.println(n);
-        }
-      } finally {
-        _zCursor1.release();
-      }
+    for(Integer n : sequence) {
+      System.out.println(n);
     }
     System.out.println("java-list as list");
     List<Integer> list = javaList;
-    {
-      ICursor<Integer> _zCursor2 = CursorFactory.createCursor(list);
-      try {
-        while(_zCursor2.moveToNext()) {
-          Integer n = _zCursor2.getCurrent();
-          System.out.println(n);
-        }
-      } finally {
-        _zCursor2.release();
-      }
+    for(Integer n : list) {
+      System.out.println(n);
     }
   }
 

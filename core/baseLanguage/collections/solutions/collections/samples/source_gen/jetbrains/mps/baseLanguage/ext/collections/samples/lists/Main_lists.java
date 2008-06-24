@@ -4,33 +4,22 @@ package jetbrains.mps.baseLanguage.ext.collections.samples.lists;
 
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 /* package */class Main_lists {
 
   /* package */static void main(String[] args) {
     List<Integer> ll = new ArrayList<Integer>();
     List<Integer> lll = ll;
-    List<String> list = ListOperations.<String>createList("val1", "val2", "val3");
-    ListOperations.addElement(list, "var4");
-    ListOperations.addElement(list, "var5");
-    ListOperations.addAllElements(list, ListOperations.<String>createList("var6", "var7"));
-    {
-      ICursor<String> _zCursor = CursorFactory.createCursor(list);
-      try {
-        while(_zCursor.moveToNext()) {
-          String s = _zCursor.getCurrent();
-          System.out.println(s);
-        }
-      } finally {
-        _zCursor.release();
-      }
+    List<String> list = ListSequence.<String>fromArray("val1", "val2", "val3");
+    ListSequence.fromList(list).addElement("var4");
+    ListSequence.fromList(list).addElement("var5");
+    ListSequence.fromList(list).addSequence(ListSequence.fromList(ListSequence.<String>fromArray("var6", "var7")));
+    for(String s : list) {
+      System.out.println(s);
     }
-    for(int i = 0 ; i < SequenceOperations.getSize(list) ; i = i + 1) {
-      System.out.println(ListOperations.getElement(list, i));
+    for(int i = 0 ; i < ListSequence.fromList(list).count() ; i = i + 1) {
+      System.out.println(ListSequence.fromList(list).getElement(i));
     }
   }
 
