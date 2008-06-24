@@ -1,6 +1,8 @@
 package jetbrains.mps.ide.findusages.view.treeholder.treeview;
 
+import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.util.SystemInfo;
 import jetbrains.mps.ide.findusages.view.treeholder.path.PathItemRole;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.TextOptions;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.BaseNodeData;
@@ -21,6 +23,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 import javax.swing.AbstractAction;
+import javax.swing.JPopupMenu;
 import javax.swing.KeyStroke;
 import javax.swing.event.TreeExpansionEvent;
 import javax.swing.event.TreeExpansionListener;
@@ -32,6 +35,8 @@ public abstract class UsagesTree extends MPSTree {
   private static final String COMMAND_OPEN_NODE_IN_PROJECT = "open_node_in_project";
   private static final String COMMAND_OPEN_NODE_IN_TREE = "open_node_in_tree";
   private static final String COMMAND_TOGGLE = "toggle";
+  private static final String COMMAND_INCLUDE = "include";
+  private static final String COMMAND_EXCLUDE = "exclude";
 
   private DataTree myContents = new DataTree();
   private HashSet<PathItemRole> myResultPathProvider = new HashSet<PathItemRole>();
@@ -54,7 +59,15 @@ public abstract class UsagesTree extends MPSTree {
     getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), COMMAND_OPEN_NODE_IN_PROJECT);
     getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_F4, 0), COMMAND_OPEN_NODE_IN_PROJECT);
     getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_F1, InputEvent.ALT_MASK), COMMAND_OPEN_NODE_IN_TREE);
-    getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_DELETE, 0), COMMAND_TOGGLE);
+
+    KeyStroke deleteKeyStroke = KeyStroke.getKeyStroke(KeyEvent.VK_DELETE, 0);
+    KeyStroke insertKeyStroke = KeyStroke.getKeyStroke(KeyEvent.VK_INSERT, 0);
+    if (SystemInfo.isMac) {
+      getInputMap().put(deleteKeyStroke, COMMAND_TOGGLE);
+    } else {
+      getInputMap().put(deleteKeyStroke, COMMAND_EXCLUDE);
+      getInputMap().put(insertKeyStroke, COMMAND_INCLUDE);
+    }
 
     addTreeExpansionListener(new TreeExpansionListener() {
       public void treeExpanded(TreeExpansionEvent event) {
@@ -86,13 +99,26 @@ public abstract class UsagesTree extends MPSTree {
       }
     });
 
+    getActionMap().put(COMMAND_EXCLUDE, new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
+        setCurrentNodeExclusion(true);
+      }
+    });
+
+    getActionMap().put(COMMAND_INCLUDE, new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
+        setCurrentNodeExclusion(false);
+      }
+    });
+
     addMouseListener(new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
-        if ((e.getButton() == MouseEvent.BUTTON1) && ((e.getClickCount() == 2) || (e.getClickCount() == 1 && myAutoscroll))) {
+        boolean gotoAction = (e.getClickCount() == 2) || (e.getClickCount() == 1 && myAutoscroll);
+        if ((e.getButton() == MouseEvent.BUTTON1) && gotoAction) {
           openCurrentNodeLink(false);
         }
         if (e.getButton() == MouseEvent.BUTTON3) {
-          changeCurrentNodeExclusion();
+          showChangeExclusionMenu(e);
         }
       }
     });
@@ -335,9 +361,7 @@ public abstract class UsagesTree extends MPSTree {
     if (treeNode == null) return;
 
     DataNode node = treeNode.getUserObject();
-    myContents.setAdjusting(true);
-    setExcluded(node, !node.getData().isExcluded());
-    myContents.setAdjusting(false);
+    setExcluded(node, node.getData().isExcluded(),true);
   }
 
   private void setCurrentNodeExclusion(boolean isExculded) {
@@ -345,19 +369,38 @@ public abstract class UsagesTree extends MPSTree {
     if (treeNode == null) return;
 
     DataNode node = treeNode.getUserObject();
-    myContents.setAdjusting(true);
-    setExcluded(node, isExculded);
-    myContents.setAdjusting(false);
-
-    //todo: make it faster, do not rebuild all the tree
-    //rebuildLater();
+    setExcluded(node, isExculded,true);
   }
 
-  private void setExcluded(DataNode node, boolean state) {
+  private void showChangeExclusionMenu(MouseEvent e) {
+    DefaultActionGroup ag = new DefaultActionGroup();
+
+    final UsagesTreeNode current = getCurrentNode();
+    final DataNode dataNode = current.getUserObject();
+
+    ag.add(new AnAction("Include") {
+      public void actionPerformed(AnActionEvent e) {
+        setExcluded(dataNode,false,true);
+      }
+    });
+
+    ag.add(new AnAction("Exclude") {
+      public void actionPerformed(AnActionEvent e) {
+        setExcluded(dataNode,true,true);
+      }
+    });
+
+    JPopupMenu popup = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, ag).getComponent();
+    popup.show(this, e.getX(), e.getY());
+  }
+
+  private void setExcluded(DataNode node, boolean state, boolean isTopLevel) {
+    if (isTopLevel) myContents.setAdjusting(true);
     node.getData().setExcluded(state);
     for (DataNode child : node.getChildren()) {
-      setExcluded(child, state);
+      setExcluded(child, state,false);
     }
+    if (isTopLevel) myContents.setAdjusting(false);
   }
 
   private void openCurrentNodeLinkIfLeaf(boolean inProject) {
