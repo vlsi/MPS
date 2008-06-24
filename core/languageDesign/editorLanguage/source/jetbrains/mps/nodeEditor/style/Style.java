@@ -21,6 +21,10 @@ public class Style {
     myEditorCell = contextCell;
   }
 
+  public void apply(EditorCell cell) {
+    cell.getStyle().putAll(this);
+  }
+
   public void add(Style child) {
     myChildren.add(child);
     child.myParent = this;
