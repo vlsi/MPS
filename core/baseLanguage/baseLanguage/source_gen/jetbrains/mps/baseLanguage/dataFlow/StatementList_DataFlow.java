@@ -19,6 +19,18 @@ public class StatementList_DataFlow extends DataFlowBuilder {
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode(), null, false, false), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
+      for(SNode ref : SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false)) {
+        SNode lref = (SNode)ref;
+        boolean statementsContainsVar = false;
+        for(SNode parent : SNodeOperations.getAncestors(SLinkOperations.getTarget(lref, "variableDeclaration", false), null, false)) {
+          if (parent.equals(_context.getNode())) {
+            statementsContainsVar = true;
+          }
+        }
+        if (!(statementsContainsVar)) {
+          _context.getBuilder().emitWrite(SLinkOperations.getTarget(lref, "variableDeclaration", false));
+        }
+      }
       SNode bmd = SNodeOperations.getParent(_context.getNode(), null, false, false);
       for(SNode parm : SLinkOperations.getTargets(bmd, "parameter", true)) {
         _context.getBuilder().emitWrite(parm);
