@@ -2932,5 +2932,59 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1214304865402">
+    <property name="package" value="Stylesheet" />
+    <link role="concept" targetNodeId="1.1186402475462" resolveInfo="StyleClassItem" />
+    <node role="canBeChild" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_CanBeAChild" id="1214304867262">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214304867263">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1214304869320">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214304870933">
+            <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_parentNode" id="1214304870510" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1214304872217">
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1214304873953">
+                <link role="conceptDeclaration" targetNodeId="1.1073389214265" resolveInfo="EditorCellModel" />
+              </node>
+            </node>
+          </node>
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214304869322">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1214304911401">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1214304911402">
+                <property name="name" value="testInstance" />
+                <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1214304911403">
+                  <link role="concept" targetNodeId="1.1186402475462" resolveInfo="StyleClassItem" />
+                </node>
+                <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1214304920596">
+                  <link role="concept" targetNodeId="1.1186402475462" resolveInfo="StyleClassItem" />
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214304911404">
+                    <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_childConcept" id="1214304911405" />
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_NewInstance" id="1214304911406" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214304875125">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214304896992">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214304911407">
+                  <link role="variableDeclaration" targetNodeId="1214304911402" resolveInfo="testsInstance" />
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1214304934566">
+                  <link role="conceptMethodDeclaration" targetNodeId="2v.1214304723440" resolveInfo="isApplicableTo" />
+                  <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1214304937834">
+                    <link role="concept" targetNodeId="1.1073389214265" resolveInfo="EditorCellModel" />
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_parentNode" id="1214304936692" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214304940774">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1214304941292">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

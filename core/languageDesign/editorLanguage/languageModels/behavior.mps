@@ -1172,5 +1172,30 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877538773" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1214304712000">
+    <property name="package" value="Stylesheet" />
+    <link role="concept" targetNodeId="1.1186402475462" resolveInfo="StyleClassItem" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1214304723440">
+      <property name="name" value="isApplicableTo" />
+      <property name="isVirtual" value="true" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1214304726538" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214304723442">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214304858196">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1214304858760">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1214304733226">
+        <property name="name" value="cellModel" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1214304733227">
+          <link role="concept" targetNodeId="1.1073389214265" resolveInfo="EditorCellModel" />
+        </node>
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1214304712001">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214304712002" />
+    </node>
+  </node>
 </model>
 
