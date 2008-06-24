@@ -151,15 +151,15 @@ public class DataNode implements IExternalizeable, IChangeListener {
     return result;
   }
 
-  public List<SNodePointer> getIncludedNodes() {
+  public List<SNodePointer> getIncludedResultNodes() {
     List<SNodePointer> nodes = new ArrayList<SNodePointer>();
     if (myData instanceof NodeNodeData) {
-      if (!myData.isInvalid() && !myData.isExcluded()) {
+      if (!myData.isInvalid() && !myData.isExcluded() && myData.isResultNode()) {
         nodes.add(new SNodePointer((SNode) myData.getIdObject()));
       }
     }
     for (DataNode child : myChildren) {
-      nodes.addAll(child.getIncludedNodes());
+      nodes.addAll(child.getIncludedResultNodes());
     }
     return nodes;
   }
@@ -172,10 +172,10 @@ public class DataNode implements IExternalizeable, IChangeListener {
     return false;
   }
 
-  public List<SNodePointer> getAllNodes() {
+  public List<SNodePointer> getAllResultNodes() {
     List<DataNode> nodeNodes = getDescendantsWithCondition(new Condition<BaseNodeData>() {
       public boolean met(BaseNodeData nodeData) {
-        return nodeData instanceof NodeNodeData;
+        return nodeData instanceof NodeNodeData && nodeData.isResultNode();
       }
     });
     List<SNodePointer> result = new ArrayList<SNodePointer>();

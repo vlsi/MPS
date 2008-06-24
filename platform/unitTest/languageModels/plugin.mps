@@ -331,10 +331,16 @@
         </node>
       </node>
     </node>
-    <node role="component" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214211919107">
-      <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1214211918699" />
-      <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation" id="1214211919828">
-        <link role="member" targetNodeId="1214211896509" resolveInfo="myComponent" />
+    <node role="getComponentBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.GetComponentBlock" id="1214306329324">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214306329325">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214306341999">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214306345468">
+            <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1214306345469" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation" id="1214306345470">
+              <link role="member" targetNodeId="1214211896509" resolveInfo="myComponent" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>

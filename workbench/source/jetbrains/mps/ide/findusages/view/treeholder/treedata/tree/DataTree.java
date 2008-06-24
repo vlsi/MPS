@@ -73,19 +73,19 @@ public class DataTree implements IExternalizeable, IChangeListener {
   }
 
   public List<SModelDescriptor> getIncludedModels() {
-    return myTreeRoot/*.getChild(1)*/.getIncludedModels();
+    return myTreeRoot.getChild(1).getIncludedModels();
   }
 
   public List<SModelDescriptor> getAllModels() {
-    return myTreeRoot/*.getChild(1)*/.getAllModels();
+    return myTreeRoot.getChild(1).getAllModels();
   }
 
-  public List<SNodePointer> getIncludedNodes() {
-    return myTreeRoot/*.getChild(1)*/.getIncludedNodes();
+  public List<SNodePointer> getIncludedResultNodes() {
+    return myTreeRoot.getChild(1).getIncludedResultNodes();
   }
 
-  public List<SNodePointer> getAllNodes() {
-    return myTreeRoot/*.getChild(1)*/.getAllNodes();
+  public List<SNodePointer> getAllResultNodes() {
+    return myTreeRoot.getChild(1).getAllResultNodes();
   }
 
   //----TREE BUILD STUFF----

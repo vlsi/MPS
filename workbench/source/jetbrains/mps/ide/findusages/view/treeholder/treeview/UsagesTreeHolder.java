@@ -178,12 +178,12 @@ public abstract class UsagesTreeHolder extends JPanel implements IChangeListener
     return myContents.getAllModels();
   }
 
-  public List<SNodePointer> getIncludedNodes() {
-    return myContents.getIncludedNodes();
+  public List<SNodePointer> getIncludedResultNodes() {
+    return myContents.getIncludedResultNodes();
   }
 
-  public List<SNodePointer> getAllNodes() {
-    return myContents.getAllNodes();
+  public List<SNodePointer> getAllResultNodes() {
+    return myContents.getAllResultNodes();
   }
 
   public void goToNext() {

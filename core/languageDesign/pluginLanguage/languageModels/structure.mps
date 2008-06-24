@@ -44,7 +44,7 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.constraints" version="19" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.classifiers.constraints" version="7" />
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
-  <maxImportIndex value="23" />
+  <maxImportIndex value="24" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="6" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="8" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
@@ -60,6 +60,7 @@
   <import index="21" modelUID="com.intellij.openapi.editor.actionSystem@java_stub" version="-1" />
   <import index="22" modelUID="com.intellij.openapi.actionSystem@java_stub" version="-1" />
   <import index="23" modelUID="com.intellij.openapi.project@java_stub" version="-1" />
+  <import index="24" modelUID="javax.swing@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203071646776">
     <property name="name" value="ActionDeclaration" />
     <property name="rootable" value="true" />
@@ -161,11 +162,11 @@
       <property name="role" value="disposeBlock" />
       <link role="target" targetNodeId="1206110108761" resolveInfo="DisposeBlock" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1208355633825">
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1214305537279">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="component" />
+      <property name="role" value="getComponentBlock" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+      <link role="target" targetNodeId="1214305437052" resolveInfo="GetComponentBlock" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1213888961901">
       <property name="metaClass" value="aggregation" />
@@ -1645,6 +1646,21 @@
       <link role="conceptLinkDeclaration" targetNodeId="2.1137545963098" resolveInfo="conceptFunctionParameterType" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213888797256">
         <link role="classifier" targetNodeId="23.~Project" resolveInfo="Project" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1214305437052">
+    <property name="package" value="Tool.Methods" />
+    <property name="name" value="GetComponentBlock" />
+    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1214305437053">
+      <property name="value" value="getComponent" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1201882037552" resolveInfo="conceptFunctionName" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1214305481066">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1214305509728">
+        <link role="classifier" targetNodeId="24.~JComponent" resolveInfo="JComponent" />
       </node>
     </node>
   </node>

@@ -160,12 +160,12 @@ public abstract class UsagesView implements IExternalizeable {
     return myTreeHolder.getAllModels();
   }
 
-  public List<SNodePointer> getIncludedNodes() {
-    return myTreeHolder.getIncludedNodes();
+  public List<SNodePointer> getIncludedResultNodes() {
+    return myTreeHolder.getIncludedResultNodes();
   }
 
-  public List<SNodePointer> getAllNodes() {
-    return myTreeHolder.getAllNodes();
+  public List<SNodePointer> getAllResultNodes() {
+    return myTreeHolder.getAllResultNodes();
   }
 
   //----SAVE/LOAD STUFF----
