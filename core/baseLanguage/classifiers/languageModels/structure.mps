@@ -141,6 +141,9 @@
       <link role="specializedLink" targetNodeId="1205756909548" />
       <link role="target" targetNodeId="1213999088275" resolveInfo="DefaultClassifierField" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1214304228587">
+      <link role="conceptPropertyDeclaration" targetNodeId="3v.1197029536315" resolveInfo="lvalue" />
+    </node>
   </node>
 </model>
 
