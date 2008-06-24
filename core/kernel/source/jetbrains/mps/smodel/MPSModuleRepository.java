@@ -253,6 +253,9 @@ public class MPSModuleRepository implements ApplicationComponent {
       } else {
         module = DevKit.newInstance(file, owner);
       }
+      if (module instanceof AbstractModule) {
+        ((AbstractModule)module).convertRenamedDependencies();
+      }
     } else {
       if (!cls.isInstance(module)) {
         LOG.error("can't register module " + module + " : module of another kind with the same name already exists", module);

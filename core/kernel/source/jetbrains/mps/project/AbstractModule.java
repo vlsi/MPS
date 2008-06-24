@@ -103,7 +103,7 @@ public abstract class AbstractModule implements IModule {
     }
   }
 
-  protected boolean convertRenamedDependencies() {
+  public boolean convertRenamedDependencies() {
     boolean setModuleDescriptor = false;
     for (Dependency dependency : getDependOn()) {
       String moduleUID = dependency.getModuleUID();
