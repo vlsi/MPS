@@ -42,6 +42,7 @@ import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseGroup;
+import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -72,7 +73,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
   }
 
-  private Set<MPSActionAdapter> myMPSActionsWithShortcuts = new HashSet<MPSActionAdapter>();
+  private Set<BaseAction> myMPSActionsWithShortcuts = new HashSet<BaseAction>();
   private WeakHashMap<EditorCell, Set<SNode>> myCellsToNodesToDependOnMap = new WeakHashMap<EditorCell, Set<SNode>>();
 
   private WeakHashMap<SNode, WeakReference<EditorCell>> myNodesToBigCellsMap = new WeakHashMap<SNode, WeakReference<EditorCell>>();
@@ -435,11 +436,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private void updateMPSActionsWithKeyStrokes(@Nullable ActionContext actionContext) {
     myActionProxies.clear();
-    for (MPSActionAdapter a : myMPSActionsWithShortcuts) {
-      KeyStroke keyStroke = KeyStroke.getKeyStroke(a.getKeyStroke());
-      if (keyStroke != null) {
-        unregisterKeyboardAction(keyStroke);
-      }
+    for (BaseAction a : myMPSActionsWithShortcuts) {
+      Shortcut[] shortcuts = a.getShortcutSet().getShortcuts();
+      if (shortcuts.length==0) continue;
+      KeyStroke keyStroke = ((KeyboardShortcut)shortcuts[0]).getFirstKeyStroke();
+      unregisterKeyboardAction(keyStroke);
     }
     myMPSActionsWithShortcuts.clear();
     BaseGroup group = (BaseGroup) ActionManager.getInstance().getAction(EDITOR_POPUP_MENU_ACTIONS);
@@ -453,8 +454,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private void registerKeyStrokes(BaseGroup group, @Nullable ActionContext actionContext) {
     if (group != null) {
       for (AnAction e : group.getChildren(null)) {
-        if (e instanceof MPSActionAdapter) {
-          MPSActionAdapter action = (MPSActionAdapter) e;
+        if (e instanceof BaseAction) {
+          BaseAction action = (BaseAction) e;
           if (action.getShortcutSet().getShortcuts().length > 0) {
             registerNodeAction(action);
             myMPSActionsWithShortcuts.add(action);
@@ -630,21 +631,20 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myOperationContext = operationContext;
   }
 
-  protected void registerNodeAction(MPSActionAdapter action) {
-    for (String keyStroke : action.getKeyStrokes()) {
-      registerNodeAction(action, keyStroke);
+  protected void registerNodeAction(BaseAction action) {
+    for (Shortcut shortcut : action.getShortcutSet().getShortcuts()) {
+      registerNodeAction(action, ((KeyboardShortcut)shortcut).getFirstKeyStroke());
     }
   }
 
-  protected AbstractAction registerNodeAction(final MPSActionAdapter action, String keyStroke) {
-    KeyStroke stroke = KeyStroke.getKeyStroke(keyStroke);
-    if (stroke != null) {
-      if (!myActionProxies.containsKey(stroke)) {
+  protected AbstractAction registerNodeAction(final BaseAction action, KeyStroke keyStroke) {
+    if (keyStroke != null) {
+      if (!myActionProxies.containsKey(keyStroke)) {
         AbstractEditorComponent.MPSActionProxy proxy = new MPSActionProxy();
-        myActionProxies.put(stroke, proxy);
-        registerKeyboardAction(proxy, stroke, WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+        myActionProxies.put(keyStroke, proxy);
+        registerKeyboardAction(proxy, keyStroke, WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
       }
-      AbstractEditorComponent.MPSActionProxy proxy = myActionProxies.get(stroke);
+      AbstractEditorComponent.MPSActionProxy proxy = myActionProxies.get(keyStroke);
       proxy.add(action);
       return proxy;
     }
@@ -2377,14 +2377,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private class MPSActionProxy extends AbstractAction {
-    private List<MPSActionAdapter> myActions = new ArrayList<MPSActionAdapter>();
+    private List<BaseAction> myActions = new ArrayList<BaseAction>();
 
-    public void add(MPSActionAdapter a) {
+    public void add(BaseAction a) {
       myActions.add(a);
     }
 
     public void actionPerformed(ActionEvent e) {
-      for (final MPSActionAdapter action : myActions) {
+      for (final BaseAction action : myActions) {
         if (mySelectedCell != null && mySelectedCell.getSNode() != null) {
           final ActionContext context = createActionContext();
           Presentation p = new Presentation();
@@ -2393,7 +2393,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
             continue;
           }
 
-          action.execute(context);
+          action.actionPerformed(ActionUtils.createEvent(new Presentation(),context));
           return;
         }
       }

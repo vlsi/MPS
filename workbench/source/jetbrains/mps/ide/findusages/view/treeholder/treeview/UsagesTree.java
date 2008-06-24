@@ -361,7 +361,7 @@ public abstract class UsagesTree extends MPSTree {
     if (treeNode == null) return;
 
     DataNode node = treeNode.getUserObject();
-    setExcluded(node, node.getData().isExcluded(),true);
+    setExcluded(node, node.getData().isExcluded(), true);
   }
 
   private void setCurrentNodeExclusion(boolean isExculded) {
@@ -369,7 +369,7 @@ public abstract class UsagesTree extends MPSTree {
     if (treeNode == null) return;
 
     DataNode node = treeNode.getUserObject();
-    setExcluded(node, isExculded,true);
+    setExcluded(node, isExculded, true);
   }
 
   private void showChangeExclusionMenu(MouseEvent e) {
@@ -380,13 +380,13 @@ public abstract class UsagesTree extends MPSTree {
 
     ag.add(new AnAction("Include") {
       public void actionPerformed(AnActionEvent e) {
-        setExcluded(dataNode,false,true);
+        setExcluded(dataNode, false, true);
       }
     });
 
     ag.add(new AnAction("Exclude") {
       public void actionPerformed(AnActionEvent e) {
-        setExcluded(dataNode,true,true);
+        setExcluded(dataNode, true, true);
       }
     });
 
@@ -398,7 +398,7 @@ public abstract class UsagesTree extends MPSTree {
     if (isTopLevel) myContents.setAdjusting(true);
     node.getData().setExcluded(state);
     for (DataNode child : node.getChildren()) {
-      setExcluded(child, state,false);
+      setExcluded(child, state, false);
     }
     if (isTopLevel) myContents.setAdjusting(false);
   }
@@ -538,7 +538,7 @@ public abstract class UsagesTree extends MPSTree {
     UsagesTreeNode currentNode = getCurrentNode();
     UsagesTreeNode next;
 
-    if (currentNode == null) {
+    if (currentNode == null || !inResults(currentNode)) {
       next = findFirstResultInSubtree((UsagesTreeNode) getResultsNode().getChildAt(0), false);
     } else {
       next = findNextResult((UsagesTreeNode) currentNode);
@@ -556,7 +556,7 @@ public abstract class UsagesTree extends MPSTree {
     UsagesTreeNode currentNode = getCurrentNode();
     UsagesTreeNode next;
 
-    if (currentNode == null) {
+    if (currentNode == null || !inResults(currentNode)) {
       next = findLastResultInSubtree((UsagesTreeNode) getResultsNode().getChildAt(0), false);
     } else {
       next = findPrevResult((UsagesTreeNode) currentNode);
@@ -566,6 +566,12 @@ public abstract class UsagesTree extends MPSTree {
       setCurrentNode(next);
       openCurrentNodeLink(false);
     }
+  }
+
+  private boolean inResults(UsagesTreeNode node) {
+    if (node == getRootNode()) return false;
+    if (node == getResultsNode()) return true;
+    return inResults((UsagesTreeNode) node.getParent());
   }
 
   public void navigateToNode(SNode node) {

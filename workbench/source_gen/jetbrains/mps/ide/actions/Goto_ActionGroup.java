@@ -17,10 +17,8 @@ import jetbrains.mps.ide.actions.gotoMenu.GoToLanguageAction;
 import jetbrains.mps.ide.actions.gotoMenu.GoToModelAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.actionSystem.Constraints;
 import com.intellij.openapi.actionSystem.Anchor;
-import com.intellij.openapi.actionSystem.AnActionEvent;
 
 public class Goto_ActionGroup extends CurrentProjectGroup {
   public static Logger LOG = Logger.getLogger(Goto_ActionGroup.class);
@@ -29,7 +27,6 @@ public class Goto_ActionGroup extends CurrentProjectGroup {
   public Goto_ActionGroup(Project project) {
     super("Go To", ID, true, false, "O".charAt(0), project);
     this.setPopup(true);
-
     try {
       this.add(new GoToRootAction());
       this.add(new GoToSymbolAction());

@@ -72,6 +72,11 @@ public class BaseGroup extends DefaultGroup {
       }
     }).toArray(new AnAction[0]);
   }
+  
+  @NotNull
+  public AnAction[] internalGetChildren(@Nullable AnActionEvent e) {
+    return super.getChildren(e);
+  }
 
   public void adjust() {
 
