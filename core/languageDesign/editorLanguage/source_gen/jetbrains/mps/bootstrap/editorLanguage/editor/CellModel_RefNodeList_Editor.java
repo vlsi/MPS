@@ -1361,6 +1361,10 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     return !(SPropertyOperations.hasValue(node, "selectable", null, null));
   }
 
+  public static boolean renderingCondition3462_04(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.hasValue(node, "drawBrackets", null, null));
+  }
+
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.create_CollectionCell3462_0(context, node);
@@ -1504,7 +1508,9 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.create_ConstantCell3462_028(context, node, ""));
     editorCell.addEditorCell(this.create_ConstantCell3462_029(context, node, "adornments:"));
     editorCell.addEditorCell(this.create_CollectionCell3462_026(context, node));
-    editorCell.addEditorCell(this.create_CollectionCell3462_027(context, node));
+    if (renderingCondition3462_04(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.create_CollectionCell3462_027(context, node));
+    }
     editorCell.addEditorCell(this.create_CollectionCell3462_028(context, node));
     editorCell.addEditorCell(this.create_CollectionCell3462_029(context, node));
     editorCell.addEditorCell(this.create_CollectionCell3462_030(context, node));

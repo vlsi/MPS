@@ -10,6 +10,8 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import java.awt.Color;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -179,6 +181,10 @@ public class CellModel_AttributedPropertyCell_Editor extends DefaultNodeEditor {
   private static void setupLabel_bracketsColorPropertyCell8144_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
+  public static boolean renderingCondition8144_0(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.hasValue(node, "drawBrackets", null, null));
+  }
+
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.create_CollectionCell8144_0(context, node);
@@ -217,7 +223,9 @@ public class CellModel_AttributedPropertyCell_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.create_CollectionCell8144_03(context, node));
+    if (renderingCondition8144_0(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.create_CollectionCell8144_03(context, node));
+    }
     editorCell.addEditorCell(this.create_CollectionCell8144_04(context, node));
     return editorCell;
   }
