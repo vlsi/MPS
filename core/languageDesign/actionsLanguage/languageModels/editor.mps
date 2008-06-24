@@ -2081,8 +2081,10 @@
               </node>
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1177526995704">
-              <property name="drawBrackets" value="true" />
               <link role="relationDeclaration" targetNodeId="1.1177526956065" />
+              <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBracketsStyleSheetItem" id="1214313021450">
+                <property name="flag" value="true" />
+              </node>
             </node>
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310998148">
               <property name="flag" value="false" />

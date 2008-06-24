@@ -7,6 +7,8 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
@@ -37,7 +39,15 @@ public class AsPattern_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_AttributedNodeCell12790_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_AttributedNodeCell12790_0");
-    editorCell.setDrawBrackets(true);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.DRAW_BRACKETS, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_ConstantCell12790_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

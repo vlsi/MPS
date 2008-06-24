@@ -103,7 +103,6 @@
     <link role="conceptDeclaration" targetNodeId="1.1203592642690" resolveInfo="IDEDialogButton" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1203592671520">
       <property name="vertical" value="true" />
-      <property name="drawBrackets" value="true" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1203592673268">
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1203592674066">
@@ -145,6 +144,9 @@
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996398">
           <property name="flag" value="false" />
         </node>
+      </node>
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBracketsStyleSheetItem" id="1214313021463">
+        <property name="flag" value="true" />
       </node>
     </node>
   </node>

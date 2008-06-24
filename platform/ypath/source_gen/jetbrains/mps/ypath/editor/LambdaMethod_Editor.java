@@ -7,6 +7,8 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
@@ -33,8 +35,16 @@ public class LambdaMethod_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_bodyRefNodeCell16314_0(EditorCell editorCell, SNode node, EditorContext context) {
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.DRAW_BRACKETS, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     editorCell.setDrawBorder(false);
-    editorCell.setDrawBrackets(true);
   }
 
   private static void setupLabel_parameterRefNodeCell16314_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -6,6 +6,8 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
@@ -22,8 +24,16 @@ public class ReplaceBlock_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_bodyRefNodeCell1481_0(EditorCell editorCell, SNode node, EditorContext context) {
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.DRAW_BRACKETS, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     editorCell.setDrawBorder(false);
-    editorCell.setDrawBrackets(true);
     editorCell.setBracketsColor(MPSColors.DARK_MAGENTA);
   }
 

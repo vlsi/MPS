@@ -188,7 +188,9 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_AttributedPropertyCell" id="1149859009402">
         <property name="drawBorder" value="false" />
-        <property name="drawBrackets" value="true" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBracketsStyleSheetItem" id="1214313021459">
+          <property name="flag" value="true" />
+        </node>
       </node>
     </node>
   </node>
@@ -507,7 +509,9 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_AttributedLinkCell" id="1149858915193">
         <property name="drawBorder" value="false" />
-        <property name="drawBrackets" value="true" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBracketsStyleSheetItem" id="1214313021464">
+          <property name="flag" value="true" />
+        </node>
       </node>
     </node>
   </node>
@@ -1273,8 +1277,10 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_AttributedNodeCell" id="1149858834706">
         <property name="drawBorder" value="false" />
-        <property name="drawBrackets" value="true" />
         <property name="bracketsColor" value="pink" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBracketsStyleSheetItem" id="1214313021473">
+          <property name="flag" value="true" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1149858857560">
         <property name="drawBorder" value="false" />
@@ -2036,8 +2042,10 @@
           <property name="textFgColor" value="DARK_BLUE" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1203262602126">
-          <property name="drawBrackets" value="true" />
           <link role="relationDeclaration" targetNodeId="1.1194989344771" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBracketsStyleSheetItem" id="1214313021456">
+            <property name="flag" value="true" />
+          </node>
         </node>
         <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1203262602127">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203262602128">
@@ -4538,7 +4546,6 @@
           <property name="vertical" value="true" />
           <property name="bracketsColor" value="gray" />
           <property name="gridLayout" value="true" />
-          <property name="drawBrackets" value="true" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1169580472046">
             <property name="drawBorder" value="false" />
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1169580472047">
@@ -4608,6 +4615,9 @@
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993844">
             <property name="flag" value="false" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBracketsStyleSheetItem" id="1214313021443">
+            <property name="flag" value="true" />
           </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996125">
@@ -4689,7 +4699,6 @@
       <property name="drawBorder" value="false" />
       <property name="vertical" value="true" />
       <property name="bracketsColor" value="gray" />
-      <property name="drawBrackets" value="true" />
       <property name="gridLayout" value="true" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1169494942757">
         <property name="drawBorder" value="false" />
@@ -4757,6 +4766,9 @@
       </node>
       <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995105">
         <property name="flag" value="false" />
+      </node>
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBracketsStyleSheetItem" id="1214313021445">
+        <property name="flag" value="true" />
       </node>
     </node>
   </node>
@@ -5005,7 +5017,6 @@
           <property name="drawBorder" value="false" />
           <property name="vertical" value="true" />
           <property name="bracketsColor" value="gray" />
-          <property name="drawBrackets" value="true" />
           <property name="gridLayout" value="true" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1177959016741">
             <property name="drawBorder" value="false" />
@@ -5083,6 +5094,9 @@
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310998160">
             <property name="flag" value="false" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBracketsStyleSheetItem" id="1214313021454">
+            <property name="flag" value="true" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1167514444709">
@@ -5321,7 +5335,6 @@
         <property name="vertical" value="true" />
         <property name="drawBorder" value="false" />
         <property name="bracketsColor" value="lightGray" />
-        <property name="drawBrackets" value="true" />
         <link role="actionMap" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168625651362">
           <property name="drawBorder" value="false" />
@@ -5396,6 +5409,9 @@
           </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997265">
+          <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBracketsStyleSheetItem" id="1214313021446">
           <property name="flag" value="true" />
         </node>
       </node>
@@ -5964,7 +5980,9 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_AttributedNodeCell" id="1184865331991">
         <property name="drawBorder" value="false" />
-        <property name="drawBrackets" value="true" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBracketsStyleSheetItem" id="1214313021449">
+          <property name="flag" value="true" />
+        </node>
       </node>
       <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993661">
         <property name="flag" value="false" />
@@ -6223,7 +6241,6 @@
     <link role="conceptDeclaration" targetNodeId="1.1195158154974" resolveInfo="InlineSwitch_RuleConsequence" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1195158950699">
       <property name="vertical" value="true" />
-      <property name="drawBrackets" value="true" />
       <property name="bracketsColor" value="gray" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1195242097517">
         <property name="vertical" value="true" />
@@ -6250,6 +6267,9 @@
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997335">
           <property name="flag" value="false" />
         </node>
+      </node>
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBracketsStyleSheetItem" id="1214313021475">
+        <property name="flag" value="true" />
       </node>
     </node>
   </node>

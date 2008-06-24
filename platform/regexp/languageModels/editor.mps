@@ -133,9 +133,11 @@
       <property name="drawBorder" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1174510567265">
         <property name="drawBorder" value="false" />
-        <property name="drawBrackets" value="true" />
         <property name="bracketsColor" value="DARK_MAGENTA" />
         <link role="relationDeclaration" targetNodeId="1.1174510571016" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBracketsStyleSheetItem" id="1214313021466">
+          <property name="flag" value="true" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1175159209099">
         <property name="drawBorder" value="false" />
@@ -678,9 +680,11 @@
       <property name="drawBorder" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1174656462804">
         <property name="drawBorder" value="false" />
-        <property name="drawBrackets" value="true" />
         <property name="bracketsColor" value="DARK_MAGENTA" />
         <link role="relationDeclaration" targetNodeId="3.1137022507850" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBracketsStyleSheetItem" id="1214313021451">
+          <property name="flag" value="true" />
+        </node>
       </node>
     </node>
   </node>

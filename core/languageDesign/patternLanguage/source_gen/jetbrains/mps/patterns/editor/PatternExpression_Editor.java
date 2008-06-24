@@ -40,8 +40,16 @@ public class PatternExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_patternNodeRefNodeCell364_0(EditorCell editorCell, SNode node, EditorContext context) {
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.DRAW_BRACKETS, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     editorCell.setDrawBorder(true);
-    editorCell.setDrawBrackets(false);
   }
 
   private static void setupBasic_ConstantCell364_01(EditorCell editorCell, SNode node, EditorContext context) {

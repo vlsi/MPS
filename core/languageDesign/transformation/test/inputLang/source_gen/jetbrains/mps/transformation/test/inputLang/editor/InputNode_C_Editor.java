@@ -40,12 +40,12 @@ public class InputNode_C_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BRACKETS, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBrackets(true);
     editorCell.setBracketsColor(Color.gray);
   }
 

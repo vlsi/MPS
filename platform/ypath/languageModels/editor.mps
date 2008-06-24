@@ -76,8 +76,10 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1168428754196">
         <property name="drawBorder" value="false" />
-        <property name="drawBrackets" value="true" />
         <link role="relationDeclaration" targetNodeId="5.1137022507850" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBracketsStyleSheetItem" id="1214313021452">
+          <property name="flag" value="true" />
+        </node>
       </node>
     </node>
   </node>
@@ -2423,7 +2425,6 @@
               </node>
               <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ModelAccess" id="1197921944687">
                 <property name="editable" value="false" />
-                <property name="drawBrackets" value="true" />
                 <link role="styleClass" targetNodeId="40.1198595398954" resolveInfo="Identifier" />
                 <node role="modelAcessor" type="jetbrains.mps.bootstrap.editorLanguage.structure.ModelAccessor" id="1197921944688">
                   <node role="getter" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_ModelAccess_Getter" id="1197921944689">
@@ -2518,6 +2519,9 @@
                       </node>
                     </node>
                   </node>
+                </node>
+                <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBracketsStyleSheetItem" id="1214313021442">
+                  <property name="flag" value="true" />
                 </node>
               </node>
               <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993674">
