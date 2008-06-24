@@ -2598,7 +2598,11 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1186414999511">
     <property name="package" value="Stylesheet" />
     <property name="name" value="UnderlinedStyleSheetItem" />
-    <link role="extends" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1214316229833">
+      <property name="name" value="underlined" />
+      <link role="dataType" targetNodeId="1130847686886" resolveInfo="UnderlineStyle" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1186415029919">
       <property name="value" value="underlined" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
