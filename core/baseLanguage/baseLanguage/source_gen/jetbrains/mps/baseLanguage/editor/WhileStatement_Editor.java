@@ -24,7 +24,6 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell12909_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell12909_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell12909_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -38,21 +37,17 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell12909_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell12909_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_conditionRefNodeCell12909_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell12909_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell12909_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell12909_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -66,11 +61,9 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_bodyRefNodeCell12909_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell12909_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -84,12 +77,10 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell12909_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell12909_02");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell12909_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -103,12 +94,10 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell12909_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell12909_04");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell12909_04(EditorCell editorCell, SNode node, EditorContext context) {

@@ -25,25 +25,20 @@ public class TreePathCreator_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell4947_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell4947_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_parentBlockRefNodeCell4947_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell4947_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell4947_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_childrenBlockRefNodeCell4947_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell4947_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell4947_02");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_TreePath_componentComponentCell4947_0(EditorCell editorCell, SNode node, EditorContext context) {

@@ -20,7 +20,6 @@ public class LinkPatternVariableReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_patternVarDeclRefCell3190_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_patternVarDeclRefCell3190_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_patternVarDeclRefCell3190_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -68,7 +67,6 @@ public class LinkPatternVariableReference_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell3190_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell3190_0");
-      editorCell.setDrawBorder(false);
       editorCell.setFontType(MPSFonts.BOLD);
     }
 

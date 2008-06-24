@@ -38,7 +38,6 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
     editorCell.addKeyMap(new ThisExpression_KeyMap());
   }
 
@@ -57,7 +56,6 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_classConceptRefCell2695_0(EditorCell editorCell, SNode node, EditorContext context) {

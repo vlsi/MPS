@@ -18,16 +18,13 @@ public class LocalVariableDeclarationStatement_Editor extends DefaultNodeEditor 
 
   private static void setupBasic_CollectionCell1518_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell1518_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_localVariableDeclarationRefNodeCell1518_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell1518_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell1518_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_localVariableDeclarationRefNodeCell1518_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

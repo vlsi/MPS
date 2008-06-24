@@ -22,18 +22,15 @@ public class AsPattern_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell12790_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell12790_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell12790_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell12790_0");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
   }
 
   private static void setupBasic_varNamePropertyCell12790_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_varNamePropertyCell12790_0");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
   }
 

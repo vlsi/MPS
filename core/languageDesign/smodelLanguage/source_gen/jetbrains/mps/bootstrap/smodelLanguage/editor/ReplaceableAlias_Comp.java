@@ -37,7 +37,6 @@ public class ReplaceableAlias_Comp extends AbstractCellProvider {
 
   private static void setupBasic_ErrorCell20022_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ErrorCell20022_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConceptPropertyCell20022_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

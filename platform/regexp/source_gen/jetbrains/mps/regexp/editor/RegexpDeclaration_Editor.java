@@ -23,32 +23,26 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell9918_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell9918_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell9918_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell9918_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell9918_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell9918_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_namePropertyCell9918_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell9918_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell9918_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell9918_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell9918_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell9918_02");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell9918_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -62,7 +56,6 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell9918_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -76,11 +69,9 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_regexpRefNodeCell9918_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell9918_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -94,7 +85,6 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell9918_04(EditorCell editorCell, SNode node, EditorContext context) {
@@ -108,17 +98,14 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell9918_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell9918_05");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_descriptionPropertyCell9918_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_descriptionPropertyCell9918_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell9918_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

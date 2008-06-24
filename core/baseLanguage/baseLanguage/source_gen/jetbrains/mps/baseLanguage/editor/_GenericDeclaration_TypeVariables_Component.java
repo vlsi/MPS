@@ -40,7 +40,6 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell18743_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -54,12 +53,10 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_typeVariableDeclarationRefNodeListCell18743_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_typeVariableDeclarationRefNodeListCell18743_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell18743_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -73,7 +70,6 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell18743_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

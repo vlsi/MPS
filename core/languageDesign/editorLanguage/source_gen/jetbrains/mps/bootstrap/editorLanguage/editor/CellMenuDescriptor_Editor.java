@@ -26,17 +26,14 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell19413_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell19413_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell19413_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19413_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_cellMenuPartRefNodeListCell19413_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_cellMenuPartRefNodeListCell19413_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell19413_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -90,7 +87,6 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_ConstantCell19413_01(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19413_01");
-      editorCell.setDrawBorder(false);
       editorCell.setFontType(MPSFonts.ITALIC);
     }
 

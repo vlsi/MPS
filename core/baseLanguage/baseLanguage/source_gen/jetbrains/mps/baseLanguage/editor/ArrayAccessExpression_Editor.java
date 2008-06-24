@@ -18,26 +18,21 @@ public class ArrayAccessExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell19469_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell19469_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_arrayRefNodeCell19469_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell19469_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19469_0");
-    editorCell.setDrawBorder(false);
     ArrayAccessExpression_Actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_indexRefNodeCell19469_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell19469_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19469_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_arrayRefNodeCell19469_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

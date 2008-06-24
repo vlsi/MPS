@@ -31,25 +31,20 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell18424_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell18424_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_leftExpressionRefNodeCell18424_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConceptPropertyCell18424_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConceptPropertyCell18424_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_rightExpressionRefNodeCell18424_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell18424_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18424_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_inequationPriorityNonEmptyPropertyCell18424_0(EditorCell editorCell, SNode node, EditorContext context) {

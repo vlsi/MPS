@@ -31,7 +31,6 @@ public class Regexps_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell18930_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell18930_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell18930_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -45,27 +44,22 @@ public class Regexps_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell18930_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18930_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_namePropertyCell18930_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell18930_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell18930_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18930_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell18930_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18930_02");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell18930_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -79,7 +73,6 @@ public class Regexps_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell18930_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -93,12 +86,10 @@ public class Regexps_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_regexpRefNodeListCell18930_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_regexpRefNodeListCell18930_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell18930_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

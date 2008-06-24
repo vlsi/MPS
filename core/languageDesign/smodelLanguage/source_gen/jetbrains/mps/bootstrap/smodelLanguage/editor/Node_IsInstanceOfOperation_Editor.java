@@ -30,7 +30,6 @@ public class Node_IsInstanceOfOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell21039_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell21039_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_conceptArgumentRefNodeCell21039_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -51,7 +50,6 @@ public class Node_IsInstanceOfOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_conceptRefCell21039_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_conceptRefCell21039_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell21039_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -87,7 +85,6 @@ public class Node_IsInstanceOfOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell21039_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell21039_04");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
 
@@ -268,7 +265,6 @@ public class Node_IsInstanceOfOperation_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell21039_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell21039_0");
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_namePropertyCell21039_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

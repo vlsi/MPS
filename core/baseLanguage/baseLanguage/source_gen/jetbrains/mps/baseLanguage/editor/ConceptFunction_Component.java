@@ -115,12 +115,10 @@ public class ConceptFunction_Component extends AbstractCellProvider {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
     editorCell.setCellBackgroundColor(_QueryFunction_Color_1196975453900(node, context));
   }
 
   private static void setupBasic_bodyRefNodeCell6954_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell6954_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

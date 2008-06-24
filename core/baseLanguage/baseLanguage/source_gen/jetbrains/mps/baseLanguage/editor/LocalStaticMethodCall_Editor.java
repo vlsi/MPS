@@ -38,22 +38,18 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell10859_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell10859_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_staticMethodDeclarationRefCell10859_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_staticMethodDeclarationRefCell10859_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell10859_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell10859_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell10859_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell10859_01");
-    editorCell.setDrawBorder(false);
     if (renderingCondition10859_0(node, context, context.getScope())) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
@@ -61,7 +57,6 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_actualArgumentRefNodeListCell10859_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_actualArgumentRefNodeListCell10859_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_staticMethodDeclarationRefCell10859_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -164,7 +159,6 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell10859_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell10859_0");
-      editorCell.setDrawBorder(false);
       editorCell.setFontType(MPSFonts.ITALIC);
     }
 
@@ -227,7 +221,6 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
         };
         inlineStyle.apply(editorCell);
       }
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_ConstantCell10859_02(EditorCell_Label editorCell, SNode node, EditorContext context) {

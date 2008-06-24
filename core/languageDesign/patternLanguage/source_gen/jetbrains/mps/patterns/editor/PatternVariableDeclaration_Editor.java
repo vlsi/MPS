@@ -20,18 +20,15 @@ public class PatternVariableDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell20538_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell20538_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_varNamePropertyCell20538_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_varNamePropertyCell20538_0");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
   }
 
   private static void setupBasic_ConstantCell20538_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell20538_0");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
   }
 

@@ -35,7 +35,15 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell1154_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell1154_0");
-    editorCell.setDrawBorder(true);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.DRAW_BORDER, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell1154_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -44,17 +52,25 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ConstantCell1154_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell1154_01");
-    editorCell.setDrawBorder(true);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.DRAW_BORDER, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell1154_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -63,12 +79,12 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_CollectionCell1154_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -77,12 +93,12 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ConstantCell1154_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -91,12 +107,12 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_CollectionCell1154_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -105,12 +121,12 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ConstantCell1154_04(EditorCell editorCell, SNode node, EditorContext context) {
@@ -119,17 +135,25 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_selectablePropertyCell1154_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_selectablePropertyCell1154_0");
-    editorCell.setDrawBorder(true);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.DRAW_BORDER, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell1154_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -138,12 +162,12 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ConstantCell1154_05(EditorCell editorCell, SNode node, EditorContext context) {
@@ -152,22 +176,38 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_attractsFocusPropertyCell1154_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_attractsFocusPropertyCell1154_0");
-    editorCell.setDrawBorder(true);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.DRAW_BORDER, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic__EditorCellModel_CellBackground_ComponentComponentCell1154_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "__EditorCellModel_CellBackground_ComponentComponentCell1154_0");
-    editorCell.setDrawBorder(true);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.DRAW_BORDER, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell1154_06(EditorCell editorCell, SNode node, EditorContext context) {
@@ -176,12 +216,12 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_CollectionCell1154_04(EditorCell editorCell, SNode node, EditorContext context) {
@@ -190,12 +230,12 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ConstantCell1154_07(EditorCell editorCell, SNode node, EditorContext context) {
@@ -204,17 +244,25 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_layoutConstraintPropertyCell1154_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_layoutConstraintPropertyCell1154_0");
-    editorCell.setDrawBorder(true);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.DRAW_BORDER, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell1154_08(EditorCell editorCell, SNode node, EditorContext context) {
@@ -223,12 +271,12 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_CollectionCell1154_05(EditorCell editorCell, SNode node, EditorContext context) {
@@ -237,12 +285,12 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ConstantCell1154_09(EditorCell editorCell, SNode node, EditorContext context) {
@@ -251,17 +299,25 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic__CellKeyMapLnk_ComponentComponentCell1154_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "__CellKeyMapLnk_ComponentComponentCell1154_0");
-    editorCell.setDrawBorder(true);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.DRAW_BORDER, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell1154_010(EditorCell editorCell, SNode node, EditorContext context) {
@@ -270,17 +326,25 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ConstantCell1154_011(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell1154_011");
-    editorCell.setDrawBorder(true);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.DRAW_BORDER, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell1154_06(EditorCell editorCell, SNode node, EditorContext context) {
@@ -289,12 +353,12 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ConstantCell1154_012(EditorCell editorCell, SNode node, EditorContext context) {
@@ -303,17 +367,25 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_drawBorderPropertyCell1154_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_drawBorderPropertyCell1154_0");
-    editorCell.setDrawBorder(true);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.DRAW_BORDER, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell1154_07(EditorCell editorCell, SNode node, EditorContext context) {
@@ -322,12 +394,12 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ConstantCell1154_013(EditorCell editorCell, SNode node, EditorContext context) {
@@ -336,17 +408,25 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_drawBracketsPropertyCell1154_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_drawBracketsPropertyCell1154_0");
-    editorCell.setDrawBorder(true);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.DRAW_BORDER, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell1154_08(EditorCell editorCell, SNode node, EditorContext context) {
@@ -355,12 +435,12 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ConstantCell1154_014(EditorCell editorCell, SNode node, EditorContext context) {
@@ -369,17 +449,25 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_bracketsColorPropertyCell1154_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_bracketsColorPropertyCell1154_0");
-    editorCell.setDrawBorder(true);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.DRAW_BORDER, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell1154_015(EditorCell editorCell, SNode node, EditorContext context) {
@@ -388,17 +476,25 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ConstantCell1154_016(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell1154_016");
-    editorCell.setDrawBorder(true);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.DRAW_BORDER, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell1154_017(EditorCell editorCell, SNode node, EditorContext context) {
@@ -407,12 +503,12 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_CollectionCell1154_09(EditorCell editorCell, SNode node, EditorContext context) {
@@ -421,12 +517,12 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ConstantCell1154_018(EditorCell editorCell, SNode node, EditorContext context) {
@@ -435,17 +531,25 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_descentPropertyCell1154_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_descentPropertyCell1154_0");
-    editorCell.setDrawBorder(true);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.DRAW_BORDER, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell1154_010(EditorCell editorCell, SNode node, EditorContext context) {
@@ -454,12 +558,12 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_imageFilePropertyCell1154_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -468,17 +572,25 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_JComponentCell1154_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_JComponentCell1154_0");
-    editorCell.setDrawBorder(true);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.DRAW_BORDER, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell1154_011(EditorCell editorCell, SNode node, EditorContext context) {
@@ -487,12 +599,12 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ConstantCell1154_019(EditorCell editorCell, SNode node, EditorContext context) {
@@ -501,17 +613,25 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_actionMapRefCell1154_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_actionMapRefCell1154_0");
-    editorCell.setDrawBorder(true);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.DRAW_BORDER, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell1154_012(EditorCell editorCell, SNode node, EditorContext context) {
@@ -520,12 +640,12 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ConstantCell1154_020(EditorCell editorCell, SNode node, EditorContext context) {
@@ -534,12 +654,12 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_renderingConditionRefNodeCell1154_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -556,7 +676,6 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell1154_021(EditorCell editorCell, SNode node, EditorContext context) {
@@ -565,16 +684,24 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_menuDescriptorRefNodeCell1154_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(true);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.DRAW_BORDER, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell1154_022(EditorCell editorCell, SNode node, EditorContext context) {
@@ -587,12 +714,12 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ConstantCell1154_023(EditorCell editorCell, SNode node, EditorContext context) {
@@ -601,12 +728,12 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_imagePathProviderRefNodeCell1154_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -1546,7 +1673,15 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell1154_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell1154_0");
-      editorCell.setDrawBorder(true);
+      {
+        Style inlineStyle = new Style() {
+          {
+            this.set(StyleAttributes.DRAW_BORDER, true);
+          }
+
+        };
+        inlineStyle.apply(editorCell);
+      }
     }
 
     private static void setupLabel_namePropertyCell1154_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

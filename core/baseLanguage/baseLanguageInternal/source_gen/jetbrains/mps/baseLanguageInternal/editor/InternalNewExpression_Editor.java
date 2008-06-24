@@ -24,22 +24,18 @@ public class InternalNewExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell8036_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell8036_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell8036_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell8036_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_fqClassNamePropertyCell8036_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_fqClassNamePropertyCell8036_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_IMethodCall_actualArgumentsComponentCell8036_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_IMethodCall_actualArgumentsComponentCell8036_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell8036_01(EditorCell editorCell, SNode node, EditorContext context) {

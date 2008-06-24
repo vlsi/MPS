@@ -17,16 +17,13 @@ public class SeqRegexp_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell2730_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell2730_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_leftRefNodeCell2730_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
     BinaryRegexp_Left_Actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_rightRefNodeCell2730_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
     BinaryRegexp_Right_Actions.setCellActions(editorCell, node, context);
   }
 

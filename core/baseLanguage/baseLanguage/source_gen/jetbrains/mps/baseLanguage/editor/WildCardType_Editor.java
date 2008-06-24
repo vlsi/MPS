@@ -14,12 +14,10 @@ public class WildCardType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell11239_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11239_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell11239_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11239_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell11239_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

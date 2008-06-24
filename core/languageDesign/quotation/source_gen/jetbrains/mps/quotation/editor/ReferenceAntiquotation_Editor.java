@@ -28,21 +28,17 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell18413_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell18413_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell18413_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18413_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_expressionRefNodeCell18413_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell18413_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18413_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell18413_01(EditorCell editorCell, SNode node, EditorContext context) {

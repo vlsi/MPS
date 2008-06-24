@@ -26,18 +26,14 @@
     <link role="conceptDeclaration" targetNodeId="1.1136027476087" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1136027532769">
       <property name="vertical" value="false" />
-      <property name="drawBorder" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1136027532770">
         <property name="text" value="$(" />
-        <property name="drawBorder" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1136027532771">
-        <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1136027476088" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1136027532772">
         <property name="text" value=")$" />
-        <property name="drawBorder" value="false" />
       </node>
     </node>
   </node>
@@ -60,17 +56,14 @@
     <link role="conceptDeclaration" targetNodeId="1.1136027498485" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1136027532779">
       <property name="vertical" value="false" />
-      <property name="drawBorder" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1136027532780">
         <property name="text" value="$(" />
-        <property name="drawBorder" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1176738996438">
         <property name="text" value="property attribute concept" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1136027532782">
         <property name="text" value=")$" />
-        <property name="drawBorder" value="false" />
       </node>
     </node>
   </node>

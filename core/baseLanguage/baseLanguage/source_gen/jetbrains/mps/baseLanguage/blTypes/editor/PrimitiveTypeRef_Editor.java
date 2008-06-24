@@ -20,12 +20,10 @@ public class PrimitiveTypeRef_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell826_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell826_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_descriptorRefCell826_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_descriptorRefCell826_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_descriptorRefCell826_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

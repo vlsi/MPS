@@ -19,16 +19,13 @@ public class MatchDefaultPropertyOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell13590_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell13590_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell13590_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell13590_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_matchExpressionRefNodeCell13590_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
@@ -36,7 +33,6 @@ public class MatchDefaultPropertyOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell13590_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell13590_01");
-    editorCell.setDrawBorder(false);
     editorCell.setRightTransformAnchorTag("default_RTransform");
   }
 

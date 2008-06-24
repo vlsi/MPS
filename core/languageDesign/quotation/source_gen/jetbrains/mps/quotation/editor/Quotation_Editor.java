@@ -23,7 +23,6 @@ public class Quotation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell2741_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell2741_0");
-    editorCell.setDrawBorder(false);
     editorCell.addKeyMap(new _CreateAntiquotationKeyMap());
   }
 
@@ -38,11 +37,9 @@ public class Quotation_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_quotedNodeRefNodeCell2741_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell2741_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -56,7 +53,6 @@ public class Quotation_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
     editorCell.addKeyMap(new _Quotation_createModel());
   }
 
@@ -71,21 +67,17 @@ public class Quotation_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell2741_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell2741_02");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_modelToCreateRefNodeCell2741_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell2741_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell2741_03");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell2741_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

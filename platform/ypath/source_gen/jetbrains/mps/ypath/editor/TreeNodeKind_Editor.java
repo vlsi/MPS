@@ -32,7 +32,6 @@ public class TreeNodeKind_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell18439_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell18439_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell18439_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -46,16 +45,13 @@ public class TreeNodeKind_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_namePropertyCell18439_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell18439_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_triggerRefNodeCell18439_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell18439_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -69,7 +65,6 @@ public class TreeNodeKind_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell18439_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -83,22 +78,18 @@ public class TreeNodeKind_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_propertiesRefNodeListCell18439_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_propertiesRefNodeListCell18439_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell18439_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18439_02");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell18439_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18439_03");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell18439_04(EditorCell editorCell, SNode node, EditorContext context) {
@@ -112,7 +103,6 @@ public class TreeNodeKind_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_namePropertyCell18439_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -288,7 +278,6 @@ public class TreeNodeKind_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_ConstantCell18439_01(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18439_01");
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_ConstantCell18439_01(EditorCell_Label editorCell, SNode node, EditorContext context) {

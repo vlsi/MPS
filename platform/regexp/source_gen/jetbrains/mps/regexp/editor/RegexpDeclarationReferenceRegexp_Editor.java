@@ -21,12 +21,10 @@ public class RegexpDeclarationReferenceRegexp_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell11213_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11213_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_regexpRefCell11213_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_regexpRefCell11213_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_regexpRefCell11213_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -84,7 +82,6 @@ public class RegexpDeclarationReferenceRegexp_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell11213_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell11213_0");
-      editorCell.setDrawBorder(false);
       editorCell.setFontType(MPSFonts.BOLD);
     }
 

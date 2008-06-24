@@ -76,7 +76,6 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell4498_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -84,7 +83,6 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_typeRefNodeCell4498_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_VariableDeclaration_NameCellComponentComponentCell4498_0(EditorCell editorCell, SNode node, EditorContext context) {

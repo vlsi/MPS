@@ -25,11 +25,9 @@ public class Node_InsertPrevSiblingOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell16099_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell16099_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_parameterRefNodeCell16099_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
@@ -37,7 +35,6 @@ public class Node_InsertPrevSiblingOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell16099_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell16099_0");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
 

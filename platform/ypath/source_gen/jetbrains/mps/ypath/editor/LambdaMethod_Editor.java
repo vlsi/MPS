@@ -25,12 +25,10 @@ public class LambdaMethod_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_parameterRefNodeCell16314_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell16314_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell16314_0");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
   }
 
@@ -44,7 +42,6 @@ public class LambdaMethod_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_parameterRefNodeCell16314_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

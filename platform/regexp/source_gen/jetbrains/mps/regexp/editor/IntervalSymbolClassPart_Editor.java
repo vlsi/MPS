@@ -19,22 +19,18 @@ public class IntervalSymbolClassPart_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell7273_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7273_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_startPropertyCell7273_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_startPropertyCell7273_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7273_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7273_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_endPropertyCell7273_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_endPropertyCell7273_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_startPropertyCell7273_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

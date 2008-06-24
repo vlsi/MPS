@@ -149,7 +149,15 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_categoryPropertyCell7305_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_categoryPropertyCell7305_0");
-    editorCell.setDrawBorder(true);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.DRAW_BORDER, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell7305_05(EditorCell editorCell, SNode node, EditorContext context) {
@@ -167,7 +175,15 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_titlePropertyCell7305_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_titlePropertyCell7305_0");
-    editorCell.setDrawBorder(true);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.DRAW_BORDER, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell7305_06(EditorCell editorCell, SNode node, EditorContext context) {
@@ -185,7 +201,15 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_migrationFromBuildPropertyCell7305_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_migrationFromBuildPropertyCell7305_0");
-    editorCell.setDrawBorder(true);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.DRAW_BORDER, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell7305_07(EditorCell editorCell, SNode node, EditorContext context) {

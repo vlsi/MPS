@@ -36,41 +36,33 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell545_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell545_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell545_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell545_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_IMethodCall_actualArgumentsComponentCell545_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_IMethodCall_actualArgumentsComponentCell545_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_methodNamePropertyCell545_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_methodNamePropertyCell545_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_fqClassNamePropertyCell545_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_fqClassNamePropertyCell545_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell545_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell545_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell545_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell545_02");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_returnTypeRefNodeCell545_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell545_01(EditorCell editorCell, SNode node, EditorContext context) {

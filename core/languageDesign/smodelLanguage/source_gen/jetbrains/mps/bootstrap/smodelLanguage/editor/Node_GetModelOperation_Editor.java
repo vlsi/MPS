@@ -14,7 +14,6 @@ public class Node_GetModelOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell12932_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell12932_0");
-    editorCell.setDrawBorder(false);
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }

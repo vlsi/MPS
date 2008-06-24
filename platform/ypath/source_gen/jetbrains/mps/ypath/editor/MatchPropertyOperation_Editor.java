@@ -24,7 +24,6 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell12004_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell12004_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_nodeKindOccurrenceRefNodeCell12004_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -37,7 +36,6 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell12004_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -51,12 +49,10 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_propertyRefCell12004_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_propertyRefCell12004_0");
-    editorCell.setDrawBorder(false);
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
@@ -73,11 +69,9 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_matchExpressionRefNodeCell12004_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell12004_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -91,12 +85,10 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell12004_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell12004_03");
-    editorCell.setDrawBorder(false);
     editorCell.setRightTransformAnchorTag("default_RTransform");
   }
 

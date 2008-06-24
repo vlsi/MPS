@@ -19,30 +19,24 @@ public class AssertSame_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell2080_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell2080_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell2080_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell2080_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell2080_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell2080_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell2080_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell2080_02");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_expectedRefNodeCell2080_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_actualRefNodeCell2080_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell2080_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

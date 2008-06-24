@@ -26,12 +26,10 @@ public class Model_NodesOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell17940_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell17940_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_conceptRefCell17940_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_conceptRefCell17940_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ReplaceableAlias_CompComponentCell17940_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -55,7 +53,6 @@ public class Model_NodesOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell17940_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell17940_01");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
 
@@ -148,7 +145,6 @@ public class Model_NodesOperation_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell17940_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell17940_0");
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_namePropertyCell17940_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

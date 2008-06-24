@@ -19,23 +19,19 @@ public class TypeVarDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell8241_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell8241_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell8241_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell8241_0");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_namePropertyCell8241_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell8241_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell8241_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell8241_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell8241_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

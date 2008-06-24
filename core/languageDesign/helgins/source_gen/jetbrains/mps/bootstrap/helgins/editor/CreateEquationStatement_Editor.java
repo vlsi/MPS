@@ -25,25 +25,20 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell15735_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell15735_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_leftExpressionRefNodeCell15735_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConceptPropertyCell15735_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConceptPropertyCell15735_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_rightExpressionRefNodeCell15735_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell15735_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15735_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell15735_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -52,16 +47,13 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell15735_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell15735_02");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell15735_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15735_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_nodeToCheckRefNodeCell15735_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell15735_03(EditorCell editorCell, SNode node, EditorContext context) {

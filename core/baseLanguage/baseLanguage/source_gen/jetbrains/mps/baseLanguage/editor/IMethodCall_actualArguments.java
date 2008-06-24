@@ -45,7 +45,6 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell13020_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -55,7 +54,6 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
 
   private static void setupBasic_actualArgumentRefNodeListCell13020_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_actualArgumentRefNodeListCell13020_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell13020_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -159,7 +157,6 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
         };
         inlineStyle.apply(editorCell);
       }
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_ConstantCell13020_01(EditorCell_Label editorCell, SNode node, EditorContext context) {

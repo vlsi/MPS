@@ -19,34 +19,27 @@ public class AssertThrows_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell18211_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell18211_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell18211_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18211_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell18211_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18211_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell18211_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18211_02");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_statementRefNodeCell18211_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_exceptionTypeRefNodeCell18211_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_messageRefNodeCell18211_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell18211_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

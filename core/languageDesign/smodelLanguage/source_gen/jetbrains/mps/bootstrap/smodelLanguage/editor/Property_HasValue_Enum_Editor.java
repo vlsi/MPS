@@ -24,11 +24,9 @@ public class Property_HasValue_Enum_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell12950_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell12950_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_valueRefNodeCell12950_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ReplaceableAlias_CompComponentCell12950_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -52,7 +50,6 @@ public class Property_HasValue_Enum_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell12950_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell12950_01");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
 

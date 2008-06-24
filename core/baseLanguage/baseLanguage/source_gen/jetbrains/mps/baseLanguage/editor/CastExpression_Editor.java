@@ -18,32 +18,26 @@ public class CastExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell18526_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell18526_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_expressionRefNodeCell18526_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell18526_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell18526_01");
-    editorCell.setDrawBorder(false);
     CastExpression_Actions.setCellActions(editorCell, node, context);
     editorCell.addKeyMap(new CastExpression_KeyMap());
   }
 
   private static void setupBasic_ConstantCell18526_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18526_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_typeRefNodeCell18526_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell18526_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18526_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_expressionRefNodeCell18526_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

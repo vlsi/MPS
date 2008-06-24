@@ -20,33 +20,27 @@ public class AtLeastNTimesRegexp_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell1189_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell1189_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_regexpRefNodeCell1189_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell1189_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell1189_0");
-    editorCell.setDrawBorder(false);
     UnaryRegexp_Regexp_actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_nPropertyCell1189_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_nPropertyCell1189_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell1189_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell1189_01");
-    editorCell.setDrawBorder(false);
     UnaryRegexp_Regexp_actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_ConstantCell1189_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell1189_02");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_regexpRefNodeCell1189_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

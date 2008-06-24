@@ -36,17 +36,14 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell6179_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell6179_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_constructorDeclarationRefCell6179_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_constructorDeclarationRefCell6179_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell6179_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell6179_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell6179_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -60,12 +57,10 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_typeParameterRefNodeListCell6179_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_typeParameterRefNodeListCell6179_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell6179_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -79,12 +74,10 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_IMethodCall_actualArgumentsComponentCell6179_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_IMethodCall_actualArgumentsComponentCell6179_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_constructorDeclarationRefCell6179_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -18,7 +18,6 @@ public class ConceptFunctionParameter_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConceptPropertyCell11492_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConceptPropertyCell11492_0");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.ITALIC);
   }
 

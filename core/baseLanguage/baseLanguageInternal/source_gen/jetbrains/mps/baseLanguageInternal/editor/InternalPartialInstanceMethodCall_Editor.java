@@ -31,50 +31,40 @@ public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor 
 
   private static void setupBasic_CollectionCell5619_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell5619_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_instanceRefNodeCell5619_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell5619_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5619_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_methodNamePropertyCell5619_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_methodNamePropertyCell5619_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell5619_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5619_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell5619_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5619_02");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_returnTypeRefNodeCell5619_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell5619_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5619_03");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell5619_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5619_04");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_actualArgumentRefNodeListCell5619_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_actualArgumentRefNodeListCell5619_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_instanceRefNodeCell5619_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -276,7 +266,6 @@ public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor 
 
     private static void setupBasic_ConstantCell5619_05(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5619_05");
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_ConstantCell5619_05(EditorCell_Label editorCell, SNode node, EditorContext context) {

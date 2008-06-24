@@ -18,7 +18,6 @@ public class LocalStaticFieldReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_staticFieldDeclarationRefCell19115_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_staticFieldDeclarationRefCell19115_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_staticFieldDeclarationRefCell19115_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -67,7 +66,6 @@ public class LocalStaticFieldReference_Editor extends DefaultNodeEditor {
     private static void setupBasic_namePropertyCell19115_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell19115_0");
       BaseLanguageStyle_StyleSheet.STATIC_FIELD.apply(editorCell);
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_namePropertyCell19115_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

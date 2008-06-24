@@ -37,7 +37,6 @@ public class Annotation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell15436_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell15436_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell15436_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -51,7 +50,6 @@ public class Annotation_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic__Component_VisibilityComponentCell15436_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -70,7 +68,6 @@ public class Annotation_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_namePropertyCell15436_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -84,13 +81,11 @@ public class Annotation_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
     editorCell.setRightTransformAnchorTag("default_RTransform");
   }
 
   private static void setupBasic__GenericDeclaration_TypeVariables_ComponentComponentCell15436_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "__GenericDeclaration_TypeVariables_ComponentComponentCell15436_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell15436_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -104,7 +99,6 @@ public class Annotation_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell15436_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -118,7 +112,6 @@ public class Annotation_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell15436_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -132,7 +125,6 @@ public class Annotation_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell15436_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -146,7 +138,6 @@ public class Annotation_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_annotationMethodRefNodeListCell15436_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -160,7 +151,6 @@ public class Annotation_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell15436_05(EditorCell editorCell, SNode node, EditorContext context) {
@@ -174,7 +164,6 @@ public class Annotation_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell15436_06(EditorCell editorCell, SNode node, EditorContext context) {
@@ -188,7 +177,6 @@ public class Annotation_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell15436_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -517,7 +505,6 @@ public class Annotation_Editor extends DefaultNodeEditor {
         };
         inlineStyle.apply(editorCell);
       }
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_ConstantCell15436_04(EditorCell_Label editorCell, SNode node, EditorContext context) {

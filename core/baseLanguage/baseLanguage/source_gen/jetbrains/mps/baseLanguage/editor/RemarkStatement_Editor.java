@@ -22,12 +22,10 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell3101_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell3101_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell3101_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell3101_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_AlternationCell3101_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -36,7 +34,6 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_valuePropertyCell3101_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_valuePropertyCell3101_0");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.ITALIC);
   }
 

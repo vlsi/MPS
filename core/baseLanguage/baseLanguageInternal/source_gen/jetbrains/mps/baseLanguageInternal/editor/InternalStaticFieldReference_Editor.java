@@ -19,22 +19,18 @@ public class InternalStaticFieldReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell11050_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11050_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell11050_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11050_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_fqClassNamePropertyCell11050_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_fqClassNamePropertyCell11050_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_fieldNamePropertyCell11050_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_fieldNamePropertyCell11050_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell11050_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

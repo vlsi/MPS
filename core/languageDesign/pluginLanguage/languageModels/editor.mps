@@ -146,16 +146,13 @@
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1205677542443">
-          <property name="drawBorder" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1205677542444">
-            <property name="drawBorder" value="false" />
             <property name="text" value="icon:" />
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996999">
               <property name="flag" value="false" />
             </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Alternation" id="1205677542445">
-            <property name="drawBorder" value="false" />
             <node role="alternationCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1205677542446">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205677542447">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1210084380345">
@@ -211,7 +208,6 @@
               </node>
             </node>
             <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1205677542487">
-              <property name="drawBorder" value="false" />
               <property name="text" value="&lt;no icon&gt;" />
               <property name="textFgColor" value="lightGray" />
             </node>
@@ -241,7 +237,6 @@
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_JComponent" id="1205677542515">
             <property name="componentProviderID" value="SelectIconButton" />
-            <property name="drawBorder" value="false" />
             <node role="componentProvider" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_JComponent" id="1205677542516">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205677542517">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1205677542518">
@@ -1250,9 +1245,7 @@
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1208950262040">
-          <property name="drawBorder" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1208950262041">
-            <property name="drawBorder" value="false" />
             <property name="text" value="icon:" />
             <link role="styleClass" targetNodeId="17.1186415544875" resolveInfo="KeyWord" />
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995621">
@@ -1260,7 +1253,6 @@
             </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Alternation" id="1208950262042">
-            <property name="drawBorder" value="false" />
             <node role="alternationCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1208950262043">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208950262044">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1210084539527">
@@ -1316,7 +1308,6 @@
               </node>
             </node>
             <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1208950262060">
-              <property name="drawBorder" value="false" />
               <property name="text" value="&lt;no icon&gt;" />
               <property name="textFgColor" value="lightGray" />
             </node>
@@ -1346,7 +1337,6 @@
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_JComponent" id="1208950262070">
             <property name="componentProviderID" value="SelectIconButton" />
-            <property name="drawBorder" value="false" />
             <node role="componentProvider" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_JComponent" id="1208950262071">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208950262072">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1208950262073">
@@ -1409,7 +1399,6 @@
           <property name="noTargetText" value="&lt;no name&gt;" />
           <property name="defaultValue" value="&lt;no name&gt;" />
           <property name="rightTransformAnchorTag" value="default_RTransform" />
-          <property name="drawBorder" value="false" />
           <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name" />
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996543">
             <property name="flag" value="true" />
@@ -1695,10 +1684,8 @@
       <property name="usesBraces" value="true" />
       <property name="name" value="nodeBox" />
       <property name="vertical" value="false" />
-      <property name="drawBorder" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1207318325523">
         <property name="text" value="&lt;" />
-        <property name="drawBorder" value="false" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997463">
           <property name="flag" value="false" />
         </node>
@@ -1707,7 +1694,6 @@
         <property name="textBgColor" value="yellow" />
         <property name="allowEmptyText" value="true" />
         <property name="noTargetText" value="any" />
-        <property name="drawBorder" value="false" />
         <property name="textBgColorSelected" value="cyan" />
         <link role="relationDeclaration" targetNodeId="1.1207318242773" resolveInfo="modifiers" />
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1207318325525">
@@ -1762,7 +1748,6 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1207318325541">
         <property name="text" value=" &gt; + &lt;" />
-        <property name="drawBorder" value="false" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993669">
           <property name="flag" value="false" />
         </node>
@@ -1770,7 +1755,6 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1207318325542">
         <property name="textBgColor" value="yellow" />
         <property name="noTargetText" value="&lt;keycode&gt;" />
-        <property name="drawBorder" value="false" />
         <property name="textBgColorSelected" value="cyan" />
         <link role="relationDeclaration" targetNodeId="1.1207318242774" resolveInfo="keycode" />
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1207318325543">
@@ -1839,7 +1823,6 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1207318325566">
         <property name="text" value=" &gt;" />
-        <property name="drawBorder" value="false" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995669">
           <property name="flag" value="false" />
         </node>
@@ -2293,9 +2276,7 @@
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1210687257426">
-          <property name="drawBorder" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1210687257427">
-            <property name="drawBorder" value="false" />
             <property name="text" value="icon" />
             <link role="styleClass" targetNodeId="17.1186415544875" resolveInfo="KeyWord" />
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997569">
@@ -2310,7 +2291,6 @@
             </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Alternation" id="1210687257428">
-            <property name="drawBorder" value="false" />
             <node role="alternationCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1210687257429">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210687257430">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1210687257431">
@@ -2366,7 +2346,6 @@
               </node>
             </node>
             <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1210687257451">
-              <property name="drawBorder" value="false" />
               <property name="text" value="&lt;no icon&gt;" />
               <property name="textFgColor" value="lightGray" />
               <link role="styleClass" targetNodeId="17.1187948382795" resolveInfo="EmptyCell" />
@@ -2397,7 +2376,6 @@
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_JComponent" id="1210687257461">
             <property name="componentProviderID" value="SelectIconButton" />
-            <property name="drawBorder" value="false" />
             <node role="componentProvider" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_JComponent" id="1210687257462">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210687257463">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1210687257464">

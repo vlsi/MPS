@@ -27,25 +27,20 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell20705_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell20705_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_leftExpressionRefNodeCell20705_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_rightExpressionRefNodeCell20705_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell20705_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell20705_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConceptPropertyCell20705_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConceptPropertyCell20705_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_AbstractEquationInspectorComponentCell20705_0(EditorCell editorCell, SNode node, EditorContext context) {

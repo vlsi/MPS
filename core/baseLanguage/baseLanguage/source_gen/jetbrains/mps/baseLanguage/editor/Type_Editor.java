@@ -20,17 +20,14 @@ public class Type_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_AlternationCell12148_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_AlternationCell12148_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ErrorCell12148_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ErrorCell12148_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConceptPropertyCell12148_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConceptPropertyCell12148_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ErrorCell12148_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

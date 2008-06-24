@@ -23,16 +23,13 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell17987_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell17987_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_expressionRefNodeCell17987_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell17987_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell17987_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell17987_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -46,7 +43,6 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
     ReturnStatement_Actions.setCellActions(editorCell, node, context);
   }
 

@@ -20,16 +20,13 @@ public class SemanticDowncastExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell17183_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell17183_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_leftExpressionRefNodeCell17183_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell17183_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell17183_0");
-    editorCell.setDrawBorder(false);
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }

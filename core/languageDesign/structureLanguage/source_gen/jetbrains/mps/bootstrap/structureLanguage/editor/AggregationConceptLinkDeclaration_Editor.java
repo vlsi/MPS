@@ -22,29 +22,24 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
 
   private static void setupBasic_CollectionCell13781_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell13781_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell13781_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell13781_0");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
   }
 
   private static void setupBasic_namePropertyCell13781_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell13781_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell13781_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell13781_01");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
   }
 
   private static void setupBasic_targetTypeRefCell13781_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_targetTypeRefCell13781_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell13781_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -162,7 +157,6 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
 
     private static void setupBasic_namePropertyCell13781_01(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell13781_01");
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_namePropertyCell13781_01(EditorCell_Label editorCell, SNode node, EditorContext context) {

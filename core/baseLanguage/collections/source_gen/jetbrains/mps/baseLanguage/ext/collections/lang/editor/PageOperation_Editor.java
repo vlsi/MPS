@@ -22,30 +22,24 @@ public class PageOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell3703_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell3703_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell3703_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell3703_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_fromElementRefNodeCell3703_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell3703_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell3703_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_toElementRefNodeCell3703_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell3703_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell3703_02");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell3703_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

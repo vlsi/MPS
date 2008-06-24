@@ -53,7 +53,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell2318_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -67,7 +66,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell2318_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -81,7 +79,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell2318_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -95,7 +92,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell2318_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -109,11 +105,9 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_bodyRefNodeCell2318_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.FIRST_EDITABLE_CELL);
     }
@@ -130,7 +124,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell2318_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -144,28 +137,23 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
     _BaseMethodDeclaration_Actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_namePropertyCell2318_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell2318_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_parameterRefNodeListCell2318_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_parameterRefNodeListCell2318_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_AlternationCell2318_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_AlternationCell2318_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell2318_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell2318_05");
-    editorCell.setDrawBorder(false);
     editorCell.addKeyMap(new InsertFirstStatement_KeyMap());
   }
 
@@ -180,22 +168,18 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell2318_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell2318_06");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_throwsItemRefNodeListCell2318_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_throwsItemRefNodeListCell2318_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell2318_07(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell2318_07");
-    editorCell.setDrawBorder(false);
     editorCell.addKeyMap(new InsertFirstStatement_KeyMap());
   }
 
@@ -247,7 +231,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic__GenericDeclaration_TypeVariables_ComponentComponentCell2318_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "__GenericDeclaration_TypeVariables_ComponentComponentCell2318_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell2318_09(EditorCell editorCell, SNode node, EditorContext context) {
@@ -648,7 +631,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
         };
         inlineStyle.apply(editorCell);
       }
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_ConstantCell2318_04(EditorCell_Label editorCell, SNode node, EditorContext context) {

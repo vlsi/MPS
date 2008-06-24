@@ -19,20 +19,16 @@ public class SplitExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell13609_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell13609_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_exprRefNodeCell13609_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell13609_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell13609_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_regexpRefNodeCell13609_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_exprRefNodeCell13609_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

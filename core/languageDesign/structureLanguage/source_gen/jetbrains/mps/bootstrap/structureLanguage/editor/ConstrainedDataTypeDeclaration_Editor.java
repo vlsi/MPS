@@ -21,7 +21,6 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell11189_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11189_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell11189_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -35,7 +34,6 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell11189_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -49,12 +47,10 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_namePropertyCell11189_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell11189_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell11189_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -68,7 +64,6 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell11189_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -82,17 +77,14 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell11189_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11189_02");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_constraintPropertyCell11189_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_constraintPropertyCell11189_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell11189_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

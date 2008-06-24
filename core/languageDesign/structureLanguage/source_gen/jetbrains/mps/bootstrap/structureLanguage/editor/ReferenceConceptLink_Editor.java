@@ -22,22 +22,18 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell4537_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell4537_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_referenceConceptLinkDeclarationRefCell4537_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_referenceConceptLinkDeclarationRefCell4537_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell4537_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell4537_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_targetRefCell4537_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_targetRefCell4537_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_referenceConceptLinkDeclarationRefCell4537_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -140,7 +136,6 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell4537_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell4537_0");
-      editorCell.setDrawBorder(false);
       editorCell.setFontType(MPSFonts.BOLD);
     }
 
@@ -195,7 +190,6 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell4537_01(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell4537_01");
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_namePropertyCell4537_01(EditorCell_Label editorCell, SNode node, EditorContext context) {

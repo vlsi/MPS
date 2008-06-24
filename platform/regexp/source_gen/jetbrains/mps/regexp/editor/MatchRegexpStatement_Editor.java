@@ -21,7 +21,6 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell20377_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell20377_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell20377_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -35,22 +34,18 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell20377_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell20377_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell20377_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell20377_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell20377_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell20377_02");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell20377_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -64,7 +59,6 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell20377_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -78,34 +72,27 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_bodyRefNodeCell20377_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_exprRefNodeCell20377_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell20377_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell20377_04");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_regexpRefNodeCell20377_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell20377_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell20377_05");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell20377_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell20377_06");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell20377_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

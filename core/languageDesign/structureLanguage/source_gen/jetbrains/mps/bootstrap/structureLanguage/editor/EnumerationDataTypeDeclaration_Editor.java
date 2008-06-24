@@ -63,12 +63,10 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_namePropertyCell7131_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell7131_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell7131_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -82,7 +80,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7131_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -96,7 +93,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell7131_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -110,7 +106,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell7131_04(EditorCell editorCell, SNode node, EditorContext context) {
@@ -124,7 +119,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell7131_05(EditorCell editorCell, SNode node, EditorContext context) {
@@ -138,7 +132,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7131_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -152,12 +145,10 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_memberDataTypeRefCell7131_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_memberDataTypeRefCell7131_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell7131_06(EditorCell editorCell, SNode node, EditorContext context) {
@@ -171,7 +162,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7131_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -185,7 +175,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_memberRefNodeListCell7131_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -199,7 +188,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7131_04(EditorCell editorCell, SNode node, EditorContext context) {
@@ -213,7 +201,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7131_05(EditorCell editorCell, SNode node, EditorContext context) {
@@ -227,7 +214,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7131_06(EditorCell editorCell, SNode node, EditorContext context) {
@@ -241,7 +227,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7131_07(EditorCell editorCell, SNode node, EditorContext context) {
@@ -255,7 +240,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell7131_07(EditorCell editorCell, SNode node, EditorContext context) {
@@ -269,7 +253,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7131_08(EditorCell editorCell, SNode node, EditorContext context) {
@@ -283,7 +266,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7131_09(EditorCell editorCell, SNode node, EditorContext context) {
@@ -297,7 +279,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_memberIdentifierPolicyPropertyCell7131_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -321,7 +302,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7131_011(EditorCell editorCell, SNode node, EditorContext context) {
@@ -335,7 +315,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7131_012(EditorCell editorCell, SNode node, EditorContext context) {
@@ -349,12 +328,10 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_defaultMemberRefCell7131_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_defaultMemberRefCell7131_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_hasNoDefaultMemberPropertyCell7131_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -372,7 +349,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7131_013(EditorCell editorCell, SNode node, EditorContext context) {
@@ -386,7 +362,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7131_014(EditorCell editorCell, SNode node, EditorContext context) {
@@ -400,7 +375,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_noValueTextPropertyCell7131_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -937,7 +911,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell7131_01(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell7131_01");
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_namePropertyCell7131_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -990,7 +963,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_externalValuePropertyCell7131_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_externalValuePropertyCell7131_0");
-      editorCell.setDrawBorder(false);
       editorCell.setFontType(MPSFonts.BOLD);
     }
 

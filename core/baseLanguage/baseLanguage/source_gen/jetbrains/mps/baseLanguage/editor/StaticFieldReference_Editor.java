@@ -27,23 +27,19 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell19365_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell19365_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell19365_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19365_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_staticFieldDeclarationRefCell19365_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_staticFieldDeclarationRefCell19365_0");
-    editorCell.setDrawBorder(false);
     editorCell.setRightTransformAnchorTag("default_RTransform");
   }
 
   private static void setupBasic_classifierRefCell19365_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_classifierRefCell19365_0");
-    editorCell.setDrawBorder(false);
     StaticFieldReference_Actions.setCellActions(editorCell, node, context);
   }
 
@@ -149,7 +145,6 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     private static void setupBasic_namePropertyCell19365_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell19365_0");
       BaseLanguageStyle_StyleSheet.STATIC_FIELD.apply(editorCell);
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_namePropertyCell19365_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -202,7 +197,6 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell19365_01(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell19365_01");
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_namePropertyCell19365_01(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -21,7 +21,6 @@ public class PrimitiveDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell19118_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell19118_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell19118_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -35,7 +34,6 @@ public class PrimitiveDataTypeDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell19118_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -49,12 +47,10 @@ public class PrimitiveDataTypeDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_namePropertyCell19118_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell19118_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell19118_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

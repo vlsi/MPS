@@ -50,7 +50,6 @@ public class Concept_FindInstances_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell3464_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell3464_01");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
 

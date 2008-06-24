@@ -76,7 +76,6 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell21166_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -84,7 +83,6 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_typeRefNodeCell21166_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_VariableDeclaration_NameCellComponentComponentCell21166_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -102,17 +100,14 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell21166_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell21166_02");
-    editorCell.setDrawBorder(false);
     LocalVariableDeclaration_Initializer_Actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_initializerRefNodeCell21166_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell21166_05(EditorCell editorCell, SNode node, EditorContext context) {

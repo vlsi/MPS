@@ -20,20 +20,16 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell14651_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell14651_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_conditionRefNodeCell14651_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell14651_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14651_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ifTrueRefNodeCell14651_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell14651_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -47,11 +43,9 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ifFalseRefNodeCell14651_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_conditionRefNodeCell14651_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

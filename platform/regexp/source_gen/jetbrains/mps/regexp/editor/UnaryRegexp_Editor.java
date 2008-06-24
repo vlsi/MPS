@@ -18,16 +18,13 @@ public class UnaryRegexp_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell2222_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell2222_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_regexpRefNodeCell2222_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConceptPropertyCell2222_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConceptPropertyCell2222_0");
-    editorCell.setDrawBorder(false);
     UnaryRegexp_Regexp_actions.setCellActions(editorCell, node, context);
   }
 

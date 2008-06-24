@@ -27,12 +27,10 @@ public class Model_RootsOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell5758_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell5758_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_conceptRefCell5758_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_conceptRefCell5758_0");
-    editorCell.setDrawBorder(false);
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
@@ -59,7 +57,6 @@ public class Model_RootsOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell5758_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5758_01");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
 
@@ -152,7 +149,6 @@ public class Model_RootsOperation_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell5758_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell5758_0");
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_namePropertyCell5758_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

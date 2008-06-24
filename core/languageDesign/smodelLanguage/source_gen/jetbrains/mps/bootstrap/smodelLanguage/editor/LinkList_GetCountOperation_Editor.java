@@ -13,7 +13,6 @@ public class LinkList_GetCountOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell5058_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5058_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell5058_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

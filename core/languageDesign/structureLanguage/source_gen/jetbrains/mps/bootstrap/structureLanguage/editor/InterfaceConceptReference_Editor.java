@@ -19,7 +19,6 @@ public class InterfaceConceptReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_intfcRefCell19749_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_intfcRefCell19749_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_intfcRefCell19749_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -67,7 +66,6 @@ public class InterfaceConceptReference_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell19749_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell19749_0");
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_namePropertyCell19749_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

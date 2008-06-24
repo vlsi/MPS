@@ -27,26 +27,21 @@ public class Model_RootsIncludingImportedOperation_Editor extends DefaultNodeEdi
 
   private static void setupBasic_CollectionCell6453_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell6453_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_conceptRefCell6453_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_conceptRefCell6453_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_scopeRefNodeCell6453_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell6453_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6453_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell6453_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6453_01");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
 
@@ -204,7 +199,6 @@ public class Model_RootsIncludingImportedOperation_Editor extends DefaultNodeEdi
     private static void setupBasic_namePropertyCell6453_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell6453_0");
       SharedStyles_StyleSheet.REFERENCE_ON_CONCEPT.apply(editorCell);
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_namePropertyCell6453_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

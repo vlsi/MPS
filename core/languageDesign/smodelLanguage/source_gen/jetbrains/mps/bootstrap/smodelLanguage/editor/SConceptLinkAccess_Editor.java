@@ -23,17 +23,14 @@ public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell19306_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell19306_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_conceptLinkDeclarationRefCell19306_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_conceptLinkDeclarationRefCell19306_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell19306_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19306_0");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.ITALIC);
     editorCell.setLayoutConstraint("punctuation");
   }
@@ -106,7 +103,6 @@ public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell19306_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell19306_0");
-      editorCell.setDrawBorder(false);
       editorCell.setFontType(MPSFonts.ITALIC);
     }
 

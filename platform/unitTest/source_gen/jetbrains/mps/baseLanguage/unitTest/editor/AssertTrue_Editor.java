@@ -19,21 +19,17 @@ public class AssertTrue_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell20855_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell20855_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell20855_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell20855_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_conditionRefNodeCell20855_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell20855_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell20855_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell20855_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

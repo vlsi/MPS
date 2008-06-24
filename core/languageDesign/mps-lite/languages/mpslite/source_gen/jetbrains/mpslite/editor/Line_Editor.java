@@ -23,12 +23,10 @@ public class Line_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell8747_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell8747_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_linePartRefNodeListCell8747_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_linePartRefNodeListCell8747_0");
-    editorCell.setDrawBorder(false);
     editorCell.addKeyMap(new _Line_Actions());
   }
 

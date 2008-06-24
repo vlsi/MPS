@@ -22,7 +22,6 @@ public class GenericNewExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell3121_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell3121_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell3121_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -36,12 +35,10 @@ public class GenericNewExpression_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
   }
 
   private static void setupBasic_creatorRefNodeCell3121_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell3121_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

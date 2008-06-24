@@ -29,22 +29,18 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell20615_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell20615_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell20615_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell20615_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_enumConstantDeclarationRefCell20615_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_enumConstantDeclarationRefCell20615_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_enumClassRefCell20615_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_enumClassRefCell20615_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell20615_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -148,7 +144,6 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell20615_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell20615_0");
-      editorCell.setDrawBorder(false);
       editorCell.setFontType(MPSFonts.BOLD);
     }
 
@@ -203,7 +198,6 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell20615_01(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell20615_01");
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_namePropertyCell20615_01(EditorCell_Label editorCell, SNode node, EditorContext context) {

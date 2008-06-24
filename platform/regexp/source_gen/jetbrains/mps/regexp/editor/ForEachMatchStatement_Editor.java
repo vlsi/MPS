@@ -21,7 +21,6 @@ public class ForEachMatchStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell11738_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11738_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell11738_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -35,50 +34,40 @@ public class ForEachMatchStatement_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell11738_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11738_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell11738_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11738_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell11738_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11738_02");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_regexpRefNodeCell11738_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell11738_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11738_03");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_exprRefNodeCell11738_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell11738_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11738_04");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell11738_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11738_05");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell11738_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11738_06");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell11738_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -92,7 +81,6 @@ public class ForEachMatchStatement_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell11738_07(EditorCell editorCell, SNode node, EditorContext context) {
@@ -106,11 +94,9 @@ public class ForEachMatchStatement_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_bodyRefNodeCell11738_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell11738_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

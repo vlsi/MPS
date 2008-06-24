@@ -26,17 +26,14 @@ public class Node_ReplaceWithNewOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell19119_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell19119_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_conceptRefCell19119_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_conceptRefCell19119_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell19119_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19119_0");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
 
@@ -148,7 +145,6 @@ public class Node_ReplaceWithNewOperation_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell19119_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell19119_0");
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_namePropertyCell19119_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

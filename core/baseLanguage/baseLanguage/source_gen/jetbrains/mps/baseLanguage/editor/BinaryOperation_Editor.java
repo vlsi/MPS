@@ -23,16 +23,13 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell7417_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7417_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_leftExpressionRefNodeCell7417_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
     BinaryOperation_LeftArgument_Actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_rightExpressionRefNodeCell7417_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
     BinaryOperation_RightArgument_Actions.setCellActions(editorCell, node, context);
   }
 
@@ -47,7 +44,6 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
     editorCell.addKeyMap(new CastExpression_KeyMap());
   }
 

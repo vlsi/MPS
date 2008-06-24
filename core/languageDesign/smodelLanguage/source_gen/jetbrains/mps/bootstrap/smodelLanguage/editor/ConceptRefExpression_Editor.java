@@ -24,23 +24,19 @@ public class ConceptRefExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell17456_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell17456_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell17456_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell17456_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell17456_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell17456_01");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
 
   private static void setupBasic_conceptDeclarationRefCell17456_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_conceptDeclarationRefCell17456_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell17456_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -149,7 +145,6 @@ public class ConceptRefExpression_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell17456_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell17456_0");
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_namePropertyCell17456_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

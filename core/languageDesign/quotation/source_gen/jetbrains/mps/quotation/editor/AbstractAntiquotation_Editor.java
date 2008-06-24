@@ -13,7 +13,6 @@ public class AbstractAntiquotation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ErrorCell20599_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ErrorCell20599_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ErrorCell20599_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

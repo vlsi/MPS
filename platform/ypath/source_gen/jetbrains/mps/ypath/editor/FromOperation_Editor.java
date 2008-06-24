@@ -22,16 +22,13 @@ public class FromOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell15423_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15423_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_fromExpressionRefNodeCell15423_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell15423_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15423_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell15423_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

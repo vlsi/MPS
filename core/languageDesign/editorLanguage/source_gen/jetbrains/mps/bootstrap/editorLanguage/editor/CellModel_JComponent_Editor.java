@@ -20,12 +20,10 @@ public class CellModel_JComponent_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell4652_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell4652_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell4652_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell4652_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell4652_01(EditorCell editorCell, SNode node, EditorContext context) {

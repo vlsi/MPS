@@ -20,7 +20,6 @@ public class ReplaceBlock_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell1481_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell1481_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_bodyRefNodeCell1481_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -33,7 +32,6 @@ public class ReplaceBlock_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
     editorCell.setBracketsColor(MPSColors.DARK_MAGENTA);
   }
 

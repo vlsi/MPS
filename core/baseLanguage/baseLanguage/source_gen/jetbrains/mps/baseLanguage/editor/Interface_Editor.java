@@ -40,7 +40,6 @@ public class Interface_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell5419_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell5419_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell5419_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -54,7 +53,6 @@ public class Interface_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell5419_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -68,7 +66,6 @@ public class Interface_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell5419_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -82,7 +79,6 @@ public class Interface_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell5419_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -96,7 +92,6 @@ public class Interface_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell5419_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -110,7 +105,6 @@ public class Interface_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell5419_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -124,7 +118,6 @@ public class Interface_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_namePropertyCell5419_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -138,13 +131,11 @@ public class Interface_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
     editorCell.setRightTransformAnchorTag("default_RTransform");
   }
 
   private static void setupBasic_ConstantCell5419_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5419_04");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell5419_05(EditorCell editorCell, SNode node, EditorContext context) {
@@ -158,7 +149,6 @@ public class Interface_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell5419_06(EditorCell editorCell, SNode node, EditorContext context) {
@@ -172,7 +162,6 @@ public class Interface_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_methodRefNodeListCell5419_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -186,22 +175,18 @@ public class Interface_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_extendedInterfaceRefNodeListCell5419_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_extendedInterfaceRefNodeListCell5419_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic__GenericDeclaration_TypeVariables_ComponentComponentCell5419_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "__GenericDeclaration_TypeVariables_ComponentComponentCell5419_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell5419_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell5419_03");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell5419_09(EditorCell editorCell, SNode node, EditorContext context) {
@@ -215,12 +200,10 @@ public class Interface_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_staticFieldRefNodeListCell5419_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_staticFieldRefNodeListCell5419_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic__Component_VisibilityComponentCell5419_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -623,7 +606,6 @@ public class Interface_Editor extends DefaultNodeEditor {
         };
         inlineStyle.apply(editorCell);
       }
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_ConstantCell5419_07(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -687,7 +669,6 @@ public class Interface_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_ConstantCell5419_08(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5419_08");
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_ConstantCell5419_08(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -761,7 +742,6 @@ public class Interface_Editor extends DefaultNodeEditor {
         };
         inlineStyle.apply(editorCell);
       }
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_ConstantCell5419_010(EditorCell_Label editorCell, SNode node, EditorContext context) {

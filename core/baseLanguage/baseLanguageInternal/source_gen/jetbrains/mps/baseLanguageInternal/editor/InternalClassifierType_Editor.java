@@ -38,17 +38,14 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell9663_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell9663_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell9663_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell9663_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_fqClassNamePropertyCell9663_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_fqClassNamePropertyCell9663_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell9663_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -66,17 +63,14 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell9663_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell9663_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell9663_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell9663_03");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_fqClassNamePropertyCell9663_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_fqClassNamePropertyCell9663_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell9663_04(EditorCell editorCell, SNode node, EditorContext context) {

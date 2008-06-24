@@ -26,11 +26,9 @@ public class TreePathAdapterExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell8846_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell8846_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_expressionRefNodeCell8846_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell8846_01(EditorCell editorCell, SNode node, EditorContext context) {

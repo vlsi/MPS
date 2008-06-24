@@ -22,23 +22,19 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell14608_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell14608_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell14608_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell14608_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell14608_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14608_0");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_namePropertyCell14608_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell14608_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell14608_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -52,22 +48,18 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell14608_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell14608_02");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell14608_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14608_02");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_applicableNodeRefNodeCell14608_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell14608_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -81,12 +73,10 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell14608_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell14608_03");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell14608_04(EditorCell editorCell, SNode node, EditorContext context) {
@@ -100,16 +90,13 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_bodyRefNodeCell14608_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell14608_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14608_05");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell14608_04(EditorCell editorCell, SNode node, EditorContext context) {
@@ -123,12 +110,10 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_isWeakPropertyCell14608_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_isWeakPropertyCell14608_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell14608_06(EditorCell editorCell, SNode node, EditorContext context) {
@@ -145,12 +130,10 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell14608_07(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14608_07");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell14608_08(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14608_08");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell14608_06(EditorCell editorCell, SNode node, EditorContext context) {
@@ -160,12 +143,10 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell14608_09(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14608_09");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell14608_010(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14608_010");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell14608_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

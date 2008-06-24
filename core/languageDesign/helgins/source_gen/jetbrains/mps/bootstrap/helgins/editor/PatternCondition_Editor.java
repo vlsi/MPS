@@ -21,21 +21,17 @@ public class PatternCondition_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell10016_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell10016_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_patternRefNodeCell10016_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell10016_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell10016_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_namePropertyCell10016_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell10016_0");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.ITALIC);
   }
 

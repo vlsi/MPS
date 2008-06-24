@@ -26,22 +26,18 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell15249_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell15249_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell15249_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15249_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_conceptRefNodeListCell15249_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_conceptRefNodeListCell15249_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell15249_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15249_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell15249_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

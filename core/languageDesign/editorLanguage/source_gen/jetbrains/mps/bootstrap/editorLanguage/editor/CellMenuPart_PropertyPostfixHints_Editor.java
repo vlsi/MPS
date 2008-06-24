@@ -22,7 +22,6 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
 
   private static void setupBasic_CollectionCell14374_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell14374_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell14374_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -36,12 +35,10 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell14374_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14374_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell14374_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -55,7 +52,6 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell14374_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -69,7 +65,6 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell14374_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -83,7 +78,6 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell14374_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -97,11 +91,9 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_postfixesFunctionRefNodeCell14374_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell14374_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -20,12 +20,10 @@ public class TreeNodeKindOccurrence_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell20368_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell20368_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_nodeKindRefCell20368_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_nodeKindRefCell20368_0");
-    editorCell.setDrawBorder(false);
     editorCell.setRightTransformAnchorTag("default_RTransform");
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.FIRST_EDITABLE_CELL);

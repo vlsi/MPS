@@ -68,7 +68,6 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic__Component_VisibilityComponentCell7665_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -77,7 +76,6 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell7665_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7665_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7665_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -85,7 +83,6 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_typeRefNodeCell7665_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_VariableDeclaration_NameCellComponentComponentCell7665_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -104,21 +101,17 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7665_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7665_03");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_initializerRefNodeCell7665_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7665_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7665_04");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell7665_05(EditorCell editorCell, SNode node, EditorContext context) {

@@ -26,12 +26,10 @@ public class Node_InsertNewNextSiblingOperation_Editor extends DefaultNodeEditor
 
   private static void setupBasic_CollectionCell4115_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell4115_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_conceptRefCell4115_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_conceptRefCell4115_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ReplaceableAlias_CompComponentCell4115_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -55,7 +53,6 @@ public class Node_InsertNewNextSiblingOperation_Editor extends DefaultNodeEditor
 
   private static void setupBasic_ConstantCell4115_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell4115_01");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
 
@@ -148,7 +145,6 @@ public class Node_InsertNewNextSiblingOperation_Editor extends DefaultNodeEditor
 
     private static void setupBasic_namePropertyCell4115_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell4115_0");
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_namePropertyCell4115_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

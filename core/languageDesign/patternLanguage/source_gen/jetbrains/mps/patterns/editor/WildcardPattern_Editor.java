@@ -16,12 +16,10 @@ public class WildcardPattern_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell5808_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell5808_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell5808_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5808_0");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
   }
 

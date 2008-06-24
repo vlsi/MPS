@@ -24,7 +24,6 @@ public class Model_AddRootOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell18660_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell18660_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ReplaceableAlias_CompComponentCell18660_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -36,7 +35,6 @@ public class Model_AddRootOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell18660_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18660_0");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
 

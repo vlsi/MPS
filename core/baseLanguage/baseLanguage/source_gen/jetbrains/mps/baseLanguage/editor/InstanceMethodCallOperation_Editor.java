@@ -42,18 +42,15 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_instanceMethodDeclarationRefCell18816_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_instanceMethodDeclarationRefCell18816_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell18816_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18816_0");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
 
   private static void setupBasic_actualArgumentRefNodeListCell18816_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_actualArgumentRefNodeListCell18816_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell18816_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -67,7 +64,6 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
     if (renderingCondition18816_0(node, context, context.getScope())) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
@@ -175,7 +171,6 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell18816_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell18816_0");
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_namePropertyCell18816_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -237,7 +232,6 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
         };
         inlineStyle.apply(editorCell);
       }
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_ConstantCell18816_01(EditorCell_Label editorCell, SNode node, EditorContext context) {

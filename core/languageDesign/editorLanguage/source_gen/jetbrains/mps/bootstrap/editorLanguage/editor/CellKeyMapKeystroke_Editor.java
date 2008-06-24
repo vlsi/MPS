@@ -28,7 +28,6 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell1532_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell1532_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell1532_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -42,12 +41,10 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_modifiersPropertyCell1532_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_modifiersPropertyCell1532_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell1532_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -61,12 +58,10 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_keycodePropertyCell1532_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_keycodePropertyCell1532_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell1532_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -80,7 +75,6 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell1532_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

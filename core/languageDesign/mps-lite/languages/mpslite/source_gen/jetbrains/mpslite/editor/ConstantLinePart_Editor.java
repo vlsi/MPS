@@ -17,12 +17,10 @@ public class ConstantLinePart_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell4507_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell4507_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_textPropertyCell4507_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_textPropertyCell4507_0");
-    editorCell.setDrawBorder(false);
     _LinePart_RT.setCellActions(editorCell, node, context);
   }
 

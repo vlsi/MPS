@@ -21,30 +21,24 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell5520_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell5520_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell5520_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell5520_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell5520_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5520_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_regexpRefNodeCell5520_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell5520_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5520_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_exprRefNodeCell5520_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell5520_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -58,7 +52,6 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell5520_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -72,16 +65,13 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell5520_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5520_03");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_replaceBlockRefNodeCell5520_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell5520_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

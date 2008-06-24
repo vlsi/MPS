@@ -24,12 +24,10 @@ public class SConceptType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell224_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell224_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell224_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell224_0");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
   }
 
@@ -44,12 +42,10 @@ public class SConceptType_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_conceptDeclaratonRefCell224_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_conceptDeclaratonRefCell224_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell224_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -63,7 +59,6 @@ public class SConceptType_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell224_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -159,7 +154,6 @@ public class SConceptType_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell224_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell224_0");
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_namePropertyCell224_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -27,7 +27,6 @@ public class PredefinedSymbolClasses_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell9149_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell9149_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell9149_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -41,7 +40,6 @@ public class PredefinedSymbolClasses_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell9149_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -55,22 +53,18 @@ public class PredefinedSymbolClasses_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell9149_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell9149_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell9149_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell9149_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell9149_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell9149_02");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell9149_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -84,12 +78,10 @@ public class PredefinedSymbolClasses_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_symbolClassRefNodeListCell9149_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_symbolClassRefNodeListCell9149_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell9149_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

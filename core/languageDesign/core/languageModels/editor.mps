@@ -51,7 +51,6 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1117830771316">
     <link role="conceptDeclaration" targetNodeId="1.1078489098625" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1152908253258">
-      <property name="drawBorder" value="false" />
       <property name="noTargetText" value="&lt;no name&gt;" />
       <link role="relationDeclaration" targetNodeId="1.1169194664001" />
     </node>
@@ -61,7 +60,6 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1133921115694">
       <property name="editable" value="true" />
       <property name="textFgColor" value="lightGray" />
-      <property name="drawBorder" value="false" />
       <property name="nullText" value="&lt;abstract concept&gt;" />
     </node>
   </node>

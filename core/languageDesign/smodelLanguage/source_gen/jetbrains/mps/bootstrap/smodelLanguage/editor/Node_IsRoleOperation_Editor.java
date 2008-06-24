@@ -27,12 +27,10 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell6011_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell6011_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_conceptOfParentRefCell6011_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_conceptOfParentRefCell6011_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell6011_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -46,17 +44,14 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_linkInParentRefCell6011_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_linkInParentRefCell6011_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell6011_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6011_01");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
 
@@ -213,7 +208,6 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell6011_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell6011_0");
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_namePropertyCell6011_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -267,7 +261,6 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_rolePropertyCell6011_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_rolePropertyCell6011_0");
-      editorCell.setDrawBorder(false);
       editorCell.setFontType(MPSFonts.ITALIC);
     }
 

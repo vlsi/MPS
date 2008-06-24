@@ -21,12 +21,10 @@ public class MatchVariableReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell20506_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell20506_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_matchRefCell20506_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_matchRefCell20506_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_matchRefCell20506_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -84,7 +82,6 @@ public class MatchVariableReference_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell20506_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell20506_0");
-      editorCell.setDrawBorder(false);
       editorCell.setFontType(MPSFonts.ITALIC);
     }
 

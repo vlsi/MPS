@@ -27,11 +27,9 @@ public class TreePathOperationExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_expressionRefNodeCell18011_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_operationRefNodeCell18011_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
@@ -53,7 +51,6 @@ public class TreePathOperationExpression_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell18011_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -67,7 +64,6 @@ public class TreePathOperationExpression_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_expressionRefNodeCell18011_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

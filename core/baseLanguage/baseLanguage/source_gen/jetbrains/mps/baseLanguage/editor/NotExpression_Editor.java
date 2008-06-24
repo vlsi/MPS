@@ -20,17 +20,14 @@ public class NotExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell5726_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell5726_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell5726_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5726_0");
-    editorCell.setDrawBorder(false);
     NotExpression_Parens_Actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_expressionRefNodeCell5726_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell5726_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -44,7 +41,6 @@ public class NotExpression_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
     NotExpression_Parens_Actions.setCellActions(editorCell, node, context);
   }
 

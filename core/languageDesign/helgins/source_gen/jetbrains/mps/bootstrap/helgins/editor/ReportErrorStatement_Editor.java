@@ -19,30 +19,24 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell13901_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell13901_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell13901_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell13901_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_errorStringRefNodeCell13901_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell13901_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell13901_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_nodeToReportRefNodeCell13901_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell13901_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell13901_02");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell13901_01(EditorCell editorCell, SNode node, EditorContext context) {

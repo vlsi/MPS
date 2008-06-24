@@ -19,7 +19,6 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell743_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell743_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell743_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -33,12 +32,10 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell743_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell743_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell743_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -52,7 +49,6 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell743_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -66,12 +62,10 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell743_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell743_02");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.ITALIC);
   }
 

@@ -15,12 +15,10 @@ public class IndentLinePart_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell927_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell927_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell927_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell927_0");
-    editorCell.setDrawBorder(false);
     _LinePart_RT.setCellActions(editorCell, node, context);
   }
 

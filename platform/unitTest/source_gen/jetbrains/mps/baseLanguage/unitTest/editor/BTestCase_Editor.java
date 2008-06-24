@@ -32,7 +32,6 @@ public class BTestCase_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell16676_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell16676_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell16676_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -46,26 +45,21 @@ public class BTestCase_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell16676_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell16676_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_testCaseNamePropertyCell16676_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_testCaseNamePropertyCell16676_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell16676_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell16676_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_superclassRefNodeCell16676_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell16676_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -79,21 +73,17 @@ public class BTestCase_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_testMethodListRefNodeCell16676_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_methodRefNodeListCell16676_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_methodRefNodeListCell16676_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_staticFieldRefNodeListCell16676_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_staticFieldRefNodeListCell16676_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell16676_05(EditorCell editorCell, SNode node, EditorContext context) {
@@ -107,7 +97,6 @@ public class BTestCase_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell16676_06(EditorCell editorCell, SNode node, EditorContext context) {
@@ -121,7 +110,6 @@ public class BTestCase_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell16676_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -349,7 +337,6 @@ public class BTestCase_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_ConstantCell16676_03(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell16676_03");
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_ConstantCell16676_03(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -413,7 +400,6 @@ public class BTestCase_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_ConstantCell16676_04(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell16676_04");
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_ConstantCell16676_04(EditorCell_Label editorCell, SNode node, EditorContext context) {

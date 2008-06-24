@@ -27,12 +27,10 @@ public class OperationParm_Concept_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell7071_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7071_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7071_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7071_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell7071_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -50,7 +48,6 @@ public class OperationParm_Concept_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_conceptRefCell7071_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_conceptRefCell7071_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7071_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -190,7 +187,6 @@ public class OperationParm_Concept_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell7071_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell7071_0");
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_namePropertyCell7071_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

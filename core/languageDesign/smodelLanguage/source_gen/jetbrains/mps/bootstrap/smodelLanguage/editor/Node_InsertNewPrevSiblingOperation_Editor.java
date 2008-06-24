@@ -26,17 +26,14 @@ public class Node_InsertNewPrevSiblingOperation_Editor extends DefaultNodeEditor
 
   private static void setupBasic_CollectionCell8787_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell8787_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_conceptRefCell8787_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_conceptRefCell8787_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell8787_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell8787_0");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
 
@@ -148,7 +145,6 @@ public class Node_InsertNewPrevSiblingOperation_Editor extends DefaultNodeEditor
 
     private static void setupBasic_namePropertyCell8787_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell8787_0");
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_namePropertyCell8787_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -19,30 +19,24 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell8225_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell8225_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell8225_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell8225_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_warningTextRefNodeCell8225_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell8225_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell8225_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_nodeToReportRefNodeCell8225_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell8225_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell8225_02");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell8225_01(EditorCell editorCell, SNode node, EditorContext context) {

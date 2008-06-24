@@ -19,22 +19,18 @@ public class ParensRegexp_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell20612_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell20612_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell20612_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell20612_0");
-    editorCell.setDrawBorder(false);
     ParensRegexp_Actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_exprRefNodeCell20612_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell20612_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell20612_01");
-    editorCell.setDrawBorder(false);
     ParensRegexp_Actions.setCellActions(editorCell, node, context);
   }
 

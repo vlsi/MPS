@@ -24,7 +24,6 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell4539_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell4539_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell4539_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -38,12 +37,10 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell4539_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell4539_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell4539_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -57,12 +54,10 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_applicablePropertyRefCell4539_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_applicablePropertyRefCell4539_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell4539_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -76,7 +71,6 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell4539_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -90,7 +84,6 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell4539_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -104,7 +97,6 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell4539_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -118,7 +110,6 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell4539_04(EditorCell editorCell, SNode node, EditorContext context) {
@@ -132,12 +123,10 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell4539_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell4539_04");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell4539_05(EditorCell editorCell, SNode node, EditorContext context) {
@@ -151,7 +140,6 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_propertyGetterRefNodeCell4539_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -168,12 +156,10 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell4539_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell4539_06");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell4539_07(EditorCell editorCell, SNode node, EditorContext context) {
@@ -187,7 +173,6 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell4539_06(EditorCell editorCell, SNode node, EditorContext context) {
@@ -201,12 +186,10 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell4539_08(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell4539_08");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell4539_09(EditorCell editorCell, SNode node, EditorContext context) {
@@ -220,12 +203,10 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell4539_010(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell4539_010");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_propertySetterRefNodeCell4539_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -586,7 +567,6 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell4539_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell4539_0");
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_namePropertyCell4539_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

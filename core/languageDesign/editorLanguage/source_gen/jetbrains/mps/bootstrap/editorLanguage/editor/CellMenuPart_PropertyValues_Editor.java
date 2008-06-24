@@ -22,7 +22,6 @@ public class CellMenuPart_PropertyValues_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell13005_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell13005_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell13005_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -36,7 +35,6 @@ public class CellMenuPart_PropertyValues_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell13005_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -50,7 +48,6 @@ public class CellMenuPart_PropertyValues_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell13005_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -64,11 +61,9 @@ public class CellMenuPart_PropertyValues_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_valuesFunctionRefNodeCell13005_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell13005_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -82,12 +77,10 @@ public class CellMenuPart_PropertyValues_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell13005_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell13005_02");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell13005_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -101,7 +94,6 @@ public class CellMenuPart_PropertyValues_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell13005_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

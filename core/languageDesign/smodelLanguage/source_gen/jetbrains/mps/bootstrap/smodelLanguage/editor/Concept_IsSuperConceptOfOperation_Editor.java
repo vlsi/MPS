@@ -24,7 +24,6 @@ public class Concept_IsSuperConceptOfOperation_Editor extends DefaultNodeEditor 
 
   private static void setupBasic_CollectionCell13835_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell13835_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ReplaceableAlias_CompComponentCell13835_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -51,7 +50,6 @@ public class Concept_IsSuperConceptOfOperation_Editor extends DefaultNodeEditor 
 
   private static void setupBasic_ConstantCell13835_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell13835_01");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
 

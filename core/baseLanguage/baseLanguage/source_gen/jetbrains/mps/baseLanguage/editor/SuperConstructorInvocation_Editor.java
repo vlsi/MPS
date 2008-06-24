@@ -28,22 +28,18 @@ public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell12443_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell12443_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell12443_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell12443_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell12443_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell12443_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_actualArgumentRefNodeListCell12443_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_actualArgumentRefNodeListCell12443_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell12443_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -151,7 +147,6 @@ public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
         };
         inlineStyle.apply(editorCell);
       }
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_ConstantCell12443_02(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -20,38 +20,31 @@ public class FromNToMTimesRegexp_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell1435_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell1435_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_regexpRefNodeCell1435_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell1435_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell1435_0");
-    editorCell.setDrawBorder(false);
     UnaryRegexp_Regexp_actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_nPropertyCell1435_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_nPropertyCell1435_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell1435_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell1435_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell1435_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell1435_02");
-    editorCell.setDrawBorder(false);
     UnaryRegexp_Regexp_actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_mPropertyCell1435_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_mPropertyCell1435_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_regexpRefNodeCell1435_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

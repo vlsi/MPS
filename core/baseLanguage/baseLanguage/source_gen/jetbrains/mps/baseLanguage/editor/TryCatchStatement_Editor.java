@@ -31,7 +31,6 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell18678_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell18678_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell18678_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -45,17 +44,14 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell18678_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18678_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell18678_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18678_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell18678_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -69,7 +65,6 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell18678_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -83,16 +78,13 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_bodyRefNodeCell18678_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_catchClauseRefNodeListCell18678_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_catchClauseRefNodeListCell18678_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell18678_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -106,12 +98,10 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell18678_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18678_03");
-    editorCell.setDrawBorder(false);
     editorCell.setRightTransformAnchorTag("default_RTransform");
   }
 

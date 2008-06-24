@@ -20,18 +20,15 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell585_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell585_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell585_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell585_0");
-    editorCell.setDrawBorder(false);
     DeleteParenthesis_Actions.setCellActions(editorCell, node, context);
     editorCell.addKeyMap(new OpenParenthesis_KeyMap());
   }
 
   private static void setupBasic_expressionRefNodeCell585_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell585_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -45,7 +42,6 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
     DeleteParenthesis_Actions.setCellActions(editorCell, node, context);
     editorCell.addKeyMap(new CloseParenthesis_KeyMap());
   }

@@ -43,23 +43,19 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell9480_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell9480_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell9480_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell9480_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell9480_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell9480_0");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_namePropertyCell9480_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell9480_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell9480_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -110,7 +106,6 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell9480_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell9480_05");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell9480_04(EditorCell editorCell, SNode node, EditorContext context) {
@@ -121,11 +116,9 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell9480_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell9480_05");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_applicableNodeRefNodeCell9480_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.FIRST_EDITABLE_CELL);
     }
@@ -164,7 +157,6 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell9480_07(EditorCell editorCell, SNode node, EditorContext context) {
@@ -183,7 +175,6 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell9480_08(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell9480_08");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell9480_09(EditorCell editorCell, SNode node, EditorContext context) {
@@ -192,7 +183,6 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell9480_08(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell9480_08");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell9480_010(EditorCell editorCell, SNode node, EditorContext context) {
@@ -206,16 +196,13 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_bodyRefNodeCell9480_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell9480_011(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell9480_011");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell9480_012(EditorCell editorCell, SNode node, EditorContext context) {

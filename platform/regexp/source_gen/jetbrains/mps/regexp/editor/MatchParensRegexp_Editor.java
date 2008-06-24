@@ -21,27 +21,22 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell15418_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell15418_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell15418_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15418_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell15418_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15418_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_namePropertyCell15418_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell15418_0");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.ITALIC);
   }
 
   private static void setupBasic_regexpRefNodeCell15418_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell15418_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

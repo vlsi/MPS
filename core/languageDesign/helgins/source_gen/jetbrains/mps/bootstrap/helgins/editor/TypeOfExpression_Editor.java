@@ -22,26 +22,21 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell14674_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell14674_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell14674_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14674_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_termRefNodeCell14674_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell14674_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14674_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell14674_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14674_02");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell14674_01(EditorCell editorCell, SNode node, EditorContext context) {

@@ -24,12 +24,10 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell10226_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell10226_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_integerConceptPropertyDeclarationRefCell10226_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_integerConceptPropertyDeclarationRefCell10226_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell10226_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -43,12 +41,10 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_valuePropertyCell10226_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_valuePropertyCell10226_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_integerConceptPropertyDeclarationRefCell10226_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -152,7 +148,6 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell10226_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell10226_0");
-      editorCell.setDrawBorder(false);
       editorCell.setFontType(MPSFonts.BOLD);
     }
 

@@ -25,7 +25,6 @@ public class NullLiteral_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell6877_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

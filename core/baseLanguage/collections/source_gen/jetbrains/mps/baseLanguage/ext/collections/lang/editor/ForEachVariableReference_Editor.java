@@ -18,7 +18,6 @@ public class ForEachVariableReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_variableRefCell3865_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_variableRefCell3865_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_variableRefCell3865_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -66,7 +65,6 @@ public class ForEachVariableReference_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell3865_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell3865_0");
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_namePropertyCell3865_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

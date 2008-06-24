@@ -21,7 +21,6 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell12173_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell12173_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_leftExpressionRefNodeCell12173_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -34,12 +33,10 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell12173_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell12173_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_classTypeRefNodeCell12173_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -52,7 +49,6 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_leftExpressionRefNodeCell12173_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

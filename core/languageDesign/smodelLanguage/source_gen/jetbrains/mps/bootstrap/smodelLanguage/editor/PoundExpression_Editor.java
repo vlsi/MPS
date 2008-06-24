@@ -20,17 +20,14 @@ public class PoundExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell18647_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell18647_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell18647_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18647_0");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.ITALIC);
   }
 
   private static void setupBasic_expressionRefNodeCell18647_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell18647_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

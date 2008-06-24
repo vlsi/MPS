@@ -20,18 +20,15 @@ public class StringConceptPropertyDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell1972_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell1972_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell1972_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell1972_0");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
   }
 
   private static void setupBasic_namePropertyCell1972_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell1972_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell1972_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

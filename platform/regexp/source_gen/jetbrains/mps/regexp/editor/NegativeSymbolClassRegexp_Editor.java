@@ -25,22 +25,18 @@ public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell3053_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell3053_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell3053_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell3053_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_partRefNodeListCell3053_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_partRefNodeListCell3053_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell3053_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell3053_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell3053_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

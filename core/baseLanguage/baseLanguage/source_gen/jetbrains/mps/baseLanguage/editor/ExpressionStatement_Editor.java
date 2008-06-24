@@ -20,7 +20,6 @@ public class ExpressionStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell140_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell140_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_expressionRefNodeCell140_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -33,13 +32,11 @@ public class ExpressionStatement_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
     ExpressionStatement_Expression_Actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_ConstantCell140_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell140_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_expressionRefNodeCell140_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

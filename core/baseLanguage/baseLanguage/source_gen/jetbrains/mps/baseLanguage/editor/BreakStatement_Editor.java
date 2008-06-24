@@ -35,18 +35,15 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell2369_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell2369_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell2369_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell2369_0");
-    editorCell.setDrawBorder(false);
     editorCell.setRightTransformAnchorTag("default_RTransform");
   }
 
   private static void setupBasic_ConstantCell2369_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell2369_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell2369_01(EditorCell editorCell, SNode node, EditorContext context) {

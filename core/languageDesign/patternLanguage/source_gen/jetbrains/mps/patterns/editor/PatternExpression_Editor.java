@@ -21,7 +21,6 @@ public class PatternExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell364_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell364_0");
-    editorCell.setDrawBorder(false);
     editorCell.addKeyMap(new _PatternExpression_KeyMap());
   }
 
@@ -36,7 +35,6 @@ public class PatternExpression_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_patternNodeRefNodeCell364_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -44,12 +42,12 @@ public class PatternExpression_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.DRAW_BRACKETS, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(true);
   }
 
   private static void setupBasic_ConstantCell364_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -63,7 +61,6 @@ public class PatternExpression_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell364_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

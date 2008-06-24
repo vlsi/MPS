@@ -36,7 +36,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell17307_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell17307_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell17307_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -50,7 +49,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell17307_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -77,21 +75,17 @@ public class IfStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell17307_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell17307_02");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell17307_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell17307_03");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_conditionRefNodeCell17307_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell17307_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell17307_04");
-    editorCell.setDrawBorder(false);
     editorCell.addKeyMap(new InsertFirstStatement_KeyMap());
   }
 
@@ -106,7 +100,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell17307_05(EditorCell editorCell, SNode node, EditorContext context) {
@@ -120,11 +113,9 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ifTrueRefNodeCell17307_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell17307_06(EditorCell editorCell, SNode node, EditorContext context) {
@@ -138,7 +129,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
     IfStatement_rTransform_action.setCellActions(editorCell, node, context);
   }
 
@@ -157,7 +147,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell17307_05(EditorCell editorCell, SNode node, EditorContext context) {
@@ -171,24 +160,20 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell17307_07(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell17307_07");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell17307_08(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell17307_08");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
     IfStatement_elseDelete_action.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_ConstantCell17307_09(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell17307_09");
-    editorCell.setDrawBorder(false);
     IfStatement_elseBlockStatement_delete.setCellActions(editorCell, node, context);
     editorCell.addKeyMap(new InsertFirstStatement_KeyMap());
   }
@@ -204,7 +189,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell17307_010(EditorCell editorCell, SNode node, EditorContext context) {
@@ -218,11 +202,9 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ifFalseStatementRefNodeCell17307_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell17307_07(EditorCell editorCell, SNode node, EditorContext context) {
@@ -236,12 +218,10 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell17307_011(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell17307_011");
-    editorCell.setDrawBorder(false);
     IfStatement_elseBlockStatement_delete.setCellActions(editorCell, node, context);
   }
 

@@ -49,7 +49,6 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
     editorCell.addKeyMap(new FieldDeclaration_keyMap());
   }
 
@@ -58,7 +57,6 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_typeRefNodeCell3369_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_VariableDeclaration_NameCellComponentComponentCell3369_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -77,21 +75,17 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell3369_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell3369_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_initializerRefNodeCell3369_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell3369_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell3369_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell3369_03(EditorCell editorCell, SNode node, EditorContext context) {

@@ -18,16 +18,13 @@ public class ArrayType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell6968_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell6968_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_componentTypeRefNodeCell6968_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell6968_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6968_0");
-    editorCell.setDrawBorder(false);
     ArrayType_Brackets_Actions.setCellActions(editorCell, node, context);
   }
 

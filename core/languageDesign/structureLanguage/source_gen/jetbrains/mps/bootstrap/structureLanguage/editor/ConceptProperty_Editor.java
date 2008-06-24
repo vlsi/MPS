@@ -13,7 +13,6 @@ public class ConceptProperty_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ErrorCell6683_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ErrorCell6683_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ErrorCell6683_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

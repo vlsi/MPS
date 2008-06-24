@@ -22,7 +22,6 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell3670_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell3670_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell3670_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -36,7 +35,6 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell3670_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -50,21 +48,17 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_statementsRefNodeCell3670_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell3670_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell3670_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell3670_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell3670_02");
-    editorCell.setDrawBorder(false);
     editorCell.addKeyMap(new InsertFirstStatement_KeyMap());
   }
 

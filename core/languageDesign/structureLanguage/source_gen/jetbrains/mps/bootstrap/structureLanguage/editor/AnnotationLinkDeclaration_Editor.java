@@ -23,7 +23,6 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell418_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell418_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell418_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -37,7 +36,6 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell418_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -55,7 +53,6 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell418_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell418_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_rolePropertyCell418_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -86,7 +83,6 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell418_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -117,12 +113,10 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell418_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell418_03");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_stereotypePropertyCell418_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_stereotypePropertyCell418_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell418_05(EditorCell editorCell, SNode node, EditorContext context) {
@@ -140,12 +134,10 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell418_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell418_04");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_sourceRefCell418_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_sourceRefCell418_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell418_06(EditorCell editorCell, SNode node, EditorContext context) {
@@ -163,12 +155,10 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell418_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell418_05");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_targetRefCell418_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_targetRefCell418_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell418_07(EditorCell editorCell, SNode node, EditorContext context) {
@@ -186,12 +176,10 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell418_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell418_06");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_sourceCardinalityPropertyCell418_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_sourceCardinalityPropertyCell418_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell418_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -535,7 +523,6 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell418_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell418_0");
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_namePropertyCell418_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -589,7 +576,6 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell418_01(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell418_01");
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_namePropertyCell418_01(EditorCell_Label editorCell, SNode node, EditorContext context) {

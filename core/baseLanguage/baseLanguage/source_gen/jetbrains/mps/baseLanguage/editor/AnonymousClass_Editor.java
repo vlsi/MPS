@@ -55,7 +55,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell15389_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -69,12 +68,10 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell15389_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15389_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell15389_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -88,7 +85,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell15389_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -102,7 +98,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_fieldRefNodeListCell15389_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -116,7 +111,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell15389_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -130,7 +124,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell15389_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -144,7 +137,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_methodRefNodeListCell15389_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -158,7 +150,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell15389_05(EditorCell editorCell, SNode node, EditorContext context) {
@@ -172,28 +163,23 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_classifierRefCell15389_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_classifierRefCell15389_0");
-    editorCell.setDrawBorder(false);
     AnonymousClass_AfterName.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_ConstantCell15389_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15389_06");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_parameterRefNodeListCell15389_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_parameterRefNodeListCell15389_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell15389_07(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15389_07");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell15389_04(EditorCell editorCell, SNode node, EditorContext context) {
@@ -685,7 +671,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell15389_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell15389_0");
-      editorCell.setDrawBorder(false);
       editorCell.setRightTransformAnchorTag("default_RTransform");
     }
 
@@ -749,7 +734,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
         };
         inlineStyle.apply(editorCell);
       }
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_ConstantCell15389_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -823,7 +807,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
         };
         inlineStyle.apply(editorCell);
       }
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_ConstantCell15389_04(EditorCell_Label editorCell, SNode node, EditorContext context) {

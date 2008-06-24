@@ -17,12 +17,10 @@ public class CharacterSymbolClassPart_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell1945_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell1945_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_characterPropertyCell1945_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_characterPropertyCell1945_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_characterPropertyCell1945_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -24,16 +24,13 @@ public class LinkList_InsertChildFirstOperation_Editor extends DefaultNodeEditor
 
   private static void setupBasic_CollectionCell17807_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell17807_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_parameterRefNodeCell17807_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell17807_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell17807_0");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
 

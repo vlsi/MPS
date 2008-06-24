@@ -37,7 +37,6 @@ public class StatementList_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_statementRefNodeListCell6566_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -78,7 +77,6 @@ public class StatementList_Editor extends DefaultNodeEditor {
         };
         inlineStyle.apply(editorCell);
       }
-      editorCell.setDrawBorder(false);
       editorCell.setFontType(MPSFonts.ITALIC);
     }
 

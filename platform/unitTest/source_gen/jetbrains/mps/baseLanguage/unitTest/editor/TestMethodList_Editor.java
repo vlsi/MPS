@@ -24,7 +24,6 @@ public class TestMethodList_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_testMethodRefNodeListCell13710_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_testMethodRefNodeListCell13710_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_testMethodRefNodeListCell13710_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -56,7 +55,6 @@ public class TestMethodList_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_ConstantCell13710_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell13710_0");
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_ConstantCell13710_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

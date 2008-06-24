@@ -18,21 +18,17 @@ public class BinaryRegexp_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell14105_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell14105_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_leftRefNodeCell14105_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
     BinaryRegexp_Left_Actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_ConceptPropertyCell14105_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConceptPropertyCell14105_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_rightRefNodeCell14105_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
     BinaryRegexp_Right_Actions.setCellActions(editorCell, node, context);
   }
 

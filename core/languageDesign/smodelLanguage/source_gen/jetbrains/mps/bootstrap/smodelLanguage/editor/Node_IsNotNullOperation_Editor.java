@@ -14,7 +14,6 @@ public class Node_IsNotNullOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell17955_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell17955_0");
-    editorCell.setDrawBorder(false);
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }

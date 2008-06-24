@@ -21,7 +21,6 @@ public class CatchClause_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell6964_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell6964_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell6964_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -35,31 +34,25 @@ public class CatchClause_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell6964_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6964_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell6964_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6964_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell6964_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6964_02");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_throwableRefNodeCell6964_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell6964_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6964_03");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell6964_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -73,7 +66,6 @@ public class CatchClause_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell6964_04(EditorCell editorCell, SNode node, EditorContext context) {
@@ -87,11 +79,9 @@ public class CatchClause_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_catchBodyRefNodeCell6964_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell6964_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

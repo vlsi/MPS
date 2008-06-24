@@ -24,7 +24,6 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell19999_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell19999_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell19999_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -38,17 +37,14 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell19999_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19999_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_namePropertyCell19999_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell19999_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell19999_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -62,7 +58,6 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell19999_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -76,7 +71,6 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell19999_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -90,7 +84,6 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell19999_04(EditorCell editorCell, SNode node, EditorContext context) {
@@ -104,17 +97,14 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_conceptDeclarationRefCell19999_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_conceptDeclarationRefCell19999_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell19999_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19999_02");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell19999_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -128,20 +118,16 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_menuDescriptorRefNodeCell19999_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell19999_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19999_04");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_applicableFeatureRefNodeCell19999_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell19999_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -398,7 +384,15 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell19999_01(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell19999_01");
-      editorCell.setDrawBorder(true);
+      {
+        Style inlineStyle = new Style() {
+          {
+            this.set(StyleAttributes.DRAW_BORDER, true);
+          }
+
+        };
+        inlineStyle.apply(editorCell);
+      }
     }
 
     private static void setupLabel_namePropertyCell19999_01(EditorCell_Label editorCell, SNode node, EditorContext context) {

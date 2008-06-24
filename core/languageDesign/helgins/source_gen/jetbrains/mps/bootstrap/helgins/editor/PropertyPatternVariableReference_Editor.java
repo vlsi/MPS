@@ -20,7 +20,6 @@ public class PropertyPatternVariableReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_patternVarDeclRefCell2093_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_patternVarDeclRefCell2093_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_patternVarDeclRefCell2093_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -68,7 +67,6 @@ public class PropertyPatternVariableReference_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell2093_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell2093_0");
-      editorCell.setDrawBorder(false);
       editorCell.setFontType(MPSFonts.BOLD_ITALIC);
     }
 

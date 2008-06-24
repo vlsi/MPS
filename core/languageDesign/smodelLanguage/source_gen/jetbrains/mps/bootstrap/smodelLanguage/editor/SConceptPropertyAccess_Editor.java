@@ -20,7 +20,6 @@ public class SConceptPropertyAccess_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_conceptPropertyRefCell3912_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_conceptPropertyRefCell3912_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_conceptPropertyRefCell3912_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -68,7 +67,6 @@ public class SConceptPropertyAccess_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell3912_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell3912_0");
-      editorCell.setDrawBorder(false);
       editorCell.setFontType(MPSFonts.ITALIC);
     }
 

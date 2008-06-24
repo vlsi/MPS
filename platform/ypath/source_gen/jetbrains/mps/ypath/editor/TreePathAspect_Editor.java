@@ -40,7 +40,6 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell7950_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7950_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell7950_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -54,7 +53,6 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7950_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -68,7 +66,6 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7950_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -82,13 +79,11 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_namePropertyCell7950_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell7950_0");
     BaseLanguageStyle_StyleSheet.FIELD.apply(editorCell);
-    editorCell.setDrawBorder(false);
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
@@ -105,7 +100,6 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_visibilityRefNodeCell7950_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -143,13 +137,11 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7950_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7950_04");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7950_05(EditorCell editorCell, SNode node, EditorContext context) {
@@ -163,7 +155,6 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell7950_05(EditorCell editorCell, SNode node, EditorContext context) {
@@ -177,7 +168,6 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7950_06(EditorCell editorCell, SNode node, EditorContext context) {
@@ -191,12 +181,10 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_nodeKindsRefNodeListCell7950_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_nodeKindsRefNodeListCell7950_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7950_08(EditorCell editorCell, SNode node, EditorContext context) {
@@ -210,7 +198,6 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell7950_06(EditorCell editorCell, SNode node, EditorContext context) {
@@ -224,7 +211,6 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7950_09(EditorCell editorCell, SNode node, EditorContext context) {
@@ -238,7 +224,6 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_TreePath_componentComponentCell7950_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -429,7 +414,6 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7950_022(EditorCell editorCell, SNode node, EditorContext context) {
@@ -447,11 +431,9 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_parentBlockRefNodeCell7950_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7950_024(EditorCell editorCell, SNode node, EditorContext context) {
@@ -465,7 +447,6 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell7950_014(EditorCell editorCell, SNode node, EditorContext context) {
@@ -479,7 +460,6 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7950_025(EditorCell editorCell, SNode node, EditorContext context) {
@@ -497,11 +477,9 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_childrenBlockRefNodeCell7950_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7950_027(EditorCell editorCell, SNode node, EditorContext context) {
@@ -545,7 +523,6 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7950_030(EditorCell editorCell, SNode node, EditorContext context) {
@@ -1279,7 +1256,6 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_ConstantCell7950_07(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7950_07");
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_ConstantCell7950_07(EditorCell_Label editorCell, SNode node, EditorContext context) {

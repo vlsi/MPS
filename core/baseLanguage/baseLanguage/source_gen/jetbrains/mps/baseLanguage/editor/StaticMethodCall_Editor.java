@@ -30,28 +30,23 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell12257_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell12257_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell12257_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell12257_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_staticMethodDeclarationRefCell12257_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_staticMethodDeclarationRefCell12257_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_classConceptRefCell12257_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_classConceptRefCell12257_0");
-    editorCell.setDrawBorder(false);
     StaticMethodCall_Actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_IMethodCall_actualArgumentsComponentCell12257_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_IMethodCall_actualArgumentsComponentCell12257_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell12257_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -165,7 +160,6 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell12257_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell12257_0");
-      editorCell.setDrawBorder(false);
       editorCell.setFontType(MPSFonts.ITALIC);
     }
 
@@ -219,7 +213,6 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell12257_01(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell12257_01");
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_namePropertyCell12257_01(EditorCell_Label editorCell, SNode node, EditorContext context) {

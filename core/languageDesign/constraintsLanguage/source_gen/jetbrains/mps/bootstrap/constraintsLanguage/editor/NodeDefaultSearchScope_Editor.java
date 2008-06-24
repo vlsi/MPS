@@ -22,12 +22,10 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell4442_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell4442_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell4442_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell4442_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell4442_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -41,7 +39,6 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell4442_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -55,7 +52,6 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell4442_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -69,7 +65,6 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell4442_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -83,7 +78,6 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell4442_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -97,12 +91,10 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_descriptionPropertyCell4442_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_descriptionPropertyCell4442_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell4442_04(EditorCell editorCell, SNode node, EditorContext context) {
@@ -116,7 +108,6 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell4442_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -130,7 +121,6 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell4442_04(EditorCell editorCell, SNode node, EditorContext context) {
@@ -144,11 +134,9 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_searchScopeCanCreateRefNodeCell4442_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell4442_05(EditorCell editorCell, SNode node, EditorContext context) {
@@ -162,7 +150,6 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell4442_05(EditorCell editorCell, SNode node, EditorContext context) {
@@ -176,7 +163,6 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell4442_06(EditorCell editorCell, SNode node, EditorContext context) {
@@ -190,16 +176,13 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_searchScopeFactoryRefNodeCell4442_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell4442_07(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell4442_07");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell4442_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

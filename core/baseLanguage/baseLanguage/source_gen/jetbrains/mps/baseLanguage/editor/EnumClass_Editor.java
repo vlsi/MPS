@@ -36,7 +36,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell1623_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell1623_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell1623_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -50,22 +49,18 @@ public class EnumClass_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_fieldRefNodeListCell1623_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_fieldRefNodeListCell1623_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell1623_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell1623_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell1623_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell1623_02");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell1623_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -79,7 +74,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_namePropertyCell1623_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -93,7 +87,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell1623_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -107,12 +100,10 @@ public class EnumClass_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell1623_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell1623_03");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell1623_04(EditorCell editorCell, SNode node, EditorContext context) {
@@ -126,12 +117,10 @@ public class EnumClass_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_enumConstantRefNodeListCell1623_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_enumConstantRefNodeListCell1623_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell1623_06(EditorCell editorCell, SNode node, EditorContext context) {
@@ -145,12 +134,10 @@ public class EnumClass_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell1623_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell1623_04");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell1623_07(EditorCell editorCell, SNode node, EditorContext context) {
@@ -164,17 +151,14 @@ public class EnumClass_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_constructorRefNodeListCell1623_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_constructorRefNodeListCell1623_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell1623_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell1623_05");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell1623_09(EditorCell editorCell, SNode node, EditorContext context) {
@@ -188,17 +172,14 @@ public class EnumClass_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_methodRefNodeListCell1623_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_methodRefNodeListCell1623_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell1623_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell1623_06");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell1623_011(EditorCell editorCell, SNode node, EditorContext context) {
@@ -212,12 +193,10 @@ public class EnumClass_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_staticMethodRefNodeListCell1623_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_staticMethodRefNodeListCell1623_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell1623_013(EditorCell editorCell, SNode node, EditorContext context) {
@@ -231,7 +210,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell1623_014(EditorCell editorCell, SNode node, EditorContext context) {
@@ -245,7 +223,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell1623_015(EditorCell editorCell, SNode node, EditorContext context) {
@@ -259,7 +236,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell1623_016(EditorCell editorCell, SNode node, EditorContext context) {
@@ -273,7 +249,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell1623_017(EditorCell editorCell, SNode node, EditorContext context) {
@@ -287,12 +262,10 @@ public class EnumClass_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_implementedInterfaceRefNodeListCell1623_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_implementedInterfaceRefNodeListCell1623_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell1623_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -679,7 +652,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
         };
         inlineStyle.apply(editorCell);
       }
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_ConstantCell1623_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -752,7 +724,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
         };
         inlineStyle.apply(editorCell);
       }
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_ConstantCell1623_05(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -825,7 +796,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
         };
         inlineStyle.apply(editorCell);
       }
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_ConstantCell1623_08(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -898,7 +868,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
         };
         inlineStyle.apply(editorCell);
       }
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_ConstantCell1623_010(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -971,7 +940,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
         };
         inlineStyle.apply(editorCell);
       }
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_ConstantCell1623_012(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -1035,7 +1003,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_ConstantCell1623_018(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell1623_018");
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_ConstantCell1623_018(EditorCell_Label editorCell, SNode node, EditorContext context) {

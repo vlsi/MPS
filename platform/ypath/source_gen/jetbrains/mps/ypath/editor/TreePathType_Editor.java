@@ -24,16 +24,13 @@ public class TreePathType_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell672_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell672_0");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_nodeTypeRefNodeCell672_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell672_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell672_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell672_02(EditorCell editorCell, SNode node, EditorContext context) {

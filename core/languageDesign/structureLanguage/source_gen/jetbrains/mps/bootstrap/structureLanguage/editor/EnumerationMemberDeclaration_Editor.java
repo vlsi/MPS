@@ -27,18 +27,15 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell15113_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell15113_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_externalValuePropertyCell15113_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_externalValuePropertyCell15113_0");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
   }
 
   private static void setupBasic_internalValuePropertyCell15113_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_internalValuePropertyCell15113_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell15113_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -52,7 +49,6 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
 
@@ -67,7 +63,6 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.ITALIC);
   }
 
@@ -82,7 +77,6 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.ITALIC);
   }
 
@@ -110,13 +104,11 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.ITALIC);
   }
 
   private static void setupBasic_javaIdentifierPropertyCell15113_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_javaIdentifierPropertyCell15113_0");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD_ITALIC);
   }
 

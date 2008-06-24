@@ -31,12 +31,10 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell19273_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19273_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell19273_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -50,12 +48,10 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell19273_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19273_02");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
 
@@ -70,12 +66,10 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell19273_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19273_04");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
 
@@ -90,7 +84,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell19273_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -104,17 +97,14 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell19273_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19273_05");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell19273_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19273_06");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
 
@@ -129,17 +119,14 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell19273_07(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19273_07");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell19273_08(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19273_08");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
 
@@ -154,12 +141,10 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell19273_09(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19273_09");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell19273_05(EditorCell editorCell, SNode node, EditorContext context) {
@@ -173,18 +158,15 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell19273_010(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19273_010");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
 
   private static void setupBasic_ConstantCell19273_011(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19273_011");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
 
@@ -199,17 +181,14 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell19273_012(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19273_012");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell19273_013(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19273_013");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
 

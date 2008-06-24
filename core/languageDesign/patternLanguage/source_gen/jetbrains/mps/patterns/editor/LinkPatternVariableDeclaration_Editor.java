@@ -20,18 +20,15 @@ public class LinkPatternVariableDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell11478_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11478_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_varNamePropertyCell11478_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_varNamePropertyCell11478_0");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
   }
 
   private static void setupBasic_ConstantCell11478_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11478_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_varNamePropertyCell11478_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -32,29 +32,24 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell8771_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell8771_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_conceptRefCell8771_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_conceptRefCell8771_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell8771_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell8771_0");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell8771_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell8771_01");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_namePropertyCell8771_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell8771_01");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.ITALIC);
   }
 
@@ -188,7 +183,6 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell8771_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell8771_0");
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_namePropertyCell8771_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -19,12 +19,10 @@ public class StringLiteralRegexp_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell17177_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell17177_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_textPropertyCell17177_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_textPropertyCell17177_0");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
   }
 

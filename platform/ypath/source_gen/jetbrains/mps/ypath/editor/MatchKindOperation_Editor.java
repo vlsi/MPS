@@ -27,23 +27,19 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell2350_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell2350_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell2350_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell2350_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell2350_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell2350_01");
-    editorCell.setDrawBorder(false);
     editorCell.setRightTransformAnchorTag("default_RTransform");
   }
 
   private static void setupBasic_AlternationCell2350_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_AlternationCell2350_0");
-    editorCell.setDrawBorder(false);
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
@@ -51,7 +47,6 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell2350_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell2350_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell2350_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -65,12 +60,10 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_nodeKindRefCell2350_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_nodeKindRefCell2350_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_nodeKindOccurrenceRefNodeCell2350_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -83,7 +76,6 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell2350_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -20,26 +20,21 @@ public class InternalVariableReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell9449_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell9449_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell9449_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell9449_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_typeRefNodeCell9449_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell9449_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell9449_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_namePropertyCell9449_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell9449_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell9449_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

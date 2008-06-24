@@ -21,17 +21,14 @@ public class BLArrayType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell9131_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell9131_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_componentTypeRefCell9131_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_componentTypeRefCell9131_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell9131_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell9131_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_componentTypeRefCell9131_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

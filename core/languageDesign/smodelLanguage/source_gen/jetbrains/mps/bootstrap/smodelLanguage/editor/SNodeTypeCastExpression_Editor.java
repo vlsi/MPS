@@ -24,11 +24,9 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell3022_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell3022_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_leftExpressionRefNodeCell3022_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell3022_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -42,12 +40,10 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_conceptRefCell3022_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_conceptRefCell3022_0");
-    editorCell.setDrawBorder(false);
     SNodeTypeCastExpression_Concept_Actions.setCellActions(editorCell, node, context);
   }
 
@@ -151,7 +147,6 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell3022_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell3022_0");
-      editorCell.setDrawBorder(false);
     }
 
     private static void setupLabel_namePropertyCell3022_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

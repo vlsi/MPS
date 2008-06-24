@@ -29,16 +29,13 @@ public class AbstractEquationInspector extends AbstractCellProvider {
 
   private static void setupBasic_CollectionCell19992_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell19992_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell19992_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19992_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_nodeToCheckRefNodeCell19992_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell19992_02(EditorCell editorCell, SNode node, EditorContext context) {

@@ -22,21 +22,17 @@ public class TakeOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell9583_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell9583_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell9583_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell9583_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_elementsToTakeRefNodeCell9583_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell9583_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell9583_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell9583_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

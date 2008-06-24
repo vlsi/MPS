@@ -24,11 +24,9 @@ public class Property_SetOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell16681_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell16681_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_valueRefNodeCell16681_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ReplaceableAlias_CompComponentCell16681_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -52,7 +50,6 @@ public class Property_SetOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell16681_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell16681_01");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
 

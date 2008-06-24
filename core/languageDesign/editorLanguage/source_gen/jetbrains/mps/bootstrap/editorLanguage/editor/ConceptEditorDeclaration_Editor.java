@@ -24,7 +24,6 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell15502_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell15502_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell15502_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -38,7 +37,6 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell15502_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -52,7 +50,6 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell15502_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -66,7 +63,6 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell15502_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -80,7 +76,6 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell15502_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -94,7 +89,6 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell15502_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -108,7 +102,6 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell15502_04(EditorCell editorCell, SNode node, EditorContext context) {
@@ -122,7 +115,6 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell15502_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -136,7 +128,6 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell15502_05(EditorCell editorCell, SNode node, EditorContext context) {
@@ -150,7 +141,6 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell15502_04(EditorCell editorCell, SNode node, EditorContext context) {
@@ -164,7 +154,6 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell15502_06(EditorCell editorCell, SNode node, EditorContext context) {
@@ -178,7 +167,6 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell15502_05(EditorCell editorCell, SNode node, EditorContext context) {
@@ -192,7 +180,6 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell15502_06(EditorCell editorCell, SNode node, EditorContext context) {
@@ -206,7 +193,6 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell15502_07(EditorCell editorCell, SNode node, EditorContext context) {
@@ -220,7 +206,6 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell15502_07(EditorCell editorCell, SNode node, EditorContext context) {
@@ -234,21 +219,17 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_inspectedCellModelRefNodeCell15502_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
     editorCell.addKeyMap(new EditorCellModel_KeyMap());
   }
 
   private static void setupBasic_conceptDeclarationRefCell15502_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_conceptDeclarationRefCell15502_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_cellModelRefNodeCell15502_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
     editorCell.addKeyMap(new EditorCellModel_KeyMap());
   }
 
@@ -540,7 +521,15 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
     private static void setupBasic_namePropertyCell15502_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell15502_0");
       SharedStyles_StyleSheet.REFERENCE_ON_CONCEPT.apply(editorCell);
-      editorCell.setDrawBorder(true);
+      {
+        Style inlineStyle = new Style() {
+          {
+            this.set(StyleAttributes.DRAW_BORDER, true);
+          }
+
+        };
+        inlineStyle.apply(editorCell);
+      }
     }
 
     private static void setupLabel_namePropertyCell15502_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

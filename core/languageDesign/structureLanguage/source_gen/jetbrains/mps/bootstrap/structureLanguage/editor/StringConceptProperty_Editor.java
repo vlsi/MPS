@@ -24,12 +24,10 @@ public class StringConceptProperty_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell16366_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell16366_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_stringConceptPropertyDeclarationRefCell16366_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_stringConceptPropertyDeclarationRefCell16366_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell16366_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -43,12 +41,10 @@ public class StringConceptProperty_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_valuePropertyCell16366_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_valuePropertyCell16366_0");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
   }
 
@@ -153,7 +149,6 @@ public class StringConceptProperty_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell16366_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell16366_0");
-      editorCell.setDrawBorder(false);
       editorCell.setFontType(MPSFonts.BOLD);
     }
 

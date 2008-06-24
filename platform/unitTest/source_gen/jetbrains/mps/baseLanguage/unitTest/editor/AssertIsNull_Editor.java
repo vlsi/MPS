@@ -19,26 +19,21 @@ public class AssertIsNull_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell3525_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell3525_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell3525_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell3525_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell3525_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell3525_01");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_expressionRefNodeCell3525_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell3525_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell3525_02");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell3525_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

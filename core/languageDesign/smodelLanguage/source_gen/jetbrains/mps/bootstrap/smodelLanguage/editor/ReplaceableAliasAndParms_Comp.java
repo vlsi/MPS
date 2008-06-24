@@ -62,7 +62,6 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell14862_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -76,18 +75,15 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
   }
 
   private static void setupBasic_parameterRefNodeListCell14862_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_parameterRefNodeListCell14862_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell14862_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14862_02");
-    editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
   }
 
@@ -210,7 +206,6 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
 
     private static void setupBasic_ConstantCell14862_01(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14862_01");
-      editorCell.setDrawBorder(false);
       editorCell.setFontType(MPSFonts.ITALIC);
     }
 

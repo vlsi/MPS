@@ -20,23 +20,19 @@ public class LookRegexp_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell4356_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell4356_0");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConceptPropertyCell4356_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConceptPropertyCell4356_0");
-    editorCell.setDrawBorder(false);
     LookRegexp_Actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_ConstantCell4356_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell4356_0");
-    editorCell.setDrawBorder(false);
     LookRegexp_Actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_regexpRefNodeCell4356_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConceptPropertyCell4356_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
