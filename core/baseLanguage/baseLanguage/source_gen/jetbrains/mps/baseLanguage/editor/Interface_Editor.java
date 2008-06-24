@@ -126,12 +126,12 @@ public class Interface_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setRightTransformAnchorTag("default_RTransform");
   }
 
   private static void setupBasic_ConstantCell5419_04(EditorCell editorCell, SNode node, EditorContext context) {

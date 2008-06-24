@@ -102,7 +102,15 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell18678_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18678_03");
-    editorCell.setRightTransformAnchorTag("default_RTransform");
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_ConstantCell18678_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

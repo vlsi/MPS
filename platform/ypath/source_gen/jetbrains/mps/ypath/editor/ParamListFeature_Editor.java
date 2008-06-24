@@ -72,7 +72,15 @@ public class ParamListFeature_Editor extends DefaultNodeEditor {
   private static void setupBasic_namePropertyCell17093_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell17093_0");
     BaseLanguageStyle_StyleSheet.FIELD.apply(editorCell);
-    editorCell.setRightTransformAnchorTag("default_RTransform");
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell17093_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -745,7 +753,15 @@ public class ParamListFeature_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell17093_030(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell17093_030");
-    editorCell.setRightTransformAnchorTag("default_RTransform");
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_IParamFeature_PropertiesComponentCell17093_0(EditorCell editorCell, SNode node, EditorContext context) {

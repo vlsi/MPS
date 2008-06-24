@@ -76,12 +76,12 @@ public class Annotation_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setRightTransformAnchorTag("default_RTransform");
   }
 
   private static void setupBasic__GenericDeclaration_TypeVariables_ComponentComponentCell15436_0(EditorCell editorCell, SNode node, EditorContext context) {

@@ -130,9 +130,11 @@
         <property name="editable" value="false" />
         <property name="textFgColor" value="DARK_BLUE" />
         <property name="text" value="sequence" />
-        <property name="rightTransformAnchorTag" value="default_RTransform" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934379">
           <property name="style" value="BOLD" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.RightTransformAnchorTagStyleSheetItem" id="1214321202522">
+          <property name="tag" value="default_RTransform" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1207756961014">

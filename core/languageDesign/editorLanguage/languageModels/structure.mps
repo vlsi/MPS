@@ -142,6 +142,10 @@
       <property name="name" value="layoutConstraint" />
       <link role="dataType" targetNodeId="1138197387103" resolveInfo="_Layout_Constraints_Enum" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1140813989553">
+      <property name="name" value="rightTransformAnchorTag" />
+      <link role="dataType" targetNodeId="1140813780565" resolveInfo="RightTransformAnchorTag" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1102623213256">
       <property name="name" value="bracketsColor" />
       <link role="dataType" targetNodeId="1083952545109" resolveInfo="_Colors_Enum" />
@@ -149,10 +153,6 @@
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1139312911783">
       <property name="name" value="cellBackground" />
       <link role="dataType" targetNodeId="1083952545109" resolveInfo="_Colors_Enum" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1140813989553">
-      <property name="name" value="rightTransformAnchorTag" />
-      <link role="dataType" targetNodeId="1140813780565" resolveInfo="RightTransformAnchorTag" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1130859485024">
       <property name="name" value="attractsFocus" />
@@ -2819,6 +2819,19 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1214317859052">
       <property name="value" value="layout constraint" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1214320119173">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="RightTransformAnchorTagStyleSheetItem" />
+    <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1214320119174">
+      <property name="name" value="tag" />
+      <link role="dataType" targetNodeId="1140813780565" resolveInfo="RightTransformAnchorTag" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1214320119175">
+      <property name="value" value="right transform anchor tag" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
   </node>

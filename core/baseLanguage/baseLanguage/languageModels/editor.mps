@@ -149,10 +149,12 @@
           <property name="writable" value="true" />
           <property name="noTargetText" value="&lt;no name&gt;" />
           <property name="defaultValue" value="&lt;no name&gt;" />
-          <property name="rightTransformAnchorTag" value="default_RTransform" />
           <link role="relationDeclaration" targetNodeId="18.1169194664001" />
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993946">
             <property name="flag" value="true" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.RightTransformAnchorTagStyleSheetItem" id="1214321202519">
+            <property name="tag" value="default_RTransform" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1109281144581">
@@ -1979,8 +1981,10 @@
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1135374809820">
             <property name="editable" value="true" />
             <property name="readOnly" value="true" />
-            <property name="rightTransformAnchorTag" value="ext_1_RTransform" />
             <link role="relationDeclaration" targetNodeId="17.1211505677611" resolveInfo="nestedName" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.RightTransformAnchorTagStyleSheetItem" id="1214321202530">
+              <property name="tag" value="ext_1_RTransform" />
+            </node>
           </node>
         </node>
       </node>
@@ -3263,7 +3267,6 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1088427644683">
         <property name="noTargetText" value="&lt;no static member&gt;" />
-        <property name="rightTransformAnchorTag" value="default_RTransform" />
         <link role="relationDeclaration" targetNodeId="17.1070568178160" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1088427644684">
           <link role="conceptDeclaration" targetNodeId="17.1070462154015" />
@@ -3302,6 +3305,9 @@
               </node>
             </node>
           </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.RightTransformAnchorTagStyleSheetItem" id="1214321202514">
+          <property name="tag" value="default_RTransform" />
         </node>
       </node>
     </node>
@@ -3361,7 +3367,9 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1101210485459">
         <property name="textFgColor" value="DARK_BLUE" />
         <property name="text" value="break" />
-        <property name="rightTransformAnchorTag" value="default_RTransform" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.RightTransformAnchorTagStyleSheetItem" id="1214321202523">
+          <property name="tag" value="default_RTransform" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1199466153260">
         <property name="vertical" value="false" />
@@ -3519,7 +3527,9 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1101210485461">
         <property name="textFgColor" value="DARK_BLUE" />
         <property name="text" value="continue" />
-        <property name="rightTransformAnchorTag" value="default_RTransform" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.RightTransformAnchorTagStyleSheetItem" id="1214321202520">
+          <property name="tag" value="default_RTransform" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1199470083774">
         <property name="vertical" value="false" />
@@ -4178,10 +4188,12 @@
           <property name="writable" value="true" />
           <property name="noTargetText" value="&lt;no name&gt;" />
           <property name="defaultValue" value="&lt;no name&gt;" />
-          <property name="rightTransformAnchorTag" value="default_RTransform" />
           <link role="relationDeclaration" targetNodeId="18.1169194664001" />
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994053">
             <property name="flag" value="true" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.RightTransformAnchorTagStyleSheetItem" id="1214321202516">
+            <property name="tag" value="default_RTransform" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1109281106345">
@@ -7215,7 +7227,9 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1164911197639">
           <property name="editable" value="true" />
           <property name="text" value="}" />
-          <property name="rightTransformAnchorTag" value="default_RTransform" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.RightTransformAnchorTagStyleSheetItem" id="1214321202526">
+            <property name="tag" value="default_RTransform" />
+          </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995400">
           <property name="flag" value="false" />
@@ -7569,8 +7583,10 @@
             <link role="conceptDeclaration" targetNodeId="17.1107461130800" />
             <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1170346092162">
               <property name="readOnly" value="true" />
-              <property name="rightTransformAnchorTag" value="default_RTransform" />
               <link role="relationDeclaration" targetNodeId="18.1169194664001" />
+              <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.RightTransformAnchorTagStyleSheetItem" id="1214321202512">
+                <property name="tag" value="default_RTransform" />
+              </node>
             </node>
           </node>
         </node>
@@ -9329,7 +9345,6 @@
       <property name="defaultValue" value="?" />
       <property name="noTargetText" value="&lt;no name&gt;" />
       <property name="attractsFocus" value="0" />
-      <property name="rightTransformAnchorTag" value="default_RTransform" />
       <link role="relationDeclaration" targetNodeId="18.1169194664001" />
       <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1181823199383">
         <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_PropertyPostfixHints" id="1181823199384">
@@ -9444,6 +9459,9 @@
             </node>
           </node>
         </node>
+      </node>
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.RightTransformAnchorTagStyleSheetItem" id="1214321202510">
+        <property name="tag" value="default_RTransform" />
       </node>
     </node>
   </node>
@@ -10077,10 +10095,12 @@
           <property name="writable" value="true" />
           <property name="noTargetText" value="&lt;no name&gt;" />
           <property name="defaultValue" value="&lt;no name&gt;" />
-          <property name="rightTransformAnchorTag" value="default_RTransform" />
           <link role="relationDeclaration" targetNodeId="18.1169194664001" />
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997834">
             <property name="flag" value="true" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.RightTransformAnchorTagStyleSheetItem" id="1214321202515">
+            <property name="tag" value="default_RTransform" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1188206420402">
@@ -14916,8 +14936,10 @@
           <link role="conceptDeclaration" targetNodeId="17.1068580123140" resolveInfo="ConstructorDeclaration" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1212700054374">
             <property name="readOnly" value="true" />
-            <property name="rightTransformAnchorTag" value="ext_1_RTransform" />
             <link role="relationDeclaration" targetNodeId="18.1196978656277" resolveInfo="resolveInfo" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.RightTransformAnchorTagStyleSheetItem" id="1214321202508">
+              <property name="tag" value="ext_1_RTransform" />
+            </node>
           </node>
         </node>
       </node>

@@ -111,7 +111,15 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   private static void setupBasic_namePropertyCell11481_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell11481_0");
     BaseLanguageStyle_StyleSheet.FIELD.apply(editorCell);
-    editorCell.setRightTransformAnchorTag("default_RTransform");
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     IFeature_opposite_DELETE.setCellActions(editorCell, node, context);
   }
 
