@@ -1412,7 +1412,9 @@
     <link role="conceptDeclaration" targetNodeId="1.1204471433283" resolveInfo="InstanceExpression" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1204471477599">
       <property name="text" value="instance" />
-      <property name="fontStyle" value="BOLD" />
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934181">
+        <property name="style" value="BOLD" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1204903559628">

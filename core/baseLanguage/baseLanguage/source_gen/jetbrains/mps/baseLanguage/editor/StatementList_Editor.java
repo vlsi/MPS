@@ -72,12 +72,12 @@ public class StatementList_Editor extends DefaultNodeEditor {
         Style inlineStyle = new Style() {
           {
             this.set(StyleAttributes.SELECTABLE, true);
+            this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
           }
 
         };
         inlineStyle.apply(editorCell);
       }
-      editorCell.setFontType(MPSFonts.ITALIC);
     }
 
     private static void setupLabel_ConstantCell6566_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -84,7 +84,15 @@ public class SetAccessor_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell20837_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell20837_04");
-    editorCell.setFontType(MPSFonts.PLAIN);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell20837_05(EditorCell editorCell, SNode node, EditorContext context) {

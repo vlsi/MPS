@@ -28,8 +28,10 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1167245583614">
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1167245583615">
         <property name="textFgColor" value="DARK_BLUE" />
-        <property name="fontStyle" value="BOLD" />
         <link role="relationDeclaration" targetNodeId="1.1167245565795" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934315">
+          <property name="style" value="BOLD" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1167245583616">
         <link role="relationDeclaration" targetNodeId="1.1167227463056" />

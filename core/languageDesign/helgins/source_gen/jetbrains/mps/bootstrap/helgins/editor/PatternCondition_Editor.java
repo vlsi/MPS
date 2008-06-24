@@ -6,6 +6,8 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -32,7 +34,15 @@ public class PatternCondition_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_namePropertyCell10016_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell10016_0");
-    editorCell.setFontType(MPSFonts.ITALIC);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_patternRefNodeCell10016_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

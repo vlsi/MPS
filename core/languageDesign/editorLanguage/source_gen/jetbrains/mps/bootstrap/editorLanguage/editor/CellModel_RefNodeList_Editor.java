@@ -1592,6 +1592,10 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     return !(SPropertyOperations.hasValue(node, "drawBorder", null, null));
   }
 
+  public static boolean renderingCondition3462_06(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.hasValue(node, "fontStyle", null, null));
+  }
+
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.create_CollectionCell3462_0(context, node);
@@ -1741,7 +1745,9 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.create_CollectionCell3462_027(context, node));
     }
     editorCell.addEditorCell(this.create_CollectionCell3462_028(context, node));
-    editorCell.addEditorCell(this.create_CollectionCell3462_029(context, node));
+    if (renderingCondition3462_06(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.create_CollectionCell3462_029(context, node));
+    }
     editorCell.addEditorCell(this.create_CollectionCell3462_030(context, node));
     editorCell.addEditorCell(this.create_CollectionCell3462_031(context, node));
     editorCell.addEditorCell(this.create_ConstantCell3462_036(context, node, ""));

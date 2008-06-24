@@ -66,8 +66,10 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168428749595">
         <property name="text" value="&gt;" />
-        <property name="fontStyle" value="BOLD" />
         <property name="textFgColor" value="blue" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934234">
+          <property name="style" value="BOLD" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1168428754196">
         <link role="relationDeclaration" targetNodeId="5.1137022507850" />
@@ -893,9 +895,11 @@
         <link role="actionMap" targetNodeId="1197908358603" resolveInfo="TreeNodeKindProperty_default_DELETE" />
         <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1175877925790">
           <property name="text" value="default" />
-          <property name="fontStyle" value="BOLD" />
           <property name="textFgColor" value="DARK_MAGENTA" />
           <property name="editable" value="false" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934069">
+            <property name="style" value="BOLD" />
+          </node>
         </node>
         <node role="alternationCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1175877896716">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1175877896717">
@@ -1434,9 +1438,11 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1180010561182">
     <link role="conceptDeclaration" targetNodeId="1.1168428709096" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1180010566277">
-      <property name="fontStyle" value="ITALIC" />
       <property name="textFgColor" value="DARK_BLUE" />
       <link role="relationDeclaration" targetNodeId="2.1169194664001" />
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934414">
+        <property name="style" value="ITALIC" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1180011189625">

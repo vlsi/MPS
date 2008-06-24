@@ -111,7 +111,15 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_descriptionPropertyCell5279_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_descriptionPropertyCell5279_0");
-    editorCell.setFontType(MPSFonts.BOLD);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_ConstantCell5279_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

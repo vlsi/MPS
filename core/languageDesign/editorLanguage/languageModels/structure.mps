@@ -126,6 +126,10 @@
       <property name="propertyType" value="string" />
       <link role="dataType" targetNodeId="1083928804390" resolveInfo="_YesNoDefault_Enum" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1130426512758">
+      <property name="name" value="fontStyle" />
+      <link role="dataType" targetNodeId="1101211480448" resolveInfo="_FontStyle_Enum" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1129573164669">
       <property name="name" value="layoutConstraint" />
       <link role="dataType" targetNodeId="1138197387103" resolveInfo="_Layout_Constraints_Enum" />
@@ -137,10 +141,6 @@
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1139312911783">
       <property name="name" value="cellBackground" />
       <link role="dataType" targetNodeId="1083952545109" resolveInfo="_Colors_Enum" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1130426512758">
-      <property name="name" value="fontStyle" />
-      <link role="dataType" targetNodeId="1101211480448" resolveInfo="_FontStyle_Enum" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1130426512759">
       <property name="name" value="fontSize" />

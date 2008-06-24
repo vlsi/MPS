@@ -614,6 +614,27 @@
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBorderStyleSheetItem" id="1214314940922">
             <property name="flag" value="true" />
           </node>
+          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1214317101615">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214317101616">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214317101617">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1214317101618">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214317101619">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214317101620">
+                      <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1214317101621" />
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1214317101622">
+                        <link role="property" targetNodeId="2.1130426512758" resolveInfo="fontStyle" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1214317101623">
+                      <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1214317101624">
+                        <link role="enumMember" targetNodeId="2.1101211506174" resolveInfo="none" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1145902640159">
           <property name="vertical" value="false" />
@@ -1574,6 +1595,27 @@
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBorderStyleSheetItem" id="1214314940992">
             <property name="flag" value="true" />
+          </node>
+          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1214317024683">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214317024684">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214317026997">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1214317026998">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214317030240">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214317028017">
+                      <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1214317027750" />
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1214317029957">
+                        <link role="property" targetNodeId="2.1130426512758" resolveInfo="fontStyle" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1214317031696">
+                      <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1214317031697">
+                        <link role="enumMember" targetNodeId="2.1101211506174" resolveInfo="none" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1130429540625">
@@ -2765,6 +2807,27 @@
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBorderStyleSheetItem" id="1214314939792">
             <property name="flag" value="true" />
+          </node>
+          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1214317043806">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214317043807">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214317043808">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1214317043809">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214317043810">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214317043811">
+                      <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1214317043812" />
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1214317043813">
+                        <link role="property" targetNodeId="2.1130426512758" resolveInfo="fontStyle" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1214317043814">
+                      <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1214317043815">
+                        <link role="enumMember" targetNodeId="2.1101211506174" resolveInfo="none" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1145902451607">
@@ -3964,6 +4027,27 @@
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBorderStyleSheetItem" id="1214314941309">
             <property name="flag" value="true" />
           </node>
+          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1214317106751">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214317106752">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214317106753">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1214317106754">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214317106755">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214317106756">
+                      <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1214317106757" />
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1214317106758">
+                        <link role="property" targetNodeId="2.1130426512758" resolveInfo="fontStyle" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1214317106759">
+                      <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1214317106760">
+                        <link role="enumMember" targetNodeId="2.1101211506174" resolveInfo="none" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1145902821121">
           <property name="vertical" value="false" />
@@ -4858,6 +4942,27 @@
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBorderStyleSheetItem" id="1214314940826">
             <property name="flag" value="true" />
           </node>
+          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1214317119061">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214317119062">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214317119063">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1214317119064">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214317119065">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214317119066">
+                      <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1214317119067" />
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1214317119068">
+                        <link role="property" targetNodeId="2.1130426512758" resolveInfo="fontStyle" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1214317119069">
+                      <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1214317119070">
+                        <link role="enumMember" targetNodeId="2.1101211506174" resolveInfo="none" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1145902907781">
           <property name="vertical" value="false" />
@@ -5673,6 +5778,27 @@
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBorderStyleSheetItem" id="1214314941637">
             <property name="flag" value="true" />
+          </node>
+          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1214317129857">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214317129858">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214317129859">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1214317129860">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214317129861">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214317129862">
+                      <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1214317129863" />
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1214317129864">
+                        <link role="property" targetNodeId="2.1130426512758" resolveInfo="fontStyle" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1214317129865">
+                      <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1214317129866">
+                        <link role="enumMember" targetNodeId="2.1101211506174" resolveInfo="none" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1145903133908">
@@ -6537,6 +6663,27 @@
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBorderStyleSheetItem" id="1214314941615">
             <property name="flag" value="true" />
+          </node>
+          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1214317122790">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214317122791">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214317122792">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1214317122793">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214317122794">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214317122795">
+                      <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1214317122796" />
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1214317122797">
+                        <link role="property" targetNodeId="2.1130426512758" resolveInfo="fontStyle" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1214317122798">
+                      <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1214317122799">
+                        <link role="enumMember" targetNodeId="2.1101211506174" resolveInfo="none" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1145902985711">
@@ -7760,8 +7907,10 @@
             <property name="textFgColor" value="DARK_GREEN" />
             <property name="allowEmptyText" value="true" />
             <property name="noTargetText" value="&lt;no description&gt;" />
-            <property name="fontStyle" value="BOLD" />
             <link role="relationDeclaration" targetNodeId="2.1136916941877" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934232">
+              <property name="style" value="BOLD" />
+            </node>
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994929">
             <property name="flag" value="false" />
@@ -7805,8 +7954,10 @@
             <property name="textFgColor" value="DARK_MAGENTA" />
             <property name="allowEmptyText" value="true" />
             <property name="noTargetText" value="&lt;no description&gt;" />
-            <property name="fontStyle" value="BOLD" />
             <link role="relationDeclaration" targetNodeId="2.1141091278922" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934192">
+              <property name="style" value="BOLD" />
+            </node>
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996957">
             <property name="flag" value="false" />
@@ -8546,6 +8697,27 @@
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBorderStyleSheetItem" id="1214314939821">
             <property name="flag" value="true" />
+          </node>
+          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1214317038886">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214317038887">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214317038888">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1214317038889">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214317038890">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214317038891">
+                      <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1214317038892" />
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1214317038893">
+                        <link role="property" targetNodeId="2.1130426512758" resolveInfo="fontStyle" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1214317038894">
+                      <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1214317038895">
+                        <link role="enumMember" targetNodeId="2.1101211506174" resolveInfo="none" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1145902319368">
@@ -9371,8 +9543,10 @@
             <property name="textFgColor" value="DARK_GREEN" />
             <property name="allowEmptyText" value="true" />
             <property name="noTargetText" value="&lt;no description&gt;" />
-            <property name="fontStyle" value="BOLD" />
             <link role="relationDeclaration" targetNodeId="2.1139537298254" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934239">
+              <property name="style" value="BOLD" />
+            </node>
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997154">
             <property name="flag" value="false" />
@@ -10051,7 +10225,9 @@
           <property name="editable" value="true" />
           <property name="textFgColor" value="darkGray" />
           <property name="text" value="&lt;choose menu part&gt;" />
-          <property name="fontStyle" value="ITALIC" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934340">
+            <property name="style" value="ITALIC" />
+          </node>
         </node>
       </node>
     </node>
@@ -10060,8 +10236,10 @@
     <property name="package" value="CellMenu" />
     <link role="conceptDeclaration" targetNodeId="2.1164824854750" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Error" id="1164841410765">
-      <property name="fontStyle" value="ITALIC" />
       <property name="text" value="&lt;choose menu part&gt;" />
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934290">
+        <property name="style" value="ITALIC" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1164834536966">
@@ -10183,7 +10361,9 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1165017449842">
           <property name="textFgColor" value="darkGray" />
           <property name="text" value="no customization needed" />
-          <property name="fontStyle" value="ITALIC" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934218">
+            <property name="style" value="ITALIC" />
+          </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996546">
           <property name="flag" value="false" />
@@ -11132,7 +11312,9 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1174088130958">
           <property name="textFgColor" value="darkGray" />
           <property name="text" value="no customization needed" />
-          <property name="fontStyle" value="ITALIC" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934366">
+            <property name="style" value="ITALIC" />
+          </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997634">
           <property name="flag" value="false" />
@@ -12563,6 +12745,27 @@
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBorderStyleSheetItem" id="1214314941353">
             <property name="flag" value="true" />
+          </node>
+          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1214317126300">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214317126301">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214317126302">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1214317126303">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214317126304">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214317126305">
+                      <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1214317126306" />
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1214317126307">
+                        <link role="property" targetNodeId="2.1130426512758" resolveInfo="fontStyle" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1214317126308">
+                      <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1214317126309">
+                        <link role="enumMember" targetNodeId="2.1101211506174" resolveInfo="none" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1182191264680">

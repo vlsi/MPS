@@ -130,8 +130,10 @@
         <property name="editable" value="false" />
         <property name="textFgColor" value="DARK_BLUE" />
         <property name="text" value="sequence" />
-        <property name="fontStyle" value="BOLD" />
         <property name="rightTransformAnchorTag" value="default_RTransform" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934379">
+          <property name="style" value="BOLD" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1207756961014">
         <property name="vertical" value="false" />
@@ -197,7 +199,9 @@
         <property name="editable" value="false" />
         <property name="textFgColor" value="DARK_BLUE" />
         <property name="text" value="yield" />
-        <property name="fontStyle" value="BOLD" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934062">
+          <property name="style" value="BOLD" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1152143218022">
         <link role="relationDeclaration" targetNodeId="1.1152141234220" />
@@ -215,7 +219,9 @@
         <property name="editable" value="false" />
         <property name="textFgColor" value="DARK_BLUE" />
         <property name="text" value="stop" />
-        <property name="fontStyle" value="BOLD" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934138">
+          <property name="style" value="BOLD" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1152143290441">
         <property name="editable" value="false" />
@@ -230,7 +236,9 @@
         <property name="editable" value="false" />
         <property name="textFgColor" value="DARK_BLUE" />
         <property name="text" value="skip" />
-        <property name="fontStyle" value="BOLD" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934124">
+          <property name="style" value="BOLD" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1152143310489">
         <property name="editable" value="false" />
@@ -528,7 +536,9 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1160600746007">
         <property name="textFgColor" value="DARK_BLUE" />
         <property name="text" value="list&lt;" />
-        <property name="fontStyle" value="BOLD" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934305">
+          <property name="style" value="BOLD" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1160602502631">
         <link role="relationDeclaration" targetNodeId="1.1160602447121" />
@@ -549,8 +559,10 @@
           <property name="editable" value="true" />
           <property name="textFgColor" value="darkGray" />
           <property name="text" value="empty" />
-          <property name="fontStyle" value="ITALIC" />
           <property name="attractsFocus" value="0" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934425">
+            <property name="style" value="ITALIC" />
+          </node>
         </node>
         <node role="cellLayout" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellLayout_Horizontal" id="1211880293245" />
       </node>
@@ -868,9 +880,11 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Alternation" id="1178286394774">
       <property name="vertical" value="true" />
       <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1178286428357">
-        <property name="fontStyle" value="BOLD" />
         <property name="textFgColor" value="DARK_BLUE" />
         <property name="text" value="asc" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934307">
+          <property name="style" value="BOLD" />
+        </node>
       </node>
       <node role="alternationCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1178286394776">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178286394777">
@@ -885,9 +899,11 @@
         </node>
       </node>
       <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1178286435607">
-        <property name="fontStyle" value="BOLD" />
         <property name="textFgColor" value="DARK_BLUE" />
         <property name="text" value="desc" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934238">
+          <property name="style" value="BOLD" />
+        </node>
       </node>
     </node>
   </node>

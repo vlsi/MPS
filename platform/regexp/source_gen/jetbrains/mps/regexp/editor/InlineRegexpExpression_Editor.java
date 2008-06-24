@@ -97,7 +97,15 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell6981_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6981_03");
-    editorCell.setFontType(MPSFonts.ITALIC);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell6981_04(EditorCell editorCell, SNode node, EditorContext context) {
@@ -153,7 +161,15 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell6981_07(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6981_07");
-    editorCell.setFontType(MPSFonts.ITALIC);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell6981_06(EditorCell editorCell, SNode node, EditorContext context) {
@@ -184,7 +200,15 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell6981_09(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6981_09");
-    editorCell.setFontType(MPSFonts.ITALIC);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell6981_010(EditorCell editorCell, SNode node, EditorContext context) {

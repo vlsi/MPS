@@ -30,9 +30,11 @@
     <link role="conceptDeclaration" targetNodeId="1.1174482753837" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1174482863553">
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1174482866914">
-        <property name="fontStyle" value="BOLD" />
         <property name="textFgColor" value="DARK_GREEN" />
         <link role="relationDeclaration" targetNodeId="1.1174482761807" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934212">
+          <property name="style" value="BOLD" />
+        </node>
       </node>
     </node>
   </node>
@@ -204,7 +206,9 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1175158942349">
           <property name="text" value="If dot all mode is enabled, the . symbol class will include new line characters" />
-          <property name="fontStyle" value="ITALIC" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934342">
+            <property name="style" value="ITALIC" />
+          </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995828">
           <property name="flag" value="false" />
@@ -231,7 +235,9 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1175158994097">
           <property name="text" value="If multiline mode is enabled, the $ and ^ will work not only in the start and" />
-          <property name="fontStyle" value="ITALIC" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934289">
+            <property name="style" value="ITALIC" />
+          </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994607">
           <property name="flag" value="false" />
@@ -246,7 +252,9 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1175159029433">
           <property name="text" value="the end of the text but on starts and ends of lines separated by new line characters" />
-          <property name="fontStyle" value="ITALIC" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934229">
+            <property name="style" value="ITALIC" />
+          </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994315">
           <property name="flag" value="false" />
@@ -387,10 +395,12 @@
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1174555877168">
           <link role="conceptDeclaration" targetNodeId="1.1174554386384" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1174555878920">
-            <property name="fontStyle" value="ITALIC" />
             <property name="readOnly" value="true" />
             <property name="textFgColor" value="DARK_BLUE" />
             <link role="relationDeclaration" targetNodeId="2.1169194664001" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934367">
+              <property name="style" value="ITALIC" />
+            </node>
           </node>
         </node>
       </node>
@@ -468,10 +478,12 @@
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1174558836403">
           <link role="conceptDeclaration" targetNodeId="1.1174554386384" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1174558837827">
-            <property name="fontStyle" value="ITALIC" />
             <property name="readOnly" value="true" />
             <property name="textFgColor" value="DARK_BLUE" />
             <link role="relationDeclaration" targetNodeId="2.1169194664001" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934294">
+              <property name="style" value="ITALIC" />
+            </node>
           </node>
         </node>
       </node>
@@ -485,9 +497,11 @@
         <property name="textFgColor" value="DARK_MAGENTA" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1174564130683">
-        <property name="fontStyle" value="ITALIC" />
         <property name="textFgColor" value="DARK_BLUE" />
         <link role="relationDeclaration" targetNodeId="2.1169194664001" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934237">
+          <property name="style" value="ITALIC" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1174564178985">
         <link role="relationDeclaration" targetNodeId="1.1174564160889" />
@@ -506,10 +520,12 @@
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1174565057139">
           <link role="conceptDeclaration" targetNodeId="1.1174564062919" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1174565058688">
-            <property name="fontStyle" value="ITALIC" />
             <property name="readOnly" value="true" />
             <property name="textFgColor" value="DARK_BLUE" />
             <link role="relationDeclaration" targetNodeId="2.1169194664001" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934335">
+              <property name="style" value="ITALIC" />
+            </node>
           </node>
         </node>
       </node>
@@ -614,10 +630,12 @@
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1174662648737">
           <link role="conceptDeclaration" targetNodeId="1.1174483125581" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1174662650208">
-            <property name="fontStyle" value="BOLD" />
             <property name="readOnly" value="true" />
             <property name="textFgColor" value="DARK_MAGENTA" />
             <link role="relationDeclaration" targetNodeId="2.1169194664001" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934065">
+              <property name="style" value="BOLD" />
+            </node>
           </node>
         </node>
       </node>
@@ -886,10 +904,12 @@
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1174909139726">
           <link role="conceptDeclaration" targetNodeId="1.1174564062919" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1174909141556">
-            <property name="fontStyle" value="ITALIC" />
             <property name="readOnly" value="true" />
             <property name="textFgColor" value="DARK_BLUE" />
             <link role="relationDeclaration" targetNodeId="2.1169194664001" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934080">
+              <property name="style" value="ITALIC" />
+            </node>
           </node>
         </node>
       </node>

@@ -12,6 +12,8 @@ import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Vertical;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import java.awt.Color;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -87,7 +89,15 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_ConstantCell19413_01(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19413_01");
-      editorCell.setFontType(MPSFonts.ITALIC);
+      {
+        Style inlineStyle = new Style() {
+          {
+            this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+          }
+
+        };
+        inlineStyle.apply(editorCell);
+      }
     }
 
     private static void setupLabel_ConstantCell19413_01(EditorCell_Label editorCell, SNode node, EditorContext context) {

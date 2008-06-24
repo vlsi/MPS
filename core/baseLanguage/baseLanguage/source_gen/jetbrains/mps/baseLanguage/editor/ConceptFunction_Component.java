@@ -96,12 +96,12 @@ public class ConceptFunction_Component extends AbstractCellProvider {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setFontType(MPSFonts.ITALIC);
   }
 
   private static void setupBasic_CollectionCell6954_04(EditorCell editorCell, SNode node, EditorContext context) {

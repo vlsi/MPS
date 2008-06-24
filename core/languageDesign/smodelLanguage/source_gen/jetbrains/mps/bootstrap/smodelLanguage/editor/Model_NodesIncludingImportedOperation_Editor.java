@@ -50,18 +50,26 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setFontType(MPSFonts.PLAIN);
     editorCell.setLayoutConstraint("punctuation");
   }
 
   private static void setupBasic_ConstantCell16817_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell16817_02");
-    editorCell.setFontType(MPSFonts.PLAIN);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_scopeRefNodeCell16817_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -489,8 +489,10 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1158790989568">
-        <property name="fontStyle" value="PLAIN" />
         <property name="text" value="creates search scope (jetbrains.mps.smodel.search.ISearchScope)" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934077">
+          <property name="style" value="PLAIN" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1158790989569">
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993943">
@@ -498,8 +500,10 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1158790989570">
-        <property name="fontStyle" value="PLAIN" />
         <property name="text" value="macros:" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934128">
+          <property name="style" value="PLAIN" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1158790989571">
         <property name="vertical" value="true" />
@@ -509,8 +513,10 @@
             <property name="text" value="model" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1158790989574">
-            <property name="fontStyle" value="PLAIN" />
             <property name="text" value="context" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934134">
+              <property name="style" value="PLAIN" />
+            </node>
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995329">
             <property name="flag" value="false" />
@@ -521,8 +527,10 @@
             <property name="text" value="enclosingNode" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1158790989577">
-            <property name="fontStyle" value="PLAIN" />
             <property name="text" value="context" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934202">
+              <property name="style" value="PLAIN" />
+            </node>
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993796">
             <property name="flag" value="false" />
@@ -535,13 +543,17 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1158790989580">
             <property name="vertical" value="true" />
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1158790989581">
-              <property name="fontStyle" value="PLAIN" />
               <property name="text" value="source of the reference link" />
+              <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934203">
+                <property name="style" value="PLAIN" />
+              </node>
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1158790989582">
-              <property name="fontStyle" value="PLAIN" />
               <property name="text" value="(optional - may not exist yet)" />
               <property name="textBgColor" value="pink" />
+              <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934275">
+                <property name="style" value="PLAIN" />
+              </node>
             </node>
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997295">
               <property name="flag" value="false" />
@@ -556,8 +568,10 @@
             <property name="text" value="scope" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1158790989585">
-            <property name="fontStyle" value="PLAIN" />
             <property name="text" value="context (jetbrains.mps.smodel.IScope)" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934075">
+              <property name="style" value="PLAIN" />
+            </node>
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997573">
             <property name="flag" value="false" />
@@ -590,8 +604,10 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1159205622453">
-        <property name="fontStyle" value="PLAIN" />
         <property name="text" value="returns true if search scope can be created " />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934255">
+          <property name="style" value="PLAIN" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1159205622454">
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994602">
@@ -599,8 +615,10 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1159205622455">
-        <property name="fontStyle" value="PLAIN" />
         <property name="text" value="macros:" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934066">
+          <property name="style" value="PLAIN" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1159205622456">
         <property name="vertical" value="true" />
@@ -610,8 +628,10 @@
             <property name="text" value="model" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1159205622459">
-            <property name="fontStyle" value="PLAIN" />
             <property name="text" value="context" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934180">
+              <property name="style" value="PLAIN" />
+            </node>
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994063">
             <property name="flag" value="false" />
@@ -622,8 +642,10 @@
             <property name="text" value="enclosingNode" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1159205622462">
-            <property name="fontStyle" value="PLAIN" />
             <property name="text" value="context" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934227">
+              <property name="style" value="PLAIN" />
+            </node>
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996539">
             <property name="flag" value="false" />
@@ -636,13 +658,17 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1159205622465">
             <property name="vertical" value="true" />
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1159205622466">
-              <property name="fontStyle" value="PLAIN" />
               <property name="text" value="source of the reference link" />
+              <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934311">
+                <property name="style" value="PLAIN" />
+              </node>
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1159205622467">
-              <property name="fontStyle" value="PLAIN" />
               <property name="text" value="(optional - may not exist yet)" />
               <property name="textBgColor" value="pink" />
+              <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934191">
+                <property name="style" value="PLAIN" />
+              </node>
             </node>
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996689">
               <property name="flag" value="false" />
@@ -657,8 +683,10 @@
             <property name="text" value="scope" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1159205622470">
-            <property name="fontStyle" value="PLAIN" />
             <property name="text" value="context (jetbrains.mps.smodel.IScope)" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934125">
+              <property name="style" value="PLAIN" />
+            </node>
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995286">
             <property name="flag" value="false" />

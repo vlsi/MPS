@@ -12,6 +12,8 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
@@ -67,7 +69,15 @@ public class ClosureParameterReference_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell9431_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell9431_0");
-      editorCell.setFontType(MPSFonts.ITALIC);
+      {
+        Style inlineStyle = new Style() {
+          {
+            this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+          }
+
+        };
+        inlineStyle.apply(editorCell);
+      }
     }
 
     private static void setupLabel_namePropertyCell9431_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -7,6 +7,8 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -49,7 +51,15 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_restrictionKindPropertyCell10316_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_restrictionKindPropertyCell10316_0");
-    editorCell.setFontType(MPSFonts.BOLD);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_typeRefNodeCell10316_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -295,7 +305,15 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_rolePropertyCell10316_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_rolePropertyCell10316_0");
-      editorCell.setFontType(MPSFonts.ITALIC);
+      {
+        Style inlineStyle = new Style() {
+          {
+            this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+          }
+
+        };
+        inlineStyle.apply(editorCell);
+      }
     }
 
     private static void setupLabel_rolePropertyCell10316_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

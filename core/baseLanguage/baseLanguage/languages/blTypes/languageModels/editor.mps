@@ -34,8 +34,10 @@
         <property name="text" value="Primitive" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1159268590365">
-        <property name="fontStyle" value="ITALIC" />
         <link role="relationDeclaration" targetNodeId="2.1169194664001" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934224">
+          <property name="style" value="ITALIC" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1159268590366">
         <property name="text" value="extends" />
@@ -54,9 +56,11 @@
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1159268661796">
           <link role="conceptDeclaration" targetNodeId="1.1159268590033" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1159268661797">
-            <property name="fontStyle" value="ITALIC" />
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="2.1169194664001" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934159">
+              <property name="style" value="ITALIC" />
+            </node>
           </node>
         </node>
       </node>
@@ -124,7 +128,6 @@
         <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1209476379605">
-        <property name="fontStyle" value="BOLD_ITALIC" />
         <link role="relationDeclaration" targetNodeId="1.1209476075374" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1209476379606">
           <link role="conceptDeclaration" targetNodeId="1.1162556266355" resolveInfo="BarConcept" />
@@ -133,6 +136,9 @@
             <property name="textFgColor" value="blue" />
             <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
           </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934145">
+          <property name="style" value="BOLD_ITALIC" />
         </node>
       </node>
     </node>

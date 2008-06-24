@@ -30,12 +30,12 @@ public class GenericNewExpression_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setFontType(MPSFonts.BOLD);
   }
 
   private static void setupBasic_creatorRefNodeCell3121_0(EditorCell editorCell, SNode node, EditorContext context) {

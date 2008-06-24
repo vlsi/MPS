@@ -7,9 +7,9 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
@@ -33,7 +33,15 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell7203_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7203_02");
-    editorCell.setFontType(MPSFonts.PLAIN);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell7203_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -42,7 +50,15 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell7203_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7203_04");
-    editorCell.setFontType(MPSFonts.PLAIN);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell7203_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -77,7 +93,15 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell7203_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7203_06");
-    editorCell.setFontType(MPSFonts.PLAIN);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell7203_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -99,7 +123,15 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell7203_08(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7203_08");
-    editorCell.setFontType(MPSFonts.PLAIN);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell7203_04(EditorCell editorCell, SNode node, EditorContext context) {
@@ -121,7 +153,15 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell7203_010(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7203_010");
-    editorCell.setFontType(MPSFonts.PLAIN);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell7203_05(EditorCell editorCell, SNode node, EditorContext context) {
@@ -143,7 +183,15 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell7203_012(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7203_012");
-    editorCell.setFontType(MPSFonts.PLAIN);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ReplaceableAliasAndParms_CompComponentCell7203_0(EditorCell editorCell, SNode node, EditorContext context) {

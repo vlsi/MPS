@@ -52,7 +52,15 @@ public class Model_CreateNewRootNodeOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell5481_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5481_01");
-    editorCell.setFontType(MPSFonts.PLAIN);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell5481_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -61,12 +69,12 @@ public class Model_CreateNewRootNodeOperation_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setFontType(MPSFonts.PLAIN);
     editorCell.setLayoutConstraint("punctuation");
   }
 

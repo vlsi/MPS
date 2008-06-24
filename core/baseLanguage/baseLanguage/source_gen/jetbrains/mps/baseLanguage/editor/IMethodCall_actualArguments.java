@@ -49,7 +49,15 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
 
   private static void setupBasic_ConstantCell13020_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell13020_0");
-    editorCell.setFontType(MPSFonts.PLAIN);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_actualArgumentRefNodeListCell13020_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -62,12 +70,12 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setFontType(MPSFonts.PLAIN);
     if (renderingCondition13020_0(node, context, context.getScope())) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }

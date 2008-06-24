@@ -283,12 +283,28 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_memberIdentifierPolicyPropertyCell7131_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_memberIdentifierPolicyPropertyCell7131_0");
-    editorCell.setFontType(MPSFonts.BOLD);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell7131_010(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7131_010");
-    editorCell.setFontType(MPSFonts.PLAIN);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell7131_08(EditorCell editorCell, SNode node, EditorContext context) {
@@ -963,7 +979,15 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_externalValuePropertyCell7131_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_externalValuePropertyCell7131_0");
-      editorCell.setFontType(MPSFonts.BOLD);
+      {
+        Style inlineStyle = new Style() {
+          {
+            this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+          }
+
+        };
+        inlineStyle.apply(editorCell);
+      }
     }
 
     private static void setupLabel_externalValuePropertyCell7131_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
