@@ -14,6 +14,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.treedata.tree.DataTree;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.TextMPSTreeNode;
+import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
@@ -361,33 +362,30 @@ public abstract class UsagesTree extends MPSTree {
     UsagesTreeNode treeNode = getCurrentNode();
     if (treeNode == null) return;
 
-    DataNode node = treeNode.getUserObject();
-    setExcluded(node, node.getData().isExcluded(), true);
+    setExcluded(treeNode, treeNode.getUserObject().getData().isExcluded(), true);
   }
 
   private void setCurrentNodeExclusion(boolean isExculded) {
     UsagesTreeNode treeNode = getCurrentNode();
     if (treeNode == null) return;
 
-    DataNode node = treeNode.getUserObject();
-    setExcluded(node, isExculded, true);
+    setExcluded(treeNode, isExculded, true);
   }
 
   private void showChangeExclusionMenu(MouseEvent e) {
     DefaultActionGroup ag = new DefaultActionGroup();
 
     final UsagesTreeNode current = getCurrentNode();
-    final DataNode dataNode = current.getUserObject();
 
     ag.add(new BaseAction("Include") {
       public void doExecute(AnActionEvent e) {
-        setExcluded(dataNode, false, true);
+        setExcluded(current, false, true);
       }
     });
 
     ag.add(new BaseAction("Exclude") {
       public void doExecute(AnActionEvent e) {
-        setExcluded(dataNode, true, true);
+        setExcluded(current, true, true);
       }
     });
 
@@ -395,11 +393,11 @@ public abstract class UsagesTree extends MPSTree {
     popup.show(this, e.getX(), e.getY());
   }
 
-  private void setExcluded(DataNode node, boolean state, boolean isTopLevel) {
+  private void setExcluded(UsagesTreeNode node, boolean state, boolean isTopLevel) {
     if (isTopLevel) myContents.setAdjusting(true);
-    node.getData().setExcluded(state);
-    for (DataNode child : node.getChildren()) {
-      setExcluded(child, state, false);
+    node.getUserObject().getData().setExcluded(state);
+    for (MPSTreeNode child : node) {
+      setExcluded((UsagesTreeNode)child, state, false);
     }
     if (isTopLevel) myContents.setAdjusting(false);
   }
