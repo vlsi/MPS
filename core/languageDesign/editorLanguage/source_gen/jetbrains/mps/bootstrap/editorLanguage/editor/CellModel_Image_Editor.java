@@ -740,6 +740,10 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     return !(SPropertyOperations.hasValue(node, "drawBrackets", null, null));
   }
 
+  public static boolean renderingCondition1154_02(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.hasValue(node, "drawBorder", null, null));
+  }
+
   public static JComponent _QueryFunction_JComponent_1176475935262(SNode node, EditorContext editorContext) {
     return new SelectImageFileButton(((CellModel_Image)SNodeOperations.getAdapter(node)));
   }
@@ -781,7 +785,9 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.create_CollectionCell1154_013(context, node));
     editorCell.addEditorCell(this.create_ConstantCell1154_010(context, node, ""));
     editorCell.addEditorCell(this.create_ConstantCell1154_011(context, node, "adornments:"));
-    editorCell.addEditorCell(this.create_CollectionCell1154_06(context, node));
+    if (renderingCondition1154_02(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.create_CollectionCell1154_06(context, node));
+    }
     if (renderingCondition1154_01(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell1154_07(context, node));
     }

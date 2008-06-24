@@ -121,14 +121,14 @@
       <property name="name" value="drawBrackets" />
       <link role="dataType" targetNodeId="1083928804390" resolveInfo="_YesNoDefault_Enum" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1129573164669">
-      <property name="name" value="layoutConstraint" />
-      <link role="dataType" targetNodeId="1138197387103" resolveInfo="_Layout_Constraints_Enum" />
-    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1078832671094">
       <property name="name" value="drawBorder" />
       <property name="propertyType" value="string" />
       <link role="dataType" targetNodeId="1083928804390" resolveInfo="_YesNoDefault_Enum" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1129573164669">
+      <property name="name" value="layoutConstraint" />
+      <link role="dataType" targetNodeId="1138197387103" resolveInfo="_Layout_Constraints_Enum" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1102623213256">
       <property name="name" value="bracketsColor" />

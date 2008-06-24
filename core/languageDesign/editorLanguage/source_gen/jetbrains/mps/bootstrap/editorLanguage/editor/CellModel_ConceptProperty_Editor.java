@@ -1149,6 +1149,10 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     return !(SPropertyOperations.hasValue(node, "drawBrackets", null, null));
   }
 
+  public static boolean renderingCondition9917_06(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.hasValue(node, "drawBorder", null, null));
+  }
+
   public static Color _QueryFunction_Color_1176889185745(SNode node, EditorContext editorContext) {
     return _EditorUtil.grayIfNotSelectable(node);
   }
@@ -1210,7 +1214,9 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.create_CollectionCell9917_018(context, node));
     editorCell.addEditorCell(this.create_ConstantCell9917_021(context, node, ""));
     editorCell.addEditorCell(this.create_ConstantCell9917_07(context, node, "adornments:"));
-    editorCell.addEditorCell(this.create_CollectionCell9917_011(context, node));
+    if (renderingCondition9917_06(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.create_CollectionCell9917_011(context, node));
+    }
     if (renderingCondition9917_05(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell9917_012(context, node));
     }
