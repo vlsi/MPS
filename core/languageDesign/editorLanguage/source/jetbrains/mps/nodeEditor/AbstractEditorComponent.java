@@ -2131,8 +2131,13 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       return null; //i.e editor is disposed
     }
 
-
-    if (cls == SNode.class) return (T) getRootCell().getSNode();
+    if (cls == SNode.class) {
+      if (getSelectedCell() != null) {
+        return (T) getSelectedCell().getSNode();
+      } else {
+        return (T) getRootCell().getSNode();
+      }
+    }
     if (cls == SModelDescriptor.class && get(SNode.class) != null) {
       return ModelAccess.instance().runReadAction(new Computable<T>() {
         public T compute() {
