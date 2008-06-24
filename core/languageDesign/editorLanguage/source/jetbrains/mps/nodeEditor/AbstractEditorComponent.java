@@ -145,6 +145,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private Map<KeyStroke, MPSActionProxy> myActionProxies = new HashMap<KeyStroke, MPSActionProxy>();
   private CellSpeedSearch myCellSpeedSearch;
   private IntentionsSupport myIntentionsSupport;
+  private FindUsagesSupport myFindUsagesSupport;
 
   public AbstractEditorComponent(IOperationContext operationContext) {
     this(operationContext, false);
@@ -306,24 +307,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     }, KeyStroke.getKeyStroke("CONTEXT_MENU"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
-    registerKeyboardAction(new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
-        UsagesViewTool usagesViewTool = operationContext.getComponent(UsagesViewTool.class);
-        assert usagesViewTool != null;
-        UsagesView usagesView = usagesViewTool.getCurrentView();
-        if (usagesView != null) usagesView.goToPrevious();
-      }
-    }, KeyStroke.getKeyStroke("control alt UP"), WHEN_FOCUSED);
-
-    registerKeyboardAction(new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
-        UsagesViewTool usagesViewTool = operationContext.getComponent(UsagesViewTool.class);
-        assert usagesViewTool != null;
-        UsagesView usagesView = usagesViewTool.getCurrentView();
-        if (usagesView != null) usagesView.goToNext();
-      }
-    }, KeyStroke.getKeyStroke("control alt DOWN"), WHEN_FOCUSED);
-
     addMouseListener(new MouseAdapter() {
       public void mousePressed(final MouseEvent e) {
         if (e.isPopupTrigger()) {
@@ -390,6 +373,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     });
 
     myIntentionsSupport = new IntentionsSupport(this);
+    myFindUsagesSupport = new FindUsagesSupport(this);
+    
     ToolTipManager.sharedInstance().registerComponent(this);
     CaretBlinker.getInstance().registerEditor(this);
 
