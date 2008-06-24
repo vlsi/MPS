@@ -106,6 +106,12 @@
       <property name="role" value="focusPolicyApplicable" />
       <link role="target" targetNodeId="1142886221719" resolveInfo="QueryFunction_NodeCondition" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1214305243050">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="styleItem" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1073389214266">
       <property name="name" value="selectable" />
       <property name="propertyType" value="string" />
