@@ -134,6 +134,10 @@
       <property name="name" value="fontSize" />
       <link role="dataType" targetNodeId="3.1082983657062" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1130836394969">
+      <property name="name" value="underlined" />
+      <link role="dataType" targetNodeId="1130847686886" resolveInfo="UnderlineStyle" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1129573164669">
       <property name="name" value="layoutConstraint" />
       <link role="dataType" targetNodeId="1138197387103" resolveInfo="_Layout_Constraints_Enum" />
@@ -145,10 +149,6 @@
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1139312911783">
       <property name="name" value="cellBackground" />
       <link role="dataType" targetNodeId="1083952545109" resolveInfo="_Colors_Enum" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1130836394969">
-      <property name="name" value="underlined" />
-      <link role="dataType" targetNodeId="1130847686886" resolveInfo="UnderlineStyle" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1130859485024">
       <property name="name" value="attractsFocus" />

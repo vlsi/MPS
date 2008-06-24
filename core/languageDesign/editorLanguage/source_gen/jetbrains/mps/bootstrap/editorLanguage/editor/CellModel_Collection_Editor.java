@@ -1204,6 +1204,10 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     return !(SPropertyOperations.hasValue(node, "fontStyle", null, null));
   }
 
+  public static boolean renderingCondition15568_07(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.hasValue(node, "underlined", "0", "0"));
+  }
+
   public static Color _QueryFunction_Color_1176889142437(SNode node, EditorContext editorContext) {
     return _EditorUtil.grayIfNotSelectable(node);
   }
@@ -1318,7 +1322,9 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     if (renderingCondition15568_05(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell15568_016(context, node));
     }
-    editorCell.addEditorCell(this.create_CollectionCell15568_017(context, node));
+    if (renderingCondition15568_07(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.create_CollectionCell15568_017(context, node));
+    }
     editorCell.addEditorCell(this.create_ConstantCell15568_018(context, node, ""));
     editorCell.addEditorCell(this.create_ConstantCell15568_08(context, node, "query methods:"));
     editorCell.addEditorCell(this.create_CollectionCell15568_020(context, node));

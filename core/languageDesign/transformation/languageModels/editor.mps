@@ -755,9 +755,12 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1200911421694">
           <property name="text" value="mapping labels:" />
           <property name="textFgColor" value="DARK_BLUE" />
-          <property name="underlined" value="2" />
+          <property name="underlined" value="0" />
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934114">
             <property name="style" value="BOLD_ITALIC" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.UnderlinedStyleSheetItem" id="1214317025776">
+            <property name="underlined" value="2" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1200911438227">
@@ -785,13 +788,16 @@
         <property name="vertical" value="true" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1195502446252">
           <property name="text" value="conditional root rules:" />
-          <property name="underlined" value="2" />
+          <property name="underlined" value="0" />
           <property name="textFgColor" value="DARK_BLUE" />
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997585">
             <property name="flag" value="false" />
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934362">
             <property name="style" value="BOLD_ITALIC" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.UnderlinedStyleSheetItem" id="1214317025775">
+            <property name="underlined" value="2" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1195502446253">
@@ -823,13 +829,16 @@
         <property name="vertical" value="true" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1195502470960">
           <property name="text" value="mapping rules:" />
-          <property name="underlined" value="2" />
+          <property name="underlined" value="0" />
           <property name="textFgColor" value="DARK_BLUE" />
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996264">
             <property name="flag" value="false" />
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934296">
             <property name="style" value="BOLD_ITALIC" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.UnderlinedStyleSheetItem" id="1214317025778">
+            <property name="underlined" value="2" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1195502470961">
@@ -860,13 +869,16 @@
         <property name="vertical" value="true" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1195502488590">
           <property name="text" value="weaving rules:" />
-          <property name="underlined" value="2" />
+          <property name="underlined" value="0" />
           <property name="textFgColor" value="DARK_BLUE" />
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993621">
             <property name="flag" value="false" />
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934347">
             <property name="style" value="BOLD_ITALIC" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.UnderlinedStyleSheetItem" id="1214317025779">
+            <property name="underlined" value="2" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1195502488591">
@@ -897,13 +909,16 @@
         <property name="vertical" value="true" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1195502503501">
           <property name="text" value="reduction rules:" />
-          <property name="underlined" value="2" />
+          <property name="underlined" value="0" />
           <property name="textFgColor" value="DARK_BLUE" />
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996250">
             <property name="flag" value="false" />
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934415">
             <property name="style" value="BOLD_ITALIC" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.UnderlinedStyleSheetItem" id="1214317025782">
+            <property name="underlined" value="2" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1195502503502">
@@ -934,13 +949,16 @@
         <property name="vertical" value="true" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1195502524913">
           <property name="text" value="abandon roots:" />
-          <property name="underlined" value="2" />
+          <property name="underlined" value="0" />
           <property name="textFgColor" value="DARK_BLUE" />
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997657">
             <property name="flag" value="false" />
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934270">
             <property name="style" value="BOLD_ITALIC" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.UnderlinedStyleSheetItem" id="1214317025777">
+            <property name="underlined" value="2" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1195502524914">
@@ -972,13 +990,16 @@
         <property name="vertical" value="true" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1195502537136">
           <property name="text" value="pre-processing scripts:" />
-          <property name="underlined" value="2" />
+          <property name="underlined" value="0" />
           <property name="textFgColor" value="DARK_BLUE" />
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995154">
             <property name="flag" value="false" />
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934108">
             <property name="style" value="BOLD_ITALIC" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.UnderlinedStyleSheetItem" id="1214317025780">
+            <property name="underlined" value="2" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1195502537137">
@@ -1010,13 +1031,16 @@
         <property name="vertical" value="true" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1195502593674">
           <property name="text" value="post-processing scripts:" />
-          <property name="underlined" value="2" />
+          <property name="underlined" value="0" />
           <property name="textFgColor" value="DARK_BLUE" />
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996817">
             <property name="flag" value="false" />
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934198">
             <property name="style" value="BOLD_ITALIC" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.UnderlinedStyleSheetItem" id="1214317025781">
+            <property name="underlined" value="2" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1195502593675">
