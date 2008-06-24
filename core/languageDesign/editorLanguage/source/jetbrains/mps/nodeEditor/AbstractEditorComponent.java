@@ -460,13 +460,13 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
             myMPSActionsWithShortcuts.add(action);
           }
         }
-        if (e instanceof MPSActionGroup) {
+        if (e instanceof BaseGroup) {
           try {
             if (actionContext != null) {
               Presentation p = new Presentation();
               e.update(ActionUtils.createEvent(p, actionContext));
             }
-            registerKeyStrokes((MPSActionGroup) e, actionContext);
+            registerKeyStrokes((BaseGroup) e, actionContext);
           } catch (Throwable t) {
             LOG.error(t);
           }
