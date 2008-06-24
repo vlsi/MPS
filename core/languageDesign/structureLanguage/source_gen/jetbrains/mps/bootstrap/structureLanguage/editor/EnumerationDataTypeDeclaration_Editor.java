@@ -7,6 +7,8 @@ import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import java.awt.Color;
@@ -39,12 +41,28 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell7131_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7131_01");
-    editorCell.setSelectable(false);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell7131_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7131_0");
-    editorCell.setSelectable(true);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.SELECTABLE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     editorCell.setDrawBorder(false);
   }
 
@@ -55,37 +73,85 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell7131_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7131_02");
-    editorCell.setSelectable(false);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7131_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7131_01");
-    editorCell.setSelectable(false);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell7131_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7131_03");
-    editorCell.setSelectable(false);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell7131_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7131_04");
-    editorCell.setSelectable(false);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell7131_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7131_05");
-    editorCell.setSelectable(false);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7131_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7131_02");
-    editorCell.setSelectable(false);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     editorCell.setDrawBorder(false);
   }
 
@@ -96,61 +162,141 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell7131_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7131_06");
-    editorCell.setSelectable(false);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7131_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7131_03");
-    editorCell.setSelectable(false);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_memberRefNodeListCell7131_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_memberRefNodeListCell7131_0");
-    editorCell.setSelectable(false);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7131_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7131_04");
-    editorCell.setSelectable(false);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7131_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7131_05");
-    editorCell.setSelectable(false);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7131_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7131_06");
-    editorCell.setSelectable(false);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7131_07(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7131_07");
-    editorCell.setSelectable(false);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_CollectionCell7131_07(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7131_07");
-    editorCell.setSelectable(false);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7131_08(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7131_08");
-    editorCell.setSelectable(false);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7131_09(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7131_09");
-    editorCell.setSelectable(false);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     editorCell.setDrawBorder(false);
   }
 
@@ -166,19 +312,43 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell7131_08(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7131_08");
-    editorCell.setSelectable(false);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7131_011(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7131_011");
-    editorCell.setSelectable(false);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7131_012(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7131_012");
-    editorCell.setSelectable(false);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     editorCell.setDrawBorder(false);
   }
 
@@ -193,19 +363,43 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell7131_09(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7131_09");
-    editorCell.setSelectable(false);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7131_013(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7131_013");
-    editorCell.setSelectable(false);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell7131_014(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7131_014");
-    editorCell.setSelectable(false);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     editorCell.setDrawBorder(false);
   }
 

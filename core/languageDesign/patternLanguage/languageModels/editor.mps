@@ -71,8 +71,10 @@
         <property name="editable" value="false" />
         <property name="textBgColor" value="green" />
         <property name="text" value="&gt;" />
-        <property name="selectable" value="false" />
         <property name="drawBorder" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997128">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1136720096751">
         <property name="drawBorder" value="true" />
@@ -83,7 +85,9 @@
         <property name="textBgColor" value="green" />
         <property name="text" value="&lt;" />
         <property name="drawBorder" value="false" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996815">
+          <property name="flag" value="false" />
+        </node>
       </node>
     </node>
   </node>

@@ -39,11 +39,12 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1167245583617">
         <property name="drawBorder" value="false" />
-        <property name="selectable" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1167245583618">
           <property name="text" value="," />
           <property name="drawBorder" value="false" />
-          <property name="selectable" value="false" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995211">
+            <property name="flag" value="false" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1167245583619">
           <property name="drawBorder" value="false" />
@@ -60,6 +61,9 @@
               </node>
             </node>
           </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310998075">
+          <property name="flag" value="false" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1167245583626">
@@ -81,7 +85,9 @@
         <property name="textFgColor" value="lightGray" />
         <property name="text" value="Alt+Enter" />
         <property name="drawBorder" value="false" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994007">
+          <property name="flag" value="false" />
+        </node>
       </node>
     </node>
   </node>
@@ -100,11 +106,13 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1168401913942">
         <property name="separatorText" value="+" />
         <property name="drawBorder" value="false" />
-        <property name="selectable" value="true" />
         <link role="relationDeclaration" targetNodeId="1.1168401864803" />
         <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168401922068">
           <property name="editable" value="true" />
           <property name="drawBorder" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993790">
+          <property name="flag" value="true" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168401899172">

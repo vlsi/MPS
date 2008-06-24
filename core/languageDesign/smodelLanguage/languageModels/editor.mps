@@ -74,7 +74,9 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1138063769792">
         <property name="drawBorder" value="false" />
         <property name="text" value="." />
-        <property name="selectable" value="true" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995273">
+          <property name="flag" value="true" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1138412455559">
         <property name="attractsFocus" value="2" />
@@ -132,7 +134,9 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1138406005691">
         <property name="drawBorder" value="false" />
         <property name="text" value="&lt;" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995080">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1138406014241">
         <property name="drawBorder" value="false" />
@@ -173,7 +177,9 @@
         <property name="layoutConstraint" value="punctuation" />
         <property name="text" value="(" />
         <property name="fontStyle" value="PLAIN" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993628">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1138662130034">
         <property name="noTargetText" value="&lt;no value&gt;" />
@@ -231,7 +237,9 @@
         <property name="layoutConstraint" value="punctuation" />
         <property name="text" value="(" />
         <property name="fontStyle" value="PLAIN" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996338">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1139880110905">
         <property name="noTargetText" value="&lt;default&gt;" />
@@ -265,7 +273,9 @@
         <property name="layoutConstraint" value="punctuation" />
         <property name="text" value="(" />
         <property name="fontStyle" value="PLAIN" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993950">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1139877775154">
         <property name="noTargetText" value="&lt;default&gt;" />
@@ -322,11 +332,9 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1154555018347">
         <property name="vertical" value="true" />
         <property name="drawBorder" value="false" />
-        <property name="selectable" value="false" />
         <property name="gridLayout" value="true" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1154555049677">
           <property name="vertical" value="false" />
-          <property name="selectable" value="false" />
           <property name="drawBorder" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1154555068240">
             <property name="drawBorder" value="false" />
@@ -337,10 +345,12 @@
             <property name="text" value="get top ancestor" />
             <property name="drawBorder" value="false" />
           </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996934">
+            <property name="flag" value="false" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1154555230665">
           <property name="vertical" value="false" />
-          <property name="selectable" value="false" />
           <property name="drawBorder" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1154555230666">
             <property name="drawBorder" value="false" />
@@ -351,10 +361,12 @@
             <property name="text" value="get ancestor which is instance of concept" />
             <property name="drawBorder" value="false" />
           </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995278">
+            <property name="flag" value="false" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1154555322515">
           <property name="vertical" value="false" />
-          <property name="selectable" value="false" />
           <property name="drawBorder" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1154555322516">
             <property name="drawBorder" value="false" />
@@ -365,10 +377,12 @@
             <property name="text" value="get ancestor which is instance of one of concepts" />
             <property name="drawBorder" value="false" />
           </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997805">
+            <property name="flag" value="false" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1154555175641">
           <property name="vertical" value="false" />
-          <property name="selectable" value="false" />
           <property name="drawBorder" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1154555175642">
             <property name="drawBorder" value="false" />
@@ -379,6 +393,12 @@
             <property name="text" value="return current node if it meets the requirements" />
             <property name="drawBorder" value="false" />
           </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994196">
+            <property name="flag" value="false" />
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997854">
+          <property name="flag" value="false" />
         </node>
       </node>
     </node>
@@ -395,10 +415,11 @@
         <property name="layoutConstraint" value="punctuation" />
         <property name="text" value="(" />
         <property name="fontStyle" value="PLAIN" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996792">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1177027660910">
-        <property name="selectable" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1177027755380">
           <property name="textFgColor" value="red" />
           <property name="text" value="old-&gt;[" />
@@ -440,6 +461,9 @@
             </node>
           </node>
         </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996894">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1177027646284">
         <property name="noTargetText" value="&lt;no concept&gt;" />
@@ -464,7 +488,9 @@
         <property name="layoutConstraint" value="punctuation" />
         <property name="text" value="(" />
         <property name="fontStyle" value="PLAIN" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997086">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1139859121222">
         <property name="noTargetText" value="&lt;no concept&gt;" />
@@ -499,7 +525,9 @@
         <property name="layoutConstraint" value="punctuation" />
         <property name="text" value="(" />
         <property name="fontStyle" value="PLAIN" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995752">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1139868035540">
         <property name="noTargetText" value="&lt;no concept&gt;" />
@@ -533,7 +561,9 @@
         <property name="layoutConstraint" value="punctuation" />
         <property name="text" value="(" />
         <property name="fontStyle" value="PLAIN" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995576">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1139870441857">
         <property name="drawBorder" value="false" />
@@ -557,7 +587,9 @@
         <property name="layoutConstraint" value="punctuation" />
         <property name="text" value="(" />
         <property name="fontStyle" value="PLAIN" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994147">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1140029629084">
         <property name="drawBorder" value="false" />
@@ -615,7 +647,9 @@
         <property name="layoutConstraint" value="punctuation" />
         <property name="text" value="(" />
         <property name="fontStyle" value="PLAIN" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995433">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1140131934570">
         <property name="drawBorder" value="false" />
@@ -648,7 +682,9 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1140138199073">
         <property name="drawBorder" value="false" />
         <property name="text" value=":" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995334">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1140138237889">
         <property name="noTargetText" value="&lt;no concept&gt;" />
@@ -703,7 +739,9 @@
         <property name="layoutConstraint" value="punctuation" />
         <property name="text" value="(" />
         <property name="fontStyle" value="PLAIN" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995048">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1140725455182">
         <property name="drawBorder" value="false" />
@@ -728,7 +766,9 @@
         <property name="layoutConstraint" value="punctuation" />
         <property name="text" value="(" />
         <property name="fontStyle" value="PLAIN" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994615">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1143221124298">
         <property name="noTargetText" value="&lt;no concept&gt;" />
@@ -763,7 +803,9 @@
         <property name="layoutConstraint" value="punctuation" />
         <property name="text" value="(" />
         <property name="fontStyle" value="PLAIN" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995754">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1143224155413">
         <property name="attractsFocus" value="1" />
@@ -789,7 +831,9 @@
         <property name="layoutConstraint" value="punctuation" />
         <property name="text" value="(" />
         <property name="fontStyle" value="PLAIN" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995460">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1143224196793">
         <property name="attractsFocus" value="1" />
@@ -835,7 +879,9 @@
         <property name="layoutConstraint" value="punctuation" />
         <property name="text" value="(" />
         <property name="fontStyle" value="PLAIN" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995072">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1143235366833">
         <property name="noTargetText" value="&lt;no concept&gt;" />
@@ -853,8 +899,10 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1177700722848">
         <property name="layoutConstraint" value="punctuation" />
-        <property name="selectable" value="false" />
         <property name="text" value="," />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997910">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1177700754756">
         <property name="noTargetText" value="&lt;no prototype&gt;" />
@@ -904,7 +952,6 @@
         <property name="drawBorder" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1207343821830">
-        <property name="selectable" value="false" />
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1207343836679">
           <property name="text" value="!" />
@@ -940,6 +987,9 @@
             </node>
           </node>
         </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994305">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1207343883309">
         <property name="noTargetText" value="&lt;no concept&gt;" />
@@ -968,7 +1018,9 @@
         <property name="layoutConstraint" value="punctuation" />
         <property name="text" value="(" />
         <property name="fontStyle" value="PLAIN" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994198">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1144195585868">
         <property name="noTargetText" value="&lt;concept of parent&gt;" />
@@ -988,7 +1040,9 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1144198123372">
         <property name="drawBorder" value="false" />
         <property name="text" value=":" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994234">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1144198126876">
         <property name="noTargetText" value="&lt;role&gt;" />
@@ -1027,7 +1081,9 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1145383245681">
         <property name="drawBorder" value="false" />
         <property name="text" value="&lt;" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997089">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1145383273157">
         <property name="drawBorder" value="false" />
@@ -1046,7 +1102,9 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1145383245687">
         <property name="drawBorder" value="false" />
         <property name="text" value="&gt;" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996114">
+          <property name="flag" value="false" />
+        </node>
       </node>
     </node>
   </node>
@@ -1159,7 +1217,9 @@
         <property name="layoutConstraint" value="punctuation" />
         <property name="text" value="(" />
         <property name="fontStyle" value="PLAIN" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995205">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1146171170038">
         <property name="noTargetText" value="&lt;no value&gt;" />
@@ -1184,7 +1244,9 @@
         <property name="layoutConstraint" value="punctuation" />
         <property name="text" value="(" />
         <property name="fontStyle" value="PLAIN" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997528">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1146253646908">
         <property name="noTargetText" value="&lt;no value&gt;" />
@@ -1248,7 +1310,9 @@
         <property name="layoutConstraint" value="punctuation" />
         <property name="text" value="(" />
         <property name="fontStyle" value="PLAIN" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995355">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1166648602700">
         <property name="noTargetText" value="&lt;no concept&gt;" />
@@ -1266,8 +1330,10 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1177700797421">
         <property name="layoutConstraint" value="punctuation" />
-        <property name="selectable" value="false" />
         <property name="text" value="," />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996061">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1177700797422">
         <property name="noTargetText" value="&lt;no prototype&gt;" />
@@ -1396,7 +1462,9 @@
         <property name="layoutConstraint" value="punctuation" />
         <property name="text" value="(" />
         <property name="fontStyle" value="PLAIN" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997381">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1171315915309">
         <property name="noTargetText" value="&lt;all&gt;" />
@@ -1432,7 +1500,9 @@
         <property name="layoutConstraint" value="punctuation" />
         <property name="text" value="(" />
         <property name="fontStyle" value="PLAIN" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996440">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1171323979880">
         <property name="noTargetText" value="&lt;all&gt;" />
@@ -1486,11 +1556,9 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1171407548394">
         <property name="vertical" value="true" />
         <property name="drawBorder" value="false" />
-        <property name="selectable" value="false" />
         <property name="gridLayout" value="true" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1171407548395">
           <property name="vertical" value="false" />
-          <property name="selectable" value="false" />
           <property name="drawBorder" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1171407548396">
             <property name="drawBorder" value="false" />
@@ -1501,10 +1569,12 @@
             <property name="text" value="get top ancestor" />
             <property name="drawBorder" value="false" />
           </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993878">
+            <property name="flag" value="false" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1171407548398">
           <property name="vertical" value="false" />
-          <property name="selectable" value="false" />
           <property name="drawBorder" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1171407548399">
             <property name="drawBorder" value="false" />
@@ -1515,10 +1585,12 @@
             <property name="text" value="get ancestor which is instance of concept" />
             <property name="drawBorder" value="false" />
           </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996525">
+            <property name="flag" value="false" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1171407548401">
           <property name="vertical" value="false" />
-          <property name="selectable" value="false" />
           <property name="drawBorder" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1171407548402">
             <property name="drawBorder" value="false" />
@@ -1529,10 +1601,12 @@
             <property name="text" value="get ancestor which is instance of one of concepts" />
             <property name="drawBorder" value="false" />
           </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993625">
+            <property name="flag" value="false" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1171407548404">
           <property name="vertical" value="false" />
-          <property name="selectable" value="false" />
           <property name="drawBorder" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1171407548405">
             <property name="drawBorder" value="false" />
@@ -1543,6 +1617,12 @@
             <property name="text" value="return current node if it meets the requirements" />
             <property name="drawBorder" value="false" />
           </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993598">
+            <property name="flag" value="false" />
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993998">
+          <property name="flag" value="false" />
         </node>
       </node>
     </node>
@@ -1669,7 +1749,9 @@
         <property name="layoutConstraint" value="punctuation" />
         <property name="text" value="(" />
         <property name="fontStyle" value="PLAIN" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995673">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1172244089060">
         <property name="drawBorder" value="false" />
@@ -1704,10 +1786,11 @@
         <property name="layoutConstraint" value="punctuation" />
         <property name="text" value="(" />
         <property name="fontStyle" value="PLAIN" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997023">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1206733900340">
-        <property name="selectable" value="false" />
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206733909392">
           <property name="text" value="!" />
@@ -1741,6 +1824,9 @@
             </node>
           </node>
         </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993784">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1206733827041">
         <property name="noTargetText" value="&lt;no concept&gt;" />
@@ -1765,9 +1851,11 @@
         <property name="drawBorder" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1180481149413">
-        <property name="selectable" value="false" />
         <property name="text" value="&lt;" />
         <property name="drawBorder" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997960">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1180481149414">
         <property name="drawBorder" value="false" />
@@ -1784,9 +1872,11 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1180481149417">
-        <property name="selectable" value="false" />
         <property name="text" value="&gt;" />
         <property name="drawBorder" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996442">
+          <property name="flag" value="false" />
+        </node>
       </node>
     </node>
   </node>
@@ -1832,7 +1922,9 @@
         <property name="layoutConstraint" value="punctuation" />
         <property name="text" value="/" />
         <property name="fontStyle" value="PLAIN" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994670">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1172424124986">
         <property name="noTargetText" value="&lt;no concept&gt;" />
@@ -1901,7 +1993,9 @@
         <property name="layoutConstraint" value="punctuation" />
         <property name="text" value="(" />
         <property name="fontStyle" value="PLAIN" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997442">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1176109781602">
         <property name="drawBorder" value="false" />
@@ -2071,7 +2165,9 @@
         <property name="layoutConstraint" value="punctuation" />
         <property name="text" value="(" />
         <property name="fontStyle" value="PLAIN" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996230">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1206486189210">
         <property name="noTargetText" value="&lt;no concept&gt;" />
@@ -2096,7 +2192,9 @@
         <property name="layoutConstraint" value="punctuation" />
         <property name="text" value="(" />
         <property name="fontStyle" value="PLAIN" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996819">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1180031838390">
         <property name="noTargetText" value="&lt;no concept&gt;" />
@@ -2140,7 +2238,9 @@
           <property name="layoutConstraint" value="punctuation" />
           <property name="text" value="(" />
           <property name="fontStyle" value="PLAIN" />
-          <property name="selectable" value="false" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997352">
+            <property name="flag" value="false" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1181943477554">
           <link role="relationDeclaration" targetNodeId="1.1181937442359" />
@@ -2164,7 +2264,9 @@
         <property name="layoutConstraint" value="punctuation" />
         <property name="text" value="(" />
         <property name="fontStyle" value="PLAIN" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993697">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1206486226040">
         <property name="noTargetText" value="&lt;no prototype&gt;" />
@@ -2189,7 +2291,9 @@
         <property name="layoutConstraint" value="punctuation" />
         <property name="text" value="(" />
         <property name="fontStyle" value="PLAIN" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996731">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1182506841743">
         <property name="noTargetText" value="&lt;smodel&gt;" />
@@ -2221,7 +2325,9 @@
         <property name="layoutConstraint" value="punctuation" />
         <property name="text" value="(" />
         <property name="fontStyle" value="PLAIN" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997013">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1182279799233">
         <property name="noTargetText" value="&lt;global scope&gt;" />
@@ -2246,7 +2352,9 @@
         <property name="layoutConstraint" value="punctuation" />
         <property name="text" value="(" />
         <property name="fontStyle" value="PLAIN" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996181">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1182511100904">
         <property name="noTargetText" value="&lt;no scope&gt;" />
@@ -2563,7 +2671,9 @@
         <property name="layoutConstraint" value="punctuation" />
         <property name="text" value="(" />
         <property name="fontStyle" value="PLAIN" />
-        <property name="selectable" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995760">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1206482605000">
         <property name="noTargetText" value="&lt;no prototype&gt;" />
@@ -2593,14 +2703,15 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1206995959902">
         <property name="vertical" value="false" />
-        <property name="selectable" value="false" />
         <property name="drawBorder" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206995959903">
           <property name="textFgColor" value="lightGray" />
           <property name="text" value="&lt;" />
           <property name="fontStyle" value="BOLD" />
-          <property name="selectable" value="false" />
           <property name="drawBorder" value="false" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993746">
+            <property name="flag" value="false" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1206995959904">
           <property name="separatorText" value="," />
@@ -2637,6 +2748,9 @@
             </node>
           </node>
         </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995815">
+          <property name="flag" value="false" />
+        </node>
       </node>
     </node>
   </node>
@@ -2647,7 +2761,6 @@
       <property name="vertical" value="true" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1208783056000">
         <property name="vertical" value="false" />
-        <property name="selectable" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1208783115211">
           <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
           <link role="styleClass" targetNodeId="5.1186415544875" resolveInfo="KeyWord" />
@@ -2655,13 +2768,18 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1208783059893">
           <property name="text" value="{" />
         </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995027">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1208783117979">
-        <property name="selectable" value="false" />
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Indent" id="1208783118809" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1208783120764">
           <link role="relationDeclaration" targetNodeId="1.1208941703859" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994766">
+          <property name="flag" value="false" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1208783062380">

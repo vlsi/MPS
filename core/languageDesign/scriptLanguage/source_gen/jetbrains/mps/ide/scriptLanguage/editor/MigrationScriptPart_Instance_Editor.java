@@ -6,6 +6,8 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -31,14 +33,30 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell14429_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell14429_01");
-    editorCell.setSelectable(false);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     editorCell.setDrawBrackets(true);
     editorCell.setBracketsColor(Color.lightGray);
   }
 
   private static void setupBasic_CollectionCell14429_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell14429_02");
-    editorCell.setSelectable(false);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell14429_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -47,7 +65,15 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell14429_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14429_02");
-    editorCell.setSelectable(false);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_descriptionPropertyCell14429_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -56,7 +82,15 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell14429_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell14429_03");
-    editorCell.setSelectable(false);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell14429_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -65,7 +99,15 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell14429_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14429_04");
-    editorCell.setSelectable(false);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_affectedInstanceConceptRefCell14429_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -74,7 +116,15 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell14429_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell14429_04");
-    editorCell.setSelectable(false);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell14429_05(EditorCell editorCell, SNode node, EditorContext context) {
@@ -83,7 +133,15 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell14429_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14429_06");
-    editorCell.setSelectable(false);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_affectedInstancePredicateRefNodeCell14429_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -91,7 +149,15 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CollectionCell14429_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell14429_05");
-    editorCell.setSelectable(false);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell14429_07(EditorCell editorCell, SNode node, EditorContext context) {
@@ -100,7 +166,15 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell14429_08(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14429_08");
-    editorCell.setSelectable(false);
+    {
+      Style inlineStyle = new Style() {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_affectedInstanceUpdaterRefNodeCell14429_0(EditorCell editorCell, SNode node, EditorContext context) {

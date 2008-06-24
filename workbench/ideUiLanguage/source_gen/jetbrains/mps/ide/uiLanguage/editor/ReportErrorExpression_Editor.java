@@ -27,7 +27,6 @@ public class ReportErrorExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_errorTextRefNodeCell20933_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_errorTextRefNodeCell20933_0");
   }
 
   private static void setupLabel_ConstantCell20933_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
