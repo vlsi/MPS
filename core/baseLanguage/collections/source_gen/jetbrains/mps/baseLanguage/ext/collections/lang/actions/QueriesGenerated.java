@@ -315,7 +315,7 @@ public class QueriesGenerated {
       applicableTypesInfo = (ApplicableTypesInfo)calc.calculate();
     }
     Iterator<INodeSubstituteAction> actions = _context.getActions();
-    while(actions.hasNext()) {
+    while (actions.hasNext()) {
       INodeSubstituteAction current = actions.next();
       final SNode concept = current.getOutputConcept();
       SNode applicableConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IOperation");
