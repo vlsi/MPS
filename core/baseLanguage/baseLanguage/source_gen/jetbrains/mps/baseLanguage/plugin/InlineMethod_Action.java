@@ -14,7 +14,6 @@ import jetbrains.mps.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.refactoring.inlineMethod.InlineMethodRefactoringAnalyzer;
 import jetbrains.mps.baseLanguage.refactoring.inlineMethod.InlineMethodDialog;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 
 public class InlineMethod_Action extends CurrentProjectAction {
   public static final Logger LOG = Logger.getLogger(InlineMethod_Action.class);
@@ -36,7 +35,6 @@ public class InlineMethod_Action extends CurrentProjectAction {
       {
         final SNode node = new ActionEventData(event).getNodes().get(0);
         final Wrappers._T<Boolean> b = new Wrappers._T<Boolean>(false);
-        b.value = this.isMethod(node);
         ModelAccess.instance().runReadAction(new Runnable() {
 
           public void run() {
@@ -80,18 +78,6 @@ public class InlineMethod_Action extends CurrentProjectAction {
       dialog.tryToShow();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "InlineMethod", t);
-    }
-  }
-
-  /* package */boolean isMethod(SNode node) {
-    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
-      return true;
-    } else
-    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BaseMethodCall")) {
-      return true;
-    } else
-    {
-      return false;
     }
   }
 
