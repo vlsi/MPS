@@ -8,15 +8,17 @@ import jetbrains.mps.nodeEditor.EditorCell;
 
 public class Style {
   private Style myParent;
+  private EditorCell myEditorCell;
   private List<Style> myChildren = new ArrayList<Style>();
   private Map<StyleAttribute, Object> myAttributeValues = new HashMap<StyleAttribute, Object>();
   private Map<StyleAttribute, Object> myCachedAttributeValues = new HashMap<StyleAttribute, Object>();
 
   public Style() {
+    this(null);
   }
 
-  public void apply(EditorCell cell) {
-    cell.getStyle().putAll(this);
+  public Style(EditorCell contextCell) {
+    myEditorCell = contextCell;
   }
 
   public void add(Style child) {
@@ -44,6 +46,11 @@ public class Style {
     updateCache();
   }
 
+  public<T> void set(StyleAttribute<T> attribute, AttributeCalculator<T> valueCalculator) {
+    myAttributeValues.put(attribute, valueCalculator);
+    updateCache();
+  }
+
   public void putAll(Style s) {
     for (StyleAttribute sa : s.myAttributeValues.keySet()) {
       myAttributeValues.put(sa, s.myAttributeValues.get(sa));      
@@ -66,6 +73,10 @@ public class Style {
     for (StyleAttribute attribute : attributes) {
       Object parentValue = getParentStyle() == null ? null : getParentStyle().get(attribute);
       Object currentValue = myAttributeValues.get(attribute);
+
+      if (currentValue instanceof AttributeCalculator) {
+        currentValue = ((AttributeCalculator) currentValue).calculate(myEditorCell);
+      }
       myCachedAttributeValues.put(attribute, attribute.combine(parentValue, currentValue));
     }
     
