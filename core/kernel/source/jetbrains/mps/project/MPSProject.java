@@ -77,6 +77,10 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
           m.onModuleLoad();
         }
 
+        for (IModule m : getModules()) {
+          ((AbstractModule)m).convertRenamedDependencies();
+        }
+
         ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
 
         model.setLoading(false);

@@ -3,6 +3,7 @@ package jetbrains.mps.library;
 import jetbrains.mps.ide.BootstrapModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.CollectionUtil;
@@ -66,7 +67,7 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
         for (BootstrapModule bm : BootstrapModule.values()) {
           bm.get().onModuleLoad();
         }
-
+        List<IModule> modules = new ArrayList<IModule>();
         updatePredefinedLibraries();
 
         update();
@@ -157,13 +158,17 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
   }
 
   private void updatePredefinedLibraries() {
+    List<IModule> result = new ArrayList<IModule>();
     myPredefinedLibrariesOwner = new MPSModuleOwner() { };
     for (Library l : getLibraries()) {
       if (l.isPredefined()) {
-        myRepository.readModuleDescriptors(FileSystem.getFile(l.getPath()), myPredefinedLibrariesOwner);
+        result.addAll(myRepository.readModuleDescriptors(FileSystem.getFile(l.getPath()), myPredefinedLibrariesOwner));
       }
     }
     fireOnLoad(myPredefinedLibrariesOwner);
+    for (IModule module : result) {
+      ((AbstractModule)module).convertRenamedDependencies();
+    }
   }
 
   public void update() {
@@ -173,15 +178,19 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
     myOwner = new MPSModuleOwner() { };
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
+        List<IModule> modules = new ArrayList<IModule>();
         for (Library l : getLibraries()) {
           if (!l.isPredefined()) {
-            myRepository.readModuleDescriptors(FileSystem.getFile(l.getPath()), myOwner);
+            modules = myRepository.readModuleDescriptors(FileSystem.getFile(l.getPath()), myOwner);
           }
         }
         ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
         fireOnLoad(myOwner);
 
         CleanupManager.getInstance().cleanup();
+        for (IModule module : modules) {
+          ((AbstractModule)module).convertRenamedDependencies();
+        }
       }
     });
   }

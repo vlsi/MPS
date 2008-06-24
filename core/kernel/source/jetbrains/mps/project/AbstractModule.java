@@ -71,12 +71,7 @@ public abstract class AbstractModule implements IModule {
       }
     }
 
-    boolean setModuleDescriptor = convertRenamedDependencies();
-
-    if (setModuleDescriptor && !isPackaged()) {
-      setModuleDescriptor(getModuleDescriptor());
-    }
-    if ((save || setModuleDescriptor) && !isPackaged()) {
+    if (save && !isPackaged()) {
       save();
     }
   }
@@ -103,7 +98,15 @@ public abstract class AbstractModule implements IModule {
     }
   }
 
-  public boolean convertRenamedDependencies() {
+  public void convertRenamedDependencies() {
+    boolean setModuleDescriptor = convertRenamedDependencies_internal();
+    if (setModuleDescriptor && !isPackaged()) {
+      setModuleDescriptor(getModuleDescriptor());
+      save();
+    }
+  }
+
+  protected boolean convertRenamedDependencies_internal() {
     boolean setModuleDescriptor = false;
     for (Dependency dependency : getDependOn()) {
       String moduleUID = dependency.getModuleUID();

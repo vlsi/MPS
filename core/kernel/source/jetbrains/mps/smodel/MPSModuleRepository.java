@@ -16,6 +16,9 @@ import java.util.*;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.command.CommandProcessor;
+import com.intellij.openapi.command.CommandAdapter;
+import com.intellij.openapi.command.CommandEvent;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -253,9 +256,9 @@ public class MPSModuleRepository implements ApplicationComponent {
       } else {
         module = DevKit.newInstance(file, owner);
       }
-      if (module instanceof AbstractModule) {
+     /* if (module instanceof AbstractModule) {
         ((AbstractModule)module).convertRenamedDependencies();
-      }
+      }*/
     } else {
       if (!cls.isInstance(module)) {
         LOG.error("can't register module " + module + " : module of another kind with the same name already exists", module);
@@ -413,32 +416,40 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
 
-  public void readModuleDescriptors(IFile dir, MPSModuleOwner owner) {
+  public List<IModule> readModuleDescriptors(IFile dir, MPSModuleOwner owner) {
+    List<IModule> result = new ArrayList<IModule>();
     String dirName = dir.getName();
 
-    if (isExluded(dirName)) return;
+    if (isExluded(dirName)) return result;
 
     List<IFile> files = dir.list();
     if (files == null) { //i.e it isn't a directory
       if (hasModuleExtension(dirName)) {
-        readModuleDescriptor_internal(dir, owner, getModuleExtension(dirName));
+        IModule module = readModuleDescriptor_internal(dir, owner, getModuleExtension(dirName));
+        if (module != null) {
+          result.add(module);
+        }
       }
-      return;
+      return result;
     }
 
     for (IFile file : files) {
       if (hasModuleExtension(file.getName())) {
-        readModuleDescriptor_internal(file, owner, getModuleExtension(file.getName()));
+        IModule module = readModuleDescriptor_internal(file, owner, getModuleExtension(file.getName()));
+        if (module != null) {
+          result.add(module);
+        }
       } else if (file.getName().endsWith(AbstractModule.PACKAGE_SUFFIX)) {
         IFile dirInJar = FileSystem.getFile(file.getAbsolutePath() + "!/" + AbstractModule.MODULE_DIR);
-        readModuleDescriptors(dirInJar, owner);
+        result.addAll(readModuleDescriptors(dirInJar, owner));
       }
     }
     List<IFile> dirs = files;
     for (IFile childDir : dirs) {
       if (childDir.getName().endsWith(".svn")) continue;
-      readModuleDescriptors(childDir, owner);
+      result.addAll(readModuleDescriptors(childDir, owner));
     }
+    return result;
   }
 
   private boolean hasModuleExtension(String name) {
@@ -452,13 +463,15 @@ public class MPSModuleRepository implements ApplicationComponent {
     return null;
   }
 
-  private void readModuleDescriptor_internal(IFile dir, MPSModuleOwner owner, String extension) {
+  private IModule readModuleDescriptor_internal(IFile dir, MPSModuleOwner owner, String extension) {
+    IModule module = null;
     try {
       Class<? extends IModule> cls = myExtensionsToModuleTypes.get(extension);
-      registerModule(dir, owner, cls);
+      module = registerModule(dir, owner, cls);
     } catch (Throwable t) {
       LOG.error("Fail to load module from descriptor " + dir.getAbsolutePath(), t);
     }
+    return module;
   }
 
   @UseCarefully

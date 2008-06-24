@@ -298,8 +298,8 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     }
   }
 
-  public boolean convertRenamedDependencies() {
-    boolean setModuleDescriptor = super.convertRenamedDependencies();
+  protected boolean convertRenamedDependencies_internal() {
+    boolean setModuleDescriptor = super.convertRenamedDependencies_internal();
 
     for (String languageNamespace : getExtendedLanguageNamespaces()) {
       Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
