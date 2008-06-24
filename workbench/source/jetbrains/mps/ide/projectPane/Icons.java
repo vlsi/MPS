@@ -46,7 +46,7 @@ public class Icons {
   public static final Icon FIND_USAGES_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/findUsagesModel.png"));
   public static final Icon PLUGIN_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/pluginModel.png"));
   public static final Icon BEHAVIOR_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/behaviorModel.png"));
-  public static final Icon CONSTRAINTS_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/constraints_Model.png"));
+  public static final Icon CONSTRAINTS_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/constraintsModel.png"));
   public static final Icon ACCESSORY_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/accessoryModel.png"));
 
   public static final Icon OPENED_FOLDER = new ImageIcon(Icons.class.getResource("other/openedFolder.png"));
