@@ -2,7 +2,6 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.projectLanguage.structure.Model;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.ide.BootstrapModule;
 import jetbrains.mps.ide.projectPane.Icons;
 
@@ -61,7 +60,7 @@ public enum LanguageAspect {
     }
 
     public Icon getIcon() {
-      return Icons.CONSTRAINTS_MODEL_ICON;
+      return Icons.BEHAVIOR_MODEL_ICON;
     }
   },
 
