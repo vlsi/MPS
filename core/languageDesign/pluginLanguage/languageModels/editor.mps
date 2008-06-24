@@ -1173,7 +1173,7 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1214305695649" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1214305564349">
           <property name="noTargetText" value="&lt;getComponent block&gt;" />
-          <link role="relationDeclaration" targetNodeId="1.1214305537279" />
+          <link role="relationDeclaration" targetNodeId="1.1214307129846" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1208271608577" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1214306398855">

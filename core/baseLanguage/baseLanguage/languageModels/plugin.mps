@@ -4777,12 +4777,12 @@
         </node>
       </node>
     </node>
-    <node role="getComponentBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.GetComponentBlock" id="1214306229787">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214306229788">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214306292795">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214306297373">
-            <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1214306297374" />
-            <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation" id="1214306297375">
+    <node role="getComponentBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.GetComponentBlock" id="1214308524963">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214308524964">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214308524981">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214210878283">
+            <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1214210878284" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation" id="1214210878285">
               <link role="member" targetNodeId="1214210764049" resolveInfo="myComponent" />
             </node>
           </node>
@@ -4795,15 +4795,15 @@
     <property name="caption" value="TODO" />
     <property name="icon" value="${language_descriptor}\source\jetbrains\mps\baseLanguage\plugin\todo.png" />
     <property name="number" value="2" />
-    <node role="getComponentBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.GetComponentBlock" id="1214306306497">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214306306498">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214306308420">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1214306316403">
-            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1214306316404">
+    <node role="getComponentBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.GetComponentBlock" id="1214308524982">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214308524983">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214308524984">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213034573496">
+            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213034573498">
               <link role="baseMethodDeclaration" targetNodeId="32.~TodoViewer.&lt;init&gt;(jetbrains.mps.project.MPSProject)" resolveInfo="TodoViewer" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214306316405">
-                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1214306316406" />
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1214306316407">
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209126436957">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1209126436958" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209126436959">
                   <link role="baseMethodDeclaration" targetNodeId="39.~BaseTool.getMPSProject():jetbrains.mps.project.MPSProject" resolveInfo="getMPSProject" />
                 </node>
               </node>
