@@ -337,7 +337,9 @@ __switch__:
   }
 
   public static void nodeFactory_NodeSetup_ClassConcept_1213605907037(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SLinkOperations.addNewChild(_context.getNewNode(), "constructor", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
+    if (!(SNodeOperations.isInstanceOf(_context.getNewNode(), "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) {
+      SLinkOperations.addNewChild(_context.getNewNode(), "constructor", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
+    }
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1177334764520(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
@@ -1358,7 +1360,7 @@ __switch__:
         public SNode doSubstitute(String pattern) {
           SNode to = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", null);
           SNode current = _context.getSourceNode();
-          while(SNodeOperations.isInstanceOf(SNodeOperations.getParent(current, null, false, false), "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
+          while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(current, null, false, false), "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
             current = SNodeOperations.getParent(current, null, false, false);
           }
           SNodeOperations.replaceWithAnother(current, to);
