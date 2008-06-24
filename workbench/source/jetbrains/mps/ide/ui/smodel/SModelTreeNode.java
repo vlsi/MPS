@@ -282,8 +282,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   public JPopupMenu getPopupMenu() {
     ActionContext context = getActionContext();
     context.put(SModelDescriptor.class, getSModelDescriptor());
-    ActionManager manager = ActionManager.getInstance();
-    BaseGroup group = (BaseGroup) manager.getAction(ProjectPane.PROJECT_PANE_MODEL_ACTIONS);
+    BaseGroup group = ActionUtils.getGroup(ProjectPane.PROJECT_PANE_MODEL_ACTIONS);
 
     return createMenu(context, group);
   }

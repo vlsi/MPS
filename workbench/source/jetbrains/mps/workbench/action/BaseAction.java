@@ -11,7 +11,8 @@ import javax.swing.SwingUtilities;
 public abstract class BaseAction extends AnAction {
   private boolean myIsAlwaysVisible;
   private boolean myExecuteInSeparateThread;
-  private boolean myExecuteOutsideCommand;
+  //todo: make private
+  protected boolean myExecuteOutsideCommand;
 
   public BaseAction(String text, String description, Icon icon, boolean isAlwaysVisible, boolean executeInSeparateThread, boolean executeOutsideCommand) {
     super(text, description, icon);
