@@ -114,10 +114,12 @@
     <link role="conceptDeclaration" targetNodeId="1.1174510540317" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1174510565684">
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1174510567265">
-        <property name="bracketsColor" value="DARK_MAGENTA" />
         <link role="relationDeclaration" targetNodeId="1.1174510571016" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBracketsStyleSheetItem" id="1214313021466">
           <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.BracketColorStyleSheetItem" id="1214330065432">
+          <property name="color" value="DARK_MAGENTA" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1175159209099">
@@ -575,10 +577,12 @@
     <link role="conceptDeclaration" targetNodeId="1.1174656254036" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1174656460068">
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1174656462804">
-        <property name="bracketsColor" value="DARK_MAGENTA" />
         <link role="relationDeclaration" targetNodeId="3.1137022507850" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBracketsStyleSheetItem" id="1214313021451">
           <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.BracketColorStyleSheetItem" id="1214330065434">
+          <property name="color" value="DARK_MAGENTA" />
         </node>
       </node>
     </node>

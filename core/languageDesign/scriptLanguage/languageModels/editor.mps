@@ -367,7 +367,6 @@
       <property name="gridLayout" value="true" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1177551421958">
         <property name="vertical" value="true" />
-        <property name="bracketsColor" value="lightGray" />
         <property name="gridLayout" value="true" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1177551421959">
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1177551421960">
@@ -462,6 +461,9 @@
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBracketsStyleSheetItem" id="1214313021457">
           <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.BracketColorStyleSheetItem" id="1214330065411">
+          <property name="color" value="lightGray" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1177461567284">

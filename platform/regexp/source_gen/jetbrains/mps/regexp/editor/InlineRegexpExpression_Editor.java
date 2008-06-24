@@ -8,9 +8,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
@@ -32,12 +34,18 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style() {
         {
           this.set(StyleAttributes.DRAW_BRACKETS, true);
+          this.set(StyleAttributes.BRACKETS_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return InlineRegexpExpression_Editor.calculateColor(cell);
+            }
+
+          });
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setBracketsColor(MPSColors.DARK_MAGENTA);
   }
 
   private static void setupBasic_CollectionCell6981_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -318,6 +326,12 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition6981_02(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "multiLine");
+  }
+
+  private static Color calculateColor(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_MAGENTA;
+    return result;
   }
 
 

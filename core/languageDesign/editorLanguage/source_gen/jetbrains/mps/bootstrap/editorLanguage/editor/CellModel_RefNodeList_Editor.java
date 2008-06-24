@@ -1591,6 +1591,10 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     return !(SPropertyOperations.hasValue(node, "layoutConstraint", null, null));
   }
 
+  public static boolean renderingCondition3462_010(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.hasValue(node, "bracketsColor", null, null));
+  }
+
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.create_CollectionCell3462_0(context, node);
@@ -1740,7 +1744,9 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     if (renderingCondition3462_04(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell3462_027(context, node));
     }
-    editorCell.addEditorCell(this.create_CollectionCell3462_028(context, node));
+    if (renderingCondition3462_010(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.create_CollectionCell3462_028(context, node));
+    }
     if (renderingCondition3462_07(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell3462_029(context, node));
     }

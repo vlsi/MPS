@@ -862,6 +862,100 @@
         </node>
       </node>
     </node>
+    <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1214329865408">
+      <property name="description" value="brackets color" />
+      <link role="affectedInstanceConcept" targetNodeId="1.1073389214265" resolveInfo="EditorCellModel" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Updater" id="1214329865409">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214329865410">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1214329903350">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1214329903351">
+              <property name="name" value="item" />
+              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1214329903352">
+                <link role="concept" targetNodeId="1.1186413799158" resolveInfo="BracketColorStyleSheetItem" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1214329909510">
+                <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1214329909511">
+                  <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1214329909512">
+                    <link role="concept" targetNodeId="1.1186413799158" resolveInfo="BracketColorStyleSheetItem" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214329912295">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214329916832">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214329912969">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214329912296">
+                  <link role="variableDeclaration" targetNodeId="1214329903351" resolveInfo="item" />
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1214329916222">
+                  <link role="property" targetNodeId="1.1186403713874" resolveInfo="color" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1214329917585">
+                <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214329919041">
+                  <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1214329918540" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1214329921373">
+                    <link role="property" targetNodeId="1.1102623213256" resolveInfo="bracketsColor" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214329925406">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214329928834">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214329925470">
+                <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1214329925407" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1214329927926">
+                  <link role="link" targetNodeId="1.1214305243050" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddChildOperation" id="1214329932259">
+                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214329932995">
+                  <link role="variableDeclaration" targetNodeId="1214329903351" resolveInfo="item" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214329935575">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214329938175">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214329935671">
+                <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1214329935576" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1214329937361">
+                  <link role="property" targetNodeId="1.1102623213256" resolveInfo="bracketsColor" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1214329940053">
+                <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1214329942774">
+                  <link role="enumMember" targetNodeId="1.1083952545110" resolveInfo="none" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="affectedInstancePredicate" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Predicate" id="1214329875989">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214329875990">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214329879710">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1214329879711">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214329885686">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214329881807">
+                  <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1214329880728" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1214329884857">
+                    <link role="property" targetNodeId="1.1102623213256" resolveInfo="bracketsColor" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1214329886580">
+                  <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1214329886581">
+                    <link role="enumMember" targetNodeId="1.1083952545110" resolveInfo="none" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 

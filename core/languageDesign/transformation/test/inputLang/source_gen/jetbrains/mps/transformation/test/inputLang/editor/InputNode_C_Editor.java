@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
@@ -41,12 +42,18 @@ public class InputNode_C_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.DRAW_BRACKETS, true);
+          this.set(StyleAttributes.BRACKETS_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return InputNode_C_Editor.calculateColor(cell);
+            }
+
+          });
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setBracketsColor(Color.gray);
   }
 
   private static void setupBasic_CollectionCell13648_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -135,6 +142,12 @@ public class InputNode_C_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell13648_04(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static Color calculateColor(EditorCell cell) {
+    Color result;
+    result = Color.gray;
+    return result;
   }
 
 
