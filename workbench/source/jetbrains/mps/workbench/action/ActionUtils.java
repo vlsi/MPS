@@ -102,6 +102,12 @@ public class ActionUtils {
         if (dataId.equals(MPSDataKeys.SNODE.getName())) {
           return context.getNode();
         }
+        if (dataId.equals(MPSDataKeys.SNODES.getName())) {
+          return context.getNodes();
+        }
+        if (dataId.equals(MPSDataKeys.MODELS.getName())) {
+          return context.getModels();
+        }
         if (dataId.equals(MPSDataKeys.SMODEL_DESCRIPTOR.getName())) {
           return context.getModel();
         }
