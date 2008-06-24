@@ -2,6 +2,7 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.ide.BaseDialog;
 import jetbrains.mps.ide.DialogDimensionsSettings;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -78,7 +79,8 @@ public class ChooseModuleDialog extends BaseDialog {
       super(module, null);
       myModule = module;
 
-      setNodeIdentifier(myModule.toString());
+      setNodeIdentifier(myModule.toString());      
+      setIcon(IconManager.getIconFor(module));
     }
 
     public void doubleClick() {
