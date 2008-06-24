@@ -16,6 +16,7 @@ import jetbrains.mps.ide.scriptLanguage.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 
@@ -25,6 +26,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
+import java.util.Set;
+import java.util.HashSet;
+import java.util.ArrayList;
 import java.lang.reflect.InvocationTargetException;
 
 /**
@@ -79,13 +83,31 @@ public class MigrationScriptsView {
 
   private void applyMigrations() {
     LOG.checkEDT();
-    final int aliveResultCount = myFinder.getLastSearchResults().getAliveResults().size();
-    if (aliveResultCount == 0) {
-      updateControls(false, new JLabel("done"));
+    final List<SearchResult<SNode>> aliveIncludedResults = new ArrayList<SearchResult<SNode>>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        List<SNodePointer> includedNodes = myUsagesVew.getIncludedResultNodes();
+        Set<SNode> aliveIncludedNodes = new HashSet<SNode>();
+        for (SNodePointer includedNode : includedNodes) {
+          if(includedNode.getNode() != null) {
+            aliveIncludedNodes.add(includedNode.getNode());
+          }
+        }
+        List<SearchResult<SNode>> aliveResults = myFinder.getLastSearchResults().getAliveResults();
+        for (SearchResult<SNode> aliveResult : aliveResults) {
+          if(aliveIncludedNodes.contains(aliveResult.getObject())) {
+            aliveIncludedResults.add(aliveResult);
+          }
+        }
+      }
+    });
+
+    if(aliveIncludedResults.size() == 0) {
+      JOptionPane.showMessageDialog(myTool.getComponent(),"No job");
       return;
     }
 
-    final JProgressBar progress = new JProgressBar(0, aliveResultCount);
+    final JProgressBar progress = new JProgressBar(0, aliveIncludedResults.size());
     progress.setString("applying migrations...");
     progress.setStringPainted(true);
     progress.setBorderPainted(false);
@@ -95,30 +117,25 @@ public class MigrationScriptsView {
       public void run() {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
-            List<SearchResult<SNode>> aliveResults = myFinder.getLastSearchResults().getAliveResults();
-            if (!aliveResults.isEmpty()) {
-              int progressCount = 0;
-              for (SearchResult<SNode> aliveResult : aliveResults) {
-                progress.setValue((progressCount++));
-                progress.paintImmediately(new Rectangle(progress.getSize()));
-                SNode node = aliveResult.getObject();
-                // still alive?
-                if (node != null && node.isRegistered()) {
-                  // still applicable?
-                  AbstractMigrationRefactoring migrationRefactoring = myFinder.getRefactoring(aliveResult);
-                  if (MigrationScriptUtil.isApplicableRefactoring(node, migrationRefactoring)) {
-                    MigrationScriptUtil.performRefactoring(node, migrationRefactoring);
-//                    long curr = System.currentTimeMillis();
-//                    while (System.currentTimeMillis() < curr + 100) ;
-                  }
+            int progressCount = 0;
+            for (SearchResult<SNode> aliveIncludedResult : aliveIncludedResults) {
+              progress.setValue((progressCount++));
+              progress.paintImmediately(new Rectangle(progress.getSize()));
+              SNode node = aliveIncludedResult.getObject();
+              // still alive?
+              if (node != null && node.isRegistered()) {
+                // still applicable?
+                AbstractMigrationRefactoring migrationRefactoring = myFinder.getRefactoring(aliveIncludedResult);
+                if (MigrationScriptUtil.isApplicableRefactoring(node, migrationRefactoring)) {
+                  MigrationScriptUtil.performRefactoring(node, migrationRefactoring);
                 }
               }
-              progress.setValue(aliveResultCount);
-              progress.paintImmediately(new Rectangle(progress.getSize()));
-
-              // ----
-              checkMigrationResults();
             }
+            progress.setValue(aliveIncludedResults.size());
+            progress.paintImmediately(new Rectangle(progress.getSize()));
+
+            // ----
+            checkMigrationResults();
           }
         });
       }
