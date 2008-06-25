@@ -224,6 +224,7 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
         Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.SELECTABLE, true);
+            this.set(StyleAttributes.EDITABLE, true);
           }
 
         };
@@ -232,7 +233,6 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_ConstantCell10859_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.setEditable(true);
     }
 
 

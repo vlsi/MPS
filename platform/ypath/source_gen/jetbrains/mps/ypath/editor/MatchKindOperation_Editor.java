@@ -36,7 +36,7 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell2350_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell2350_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
         }
@@ -60,7 +60,7 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell2350_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell2350_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -76,7 +76,7 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_nodeKindOccurrenceRefNodeCell2350_0(EditorCell editorCell, SNode node, EditorContext context) {
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }

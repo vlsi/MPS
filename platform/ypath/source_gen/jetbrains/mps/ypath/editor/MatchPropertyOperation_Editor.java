@@ -28,7 +28,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_nodeKindOccurrenceRefNodeCell12004_0(EditorCell editorCell, SNode node, EditorContext context) {
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -41,7 +41,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell12004_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell12004_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -61,7 +61,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell12004_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell12004_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -77,7 +77,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell12004_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell12004_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -90,7 +90,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell12004_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell12004_03");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
         }

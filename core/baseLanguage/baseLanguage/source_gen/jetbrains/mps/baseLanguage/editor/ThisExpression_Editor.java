@@ -33,6 +33,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.EDITABLE, true);
         }
 
       };
@@ -51,6 +52,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.EDITABLE, true);
         }
 
       };
@@ -69,6 +71,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.EDITABLE, false);
         }
 
       };
@@ -77,12 +80,10 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell2695_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(true);
     editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_ConstantCell2695_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(true);
     editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
@@ -90,7 +91,6 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell2695_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   public static boolean renderingCondition2695_0(SNode node, EditorContext editorContext, IScope scope) {

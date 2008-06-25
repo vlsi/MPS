@@ -34,7 +34,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell5550_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5550_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
@@ -51,7 +51,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell5550_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5550_04");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
@@ -64,7 +64,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell5550_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell5550_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -77,7 +77,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell5550_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell5550_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -94,7 +94,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell5550_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5550_06");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
@@ -107,7 +107,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell5550_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell5550_03");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -124,7 +124,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell5550_08(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5550_08");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
@@ -137,7 +137,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell5550_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell5550_04");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -154,7 +154,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell5550_010(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5550_010");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
@@ -167,7 +167,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell5550_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell5550_05");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -184,7 +184,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell5550_012(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5550_012");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }

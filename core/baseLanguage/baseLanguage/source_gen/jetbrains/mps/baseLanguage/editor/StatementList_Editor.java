@@ -73,6 +73,7 @@ public class StatementList_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.SELECTABLE, true);
             this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+            this.set(StyleAttributes.EDITABLE, true);
           }
 
         };
@@ -81,7 +82,6 @@ public class StatementList_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_ConstantCell6566_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.setEditable(true);
       editorCell.setTextColor(Color.darkGray);
     }
 

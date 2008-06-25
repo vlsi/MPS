@@ -15,59 +15,59 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class MoneyLiteral_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1186668017411");
+  private static void setupBasic_CollectionCell9825_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell9825_0");
   }
 
-  private static void setupBasic_AmountCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1186668023743");
+  private static void setupBasic_amountPropertyCell9825_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_amountPropertyCell9825_0");
   }
 
-  private static void setupBasic_CurrencyCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1186668032201");
+  private static void setupBasic_currencyPropertyCell9825_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_currencyPropertyCell9825_0");
   }
 
-  private static void setupLabel_AmountCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_amountPropertyCell9825_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_CurrencyCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_currencyPropertyCell9825_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createRowCell(context, node);
+    return this.create_CollectionCell9825_0(context, node);
   }
 
-  public EditorCell createRowCell(EditorContext context, SNode node) {
+  public EditorCell create_CollectionCell9825_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    MoneyLiteral_Editor.setupBasic_RowCell(editorCell, node, context);
+    setupBasic_CollectionCell9825_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createAmountCell(context, node));
-    editorCell.addEditorCell(this.createCurrencyCell(context, node));
+    editorCell.addEditorCell(this.create_amountPropertyCell9825_0(context, node));
+    editorCell.addEditorCell(this.create_currencyPropertyCell9825_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createAmountCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_amountPropertyCell9825_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    MoneyLiteral_Editor.setupBasic_AmountCell(editorCell, node, context);
+    setupBasic_amountPropertyCell9825_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      MoneyLiteral_Editor.setupLabel_AmountCell((EditorCell_Label) editorCell, node, context);
+      setupLabel_amountPropertyCell9825_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createAmountCell(EditorContext context, SNode node) {
+  public EditorCell create_amountPropertyCell9825_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("amount");
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createAmountCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_amountPropertyCell9825_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -75,28 +75,28 @@ public class MoneyLiteral_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
-  public EditorCell createCurrencyCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell create_currencyPropertyCell9825_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    MoneyLiteral_Editor.setupBasic_CurrencyCell(editorCell, node, context);
+    setupBasic_currencyPropertyCell9825_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      MoneyLiteral_Editor.setupLabel_CurrencyCell((EditorCell_Label) editorCell, node, context);
+      setupLabel_currencyPropertyCell9825_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createCurrencyCell(EditorContext context, SNode node) {
+  public EditorCell create_currencyPropertyCell9825_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("currency");
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createCurrencyCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.create_currencyPropertyCell9825_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -104,7 +104,7 @@ public class MoneyLiteral_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
 }

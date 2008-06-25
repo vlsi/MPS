@@ -1315,7 +1315,9 @@
               <property name="separatorText" value="," />
               <link role="relationDeclaration" targetNodeId="3.1068580123134" />
               <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1178272509025">
-                <property name="editable" value="true" />
+                <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032095">
+                  <property name="flag" value="true" />
+                </node>
               </node>
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1177755613651">

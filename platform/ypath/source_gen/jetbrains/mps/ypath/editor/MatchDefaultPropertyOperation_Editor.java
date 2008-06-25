@@ -36,7 +36,7 @@ public class MatchDefaultPropertyOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell13590_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell13590_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
         }

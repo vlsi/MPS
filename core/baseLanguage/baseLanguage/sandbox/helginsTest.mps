@@ -444,7 +444,6 @@
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1186051408113">
     <property name="name" value="CollectionsHelginsTest" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1186051417381">
-      <property name="name" value="foo" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1186051417382" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1186051417383" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186051417384">

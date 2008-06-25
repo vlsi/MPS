@@ -23,7 +23,7 @@ public class WildcardPattern_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell5808_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5808_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         }

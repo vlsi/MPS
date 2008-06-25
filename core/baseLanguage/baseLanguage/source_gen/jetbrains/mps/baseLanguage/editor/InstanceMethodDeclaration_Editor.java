@@ -133,6 +133,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.EDITABLE, true);
         }
 
       };
@@ -278,7 +279,6 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell3805_03(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(true);
   }
 
   private static void setupLabel_returnTypeRefNodeCell3805_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -750,6 +750,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
         Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.SELECTABLE, true);
+            this.set(StyleAttributes.EDITABLE, true);
           }
 
         };
@@ -758,7 +759,6 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_ConstantCell3805_04(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.setEditable(true);
     }
 
 

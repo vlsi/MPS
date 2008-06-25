@@ -68,6 +68,7 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+          this.set(StyleAttributes.EDITABLE, false);
         }
 
       };
@@ -88,7 +89,6 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell18816_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   public static boolean renderingCondition18816_0(SNode node, EditorContext editorContext, IScope scope) {
@@ -235,6 +235,7 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
         Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.SELECTABLE, true);
+            this.set(StyleAttributes.EDITABLE, true);
           }
 
         };
@@ -243,7 +244,6 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_ConstantCell18816_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.setEditable(true);
     }
 
 

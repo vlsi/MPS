@@ -69,8 +69,10 @@
         <link role="relationDeclaration" targetNodeId="1.1187358164451" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1187703331058">
-        <property name="editable" value="false" />
         <link role="relationDeclaration" targetNodeId="2.1137473891462" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032078">
+          <property name="flag" value="false" />
+        </node>
       </node>
     </node>
   </node>

@@ -31,7 +31,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell4442_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell4442_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -44,7 +44,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell4442_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell4442_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -57,7 +57,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell4442_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell4442_03");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -70,7 +70,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell4442_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell4442_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -83,7 +83,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell4442_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell4442_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -100,7 +100,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell4442_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell4442_04");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -113,7 +113,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell4442_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell4442_03");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -126,7 +126,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell4442_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell4442_04");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -142,7 +142,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell4442_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell4442_05");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -155,7 +155,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell4442_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell4442_05");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -168,7 +168,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell4442_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell4442_06");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }

@@ -43,7 +43,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7832_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7832_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
@@ -56,7 +56,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_rolePropertyCell7832_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_rolePropertyCell7832_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
@@ -69,7 +69,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_sourceCardinalityPropertyCell7832_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_sourceCardinalityPropertyCell7832_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
@@ -82,9 +82,10 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ModelAccessCell7832_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ModelAccessCell7832_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.EDITABLE, false);
         }
 
       };
@@ -95,7 +96,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7832_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7832_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.DRAW_BORDER, true);
@@ -109,7 +110,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7832_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7832_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.DRAW_BORDER, true);
@@ -123,7 +124,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_specializedLinkRefCell7832_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_specializedLinkRefCell7832_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
@@ -136,7 +137,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_targetRefCell7832_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_targetRefCell7832_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
@@ -153,7 +154,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ModelAccessCell7832_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
     editorCell.setTextBackgroundColor(Color.lightGray);
   }
 

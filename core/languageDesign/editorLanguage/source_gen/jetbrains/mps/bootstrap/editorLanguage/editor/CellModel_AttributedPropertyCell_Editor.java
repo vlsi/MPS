@@ -40,6 +40,7 @@ public class CellModel_AttributedPropertyCell_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.EDITABLE, false);
         }
 
       };
@@ -188,7 +189,6 @@ public class CellModel_AttributedPropertyCell_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell8144_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
     editorCell.setTextBackgroundColor(Color.blue);
   }
 

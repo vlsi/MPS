@@ -135,6 +135,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.EDITABLE, true);
         }
 
       };
@@ -259,7 +260,6 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell19808_03(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(true);
   }
 
   private static void setupLabel_ConstantCell19808_04(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -648,6 +648,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
         Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.SELECTABLE, true);
+            this.set(StyleAttributes.EDITABLE, true);
           }
 
         };
@@ -656,7 +657,6 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_ConstantCell19808_05(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.setEditable(true);
     }
 
 

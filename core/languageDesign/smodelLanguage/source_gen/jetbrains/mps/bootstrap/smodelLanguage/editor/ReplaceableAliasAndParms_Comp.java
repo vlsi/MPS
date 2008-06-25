@@ -49,7 +49,7 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
   private static void setupBasic_ConceptPropertyCell14862_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConceptPropertyCell14862_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         }
@@ -62,7 +62,7 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
   private static void setupBasic_CollectionCell14862_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell14862_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -75,7 +75,7 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
   private static void setupBasic_ConstantCell14862_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14862_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
@@ -93,7 +93,7 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
   private static void setupBasic_ConstantCell14862_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14862_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         }
@@ -223,9 +223,10 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
     private static void setupBasic_ConstantCell14862_01(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14862_01");
       {
-        Style inlineStyle = new Style() {
+        Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+            this.set(StyleAttributes.EDITABLE, true);
           }
 
         };
@@ -234,7 +235,6 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
     }
 
     private static void setupLabel_ConstantCell14862_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.setEditable(true);
       editorCell.setTextColor(Color.lightGray);
     }
 

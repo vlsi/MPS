@@ -30,7 +30,7 @@ public class LambdaMethod_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell16314_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell16314_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         }
@@ -42,7 +42,7 @@ public class LambdaMethod_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_bodyRefNodeCell16314_0(EditorCell editorCell, SNode node, EditorContext context) {
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.DRAW_BRACKETS, true);
         }

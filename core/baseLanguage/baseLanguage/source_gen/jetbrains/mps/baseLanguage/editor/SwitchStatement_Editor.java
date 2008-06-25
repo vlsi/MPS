@@ -206,6 +206,7 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.EDITABLE, false);
         }
 
       };
@@ -232,6 +233,15 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell14370_011(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14370_011");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.EDITABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell14370_012(EditorCell editorCell, SNode node, EditorContext context) {
@@ -240,6 +250,7 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.EDITABLE, false);
         }
 
       };
@@ -296,15 +307,12 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell14370_010(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   private static void setupLabel_ConstantCell14370_011(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   private static void setupLabel_ConstantCell14370_012(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   private static void setupLabel_labelPropertyCell14370_01(EditorCell_Label editorCell, SNode node, EditorContext context) {

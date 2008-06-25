@@ -119,11 +119,13 @@
     <link role="conceptDeclaration" targetNodeId="1.1138055754698" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1138405907970">
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1138405916830">
-        <property name="editable" value="true" />
         <property name="textFgColor" value="DARK_BLUE" />
         <property name="text" value="node" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934043">
           <property name="style" value="BOLD" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032198">
+          <property name="flag" value="true" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1138406005691">
@@ -632,8 +634,10 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1140129701012">
     <link role="conceptDeclaration" targetNodeId="1.1140129518788" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1140129710123">
-      <property name="editable" value="true" />
       <property name="text" value="remove" />
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032009">
+        <property name="flag" value="true" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1140131924706">
@@ -670,8 +674,10 @@
     <property name="package" value="operation.node" />
     <link role="conceptDeclaration" targetNodeId="1.1140133623887" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1140133705634">
-      <property name="editable" value="true" />
       <property name="text" value="delete" />
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398031925">
+        <property name="flag" value="true" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1140138174990">
@@ -859,11 +865,13 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1143226136623">
     <link role="conceptDeclaration" targetNodeId="1.1143226024141" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1143226143282">
-      <property name="editable" value="true" />
       <property name="textFgColor" value="DARK_BLUE" />
       <property name="text" value="model" />
       <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934151">
         <property name="style" value="BOLD" />
+      </node>
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032206">
+        <property name="flag" value="true" />
       </node>
     </node>
   </node>
@@ -871,9 +879,11 @@
     <property name="package" value="operation.node" />
     <link role="conceptDeclaration" targetNodeId="1.1143234257716" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1143234307769">
-      <property name="editable" value="true" />
       <property name="text" value="model" />
       <property name="attractsFocus" value="1" />
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398031922">
+        <property name="flag" value="true" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1143235366830">
@@ -932,16 +942,20 @@
     <property name="package" value="operation.node" />
     <link role="conceptDeclaration" targetNodeId="1.1143511969223" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1143512939911">
-      <property name="editable" value="true" />
       <property name="text" value="prev-sibling" />
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032060">
+        <property name="flag" value="true" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1143512964459">
     <property name="package" value="operation.node" />
     <link role="conceptDeclaration" targetNodeId="1.1143512015885" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1143512964460">
-      <property name="editable" value="true" />
       <property name="text" value="next-sibling" />
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032068">
+        <property name="flag" value="true" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1144100785515">
@@ -1077,11 +1091,13 @@
     <link role="conceptDeclaration" targetNodeId="1.1145383075378" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1145383245679">
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1145383245680">
-        <property name="editable" value="true" />
         <property name="textFgColor" value="DARK_BLUE" />
         <property name="text" value="nlist" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934105">
           <property name="style" value="BOLD" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398031994">
+          <property name="flag" value="true" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1145383245681">
@@ -1117,11 +1133,13 @@
         <link role="relationDeclaration" targetNodeId="1.1140138123956" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1145404664305">
-        <property name="editable" value="false" />
         <property name="textFgColor" value="DARK_MAGENTA" />
         <property name="text" value="/" />
         <property name="attractsFocus" value="1" />
         <link role="actionMap" targetNodeId="1145407825538" resolveInfo="SemanticDowncastExpression_Symbol_Actions" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398031962">
+          <property name="flag" value="false" />
+        </node>
       </node>
     </node>
   </node>
@@ -1153,8 +1171,10 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1145468780047">
     <link role="conceptDeclaration" targetNodeId="1.1145468686058" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1145468793690">
-      <property name="editable" value="true" />
       <property name="text" value="count" />
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398031985">
+        <property name="flag" value="true" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1145567617432">
@@ -1447,8 +1467,10 @@
     <property name="package" value="operation.node" />
     <link role="conceptDeclaration" targetNodeId="1.1171310072040" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1171310416458">
-      <property name="editable" value="true" />
       <property name="text" value="containing root" />
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398031973">
+        <property name="flag" value="true" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1171315913365">
@@ -1711,26 +1733,32 @@
     <property name="package" value="operation.node" />
     <link role="conceptDeclaration" targetNodeId="1.1171500988903" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1171501030411">
-      <property name="editable" value="true" />
       <property name="text" value="children" />
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032210">
+        <property name="flag" value="true" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1171999181752">
     <property name="package" value="operation.node" />
     <link role="conceptDeclaration" targetNodeId="1.1171999116870" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1171999196301">
-      <property name="editable" value="true" />
       <property name="text" value="isNull" />
       <property name="attractsFocus" value="1" />
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398031917">
+        <property name="flag" value="true" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1172008334580">
     <property name="package" value="operation.node" />
     <link role="conceptDeclaration" targetNodeId="1.1172008320231" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1172008340176">
-      <property name="editable" value="true" />
       <property name="text" value="isNotNull" />
       <property name="attractsFocus" value="1" />
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032018">
+        <property name="flag" value="true" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1172244086685">
@@ -1766,9 +1794,11 @@
     <property name="package" value="operation.node" />
     <link role="conceptDeclaration" targetNodeId="1.1172323065820" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1172323109267">
-      <property name="editable" value="true" />
       <property name="text" value="concept" />
       <property name="attractsFocus" value="1" />
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032020">
+        <property name="flag" value="true" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1172326614774">
@@ -1842,11 +1872,13 @@
     <link role="conceptDeclaration" targetNodeId="1.1172420572800" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1180481149411">
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1180481149412">
-        <property name="editable" value="true" />
         <property name="textFgColor" value="DARK_BLUE" />
         <property name="text" value="concept" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934182">
           <property name="style" value="BOLD" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032084">
+          <property name="flag" value="true" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1180481149413">
@@ -1884,8 +1916,10 @@
         <property name="textFgColor" value="red" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1172421378671">
-        <property name="editable" value="true" />
         <property name="text" value="isAssignableFrom" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032156">
+          <property name="flag" value="true" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1178066424681">
         <property name="text" value="(" />
@@ -2043,11 +2077,13 @@
     <link role="conceptDeclaration" targetNodeId="1.1177025403857" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1177027253787">
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1177027260554">
-        <property name="editable" value="false" />
         <property name="textFgColor" value="red" />
         <property name="text" value="!#" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934122">
           <property name="style" value="ITALIC" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398031921">
+          <property name="flag" value="false" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1177027356385">
@@ -2074,9 +2110,11 @@
     <property name="package" value="operation.node" />
     <link role="conceptDeclaration" targetNodeId="1.1179168000618" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1179168170880">
-      <property name="editable" value="false" />
       <property name="attractsFocus" value="1" />
       <link role="relationDeclaration" targetNodeId="2.1137473891462" />
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032142">
+        <property name="flag" value="false" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1179350233276">
@@ -2112,7 +2150,9 @@
         <property name="vertical" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1179409255348" />
         <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1179409374863">
-          <property name="editable" value="true" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032159">
+            <property name="flag" value="true" />
+          </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1179409379177">
@@ -2222,8 +2262,10 @@
     <property name="package" value="operation.concept" />
     <link role="conceptDeclaration" targetNodeId="1.1180458444893" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1180459627781">
-      <property name="editable" value="true" />
       <property name="text" value="hierarchy" />
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032006">
+        <property name="flag" value="true" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1180636825133">
@@ -2472,11 +2514,13 @@
     <link role="conceptDeclaration" targetNodeId="1.1204834851141" resolveInfo="ExpressionArg" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1204835162156">
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1204835162157">
-        <property name="editable" value="false" />
         <property name="textFgColor" value="DARK_MAGENTA" />
         <property name="text" value="#" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934144">
           <property name="style" value="ITALIC" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032149">
+          <property name="flag" value="false" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1204835162158">
@@ -2581,8 +2625,10 @@
     <property name="package" value="attribute" />
     <link role="conceptDeclaration" targetNodeId="1.1205357139746" resolveInfo="AllAttributesQualifier" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1205357242128">
-      <property name="editable" value="false" />
       <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032176">
+        <property name="flag" value="false" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheet" id="1205441004091">
@@ -2639,7 +2685,9 @@
         <property name="separatorText" value="," />
         <link role="relationDeclaration" targetNodeId="4.1068499141038" />
         <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206019768050">
-          <property name="editable" value="true" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032137">
+            <property name="flag" value="true" />
+          </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206019920053">
@@ -2753,12 +2801,14 @@
           <property name="vertical" value="false" />
           <link role="relationDeclaration" targetNodeId="1.1144104376918" />
           <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206995959905">
-            <property name="editable" value="true" />
             <property name="textFgColor" value="lightGray" />
             <property name="text" value="no params" />
             <property name="defaultCaretPosition" value="FIRST" />
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934287">
               <property name="style" value="ITALIC" />
+            </node>
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032170">
+              <property name="flag" value="true" />
             </node>
           </node>
         </node>

@@ -669,10 +669,18 @@ public class Interface_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_ConstantCell5419_08(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5419_08");
+      {
+        Style inlineStyle = new Style(editorCell) {
+          {
+            this.set(StyleAttributes.EDITABLE, true);
+          }
+
+        };
+        inlineStyle.apply(editorCell);
+      }
     }
 
     private static void setupLabel_ConstantCell5419_08(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.setEditable(true);
     }
 
 

@@ -53,7 +53,7 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell21416_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell21416_05");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }

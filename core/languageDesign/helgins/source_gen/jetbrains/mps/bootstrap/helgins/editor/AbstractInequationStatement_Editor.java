@@ -49,7 +49,15 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_inequationPriorityNonEmptyPropertyCell18424_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_inequationPriorityNonEmptyPropertyCell18424_0");
-    editorCell.setFontSize(8);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.FONT_SIZE, 8);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell18424_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -63,7 +71,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell18424_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell18424_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }

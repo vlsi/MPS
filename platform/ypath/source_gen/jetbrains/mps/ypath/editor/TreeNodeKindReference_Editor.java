@@ -27,12 +27,21 @@ public class TreeNodeKindReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConceptPropertyCell19430_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConceptPropertyCell19430_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.EDITABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell19430_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19430_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -49,7 +58,7 @@ public class TreeNodeKindReference_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell19430_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19430_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -68,7 +77,6 @@ public class TreeNodeKindReference_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConceptPropertyCell19430_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   private static void setupLabel_ConstantCell19430_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

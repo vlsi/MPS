@@ -124,6 +124,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.EDITABLE, true);
         }
 
       };
@@ -267,7 +268,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell17307_06(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(true);
   }
 
   private static void setupLabel_ConstantCell17307_07(EditorCell_Label editorCell, SNode node, EditorContext context) {

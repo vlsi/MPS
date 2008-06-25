@@ -45,7 +45,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell11481_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11481_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -58,7 +58,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell11481_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11481_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -71,7 +71,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell11481_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11481_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -84,7 +84,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell11481_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11481_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -97,7 +97,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell11481_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11481_03");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -112,7 +112,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell11481_0");
     BaseLanguageStyle_StyleSheet.FIELD.apply(editorCell);
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
         }
@@ -126,7 +126,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell11481_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11481_04");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -147,7 +147,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell11481_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11481_05");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -160,7 +160,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell11481_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11481_06");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -178,7 +178,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell11481_07(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11481_07");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -196,7 +196,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell11481_08(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11481_08");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -214,7 +214,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell11481_09(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11481_09");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -232,7 +232,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell11481_010(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11481_010");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -245,7 +245,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell11481_011(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11481_011");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -266,7 +266,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell11481_012(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11481_012");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -288,7 +288,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell11481_013(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11481_013");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -301,7 +301,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell11481_09(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11481_09");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -317,7 +317,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell11481_014(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11481_014");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -330,7 +330,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell11481_010(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11481_010");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -346,7 +346,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell11481_015(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11481_015");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -359,7 +359,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell11481_011(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11481_011");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -375,7 +375,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell11481_016(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11481_016");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -388,7 +388,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell11481_012(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11481_012");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -404,7 +404,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell11481_017(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11481_017");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -417,7 +417,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell11481_013(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11481_013");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -430,7 +430,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell11481_018(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11481_018");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -443,7 +443,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell11481_014(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11481_014");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -459,7 +459,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell11481_019(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11481_019");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -481,16 +481,34 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell11481_016(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11481_016");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.EDITABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell11481_017(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11481_017");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.EDITABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell11481_020(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11481_020");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -508,7 +526,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell11481_021(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11481_021");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -527,9 +545,10 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ModelAccessCell11481_0");
     BaseLanguageStyle_StyleSheet.FIELD.apply(editorCell);
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.DRAW_BRACKETS, true);
+          this.set(StyleAttributes.EDITABLE, false);
         }
 
       };
@@ -540,7 +559,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell11481_022(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11481_022");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -574,7 +593,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell11481_023(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11481_023");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -658,18 +677,15 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell11481_016(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   private static void setupLabel_ConstantCell11481_017(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   private static void setupLabel_ConstantCell11481_018(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ModelAccessCell11481_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   private static void setupLabel_ConstantCell11481_019(EditorCell_Label editorCell, SNode node, EditorContext context) {

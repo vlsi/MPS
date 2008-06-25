@@ -42,7 +42,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7131_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7131_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -55,7 +55,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7131_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7131_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, true);
         }
@@ -72,7 +72,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7131_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7131_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -85,7 +85,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7131_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7131_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -98,7 +98,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7131_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7131_03");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -111,7 +111,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7131_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7131_04");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -124,7 +124,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7131_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7131_05");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -137,7 +137,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7131_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7131_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -154,7 +154,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7131_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7131_06");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -167,7 +167,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7131_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7131_03");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -180,7 +180,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_memberRefNodeListCell7131_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_memberRefNodeListCell7131_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -193,7 +193,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7131_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7131_04");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -206,7 +206,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7131_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7131_05");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -219,7 +219,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7131_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7131_06");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -232,7 +232,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7131_07(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7131_07");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -245,7 +245,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7131_07(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7131_07");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -258,7 +258,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7131_08(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7131_08");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -271,7 +271,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7131_09(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7131_09");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -284,7 +284,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_memberIdentifierPolicyPropertyCell7131_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_memberIdentifierPolicyPropertyCell7131_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         }
@@ -297,7 +297,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7131_010(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7131_010");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
@@ -310,7 +310,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7131_08(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7131_08");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -323,7 +323,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7131_011(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7131_011");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -336,7 +336,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7131_012(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7131_012");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -357,7 +357,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7131_09(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7131_09");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -370,7 +370,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7131_013(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7131_013");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -383,7 +383,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7131_014(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7131_014");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -980,7 +980,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     private static void setupBasic_externalValuePropertyCell7131_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_externalValuePropertyCell7131_0");
       {
-        Style inlineStyle = new Style() {
+        Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
           }

@@ -1003,10 +1003,18 @@ public class EnumClass_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_ConstantCell1623_018(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell1623_018");
+      {
+        Style inlineStyle = new Style(editorCell) {
+          {
+            this.set(StyleAttributes.EDITABLE, true);
+          }
+
+        };
+        inlineStyle.apply(editorCell);
+      }
     }
 
     private static void setupLabel_ConstantCell1623_018(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.setEditable(true);
     }
 
 

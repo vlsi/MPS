@@ -37,6 +37,15 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell5981_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5981_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.EDITABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell5981_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -320,7 +329,6 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell5981_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   private static void setupLabel_ConstantCell5981_01(EditorCell_Label editorCell, SNode node, EditorContext context) {

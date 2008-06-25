@@ -43,8 +43,10 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1168428575144">
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168428576716">
         <property name="text" value="treepath" />
-        <property name="editable" value="false" />
         <link role="styleClass" targetNodeId="40.1186415544875" resolveInfo="KeyWord" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032074">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198257736336">
         <property name="text" value="&lt;" />
@@ -167,7 +169,6 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1178981885128">
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ModelAccess" id="1178981885129">
-        <property name="editable" value="false" />
         <link role="actionMap" targetNodeId="1197480027821" resolveInfo="IterateOperation_DELETE" />
         <node role="modelAcessor" type="jetbrains.mps.bootstrap.editorLanguage.structure.ModelAccessor" id="1178981885130">
           <node role="getter" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_ModelAccess_Getter" id="1178981885131">
@@ -207,12 +208,14 @@
             <link role="cellMenuComponent" targetNodeId="1197650203309" resolveInfo="menu_SubstituteIterateOperationAxis" />
           </node>
         </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032091">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197644974882">
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197644974883">
           <property name="text" value="*" />
-          <property name="editable" value="false" />
           <link role="actionMap" targetNodeId="1197480027821" resolveInfo="IterateOperation_DELETE" />
           <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1197644974884">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197644974885">
@@ -233,6 +236,9 @@
             <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_CellMenuComponent" id="1197644974893">
               <link role="cellMenuComponent" targetNodeId="1197460698446" resolveInfo="menu_SubstituteFeatureAndParameter" />
             </node>
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032201">
+            <property name="flag" value="false" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1197644974894">
@@ -361,8 +367,10 @@
             <link role="conceptDeclaration" targetNodeId="1.1184066209434" resolveInfo="IFeature" />
             <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197457272760">
               <property name="readOnly" value="true" />
-              <property name="editable" value="false" />
               <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
+              <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032158">
+                <property name="flag" value="false" />
+              </node>
             </node>
           </node>
         </node>
@@ -466,8 +474,10 @@
               </node>
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197998278359">
-              <property name="editable" value="false" />
               <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996051">
+                <property name="flag" value="false" />
+              </node>
+              <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398031980">
                 <property name="flag" value="false" />
               </node>
             </node>
@@ -486,8 +496,10 @@
               </node>
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197998278363">
-              <property name="editable" value="false" />
               <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995212">
+                <property name="flag" value="false" />
+              </node>
+              <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032016">
                 <property name="flag" value="false" />
               </node>
             </node>
@@ -533,8 +545,10 @@
               </node>
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197998278374">
-              <property name="editable" value="false" />
               <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997804">
+                <property name="flag" value="false" />
+              </node>
+              <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032066">
                 <property name="flag" value="false" />
               </node>
             </node>
@@ -596,8 +610,10 @@
             </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1183981145356">
-            <property name="editable" value="false" />
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995108">
+              <property name="flag" value="false" />
+            </node>
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032050">
               <property name="flag" value="false" />
             </node>
           </node>
@@ -619,8 +635,10 @@
             </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1183981149071">
-            <property name="editable" value="false" />
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995776">
+              <property name="flag" value="false" />
+            </node>
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398031977">
               <property name="flag" value="false" />
             </node>
           </node>
@@ -634,8 +652,10 @@
             </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1183980638244">
-            <property name="editable" value="false" />
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997099">
+              <property name="flag" value="false" />
+            </node>
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032054">
               <property name="flag" value="false" />
             </node>
           </node>
@@ -652,8 +672,10 @@
             </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1178971984118">
-            <property name="editable" value="false" />
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310998163">
+              <property name="flag" value="false" />
+            </node>
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032147">
               <property name="flag" value="false" />
             </node>
           </node>
@@ -677,8 +699,10 @@
             </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1178971984124">
-            <property name="editable" value="false" />
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994745">
+              <property name="flag" value="false" />
+            </node>
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032154">
               <property name="flag" value="false" />
             </node>
           </node>
@@ -898,9 +922,11 @@
         <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1175877925790">
           <property name="text" value="default" />
           <property name="textFgColor" value="DARK_MAGENTA" />
-          <property name="editable" value="false" />
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934069">
             <property name="style" value="BOLD" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398031967">
+            <property name="flag" value="false" />
           </node>
         </node>
         <node role="alternationCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1175877896716">
@@ -916,7 +942,9 @@
           </node>
         </node>
         <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1175877967658">
-          <property name="editable" value="false" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032079">
+            <property name="flag" value="false" />
+          </node>
         </node>
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1197652826656">
           <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_Generic_Group" id="1197652855588">
@@ -1230,8 +1258,10 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1179571859980">
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1179571861967">
-        <property name="editable" value="false" />
         <link role="relationDeclaration" targetNodeId="2.1137473891462" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032143">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1179571870250">
         <property name="text" value="&lt;" />
@@ -1249,8 +1279,10 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1179740294081">
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1179740310923">
-        <property name="editable" value="false" />
         <link role="relationDeclaration" targetNodeId="2.1137473891462" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032168">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1179740379380">
         <property name="text" value="(" />
@@ -1467,9 +1499,11 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1180014178115">
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1180014178116">
-        <property name="editable" value="false" />
         <property name="textFgColor" value="DARK_BLUE" />
         <link role="relationDeclaration" targetNodeId="2.1137473891462" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398031964">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1180014183119">
         <property name="vertical" value="false" />
@@ -1628,8 +1662,10 @@
           <link role="actionMap" targetNodeId="1197908223487" resolveInfo="IFeature_default_DELETE" />
           <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197906860387">
             <property name="text" value="default" />
-            <property name="editable" value="false" />
             <link role="styleClass" targetNodeId="40.1186415544875" resolveInfo="KeyWord" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398031999">
+              <property name="flag" value="false" />
+            </node>
           </node>
           <node role="alternationCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1197906827847">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197906827848">
@@ -1644,7 +1680,9 @@
             </node>
           </node>
           <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197906866120">
-            <property name="editable" value="false" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032063">
+              <property name="flag" value="false" />
+            </node>
           </node>
           <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1197906909585">
             <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_Generic_Group" id="1197906911263">
@@ -1746,7 +1784,6 @@
                 </node>
               </node>
               <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ModelAccess" id="1197921774652">
-                <property name="editable" value="false" />
                 <node role="modelAcessor" type="jetbrains.mps.bootstrap.editorLanguage.structure.ModelAccessor" id="1197921774653">
                   <node role="getter" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_ModelAccess_Getter" id="1197921774654">
                     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197921774655">
@@ -1848,6 +1885,9 @@
                       </node>
                     </node>
                   </node>
+                </node>
+                <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032224">
+                  <property name="flag" value="false" />
                 </node>
               </node>
               <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993702">
@@ -2245,8 +2285,10 @@
           <link role="actionMap" targetNodeId="1197908223487" resolveInfo="IFeature_default_DELETE" />
           <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197907108085">
             <property name="text" value="default" />
-            <property name="editable" value="false" />
             <link role="styleClass" targetNodeId="40.1186415544875" resolveInfo="KeyWord" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032172">
+              <property name="flag" value="false" />
+            </node>
           </node>
           <node role="alternationCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1197907108086">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197907108087">
@@ -2261,7 +2303,9 @@
             </node>
           </node>
           <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197907108092">
-            <property name="editable" value="false" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032017">
+              <property name="flag" value="false" />
+            </node>
           </node>
           <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1197907108093">
             <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_Generic_Group" id="1197907108094">
@@ -2364,7 +2408,6 @@
                 </node>
               </node>
               <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ModelAccess" id="1197921944687">
-                <property name="editable" value="false" />
                 <link role="styleClass" targetNodeId="40.1198595398954" resolveInfo="Identifier" />
                 <node role="modelAcessor" type="jetbrains.mps.bootstrap.editorLanguage.structure.ModelAccessor" id="1197921944688">
                   <node role="getter" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_ModelAccess_Getter" id="1197921944689">
@@ -2462,6 +2505,9 @@
                 </node>
                 <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBracketsStyleSheetItem" id="1214313021442">
                   <property name="flag" value="true" />
+                </node>
+                <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032121">
+                  <property name="flag" value="false" />
                 </node>
               </node>
               <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993674">
@@ -3016,8 +3062,10 @@
           <link role="actionMap" targetNodeId="1197908223487" resolveInfo="IFeature_default_DELETE" />
           <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197912151429">
             <property name="text" value="default" />
-            <property name="editable" value="false" />
             <link role="styleClass" targetNodeId="40.1186415544875" resolveInfo="KeyWord" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032139">
+              <property name="flag" value="false" />
+            </node>
           </node>
           <node role="alternationCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1197912151430">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197912151431">
@@ -3032,7 +3080,9 @@
             </node>
           </node>
           <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197912151436">
-            <property name="editable" value="false" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032094">
+              <property name="flag" value="false" />
+            </node>
           </node>
           <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1197912151437">
             <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_Generic_Group" id="1197912151439">
@@ -3155,7 +3205,6 @@
                 </node>
               </node>
               <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ModelAccess" id="1197921919381">
-                <property name="editable" value="false" />
                 <node role="modelAcessor" type="jetbrains.mps.bootstrap.editorLanguage.structure.ModelAccessor" id="1197921919382">
                   <node role="getter" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_ModelAccess_Getter" id="1197921919383">
                     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197921919384">
@@ -3257,6 +3306,9 @@
                       </node>
                     </node>
                   </node>
+                </node>
+                <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032167">
+                  <property name="flag" value="false" />
                 </node>
               </node>
               <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995542">
@@ -3730,8 +3782,10 @@
           <link role="actionMap" targetNodeId="1197908223487" resolveInfo="IFeature_default_DELETE" />
           <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197912159702">
             <property name="text" value="default" />
-            <property name="editable" value="false" />
             <link role="styleClass" targetNodeId="40.1186415544875" resolveInfo="KeyWord" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398031943">
+              <property name="flag" value="false" />
+            </node>
           </node>
           <node role="alternationCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1197912159703">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197912159704">
@@ -3746,7 +3800,9 @@
             </node>
           </node>
           <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197912159709">
-            <property name="editable" value="false" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398031988">
+              <property name="flag" value="false" />
+            </node>
           </node>
           <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1197912159710">
             <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_Generic_Group" id="1197912159711">
@@ -3866,7 +3922,6 @@
                 </node>
               </node>
               <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ModelAccess" id="1197922168418">
-                <property name="editable" value="false" />
                 <node role="modelAcessor" type="jetbrains.mps.bootstrap.editorLanguage.structure.ModelAccessor" id="1197922168419">
                   <node role="getter" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_ModelAccess_Getter" id="1197922168420">
                     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197922168421">
@@ -3968,6 +4023,9 @@
                       </node>
                     </node>
                   </node>
+                </node>
+                <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032007">
+                  <property name="flag" value="false" />
                 </node>
               </node>
               <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997456">
@@ -4414,7 +4472,6 @@
           <property name="text" value="feature:" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ModelAccess" id="1197465964250">
-          <property name="editable" value="false" />
           <node role="modelAcessor" type="jetbrains.mps.bootstrap.editorLanguage.structure.ModelAccessor" id="1197465964251">
             <node role="getter" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_ModelAccess_Getter" id="1197465964252">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197465964253">
@@ -4474,6 +4531,9 @@
               </node>
             </node>
           </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398031963">
+            <property name="flag" value="false" />
+          </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997331">
           <property name="flag" value="false" />
@@ -4481,8 +4541,10 @@
       </node>
     </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197479518472">
-      <property name="editable" value="false" />
       <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032130">
+        <property name="flag" value="false" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1190799198273">
@@ -4499,8 +4561,10 @@
           <link role="actionMap" targetNodeId="1197908223487" resolveInfo="IFeature_default_DELETE" />
           <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197912140860">
             <property name="text" value="default" />
-            <property name="editable" value="false" />
             <link role="styleClass" targetNodeId="40.1186415544875" resolveInfo="KeyWord" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398031938">
+              <property name="flag" value="false" />
+            </node>
           </node>
           <node role="alternationCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1197912140861">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197912140862">
@@ -4515,7 +4579,9 @@
             </node>
           </node>
           <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197912140867">
-            <property name="editable" value="false" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032134">
+              <property name="flag" value="false" />
+            </node>
           </node>
           <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1197912140868">
             <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_Generic_Group" id="1197912140869">
@@ -4635,7 +4701,6 @@
                 </node>
               </node>
               <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ModelAccess" id="1197921519494">
-                <property name="editable" value="false" />
                 <node role="modelAcessor" type="jetbrains.mps.bootstrap.editorLanguage.structure.ModelAccessor" id="1197921519495">
                   <node role="getter" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_ModelAccess_Getter" id="1197921519496">
                     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197921519497">
@@ -4737,6 +4802,9 @@
                       </node>
                     </node>
                   </node>
+                </node>
+                <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398031982">
+                  <property name="flag" value="false" />
                 </node>
               </node>
               <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997613">
@@ -6812,7 +6880,6 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ModelAccess" id="1196427374349">
           <property name="textFgColor" value="gray" />
-          <property name="editable" value="false" />
           <node role="modelAcessor" type="jetbrains.mps.bootstrap.editorLanguage.structure.ModelAccessor" id="1196427374350">
             <node role="getter" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_ModelAccess_Getter" id="1196427374351">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196427374352">
@@ -6838,6 +6905,9 @@
                 </node>
               </node>
             </node>
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032088">
+            <property name="flag" value="false" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1196427374363">
@@ -6881,7 +6951,6 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ModelAccess" id="1196427368883">
           <property name="textFgColor" value="gray" />
-          <property name="editable" value="false" />
           <node role="modelAcessor" type="jetbrains.mps.bootstrap.editorLanguage.structure.ModelAccessor" id="1196427368884">
             <node role="getter" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_ModelAccess_Getter" id="1196427368885">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196427368886">
@@ -6907,6 +6976,9 @@
                 </node>
               </node>
             </node>
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398031992">
+            <property name="flag" value="false" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1196427368897">
@@ -6950,7 +7022,6 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ModelAccess" id="1196427258247">
           <property name="textFgColor" value="gray" />
-          <property name="editable" value="false" />
           <node role="modelAcessor" type="jetbrains.mps.bootstrap.editorLanguage.structure.ModelAccessor" id="1196427258248">
             <node role="getter" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_ModelAccess_Getter" id="1196427258249">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196427258250">
@@ -6976,6 +7047,9 @@
                 </node>
               </node>
             </node>
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032086">
+            <property name="flag" value="false" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1196427261271">
@@ -7185,8 +7259,10 @@
           <link role="actionMap" targetNodeId="1197908223487" resolveInfo="IFeature_default_DELETE" />
           <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197912127175">
             <property name="text" value="default" />
-            <property name="editable" value="false" />
             <link role="styleClass" targetNodeId="40.1186415544875" resolveInfo="KeyWord" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032216">
+              <property name="flag" value="false" />
+            </node>
           </node>
           <node role="alternationCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1197912127176">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197912127177">
@@ -7201,7 +7277,9 @@
             </node>
           </node>
           <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197912127182">
-            <property name="editable" value="false" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398031931">
+              <property name="flag" value="false" />
+            </node>
           </node>
           <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1197912127183">
             <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_Generic_Group" id="1197912127184">
@@ -7303,7 +7381,6 @@
                 </node>
               </node>
               <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ModelAccess" id="1197922544511">
-                <property name="editable" value="false" />
                 <node role="modelAcessor" type="jetbrains.mps.bootstrap.editorLanguage.structure.ModelAccessor" id="1197922544512">
                   <node role="getter" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_ModelAccess_Getter" id="1197922544513">
                     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197922544514">
@@ -7405,6 +7482,9 @@
                       </node>
                     </node>
                   </node>
+                </node>
+                <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032118">
+                  <property name="flag" value="false" />
                 </node>
               </node>
               <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997232">

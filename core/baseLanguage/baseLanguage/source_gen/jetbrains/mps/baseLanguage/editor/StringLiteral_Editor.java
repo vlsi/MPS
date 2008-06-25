@@ -46,6 +46,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
           this.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
+          this.set(StyleAttributes.EDITABLE, true);
         }
 
       };
@@ -76,7 +77,6 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_valuePropertyCell14_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(true);
     editorCell.setTextColor(MPSColors.DARK_GREEN);
   }
 

@@ -43,7 +43,7 @@ public class TreePathOperationExpression_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell18011_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18011_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -56,7 +56,7 @@ public class TreePathOperationExpression_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell18011_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18011_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }

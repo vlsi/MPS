@@ -177,6 +177,7 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
         Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.SELECTABLE, true);
+            this.set(StyleAttributes.EDITABLE, true);
           }
 
         };
@@ -185,7 +186,6 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_ConstantCell1091_03(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.setEditable(true);
     }
 
 

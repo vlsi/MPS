@@ -47,7 +47,7 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7305_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7305_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -68,7 +68,7 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7305_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7305_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -81,7 +81,7 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7305_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7305_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -94,7 +94,7 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7305_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7305_03");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -107,7 +107,7 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7305_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7305_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -120,7 +120,7 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7305_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7305_04");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -137,7 +137,7 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7305_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7305_03");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -150,7 +150,7 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
   private static void setupBasic_categoryPropertyCell7305_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_categoryPropertyCell7305_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
@@ -163,7 +163,7 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7305_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7305_05");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -176,7 +176,7 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
   private static void setupBasic_titlePropertyCell7305_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_titlePropertyCell7305_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
@@ -189,7 +189,7 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7305_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7305_06");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -202,7 +202,7 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
   private static void setupBasic_migrationFromBuildPropertyCell7305_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_migrationFromBuildPropertyCell7305_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
@@ -215,7 +215,7 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7305_07(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7305_07");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }

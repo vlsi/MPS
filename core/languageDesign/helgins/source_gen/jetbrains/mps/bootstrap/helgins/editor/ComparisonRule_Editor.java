@@ -31,6 +31,15 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell14608_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14608_0");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.EDITABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_namePropertyCell14608_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -40,7 +49,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell14608_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14608_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -57,6 +66,15 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell14608_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14608_02");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.EDITABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_applicableNodeRefNodeCell14608_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -65,7 +83,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell14608_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14608_03");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -82,7 +100,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell14608_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14608_04");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -97,12 +115,21 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell14608_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14608_05");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.EDITABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell14608_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell14608_04");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -143,14 +170,31 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell14608_09(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14608_09");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.EDITABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell14608_010(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14608_010");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.EDITABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_ConstantCell14608_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   private static void setupLabel_namePropertyCell14608_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -160,7 +204,6 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell14608_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   private static void setupLabel_applicableNodeRefNodeCell14608_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -176,7 +219,6 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell14608_05(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   private static void setupLabel_isWeakPropertyCell14608_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -195,11 +237,9 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell14608_09(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   private static void setupLabel_ConstantCell14608_010(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
 

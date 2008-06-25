@@ -34,7 +34,7 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7203_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7203_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
@@ -51,7 +51,7 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7203_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7203_04");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
@@ -64,7 +64,7 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7203_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7203_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -77,7 +77,7 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7203_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7203_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -94,7 +94,7 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7203_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7203_06");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
@@ -107,7 +107,7 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7203_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7203_03");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -124,7 +124,7 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7203_08(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7203_08");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
@@ -137,7 +137,7 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7203_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7203_04");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -154,7 +154,7 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7203_010(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7203_010");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
@@ -167,7 +167,7 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7203_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7203_05");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -184,7 +184,7 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7203_012(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7203_012");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }

@@ -104,6 +104,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
         {
           this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+          this.set(StyleAttributes.EDITABLE, false);
         }
 
       };
@@ -138,7 +139,6 @@ public class ConceptFunction_Component extends AbstractCellProvider {
   }
 
   private static void setupLabel_ModelAccessCell6954_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
     editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 

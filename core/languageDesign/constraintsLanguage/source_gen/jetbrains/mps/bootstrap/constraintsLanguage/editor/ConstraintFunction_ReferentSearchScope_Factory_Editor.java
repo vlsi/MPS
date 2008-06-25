@@ -23,7 +23,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   private static void setupBasic_CollectionCell19273_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell19273_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -40,7 +40,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   private static void setupBasic_ConstantCell19273_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19273_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -53,7 +53,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   private static void setupBasic_ConstantCell19273_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19273_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
@@ -66,7 +66,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   private static void setupBasic_ConstantCell19273_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19273_03");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -79,7 +79,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   private static void setupBasic_ConstantCell19273_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19273_04");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
@@ -92,7 +92,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   private static void setupBasic_CollectionCell19273_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell19273_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -105,7 +105,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   private static void setupBasic_CollectionCell19273_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell19273_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -122,7 +122,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   private static void setupBasic_ConstantCell19273_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19273_06");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
@@ -135,7 +135,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   private static void setupBasic_CollectionCell19273_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell19273_03");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -152,7 +152,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   private static void setupBasic_ConstantCell19273_08(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19273_08");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
@@ -165,7 +165,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   private static void setupBasic_CollectionCell19273_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell19273_04");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -182,7 +182,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   private static void setupBasic_CollectionCell19273_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell19273_05");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -195,7 +195,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   private static void setupBasic_ConstantCell19273_010(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19273_010");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
@@ -208,7 +208,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   private static void setupBasic_ConstantCell19273_011(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19273_011");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
@@ -221,7 +221,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   private static void setupBasic_CollectionCell19273_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell19273_06");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -238,7 +238,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   private static void setupBasic_ConstantCell19273_013(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19273_013");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }

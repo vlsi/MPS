@@ -26,7 +26,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell11189_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11189_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -39,9 +39,10 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell11189_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11189_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.EDITABLE, false);
         }
 
       };
@@ -56,7 +57,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell11189_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11189_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -69,7 +70,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell11189_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11189_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -88,7 +89,6 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell11189_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   private static void setupLabel_namePropertyCell11189_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -48,9 +48,11 @@
         <property name="name" value="headerRow" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1082979388815">
           <property name="text" value="constrained string datatype:" />
-          <property name="editable" value="false" />
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993999">
             <property name="flag" value="true" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032087">
+            <property name="flag" value="false" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1082979388816">
@@ -512,9 +514,11 @@
         <property name="name" value="headerRow" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1083244251721">
           <property name="text" value="primitive datatype:" />
-          <property name="editable" value="false" />
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995102">
             <property name="flag" value="true" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032133">
+            <property name="flag" value="false" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1083244251722">
@@ -780,7 +784,6 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ModelAccess" id="1084205682785">
         <property name="textBgColor" value="lightGray" />
-        <property name="editable" value="false" />
         <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1146606011485">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1146606011486">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1146606013315">
@@ -842,6 +845,9 @@
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBorderStyleSheetItem" id="1214314939858">
           <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032047">
+          <property name="flag" value="false" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1164661317301">

@@ -70,7 +70,7 @@ public class PropertyPatternVariableReference_Editor extends DefaultNodeEditor {
     private static void setupBasic_namePropertyCell2093_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell2093_0");
       {
-        Style inlineStyle = new Style() {
+        Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
           }

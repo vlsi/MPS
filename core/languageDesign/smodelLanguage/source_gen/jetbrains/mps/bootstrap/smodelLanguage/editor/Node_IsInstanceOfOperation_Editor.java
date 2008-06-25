@@ -38,7 +38,7 @@ public class Node_IsInstanceOfOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell21039_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell21039_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -71,7 +71,7 @@ public class Node_IsInstanceOfOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell21039_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell21039_03");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
@@ -86,7 +86,7 @@ public class Node_IsInstanceOfOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell21039_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell21039_04");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }

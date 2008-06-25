@@ -53,7 +53,7 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
   private static void setupBasic_namePropertyCell8771_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell8771_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
         }

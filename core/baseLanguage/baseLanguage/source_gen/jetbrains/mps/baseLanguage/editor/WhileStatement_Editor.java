@@ -124,6 +124,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.EDITABLE, false);
         }
 
       };
@@ -150,6 +151,15 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell12909_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell12909_06");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.EDITABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell12909_07(EditorCell editorCell, SNode node, EditorContext context) {
@@ -158,6 +168,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.EDITABLE, false);
         }
 
       };
@@ -195,15 +206,12 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell12909_05(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   private static void setupLabel_ConstantCell12909_06(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   private static void setupLabel_ConstantCell12909_07(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   private static void setupLabel_labelPropertyCell12909_01(EditorCell_Label editorCell, SNode node, EditorContext context) {

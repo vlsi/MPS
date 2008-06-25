@@ -481,6 +481,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.EDITABLE, true);
         }
 
       };
@@ -522,6 +523,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.EDITABLE, true);
         }
 
       };
@@ -1398,14 +1400,12 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_verticalPropertyCell3462_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(true);
   }
 
   private static void setupLabel_ConstantCell3462_011(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_gridLayoutPropertyCell3462_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(true);
   }
 
   private static void setupLabel_ConstantCell3462_012(EditorCell_Label editorCell, SNode node, EditorContext context) {

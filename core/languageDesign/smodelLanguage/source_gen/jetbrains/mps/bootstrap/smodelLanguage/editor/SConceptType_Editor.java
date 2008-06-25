@@ -29,9 +29,10 @@ public class SConceptType_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell224_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell224_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+          this.set(StyleAttributes.EDITABLE, true);
         }
 
       };
@@ -42,7 +43,7 @@ public class SConceptType_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell224_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell224_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -59,7 +60,7 @@ public class SConceptType_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell224_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell224_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -70,7 +71,6 @@ public class SConceptType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell224_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(true);
     editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 

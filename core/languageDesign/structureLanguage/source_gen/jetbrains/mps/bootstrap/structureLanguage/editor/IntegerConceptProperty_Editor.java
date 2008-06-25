@@ -33,7 +33,7 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell10226_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell10226_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -149,7 +149,7 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
     private static void setupBasic_namePropertyCell10226_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell10226_0");
       {
-        Style inlineStyle = new Style() {
+        Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
           }

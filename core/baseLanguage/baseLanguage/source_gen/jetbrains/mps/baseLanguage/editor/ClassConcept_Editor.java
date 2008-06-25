@@ -2035,10 +2035,18 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_ConstantCell6031_013(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6031_013");
+      {
+        Style inlineStyle = new Style(editorCell) {
+          {
+            this.set(StyleAttributes.EDITABLE, true);
+          }
+
+        };
+        inlineStyle.apply(editorCell);
+      }
     }
 
     private static void setupLabel_ConstantCell6031_013(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.setEditable(true);
     }
 
 

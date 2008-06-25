@@ -73,6 +73,7 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.EDITABLE, true);
         }
 
       };
@@ -89,7 +90,6 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_labelPropertyCell4891_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(true);
   }
 
   public static boolean renderingCondition4891_0(SNode node, EditorContext editorContext, IScope scope) {

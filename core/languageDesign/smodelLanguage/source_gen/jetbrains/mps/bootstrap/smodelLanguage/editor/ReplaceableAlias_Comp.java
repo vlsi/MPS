@@ -35,7 +35,7 @@ public class ReplaceableAlias_Comp extends AbstractCellProvider {
   private static void setupBasic_ConceptPropertyCell20022_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConceptPropertyCell20022_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         }

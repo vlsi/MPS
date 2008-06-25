@@ -1101,6 +1101,135 @@
         </node>
       </node>
     </node>
+    <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1214397822608">
+      <property name="description" value="editable" />
+      <link role="affectedInstanceConcept" targetNodeId="1.1079353555532" resolveInfo="CellModel_AbstractLabel" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Updater" id="1214397822609">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214397822610">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1214397856684">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1214397856685">
+              <property name="name" value="item" />
+              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1214397856686">
+                <link role="concept" targetNodeId="1.1186414860679" resolveInfo="EditableStyleSheetItem" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1214397866066">
+                <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1214397866067">
+                  <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1214397866068">
+                    <link role="concept" targetNodeId="1.1186414860679" resolveInfo="EditableStyleSheetItem" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1214397893039">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214397893040">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214397900212">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214397903110">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214397900527">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214397900213">
+                      <link role="variableDeclaration" targetNodeId="1214397856685" resolveInfo="item" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1214397902671">
+                      <link role="property" targetNodeId="1.1186414551515" resolveInfo="flag" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1214397903504">
+                    <node role="value" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1214397905679">
+                      <property name="value" value="true" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214397895956">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214397893904">
+                <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1214397893622" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1214397895267">
+                  <link role="property" targetNodeId="1.1079353555534" resolveInfo="editable" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1214397896381">
+                <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1214397896382">
+                  <link role="enumMember" targetNodeId="1.1083928804391" resolveInfo="yes" />
+                </node>
+              </node>
+            </node>
+            <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1214397907806">
+              <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214397907807">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214397908997">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214397910457">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214397909359">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214397908998">
+                        <link role="variableDeclaration" targetNodeId="1214397856685" resolveInfo="item" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1214397910065">
+                        <link role="property" targetNodeId="1.1186414551515" resolveInfo="flag" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1214397910913">
+                      <node role="value" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1214397912291">
+                        <property name="value" value="false" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214397871197">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214397874236">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214397871246">
+                <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1214397871198" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1214397873719">
+                  <link role="link" targetNodeId="1.1214305243050" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddChildOperation" id="1214397875239">
+                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214397875851">
+                  <link role="variableDeclaration" targetNodeId="1214397856685" resolveInfo="item" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214397877385">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214397883288">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214397881471">
+                <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1214397877386" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1214397882662">
+                  <link role="property" targetNodeId="1.1079353555534" resolveInfo="editable" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1214397884479">
+                <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1214397886763">
+                  <link role="enumMember" targetNodeId="1.1083928804393" resolveInfo="none" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="affectedInstancePredicate" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Predicate" id="1214397831958">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214397831959">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214397833476">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1214397839083">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214397839084">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214397839085">
+                  <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1214397839086" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1214397839087">
+                    <link role="property" targetNodeId="1.1079353555534" resolveInfo="editable" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1214397839088">
+                  <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1214397839089">
+                    <link role="enumMember" targetNodeId="1.1083928804393" resolveInfo="none" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 

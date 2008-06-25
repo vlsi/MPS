@@ -106,6 +106,7 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
+          this.set(StyleAttributes.EDITABLE, true);
         }
 
       };
@@ -130,7 +131,6 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell18678_03(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(true);
   }
 
 

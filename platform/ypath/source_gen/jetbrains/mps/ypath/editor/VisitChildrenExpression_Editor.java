@@ -7,6 +7,8 @@ import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
@@ -38,6 +40,15 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConceptPropertyCell18331_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConceptPropertyCell18331_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.EDITABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell18331_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -57,7 +68,6 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConceptPropertyCell18331_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
     editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 

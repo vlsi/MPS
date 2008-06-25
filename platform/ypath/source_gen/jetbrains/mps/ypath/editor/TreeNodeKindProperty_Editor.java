@@ -43,7 +43,7 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell20062_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell20062_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -64,9 +64,10 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell20062_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell20062_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+          this.set(StyleAttributes.EDITABLE, false);
         }
 
       };
@@ -76,6 +77,15 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell20062_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell20062_02");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.EDITABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_namePropertyCell20062_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -88,12 +98,10 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell20062_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
     editorCell.setTextColor(MPSColors.DARK_MAGENTA);
   }
 
   private static void setupLabel_ConstantCell20062_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   public static boolean renderingCondition20062_0(SNode node, EditorContext editorContext, IScope scope) {

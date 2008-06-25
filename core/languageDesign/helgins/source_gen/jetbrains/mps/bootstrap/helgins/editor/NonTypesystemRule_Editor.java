@@ -37,7 +37,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7335_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7335_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -50,6 +50,15 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7335_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7335_0");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.EDITABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_namePropertyCell7335_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -78,7 +87,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7335_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7335_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -91,7 +100,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7335_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7335_05");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -104,7 +113,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7335_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7335_03");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -117,7 +126,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7335_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7335_04");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -130,6 +139,15 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7335_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7335_06");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.EDITABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_applicableNodeRefNodeCell7335_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -141,7 +159,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7335_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7335_05");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -163,7 +181,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7335_08(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7335_08");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -180,7 +198,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7335_09(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7335_09");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -195,6 +213,15 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell7335_010(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7335_010");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.EDITABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell7335_011(EditorCell editorCell, SNode node, EditorContext context) {
@@ -205,7 +232,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7335_07(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7335_07");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -217,6 +244,15 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell7335_012(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7335_012");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.EDITABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell7335_013(EditorCell editorCell, SNode node, EditorContext context) {
@@ -229,7 +265,6 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell7335_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   private static void setupLabel_namePropertyCell7335_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -251,7 +286,6 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell7335_06(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   private static void setupLabel_applicableNodeRefNodeCell7335_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -273,14 +307,12 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell7335_010(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   private static void setupLabel_ConstantCell7335_011(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell7335_012(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   private static void setupLabel_ConstantCell7335_013(EditorCell_Label editorCell, SNode node, EditorContext context) {

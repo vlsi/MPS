@@ -37,6 +37,7 @@ public class _OpenTag extends AbstractCellProvider {
             }
 
           });
+          this.set(StyleAttributes.EDITABLE, false);
         }
 
       };
@@ -45,7 +46,6 @@ public class _OpenTag extends AbstractCellProvider {
   }
 
   private static void setupLabel_ModelAccessCell15352_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   public static Color _QueryFunction_Color_1214396913666(SNode node, EditorContext editorContext) {

@@ -1368,6 +1368,10 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
     return !(SPropertyOperations.hasValue(node, "bracketsColor", null, null));
   }
 
+  public static boolean renderingCondition19694_012(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.hasValue(node, "editable", null, null));
+  }
+
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.create_CollectionCell19694_0(context, node);
@@ -1413,7 +1417,9 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
     if (renderingCondition19694_04(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell19694_03(context, node));
     }
-    editorCell.addEditorCell(this.create_CollectionCell19694_04(context, node));
+    if (renderingCondition19694_012(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.create_CollectionCell19694_04(context, node));
+    }
     editorCell.addEditorCell(this.create_CollectionCell19694_07(context, node));
     editorCell.addEditorCell(this.create__FocusPolicy_ApplicableComponentCell19694_0(context, node));
     editorCell.addEditorCell(this.create__EditorCellModel_DefaultCaretPosition_ComponentComponentCell19694_0(context, node));

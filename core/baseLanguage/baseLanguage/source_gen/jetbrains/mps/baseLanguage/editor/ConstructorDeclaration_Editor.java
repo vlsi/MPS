@@ -74,6 +74,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.EDITABLE, true);
         }
 
       };
@@ -142,6 +143,15 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_namePropertyCell2318_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell2318_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.EDITABLE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_parameterRefNodeListCell2318_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -238,7 +248,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell2318_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(true);
   }
 
   private static void setupLabel_ConstantCell2318_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -254,7 +263,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_namePropertyCell2318_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(true);
   }
 
   private static void setupLabel_parameterRefNodeListCell2318_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -626,6 +634,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
         Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.SELECTABLE, true);
+            this.set(StyleAttributes.EDITABLE, true);
           }
 
         };
@@ -634,7 +643,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_ConstantCell2318_04(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.setEditable(true);
     }
 
 

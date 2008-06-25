@@ -93,6 +93,7 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
         Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+            this.set(StyleAttributes.EDITABLE, true);
           }
 
         };
@@ -101,7 +102,6 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_ConstantCell19413_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.setEditable(true);
       editorCell.setTextColor(Color.darkGray);
     }
 

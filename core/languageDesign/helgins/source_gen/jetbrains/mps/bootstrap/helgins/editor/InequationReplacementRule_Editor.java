@@ -31,6 +31,15 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell19999_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19999_0");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.EDITABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_namePropertyCell19999_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -40,7 +49,7 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell19999_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19999_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -57,6 +66,15 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell19999_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19999_02");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.EDITABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_applicableNodeRefNodeCell19999_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -72,7 +90,7 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell19999_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19999_04");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -89,10 +107,28 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell19999_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19999_05");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.EDITABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell19999_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19999_06");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.EDITABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell19999_04(EditorCell editorCell, SNode node, EditorContext context) {
@@ -102,7 +138,7 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell19999_07(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19999_07");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -117,10 +153,18 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell19999_08(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19999_08");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.EDITABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_ConstantCell19999_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   private static void setupLabel_namePropertyCell19999_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -130,7 +174,6 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell19999_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   private static void setupLabel_applicableNodeRefNodeCell19999_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -146,11 +189,9 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell19999_05(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   private static void setupLabel_ConstantCell19999_06(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   private static void setupLabel_ConstantCell19999_07(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -160,7 +201,6 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell19999_08(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
 

@@ -34,7 +34,7 @@ public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell19306_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19306_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
           this.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
@@ -114,7 +114,7 @@ public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
     private static void setupBasic_namePropertyCell19306_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell19306_0");
       {
-        Style inlineStyle = new Style() {
+        Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
           }

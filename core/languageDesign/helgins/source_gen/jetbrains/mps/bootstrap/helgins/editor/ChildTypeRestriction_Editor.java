@@ -52,7 +52,7 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
   private static void setupBasic_restrictionKindPropertyCell10316_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_restrictionKindPropertyCell10316_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         }
@@ -306,7 +306,7 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
     private static void setupBasic_rolePropertyCell10316_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_rolePropertyCell10316_0");
       {
-        Style inlineStyle = new Style() {
+        Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
           }

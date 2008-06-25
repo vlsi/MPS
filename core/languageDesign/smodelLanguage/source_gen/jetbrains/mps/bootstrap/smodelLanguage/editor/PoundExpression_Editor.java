@@ -27,9 +27,10 @@ public class PoundExpression_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell18647_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18647_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+          this.set(StyleAttributes.EDITABLE, false);
         }
 
       };
@@ -41,7 +42,6 @@ public class PoundExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell18647_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
     editorCell.setTextColor(MPSColors.DARK_MAGENTA);
   }
 

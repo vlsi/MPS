@@ -35,7 +35,7 @@ public class Node_InsertNewPrevSiblingOperation_Editor extends DefaultNodeEditor
   private static void setupBasic_ConstantCell8787_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell8787_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
@@ -52,7 +52,7 @@ public class Node_InsertNewPrevSiblingOperation_Editor extends DefaultNodeEditor
   private static void setupBasic_ConstantCell8787_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell8787_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);

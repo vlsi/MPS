@@ -45,7 +45,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7950_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7950_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -58,7 +58,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7950_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7950_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -71,7 +71,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7950_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7950_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -92,7 +92,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7950_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7950_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -112,7 +112,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7950_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7950_03");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -129,7 +129,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7950_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7950_04");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -147,9 +147,10 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7950_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7950_05");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.EDITABLE, false);
         }
 
       };
@@ -160,7 +161,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7950_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7950_05");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -173,7 +174,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7950_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7950_06");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -190,9 +191,10 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7950_08(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7950_08");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.EDITABLE, false);
         }
 
       };
@@ -203,7 +205,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7950_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7950_06");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -216,7 +218,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7950_09(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7950_09");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -233,9 +235,10 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7950_010(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7950_010");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.EDITABLE, false);
         }
 
       };
@@ -246,7 +249,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7950_07(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7950_07");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -268,7 +271,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7950_012(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7950_012");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -285,7 +288,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7950_09(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7950_09");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -302,9 +305,10 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7950_015(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7950_015");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.EDITABLE, false);
         }
 
       };
@@ -315,9 +319,10 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7950_016(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7950_016");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.EDITABLE, false);
         }
 
       };
@@ -328,7 +333,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7950_010(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7950_010");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -341,7 +346,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7950_011(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7950_011");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -358,9 +363,10 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7950_018(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7950_018");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.EDITABLE, false);
         }
 
       };
@@ -371,7 +377,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7950_012(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7950_012");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -393,9 +399,10 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7950_021(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7950_021");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.EDITABLE, false);
         }
 
       };
@@ -406,7 +413,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7950_013(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7950_013");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -423,7 +430,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7950_023(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7950_023");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -439,7 +446,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7950_024(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7950_024");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -452,7 +459,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7950_014(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7950_014");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -469,7 +476,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7950_026(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7950_026");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -485,9 +492,10 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7950_027(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7950_027");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.EDITABLE, false);
         }
 
       };
@@ -498,7 +506,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7950_015(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7950_015");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -515,7 +523,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7950_029(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7950_029");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -555,7 +563,6 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell7950_05(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   private static void setupLabel_ConstantCell7950_06(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -565,14 +572,12 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell7950_08(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   private static void setupLabel_ConstantCell7950_09(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell7950_010(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   private static void setupLabel_ConstantCell7950_011(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -588,18 +593,15 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell7950_015(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   private static void setupLabel_ConstantCell7950_016(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   private static void setupLabel_ConstantCell7950_017(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell7950_018(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   private static void setupLabel_ConstantCell7950_019(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -610,7 +612,6 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell7950_021(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   private static void setupLabel_ConstantCell7950_022(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -635,7 +636,6 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell7950_027(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   private static void setupLabel_ConstantCell7950_028(EditorCell_Label editorCell, SNode node, EditorContext context) {

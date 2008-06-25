@@ -468,8 +468,10 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1177461567284">
         <property name="text" value=";" />
-        <property name="editable" value="false" />
         <property name="textFgColor" value="DARK_BLUE" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032117">
+          <property name="flag" value="false" />
+        </node>
       </node>
     </node>
   </node>

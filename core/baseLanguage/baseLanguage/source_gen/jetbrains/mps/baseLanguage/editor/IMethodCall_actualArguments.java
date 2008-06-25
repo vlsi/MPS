@@ -71,6 +71,7 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
         {
           this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+          this.set(StyleAttributes.EDITABLE, false);
         }
 
       };
@@ -88,7 +89,6 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
   }
 
   private static void setupLabel_ConstantCell13020_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   public static boolean renderingCondition13020_0(SNode node, EditorContext editorContext, IScope scope) {
@@ -160,6 +160,7 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
         Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.SELECTABLE, true);
+            this.set(StyleAttributes.EDITABLE, true);
           }
 
         };
@@ -168,7 +169,6 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
     }
 
     private static void setupLabel_ConstantCell13020_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.setEditable(true);
     }
 
 

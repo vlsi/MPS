@@ -39,6 +39,7 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.EDITABLE, true);
         }
 
       };
@@ -54,7 +55,6 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConceptPropertyCell7417_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(true);
   }
 
 

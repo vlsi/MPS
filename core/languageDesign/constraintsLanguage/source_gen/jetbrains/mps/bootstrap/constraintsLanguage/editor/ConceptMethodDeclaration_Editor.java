@@ -65,7 +65,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell20116_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell20116_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -78,7 +78,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell20116_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell20116_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -98,7 +98,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell20116_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell20116_04");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -119,7 +119,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell20116_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell20116_05");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -140,7 +140,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell20116_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell20116_06");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -165,7 +165,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell20116_08(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell20116_08");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -209,7 +209,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell20116_09(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell20116_09");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -226,7 +226,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell20116_012(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell20116_012");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -243,7 +243,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell20116_010(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell20116_010");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -272,7 +272,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell20116_016(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell20116_016");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -1139,10 +1139,18 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_ConstantCell20116_017(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell20116_017");
+      {
+        Style inlineStyle = new Style(editorCell) {
+          {
+            this.set(StyleAttributes.EDITABLE, true);
+          }
+
+        };
+        inlineStyle.apply(editorCell);
+      }
     }
 
     private static void setupLabel_ConstantCell20116_017(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.setEditable(true);
     }
 
 

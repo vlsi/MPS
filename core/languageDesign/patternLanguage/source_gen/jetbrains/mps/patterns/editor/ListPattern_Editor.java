@@ -27,7 +27,7 @@ public class ListPattern_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell19278_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19278_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         }
@@ -40,7 +40,7 @@ public class ListPattern_Editor extends DefaultNodeEditor {
   private static void setupBasic_varNamePropertyCell19278_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_varNamePropertyCell19278_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         }
@@ -53,7 +53,7 @@ public class ListPattern_Editor extends DefaultNodeEditor {
   private static void setupBasic_AttributedNodeCell19278_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_AttributedNodeCell19278_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.DRAW_BRACKETS, true);
         }

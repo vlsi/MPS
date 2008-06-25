@@ -26,7 +26,7 @@ public class PrimitiveDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell19118_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell19118_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -39,9 +39,10 @@ public class PrimitiveDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell19118_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19118_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.EDITABLE, false);
         }
 
       };
@@ -54,7 +55,6 @@ public class PrimitiveDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell19118_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   private static void setupLabel_namePropertyCell19118_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

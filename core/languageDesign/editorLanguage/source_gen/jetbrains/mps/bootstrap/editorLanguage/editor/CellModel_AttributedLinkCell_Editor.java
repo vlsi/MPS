@@ -54,6 +54,7 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.EDITABLE, false);
         }
 
       };
@@ -191,7 +192,6 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell6195_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
     editorCell.setTextBackgroundColor(Color.green);
   }
 

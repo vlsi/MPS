@@ -28,7 +28,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell418_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell418_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -41,7 +41,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell418_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell418_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -62,7 +62,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell418_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell418_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -75,7 +75,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell418_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell418_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -88,7 +88,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell418_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell418_03");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -101,7 +101,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell418_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell418_04");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -122,7 +122,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell418_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell418_05");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -143,7 +143,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell418_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell418_06");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -164,7 +164,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell418_07(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell418_07");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }

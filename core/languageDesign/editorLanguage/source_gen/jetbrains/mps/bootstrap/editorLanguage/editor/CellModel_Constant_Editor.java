@@ -1177,7 +1177,6 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
 
   private static void setupLabel_textPropertyCell10258_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setTextBackgroundColor(Color.yellow);
-    editorCell.setSelectedTextBackgroundColor(Color.cyan);
   }
 
   private static void setupLabel_ConstantCell10258_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -1421,6 +1420,10 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
     return !(SPropertyOperations.hasValue(node, "bracketsColor", null, null));
   }
 
+  public static boolean renderingCondition10258_015(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.hasValue(node, "editable", null, null));
+  }
+
   public static Color _QueryFunction_Color_1214396926660(SNode node, EditorContext editorContext) {
     return _EditorUtil.grayIfNotSelectable(node);
   }
@@ -1485,7 +1488,9 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
     if (renderingCondition10258_06(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell10258_04(context, node));
     }
-    editorCell.addEditorCell(this.create_CollectionCell10258_05(context, node));
+    if (renderingCondition10258_015(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.create_CollectionCell10258_05(context, node));
+    }
     editorCell.addEditorCell(this.create_CollectionCell10258_09(context, node));
     editorCell.addEditorCell(this.create__FocusPolicy_ApplicableComponentCell10258_0(context, node));
     editorCell.addEditorCell(this.create__EditorCellModel_DefaultCaretPosition_ComponentComponentCell10258_0(context, node));

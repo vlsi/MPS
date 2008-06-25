@@ -27,6 +27,15 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell5279_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5279_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.EDITABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell5279_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -123,7 +132,6 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell5279_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   private static void setupLabel_ConstantCell5279_01(EditorCell_Label editorCell, SNode node, EditorContext context) {

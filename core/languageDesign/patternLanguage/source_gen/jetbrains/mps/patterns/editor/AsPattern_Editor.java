@@ -27,7 +27,7 @@ public class AsPattern_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell12790_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell12790_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         }
@@ -40,7 +40,7 @@ public class AsPattern_Editor extends DefaultNodeEditor {
   private static void setupBasic_varNamePropertyCell12790_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_varNamePropertyCell12790_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         }
@@ -53,7 +53,7 @@ public class AsPattern_Editor extends DefaultNodeEditor {
   private static void setupBasic_AttributedNodeCell12790_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_AttributedNodeCell12790_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.DRAW_BRACKETS, true);
         }

@@ -40,7 +40,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
   private static void setupBasic_CollectionCell8711_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell8711_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -64,7 +64,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
   private static void setupBasic_CollectionCell8711_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell8711_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -89,7 +89,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
   private static void setupBasic_CollectionCell8711_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell8711_03");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
