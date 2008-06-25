@@ -42,6 +42,13 @@ public class CellModel_BlockStart_Editor extends DefaultNodeEditor {
             }
 
           });
+          this.set(StyleAttributes.NULL_TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return CellModel_BlockStart_Editor.calculateColor50(cell);
+            }
+
+          });
         }
 
       };
@@ -404,7 +411,6 @@ public class CellModel_BlockStart_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_openBracePropertyCell7038_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setNullTextColor(Color.blue);
   }
 
   private static void setupLabel_ConstantCell7038_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -468,6 +474,12 @@ public class CellModel_BlockStart_Editor extends DefaultNodeEditor {
   }
 
   private static Color calculateColor22(EditorCell cell) {
+    Color result;
+    result = Color.blue;
+    return result;
+  }
+
+  private static Color calculateColor50(EditorCell cell) {
     Color result;
     result = Color.blue;
     return result;

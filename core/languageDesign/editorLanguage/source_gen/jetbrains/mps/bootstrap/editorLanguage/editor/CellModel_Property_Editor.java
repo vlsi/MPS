@@ -1534,6 +1534,10 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     return !(SPropertyOperations.hasValue(node, "textFgColor", null, null));
   }
 
+  public static boolean renderingCondition12548_015(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.hasValue(node, "textFgColorEmpty", null, null));
+  }
+
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.create_CollectionCell12548_0(context, node);
@@ -1622,7 +1626,9 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     if (renderingCondition12548_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell12548_022(context, node));
     }
-    editorCell.addEditorCell(this.create_CollectionCell12548_024(context, node));
+    if (renderingCondition12548_015(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.create_CollectionCell12548_024(context, node));
+    }
     if (renderingCondition12548_01(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell12548_025(context, node));
     }
