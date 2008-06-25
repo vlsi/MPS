@@ -43,7 +43,7 @@ public class DerivedInterfaces_Finder extends GeneratedFinder {
     ListSequence.fromList(derived).addElement(node);
     // 
     int passed = 0;
-    while(ListSequence.fromList(derived).count() != passed) {
+    while (ListSequence.fromList(derived).count() != passed) {
       SNode passingNode = ListSequence.fromList(derived).getElement(passed);
       for(SNode nodeUsage : FindUtils.executeFinder("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder", passingNode, scope, indicator)) {
         if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeUsage, null, false, false), "jetbrains.mps.baseLanguage.structure.Interface")) {

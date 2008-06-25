@@ -28,7 +28,7 @@ public class typeof_Node_ConceptMethodCall_InferenceRule implements InferenceRul
       SNode parameter;
       Iterator<SNode> arg_iterator = SLinkOperations.getTargets(conceptMethodCall, "actualArgument", true).iterator();
       Iterator<SNode> parameter_iterator = SLinkOperations.getTargets(SLinkOperations.getTarget(conceptMethodCall, "conceptMethodDeclaration", false), "parameter", true).iterator();
-      while(true) {
+      while (true) {
         if (!(arg_iterator.hasNext())) {
           break;
         }

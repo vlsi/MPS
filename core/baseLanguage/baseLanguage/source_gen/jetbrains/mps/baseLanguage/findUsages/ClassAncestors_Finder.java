@@ -37,7 +37,7 @@ public class ClassAncestors_Finder extends GeneratedFinder {
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
     SNode current = node;
-    while(current != null) {
+    while (current != null) {
       current = SLinkOperations.getTarget(SLinkOperations.getTarget(current, "superclass", true), "classifier", false);
       if (current != null) {
         ListOperations.addElement(_results, current);

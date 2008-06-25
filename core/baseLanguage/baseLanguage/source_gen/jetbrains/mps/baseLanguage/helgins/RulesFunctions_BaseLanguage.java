@@ -231,7 +231,7 @@ __switch__:
       SNode param;
       Iterator<SNode> arg_iterator = SLinkOperations.getTargets(mc, "actualArgument", true).iterator();
       Iterator<SNode> param_iterator = SLinkOperations.getTargets(SLinkOperations.getTarget(mc, "baseMethodDeclaration", false), "parameter", true).iterator();
-      while(true) {
+      while (true) {
         if (!(arg_iterator.hasNext())) {
           break;
         }
@@ -344,7 +344,7 @@ __switch__:
     }
     SNode statementList = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
     SNode prevStatementList = null;
-    while((statementList != null)) {
+    while ((statementList != null)) {
       prevStatementList = statementList;
       statementList = SNodeOperations.getAncestor(statementList, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
     }

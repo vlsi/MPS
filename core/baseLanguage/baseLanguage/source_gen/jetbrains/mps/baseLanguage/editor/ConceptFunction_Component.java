@@ -161,7 +161,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
 
   private static Color calculateColor8(EditorCell cell) {
     Color result;
-    result = _QueryFunction_Color_1214395853126((cell == null ?
+    result = ConceptFunction_Component._QueryFunction_Color_1214395853126((cell == null ?
       null :
       cell.getSNode()
     ), (cell == null ?
@@ -173,7 +173,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
 
   private static Color calculateColor9(EditorCell cell) {
     Color result;
-    result = _QueryFunction_Color_1214395853135((cell == null ?
+    result = ConceptFunction_Component._QueryFunction_Color_1214395853135((cell == null ?
       null :
       cell.getSNode()
     ), (cell == null ?

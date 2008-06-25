@@ -42,7 +42,7 @@ public class DerivedClasses_Finder extends GeneratedFinder {
     ListSequence.fromList(derived).addElement((SNode)node);
     // 
     int passed = 0;
-    while(ListSequence.fromList(derived).count() != passed) {
+    while (ListSequence.fromList(derived).count() != passed) {
       SNode passingNode = ListSequence.fromList(derived).getElement(passed);
       for(SNode classNode : FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder", passingNode, scope, indicator)) {
         ListSequence.fromList(derived).addElement(classNode);
