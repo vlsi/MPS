@@ -169,6 +169,7 @@ public abstract class BaseTool{
   }
 
   public void register() {
+    if (myProject.isDisposed()) return;
     if (isRegistered()) return;
     setIsRegistered(true);
 
