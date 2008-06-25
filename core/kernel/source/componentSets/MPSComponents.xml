@@ -22,9 +22,9 @@
     <component>
       <implementation-class>com.intellij.openapi.components.impl.ServiceManagerImpl</implementation-class>
     </component>
-    <component>
+    <!--<component>
       <implementation-class>com.intellij.platform.FilesystemToolwindowOpener</implementation-class>
-    </component>
+    </component>-->
 
     <component>
       <implementation-class>jetbrains.mps.workbench.projectPaths.MPSProjectPaths</implementation-class>
@@ -401,11 +401,11 @@
       <skipForDummyProject/>
     </component>
 
-    <component>
+    <!--<component>
       <implementation-class>jetbrains.mps.ide.projectPane.TestProjectViewPane</implementation-class>
       <option name="workspace" value="true"/>
       <skipForDummyProject/>
-    </component>
+    </component>-->
   </project-components>
 
 </components>
