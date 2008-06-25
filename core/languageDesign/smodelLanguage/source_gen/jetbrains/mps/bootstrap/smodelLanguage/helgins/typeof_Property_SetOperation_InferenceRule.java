@@ -38,7 +38,15 @@ public class typeof_Property_SetOperation_InferenceRule implements InferenceRule
       } else
       if (DataTypeUtil.isEnum(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
         if (!(SNodeOperations.isInstanceOf(value, "jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference"))) {
-          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(op, "value", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059478775", true), new QuotationClass_6().createNode(), SLinkOperations.getTarget(op, "value", true), "<enum member> or String is expected", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059478770", false, 0);
+          if (DataTypeUtil.isEnumOfInteger(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
+            TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1214430014542", true), new QuotationClass_99().createNode(), value, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1214430014537", false, 0);
+          } else
+          if (DataTypeUtil.isEnumOfBoolean(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
+            TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1214430042918", true), new QuotationClass_100().createNode(), value, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1214430042913", false, 0);
+          } else
+          {
+            TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059478775", true), new QuotationClass_6().createNode(), value, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059478770", false, 0);
+          }
         }
       } else
       {
