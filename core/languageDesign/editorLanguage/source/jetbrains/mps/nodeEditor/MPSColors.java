@@ -11,6 +11,4 @@ public class MPSColors {
   public static final Color DARK_GREEN = new Color(0, 128, 0);
 
   public static final Color DARK_MAGENTA = new Color(102, 14, 122);
-
-  public static final Color WHITE = Color.WHITE;
 }
