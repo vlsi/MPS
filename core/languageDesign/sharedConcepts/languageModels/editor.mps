@@ -17,6 +17,7 @@
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
+  <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
   <maxImportIndex value="0" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheet" id="1203541329669">
     <property name="name" value="SharedStyles" />
