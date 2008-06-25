@@ -196,7 +196,6 @@ public class GenerationController {
         wasLoggingThreshold = Logger.setThreshold("ERROR");
       }
       Logger.addLoggingHandler(generationSession.getLoggingHandler());
-      TypeChecker.getInstance().setIncrementalMode(false);
       TypeChecker.getInstance().setTypeCheckingMode(TypeCheckingMode.GENERATION);
       for (SModelDescriptor inputModel : descriptors) {
         if (!myGenerationType.isApplicable(inputModel)) {
@@ -244,7 +243,6 @@ public class GenerationController {
       }
       generationSession.discardTransients();
       Logger.removeLoggingHandler(generationSession.getLoggingHandler());
-      TypeChecker.getInstance().setIncrementalMode(true);
       TypeChecker.getInstance().resetTypeCheckingMode();
 
       tryToReloadModelsFromDisk();

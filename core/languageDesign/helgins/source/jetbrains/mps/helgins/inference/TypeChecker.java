@@ -145,7 +145,7 @@ public class TypeChecker implements ApplicationComponent {
     myCheckedRoots.clear();
   }
 
-  public void setIncrementalMode(boolean isIncrementalMode) {
+  private void setIncrementalMode(boolean isIncrementalMode) {
     myIsIncrementalMode = isIncrementalMode;
   }
 
@@ -154,6 +154,9 @@ public class TypeChecker implements ApplicationComponent {
       myTypesCheckingModesStack.push(myTypeCheckingMode);
     }
     myTypeCheckingMode = typeCheckingMode;
+    if (typeCheckingMode != null) {
+      setIncrementalMode(false);
+    }
   }
 
   public void resetTypeCheckingMode() {
@@ -161,6 +164,7 @@ public class TypeChecker implements ApplicationComponent {
     if (!myTypesCheckingModesStack.isEmpty()) {
       myTypeCheckingMode = myTypesCheckingModesStack.pop();
     }
+    setIncrementalMode(true);
   }
 
   public void reportTypeError(SNode nodeWithError, String errorString) {
