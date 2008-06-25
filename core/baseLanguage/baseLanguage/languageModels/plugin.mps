@@ -29,7 +29,7 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
-  <maxImportIndex value="49" />
+  <maxImportIndex value="50" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.plugin.uiActions@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.ide.actions" version="-1" />
@@ -78,6 +78,7 @@
   <import index="47" modelUID="com.intellij.openapi.actionSystem@java_stub" version="-1" />
   <import index="48" modelUID="jetbrains.mps.core.behavior" version="-1" />
   <import index="49" modelUID="com.intellij.openapi@java_stub" version="-1" />
+  <import index="50" modelUID="com.intellij.openapi.util@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1205247197267">
     <property name="name" value="BaseLanguageEditorPopup" />
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement" id="1205247338363">
@@ -663,16 +664,15 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1214210830128" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1214210830129" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214210830130">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214210853922">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214210854940">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214210853923">
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1214210853924">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214386080929">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1214386083082">
+            <link role="baseMethodDeclaration" targetNodeId="50.~Disposer.dispose(com.intellij.openapi.Disposable):void" resolveInfo="dispose" />
+            <link role="classConcept" targetNodeId="50.~Disposer" resolveInfo="Disposer" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214386086318">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1214386086319">
                 <link role="fieldDeclaration" targetNodeId="1213184110921" resolveInfo="myConsoleView" />
               </node>
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1214210853925" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1214210857252">
-              <link role="baseMethodDeclaration" targetNodeId="49.~Disposable.dispose():void" resolveInfo="dispose" />
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1214386086320" />
             </node>
           </node>
         </node>

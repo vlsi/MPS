@@ -10,6 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.execution.impl.ConsoleViewImpl;
 import org.apache.commons.lang.ObjectUtils;
 import com.intellij.execution.ui.ConsoleViewContentType;
+import com.intellij.openapi.util.Disposer;
 
 public class TestOutputComponent {
 
@@ -77,7 +78,7 @@ public class TestOutputComponent {
   }
 
   public void dispose() {
-    this.consoleView.dispose();
+    Disposer.dispose(this.consoleView);
   }
 
   private static class Message {

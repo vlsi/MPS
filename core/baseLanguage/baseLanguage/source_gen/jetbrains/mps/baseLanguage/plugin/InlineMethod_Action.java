@@ -33,7 +33,7 @@ public class InlineMethod_Action extends CurrentProjectAction {
   public void dodoUpdate(@NotNull() AnActionEvent event) {
     try {
       {
-        final SNode node = new ActionEventData(event).getNodes().get(0);
+        final SNode node = new ActionEventData(event).getNode();
         final Wrappers._T<Boolean> b = new Wrappers._T<Boolean>(false);
         ModelAccess.instance().runReadAction(new Runnable() {
 
