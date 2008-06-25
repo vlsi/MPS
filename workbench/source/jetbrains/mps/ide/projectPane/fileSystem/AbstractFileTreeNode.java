@@ -41,6 +41,10 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode {
 
   @Override
   protected void updatePresentation() {
+    if (!myFile.exists()){
+      removeFromParent();
+      return;
+    }
     setText(myFile.getName());
     setNodeIdentifier(myFile.getPath());
     setColor(myProvider.getFileStatus(VFileSystem.getFile(myFile)).getColor());

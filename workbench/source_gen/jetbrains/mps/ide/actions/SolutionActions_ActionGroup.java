@@ -24,7 +24,6 @@ public class SolutionActions_ActionGroup extends CurrentProjectGroup {
   public static Logger LOG = Logger.getLogger(SolutionActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.SolutionActions";
   public static final String LABEL_ID_solutionNew = ID + "solutionNew";
-  public static final String LABEL_ID_VCS = ID + "VCS";
 
   public SolutionActions_ActionGroup(Project project) {
     super("", ID, true, false, null, project);
@@ -49,7 +48,6 @@ public class SolutionActions_ActionGroup extends CurrentProjectGroup {
       this.add(new SetModuleFolderAction());
       this.addSeparator();
       this.add(new SolutionPropertiesAction());
-      this.add(new LabelledAnchor(SolutionActions_ActionGroup.LABEL_ID_VCS));
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

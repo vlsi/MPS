@@ -21,13 +21,17 @@ public class FolderTreeNode extends AbstractFileTreeNode {
     super(operationContext, provider, folder);
 
     for (IFile f : myFile.list()) {
-      if (!myExcluded.contains(f.getName()) && f.isDirectory()) {
-        this.add(createNode(operationContext, provider, f));
+      if (f.exists()) {
+        if (!myExcluded.contains(f.getName()) && f.isDirectory()) {
+          this.add(createNode(operationContext, provider, f));
+        }
       }
     }
     for (IFile f : myFile.list()) {
-      if (!myExcluded.contains(f.getName()) && !f.isDirectory()) {
-        this.add(createNode(operationContext, provider, f));
+      if (f.exists()) {
+        if (!myExcluded.contains(f.getName()) && !f.isDirectory()) {
+          this.add(createNode(operationContext, provider, f));
+        }
       }
     }
   }

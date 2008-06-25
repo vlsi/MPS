@@ -108,7 +108,7 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
       public void actionPerformed(ActionEvent e) {
         ModelAccess.instance().runReadInEDT(new Runnable() {
           public void run() {
-            System.out.println("rebuild");
+//            System.out.println("rebuild");
             myMPSTree.rebuildLater();
           }
         });

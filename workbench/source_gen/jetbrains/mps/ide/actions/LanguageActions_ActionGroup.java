@@ -24,7 +24,6 @@ public class LanguageActions_ActionGroup extends CurrentProjectGroup {
   public static Logger LOG = Logger.getLogger(LanguageActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.LanguageActions";
   public static final String LABEL_ID_newGroup = ID + "newGroup";
-  public static final String LABEL_ID_VCS = ID + "VCS";
 
   public LanguageActions_ActionGroup(Project project) {
     super("", ID, true, false, null, project);
@@ -49,7 +48,6 @@ public class LanguageActions_ActionGroup extends CurrentProjectGroup {
       this.add(new CleanModuleAction());
       this.addSeparator();
       this.add(new SetModuleFolderAction());
-      this.add(new LabelledAnchor(LanguageActions_ActionGroup.LABEL_ID_VCS));
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

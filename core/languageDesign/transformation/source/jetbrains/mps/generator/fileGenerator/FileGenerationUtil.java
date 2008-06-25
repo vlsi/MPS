@@ -17,6 +17,7 @@ import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.vcs.ProjectVCSManager;
+import jetbrains.mps.vcs.VCSUtil;
 
 import javax.swing.JOptionPane;
 import java.io.File;
@@ -53,9 +54,7 @@ public class FileGenerationUtil {
 
     generateFiles(status, outputRootDirectory, gm, outputNodeContents, generatedFiles, directories);
 
-    ProjectVCSManager projectVCSManager = context.getComponent(ProjectVCSManager.class);
-    assert projectVCSManager != null;
-    projectVCSManager.getController().addFilesToVCS(new ArrayList<File>(generatedFiles));
+    VCSUtil.addFilesToVCS(context.getProject(), new ArrayList<File>(generatedFiles));
 
     // always clean-up default output dir.
     directories.add(getDefaultOutputDir(status.getInputModel(), outputRootDirectory));
@@ -99,9 +98,7 @@ public class FileGenerationUtil {
         }
       }
     }
-    ProjectVCSManager projectVCSManager = context.getComponent(ProjectVCSManager.class);
-    assert projectVCSManager != null;
-    projectVCSManager.getController().deleteFilesAndRemoveFromVCS(filesToDelete);
+    VCSUtil.deleteFilesAndRemoveFromVCS(context.getProject(), filesToDelete);
   }
 
   public static void cleanUpDefaultOutputDir(GenerationStatus status, String outputDir, IOperationContext context) {
