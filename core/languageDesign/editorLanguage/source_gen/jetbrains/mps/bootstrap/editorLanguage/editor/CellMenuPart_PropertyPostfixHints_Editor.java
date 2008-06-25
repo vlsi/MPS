@@ -27,7 +27,7 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
   private static void setupBasic_CollectionCell14374_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell14374_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -44,7 +44,7 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
   private static void setupBasic_CollectionCell14374_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell14374_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -57,7 +57,7 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
   private static void setupBasic_ConstantCell14374_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14374_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -70,7 +70,7 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
   private static void setupBasic_ConstantCell14374_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14374_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, true);
         }
@@ -83,7 +83,7 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
   private static void setupBasic_ConstantCell14374_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14374_03");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }

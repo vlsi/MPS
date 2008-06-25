@@ -51,7 +51,7 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
   private static void setupBasic_initValueRefNodeListCell1091_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_initValueRefNodeListCell1091_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -174,7 +174,7 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
     private static void setupBasic_ConstantCell1091_03(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell1091_03");
       {
-        Style inlineStyle = new Style() {
+        Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.SELECTABLE, true);
           }

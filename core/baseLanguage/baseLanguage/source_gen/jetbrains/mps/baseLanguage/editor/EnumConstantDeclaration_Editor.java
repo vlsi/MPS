@@ -38,7 +38,7 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_namePropertyCell6462_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell6462_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         }
@@ -158,7 +158,7 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
     private static void setupBasic_ConstantCell6462_02(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6462_02");
       {
-        Style inlineStyle = new Style() {
+        Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.SELECTABLE, true);
           }

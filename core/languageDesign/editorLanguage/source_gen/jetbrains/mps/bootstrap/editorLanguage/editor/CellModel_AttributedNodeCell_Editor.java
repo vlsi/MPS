@@ -24,7 +24,7 @@ public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell15341_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell15341_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -41,7 +41,7 @@ public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell15341_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell15341_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -54,7 +54,7 @@ public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell15341_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell15341_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.DRAW_BORDER, true);
@@ -68,7 +68,7 @@ public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell15341_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15341_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.DRAW_BORDER, true);
@@ -82,7 +82,7 @@ public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
   private static void setupBasic_drawBracketsPropertyCell15341_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_drawBracketsPropertyCell15341_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
@@ -95,7 +95,7 @@ public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell15341_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell15341_03");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.DRAW_BORDER, true);
@@ -109,7 +109,7 @@ public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell15341_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15341_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.DRAW_BORDER, true);
@@ -123,7 +123,7 @@ public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
   private static void setupBasic_bracketsColorPropertyCell15341_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_bracketsColorPropertyCell15341_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
@@ -136,7 +136,7 @@ public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell15341_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell15341_04");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
@@ -149,7 +149,7 @@ public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell15341_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15341_03");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.DRAW_BORDER, true);
@@ -163,7 +163,7 @@ public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell15341_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15341_04");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
@@ -176,7 +176,7 @@ public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell15341_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15341_05");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.DRAW_BORDER, true);

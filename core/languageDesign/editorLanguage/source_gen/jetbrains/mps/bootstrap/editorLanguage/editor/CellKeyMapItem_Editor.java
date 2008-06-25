@@ -42,7 +42,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell5981_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell5981_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, true);
         }
@@ -55,7 +55,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell5981_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell5981_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -72,7 +72,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   private static void setupBasic_keystrokeRefNodeListCell5981_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_keystrokeRefNodeListCell5981_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -85,7 +85,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell5981_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell5981_03");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -105,7 +105,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell5981_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell5981_04");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -125,7 +125,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell5981_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5981_04");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -138,7 +138,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell5981_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5981_05");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -151,7 +151,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell5981_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5981_06");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -164,7 +164,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell5981_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell5981_05");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -181,7 +181,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell5981_08(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5981_08");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -194,7 +194,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   private static void setupBasic_descriptionPropertyCell5981_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_descriptionPropertyCell5981_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         }
@@ -207,7 +207,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell5981_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell5981_06");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -224,7 +224,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell5981_010(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5981_010");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -237,7 +237,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   private static void setupBasic_caretPolicyPropertyCell5981_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_caretPolicyPropertyCell5981_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         }
@@ -250,7 +250,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell5981_011(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5981_011");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -263,7 +263,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell5981_07(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell5981_07");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -280,7 +280,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell5981_013(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5981_013");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -297,7 +297,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell5981_08(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell5981_08");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }

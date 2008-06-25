@@ -25,7 +25,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_leftExpressionRefNodeCell12173_0(EditorCell editorCell, SNode node, EditorContext context) {
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, true);
         }
@@ -41,7 +41,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_classTypeRefNodeCell12173_0(EditorCell editorCell, SNode node, EditorContext context) {
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, true);
         }

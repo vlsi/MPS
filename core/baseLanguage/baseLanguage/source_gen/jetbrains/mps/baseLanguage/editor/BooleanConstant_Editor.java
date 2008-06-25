@@ -21,7 +21,7 @@ public class BooleanConstant_Editor extends DefaultNodeEditor {
   private static void setupBasic_valuePropertyCell12933_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_valuePropertyCell12933_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         }

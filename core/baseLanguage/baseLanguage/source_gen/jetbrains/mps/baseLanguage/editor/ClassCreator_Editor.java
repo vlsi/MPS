@@ -49,7 +49,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell6179_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6179_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -66,7 +66,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell6179_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6179_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -203,7 +203,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     private static void setupBasic_resolveInfoPropertyCell6179_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_resolveInfoPropertyCell6179_0");
       {
-        Style inlineStyle = new Style() {
+        Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
           }

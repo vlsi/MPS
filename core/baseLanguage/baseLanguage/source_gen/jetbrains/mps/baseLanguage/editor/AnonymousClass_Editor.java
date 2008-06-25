@@ -47,7 +47,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell15389_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell15389_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -60,7 +60,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell15389_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell15389_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -77,7 +77,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell15389_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell15389_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -90,7 +90,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell15389_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15389_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -103,7 +103,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   private static void setupBasic_fieldRefNodeListCell15389_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_fieldRefNodeListCell15389_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -116,7 +116,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell15389_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell15389_03");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -129,7 +129,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell15389_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15389_03");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -142,7 +142,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   private static void setupBasic_methodRefNodeListCell15389_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_methodRefNodeListCell15389_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -155,7 +155,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell15389_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15389_05");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -185,7 +185,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell15389_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell15389_04");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -218,7 +218,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell15389_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell15389_05");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -239,7 +239,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell15389_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell15389_06");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -672,7 +672,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     private static void setupBasic_namePropertyCell15389_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell15389_0");
       {
-        Style inlineStyle = new Style() {
+        Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
           }
@@ -734,7 +734,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15389_02");
       BaseLanguageStyle_StyleSheet.EMPTY_CELL.apply(editorCell);
       {
-        Style inlineStyle = new Style() {
+        Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.SELECTABLE, true);
           }
@@ -807,7 +807,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15389_04");
       BaseLanguageStyle_StyleSheet.EMPTY_CELL.apply(editorCell);
       {
-        Style inlineStyle = new Style() {
+        Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.SELECTABLE, true);
           }

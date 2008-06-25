@@ -17,7 +17,7 @@ public class CellMenuPart_Abstract_Editor extends DefaultNodeEditor {
   private static void setupBasic_ErrorCell9457_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ErrorCell9457_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
         }

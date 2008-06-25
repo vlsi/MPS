@@ -60,7 +60,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7665_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7665_03");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -93,7 +93,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7665_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7665_04");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -117,7 +117,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7665_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7665_05");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -134,7 +134,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7665_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7665_06");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }

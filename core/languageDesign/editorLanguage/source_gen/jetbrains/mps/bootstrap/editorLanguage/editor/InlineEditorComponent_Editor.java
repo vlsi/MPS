@@ -21,7 +21,7 @@ public class InlineEditorComponent_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell20653_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell20653_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
@@ -34,7 +34,7 @@ public class InlineEditorComponent_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell20653_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell20653_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.DRAW_BORDER, true);
@@ -47,7 +47,7 @@ public class InlineEditorComponent_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_cellModelRefNodeCell20653_0(EditorCell editorCell, SNode node, EditorContext context) {
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }

@@ -24,7 +24,7 @@ public class ExpressionStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_expressionRefNodeCell140_0(EditorCell editorCell, SNode node, EditorContext context) {
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, true);
         }

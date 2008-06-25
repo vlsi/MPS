@@ -36,7 +36,7 @@ public class InstanceInitializer_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7809_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7809_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -49,7 +49,7 @@ public class InstanceInitializer_Editor extends DefaultNodeEditor {
   private static void setupBasic_IndentCell7809_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_IndentCell7809_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -69,7 +69,7 @@ public class InstanceInitializer_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell7809_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell7809_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }

@@ -38,7 +38,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
   private static void setupBasic_staticFieldDeclarationRefCell19365_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_staticFieldDeclarationRefCell19365_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
         }

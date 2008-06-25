@@ -46,7 +46,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell16512_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell16512_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -67,7 +67,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell16512_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell16512_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -80,7 +80,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell16512_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell16512_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -93,7 +93,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell16512_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell16512_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -110,7 +110,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell16512_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell16512_03");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -123,7 +123,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell16512_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell16512_04");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -136,7 +136,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell16512_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell16512_05");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -350,7 +350,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell16512_01");
       SharedStyles_StyleSheet.REFERENCE_ON_CONCEPT.apply(editorCell);
       {
-        Style inlineStyle = new Style() {
+        Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.DRAW_BORDER, true);
           }

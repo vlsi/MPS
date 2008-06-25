@@ -37,7 +37,7 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_valuePropertyCell3101_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_valuePropertyCell3101_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
         }
@@ -50,7 +50,7 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_valuePropertyCell3101_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_valuePropertyCell3101_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
         }

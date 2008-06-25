@@ -50,7 +50,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
   private static void setupBasic_CollectionCell18242_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell18242_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -82,7 +82,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
   private static void setupBasic_CollectionCell18242_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell18242_03");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -107,7 +107,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
   private static void setupBasic_CollectionCell18242_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell18242_04");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -128,7 +128,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
   private static void setupBasic_CollectionCell18242_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell18242_05");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }

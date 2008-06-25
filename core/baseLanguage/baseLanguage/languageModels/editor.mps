@@ -8439,9 +8439,11 @@
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1177326980923">
-          <property name="cellBackground" value="lightGray" />
           <property name="vertical" value="true" />
           <link role="relationDeclaration" targetNodeId="17.1177326540772" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.BackgroundColorStyleSheetItem" id="1214395853139">
+            <property name="color" value="lightGray" />
+          </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996936">
           <property name="flag" value="false" />
@@ -11703,7 +11705,6 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1196975453803">
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1196975453804">
-        <property name="cellBackground" value="query" />
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1196975453805">
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995259">
@@ -11978,51 +11979,56 @@
             </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1196975453898">
-            <property name="cellBackground" value="query" />
             <property name="vertical" value="false" />
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1196975453899">
               <link role="relationDeclaration" targetNodeId="17.1137022507850" />
             </node>
-            <node role="cellBackgroundFunction" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1196975453900">
-              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196975453901">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196975453902">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1196975453903">
-                    <link role="classifier" targetNodeId="56.~Color" resolveInfo="Color" />
-                    <link role="variableDeclaration" targetNodeId="56.~Color.white" resolveInfo="white" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310998065">
+              <property name="flag" value="false" />
+            </node>
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.BackgroundColorStyleSheetItem" id="1214395853134">
+              <property name="color" value="query" />
+              <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1214395853135">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214395853136">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214395853137">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1214395853138">
+                      <link role="classifier" targetNodeId="56.~Color" resolveInfo="Color" />
+                      <link role="variableDeclaration" targetNodeId="56.~Color.white" resolveInfo="white" />
+                    </node>
                   </node>
                 </node>
               </node>
-            </node>
-            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310998065">
-              <property name="flag" value="false" />
             </node>
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993664">
             <property name="flag" value="false" />
           </node>
         </node>
-        <node role="cellBackgroundFunction" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1196975453904">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196975453905">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196975453906">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213034542606">
-                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213034542608">
-                  <link role="baseMethodDeclaration" targetNodeId="56.~Color.&lt;init&gt;(int,int,int)" resolveInfo="Color" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1196975453908">
-                    <property name="value" value="238" />
-                  </node>
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1196975453909">
-                    <property name="value" value="238" />
-                  </node>
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1196975453910">
-                    <property name="value" value="238" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994692">
+          <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.BackgroundColorStyleSheetItem" id="1214395853125">
+          <property name="color" value="query" />
+          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1214395853126">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214395853127">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214395853128">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1214395853129">
+                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1214395853130">
+                    <link role="baseMethodDeclaration" targetNodeId="56.~Color.&lt;init&gt;(int,int,int)" resolveInfo="Color" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1214395853131">
+                      <property name="value" value="238" />
+                    </node>
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1214395853132">
+                      <property name="value" value="238" />
+                    </node>
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1214395853133">
+                      <property name="value" value="238" />
+                    </node>
                   </node>
                 </node>
               </node>
             </node>
           </node>
-        </node>
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994692">
-          <property name="flag" value="false" />
         </node>
       </node>
     </node>

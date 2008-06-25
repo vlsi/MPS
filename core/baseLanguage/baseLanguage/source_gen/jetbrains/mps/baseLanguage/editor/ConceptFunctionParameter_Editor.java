@@ -21,7 +21,7 @@ public class ConceptFunctionParameter_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConceptPropertyCell11492_0");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
         }

@@ -8,10 +8,11 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.ModelAccessor;
@@ -40,21 +41,27 @@ public class ConceptFunction_Component extends AbstractCellProvider {
   private static void setupBasic_CollectionCell6954_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell6954_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return ConceptFunction_Component.calculateColor8(cell);
+            }
+
+          });
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setCellBackgroundColor(_QueryFunction_Color_1196975453904(node, context));
   }
 
   private static void setupBasic_ConstantCell6954_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6954_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -67,7 +74,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
   private static void setupBasic_CollectionCell6954_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell6954_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -80,7 +87,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
   private static void setupBasic_CollectionCell6954_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell6954_03");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -93,7 +100,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
   private static void setupBasic_ModelAccessCell6954_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ModelAccessCell6954_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
@@ -107,15 +114,21 @@ public class ConceptFunction_Component extends AbstractCellProvider {
   private static void setupBasic_CollectionCell6954_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell6954_04");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return ConceptFunction_Component.calculateColor9(cell);
+            }
+
+          });
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.setCellBackgroundColor(_QueryFunction_Color_1196975453900(node, context));
   }
 
   private static void setupBasic_bodyRefNodeCell6954_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -132,12 +145,36 @@ public class ConceptFunction_Component extends AbstractCellProvider {
   private static void setupLabel_bodyRefNodeCell6954_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static Color _QueryFunction_Color_1196975453900(SNode node, EditorContext editorContext) {
+  public static Color _QueryFunction_Color_1214395853126(SNode node, EditorContext editorContext) {
+    return new Color(238, 238, 238);
+  }
+
+  public static Color _QueryFunction_Color_1214395853135(SNode node, EditorContext editorContext) {
     return Color.white;
   }
 
-  public static Color _QueryFunction_Color_1196975453904(SNode node, EditorContext editorContext) {
-    return new Color(238, 238, 238);
+  private static Color calculateColor8(EditorCell cell) {
+    Color result;
+    result = _QueryFunction_Color_1214395853126((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
+    return result;
+  }
+
+  private static Color calculateColor9(EditorCell cell) {
+    Color result;
+    result = _QueryFunction_Color_1214395853135((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
+    return result;
   }
 
 

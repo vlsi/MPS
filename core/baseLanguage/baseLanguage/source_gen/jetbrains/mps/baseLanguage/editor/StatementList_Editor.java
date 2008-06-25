@@ -29,7 +29,7 @@ public class StatementList_Editor extends DefaultNodeEditor {
   private static void setupBasic_statementRefNodeListCell6566_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_statementRefNodeListCell6566_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -69,7 +69,7 @@ public class StatementList_Editor extends DefaultNodeEditor {
     private static void setupBasic_ConstantCell6566_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6566_0");
       {
-        Style inlineStyle = new Style() {
+        Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.SELECTABLE, true);
             this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);

@@ -163,7 +163,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     private static void setupBasic_namePropertyCell12257_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell12257_0");
       {
-        Style inlineStyle = new Style() {
+        Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
           }

@@ -33,7 +33,7 @@ public class CharConstant_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell443_01");
     BaseLanguageStyle_StyleSheet.STRING_LITERAL.apply(editorCell);
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
         }
@@ -46,7 +46,7 @@ public class CharConstant_Editor extends DefaultNodeEditor {
   private static void setupBasic_AlternationCell443_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_AlternationCell443_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
         }

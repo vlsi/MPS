@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
@@ -42,7 +43,7 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell19947_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell19947_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -55,7 +56,7 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell19947_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19947_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -67,7 +68,21 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_statementRefNodeListCell19947_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_statementRefNodeListCell19947_0");
-    editorCell.setCellBackgroundColor(Color.lightGray);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return CommentedStatementsBlock_Editor.calculateColor10(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_ConstantCell19947_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -82,6 +97,12 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_statementRefNodeListCell19947_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static Color calculateColor10(EditorCell cell) {
+    Color result;
+    result = Color.lightGray;
+    return result;
   }
 
 

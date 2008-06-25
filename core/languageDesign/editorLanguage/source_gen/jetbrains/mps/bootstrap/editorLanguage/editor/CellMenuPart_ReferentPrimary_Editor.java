@@ -24,7 +24,7 @@ public class CellMenuPart_ReferentPrimary_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell9327_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell9327_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -37,7 +37,7 @@ public class CellMenuPart_ReferentPrimary_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell9327_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell9327_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
         }
@@ -50,7 +50,7 @@ public class CellMenuPart_ReferentPrimary_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell9327_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell9327_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -67,7 +67,7 @@ public class CellMenuPart_ReferentPrimary_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell9327_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell9327_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
