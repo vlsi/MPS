@@ -590,6 +590,10 @@
       <property name="externalValue" value="dark gray" />
       <property name="internalValue" value="darkGray" />
     </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1214395400259">
+      <property name="externalValue" value="white" />
+      <property name="internalValue" value="WHITE" />
+    </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1139246571096">
       <property name="name" value="query" />
       <property name="externalValue" value="&lt;query&gt;" />

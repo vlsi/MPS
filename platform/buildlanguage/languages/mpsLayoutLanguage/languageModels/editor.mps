@@ -244,18 +244,8 @@
     </node>
     <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1204115710587">
       <property name="name" value="configuration" />
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1204115722526">
-        <property name="color" value="query" />
-        <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1204705974203">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204705974204">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204706136934">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1204706136935">
-                <link role="classifier" targetNodeId="5.~Color" resolveInfo="Color" />
-                <link role="variableDeclaration" targetNodeId="5.~Color.WHITE" resolveInfo="WHITE" />
-              </node>
-            </node>
-          </node>
-        </node>
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214395203016">
+        <property name="color" value="WHITE" />
       </node>
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.BackgroundColorStyleSheetItem" id="1204129851721">
         <property name="color" value="gray" />
