@@ -54,13 +54,14 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
 
   public void updateAfterLoad(@NotNull SModelDescriptor modelDescriptor) {
     SModel model = modelDescriptor.getSModel();
+    boolean wasLoading = model.isLoading();
     model.setLoading(true);
     try {
       SModelUID uid = modelDescriptor.getModelUID();
       String pack = uid.getLongName();      
       myConverter.updateModel(pack, true);
     } finally {
-      model.setLoading(false);
+      model.setLoading(wasLoading);
     }
   }
 

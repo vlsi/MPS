@@ -149,6 +149,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     if (!SModelStereotype.NONE.equals(stereotype) && !SModelStereotype.TEMPLATES.equals(stereotype)) {
       return;
     }
+    boolean wasLoading = mySModel.isLoading();
     try {
       mySModel.setLoading(true);
       convertRenamedLanguageImports();
@@ -156,7 +157,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
         playUsedModelDescriptorsRefactoring(modelDescriptor);
       }
     } finally {
-      mySModel.setLoading(false);
+      mySModel.setLoading(wasLoading);
     }
   }
 

@@ -19,9 +19,13 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
     SNode node = declaration.getNode();
     if (!node.isRegistered()) {
       SModel sModel = node.getModel();
-      sModel.setLoading(true);
-      sModel.addRoot(node.getTopmostAncestor());
-      sModel.setLoading(false);
+      boolean wasLoading = sModel.isLoading();
+      try {
+        sModel.setLoading(true);
+        sModel.addRoot(node.getTopmostAncestor());
+      } finally {
+        sModel.setLoading(wasLoading);
+      }
     }
     myNodePointer = new SNodePointer(declaration);
     myHierarchyTree = tree;
@@ -40,9 +44,13 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
     SNode node = myNodePointer.getNode();
     if (node != null && !node.isRegistered()) {
       SModel sModel = node.getModel();
-      sModel.setLoading(true);
-      sModel.removeRoot(node.getTopmostAncestor());
-      sModel.setLoading(false);
+      boolean wasLoading = sModel.isLoading();
+      try {
+        sModel.setLoading(true);
+        sModel.removeRoot(node.getTopmostAncestor());
+      } finally {
+        sModel.setLoading(wasLoading);
+      }
     }
   }
 

@@ -11,6 +11,7 @@ import jetbrains.mps.baseLanguage.structure.Expression;
 public class RefactorModelUtil {
   public static void refactorModel(SModelDescriptor modelDescriptor) {
     SModel model = modelDescriptor.getSModel();
+    boolean wasLoading = model.isLoading();
     try {
       model.setLoading(true);
       boolean modified = false;
@@ -34,7 +35,7 @@ public class RefactorModelUtil {
         modelDescriptor.save();
       }
     } finally {
-      model.setLoading(false);
+      model.setLoading(wasLoading);
     }
   }
 }
