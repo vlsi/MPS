@@ -133,10 +133,10 @@ __switch__:
       public void invoke(List<Integer> exp) {
         int i = 3;
         exp.add(i);
-        while(i > 0) {
+        while (i > 0) {
           int j = 1;
           exp.add(j);
-          while(j <= 3) {
+          while (j <= 3) {
             exp.add(i * j);
             j = j + 1;
           }

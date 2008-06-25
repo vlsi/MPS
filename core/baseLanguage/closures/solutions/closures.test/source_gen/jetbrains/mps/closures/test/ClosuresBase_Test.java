@@ -30,7 +30,7 @@ public class ClosuresBase_Test extends TestCase {
   public void assertResultsEqual(FunctionTypes._R<? extends Iterable<Integer>> expected, FunctionTypes._R<? extends Iterable<Integer>> test) {
     Iterator<Integer> expIt = expected.invoke().iterator();
     Iterator<Integer> testIt = expected.invoke().iterator();
-    while(expIt.hasNext() && testIt.hasNext()) {
+    while (expIt.hasNext() && testIt.hasNext()) {
       Assert.assertEquals(expIt.next(), testIt.next());
     }
     Assert.assertFalse(expIt.hasNext());
