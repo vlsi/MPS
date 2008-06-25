@@ -15,6 +15,9 @@
   </language>
   <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
+  <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <maxImportIndex value="5" />
   <import index="1" modelUID="org.w3c.dom@java_stub" version="-1" />
   <import index="2" modelUID="jetbrains.mps.ypath.runtime.dom@java_stub" version="-1" />
