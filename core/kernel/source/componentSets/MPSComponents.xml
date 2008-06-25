@@ -22,6 +22,10 @@
     <component>
       <implementation-class>com.intellij.openapi.components.impl.ServiceManagerImpl</implementation-class>
     </component>
+    <component>
+      <interface-class>com.intellij.openapi.vcs.impl.VcsPathPresenter</interface-class>
+      <implementation-class>jetbrains.mps.vcs.ModuleVcsPathPresenter</implementation-class>
+    </component>
     <!--<component>
       <implementation-class>com.intellij.platform.FilesystemToolwindowOpener</implementation-class>
     </component>-->
