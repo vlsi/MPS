@@ -10,6 +10,7 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.MessageViewLoggingHandler;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.action.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.blame.BlameDialog;
 import jetbrains.mps.ide.messages.MessagesViewTool.MyState;
@@ -340,6 +341,10 @@ public class MessagesViewTool extends BaseMPSTool implements PersistentStateComp
   }
 
   public void add(final Message message) {
+    if (IdeMain.isTestMode()) {
+      return;
+    }
+
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
         if (myMessages.size() >= MAX_MESSAGES_SIZE) {
