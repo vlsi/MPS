@@ -1,18 +1,13 @@
 package jetbrains.mps.ide;
 
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.ide.progress.TaskProgressSettings;
-import jetbrains.mps.ide.progress.AdaptiveProgressMonitorFactory;
 import jetbrains.mps.nodeEditor.UIEditorComponent;
-import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponentFactory;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.JSplitPaneWithoutBorders;
-import jetbrains.mps.util.Calculable;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.cleanup.CleanupManager;
 
@@ -27,6 +22,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.annotations.NotNull;
 
 public abstract class BaseNodeDialog extends BaseDialog {
@@ -105,11 +101,11 @@ public abstract class BaseNodeDialog extends BaseDialog {
 
   @BaseDialog.Button(position = 0, name = "OK", defaultButton = true)
   public void buttonOK() {
-    if (saveChanges_internal()) return;
+    if (doSaveChanges()) return;
     BaseNodeDialog.this.dispose();
   }
 
-  private boolean saveChanges_internal() {
+  private boolean doSaveChanges() {
     if (!validateNode()) return true;
     ProgressManager.getInstance().run(new Modal(getOperationContext().getComponent(Project.class), "Applying changes", false) {
       public void run(@NotNull ProgressIndicator indicator) {
@@ -128,7 +124,12 @@ public abstract class BaseNodeDialog extends BaseDialog {
       }
     });
 
+    ApplicationManager.getApplication().saveAll();
+
     return false;
+  }
+
+  protected void afterSave() {
   }
 
   @BaseDialog.Button(position = 1, name = "Cancel")
@@ -138,7 +139,7 @@ public abstract class BaseNodeDialog extends BaseDialog {
 
   @BaseDialog.Button(position = 2, name = "Apply")
   public void buttonApply() {
-    saveChanges_internal();
+    doSaveChanges();
   }
 
   public class MyPreferencesPage {

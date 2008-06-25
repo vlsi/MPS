@@ -7,6 +7,7 @@ import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.smodel.ModelAccess;
 
 import java.io.File;
 import java.io.IOException;
@@ -53,25 +54,27 @@ public class VCSUtil {
     }
 
     boolean result = true;
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-      public void run() {
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
-          public void run() {
-            LocalFileSystem lfs = LocalFileSystem.getInstance();
-            for (File file : inVCS) {
-              VirtualFile vfile = lfs.refreshAndFindFileByIoFile(file);
-              if (vfile != null) {
-                try {
-                  vfile.delete(this);
-                } catch (IOException ex) {
-                  ex.printStackTrace();
-                }
-              }
-            }
-          }
-        });
-      }
-    });
+
+    //todo this code causes UI freezing during generation. work around it somehow
+//    ApplicationManager.getApplication().invokeLater(new Runnable() {
+//      public void run() {
+//        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+//          public void run() {
+//            LocalFileSystem lfs = LocalFileSystem.getInstance();
+//            for (File file : inVCS) {
+//              VirtualFile vfile = lfs.refreshAndFindFileByIoFile(file);
+//              if (vfile != null) {
+//                try {
+//                  vfile.delete(this);
+//                } catch (IOException ex) {
+//                  ex.printStackTrace();
+//                }
+//              }
+//            }
+//          }
+//        });
+//      }
+//    });
 
     IProjectHandler projectHandler = project.getComponent(MPSProjectHolder.class).getMPSProject().getProjectHandler();
     if (projectHandler != null) {
@@ -113,32 +116,32 @@ public class VCSUtil {
 
     boolean result = true;
 
-
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-      public void run() {
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
-          public void run() {
-            LocalFileSystem lfs = LocalFileSystem.getInstance();
-            for (File f : inVCS) {
-              VirtualFile vf = lfs.refreshAndFindFileByIoFile(f);
-              if (vf == null) {
-                continue;
-              }
-              AbstractVcs vcs = manager.getVcsFor(vf);
-              if (vcs != null) {
-                CheckinEnvironment ci = vcs.getCheckinEnvironment();
-                if (ci != null && !isUnderVCS(project, vf)) {
-                  List<VirtualFile> vfs = new ArrayList<VirtualFile>();
-                  vfs.add(vf);
-                  List<VcsException> result = ci.scheduleUnversionedFilesForAddition(vfs);
-                  VcsDirtyScopeManager.getInstance(project).fileDirty(vf);
-                }
-              }
-            }
-          }
-        });
-      }
-    });
+    //todo this code causes UI freezing during generation. work around it somehow
+//    ApplicationManager.getApplication().invokeLater(new Runnable() {
+//      public void run() {
+//        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+//          public void run() {
+//            LocalFileSystem lfs = LocalFileSystem.getInstance();
+//            for (File f : inVCS) {
+//              VirtualFile vf = lfs.refreshAndFindFileByIoFile(f);
+//              if (vf == null) {
+//                continue;
+//              }
+//              AbstractVcs vcs = manager.getVcsFor(vf);
+//              if (vcs != null) {
+//                CheckinEnvironment ci = vcs.getCheckinEnvironment();
+//                if (ci != null && !isUnderVCS(project, vf)) {
+//                  List<VirtualFile> vfs = new ArrayList<VirtualFile>();
+//                  vfs.add(vf);
+//                  List<VcsException> result = ci.scheduleUnversionedFilesForAddition(vfs);
+//                  VcsDirtyScopeManager.getInstance(project).fileDirty(vf);
+//                }
+//              }
+//            }
+//          }
+//        });
+//      }
+//    });
 
     IProjectHandler projectHandler = project.getComponent(MPSProjectHolder.class).getMPSProject().getProjectHandler();
     if (projectHandler != null) {
