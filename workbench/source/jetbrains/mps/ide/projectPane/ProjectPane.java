@@ -284,15 +284,15 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
     opener.openNode(node, context);
   }
 
-  public void addNotify() {
-    getPanel().addNotify();
+  public void projectOpened() {
+    super.projectOpened();
     myReloadListener.onAfterReload();
     ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
   }
 
-  public void removeNotify() {
+  public void projectClosed() {
     ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
-    getPanel().removeNotify();
+    super.projectClosed();
   }
 
 

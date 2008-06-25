@@ -114,8 +114,7 @@ public class VCSUtil {
       }
     }
 
-    boolean result = true;
-
+    boolean result = true;    
     //todo this code causes UI freezing during generation. work around it somehow
 //    ApplicationManager.getApplication().invokeLater(new Runnable() {
 //      public void run() {
