@@ -62,7 +62,6 @@ public class VCSUtil {
               VirtualFile vfile = lfs.refreshAndFindFileByIoFile(file);
               if (vfile != null) {
                 try {
-                  System.out.format("delete %s file from vcs", vfile);
                   vfile.delete(this);
                 } catch (IOException ex) {
                   ex.printStackTrace();
@@ -130,7 +129,6 @@ public class VCSUtil {
                 CheckinEnvironment ci = vcs.getCheckinEnvironment();
                 if (ci != null && !isUnderVCS(project, vf)) {
                   List<VirtualFile> vfs = new ArrayList<VirtualFile>();
-                  System.out.format("add file %s to vcs", vf);
                   vfs.add(vf);
                   List<VcsException> result = ci.scheduleUnversionedFilesForAddition(vfs);
                   VcsDirtyScopeManager.getInstance(project).fileDirty(vf);
