@@ -55,7 +55,6 @@
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/app/agreement" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/app/complexLanguage" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/app/dslbook_example" />
-    <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/app/fibonacci" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/app/fixedLengthReader" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/app/formulaLanguage" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/app/jetbrains.mps.matrixLanguage" />
@@ -298,9 +297,6 @@
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/app/dslbook_example">
       <fileset dir="app/dslbook_example" excludes="**/*.iml, **/*.ipr" includes="" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/app/fibonacci">
-      <fileset dir="app/fibonacci" excludes="**/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/app/fixedLengthReader">
       <fileset dir="app/fixedLengthReader" excludes="**/*.iml, **/*.ipr" includes="" />
