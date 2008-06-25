@@ -2839,5 +2839,23 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1214406454886">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="TextBackgroundColorStyleSheetItem" />
+    <link role="extends" targetNodeId="1186403694788" resolveInfo="ColorStyleClassItem" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1214406454887">
+      <property name="value" value="text-background-color" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1214406466686">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="TextBackgroundColorSelectedStyleSheetItem" />
+    <link role="extends" targetNodeId="1186403694788" resolveInfo="ColorStyleClassItem" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1214406466687">
+      <property name="value" value="text-background-color-selected" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

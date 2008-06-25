@@ -1418,27 +1418,35 @@
       <property name="vertical" value="false" />
       <link role="keyMap" targetNodeId="1182951941449" resolveInfo="RemoveHelginsJudgement" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1182937438866">
-        <property name="textBgColor" value="magenta" />
         <property name="text" value="[" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleSheetItem" id="1214407441999">
+          <property name="color" value="magenta" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_AttributedNodeCell" id="1182952122881" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1182937453338">
-        <property name="textBgColor" value="magenta" />
         <property name="text" value="]" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleSheetItem" id="1214407441857">
+          <property name="color" value="magenta" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1182937456731">
         <property name="text" value=":" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1182937536374">
-        <property name="textBgColor" value="green" />
         <property name="text" value="[" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleSheetItem" id="1214407441935">
+          <property name="color" value="green" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1182937540001">
         <link role="relationDeclaration" targetNodeId="1.1182937420689" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1182937542831">
-        <property name="textBgColor" value="green" />
         <property name="text" value="]" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleSheetItem" id="1214407441970">
+          <property name="color" value="green" />
+        </node>
       </node>
     </node>
   </node>

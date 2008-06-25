@@ -153,7 +153,7 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor2(EditorCell cell) {
     Color result;
-    result = _QueryFunction_Color_1214399678097((cell == null ?
+    result = Antiquotation_Editor._QueryFunction_Color_1214399678097((cell == null ?
       null :
       cell.getSNode()
     ), (cell == null ?
@@ -165,7 +165,7 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor4(EditorCell cell) {
     Color result;
-    result = _QueryFunction_Color_1214399678591((cell == null ?
+    result = Antiquotation_Editor._QueryFunction_Color_1214399678591((cell == null ?
       null :
       cell.getSNode()
     ), (cell == null ?

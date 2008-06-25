@@ -8,8 +8,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -31,7 +32,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_PropertyValues;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -87,6 +87,13 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
           this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return LinkDeclaration_Editor.calculateColor39(cell);
+            }
+
+          });
         }
 
       };
@@ -155,7 +162,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ModelAccessCell7832_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextBackgroundColor(Color.lightGray);
   }
 
   private static void setupLabel_ConstantCell7832_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -178,6 +184,12 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
   private static Color calculateColor12(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
+    return result;
+  }
+
+  private static Color calculateColor39(EditorCell cell) {
+    Color result;
+    result = Color.lightGray;
     return result;
   }
 

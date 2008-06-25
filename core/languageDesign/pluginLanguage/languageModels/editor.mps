@@ -342,9 +342,11 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1205861591578">
         <property name="text" value="additional methods" />
-        <property name="textBgColor" value="orange" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995533">
           <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleSheetItem" id="1214407441905">
+          <property name="color" value="orange" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1205861604127">
@@ -361,9 +363,11 @@
       <property name="vertical" value="true" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206183272506">
         <property name="text" value="available parameter types:" />
-        <property name="textBgColor" value="orange" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997100">
           <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleSheetItem" id="1214407442068">
+          <property name="color" value="orange" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206183272507">
@@ -929,7 +933,9 @@
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1203852200577">
           <property name="text" value="single-tabbed editor tab" />
-          <property name="textBgColor" value="orange" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleSheetItem" id="1214407441939">
+            <property name="color" value="orange" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1203852213283">
           <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name" />
@@ -984,7 +990,9 @@
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1203852433963">
           <property name="text" value="multitabbed editor tab" />
-          <property name="textBgColor" value="orange" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleSheetItem" id="1214407441962">
+            <property name="color" value="orange" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1203852433964">
           <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name" />
@@ -1715,10 +1723,8 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1207318325524">
-        <property name="textBgColor" value="yellow" />
         <property name="allowEmptyText" value="true" />
         <property name="noTargetText" value="any" />
-        <property name="textBgColorSelected" value="cyan" />
         <link role="relationDeclaration" targetNodeId="1.1207318242773" resolveInfo="modifiers" />
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1207318325525">
           <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_PropertyValues" id="1207318325526">
@@ -1769,6 +1775,12 @@
             </node>
           </node>
         </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleSheetItem" id="1214407442072">
+          <property name="color" value="yellow" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorSelectedStyleSheetItem" id="1214407442187">
+          <property name="color" value="cyan" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1207318325541">
         <property name="text" value=" &gt; + &lt;" />
@@ -1777,9 +1789,7 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1207318325542">
-        <property name="textBgColor" value="yellow" />
         <property name="noTargetText" value="&lt;keycode&gt;" />
-        <property name="textBgColorSelected" value="cyan" />
         <link role="relationDeclaration" targetNodeId="1.1207318242774" resolveInfo="keycode" />
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1207318325543">
           <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_PropertyValues" id="1207318325544">
@@ -1843,6 +1853,12 @@
               </node>
             </node>
           </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleSheetItem" id="1214407442044">
+          <property name="color" value="yellow" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorSelectedStyleSheetItem" id="1214407442180">
+          <property name="color" value="cyan" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1207318325566">

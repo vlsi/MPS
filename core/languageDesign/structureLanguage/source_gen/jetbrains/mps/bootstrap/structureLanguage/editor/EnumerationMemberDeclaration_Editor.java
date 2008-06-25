@@ -62,6 +62,13 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
             }
 
           });
+          this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return EnumerationMemberDeclaration_Editor.calculateColor41(cell);
+            }
+
+          });
         }
 
       };
@@ -172,6 +179,13 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
             }
 
           });
+          this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return EnumerationMemberDeclaration_Editor.calculateColor44(cell);
+            }
+
+          });
         }
 
       };
@@ -183,7 +197,6 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_internalValuePropertyCell15113_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setSelectedTextBackgroundColor(Color.cyan);
   }
 
   private static void setupLabel_ConstantCell15113_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -199,7 +212,6 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_javaIdentifierPropertyCell15113_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setSelectedTextBackgroundColor(Color.cyan);
   }
 
   public static boolean renderingCondition15113_0(SNode node, EditorContext editorContext, IScope scope) {
@@ -243,6 +255,18 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
   private static Color calculateColor25(EditorCell cell) {
     Color result;
     result = Color.darkGray;
+    return result;
+  }
+
+  private static Color calculateColor41(EditorCell cell) {
+    Color result;
+    result = Color.cyan;
+    return result;
+  }
+
+  private static Color calculateColor44(EditorCell cell) {
+    Color result;
+    result = Color.cyan;
     return result;
   }
 

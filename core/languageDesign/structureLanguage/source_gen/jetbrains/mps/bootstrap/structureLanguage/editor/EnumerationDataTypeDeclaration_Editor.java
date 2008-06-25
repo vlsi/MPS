@@ -9,9 +9,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
@@ -68,6 +68,28 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_namePropertyCell7131_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell7131_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return EnumerationDataTypeDeclaration_Editor.calculateColor36(cell);
+            }
+
+          });
+          this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return EnumerationDataTypeDeclaration_Editor.calculateColor40(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell7131_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -431,8 +453,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_namePropertyCell7131_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextBackgroundColor(Color.yellow);
-    editorCell.setSelectedTextBackgroundColor(Color.cyan);
   }
 
   private static void setupLabel_ConstantCell7131_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -528,6 +548,18 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static Color calculateColor24(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_GREEN;
+    return result;
+  }
+
+  private static Color calculateColor36(EditorCell cell) {
+    Color result;
+    result = Color.yellow;
+    return result;
+  }
+
+  private static Color calculateColor40(EditorCell cell) {
+    Color result;
+    result = Color.cyan;
     return result;
   }
 

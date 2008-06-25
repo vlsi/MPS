@@ -9,8 +9,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
@@ -336,6 +337,20 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return CellModel_RefCell_Editor.calculateColor79(cell);
+            }
+
+          });
+          this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return CellModel_RefCell_Editor.calculateColor93(cell);
+            }
+
+          });
         }
 
       };
@@ -941,8 +956,6 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_noTargetTextPropertyCell17023_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextBackgroundColor(Color.yellow);
-    editorCell.setSelectedTextBackgroundColor(Color.cyan);
   }
 
   private static void setupLabel_ConstantCell17023_011(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -1070,6 +1083,18 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition17023_09(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "bracketsColor", null, null));
+  }
+
+  private static Color calculateColor79(EditorCell cell) {
+    Color result;
+    result = Color.yellow;
+    return result;
+  }
+
+  private static Color calculateColor93(EditorCell cell) {
+    Color result;
+    result = Color.cyan;
+    return result;
   }
 
 

@@ -1197,5 +1197,165 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214304712002" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1214405736963">
+    <property name="package" value="Stylesheet" />
+    <link role="concept" targetNodeId="1.1186404549998" resolveInfo="ForegroundColorStyleSheetItem" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1214405738762">
+      <property name="name" value="isApplicableTo" />
+      <link role="overriddenMethod" targetNodeId="1214304723440" resolveInfo="isApplicableTo" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214405738764">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214405746870">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214405748467">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1214405747700">
+              <link role="variableDeclaration" targetNodeId="1214405740906" resolveInfo="cellModel" />
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1214405749970">
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1214405752580">
+                <link role="conceptDeclaration" targetNodeId="1.1079353555532" resolveInfo="CellModel_AbstractLabel" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1214405740906">
+        <property name="name" value="cellModel" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1214405740907">
+          <link role="concept" targetNodeId="1.1073389214265" resolveInfo="EditorCellModel" />
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1214405740908" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1214405736964">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214405736965" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1214405764144">
+    <property name="package" value="Stylesheet" />
+    <link role="concept" targetNodeId="1.1187258617779" resolveInfo="ForegroundNullColorStyleSheetItem" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1214405766460">
+      <property name="name" value="isApplicableTo" />
+      <link role="overriddenMethod" targetNodeId="1214304723440" resolveInfo="isApplicableTo" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214405766462">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214405770013">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214405771422">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1214405770734">
+              <link role="variableDeclaration" targetNodeId="1214405768885" resolveInfo="cellModel" />
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1214405772863">
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1214405775223">
+                <link role="conceptDeclaration" targetNodeId="1.1079353555532" resolveInfo="CellModel_AbstractLabel" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1214405768885">
+        <property name="name" value="cellModel" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1214405768886">
+          <link role="concept" targetNodeId="1.1073389214265" resolveInfo="EditorCellModel" />
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1214405768887" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1214405764145">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214405764146" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1214405914995">
+    <property name="package" value="Stylesheet" />
+    <link role="concept" targetNodeId="1.1186414860679" resolveInfo="EditableStyleSheetItem" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1214405916295">
+      <property name="name" value="isApplicableTo" />
+      <link role="overriddenMethod" targetNodeId="1214304723440" resolveInfo="isApplicableTo" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214405916297">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214405922674">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214405924302">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1214405923739">
+              <link role="variableDeclaration" targetNodeId="1214405918344" resolveInfo="cellModel" />
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1214405927056">
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1214405929182">
+                <link role="conceptDeclaration" targetNodeId="1.1079353555532" resolveInfo="CellModel_AbstractLabel" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1214405918344">
+        <property name="name" value="cellModel" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1214405918345">
+          <link role="concept" targetNodeId="1.1073389214265" resolveInfo="EditorCellModel" />
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1214405918362" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1214405914996">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214405914997" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1214406601868">
+    <property name="package" value="Stylesheet" />
+    <link role="concept" targetNodeId="1.1214406466686" resolveInfo="TextBackgroundColorSelectedStyleSheetItem" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1214406603371">
+      <property name="name" value="isApplicableTo" />
+      <link role="overriddenMethod" targetNodeId="1214304723440" resolveInfo="isApplicableTo" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214406603373">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214406613542">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214406615451">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1214406613825">
+              <link role="variableDeclaration" targetNodeId="1214406607624" resolveInfo="cellModel" />
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1214406616954">
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1214406619455">
+                <link role="conceptDeclaration" targetNodeId="1.1079353555532" resolveInfo="CellModel_AbstractLabel" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1214406607624">
+        <property name="name" value="cellModel" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1214406607625">
+          <link role="concept" targetNodeId="1.1073389214265" resolveInfo="EditorCellModel" />
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1214406607626" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1214406601869">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214406601870" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1214406624347">
+    <property name="package" value="Stylesheet" />
+    <link role="concept" targetNodeId="1.1214406454886" resolveInfo="TextBackgroundColorStyleSheetItem" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1214406625647">
+      <property name="name" value="isApplicableTo" />
+      <link role="overriddenMethod" targetNodeId="1214304723440" resolveInfo="isApplicableTo" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214406625649">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214406627903">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214406629390">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1214406628655">
+              <link role="variableDeclaration" targetNodeId="1214406626822" resolveInfo="cellModel" />
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1214406631222">
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1214406633629">
+                <link role="conceptDeclaration" targetNodeId="1.1079353555532" resolveInfo="CellModel_AbstractLabel" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1214406626822">
+        <property name="name" value="cellModel" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1214406626823">
+          <link role="concept" targetNodeId="1.1073389214265" resolveInfo="EditorCellModel" />
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1214406626824" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1214406624348">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214406624349" />
+    </node>
+  </node>
 </model>
 

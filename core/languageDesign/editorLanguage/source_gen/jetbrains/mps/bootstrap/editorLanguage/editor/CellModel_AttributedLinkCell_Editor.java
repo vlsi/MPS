@@ -8,8 +8,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
@@ -55,6 +56,13 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
           this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return CellModel_AttributedLinkCell_Editor.calculateColor72(cell);
+            }
+
+          });
         }
 
       };
@@ -192,7 +200,6 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell6195_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextBackgroundColor(Color.green);
   }
 
   private static void setupLabel_ConstantCell6195_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -219,6 +226,12 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition6195_01(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "bracketsColor", null, null));
+  }
+
+  private static Color calculateColor72(EditorCell cell) {
+    Color result;
+    result = Color.green;
+    return result;
   }
 
 

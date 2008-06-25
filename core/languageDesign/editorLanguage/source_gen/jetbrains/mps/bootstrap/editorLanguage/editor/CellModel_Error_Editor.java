@@ -58,6 +58,20 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
             }
 
           });
+          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return CellModel_Error_Editor.calculateColor66(cell);
+            }
+
+          });
+          this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return CellModel_Error_Editor.calculateColor88(cell);
+            }
+
+          });
         }
 
       };
@@ -141,6 +155,20 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return CellModel_Error_Editor.calculateColor76(cell);
+            }
+
+          });
+          this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return CellModel_Error_Editor.calculateColor91(cell);
+            }
+
+          });
         }
 
       };
@@ -1115,8 +1143,6 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_textPropertyCell2345_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextBackgroundColor(Color.pink);
-    editorCell.setSelectedTextBackgroundColor(Color.magenta);
   }
 
   private static void setupLabel_ConstantCell2345_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -1126,8 +1152,6 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_textPropertyCell2345_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextBackgroundColor(Color.pink);
-    editorCell.setSelectedTextBackgroundColor(Color.magenta);
   }
 
   private static void setupLabel_ConstantCell2345_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -1346,6 +1370,14 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
     return !(SPropertyOperations.hasValue(node, "textFgColorEmpty", null, null));
   }
 
+  public static boolean renderingCondition2345_015(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.hasValue(node, "textBgColor", null, null));
+  }
+
+  public static boolean renderingCondition2345_016(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.hasValue(node, "textBgColorSelected", null, null));
+  }
+
   public static Color _QueryFunction_Color_1214396913642(SNode node, EditorContext editorContext) {
     return _EditorUtil.grayIfNotSelectable(node);
   }
@@ -1359,6 +1391,30 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
       null :
       cell.getEditorContext()
     ));
+    return result;
+  }
+
+  private static Color calculateColor66(EditorCell cell) {
+    Color result;
+    result = Color.pink;
+    return result;
+  }
+
+  private static Color calculateColor76(EditorCell cell) {
+    Color result;
+    result = Color.pink;
+    return result;
+  }
+
+  private static Color calculateColor88(EditorCell cell) {
+    Color result;
+    result = Color.magenta;
+    return result;
+  }
+
+  private static Color calculateColor91(EditorCell cell) {
+    Color result;
+    result = Color.magenta;
     return result;
   }
 
@@ -1419,7 +1475,7 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
     if (renderingCondition2345_010(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell2345_08(context, node));
     }
-    editorCell.addEditorCell(this.create_ConstantCell2345_02(context, node, "adornments:"));
+    editorCell.addEditorCell(this.create_ConstantCell2345_02(context, node, ""));
     if (renderingCondition2345_06(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell2345_09(context, node));
     }
@@ -1450,11 +1506,15 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
     if (renderingCondition2345_01(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell2345_021(context, node));
     }
-    editorCell.addEditorCell(this.create_CollectionCell2345_023(context, node));
+    if (renderingCondition2345_015(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.create_CollectionCell2345_023(context, node));
+    }
     if (renderingCondition2345_02(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell2345_024(context, node));
     }
-    editorCell.addEditorCell(this.create_CollectionCell2345_026(context, node));
+    if (renderingCondition2345_016(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.create_CollectionCell2345_026(context, node));
+    }
     if (renderingCondition2345_03(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell2345_027(context, node));
     }

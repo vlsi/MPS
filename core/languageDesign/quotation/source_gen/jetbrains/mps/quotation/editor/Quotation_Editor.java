@@ -8,8 +8,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
@@ -32,6 +33,13 @@ public class Quotation_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return Quotation_Editor.calculateColor8(cell);
+            }
+
+          });
         }
 
       };
@@ -48,6 +56,13 @@ public class Quotation_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return Quotation_Editor.calculateColor9(cell);
+            }
+
+          });
         }
 
       };
@@ -81,14 +96,12 @@ public class Quotation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell2741_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextBackgroundColor(Color.cyan);
   }
 
   private static void setupLabel_quotedNodeRefNodeCell2741_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell2741_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextBackgroundColor(Color.cyan);
   }
 
   private static void setupLabel_ConstantCell2741_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -102,6 +115,18 @@ public class Quotation_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition2741_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "modelToCreate", true) != null;
+  }
+
+  private static Color calculateColor8(EditorCell cell) {
+    Color result;
+    result = Color.cyan;
+    return result;
+  }
+
+  private static Color calculateColor9(EditorCell cell) {
+    Color result;
+    result = Color.cyan;
+    return result;
   }
 
 

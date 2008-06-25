@@ -428,21 +428,25 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1196350915657">
       <link role="keyMap" targetNodeId="1196350915740" resolveInfo="_CreateAntiquotationKeyMap" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1196350915658">
-        <property name="textBgColor" value="cyan" />
         <property name="text" value="&lt;" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994814">
           <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleSheetItem" id="1214407441911">
+          <property name="color" value="cyan" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1196350915659">
         <link role="relationDeclaration" targetNodeId="1.1196350785114" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1196350915660">
-        <property name="textBgColor" value="cyan" />
         <property name="text" value="&gt;" />
         <link role="keyMap" targetNodeId="1196350915994" resolveInfo="_Quotation_createModel" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997307">
           <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleSheetItem" id="1214407442002">
+          <property name="color" value="cyan" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1196350915661">

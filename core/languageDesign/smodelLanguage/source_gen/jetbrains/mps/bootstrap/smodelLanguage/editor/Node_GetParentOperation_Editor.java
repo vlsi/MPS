@@ -36,6 +36,13 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
             }
 
           });
+          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return Node_GetParentOperation_Editor.calculateColor62(cell);
+            }
+
+          });
         }
 
       };
@@ -215,7 +222,6 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell7203_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextBackgroundColor(Color.lightGray);
   }
 
   private static void setupLabel_ConstantCell7203_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -257,6 +263,12 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
   private static Color calculateColor11(EditorCell cell) {
     Color result;
     result = Color.blue;
+    return result;
+  }
+
+  private static Color calculateColor62(EditorCell cell) {
+    Color result;
+    result = Color.lightGray;
     return result;
   }
 

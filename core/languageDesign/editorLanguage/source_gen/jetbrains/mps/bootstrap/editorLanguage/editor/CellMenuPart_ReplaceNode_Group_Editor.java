@@ -53,6 +53,13 @@ public class CellMenuPart_ReplaceNode_Group_Editor extends DefaultNodeEditor {
             }
 
           });
+          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return CellMenuPart_ReplaceNode_Group_Editor.calculateColor75(cell);
+            }
+
+          });
         }
 
       };
@@ -299,7 +306,6 @@ public class CellMenuPart_ReplaceNode_Group_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell18550_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextBackgroundColor(Color.lightGray);
   }
 
   private static void setupLabel_ConstantCell18550_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -370,6 +376,12 @@ public class CellMenuPart_ReplaceNode_Group_Editor extends DefaultNodeEditor {
   private static Color calculateColor14(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
+    return result;
+  }
+
+  private static Color calculateColor75(EditorCell cell) {
+    Color result;
+    result = Color.lightGray;
     return result;
   }
 

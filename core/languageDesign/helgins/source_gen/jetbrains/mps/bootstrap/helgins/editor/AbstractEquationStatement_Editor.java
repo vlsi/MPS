@@ -88,7 +88,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor15(EditorCell cell) {
     Color result;
-    result = _QueryFunction_Color_1214399678504((cell == null ?
+    result = AbstractEquationStatement_Editor._QueryFunction_Color_1214399678504((cell == null ?
       null :
       cell.getSNode()
     ), (cell == null ?

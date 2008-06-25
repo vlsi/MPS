@@ -144,13 +144,15 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197591806188">
           <property name="noTargetText" value="&lt;no identifier&gt;" />
-          <property name="textBgColorSelected" value="cyan" />
           <link role="relationDeclaration" targetNodeId="1.1192116978809" resolveInfo="javaIdentifier" />
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934200">
             <property name="style" value="BOLD_ITALIC" />
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678453">
             <property name="color" value="DARK_MAGENTA" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorSelectedStyleSheetItem" id="1214407442184">
+            <property name="color" value="cyan" />
           </node>
         </node>
         <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1197591831892">
@@ -197,10 +199,12 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1083925414256">
         <property name="allowEmptyText" value="true" />
         <property name="noTargetText" value="&lt;NULL&gt;" />
-        <property name="textBgColorSelected" value="cyan" />
         <link role="relationDeclaration" targetNodeId="1.1083923523171" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678282">
           <property name="color" value="blue" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorSelectedStyleSheetItem" id="1214407442128">
+          <property name="color" value="cyan" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1162585954651">
@@ -274,9 +278,13 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1083172476031">
           <property name="noTargetText" value="&lt;no name&gt;" />
-          <property name="textBgColorSelected" value="cyan" />
-          <property name="textBgColor" value="yellow" />
           <link role="relationDeclaration" targetNodeId="2.1169194664001" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleSheetItem" id="1214407441938">
+            <property name="color" value="yellow" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorSelectedStyleSheetItem" id="1214407442126">
+            <property name="color" value="cyan" />
+          </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997775">
           <property name="flag" value="false" />
@@ -547,9 +555,13 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1083244251722">
           <property name="noTargetText" value="&lt;no name&gt;" />
-          <property name="textBgColorSelected" value="cyan" />
-          <property name="textBgColor" value="yellow" />
           <link role="relationDeclaration" targetNodeId="2.1169194664001" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleSheetItem" id="1214407442049">
+            <property name="color" value="yellow" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorSelectedStyleSheetItem" id="1214407442182">
+            <property name="color" value="cyan" />
+          </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996035">
           <property name="flag" value="false" />
@@ -809,7 +821,6 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ModelAccess" id="1084205682785">
-        <property name="textBgColor" value="lightGray" />
         <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1146606011485">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1146606011486">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1146606013315">
@@ -874,6 +885,9 @@
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032047">
           <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleSheetItem" id="1214407442051">
+          <property name="color" value="lightGray" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1164661317301">
@@ -2040,9 +2054,13 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1169126008916">
           <property name="noTargetText" value="&lt;no name&gt;" />
-          <property name="textBgColorSelected" value="cyan" />
-          <property name="textBgColor" value="yellow" />
           <link role="relationDeclaration" targetNodeId="2.1169194664001" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleSheetItem" id="1214407441944">
+            <property name="color" value="yellow" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorSelectedStyleSheetItem" id="1214407442129">
+            <property name="color" value="cyan" />
+          </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993993">
           <property name="flag" value="false" />

@@ -8,8 +8,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -31,6 +32,13 @@ public class PatternExpression_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return PatternExpression_Editor.calculateColor14(cell);
+            }
+
+          });
         }
 
       };
@@ -57,6 +65,13 @@ public class PatternExpression_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return PatternExpression_Editor.calculateColor13(cell);
+            }
+
+          });
         }
 
       };
@@ -65,14 +80,24 @@ public class PatternExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell364_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextBackgroundColor(Color.green);
   }
 
   private static void setupLabel_patternNodeRefNodeCell364_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell364_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextBackgroundColor(Color.green);
+  }
+
+  private static Color calculateColor13(EditorCell cell) {
+    Color result;
+    result = Color.green;
+    return result;
+  }
+
+  private static Color calculateColor14(EditorCell cell) {
+    Color result;
+    result = Color.green;
+    return result;
   }
 
 

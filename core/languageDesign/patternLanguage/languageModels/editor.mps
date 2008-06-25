@@ -74,13 +74,15 @@
       <property name="vertical" value="false" />
       <link role="keyMap" targetNodeId="1136721133135" resolveInfo="_PatternExpression_KeyMap" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1136720096750">
-        <property name="textBgColor" value="green" />
         <property name="text" value="&gt;" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997128">
           <property name="flag" value="false" />
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032225">
           <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleSheetItem" id="1214407442037">
+          <property name="color" value="green" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1136720096751">
@@ -93,10 +95,12 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1136720096752">
-        <property name="textBgColor" value="green" />
         <property name="text" value="&lt;" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996815">
           <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleSheetItem" id="1214407442000">
+          <property name="color" value="green" />
         </node>
       </node>
     </node>

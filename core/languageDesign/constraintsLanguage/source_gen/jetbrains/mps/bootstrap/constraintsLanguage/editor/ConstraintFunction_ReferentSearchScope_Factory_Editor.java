@@ -46,6 +46,13 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
             }
 
           });
+          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return ConstraintFunction_ReferentSearchScope_Factory_Editor.calculateColor46(cell);
+            }
+
+          });
         }
 
       };
@@ -227,6 +234,13 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return ConstraintFunction_ReferentSearchScope_Factory_Editor.calculateColor48(cell);
+            }
+
+          });
         }
 
       };
@@ -269,7 +283,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   }
 
   private static void setupLabel_ConstantCell19273_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextBackgroundColor(Color.lightGray);
   }
 
   private static void setupLabel_ConstantCell19273_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -303,7 +316,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   }
 
   private static void setupLabel_ConstantCell19273_011(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextBackgroundColor(Color.pink);
   }
 
   private static void setupLabel_ConstantCell19273_012(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -315,6 +327,18 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   private static Color calculateColor15(EditorCell cell) {
     Color result;
     result = Color.blue;
+    return result;
+  }
+
+  private static Color calculateColor46(EditorCell cell) {
+    Color result;
+    result = Color.lightGray;
+    return result;
+  }
+
+  private static Color calculateColor48(EditorCell cell) {
+    Color result;
+    result = Color.pink;
     return result;
   }
 

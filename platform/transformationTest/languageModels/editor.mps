@@ -36,8 +36,10 @@
         <property name="text" value="&lt;" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1210673792352">
-        <property name="textBgColor" value="cyan" />
         <link role="relationDeclaration" targetNodeId="2v.1169194664001" resolveInfo="name" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleSheetItem" id="1214407441910">
+          <property name="color" value="cyan" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_AttributedNodeCell" id="1210673841386" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1210673843483">
@@ -53,8 +55,10 @@
         <link role="conceptDeclaration" targetNodeId="1.1210673684636" resolveInfo="TestNodeAnnotation" />
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1210674551757">
           <property name="readOnly" value="true" />
-          <property name="textBgColor" value="cyan" />
           <link role="relationDeclaration" targetNodeId="2v.1169194664001" resolveInfo="name" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.TextBackgroundColorStyleSheetItem" id="1214407441877">
+            <property name="color" value="cyan" />
+          </node>
         </node>
       </node>
     </node>
