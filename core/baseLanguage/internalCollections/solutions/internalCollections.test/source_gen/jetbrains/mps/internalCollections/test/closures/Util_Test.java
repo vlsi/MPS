@@ -20,7 +20,7 @@ public class Util_Test extends TestCase {
   public  <T>void assertIterableEquals(Iterable<T> exp, Iterable<T> test) {
     Iterator<T> expIt = exp.iterator();
     Iterator<T> testIt = test.iterator();
-    while(expIt.hasNext() && testIt.hasNext()) {
+    while (expIt.hasNext() && testIt.hasNext()) {
       Assert.assertEquals(expIt.next(), testIt.next());
     }
     Assert.assertFalse(expIt.hasNext());
@@ -33,7 +33,7 @@ public class Util_Test extends TestCase {
       Assert.assertTrue(expSet.add(e));
     }
     Iterator<T> testIt = test.iterator();
-    while(testIt.hasNext()) {
+    while (testIt.hasNext()) {
       Assert.assertTrue(expSet.remove(testIt.next()));
     }
     Assert.assertTrue(expSet.isEmpty());
@@ -50,7 +50,7 @@ public class Util_Test extends TestCase {
       ));
     }
     Iterator<T> testIt = test.iterator();
-    while(testIt.hasNext()) {
+    while (testIt.hasNext()) {
       T next = testIt.next();
       Integer card = cardMap.remove(next);
       Assert.assertFalse(card == null);
