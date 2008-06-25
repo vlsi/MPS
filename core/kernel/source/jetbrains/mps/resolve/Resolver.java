@@ -110,6 +110,9 @@ public class Resolver {
     if (sNode == null) sNode = referenceNode;
 
     SNode containingRoot = sNode.getContainingRoot();
+  /*  if (containingRoot == null) {
+      containingRoot = sNode.getTopmostAncestor();
+    }*/
     NodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance().
       createNodeTypesComponent(containingRoot);
     NodeTypesComponent temporaryComponent;
@@ -190,7 +193,7 @@ public class Resolver {
 
       return false;
     } finally {
-      NodeTypesComponentsRepository.getInstance().swapTypesComponentForRoot(containingRoot, nodeTypesComponent);
+    //  NodeTypesComponentsRepository.getInstance().swapTypesComponentForRoot(containingRoot, nodeTypesComponent);
     }
   }
 
