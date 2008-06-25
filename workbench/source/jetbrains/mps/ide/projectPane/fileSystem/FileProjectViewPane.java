@@ -65,7 +65,7 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
     final VirtualFile baseDir = myProject.getBaseDir();
     myMPSTree = new MPSTree() {
       protected MPSTreeNode rebuild() {
-        if (myProject != null) {
+        if (myProject != null && !myProject.isDisposed()) {
           final IFile root = VFileSystem.toIFile(baseDir);
           return new FolderTreeNode(new ProjectOperationContext(getProject()),
             myProject.getComponent(VcsFileStatusProvider.class),
