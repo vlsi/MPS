@@ -433,7 +433,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.create_ConstantCell15389_014(context, node, "  "));
-    editorCell.addEditorCell(this.create_ConstantCell15389_013(context, node, "<add members (ctrl+space)>"));
+    editorCell.addEditorCell(this.create_ConstantCell15389_013(context, node, ""));
     return editorCell;
   }
 
@@ -532,7 +532,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell15389_013(editorCell, node, context);
     setupLabel_ConstantCell15389_013(editorCell, node, context);
-    editorCell.setDefaultText("");
+    editorCell.setDefaultText("<add members (ctrl+space)>");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new ISubstituteInfoPart[]{new AnonymousClass_Editor.AnonymousClass_generic_cellMenu2(),new AnonymousClass_Editor.AnonymousClass_generic_cellMenu1(),new AnonymousClass_Editor.AnonymousClass_generic_cellMenu()}));
     return editorCell;
   }

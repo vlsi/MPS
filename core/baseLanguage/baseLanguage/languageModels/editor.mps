@@ -8044,7 +8044,7 @@
           <property name="text" value="  " />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1208704399921">
-          <property name="text" value="&lt;add members (ctrl+space)&gt;" />
+          <property name="nullText" value="&lt;add members (ctrl+space)&gt;" />
           <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1208704399939">
             <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_Generic_Item" id="1208704654249">
               <property name="matchingText" value="add field" />
