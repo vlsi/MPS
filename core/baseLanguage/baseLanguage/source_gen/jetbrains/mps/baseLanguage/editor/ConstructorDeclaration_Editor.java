@@ -11,11 +11,13 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.FocusPolicy;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
@@ -182,6 +184,21 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell2318_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell2318_06");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return ConstructorDeclaration_Editor.calculateColor82(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_throwsItemRefNodeListCell2318_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -272,7 +289,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell2318_06(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_throwsItemRefNodeListCell2318_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -307,6 +323,12 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition2318_03(SNode node, EditorContext editorContext, IScope scope) {
     return SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.AnonymousClass", false, false) == null;
+  }
+
+  private static Color calculateColor82(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_BLUE;
+    return result;
   }
 
 

@@ -6,8 +6,11 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
@@ -26,6 +29,21 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell14674_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14674_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return TypeOfExpression_Editor.calculateColor2(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_termRefNodeCell14674_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -52,7 +70,6 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell14674_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(_QueryFunction_Color_1195144572322(node, context));
   }
 
   private static void setupLabel_termRefNodeCell14674_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -70,13 +87,25 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell14674_03(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static Color _QueryFunction_Color_1195144572322(SNode node, EditorContext editorContext) {
+  public static Color _QueryFunction_Color_1214399678001(SNode node, EditorContext editorContext) {
     if (SPropertyOperations.getBoolean(node, "skipDependencyOnCurrent")) {
       return Color.GRAY;
     } else
     {
       return MPSColors.DARK_GREEN;
     }
+  }
+
+  private static Color calculateColor2(EditorCell cell) {
+    Color result;
+    result = _QueryFunction_Color_1214399678001((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
+    return result;
   }
 
 

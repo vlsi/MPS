@@ -8,6 +8,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import java.awt.Color;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -28,7 +30,7 @@ public class RequiredUserEnteredArgument_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell9294_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell9294_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -40,6 +42,21 @@ public class RequiredUserEnteredArgument_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_namePropertyCell9294_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell9294_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return RequiredUserEnteredArgument_Editor.calculateColor2(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell9294_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -52,7 +69,7 @@ public class RequiredUserEnteredArgument_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell9294_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell9294_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -72,7 +89,7 @@ public class RequiredUserEnteredArgument_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell9294_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell9294_03");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -92,7 +109,7 @@ public class RequiredUserEnteredArgument_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell9294_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell9294_04");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -120,7 +137,7 @@ public class RequiredUserEnteredArgument_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell9294_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell9294_05");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -140,7 +157,6 @@ public class RequiredUserEnteredArgument_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_namePropertyCell9294_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(MPSColors.DARK_MAGENTA);
   }
 
   private static void setupLabel_ConstantCell9294_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -177,6 +193,12 @@ public class RequiredUserEnteredArgument_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_presentationPropertyCell9294_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static Color calculateColor2(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_MAGENTA;
+    return result;
   }
 
 

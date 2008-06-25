@@ -8,8 +8,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.ModelAccessor;
@@ -32,6 +33,21 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell18413_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18413_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return ReferenceAntiquotation_Editor.calculateColor6(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_expressionRefNodeCell18413_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -39,6 +55,21 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell18413_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18413_01");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return ReferenceAntiquotation_Editor.calculateColor3(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell18413_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -56,7 +87,7 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell18413_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18413_03");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -91,14 +122,12 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell18413_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(_QueryFunction_Color_1196350915676(node, context));
   }
 
   private static void setupLabel_expressionRefNodeCell18413_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell18413_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(_QueryFunction_Color_1196350915682(node, context));
   }
 
   private static void setupLabel_ConstantCell18413_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -119,12 +148,36 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
   private static void setupLabel_ModelAccessCell18413_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static Color _QueryFunction_Color_1196350915676(SNode node, EditorContext editorContext) {
+  public static Color _QueryFunction_Color_1214399678256(SNode node, EditorContext editorContext) {
     return Colors.BROWN;
   }
 
-  public static Color _QueryFunction_Color_1196350915682(SNode node, EditorContext editorContext) {
+  public static Color _QueryFunction_Color_1214399678855(SNode node, EditorContext editorContext) {
     return Colors.BROWN;
+  }
+
+  private static Color calculateColor3(EditorCell cell) {
+    Color result;
+    result = _QueryFunction_Color_1214399678256((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
+    return result;
+  }
+
+  private static Color calculateColor6(EditorCell cell) {
+    Color result;
+    result = _QueryFunction_Color_1214399678855((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
+    return result;
   }
 
 

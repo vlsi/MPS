@@ -8,6 +8,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
@@ -29,6 +31,21 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell5520_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5520_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return ReplaceWithRegexpExpression_Editor.calculateColor37(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_regexpRefNodeCell5520_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -36,6 +53,21 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell5520_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5520_01");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return ReplaceWithRegexpExpression_Editor.calculateColor46(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_exprRefNodeCell5520_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -44,7 +76,7 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell5520_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell5520_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -57,7 +89,7 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell5520_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5520_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -69,20 +101,33 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell5520_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5520_03");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return ReplaceWithRegexpExpression_Editor.calculateColor9(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_replaceBlockRefNodeCell5520_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell5520_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_regexpRefNodeCell5520_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell5520_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_exprRefNodeCell5520_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -92,10 +137,27 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell5520_03(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_replaceBlockRefNodeCell5520_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static Color calculateColor9(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_BLUE;
+    return result;
+  }
+
+  private static Color calculateColor37(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_BLUE;
+    return result;
+  }
+
+  private static Color calculateColor46(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_BLUE;
+    return result;
   }
 
 

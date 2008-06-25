@@ -9,8 +9,9 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.FocusPolicy;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
@@ -63,6 +64,13 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return MatchKindOperation_Editor.calculateColor22(cell);
+            }
+
+          });
         }
 
       };
@@ -93,7 +101,6 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell2350_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(Color.red);
   }
 
   private static void setupLabel_nodeKindRefCell2350_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -104,6 +111,12 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition2350_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "nodeKind", false) != null;
+  }
+
+  private static Color calculateColor22(EditorCell cell) {
+    Color result;
+    result = Color.red;
+    return result;
   }
 
 

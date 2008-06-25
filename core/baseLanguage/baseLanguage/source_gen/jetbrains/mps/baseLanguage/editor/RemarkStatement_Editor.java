@@ -8,9 +8,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
-import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.baseLanguage.behavior.RemarkStatement_Behavior;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
@@ -28,6 +29,21 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell3101_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell3101_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return RemarkStatement_Editor.calculateColor34(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_AlternationCell3101_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -40,6 +56,13 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return RemarkStatement_Editor.calculateColor83(cell);
+            }
+
+          });
         }
 
       };
@@ -53,6 +76,13 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return RemarkStatement_Editor.calculateColor87(cell);
+            }
+
+          });
         }
 
       };
@@ -61,19 +91,34 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell3101_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(Color.gray);
   }
 
   private static void setupLabel_valuePropertyCell3101_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(Color.gray);
   }
 
   private static void setupLabel_valuePropertyCell3101_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(Color.blue);
   }
 
   public static boolean renderingCondition3101_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(RemarkStatement_Behavior.call_isTodo_1213877427548(node));
+  }
+
+  private static Color calculateColor34(EditorCell cell) {
+    Color result;
+    result = Color.gray;
+    return result;
+  }
+
+  private static Color calculateColor83(EditorCell cell) {
+    Color result;
+    result = Color.gray;
+    return result;
+  }
+
+  private static Color calculateColor87(EditorCell cell) {
+    Color result;
+    result = Color.blue;
+    return result;
   }
 
 

@@ -9,6 +9,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
@@ -153,6 +155,13 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return MigrationScript_Editor.calculateColor19(cell);
+            }
+
+          });
         }
 
       };
@@ -166,6 +175,13 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return MigrationScript_Editor.calculateColor12(cell);
+            }
+
+          });
         }
 
       };
@@ -179,6 +195,13 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return MigrationScript_Editor.calculateColor6(cell);
+            }
+
+          });
         }
 
       };
@@ -192,6 +215,13 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return MigrationScript_Editor.calculateColor4(cell);
+            }
+
+          });
         }
 
       };
@@ -205,6 +235,13 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return MigrationScript_Editor.calculateColor11(cell);
+            }
+
+          });
         }
 
       };
@@ -218,6 +255,13 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return MigrationScript_Editor.calculateColor20(cell);
+            }
+
+          });
         }
 
       };
@@ -247,27 +291,57 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_categoryPropertyCell7305_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(MPSColors.DARK_GREEN);
   }
 
   private static void setupLabel_ConstantCell7305_05(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(MPSColors.DARK_GREEN);
   }
 
   private static void setupLabel_titlePropertyCell7305_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(MPSColors.DARK_GREEN);
   }
 
   private static void setupLabel_ConstantCell7305_06(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(MPSColors.DARK_GREEN);
   }
 
   private static void setupLabel_migrationFromBuildPropertyCell7305_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(MPSColors.DARK_GREEN);
   }
 
   private static void setupLabel_ConstantCell7305_07(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(MPSColors.DARK_GREEN);
+  }
+
+  private static Color calculateColor4(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_GREEN;
+    return result;
+  }
+
+  private static Color calculateColor6(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_GREEN;
+    return result;
+  }
+
+  private static Color calculateColor11(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_GREEN;
+    return result;
+  }
+
+  private static Color calculateColor12(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_GREEN;
+    return result;
+  }
+
+  private static Color calculateColor19(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_GREEN;
+    return result;
+  }
+
+  private static Color calculateColor20(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_GREEN;
+    return result;
   }
 
 

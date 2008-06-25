@@ -123,7 +123,9 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1211979491120">
         <property name="text" value="assert" />
-        <property name="textFgColor" value="blue" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678986">
+          <property name="color" value="blue" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1211982195991">
         <property name="text" value="&lt;" />
@@ -137,7 +139,9 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1211979524795">
         <property name="text" value="match" />
-        <property name="textFgColor" value="blue" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399677882">
+          <property name="color" value="blue" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1211982223918">
         <property name="text" value="&lt;" />
@@ -151,7 +155,9 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1211979547001">
         <property name="text" value=";" />
-        <property name="textFgColor" value="blue" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678086">
+          <property name="color" value="blue" />
+        </node>
       </node>
     </node>
   </node>

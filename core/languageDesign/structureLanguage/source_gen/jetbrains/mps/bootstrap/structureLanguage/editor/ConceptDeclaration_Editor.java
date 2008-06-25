@@ -19,6 +19,8 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.vfs.FileSystem;
 import javax.swing.JComponent;
+import java.awt.Color;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Component;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
@@ -30,7 +32,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.EditorCellAction;
@@ -633,6 +635,12 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     return EditorUtil.createSelectIconButton(node, editorContext);
   }
 
+  private static Color calculateColor4(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_MAGENTA;
+    return result;
+  }
+
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.create_CollectionCell6174_0(context, node);
@@ -1208,10 +1216,24 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell6174_01(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell6174_01");
+      {
+        Style inlineStyle = new Style(editorCell) {
+          {
+            this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+              public Color calculate(EditorCell cell) {
+                return ConceptDeclaration_Editor.calculateColor4(cell);
+              }
+
+            });
+          }
+
+        };
+        inlineStyle.apply(editorCell);
+      }
     }
 
     private static void setupLabel_namePropertyCell6174_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.setTextColor(MPSColors.DARK_MAGENTA);
     }
 
 

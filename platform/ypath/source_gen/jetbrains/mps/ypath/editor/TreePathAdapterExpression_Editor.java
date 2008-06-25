@@ -8,8 +8,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
@@ -58,6 +59,21 @@ public class TreePathAdapterExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell8846_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell8846_01");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return TreePathAdapterExpression_Editor.calculateColor1(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     TreePathAdapterExpression_DELETE.setCellActions(editorCell, node, context);
   }
 
@@ -71,11 +87,16 @@ public class TreePathAdapterExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell8846_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(Color.red);
   }
 
   public static boolean renderingCondition8846_0(SNode node, EditorContext editorContext, IScope scope) {
     return (SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false) == null);
+  }
+
+  private static Color calculateColor1(EditorCell cell) {
+    Color result;
+    result = Color.red;
+    return result;
   }
 
 

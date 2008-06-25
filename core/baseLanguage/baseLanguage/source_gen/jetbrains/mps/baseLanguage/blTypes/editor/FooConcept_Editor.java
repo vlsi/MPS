@@ -10,6 +10,7 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
@@ -17,7 +18,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import java.awt.Color;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 
 public class FooConcept_Editor extends DefaultNodeEditor {
 
@@ -32,7 +33,7 @@ public class FooConcept_Editor extends DefaultNodeEditor {
   private static void setupBasic_barRefCell14211_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_barRefCell14211_0");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
         }
@@ -46,6 +47,12 @@ public class FooConcept_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_barRefCell14211_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static Color calculateColor(EditorCell cell) {
+    Color result;
+    result = Color.blue;
+    return result;
   }
 
 
@@ -130,10 +137,24 @@ public class FooConcept_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell14211_01(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell14211_01");
+      {
+        Style inlineStyle = new Style(editorCell) {
+          {
+            this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+              public Color calculate(EditorCell cell) {
+                return FooConcept_Editor.calculateColor(cell);
+              }
+
+            });
+          }
+
+        };
+        inlineStyle.apply(editorCell);
+      }
     }
 
     private static void setupLabel_namePropertyCell14211_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.setTextColor(Color.blue);
     }
 
 

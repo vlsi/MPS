@@ -103,8 +103,10 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1161696750128">
-        <property name="textFgColor" value="DARK_BLUE" />
         <property name="text" value="[]" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678230">
+          <property name="color" value="DARK_BLUE" />
+        </node>
       </node>
     </node>
   </node>
@@ -133,8 +135,10 @@
           <link role="conceptDeclaration" targetNodeId="1.1162556266355" resolveInfo="BarConcept" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1209476428083">
             <property name="readOnly" value="true" />
-            <property name="textFgColor" value="blue" />
             <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399677960">
+              <property name="color" value="blue" />
+            </node>
           </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934145">

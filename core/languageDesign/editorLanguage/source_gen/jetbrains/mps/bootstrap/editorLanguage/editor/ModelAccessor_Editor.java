@@ -8,6 +8,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
@@ -38,6 +40,21 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell14408_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14408_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return ModelAccessor_Editor.calculateColor29(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell14408_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -102,6 +119,21 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell14408_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14408_04");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return ModelAccessor_Editor.calculateColor32(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell14408_05(EditorCell editorCell, SNode node, EditorContext context) {
@@ -156,6 +188,21 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell14408_08(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14408_08");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return ModelAccessor_Editor.calculateColor15(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell14408_09(EditorCell editorCell, SNode node, EditorContext context) {
@@ -210,6 +257,21 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell14408_012(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14408_012");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return ModelAccessor_Editor.calculateColor47(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell14408_013(EditorCell editorCell, SNode node, EditorContext context) {
@@ -250,7 +312,6 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell14408_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_ConstantCell14408_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -263,7 +324,6 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell14408_04(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_ConstantCell14408_05(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -279,7 +339,6 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell14408_08(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_ConstantCell14408_09(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -295,7 +354,6 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell14408_012(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_ConstantCell14408_013(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -308,6 +366,30 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell14408_015(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static Color calculateColor15(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_BLUE;
+    return result;
+  }
+
+  private static Color calculateColor29(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_BLUE;
+    return result;
+  }
+
+  private static Color calculateColor32(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_BLUE;
+    return result;
+  }
+
+  private static Color calculateColor47(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_BLUE;
+    return result;
   }
 
 

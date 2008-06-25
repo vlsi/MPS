@@ -52,16 +52,20 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1087907544521">
         <property name="text" value="property macro" />
         <property name="textBgColor" value="lightGray" />
-        <property name="textFgColor" value="DARK_BLUE" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996862">
           <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399679049">
+          <property name="color" value="DARK_BLUE" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1087907544522">
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1087907544523">
           <property name="text" value="java query (deprecated)" />
-          <property name="textFgColor" value="red" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678898">
+            <property name="color" value="red" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Custom" id="1088501636842">
           <node role="cellProvider" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_CellProvider" id="1176804140005">
@@ -144,7 +148,6 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1149859006667">
         <property name="textBgColorSelected" value="cyan" />
         <property name="text" value="$" />
-        <property name="textFgColor" value="DARK_BLUE" />
         <link role="keyMap" targetNodeId="1149931179122" resolveInfo="MacroSymbol_KeyMap" />
         <link role="actionMap" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994079">
@@ -153,10 +156,12 @@
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934378">
           <property name="style" value="BOLD_ITALIC" />
         </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678014">
+          <property name="color" value="DARK_BLUE" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168019544316">
         <property name="text" value="!" />
-        <property name="textFgColor" value="red" />
         <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1168019544317">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1168019544318">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1168019544319">
@@ -174,6 +179,9 @@
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996807">
           <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678479">
+          <property name="color" value="red" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_AttributedPropertyCell" id="1149859009402">
@@ -201,7 +209,6 @@
         <property name="vertical" value="true" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1207673648137">
           <property name="text" value="DEPRECATED USAGE. USE THE 'MAP_SRC' MACRO INSTEAD." />
-          <property name="textFgColor" value="red" />
           <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1207673678326">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207673678327">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1207673683078">
@@ -266,12 +273,17 @@
               </node>
             </node>
           </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678981">
+            <property name="color" value="red" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1205871987410">
           <property name="vertical" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1205871987411">
             <property name="text" value="mapping name" />
-            <property name="textFgColor" value="red" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678043">
+              <property name="color" value="red" />
+            </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1205871987412">
             <property name="allowEmptyText" value="true" />
@@ -301,7 +313,9 @@
           <property name="vertical" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1200912330335">
             <property name="text" value="mapping label" />
-            <property name="textFgColor" value="red" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678180">
+              <property name="color" value="red" />
+            </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1200912330336">
             <property name="text" value=":" />
@@ -344,7 +358,9 @@
           <property name="vertical" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1090493300947">
             <property name="text" value="templateSourceQuery_" />
-            <property name="textFgColor" value="red" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678305">
+              <property name="color" value="red" />
+            </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Custom" id="1090493300948">
             <node role="cellProvider" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_CellProvider" id="1176801919383">
@@ -407,7 +423,6 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1149865868009">
         <property name="text" value="$$" />
         <property name="textBgColorSelected" value="cyan" />
-        <property name="textFgColor" value="red" />
         <link role="keyMap" targetNodeId="1149931179122" resolveInfo="MacroSymbol_KeyMap" />
         <link role="actionMap" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1185230015117">
@@ -424,6 +439,9 @@
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398031941">
           <property name="flag" value="true" />
         </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678832">
+          <property name="color" value="red" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1200912847340">
         <link role="editorComponent" targetNodeId="1184864447477" resolveInfo="NodeMacro_postfix" />
@@ -439,9 +457,11 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1167770426881">
         <property name="text" value="reference macro" />
         <property name="textBgColor" value="lightGray" />
-        <property name="textFgColor" value="DARK_BLUE" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993725">
           <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678382">
+          <property name="color" value="DARK_BLUE" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1167770426893">
@@ -472,7 +492,6 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1149858910850">
         <property name="textBgColorSelected" value="cyan" />
         <property name="text" value="-&gt;$" />
-        <property name="textFgColor" value="DARK_BLUE" />
         <link role="keyMap" targetNodeId="1149931179122" resolveInfo="MacroSymbol_KeyMap" />
         <link role="actionMap" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994069">
@@ -480,6 +499,9 @@
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934267">
           <property name="style" value="BOLD_ITALIC" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678380">
+          <property name="color" value="DARK_BLUE" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_AttributedLinkCell" id="1149858915193">
@@ -623,9 +645,11 @@
             <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1168623810821">
               <link role="conceptDeclaration" targetNodeId="6.1169125787135" />
               <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1168623810822">
-                <property name="textFgColor" value="DARK_MAGENTA" />
                 <property name="readOnly" value="true" />
                 <link role="relationDeclaration" targetNodeId="4.1169194664001" />
+                <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678822">
+                  <property name="color" value="DARK_MAGENTA" />
+                </node>
               </node>
             </node>
           </node>
@@ -755,13 +779,15 @@
         <property name="vertical" value="true" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1200911421694">
           <property name="text" value="mapping labels:" />
-          <property name="textFgColor" value="DARK_BLUE" />
           <property name="underlined" value="0" />
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934114">
             <property name="style" value="BOLD_ITALIC" />
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.UnderlinedStyleSheetItem" id="1214317025776">
             <property name="underlined" value="2" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399677782">
+            <property name="color" value="DARK_BLUE" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1200911438227">
@@ -790,7 +816,6 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1195502446252">
           <property name="text" value="conditional root rules:" />
           <property name="underlined" value="0" />
-          <property name="textFgColor" value="DARK_BLUE" />
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997585">
             <property name="flag" value="false" />
           </node>
@@ -799,6 +824,9 @@
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.UnderlinedStyleSheetItem" id="1214317025775">
             <property name="underlined" value="2" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678347">
+            <property name="color" value="DARK_BLUE" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1195502446253">
@@ -831,7 +859,6 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1195502470960">
           <property name="text" value="mapping rules:" />
           <property name="underlined" value="0" />
-          <property name="textFgColor" value="DARK_BLUE" />
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996264">
             <property name="flag" value="false" />
           </node>
@@ -840,6 +867,9 @@
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.UnderlinedStyleSheetItem" id="1214317025778">
             <property name="underlined" value="2" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678565">
+            <property name="color" value="DARK_BLUE" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1195502470961">
@@ -871,7 +901,6 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1195502488590">
           <property name="text" value="weaving rules:" />
           <property name="underlined" value="0" />
-          <property name="textFgColor" value="DARK_BLUE" />
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993621">
             <property name="flag" value="false" />
           </node>
@@ -880,6 +909,9 @@
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.UnderlinedStyleSheetItem" id="1214317025779">
             <property name="underlined" value="2" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678615">
+            <property name="color" value="DARK_BLUE" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1195502488591">
@@ -911,7 +943,6 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1195502503501">
           <property name="text" value="reduction rules:" />
           <property name="underlined" value="0" />
-          <property name="textFgColor" value="DARK_BLUE" />
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996250">
             <property name="flag" value="false" />
           </node>
@@ -920,6 +951,9 @@
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.UnderlinedStyleSheetItem" id="1214317025782">
             <property name="underlined" value="2" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678348">
+            <property name="color" value="DARK_BLUE" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1195502503502">
@@ -951,7 +985,6 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1195502524913">
           <property name="text" value="abandon roots:" />
           <property name="underlined" value="0" />
-          <property name="textFgColor" value="DARK_BLUE" />
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997657">
             <property name="flag" value="false" />
           </node>
@@ -960,6 +993,9 @@
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.UnderlinedStyleSheetItem" id="1214317025777">
             <property name="underlined" value="2" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678448">
+            <property name="color" value="DARK_BLUE" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1195502524914">
@@ -992,7 +1028,6 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1195502537136">
           <property name="text" value="pre-processing scripts:" />
           <property name="underlined" value="0" />
-          <property name="textFgColor" value="DARK_BLUE" />
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995154">
             <property name="flag" value="false" />
           </node>
@@ -1001,6 +1036,9 @@
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.UnderlinedStyleSheetItem" id="1214317025780">
             <property name="underlined" value="2" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678332">
+            <property name="color" value="DARK_BLUE" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1195502537137">
@@ -1033,7 +1071,6 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1195502593674">
           <property name="text" value="post-processing scripts:" />
           <property name="underlined" value="0" />
-          <property name="textFgColor" value="DARK_BLUE" />
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996817">
             <property name="flag" value="false" />
           </node>
@@ -1042,6 +1079,9 @@
           </node>
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.UnderlinedStyleSheetItem" id="1214317025781">
             <property name="underlined" value="2" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678626">
+            <property name="color" value="DARK_BLUE" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1195502593675">
@@ -1074,9 +1114,11 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1184374372470">
         <property name="text" value="template fragment" />
         <property name="textBgColor" value="lightGray" />
-        <property name="textFgColor" value="DARK_BLUE" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994427">
           <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678765">
+          <property name="color" value="DARK_BLUE" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1184374372471">
@@ -1237,9 +1279,11 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168380475643">
         <property name="text" value="switch-macro" />
         <property name="textBgColor" value="lightGray" />
-        <property name="textFgColor" value="DARK_BLUE" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997713">
           <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678556">
+          <property name="color" value="DARK_BLUE" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168380475644">
@@ -1305,7 +1349,9 @@
           <property name="vertical" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168380475651">
             <property name="text" value="java query (deprecated)" />
-            <property name="textFgColor" value="red" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678090">
+              <property name="color" value="red" />
+            </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168380475652">
             <property name="text" value=":" />
@@ -1369,7 +1415,9 @@
           <property name="vertical" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168649023868">
             <property name="text" value="mapped concept (deprecated)" />
-            <property name="textFgColor" value="red" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678376">
+              <property name="color" value="red" />
+            </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168649023869">
             <property name="text" value=":" />
@@ -1475,7 +1523,6 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1149865971863">
         <property name="textBgColorSelected" value="cyan" />
         <property name="text" value="$SWITCH$" />
-        <property name="textFgColor" value="DARK_BLUE" />
         <property name="attractsFocus" value="1" />
         <link role="keyMap" targetNodeId="1149931179122" resolveInfo="MacroSymbol_KeyMap" />
         <link role="actionMap" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
@@ -1490,10 +1537,12 @@
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032223">
           <property name="flag" value="true" />
         </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399677818">
+          <property name="color" value="DARK_BLUE" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168380692643">
         <property name="text" value="!" />
-        <property name="textFgColor" value="red" />
         <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1168649092481">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1168649092482">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1168649092483">
@@ -1522,6 +1571,9 @@
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994797">
           <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399677783">
+          <property name="color" value="red" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1184865715451">
@@ -1665,8 +1717,10 @@
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1114458600628">
           <property name="noTargetText" value="&lt;no name&gt;" />
           <property name="readOnly" value="true" />
-          <property name="textFgColor" value="DARK_MAGENTA" />
           <link role="relationDeclaration" targetNodeId="4.1169194664001" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678334">
+            <property name="color" value="DARK_MAGENTA" />
+          </node>
         </node>
       </node>
     </node>
@@ -1679,9 +1733,11 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1114709792729">
         <property name="text" value="if-macro" />
         <property name="textBgColor" value="lightGray" />
-        <property name="textFgColor" value="DARK_BLUE" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996876">
           <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678993">
+          <property name="color" value="DARK_BLUE" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1167866342692">
@@ -1747,7 +1803,9 @@
           <property name="vertical" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1167946218107">
             <property name="text" value="java query (deprecated)" />
-            <property name="textFgColor" value="red" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678947">
+              <property name="color" value="red" />
+            </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1167946218108">
             <property name="text" value=":" />
@@ -1855,7 +1913,6 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1149865995528">
         <property name="textBgColorSelected" value="cyan" />
         <property name="text" value="$IF$" />
-        <property name="textFgColor" value="DARK_BLUE" />
         <property name="attractsFocus" value="1" />
         <link role="keyMap" targetNodeId="1149931179122" resolveInfo="MacroSymbol_KeyMap" />
         <link role="actionMap" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
@@ -1870,10 +1927,12 @@
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032157">
           <property name="flag" value="true" />
         </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678596">
+          <property name="color" value="DARK_BLUE" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168019522719">
         <property name="text" value="!" />
-        <property name="textFgColor" value="red" />
         <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1168019522720">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1168019522721">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1168019522722">
@@ -1892,6 +1951,9 @@
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997387">
           <property name="flag" value="false" />
         </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678731">
+          <property name="color" value="red" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1184865608223">
         <link role="editorComponent" targetNodeId="1184864447477" resolveInfo="NodeMacro_postfix" />
@@ -1903,9 +1965,11 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1203262602125">
           <property name="text" value="$ELSE$" />
-          <property name="textFgColor" value="DARK_BLUE" />
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934120">
             <property name="style" value="BOLD_ITALIC" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399677822">
+            <property name="color" value="DARK_BLUE" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1203262602126">
@@ -1943,9 +2007,11 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168278698423">
         <property name="text" value="copy/reduce node list macro" />
         <property name="textBgColor" value="lightGray" />
-        <property name="textFgColor" value="DARK_BLUE" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996183">
           <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678481">
+          <property name="color" value="DARK_BLUE" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168278698424">
@@ -2011,7 +2077,9 @@
           <property name="vertical" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168278698431">
             <property name="text" value="java query (deprecated)" />
-            <property name="textFgColor" value="red" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399677974">
+              <property name="color" value="red" />
+            </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168278698432">
             <property name="text" value=":" />
@@ -2105,7 +2173,6 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1149865948823">
         <property name="textBgColorSelected" value="cyan" />
         <property name="text" value="$COPY_SRCL$" />
-        <property name="textFgColor" value="DARK_BLUE" />
         <property name="attractsFocus" value="1" />
         <link role="keyMap" targetNodeId="1149931179122" resolveInfo="MacroSymbol_KeyMap" />
         <link role="actionMap" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
@@ -2120,10 +2187,12 @@
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032038">
           <property name="flag" value="true" />
         </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399679050">
+          <property name="color" value="DARK_BLUE" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168278666106">
         <property name="text" value="!" />
-        <property name="textFgColor" value="red" />
         <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1168278666107">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1168278666108">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1168278666109">
@@ -2141,6 +2210,9 @@
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993921">
           <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678499">
+          <property name="color" value="red" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1184865655240">
@@ -2170,7 +2242,6 @@
         <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1184214890348">
           <property name="textBgColorSelected" value="cyan" />
           <property name="text" value="$COPY_SRC$" />
-          <property name="textFgColor" value="DARK_BLUE" />
           <property name="attractsFocus" value="1" />
           <link role="keyMap" targetNodeId="1149931179122" resolveInfo="MacroSymbol_KeyMap" />
           <link role="actionMap" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
@@ -2185,13 +2256,15 @@
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032045">
             <property name="flag" value="true" />
           </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678428">
+            <property name="color" value="DARK_BLUE" />
+          </node>
         </node>
         <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1184214899933">
           <property name="vertical" value="true" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1184214901037">
             <property name="textBgColorSelected" value="cyan" />
             <property name="text" value="$COPY_SRC$" />
-            <property name="textFgColor" value="DARK_BLUE" />
             <property name="attractsFocus" value="1" />
             <link role="actionMap" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
             <link role="keyMap" targetNodeId="1149931179122" resolveInfo="MacroSymbol_KeyMap" />
@@ -2205,6 +2278,9 @@
             </node>
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032174">
               <property name="flag" value="true" />
+            </node>
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678723">
+              <property name="color" value="DARK_BLUE" />
             </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1184215406198">
@@ -2228,9 +2304,11 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1167952224466">
         <property name="text" value="loop-macro" />
         <property name="textBgColor" value="lightGray" />
-        <property name="textFgColor" value="DARK_BLUE" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995946">
           <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399677860">
+          <property name="color" value="DARK_BLUE" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1167952224467">
@@ -2296,7 +2374,9 @@
           <property name="vertical" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1167952224474">
             <property name="text" value="java query (deprecated)" />
-            <property name="textFgColor" value="red" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678147">
+              <property name="color" value="red" />
+            </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1167952224475">
             <property name="text" value=":" />
@@ -2360,7 +2440,9 @@
           <property name="vertical" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168648563445">
             <property name="text" value="mapped concept (deprecated)" />
-            <property name="textFgColor" value="red" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678482">
+              <property name="color" value="red" />
+            </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168648563446">
             <property name="text" value=":" />
@@ -2431,7 +2513,6 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1149866040638">
         <property name="textBgColorSelected" value="cyan" />
         <property name="text" value="$LOOP$" />
-        <property name="textFgColor" value="DARK_BLUE" />
         <property name="attractsFocus" value="1" />
         <link role="keyMap" targetNodeId="1149931179122" resolveInfo="MacroSymbol_KeyMap" />
         <link role="actionMap" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
@@ -2446,10 +2527,12 @@
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032179">
           <property name="flag" value="true" />
         </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678660">
+          <property name="color" value="DARK_BLUE" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168019424098">
         <property name="text" value="!" />
-        <property name="textFgColor" value="red" />
         <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1168649141024">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1168649141025">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1168649141026">
@@ -2479,6 +2562,9 @@
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997379">
           <property name="flag" value="false" />
         </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678602">
+          <property name="color" value="red" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1184865359555">
         <link role="editorComponent" targetNodeId="1184864447477" resolveInfo="NodeMacro_postfix" />
@@ -2493,9 +2579,11 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168281881363">
         <property name="text" value="map node macro" />
         <property name="textBgColor" value="lightGray" />
-        <property name="textFgColor" value="DARK_BLUE" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994376">
           <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678015">
+          <property name="color" value="DARK_BLUE" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168281881364">
@@ -2561,7 +2649,9 @@
           <property name="vertical" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168649038552">
             <property name="text" value="mapped concept (deprecated)" />
-            <property name="textFgColor" value="red" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678307">
+              <property name="color" value="red" />
+            </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168649038553">
             <property name="text" value=":" />
@@ -2652,7 +2742,6 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1149866022646">
         <property name="textBgColorSelected" value="cyan" />
         <property name="text" value="$MAP_SRC$" />
-        <property name="textFgColor" value="DARK_BLUE" />
         <property name="attractsFocus" value="1" />
         <link role="keyMap" targetNodeId="1149931179122" resolveInfo="MacroSymbol_KeyMap" />
         <link role="actionMap" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
@@ -2666,6 +2755,9 @@
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398031911">
           <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678483">
+          <property name="color" value="DARK_BLUE" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1184865705543">
@@ -2681,9 +2773,11 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168291602938">
         <property name="text" value="map node macro" />
         <property name="textBgColor" value="lightGray" />
-        <property name="textFgColor" value="DARK_BLUE" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995600">
           <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678288">
+          <property name="color" value="DARK_BLUE" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168291602939">
@@ -2736,8 +2830,10 @@
               <link role="conceptDeclaration" targetNodeId="1.1200911316486" resolveInfo="MappingLabelDeclaration" />
               <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1200912293387">
                 <property name="readOnly" value="true" />
-                <property name="textFgColor" value="orange" />
                 <link role="relationDeclaration" targetNodeId="4.1169194664001" resolveInfo="name" />
+                <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678982">
+                  <property name="color" value="orange" />
+                </node>
               </node>
             </node>
           </node>
@@ -2749,7 +2845,9 @@
           <property name="vertical" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168291602946">
             <property name="text" value="java query (deprecated)" />
-            <property name="textFgColor" value="red" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678430">
+              <property name="color" value="red" />
+            </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168291602947">
             <property name="text" value=":" />
@@ -2813,7 +2911,9 @@
           <property name="vertical" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168648990340">
             <property name="text" value="mapped concept (deprecated)" />
-            <property name="textFgColor" value="red" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678082">
+              <property name="color" value="red" />
+            </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168648990341">
             <property name="text" value=":" />
@@ -2905,7 +3005,9 @@
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168291763042">
           <property name="text" value="templateSourceNodeMapper_ (old)" />
-          <property name="textFgColor" value="red" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399677972">
+            <property name="color" value="red" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Custom" id="1168291763043">
           <node role="cellProvider" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_CellProvider" id="1176804676371">
@@ -2959,7 +3061,6 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1149865915190">
         <property name="textBgColorSelected" value="cyan" />
         <property name="text" value="$MAP_SRCL$" />
-        <property name="textFgColor" value="DARK_BLUE" />
         <property name="attractsFocus" value="1" />
         <link role="keyMap" targetNodeId="1149931179122" resolveInfo="MacroSymbol_KeyMap" />
         <link role="actionMap" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
@@ -2974,10 +3075,12 @@
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032204">
           <property name="flag" value="true" />
         </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678679">
+          <property name="color" value="DARK_BLUE" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168291575106">
         <property name="text" value="!" />
-        <property name="textFgColor" value="red" />
         <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1168649164567">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1168649164568">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1170898551543">
@@ -3036,6 +3139,9 @@
         </node>
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994252">
           <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678649">
+          <property name="color" value="red" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1184865693854">
@@ -4147,10 +4253,12 @@
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1167088005396">
             <property name="noTargetText" value="&lt;no name&gt;" />
             <property name="readOnly" value="true" />
-            <property name="textFgColor" value="DARK_BLUE" />
             <link role="relationDeclaration" targetNodeId="4.1169194664001" />
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934068">
               <property name="style" value="ITALIC" />
+            </node>
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678141">
+              <property name="color" value="DARK_BLUE" />
             </node>
           </node>
         </node>
@@ -4161,9 +4269,11 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1167518681156">
         <property name="text" value="conditional root rule" />
         <property name="textBgColor" value="lightGray" />
-        <property name="textFgColor" value="DARK_BLUE" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996365">
           <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678792">
+          <property name="color" value="DARK_BLUE" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1167518681157">
@@ -4316,7 +4426,9 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1169580472046">
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1169580472047">
               <property name="text" value="old:" />
-              <property name="textFgColor" value="red" />
+              <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678179">
+                <property name="color" value="red" />
+              </node>
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1169580472048">
               <property name="noTargetText" value="&lt;no template&gt;" />
@@ -4398,9 +4510,11 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1167517960208">
         <property name="text" value="weaving rule" />
         <property name="textBgColor" value="lightGray" />
-        <property name="textFgColor" value="DARK_BLUE" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994871">
           <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678438">
+          <property name="color" value="DARK_BLUE" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1167517960209">
@@ -4472,8 +4586,10 @@
             <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1169494942761">
               <property name="attractsFocus" value="0" />
               <property name="readOnly" value="true" />
-              <property name="textFgColor" value="DARK_MAGENTA" />
               <link role="relationDeclaration" targetNodeId="4.1169194664001" />
+              <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678658">
+                <property name="color" value="DARK_MAGENTA" />
+              </node>
             </node>
           </node>
         </node>
@@ -4616,7 +4732,9 @@
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1169672948390">
               <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1169672948391">
                 <property name="text" value="old:" />
-                <property name="textFgColor" value="red" />
+                <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399677904">
+                  <property name="color" value="red" />
+                </node>
               </node>
               <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1169672948392">
                 <property name="noTargetText" value="&lt;no template&gt;" />
@@ -4680,9 +4798,11 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1167518270806">
         <property name="text" value="reduction rule" />
         <property name="textBgColor" value="lightGray" />
-        <property name="textFgColor" value="DARK_BLUE" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996723">
           <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678541">
+          <property name="color" value="DARK_BLUE" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1167518270807">
@@ -4758,8 +4878,10 @@
                 <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1177959016745">
                   <property name="attractsFocus" value="0" />
                   <property name="readOnly" value="true" />
-                  <property name="textFgColor" value="DARK_MAGENTA" />
                   <link role="relationDeclaration" targetNodeId="4.1169194664001" />
+                  <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678201">
+                    <property name="color" value="DARK_MAGENTA" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -4905,10 +5027,12 @@
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1167514444713">
             <property name="noTargetText" value="&lt;no name&gt;" />
             <property name="readOnly" value="true" />
-            <property name="textFgColor" value="DARK_BLUE" />
             <link role="relationDeclaration" targetNodeId="4.1169194664001" />
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934352">
               <property name="style" value="ITALIC" />
+            </node>
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399677853">
+              <property name="color" value="DARK_BLUE" />
             </node>
           </node>
         </node>
@@ -4919,9 +5043,11 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1167516845603">
         <property name="text" value="root mapping rule" />
         <property name="textBgColor" value="lightGray" />
-        <property name="textFgColor" value="DARK_BLUE" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994209">
           <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678586">
+          <property name="color" value="DARK_BLUE" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1167516860073">
@@ -5017,7 +5143,9 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1169670446867">
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1169670468666">
         <property name="text" value="DISMISS TOP RULE" />
-        <property name="textFgColor" value="DARK_BLUE" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678431">
+          <property name="color" value="DARK_BLUE" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1169670501887">
         <property name="noTargetText" value="&lt;no message&gt;" />
@@ -5052,9 +5180,11 @@
             <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1168625644514">
               <link role="conceptDeclaration" targetNodeId="6.1169125787135" />
               <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1168625644515">
-                <property name="textFgColor" value="DARK_MAGENTA" />
                 <property name="readOnly" value="true" />
                 <link role="relationDeclaration" targetNodeId="4.1169194664001" />
+                <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678026">
+                  <property name="color" value="DARK_MAGENTA" />
+                </node>
               </node>
             </node>
           </node>
@@ -5302,10 +5432,12 @@
     <link role="conceptDeclaration" targetNodeId="1.1169670156577" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1169670581344">
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1169670587361">
-        <property name="textFgColor" value="DARK_MAGENTA" />
         <link role="relationDeclaration" targetNodeId="1.1169670356567" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934314">
           <property name="style" value="BOLD" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678331">
+          <property name="color" value="DARK_MAGENTA" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1169670599832">
@@ -5316,8 +5448,10 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1169670607428">
         <property name="noTargetText" value="&lt;no text&gt;" />
-        <property name="textFgColor" value="DARK_GREEN" />
         <link role="relationDeclaration" targetNodeId="1.1169670173015" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399677899">
+          <property name="color" value="DARK_GREEN" />
+        </node>
       </node>
     </node>
   </node>
@@ -5348,9 +5482,11 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1184214419029">
         <property name="text" value="copy/reduce node macro" />
         <property name="textBgColor" value="lightGray" />
-        <property name="textFgColor" value="DARK_BLUE" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997439">
           <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678300">
+          <property name="color" value="DARK_BLUE" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1184214419030">
@@ -5533,7 +5669,6 @@
           <property name="text" value="bad role:" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ModelAccess" id="1184865302332">
-          <property name="textFgColor" value="red" />
           <node role="modelAcessor" type="jetbrains.mps.bootstrap.editorLanguage.structure.ModelAccessor" id="1184865302333">
             <node role="getter" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_ModelAccess_Getter" id="1184865302334">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1184865302335">
@@ -5561,6 +5696,9 @@
                 </node>
               </node>
             </node>
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399677923">
+            <property name="color" value="red" />
           </node>
         </node>
         <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1184865302346">
@@ -5663,7 +5801,6 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1194566483567">
         <property name="textBgColorSelected" value="cyan" />
         <property name="text" value="$INCLUDE$" />
-        <property name="textFgColor" value="DARK_BLUE" />
         <property name="attractsFocus" value="1" />
         <link role="keyMap" targetNodeId="1149931179122" resolveInfo="MacroSymbol_KeyMap" />
         <link role="actionMap" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
@@ -5678,6 +5815,9 @@
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032056">
           <property name="flag" value="true" />
         </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399677967">
+          <property name="color" value="DARK_BLUE" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1194566483585">
         <link role="editorComponent" targetNodeId="1184864447477" resolveInfo="NodeMacro_postfix" />
@@ -5688,9 +5828,11 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1194566535682">
         <property name="text" value="include-macro" />
         <property name="textBgColor" value="lightGray" />
-        <property name="textFgColor" value="DARK_BLUE" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996743">
           <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678277">
+          <property name="color" value="DARK_BLUE" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1194566535683">
@@ -6087,8 +6229,10 @@
           <link role="conceptDeclaration" targetNodeId="6.1169125787135" resolveInfo="AbstractConceptDeclaration" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1200911383718">
             <property name="readOnly" value="true" />
-            <property name="textFgColor" value="DARK_MAGENTA" />
             <link role="relationDeclaration" targetNodeId="4.1169194664001" resolveInfo="name" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678287">
+              <property name="color" value="DARK_MAGENTA" />
+            </node>
           </node>
         </node>
       </node>
@@ -6102,8 +6246,10 @@
           <link role="conceptDeclaration" targetNodeId="6.1169125787135" resolveInfo="AbstractConceptDeclaration" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1200913029718">
             <property name="readOnly" value="true" />
-            <property name="textFgColor" value="DARK_MAGENTA" />
             <link role="relationDeclaration" targetNodeId="4.1169194664001" resolveInfo="name" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399677931">
+              <property name="color" value="DARK_MAGENTA" />
+            </node>
           </node>
         </node>
       </node>
@@ -6154,7 +6300,9 @@
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1207698573050">
           <property name="text" value="!" />
-          <property name="textFgColor" value="red" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678434">
+            <property name="color" value="red" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1200923100681">
           <property name="text" value="label" />
@@ -6178,8 +6326,10 @@
           <link role="conceptDeclaration" targetNodeId="6.1169125787135" resolveInfo="AbstractConceptDeclaration" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1200923100690">
             <property name="readOnly" value="true" />
-            <property name="textFgColor" value="DARK_MAGENTA" />
             <link role="relationDeclaration" targetNodeId="4.1169194664001" resolveInfo="name" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678569">
+              <property name="color" value="DARK_MAGENTA" />
+            </node>
           </node>
         </node>
       </node>

@@ -54,7 +54,7 @@ public class _OpenTag extends AbstractCellProvider {
 
   private static Color calculateColor9(EditorCell cell) {
     Color result;
-    result = _QueryFunction_Color_1214396913666((cell == null ?
+    result = _OpenTag._QueryFunction_Color_1214396913666((cell == null ?
       null :
       cell.getSNode()
     ), (cell == null ?

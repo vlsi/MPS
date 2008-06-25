@@ -9,10 +9,12 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
@@ -68,6 +70,13 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
           this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return TreeNodeKindProperty_Editor.calculateColor24(cell);
+            }
+
+          });
         }
 
       };
@@ -98,7 +107,6 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell20062_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(MPSColors.DARK_MAGENTA);
   }
 
   private static void setupLabel_ConstantCell20062_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -106,6 +114,12 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition20062_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "default");
+  }
+
+  private static Color calculateColor24(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_MAGENTA;
+    return result;
   }
 
 

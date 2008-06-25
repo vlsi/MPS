@@ -7,6 +7,7 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -15,7 +16,7 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import java.awt.Color;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 
 public class SLinkListAccess_Editor extends DefaultNodeEditor {
@@ -25,6 +26,12 @@ public class SLinkListAccess_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_linkRefCell2380_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static Color calculateColor7(EditorCell cell) {
+    Color result;
+    result = Color.darkGray;
+    return result;
   }
 
 
@@ -73,6 +80,13 @@ public class SLinkListAccess_Editor extends DefaultNodeEditor {
         Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+            this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+              public Color calculate(EditorCell cell) {
+                return SLinkListAccess_Editor.calculateColor7(cell);
+              }
+
+            });
           }
 
         };
@@ -81,7 +95,6 @@ public class SLinkListAccess_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_rolePropertyCell2380_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.setTextColor(Color.darkGray);
     }
 
 

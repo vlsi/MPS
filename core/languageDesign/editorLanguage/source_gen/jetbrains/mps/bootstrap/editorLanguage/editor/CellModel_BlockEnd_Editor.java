@@ -9,8 +9,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
@@ -361,6 +362,13 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return CellModel_BlockEnd_Editor.calculateColor26(cell);
+            }
+
+          });
         }
 
       };
@@ -454,7 +462,6 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_closeBracePropertyCell10561_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(Color.blue);
     editorCell.setNullTextColor(Color.blue);
   }
 
@@ -474,6 +481,12 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition10561_02(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "rightTransformAnchorTag", null, null));
+  }
+
+  private static Color calculateColor26(EditorCell cell) {
+    Color result;
+    result = Color.blue;
+    return result;
   }
 
 

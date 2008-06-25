@@ -9,10 +9,12 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Vertical;
@@ -51,6 +53,21 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell14370_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14370_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return SwitchStatement_Editor.calculateColor49(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell14370_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -147,6 +164,21 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell14370_07(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14370_07");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return SwitchStatement_Editor.calculateColor55(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell14370_08(EditorCell editorCell, SNode node, EditorContext context) {
@@ -263,7 +295,6 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell14370_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_ConstantCell14370_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -291,7 +322,6 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell14370_07(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_ConstantCell14370_08(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -320,6 +350,18 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition14370_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "label", null));
+  }
+
+  private static Color calculateColor49(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_BLUE;
+    return result;
+  }
+
+  private static Color calculateColor55(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_BLUE;
+    return result;
   }
 
 

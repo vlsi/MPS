@@ -8,6 +8,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
@@ -45,6 +47,21 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_valuePropertyCell10226_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_valuePropertyCell10226_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return IntegerConceptProperty_Editor.calculateColor35(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_integerConceptPropertyDeclarationRefCell10226_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -54,7 +71,18 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_valuePropertyCell10226_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(MPSColors.DARK_BLUE);
+  }
+
+  private static Color calculateColor11(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_MAGENTA;
+    return result;
+  }
+
+  private static Color calculateColor35(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_BLUE;
+    return result;
   }
 
 
@@ -152,6 +180,13 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
         Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+            this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+              public Color calculate(EditorCell cell) {
+                return IntegerConceptProperty_Editor.calculateColor11(cell);
+              }
+
+            });
           }
 
         };
@@ -160,7 +195,6 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_namePropertyCell10226_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.setTextColor(MPSColors.DARK_MAGENTA);
     }
 
 

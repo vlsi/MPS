@@ -9,6 +9,8 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
@@ -30,6 +32,13 @@ public class PatternVariableDeclaration_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return PatternVariableDeclaration_Editor.calculateColor12(cell);
+            }
+
+          });
         }
 
       };
@@ -43,6 +52,13 @@ public class PatternVariableDeclaration_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return PatternVariableDeclaration_Editor.calculateColor11(cell);
+            }
+
+          });
         }
 
       };
@@ -51,11 +67,21 @@ public class PatternVariableDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_varNamePropertyCell20538_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(MPSColors.DARK_GREEN);
   }
 
   private static void setupLabel_ConstantCell20538_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(MPSColors.DARK_GREEN);
+  }
+
+  private static Color calculateColor11(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_GREEN;
+    return result;
+  }
+
+  private static Color calculateColor12(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_GREEN;
+    return result;
   }
 
 

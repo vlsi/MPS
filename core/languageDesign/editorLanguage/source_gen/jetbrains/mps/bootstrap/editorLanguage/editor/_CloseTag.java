@@ -53,7 +53,7 @@ public class _CloseTag extends AbstractCellProvider {
 
   private static Color calculateColor4(EditorCell cell) {
     Color result;
-    result = _QueryFunction_Color_1214396913636((cell == null ?
+    result = _CloseTag._QueryFunction_Color_1214396913636((cell == null ?
       null :
       cell.getSNode()
     ), (cell == null ?

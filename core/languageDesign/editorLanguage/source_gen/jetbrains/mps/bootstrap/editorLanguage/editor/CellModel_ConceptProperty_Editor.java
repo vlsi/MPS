@@ -1434,13 +1434,17 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     return !(SPropertyOperations.hasValue(node, "editable", null, null));
   }
 
+  public static boolean renderingCondition9917_014(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.hasValue(node, "textFgColor", null, null));
+  }
+
   public static Color _QueryFunction_Color_1214396913648(SNode node, EditorContext editorContext) {
     return _EditorUtil.grayIfNotSelectable(node);
   }
 
   private static Color calculateColor6(EditorCell cell) {
     Color result;
-    result = _QueryFunction_Color_1214396913648((cell == null ?
+    result = CellModel_ConceptProperty_Editor._QueryFunction_Color_1214396913648((cell == null ?
       null :
       cell.getSNode()
     ), (cell == null ?
@@ -1530,7 +1534,9 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     if (renderingCondition9917_09(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell9917_016(context, node));
     }
-    editorCell.addEditorCell(this.create_CollectionCell9917_019(context, node));
+    if (renderingCondition9917_014(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.create_CollectionCell9917_019(context, node));
+    }
     if (renderingCondition9917_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell9917_020(context, node));
     }

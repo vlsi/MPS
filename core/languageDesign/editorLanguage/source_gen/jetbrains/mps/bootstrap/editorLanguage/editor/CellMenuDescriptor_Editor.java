@@ -8,6 +8,7 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Vertical;
@@ -15,7 +16,7 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import java.awt.Color;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
@@ -42,6 +43,12 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_cellMenuPartRefNodeListCell19413_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static Color calculateColor19(EditorCell cell) {
+    Color result;
+    result = Color.darkGray;
+    return result;
   }
 
 
@@ -94,6 +101,13 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
             this.set(StyleAttributes.EDITABLE, true);
+            this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+              public Color calculate(EditorCell cell) {
+                return CellMenuDescriptor_Editor.calculateColor19(cell);
+              }
+
+            });
           }
 
         };
@@ -102,7 +116,6 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_ConstantCell19413_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.setTextColor(Color.darkGray);
     }
 
 

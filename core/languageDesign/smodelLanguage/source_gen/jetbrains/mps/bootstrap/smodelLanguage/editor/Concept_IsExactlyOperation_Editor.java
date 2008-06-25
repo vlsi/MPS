@@ -10,10 +10,12 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -21,7 +23,6 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 
 public class Concept_IsExactlyOperation_Editor extends DefaultNodeEditor {
@@ -86,6 +87,21 @@ public class Concept_IsExactlyOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell1868_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell1868_02");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return Concept_IsExactlyOperation_Editor.calculateColor2(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_ConstantCell1868_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -101,11 +117,22 @@ public class Concept_IsExactlyOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell1868_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(Color.red);
   }
 
   public static boolean renderingCondition1868_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "conceptDeclaration", false) != null;
+  }
+
+  private static Color calculateColor2(EditorCell cell) {
+    Color result;
+    result = Color.red;
+    return result;
+  }
+
+  private static Color calculateColor24(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_MAGENTA;
+    return result;
   }
 
 
@@ -239,10 +266,24 @@ public class Concept_IsExactlyOperation_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell1868_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell1868_0");
+      {
+        Style inlineStyle = new Style(editorCell) {
+          {
+            this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+              public Color calculate(EditorCell cell) {
+                return Concept_IsExactlyOperation_Editor.calculateColor24(cell);
+              }
+
+            });
+          }
+
+        };
+        inlineStyle.apply(editorCell);
+      }
     }
 
     private static void setupLabel_namePropertyCell1868_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.setTextColor(MPSColors.DARK_MAGENTA);
     }
 
 

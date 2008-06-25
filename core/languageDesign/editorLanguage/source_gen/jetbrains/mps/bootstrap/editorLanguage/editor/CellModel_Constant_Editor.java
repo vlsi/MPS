@@ -1373,7 +1373,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   }
 
   public static boolean renderingCondition10258_03(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.hasValue(node, "textFgColor", "query", null);
+    return SPropertyOperations.hasValue(node, "textFgColorEmpty", "query", null);
   }
 
   public static boolean renderingCondition10258_04(SNode node, EditorContext editorContext, IScope scope) {
@@ -1424,13 +1424,17 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
     return !(SPropertyOperations.hasValue(node, "editable", null, null));
   }
 
+  public static boolean renderingCondition10258_016(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.hasValue(node, "textFgColor", null, null));
+  }
+
   public static Color _QueryFunction_Color_1214396926660(SNode node, EditorContext editorContext) {
     return _EditorUtil.grayIfNotSelectable(node);
   }
 
   private static Color calculateColor10(EditorCell cell) {
     Color result;
-    result = _QueryFunction_Color_1214396926660((cell == null ?
+    result = CellModel_Constant_Editor._QueryFunction_Color_1214396926660((cell == null ?
       null :
       cell.getSNode()
     ), (cell == null ?
@@ -1525,7 +1529,9 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
     if (renderingCondition10258_010(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell10258_016(context, node));
     }
-    editorCell.addEditorCell(this.create_CollectionCell10258_019(context, node));
+    if (renderingCondition10258_016(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.create_CollectionCell10258_019(context, node));
+    }
     if (renderingCondition10258_02(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell10258_020(context, node));
     }

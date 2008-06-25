@@ -10,8 +10,9 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ypath.behavior.IFeature_Behavior;
@@ -331,6 +332,21 @@ public class ListFeature_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell21469_011(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell21469_011");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return ListFeature_Editor.calculateColor43(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell21469_016(EditorCell editorCell, SNode node, EditorContext context) {
@@ -688,7 +704,6 @@ public class ListFeature_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell21469_011(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(Color.gray);
   }
 
   private static void setupLabel_ConstantCell21469_012(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -776,6 +791,12 @@ public class ListFeature_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition21469_05(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "opposite", false) != null);
+  }
+
+  private static Color calculateColor43(EditorCell cell) {
+    Color result;
+    result = Color.gray;
+    return result;
   }
 
 

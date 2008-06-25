@@ -32,11 +32,41 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell19947_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19947_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return CommentedStatementsBlock_Editor.calculateColor38(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     CommentedStatementsBlock_Actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_ConstantCell19947_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19947_01");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return CommentedStatementsBlock_Editor.calculateColor32(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     CommentedStatementsBlock_Actions.setCellActions(editorCell, node, context);
   }
 
@@ -86,11 +116,9 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell19947_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(Color.gray);
   }
 
   private static void setupLabel_ConstantCell19947_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(Color.gray);
   }
 
   private static void setupLabel_ConstantCell19947_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -102,6 +130,18 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
   private static Color calculateColor10(EditorCell cell) {
     Color result;
     result = Color.lightGray;
+    return result;
+  }
+
+  private static Color calculateColor32(EditorCell cell) {
+    Color result;
+    result = Color.gray;
+    return result;
+  }
+
+  private static Color calculateColor38(EditorCell cell) {
+    Color result;
+    result = Color.gray;
     return result;
   }
 

@@ -9,9 +9,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.baseLanguage.editor.ConceptFunction_Component;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
@@ -35,6 +36,21 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
 
   private static void setupBasic_ConstantCell19273_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19273_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return ConstraintFunction_ReferentSearchScope_Factory_Editor.calculateColor15(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell19273_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -253,7 +269,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   }
 
   private static void setupLabel_ConstantCell19273_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(Color.blue);
     editorCell.setTextBackgroundColor(Color.lightGray);
   }
 
@@ -295,6 +310,12 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   }
 
   private static void setupLabel_ConstantCell19273_013(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static Color calculateColor15(EditorCell cell) {
+    Color result;
+    result = Color.blue;
+    return result;
   }
 
 

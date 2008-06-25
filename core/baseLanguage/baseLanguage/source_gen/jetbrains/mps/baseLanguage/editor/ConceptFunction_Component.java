@@ -105,6 +105,13 @@ public class ConceptFunction_Component extends AbstractCellProvider {
           this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
           this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return ConceptFunction_Component.calculateColor27(cell);
+            }
+
+          });
         }
 
       };
@@ -139,7 +146,6 @@ public class ConceptFunction_Component extends AbstractCellProvider {
   }
 
   private static void setupLabel_ModelAccessCell6954_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_bodyRefNodeCell6954_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -174,6 +180,12 @@ public class ConceptFunction_Component extends AbstractCellProvider {
       null :
       cell.getEditorContext()
     ));
+    return result;
+  }
+
+  private static Color calculateColor27(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_BLUE;
     return result;
   }
 

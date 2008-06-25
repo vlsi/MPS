@@ -8,6 +8,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -86,6 +88,21 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_actionIdPropertyCell5279_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_actionIdPropertyCell5279_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return CellActionMapItem_Editor.calculateColor27(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell5279_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -124,6 +141,13 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return CellActionMapItem_Editor.calculateColor23(cell);
+            }
+
+          });
         }
 
       };
@@ -144,7 +168,6 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_actionIdPropertyCell5279_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(MPSColors.DARK_MAGENTA);
   }
 
   private static void setupLabel_ConstantCell5279_03(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -154,7 +177,18 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_descriptionPropertyCell5279_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(MPSColors.DARK_GREEN);
+  }
+
+  private static Color calculateColor23(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_GREEN;
+    return result;
+  }
+
+  private static Color calculateColor27(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_MAGENTA;
+    return result;
   }
 
 

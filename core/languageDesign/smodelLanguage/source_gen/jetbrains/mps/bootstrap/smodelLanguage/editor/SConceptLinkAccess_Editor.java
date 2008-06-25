@@ -9,8 +9,10 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -18,7 +20,6 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 
 public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
@@ -38,6 +39,13 @@ public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
           this.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return SConceptLinkAccess_Editor.calculateColor42(cell);
+            }
+
+          });
         }
 
       };
@@ -49,7 +57,18 @@ public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell19306_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(Color.darkGray);
+  }
+
+  private static Color calculateColor25(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_MAGENTA;
+    return result;
+  }
+
+  private static Color calculateColor42(EditorCell cell) {
+    Color result;
+    result = Color.darkGray;
+    return result;
   }
 
 
@@ -117,6 +136,13 @@ public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
         Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+            this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+              public Color calculate(EditorCell cell) {
+                return SConceptLinkAccess_Editor.calculateColor25(cell);
+              }
+
+            });
           }
 
         };
@@ -125,7 +151,6 @@ public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_namePropertyCell19306_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.setTextColor(MPSColors.DARK_MAGENTA);
     }
 
 

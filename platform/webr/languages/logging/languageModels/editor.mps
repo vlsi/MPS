@@ -27,10 +27,12 @@
     <link role="conceptDeclaration" targetNodeId="1.1167227138527" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1167245583614">
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1167245583615">
-        <property name="textFgColor" value="DARK_BLUE" />
         <link role="relationDeclaration" targetNodeId="1.1167245565795" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934315">
           <property name="style" value="BOLD" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678456">
+          <property name="color" value="DARK_BLUE" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1167245583616">
@@ -74,10 +76,12 @@
         <link role="relationDeclaration" targetNodeId="1.1167228628751" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1169034785409">
-        <property name="textFgColor" value="lightGray" />
         <property name="text" value="Alt+Enter" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994007">
           <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399677823">
+          <property name="color" value="lightGray" />
         </node>
       </node>
     </node>

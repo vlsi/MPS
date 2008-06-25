@@ -35,8 +35,10 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1189768590115">
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1189768590116">
-        <property name="textFgColor" value="DARK_MAGENTA" />
         <link role="relationDeclaration" targetNodeId="2.1169194664001" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399679053">
+          <property name="color" value="DARK_MAGENTA" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1190637154835">
         <property name="text" value=":" />
@@ -54,8 +56,10 @@
         <link role="conceptDeclaration" targetNodeId="1.1189693830529" />
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1189694134365">
           <property name="readOnly" value="true" />
-          <property name="textFgColor" value="DARK_MAGENTA" />
           <link role="relationDeclaration" targetNodeId="2.1169194664001" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399677826">
+            <property name="color" value="DARK_MAGENTA" />
+          </node>
         </node>
       </node>
     </node>
@@ -78,10 +82,12 @@
           <property name="text" value="(" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1191237890551">
-          <property name="textFgColor" value="DARK_GREEN" />
           <property name="noTargetText" value="no user friendly name" />
           <link role="relationDeclaration" targetNodeId="1.1191237830649" />
           <link role="styleClass" targetNodeId="4.1186415563770" resolveInfo="StringLiteral" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678802">
+            <property name="color" value="DARK_GREEN" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1191237897600">
           <property name="text" value=")" />
@@ -99,8 +105,10 @@
               <link role="conceptDeclaration" targetNodeId="3.1169125787135" resolveInfo="AbstractConceptDeclaration" />
               <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1209559595363">
                 <property name="readOnly" value="true" />
-                <property name="textFgColor" value="DARK_MAGENTA" />
                 <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
+                <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678254">
+                  <property name="color" value="DARK_MAGENTA" />
+                </node>
               </node>
             </node>
           </node>
@@ -418,8 +426,10 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197985313785">
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197985313786">
-          <property name="textFgColor" value="DARK_MAGENTA" />
           <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678755">
+            <property name="color" value="DARK_MAGENTA" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197985313790">
           <property name="text" value=":" />

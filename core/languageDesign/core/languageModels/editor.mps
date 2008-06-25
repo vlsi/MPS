@@ -58,10 +58,12 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1133921100033">
     <link role="conceptDeclaration" targetNodeId="1.1133920641626" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1133921115694">
-      <property name="textFgColor" value="lightGray" />
       <property name="nullText" value="&lt;abstract concept&gt;" />
       <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398031997">
         <property name="flag" value="true" />
+      </node>
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678662">
+        <property name="color" value="lightGray" />
       </node>
     </node>
   </node>

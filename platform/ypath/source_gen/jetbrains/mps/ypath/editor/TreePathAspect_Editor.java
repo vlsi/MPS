@@ -12,8 +12,9 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.FocusPolicy;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
@@ -394,6 +395,21 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell7950_020(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7950_020");
     BaseLanguageStyle_StyleSheet.COMMENT.apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateColor37(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell7950_021(EditorCell editorCell, SNode node, EditorContext context) {
@@ -608,7 +624,6 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell7950_020(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(Color.lightGray);
   }
 
   private static void setupLabel_ConstantCell7950_021(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -652,6 +667,12 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition7950_0(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "parentBlock", true) != null) || (SLinkOperations.getTarget(node, "childrenBlock", true) != null);
+  }
+
+  private static Color calculateColor37(EditorCell cell) {
+    Color result;
+    result = Color.lightGray;
+    return result;
   }
 
 

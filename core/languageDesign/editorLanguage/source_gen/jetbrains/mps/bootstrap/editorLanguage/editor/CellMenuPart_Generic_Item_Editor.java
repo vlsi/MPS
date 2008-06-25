@@ -8,9 +8,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -40,6 +41,21 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell11977_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11977_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return CellMenuPart_Generic_Item_Editor.calculateColor24(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell11977_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -113,6 +129,21 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_matchingTextPropertyCell11977_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_matchingTextPropertyCell11977_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return CellMenuPart_Generic_Item_Editor.calculateColor33(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell11977_05(EditorCell editorCell, SNode node, EditorContext context) {
@@ -149,7 +180,6 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell11977_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(MPSColors.DARK_BLUE);
     editorCell.setTextBackgroundColor(Color.lightGray);
   }
 
@@ -163,7 +193,6 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_matchingTextPropertyCell11977_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(MPSColors.DARK_GREEN);
   }
 
   private static void setupLabel_ConstantCell11977_04(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -173,6 +202,18 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_handlerFunctionRefNodeCell11977_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static Color calculateColor24(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_BLUE;
+    return result;
+  }
+
+  private static Color calculateColor33(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_GREEN;
+    return result;
   }
 
 

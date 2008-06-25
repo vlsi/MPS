@@ -10,11 +10,12 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.CellLayout_Vertical;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import java.awt.Color;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
@@ -40,6 +41,12 @@ public class StatementList_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_statementRefNodeListCell6566_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static Color calculateColor25(EditorCell cell) {
+    Color result;
+    result = Color.darkGray;
+    return result;
   }
 
 
@@ -74,6 +81,13 @@ public class StatementList_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.SELECTABLE, true);
             this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
             this.set(StyleAttributes.EDITABLE, true);
+            this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+              public Color calculate(EditorCell cell) {
+                return StatementList_Editor.calculateColor25(cell);
+              }
+
+            });
           }
 
         };
@@ -82,7 +96,6 @@ public class StatementList_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_ConstantCell6566_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.setTextColor(Color.darkGray);
     }
 
 

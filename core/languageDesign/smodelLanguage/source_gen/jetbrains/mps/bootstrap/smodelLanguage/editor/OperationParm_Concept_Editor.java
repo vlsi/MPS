@@ -8,10 +8,12 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -20,7 +22,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 
 public class OperationParm_Concept_Editor extends DefaultNodeEditor {
@@ -31,6 +32,21 @@ public class OperationParm_Concept_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell7071_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7071_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return OperationParm_Concept_Editor.calculateColor34(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell7071_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -52,20 +68,33 @@ public class OperationParm_Concept_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell7071_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7071_01");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return OperationParm_Concept_Editor.calculateColor22(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_conceptArgumentRefNodeCell7071_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell7071_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(Color.lightGray);
   }
 
   private static void setupLabel_conceptRefCell7071_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell7071_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(Color.red);
   }
 
   private static void setupLabel_conceptArgumentRefNodeCell7071_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -73,6 +102,24 @@ public class OperationParm_Concept_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition7071_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "concept", false) != null;
+  }
+
+  private static Color calculateColor9(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_MAGENTA;
+    return result;
+  }
+
+  private static Color calculateColor22(EditorCell cell) {
+    Color result;
+    result = Color.red;
+    return result;
+  }
+
+  private static Color calculateColor34(EditorCell cell) {
+    Color result;
+    result = Color.lightGray;
+    return result;
   }
 
 
@@ -187,10 +234,24 @@ public class OperationParm_Concept_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell7071_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell7071_0");
+      {
+        Style inlineStyle = new Style(editorCell) {
+          {
+            this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+              public Color calculate(EditorCell cell) {
+                return OperationParm_Concept_Editor.calculateColor9(cell);
+              }
+
+            });
+          }
+
+        };
+        inlineStyle.apply(editorCell);
+      }
     }
 
     private static void setupLabel_namePropertyCell7071_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.setTextColor(MPSColors.DARK_MAGENTA);
     }
 
 

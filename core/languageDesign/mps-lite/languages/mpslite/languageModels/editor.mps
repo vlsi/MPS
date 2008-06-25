@@ -346,9 +346,11 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1182511243683">
-        <property name="textFgColor" value="lightGray" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995347">
           <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678979">
+          <property name="color" value="lightGray" />
         </node>
       </node>
     </node>
@@ -666,9 +668,11 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1182512719605">
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1182512721419">
-        <property name="textFgColor" value="lightGray" />
         <property name="text" value="---&gt;" />
         <link role="actionMap" targetNodeId="1182843155485" resolveInfo="_LinePart_RT" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678664">
+          <property name="color" value="lightGray" />
+        </node>
       </node>
     </node>
   </node>
@@ -769,8 +773,10 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1182840297799">
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1182840299238">
-          <property name="textFgColor" value="DARK_BLUE" />
           <property name="text" value="concept declarations" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678646">
+            <property name="color" value="DARK_BLUE" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1182840305162">
           <link role="relationDeclaration" targetNodeId="2.1169194664001" />

@@ -992,7 +992,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor3(EditorCell cell) {
     Color result;
-    result = _QueryFunction_Color_1214396893965((cell == null ?
+    result = CellModel_Alternation_Editor._QueryFunction_Color_1214396893965((cell == null ?
       null :
       cell.getSNode()
     ), (cell == null ?
@@ -1004,7 +1004,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor8(EditorCell cell) {
     Color result;
-    result = _QueryFunction_Color_1214396913660((cell == null ?
+    result = CellModel_Alternation_Editor._QueryFunction_Color_1214396913660((cell == null ?
       null :
       cell.getSNode()
     ), (cell == null ?

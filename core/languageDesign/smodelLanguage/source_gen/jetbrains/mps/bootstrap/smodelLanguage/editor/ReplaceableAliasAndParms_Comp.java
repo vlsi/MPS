@@ -10,8 +10,9 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
@@ -79,6 +80,13 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
         {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return ReplaceableAliasAndParms_Comp.calculateColor12(cell);
+            }
+
+          });
         }
 
       };
@@ -96,6 +104,13 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return ReplaceableAliasAndParms_Comp.calculateColor23(cell);
+            }
+
+          });
         }
 
       };
@@ -107,18 +122,34 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
   }
 
   private static void setupLabel_ConstantCell14862_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(Color.lightGray);
   }
 
   private static void setupLabel_parameterRefNodeListCell14862_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell14862_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(Color.lightGray);
   }
 
   public static boolean renderingCondition14862_0(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty();
+  }
+
+  private static Color calculateColor12(EditorCell cell) {
+    Color result;
+    result = Color.lightGray;
+    return result;
+  }
+
+  private static Color calculateColor23(EditorCell cell) {
+    Color result;
+    result = Color.lightGray;
+    return result;
+  }
+
+  private static Color calculateColor49(EditorCell cell) {
+    Color result;
+    result = Color.lightGray;
+    return result;
   }
 
 
@@ -227,6 +258,13 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
           {
             this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
             this.set(StyleAttributes.EDITABLE, true);
+            this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+              public Color calculate(EditorCell cell) {
+                return ReplaceableAliasAndParms_Comp.calculateColor49(cell);
+              }
+
+            });
           }
 
         };
@@ -235,7 +273,6 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
     }
 
     private static void setupLabel_ConstantCell14862_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.setTextColor(Color.lightGray);
     }
 
 

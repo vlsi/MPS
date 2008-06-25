@@ -9,8 +9,9 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -208,6 +209,21 @@ public class IParamFeature_Properties extends AbstractCellProvider {
 
   private static void setupBasic_ConstantCell12837_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell12837_06");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return IParamFeature_Properties.calculateColor36(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell12837_09(EditorCell editorCell, SNode node, EditorContext context) {
@@ -312,7 +328,6 @@ public class IParamFeature_Properties extends AbstractCellProvider {
   }
 
   private static void setupLabel_ConstantCell12837_06(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(Color.gray);
   }
 
   private static void setupLabel_ConstantCell12837_07(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -325,6 +340,12 @@ public class IParamFeature_Properties extends AbstractCellProvider {
   }
 
   private static void setupLabel_ConstantCell12837_09(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static Color calculateColor36(EditorCell cell) {
+    Color result;
+    result = Color.gray;
+    return result;
   }
 
 

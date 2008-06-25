@@ -8,6 +8,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import java.awt.Color;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -30,6 +32,21 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell6496_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6496_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return WhenConcreteStatement_Editor.calculateColor8(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConstantCell6496_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -76,7 +93,6 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell6496_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(MPSColors.DARK_GREEN);
   }
 
   private static void setupLabel_ConstantCell6496_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -101,6 +117,12 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_argumentRepresentatorRefNodeCell6496_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static Color calculateColor8(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_GREEN;
+    return result;
   }
 
 

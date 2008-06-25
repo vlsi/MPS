@@ -10,8 +10,9 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ypath.behavior.IFeature_Behavior;
@@ -283,6 +284,21 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell12325_08(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell12325_08");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return ParamSequenceFeature_Editor.calculateColor41(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell12325_014(EditorCell editorCell, SNode node, EditorContext context) {
@@ -754,6 +770,21 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell12325_029(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell12325_029");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return ParamSequenceFeature_Editor.calculateColor26(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_namePropertyCell12325_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -784,7 +815,6 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell12325_08(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(Color.gray);
   }
 
   private static void setupLabel_ConstantCell12325_09(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -881,7 +911,6 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell12325_029(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(Color.gray);
   }
 
   public static boolean renderingCondition12325_0(SNode node, EditorContext editorContext, IScope scope) {
@@ -910,6 +939,18 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition12325_06(SNode node, EditorContext editorContext, IScope scope) {
     return false;
+  }
+
+  private static Color calculateColor26(EditorCell cell) {
+    Color result;
+    result = Color.gray;
+    return result;
+  }
+
+  private static Color calculateColor41(EditorCell cell) {
+    Color result;
+    result = Color.gray;
+    return result;
   }
 
 

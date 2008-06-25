@@ -9,8 +9,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
@@ -38,6 +39,21 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConceptPropertyCell18424_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConceptPropertyCell18424_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return AbstractInequationStatement_Editor.calculateColor19(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_rightExpressionRefNodeCell18424_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -93,7 +109,6 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConceptPropertyCell18424_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(_QueryFunction_Color_1212056631973(node, context));
   }
 
   private static void setupLabel_rightExpressionRefNodeCell18424_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -111,13 +126,25 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell18424_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static Color _QueryFunction_Color_1212056631973(SNode node, EditorContext editorContext) {
+  public static Color _QueryFunction_Color_1214399678682(SNode node, EditorContext editorContext) {
     if (SPropertyOperations.getBoolean(node, "checkOnly")) {
       return Color.GRAY;
     } else
     {
       return Color.BLACK;
     }
+  }
+
+  private static Color calculateColor19(EditorCell cell) {
+    Color result;
+    result = _QueryFunction_Color_1214399678682((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
+    return result;
   }
 
 

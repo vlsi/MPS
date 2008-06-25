@@ -8,10 +8,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
@@ -36,6 +37,21 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell743_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell743_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return CellMenuPart_ReplaceChildPrimary_Editor.calculateColor44(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_CollectionCell743_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -70,6 +86,13 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return CellMenuPart_ReplaceChildPrimary_Editor.calculateColor21(cell);
+            }
+
+          });
         }
 
       };
@@ -78,7 +101,6 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell743_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(MPSColors.DARK_BLUE);
     editorCell.setTextBackgroundColor(Color.lightGray);
   }
 
@@ -86,7 +108,18 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell743_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(Color.darkGray);
+  }
+
+  private static Color calculateColor21(EditorCell cell) {
+    Color result;
+    result = Color.darkGray;
+    return result;
+  }
+
+  private static Color calculateColor44(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_BLUE;
+    return result;
   }
 
 

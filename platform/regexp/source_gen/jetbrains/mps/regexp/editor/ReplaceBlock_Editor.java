@@ -26,7 +26,7 @@ public class ReplaceBlock_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_bodyRefNodeCell1481_0(EditorCell editorCell, SNode node, EditorContext context) {
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.DRAW_BRACKETS, true);
           this.set(StyleAttributes.BRACKETS_COLOR, new AttributeCalculator <Color>() {

@@ -8,9 +8,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -31,6 +32,21 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell9918_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell9918_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return RegexpDeclaration_Editor.calculateColor50(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_namePropertyCell9918_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -48,7 +64,7 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell9918_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell9918_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -61,7 +77,7 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell9918_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell9918_03");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -77,7 +93,7 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell9918_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell9918_03");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -90,7 +106,7 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell9918_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell9918_04");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -102,14 +118,43 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell9918_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell9918_05");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return RegexpDeclaration_Editor.calculateColor14(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_descriptionPropertyCell9918_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_descriptionPropertyCell9918_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return RegexpDeclaration_Editor.calculateColor39(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_ConstantCell9918_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_namePropertyCell9918_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -131,11 +176,27 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell9918_05(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(Color.darkGray);
   }
 
   private static void setupLabel_descriptionPropertyCell9918_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(Color.darkGray);
+  }
+
+  private static Color calculateColor14(EditorCell cell) {
+    Color result;
+    result = Color.darkGray;
+    return result;
+  }
+
+  private static Color calculateColor39(EditorCell cell) {
+    Color result;
+    result = Color.darkGray;
+    return result;
+  }
+
+  private static Color calculateColor50(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_BLUE;
+    return result;
   }
 
 

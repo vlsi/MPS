@@ -2538,7 +2538,7 @@
     <property name="name" value="ForegroundColorStyleSheetItem" />
     <link role="extends" targetNodeId="1186403694788" resolveInfo="ColorStyleClassItem" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1186404568646">
-      <property name="value" value="foreground-color" />
+      <property name="value" value="text-foreground-color" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
     </node>
   </node>
@@ -2639,7 +2639,7 @@
     <property name="name" value="ForegroundNullColorStyleSheetItem" />
     <link role="extends" targetNodeId="1186403694788" resolveInfo="ColorStyleClassItem" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1187258725566">
-      <property name="value" value="foreground-null-color" />
+      <property name="value" value="text-foreground-null-color" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
     </node>
   </node>

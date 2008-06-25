@@ -8,8 +8,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class BaseConcept_Editor extends DefaultNodeEditor {
@@ -20,6 +21,13 @@ public class BaseConcept_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.EDITABLE, true);
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return BaseConcept_Editor.calculateColor(cell);
+            }
+
+          });
         }
 
       };
@@ -28,7 +36,12 @@ public class BaseConcept_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell5616_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(Color.lightGray);
+  }
+
+  private static Color calculateColor(EditorCell cell) {
+    Color result;
+    result = Color.lightGray;
+    return result;
   }
 
 

@@ -8,9 +8,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -26,6 +27,21 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell21416_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell21416_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return GivetypeStatement_Editor.calculateColor16(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_typeExpressionRefNodeCell21416_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -33,6 +49,21 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell21416_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell21416_01");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return GivetypeStatement_Editor.calculateColor13(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_termExpressionRefNodeCell21416_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -56,6 +87,13 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return GivetypeStatement_Editor.calculateColor12(cell);
+            }
+
+          });
         }
 
       };
@@ -64,14 +102,12 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell21416_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(MPSColors.DARK_GREEN);
   }
 
   private static void setupLabel_typeExpressionRefNodeCell21416_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell21416_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(MPSColors.DARK_GREEN);
   }
 
   private static void setupLabel_termExpressionRefNodeCell21416_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -87,7 +123,24 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell21416_05(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(Color.red);
+  }
+
+  private static Color calculateColor12(EditorCell cell) {
+    Color result;
+    result = Color.red;
+    return result;
+  }
+
+  private static Color calculateColor13(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_GREEN;
+    return result;
+  }
+
+  private static Color calculateColor16(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_GREEN;
+    return result;
   }
 
 

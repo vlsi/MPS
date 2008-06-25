@@ -209,7 +209,9 @@
             </node>
             <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1205677542487">
               <property name="text" value="&lt;no icon&gt;" />
-              <property name="textFgColor" value="lightGray" />
+              <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678020">
+                <property name="color" value="lightGray" />
+              </node>
             </node>
             <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1205845889620">
               <property name="vertical" value="false" />
@@ -366,16 +368,20 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206183272507">
         <property name="text" value="  (it's checked that parameters with theese types are present in the context" />
-        <property name="textFgColor" value="gray" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997157">
           <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678904">
+          <property name="color" value="gray" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206183272508">
         <property name="text" value="  and they are extracted from it, otherwise the action is disabled)" />
-        <property name="textFgColor" value="gray" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997933">
           <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678791">
+          <property name="color" value="gray" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206183272509">
@@ -1087,7 +1093,9 @@
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1204384496433">
           <property name="text" value="bootstrap" />
-          <property name="textFgColor" value="red" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678654">
+            <property name="color" value="red" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1204384454874">
           <property name="text" value="group" />
@@ -1122,7 +1130,9 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1204398280442">
         <property name="text" value="bootstrap label" />
-        <property name="textFgColor" value="red" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399677938">
+          <property name="color" value="red" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1204398241222">
         <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name" />
@@ -1173,17 +1183,20 @@
             <property name="vertical" value="false" />
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1208974887398">
               <property name="text" value="(" />
-              <property name="textFgColor" value="lightGray" />
+              <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678490">
+                <property name="color" value="lightGray" />
+              </node>
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1208974878779">
               <property name="text" value="show keystroke: " />
-              <property name="textFgColor" value="lightGray" />
               <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997541">
                 <property name="flag" value="false" />
               </node>
+              <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678811">
+                <property name="color" value="lightGray" />
+              </node>
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ModelAccess" id="1208974878780">
-              <property name="textFgColor" value="lightGray" />
               <node role="modelAcessor" type="jetbrains.mps.bootstrap.editorLanguage.structure.ModelAccessor" id="1208974878781">
                 <node role="getter" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_ModelAccess_Getter" id="1208974878782">
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208974878783">
@@ -1218,11 +1231,16 @@
               <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997749">
                 <property name="flag" value="false" />
               </node>
+              <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678222">
+                <property name="color" value="lightGray" />
+              </node>
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1208975854394">
               <property name="text" value=")" />
-              <property name="textFgColor" value="lightGray" />
               <link role="styleClass" targetNodeId="17.1186415544875" resolveInfo="KeyWord" />
+              <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678695">
+                <property name="color" value="lightGray" />
+              </node>
             </node>
             <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1208974878796">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208974878797">
@@ -1309,7 +1327,9 @@
             </node>
             <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1208950262060">
               <property name="text" value="&lt;no icon&gt;" />
-              <property name="textFgColor" value="lightGray" />
+              <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399677964">
+                <property name="color" value="lightGray" />
+              </node>
             </node>
             <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1208950262061">
               <property name="vertical" value="false" />
@@ -2355,8 +2375,10 @@
             </node>
             <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1210687257451">
               <property name="text" value="&lt;no icon&gt;" />
-              <property name="textFgColor" value="lightGray" />
               <link role="styleClass" targetNodeId="17.1187948382795" resolveInfo="EmptyCell" />
+              <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399677831">
+                <property name="color" value="lightGray" />
+              </node>
             </node>
             <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1210687257452">
               <property name="vertical" value="false" />

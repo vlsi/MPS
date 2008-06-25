@@ -8,6 +8,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
@@ -54,6 +56,21 @@ public class VisitBlock_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell12311_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell12311_03");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return VisitBlock_Editor.calculateColor27(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_expressionRefNodeCell12311_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -70,6 +87,21 @@ public class VisitBlock_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell12311_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell12311_04");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return VisitBlock_Editor.calculateColor34(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_ConstantCell12311_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -82,7 +114,6 @@ public class VisitBlock_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell12311_03(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_expressionRefNodeCell12311_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -98,7 +129,18 @@ public class VisitBlock_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell12311_04(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(MPSColors.DARK_BLUE);
+  }
+
+  private static Color calculateColor27(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_BLUE;
+    return result;
+  }
+
+  private static Color calculateColor34(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_BLUE;
+    return result;
   }
 
 

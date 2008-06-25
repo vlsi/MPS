@@ -10,11 +10,12 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
-import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Vertical;
@@ -287,6 +288,13 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return EnumerationDataTypeDeclaration_Editor.calculateColor16(cell);
+            }
+
+          });
         }
 
       };
@@ -300,6 +308,13 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return EnumerationDataTypeDeclaration_Editor.calculateColor23(cell);
+            }
+
+          });
         }
 
       };
@@ -395,6 +410,21 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_noValueTextPropertyCell7131_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_noValueTextPropertyCell7131_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return EnumerationDataTypeDeclaration_Editor.calculateColor24(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_ConstantCell7131_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -439,11 +469,9 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_memberIdentifierPolicyPropertyCell7131_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(MPSColors.DARK_MAGENTA);
   }
 
   private static void setupLabel_ConstantCell7131_010(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(Color.red);
   }
 
   private static void setupLabel_ConstantCell7131_011(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -465,7 +493,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_noValueTextPropertyCell7131_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(MPSColors.DARK_GREEN);
   }
 
   public static boolean renderingCondition7131_0(SNode node, EditorContext editorContext, IScope scope) {
@@ -478,6 +505,30 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition7131_02(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "hasNoDefaultMember");
+  }
+
+  private static Color calculateColor16(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_MAGENTA;
+    return result;
+  }
+
+  private static Color calculateColor17(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_MAGENTA;
+    return result;
+  }
+
+  private static Color calculateColor23(EditorCell cell) {
+    Color result;
+    result = Color.red;
+    return result;
+  }
+
+  private static Color calculateColor24(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_GREEN;
+    return result;
   }
 
 
@@ -983,6 +1034,13 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
         Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+            this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+              public Color calculate(EditorCell cell) {
+                return EnumerationDataTypeDeclaration_Editor.calculateColor17(cell);
+              }
+
+            });
           }
 
         };
@@ -991,7 +1049,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_externalValuePropertyCell7131_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.setTextColor(MPSColors.DARK_MAGENTA);
     }
 
 

@@ -10,6 +10,8 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
@@ -41,6 +43,13 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return EnumConstantDeclaration_Editor.calculateColor43(cell);
+            }
+
+          });
         }
 
       };
@@ -61,7 +70,6 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_namePropertyCell6462_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setTextColor(MPSColors.DARK_MAGENTA);
   }
 
   private static void setupLabel_ConstantCell6462_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -71,6 +79,12 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell6462_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static Color calculateColor43(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_MAGENTA;
+    return result;
   }
 
 
