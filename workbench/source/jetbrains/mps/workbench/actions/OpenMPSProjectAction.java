@@ -19,6 +19,10 @@ import java.io.File;
 import java.awt.Frame;
 
 public class OpenMPSProjectAction extends BaseAction {
+  public OpenMPSProjectAction() {
+    myExecuteOutsideCommand = true;
+  }
+
   public void doExecute(AnActionEvent e) {
     final ProjectManagerEx projectManager = ProjectManagerEx.getInstanceEx();
 

@@ -23,7 +23,7 @@ public class ITreePathExpression_Behavior {
 
     });
     SNode exp = thisNode;
-    while(Sequence.fromIterable(nodes).isEmpty()) {
+    while (Sequence.fromIterable(nodes).isEmpty()) {
       Iterable<SNode> varRefs = ListSequence.fromList(SNodeOperations.getDescendants(exp, null, false)).where(new IWhereFilter <SNode>() {
 
         public boolean accept(SNode it) {
