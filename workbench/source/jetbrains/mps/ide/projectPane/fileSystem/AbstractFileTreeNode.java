@@ -2,7 +2,9 @@ package jetbrains.mps.ide.projectPane.fileSystem;
 
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.ide.ui.customization.CustomizableActionsSchemas;
+import com.intellij.ide.FileIconProvider;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSActionAdapter;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -21,11 +23,12 @@ import java.util.Collection;
 import java.util.Collection;
 
 public abstract class AbstractFileTreeNode extends MPSTreeNode {
-  protected IFile myFile;
+  protected final IFile myFile;
   protected VcsFileStatusProvider myProvider;
 
   public AbstractFileTreeNode(IOperationContext operationContext, VcsFileStatusProvider provider, IFile file) {
     super(operationContext);
+    assert file != null;
     myFile = file;
     myProvider = provider;
 

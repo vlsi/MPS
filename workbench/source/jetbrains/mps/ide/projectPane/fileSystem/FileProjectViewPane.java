@@ -3,24 +3,20 @@ package jetbrains.mps.ide.projectPane.fileSystem;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.SelectInTarget;
-import com.intellij.ide.util.treeView.NodeDescriptor;
 import com.intellij.openapi.vfs.*;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vcs.FileStatusListener;
-import com.intellij.openapi.actionSystem.ActionPlaces;
-import com.intellij.openapi.actionSystem.IdeActions;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.DataConstants;
-import com.intellij.util.ReflectionCache;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
+import javax.swing.Timer;
 import javax.swing.tree.TreePath;
-import javax.swing.tree.DefaultMutableTreeNode;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
@@ -28,10 +24,6 @@ import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.projectPane.fileSystem.FolderTreeNode;
-import jetbrains.mps.vcs.ui.IFileController;
-import jetbrains.mps.vcs.ui.IFileController.IWorkspaceListener;
-import jetbrains.mps.vcs.Status;
-import jetbrains.mps.vcs.ProjectVCSManager;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.ui.MPSTree;
@@ -41,9 +33,9 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 
 import java.util.List;
-import java.util.Collections;
-import java.util.ArrayList;
 import java.util.LinkedList;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class FileProjectViewPane extends AbstractProjectViewPane implements DataProvider {
   @NonNls
@@ -55,6 +47,8 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
   private MPSTree myMPSTree;
   private FileStatusListener myFileStatusListener;
   private VirtualFileAdapter myFileListener;
+  private Timer myTimer;
+  private static final int SECOND = 1000;
 
   protected FileProjectViewPane(Project project, final ProjectView projectView) {
     super(project);
@@ -81,43 +75,55 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
 
     myFileStatusListener = new FileStatusListener() {
       public void fileStatusesChanged() {
-        rebuildTree();
+        rebuildTreeLater();
       }
 
       public void fileStatusChanged(@NotNull VirtualFile virtualFile) {
-        rebuildTree();
+        rebuildTreeLater();
       }
     };
 
     myFileListener = new VirtualFileAdapter() {
       @Override
       public void fileCreated(VirtualFileEvent event) {
-        rebuildTree();
+        rebuildTreeLater();
       }
 
       @Override
       public void fileDeleted(VirtualFileEvent event) {
-        rebuildTree();
+        rebuildTreeLater();
       }
 
       @Override
       public void fileMoved(VirtualFileMoveEvent event) {
-        rebuildTree();
+        rebuildTreeLater();
       }
 
       @Override
       public void fileCopied(VirtualFileCopyEvent event) {
-        rebuildTree();
+        rebuildTreeLater();
       }
     };
-  }
-
-  private void rebuildTree() {
-    ModelAccess.instance().runReadInEDT(new Runnable() {
-      public void run() {
-        myMPSTree.rebuildLater();
+    myTimer = new Timer(SECOND, new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        ModelAccess.instance().runReadInEDT(new Runnable() {
+          public void run() {
+            System.out.println("rebuild");
+            myMPSTree.rebuildLater();
+          }
+        });
       }
     });
+    myTimer.setRepeats(false);
+    myTimer.setInitialDelay(3 * SECOND);
+  }
+
+  private void rebuildTreeLater() {
+    if (myTimer.isRunning()){
+      return;
+    } else {
+      myTimer.restart();
+    }
   }
 
 
@@ -160,7 +166,7 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
   }
 
   public void projectOpened() {
-    rebuildTree();
+    rebuildTreeLater();
     StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
       public void run() {
         myProjectView.addProjectPane(FileProjectViewPane.this);
@@ -190,11 +196,11 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
 
   }
 
-  public Object getData(String dataId){
-    if (dataId.equals(DataConstants.VIRTUAL_FILE_ARRAY)){
+  public Object getData(String dataId) {
+    if (dataId.equals(DataConstants.VIRTUAL_FILE_ARRAY)) {
       List<VirtualFile> files = new LinkedList<VirtualFile>();
       TreePath[] treePaths = getSelectionPaths();
-      for (TreePath tp : treePaths){
+      for (TreePath tp : treePaths) {
         Object lastPathComponent = tp.getLastPathComponent();
         AbstractFileTreeNode node = (AbstractFileTreeNode) lastPathComponent;
         files.add(VFileSystem.getFile(node.getFile()));

@@ -1,18 +1,24 @@
 package jetbrains.mps.ide.projectPane.fileSystem;
 
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.vcs.ui.VCSIcons;
 import jetbrains.mps.ide.projectPane.fileSystem.AbstractFileTreeNode;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.workbench.editors.MPSIconProvider;
 
 import javax.swing.Icon;
 import java.util.*;
 
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.project.Project;
+import com.intellij.ide.FileIconProvider;
 
 public class FileTreeNode extends AbstractFileTreeNode {
   private static final Map<String, Icon> ICONS = new HashMap<String, Icon>();
+  private Project myProject;
 
   static {
     ICONS.put("mpr", Icons.PROJECT_ICON);
@@ -27,6 +33,7 @@ public class FileTreeNode extends AbstractFileTreeNode {
 
   public FileTreeNode(IOperationContext operationContext, VcsFileStatusProvider provider, IFile file) {
     super(operationContext, provider, file);
+    myProject = operationContext.getProject();
   }
 
   @Override
@@ -42,6 +49,11 @@ public class FileTreeNode extends AbstractFileTreeNode {
   }
 
   private Icon getIcon() {
+    FileIconProvider provider = ApplicationManager.getApplication().getComponent(FileIconProvider.class);
+    if (provider != null) {
+      System.out.println("USING IDEA ICONS");
+      return provider.getIcon(VFileSystem.getFile(myFile), 0, myProject);
+    }
     String name = myFile.getName();
     int pos = name.lastIndexOf(".");
     if (pos == -1) return getDefaultIcon();
