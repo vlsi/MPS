@@ -94,6 +94,7 @@ public abstract class MPSTree extends DnDAwareTree {
 
     addMouseListener(new MouseAdapter() {
       public void mousePressed(MouseEvent e) {
+        requestFocus();
         myMousePressed(e);
       }
 

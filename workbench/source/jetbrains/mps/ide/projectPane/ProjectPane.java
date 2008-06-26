@@ -181,14 +181,6 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
       }
     });
 
-    myTree.addMouseListener(new MouseAdapter() {
-      public void mousePressed(MouseEvent e) {
-        if (e.getButton()== MouseEvent.BUTTON3){
-          ProjectPane.this.openTool(true);
-        }
-      }
-    });
-
     myToolbar.add(myPAndRToggle = new JToggleButton() {
       {
         setAction(new AbstractAction("", Icons.PROP_AND_REF) {

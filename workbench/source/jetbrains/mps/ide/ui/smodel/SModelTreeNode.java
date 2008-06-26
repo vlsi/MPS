@@ -775,7 +775,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       }
     }
 
-
     public ActionGroup getActionGroup() {
       CreateRootNodeGroup cg = new CreateRootNodeGroup(getPackage());
 

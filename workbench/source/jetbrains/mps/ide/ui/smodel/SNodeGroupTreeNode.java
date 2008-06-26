@@ -3,9 +3,14 @@ package jetbrains.mps.ide.ui.smodel;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.workbench.action.BaseAction;
 
 import javax.swing.JPopupMenu;
 import java.awt.Color;
+
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.AnActionEvent;
 
 public class SNodeGroupTreeNode extends TextTreeNode {
 

@@ -56,6 +56,7 @@ public class BaseGroup extends DefaultGroup {
 
   public void update(final AnActionEvent e) {
     super.update(e);
+    enable(e.getPresentation());
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         doUpdate(e);
