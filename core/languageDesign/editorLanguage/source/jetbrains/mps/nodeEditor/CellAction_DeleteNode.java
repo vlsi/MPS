@@ -11,9 +11,6 @@ import java.util.ArrayList;
  * Time: Nov 5, 2003 1:03:02 PM
  */
 public class CellAction_DeleteNode extends EditorCellAction {
-
-  Throwable t = new Throwable();
-
   private SNode mySemanticNode;
 
   public CellAction_DeleteNode(SNode semanticNode) {
