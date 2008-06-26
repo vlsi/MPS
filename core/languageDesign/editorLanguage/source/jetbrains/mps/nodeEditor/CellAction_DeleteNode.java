@@ -17,7 +17,7 @@ public class CellAction_DeleteNode extends EditorCellAction {
     mySemanticNode = semanticNode;
   }
 
-  protected SNode getSemanticNode() {
+  protected SNode getSNode() {
     return mySemanticNode;
   }
 

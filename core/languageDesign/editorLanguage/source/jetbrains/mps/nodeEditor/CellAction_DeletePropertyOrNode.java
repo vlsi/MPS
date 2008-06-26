@@ -23,7 +23,7 @@ public class CellAction_DeletePropertyOrNode extends EditorCellAction {
     if (mySemanticNode.getProperty(myPropertyName) != null) {
       mySemanticNode.setProperty(myPropertyName, null);
     } else {
-      CellAction_DeleteNodeIfEmpty deleteAction = new CellAction_DeleteNodeIfEmpty(mySemanticNode);
+      CellAction_DeleteEasily deleteAction = new CellAction_DeleteEasily(mySemanticNode);
       if (deleteAction.canExecute(context)) {
         deleteAction.execute(context);
       }

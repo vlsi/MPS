@@ -982,10 +982,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     if ((keyEvent.getKeyCode() == KeyEvent.VK_DELETE || keyEvent.getKeyCode() == KeyEvent.VK_BACK_SPACE)
       && keyEvent.getModifiers() == 0) {
-      // editable label and no text
+
       EditorCell selectedCell = editorContext.getNodeEditorComponent().getSelectedCell();
       if (selectedCell instanceof EditorCell_Label) {
-        if (((EditorCell_Label) selectedCell).getText().length() == 0) {
+        EditorCell_Label label = (EditorCell_Label) selectedCell;
+        if (label.getText().length() == 0 ||
+          (label instanceof EditorCell_Constant && !label.isEditable())) {
           return EditorCellAction.DELETE;
         }
       }

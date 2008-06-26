@@ -39,7 +39,7 @@ public class PropertyCellProvider extends CellProviderWithRole {
     if (!myReadOnly) {
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeletePropertyOrNode(getSNode(), myPropertyName));
     } else {
-      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNodeIfEmpty(getSNode()));
+      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteEasily(getSNode()));
     }
     return editorCell;
   }
