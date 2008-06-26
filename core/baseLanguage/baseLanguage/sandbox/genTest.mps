@@ -21,6 +21,7 @@
   <maxImportIndex value="14" />
   <import index="14" modelUID="java.lang@java_stub" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1214485924900">
+    <property name="name" value="C1" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1214491338303">
       <property name="name" value="abcdef" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1214491338305" />

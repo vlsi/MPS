@@ -849,7 +849,7 @@ public class CellModel_RefNode_Editor extends DefaultNodeEditor {
   public EditorCell create_CollectionCell3008_012(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_CollectionCell3008_012(editorCell, node, context);
-    editorCell.setGridLayout(false);
+    editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.create_CollectionCell3008_013(context, node));

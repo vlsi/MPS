@@ -5218,6 +5218,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1214477690868">
         <property name="vertical" value="true" />
+        <property name="gridLayout" value="true" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1214477807872">
           <property name="vertical" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1214477807873">
@@ -5963,7 +5964,7 @@
         <link role="relationDeclaration" targetNodeId="2.1088186146602" />
         <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1146619345990">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1146619345991">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1146619347257">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214512981884">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1146619356512">
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1146619360421" />
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227883271">
