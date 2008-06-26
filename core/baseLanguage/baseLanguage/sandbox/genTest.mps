@@ -7,9 +7,7 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
   <language namespace="webr.logging" />
-  <language namespace="jetbrains.mps.transformationTest">
-    <languageAspect modelUID="jetbrains.mps.transformationTest.constraints" version="0" />
-  </language>
+  <languageAspect modelUID="jetbrains.mps.transformationTest.constraints" version="0" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   <languageAspect modelUID="webr.templateLanguage.structure" version="0" />
