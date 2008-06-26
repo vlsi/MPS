@@ -8,15 +8,21 @@ import jetbrains.mps.MPSProjectHolder;
 import java.io.File;
 import java.util.List;
 import java.util.LinkedList;
+import java.util.ArrayList;
 import java.rmi.RemoteException;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.FilePath;
+import com.intellij.openapi.vcs.VcsException;
+import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
+import com.intellij.openapi.vcs.checkin.CheckinEnvironment;
 import com.intellij.openapi.vcs.actions.VcsContextFactory;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.components.ProjectComponent;
+import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -29,10 +35,10 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   public boolean deleteFilesAndRemoveFromVCS(List<File> files) {
-    final List<File> inVCS = new LinkedList<File>();
-    List<File> notInVCS = new LinkedList<File>();
+//    final List<File> inVCS = new LinkedList<File>();
+//    List<File> notInVCS = new LinkedList<File>();
 
-    ProjectLevelVcsManager manager = myProject.getComponent(ProjectLevelVcsManager.class);
+    /*ProjectLevelVcsManager manager = myProject.getComponent(ProjectLevelVcsManager.class);
     for (File f : files) {
       VirtualFile virtualFile = VFileSystem.getFile(f);
       if (virtualFile != null) {
@@ -43,7 +49,7 @@ public class MPSVCSManager implements ProjectComponent {
           notInVCS.add(f);
         }
       }
-    }
+    }*/
 
     boolean result = true;
 
@@ -71,7 +77,7 @@ public class MPSVCSManager implements ProjectComponent {
     IProjectHandler projectHandler = myProject.getComponent(MPSProjectHolder.class).getMPSProject().getProjectHandler();
     if (projectHandler != null) {
       try {
-        projectHandler.deleteFilesAndRemoveFromVCS(notInVCS);
+        projectHandler.deleteFilesAndRemoveFromVCS(files);
       } catch (RemoteException e) {
         LOG.error(e);
         return false;
@@ -86,7 +92,7 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   public boolean addFilesToVCS(final List<File> files) {
-    final List<File> inVCS = new LinkedList<File>();
+    /*final List<File> inVCS = new LinkedList<File>();
     List<File> notInVCS = new LinkedList<File>();
 
     final ProjectLevelVcsManager manager = myProject.getComponent(ProjectLevelVcsManager.class);
@@ -100,9 +106,9 @@ public class MPSVCSManager implements ProjectComponent {
           notInVCS.add(f);
         }
       }
-    }
+    }*/
 
-    boolean result = true;    
+    boolean result = true;
     //todo this code causes UI freezing during generation. work around it somehow
 //    ApplicationManager.getApplication().invokeLater(new Runnable() {
 //      public void run() {
