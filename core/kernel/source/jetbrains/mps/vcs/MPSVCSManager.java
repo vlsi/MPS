@@ -4,11 +4,15 @@ import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.util.Pair;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.GenerationListener;
 
 import java.io.File;
-import java.util.List;
-import java.util.LinkedList;
-import java.util.ArrayList;
+import java.io.IOException;
+import java.util.*;
 import java.rmi.RemoteException;
 
 import com.intellij.openapi.project.Project;
@@ -29,16 +33,49 @@ import org.jetbrains.annotations.NotNull;
 public class MPSVCSManager implements ProjectComponent {
   public static final Logger LOG = Logger.getLogger(MPSVCSManager.class);
   private final Project myProject;
+  private GenerationListener myGenerationListener;
+  private volatile boolean isGenerationRunning;
+  private final Set<Runnable> myTasks = new HashSet<Runnable>();
 
   public MPSVCSManager(Project project) {
     myProject = project;
+    myGenerationListener = new GenerationListener() {
+      public void beforeGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
+        isGenerationRunning = true;
+      }
+
+      public void modelsGenerated(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
+
+      }
+
+      public void afterGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
+        isGenerationRunning = false;
+
+        for (Runnable task : myTasks) {
+          ApplicationManager.getApplication().invokeLater(task);
+        }
+
+        myTasks.clear();
+      }
+    };
+  }
+
+  private void invokeLater(Runnable task) {
+    if (isGenerationRunning) {
+      myTasks.add(task);
+      LOG.debug("shedule task");
+      return;
+    }
+
+    LOG.debug("invoke task");
+    ApplicationManager.getApplication().invokeLater(task);
   }
 
   public boolean deleteFilesAndRemoveFromVCS(List<File> files) {
-//    final List<File> inVCS = new LinkedList<File>();
-//    List<File> notInVCS = new LinkedList<File>();
+    final List<File> inVCS = new LinkedList<File>();
+    List<File> notInVCS = new LinkedList<File>();
 
-    /*ProjectLevelVcsManager manager = myProject.getComponent(ProjectLevelVcsManager.class);
+    ProjectLevelVcsManager manager = myProject.getComponent(ProjectLevelVcsManager.class);
     for (File f : files) {
       VirtualFile virtualFile = VFileSystem.getFile(f);
       if (virtualFile != null) {
@@ -49,35 +86,34 @@ public class MPSVCSManager implements ProjectComponent {
           notInVCS.add(f);
         }
       }
-    }*/
+    }
 
     boolean result = true;
 
-    //todo this code causes UI freezing during generation. work around it somehow
-//    ApplicationManager.getApplication().invokeLater(new Runnable() {
-//      public void run() {
-//        ApplicationManager.getApplication().runWriteAction(new Runnable() {
-//          public void run() {
-//            LocalFileSystem lfs = LocalFileSystem.getInstance();
-//            for (File file : inVCS) {
-//              VirtualFile vfile = lfs.refreshAndFindFileByIoFile(file);
-//              if (vfile != null) {
-//                try {
-//                  vfile.delete(this);
-//                } catch (IOException ex) {
-//                  ex.printStackTrace();
-//                }
-//              }
-//            }
-//          }
-//        });
-//      }
-//    });
+    invokeLater(new Runnable() {
+      public void run() {
+        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+          public void run() {
+            LocalFileSystem lfs = LocalFileSystem.getInstance();
+            for (File file : inVCS) {
+              VirtualFile vfile = lfs.refreshAndFindFileByIoFile(file);
+              if (vfile != null) {
+                try {
+                  vfile.delete(this);
+                } catch (IOException ex) {
+                  ex.printStackTrace();
+                }
+              }
+            }
+          }
+        });
+      }
+    });
 
     IProjectHandler projectHandler = myProject.getComponent(MPSProjectHolder.class).getMPSProject().getProjectHandler();
     if (projectHandler != null) {
       try {
-        projectHandler.deleteFilesAndRemoveFromVCS(files);
+        projectHandler.deleteFilesAndRemoveFromVCS(notInVCS);
       } catch (RemoteException e) {
         LOG.error(e);
         return false;
@@ -92,7 +128,7 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   public boolean addFilesToVCS(final List<File> files) {
-    /*final List<File> inVCS = new LinkedList<File>();
+    final List<File> inVCS = new LinkedList<File>();
     List<File> notInVCS = new LinkedList<File>();
 
     final ProjectLevelVcsManager manager = myProject.getComponent(ProjectLevelVcsManager.class);
@@ -106,40 +142,39 @@ public class MPSVCSManager implements ProjectComponent {
           notInVCS.add(f);
         }
       }
-    }*/
+    }
 
     boolean result = true;
-    //todo this code causes UI freezing during generation. work around it somehow
-//    ApplicationManager.getApplication().invokeLater(new Runnable() {
-//      public void run() {
-//        ApplicationManager.getApplication().runWriteAction(new Runnable() {
-//          public void run() {
-//            LocalFileSystem lfs = LocalFileSystem.getInstance();
-//            for (File f : inVCS) {
-//              VirtualFile vf = lfs.refreshAndFindFileByIoFile(f);
-//              if (vf == null) {
-//                continue;
-//              }
-//              AbstractVcs vcs = manager.getVcsFor(vf);
-//              if (vcs != null) {
-//                CheckinEnvironment ci = vcs.getCheckinEnvironment();
-//                if (ci != null && !isUnderVCS(project, vf)) {
-//                  List<VirtualFile> vfs = new ArrayList<VirtualFile>();
-//                  vfs.add(vf);
-//                  List<VcsException> result = ci.scheduleUnversionedFilesForAddition(vfs);
-//                  VcsDirtyScopeManager.getInstance(project).fileDirty(vf);
-//                }
-//              }
-//            }
-//          }
-//        });
-//      }
-//    });
+    invokeLater(new Runnable() {
+      public void run() {
+        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+          public void run() {
+            LocalFileSystem lfs = LocalFileSystem.getInstance();
+            for (File f : inVCS) {
+              VirtualFile vf = lfs.refreshAndFindFileByIoFile(f);
+              if (vf == null) {
+                continue;
+              }
+              AbstractVcs vcs = manager.getVcsFor(vf);
+              if (vcs != null) {
+                CheckinEnvironment ci = vcs.getCheckinEnvironment();
+                if (ci != null && !isUnderVCS(myProject, vf)) {
+                  List<VirtualFile> vfs = new ArrayList<VirtualFile>();
+                  vfs.add(vf);
+                  List<VcsException> result = ci.scheduleUnversionedFilesForAddition(vfs);
+                  VcsDirtyScopeManager.getInstance(myProject).fileDirty(vf);
+                }
+              }
+            }
+          }
+        });
+      }
+    });
 
     IProjectHandler projectHandler = myProject.getComponent(MPSProjectHolder.class).getMPSProject().getProjectHandler();
     if (projectHandler != null) {
       try {
-        projectHandler.addFilesToVCS(files);
+        projectHandler.addFilesToVCS(notInVCS);
       } catch (RemoteException e) {
         LOG.error(e);
         return false;
@@ -160,7 +195,6 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   public void projectOpened() {
-
   }
 
   public void projectClosed() {
@@ -174,10 +208,10 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   public void initComponent() {
-
+    myProject.getComponent(GeneratorManager.class).addGenerationListener(myGenerationListener);
   }
 
   public void disposeComponent() {
-
+    myProject.getComponent(GeneratorManager.class).removeGenerationListener(myGenerationListener);
   }
 }
