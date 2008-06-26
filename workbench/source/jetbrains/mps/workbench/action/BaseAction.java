@@ -80,7 +80,7 @@ public abstract class BaseAction extends AnAction {
         } else {
           SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-              access.runWriteAction(action);
+              access.runWriteActionInCommand(action);
             }
           });
         }
