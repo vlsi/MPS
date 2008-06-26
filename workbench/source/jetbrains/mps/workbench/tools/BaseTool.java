@@ -221,7 +221,7 @@ public abstract class BaseTool{
 
   public void unregisterLater() {
     SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
+      public void run() {                                                             
         unregister();
       }
     });

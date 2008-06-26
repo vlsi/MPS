@@ -140,11 +140,11 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
         return PathManager.getBaseLanguagePath()  ;
       }
     });
-//   result.add(new PredefinedLibrary("mps.app") {
-//      public String getPath() {
-//        return PathManager.getAppPath()  ;
-//      }
-//    });
+   result.add(new PredefinedLibrary("mps.app") {
+      public String getPath() {
+        return PathManager.getAppPath()  ;
+      }
+    });
     result.add(new PredefinedLibrary("mps.vcs") {
       public String getPath() {
         return PathManager.getVCSPath()  ;

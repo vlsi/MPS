@@ -550,12 +550,12 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214316640500">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214316636964">
                 <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1214316636932" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1214316640202">
-                  <link role="property" targetNodeId="1.1130426512758" resolveInfo="fontStyle" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1214483625202">
+                  <link role="property" targetNodeId="1.1130426512759" resolveInfo="fontSize" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1214316641681">
-                <node role="value" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1214316643652" />
+                <node role="value" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1214483629360" />
               </node>
             </node>
           </node>
