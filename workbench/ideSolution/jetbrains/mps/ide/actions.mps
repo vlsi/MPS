@@ -842,25 +842,6 @@
           </node>
         </node>
       </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1205843220340" />
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1207221502866">
-        <property name="name" value="VersionControl" />
-        <property name="caption" value="Version Control" />
-        <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1207221519539">
-          <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1207221522946">
-            <link role="javaClass" targetNodeId="29.~CommitAction" resolveInfo="CommitAction" />
-          </node>
-          <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1207222873612">
-            <link role="javaClass" targetNodeId="29.~UpdateAction" resolveInfo="UpdateAction" />
-          </node>
-          <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1207751936927">
-            <link role="javaClass" targetNodeId="29.~ShowProjectHistoryAction" resolveInfo="ShowProjectHistoryAction" />
-          </node>
-        </node>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1205846213311">
-        <link role="javaClass" targetNodeId="27.~SVNCheckOutAction" resolveInfo="SVNCheckOutAction" />
-      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991238844">
