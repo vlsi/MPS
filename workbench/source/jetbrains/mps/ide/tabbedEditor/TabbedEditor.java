@@ -225,13 +225,19 @@ public class TabbedEditor implements IEditor {
   }
 
   public void loadState(@NotNull MPSEditorState state) {
+    if (getEditorContext() == null) {
+      return;
+    }
+
     if (!(state instanceof MyFileEditorState)) {
       return;
     }
 
     MyFileEditorState s = (MyFileEditorState) state;
     myTabbedPane.selectTab(s.myTab);
-    getEditorContext().setMemento(s.myMemento);
+    if (s.myMemento != null) {
+      getEditorContext().setMemento(s.myMemento);
+    }
   }
 
   public void selectMainEditor() {
