@@ -1,16 +1,18 @@
 package jetbrains.mps.ide.ui;
 
-import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.actionSystem.Presentation;
-import com.intellij.ui.TreeToolTipHandler;
 import com.intellij.ide.dnd.aware.DnDAwareTree;
+import com.intellij.openapi.actionSystem.KeyboardShortcut;
+import com.intellij.openapi.actionSystem.Presentation;
+import com.intellij.openapi.actionSystem.Shortcut;
+import com.intellij.openapi.util.Computable;
+import com.intellij.ui.TreeToolTipHandler;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.MPSActionAdapter;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.workbench.action.BaseAction;
 import org.jdom.Element;
 
 import javax.swing.*;
@@ -126,10 +128,10 @@ public abstract class MPSTree extends DnDAwareTree {
         }
         final KeyStroke eventKeyStroke = KeyStroke.getKeyStrokeForEvent(e);
         Pair pair = new Pair(eventKeyStroke, selNode.getClass());
-        final MPSActionAdapter action = myKeyStrokesToActionsMap.get(pair);
+        final BaseAction action = myKeyStrokesToActionsMap.get(pair);
         if (action != null) {
           final ActionContext context = getActionContext(selNode, nodes);
-          action.actionPerformed(ActionUtils.createEvent(new Presentation(),context));
+          action.actionPerformed(ActionUtils.createEvent(new Presentation(), context));
         } else {
           KeyStroke stroke = KeyStroke.getKeyStrokeForEvent(e);
           if (stroke.getKeyCode() == KeyEvent.VK_CONTROL ||
@@ -323,11 +325,13 @@ public abstract class MPSTree extends DnDAwareTree {
   }
 
 
-  private HashMap<Pair, MPSActionAdapter> myKeyStrokesToActionsMap = new HashMap<Pair, MPSActionAdapter>();
+  private HashMap<Pair, BaseAction> myKeyStrokesToActionsMap = new HashMap<Pair, BaseAction>();
 
-  public final void registerMPSAction(MPSActionAdapter action, Class<? extends MPSTreeNode> nodeClass) {
-    for (String keyStroke : action.getKeyStrokes()) {
-      Pair pair = new Pair(KeyStroke.getKeyStroke(keyStroke), nodeClass);
+  public final void registerMPSAction(BaseAction action, Class<? extends MPSTreeNode> nodeClass) {
+    Shortcut[] shortcuts = action.getShortcutSet().getShortcuts();
+    for (Shortcut shortcut : shortcuts) {
+      KeyStroke keyStroke = ((KeyboardShortcut) shortcut).getFirstKeyStroke();
+      Pair pair = new Pair(keyStroke, nodeClass);
       myKeyStrokesToActionsMap.put(pair, action);
     }
   }
