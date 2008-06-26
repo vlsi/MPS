@@ -230,7 +230,7 @@ public class SetAccessor_Editor extends DefaultNodeEditor {
   public EditorCell create_statementListRefNodeCell20837_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("statementList");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no statementList>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_statementListRefNodeCell20837_0_internal(context, node, provider);

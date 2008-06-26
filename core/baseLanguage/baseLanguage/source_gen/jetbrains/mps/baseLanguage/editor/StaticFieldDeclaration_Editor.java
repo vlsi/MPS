@@ -444,7 +444,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell create_isFinalPropertyCell7665_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("isFinal");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no isFinal>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_isFinalPropertyCell7665_0_internal(context, node, provider);
@@ -502,7 +502,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell create_initializerRefNodeCell7665_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("initializer");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no initializer>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_initializerRefNodeCell7665_0_internal(context, node, provider);

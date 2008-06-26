@@ -475,7 +475,7 @@ public class ForStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_variableRefNodeCell17219_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("variable");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no variable>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_variableRefNodeCell17219_0_internal(context, node, provider);
@@ -504,7 +504,7 @@ public class ForStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_bodyRefNodeCell17219_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no body>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_bodyRefNodeCell17219_0_internal(context, node, provider);
@@ -533,7 +533,7 @@ public class ForStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_conditionRefNodeCell17219_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("condition");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no condition>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_conditionRefNodeCell17219_0_internal(context, node, provider);
@@ -562,7 +562,7 @@ public class ForStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_iterationRefNodeCell17219_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("iteration");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no iteration>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_iterationRefNodeCell17219_0_internal(context, node, provider);
@@ -591,7 +591,7 @@ public class ForStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_labelPropertyCell17219_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("label");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no label>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_labelPropertyCell17219_0_internal(context, node, provider);

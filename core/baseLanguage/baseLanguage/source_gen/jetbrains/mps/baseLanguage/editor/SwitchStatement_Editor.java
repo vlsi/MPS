@@ -623,7 +623,7 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_expressionRefNodeCell14370_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("expression");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no expression>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_expressionRefNodeCell14370_0_internal(context, node, provider);
@@ -652,7 +652,7 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_defaultBlockRefNodeCell14370_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("defaultBlock");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no defaultBlock>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_defaultBlockRefNodeCell14370_0_internal(context, node, provider);
@@ -681,7 +681,7 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_labelPropertyCell14370_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("label");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no label>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_labelPropertyCell14370_0_internal(context, node, provider);

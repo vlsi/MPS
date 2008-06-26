@@ -195,7 +195,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
   public EditorCell create_instanceMethodDeclarationRefCell18949_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("instanceMethodDeclaration");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no instanceMethodDeclaration>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_instanceMethodDeclarationRefCell18949_0_internal(context, node, provider);
@@ -246,7 +246,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     public EditorCell create_namePropertyCell18949_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_namePropertyCell18949_0_internal(context, node, provider);

@@ -461,7 +461,7 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_iterableRefNodeCell19902_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("iterable");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no iterable>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_iterableRefNodeCell19902_0_internal(context, node, provider);
@@ -490,7 +490,7 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_bodyRefNodeCell19902_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no body>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_bodyRefNodeCell19902_0_internal(context, node, provider);
@@ -519,7 +519,7 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_variableRefNodeCell19902_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("variable");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no variable>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_variableRefNodeCell19902_0_internal(context, node, provider);
@@ -548,7 +548,7 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_labelPropertyCell19902_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("label");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no label>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_labelPropertyCell19902_0_internal(context, node, provider);

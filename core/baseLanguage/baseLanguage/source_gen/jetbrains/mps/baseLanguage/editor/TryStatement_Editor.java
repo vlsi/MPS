@@ -442,7 +442,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_finallyBodyRefNodeCell15273_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("finallyBody");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no finallyBody>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_finallyBodyRefNodeCell15273_0_internal(context, node, provider);
@@ -471,7 +471,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_bodyRefNodeCell15273_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no body>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_bodyRefNodeCell15273_0_internal(context, node, provider);
@@ -500,7 +500,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_bodyRefNodeCell15273_01(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no body>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_bodyRefNodeCell15273_01_internal(context, node, provider);

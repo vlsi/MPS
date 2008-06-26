@@ -628,7 +628,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_conditionRefNodeCell17307_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("condition");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no condition>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_conditionRefNodeCell17307_0_internal(context, node, provider);
@@ -657,7 +657,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_ifTrueRefNodeCell17307_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("ifTrue");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no ifTrue>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_ifTrueRefNodeCell17307_0_internal(context, node, provider);
@@ -686,7 +686,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_ifFalseStatementRefNodeCell17307_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("ifFalseStatement");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no ifFalseStatement>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_ifFalseStatementRefNodeCell17307_0_internal(context, node, provider);
@@ -715,7 +715,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_ifFalseStatementRefNodeCell17307_01(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("ifFalseStatement");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no ifFalseStatement>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_ifFalseStatementRefNodeCell17307_01_internal(context, node, provider);

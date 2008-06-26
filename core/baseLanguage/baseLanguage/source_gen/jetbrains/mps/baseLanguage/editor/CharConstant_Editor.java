@@ -144,7 +144,7 @@ public class CharConstant_Editor extends DefaultNodeEditor {
   public EditorCell create_charConstantPropertyCell443_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("charConstant");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no charConstant>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_charConstantPropertyCell443_0_internal(context, node, provider);
@@ -173,7 +173,7 @@ public class CharConstant_Editor extends DefaultNodeEditor {
   public EditorCell create_charConstantPropertyCell443_01(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("charConstant");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no charConstant>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_charConstantPropertyCell443_01_internal(context, node, provider);

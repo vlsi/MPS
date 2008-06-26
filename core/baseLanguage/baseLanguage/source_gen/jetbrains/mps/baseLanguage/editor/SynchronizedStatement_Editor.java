@@ -240,7 +240,7 @@ public class SynchronizedStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_expressionRefNodeCell20142_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("expression");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no expression>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_expressionRefNodeCell20142_0_internal(context, node, provider);
@@ -269,7 +269,7 @@ public class SynchronizedStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_blockRefNodeCell20142_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("block");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no block>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_blockRefNodeCell20142_0_internal(context, node, provider);

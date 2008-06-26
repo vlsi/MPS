@@ -224,7 +224,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
   public EditorCell create_throwableRefNodeCell6964_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("throwable");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no throwable>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_throwableRefNodeCell6964_0_internal(context, node, provider);
@@ -253,7 +253,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
   public EditorCell create_catchBodyRefNodeCell6964_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("catchBody");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no catchBody>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_catchBodyRefNodeCell6964_0_internal(context, node, provider);

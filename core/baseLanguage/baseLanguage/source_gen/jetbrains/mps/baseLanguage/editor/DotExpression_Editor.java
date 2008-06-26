@@ -106,7 +106,7 @@ public class DotExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_operandRefNodeCell7793_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("operand");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no operand>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_operandRefNodeCell7793_0_internal(context, node, provider);
@@ -135,7 +135,7 @@ public class DotExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_operationRefNodeCell7793_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("operation");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no operation>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_operationRefNodeCell7793_0_internal(context, node, provider);

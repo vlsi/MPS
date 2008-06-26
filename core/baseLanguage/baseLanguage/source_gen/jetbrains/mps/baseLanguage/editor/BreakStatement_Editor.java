@@ -171,7 +171,7 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
   public EditorCell create_labelPropertyCell2369_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("label");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no label>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_labelPropertyCell2369_0_internal(context, node, provider);

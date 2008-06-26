@@ -70,7 +70,7 @@ public class CustomPropertyImplementation_Editor extends DefaultNodeEditor {
   public EditorCell create_getAccessorRefNodeCell759_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("getAccessor");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no getAccessor>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_getAccessorRefNodeCell759_0_internal(context, node, provider);
@@ -99,7 +99,7 @@ public class CustomPropertyImplementation_Editor extends DefaultNodeEditor {
   public EditorCell create_setAccessorRefNodeCell759_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("setAccessor");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no setAccessor>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_setAccessorRefNodeCell759_0_internal(context, node, provider);

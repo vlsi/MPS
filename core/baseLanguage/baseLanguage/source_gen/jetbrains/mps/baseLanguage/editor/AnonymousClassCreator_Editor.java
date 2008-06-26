@@ -55,7 +55,7 @@ public class AnonymousClassCreator_Editor extends DefaultNodeEditor {
   public EditorCell create_clsRefNodeCell15463_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("cls");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no cls>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_clsRefNodeCell15463_0_internal(context, node, provider);

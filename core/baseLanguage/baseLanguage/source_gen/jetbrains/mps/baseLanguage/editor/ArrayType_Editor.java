@@ -73,7 +73,7 @@ public class ArrayType_Editor extends DefaultNodeEditor {
   public EditorCell create_componentTypeRefNodeCell6968_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("componentType");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no componentType>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_componentTypeRefNodeCell6968_0_internal(context, node, provider);

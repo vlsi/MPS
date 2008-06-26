@@ -137,7 +137,7 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
   public EditorCell create_staticMethodDeclarationRefCell10859_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("staticMethodDeclaration");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no staticMethodDeclaration>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_staticMethodDeclarationRefCell10859_0_internal(context, node, provider);
@@ -197,7 +197,7 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
     public EditorCell create_namePropertyCell10859_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_namePropertyCell10859_0_internal(context, node, provider);

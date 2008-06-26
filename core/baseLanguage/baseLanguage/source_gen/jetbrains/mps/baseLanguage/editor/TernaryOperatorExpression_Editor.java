@@ -113,7 +113,7 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_conditionRefNodeCell14651_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("condition");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no condition>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_conditionRefNodeCell14651_0_internal(context, node, provider);
@@ -142,7 +142,7 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_ifTrueRefNodeCell14651_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("ifTrue");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no ifTrue>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_ifTrueRefNodeCell14651_0_internal(context, node, provider);
@@ -171,7 +171,7 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_ifFalseRefNodeCell14651_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("ifFalse");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no ifFalse>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_ifFalseRefNodeCell14651_0_internal(context, node, provider);

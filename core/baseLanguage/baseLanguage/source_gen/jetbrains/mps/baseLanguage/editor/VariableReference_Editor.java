@@ -43,7 +43,7 @@ public class VariableReference_Editor extends DefaultNodeEditor {
   public EditorCell create_variableDeclarationRefCell19820_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("variableDeclaration");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no variableDeclaration>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_variableDeclarationRefCell19820_0_internal(context, node, provider);

@@ -218,7 +218,7 @@ public class InstanceInitializer_Editor extends DefaultNodeEditor {
   public EditorCell create_statementListRefNodeCell7809_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("statementList");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no statementList>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_statementListRefNodeCell7809_0_internal(context, node, provider);
@@ -247,7 +247,7 @@ public class InstanceInitializer_Editor extends DefaultNodeEditor {
   public EditorCell create_statementListRefNodeCell7809_01(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("statementList");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no statementList>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_statementListRefNodeCell7809_01_internal(context, node, provider);

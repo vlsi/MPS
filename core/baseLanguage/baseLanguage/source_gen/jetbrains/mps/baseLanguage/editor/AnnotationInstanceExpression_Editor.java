@@ -55,7 +55,7 @@ public class AnnotationInstanceExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_annotationInstanceRefNodeCell2938_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("annotationInstance");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no annotationInstance>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_annotationInstanceRefNodeCell2938_0_internal(context, node, provider);

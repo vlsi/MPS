@@ -289,7 +289,7 @@ public class Property_Editor extends DefaultNodeEditor {
   public EditorCell create_typeRefNodeCell15789_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("type");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no type>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_typeRefNodeCell15789_0_internal(context, node, provider);
@@ -318,7 +318,7 @@ public class Property_Editor extends DefaultNodeEditor {
   public EditorCell create_propertyNamePropertyCell15789_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("propertyName");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no propertyName>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_propertyNamePropertyCell15789_0_internal(context, node, provider);
@@ -347,7 +347,7 @@ public class Property_Editor extends DefaultNodeEditor {
   public EditorCell create_propertyImplementationRefNodeCell15789_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("propertyImplementation");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no propertyImplementation>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_propertyImplementationRefNodeCell15789_0_internal(context, node, provider);
@@ -376,7 +376,7 @@ public class Property_Editor extends DefaultNodeEditor {
   public EditorCell create_typeRefNodeCell15789_01(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("type");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no type>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_typeRefNodeCell15789_01_internal(context, node, provider);
@@ -405,7 +405,7 @@ public class Property_Editor extends DefaultNodeEditor {
   public EditorCell create_propertyNamePropertyCell15789_01(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("propertyName");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no propertyName>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_propertyNamePropertyCell15789_01_internal(context, node, provider);
@@ -434,7 +434,7 @@ public class Property_Editor extends DefaultNodeEditor {
   public EditorCell create_propertyImplementationRefNodeCell15789_01(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("propertyImplementation");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no propertyImplementation>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_propertyImplementationRefNodeCell15789_01_internal(context, node, provider);

@@ -1707,7 +1707,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   public EditorCell create_staticInitializerRefNodeCell6031_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("staticInitializer");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no staticInitializer>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_staticInitializerRefNodeCell6031_0_internal(context, node, provider);
@@ -1736,7 +1736,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   public EditorCell create_staticInitializerRefNodeCell6031_01(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("staticInitializer");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no staticInitializer>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_staticInitializerRefNodeCell6031_01_internal(context, node, provider);
@@ -1765,7 +1765,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   public EditorCell create_abstractClassPropertyCell6031_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("abstractClass");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no abstractClass>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_abstractClassPropertyCell6031_0_internal(context, node, provider);

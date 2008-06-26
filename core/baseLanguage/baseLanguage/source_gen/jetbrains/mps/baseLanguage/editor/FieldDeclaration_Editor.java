@@ -351,7 +351,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell create_initializerRefNodeCell3369_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("initializer");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no initializer>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_initializerRefNodeCell3369_0_internal(context, node, provider);

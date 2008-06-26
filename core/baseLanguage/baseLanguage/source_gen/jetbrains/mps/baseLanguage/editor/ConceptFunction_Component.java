@@ -322,7 +322,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
   public EditorCell create_bodyRefNodeCell6954_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no body>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_bodyRefNodeCell6954_0_internal(context, node, provider);

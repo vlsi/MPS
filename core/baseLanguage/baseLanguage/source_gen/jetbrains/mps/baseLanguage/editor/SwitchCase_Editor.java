@@ -192,7 +192,7 @@ public class SwitchCase_Editor extends DefaultNodeEditor {
   public EditorCell create_expressionRefNodeCell8497_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("expression");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no expression>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_expressionRefNodeCell8497_0_internal(context, node, provider);
@@ -221,7 +221,7 @@ public class SwitchCase_Editor extends DefaultNodeEditor {
   public EditorCell create_bodyRefNodeCell8497_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no body>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_bodyRefNodeCell8497_0_internal(context, node, provider);

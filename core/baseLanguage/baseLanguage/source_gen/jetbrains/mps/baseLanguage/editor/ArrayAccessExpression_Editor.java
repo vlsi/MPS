@@ -96,7 +96,7 @@ public class ArrayAccessExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_arrayRefNodeCell19469_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("array");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no array>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_arrayRefNodeCell19469_0_internal(context, node, provider);
@@ -125,7 +125,7 @@ public class ArrayAccessExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_indexRefNodeCell19469_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("index");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no index>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_indexRefNodeCell19469_0_internal(context, node, provider);

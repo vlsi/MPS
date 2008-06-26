@@ -92,7 +92,7 @@ public class Expression_Editor extends DefaultNodeEditor {
   public EditorCell create_ConceptPropertyCell1942_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no alias>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_ConceptPropertyCell1942_0_internal(context, node, provider);

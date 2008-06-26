@@ -206,7 +206,7 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
   public EditorCell create_annotationRefCell15912_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("annotation");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no annotation>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_annotationRefCell15912_0_internal(context, node, provider);
@@ -258,7 +258,7 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
     public EditorCell create_namePropertyCell15912_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_namePropertyCell15912_0_internal(context, node, provider);

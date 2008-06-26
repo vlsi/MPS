@@ -62,7 +62,7 @@ public class DefaultPropertyImplementation_Editor extends DefaultNodeEditor {
   public EditorCell create_defaultGetAccessorRefNodeCell18498_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("defaultGetAccessor");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no defaultGetAccessor>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_defaultGetAccessorRefNodeCell18498_0_internal(context, node, provider);
@@ -91,7 +91,7 @@ public class DefaultPropertyImplementation_Editor extends DefaultNodeEditor {
   public EditorCell create_defaultSetAccessorRefNodeCell18498_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("defaultSetAccessor");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no defaultSetAccessor>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_defaultSetAccessorRefNodeCell18498_0_internal(context, node, provider);

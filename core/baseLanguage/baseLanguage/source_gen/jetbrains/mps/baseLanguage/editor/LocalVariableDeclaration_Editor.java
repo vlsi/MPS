@@ -385,7 +385,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell create_isFinalPropertyCell21166_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("isFinal");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no isFinal>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_isFinalPropertyCell21166_0_internal(context, node, provider);
@@ -443,7 +443,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell create_initializerRefNodeCell21166_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("initializer");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no initializer>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_initializerRefNodeCell21166_0_internal(context, node, provider);

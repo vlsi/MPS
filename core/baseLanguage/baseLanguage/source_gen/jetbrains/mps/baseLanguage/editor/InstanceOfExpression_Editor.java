@@ -123,7 +123,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_leftExpressionRefNodeCell12173_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("leftExpression");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no leftExpression>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_leftExpressionRefNodeCell12173_0_internal(context, node, provider);
@@ -152,7 +152,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_classTypeRefNodeCell12173_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("classType");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no classType>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_classTypeRefNodeCell12173_0_internal(context, node, provider);

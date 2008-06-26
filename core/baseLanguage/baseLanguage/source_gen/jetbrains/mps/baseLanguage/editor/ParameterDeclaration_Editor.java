@@ -332,7 +332,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell create_isFinalPropertyCell4498_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("isFinal");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no isFinal>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_isFinalPropertyCell4498_0_internal(context, node, provider);

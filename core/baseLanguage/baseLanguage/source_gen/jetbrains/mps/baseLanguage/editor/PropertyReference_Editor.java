@@ -43,7 +43,7 @@ public class PropertyReference_Editor extends DefaultNodeEditor {
   public EditorCell create_propertyRefCell7217_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("property");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no property>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_propertyRefCell7217_0_internal(context, node, provider);
@@ -95,7 +95,7 @@ public class PropertyReference_Editor extends DefaultNodeEditor {
     public EditorCell create_propertyNamePropertyCell7217_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("propertyName");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no propertyName>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_propertyNamePropertyCell7217_0_internal(context, node, provider);

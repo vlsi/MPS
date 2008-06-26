@@ -193,7 +193,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_classConceptRefCell2695_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("classConcept");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no classConcept>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_classConceptRefCell2695_0_internal(context, node, provider);
@@ -244,7 +244,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
     public EditorCell create_namePropertyCell2695_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no name>");
       provider.setReadOnly(false);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_namePropertyCell2695_0_internal(context, node, provider);
