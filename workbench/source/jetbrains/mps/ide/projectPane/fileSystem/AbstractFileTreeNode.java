@@ -3,6 +3,7 @@ package jetbrains.mps.ide.projectPane.fileSystem;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ide.ui.customization.CustomizableActionsSchemas;
 import com.intellij.ide.FileIconProvider;
 import jetbrains.mps.ide.action.ActionContext;
@@ -41,13 +42,14 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode {
 
   @Override
   protected void updatePresentation() {
-    if (!myFile.exists()){
+    VirtualFile vfile = VFileSystem.getFile(myFile);
+    if (!myFile.exists() || (vfile == null)){
       removeFromParent();
       return;
     }
     setText(myFile.getName());
     setNodeIdentifier(myFile.getPath());
-    setColor(myProvider.getFileStatus(VFileSystem.getFile(myFile)).getColor());
+    setColor(myProvider.getFileStatus(vfile).getColor());
   }
 
   @Override
