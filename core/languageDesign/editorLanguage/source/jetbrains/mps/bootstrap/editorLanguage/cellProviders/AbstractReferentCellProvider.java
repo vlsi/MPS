@@ -97,7 +97,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
       noRefCell.setText("");
       noRefCell.setEditable(true);
       noRefCell.setDefaultText(myNoTargetText);
-      noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+      noRefCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNodeIfEmpty(getSNode()));
       noRefCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_" + myLinkDeclaration.getRole());
       return noRefCell;
     }
@@ -108,7 +108,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
   private EditorCell createErrorCell(String error, SNode node, EditorContext context) {
     EditorCell_Error errorCell = new EditorCell_Error(context, node, null);
     errorCell.setText(error);
-    errorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+    errorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(getSNode()));
     return errorCell;
   }
 

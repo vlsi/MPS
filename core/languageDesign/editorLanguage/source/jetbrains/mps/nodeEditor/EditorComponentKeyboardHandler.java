@@ -42,7 +42,6 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
     }
 
     // process cell keymaps first
-
     if (selectedCell != null) {
       List<Pair<EditorCellKeyMapAction, EditorCell>> actionsInfo = KeyMapUtil.getKeyMapActionsForEvent(selectedCell, keyEvent, editorContext);
       if (actionsInfo.size() == 1 && !(actionsInfo.get(0).o1.isMenuAlwaysShown())) {
@@ -65,13 +64,8 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
     boolean dontExecuteRT = false;
 
     if (selectedCell != null) {
-
-      boolean endEditKeystroke = isEndEditKeystroke(keyEvent);
-      boolean deleteKeystroke = isDeleteKeystroke(keyEvent);
-      boolean backspaceKeystroke = isBackspaceKeystroke(keyEvent);
-
+      boolean endEditKeystroke = isEndEditKeystroke(keyEvent);      
       boolean strictMatching = endEditKeystroke || EditorCellAction.RIGHT_TRANSFORM.equals(actionType);
-
 
       if (keyEvent.getModifiers() == KeyEvent.CTRL_MASK && keyEvent.getKeyCode() == KeyEvent.VK_F1) {
         editorContext.getNodeEditorComponent().showMessageTooltip();
@@ -100,25 +94,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
         }
       }
 
-      // we may want to change action Type as result of pre-processing
-
-
-      if (deleteKeystroke) {
-        if (!(selectedCell instanceof EditorCell_Label &&
-          ((EditorCell_Label) selectedCell).isEditable())) {
-          actionType = EditorCellAction.DELETE;
-          keyEvent.consume();
-        }
-
-      } else if (backspaceKeystroke) {
-        if (selectedCell instanceof EditorCell_Constant &&
-          !((EditorCell_Label) selectedCell).isEditable() &&
-          !((EditorCell_Label) selectedCell).isFirstCaretPosition()) {
-          actionType = EditorCellAction.DELETE;
-          keyEvent.consume();
-        }
-
-      } else if (EditorCellAction.RIGHT_TRANSFORM.equals(actionType)) {
+      if (EditorCellAction.RIGHT_TRANSFORM.equals(actionType)) {
         if (selectedCell instanceof EditorCell_Label && selectedCell.isErrorState()) {
           //return true;
           dontExecuteRT = true;
@@ -129,7 +105,6 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
     // process action
 
     if (selectedCell != null) {
-
       if (actionType != null && !actionType.equals(EditorCellAction.DELETE)) {
         if (!(EditorCellAction.RIGHT_TRANSFORM.equals(actionType) && dontExecuteRT)) {
           if (EditorUtil.executeCellAction(selectedCell, actionType, editorContext)) {
