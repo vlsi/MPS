@@ -2,29 +2,17 @@ package jetbrains.mps.generator.fileGenerator;
 
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.generator.generationTypes.GenerateFilesGenerationType;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil.TextGenerationResult;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
-import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.plugin.IProjectHandler;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenManager;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.vcs.ProjectVCSManager;
-import jetbrains.mps.vcs.VCSUtil;
+import jetbrains.mps.vcs.MPSVCSManager;
 
-import javax.swing.JOptionPane;
 import java.io.File;
 import java.io.IOException;
-import java.io.Writer;
-import java.io.FileWriter;
-import java.rmi.RemoteException;
 import java.util.*;
 
 public class FileGenerationUtil {
@@ -54,7 +42,8 @@ public class FileGenerationUtil {
 
     generateFiles(status, outputRootDirectory, gm, outputNodeContents, generatedFiles, directories);
 
-    VCSUtil.addFilesToVCS(context.getProject(), new ArrayList<File>(generatedFiles));
+    MPSVCSManager manager = context.getProject().getComponent(MPSVCSManager.class);
+    manager.addFilesToVCS(new ArrayList<File>(generatedFiles));
 
     // always clean-up default output dir.
     directories.add(getDefaultOutputDir(status.getInputModel(), outputRootDirectory));
@@ -98,7 +87,8 @@ public class FileGenerationUtil {
         }
       }
     }
-    VCSUtil.deleteFilesAndRemoveFromVCS(context.getProject(), filesToDelete);
+    MPSVCSManager manager = context.getProject().getComponent(MPSVCSManager.class);
+    manager.deleteFilesAndRemoveFromVCS(filesToDelete);
   }
 
   public static void cleanUpDefaultOutputDir(GenerationStatus status, String outputDir, IOperationContext context) {

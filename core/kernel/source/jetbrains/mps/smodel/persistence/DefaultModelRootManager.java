@@ -13,8 +13,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vcs.Merger;
-import jetbrains.mps.vcs.ProjectVCSManager;
-import jetbrains.mps.vcs.VCSUtil;
+import jetbrains.mps.vcs.MPSVCSManager;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -194,7 +193,8 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     SModelDescriptor result = DefaultModelRootManager.createModel(this, root, modelFile.getCanonicalPath(), uid, owner);
     IOperationContext operationContext = result.getOperationContext();
     if (operationContext != null) {
-      VCSUtil.addFilesToVCS(operationContext.getProject(), Collections.singletonList(modelFile.toFile()));
+      MPSVCSManager manager = operationContext.getProject().getComponent(MPSVCSManager.class);
+      manager.addFilesToVCS(Collections.singletonList(modelFile.toFile()));
 
     } else {
       LOG.warning("can't find an operation context for a model " + result);
@@ -307,10 +307,10 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
 
     //vcs
     Project ideaProject = project.createOperationContext().getProject();
-    boolean result = VCSUtil.deleteFilesAndRemoveFromVCS(ideaProject,
-      CollectionUtil.asList(FileSystem.toFile(oldModelFile)));
-    result &= VCSUtil.addFilesToVCS(ideaProject, CollectionUtil.asList(FileSystem.toFile(dest)));
-    result &= VCSUtil.addFilesToVCS(ideaProject, CollectionUtil.asList(FileSystem.toFile(stubDescriptorModelFile)));
+    MPSVCSManager manager = ideaProject.getComponent(MPSVCSManager.class);
+    boolean result = manager.deleteFilesAndRemoveFromVCS(CollectionUtil.asList(FileSystem.toFile(oldModelFile)));
+    result &= manager.addFilesToVCS(CollectionUtil.asList(FileSystem.toFile(dest)));
+    result &= manager.addFilesToVCS(CollectionUtil.asList(FileSystem.toFile(stubDescriptorModelFile)));
 
     MPSModuleRepository.getInstance().invalidateCaches();
     return result;
@@ -325,8 +325,8 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       metadataFile.createNewFile();
       IOperationContext operationContext = modelDescriptor.getOperationContext();
       if (operationContext != null) {
-        VCSUtil.addFilesToVCS(operationContext.getProject(),
-          CollectionUtil.asList(metadataFile.toFile()));
+        MPSVCSManager manager = operationContext.getProject().getComponent(MPSVCSManager.class); 
+        manager.addFilesToVCS(CollectionUtil.asList(metadataFile.toFile()));
       } else {
         LOG.warning("can't find an operation context for a model " + modelDescriptor);
       }

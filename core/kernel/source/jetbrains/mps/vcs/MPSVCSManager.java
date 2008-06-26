@@ -1,46 +1,38 @@
 package jetbrains.mps.vcs;
 
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.smodel.ModelAccess;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.List;
-import java.util.Map;
 import java.util.LinkedList;
-import java.util.ArrayList;
 import java.rmi.RemoteException;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.FilePath;
-import com.intellij.openapi.vcs.VcsException;
 import com.intellij.openapi.vcs.actions.VcsContextFactory;
-import com.intellij.openapi.vcs.checkin.CheckinEnvironment;
-import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
-import com.intellij.openapi.vcs.vfs.VcsFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.LocalFileSystem;
-import com.intellij.openapi.application.Application;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.util.containers.HashMap;
-import com.intellij.peer.impl.VcsContextFactoryImpl;
+import com.intellij.openapi.components.ProjectComponent;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 
-public class VCSUtil {
-  public static final Logger LOG = Logger.getLogger(VCSUtil.class);
+public class MPSVCSManager implements ProjectComponent {
+  public static final Logger LOG = Logger.getLogger(MPSVCSManager.class);
+  private final Project myProject;
 
-  public static boolean deleteFilesAndRemoveFromVCS(Project project, List<File> files) {
+  public MPSVCSManager(Project project) {
+    myProject = project;
+  }
+
+  public boolean deleteFilesAndRemoveFromVCS(List<File> files) {
     final List<File> inVCS = new LinkedList<File>();
     List<File> notInVCS = new LinkedList<File>();
 
-    ProjectLevelVcsManager manager = project.getComponent(ProjectLevelVcsManager.class);
+    ProjectLevelVcsManager manager = myProject.getComponent(ProjectLevelVcsManager.class);
     for (File f : files) {
       VirtualFile virtualFile = VFileSystem.getFile(f);
       if (virtualFile != null) {
@@ -76,7 +68,7 @@ public class VCSUtil {
 //      }
 //    });
 
-    IProjectHandler projectHandler = project.getComponent(MPSProjectHolder.class).getMPSProject().getProjectHandler();
+    IProjectHandler projectHandler = myProject.getComponent(MPSProjectHolder.class).getMPSProject().getProjectHandler();
     if (projectHandler != null) {
       try {
         projectHandler.deleteFilesAndRemoveFromVCS(notInVCS);
@@ -93,15 +85,11 @@ public class VCSUtil {
     return result;
   }
 
-  public static boolean addFilesToVCS(final Project project, final List<File> files) {
-    if (project == null) {
-      return false;
-    }
-
+  public boolean addFilesToVCS(final List<File> files) {
     final List<File> inVCS = new LinkedList<File>();
     List<File> notInVCS = new LinkedList<File>();
 
-    final ProjectLevelVcsManager manager = project.getComponent(ProjectLevelVcsManager.class);
+    final ProjectLevelVcsManager manager = myProject.getComponent(ProjectLevelVcsManager.class);
     for (File f : files) {
       VirtualFile virtualFile = VFileSystem.getFile(f);
       if (virtualFile != null) {
@@ -142,7 +130,7 @@ public class VCSUtil {
 //      }
 //    });
 
-    IProjectHandler projectHandler = project.getComponent(MPSProjectHolder.class).getMPSProject().getProjectHandler();
+    IProjectHandler projectHandler = myProject.getComponent(MPSProjectHolder.class).getMPSProject().getProjectHandler();
     if (projectHandler != null) {
       try {
         projectHandler.addFilesToVCS(files);
@@ -163,5 +151,27 @@ public class VCSUtil {
     }
     FilePath path = VcsContextFactory.SERVICE.getInstance().createFilePathOn(f);
     return vcs.fileIsUnderVcs(path);
+  }
+
+  public void projectOpened() {
+
+  }
+
+  public void projectClosed() {
+
+  }
+
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "VCS Manager";
+  }
+
+  public void initComponent() {
+
+  }
+
+  public void disposeComponent() {
+
   }
 }
