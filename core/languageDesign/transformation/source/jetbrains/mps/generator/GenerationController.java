@@ -173,7 +173,7 @@ public class GenerationController {
 
     // myProgress.startTask("generating in module " + module);
     //todo start timer
-    setText2("generating in module " + module, totalJob, startJobTime);
+    setText2("module " + module, totalJob, startJobTime);
 
     String outputFolder = module != null ? module.getGeneratorOutputPath() : null;
     if (outputFolder != null && !new File(outputFolder).exists()) {
@@ -207,7 +207,7 @@ public class GenerationController {
         String taskName = ModelsProgressUtil.generationModelTaskName(inputModel);
 
         //  myProgress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_GENERATION);
-        setText2(inputModel.getModelUID().toString(), totalJob, startJobTime);
+        setText2("model " + inputModel.getModelUID().toString(), totalJob, startJobTime);
         TaskProgressHelper progress = new TaskProgressHelper(this);
         progress.startLeafTask(taskName, myProgress, totalJob, startJobTime);
 
@@ -354,7 +354,7 @@ public class GenerationController {
     long elapsedTime = System.currentTimeMillis() - startJobTime;
     String elapsedTimeString = TimePresentationUtil.timeIntervalStringPresentation(elapsedTime);
     String estimatedTimeString = TimePresentationUtil.timeIntervalStringPresentation(estimatedTime);
-    myProgress.setText("Generation: " + myText2);
+    myProgress.setText(/*"Generation: " +*/ myText2);
     myProgress.setText2("Estimated time: " + estimatedTimeString + ", elapsed time: " + elapsedTimeString);
   }
 
