@@ -42,11 +42,6 @@ public class OpenMPSProjectAction extends BaseAction {
     String filePath = file.getCanonicalPath();
     String iprfilePath = filePath.replaceAll("(.*)(\\.mpr)", "$1.ipr");
 
-    Project ideaProject = projectManager.newProject(iprfilePath, true, false);
-    assert ideaProject != null;
-    ideaProject.save();
-    Disposer.dispose(ideaProject);
-
     ProjectUtil.openProject(iprfilePath, e.getData(PlatformDataKeys.PROJECT), false);
   }
 }
