@@ -217,7 +217,7 @@ public class Style_Component extends AbstractCellProvider {
 
   public EditorCell create_styleClassRefCell168_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new Style_Component._Inline43());
+    provider.setAuxiliaryCellProvider(new Style_Component._Inline25());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_styleClassRefCell168_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -230,7 +230,7 @@ public class Style_Component extends AbstractCellProvider {
   public EditorCell create_styleClassRefCell168_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("styleClass");
-    provider.setNoTargetText("<no style>");
+    provider.setNoTargetText("<no base style>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_styleClassRefCell168_0_internal(context, node, provider);
@@ -244,9 +244,9 @@ public class Style_Component extends AbstractCellProvider {
     return cellWithRole;
   }
 
-  public static class _Inline43 extends AbstractCellProvider {
+  public static class _Inline25 extends AbstractCellProvider {
 
-    public _Inline43() {
+    public _Inline25() {
       super();
     }
 

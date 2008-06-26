@@ -48,7 +48,7 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
 
   public EditorCell create_keyMapRefCell7380_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new _CellKeyMapLnk_Component._Inline25());
+    provider.setAuxiliaryCellProvider(new _CellKeyMapLnk_Component._Inline12());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_keyMapRefCell7380_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -75,9 +75,9 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
     return cellWithRole;
   }
 
-  public static class _Inline25 extends AbstractCellProvider {
+  public static class _Inline12 extends AbstractCellProvider {
 
-    public _Inline25() {
+    public _Inline12() {
       super();
     }
 

@@ -95,7 +95,7 @@ public class CellMenuPart_PropertyValues_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CellMenuPart_PropertyValues_Editor.calculateColor70(cell);
+              return CellMenuPart_PropertyValues_Editor.calculateColor69(cell);
             }
 
           });
@@ -140,7 +140,7 @@ public class CellMenuPart_PropertyValues_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private static Color calculateColor70(EditorCell cell) {
+  private static Color calculateColor69(EditorCell cell) {
     Color result;
     result = Color.lightGray;
     return result;

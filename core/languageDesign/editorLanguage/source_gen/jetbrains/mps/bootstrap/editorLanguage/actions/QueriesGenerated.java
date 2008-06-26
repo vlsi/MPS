@@ -9,6 +9,7 @@ import jetbrains.mps.bootstrap.editorLanguage.CellMenuUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.NodeSetupContext;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
@@ -16,7 +17,6 @@ import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import java.util.ArrayList;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
@@ -55,13 +55,17 @@ public class QueriesGenerated {
 
   public static void nodeFactory_NodeSetup_CellModel_Collection_1159287296419(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection")) {
-      SPropertyOperations.set(_context.getNewNode(), "selectable", "false");
+      SNode item = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem", null);
+      SPropertyOperations.set(item, "flag", "" + (false));
+      SLinkOperations.addChild(_context.getNewNode(), "styleItem", item);
     }
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel")) {
       SNode innerNode = SNodeOperations.copyNode(_context.getSampleNode());
       SLinkOperations.addChild(_context.getNewNode(), "childCellModel", innerNode);
       if (SNodeOperations.isInstanceOf(innerNode, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection")) {
-        SPropertyOperations.set(innerNode, "selectable", "false");
+        SNode item = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem", null);
+        SPropertyOperations.set(item, "flag", "" + (false));
+        SLinkOperations.addChild(innerNode, "styleItem", item);
       }
     }
   }
@@ -104,7 +108,9 @@ public class QueriesGenerated {
             SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection", _context.getCurrentTargetNode());
             SPropertyOperations.set(result, "vertical", "" + (true));
             if ((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection", true, false) != null)) {
-              SPropertyOperations.set(result, "selectable", "false");
+              SNode item = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem", null);
+              SPropertyOperations.set(item, "flag", "" + (false));
+              SLinkOperations.addChild(result, "styleItem", item);
             }
             return result;
           }
@@ -149,7 +155,9 @@ public class QueriesGenerated {
             SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection", _context.getCurrentTargetNode());
             SPropertyOperations.set(result, "vertical", "" + (false));
             if ((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection", true, false) != null)) {
-              SPropertyOperations.set(result, "selectable", "false");
+              SNode item = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem", null);
+              SPropertyOperations.set(item, "flag", "" + (false));
+              SLinkOperations.addChild(result, "styleItem", item);
             }
             return result;
           }
@@ -175,10 +183,14 @@ public class QueriesGenerated {
             SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection", _context.getCurrentTargetNode());
             SPropertyOperations.set(result, "vertical", "" + (false));
             SNode indent = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Indent", null);
-            SPropertyOperations.set(indent, "selectable", "false");
+            SNode item = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem", null);
+            SPropertyOperations.set(item, "flag", "" + (false));
+            SLinkOperations.addChild(indent, "styleItem", item);
             SLinkOperations.insertChildFirst(result, "childCellModel", indent);
             if ((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection", true, false) != null)) {
-              SPropertyOperations.set(result, "selectable", "false");
+              SNode styleItem = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem", null);
+              SPropertyOperations.set(styleItem, "flag", "" + (false));
+              SLinkOperations.addChild(result, "styleItem", styleItem);
             }
             return result;
           }
@@ -223,7 +235,9 @@ public class QueriesGenerated {
             SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList", _context.getCurrentTargetNode());
             SPropertyOperations.set(result, "vertical", "" + (true));
             if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection")) {
-              SPropertyOperations.set(result, "selectable", "false");
+              SNode item = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem", null);
+              SPropertyOperations.set(item, "flag", "" + (false));
+              SLinkOperations.addChild(result, "styleItem", item);
             }
             return result;
           }
@@ -268,7 +282,9 @@ public class QueriesGenerated {
             SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList", _context.getCurrentTargetNode());
             SPropertyOperations.set(result, "vertical", "" + (false));
             if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection")) {
-              SPropertyOperations.set(result, "selectable", "false");
+              SNode item = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem", null);
+              SPropertyOperations.set(item, "flag", "" + (false));
+              SLinkOperations.addChild(result, "styleItem", item);
             }
             return result;
           }

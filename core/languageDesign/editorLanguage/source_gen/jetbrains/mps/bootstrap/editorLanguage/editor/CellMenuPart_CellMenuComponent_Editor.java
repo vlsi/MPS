@@ -55,7 +55,7 @@ public class CellMenuPart_CellMenuComponent_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CellMenuPart_CellMenuComponent_Editor.calculateColor64(cell);
+              return CellMenuPart_CellMenuComponent_Editor.calculateColor63(cell);
             }
 
           });
@@ -143,7 +143,7 @@ public class CellMenuPart_CellMenuComponent_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private static Color calculateColor64(EditorCell cell) {
+  private static Color calculateColor63(EditorCell cell) {
     Color result;
     result = Color.lightGray;
     return result;
@@ -222,7 +222,7 @@ public class CellMenuPart_CellMenuComponent_Editor extends DefaultNodeEditor {
 
   public EditorCell create_cellMenuComponentRefCell7052_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new CellMenuPart_CellMenuComponent_Editor._Inline32());
+    provider.setAuxiliaryCellProvider(new CellMenuPart_CellMenuComponent_Editor._Inline19());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_cellMenuComponentRefCell7052_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -249,9 +249,9 @@ public class CellMenuPart_CellMenuComponent_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline32 extends AbstractCellProvider {
+  public static class _Inline19 extends AbstractCellProvider {
 
-    public _Inline32() {
+    public _Inline19() {
       super();
     }
 

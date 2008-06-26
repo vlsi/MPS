@@ -49,6 +49,36 @@ public class Styles_StyleSheet {
     }
 
   };
+  public static final Style HEADER = new Style() {
+    {
+      this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+      this.set(StyleAttributes.SELECTABLE, false);
+      this.set(StyleAttributes.UNDERLINED, true);
+      this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+        public Color calculate(EditorCell cell) {
+          return Styles_StyleSheet.calculateColor94(cell);
+        }
+
+      });
+    }
+
+  };
+  public static final Style PROPERTY = new Style() {
+    {
+      this.set(StyleAttributes.SELECTABLE, false);
+      this.set(StyleAttributes.DRAW_BORDER, true);
+      this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+      this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+        public Color calculate(EditorCell cell) {
+          return Styles_StyleSheet.calculateColor95(cell);
+        }
+
+      });
+    }
+
+  };
 
   private static Color calculateColor(EditorCell cell) {
     Color result;
@@ -65,6 +95,18 @@ public class Styles_StyleSheet {
   private static Color calculateColor2(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_GREEN;
+    return result;
+  }
+
+  private static Color calculateColor94(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_GREEN;
+    return result;
+  }
+
+  private static Color calculateColor95(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_MAGENTA;
     return result;
   }
 

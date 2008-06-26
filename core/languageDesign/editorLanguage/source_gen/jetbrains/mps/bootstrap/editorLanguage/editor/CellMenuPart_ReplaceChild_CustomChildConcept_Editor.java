@@ -53,7 +53,7 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CellMenuPart_ReplaceChild_CustomChildConcept_Editor.calculateColor60(cell);
+              return CellMenuPart_ReplaceChild_CustomChildConcept_Editor.calculateColor59(cell);
             }
 
           });
@@ -140,7 +140,7 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
     return result;
   }
 
-  private static Color calculateColor60(EditorCell cell) {
+  private static Color calculateColor59(EditorCell cell) {
     Color result;
     result = Color.lightGray;
     return result;

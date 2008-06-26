@@ -30,7 +30,7 @@ public class StyleSheetClassReference_Editor extends DefaultNodeEditor {
 
   public EditorCell create_styleSheetClassRefCell16166_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new StyleSheetClassReference_Editor._Inline39());
+    provider.setAuxiliaryCellProvider(new StyleSheetClassReference_Editor._Inline24());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_styleSheetClassRefCell16166_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -57,9 +57,9 @@ public class StyleSheetClassReference_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline39 extends AbstractCellProvider {
+  public static class _Inline24 extends AbstractCellProvider {
 
-    public _Inline39() {
+    public _Inline24() {
       super();
     }
 

@@ -477,7 +477,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
 
   public EditorCell create_queryIdPropertyRefCell18242_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new QueryMethodIdEditorProviderExpression_Editor._Inline33());
+    provider.setAuxiliaryCellProvider(new QueryMethodIdEditorProviderExpression_Editor._Inline20());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_queryIdPropertyRefCell18242_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -504,9 +504,9 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     return cellWithRole;
   }
 
-  public static class _Inline33 extends AbstractCellProvider {
+  public static class _Inline20 extends AbstractCellProvider {
 
-    public _Inline33() {
+    public _Inline20() {
       super();
     }
 
