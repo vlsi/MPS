@@ -75,7 +75,7 @@ public class MPSVCSManager implements ProjectComponent {
     final List<File> inVCS = new LinkedList<File>();
     List<File> notInVCS = new LinkedList<File>();
 
-    ProjectLevelVcsManager manager = myProject.getComponent(ProjectLevelVcsManager.class);
+    final ProjectLevelVcsManager manager = myProject.getComponent(ProjectLevelVcsManager.class);
     for (File f : files) {
       VirtualFile virtualFile = VFileSystem.getFile(f);
       if (virtualFile != null) {
@@ -98,27 +98,36 @@ public class MPSVCSManager implements ProjectComponent {
             for (File file : inVCS) {
               VirtualFile vfile = lfs.refreshAndFindFileByIoFile(file);
               if (vfile != null) {
-                try {
-                  vfile.delete(this);
-                } catch (IOException ex) {
-                  ex.printStackTrace();
+                AbstractVcs vcs = manager.getVcsFor(vfile);
+                if (vcs != null) {
+                  CheckinEnvironment ci = vcs.getCheckinEnvironment();
+                  if (ci != null && isUnderVCS(myProject, vfile)) {
+                    FilePath path = VcsContextFactory.SERVICE.getInstance().createFilePathOn(vfile);
+                    ci.scheduleMissingFileForDeletion(Collections.singletonList(path));
+                  }
                 }
               }
             }
           }
         });
       }
-    });
+    }
+
+    );
 
     IProjectHandler projectHandler = myProject.getComponent(MPSProjectHolder.class).getMPSProject().getProjectHandler();
-    if (projectHandler != null) {
+    if (projectHandler != null)
+
+    {
       try {
         projectHandler.deleteFilesAndRemoveFromVCS(notInVCS);
       } catch (RemoteException e) {
         LOG.error(e);
         return false;
       }
-    } else {
+    } else
+
+    {
       for (File f : files) {
         f.delete();
       }
@@ -127,7 +136,9 @@ public class MPSVCSManager implements ProjectComponent {
     return result;
   }
 
-  public boolean addFilesToVCS(final List<File> files) {
+  public boolean addFilesToVCS
+    (
+      final List<File> files) {
     final List<File> inVCS = new LinkedList<File>();
     List<File> notInVCS = new LinkedList<File>();
 
