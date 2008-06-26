@@ -116,18 +116,14 @@ public class MPSVCSManager implements ProjectComponent {
     );
 
     IProjectHandler projectHandler = myProject.getComponent(MPSProjectHolder.class).getMPSProject().getProjectHandler();
-    if (projectHandler != null)
-
-    {
+    if (projectHandler != null) {
       try {
         projectHandler.deleteFilesAndRemoveFromVCS(notInVCS);
       } catch (RemoteException e) {
         LOG.error(e);
         return false;
       }
-    } else
-
-    {
+    } else {
       for (File f : files) {
         f.delete();
       }
@@ -136,9 +132,7 @@ public class MPSVCSManager implements ProjectComponent {
     return result;
   }
 
-  public boolean addFilesToVCS
-    (
-      final List<File> files) {
+  public boolean addFilesToVCS(final List<File> files) {
     final List<File> inVCS = new LinkedList<File>();
     List<File> notInVCS = new LinkedList<File>();
 

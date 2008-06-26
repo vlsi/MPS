@@ -237,6 +237,10 @@
       <implementation-class>jetbrains.mps.cleanup.CleanupManager</implementation-class>
     </component>
 
+    <component>
+      <implementation-class>jetbrains.mps.watching.ModelChangesWhatcher</implementation-class>
+    </component>
+
   </application-components>
 
   <project-components>
