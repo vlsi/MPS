@@ -7,11 +7,11 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.Nullable;
 
-public abstract class BaseNavigationItem implements NavigationItem {
+public abstract class BaseModuleItem implements NavigationItem {
   private IModule myModule;
   private String myShortName;
 
-  public BaseNavigationItem(IModule module) {
+  public BaseModuleItem(IModule module) {
     myModule = module;
     myShortName = NameUtil.shortNameFromLongName(myModule.getModuleUID());
   }
@@ -21,7 +21,8 @@ public abstract class BaseNavigationItem implements NavigationItem {
   }
 
   public String getName() {
-    return myShortName;
+    //noinspection ConstantConditions
+    return getPresentation().getPresentableText();
   }
 
   @Nullable

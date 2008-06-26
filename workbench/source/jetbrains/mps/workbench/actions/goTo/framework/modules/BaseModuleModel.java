@@ -45,9 +45,7 @@ public abstract class BaseModuleModel extends BaseMPSChooseModel<IModule> {
   }
 
   public String doGetFullName(Object element) {
-    ModulePresentation presentation = (ModulePresentation) ((NavigationItem) element).getPresentation();
-    assert presentation != null;
-    return presentation.getNamespace();
+    return ((BaseModuleItem) element).getModule().getModuleUID();
   }
 
   public String doGetObjectName(IModule module) {

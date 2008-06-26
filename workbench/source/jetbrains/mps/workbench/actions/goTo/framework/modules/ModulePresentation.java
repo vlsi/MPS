@@ -10,34 +10,17 @@ import javax.swing.Icon;
 
 public class ModulePresentation extends BasePresentation {
   private IModule myModule;
-  private String myParentNamespace;
-  private String myShortName;
 
   public ModulePresentation(IModule module) {
     myModule = module;
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        String s = myModule.getModuleUID();
-        myShortName = NameUtil.shortNameFromLongName(s);
-        myParentNamespace = NameUtil.namespaceFromLongName(s);
-      }
-    });
-  }
-
-  public String getNamespace() {
-    return myModule.getModuleUID();
-  }
-
-  public String getParentNamespace() {
-    return myParentNamespace;
   }
 
   public String doGetPresentableText() {
-    return myShortName;
+    return myModule.getModuleUID();
   }
 
   public String doGetLocationString() {
-    return "(" + myParentNamespace + ")";
+    return "";
   }
 
   public Icon doGetIcon() {

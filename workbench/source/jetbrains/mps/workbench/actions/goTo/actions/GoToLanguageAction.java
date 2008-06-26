@@ -16,7 +16,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.workbench.actions.goTo.framework.modules.BaseLanguageModel;
-import jetbrains.mps.workbench.actions.goTo.framework.modules.BaseNavigationItem;
+import jetbrains.mps.workbench.actions.goTo.framework.modules.BaseModuleItem;
 
 public class GoToLanguageAction extends BaseProjectAction {
   public void doExecute(AnActionEvent e) {
@@ -35,7 +35,7 @@ public class GoToLanguageAction extends BaseProjectAction {
 
     BaseLanguageModel goToLanguageModel = new BaseLanguageModel(mpsProject) {
       public NavigationItem doGetNavigationItem(final IModule module) {
-        return new BaseNavigationItem(module) {
+        return new BaseModuleItem(module) {
           public void navigate(boolean requestFocus) {
             ProjectPane projectPane = mpsProject.getComponentSafe(ProjectPane.class);
             projectPane.selectModule(module);

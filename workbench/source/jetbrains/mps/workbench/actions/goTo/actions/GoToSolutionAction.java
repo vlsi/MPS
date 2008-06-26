@@ -15,7 +15,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.workbench.actions.goTo.framework.modules.BaseNavigationItem;
+import jetbrains.mps.workbench.actions.goTo.framework.modules.BaseModuleItem;
 import jetbrains.mps.workbench.actions.goTo.framework.modules.BaseSolutionModel;
 
 import java.util.ArrayList;
@@ -38,7 +38,7 @@ public class GoToSolutionAction extends BaseProjectAction {
 
     BaseSolutionModel goToSolutionModel = new BaseSolutionModel(mpsProject) {
       public NavigationItem doGetNavigationItem(final IModule module) {
-        return new BaseNavigationItem(module) {
+        return new BaseModuleItem(module) {
           public void navigate(boolean requestFocus) {
             ProjectPane projectPane = mpsProject.getComponentSafe(ProjectPane.class);
             projectPane.selectModule(module);
