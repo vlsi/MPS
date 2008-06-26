@@ -1,5 +1,6 @@
 package jetbrains.mps.ide.ui;
 
+import com.intellij.ide.DataManager;
 import com.intellij.ide.dnd.aware.DnDAwareTree;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.util.Computable;
@@ -113,7 +114,7 @@ public abstract class MPSTree extends DnDAwareTree {
     });
 
     addKeyListener(new KeyAdapter() {
-      public void keyPressed(KeyEvent e) {
+      public void keyPressed(final KeyEvent e) {
         TreePath[] paths = getSelectionPaths();
         TreePath selPath = getSelectionPath();
         if (selPath == null) return;
@@ -128,47 +129,60 @@ public abstract class MPSTree extends DnDAwareTree {
         final KeyStroke eventKeyStroke = KeyStroke.getKeyStrokeForEvent(e);
         Pair pair = new Pair(eventKeyStroke, selNode.getClass());
         final BaseAction action = myKeyStrokesToActionsMap.get(pair);
+
+        final DataContext dataContext = DataManager.getInstance().getDataContext();
+
         if (action != null) {
-          final ActionContext context = getActionContext(selNode, nodes);
-          action.actionPerformed(ActionUtils.createEvent(context));
-        } else {
-          KeyStroke stroke = KeyStroke.getKeyStrokeForEvent(e);
-          if (stroke.getKeyCode() == KeyEvent.VK_CONTROL ||
-            stroke.getKeyCode() == KeyEvent.VK_SHIFT ||
-            stroke.getKeyCode() == KeyEvent.VK_ALT) {
-            return;
-          }
-          stroke.toString();
-
-          for (TreePath p : paths) {
-            final MPSTreeNode lastNode = (MPSTreeNode) p.getLastPathComponent();
-
-            ActionGroup actionGroup = lastNode.getActionGroup();
-            if (actionGroup == null) continue;
-            final AnAction a = findAction(actionGroup, eventKeyStroke);
-            if (a == null) continue;
-
-            ModelAccess.instance().runReadAction(new Runnable() {
-              public void run() {
-                a.actionPerformed(ActionUtils.createEvent(getActionContext(selNode, nodes)));
-              }
-            });
-            e.consume();
+          Presentation presentation = new Presentation();
+          AnActionEvent event = new AnActionEvent(e, dataContext, ActionPlaces.UNKNOWN, presentation, ActionManager.getInstance(), 0);
+          action.update(event);
+          if (presentation.isEnabled()) {
+            action.actionPerformed(event);
             return;
           }
         }
+
+        KeyStroke stroke = KeyStroke.getKeyStrokeForEvent(e);
+        if (stroke.getKeyCode() == KeyEvent.VK_CONTROL ||
+          stroke.getKeyCode() == KeyEvent.VK_SHIFT ||
+          stroke.getKeyCode() == KeyEvent.VK_ALT) {
+          return;
+        }
+        stroke.toString();
+
+        for (TreePath p : paths) {
+          final MPSTreeNode lastNode = (MPSTreeNode) p.getLastPathComponent();
+
+          ActionGroup actionGroup = lastNode.getActionGroup();
+          if (actionGroup == null) continue;
+          final AnAction a = findAction(e, dataContext, actionGroup, eventKeyStroke);
+          if (a == null) continue;
+
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              Presentation presentation = new Presentation();
+              AnActionEvent event = new AnActionEvent(e, dataContext, ActionPlaces.UNKNOWN, presentation, ActionManager.getInstance(), 0);
+              a.actionPerformed(event);
+            }
+          });
+          e.consume();
+          return;
+        }
       }
 
-      private AnAction findAction(ActionGroup actionGroup, KeyStroke eventKeyStroke) {
+      private AnAction findAction(InputEvent e, DataContext dataContext, ActionGroup actionGroup, KeyStroke eventKeyStroke) {
         for (final AnAction action : actionGroup.getChildren(null)) {
-          if (action instanceof ActionGroup){
-            AnAction res = findAction((ActionGroup) action, eventKeyStroke);
-            if (res!=null) return res;
-          }else{
+          if (action instanceof ActionGroup) {
+            AnAction res = findAction(e, dataContext, (ActionGroup) action, eventKeyStroke);
+            if (res != null) return res;
+          } else {
             Shortcut[] shortcuts = action.getShortcutSet().getShortcuts();
             for (Shortcut shortcut : shortcuts) {
               if (eventKeyStroke.equals(((KeyboardShortcut) shortcut).getFirstKeyStroke())) {
-                return action;
+                Presentation presentation = new Presentation();
+                AnActionEvent event = new AnActionEvent(e, dataContext, ActionPlaces.UNKNOWN, presentation, ActionManager.getInstance(), 0);
+                action.update(event);
+                if (presentation.isEnabled()) return action;
               }
             }
           }
@@ -254,6 +268,10 @@ public abstract class MPSTree extends DnDAwareTree {
     }, KeyStroke.getKeyStroke("CONTEXT_MENU"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
   }
 
+  protected ActionContext getActionContext(MPSTreeNode node, List<MPSTreeNode> nodes) {
+    return new ActionContext(node.getOperationContext());
+  }
+        
   protected void doInit(final MPSTreeNode node) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -346,10 +364,6 @@ public abstract class MPSTree extends DnDAwareTree {
     }
   }
 
-  protected ActionContext getActionContext(MPSTreeNode node, List<MPSTreeNode> nodes) {
-    return new ActionContext(node.getOperationContext());
-  }
-
   protected JPopupMenu createDefaultPopupMenu() {
     return null;
   }
@@ -364,7 +378,8 @@ public abstract class MPSTree extends DnDAwareTree {
       final MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
       JPopupMenu menu = ModelAccess.instance().runReadAction(new Computable<JPopupMenu>() {
         public JPopupMenu compute() {
-          return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.PROJECT_VIEW_POPUP, node.getActionGroup()).getComponent();
+          ActionManager manager = ActionManager.getInstance();
+          return manager.createActionPopupMenu(ActionPlaces.PROJECT_VIEW_POPUP, node.getActionGroup()).getComponent();
         }
       });
       if (menu == null) return;
