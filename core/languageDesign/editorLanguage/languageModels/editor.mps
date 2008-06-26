@@ -5943,7 +5943,11 @@
             <property name="noTargetText" value="&lt;no role&gt;" />
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="8.1071599776563" />
+            <link role="styleClass" targetNodeId="2v.1203541368202" resolveInfo="ReferenceDecorated" />
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBorderStyleSheetItem" id="1214314940027">
+              <property name="flag" value="true" />
+            </node>
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214513831358">
               <property name="flag" value="true" />
             </node>
           </node>
@@ -6013,6 +6017,7 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1140223422095">
             <property name="noTargetText" value="&lt;no link&gt;" />
             <link role="relationDeclaration" targetNodeId="2.1088013239202" />
+            <link role="styleClass" targetNodeId="2v.1203541368202" resolveInfo="ReferenceDecorated" />
             <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1140223422096">
               <link role="conceptDeclaration" targetNodeId="8.1071489288298" />
               <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1140223422097">
@@ -6044,7 +6049,6 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1147110301563">
             <property name="noTargetText" value="error! no editor component" />
             <link role="relationDeclaration" targetNodeId="2.1088186146602" />
-            <link role="styleClass" targetNodeId="1214480913160" resolveInfo="property" />
             <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1147110301564">
               <link role="conceptDeclaration" targetNodeId="2.1088185857835" />
               <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1147110319487">

@@ -4,7 +4,7 @@ package jetbrains.mps.bootstrap.editorLanguage.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.bootstrap.structureLanguage.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -15,8 +15,8 @@ public class check_CellModel_RefCell_InferenceRule implements InferenceRule_Runt
   }
 
   public void applyRule(final SNode refCell) {
-    if (!(SPropertyOperations.hasValue(SLinkOperations.getTarget(refCell, "relationDeclaration", false), "metaClass", "reference", "reference"))) {
-      TypeChecker.getInstance().reportTypeError(refCell, "reference link expected", "jetbrains.mps.bootstrap.editorLanguage.helgins", "1180280232711");
+    if (!(LinkDeclaration_Behavior.call_isSingular_1213877254557(SLinkOperations.getTarget(refCell, "relationDeclaration", false)))) {
+      TypeChecker.getInstance().reportTypeError(refCell, "multiple cardinality link is not applicable", "jetbrains.mps.bootstrap.editorLanguage.helgins", "1180280232711");
     }
   }
 

@@ -11,6 +11,7 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
+import jetbrains.mps.bootstrap.sharedConcepts.editor.SharedStyles_StyleSheet;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
@@ -253,6 +254,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_linkDeclarationRefCell17023_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_linkDeclarationRefCell17023_01");
+    SharedStyles_StyleSheet.REFERENCE_DECORATED.apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -1548,10 +1550,12 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_rolePropertyCell17023_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_rolePropertyCell17023_0");
+      SharedStyles_StyleSheet.REFERENCE_DECORATED.apply(editorCell);
       {
         Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.DRAW_BORDER, true);
+            this.set(StyleAttributes.SELECTABLE, true);
           }
 
         };

@@ -46,7 +46,7 @@ public class CellModel_RefCell_linkDeclaration_ReferentConstraint implements IMo
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode editorComponent = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.BaseEditorComponent", true, false);
     SNode editedConcept = SLinkOperations.getTarget(editorComponent, "conceptDeclaration", false);
-    List<SNode> links = AbstractConceptDeclaration_Behavior.call_getReferenceLinkDeclarations_1213877394496(editedConcept);
+    List<SNode> links = AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(editedConcept);
     return new SimpleSearchScope(ListSequence.fromList(links).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
@@ -57,7 +57,7 @@ public class CellModel_RefCell_linkDeclaration_ReferentConstraint implements IMo
   }
 
   public String getNodeReferentSearchScopeDescription() {
-    return "reference links declared in concept hierarchy and not overridden";
+    return "singular links declared in concept hierarchy and not overridden";
   }
 
 }

@@ -2328,7 +2328,7 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1213104846421">
     <link role="concept" targetNodeId="1.1088013125922" resolveInfo="CellModel_RefCell" />
     <node role="referent" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1213104846422">
-      <property name="searchScopeDescription" value="reference links declared in concept hierarchy and not overridden" />
+      <property name="searchScopeDescription" value="singular links declared in concept hierarchy and not overridden" />
       <link role="applicableLink" targetNodeId="1.1088013239202" />
       <node role="referentSetHandler" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSetHandler" id="1213104846423">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104846424">
@@ -2405,7 +2405,7 @@
                   <link role="variableDeclaration" targetNodeId="1213104846448" resolveInfo="editedConcept" />
                 </node>
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1213104846458">
-                  <link role="conceptMethodDeclaration" targetNodeId="22.1213877394496" resolveInfo="getReferenceLinkDeclarations" />
+                  <link role="conceptMethodDeclaration" targetNodeId="22.1213877394480" resolveInfo="getLinkDeclarations" />
                 </node>
               </node>
             </node>
