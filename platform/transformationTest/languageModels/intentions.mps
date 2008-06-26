@@ -110,6 +110,21 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1214477387636">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214477387637">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214477395615">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1214477397648">
+                <property name="value" value="false" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1214477391282">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1214477392817" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214477390000">
+              <link role="variableDeclaration" targetNodeId="1210674036310" resolveInfo="test" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1210674097494">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1211898444883">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1211898445479">
