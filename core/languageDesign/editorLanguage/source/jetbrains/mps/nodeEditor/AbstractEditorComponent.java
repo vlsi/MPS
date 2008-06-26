@@ -984,6 +984,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       && keyEvent.getModifiers() == 0) {
 
       EditorCell selectedCell = editorContext.getNodeEditorComponent().getSelectedCell();
+      if (selectedCell.isBigCell()) {
+        return EditorCellAction.DELETE;
+      }
+
       if (selectedCell instanceof EditorCell_Label) {
         EditorCell_Label label = (EditorCell_Label) selectedCell;
         if (label.getText().length() == 0 ||
