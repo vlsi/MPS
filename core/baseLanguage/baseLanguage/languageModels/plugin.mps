@@ -344,17 +344,19 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1208521377785">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1208521377786">
             <property name="name" value="runTool" />
-            <node role="initializer" type="jetbrains.mps.bootstrap.pluginLanguage.structure.GetToolExpression" id="1208789214498">
-              <link role="tool" targetNodeId="1208789093348" resolveInfo="Run Class" />
-              <node role="project" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208789230681">
-                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1208789230682" />
-                <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterReferenceOperation" id="1208789230683">
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208789354894">
+              <link role="classifier" targetNodeId="39.~BaseTool" resolveInfo="BaseTool" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214493785467">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214493784960">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1214493784961" />
+                <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterReferenceOperation" id="1214493784962">
                   <link role="member" targetNodeId="1208789220993" resolveInfo="project" />
                 </node>
               </node>
-            </node>
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208789354894">
-              <link role="classifier" targetNodeId="39.~BaseTool" resolveInfo="BaseTool" />
+              <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.GetToolOperation" id="1214493787601">
+                <link role="tool" targetNodeId="1208789093348" resolveInfo="Run Class" />
+              </node>
             </node>
           </node>
         </node>

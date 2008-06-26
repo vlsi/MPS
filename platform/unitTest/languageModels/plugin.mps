@@ -85,17 +85,19 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1208351412066">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1208351412067">
             <property name="name" value="testTool" />
-            <node role="initializer" type="jetbrains.mps.bootstrap.pluginLanguage.structure.GetToolExpression" id="1208528031942">
-              <link role="tool" targetNodeId="1208269069496" resolveInfo="JUnit Test" />
-              <node role="project" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208528031943">
-                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1208528031944" />
-                <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterReferenceOperation" id="1208528031945">
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208533670994">
+              <link role="classifier" targetNodeId="32.~BaseTool" resolveInfo="BaseTool" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214493808517">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214493808136">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1214493808137" />
+                <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterReferenceOperation" id="1214493808138">
                   <link role="member" targetNodeId="1208527969137" resolveInfo="project" />
                 </node>
               </node>
-            </node>
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208533670994">
-              <link role="classifier" targetNodeId="32.~BaseTool" resolveInfo="BaseTool" />
+              <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.GetToolOperation" id="1214493810640">
+                <link role="tool" targetNodeId="1208269069496" resolveInfo="JUnit Test" />
+              </node>
             </node>
           </node>
         </node>
@@ -4491,17 +4493,19 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1208769567845">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1208769567846">
             <property name="name" value="testTool" />
-            <node role="initializer" type="jetbrains.mps.bootstrap.pluginLanguage.structure.GetToolExpression" id="1208769567847">
-              <link role="tool" targetNodeId="1208269069496" resolveInfo="JUnit Test" />
-              <node role="project" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208769567848">
-                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1208769567849" />
-                <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterReferenceOperation" id="1208769567850">
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208769567851">
+              <link role="classifier" targetNodeId="32.~BaseTool" resolveInfo="BaseTool" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214493819036">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214493819037">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1214493819038" />
+                <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterReferenceOperation" id="1214493823861">
                   <link role="member" targetNodeId="1208769567908" resolveInfo="project" />
                 </node>
               </node>
-            </node>
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208769567851">
-              <link role="classifier" targetNodeId="32.~BaseTool" resolveInfo="BaseTool" />
+              <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.GetToolOperation" id="1214493819040">
+                <link role="tool" targetNodeId="1208269069496" resolveInfo="JUnit Test" />
+              </node>
             </node>
           </node>
         </node>
@@ -10044,17 +10048,19 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1209121024520">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1209121024521">
             <property name="name" value="testTool" />
-            <node role="initializer" type="jetbrains.mps.bootstrap.pluginLanguage.structure.GetToolExpression" id="1209121024522">
-              <link role="tool" targetNodeId="1208269069496" resolveInfo="JUnit Test" />
-              <node role="project" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209121024523">
-                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1209121024524" />
-                <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterReferenceOperation" id="1209121024525">
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1209121024526">
+              <link role="classifier" targetNodeId="32.~BaseTool" resolveInfo="BaseTool" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214493831256">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214493831257">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1214493831258" />
+                <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterReferenceOperation" id="1214493831259">
                   <link role="member" targetNodeId="1209121024584" resolveInfo="project" />
                 </node>
               </node>
-            </node>
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1209121024526">
-              <link role="classifier" targetNodeId="32.~BaseTool" resolveInfo="BaseTool" />
+              <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.GetToolOperation" id="1214493831260">
+                <link role="tool" targetNodeId="1208269069496" resolveInfo="JUnit Test" />
+              </node>
             </node>
           </node>
         </node>
@@ -10248,17 +10254,19 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1209121623499">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1209121623500">
             <property name="name" value="testTool" />
-            <node role="initializer" type="jetbrains.mps.bootstrap.pluginLanguage.structure.GetToolExpression" id="1209121623501">
-              <link role="tool" targetNodeId="1208269069496" resolveInfo="JUnit Test" />
-              <node role="project" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209121623502">
-                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1209121623503" />
-                <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterReferenceOperation" id="1209121623504">
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1209121623505">
+              <link role="classifier" targetNodeId="32.~BaseTool" resolveInfo="BaseTool" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214493837989">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214493837990">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1214493837991" />
+                <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterReferenceOperation" id="1214493837992">
                   <link role="member" targetNodeId="1209121623559" resolveInfo="project" />
                 </node>
               </node>
-            </node>
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1209121623505">
-              <link role="classifier" targetNodeId="32.~BaseTool" resolveInfo="BaseTool" />
+              <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.GetToolOperation" id="1214493837993">
+                <link role="tool" targetNodeId="1208269069496" resolveInfo="JUnit Test" />
+              </node>
             </node>
           </node>
         </node>

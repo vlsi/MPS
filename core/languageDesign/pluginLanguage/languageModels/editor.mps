@@ -1918,38 +1918,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1208525353072">
-    <property name="package" value="Tool.Operations" />
-    <link role="conceptDeclaration" targetNodeId="1.1208525212550" resolveInfo="GetToolExpression" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1208525366973">
-      <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1208525369757">
-        <property name="text" value="tool" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1208525389338">
-        <link role="relationDeclaration" targetNodeId="1.1208525379618" />
-        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1208525389339">
-          <link role="conceptDeclaration" targetNodeId="1.1203071677434" resolveInfo="Tool" />
-          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1208525392106">
-            <property name="readOnly" value="true" />
-            <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name" />
-          </node>
-        </node>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1208526353915">
-        <property name="text" value="in" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1208529377780">
-        <property name="text" value="(" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1208526357620">
-        <link role="relationDeclaration" targetNodeId="1.1208526070459" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1208527243689">
-        <property name="text" value=")" />
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1208529549867">
     <property name="package" value="Tool" />
     <link role="conceptDeclaration" targetNodeId="1.1208528650020" resolveInfo="ToolType" />

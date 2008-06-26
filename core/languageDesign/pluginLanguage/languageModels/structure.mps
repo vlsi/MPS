@@ -1086,26 +1086,6 @@
       <link role="target" targetNodeId="1203087890642" resolveInfo="ActionGroupDeclaration" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1208525212550">
-    <property name="package" value="Tool.Operations" />
-    <property name="name" value="GetToolExpression" />
-    <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1208526070459">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="project" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1208525379618">
-      <property name="role" value="tool" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1203071677434" resolveInfo="Tool" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1208526847650">
-      <property name="value" value="tool&lt;&lt;{tool}&gt;&gt;" />
-      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1208528650020">
     <property name="package" value="Tool" />
     <property name="name" value="ToolType" />
