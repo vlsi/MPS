@@ -2858,5 +2858,18 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1214472762472">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="DefaultCaretPositionStyleSheetItem" />
+    <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1214472762473">
+      <property name="name" value="position" />
+      <link role="dataType" targetNodeId="1197893505573" resolveInfo="_CaretPosition_Enum" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1214472762474">
+      <property name="value" value="default-caret-position" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

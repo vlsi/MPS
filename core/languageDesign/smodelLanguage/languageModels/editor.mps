@@ -2923,7 +2923,7 @@
           <link role="relationDeclaration" targetNodeId="1.1144104376918" />
           <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206995959905">
             <property name="text" value="no params" />
-            <property name="defaultCaretPosition" value="FIRST" />
+            <property name="defaultCaretPosition" value="NONE" />
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934287">
               <property name="style" value="ITALIC" />
             </node>
@@ -2932,6 +2932,9 @@
             </node>
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214399678810">
               <property name="color" value="lightGray" />
+            </node>
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DefaultCaretPositionStyleSheetItem" id="1214475125639">
+              <property name="position" value="FIRST" />
             </node>
           </node>
         </node>
