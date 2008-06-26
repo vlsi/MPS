@@ -136,7 +136,12 @@ public class Resolver {
         }
         return true;
       }
+      
+      //smart refs:
       if (referenceNode.getParent() == null) {
+        return false;
+      }
+      if (referenceNode.getReferences().size() > 1) {
         return false;
       }
       SNode parent = referenceNode.getParent();
