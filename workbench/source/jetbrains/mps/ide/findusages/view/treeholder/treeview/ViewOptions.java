@@ -19,7 +19,7 @@ public class ViewOptions implements IExternalizeable {
 
   private static final String AUTOSCROLL_OPTION = "autoscroll_option";
 
-  public boolean myAutoscrolls = true;
+  public boolean myAutoscrolls = false;
 
   public boolean myCategory = false,
     myModule = true,
