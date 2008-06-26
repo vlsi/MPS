@@ -111,7 +111,9 @@ public class NodeEditor implements IEditor {
 
   public MPSEditorState saveState(@NotNull FileEditorStateLevel level) {
     MyFileEditorState result = new MyFileEditorState();
-    result.myMemento = getEditorContext().createMemento();
+    if (getEditorContext() != null) {
+      result.myMemento = getEditorContext().createMemento();
+    }
     return result;
   }
 
@@ -121,7 +123,9 @@ public class NodeEditor implements IEditor {
     }
 
     MyFileEditorState s = (MyFileEditorState) state;
-    getEditorContext().setMemento(s.myMemento);
+    if (s.myMemento != null) {
+      getEditorContext().setMemento(s.myMemento);
+    }
   }
 
   public static class MyFileEditorState implements MPSEditorState {
