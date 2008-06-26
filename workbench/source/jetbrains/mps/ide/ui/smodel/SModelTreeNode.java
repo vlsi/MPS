@@ -1,8 +1,9 @@
 package jetbrains.mps.ide.ui.smodel;
 
+import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
-import com.intellij.openapi.actionSystem.Presentation;
+import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.annotations.structure.AttributeConcept;
 import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
@@ -26,6 +27,7 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseGroup;
+import jetbrains.mps.workbench.action.BaseAction;
 
 import javax.swing.JOptionPane;
 import javax.swing.JPopupMenu;
@@ -112,7 +114,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     if (generationRequired()) {
       setAdditionalText("generation required");
     } else if (sm != null && sm.isPackaged()) {
-      setAdditionalText("packaged");      
+      setAdditionalText("packaged");
     } else {
       setAdditionalText(null);
     }
@@ -279,12 +281,8 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return new SNodeTreeNode(node, role, operationContext, condition);
   }
 
-  public JPopupMenu getPopupMenu() {
-    ActionContext context = getActionContext();
-    context.put(SModelDescriptor.class, getSModelDescriptor());
-    BaseGroup group = ActionUtils.getGroup(ProjectPane.PROJECT_PANE_MODEL_ACTIONS);
-
-    return createMenu(context, group);
+  public ActionGroup getActionGroup() {
+    return ActionUtils.getGroup(ProjectPane.PROJECT_PANE_MODEL_ACTIONS);
   }
 
   private JPopupMenu createMenu(ActionContext context, BaseGroup group) {
@@ -313,7 +311,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   public JPopupMenu getQuickCreatePopupMenu() {
-    MPSActionGroup group = new CreateRootNodeGroup();
+    BaseGroup group = new CreateRootNodeGroup();
     ActionContext context = getActionContext();
     return createMenu(context, group);
   }
@@ -778,15 +776,12 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     }
 
 
-    public JPopupMenu getPopupMenu() {
-      ActionContext context = getActionContext();
-
+    public ActionGroup getActionGroup() {
       CreateRootNodeGroup cg = new CreateRootNodeGroup(getPackage());
-      JPopupMenu menu = createMenu(context, cg);
 
-      menu.addSeparator();
-      menu.add(new AbstractActionWithEmptyIcon("Rename") {
-        public void actionPerformed(ActionEvent e) {
+      cg.addSeparator();
+      cg.add(new BaseAction("Rename","", IconManager.EMPTY_ICON) {
+        protected void doExecute(AnActionEvent e) {
           Frame frame = SModelTreeNode.this.getOperationContext().getMainFrame();
           final String newName = JOptionPane.showInputDialog(frame, "Enter New Package Name", myName);
           if (newName != null) {
@@ -807,8 +802,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
         }
       });
 
-
-      return menu;
+      return cg;
     }
 
     public IOperationContext getOperationContext() {

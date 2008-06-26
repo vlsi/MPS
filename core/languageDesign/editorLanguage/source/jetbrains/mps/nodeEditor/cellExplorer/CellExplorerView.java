@@ -1,6 +1,8 @@
 package jetbrains.mps.nodeEditor.cellExplorer;
 
-import jetbrains.mps.ide.action.AbstractActionWithEmptyIcon;
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
@@ -15,11 +17,14 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.workbench.action.BaseAction;
 
-import javax.swing.*;
+import javax.swing.Icon;
+import javax.swing.JComponent;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.tree.DefaultTreeModel;
 import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
 import java.util.*;
 
 /**
@@ -228,19 +233,19 @@ public class CellExplorerView extends DefaultTool {
       return -1;
     }
 
-    public JPopupMenu getPopupMenu() {
-      JPopupMenu result = new JPopupMenu();
-      result.add(new AbstractActionWithEmptyIcon("Select In Editor") {
-        public void actionPerformed(ActionEvent e) {
+    public ActionGroup getActionGroup() {
+      DefaultActionGroup group = new DefaultActionGroup();
+      group.add(new BaseAction("Select In Editor") {
+        protected void doExecute(AnActionEvent e) {
           showCell();
         }
-      }).setBorder(null);
-      result.add(new AbstractActionWithEmptyIcon("Properties") {
-        public void actionPerformed(ActionEvent e) {
+      });
+      group.add(new BaseAction("Properties") {
+        protected void doExecute(AnActionEvent e) {
           new CellPropertiesWindow(myCell, null);
         }
-      }).setBorder(null);
-      return result;
+      });
+      return group;
     }
 
     private void showCell() {

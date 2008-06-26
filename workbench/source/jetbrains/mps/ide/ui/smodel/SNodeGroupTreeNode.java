@@ -1,14 +1,11 @@
 package jetbrains.mps.ide.ui.smodel;
 
 import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.SystemInfo;
+import jetbrains.mps.workbench.action.ActionUtils;
 
 import javax.swing.JPopupMenu;
-import java.awt.Rectangle;
 import java.awt.Color;
-import java.awt.event.KeyEvent;
 
 public class SNodeGroupTreeNode extends TextTreeNode {
 
@@ -41,7 +38,7 @@ public class SNodeGroupTreeNode extends TextTreeNode {
   }
 
   public JPopupMenu getQuickCreatePopupMenu() {
-    return getPopupMenu();
+    return ActionUtils.createPopup(getActionGroup());
   }
 
   public boolean hasErrors() {

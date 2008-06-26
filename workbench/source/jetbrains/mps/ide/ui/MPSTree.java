@@ -1,9 +1,7 @@
 package jetbrains.mps.ide.ui;
 
 import com.intellij.ide.dnd.aware.DnDAwareTree;
-import com.intellij.openapi.actionSystem.KeyboardShortcut;
-import com.intellij.openapi.actionSystem.Presentation;
-import com.intellij.openapi.actionSystem.Shortcut;
+import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.util.Computable;
 import com.intellij.ui.TreeToolTipHandler;
 import jetbrains.mps.ide.ThreadUtils;
@@ -118,9 +116,9 @@ public abstract class MPSTree extends DnDAwareTree {
         TreePath[] paths = getSelectionPaths();
         TreePath selPath = getSelectionPath();
         if (selPath == null) return;
-        MPSTreeNode selNode = (MPSTreeNode) selPath.getLastPathComponent();
+        final MPSTreeNode selNode = (MPSTreeNode) selPath.getLastPathComponent();
         if (selNode == null) return;
-        List<MPSTreeNode> nodes = new ArrayList<MPSTreeNode>();
+        final List<MPSTreeNode> nodes = new ArrayList<MPSTreeNode>();
         for (TreePath path : paths) {
           MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
           nodes.add(node);
@@ -131,7 +129,7 @@ public abstract class MPSTree extends DnDAwareTree {
         final BaseAction action = myKeyStrokesToActionsMap.get(pair);
         if (action != null) {
           final ActionContext context = getActionContext(selNode, nodes);
-          action.actionPerformed(ActionUtils.createEvent(new Presentation(), context));
+          action.actionPerformed(ActionUtils.createEvent(context));
         } else {
           KeyStroke stroke = KeyStroke.getKeyStrokeForEvent(e);
           if (stroke.getKeyCode() == KeyEvent.VK_CONTROL ||
@@ -143,28 +141,39 @@ public abstract class MPSTree extends DnDAwareTree {
 
           for (TreePath p : paths) {
             final MPSTreeNode lastNode = (MPSTreeNode) p.getLastPathComponent();
-            final JPopupMenu menu = ModelAccess.instance().runReadAction(new Computable<JPopupMenu>() {
-              public JPopupMenu compute() {
-                return lastNode.getPopupMenu();
+
+            ActionGroup actionGroup = lastNode.getActionGroup();
+            if (actionGroup == null) continue;
+            final AnAction a = findAction(actionGroup, eventKeyStroke);
+            if (a == null) continue;
+
+            ModelAccess.instance().runReadAction(new Runnable() {
+              public void run() {
+                a.actionPerformed(ActionUtils.createEvent(getActionContext(selNode, nodes)));
               }
             });
-
-            if (menu == null) return;
-
-            JMenuItem item = ModelAccess.instance().runReadAction(new Computable<JMenuItem>() {
-              public JMenuItem compute() {
-                return findMenuItem(eventKeyStroke, menu);
-              }
-            });
-            if (item != null) {
-              item.getAction().actionPerformed(new ActionEvent(this, 0, ""));
-              e.consume();
-              return;
-            }
+            e.consume();
+            return;
           }
         }
       }
 
+      private AnAction findAction(ActionGroup actionGroup, KeyStroke eventKeyStroke) {
+        for (final AnAction action : actionGroup.getChildren(null)) {
+          if (action instanceof ActionGroup){
+            AnAction res = findAction((ActionGroup) action, eventKeyStroke);
+            if (res!=null) return res;
+          }else{
+            Shortcut[] shortcuts = action.getShortcutSet().getShortcuts();
+            for (Shortcut shortcut : shortcuts) {
+              if (eventKeyStroke.equals(((KeyboardShortcut) shortcut).getFirstKeyStroke())) {
+                return action;
+              }
+            }
+          }
+        }
+        return null;
+      }
 
       private JMenuItem findMenuItem(KeyStroke eventKeyStroke, JPopupMenu menu) {
         for (int i = 0; i < menu.getComponentCount(); i++) {
@@ -354,7 +363,7 @@ public abstract class MPSTree extends DnDAwareTree {
       final MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
       JPopupMenu menu = ModelAccess.instance().runReadAction(new Computable<JPopupMenu>() {
         public JPopupMenu compute() {
-          return node.getPopupMenu();
+          return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.PROJECT_VIEW_POPUP, node.getActionGroup()).getComponent();
         }
       });
       if (menu == null) return;

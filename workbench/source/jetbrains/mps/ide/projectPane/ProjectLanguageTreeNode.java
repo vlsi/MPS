@@ -1,6 +1,5 @@
 package jetbrains.mps.ide.projectPane;
 
-import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
@@ -13,6 +12,8 @@ import jetbrains.mps.workbench.action.ActionUtils;
 
 import javax.swing.JPopupMenu;
 import java.util.List;
+
+import com.intellij.openapi.actionSystem.ActionGroup;
 
 /**
  * Created by IntelliJ IDEA.
@@ -61,8 +62,8 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     return ActionUtils.createPopup(ProjectPane.LANGUAGE_NEW_ACTIONS);
   }
 
-  public JPopupMenu getPopupMenu() {
-    return ActionUtils.createPopup(ProjectPane.PROJECT_PANE_LANGUAGE_ACTIONS);
+  public ActionGroup getActionGroup() {
+    return ActionUtils.getGroup(ProjectPane.PROJECT_PANE_LANGUAGE_ACTIONS);
   }
 
   protected String getModulePresentation() {

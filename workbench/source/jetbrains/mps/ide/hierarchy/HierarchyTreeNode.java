@@ -4,10 +4,15 @@ import jetbrains.mps.ide.action.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JPopupMenu;
 import java.awt.event.ActionEvent;
+
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.AnActionEvent;
 
 public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
 
@@ -71,17 +76,20 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
     return getNode().getName() + "  (" + namespace + ")";
   }
 
-  public JPopupMenu getPopupMenu() {
+  public ActionGroup getActionGroup() {
     final AbstractHierarchyView<T> hierarchyView = myHierarchyTree.getHierarchyView();
     if (hierarchyView == null) return null;
-    JPopupMenu result = new JPopupMenu();
-    result.add(new AbstractActionWithEmptyIcon("Show Hierarchy For This Node") {
-      public void actionPerformed(ActionEvent e) {
+
+
+    DefaultActionGroup group = new DefaultActionGroup();
+    group.add(new BaseAction("Show Hierarchy For This Node") {
+      protected void doExecute(AnActionEvent e) {
         final SNode node = myNodePointer.getNode();
         hierarchyView.showConceptInHierarchy((T) node.getAdapter(), getOperationContext());
       }
-    }).setBorder(null);
-    return result;
+    });
+
+    return group;
   }
 
   public void doubleClick() {

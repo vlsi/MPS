@@ -1,6 +1,7 @@
 package jetbrains.mps.ide.actions.model;
 
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSActionAdapter;
@@ -13,6 +14,9 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ToStringComparator;
+import jetbrains.mps.workbench.action.BaseGroup;
+import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.workbench.action.ActionEventData;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
@@ -21,7 +25,7 @@ import java.util.*;
 /**
  * @author Kostik
  */
-public class CreateRootNodeGroup extends MPSActionGroup {
+public class CreateRootNodeGroup extends BaseGroup {
 
   private Set<String> myAllowedLanguages = null;
   private String myPackage;
@@ -43,16 +47,15 @@ public class CreateRootNodeGroup extends MPSActionGroup {
     setPopup(true);
   }
 
-  public void doUpdate(ActionContext context) {
+  public void doUpdate(AnActionEvent event) {
     setPopup(true);
     removeAll();
-    SModelDescriptor modelDescriptor = context.get(SModelDescriptor.class);
-    IOperationContext operationContext = context.get(IOperationContext.class);
+    ActionEventData data = new ActionEventData(event);
 
-    List<Language> modelLanguages = modelDescriptor == null ? new ArrayList<Language>() : modelDescriptor.getSModel().getLanguages(operationContext.getScope());
+    List<Language> modelLanguages = data.getModelDescriptor() == null ? new ArrayList<Language>() : data.getModelDescriptor().getSModel().getLanguages(data.getOperationContext().getScope());
     if (modelLanguages.size() == 0) {
-      add(new MPSActionAdapter("<NO LANGUAGES>") {
-        public void dodoExecute(@NotNull ActionContext c) {
+      add(new BaseAction("<NO LANGUAGES>") {
+        protected void doExecute(AnActionEvent e) {
         }
       });
     }
@@ -61,7 +64,6 @@ public class CreateRootNodeGroup extends MPSActionGroup {
     Collections.sort(modelLanguages, new ToStringComparator());
 
     for (final Language language : modelLanguages) {
-
       if (myAllowedLanguages != null) {
         if (!myAllowedLanguages.contains(language.getNamespace())) continue;
       }
@@ -76,7 +78,7 @@ public class CreateRootNodeGroup extends MPSActionGroup {
 
       for (ConceptDeclaration conceptDeclaration : language.getConceptDeclarations()) {
         if (conceptDeclaration.getRootable()) {
-          langRootsGroup.add(newRootNodeAction(new SNodePointer(conceptDeclaration), modelDescriptor));
+          langRootsGroup.add(newRootNodeAction(new SNodePointer(conceptDeclaration), data.getModelDescriptor()));
         }
       }
       if (langRootsGroup.getChildren(null).length > 0) {
@@ -84,7 +86,7 @@ public class CreateRootNodeGroup extends MPSActionGroup {
       }
     }
 
-    setVisible(context.hasOneSelectedItem());
+    setVisible(event.getPresentation(),data.hasOneSelectedItem());
   }
 
   private MPSActionAdapter newRootNodeAction(final SNodePointer nodeConcept, final SModelDescriptor modelDescriptor) {

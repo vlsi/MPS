@@ -3,16 +3,12 @@ package jetbrains.mps.ide.projectPane;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
-import com.intellij.openapi.actionSystem.Presentation;
-import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.action.ActionUtils;
-
-import javax.swing.JPopupMenu;
 
 
 class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
@@ -52,9 +48,8 @@ class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
     return descriptorFile.getAbsolutePath();
   }
 
-  public JPopupMenu getPopupMenu() {
-    ActionGroup g = ActionUtils.getGroup(ProjectPane.PROJECT_PANE_DEVKIT_ACTIONS);
-    return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, g).getComponent();
+  public ActionGroup getActionGroup() {
+    return ActionUtils.getGroup(ProjectPane.PROJECT_PANE_DEVKIT_ACTIONS);
   }
 
   protected String getModulePresentation() {

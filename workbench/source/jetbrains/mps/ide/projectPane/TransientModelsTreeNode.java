@@ -3,15 +3,11 @@ package jetbrains.mps.ide.projectPane;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
-import com.intellij.openapi.actionSystem.Presentation;
 import jetbrains.mps.generator.TransientModelsModule;
-import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.workbench.action.ActionUtils;
-
-import javax.swing.JPopupMenu;
 
 public class TransientModelsTreeNode extends ProjectModuleTreeNode {
   private IModule myTransientModule;
@@ -43,8 +39,7 @@ public class TransientModelsTreeNode extends ProjectModuleTreeNode {
     }
   }
 
-  public JPopupMenu getPopupMenu() {
-    ActionGroup g = ActionUtils.getGroup(ProjectPane.PROJECT_PANE_TRANSIENT_MODULES_ACTIONS);
-    return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, g).getComponent();
+  public ActionGroup getActionGroup() {
+    return ActionUtils.getGroup(ProjectPane.PROJECT_PANE_TRANSIENT_MODULES_ACTIONS);
   }
 }

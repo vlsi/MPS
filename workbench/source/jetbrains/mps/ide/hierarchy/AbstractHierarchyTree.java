@@ -1,5 +1,7 @@
 package jetbrains.mps.ide.hierarchy;
 
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -7,19 +9,13 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.TreeTextUtil;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.Calculable;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.Icon;
-import javax.swing.JPopupMenu;
 import java.util.ArrayList;
 import java.util.Set;
-
-import com.intellij.openapi.util.Computable;
 
 /**
  * Created by IntelliJ IDEA.
@@ -177,11 +173,9 @@ public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPST
       }
     }
 
-    public JPopupMenu getPopupMenu() {
-      if (myHierarchyView != null) {
-        return myHierarchyView.showHierarchyForFoundConceptPopupMenu(myClass);
-      }
-      return null;
+    public ActionGroup getActionGroup() {
+      if (myHierarchyView == null) return null;
+      return myHierarchyView.getHierarchyForFoundConceptActionGroup(myClass);
     }
   }
 }

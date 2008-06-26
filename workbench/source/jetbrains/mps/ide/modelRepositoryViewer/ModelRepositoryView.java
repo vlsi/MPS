@@ -1,10 +1,12 @@
 package jetbrains.mps.ide.modelRepositoryViewer;
 
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.command.CommandEvent;
 import com.intellij.openapi.command.CommandListener;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.command.CommandProcessorEx;
-import jetbrains.mps.ide.action.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.SortUtil;
@@ -16,13 +18,12 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.workbench.action.BaseAction;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
-import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import java.awt.Color;
-import java.awt.event.ActionEvent;
 
 /**
  * @author Kostik
@@ -70,16 +71,15 @@ public class ModelRepositoryView extends DefaultTool {
               setIcon(Icons.PROJECT_MODELS_ICON);
             }
 
-            public JPopupMenu getPopupMenu() {
-              JPopupMenu result = new JPopupMenu();
-
-              result.add(new AbstractActionWithEmptyIcon("Refresh") {
-                public void actionPerformed(ActionEvent e) {
+            public ActionGroup getActionGroup() {
+              DefaultActionGroup group = new DefaultActionGroup();
+              group.add(new BaseAction("Refresh") {
+                protected void doExecute(AnActionEvent e) {
                   myTree.rebuildNow();
                 }
               });
 
-              return result;
+              return group;
             }
           };
           for (SModelDescriptor modelDescriptor : SortUtil.sortModels(SModelRepository.getInstance().getAllModelDescriptors())) {

@@ -9,9 +9,14 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.workbench.action.BaseAction;
 
 import javax.swing.JPopupMenu;
 import java.awt.event.ActionEvent;
+
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.AnActionEvent;
 
 public class ReferencesTreeNode extends MPSTreeNodeEx {
   private SNode myNode;
@@ -53,11 +58,10 @@ public class ReferencesTreeNode extends MPSTreeNodeEx {
         }
 
         @Override
-        public JPopupMenu getPopupMenu() {
-          JPopupMenu result = new JPopupMenu();
-
-          result.add(new AbstractActionWithEmptyIcon("Delete") {
-            public void actionPerformed(ActionEvent e) {
+        public ActionGroup getActionGroup() {
+          DefaultActionGroup group = new DefaultActionGroup();
+          group.add(new BaseAction("Delete") {
+            protected void doExecute(AnActionEvent e) {
               ModelAccess.instance().runWriteActionInCommand(new Runnable() {
                 public void run() {
                   myNode.removeReference(ref);
@@ -66,7 +70,7 @@ public class ReferencesTreeNode extends MPSTreeNodeEx {
             }
           });
 
-          return result;
+          return group;
         }
 
         public boolean isLeaf() {

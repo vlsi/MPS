@@ -95,6 +95,10 @@ public class ActionUtils {
     };
   }
 
+  public static AnActionEvent createEvent(ActionContext context) {
+    return createEvent(new Presentation(),context); 
+  }
+
   public static AnActionEvent createEvent(Presentation presentation, final ActionContext context) {
     DataContext dataContext = new DataContext() {
       @Nullable

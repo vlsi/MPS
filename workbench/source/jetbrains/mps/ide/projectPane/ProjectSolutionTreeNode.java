@@ -10,6 +10,8 @@ import jetbrains.mps.workbench.action.ActionUtils;
 
 import javax.swing.JPopupMenu;
 
+import com.intellij.openapi.actionSystem.ActionGroup;
+
 class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
   private Solution mySolution;
   private boolean myShortNameOnly;
@@ -49,8 +51,8 @@ class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
     return ActionUtils.createPopup(ProjectPane.SOLUTION_NEW_ACTIONS);
   }
 
-  public JPopupMenu getPopupMenu() {
-    return ActionUtils.createPopup(ProjectPane.PROJECT_PANE_PROJECT_SOLUTION_ACTIONS);
+  public ActionGroup getActionGroup() {
+    return ActionUtils.getGroup(ProjectPane.PROJECT_PANE_PROJECT_SOLUTION_ACTIONS);
   }
 
   protected String getModulePresentation() {

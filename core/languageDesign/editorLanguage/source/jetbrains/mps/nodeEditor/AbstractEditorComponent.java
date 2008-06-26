@@ -462,8 +462,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         if (e instanceof BaseGroup) {
           try {
             if (actionContext != null) {
-              Presentation p = new Presentation();
-              e.update(ActionUtils.createEvent(p, actionContext));
+              e.update(ActionUtils.createEvent(actionContext));
             }
             registerKeyStrokes((BaseGroup) e, actionContext);
           } catch (Throwable t) {
@@ -2386,7 +2385,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
             continue;
           }
 
-          action.actionPerformed(ActionUtils.createEvent(new Presentation(),context));
+          action.actionPerformed(ActionUtils.createEvent(context));
           return;
         }
       }

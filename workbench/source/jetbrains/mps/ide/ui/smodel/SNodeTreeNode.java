@@ -1,6 +1,5 @@
 package jetbrains.mps.ide.ui.smodel;
 
-import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
@@ -11,12 +10,12 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.action.ActionUtils;
 
-import javax.swing.JPopupMenu;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 import java.awt.Color;
-import java.util.Arrays;
 import java.util.List;
+
+import com.intellij.openapi.actionSystem.ActionGroup;
 
 public class SNodeTreeNode extends MPSTreeNodeEx {
   protected boolean myInitialized = false;
@@ -109,8 +108,8 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     return null;
   }
 
-  public JPopupMenu getPopupMenu() {
-    return ActionUtils.createPopup(ProjectPane.PROJECT_PANE_NODE_ACTIONS);
+  public ActionGroup getActionGroup() {
+    return ActionUtils.getGroup(ProjectPane.PROJECT_PANE_NODE_ACTIONS);
   }
 
   public Object getUserObject() {

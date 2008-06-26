@@ -1,12 +1,15 @@
 package jetbrains.mps.ide.hierarchy;
 
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.ChooseItemWindow;
 import jetbrains.mps.ide.GoToNodeWindow.GoToNodeComponent;
-import jetbrains.mps.ide.action.AbstractActionWithEmptyIcon;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.workbench.tools.BaseMPSTool;
 
@@ -84,30 +87,33 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
   }
 
 
-  protected JPopupMenu showHierarchyForFoundConceptPopupMenu(final Class<T> aClass) {
-    JPopupMenu result = new JPopupMenu();
-    result.add(new AbstractActionWithEmptyIcon("Show Hierarchy For Concept") {
-      public void actionPerformed(ActionEvent e) {
-        java.util.List<SNode> nodes = new ArrayList<SNode>();
-        for (SModelDescriptor modelDescriptor : myContext.getScope().getModelDescriptors()) {
-          if (modelDescriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) continue;
-          for (INodeAdapter node : modelDescriptor.getSModel().getRootsAdapters()) {
-            if (aClass.isInstance(node)) nodes.add(node.getNode());
-          }
-        }
-
-        new ChooseItemWindow(getMPSProject().getComponent(Frame.class), nodes.toArray(new SNode[0]), new GoToNodeComponent(myContext) {
-          public void doChoose(final SNode node) {
-            MPSProject project = getMPSProject();
-            if (project != null) {
-              final IOperationContext operationContext = project.createOperationContext();
-              showConceptInHierarchy((T) node.getAdapter(), operationContext);
+  protected ActionGroup getHierarchyForFoundConceptActionGroup(final Class<T> aClass) {
+    DefaultActionGroup group = new DefaultActionGroup();
+    group.add(
+      new BaseAction("Show Hierarchy For Concept") {
+        protected void doExecute(AnActionEvent e) {
+          java.util.List<SNode> nodes = new ArrayList<SNode>();
+          for (SModelDescriptor modelDescriptor : myContext.getScope().getModelDescriptors()) {
+            if (modelDescriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) continue;
+            for (INodeAdapter node : modelDescriptor.getSModel().getRootsAdapters()) {
+              if (aClass.isInstance(node)) nodes.add(node.getNode());
             }
           }
-        });
+
+          new ChooseItemWindow(getMPSProject().getComponent(Frame.class), nodes.toArray(new SNode[0]), new GoToNodeComponent(myContext) {
+            public void doChoose(final SNode node) {
+              MPSProject project = getMPSProject();
+              if (project != null) {
+                final IOperationContext operationContext = project.createOperationContext();
+                showConceptInHierarchy((T) node.getAdapter(), operationContext);
+              }
+            }
+          });
+        }
       }
-    }).setBorder(null);
-    return result;
+    );
+
+    return group;
   }
 
   public void showConceptInHierarchy(T node, IOperationContext _context) {

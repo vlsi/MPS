@@ -11,7 +11,6 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.vcs.*;
 
 import javax.swing.JPanel;
-import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.tree.TreeNode;
@@ -20,6 +19,8 @@ import java.awt.Color;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import com.intellij.openapi.actionSystem.ActionGroup;
 
 public class ModelDifferenceView extends JPanel {
   private MPSTree myModelTree = new MPSTree() {
@@ -219,7 +220,7 @@ public class ModelDifferenceView extends JPanel {
       return null;
     }
 
-    public JPopupMenu getPopupMenu() {
+    public ActionGroup getActionGroup() {
       return null;
     }
   }
@@ -243,7 +244,7 @@ public class ModelDifferenceView extends JPanel {
       setText(getText() + " " + getSNode().getId());
     }
 
-    public JPopupMenu getPopupMenu() {
+    public ActionGroup getActionGroup() {
       return null; 
     }
 

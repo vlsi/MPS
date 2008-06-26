@@ -1,6 +1,8 @@
 package jetbrains.mps.vcs.ui;
 
-import jetbrains.mps.ide.action.AbstractActionWithEmptyIcon;
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -12,14 +14,13 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.vcs.*;
+import jetbrains.mps.workbench.action.BaseAction;
 
 import javax.swing.JPanel;
-import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.tree.TreeNode;
 import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
 import java.util.*;
 
 public class MergeResultView extends JPanel {
@@ -408,7 +409,7 @@ public class MergeResultView extends JPanel {
       super(node, role, operationContext);
     }
 
-    public JPopupMenu getPopupMenu() {
+    public ActionGroup getActionGroup() {
       return null;
     }
 
@@ -446,7 +447,7 @@ public class MergeResultView extends JPanel {
       return null;
     }
 
-    public JPopupMenu getPopupMenu() {
+    public ActionGroup getActionGroup() {
       return null;
     }
 
@@ -504,18 +505,12 @@ public class MergeResultView extends JPanel {
       setText(calculateText());
     }
 
-    public JPopupMenu getPopupMenu() {
-      JPopupMenu result = new JPopupMenu();
+    public ActionGroup getActionGroup() {
+      String text = myExcludedChanges.contains(myChange) ? "Include" : "Exclude";
 
-      String text;
-      if (myExcludedChanges.contains(myChange)) {
-        text = "Include";
-      } else {
-        text = "Exclude";
-      }
-
-      result.add(new AbstractActionWithEmptyIcon(text) {
-        public void actionPerformed(ActionEvent e) {
+      DefaultActionGroup group = new DefaultActionGroup();
+      group.add(new BaseAction(text) {
+        protected void doExecute(AnActionEvent e) {
           if (myExcludedChanges.contains(myChange)) {
             myExcludedChanges.remove(myChange);
           } else {
@@ -524,7 +519,8 @@ public class MergeResultView extends JPanel {
           rebuildData();
         }
       });
-      return result;
+
+      return group;
     }
 
 

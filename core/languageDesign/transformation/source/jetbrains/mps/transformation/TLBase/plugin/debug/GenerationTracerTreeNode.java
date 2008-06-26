@@ -1,5 +1,8 @@
 package jetbrains.mps.transformation.TLBase.plugin.debug;
 
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.ide.action.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.logging.Logger;
@@ -9,6 +12,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.transformation.TLBase.plugin.debug.TracerNode.Kind;
 import jetbrains.mps.transformation.TLBase.plugin.debug.icons.Icons;
+import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 import javax.swing.JPopupMenu;
@@ -36,14 +40,14 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     return myTracerNode;
   }
 
-  public JPopupMenu getPopupMenu() {
+  public ActionGroup getActionGroup() {
     if (myTracerNode.getKind() == Kind.INPUT ||
       myTracerNode.getKind() == Kind.APPROXIMATE_INPUT) {
-      return createPopupMenuForInputNode();
+      return createActionGroupForInputNode();
     }
     if (myTracerNode.getKind() == Kind.OUTPUT ||
       myTracerNode.getKind() == Kind.APPROXIMATE_OUTPUT) {
-      return createPopupMenuForOutputNode();
+      return createActionGroupForOutputNode();
     }
     return null;
   }
@@ -52,66 +56,77 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     return -1;
   }
 
-  private JPopupMenu createPopupMenuForInputNode() {
+  private ActionGroup createActionGroupForInputNode() {
     final GenerationTracer tracer = myProject.getComponentSafe(GenerationTracer.class);
 
-    JPopupMenu result = new JPopupMenu();
-
     final TracerNode tracerNode = this.getTracerNode();
-    boolean enable = tracerNode != null && tracerNode.getNodePointer() != null && tracerNode.getNodePointer().getNode() != null;
+    final boolean enable = tracerNode != null && tracerNode.getNodePointer() != null && tracerNode.getNodePointer().getNode() != null;
 
+    DefaultActionGroup group = new DefaultActionGroup();
     // is traceback shown?
     GenerationTracerTreeNode rootNode = (GenerationTracerTreeNode) getRoot();
     TracerNode rootTracerNode = rootNode.getTracerNode();
     if (rootTracerNode != null && rootTracerNode.getKind() == Kind.OUTPUT) {
-      AbstractActionWithEmptyIcon showTraceAction = new PopupAction("Show Trace") {
-        public void action() {
+      group.add(new BaseAction("Show Prev Step Traceback") {
+        protected void doExecute(AnActionEvent e) {
           tracer.showTraceInputData(tracerNode.getNodePointer().getNode());
         }
-      };
-      showTraceAction.setEnabled(enable && tracer.hasTraceInputData(tracerNode.getNodePointer().getModelUID()));
-      result.add(showTraceAction);
+
+        protected void doUpdate(AnActionEvent e) {
+          boolean enabled = enable && tracer.hasTraceInputData(tracerNode.getNodePointer().getModelUID());
+          setEnabled(e.getPresentation(), enabled);
+        }
+      });
     }
 
-    AbstractActionWithEmptyIcon showPrevTracebackAction = new PopupAction("Show Prev Step Traceback") {
-      public void action() {
+    group.add(new BaseAction("Show Prev Step Traceback") {
+      protected void doExecute(AnActionEvent e) {
         tracer.showTracebackData(tracerNode.getNodePointer().getNode());
       }
-    };
-    showPrevTracebackAction.setEnabled(enable && tracer.hasTracebackData(tracerNode.getNodePointer().getModelUID()));
-    result.add(showPrevTracebackAction);
-    return result;
+
+      protected void doUpdate(AnActionEvent e) {
+        boolean enabled = enable && tracer.hasTracebackData(tracerNode.getNodePointer().getModelUID());
+        setEnabled(e.getPresentation(), enabled);
+      }
+    });
+    return group;
   }
 
-  private JPopupMenu createPopupMenuForOutputNode() {
+  private ActionGroup createActionGroupForOutputNode() {
     final GenerationTracer tracer = myProject.getComponentSafe(GenerationTracer.class);
 
-    JPopupMenu result = new JPopupMenu();
+    DefaultActionGroup group = new DefaultActionGroup();
 
     final TracerNode tracerNode = this.getTracerNode();
-    boolean enable = tracerNode != null && tracerNode.getNodePointer() != null && tracerNode.getNodePointer().getNode() != null;
+    final boolean enable = tracerNode != null && tracerNode.getNodePointer() != null && tracerNode.getNodePointer().getNode() != null;
 
     // is trace (forward) shown?
     GenerationTracerTreeNode rootNode = (GenerationTracerTreeNode) getRoot();
     TracerNode rootTracerNode = rootNode.getTracerNode();
     if (rootTracerNode != null && (rootTracerNode.getKind() == Kind.INPUT || rootTracerNode.getKind() == Kind.RULE)) {
-      AbstractActionWithEmptyIcon showTracebackAction = new PopupAction("Show Traceback") {
-        public void action() {
+      group.add(new BaseAction("Show Traceback") {
+        protected void doExecute(AnActionEvent e) {
           tracer.showTracebackData(tracerNode.getNodePointer().getNode());
         }
-      };
-      showTracebackAction.setEnabled(enable && tracer.hasTracebackData(tracerNode.getNodePointer().getModelUID()));
-      result.add(showTracebackAction);
+
+        protected void doUpdate(AnActionEvent e) {
+          boolean enabled = enable && tracer.hasTracebackData(tracerNode.getNodePointer().getModelUID());
+          setEnabled(e.getPresentation(), enabled);
+        }
+      });
     }
 
-    AbstractActionWithEmptyIcon showNextTraceAction = new PopupAction("Show Next Step Trace") {
-      public void action() {
+    group.add(new BaseAction("Show Next Step Trace") {
+      protected void doExecute(AnActionEvent e) {
         tracer.showTraceInputData(tracerNode.getNodePointer().getNode());
       }
-    };
-    showNextTraceAction.setEnabled(enable && tracer.hasTraceInputData(tracerNode.getNodePointer().getModelUID()));
-    result.add(showNextTraceAction);
-    return result;
+
+      protected void doUpdate(AnActionEvent e) {
+        boolean enabled = enable && tracer.hasTraceInputData(tracerNode.getNodePointer().getModelUID());
+        setEnabled(e.getPresentation(), enabled);
+      }
+    });
+    return group;
   }
 
 

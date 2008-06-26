@@ -22,6 +22,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.actionSystem.ActionGroup;
 
 /**
  * @author Kostik
@@ -82,7 +83,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     return false;
   }
 
-  public JPopupMenu getPopupMenu() {
+  public ActionGroup getActionGroup() {
     return null;
   }
 
