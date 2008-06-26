@@ -12,6 +12,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class StatementList_Behavior {
 
@@ -110,6 +111,22 @@ public class StatementList_Behavior {
       }
     }
     return referencedInClosures;
+  }
+
+  public static HashSet<SNode> call_getExternalVariablesDeclarations_1214501165480(SNode thisNode) {
+    HashSet<SNode> declarations = new HashSet<SNode>();
+    for(SNode ref : SNodeOperations.getDescendants(thisNode, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false)) {
+      boolean statementsContainsVar = false;
+      for(SNode parent : SNodeOperations.getAncestors(SLinkOperations.getTarget(ref, "variableDeclaration", false), null, false)) {
+        if (parent.equals(thisNode)) {
+          statementsContainsVar = true;
+        }
+      }
+      if (!(statementsContainsVar)) {
+        declarations.add(SLinkOperations.getTarget(ref, "variableDeclaration", false));
+      }
+    }
+    return declarations;
   }
 
 }

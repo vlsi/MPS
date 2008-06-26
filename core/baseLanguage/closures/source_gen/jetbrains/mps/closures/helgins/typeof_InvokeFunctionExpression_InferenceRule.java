@@ -30,7 +30,7 @@ public class typeof_InvokeFunctionExpression_InferenceRule implements InferenceR
             SNode p;
             Iterator<SNode> pt_iterator = SLinkOperations.getTargets(ft, "parameterType", true).iterator();
             Iterator<SNode> p_iterator = SLinkOperations.getTargets(invoke, "parameter", true).iterator();
-            while(true) {
+            while (true) {
               if (!(pt_iterator.hasNext())) {
                 break;
               }

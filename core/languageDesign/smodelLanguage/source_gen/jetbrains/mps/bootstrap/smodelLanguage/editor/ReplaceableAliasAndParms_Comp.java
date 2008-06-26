@@ -26,13 +26,13 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.ConceptPropertyCellP
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
+import jetbrains.mps.nodeEditor.CaretPosition;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
-import jetbrains.mps.nodeEditor.CaretPosition;
 import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
@@ -265,6 +265,7 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
               }
 
             });
+            this.set(StyleAttributes.DEFAULT_CARET_POSITON, CaretPosition.FIRST);
           }
 
         };
@@ -327,7 +328,6 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
       setupBasic_ConstantCell14862_01(editorCell, node, context);
       setupLabel_ConstantCell14862_01(editorCell, node, context);
       editorCell.setDefaultText("");
-      editorCell.setDefaultCaretPosition(CaretPosition.FIRST);
       return editorCell;
     }
 

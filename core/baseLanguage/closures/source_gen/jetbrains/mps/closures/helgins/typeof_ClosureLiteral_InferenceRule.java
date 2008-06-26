@@ -46,7 +46,7 @@ public class typeof_ClosureLiteral_InferenceRule implements InferenceRule_Runtim
         allStmts.addLast(c);
       }
     }
-    while(!(allStmts.isEmpty())) {
+    while (!(allStmts.isEmpty())) {
       SNode stmt = allStmts.removeFirst();
       if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.ReturnStatement")) {
         allRets.add(stmt);

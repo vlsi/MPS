@@ -60,6 +60,7 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.structure.GenericNewExpression", new GenericNewExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.RemarkStatement", new RemarkStatement_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.NewExpression", new NewExpression_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.structure.AnonymousClassCreator", new AnonymousClassCreator_DataFlow());
   }
 
 }

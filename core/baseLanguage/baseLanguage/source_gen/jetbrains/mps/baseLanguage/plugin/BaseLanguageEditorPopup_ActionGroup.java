@@ -23,6 +23,7 @@ public class BaseLanguageEditorPopup_ActionGroup extends CurrentProjectGroup {
       this.addSeparator();
       this.add(new ExtractMethod_Action(project));
       this.add(new InlineMethod_Action(project));
+      this.add(new ChangeMethodSignature_Action(project));
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

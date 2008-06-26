@@ -30,7 +30,7 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
       SNode paramType2;
       Iterator<SNode> paramType1_iterator = SLinkOperations.getTargets(subtype, "parameterType", true).iterator();
       Iterator<SNode> paramType2_iterator = SLinkOperations.getTargets(supertype, "parameterType", true).iterator();
-      while(true) {
+      while (true) {
         if (!(paramType1_iterator.hasNext())) {
           break;
         }

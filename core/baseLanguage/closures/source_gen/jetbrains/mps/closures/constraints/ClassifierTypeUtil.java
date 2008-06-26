@@ -81,7 +81,7 @@ public class ClassifierTypeUtil {
     LinkedList<SNode> concretes = new LinkedList<SNode>();
     concretes.addLast(concrete);
     SNode resType = type;
-    while(!(concretes.isEmpty())) {
+    while (!(concretes.isEmpty())) {
       SNode ct = concretes.removeFirst();
       if (visitedClassifiers.contains(SLinkOperations.getTarget(ct, "classifier", false)) || SLinkOperations.getCount(ct, "parameter") == 0) {
         continue;

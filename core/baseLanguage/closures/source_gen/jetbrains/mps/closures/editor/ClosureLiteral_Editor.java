@@ -53,7 +53,7 @@ public class ClosureLiteral_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_bodyRefNodeCell11692_0(EditorCell editorCell, SNode node, EditorContext context) {
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.DRAW_BRACKETS, true);
         }

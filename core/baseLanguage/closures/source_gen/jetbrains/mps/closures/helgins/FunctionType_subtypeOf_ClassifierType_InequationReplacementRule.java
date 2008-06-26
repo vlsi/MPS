@@ -34,7 +34,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
             SNode mpt;
             Iterator<SNode> fpt_iterator = SLinkOperations.getTargets(subtype, "parameterType", true).iterator();
             Iterator<SNode> mpt_iterator = SLinkOperations.getTargets(md, "parameter", true).iterator();
-            while(true) {
+            while (true) {
               if (!(fpt_iterator.hasNext())) {
                 break;
               }
