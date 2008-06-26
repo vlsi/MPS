@@ -268,7 +268,7 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
   public EditorCell create_namePropertyCell13915_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no name>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_namePropertyCell13915_0_internal(context, node, provider);
@@ -297,7 +297,7 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
   public EditorCell create_extendedClassRefNodeCell13915_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("extendedClass");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no extendedClass>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_extendedClassRefNodeCell13915_0_internal(context, node, provider);

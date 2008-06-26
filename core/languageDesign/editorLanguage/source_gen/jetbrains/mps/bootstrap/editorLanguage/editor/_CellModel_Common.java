@@ -695,7 +695,7 @@ public class _CellModel_Common extends AbstractCellProvider {
   public EditorCell create_attractsFocusPropertyCell2177_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("attractsFocus");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no attractsFocus>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_attractsFocusPropertyCell2177_0_internal(context, node, provider);
@@ -724,7 +724,7 @@ public class _CellModel_Common extends AbstractCellProvider {
   public EditorCell create_focusPolicyApplicableRefNodeCell2177_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("focusPolicyApplicable");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no focusPolicyApplicable>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_focusPolicyApplicableRefNodeCell2177_0_internal(context, node, provider);
@@ -842,7 +842,7 @@ public class _CellModel_Common extends AbstractCellProvider {
     public EditorCell create_namePropertyCell2177_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_namePropertyCell2177_0_internal(context, node, provider);
@@ -955,7 +955,7 @@ public class _CellModel_Common extends AbstractCellProvider {
     public EditorCell create_namePropertyCell2177_02(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_namePropertyCell2177_02_internal(context, node, provider);

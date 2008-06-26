@@ -492,7 +492,7 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
   public EditorCell create_bodyRefNodeCell12355_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no body>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_bodyRefNodeCell12355_0_internal(context, node, provider);
@@ -550,7 +550,7 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
   public EditorCell create_selectablePropertyCell12355_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("selectable");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no selectable>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_selectablePropertyCell12355_0_internal(context, node, provider);
@@ -579,7 +579,7 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
   public EditorCell create_layoutConstraintPropertyCell12355_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("layoutConstraint");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no layoutConstraint>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_layoutConstraintPropertyCell12355_0_internal(context, node, provider);
@@ -666,7 +666,7 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
   public EditorCell create_rightTransformAnchorTagPropertyCell12355_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("rightTransformAnchorTag");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no rightTransformAnchorTag>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_rightTransformAnchorTagPropertyCell12355_0_internal(context, node, provider);

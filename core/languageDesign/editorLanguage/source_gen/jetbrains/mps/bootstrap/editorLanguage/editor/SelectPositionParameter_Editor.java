@@ -89,7 +89,7 @@ public class SelectPositionParameter_Editor extends DefaultNodeEditor {
   public EditorCell create_positionPropertyCell5753_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("position");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no position>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_positionPropertyCell5753_0_internal(context, node, provider);

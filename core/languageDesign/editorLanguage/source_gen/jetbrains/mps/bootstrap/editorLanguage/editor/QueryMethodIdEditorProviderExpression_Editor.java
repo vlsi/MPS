@@ -461,7 +461,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
   public EditorCell create_notSetStringPropertyCell18242_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("notSetString");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no notSetString>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_notSetStringPropertyCell18242_0_internal(context, node, provider);
@@ -490,7 +490,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
   public EditorCell create_queryIdPropertyRefCell18242_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("queryIdProperty");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no queryIdProperty>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_queryIdPropertyRefCell18242_0_internal(context, node, provider);
@@ -541,7 +541,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     public EditorCell create_namePropertyCell18242_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_namePropertyCell18242_0_internal(context, node, provider);

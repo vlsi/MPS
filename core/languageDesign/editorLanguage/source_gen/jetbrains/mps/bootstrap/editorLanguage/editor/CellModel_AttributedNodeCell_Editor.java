@@ -367,7 +367,7 @@ public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
   public EditorCell create_drawBracketsPropertyCell15341_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("drawBrackets");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no drawBrackets>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_drawBracketsPropertyCell15341_0_internal(context, node, provider);
@@ -396,7 +396,7 @@ public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
   public EditorCell create_bracketsColorPropertyCell15341_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("bracketsColor");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no bracketsColor>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_bracketsColorPropertyCell15341_0_internal(context, node, provider);

@@ -88,7 +88,7 @@ public class CaretPositionParameter_Editor extends DefaultNodeEditor {
   public EditorCell create_positionRefNodeCell256_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("position");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no position>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_positionRefNodeCell256_0_internal(context, node, provider);

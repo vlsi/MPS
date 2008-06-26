@@ -1818,7 +1818,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   public EditorCell create_textPropertyCell10258_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("text");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no text>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(true);
     EditorCell cellWithRole = this.create_textPropertyCell10258_0_internal(context, node, provider);
@@ -1905,7 +1905,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   public EditorCell create_selectablePropertyCell10258_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("selectable");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no selectable>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_selectablePropertyCell10258_0_internal(context, node, provider);
@@ -1934,7 +1934,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   public EditorCell create_editablePropertyCell10258_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("editable");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no editable>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_editablePropertyCell10258_0_internal(context, node, provider);
@@ -1963,7 +1963,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   public EditorCell create_layoutConstraintPropertyCell10258_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("layoutConstraint");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no layoutConstraint>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_layoutConstraintPropertyCell10258_0_internal(context, node, provider);
@@ -1992,7 +1992,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   public EditorCell create_rightTransformAnchorTagPropertyCell10258_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("rightTransformAnchorTag");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no rightTransformAnchorTag>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_rightTransformAnchorTagPropertyCell10258_0_internal(context, node, provider);
@@ -2021,7 +2021,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   public EditorCell create_drawBorderPropertyCell10258_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("drawBorder");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no drawBorder>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_drawBorderPropertyCell10258_0_internal(context, node, provider);
@@ -2050,7 +2050,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   public EditorCell create_drawBracketsPropertyCell10258_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("drawBrackets");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no drawBrackets>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_drawBracketsPropertyCell10258_0_internal(context, node, provider);
@@ -2079,7 +2079,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   public EditorCell create_bracketsColorPropertyCell10258_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("bracketsColor");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no bracketsColor>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_bracketsColorPropertyCell10258_0_internal(context, node, provider);
@@ -2108,7 +2108,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   public EditorCell create_fontStylePropertyCell10258_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("fontStyle");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no fontStyle>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_fontStylePropertyCell10258_0_internal(context, node, provider);
@@ -2166,7 +2166,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   public EditorCell create_underlinedPropertyCell10258_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("underlined");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no underlined>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_underlinedPropertyCell10258_0_internal(context, node, provider);
@@ -2195,7 +2195,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   public EditorCell create_textFgColorPropertyCell10258_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("textFgColor");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no textFgColor>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_textFgColorPropertyCell10258_0_internal(context, node, provider);
@@ -2253,7 +2253,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   public EditorCell create_textFgColorEmptyPropertyCell10258_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("textFgColorEmpty");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no textFgColorEmpty>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_textFgColorEmptyPropertyCell10258_0_internal(context, node, provider);
@@ -2311,7 +2311,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   public EditorCell create_textBgColorPropertyCell10258_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("textBgColor");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no textBgColor>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_textBgColorPropertyCell10258_0_internal(context, node, provider);
@@ -2369,7 +2369,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   public EditorCell create_textBgColorSelectedPropertyCell10258_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("textBgColorSelected");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no textBgColorSelected>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_textBgColorSelectedPropertyCell10258_0_internal(context, node, provider);
@@ -2398,7 +2398,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   public EditorCell create_textBgColorSelectedFunctionRefNodeCell10258_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("textBgColorSelectedFunction");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no textBgColorSelectedFunction>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_textBgColorSelectedFunctionRefNodeCell10258_0_internal(context, node, provider);

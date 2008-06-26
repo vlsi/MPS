@@ -658,7 +658,7 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
   public EditorCell create_setterRefNodeCell14408_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("setter");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no setter>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_setterRefNodeCell14408_0_internal(context, node, provider);
@@ -687,7 +687,7 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
   public EditorCell create_getterRefNodeCell14408_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("getter");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no getter>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_getterRefNodeCell14408_0_internal(context, node, provider);
@@ -716,7 +716,7 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
   public EditorCell create_validatorRefNodeCell14408_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("validator");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no validator>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_validatorRefNodeCell14408_0_internal(context, node, provider);

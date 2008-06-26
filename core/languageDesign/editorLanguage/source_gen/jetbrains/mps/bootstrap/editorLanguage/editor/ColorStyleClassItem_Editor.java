@@ -106,7 +106,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
   public EditorCell create_ConceptPropertyCell13294_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no alias>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_ConceptPropertyCell13294_0_internal(context, node, provider);
@@ -135,7 +135,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
   public EditorCell create_colorPropertyCell13294_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("color");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no color>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_colorPropertyCell13294_0_internal(context, node, provider);

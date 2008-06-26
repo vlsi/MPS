@@ -727,7 +727,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   public EditorCell create_executeFunctionRefNodeCell5981_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("executeFunction");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no executeFunction>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_executeFunctionRefNodeCell5981_0_internal(context, node, provider);
@@ -814,7 +814,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   public EditorCell create_showInPopupPropertyCell5981_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("showInPopup");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no showInPopup>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_showInPopupPropertyCell5981_0_internal(context, node, provider);
@@ -843,7 +843,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   public EditorCell create_menuAlwaysShownPropertyCell5981_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("menuAlwaysShown");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no menuAlwaysShown>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_menuAlwaysShownPropertyCell5981_0_internal(context, node, provider);

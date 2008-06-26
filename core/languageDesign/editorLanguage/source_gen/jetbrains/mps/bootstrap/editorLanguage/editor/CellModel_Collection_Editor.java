@@ -1430,7 +1430,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   public EditorCell create_verticalPropertyCell15568_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("vertical");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no vertical>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_verticalPropertyCell15568_0_internal(context, node, provider);
@@ -1459,7 +1459,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   public EditorCell create_gridLayoutPropertyCell15568_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("gridLayout");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no gridLayout>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_gridLayoutPropertyCell15568_0_internal(context, node, provider);
@@ -1517,7 +1517,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   public EditorCell create_usesBracesPropertyCell15568_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("usesBraces");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no usesBraces>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_usesBracesPropertyCell15568_0_internal(context, node, provider);
@@ -1546,7 +1546,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   public EditorCell create_usesFoldingPropertyCell15568_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("usesFolding");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no usesFolding>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_usesFoldingPropertyCell15568_0_internal(context, node, provider);
@@ -1575,7 +1575,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   public EditorCell create_selectablePropertyCell15568_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("selectable");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no selectable>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_selectablePropertyCell15568_0_internal(context, node, provider);
@@ -1604,7 +1604,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   public EditorCell create_layoutConstraintPropertyCell15568_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("layoutConstraint");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no layoutConstraint>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_layoutConstraintPropertyCell15568_0_internal(context, node, provider);
@@ -1633,7 +1633,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   public EditorCell create_rightTransformAnchorTagPropertyCell15568_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("rightTransformAnchorTag");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no rightTransformAnchorTag>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_rightTransformAnchorTagPropertyCell15568_0_internal(context, node, provider);
@@ -1662,7 +1662,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   public EditorCell create_drawBorderPropertyCell15568_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("drawBorder");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no drawBorder>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_drawBorderPropertyCell15568_0_internal(context, node, provider);
@@ -1691,7 +1691,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   public EditorCell create_drawBracketsPropertyCell15568_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("drawBrackets");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no drawBrackets>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_drawBracketsPropertyCell15568_0_internal(context, node, provider);
@@ -1720,7 +1720,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   public EditorCell create_bracketsColorPropertyCell15568_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("bracketsColor");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no bracketsColor>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_bracketsColorPropertyCell15568_0_internal(context, node, provider);
@@ -1749,7 +1749,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   public EditorCell create_fontStylePropertyCell15568_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("fontStyle");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no fontStyle>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_fontStylePropertyCell15568_0_internal(context, node, provider);
@@ -1778,7 +1778,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   public EditorCell create_fontSizePropertyCell15568_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("fontSize");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no fontSize>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_fontSizePropertyCell15568_0_internal(context, node, provider);
@@ -1807,7 +1807,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   public EditorCell create_underlinedPropertyCell15568_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("underlined");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no underlined>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_underlinedPropertyCell15568_0_internal(context, node, provider);

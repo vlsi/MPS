@@ -232,7 +232,7 @@ public class CellMenuPart_PropertyValues_Editor extends DefaultNodeEditor {
   public EditorCell create_valuesFunctionRefNodeCell13005_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("valuesFunction");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no valuesFunction>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_valuesFunctionRefNodeCell13005_0_internal(context, node, provider);

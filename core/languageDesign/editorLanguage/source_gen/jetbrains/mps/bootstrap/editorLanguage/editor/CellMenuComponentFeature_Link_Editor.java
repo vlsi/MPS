@@ -120,7 +120,7 @@ public class CellMenuComponentFeature_Link_Editor extends DefaultNodeEditor {
     public EditorCell create_rolePropertyCell6801_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("role");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no role>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_rolePropertyCell6801_0_internal(context, node, provider);

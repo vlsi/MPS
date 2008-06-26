@@ -232,7 +232,7 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
   public EditorCell create_childConceptFunctionRefNodeCell20847_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("childConceptFunction");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no childConceptFunction>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_childConceptFunctionRefNodeCell20847_0_internal(context, node, provider);

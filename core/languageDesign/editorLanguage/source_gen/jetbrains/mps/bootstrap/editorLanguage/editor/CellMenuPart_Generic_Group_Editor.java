@@ -669,7 +669,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
   public EditorCell create_parametersFunctionRefNodeCell14578_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("parametersFunction");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no parametersFunction>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_parametersFunctionRefNodeCell14578_0_internal(context, node, provider);
@@ -698,7 +698,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
   public EditorCell create_presentationPropertyCell14578_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("presentation");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no presentation>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_presentationPropertyCell14578_0_internal(context, node, provider);

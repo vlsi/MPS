@@ -821,7 +821,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
   public EditorCell create_selectablePropertyCell1154_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("selectable");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no selectable>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_selectablePropertyCell1154_0_internal(context, node, provider);
@@ -850,7 +850,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
   public EditorCell create_layoutConstraintPropertyCell1154_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("layoutConstraint");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no layoutConstraint>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_layoutConstraintPropertyCell1154_0_internal(context, node, provider);
@@ -879,7 +879,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
   public EditorCell create_drawBorderPropertyCell1154_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("drawBorder");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no drawBorder>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_drawBorderPropertyCell1154_0_internal(context, node, provider);
@@ -908,7 +908,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
   public EditorCell create_drawBracketsPropertyCell1154_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("drawBrackets");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no drawBrackets>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_drawBracketsPropertyCell1154_0_internal(context, node, provider);
@@ -937,7 +937,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
   public EditorCell create_bracketsColorPropertyCell1154_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("bracketsColor");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no bracketsColor>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_bracketsColorPropertyCell1154_0_internal(context, node, provider);
@@ -966,7 +966,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
   public EditorCell create_rightTransformAnchorTagPropertyCell1154_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("rightTransformAnchorTag");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no rightTransformAnchorTag>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_rightTransformAnchorTagPropertyCell1154_0_internal(context, node, provider);
@@ -1024,7 +1024,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
   public EditorCell create_imageFilePropertyCell1154_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("imageFile");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no imageFile>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_imageFilePropertyCell1154_0_internal(context, node, provider);
@@ -1053,7 +1053,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
   public EditorCell create_descentPropertyCell1154_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("descent");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no descent>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_descentPropertyCell1154_0_internal(context, node, provider);
