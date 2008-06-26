@@ -987,7 +987,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       if (selectedCell instanceof EditorCell_Label) {
         EditorCell_Label label = (EditorCell_Label) selectedCell;
         if (label.getText().length() == 0 ||
-          (label instanceof EditorCell_Constant && !label.isEditable())) {
+          (label instanceof EditorCell_Constant && !label.isEditable() && EditorUtil.isEasilyDeletableFromConstant(label.getSNode()))) {
           return EditorCellAction.DELETE;
         }
       }

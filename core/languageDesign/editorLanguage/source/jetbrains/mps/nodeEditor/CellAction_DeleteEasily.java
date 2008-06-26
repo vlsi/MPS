@@ -9,6 +9,6 @@ public class CellAction_DeleteEasily extends CellAction_DeleteNode {
   }
 
   public boolean canExecute(EditorContext context) {
-    return super.canExecute(context) && EditorUtil.isEasilyDeletable(getSNode());
+    return super.canExecute(context) && EditorUtil.isEasilyDeletableFromEmptyCell(getSNode());
   }
 }
