@@ -6,6 +6,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.helgins.inference.NodeTypesComponent;
 import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.helgins.inference.TypeCheckingMode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
@@ -106,29 +107,7 @@ public class Resolver {
     }
     final AbstractConceptDeclaration referentConcept = linkDeclaration.getTarget();
 
-    SNode sNode = referenceNode.getParent();
-    if (sNode == null) sNode = referenceNode;
-
-    SNode containingRoot = sNode.getContainingRoot();
-  /*  if (containingRoot == null) {
-      containingRoot = sNode.getTopmostAncestor();
-    }*/
-    NodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance().
-      createNodeTypesComponent(containingRoot);
-    NodeTypesComponent temporaryComponent;
-    try {
-      temporaryComponent = nodeTypesComponent.clone();
-    } catch (CloneNotSupportedException ex) {
-      LOG.error(ex);
-      return false;
-    }
-    TypeChecker.getInstance().setCurrentTypesComponent(temporaryComponent);
-    temporaryComponent.computeOnlyTypesForNode(sNode); //todo dirty hack
-    temporaryComponent.solveInequationsAndExpandTypes();
-    TypeChecker.getInstance().clearCurrentTypesComponent();
-
-    NodeTypesComponentsRepository.getInstance().swapTypesComponentForRoot(containingRoot, temporaryComponent);
-
+    TypeChecker.getInstance().setTypeCheckingMode(TypeCheckingMode.RESOLVE);
     try {
       SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(referenceNode.getParent(),
         referenceNode, referenceNodeConcept, linkDeclaration, operationContext);
@@ -193,7 +172,7 @@ public class Resolver {
 
       return false;
     } finally {
-    //  NodeTypesComponentsRepository.getInstance().swapTypesComponentForRoot(containingRoot, nodeTypesComponent);
+      TypeChecker.getInstance().resetTypeCheckingMode();
     }
   }
 

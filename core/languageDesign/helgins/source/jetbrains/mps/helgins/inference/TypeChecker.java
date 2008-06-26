@@ -218,7 +218,13 @@ public class TypeChecker implements ApplicationComponent {
     assert node.isRoot();
     checkWithinRoot(node, new Runnable() {
       public void run() {
-        NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(node).computeTypes(refreshTypes);
+        NodeTypesComponent component = NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(node);
+        setCurrentTypesComponent(component);
+        try {
+          component.computeTypes(refreshTypes);
+        } finally {
+          clearCurrentTypesComponent();
+        }
         myCheckedRoots.add(node);
       }
     });
@@ -267,7 +273,8 @@ public class TypeChecker implements ApplicationComponent {
     if (!myCheckedRoots.contains(containingRoot) || component == null) {
       final SNode[] result = new SNode[1];
       final NodeTypesComponent component1 = NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(containingRoot);
-
+      setCurrentTypesComponent(component1);
+      try {
       checkWithinRoot(node, new Runnable() {
         public void run() {
           result[0] = component1.computeTypesForNodeDuringGeneration(node, new Runnable() {
@@ -277,7 +284,9 @@ public class TypeChecker implements ApplicationComponent {
           });
         }
       });
-
+      } finally {
+        clearCurrentTypesComponent();
+      }
       return result[0];
     }
     return getTypeDontCheck(node);
@@ -300,6 +309,9 @@ public class TypeChecker implements ApplicationComponent {
         return null;
       }
       setCurrentTypesComponent(temporaryComponent);
+      NodeTypesComponent oldComponent =
+        NodeTypesComponentsRepository.getInstance().swapTypesComponentForRoot(containingRoot, temporaryComponent);
+      try {
       checkWithinRoot(node, new Runnable() {
         public void run() {
           result[0] = temporaryComponent.computeTypesForNodeDuringResolving(node, new Runnable() {
@@ -309,7 +321,10 @@ public class TypeChecker implements ApplicationComponent {
           });
         }
       });
-      clearCurrentTypesComponent();
+      } finally {
+        NodeTypesComponentsRepository.getInstance().swapTypesComponentForRoot(containingRoot, oldComponent);
+        clearCurrentTypesComponent();
+      }
       return result[0];
     }
     return getTypeDontCheck(node);

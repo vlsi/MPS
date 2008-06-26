@@ -186,10 +186,6 @@ public class NodeTypesComponent implements IEditorMessageOwner, Cloneable {
   }
 
 
-  public void computeTypes() {
-    computeTypes(false);
-  }
-
   public void computeTypes(boolean refreshTypes) {
     computeTypes(myRootNode, refreshTypes, true, true, new ArrayList<SNode>());
   }
@@ -215,7 +211,6 @@ public class NodeTypesComponent implements IEditorMessageOwner, Cloneable {
         myFullyCheckedNodes.clear();
       }
 
-      myTypeChecker.setCurrentTypesComponent(this);
       if (!loadTypesystemRules(nodeToCheck)) {
         return;
       }
@@ -264,7 +259,6 @@ public class NodeTypesComponent implements IEditorMessageOwner, Cloneable {
         });
       }
     } finally {
-      myTypeChecker.clearCurrentTypesComponent();
       myNotSkippedNodes.clear();
       clearEquationManager();
     }
