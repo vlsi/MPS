@@ -428,7 +428,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell create_stereotypePropertyCell418_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("stereotype");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no stereotype>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_stereotypePropertyCell418_0_internal(context, node, provider);
@@ -457,7 +457,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell create_sourceRefCell418_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("source");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no source>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_sourceRefCell418_0_internal(context, node, provider);
@@ -486,7 +486,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell create_targetRefCell418_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("target");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no target>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_targetRefCell418_0_internal(context, node, provider);
@@ -515,7 +515,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell create_sourceCardinalityPropertyCell418_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("sourceCardinality");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no sourceCardinality>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_sourceCardinalityPropertyCell418_0_internal(context, node, provider);

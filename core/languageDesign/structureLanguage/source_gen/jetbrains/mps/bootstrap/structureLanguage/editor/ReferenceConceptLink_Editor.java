@@ -124,7 +124,7 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
   public EditorCell create_targetRefCell4537_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("target");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no target>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_targetRefCell4537_0_internal(context, node, provider);
@@ -191,7 +191,7 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
     public EditorCell create_namePropertyCell4537_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_namePropertyCell4537_0_internal(context, node, provider);
@@ -243,7 +243,7 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
     public EditorCell create_namePropertyCell4537_01(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_namePropertyCell4537_01_internal(context, node, provider);

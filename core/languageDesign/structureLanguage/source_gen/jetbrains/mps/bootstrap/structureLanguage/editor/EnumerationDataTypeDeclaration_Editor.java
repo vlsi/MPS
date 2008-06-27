@@ -901,7 +901,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell create_memberIdentifierPolicyPropertyCell7131_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("memberIdentifierPolicy");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no memberIdentifierPolicy>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_memberIdentifierPolicyPropertyCell7131_0_internal(context, node, provider);
@@ -959,7 +959,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell create_hasNoDefaultMemberPropertyCell7131_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("hasNoDefaultMember");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no hasNoDefaultMember>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_hasNoDefaultMemberPropertyCell7131_0_internal(context, node, provider);
@@ -1039,7 +1039,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     public EditorCell create_namePropertyCell7131_01(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_namePropertyCell7131_01_internal(context, node, provider);

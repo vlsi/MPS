@@ -130,7 +130,7 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
   public EditorCell create_targetRefNodeCell20120_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("target");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no target>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_targetRefNodeCell20120_0_internal(context, node, provider);

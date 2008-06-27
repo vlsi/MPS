@@ -1508,10 +1508,10 @@
         <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Image" id="1161165534970">
           <node role="imagePathProvider" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_ImagePath" id="1210083703314">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210083703315">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1210083706769">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210083707381">
-                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1210083706770" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1210083709165">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214580244841">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214581919162">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1214581917708" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1214581920524">
                     <link role="property" targetNodeId="1.1160488491229" resolveInfo="iconPath" />
                   </node>
                 </node>

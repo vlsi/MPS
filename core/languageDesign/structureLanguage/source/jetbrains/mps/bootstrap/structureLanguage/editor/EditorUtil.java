@@ -62,6 +62,13 @@ public class EditorUtil {
     return button;
   }
 
+  public static String expandIconPath(String path, SNode sourceNode) {
+    IModule module = findAnchorModule(sourceNode);
+    final Macros macros = Macros.moduleDescriptor(module);
+    String filename = module == null ? null : macros.expandPath(path, module.getDescriptorFile());
+    return filename;
+  }
+
   public static IModule findAnchorModule(SNode sourceNode) {
     return findAnchorModule(sourceNode.getModel());
   }
