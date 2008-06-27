@@ -462,7 +462,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         if (e instanceof BaseGroup) {
           try {
             if (actionContext != null) {
-              e.update(ActionUtils.createEvent(actionContext));
+              e.update(ActionUtils.createEvent(ActionPlaces.EDITOR_POPUP,actionContext));
             }
             registerKeyStrokes((BaseGroup) e, actionContext);
           } catch (Throwable t) {
@@ -637,7 +637,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         registerKeyboardAction(proxy, keyStroke, WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
       }
       AbstractEditorComponent.MPSActionProxy proxy = myActionProxies.get(keyStroke);
-      proxy.add(action);
+      proxy.add(ActionPlaces.EDITOR_POPUP,action);
       return proxy;
     }
     return null;
@@ -678,7 +678,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     BaseGroup group = ActionUtils.getGroup(EDITOR_POPUP_MENU_ACTIONS);
     if (group == null) return;
 
-    JPopupMenu popupMenu = ActionUtils.createPopup(group);
+    JPopupMenu popupMenu = ActionUtils.createPopup(ActionPlaces.EDITOR_POPUP,group);
 
     EditorCell cell = getSelectedCell();
     { // keymaps
@@ -717,7 +717,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         };
 //        mpsAction.setVisible(true);
 //        mpsAction.setEnabled(true);
-        keyMapActions.add(ActionUtils.createComponent(mpsAction));
+        keyMapActions.add(ActionUtils.createComponent(ActionPlaces.EDITOR_POPUP,mpsAction));
       }
 
       popupMenu.add(keyMapActions);
@@ -2382,8 +2382,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private class MPSActionProxy extends AbstractAction {
     private List<BaseAction> myActions = new ArrayList<BaseAction>();
+    private String myPlace = ActionPlaces.UNKNOWN;
 
-    public void add(BaseAction a) {
+    public void add(String place,BaseAction a) {
+      myPlace = place;
       myActions.add(a);
     }
 
@@ -2392,12 +2394,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         if (mySelectedCell != null && mySelectedCell.getSNode() != null) {
           final ActionContext context = createActionContext();
           Presentation p = new Presentation();
-          action.update(ActionUtils.createEvent(p, context));
+          action.update(ActionUtils.createEvent(myPlace, context));
           if (!p.isVisible() || !p.isEnabled()) {
             continue;
           }
 
-          action.actionPerformed(ActionUtils.createEvent(context));
+          action.actionPerformed(ActionUtils.createEvent(myPlace,context));
           return;
         }
       }

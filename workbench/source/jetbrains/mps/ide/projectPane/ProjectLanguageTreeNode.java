@@ -14,6 +14,7 @@ import javax.swing.JPopupMenu;
 import java.util.List;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.ActionPlaces;
 
 /**
  * Created by IntelliJ IDEA.
@@ -59,7 +60,7 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
   }
 
   public JPopupMenu getQuickCreatePopupMenu() {
-    return ActionUtils.createPopup(ProjectPane.LANGUAGE_NEW_ACTIONS);
+    return ActionUtils.createPopup(ActionPlaces.PROJECT_VIEW_POPUP,ProjectPane.LANGUAGE_NEW_ACTIONS);
   }
 
   public ActionGroup getActionGroup() {

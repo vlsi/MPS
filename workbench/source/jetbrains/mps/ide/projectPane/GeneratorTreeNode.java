@@ -9,6 +9,7 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import javax.swing.JPopupMenu;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.ActionPlaces;
 
 class GeneratorTreeNode extends MPSTreeNode {
 
@@ -31,7 +32,7 @@ class GeneratorTreeNode extends MPSTreeNode {
   }
 
   public JPopupMenu getQuickCreatePopupMenu() {
-    return ActionUtils.createPopup(ProjectPane.GENERATOR_NEW_ACTIONS);
+    return ActionUtils.createPopup(ActionPlaces.PROJECT_VIEW_POPUP,ProjectPane.GENERATOR_NEW_ACTIONS);
   }
 
   public ActionGroup getActionGroup() {

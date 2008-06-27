@@ -11,6 +11,7 @@ import java.awt.Color;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.ActionPlaces;
 
 public class SNodeGroupTreeNode extends TextTreeNode {
 
@@ -43,7 +44,7 @@ public class SNodeGroupTreeNode extends TextTreeNode {
   }
 
   public JPopupMenu getQuickCreatePopupMenu() {
-    return ActionUtils.createPopup(getActionGroup());
+    return ActionUtils.createPopup(ActionPlaces.PROJECT_VIEW_POPUP,getActionGroup());
   }
 
   public boolean hasErrors() {

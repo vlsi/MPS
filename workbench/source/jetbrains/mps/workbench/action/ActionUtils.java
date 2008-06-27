@@ -25,20 +25,20 @@ public class ActionUtils {
     return ((BaseGroup) ActionManager.getInstance().getAction(id));
   }
 
-  public static JPopupMenu createPopup(String groupId) {
-    return createPopup(getGroup(groupId));
+  public static JPopupMenu createPopup(String place,String groupId) {
+    return createPopup(place,getGroup(groupId));
   }
 
-  public static JPopupMenu createPopup(ActionGroup g) {
-    return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, g).getComponent();
+  public static JPopupMenu createPopup(String place,ActionGroup g) {
+    return ActionManager.getInstance().createActionPopupMenu(place, g).getComponent();
   }
 
-  public static JComponent createComponent(AnAction... actions) {
-    return createComponent(groupFromActions(actions));
+  public static JComponent createComponent(String place,AnAction... actions) {
+    return createComponent(place,groupFromActions(actions));
   }
 
-  public static JComponent createComponent(ActionGroup g) {
-    return ActionManager.getInstance().createButtonToolbar(ActionPlaces.UNKNOWN, g);
+  public static JComponent createComponent(String place,ActionGroup g) {
+    return ActionManager.getInstance().createButtonToolbar(place, g);
   }
 
   public static ActionGroup groupFromActions(AnAction... actions) {
@@ -95,11 +95,11 @@ public class ActionUtils {
     };
   }
 
-  public static AnActionEvent createEvent(ActionContext context) {
-    return createEvent(new Presentation(),context); 
+  public static AnActionEvent createEvent(String place,ActionContext context) {
+    return createEvent(place,new Presentation(),context);
   }
 
-  public static AnActionEvent createEvent(Presentation presentation, final ActionContext context) {
+  public static AnActionEvent createEvent(String place,Presentation presentation, final ActionContext context) {
     DataContext dataContext = new DataContext() {
       @Nullable
       public Object getData(@NonNls String dataId) {
@@ -125,7 +125,7 @@ public class ActionUtils {
         throw new UnsupportedOperationException(dataId);
       }
     };
-    AnActionEvent event = new AnActionEvent(null, dataContext, ActionPlaces.UNKNOWN, presentation, ActionManager.getInstance(), 0);
+    AnActionEvent event = new AnActionEvent(null, dataContext, place, presentation, ActionManager.getInstance(), 0);
     return event;
   }
 
