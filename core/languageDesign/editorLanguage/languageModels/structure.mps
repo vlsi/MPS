@@ -1128,6 +1128,10 @@
       <property name="name" value="noTargetText" />
       <link role="dataType" targetNodeId="3.1082983041843" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1214560368769">
+      <property name="name" value="emptyNoTargetText" />
+      <link role="dataType" targetNodeId="3.1082983657063" resolveInfo="boolean" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1140017977771">
       <property name="name" value="readOnly" />
       <property name="propertyType" value="boolean" />

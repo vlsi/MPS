@@ -24,7 +24,18 @@
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1214555156299">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1214555156300" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1214555156301" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214555156302" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214555156302">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214561506802">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1214561506803">
+            <property name="value" value="abc" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1214561509148">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1214561509149" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1214561509150" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214561509151" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1214554827614">
       <property name="name" value="main" />
@@ -65,6 +76,11 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1214561511011">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1214561511012" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1214561511013" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214561511014" />
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1214554555185">
       <property name="name" value="getGreeting" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1214554588862">
@@ -77,7 +93,7 @@
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="1214556426117">
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1214556758634">
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1214556760045">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1214556760266" />
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1214560321459" />
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1214556759216">
                     <property name="value" value="23" />
                   </node>

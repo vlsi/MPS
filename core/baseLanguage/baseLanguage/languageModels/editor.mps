@@ -2588,6 +2588,7 @@
         <property name="allowEmptyText" value="true" />
         <property name="writable" value="true" />
         <property name="attractsFocus" value="1" />
+        <property name="emptyNoTargetText" value="true" />
         <link role="relationDeclaration" targetNodeId="17.1070475926801" />
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994428">
           <property name="flag" value="true" />
