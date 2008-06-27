@@ -49,7 +49,8 @@ public class IntelligentInputUtil {
     } else if (canCompleteSmallPatternImmediately(substituteInfo, smallPattern, tail) ||
       canCompleteSmallPatternImmediately(substituteInfo, smallPattern.trim(), tail)) {
 
-      if (canCompleteSmallPatternImmediately(substituteInfo, smallPattern.trim(), tail)) {
+      if (!canCompleteSmallPatternImmediately(substituteInfo, smallPattern, tail) &&
+        canCompleteSmallPatternImmediately(substituteInfo, smallPattern.trim(), tail)) {
         smallPattern = smallPattern.trim();
       }
 
@@ -75,7 +76,8 @@ public class IntelligentInputUtil {
     } else if (canCompleteTheWholeStringImmediately(substituteInfo, smallPattern, tail) ||
       canCompleteTheWholeStringImmediately(substituteInfo, smallPattern.trim(), tail)) {
 
-      if (canCompleteTheWholeStringImmediately(substituteInfo, smallPattern.trim(), tail)) {
+      if (!canCompleteTheWholeStringImmediately(substituteInfo, smallPattern, tail) &&
+        canCompleteTheWholeStringImmediately(substituteInfo, smallPattern.trim(), tail)) {
         smallPattern = smallPattern.trim();
       }
 
