@@ -306,8 +306,8 @@ public class ChildSubstituteActionsHelper {
     return actions;
   }
 
-  private static String getSmartMatchingText(ConceptDeclaration referenceNodeConcept, SNode referentNode) {
-    String referentMatchingText = NodePresentationUtil.matchingText(referentNode, true);
+  private static String getSmartMatchingText(ConceptDeclaration referenceNodeConcept, SNode referentNode, boolean visible) {
+    String referentMatchingText = NodePresentationUtil.matchingText(referentNode, true, visible);
     if (ReferenceConceptUtil.hasSmartAlias(referenceNodeConcept)) {
       return ReferenceConceptUtil.getPresentationFromSmartAlias(referenceNodeConcept, referentMatchingText);
     }
@@ -433,6 +433,7 @@ public class ChildSubstituteActionsHelper {
 
   private static class SmartRefChildNodeSubstituteAction extends DefaultChildNodeSubstituteAction {
     private String myMatchingText;
+    private String myVisibleMatchingText;
     private final SNode myParentNode;
     private final SNode myCurrentChild;
     private final SNode myReferentNode;
@@ -451,9 +452,16 @@ public class ChildSubstituteActionsHelper {
 
     public String getMatchingText(String pattern) {
       if (myMatchingText == null) {
-        myMatchingText = getSmartMatchingText(myReferenceNodeConcept, myReferentNode);
+        myMatchingText = getSmartMatchingText(myReferenceNodeConcept, myReferentNode, false);
       }
       return myMatchingText;
+    }
+
+    public String getVisibleMatchingText(String pattern) {
+      if (myVisibleMatchingText == null) {
+        myVisibleMatchingText = getSmartMatchingText(myReferenceNodeConcept, myReferentNode, true);
+      }
+      return myVisibleMatchingText;
     }
 
     public Icon getIconFor(String pattern) {
@@ -468,10 +476,6 @@ public class ChildSubstituteActionsHelper {
       }
 
       return "^" + result;
-    }
-
-    public SNode getOutputConcept() {
-      return myReferenceNodeConcept.getNode();
     }
 
     public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
