@@ -50,7 +50,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CatchClause_Editor.calculateColor26(cell);
+              return CatchClause_Editor.calculateColor24(cell);
             }
 
           });
@@ -122,7 +122,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
   private static void setupLabel_catchBodyRefNodeCell6964_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor26(EditorCell cell) {
+  private static Color calculateColor24(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

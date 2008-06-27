@@ -50,7 +50,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return SuperMethodCall_Editor.calculateColor17(cell);
+              return SuperMethodCall_Editor.calculateColor15(cell);
             }
 
           });
@@ -109,7 +109,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "parameter", true)).isEmpty();
   }
 
-  private static Color calculateColor17(EditorCell cell) {
+  private static Color calculateColor15(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

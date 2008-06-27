@@ -35,7 +35,7 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return AssertStatement_Editor.calculateColor84(cell);
+              return AssertStatement_Editor.calculateColor81(cell);
             }
 
           });
@@ -104,7 +104,7 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     return SLinkOperations.getTarget(node, "message", true) != null;
   }
 
-  private static Color calculateColor84(EditorCell cell) {
+  private static Color calculateColor81(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

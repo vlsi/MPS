@@ -59,7 +59,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return TryStatement_Editor.calculateColor15(cell);
+              return TryStatement_Editor.calculateColor13(cell);
             }
 
           });
@@ -124,7 +124,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return TryStatement_Editor.calculateColor61(cell);
+              return TryStatement_Editor.calculateColor58(cell);
             }
 
           });
@@ -249,13 +249,13 @@ public class TryStatement_Editor extends DefaultNodeEditor {
     return SLinkOperations.getCount(node, "catchClause") > 0;
   }
 
-  private static Color calculateColor15(EditorCell cell) {
+  private static Color calculateColor13(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor61(EditorCell cell) {
+  private static Color calculateColor58(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

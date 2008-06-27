@@ -46,7 +46,7 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return EnumConstantDeclaration_Editor.calculateColor43(cell);
+              return EnumConstantDeclaration_Editor.calculateColor40(cell);
             }
 
           });
@@ -81,7 +81,7 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell6462_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor43(EditorCell cell) {
+  private static Color calculateColor40(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;

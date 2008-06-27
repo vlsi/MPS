@@ -88,7 +88,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ParameterDeclaration_Editor.calculateColor12(cell);
+              return ParameterDeclaration_Editor.calculateColor10(cell);
             }
 
           });
@@ -173,7 +173,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
     return SLinkOperations.getCount(node, "annotation") > 0;
   }
 
-  private static Color calculateColor12(EditorCell cell) {
+  private static Color calculateColor10(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

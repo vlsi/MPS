@@ -88,7 +88,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return LocalVariableDeclaration_Editor.calculateColor67(cell);
+              return LocalVariableDeclaration_Editor.calculateColor64(cell);
             }
 
           });
@@ -204,7 +204,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     return SLinkOperations.getCount(node, "annotation") > 0;
   }
 
-  private static Color calculateColor67(EditorCell cell) {
+  private static Color calculateColor64(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

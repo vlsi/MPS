@@ -74,7 +74,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ClassConcept_Editor.calculateColor35(cell);
+              return ClassConcept_Editor.calculateColor32(cell);
             }
 
           });
@@ -294,7 +294,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ClassConcept_Editor.calculateColor45(cell);
+              return ClassConcept_Editor.calculateColor42(cell);
             }
 
           });
@@ -398,7 +398,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ClassConcept_Editor.calculateColor79(cell);
+              return ClassConcept_Editor.calculateColor76(cell);
             }
 
           });
@@ -493,7 +493,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ClassConcept_Editor.calculateColor57(cell);
+              return ClassConcept_Editor.calculateColor54(cell);
             }
 
           });
@@ -553,7 +553,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ClassConcept_Editor.calculateColor65(cell);
+              return ClassConcept_Editor.calculateColor62(cell);
             }
 
           });
@@ -768,7 +768,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ClassConcept_Editor.calculateColor22(cell);
+              return ClassConcept_Editor.calculateColor20(cell);
             }
 
           });
@@ -946,37 +946,37 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     return SLinkOperations.getTarget(node, "instanceInitializer", true) != null;
   }
 
-  private static Color calculateColor22(EditorCell cell) {
+  private static Color calculateColor20(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor35(EditorCell cell) {
+  private static Color calculateColor32(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor45(EditorCell cell) {
+  private static Color calculateColor42(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor57(EditorCell cell) {
+  private static Color calculateColor54(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor65(EditorCell cell) {
+  private static Color calculateColor62(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor79(EditorCell cell) {
+  private static Color calculateColor76(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

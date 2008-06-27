@@ -79,7 +79,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return IfStatement_Editor.calculateColor59(cell);
+              return IfStatement_Editor.calculateColor56(cell);
             }
 
           });
@@ -98,7 +98,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return IfStatement_Editor.calculateColor58(cell);
+              return IfStatement_Editor.calculateColor55(cell);
             }
 
           });
@@ -208,7 +208,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return IfStatement_Editor.calculateColor33(cell);
+              return IfStatement_Editor.calculateColor30(cell);
             }
 
           });
@@ -360,19 +360,19 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).isNotEmpty();
   }
 
-  private static Color calculateColor33(EditorCell cell) {
+  private static Color calculateColor30(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor58(EditorCell cell) {
+  private static Color calculateColor55(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor59(EditorCell cell) {
+  private static Color calculateColor56(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

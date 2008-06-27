@@ -29,7 +29,7 @@ public class BooleanConstant_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return BooleanConstant_Editor.calculateColor54(cell);
+              return BooleanConstant_Editor.calculateColor51(cell);
             }
 
           });
@@ -43,7 +43,7 @@ public class BooleanConstant_Editor extends DefaultNodeEditor {
   private static void setupLabel_valuePropertyCell12933_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor54(EditorCell cell) {
+  private static Color calculateColor51(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

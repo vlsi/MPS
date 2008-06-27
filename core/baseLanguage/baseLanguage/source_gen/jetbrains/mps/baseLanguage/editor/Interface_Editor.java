@@ -118,7 +118,7 @@ public class Interface_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return Interface_Editor.calculateColor37(cell);
+              return Interface_Editor.calculateColor34(cell);
             }
 
           });
@@ -151,7 +151,7 @@ public class Interface_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return Interface_Editor.calculateColor30(cell);
+              return Interface_Editor.calculateColor27(cell);
             }
 
           });
@@ -329,13 +329,13 @@ public class Interface_Editor extends DefaultNodeEditor {
     return SLinkOperations.getCount(node, "annotation") > 0;
   }
 
-  private static Color calculateColor30(EditorCell cell) {
+  private static Color calculateColor27(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor37(EditorCell cell) {
+  private static Color calculateColor34(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

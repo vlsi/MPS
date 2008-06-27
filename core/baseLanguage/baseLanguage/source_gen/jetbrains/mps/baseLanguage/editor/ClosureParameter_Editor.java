@@ -29,7 +29,7 @@ public class ClosureParameter_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ClosureParameter_Editor.calculateColor14(cell);
+              return ClosureParameter_Editor.calculateColor12(cell);
             }
 
           });
@@ -43,7 +43,7 @@ public class ClosureParameter_Editor extends DefaultNodeEditor {
   private static void setupLabel_namePropertyCell4815_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor14(EditorCell cell) {
+  private static Color calculateColor12(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

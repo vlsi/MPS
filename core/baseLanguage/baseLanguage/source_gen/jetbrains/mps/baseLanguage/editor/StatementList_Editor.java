@@ -43,7 +43,7 @@ public class StatementList_Editor extends DefaultNodeEditor {
   private static void setupLabel_statementRefNodeListCell6566_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor25(EditorCell cell) {
+  private static Color calculateColor23(EditorCell cell) {
     Color result;
     result = Color.darkGray;
     return result;
@@ -84,7 +84,7 @@ public class StatementList_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return StatementList_Editor.calculateColor25(cell);
+                return StatementList_Editor.calculateColor23(cell);
               }
 
             });

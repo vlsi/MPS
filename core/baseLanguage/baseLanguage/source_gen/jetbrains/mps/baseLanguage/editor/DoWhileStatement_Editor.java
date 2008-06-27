@@ -40,7 +40,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return DoWhileStatement_Editor.calculateColor46(cell);
+              return DoWhileStatement_Editor.calculateColor43(cell);
             }
 
           });
@@ -91,7 +91,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return DoWhileStatement_Editor.calculateColor11(cell);
+              return DoWhileStatement_Editor.calculateColor9(cell);
             }
 
           });
@@ -239,13 +239,13 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     return !(SPropertyOperations.hasValue(node, "label", null));
   }
 
-  private static Color calculateColor11(EditorCell cell) {
+  private static Color calculateColor9(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor46(EditorCell cell) {
+  private static Color calculateColor43(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

@@ -74,7 +74,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return EnumClass_Editor.calculateColor66(cell);
+              return EnumClass_Editor.calculateColor63(cell);
             }
 
           });
@@ -269,7 +269,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return EnumClass_Editor.calculateColor20(cell);
+              return EnumClass_Editor.calculateColor18(cell);
             }
 
           });
@@ -344,13 +344,13 @@ public class EnumClass_Editor extends DefaultNodeEditor {
   private static void setupLabel_implementedInterfaceRefNodeListCell1623_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor20(EditorCell cell) {
+  private static Color calculateColor18(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor66(EditorCell cell) {
+  private static Color calculateColor63(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

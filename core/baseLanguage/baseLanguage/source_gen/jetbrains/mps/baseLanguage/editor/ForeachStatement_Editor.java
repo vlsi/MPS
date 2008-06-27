@@ -49,7 +49,7 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ForeachStatement_Editor.calculateColor80(cell);
+              return ForeachStatement_Editor.calculateColor77(cell);
             }
 
           });
@@ -266,7 +266,7 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
     return !(SPropertyOperations.hasValue(node, "label", null));
   }
 
-  private static Color calculateColor80(EditorCell cell) {
+  private static Color calculateColor77(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

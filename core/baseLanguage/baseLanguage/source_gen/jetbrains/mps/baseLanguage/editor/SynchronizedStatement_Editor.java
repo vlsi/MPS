@@ -46,7 +46,7 @@ public class SynchronizedStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return SynchronizedStatement_Editor.calculateColor71(cell);
+              return SynchronizedStatement_Editor.calculateColor68(cell);
             }
 
           });
@@ -129,7 +129,7 @@ public class SynchronizedStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_blockRefNodeCell20142_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor71(EditorCell cell) {
+  private static Color calculateColor68(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

@@ -36,7 +36,7 @@ public class DotExpression_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return DotExpression_Editor.calculateColor42(cell);
+              return DotExpression_Editor.calculateColor39(cell);
             }
 
           });
@@ -60,7 +60,7 @@ public class DotExpression_Editor extends DefaultNodeEditor {
   private static void setupLabel_operationRefNodeCell7793_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor42(EditorCell cell) {
+  private static Color calculateColor39(EditorCell cell) {
     Color result;
     result = Color.lightGray;
     return result;

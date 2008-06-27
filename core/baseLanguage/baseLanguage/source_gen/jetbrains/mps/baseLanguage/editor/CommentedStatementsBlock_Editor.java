@@ -38,7 +38,7 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CommentedStatementsBlock_Editor.calculateColor38(cell);
+              return CommentedStatementsBlock_Editor.calculateColor35(cell);
             }
 
           });
@@ -58,7 +58,7 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CommentedStatementsBlock_Editor.calculateColor32(cell);
+              return CommentedStatementsBlock_Editor.calculateColor29(cell);
             }
 
           });
@@ -104,7 +104,7 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CommentedStatementsBlock_Editor.calculateColor10(cell);
+              return CommentedStatementsBlock_Editor.calculateColor8(cell);
             }
 
           });
@@ -127,19 +127,19 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
   private static void setupLabel_statementRefNodeListCell19947_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor10(EditorCell cell) {
+  private static Color calculateColor8(EditorCell cell) {
     Color result;
     result = Color.lightGray;
     return result;
   }
 
-  private static Color calculateColor32(EditorCell cell) {
+  private static Color calculateColor29(EditorCell cell) {
     Color result;
     result = Color.gray;
     return result;
   }
 
-  private static Color calculateColor38(EditorCell cell) {
+  private static Color calculateColor35(EditorCell cell) {
     Color result;
     result = Color.gray;
     return result;

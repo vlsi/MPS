@@ -39,7 +39,7 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ClassifierClassExpression_Editor.calculateColor23(cell);
+              return ClassifierClassExpression_Editor.calculateColor21(cell);
             }
 
           });
@@ -56,7 +56,7 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell17599_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor23(EditorCell cell) {
+  private static Color calculateColor21(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

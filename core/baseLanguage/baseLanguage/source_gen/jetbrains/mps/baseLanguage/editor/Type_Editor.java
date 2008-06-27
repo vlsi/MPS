@@ -38,7 +38,7 @@ public class Type_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return Type_Editor.calculateColor68(cell);
+              return Type_Editor.calculateColor65(cell);
             }
 
           });
@@ -59,7 +59,7 @@ public class Type_Editor extends DefaultNodeEditor {
     return SConceptPropertyOperations.getBoolean(node, "abstract");
   }
 
-  private static Color calculateColor68(EditorCell cell) {
+  private static Color calculateColor65(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
