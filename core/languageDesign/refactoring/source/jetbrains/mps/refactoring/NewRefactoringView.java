@@ -16,13 +16,6 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import java.awt.BorderLayout;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 21.01.2008
- * Time: 17:30:43
- * To change this template use File | Settings | File Templates.
- */
 public class NewRefactoringView extends BaseMPSTool {
   private static final Logger LOG = Logger.getLogger(NewRefactoringView.class);
   private RefactoringViewItem myRefactoringViewItem;

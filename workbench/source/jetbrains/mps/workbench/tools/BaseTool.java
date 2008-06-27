@@ -35,6 +35,8 @@ public abstract class BaseTool{
   private boolean myIsRegistered;
   private ToolWindowManager myWindowManager;
 
+  private JComponent myComponent = null;
+
   public BaseTool(Project project, String id, int number, Icon icon, ToolWindowAnchor anchor, boolean canCloseContent) {
     myAnchor = anchor;
     myNumber = number;
@@ -184,20 +186,20 @@ public abstract class BaseTool{
 
     ToolWindow toolWindow = myWindowManager.registerToolWindow(myId, myCanCloseContent, myAnchor);
 
-    JComponent component = getComponent();
-    if (component != null) {
+    if (myComponent==null) myComponent =getComponent();
+    if (myComponent != null) {
       if (!hasCloseButton()) {
-        addContent(component, null, false);
+        addContent(myComponent, null, false);
       } else {
         DefaultGroup group = new DefaultGroup();
         group.add(new BaseAction("", "Close", Icons.CLOSE_ICON) {
           public void doExecute(AnActionEvent e) {
-            getContentManager().removeAllContents(true);
+            unregister();
           }
         });
 
         JPanel panel = new JPanel(new BorderLayout());
-        panel.add(component, BorderLayout.CENTER);
+        panel.add(myComponent, BorderLayout.CENTER);
         panel.add(ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent(), BorderLayout.WEST);
         addContent(panel, null, false);
       }
@@ -241,6 +243,7 @@ public abstract class BaseTool{
     }
 
     myWindowManager.unregisterToolWindow(myId);
+    myIsRegistered = false;
   }
 
   public JComponent getComponent() {
