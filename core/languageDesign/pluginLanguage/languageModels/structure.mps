@@ -169,12 +169,6 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1214307303872" resolveInfo="GetToolBlock" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1208355633825">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="component" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1213888961901">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="methodDeclaration" />
