@@ -87,9 +87,6 @@ public class InspectorEditorComponent extends AbstractEditorComponent {
   public <T> T get(Class<T> cls) {
     T result = super.get(cls);
     if (result != null) return result;
-    if (cls == IEditor.class) {
-      return (T) this;
-    }
     return null;
   }
 }
