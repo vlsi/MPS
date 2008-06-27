@@ -58,7 +58,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
   }
 
   public String getVisibleMatchingText(String pattern) {
-    return getMatchingText(pattern, false, true);
+    return getMatchingText(pattern);
   }
 
   public String getDescriptionText(String pattern) {
