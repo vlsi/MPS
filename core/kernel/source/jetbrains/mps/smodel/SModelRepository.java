@@ -27,11 +27,12 @@ public class SModelRepository implements ApplicationComponent {
   private Set<SModelDescriptor> myModelsWithNoOwners = new LinkedHashSet<SModelDescriptor>();
   private List<SModelRepositoryListener> mySModelRepositoryListeners = new ArrayList<SModelRepositoryListener>();
   private WeakSet<SModelRepositoryListener> myWeakSModelRepositoryListeners = new WeakSet<SModelRepositoryListener>();
+  private final Map<String, SModelDescriptor> myCanonicalPathsToModelDescriptorMap = new LinkedHashMap<String, SModelDescriptor>();
 
   private ManyToManyMap<SModelDescriptor, ModelOwner> myModelsToOwners = new ManyToManyMap<SModelDescriptor, ModelOwner>();
 
   private boolean myInChangedModelsReloading = false;
-  
+
   private SModelListener myModelsListener = new ModelChangeListener();
 
   public SModelRepository() {
@@ -65,14 +66,7 @@ public class SModelRepository implements ApplicationComponent {
   public SModelDescriptor findModel(IFile modelFile) {
     String canonicalPath = modelFile.getCanonicalPath();
 
-    for (SModelDescriptor model : getAllModelDescriptors()) {
-      if (model.getModelFile() == null) continue;
-
-      String modelCanonicalPath = model.getModelFile().getCanonicalPath();
-      if (canonicalPath.equals(modelCanonicalPath)) return model;
-    }
-
-    return null;
+    return myCanonicalPathsToModelDescriptorMap.get(canonicalPath);
   }
 
   public void addModelRepositoryListener(SModelRepositoryListener l) {
@@ -119,7 +113,7 @@ public class SModelRepository implements ApplicationComponent {
   public void createNewModel(SModelDescriptor modelDescriptor, ModelOwner owner) {
     registerModelDescriptor(modelDescriptor, owner);
     markChanged(modelDescriptor, true);
-    fireModelCreatedEvent(modelDescriptor);        
+    fireModelCreatedEvent(modelDescriptor);
   }
 
   public void deleteModel(SModelDescriptor modelDescriptor) {
@@ -132,7 +126,7 @@ public class SModelRepository implements ApplicationComponent {
     SModelRepository.getInstance().fireModelDeletedEvent(modelDescriptor);
   }
 
-  public void addOwnerForDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {    
+  public void addOwnerForDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
     if (!myModelDescriptors.contains(modelDescriptor)) {
       throw new IllegalStateException();
     }
@@ -149,18 +143,18 @@ public class SModelRepository implements ApplicationComponent {
     SModelUID modelUID = modelDescriptor.getModelUID();
     SModelDescriptor registeredModel = myUIDToModelDescriptorMap.get(modelUID);
     LOG.assertLog(registeredModel == null || registeredModel == modelDescriptor,
-            "Another model \"" + modelUID + "\" is already registered!");
+      "Another model \"" + modelUID + "\" is already registered!");
 
     Set<ModelOwner> owners = myModelsToOwners.getByFirst(modelDescriptor);
     LOG.assertLog(owners == null ||
-            !owners.contains(owner),
-            "Another model \"" + modelUID + "\" is already registered!");
+      !owners.contains(owner),
+      "Another model \"" + modelUID + "\" is already registered!");
 
     myModelsToOwners.addLink(modelDescriptor, owner);
 
     myUIDToModelDescriptorMap.put(modelUID, modelDescriptor);
     myModelDescriptors.add(modelDescriptor);
-
+    addModelToFileCache(modelDescriptor);
     myModelsWithNoOwners.remove(modelDescriptor);
     addListeners(modelDescriptor);
     fireModelAdded(modelDescriptor);
@@ -187,10 +181,12 @@ public class SModelRepository implements ApplicationComponent {
     myModelsToOwners.clearFirst(modelDescriptor);
 
     myModelDescriptors.remove(modelDescriptor);
+    boolean result = removeModelFromFileCache(modelDescriptor);
+    assert result;
     myUIDToModelDescriptorMap.remove(modelDescriptor.getModelUID());
     myChangedModels.remove(modelDescriptor);
     myModelsWithNoOwners.remove(modelDescriptor);
-    
+
     removeListeners(modelDescriptor);
     fireModelRemoved(modelDescriptor);
     modelDescriptor.dispose();
@@ -207,7 +203,7 @@ public class SModelRepository implements ApplicationComponent {
   public void removeUnusedDescriptors() {
     List<SModelDescriptor> descriptorsToRemove = new ArrayList<SModelDescriptor>();
     for (SModelDescriptor descriptor : new ArrayList<SModelDescriptor>(myModelsWithNoOwners)) {
-      Set<ModelOwner> modelOwners =  myModelsToOwners.getByFirst(descriptor);
+      Set<ModelOwner> modelOwners = myModelsToOwners.getByFirst(descriptor);
       if (modelOwners == null || modelOwners.isEmpty()) {
         descriptorsToRemove.add(descriptor);
       } else {
@@ -276,6 +272,9 @@ public class SModelRepository implements ApplicationComponent {
     myUIDToModelDescriptorMap.remove(modelDescriptor.getModelUID());
     boolean contains1 = myModelDescriptors.contains(modelDescriptor);
     myModelDescriptors.remove(modelDescriptor);
+    boolean result = removeModelFromFileCache(modelDescriptor);
+    assert result ^ !contains1;
+    removeModelFromFileCache(modelDescriptor);
     Long aLong = myChangedModels.get(modelDescriptor);
     myChangedModels.remove(modelDescriptor);
 
@@ -291,6 +290,7 @@ public class SModelRepository implements ApplicationComponent {
     }
     if (contains1) {
       myModelDescriptors.add(modelDescriptor);
+      addModelToFileCache(modelDescriptor);
     }
     if (aLong != null) {
       myChangedModels.put(modelDescriptor, aLong);
@@ -302,6 +302,22 @@ public class SModelRepository implements ApplicationComponent {
 
     markChanged(modelDescriptor, true);
     fireModelRenamed(modelDescriptor);
+  }
+
+  private void addModelToFileCache(SModelDescriptor modelDescriptor) {
+    IFile modelFile = modelDescriptor.getModelFile();
+    if (modelFile != null) {
+      myCanonicalPathsToModelDescriptorMap.put(modelFile.getCanonicalPath(), modelDescriptor);
+    }
+  }
+
+  private boolean removeModelFromFileCache(SModelDescriptor modelDescriptor) {
+    IFile modelFile = modelDescriptor.getModelFile();
+    if (modelFile != null) {
+      SModelDescriptor sd = myCanonicalPathsToModelDescriptorMap.remove(modelFile.getCanonicalPath());
+      return sd == modelDescriptor;
+    }
+    return true;
   }
 
   public void markChanged(SModelDescriptor descriptor, boolean b) {

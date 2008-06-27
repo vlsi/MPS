@@ -4,6 +4,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.vfs.*;
+import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SModelRepository;
@@ -17,15 +18,15 @@ public class ModelChangesWhatcher implements ApplicationComponent {
   private VirtualFileAdapter myVirtualFileListener = new VirtualFileAdapter() {
     @Override
     public void contentsChanged(VirtualFileEvent event) {
-//      IFile ifile = VFileSystem.toIFile(event.getFile());
-//      final SModelDescriptor model = ApplicationManager.getApplication().getComponent(SModelRepository.class).findModel(ifile);
-//      if (model != null){
-//        ModelAccess.instance().runReadAction(new Runnable() {
-//          public void run() {
-//            model.reloadFromDisk();
-//          }
-//        });
-//      }
+      IFile ifile = VFileSystem.toIFile(event.getFile());
+      final SModelDescriptor model = ApplicationManager.getApplication().getComponent(SModelRepository.class).findModel(ifile);
+      if (model != null){
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            model.reloadFromDisk();
+          }
+        });
+      }
     }
 
     @Override
@@ -38,6 +39,11 @@ public class ModelChangesWhatcher implements ApplicationComponent {
 
     @Override
     public void beforeFileDeletion(VirtualFileEvent event) {
+    }
+
+    @Override
+    public void fileCreated(VirtualFileEvent event) {
+      IFile ifile = VFileSystem.toIFile(event.getFile());
     }
   };
 
