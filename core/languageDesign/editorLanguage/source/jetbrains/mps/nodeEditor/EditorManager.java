@@ -346,6 +346,9 @@ public class EditorManager {
       return new EditorCell_RTHint(editorContext, node);
     }
 
+    protected boolean isSelectionPainted() {
+      return isSelected();
+    }
   }
 
 
