@@ -55,7 +55,6 @@ public class IntelligentInputUtil {
       EditorCell errorCell = EditorUtil.findErrorCell(cellForNewNode);
       if (errorCell != null && errorCell instanceof EditorCell_Label) {
         editorContext.flushEvents();
-
         new Runnable() {
           public void run() {
             EditorCell cellForNewNode = editorContext.getNodeEditorComponent().findNodeCell(newNode);
@@ -64,7 +63,6 @@ public class IntelligentInputUtil {
             errorCell.setCaretPosition(tail.length());
           }
         }.run();
-
         return;
       }
     } else if (canCompleteImmediately(substituteInfo, smallPattern, tail)) {
