@@ -1079,11 +1079,6 @@
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1213720510794">
                     <link role="classifier" targetNodeId="36.~MPSActionAdapter" resolveInfo="MPSActionAdapter" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1213720510795" />
-                    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1213720510796">
-                      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1213720510797" />
-                      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1213720510798" />
-                      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213720510799" />
-                    </node>
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1213720510800">
                       <property name="isAbstract" value="false" />
                       <property name="name" value="doExecute" />
