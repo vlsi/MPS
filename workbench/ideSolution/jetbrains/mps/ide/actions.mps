@@ -265,11 +265,17 @@
         <property name="name" value="newGroup" />
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204911304334" />
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1205347605622">
-        <link role="javaClass" targetNodeId="10.~GenerateAllModelsInModuleAction_true" resolveInfo="GenerateAllModelsInModuleAction_true" />
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator" id="1214585890083">
+        <link role="constructorDeclaration" targetNodeId="10.~GenerateAllModelsInModuleAction.&lt;init&gt;(boolean)" resolveInfo="GenerateAllModelsInModuleAction" />
+        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1214585903212">
+          <property name="value" value="true" />
+        </node>
       </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1205268112301">
-        <link role="javaClass" targetNodeId="10.~GenerateAllModelsInModuleAction_false" resolveInfo="GenerateAllModelsInModuleAction_false" />
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator" id="1214585906589">
+        <link role="constructorDeclaration" targetNodeId="10.~GenerateAllModelsInModuleAction.&lt;init&gt;(boolean)" resolveInfo="GenerateAllModelsInModuleAction" />
+        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1214585906590">
+          <property name="value" value="false" />
+        </node>
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204911328898">
         <link role="javaClass" targetNodeId="2.~CheckLanguageAction" resolveInfo="CheckLanguageAction" />
@@ -346,11 +352,17 @@
         <link role="javaClass" targetNodeId="5.~RemoveModuleFromProjectAction" resolveInfo="RemoveModuleFromProjectAction" />
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204912175121" />
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1205347618406">
-        <link role="javaClass" targetNodeId="10.~GenerateAllModelsInModuleAction_true" resolveInfo="GenerateAllModelsInModuleAction_true" />
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator" id="1214586108594">
+        <link role="constructorDeclaration" targetNodeId="10.~GenerateAllModelsInModuleAction.&lt;init&gt;(boolean)" resolveInfo="GenerateAllModelsInModuleAction" />
+        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1214586108595">
+          <property name="value" value="true" />
+        </node>
       </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1205268121849">
-        <link role="javaClass" targetNodeId="10.~GenerateAllModelsInModuleAction_false" resolveInfo="GenerateAllModelsInModuleAction_false" />
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator" id="1214586108596">
+        <link role="constructorDeclaration" targetNodeId="10.~GenerateAllModelsInModuleAction.&lt;init&gt;(boolean)" resolveInfo="GenerateAllModelsInModuleAction" />
+        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1214586108597">
+          <property name="value" value="false" />
+        </node>
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204912216802">
         <link role="javaClass" targetNodeId="11.~GenerateTextFromAllModelsInSolutionAction" resolveInfo="GenerateTextFromAllModelsInSolutionAction" />
@@ -446,12 +458,17 @@
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1204980550723">
         <property name="name" value="generatorNew" />
       </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204980588962" />
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204998545197">
-        <link role="javaClass" targetNodeId="8.~GenerateTemplateQueriesAction_true" resolveInfo="GenerateTemplateQueriesAction_true" />
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator" id="1214586143521">
+        <link role="constructorDeclaration" targetNodeId="8.~GenerateTemplateQueriesAction.&lt;init&gt;(boolean)" resolveInfo="GenerateTemplateQueriesAction" />
+        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1214586149865">
+          <property name="value" value="true" />
+        </node>
       </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204998548902">
-        <link role="javaClass" targetNodeId="8.~GenerateTemplateQueriesAction_false" resolveInfo="GenerateTemplateQueriesAction_false" />
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator" id="1214586151398">
+        <link role="constructorDeclaration" targetNodeId="8.~GenerateTemplateQueriesAction.&lt;init&gt;(boolean)" resolveInfo="GenerateTemplateQueriesAction" />
+        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1214586151399">
+          <property name="value" value="false" />
+        </node>
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204980690186" />
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980696642">
@@ -738,8 +755,11 @@
       <link role="point" targetNodeId="1204982925572" resolveInfo="generate" />
     </node>
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1207148351921">
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1205268101799">
-        <link role="javaClass" targetNodeId="10.~GenerateAllModelsInModuleAction_false" resolveInfo="GenerateAllModelsInModuleAction_false" />
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator" id="1214586275740">
+        <link role="constructorDeclaration" targetNodeId="10.~GenerateAllModelsInModuleAction.&lt;init&gt;(boolean)" resolveInfo="GenerateAllModelsInModuleAction" />
+        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1214586295069">
+          <property name="value" value="false" />
+        </node>
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1205244590370" />
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983511988">
@@ -1179,8 +1199,12 @@
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1213720011710">
               <link role="baseMethodDeclaration" targetNodeId="50.~BaseActionGroup.checkProject(com.intellij.openapi.actionSystem.AnActionEvent):boolean" resolveInfo="checkProject" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1213720055341">
-                <link role="baseMethodDeclaration" targetNodeId="51.~ActionUtils.createEvent(com.intellij.openapi.actionSystem.Presentation,jetbrains.mps.ide.action.ActionContext):com.intellij.openapi.actionSystem.AnActionEvent" resolveInfo="createEvent" />
                 <link role="classConcept" targetNodeId="51.~ActionUtils" resolveInfo="ActionUtils" />
+                <link role="baseMethodDeclaration" targetNodeId="51.~ActionUtils.createEvent(java.lang.String,com.intellij.openapi.actionSystem.Presentation,jetbrains.mps.ide.action.ActionContext):com.intellij.openapi.actionSystem.AnActionEvent" resolveInfo="createEvent" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1214586052626">
+                  <link role="classifier" targetNodeId="47.~ActionPlaces" resolveInfo="ActionPlaces" />
+                  <link role="variableDeclaration" targetNodeId="47.~ActionPlaces.MAIN_MENU" resolveInfo="MAIN_MENU" />
+                </node>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213720057954">
                   <link role="variableDeclaration" targetNodeId="1213719985561" resolveInfo="p" />
                 </node>

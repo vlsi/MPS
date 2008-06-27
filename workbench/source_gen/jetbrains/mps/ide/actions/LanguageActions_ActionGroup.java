@@ -6,8 +6,7 @@ import jetbrains.mps.workbench.action.CurrentProjectGroup;
 import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.action.LabelledAnchor;
-import jetbrains.mps.ide.actions.module.GenerateAllModelsInModuleAction_true;
-import jetbrains.mps.ide.actions.module.GenerateAllModelsInModuleAction_false;
+import jetbrains.mps.ide.actions.module.GenerateAllModelsInModuleAction;
 import jetbrains.mps.ide.modelchecker.CheckLanguageAction;
 import jetbrains.mps.ide.actions.language.OptimizeLanguageImportsAction;
 import jetbrains.mps.ide.classpath.AnalyzeClassPathAction;
@@ -31,8 +30,8 @@ public class LanguageActions_ActionGroup extends CurrentProjectGroup {
     try {
       this.add(new LabelledAnchor(LanguageActions_ActionGroup.LABEL_ID_newGroup));
       this.addSeparator();
-      this.add(new GenerateAllModelsInModuleAction_true());
-      this.add(new GenerateAllModelsInModuleAction_false());
+      this.add(new GenerateAllModelsInModuleAction(true));
+      this.add(new GenerateAllModelsInModuleAction(false));
       this.add(new CheckLanguageAction());
       this.add(new OptimizeLanguageImportsAction());
       this.add(new AnalyzeClassPathAction());

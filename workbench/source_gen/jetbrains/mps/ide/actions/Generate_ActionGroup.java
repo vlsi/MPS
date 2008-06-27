@@ -5,7 +5,7 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.workbench.action.CurrentProjectGroup;
 import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.actions.module.GenerateAllModelsInModuleAction_false;
+import jetbrains.mps.ide.actions.module.GenerateAllModelsInModuleAction;
 import jetbrains.mps.ide.actions.generate.ToggleTransientModelsSavingAction;
 import jetbrains.mps.ide.actions.generate.GenerateFilesFromCurrentModelAction;
 import jetbrains.mps.ide.actions.generate.GenerateTextFromCurrentModelAction;
@@ -22,7 +22,7 @@ public class Generate_ActionGroup extends CurrentProjectGroup {
     super("Generate", ID, true, false, "G".charAt(0), project);
     this.setPopup(true);
     try {
-      this.add(new GenerateAllModelsInModuleAction_false());
+      this.add(new GenerateAllModelsInModuleAction(false));
       this.addSeparator();
       this.add(new ToggleTransientModelsSavingAction());
       this.addSeparator();

@@ -70,7 +70,7 @@ public class EditorPopup_ActionGroup extends CurrentProjectGroup {
       this.addSeparator();
       this.add(new ShowParametersAction());
       this.addSeparator();
-      //this.add(new ModelPropertiesAction());
+      this.add(new ModelPropertiesAction());
       this.addSeparator();
     } catch (Throwable t) {
       LOG.error("User group error", t);

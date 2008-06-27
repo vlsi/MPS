@@ -6,8 +6,7 @@ import jetbrains.mps.workbench.action.CurrentProjectGroup;
 import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.action.LabelledAnchor;
-import jetbrains.mps.ide.actions.language.GenerateTemplateQueriesAction_true;
-import jetbrains.mps.ide.actions.language.GenerateTemplateQueriesAction_false;
+import jetbrains.mps.ide.actions.language.GenerateTemplateQueriesAction;
 import jetbrains.mps.ide.actions.language.DeleteGeneratorAction;
 import jetbrains.mps.ide.modelchecker.CheckGeneratorAction;
 import jetbrains.mps.ide.actions.language.GeneratorPropertiesAction;
@@ -22,9 +21,8 @@ public class GeneratorActions_ActionGroup extends CurrentProjectGroup {
     this.setPopup(false);
     try {
       this.add(new LabelledAnchor(GeneratorActions_ActionGroup.LABEL_ID_generatorNew));
-      this.addSeparator();
-      this.add(new GenerateTemplateQueriesAction_true());
-      this.add(new GenerateTemplateQueriesAction_false());
+      this.add(new GenerateTemplateQueriesAction(true));
+      this.add(new GenerateTemplateQueriesAction(false));
       this.addSeparator();
       this.add(new DeleteGeneratorAction());
       this.addSeparator();
