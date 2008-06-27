@@ -5,9 +5,9 @@ package jetbrains.mps.baseLanguage.dataFlow;
 import jetbrains.mps.dataFlow.DataFlowBuilder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.dataFlow.DataFlowBuilderContext;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.LastStatementUtil;
@@ -19,8 +19,10 @@ public class StatementList_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    for(SNode var : StatementList_Behavior.call_getExternalVariablesDeclarations_1214501165480(_context.getNode())) {
-      _context.getBuilder().emitWrite(var);
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode(), null, false, false), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration") || SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode(), null, false, false), "jetbrains.mps.baseLanguage.structure.IStatementListContainer")) {
+      for(SNode var : StatementList_Behavior.call_getExternalVariablesDeclarations_1214501165480(_context.getNode())) {
+        _context.getBuilder().emitWrite(var);
+      }
     }
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode(), null, false, false), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
       SNode bmd = SNodeOperations.getParent(_context.getNode(), null, false, false);

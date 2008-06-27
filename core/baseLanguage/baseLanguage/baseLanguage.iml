@@ -7,6 +7,7 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/refactoring-tests/test_gen" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/solutions/MPS.Classpath/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.baseLanguage.dataflow-tests/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.baselanguage.reafactoring-tests/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source_gen" isTestSource="false" />
