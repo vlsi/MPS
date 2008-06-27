@@ -28,6 +28,7 @@ import jetbrains.mps.ide.actions.nodes.ShowConceptStructureAction;
 import jetbrains.mps.ide.actions.nodes.CloneRootAction;
 import jetbrains.mps.ide.actions.cells.ShowCellKeymapsAction;
 import jetbrains.mps.ide.actions.baseLanguage.ShowParametersAction;
+import jetbrains.mps.ide.actions.model.ModelPropertiesAction;
 
 public class EditorPopup_ActionGroup extends CurrentProjectGroup {
   public static Logger LOG = Logger.getLogger(EditorPopup_ActionGroup.class);
@@ -67,9 +68,9 @@ public class EditorPopup_ActionGroup extends CurrentProjectGroup {
       this.addSeparator();
       this.add(new ShowCellKeymapsAction());
       this.addSeparator();
-      this.addSeparator();
       this.add(new ShowParametersAction());
       this.addSeparator();
+      this.add(new ModelPropertiesAction());
       this.addSeparator();
     } catch (Throwable t) {
       LOG.error("User group error", t);

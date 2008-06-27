@@ -555,12 +555,14 @@
         <link role="javaClass" targetNodeId="15.~ShowCellKeymapsAction" resolveInfo="ShowCellKeymapsAction" />
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981045436" />
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981046469" />
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981070972">
         <link role="javaClass" targetNodeId="16.~ShowParametersAction" resolveInfo="ShowParametersAction" />
       </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981072739" />
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981073163" />
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1214581382814">
+        <link role="javaClass" targetNodeId="3.~ModelPropertiesAction" resolveInfo="ModelPropertiesAction" />
+      </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1214581695123" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991232446">
@@ -773,8 +775,8 @@
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983557370">
         <link role="javaClass" targetNodeId="22.~GoToConceptAction" resolveInfo="GoToConceptAction" />
       </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983561793">
-        <link role="javaClass" targetNodeId="22.~GoToNodeAction" resolveInfo="GoToNodeAction" />
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1214581417184">
+        <link role="javaClass" targetNodeId="22.~GoToNodeByIdAction" resolveInfo="GoToNodeByIdAction" />
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204983564013" />
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983568436">
