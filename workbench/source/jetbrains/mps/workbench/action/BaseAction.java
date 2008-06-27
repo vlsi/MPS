@@ -51,12 +51,12 @@ public abstract class BaseAction extends AnAction {
 
   public final void update(final AnActionEvent e) {
     super.update(e);
-    if (!fillFieldsIfNecessary(e)) {
-      disable(e.getPresentation());
-      return;
-    }
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
+        if (!fillFieldsIfNecessary(e)) {
+          disable(e.getPresentation());
+          return;
+        }
         doUpdate(e);
       }
     });

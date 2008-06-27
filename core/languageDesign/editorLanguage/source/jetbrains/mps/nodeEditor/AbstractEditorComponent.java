@@ -449,9 +449,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return myOwner;
   }
 
-  private void registerKeyStrokes(BaseGroup group, @Nullable ActionContext actionContext) {
+  private void registerKeyStrokes(BaseGroup group, @Nullable final ActionContext actionContext) {
     if (group != null) {
-      for (AnAction e : group.getChildren(null)) {
+      for (final AnAction e : group.getChildren(null)) {
         if (e instanceof BaseAction) {
           BaseAction action = (BaseAction) e;
           if (action.getShortcutSet().getShortcuts().length > 0) {
@@ -463,8 +463,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           try {
             if (actionContext != null) {
               e.update(ActionUtils.createEvent(ActionPlaces.EDITOR_POPUP,actionContext));
+              registerKeyStrokes((BaseGroup) e, actionContext);
             }
-            registerKeyStrokes((BaseGroup) e, actionContext);
           } catch (Throwable t) {
             LOG.error(t);
           }
@@ -2389,12 +2389,13 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       myActions.add(a);
     }
 
+
     public void actionPerformed(ActionEvent e) {
       for (final BaseAction action : myActions) {
         if (mySelectedCell != null && mySelectedCell.getSNode() != null) {
           final ActionContext context = createActionContext();
           Presentation p = new Presentation();
-          action.update(ActionUtils.createEvent(myPlace, context));
+          action.update(ActionUtils.createEvent(myPlace,p, context));
           if (!p.isVisible() || !p.isEnabled()) {
             continue;
           }
