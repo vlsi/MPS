@@ -15,7 +15,7 @@ import java.io.File;
  * To change this template use File | Settings | File Templates.
  */
 public class RefactoringTest extends BaseMPSTest {
-  private static final String TEST_REFACTORING_PATH = "app/testRefactoring";
+  private static final String TEST_REFACTORING_PATH = "testMaterial/testRefactoring";
 
   public void testRefactoringEnvironment() {
     assertTrue(testRefactoringTestEnvironment(new File(TEST_REFACTORING_PATH)));
