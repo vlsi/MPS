@@ -1,6 +1,8 @@
 package jetbrains.mps.ide.ui.filechoosers.treefilechooser;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileNameFilter;
 
@@ -18,6 +20,7 @@ import java.awt.Component;
 import java.awt.Image;
 
 import sun.swing.plaf.synth.SynthIcon;
+import com.intellij.openapi.util.io.FileUtil;
 
 public abstract class FileTreeNode extends MPSTreeNode {
   private boolean myInitialized;
@@ -37,7 +40,21 @@ public abstract class FileTreeNode extends MPSTreeNode {
     setNodeIdentifier(filename);
 
     FileSystemView fsView = FileSystemView.getFileSystemView();
-    Icon icon = fsView.getSystemIcon(file.toFile());
+
+    Icon icon;
+    String extension = FileUtil.getExtension(file.getName());
+    if (extension.equals("ipr")){
+      icon = Icons.PROJECT_ICON;
+    }else if (extension.equals("mpl")){
+      icon = Icons.LANGUAGE_ICON;
+    }else if (extension.equals("msd")){
+      icon = Icons.MODEL_ICON;
+    }else if (extension.equals("devkit")){
+      icon = Icons.DEVKIT_ICON;
+    }else{
+      icon = fsView.getSystemIcon(file.toFile());
+    }
+
 
     String caption = filename;
     if (!isDisk) {
