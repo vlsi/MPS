@@ -1702,8 +1702,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     g.setColor(getBackground());
     Rectangle bounds = g.getClipBounds();
 
-
     g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
+
+    EditorCell deepestCell = getDeepestSelectedCell();
+    if (deepestCell instanceof EditorCell_Label) {
+      g.setColor(new Color(255, 255, 215));
+      g.fillRect(0, deepestCell.getY(), getWidth(), deepestCell.getHeight());
+    }
+
     myLeftHighlighter.paint(g);
     if (myRootCell != null) {
       myRootCell.paint(g);
