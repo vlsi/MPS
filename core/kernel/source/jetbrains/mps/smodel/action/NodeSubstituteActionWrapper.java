@@ -31,6 +31,10 @@ public class NodeSubstituteActionWrapper implements INodeSubstituteAction {
     return mySubstituteAction.getMatchingText(pattern);
   }
 
+  public String getVisibleMatchingText(String pattern) {
+    return mySubstituteAction.getVisibleMatchingText(pattern);
+  }
+
   public String getDescriptionText(String pattern) {
     return mySubstituteAction.getDescriptionText(pattern);
   }

@@ -211,6 +211,23 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1214568609321">
+      <property name="name" value="getCompactPresentation" />
+      <property name="isVirtual" value="true" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1214568613424">
+        <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214568609323">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214568618839">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214568620516">
+            <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1214568620517" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1214568620518">
+              <link role="conceptMethodDeclaration" targetNodeId="1213877396640" resolveInfo="getPresentation" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1213877396707">
       <property name="name" value="useHorizontalInspector" />
       <property name="isVirtual" value="true" />

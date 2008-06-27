@@ -200,8 +200,6 @@ public class EditorContext {
     }
   }
 
-
-
   public void selectAndSetCaret(final SNode node, final int position) {
     flushEvents();
 

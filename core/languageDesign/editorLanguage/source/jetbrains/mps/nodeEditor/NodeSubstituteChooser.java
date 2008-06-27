@@ -121,8 +121,8 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     try {
       Collections.sort(matchingActions, new Comparator<INodeSubstituteAction>() {
         public int compare(INodeSubstituteAction iNodeSubstituteItem, INodeSubstituteAction iNodeSubstituteItem1) {
-          String s1 = iNodeSubstituteItem.getMatchingText(pattern);
-          String s2 = iNodeSubstituteItem1.getMatchingText(pattern);
+          String s1 = iNodeSubstituteItem.getVisibleMatchingText(pattern);
+          String s2 = iNodeSubstituteItem1.getVisibleMatchingText(pattern);
           boolean null_s1 = (s1 == null || s1.length() == 0);
           boolean null_s2 = (s2 == null || s2.length() == 0);
           if (null_s1 && null_s2) return 0;
@@ -169,7 +169,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
   }
 
   private int getTextLength(INodeSubstituteAction action, String pattern) {
-    String text = action.getMatchingText(pattern);
+    String text = action.getVisibleMatchingText(pattern);
     if (text == null) {
       text = "";
     }
@@ -425,7 +425,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
     public String getSelectedText(String pattern) {
       if (getSelectionIndex() != -1) {
-        return mySubstituteActions.get(getSelectionIndex()).getMatchingText(pattern);
+        return mySubstituteActions.get(getSelectionIndex()).getVisibleMatchingText(pattern);
       }
       return "";
     }
@@ -543,7 +543,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       INodeSubstituteAction action = (INodeSubstituteAction) value;
       myLeft.setIcon(action.getIconFor(getPatternEditor().getPattern()));
       try {
-        myLeft.setText(action.getMatchingText(getPatternEditor().getPattern()));
+        myLeft.setText(action.getVisibleMatchingText(getPatternEditor().getPattern()));
       } catch (Throwable t) {
         myLeft.setText("!Exception was thrown!");
         LOG.error(t);

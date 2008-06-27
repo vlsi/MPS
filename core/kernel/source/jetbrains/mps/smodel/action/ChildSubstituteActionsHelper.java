@@ -6,6 +6,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.core.structure.BaseConcept;
+import jetbrains.mps.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -75,7 +76,7 @@ public class ChildSubstituteActionsHelper {
         for (SNode visibleConcept : allVisibleConcepts) {
           resultActions.add(new DefaultChildNodeSubstituteAction(visibleConcept, parentNode, currentChild, childSetter, context.getScope()) {
             public String getMatchingText(String pattern) {
-              return getMatchingText(pattern, true);
+              return getMatchingText(pattern, true, true);
             }
 
             public String getDescriptionText(String pattern) {

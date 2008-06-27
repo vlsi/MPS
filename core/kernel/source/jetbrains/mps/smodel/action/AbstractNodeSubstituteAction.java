@@ -54,7 +54,11 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
   }
 
   public String getMatchingText(String pattern) {
-    return getMatchingText(pattern, false);
+    return getMatchingText(pattern, false, false);
+  }
+
+  public String getVisibleMatchingText(String pattern) {
+    return getMatchingText(pattern, false, true);
   }
 
   public String getDescriptionText(String pattern) {
@@ -64,12 +68,12 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     return getIconFor(pattern, false);
   }
 
-  protected String getMatchingText(String pattern, boolean referent_presentation) {
+  protected String getMatchingText(String pattern, boolean referent_presentation, boolean visible) {
     if (myParameterObject instanceof SNode) {
-      return NodePresentationUtil.matchingText((SNode) myParameterObject, referent_presentation);
+      return NodePresentationUtil.matchingText((SNode) myParameterObject, referent_presentation, visible);
     }
     if (myParameterObject instanceof INodeAdapter) {
-      return NodePresentationUtil.matchingText((INodeAdapter) myParameterObject, referent_presentation);
+      return NodePresentationUtil.matchingText((INodeAdapter) myParameterObject, referent_presentation, visible);
     }
     return "" + myParameterObject;
   }
