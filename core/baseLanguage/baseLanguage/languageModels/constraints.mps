@@ -15574,5 +15574,32 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" id="1214583696654">
+    <link role="concept" targetNodeId="1.1188206574119" resolveInfo="AnnotationMethodDeclaration" />
+    <node role="canBeChild" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_CanBeAChild" id="1214583698390">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214583698391">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214583704397">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1214583717891">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214583720958">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_parentNode" id="1214583720301" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1214583723915">
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1214583729636">
+                  <link role="conceptDeclaration" targetNodeId="1.1188206331916" resolveInfo="Annotation" />
+                </node>
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214583706447">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_parentNode" id="1214583705712" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1214583707919">
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1214583712452">
+                  <link role="conceptDeclaration" targetNodeId="1.1188214545140" resolveInfo="AnnotationInstanceValue" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

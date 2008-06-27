@@ -20,7 +20,7 @@ public class IntelligentInputUtil {
     if (cell instanceof EditorManager.EditorCell_RTHint) {
       EditorManager.EditorCell_RTHint rtHintCell = (EditorCell_RTHint) cell;
       INodeSubstituteInfo substituteInfo = rtHintCell.getSubstituteInfo();
-      if (uniqueAction(substituteInfo, pattern, "")) {
+      if (canCompleteSmallPatternImmediately(substituteInfo, pattern, "")) {
         SNode resultNode = substituteInfo.getMatchingActions(pattern, true).get(0).doSubstitute(pattern);
         editorContext.selectWRTFocusPolicy(resultNode);
       }
@@ -31,7 +31,7 @@ public class IntelligentInputUtil {
     processCell(cell, editorContext, smallPattern, tail);
   }
 
-  private static void processCell(EditorCell cell, final EditorContext editorContext, final String smallPattern, final String tail) {
+  private static void processCell(EditorCell cell, final EditorContext editorContext, String smallPattern, final String tail) {
     boolean sourceCellRemains = false;
     INodeSubstituteInfo substituteInfo = cell.getSubstituteInfo();
     if (substituteInfo == null) {
@@ -46,13 +46,20 @@ public class IntelligentInputUtil {
       newNode = cell.getSNode();
       cellForNewNode = cell;
       sourceCellRemains = true;
-    } else if (uniqueAction(substituteInfo, smallPattern, tail)) {
+    } else if (canCompleteSmallPatternImmediately(substituteInfo, smallPattern, tail) ||
+      canCompleteSmallPatternImmediately(substituteInfo, smallPattern.trim(), tail)) {
+
+      if (canCompleteSmallPatternImmediately(substituteInfo, smallPattern.trim(), tail)) {
+        smallPattern = smallPattern.trim();
+      }
+
       List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(smallPattern, true);
       INodeSubstituteAction item = matchingActions.get(0);
       newNode = item.doSubstitute(smallPattern);
       assert newNode != null;
       cellForNewNode = editorContext.createNodeCellInAir(newNode, ourServiceEditorManager);
       EditorCell errorCell = EditorUtil.findErrorCell(cellForNewNode);
+
       if (errorCell != null && errorCell instanceof EditorCell_Label) {
         editorContext.flushEvents();
         new Runnable() {
@@ -65,7 +72,13 @@ public class IntelligentInputUtil {
         }.run();
         return;
       }
-    } else if (canCompleteImmediately(substituteInfo, smallPattern, tail)) {
+    } else if (canCompleteTheWholeStringImmediately(substituteInfo, smallPattern, tail) ||
+      canCompleteTheWholeStringImmediately(substituteInfo, smallPattern.trim(), tail)) {
+
+      if (canCompleteTheWholeStringImmediately(substituteInfo, smallPattern.trim(), tail)) {
+        smallPattern = smallPattern.trim();
+      }
+
       List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(smallPattern + tail, true);
       INodeSubstituteAction item = matchingActions.get(0);
       editorContext.selectWRTFocusPolicy(item.doSubstitute(smallPattern + tail));
@@ -117,7 +130,7 @@ public class IntelligentInputUtil {
 
       cellFounder.setCallSelect(true);
 
-      if (!uniqueAction(rtSubstituteInfo, tail, "")) { //don't execute non-unique action on RT hint cell
+      if (!canCompleteSmallPatternImmediately(rtSubstituteInfo, tail, "")) { //don't execute non-unique action on RT hint cell
         editorContext.flushEvents();
         cellFounder.run();
         return;
@@ -138,7 +151,7 @@ public class IntelligentInputUtil {
     }
   }
 
-  private static boolean uniqueAction(INodeSubstituteInfo info, String smallPattern, String tail) {
+  private static boolean canCompleteSmallPatternImmediately(INodeSubstituteInfo info, String smallPattern, String tail) {
     if ("".equals(tail)) {
       return info.hasExactlyNActions(smallPattern, true, 1) && info.hasExactlyNActions(smallPattern, false, 1);
     }
@@ -148,7 +161,7 @@ public class IntelligentInputUtil {
     return info.hasExactlyNActions(smallPattern, true, 1) && (tail.equals("*") || info.hasExactlyNActions(smallPattern + tail, false, 0));
   }
 
-  private static boolean canCompleteImmediately(INodeSubstituteInfo info, String smallPattern, String tail) {
+  private static boolean canCompleteTheWholeStringImmediately(INodeSubstituteInfo info, String smallPattern, String tail) {
     return info.hasExactlyNActions(smallPattern + tail, true, 1) && info.hasExactlyNActions(smallPattern + tail, false, 1);
   }
 
