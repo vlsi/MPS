@@ -78,7 +78,7 @@
         <keyboard-shortcut first-keystroke="control alt shift S" keymap="$default"/>
       </action>
 
-      <action id="GoToNodeById" class="jetbrains.mps.ide.actions.gotoMenu.adapters.GoToNodeByIdAction"
+      <action id="GoToNodeById" class="jetbrains.mps.ide.actions.gotoMenu.GoToNodeByIdAction"
               text="Go To Node by ID"/>
 
       <add-to-group anchor="last" group-id="GoToMenu"/>
