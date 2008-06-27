@@ -17,15 +17,15 @@ public class ModelChangesWhatcher implements ApplicationComponent {
   private VirtualFileAdapter myVirtualFileListener = new VirtualFileAdapter() {
     @Override
     public void contentsChanged(VirtualFileEvent event) {
-      IFile ifile = VFileSystem.toIFile(event.getFile());
-      final SModelDescriptor model = ApplicationManager.getApplication().getComponent(SModelRepository.class).findModel(ifile);
-      if (model != null){
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            model.reloadFromDisk();
-          }
-        });
-      }
+//      IFile ifile = VFileSystem.toIFile(event.getFile());
+//      final SModelDescriptor model = ApplicationManager.getApplication().getComponent(SModelRepository.class).findModel(ifile);
+//      if (model != null){
+//        ModelAccess.instance().runReadAction(new Runnable() {
+//          public void run() {
+//            model.reloadFromDisk();
+//          }
+//        });
+//      }
     }
 
     @Override
