@@ -634,7 +634,7 @@ public class Interface_Editor extends DefaultNodeEditor {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.SELECTABLE, true);
+            this.set(StyleAttributes.EDITABLE, true);
           }
 
         };
@@ -665,7 +665,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext context, SNode node) {
-      return this.create_ConstantCell5419_07(context, node, " << methods >>");
+      return this.create_ConstantCell5419_07(context, node, "");
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
@@ -690,7 +690,7 @@ public class Interface_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       setupBasic_ConstantCell5419_07(editorCell, node, context);
       setupLabel_ConstantCell5419_07(editorCell, node, context);
-      editorCell.setDefaultText("");
+      editorCell.setDefaultText("<<methods>>");
       return editorCell;
     }
 
@@ -778,7 +778,7 @@ public class Interface_Editor extends DefaultNodeEditor {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.SELECTABLE, true);
+            this.set(StyleAttributes.EDITABLE, true);
           }
 
         };
@@ -809,7 +809,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext context, SNode node) {
-      return this.create_ConstantCell5419_010(context, node, " << static fields>>");
+      return this.create_ConstantCell5419_010(context, node, "");
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
@@ -834,7 +834,7 @@ public class Interface_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       setupBasic_ConstantCell5419_010(editorCell, node, context);
       setupLabel_ConstantCell5419_010(editorCell, node, context);
-      editorCell.setDefaultText("");
+      editorCell.setDefaultText("<<static fields>>");
       return editorCell;
     }
 
