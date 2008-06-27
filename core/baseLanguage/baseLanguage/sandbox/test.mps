@@ -973,43 +973,6 @@
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178550081261" />
   </node>
-  <node type="jetbrains.mps.baseLanguage.structure.EnumClass" id="1137816471209">
-    <property name="name" value="EnumClass" />
-    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1137892365869">
-      <property name="name" value="STM1" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1137892370622" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1137892365933" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178546096966" />
-    </node>
-    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1137892377201">
-      <property name="name" value="STM1" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1137892381017" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1137892377219" />
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1137892388486">
-        <property name="name" value="i" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1137892388519" />
-      </node>
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178546096792" />
-    </node>
-    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1137816490149">
-      <property name="name" value="get" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1137816496918">
-        <link role="classifier" targetNodeId="1137816471209" />
-      </node>
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1137816490182" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178546095561" />
-    </node>
-    <node role="enumConstant" type="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration" id="1137816482507">
-      <property name="name" value="EC1" />
-    </node>
-    <node role="enumConstant" type="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration" id="1137816485867">
-      <property name="name" value="EC2" />
-    </node>
-    <node role="enumConstant" type="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration" id="1137892355071">
-      <property name="name" value="EC3" />
-    </node>
-    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178550080869" />
-  </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1137951629318">
     <property name="name" value="GenaricClasS" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1158760513059">
