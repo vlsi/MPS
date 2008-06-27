@@ -40,25 +40,35 @@ public class RefactoringProcessor {
     final RefactoringContext refactoringContext = new RefactoringContext(refactoring);
     boolean success = refactoring.askForInfo(context, refactoringContext);
     if (!success) return;
+
     if (refactoring.showsAffectedNodes()) {
       Thread thread = new Thread() {
         public void run() {
           final boolean toReturn[] = new boolean[]{false};
-          ModelAccess.instance().runReadAction(new Runnable() {
+          ThreadUtils.runInUIThreadAndWait(new Runnable() {
             public void run() {
-              try {
-                ActionContext newContext = new ActionContext(context);
-                newContext.put(IOperationContext.class, new ProjectOperationContext(context.getOperationContext().getMPSProject()));
-                refactoringContext.setUsages(refactoring.getAffectedNodes(newContext, refactoringContext));
-              } catch (Throwable t) {
-                LOG.error(t);
-                ThreadUtils.runInUIThreadAndWait(new Runnable() {
-                  public void run() {
-                    int promptResult = JOptionPane.showConfirmDialog(context.getFrame(),
-                      "An exception occurred during searching affected nodes. Do you want to continue anyway?", "Exception", JOptionPane.YES_NO_OPTION);
-                    toReturn[0] = promptResult == JOptionPane.NO_OPTION;
-                  }
-                });
+              final boolean[] wasError = new boolean[]{false};
+              ProgressManager.getInstance().run(new Modal(context.get(Project.class),"Finding usages...",false) {
+                public void run(@NotNull ProgressIndicator indicator) {
+                  indicator.setIndeterminate(true);
+                  ModelAccess.instance().runReadAction(new Runnable() {
+                    public void run() {
+                      try {
+                        ActionContext newContext = new ActionContext(context);
+                        newContext.put(IOperationContext.class, new ProjectOperationContext(context.getOperationContext().getMPSProject()));
+                        refactoringContext.setUsages(refactoring.getAffectedNodes(newContext, refactoringContext));
+                      } catch (Throwable t) {
+                        LOG.error(t);
+                        wasError[0] = true;
+                      }
+                    }
+                  });
+                }
+              });
+              if (wasError[0]){
+                int promptResult = JOptionPane.showConfirmDialog(context.getFrame(),
+                  "An exception occurred during searching affected nodes. Do you want to continue anyway?", "Exception", JOptionPane.YES_NO_OPTION);
+                toReturn[0] = promptResult == JOptionPane.NO_OPTION;
               }
             }
           });

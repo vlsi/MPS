@@ -83,7 +83,7 @@ public abstract class BaseTool{
 
   public void openTool(boolean setActive) {
     ToolWindow window = getToolWindow();
-    if (!isAvailable()) makeAvailableLater();
+    if (!isAvailable()) makeAvailable();
     if (!toolIsOpened()) window.show(null);
     if (setActive) window.activate(null);
   }
@@ -112,8 +112,8 @@ public abstract class BaseTool{
   }
 
   public void setAvailable(boolean state) {
-    if (state) makeAvailableLater();
-    else makeUnavailableLater();
+    if (state) makeAvailable();
+    else makeUnavailable();
   }
 
   /**
