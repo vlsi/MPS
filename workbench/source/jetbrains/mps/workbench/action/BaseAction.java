@@ -6,7 +6,6 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import javax.swing.KeyStroke;
-import javax.swing.SwingUtilities;
 
 public abstract class BaseAction extends AnAction {
   private boolean myIsAlwaysVisible;
@@ -43,7 +42,7 @@ public abstract class BaseAction extends AnAction {
         if (keyStroke != null) {
           KeyboardShortcut keyboardShortcut = new KeyboardShortcut(keyStroke, null);
           return new Shortcut[]{keyboardShortcut};
-        }else{
+        } else {
           return new Shortcut[0];
         }
       }
@@ -78,11 +77,7 @@ public abstract class BaseAction extends AnAction {
           //otherwise it will lead to a deadlock
           action.run();
         } else {
-          SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-              access.runWriteActionInCommand(action);
-            }
-          });
+          access.runWriteActionInCommand(action);
         }
       }
     };
