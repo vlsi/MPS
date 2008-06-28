@@ -1,25 +1,27 @@
 package jetbrains.mps.ide.messages;
 
 import com.intellij.ide.SelectInManager;
-import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.ToggleAction;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.MessageViewLoggingHandler;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.action.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.blame.BlameDialog;
 import jetbrains.mps.ide.messages.MessagesViewTool.MyState;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.workbench.tools.BaseMPSTool;
-import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.DefaultGroup;
+import jetbrains.mps.workbench.tools.BaseMPSTool;
 
 import javax.swing.*;
 import java.awt.*;
@@ -80,7 +82,7 @@ public class MessagesViewTool extends BaseMPSTool implements PersistentStateComp
 
   public void initComponent() {
     super.initComponent();
-    myList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+    myList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
     myComponent.setLayout(new BorderLayout());
 
     JPanel panel = new JPanel(new BorderLayout());
@@ -246,13 +248,20 @@ public class MessagesViewTool extends BaseMPSTool implements PersistentStateComp
     if (myList.getSelectedValue() == null) return;
 
     JPopupMenu menu = new JPopupMenu();
-    menu.add(new AbstractActionWithEmptyIcon("Copy Text") {
-      public void actionPerformed(ActionEvent e) {
-        if (myList.getSelectedValue() == null) return;
-        String text = ((Message) myList.getSelectedValue()).getText();
-        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(text), null);
-      }
-    });
+
+    if (myList.getSelectedIndices().length != 0) {
+      menu.add(new AbstractActionWithEmptyIcon("Copy Text") {
+        public void actionPerformed(ActionEvent e) {
+          StringBuilder sb = new StringBuilder();
+          for (Object o : myList.getSelectedValues()) {
+            sb.append(((Message) o).getText());
+            sb.append("\n");
+          }
+          Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(sb.toString()), null);
+        }
+      });
+    }
+
     menu.addSeparator();
     menu.add(new AbstractActionWithEmptyIcon("Clear") {
       public void actionPerformed(ActionEvent e) {
@@ -260,21 +269,24 @@ public class MessagesViewTool extends BaseMPSTool implements PersistentStateComp
       }
     });
 
-    if (((Message) myList.getSelectedValue()).getKind() == MessageKind.ERROR) {
-      menu.addSeparator();
-      menu.add(new AbstractActionWithEmptyIcon("Submit to Issue tracker") {
-        public void actionPerformed(ActionEvent e) {
-          submitToTracker();
-        }
-      });
+    if (myList.getSelectedIndices().length == 1) {
+      final Message message = (Message) myList.getSelectedValue();
+      if (message.getKind() == MessageKind.ERROR) {
+        menu.addSeparator();
+        menu.add(new AbstractActionWithEmptyIcon("Submit to Issue tracker") {
+          public void actionPerformed(ActionEvent e) {
+            submitToTracker(message);
+          }
+        });
+      }
     }
 
     menu.show(myList, evt.getX(), evt.getY());
   }
 
-  private void submitToTracker() {
-    myBlameDialog.setMessage(((Message) myList.getSelectedValue()).getText());
-    myBlameDialog.setEx(((Message) myList.getSelectedValue()).getException());
+  private void submitToTracker(Message msg) {
+    myBlameDialog.setMessage(msg.getText());
+    myBlameDialog.setEx(msg.getException());
     if (myBlameDialog.showAuthDialog()) {
       if (myBlameDialog.getStatusCode() == 200) {
         JOptionPane.showMessageDialog(null, myBlameDialog.getResponseString(), "Submit OK", JOptionPane.INFORMATION_MESSAGE);
