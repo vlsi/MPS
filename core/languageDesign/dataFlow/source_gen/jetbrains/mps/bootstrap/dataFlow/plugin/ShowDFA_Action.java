@@ -23,7 +23,7 @@ public class ShowDFA_Action extends CurrentProjectAction {
   private IOperationContext context;
 
   public ShowDFA_Action(Project project) {
-    super(project, "Show DFA (under construction)", "", ICON, false, false, false);
+    super(project, "Show DFA (under construction)", "", ICON, false, false);
   }
 
   @NotNull()

@@ -24,7 +24,7 @@ public class GoToTypeErrorRule_Action extends CurrentProjectAction {
   private MPSProject project;
 
   public GoToTypeErrorRule_Action(Project project) {
-    super(project, "Go To Rule Which Caused Error", "", ICON, false, false, false);
+    super(project, "Go To Rule Which Caused Error", "", ICON, false, false);
   }
 
   @NotNull()

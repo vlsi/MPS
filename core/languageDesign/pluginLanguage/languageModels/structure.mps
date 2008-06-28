@@ -118,10 +118,6 @@
       <property name="name" value="outsideCommandExecution" />
       <link role="dataType" targetNodeId="6.1082983657063" resolveInfo="boolean" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1212506431080">
-      <property name="name" value="executeInNewThread" />
-      <link role="dataType" targetNodeId="6.1082983657063" resolveInfo="boolean" />
-    </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1205850901791">
       <link role="intfc" targetNodeId="14.1205751982837" resolveInfo="IClassifier" />
     </node>
@@ -477,6 +473,10 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1204043065072">
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1214655875965">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1137545963098" resolveInfo="conceptFunctionParameterType" />
+      <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1214655880993" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203866019489">

@@ -29,7 +29,7 @@ public class FindLanguageUsages_Action extends CurrentProjectAction {
   private IScope scope;
 
   public FindLanguageUsages_Action(Project project) {
-    super(project, "Find Usages", "", ICON, false, true, false);
+    super(project, "Find Usages", "", ICON, false, false);
   }
 
   @NotNull()

@@ -25,7 +25,7 @@ public class CommentStatements_Action extends CurrentProjectAction {
   private List<SNode> nodes;
 
   public CommentStatements_Action(Project project) {
-    super(project, "Comment Statements", "", ICON, false, false, false);
+    super(project, "Comment Statements", "", ICON, false, false);
   }
 
   @NotNull()

@@ -20,7 +20,7 @@ public class PrintDFAResult_Action extends CurrentProjectAction {
   private SNode node;
 
   public PrintDFAResult_Action(Project project) {
-    super(project, "Print DFA", "", ICON, false, false, false);
+    super(project, "Print DFA", "", ICON, false, false);
   }
 
   @NotNull()

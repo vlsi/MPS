@@ -24,7 +24,7 @@ public class PrintReachingDefinintionsInformation_Action extends CurrentProjectA
   private SNode node;
 
   public PrintReachingDefinintionsInformation_Action(Project project) {
-    super(project, "Print DFA Reaching Definitions Information", "", ICON, false, false, false);
+    super(project, "Print DFA Reaching Definitions Information", "", ICON, false, false);
   }
 
   @NotNull()

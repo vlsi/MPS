@@ -24,7 +24,7 @@ public class ExtractMethod_Action extends CurrentProjectAction {
   private List<SNode> nodes;
 
   public ExtractMethod_Action(Project project) {
-    super(project, "Extract Method", "", ICON, false, false, false);
+    super(project, "Extract Method", "", ICON, false, false);
   }
 
   @NotNull()

@@ -20,7 +20,7 @@ public class UncommentStatements_Action extends CurrentProjectAction {
   private SNode node;
 
   public UncommentStatements_Action(Project project) {
-    super(project, "Uncomment Statements", "", ICON, false, false, false);
+    super(project, "Uncomment Statements", "", ICON, false, false);
   }
 
   @NotNull()

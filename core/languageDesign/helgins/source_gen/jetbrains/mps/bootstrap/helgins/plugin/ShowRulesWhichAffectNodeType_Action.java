@@ -38,7 +38,7 @@ public class ShowRulesWhichAffectNodeType_Action extends CurrentProjectAction {
   private Frame frame;
 
   public ShowRulesWhichAffectNodeType_Action(Project project) {
-    super(project, "Show Rules Which Affect Node's Type", "", ICON, false, false, false);
+    super(project, "Show Rules Which Affect Node's Type", "", ICON, false, false);
   }
 
   @NotNull()

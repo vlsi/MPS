@@ -2,7 +2,6 @@ package jetbrains.mps.workbench.action;
 
 import com.intellij.openapi.actionSystem.*;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.ide.ThreadUtils;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
@@ -10,32 +9,30 @@ import javax.swing.KeyStroke;
 
 public abstract class BaseAction extends AnAction {
   private boolean myIsAlwaysVisible;
-  private boolean myExecuteInSeparateThread;
-  //todo: make private  
+  //todo: make private
   protected boolean myExecuteOutsideCommand;
 
-  public BaseAction(String text, String description, Icon icon, boolean isAlwaysVisible, boolean executeInSeparateThread, boolean executeOutsideCommand) {
+  public BaseAction(String text, String description, Icon icon, boolean isAlwaysVisible, boolean executeOutsideCommand) {
     super(text, description, icon);
-    doConstruct(isAlwaysVisible, executeInSeparateThread, executeOutsideCommand);
+    doConstruct(isAlwaysVisible, executeOutsideCommand);
   }
 
   protected BaseAction(String text, String description, Icon icon) {
     super(text, description, icon);
-    doConstruct(true, false, false);
+    doConstruct(true, false);
   }
 
   public BaseAction(String text) {
     super(text);
-    doConstruct(true, false, false);
+    doConstruct(true, false);
   }
 
   protected BaseAction() {
-    doConstruct(true, false, false);
+    doConstruct(true, false);
   }
 
-  protected void doConstruct(boolean isAlwaysVisible, boolean executeInSeparateThread, boolean executeOutsideCommand) {
+  protected void doConstruct(boolean isAlwaysVisible, boolean executeOutsideCommand) {
     myIsAlwaysVisible = isAlwaysVisible;
-    myExecuteInSeparateThread = executeInSeparateThread;
     myExecuteOutsideCommand = executeOutsideCommand;
     setShortcutSet(new ShortcutSet() {
       public Shortcut[] getShortcuts() {
@@ -70,21 +67,15 @@ public abstract class BaseAction extends AnAction {
       }
     };
 
-    Runnable commander = new Runnable() {
-      public void run() {
-        final ModelAccess access = ModelAccess.instance();
-        if (myExecuteOutsideCommand) {
-          //execute outside command means no action neither read nor write
-          //otherwise it will lead to a deadlock
-          action.run();
-        } else {
-          access.runWriteActionInCommand(action);
-        }
-      }
-    };
+    final ModelAccess access = ModelAccess.instance();
+    if (myExecuteOutsideCommand) {
+      //execute outside command means no action neither read nor write
+      //otherwise it will lead to a deadlock
+      action.run();
+    } else {
+      access.runWriteActionInCommand(action);
+    }
 
-    if (myExecuteInSeparateThread) new Thread(commander).start();
-    else commander.run();
   }
 
   protected void disable(Presentation p) {

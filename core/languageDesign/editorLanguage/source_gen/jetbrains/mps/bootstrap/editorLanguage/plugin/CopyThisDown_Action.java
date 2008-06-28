@@ -21,7 +21,7 @@ public class CopyThisDown_Action extends CurrentProjectAction {
   private SNode inputNode;
 
   public CopyThisDown_Action(Project project) {
-    super(project, "Duplicate Node", "", ICON, false, false, false);
+    super(project, "Duplicate Node", "", ICON, false, false);
   }
 
   @NotNull()

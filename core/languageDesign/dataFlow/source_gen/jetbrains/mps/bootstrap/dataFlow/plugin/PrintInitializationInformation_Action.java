@@ -23,7 +23,7 @@ public class PrintInitializationInformation_Action extends CurrentProjectAction 
   private SNode node;
 
   public PrintInitializationInformation_Action(Project project) {
-    super(project, "Print DFA Initialization Information", "", ICON, false, false, false);
+    super(project, "Print DFA Initialization Information", "", ICON, false, false);
   }
 
   @NotNull()

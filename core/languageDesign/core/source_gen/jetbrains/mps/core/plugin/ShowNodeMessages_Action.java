@@ -23,7 +23,7 @@ public class ShowNodeMessages_Action extends CurrentProjectAction {
   private SNode node;
 
   public ShowNodeMessages_Action(Project project) {
-    super(project, "Show Node Messages", "", ICON, false, false, false);
+    super(project, "Show Node Messages", "", ICON, false, false);
   }
 
   @NotNull()

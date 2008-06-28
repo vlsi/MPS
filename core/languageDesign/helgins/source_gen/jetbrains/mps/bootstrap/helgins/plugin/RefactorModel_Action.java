@@ -21,7 +21,7 @@ public class RefactorModel_Action extends CurrentProjectAction {
   private SModelDescriptor model;
 
   public RefactorModel_Action(Project project) {
-    super(project, "Refactor Helgins Model", "", ICON, false, false, false);
+    super(project, "Refactor Helgins Model", "", ICON, false, false);
   }
 
   @NotNull()

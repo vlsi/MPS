@@ -22,7 +22,7 @@ public class InlineMethod_Action extends CurrentProjectAction {
   private SNode node;
 
   public InlineMethod_Action(Project project) {
-    super(project, "Inline method", "", ICON, true, false, true);
+    super(project, "Inline method", "", ICON, true, true);
   }
 
   @NotNull()
