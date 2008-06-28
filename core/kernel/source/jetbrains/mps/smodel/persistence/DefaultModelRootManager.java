@@ -16,6 +16,7 @@ import jetbrains.mps.vcs.Merger;
 import jetbrains.mps.vcs.MPSVCSManager;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.MPSExtentions;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -32,8 +33,6 @@ import com.intellij.openapi.project.Project;
  */
 public class DefaultModelRootManager extends AbstractModelRootManager {
   private static final Logger LOG = Logger.getLogger(DefaultModelRootManager.class);
-  public static final String MODEL_EXTENSION = ".mps";
-  public static final String STUB_EXTENSION = ".mpstub";
 
   @NotNull
   public Set<SModelDescriptor> read(@NotNull ModelRoot root, @NotNull IModule owner) {
@@ -164,8 +163,8 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     List<IFile> files = dir.list();
     for (IFile file : files) {
       String fileName = file.getName();
-      boolean isMPSModel = fileName.endsWith(MODEL_EXTENSION);
-      boolean isMPSStub = fileName.endsWith(STUB_EXTENSION);
+      boolean isMPSModel = fileName.endsWith(MPSExtentions.DOT_MODEL);
+      boolean isMPSStub = fileName.endsWith(MPSExtentions.DOT_STUB);
       if (!(isMPSModel || isMPSStub)) continue;
       SModelUID modelUID = PathManager.getModelUID(file, FileSystem.getFile(modelRoot.getPath()), modelRoot.getPrefix());
       SModelDescriptor modelDescriptor = getInstance(this, modelRoot, isMPSStub, file.getAbsolutePath(), modelUID, owner);
@@ -216,7 +215,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       filenameSuffix = filenameSuffix + '@' + uid.getStereotype();
     }
 
-    IFile modelFile = FileSystem.getFile(path + File.separator + filenameSuffix.replace('.', File.separatorChar) + MODEL_EXTENSION);
+    IFile modelFile = FileSystem.getFile(path + File.separator + filenameSuffix.replace('.', File.separatorChar) + MPSExtentions.DOT_MODEL);
     return modelFile;
   }
 
@@ -299,7 +298,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     ((DefaultSModelDescriptor) modelDescriptor).setModelFile(dest);
 
     //create stub for an old UID
-    String stubFileName = oldFileName.substring(0, oldFileName.lastIndexOf(MODEL_EXTENSION)) + STUB_EXTENSION;
+    String stubFileName = oldFileName.substring(0, oldFileName.lastIndexOf(MPSExtentions.DOT_MODEL)) + MPSExtentions.DOT_STUB;
     SModelDescriptor stubDescriptor = new StubModelDescriptor(this, FileSystem.getFile(stubFileName), oldModelUID, newModelUID);
     SModelRepository.getInstance().registerModelDescriptor(stubDescriptor, owner);
     stubDescriptor.save();
@@ -347,7 +346,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
 
   private static IFile getMetadataFile(IFile modelFile) {
     String modelPath = modelFile.getAbsolutePath();
-    String versionPath = modelPath.substring(0, modelPath.length() - MODEL_EXTENSION.length()) + ".metadata";
+    String versionPath = modelPath.substring(0, modelPath.length() - MPSExtentions.DOT_MODEL.length()) + ".metadata";
     return FileSystem.getFile(versionPath);
   }
 }

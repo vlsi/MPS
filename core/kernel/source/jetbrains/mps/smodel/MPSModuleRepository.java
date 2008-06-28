@@ -8,6 +8,7 @@ import jetbrains.mps.util.ManyToManyMap;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 
@@ -16,9 +17,6 @@ import java.util.*;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.command.CommandProcessor;
-import com.intellij.openapi.command.CommandAdapter;
-import com.intellij.openapi.command.CommandEvent;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -46,10 +44,6 @@ public class MPSModuleRepository implements ApplicationComponent {
   private boolean myDirtyFlag = false;
 
   private Map<String, Class<? extends IModule>> myExtensionsToModuleTypes = new LinkedHashMap<String, Class<? extends IModule>>();
-  public static final String LANGUAGE_EXT = ".mpl";
-  public static final String SOLUTION_EXT = ".msd";
-  public static final String DEVKIT_EXT = ".devkit";
-  public static final String MPS_ARCHIVE = ".mpsarch";
 
   public MPSModuleRepository() {
     initializeExtensionsToModuleTypesMap();
@@ -74,17 +68,13 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   private void initializeExtensionsToModuleTypesMap() {
-    myExtensionsToModuleTypes.put(LANGUAGE_EXT, Language.class);
-    myExtensionsToModuleTypes.put(SOLUTION_EXT, Solution.class);
-    myExtensionsToModuleTypes.put(DEVKIT_EXT, DevKit.class);
+    myExtensionsToModuleTypes.put(MPSExtentions.LANGUAGE, Language.class);
+    myExtensionsToModuleTypes.put(MPSExtentions.SOLUTION, Solution.class);
+    myExtensionsToModuleTypes.put(MPSExtentions.DEVKIT, DevKit.class);
   }
 
   public Set<String> getModuleExtensions() {
     return new HashSet<String>(myExtensionsToModuleTypes.keySet());
-  }
-
-  public String getLanguageExtension() {
-    return LANGUAGE_EXT;
   }
 
   public void addRepositoryListener(RepositoryListener l) {
@@ -465,9 +455,9 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   private String getModuleExtension(String name) {
-    if (name.endsWith(LANGUAGE_EXT)) return LANGUAGE_EXT;
-    if (name.endsWith(SOLUTION_EXT)) return SOLUTION_EXT;
-    if (name.endsWith(DEVKIT_EXT)) return DEVKIT_EXT;
+    if (name.endsWith(MPSExtentions.DOT_LANGUAGE)) return MPSExtentions.LANGUAGE;
+    if (name.endsWith(MPSExtentions.DOT_SOLUTION)) return MPSExtentions.SOLUTION;
+    if (name.endsWith(MPSExtentions.DOT_DEVKIT)) return MPSExtentions.DEVKIT;
     return null;
   }
 

@@ -5,6 +5,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileNameFilter;
+import jetbrains.mps.vfs.MPSExtentions;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -43,14 +44,19 @@ public abstract class FileTreeNode extends MPSTreeNode {
 
     Icon icon;
     String extension = FileUtil.getExtension(file.getName());
-    if (extension.equals("ipr")){
+
+    if (extension.equals(MPSExtentions.PROJECT)){
       icon = Icons.PROJECT_ICON;
-    }else if (extension.equals("mpl")){
+    }else if (extension.equals(MPSExtentions.IDEAPROJECT)){
+      icon = Icons.PROJECT_ICON;
+    }else if (extension.equals(MPSExtentions.LANGUAGE)){
       icon = Icons.LANGUAGE_ICON;
-    }else if (extension.equals("msd")){
-      icon = Icons.MODEL_ICON;
-    }else if (extension.equals("devkit")){
+    }else if (extension.equals(MPSExtentions.SOLUTION)){
+      icon = Icons.SOLUTION_ICON;
+    }else if (extension.equals(MPSExtentions.DEVKIT)){
       icon = Icons.DEVKIT_ICON;
+    }else if (extension.equals(MPSExtentions.MODEL)){
+      icon = Icons.MODEL_ICON;
     }else{
       icon = fsView.getSystemIcon(file.toFile());
     }

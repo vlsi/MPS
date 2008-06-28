@@ -2,6 +2,7 @@ package jetbrains.mps.ide.projectPane.fileSystem;
 
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.vcs.ui.VCSIcons;
 import jetbrains.mps.ide.projectPane.fileSystem.AbstractFileTreeNode;
@@ -21,13 +22,13 @@ public class FileTreeNode extends AbstractFileTreeNode {
   private Project myProject;
 
   static {
-    ICONS.put("mpr", Icons.PROJECT_ICON);
-    ICONS.put("msd", Icons.SOLUTION_ICON);
-    ICONS.put("devkit", Icons.DEVKIT_ICON);
-    ICONS.put("mpl", Icons.LANGUAGE_ICON);
-    ICONS.put("mps", Icons.MODEL_ICON);
-    ICONS.put("java", VCSIcons.JAVA_ICON);
-    ICONS.put("class", VCSIcons.CLASS_ICON);
+    ICONS.put(MPSExtentions.PROJECT, Icons.PROJECT_ICON);
+    ICONS.put(MPSExtentions.SOLUTION, Icons.SOLUTION_ICON);
+    ICONS.put(MPSExtentions.DEVKIT, Icons.DEVKIT_ICON);
+    ICONS.put(MPSExtentions.LANGUAGE, Icons.LANGUAGE_ICON);
+    ICONS.put(MPSExtentions.MODEL, Icons.MODEL_ICON);
+    ICONS.put(MPSExtentions.JAVAFILE, VCSIcons.JAVA_ICON);
+    ICONS.put(MPSExtentions.CLASSFILE, VCSIcons.CLASS_ICON);
     ICONS.put("", VCSIcons.FILE_ICON);
   }
 

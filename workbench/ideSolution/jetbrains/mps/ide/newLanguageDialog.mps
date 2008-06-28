@@ -22,7 +22,7 @@
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
-  <maxImportIndex value="14" />
+  <maxImportIndex value="15" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="2" modelUID="jetbrains.mps.project@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.util@java_stub" version="-1" />
@@ -32,6 +32,7 @@
   <import index="8" modelUID="jetbrains.mps.projectLanguage.structure@java_stub" version="-1" />
   <import index="11" modelUID="java.awt@java_stub" version="-1" />
   <import index="13" modelUID="jetbrains.mps.ide.common" version="-1" />
+  <import index="15" modelUID="jetbrains.mps.vfs@java_stub" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.uiLanguage.components" />
   <node type="jetbrains.mps.uiLanguage.structure.ComponentDeclaration" id="1203684597238">
     <property name="name" value="NewLanguageDialog" />
@@ -509,12 +510,13 @@
                   <link role="member" targetNodeId="1203685104730" resolveInfo="languagePath" />
                 </node>
               </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1203686327235">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203686328128">
-                  <property name="value" value=".mpl" />
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203686326702">
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1214658733896">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214658733897">
                   <link role="variableDeclaration" targetNodeId="1203686289744" resolveInfo="descriptorFileName" />
+                </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1214658752399">
+                  <link role="classifier" targetNodeId="15.~MPSExtentions" resolveInfo="MPSExtentions" />
+                  <link role="variableDeclaration" targetNodeId="15.~MPSExtentions.DOT_LANGUAGE" resolveInfo="DOT_LANGUAGE" />
                 </node>
               </node>
             </node>
@@ -567,16 +569,21 @@
               <link role="classifier" targetNodeId="5.~Language" resolveInfo="Language" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1203687016018">
-              <link role="baseMethodDeclaration" targetNodeId="5.~Language.createLanguage(java.lang.String,java.io.File,jetbrains.mps.smodel.MPSModuleOwner):jetbrains.mps.smodel.Language" resolveInfo="createLanguage" />
               <link role="classConcept" targetNodeId="5.~Language" resolveInfo="Language" />
+              <link role="baseMethodDeclaration" targetNodeId="5.~Language.createLanguage(java.lang.String,jetbrains.mps.vfs.IFile,jetbrains.mps.smodel.MPSModuleOwner):jetbrains.mps.smodel.Language" resolveInfo="createLanguage" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203687018614">
                 <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1205754224265" />
                 <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="1203687020350">
                   <link role="member" targetNodeId="1203685089919" resolveInfo="languageNamespace" />
                 </node>
               </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203687026103">
-                <link role="variableDeclaration" targetNodeId="1203686307506" resolveInfo="descriptorFile" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1214659487742">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1214659509407">
+                  <link role="baseMethodDeclaration" targetNodeId="15.~FileSystemFile.&lt;init&gt;(java.io.File)" resolveInfo="FileSystemFile" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214659511940">
+                    <link role="variableDeclaration" targetNodeId="1203686307506" resolveInfo="descriptorFile" />
+                  </node>
+                </node>
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203687029653">
                 <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1205754224139" />

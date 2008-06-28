@@ -23,6 +23,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.MPSExtentions;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -110,8 +111,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
         continue;
       }
       IFile descriptorFile = FileSystem.getFile(path);
-      if (!descriptorFile.getName().endsWith(".msd")) {
-        LOG.error("Couldn't load solution from: " + descriptorFile.getPath() + " : '*.msd' file expected");
+      if (!descriptorFile.getName().endsWith(MPSExtentions.DOT_SOLUTION)) {
+        LOG.error("Couldn't load solution from: " + descriptorFile.getPath() + " : '*"+MPSExtentions.DOT_SOLUTION+"' file expected");
       } else if (descriptorFile.exists()) {
         mySolutions.add((Solution) MPSModuleRepository.getInstance().registerSolution(descriptorFile, this));
       } else {
@@ -126,8 +127,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     for (LanguagePath languagePath : CollectionUtil.iteratorAsIterable(myProjectDescriptor.projectLanguages())) {
       String path = languagePath.getPath();
       IFile descriptorFile = FileSystem.getFile(path);
-      if (!descriptorFile.getName().endsWith(".mpl")) {
-        LOG.error("Couldn't load language from: " + descriptorFile.getPath() + " : '*.mpl' file expected");
+      if (!descriptorFile.getName().endsWith(MPSExtentions.DOT_LANGUAGE)) {
+        LOG.error("Couldn't load language from: " + descriptorFile.getPath() + " : '*"+MPSExtentions.DOT_LANGUAGE+"' file expected");
       } else if (descriptorFile.exists()) {
         myLanguages.add(MPSModuleRepository.getInstance().registerLanguage(descriptorFile, this));
       } else {
@@ -144,8 +145,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     for (DevKitPath dk : myProjectDescriptor.getProjectDevkits()) {
       String path = dk.getPath();
       IFile devKit = FileSystem.getFile(path);
-      if (!devKit.getName().endsWith(".devkit")) {
-        LOG.error("Couldn't load devkit from: " + devKit.getPath() + " : '*.devkit' file expected");
+      if (!devKit.getName().endsWith(MPSExtentions.DOT_DEVKIT)) {
+        LOG.error("Couldn't load devkit from: " + devKit.getPath() + " : '*."+MPSExtentions.DOT_DEVKIT+"' file expected");
       } else if (devKit.exists()) {
         myDevKits.add(MPSModuleRepository.getInstance().registerDevKit(devKit, this));
       } else {

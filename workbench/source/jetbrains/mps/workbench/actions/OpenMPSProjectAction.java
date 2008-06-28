@@ -13,6 +13,7 @@ import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.IFileFilter;
 import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.workbench.action.BaseAction;
 
 import java.io.File;
@@ -30,7 +31,7 @@ public class OpenMPSProjectAction extends BaseAction {
 
     chooser.setFileFilter(new IFileFilter() {
       public boolean accept(IFile file) {
-        return file.isDirectory() || file.getName().toLowerCase().endsWith(".ipr") || file.getName().toLowerCase().endsWith(".mpr");
+        return file.isDirectory() || file.getName().toLowerCase().endsWith(".ipr") || file.getName().toLowerCase().endsWith(MPSExtentions.DOT_PROJECT);
       }
     });
 

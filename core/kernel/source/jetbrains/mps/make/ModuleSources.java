@@ -3,13 +3,11 @@ package jetbrains.mps.make;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.MPSExtentions;
 
 import java.util.*;
 
 public class ModuleSources {
-  private static final String JAVA_SUFFIX = ".java";
-  private static final String CLASS_SUFFIX = ".class";
-
   private IModule myModule;
   private Map<String, JavaFile> myJavaFiles = new HashMap<String, JavaFile>();    
   private Map<String, ResourceFile> myResourceFiles = new HashMap<String, ResourceFile>();
@@ -60,7 +58,7 @@ public class ModuleSources {
       if (isIgnored(child)) continue;
 
       if (isJavaFile(child)) {
-        String className = child.getName().substring(0, child.getName().length() - JAVA_SUFFIX.length());
+        String className = child.getName().substring(0, child.getName().length() - MPSExtentions.DOT_JAVAFILE.length());
         String fqName = toPack(addSubPath(path, className));
         myJavaFiles.put(fqName, new JavaFile(child, fqName));
       }
@@ -93,8 +91,8 @@ public class ModuleSources {
       if (file.isDirectory()) {
         collectOutput(file, addSubPath(path, file.getName()));
       } else {
-        if (file.getName().endsWith(CLASS_SUFFIX)) {
-          String containerName = file.getName().substring(0, file.getName().length() - CLASS_SUFFIX.length());
+        if (file.getName().endsWith(MPSExtentions.DOT_CLASSFILE)) {
+          String containerName = file.getName().substring(0, file.getName().length() - MPSExtentions.DOT_CLASSFILE.length());
           if (containerName.contains("$")) {
             containerName = containerName.substring(0, containerName.indexOf("$"));
           }
@@ -137,12 +135,12 @@ public class ModuleSources {
   }
 
   private boolean isJavaFile(IFile file) {
-    return file.isFile() && file.getName().endsWith(JAVA_SUFFIX);
+    return file.isFile() && file.getName().endsWith(MPSExtentions.DOT_JAVAFILE);
   }
 
   private boolean isResourceFile(IFile file) {
     return file.isFile() &&
-      !file.getName().endsWith(JAVA_SUFFIX) &&
-      !file.getName().endsWith(CLASS_SUFFIX);
+      !file.getName().endsWith(MPSExtentions.DOT_JAVAFILE) &&
+      !file.getName().endsWith(MPSExtentions.DOT_CLASSFILE);
   }
 }

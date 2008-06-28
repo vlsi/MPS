@@ -2748,8 +2748,9 @@
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1213877514877">
                     <link role="baseMethodDeclaration" targetNodeId="3.~String.endsWith(java.lang.String):boolean" resolveInfo="endsWith" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213877514878">
-                      <property name="value" value=".mpr" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1214658897846">
+                      <link role="classifier" targetNodeId="7.~MPSExtentions" resolveInfo="MPSExtentions" />
+                      <link role="variableDeclaration" targetNodeId="7.~MPSExtentions.DOT_PROJECT" resolveInfo="DOT_PROJECT" />
                     </node>
                   </node>
                 </node>

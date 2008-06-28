@@ -12,6 +12,7 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.MPSExtentions;
 import org.eclipse.jdt.internal.compiler.ClassFile;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
@@ -146,7 +147,7 @@ public class ModuleMaker {
         for (CategorizedProblem cp : cr.getErrors()) {
 
           String fileName = new String(cp.getOriginatingFileName());
-          String fqName = fileName.substring(0, fileName.length() - ".java".length()).replace(File.separatorChar, '.');
+          String fqName = fileName.substring(0, fileName.length() - MPSExtentions.DOT_JAVAFILE.length()).replace(File.separatorChar, '.');
           IModule containingModule = myContainingModules.get(fqName);
           assert containingModule != null;
           JavaFile javaFile = myModuleSources.get(containingModule).getJavaFile(fqName);

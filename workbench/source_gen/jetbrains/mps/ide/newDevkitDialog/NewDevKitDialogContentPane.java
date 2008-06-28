@@ -16,6 +16,7 @@ import org.jdesktop.beansbinding.Property;
 import org.jdesktop.beansbinding.BeanProperty;
 import org.jdesktop.beansbinding.Bindings;
 import java.io.File;
+import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.util.DirectoryUtil;
 import java.awt.Frame;
 import jetbrains.mps.smodel.ModelAccess;
@@ -183,7 +184,7 @@ public class NewDevKitDialogContentPane extends JPanel {
       myThis.getDialog().setErrorText("Enter DevKit Name");
       return;
     }
-    final String devkitPath = myThis.getDevkitDir() + File.separator + myThis.getDevkitName() + ".devkit";
+    final String devkitPath = myThis.getDevkitDir() + File.separator + myThis.getDevkitName() + MPSExtentions.DOT_DEVKIT;
     if (new File(devkitPath).exists()) {
       myThis.getDialog().setErrorText("File " + devkitPath + " already exists");
       return;

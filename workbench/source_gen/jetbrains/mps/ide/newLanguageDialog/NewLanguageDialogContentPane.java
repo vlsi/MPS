@@ -7,7 +7,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.project.MPSProject;
-
+import jetbrains.mps.smodel.Language;
 import java.util.List;
 import org.jdesktop.beansbinding.AutoBinding;
 import java.util.ArrayList;
@@ -17,17 +17,19 @@ import org.jdesktop.beansbinding.Property;
 import org.jdesktop.beansbinding.BeanProperty;
 import org.jdesktop.beansbinding.Bindings;
 import java.io.File;
-
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.DirectoryUtil;
 import java.awt.Frame;
-
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.vfs.FileSystemFile;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.projectLanguage.structure.LanguageDescriptor;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.vfs.FileSystem;
 
 public class NewLanguageDialogContentPane extends JPanel {
 
@@ -247,12 +249,12 @@ public class NewLanguageDialogContentPane extends JPanel {
 
   /* package */void createNewLanguage() {
     String descriptorFileName = NameUtil.shortNameFromLongName(myThis.getLanguageNamespace());
-    File descriptorFile = new File(myThis.getLanguagePath(), descriptorFileName + ".mpl");
+    File descriptorFile = new File(myThis.getLanguagePath(), descriptorFileName + MPSExtentions.DOT_LANGUAGE);
     File dir = descriptorFile.getParentFile();
     if (!(dir.exists())) {
       dir.mkdirs();
     }
-    Language language = Language.createLanguage(myThis.getLanguageNamespace(), FileSystem.getFile(descriptorFile), myThis.getProject());
+    Language language = Language.createLanguage(myThis.getLanguageNamespace(), new FileSystemFile(descriptorFile), myThis.getProject());
     SNode languageDescriptor = (SNode)language.getLanguageDescriptor().getNode();
     SPropertyOperations.set(languageDescriptor, "compileInMPS", "" + (myThis.getCompileInMPS()));
     LanguageAspect.STRUCTURE.createNew(language);

@@ -21,6 +21,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.MPSExtentions;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -148,11 +149,11 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     IFile dir = myDescriptorFile.getParent();
     String oldShortFileName = NameUtil.shortNameFromLongName(myDescriptorFile.getAbsolutePath());
     String newPathSuffix = NameUtil.shortNameFromLongName(newNamespace);
-    if ((dir.getAbsolutePath() + MPSModuleRepository.LANGUAGE_EXT).endsWith(oldShortFileName)) {
+    if ((dir.getAbsolutePath()+MPSExtentions.DOT_LANGUAGE).endsWith(oldShortFileName)) {
       dir = dir.getParent();
       newPathSuffix = newPathSuffix + File.separatorChar + newPathSuffix;
     }
-    return dir.child(newPathSuffix + MPSModuleRepository.LANGUAGE_EXT);
+    return dir.child(newPathSuffix+ MPSExtentions.DOT_LANGUAGE);
   }
 
   public String marshall() {

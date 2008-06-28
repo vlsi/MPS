@@ -4,6 +4,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.MPSExtentions;
 
 import java.io.File;
 import java.io.IOException;
@@ -309,7 +310,7 @@ public class PathManager {
       System.err.println ("littleName = " + littleName + ", rawPath = " + rawPath);
       path = rawPath + modelUID.getStereotype() + "@" + littleName;
     }
-    path = modelRoot.getPath() + path + ".mps";
+    path = modelRoot.getPath() + path + MPSExtentions.DOT_MODEL;
     if(!(new File(path)).exists()) {
       return null;
     }
