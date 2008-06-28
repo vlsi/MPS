@@ -1,5 +1,8 @@
 package jetbrains.mps.workbench.output;
 
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.action.AbstractActionWithEmptyIcon;
@@ -16,8 +19,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class OutputViewTool extends BaseMPSTool {
-
-  private JPanel myComponent = new JPanel();
+  private JPanel myComponent = new JPanel(new BorderLayout());
   private JTextArea myTextArea = new JTextArea();
   private String myLastSearchPattern = null;
   private AbstractAction myFindAction;
@@ -55,9 +57,7 @@ public class OutputViewTool extends BaseMPSTool {
       }
     };
 
-    myComponent.registerKeyboardAction(myFindAction, KeyStroke.getKeyStroke("control F"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-    myComponent.registerKeyboardAction(myFindNextAction, KeyStroke.getKeyStroke("F3"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-
+    JPanel panel = new JPanel();
 
     updateComponent();
 
@@ -87,8 +87,17 @@ public class OutputViewTool extends BaseMPSTool {
       }
     });
 
-    myComponent.setLayout(new BorderLayout());
-    myComponent.add(new JScrollPane(myTextArea), BorderLayout.CENTER);
+    panel.setLayout(new BorderLayout());
+    panel.add(new JScrollPane(myTextArea), BorderLayout.CENTER);
+
+    DefaultActionGroup group = new DefaultActionGroup();
+    group.add(createCloseAction());
+    JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();
+
+    myComponent.registerKeyboardAction(myFindAction, KeyStroke.getKeyStroke("control F"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    myComponent.registerKeyboardAction(myFindNextAction, KeyStroke.getKeyStroke("F3"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    myComponent.add(panel, BorderLayout.CENTER);
+    myComponent.add(toolbar, BorderLayout.WEST);
   }
 
   public static OutputViewTool getOutputViewTool(MPSProject project) {

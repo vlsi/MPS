@@ -39,6 +39,8 @@ public class SupertypesViewTool extends AbstractHierarchyView {
 
     DefaultActionGroup group = new DefaultActionGroup();
     group.add(action);
+    group.add(createCloseAction());
+
     return ActionManager.getInstance().createActionToolbar(ActionPlaces.TYPE_HIERARCHY_VIEW_TOOLBAR, group, true).getComponent();
   }
 }

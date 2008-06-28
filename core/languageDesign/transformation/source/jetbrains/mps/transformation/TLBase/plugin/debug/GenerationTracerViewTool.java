@@ -111,7 +111,7 @@ public class GenerationTracerViewTool extends BaseMPSTool {
       myNoTabsComponent = createNoTabsComponent();
       myPanel.add(myNoTabsComponent, BorderLayout.CENTER);
     } else {
-      myPanel.add(myTabbedPane);
+      myPanel.add(myTabbedPane, BorderLayout.CENTER);
     }
 
     myPanel.revalidate();

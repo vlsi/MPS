@@ -1,5 +1,8 @@
 package jetbrains.mps.ide.classpath;
 
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.icons.IconManager;
@@ -14,18 +17,27 @@ import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.workbench.tools.BaseMPSTool;
 
 import javax.swing.JComponent;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import java.awt.BorderLayout;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class ClassPathViewerTool extends BaseMPSTool {
   private MyClassPathTree myTree = new MyClassPathTree();
-  private JScrollPane myExternalComponent = new JScrollPane(myTree);
+  private JPanel myComponent = new JPanel(new BorderLayout());
   private IModule myInspectedModule;
 
   public ClassPathViewerTool(Project project) {
     super(project, "Classpath Explorer", -1, IconManager.EMPTY_ICON, ToolWindowAnchor.BOTTOM, true);
+
+    DefaultActionGroup group = new DefaultActionGroup();
+    group.add(createCloseAction());
+    JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();
+
+    myComponent.add(new JScrollPane(myTree), BorderLayout.CENTER);
+    myComponent.add(toolbar, BorderLayout.WEST);
   }
 
   public void initComponent() {
@@ -34,7 +46,7 @@ public class ClassPathViewerTool extends BaseMPSTool {
   }
 
   public JComponent getComponent() {
-    return myExternalComponent;
+    return myComponent;
   }
 
   public void analyzeModule(IModule m) {

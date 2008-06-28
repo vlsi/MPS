@@ -1,12 +1,14 @@
 package jetbrains.mps.refactoring;
 
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.workbench.tools.BaseMPSTool;
 import org.jetbrains.annotations.NotNull;
 
@@ -19,7 +21,7 @@ import java.awt.BorderLayout;
 public class NewRefactoringView extends BaseMPSTool {
   private static final Logger LOG = Logger.getLogger(NewRefactoringView.class);
   private RefactoringViewItem myRefactoringViewItem;
-  private JPanel myPanel;
+  private JPanel myComponent = new JPanel(new BorderLayout());
   public JLabel myLabel;
 
   protected NewRefactoringView(Project project) {
@@ -28,17 +30,22 @@ public class NewRefactoringView extends BaseMPSTool {
 
   public void initComponent() {
     super.initComponent();
-    myPanel = new JPanel(new BorderLayout());
     myLabel = new JLabel("no refactoring");
-    myPanel.add(myLabel);
+
+    DefaultActionGroup group = new DefaultActionGroup();
+    group.add(createCloseAction());
+    JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();
+
+    myComponent.add(myLabel, BorderLayout.CENTER);
+    myComponent.add(toolbar, BorderLayout.WEST);
   }
 
   public void showRefactoringView(@NotNull ActionContext actionContext,
                                   @NotNull RefactoringViewAction refactoringViewAction,
                                   SearchResults searchResults) {
     myRefactoringViewItem = new RefactoringViewItem(actionContext, refactoringViewAction, searchResults, this);
-    myPanel.remove(myLabel);
-    myPanel.add(myRefactoringViewItem.getComponent(), BorderLayout.CENTER);
+    myComponent.remove(myLabel);
+    myComponent.add(myRefactoringViewItem.getComponent(), BorderLayout.CENTER);
     myRefactoringViewItem.initUsagesView();
     openTool(true);
   }
@@ -46,18 +53,16 @@ public class NewRefactoringView extends BaseMPSTool {
   /*package*/ void closeRefactoringView() {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        myPanel.remove(myRefactoringViewItem.getComponent());
+        myComponent.remove(myRefactoringViewItem.getComponent());
         myLabel = new JLabel("no refactoring");
-        myPanel.add(myLabel);
+        myComponent.add(myLabel, BorderLayout.CENTER);
         myRefactoringViewItem = null;
         close();
       }
     });
-
   }
 
-
   public JComponent getComponent() {
-    return myPanel;
+    return myComponent;
   }
 }

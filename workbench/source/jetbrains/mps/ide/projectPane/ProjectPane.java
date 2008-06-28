@@ -149,10 +149,6 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
     super(project, "Project Pane", 1, Icons.MPS_SMALL_ICON, ToolWindowAnchor.LEFT, false);
   }
 
-  protected boolean hasCloseButton() {
-    return false;
-  }
-
   protected boolean isInitiallyAvailable() {
     return true;
   }

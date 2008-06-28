@@ -89,6 +89,7 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
     group.add(childrenAction);
     group.add(parentAction);
     group.add(thisModelAction);
+    group.add(createCloseAction());
 
     return ActionManager.getInstance().createActionToolbar(ActionPlaces.TYPE_HIERARCHY_VIEW_TOOLBAR, group, true).getComponent();
   }

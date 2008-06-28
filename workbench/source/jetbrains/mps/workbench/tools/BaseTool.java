@@ -1,7 +1,8 @@
 package jetbrains.mps.workbench.tools;
 
 import com.intellij.ide.actions.ActivateToolWindowAction;
-import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.KeyboardShortcut;
 import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindow;
@@ -11,19 +12,19 @@ import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentFactoryImpl;
 import com.intellij.ui.content.ContentManager;
 import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.workbench.action.DefaultGroup;
-import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.ide.findusages.view.icons.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.*;
-import java.awt.BorderLayout;
+import javax.swing.Icon;
+import javax.swing.JComponent;
+import javax.swing.KeyStroke;
+import javax.swing.SwingUtilities;
 
-public abstract class BaseTool{
+public abstract class BaseTool {
   private static Logger LOG = Logger.getLogger(BaseTool.class);
 
   private Project myProject;
@@ -186,23 +187,9 @@ public abstract class BaseTool{
 
     ToolWindow toolWindow = myWindowManager.registerToolWindow(myId, myCanCloseContent, myAnchor);
 
-    if (myComponent==null) myComponent =getComponent();
+    if (myComponent == null) myComponent = getComponent();
     if (myComponent != null) {
-      if (!hasCloseButton()) {
-        addContent(myComponent, null, false);
-      } else {
-        DefaultGroup group = new DefaultGroup();
-        group.add(new BaseAction("", "Close", Icons.CLOSE_ICON) {
-          public void doExecute(AnActionEvent e) {
-            unregister();
-          }
-        });
-
-        JPanel panel = new JPanel(new BorderLayout());
-        panel.add(myComponent, BorderLayout.CENTER);
-        panel.add(ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent(), BorderLayout.WEST);
-        addContent(panel, null, false);
-      }
+      addContent(myComponent, null, false);
     }
 
     toolWindow.setIcon(myIcon);
@@ -213,8 +200,13 @@ public abstract class BaseTool{
     }
   }
 
-  protected boolean hasCloseButton() {
-    return true;
+
+  protected BaseAction createCloseAction() {
+    return new BaseAction("Close", "Close tool", Icons.CLOSE_ICON) {
+      public void doExecute(AnActionEvent e) {
+        unregister();
+      }
+    };
   }
 
   protected boolean isInitiallyAvailable() {
@@ -223,7 +215,7 @@ public abstract class BaseTool{
 
   public void unregisterLater() {
     SwingUtilities.invokeLater(new Runnable() {
-      public void run() {                                                             
+      public void run() {
         unregister();
       }
     });
