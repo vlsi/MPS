@@ -11,7 +11,6 @@ import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.GenerationListener;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.*;
 import java.rmi.RemoteException;
 
@@ -34,14 +33,14 @@ public class MPSVCSManager implements ProjectComponent {
   public static final Logger LOG = Logger.getLogger(MPSVCSManager.class);
   private final Project myProject;
   private GenerationListener myGenerationListener;
-  private volatile boolean isGenerationRunning;
+  private volatile boolean myGenerationRunning;
   private final Set<Runnable> myTasks = new HashSet<Runnable>();
 
   public MPSVCSManager(Project project) {
     myProject = project;
     myGenerationListener = new GenerationListener() {
       public void beforeGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
-        isGenerationRunning = true;
+        myGenerationRunning = true;
       }
 
       public void modelsGenerated(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
@@ -49,7 +48,7 @@ public class MPSVCSManager implements ProjectComponent {
       }
 
       public void afterGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
-        isGenerationRunning = false;
+        myGenerationRunning = false;
 
         for (Runnable task : myTasks) {
           ApplicationManager.getApplication().invokeLater(task);
@@ -61,7 +60,7 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   private void invokeLater(Runnable task) {
-    if (isGenerationRunning) {
+    if (myGenerationRunning) {
       myTasks.add(task);
       LOG.debug("shedule task");
       return;

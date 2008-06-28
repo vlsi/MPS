@@ -238,7 +238,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.watching.ModelChangesWhatcher</implementation-class>
+      <implementation-class>jetbrains.mps.watching.ModelChangesWatcher</implementation-class>
     </component>
 
   </application-components>

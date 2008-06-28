@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 
-public class ModelChangesWhatcher implements ApplicationComponent {
+public class ModelChangesWatcher implements ApplicationComponent {
   private VirtualFileAdapter myVirtualFileListener = new VirtualFileAdapter() {
     @Override
     public void contentsChanged(VirtualFileEvent event) {
@@ -48,7 +48,7 @@ public class ModelChangesWhatcher implements ApplicationComponent {
   };
 
 
-  public ModelChangesWhatcher() {
+  public ModelChangesWatcher() {
 
   }
 
