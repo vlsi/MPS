@@ -1,10 +1,9 @@
 package jetbrains.mps.ide.actions.module;
 
+import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.MPSActionAdapter;
 import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.ide.genconf.GeneratorConfigUtil;
 import jetbrains.mps.project.IModule;
@@ -14,15 +13,17 @@ import jetbrains.mps.projectLanguage.structure.LanguageGeneratorConfiguration;
 import jetbrains.mps.projectLanguage.structure.SolutionGeneratorConfiguration;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.workbench.action.ActionEventData;
+import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
 
-public class GenerateAllModelsInModuleAction extends MPSActionAdapter {
+public class GenerateAllModelsInModuleAction extends BaseAction {
   private boolean myRegenerate;
 
   public GenerateAllModelsInModuleAction(boolean regenerate) {
-    super("Generate Models In Module");
+    super("Generate Models In Module", "", null, false, true);
     myRegenerate = regenerate;
   }
 
@@ -31,28 +32,13 @@ public class GenerateAllModelsInModuleAction extends MPSActionAdapter {
     if (!myRegenerate) {
       return "control F9";
     } else {
-      return super.getKeyStroke();
+      return "";
     }
   }
 
-  public boolean executeInsideCommand() {
-    return false;
-  }
-
-
-  public void dodoUpdate(ActionContext context) {
-    super.dodoUpdate(context);
-    IOperationContext opContext = context.getOperationContext();
-    boolean isEnabled = opContext != null && opContext.getModule() != null;
-    setVisible(isEnabled);
-    if (isEnabled) {
-      setName((myRegenerate ? "Regenerate" : "Generate") + " " +
-        NameUtil.shortNameFromLongName(opContext.getModule().getClass().getName()));
-    }
-  }
-
-  public void dodoExecute(@NotNull final ActionContext context) {
-    final IOperationContext operationContext = context.get(IOperationContext.class);
+  protected void doExecute(AnActionEvent e) {
+    final ActionEventData data = new ActionEventData(e);
+    IOperationContext operationContext = data.getOperationContext();
     IModule module = operationContext.getModule();
 
     if (module instanceof Generator) {
@@ -88,9 +74,9 @@ public class GenerateAllModelsInModuleAction extends MPSActionAdapter {
         }
 
         try {
-          return GeneratorConfigUtil.calculate(operationContext.getMPSProject(), conf, myRegenerate);
+          return GeneratorConfigUtil.calculate(data.getMPSProject(), conf, myRegenerate);
         } catch (GeneratorConfigUtil.GeneratorConfigurationException e) {
-          JOptionPane.showMessageDialog(context.getFrame(), e.getMessage());
+          JOptionPane.showMessageDialog(data.getFrame(), e.getMessage());
           return null;
         }
       }
@@ -109,4 +95,14 @@ public class GenerateAllModelsInModuleAction extends MPSActionAdapter {
       false);
   }
 
+  protected void doUpdate(AnActionEvent e) {
+    ActionEventData data = new ActionEventData(e);
+    IOperationContext opContext = data.getOperationContext();
+    boolean isEnabled = opContext != null && opContext.getModule() != null;
+    setVisible(e.getPresentation(), isEnabled);
+    if (isEnabled) {
+      e.getPresentation().setText((myRegenerate ? "Regenerate" : "Generate") + " " +
+        NameUtil.shortNameFromLongName(opContext.getModule().getClass().getName()));
+    }
+  }
 }
