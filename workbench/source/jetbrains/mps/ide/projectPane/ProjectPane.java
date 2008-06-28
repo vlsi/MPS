@@ -12,8 +12,8 @@ import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.ide.*;
@@ -52,7 +52,9 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
 import java.awt.BorderLayout;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -60,11 +62,11 @@ import java.util.List;
 @State(
   name = "MPSProjectPane",
   storages = {
-    @Storage(
-      id = "other",
-      file = "$WORKSPACE_FILE$"
-    )
-  }
+  @Storage(
+    id = "other",
+    file = "$WORKSPACE_FILE$"
+  )
+    }
 )
 public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPane, PersistentStateComponent<MyState> {
   private static final Logger LOG = Logger.getLogger(ProjectPane.class);
@@ -802,7 +804,9 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
       return ModelAccess.instance().runReadAction(new Computable<JPopupMenu>() {
         public JPopupMenu compute() {
           ActionManager manager = ActionManager.getInstance();
-          return manager.createActionPopupMenu(ActionPlaces.PROJECT_VIEW_POPUP, node.getActionGroup()).getComponent();
+          ActionGroup actionGroup = node.getActionGroup();
+          if (actionGroup == null) return null;
+          return manager.createActionPopupMenu(ActionPlaces.PROJECT_VIEW_POPUP, actionGroup).getComponent();
         }
       });
     }
