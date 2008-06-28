@@ -576,8 +576,8 @@
         <link role="javaClass" targetNodeId="16.~ShowParametersAction" resolveInfo="ShowParametersAction" />
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981073163" />
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1214581382814">
-        <link role="javaClass" targetNodeId="3.~ModelPropertiesAction" resolveInfo="ModelPropertiesAction" />
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1214652277219">
+        <link role="javaClass" targetNodeId="3.~ModelPropertiesActionWOShortcuts" resolveInfo="ModelPropertiesActionWOShortcuts" />
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1214581695123" />
     </node>
