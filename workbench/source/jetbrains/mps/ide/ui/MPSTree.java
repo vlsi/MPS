@@ -362,28 +362,29 @@ public abstract class MPSTree extends DnDAwareTree {
     return null;
   }
 
+  protected JPopupMenu createPopupMenu(final MPSTreeNode node) {
+    return null;
+  }
+
   private void showPopup(MouseEvent e) {
     showPopup(e.getX(), e.getY());
   }
 
   private void showPopup(int x, int y) {
     TreePath path = getPathForLocation(x, y);
+    JPopupMenu menu = null;
     if (path != null && path.getLastPathComponent() instanceof MPSTreeNode) {
       final MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
-      JPopupMenu menu = ModelAccess.instance().runReadAction(new Computable<JPopupMenu>() {
-        public JPopupMenu compute() {
-          ActionManager manager = ActionManager.getInstance();
-          return manager.createActionPopupMenu(ActionPlaces.PROJECT_VIEW_POPUP, node.getActionGroup()).getComponent();
+      menu = createPopupMenu(node);
+      if (menu != null) {
+        if (!getSelectedPaths().contains(pathToString(path))) {
+          setSelectionPath(path);
         }
-      });
-      if (menu == null) return;
-      if (!getSelectedPaths().contains(pathToString(path))) {
-        setSelectionPath(path);
+        menu.show(this, x, y);
+        return;
       }
-      menu.show(this, x, y);
-      return;
     }
-
+    
     JPopupMenu defaultMenu = createDefaultPopupMenu();
     if (defaultMenu == null) return;
     defaultMenu.show(this, x, y);

@@ -2,6 +2,7 @@ package jetbrains.mps.workbench.action;
 
 import com.intellij.openapi.actionSystem.*;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.ThreadUtils;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;

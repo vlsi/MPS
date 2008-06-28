@@ -1,6 +1,9 @@
 package jetbrains.mps.ide.findusages.view.treeholder.treeview;
 
-import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.SystemInfo;
 import jetbrains.mps.ide.findusages.view.treeholder.path.PathItemRole;
@@ -13,16 +16,16 @@ import jetbrains.mps.ide.findusages.view.treeholder.treedata.tree.DataNode;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.tree.DataTree;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTree;
-import jetbrains.mps.ide.ui.TextMPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.TextMPSTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 import javax.swing.AbstractAction;
 import javax.swing.JPopupMenu;
@@ -113,9 +116,6 @@ public abstract class UsagesTree extends MPSTree {
         boolean gotoAction = (e.getClickCount() == 2) || (e.getClickCount() == 1 && myAutoscroll);
         if ((e.getButton() == MouseEvent.BUTTON1) && gotoAction) {
           openCurrentNodeLink(false);
-        }
-        if (e.getButton() == MouseEvent.BUTTON3) {
-          showChangeExclusionMenu(e);
         }
       }
     });
@@ -353,19 +353,19 @@ public abstract class UsagesTree extends MPSTree {
     return (UsagesTreeNode) super.getCurrentNode();
   }
 
-  public UsagesTreeNode[] getCurrentNodes(){
-    return getSelectedNodes(UsagesTreeNode.class,null);
+  public UsagesTreeNode[] getCurrentNodes() {
+    return getSelectedNodes(UsagesTreeNode.class, null);
   }
 
   private void setCurrentNodesExclusion(boolean isExculded) {
     myContents.setAdjusting(true);
-    for (UsagesTreeNode node: getCurrentNodes()){
+    for (UsagesTreeNode node : getCurrentNodes()) {
       setExcluded(node, isExculded, false);
     }
     myContents.setAdjusting(false);
   }
 
-  private void showChangeExclusionMenu(MouseEvent e) {
+  protected JPopupMenu createPopupMenu(MPSTreeNode node) {
     DefaultActionGroup ag = new DefaultActionGroup();
 
     ag.add(new BaseAction("Include") {
@@ -382,15 +382,14 @@ public abstract class UsagesTree extends MPSTree {
       }
     });
 
-    JPopupMenu popup = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, ag).getComponent();
-    popup.show(this, e.getX(), e.getY());
+    return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, ag).getComponent();
   }
 
   private void setExcluded(UsagesTreeNode node, boolean isExcluded, boolean useAdjust) {
     if (useAdjust) myContents.setAdjusting(true);
     node.getUserObject().getData().setExcluded(isExcluded);
     for (MPSTreeNode child : node) {
-      setExcluded((UsagesTreeNode)child, isExcluded, false);
+      setExcluded((UsagesTreeNode) child, isExcluded, false);
     }
     if (useAdjust) myContents.setAdjusting(false);
   }

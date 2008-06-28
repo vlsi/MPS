@@ -3,9 +3,7 @@ package jetbrains.mps.ide.projectPane;
 import com.intellij.ide.CopyProvider;
 import com.intellij.ide.CutProvider;
 import com.intellij.ide.PasteProvider;
-import com.intellij.openapi.actionSystem.DataContext;
-import com.intellij.openapi.actionSystem.DataProvider;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.command.CommandAdapter;
 import com.intellij.openapi.command.CommandEvent;
@@ -15,6 +13,7 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.ide.*;
@@ -797,6 +796,15 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
       scrollsOnExpand = false;
 
       registerActions();
+    }
+
+    protected JPopupMenu createPopupMenu(final MPSTreeNode node) {
+      return ModelAccess.instance().runReadAction(new Computable<JPopupMenu>() {
+        public JPopupMenu compute() {
+          ActionManager manager = ActionManager.getInstance();
+          return manager.createActionPopupMenu(ActionPlaces.PROJECT_VIEW_POPUP, node.getActionGroup()).getComponent();
+        }
+      });
     }
 
     public void editNode(SNode node, IOperationContext context) {
