@@ -1,14 +1,14 @@
 package jetbrains.mps.helgins.uiActions;
 
+import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyTree;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyView;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.project.MPSProject;
 
-import javax.swing.AbstractAction;
 import javax.swing.JCheckBox;
-import java.awt.event.ActionEvent;
+import javax.swing.JComponent;
 
 public class SupertypesViewTool extends AbstractHierarchyView {
 
@@ -23,13 +23,22 @@ public class SupertypesViewTool extends AbstractHierarchyView {
     return new SupertypesTree(this);
   }
 
-  protected void initButtons() {
-    myCheckBox = new JCheckBox(new AbstractAction("show only strong supertypes") {
-      public void actionPerformed(ActionEvent e) {
-        ((SupertypesTree) myHierarchyTree).setShowOnlyStrong(myCheckBox.isSelected());
-      }
-    });
-    myButtonsPanel.add(myCheckBox);
-  }
+  protected JComponent createButtons() {
+    ToggleAction action = new ToggleAction("Strong", "Show Only Strong Supertypes", IconManager.EMPTY_ICON) {
+      private boolean myState = false;
 
+      public boolean isSelected(AnActionEvent e) {
+        return myState;
+      }
+
+      public void setSelected(AnActionEvent e, boolean state) {
+        myState = state;
+        ((SupertypesTree) myHierarchyTree).setShowOnlyStrong(myState);
+      }
+    };
+
+    DefaultActionGroup group = new DefaultActionGroup();
+    group.add(action);
+    return ActionManager.getInstance().createActionToolbar(ActionPlaces.TYPE_HIERARCHY_VIEW_TOOLBAR, group, true).getComponent();
+  }
 }

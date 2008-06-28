@@ -1,12 +1,13 @@
 package jetbrains.mps.ide.hierarchy;
 
-import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.ChooseItemWindow;
 import jetbrains.mps.ide.GoToNodeWindow.GoToNodeComponent;
+import jetbrains.mps.ide.hierarchy.icons.Icons;
+import jetbrains.mps.ide.hierarchy.toggle.GroupedToggleAction;
+import jetbrains.mps.ide.hierarchy.toggle.ToggleActionGroup;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -16,8 +17,6 @@ import jetbrains.mps.workbench.tools.BaseMPSTool;
 import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.Frame;
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 
 public abstract class AbstractHierarchyView<T extends INodeAdapter> extends BaseMPSTool {
@@ -25,11 +24,7 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
   protected AbstractHierarchyTree<T> myHierarchyTree;
   protected HierarchyTreeNode<T> myTreeNode;
   protected JPanel myComponent = new JPanel(new BorderLayout());
-  protected JPanel myButtonsPanel = new JPanel(new GridLayout(1, 3));
   protected ButtonGroup myButtonGroup = new ButtonGroup();
-  protected JRadioButton myChildrenHierarchyButton;
-  protected JRadioButton myParentsHierarchyButton;
-  protected JCheckBox myOnlyInOneModelCheckBox;
   protected IOperationContext myContext;
   public JScrollPane myScrollPane;
 
@@ -42,9 +37,9 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
     myHierarchyTree = createHierarchyTree(false);
     myHierarchyTree.setRootVisible(true);
 
-    initButtons();
+    createButtons();
     JPanel panel = new JPanel(new BorderLayout());
-    panel.add(myButtonsPanel, BorderLayout.WEST);
+    panel.add(createButtons(), BorderLayout.WEST);
     myComponent.add(panel, BorderLayout.NORTH);
     myScrollPane = new JScrollPane(myHierarchyTree);
     myComponent.add(myScrollPane, BorderLayout.CENTER);
@@ -57,33 +52,45 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
     context.getComponent(MPSEditorOpener.class).openNode(node, context);
   }
 
-  protected void initButtons() {
-    myChildrenHierarchyButton = new JRadioButton(new AbstractAction("Children Hierarchy") {
-      public void actionPerformed(ActionEvent e) {
+  protected JComponent createButtons() {
+
+    GroupedToggleAction childrenAction = new GroupedToggleAction("Children Hierarchy", "Show children hierarchy", Icons.CHILDREN_ICON, true) {
+      public void select() {
         myHierarchyTree.setParentHierarchy(false);
         myHierarchyTree.rebuildNow();
       }
-    });
+    };
 
-    myParentsHierarchyButton = new JRadioButton(new AbstractAction("Parent Hierarchy") {
-      public void actionPerformed(ActionEvent e) {
+    GroupedToggleAction parentAction = new GroupedToggleAction("Parent Hierarchy", "Show parent hierarchy", Icons.PARENT_ICON, false) {
+      public void select() {
         myHierarchyTree.setParentHierarchy(true);
         myHierarchyTree.rebuildNow();
       }
-    });
+    };
 
-    myOnlyInOneModelCheckBox = new JCheckBox(new AbstractAction("Only This Model") {
-      public void actionPerformed(ActionEvent e) {
-        myHierarchyTree.setIsOnlyInOneModel(myOnlyInOneModelCheckBox.isSelected());
+    ToggleActionGroup toggleGroup = new ToggleActionGroup();
+    toggleGroup.add(childrenAction);
+    toggleGroup.add(parentAction);
+
+    ToggleAction thisModelAction = new ToggleAction("Only This Model", "Show hierarchy only for model", Icons.THIS_MODEL_ICON) {
+      private boolean mySelected = false;
+
+      public boolean isSelected(AnActionEvent e) {
+        return mySelected;
       }
-    });
 
-    myButtonGroup.add(myChildrenHierarchyButton);
-    myButtonGroup.add(myParentsHierarchyButton);
-    myChildrenHierarchyButton.setSelected(true);
-    myButtonsPanel.add(myChildrenHierarchyButton);
-    myButtonsPanel.add(myParentsHierarchyButton);
-    myButtonsPanel.add(myOnlyInOneModelCheckBox);
+      public void setSelected(AnActionEvent e, boolean state) {
+        mySelected = state;
+        myHierarchyTree.setIsOnlyInOneModel(mySelected);
+      }
+    };
+
+    DefaultActionGroup group = new DefaultActionGroup();
+    group.add(childrenAction);
+    group.add(parentAction);
+    group.add(thisModelAction);
+
+    return ActionManager.getInstance().createActionToolbar(ActionPlaces.TYPE_HIERARCHY_VIEW_TOOLBAR, group, true).getComponent();
   }
 
 
