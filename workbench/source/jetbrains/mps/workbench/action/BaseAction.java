@@ -106,7 +106,8 @@ public abstract class BaseAction extends AnAction {
   }
 
   protected void doUpdate(AnActionEvent e) {
-
+    e.getPresentation().setVisible(true);
+    e.getPresentation().setEnabled(true);
   }
 
   @NotNull

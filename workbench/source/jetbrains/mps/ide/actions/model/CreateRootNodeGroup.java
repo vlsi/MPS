@@ -1,7 +1,7 @@
 package jetbrains.mps.ide.actions.model;
 
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSActionAdapter;
@@ -14,9 +14,9 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ToStringComparator;
-import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.ActionEventData;
+import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.workbench.action.BaseGroup;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
@@ -44,11 +44,9 @@ public class CreateRootNodeGroup extends BaseGroup {
   public CreateRootNodeGroup(String pack) {
     this();
     myPackage = pack;
-    setPopup(true);
   }
 
   public void doUpdate(AnActionEvent event) {
-    setPopup(true);
     removeAll();
     ActionEventData data = new ActionEventData(event);
 
@@ -86,7 +84,7 @@ public class CreateRootNodeGroup extends BaseGroup {
       }
     }
 
-    setVisible(event.getPresentation(),true);     
+    setVisible(event.getPresentation(), true);
     //todo:setVisible(event.getPresentation(),data.hasOneSelectedItem());
   }
 
