@@ -1592,6 +1592,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (mySelectedCell != null) {
       mySelectedCell.setSelected(true);
     }
+
+    repaint();
+    
     if (mySelectedCell != null) {
       if (scrollToCell) {
         scrollToCell(newSelectedCell);
@@ -1623,7 +1626,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     EditorCell largestVerticalBigCell = cell;
 
-    int viewportWidth = myScrollPane.getViewport().getWidth();
+    int viewportWidth = getViewport().getWidth();
 
     int x0;
     int width;
