@@ -94,7 +94,7 @@ public class LazyTabbedPane extends JPanel {
       label.setOpaque(false);
 
       panel.add(label, BorderLayout.CENTER);
-      panel.revalidate();
+      panel.validate();
       panel.repaint();
       updateTabColor(tab);
       return;
@@ -102,6 +102,8 @@ public class LazyTabbedPane extends JPanel {
     updateTabColor(tab);
     panel.removeAll();
     panel.add(component, BorderLayout.CENTER);
+    panel.validate();
+    panel.repaint();    
     myInitializedTabs.add(tab);
 
     for (AbstractEditorComponent c : tab.getEditorComponents()) {
