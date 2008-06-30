@@ -621,6 +621,37 @@
       </node>
       <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType" id="1213877267299" />
     </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1214840544944">
+      <property name="name" value="hasStaticMemebers" />
+      <link role="overriddenMethod" targetNodeId="1214840444586" resolveInfo="hasStaticMemebers" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214840544946">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214840549442">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1214840553047">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" id="1214840565287">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1214840565701">
+                <property name="value" value="0" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214840561290">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214840557622">
+                  <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1214840557304" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1214840559254">
+                    <link role="link" targetNodeId="1.1083245396908" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.CountOperation" id="1214840563687" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214840551160">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.SuperNodeExpression" id="1214840550921" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1214840551980">
+                <link role="conceptMethodDeclaration" targetNodeId="1214840444586" resolveInfo="hasStaticMemebers" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1214840546359" />
+    </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1213877267300">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877267301" />
     </node>
@@ -1146,6 +1177,29 @@
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877306353">
         <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1214840444586">
+      <property name="name" value="hasStaticMemebers" />
+      <property name="isVirtual" value="true" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1214840469366" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214840444588">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214840477167">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" id="1214840486563">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1214840486993">
+              <property name="value" value="0" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214840481597">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214840479819">
+                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1214840479580" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1214840480763">
+                  <link role="link" targetNodeId="1.1128555889557" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.CountOperation" id="1214840484947" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1213877306354">
@@ -4453,6 +4507,37 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1214840497917">
+      <property name="name" value="hasStaticMemebers" />
+      <link role="overriddenMethod" targetNodeId="1214840444586" resolveInfo="hasStaticMemebers" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214840497919">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214840503996">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1214840507395">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" id="1214840519558">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1214840520027">
+                <property name="value" value="0" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214840513623">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214840509079">
+                  <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1214840508816" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1214840512954">
+                    <link role="link" targetNodeId="1.1070462273904" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.CountOperation" id="1214840517950" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214840505320">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.SuperNodeExpression" id="1214840504854" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1214840506273">
+                <link role="conceptMethodDeclaration" targetNodeId="1214840444586" resolveInfo="hasStaticMemebers" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1214840502561" />
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1213877355902">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877355903" />

@@ -59,4 +59,8 @@ public class ClassConcept_Behavior {
     }).first();
   }
 
+  public static boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {
+    return Classifier_Behavior.callSuper_hasStaticMemebers_1214840444586(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept") || ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticMethod", true)).count() > 0;
+  }
+
 }

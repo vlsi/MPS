@@ -14,8 +14,10 @@ import jetbrains.mps.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class Classifier_Behavior {
+  public static Class[] PARAMETERS_1214840444586 = {SNode.class};
 
   public static void init(SNode thisNode) {
     SLinkOperations.setNewChild(thisNode, "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
@@ -45,6 +47,18 @@ public class Classifier_Behavior {
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     return SPropertyOperations.getString(thisNode, "nestedName");
+  }
+
+  public static boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {
+    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticField", true)).count() > 0;
+  }
+
+  public static boolean call_hasStaticMemebers_1214840444586(SNode thisNode) {
+    return (Boolean)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_hasStaticMemebers_1214840444586", PARAMETERS_1214840444586);
+  }
+
+  public static boolean callSuper_hasStaticMemebers_1214840444586(SNode thisNode, String callerConceptFqName) {
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_hasStaticMemebers_1214840444586", PARAMETERS_1214840444586);
   }
 
 }

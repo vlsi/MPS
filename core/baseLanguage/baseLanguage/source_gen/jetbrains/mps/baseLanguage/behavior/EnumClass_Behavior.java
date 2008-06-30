@@ -28,4 +28,8 @@ public class EnumClass_Behavior {
     return members;
   }
 
+  public static boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {
+    return Classifier_Behavior.callSuper_hasStaticMemebers_1214840444586(thisNode, "jetbrains.mps.baseLanguage.structure.EnumClass") || ListSequence.fromList(SLinkOperations.getTargets(thisNode, "enumConstant", true)).count() > 0;
+  }
+
 }

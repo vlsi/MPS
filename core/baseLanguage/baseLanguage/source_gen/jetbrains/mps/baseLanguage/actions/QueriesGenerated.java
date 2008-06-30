@@ -20,6 +20,7 @@ import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceIterableAdapter;
 import java.util.Iterator;
 import jetbrains.mps.closures.runtime.YieldingIterator;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import java.util.List;
@@ -37,7 +38,6 @@ import jetbrains.mps.util.Calculable;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
@@ -204,6 +204,13 @@ __switch__:
     }
     SNode method = SNodeOperations.getParent(_context.getSourceNode(), null, false, false);
     return SLinkOperations.getTarget(method, "returnType", true) == _context.getSourceNode() && SPropertyOperations.getString(method, "name") == null;
+  }
+
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_ClassifierType_1214840273030(final IOperationContext operationContext, final RTransformPreconditionContext _context) {
+    if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode(), null, false, false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
+      return false;
+    }
+    return Classifier_Behavior.call_hasStaticMemebers_1214840444586(SLinkOperations.getTarget(_context.getSourceNode(), "classifier", false));
   }
 
   public static void nodeFactory_NodeSetup_InstanceMethodDeclaration_1158793299786(final IOperationContext operationContext, final NodeSetupContext _context) {
@@ -523,17 +530,8 @@ __switch__:
             List<SNode> visibleClassifiers = (List<SNode>)searchScope.getClassifierNodes();
             List<SNode> classifiers = new ArrayList<SNode>();
             for(SNode cls : visibleClassifiers) {
-              if (SLinkOperations.getCount(cls, "staticField") > 0) {
+              if (Classifier_Behavior.call_hasStaticMemebers_1214840444586(cls)) {
                 ListSequence.fromList(classifiers).addElement(cls);
-                continue;
-              }
-              if (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept") && SLinkOperations.getCount(cls, "staticMethod") > 0) {
-                ListSequence.fromList(classifiers).addElement(cls);
-                continue;
-              }
-              if (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.EnumClass") && SLinkOperations.getCount(cls, "enumConstant") > 0) {
-                ListSequence.fromList(classifiers).addElement(cls);
-                continue;
               }
             }
             return classifiers;
@@ -1888,6 +1886,34 @@ __switch__:
 
         public String getMatchingText(String pattern) {
           return pattern;
+        }
+
+      });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_ClassifierType_1214840267304(final IOperationContext operationContext, final RTActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", operationContext.getScope());
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
+
+        public SNode doSubstitute(String pattern) {
+          SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
+          SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
+          SLinkOperations.setTarget(ref, "classifier", SLinkOperations.getTarget(_context.getSourceNode(), "classifier", false), false);
+          SLinkOperations.setTarget(result, "expression", ref, true);
+          SNodeOperations.replaceWithAnother(SNodeOperations.getParent(SNodeOperations.getParent(_context.getSourceNode(), null, false, false), null, false, false), result);
+          return ref;
+        }
+
+        public String getMatchingText(String pattern) {
+          return ".";
+        }
+
+        public String getDescriptionText(String pattern) {
+          return "static access";
         }
 
       });
