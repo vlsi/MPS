@@ -23,7 +23,32 @@ public class IntelligentInputUtil {
       if (canCompleteSmallPatternImmediately(substituteInfo, pattern, "")) {
         SNode resultNode = substituteInfo.getMatchingActions(pattern, true).get(0).doSubstitute(pattern);
         editorContext.selectWRTFocusPolicy(resultNode);
+      } else if (pattern.length() > 0) {
+        String smallPattern = pattern.substring(0, pattern.length() - 1);
+        String tail = "" + pattern.charAt(pattern.length() - 1);
+        if (canCompleteSmallPatternImmediately(substituteInfo, smallPattern, tail)) {
+          List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(smallPattern, true);
+          INodeSubstituteAction item = matchingActions.get(0);
+          SNode newNode = item.doSubstitute(smallPattern);
+          editorContext.flushEvents();
+          EditorCell cellForNewNode = editorContext.getNodeEditorComponent().findNodeCell(newNode);
+
+          EditorCell_Label target = null;
+          if (EditorUtil.findErrorOrEditableCell(cellForNewNode) instanceof EditorCell_Label) {
+            target = (EditorCell_Label) EditorUtil.findErrorOrEditableCell(cellForNewNode);
+          }
+
+          if (target != null) {
+            target.changeText(tail);
+            target.end();
+
+            if (!EditorUtil.isValidCell(target)) {
+              EditorUtil.validateCell(target, editorContext, true); 
+            }
+          }
+        }
       }
+
       return;
     }
     String smallPattern = pattern.substring(0, pattern.length() - 1);
