@@ -5,6 +5,7 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.projectLanguage.structure.Root;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ManyToManyMap;
+import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -186,7 +187,7 @@ public class MPSModuleRepository implements ApplicationComponent {
     String canonicalPath = file.getCanonicalPath();
     ModuleStub moduleStub = myFileToModuleStubMap.get(canonicalPath);
     if (moduleStub == null) {
-      moduleStub = ModuleStub.newInstance(file, owner);
+      moduleStub = ModuleStub.newInstance(file, CollectionUtil.asSet(owner));
     } else {
       //todo
       myModuleStubToOwners.addLink(moduleStub, owner);
@@ -195,11 +196,11 @@ public class MPSModuleRepository implements ApplicationComponent {
     return moduleStub;
   }
 
-  public void addModuleStub(ModuleStub moduleStub, MPSModuleOwner owner) {
+  public void addModuleStub(ModuleStub moduleStub, Set<MPSModuleOwner> owners) {
     myDirtyFlag = true;
-    if (myModuleStubToOwners.contains(moduleStub, owner)) {
-      throw new RuntimeException("Couldn't add module stub\"" + moduleStub.getOldModuleId() + "\" : this module stub is already registered with this very owner: " + owner);
-    }
+/*    if (myModuleStubToOwners.contains(moduleStub, owners)) {
+      throw new RuntimeException("Couldn't add module stub\"" + moduleStub.getOldModuleId() + "\" : this module stub is already registered with this very owner: " + owners);
+    }*/
     IFile descriptorFile = moduleStub.getDescriptorFile();
 
     String canonicalDescriptorPath;
@@ -214,7 +215,9 @@ public class MPSModuleRepository implements ApplicationComponent {
 
     putModuleStubWithUID(moduleStub.getOldModuleId(), moduleStub);
 
-    myModuleStubToOwners.addLink(moduleStub, owner);
+    for (MPSModuleOwner owner : owners) {
+      myModuleStubToOwners.addLink(moduleStub, owner);
+    }
 
     //fireModuleAdded(moduleStub);
   }

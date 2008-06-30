@@ -1542,8 +1542,36 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1214227033409">
-          <property name="value" value="todo:" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214825406759">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214825434308">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1214825414924">
+              <link role="baseMethodDeclaration" targetNodeId="18.~ModuleStub.newInstance(jetbrains.mps.project.AbstractModule):jetbrains.mps.project.ModuleStub" resolveInfo="newInstance" />
+              <link role="classConcept" targetNodeId="18.~ModuleStub" resolveInfo="ModuleStub" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214825416145">
+                <link role="variableDeclaration" targetNodeId="1214224961853" resolveInfo="l" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1214825437811">
+              <link role="baseMethodDeclaration" targetNodeId="18.~ModuleStub.saveStub():void" resolveInfo="saveStub" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214825192106">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214825219779">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1214825218107">
+              <link role="baseMethodDeclaration" targetNodeId="5.~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolveInfo="getInstance" />
+              <link role="classConcept" targetNodeId="5.~MPSModuleRepository" resolveInfo="MPSModuleRepository" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1214825223532">
+              <link role="baseMethodDeclaration" targetNodeId="5.~MPSModuleRepository.renameUID(jetbrains.mps.smodel.Language,java.lang.String):void" resolveInfo="renameUID" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214825224877">
+                <link role="variableDeclaration" targetNodeId="1214224961853" resolveInfo="l" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1214825229426">
+                <link role="argument" targetNodeId="1199457954885" resolveInfo="newName" />
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>
