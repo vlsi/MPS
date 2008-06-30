@@ -45,7 +45,7 @@ public class ApplicationsTest extends BaseMPSTest {
   }
 
   public void testUILanguage() {
-    String res = testProject(new File("platform/uiLanguage/uiLanguage.mpr"));
+    String res = testProject(new File("platform/uiLanguage/uiLanguage.ipr"));
     assertTrue(res, res == null);
   }
 }
