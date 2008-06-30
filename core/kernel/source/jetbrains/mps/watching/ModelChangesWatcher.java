@@ -91,7 +91,6 @@ public class ModelChangesWatcher implements ApplicationComponent {
             }
             if (model.needsReloading()) {
               toReload.add(model);
-              System.out.println("reloading model " + model);
             }
           }
 
