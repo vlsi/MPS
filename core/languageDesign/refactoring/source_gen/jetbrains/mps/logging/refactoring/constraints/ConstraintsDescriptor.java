@@ -12,7 +12,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
   private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
 
   public ConstraintsDescriptor() {
-    this.myConstraints.add(new RequiredAdditionalArgumentReference_DefaultSearchScope());
+    this.myConstraints.add(new RequiredAdditionalArgumentReference_argument_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {
