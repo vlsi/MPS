@@ -2266,7 +2266,7 @@
       <link role="dataType" targetNodeId="4.1082983041843" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1179360836875">
-      <property name="value" value="0x" />
+      <property name="value" value="hexademical integer literal" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
   </node>
