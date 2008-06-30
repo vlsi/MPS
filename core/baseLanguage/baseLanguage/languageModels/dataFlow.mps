@@ -1500,13 +1500,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1207061421586">
-    <property name="package" value="conceptFunction" />
-    <link role="conceptDeclaration" targetNodeId="1.1137021947720" resolveInfo="ConceptFunction" />
-    <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1207061421587">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207061421588" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1207075974495">
     <link role="conceptDeclaration" targetNodeId="1.1081516740877" resolveInfo="NotExpression" />
     <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1207075974496">
@@ -1557,12 +1550,6 @@
           </node>
         </node>
       </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1207125045369">
-    <link role="conceptDeclaration" targetNodeId="1.1152728232947" resolveInfo="Closure" />
-    <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1207125045370">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207125045371" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1207140821807">
