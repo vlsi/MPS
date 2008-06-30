@@ -10,8 +10,8 @@ public enum Option {
   option_1("option_1", "option_1"),
   drop_it("drop it", "drop_it");
 
-  /* package */String myName;
-  /* package */String myValue;
+  private String myName;
+  private String myValue;
 
 Option(String name, String value) {
     this.myName = name;

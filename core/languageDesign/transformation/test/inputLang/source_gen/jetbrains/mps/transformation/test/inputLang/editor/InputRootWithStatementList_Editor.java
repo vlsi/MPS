@@ -27,7 +27,7 @@ public class InputRootWithStatementList_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell11224_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11224_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -52,7 +52,7 @@ public class InputRootWithStatementList_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell11224_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11224_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -85,7 +85,7 @@ public class InputRootWithStatementList_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell11224_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11224_03");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -280,7 +280,7 @@ public class InputRootWithStatementList_Editor extends DefaultNodeEditor {
   public EditorCell create_useInTestPropertyCell11224_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("useInTest");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no useInTest>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_useInTestPropertyCell11224_0_internal(context, node, provider);
@@ -309,7 +309,7 @@ public class InputRootWithStatementList_Editor extends DefaultNodeEditor {
   public EditorCell create_statementListRefNodeCell11224_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("statementList");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no statementList>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_statementListRefNodeCell11224_0_internal(context, node, provider);

@@ -12,7 +12,7 @@ public class Option_PropertySupport extends PropertySupport {
       return true;
     }
     Iterator<Option> constants = Option.getConstants().iterator();
-    while(constants.hasNext()) {
+    while (constants.hasNext()) {
       Option constant = constants.next();
       if (value.equals(constant.getName())) {
         return true;
@@ -26,7 +26,7 @@ public class Option_PropertySupport extends PropertySupport {
       return null;
     }
     Iterator<Option> constants = Option.getConstants().iterator();
-    while(constants.hasNext()) {
+    while (constants.hasNext()) {
       Option constant = constants.next();
       if (value.equals(constant.getName())) {
         return constant.getValueAsString();
@@ -40,7 +40,7 @@ public class Option_PropertySupport extends PropertySupport {
     if (constant != null) {
       return constant.getName();
     }
-    return null;
+    return "";
   }
 
 }

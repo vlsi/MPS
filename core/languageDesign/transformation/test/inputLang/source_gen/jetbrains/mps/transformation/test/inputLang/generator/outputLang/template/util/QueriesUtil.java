@@ -6,25 +6,15 @@ import jetbrains.mps.smodel.SModel;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 
 public class QueriesUtil {
 
   public static boolean isTest1(SModel model) {
     List<SNode> nodes = SModelOperations.getRoots(model, "jetbrains.mps.transformation.test.inputLang.structure.InputRoot");
-    {
-      ICursor<SNode> _zCursor = CursorFactory.createCursor(nodes);
-      try {
-        while(_zCursor.moveToNext()) {
-          SNode node = _zCursor.getCurrent();
-          if (SPropertyOperations.hasValue(node, "useInTest", "test1", "none")) {
-            return true;
-          }
-        }
-      } finally {
-        _zCursor.release();
+    for(SNode node : nodes) {
+      if (SPropertyOperations.hasValue(node, "useInTest", "test1", "none")) {
+        return true;
       }
     }
     return false;

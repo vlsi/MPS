@@ -13,8 +13,8 @@ public enum UseInTest {
   dontApplyReductionTwice("dontApplyReductionTwice", "dontApplyReductionTwice"),
   none("none", "none");
 
-  /* package */String myName;
-  /* package */String myValue;
+  private String myName;
+  private String myValue;
 
 UseInTest(String name, String value) {
     this.myName = name;

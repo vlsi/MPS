@@ -35,7 +35,7 @@ public class InputRoot_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell14087_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell14087_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -60,7 +60,7 @@ public class InputRoot_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell14087_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell14087_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -85,7 +85,7 @@ public class InputRoot_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell14087_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell14087_03");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -308,7 +308,7 @@ public class InputRoot_Editor extends DefaultNodeEditor {
   public EditorCell create_useInTestPropertyCell14087_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("useInTest");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no useInTest>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_useInTestPropertyCell14087_0_internal(context, node, provider);

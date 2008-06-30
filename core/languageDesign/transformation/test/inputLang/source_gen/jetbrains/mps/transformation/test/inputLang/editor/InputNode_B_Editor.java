@@ -38,7 +38,7 @@ public class InputNode_B_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell11873_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11873_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.DRAW_BRACKETS, true);
@@ -59,7 +59,7 @@ public class InputNode_B_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell11873_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11873_02");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -80,7 +80,7 @@ public class InputNode_B_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell11873_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11873_03");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -101,7 +101,7 @@ public class InputNode_B_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell11873_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell11873_04");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
@@ -300,7 +300,7 @@ public class InputNode_B_Editor extends DefaultNodeEditor {
   public EditorCell create_optionPropertyCell11873_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("option");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no option>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_optionPropertyCell11873_0_internal(context, node, provider);

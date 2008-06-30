@@ -39,7 +39,7 @@ public class OutputRoot_Editor extends DefaultNodeEditor {
   private static void setupBasic_CollectionCell4127_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_CollectionCell4127_01");
     {
-      Style inlineStyle = new Style() {
+      Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }

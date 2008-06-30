@@ -12,7 +12,7 @@ public class UseInTest_PropertySupport extends PropertySupport {
       return true;
     }
     Iterator<UseInTest> constants = UseInTest.getConstants().iterator();
-    while(constants.hasNext()) {
+    while (constants.hasNext()) {
       UseInTest constant = constants.next();
       if (value.equals(constant.getName())) {
         return true;
@@ -26,7 +26,7 @@ public class UseInTest_PropertySupport extends PropertySupport {
       return null;
     }
     Iterator<UseInTest> constants = UseInTest.getConstants().iterator();
-    while(constants.hasNext()) {
+    while (constants.hasNext()) {
       UseInTest constant = constants.next();
       if (value.equals(constant.getName())) {
         return constant.getValueAsString();
@@ -40,7 +40,7 @@ public class UseInTest_PropertySupport extends PropertySupport {
     if (constant != null) {
       return constant.getName();
     }
-    return null;
+    return "";
   }
 
 }
