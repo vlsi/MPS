@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.bootstrap.findUsagesLanguage.structure.FinderDeclaration;
 
 public class FinderReference extends BaseConcept implements IResolveInfo {
   public static final String concept = "jetbrains.mps.logging.refactoring.structure.FinderReference";
@@ -15,6 +16,7 @@ public class FinderReference extends BaseConcept implements IResolveInfo {
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String FINDER_DECLARATION = "finderDeclaration";
 
   public FinderReference(SNode node) {
     super(node);
@@ -59,6 +61,14 @@ public class FinderReference extends BaseConcept implements IResolveInfo {
 
   public void setVirtualPackage(String value) {
     this.setProperty(FinderReference.VIRTUAL_PACKAGE, value);
+  }
+
+  public FinderDeclaration getFinderDeclaration() {
+    return (FinderDeclaration)this.getReferent(FinderReference.FINDER_DECLARATION);
+  }
+
+  public void setFinderDeclaration(FinderDeclaration node) {
+    super.setReferent(FinderReference.FINDER_DECLARATION, node);
   }
 
 }

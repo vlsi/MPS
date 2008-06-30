@@ -1556,6 +1556,19 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214837668400">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214837668501">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214837668401">
+              <link role="variableDeclaration" targetNodeId="1214224961853" resolveInfo="l" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1214837671849">
+              <link role="baseMethodDeclaration" targetNodeId="5.~Language.rename(java.lang.String):void" resolveInfo="rename" />
+              <node role="actualArgument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1214837686023">
+                <link role="argument" targetNodeId="1214216915334" resolveInfo="newName" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214825192106">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214825219779">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1214825218107">

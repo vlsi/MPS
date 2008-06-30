@@ -461,6 +461,12 @@ public class Language extends AbstractModule {
     return NameUtil.shortNameFromLongName(getNamespace());
   }
 
+  public void rename(String newNamespace) {
+    LanguageDescriptor languageDescriptor = getLanguageDescriptor();
+    languageDescriptor.setNamespace(newNamespace);
+    setLanguageDescriptor(languageDescriptor, false);
+  }
+
   public File getSourceDir() {
     File sourceDir = new File(myDescriptorFile.getParent().toFile(), "source_gen");
     if (getLanguageDescriptor().getLanguageGenPath() != null) {
