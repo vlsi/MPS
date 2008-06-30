@@ -1,7 +1,8 @@
-package jetbrains.mps.vcs;
+package jetbrains.mps.vcs.diff;
 
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.vcs.diff.NewNodeChange;
 
 public class SetNodeChange extends NewNodeChange {
   public SetNodeChange(String nodeType, SNodeId nodeId, String role, SNodeId parentId) {

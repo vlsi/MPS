@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.vcs.*;
+import jetbrains.mps.vcs.diff.*;
 import jetbrains.mps.workbench.action.BaseAction;
 
 import javax.swing.JPanel;

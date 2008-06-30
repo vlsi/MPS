@@ -1,6 +1,7 @@
-package jetbrains.mps.vcs;
+package jetbrains.mps.vcs.diff;
 
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.vcs.diff.Change;
 
 public class SetReferenceChange extends Change {
   private SNodeId myNodeId;

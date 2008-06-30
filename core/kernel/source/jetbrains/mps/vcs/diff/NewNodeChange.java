@@ -1,6 +1,7 @@
-package jetbrains.mps.vcs;
+package jetbrains.mps.vcs.diff;
 
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.vcs.diff.Change;
 
 public abstract class NewNodeChange extends Change {
   private String myConceptFqName;

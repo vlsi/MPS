@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.vcs.*;
+import jetbrains.mps.vcs.diff.*;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;

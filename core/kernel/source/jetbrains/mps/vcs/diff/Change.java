@@ -1,4 +1,4 @@
-package jetbrains.mps.vcs;
+package jetbrains.mps.vcs.diff;
 
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNodeId;

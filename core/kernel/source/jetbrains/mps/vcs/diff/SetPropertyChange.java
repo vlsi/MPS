@@ -1,8 +1,9 @@
-package jetbrains.mps.vcs;
+package jetbrains.mps.vcs.diff;
 
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.vcs.diff.Change;
 
 public class SetPropertyChange extends Change {
   private SNodeId myNodeId;

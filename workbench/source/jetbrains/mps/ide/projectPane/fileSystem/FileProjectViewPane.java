@@ -47,7 +47,7 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
   private MPSTree myMPSTree;
   private FileStatusListener myFileStatusListener;
   private VirtualFileAdapter myFileListener;
-  private Timer myTimer;
+  private final Timer myTimer;
   private static final int SECOND = 1000;
 
   protected FileProjectViewPane(Project project, final ProjectView projectView) {
@@ -108,7 +108,6 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
       public void actionPerformed(ActionEvent e) {
         ModelAccess.instance().runReadInEDT(new Runnable() {
           public void run() {
-//            System.out.println("rebuild");
             myMPSTree.rebuildLater();
           }
         });

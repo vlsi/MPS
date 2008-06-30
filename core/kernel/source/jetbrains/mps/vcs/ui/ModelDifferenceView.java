@@ -8,7 +8,7 @@ import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.vcs.*;
+import jetbrains.mps.vcs.diff.*;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
