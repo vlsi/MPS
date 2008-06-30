@@ -12,6 +12,7 @@ import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.UseCarefully;
+import jetbrains.mps.util.annotation.ForDebug;
 import jetbrains.mps.helgins.integration.HelginsPreferencesComponent;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadListener;
@@ -51,6 +52,12 @@ public class TypeChecker implements ApplicationComponent {
   private Stack<NodeTypesComponent> myCurentTypesComponentStack = new Stack<NodeTypesComponent>();
   private Stack<TypeCheckingMode> myTypesCheckingModesStack = new Stack<TypeCheckingMode>();
 
+  @ForDebug
+  private Set<SNode> myResolveModeNodesBeingChecked = new HashSet<SNode>();
+  @ForDebug
+  private boolean myResolveModeInProgress;
+  @ForDebug
+  private Object myResolveModeStartedFrame;
 
   private MPSProject myProject;
   private boolean myIsIncrementalMode = true;
@@ -97,6 +104,34 @@ public class TypeChecker implements ApplicationComponent {
 
   public static TypeChecker getInstance() {
     return ApplicationManager.getApplication().getComponent(TypeChecker.class);
+  }
+
+  @ForDebug
+  public void startResolveMode(Object frame, SNode nodeToCheck) {
+    if (myResolveModeInProgress) {
+      return;
+    } else {
+      myResolveModeInProgress = true;
+      myResolveModeStartedFrame = frame;
+      myResolveModeNodesBeingChecked.add(nodeToCheck);
+    }
+  }
+
+  @ForDebug
+  public void finishResolveMode(Object frame) {
+    if (!myResolveModeInProgress) {
+      return;
+    }
+    if (frame != myResolveModeStartedFrame) {
+      return;
+    }
+    myResolveModeStartedFrame = null;
+    myResolveModeInProgress = false;
+    myResolveModeNodesBeingChecked.clear();
+  }
+
+  public boolean isNodeBeingCheckedInResolveMode(SNode node) {
+    return myResolveModeNodesBeingChecked.contains(node);
   }
 
   public Map<SNode, SNode> getMainContext() {
