@@ -118,7 +118,7 @@ public class StatementList_Behavior {
     for(SNode ref : SNodeOperations.getDescendants(thisNode, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false)) {
       boolean statementsContainsVar = false;
       for(SNode parent : SNodeOperations.getAncestors(SLinkOperations.getTarget(ref, "variableDeclaration", false), null, false)) {
-        if (parent.equals(thisNode)) {
+        if (parent == thisNode) {
           statementsContainsVar = true;
         }
       }

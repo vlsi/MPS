@@ -2429,15 +2429,10 @@
               </node>
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214501228186">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1214501228187">
-                  <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214501228188">
-                    <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1214501228189">
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214501228190">
-                        <link role="variableDeclaration" targetNodeId="1214501228184" resolveInfo="parent" />
-                      </node>
-                    </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1214501228191">
-                      <link role="baseMethodDeclaration" targetNodeId="2.~Object.equals(java.lang.Object):boolean" resolveInfo="equals" />
-                      <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1214501251573" />
+                  <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1214823840157">
+                    <node role="rightExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1214823841774" />
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214501228190">
+                      <link role="variableDeclaration" targetNodeId="1214501228184" resolveInfo="parent" />
                     </node>
                   </node>
                   <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214501228193">
