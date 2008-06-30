@@ -31,7 +31,7 @@ import java.lang.reflect.Constructor;
 import java.util.*;
 
 
-public class Language extends AbstractModule implements Marshallable<Language> {
+public class Language extends AbstractModule {
   private static final Logger LOG = Logger.getLogger(Language.class);
 
   private static final String LANGUAGE_ACCESSORIES = "languageAccessories";
@@ -154,14 +154,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
       newPathSuffix = newPathSuffix + File.separatorChar + newPathSuffix;
     }
     return dir.child(newPathSuffix+ MPSExtentions.DOT_LANGUAGE);
-  }
-
-  public String marshall() {
-    return getNamespace();
-  }
-
-  public Language unmarshall(String s, IOperationContext operationContext) {
-    return MPSModuleRepository.getInstance().getLanguage(s);
   }
 
   public List<String> getExtendedLanguageNamespaces() {
