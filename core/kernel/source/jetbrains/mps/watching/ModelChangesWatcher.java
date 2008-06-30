@@ -36,7 +36,6 @@ import java.util.LinkedHashSet;
 
 public class ModelChangesWatcher implements ApplicationComponent {
   public static final Logger LOG = Logger.getLogger(ModelChangesWatcher.class);
-  private static final int SECOND = 1000;
   private final MessageBus myBus;
 
   private BulkFileListener myBusListener = new BulkFileListener() {
@@ -47,13 +46,11 @@ public class ModelChangesWatcher implements ApplicationComponent {
     public void after(List<? extends VFileEvent> events) {
       final Set<SModelDescriptor> toReload = new LinkedHashSet<SModelDescriptor>();
 
-//      System.out.println("START");
       for (VFileEvent event : events) {
         if ((event instanceof VFileDeleteEvent) || (event instanceof VFileCreateEvent)) {
 
           String path = event.getPath();
           if (path.endsWith(".mps")) {
-//            System.out.println("RELOAD ALL");
             ProgressManager.getInstance().run(new Modal(null, "Reloading Updated Models", false) {
               public void run(@NotNull final ProgressIndicator indicator) {
                 ModelAccess.instance().runReadAction(new Runnable() {
@@ -76,7 +73,6 @@ public class ModelChangesWatcher implements ApplicationComponent {
               }
             });
           }
-//          System.out.println("STOP");
           return;
 
         } else {
@@ -110,7 +106,6 @@ public class ModelChangesWatcher implements ApplicationComponent {
         }
       });
 
-      System.out.println("STOP");
     }
   };
 
