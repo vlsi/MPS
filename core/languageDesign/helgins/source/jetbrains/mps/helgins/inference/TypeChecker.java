@@ -291,14 +291,6 @@ public class TypeChecker implements ApplicationComponent {
     }
   }
 
-  // we assume that type of a node does not depend on its ancestors
-  @Hack
-  @Deprecated
-  @Nullable
-  public SNode hackTypeOf(SNode node) {
-    return getTypeOf(node);
-  }
-
   private SNode getTypeOf_generationMode(final SNode node) {
     if (node == null) return null;
     SNode containingRoot = node.getContainingRoot();
@@ -385,13 +377,18 @@ public class TypeChecker implements ApplicationComponent {
   @Nullable
   private SNode getTypeOf_normalMode(SNode node) {
     if (node == null) return null;
+    if (!checkIfNotChecked(node)) return null;
+    return getTypeDontCheck(node);
+  }
+
+  public boolean checkIfNotChecked(SNode node) {
     SNode containingRoot = node.getContainingRoot();
-    if (containingRoot == null) return null;
+    if (containingRoot == null) return false;
     if (!myCheckedRoots.contains(containingRoot) || NodeTypesComponentsRepository.getInstance().
       getNodeTypesComponent(node.getContainingRoot()) == null) {
       checkRoot(containingRoot);
     }
-    return getTypeDontCheck(node);
+    return true;
   }
 
   @Nullable
