@@ -295,7 +295,15 @@ public class NodeTypesComponent implements IEditorMessageOwner, Cloneable {
   }
 
   public SNode computeTypesForNodeDuringResolving(SNode initialNode, Runnable continuation) {
-    return computeTypesForNode_special(initialNode, continuation, false);
+    Object frame = new Object();
+    if (myTypeChecker.isNodeBeingCheckedInResolveMode(initialNode)) {
+      LOG.error("the same node is checked more than once on a stack. StackOverFlow is inevitable");
+      return null;
+    }
+    myTypeChecker.startResolveMode(frame, initialNode);
+    SNode result = computeTypesForNode_special(initialNode, continuation, false);
+    myTypeChecker.finishResolveMode(frame);
+    return result;
   }
 
   private SNode computeTypesForNode_special(SNode initialNode, Runnable continuation, boolean refreshTypes) {
