@@ -82,11 +82,6 @@
         </node>
       </node>
     </node>
-    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1214583817157">
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1214583817158" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1214583817159" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214583817160" />
-    </node>
   </node>
 </model>
 
