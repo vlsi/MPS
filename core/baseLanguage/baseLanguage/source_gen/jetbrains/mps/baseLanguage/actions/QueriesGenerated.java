@@ -1842,9 +1842,14 @@ __switch__:
       result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
-          SNode method = SNodeOperations.getParent(_context.getSourceNode(), null, false, false);
-          SPropertyOperations.set(method, "name", pattern);
-          return null;
+          if (pattern.length() == 1 && Character.isJavaIdentifierStart(pattern.charAt(0))) {
+            SNode method = SNodeOperations.getParent(_context.getSourceNode(), null, false, false);
+            SPropertyOperations.set(method, "name", pattern);
+            return null;
+          } else
+          {
+            return _context.getSourceNode();
+          }
         }
 
         public String getMatchingText(String pattern) {

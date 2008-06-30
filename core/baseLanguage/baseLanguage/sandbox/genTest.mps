@@ -27,6 +27,12 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214827617642" />
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1214554222481" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1214833757223">
+      <property name="name" value="adwedwedwed" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1214833757224" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214833757225" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1214833757226" />
+    </node>
   </node>
 </model>
 
