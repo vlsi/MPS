@@ -15,6 +15,7 @@ import jetbrains.mps.datatransfer.PasteNodeData;
 import jetbrains.mps.datatransfer.PastePlaceHint;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.resolve.Resolver;
+import jetbrains.mps.util.Condition;
 
 import java.util.List;
 import java.util.Set;
@@ -35,12 +36,13 @@ public class CellAction_PasteNodeRelative extends EditorCellAction {
       return false;
     }
     SNode anchorNode = selectedCell.getSNode();
-    List<SNode> pasteNodes = CopyPasteUtil.getNodesFromClipboard(anchorNode.getModel());
-    if (pasteNodes == null) {
+    if (anchorNode == null) {
       return false;
     }
-
-    if (pasteNodes.isEmpty()) return false;
+    List<SNode> pasteNodes = CopyPasteUtil.getNodesFromClipboard(anchorNode.getModel());
+    if (pasteNodes == null || pasteNodes.isEmpty()) {
+      return false;
+    }
 
     if (!PasteNodeUtil.canPasteRelative(anchorNode, pasteNodes)) {
       LOG.debug("Couldn't paste node relative");
@@ -51,17 +53,39 @@ public class CellAction_PasteNodeRelative extends EditorCellAction {
 
   public void execute(EditorContext context) {
     LOG.assertInCommand();
-    IOperationContext operationContext = context.getOperationContext();
-    assert operationContext != null : "operation context in \"paste node relative\" is null";
-    EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
+    AbstractEditorComponent editorComponent = context.getNodeEditorComponent();
+    EditorCell selectedCell = editorComponent.getSelectedCell();
     SNode anchorNode = selectedCell.getSNode();
 
     PasteNodeData pasteNodeData = CopyPasteUtil.getPasteNodeDataFromClipboard(anchorNode.getModel());
     List<SNode> pasteNodes = pasteNodeData.getNodes();
     Set<SReference> requireResolveReferences = pasteNodeData.getRequireResolveReferences();
 
-
     PasteNodeUtil.pasteRelative(anchorNode, pasteNodes, myPastePlaceHint);
-    Resolver.resolveReferences(requireResolveReferences, operationContext);
+    Resolver.resolveReferences(requireResolveReferences, context.getOperationContext());
+
+    // set selection
+    editorComponent.flushEvents();
+    EditorCell nodeCell = editorComponent.findNodeCell(pasteNodes.get(0), true);
+    if (nodeCell == null) return; // after 'set reference'?
+    editorComponent.changeSelection(nodeCell);
+    EditorCell_Label labelCell = (EditorCell_Label) EditorUtil.findFirstCellWhichMeetsCondition(nodeCell, new Condition<EditorCell>() {
+      public boolean met(EditorCell cell) {
+        return cell instanceof EditorCell_Label;
+      }
+    });
+
+    if (labelCell != null) {
+      editorComponent.changeSelection(labelCell);
+      if (pasteNodes.size() == 1) {
+        editorComponent.pushSelection(labelCell);
+        editorComponent.setSelectionDontClearStack(nodeCell, true);
+      }
+    }
+
+    if (pasteNodes.size() > 1) {
+      editorComponent.getNodeRangeSelection().setRange(pasteNodes.get(0), pasteNodes.get(pasteNodes.size() - 1));
+    }
+
   }
 }

@@ -1532,9 +1532,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return null;
   }
 
-  public Stack<EditorCell> getSelectionStackCopy() {
-    return (Stack<EditorCell>) mySelectedStack.clone();
-  }
+//  public Stack<EditorCell> getSelectionStackCopy() {
+//    return (Stack<EditorCell>) mySelectedStack.clone();
+//  }
 
   public boolean selectionStackContains(EditorCell cell) {
     return mySelectedStack.contains(cell);
