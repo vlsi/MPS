@@ -1055,6 +1055,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration" id="1169670215797">
     <property name="name" value="GeneratorMessageType" />
     <property name="package" value="rule.consequence" />
+    <property name="memberIdentifierPolicy" value="derive_from_internal_value" />
     <link role="memberDataType" targetNodeId="2.1082983041843" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1169670215798">
       <property name="internalValue" value="info" />
