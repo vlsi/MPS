@@ -32,6 +32,7 @@ public class CreateRootNodeGroup extends BaseGroup {
 
   public CreateRootNodeGroup() {
     super("Create Root Node");
+    setPopup(true);
   }
 
   public CreateRootNodeGroup(List<String> allowed) {
@@ -44,6 +45,7 @@ public class CreateRootNodeGroup extends BaseGroup {
   public CreateRootNodeGroup(String pack) {
     this();
     myPackage = pack;
+    setPopup(true);
   }
 
   public void doUpdate(AnActionEvent event) {
