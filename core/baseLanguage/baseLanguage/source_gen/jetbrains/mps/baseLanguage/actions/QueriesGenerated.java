@@ -203,7 +203,7 @@ __switch__:
       return false;
     }
     SNode method = SNodeOperations.getParent(_context.getSourceNode(), null, false, false);
-    return SLinkOperations.getTarget(method, "returnType", true) == _context.getSourceNode();
+    return SLinkOperations.getTarget(method, "returnType", true) == _context.getSourceNode() && SPropertyOperations.getString(method, "name") == null;
   }
 
   public static void nodeFactory_NodeSetup_InstanceMethodDeclaration_1158793299786(final IOperationContext operationContext, final NodeSetupContext _context) {
