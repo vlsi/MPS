@@ -1,7 +1,10 @@
 package jetbrains.mps.ide.actions.module;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.ide.genconf.GenParameters;
@@ -83,6 +86,12 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
     });
 
     if (params == null) {
+      return;
+    }
+
+    if (params.getModels().isEmpty()) {
+      Project project = e.getData(PlatformDataKeys.PROJECT);
+      WindowManager.getInstance().getIdeFrame(project).getStatusBar().setInfo("Nothing to generate");
       return;
     }
 
