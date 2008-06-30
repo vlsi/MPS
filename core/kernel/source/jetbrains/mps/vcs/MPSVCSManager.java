@@ -29,18 +29,23 @@ import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
+import javax.swing.SwingUtilities;
+
 public class MPSVCSManager implements ProjectComponent {
   public static final Logger LOG = Logger.getLogger(MPSVCSManager.class);
   private final Project myProject;
   private GenerationListener myGenerationListener;
-  private volatile boolean myGenerationRunning;
-  private final Set<Runnable> myTasks = new HashSet<Runnable>();
+  private boolean myGenerationRunning;
+  private final Object myMonitor = new Object();
+  private final List<Runnable> myTasks = new LinkedList<Runnable>();
 
   public MPSVCSManager(Project project) {
     myProject = project;
     myGenerationListener = new GenerationListener() {
       public void beforeGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
-        myGenerationRunning = true;
+        synchronized (myMonitor) {
+          myGenerationRunning = true;
+        }
       }
 
       public void modelsGenerated(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
@@ -48,26 +53,30 @@ public class MPSVCSManager implements ProjectComponent {
       }
 
       public void afterGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
-        myGenerationRunning = false;
+        synchronized (myMonitor) {
+          myGenerationRunning = false;
 
-        for (Runnable task : myTasks) {
-          ApplicationManager.getApplication().invokeLater(task);
+          for (Runnable task : myTasks) {
+            SwingUtilities.invokeLater(task);
+          }
+
+          myTasks.clear();
         }
-
-        myTasks.clear();
       }
     };
   }
 
   private void invokeLater(Runnable task) {
-    if (myGenerationRunning) {
-      myTasks.add(task);
-      LOG.debug("shedule task");
-      return;
-    }
+    synchronized (myMonitor) {
+      if (myGenerationRunning) {
+        myTasks.add(task);
+        LOG.debug("shedule task");
+        return;
+      }
 
-    LOG.debug("invoke task");
-    ApplicationManager.getApplication().invokeLater(task);
+      LOG.debug("invoke task");
+      SwingUtilities.invokeLater(task);
+    }
   }
 
   public boolean deleteFilesAndRemoveFromVCS(List<File> files) {
