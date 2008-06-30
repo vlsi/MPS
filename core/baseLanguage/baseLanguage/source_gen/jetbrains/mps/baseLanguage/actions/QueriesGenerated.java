@@ -198,6 +198,14 @@ __switch__:
     return SLinkOperations.getCount(_context.getSourceNode(), "typeParameter") == 0;
   }
 
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Type_1214826155342(final IOperationContext operationContext, final RTransformPreconditionContext _context) {
+    if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode(), null, false, false), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"))) {
+      return false;
+    }
+    SNode method = SNodeOperations.getParent(_context.getSourceNode(), null, false, false);
+    return SLinkOperations.getTarget(method, "returnType", true) == _context.getSourceNode();
+  }
+
   public static void nodeFactory_NodeSetup_InstanceMethodDeclaration_1158793299786(final IOperationContext operationContext, final NodeSetupContext _context) {
     SLinkOperations.setNewChild(_context.getNewNode(), "returnType", "jetbrains.mps.baseLanguage.structure.VoidType");
     SLinkOperations.setNewChild(_context.getNewNode(), "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
@@ -1755,6 +1763,27 @@ __switch__:
       };
       SNode node = (SNode)calc.calculate();
       result.addAll(ModelActions.createRightTransformHintSubstituteActions(node, _context.getTransformationTag(), operationContext));
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Type_1214826150863(final IOperationContext operationContext, final RTActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type", operationContext.getScope());
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
+
+        public SNode doSubstitute(String pattern) {
+          SNode method = SNodeOperations.getParent(_context.getSourceNode(), null, false, false);
+          SPropertyOperations.set(method, "name", pattern);
+          return null;
+        }
+
+        public String getMatchingText(String pattern) {
+          return pattern;
+        }
+
+      });
     }
     return result;
   }
