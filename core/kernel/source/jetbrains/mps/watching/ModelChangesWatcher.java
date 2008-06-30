@@ -20,12 +20,12 @@ public class ModelChangesWatcher implements ApplicationComponent {
     public void contentsChanged(VirtualFileEvent event) {
       IFile ifile = VFileSystem.toIFile(event.getFile());
       final SModelDescriptor model = ApplicationManager.getApplication().getComponent(SModelRepository.class).findModel(ifile);
-      if (model != null){
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            model.reloadFromDisk();
-          }
-        });
+      if (model != null) {
+//        ModelAccess.instance().runReadAction(new Runnable() {
+//          public void run() {
+//            model.reloadFromDisk();
+//          }
+//        });
       }
     }
 
