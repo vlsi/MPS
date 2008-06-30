@@ -143,10 +143,12 @@ public class IntelligentInputUtil {
 
       editorContext.flushEvents();
 
-      AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
-      EditorCell yetNewNodeCell = editor.findNodeCell(yetNewNode);
-      EditorCell errorOrEditableCell = EditorUtil.findErrorOrEditableCell(yetNewNodeCell);
-      editor.changeSelectionWRTFocusPolicy(errorOrEditableCell);
+      if (yetNewNode != null) {
+        AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
+        EditorCell yetNewNodeCell = editor.findNodeCell(yetNewNode);
+        EditorCell errorOrEditableCell = EditorUtil.findErrorOrEditableCell(yetNewNodeCell);
+        editor.changeSelectionWRTFocusPolicy(errorOrEditableCell);
+      }
     } else {
       editorContext.flushEvents();
       cellFounder.run();
