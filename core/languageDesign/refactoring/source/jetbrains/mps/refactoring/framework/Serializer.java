@@ -8,6 +8,9 @@ import jetbrains.mps.refactoring.framework.RefactoringContext.FullNodeId;
 import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 
+import java.util.Collection;
+import java.util.List;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
@@ -26,9 +29,11 @@ public class Serializer {
   public static final String SMODEL = "smodel";
   public static final String SMODEL_DESCRIPTOR = "smodelDescriptor";
   public static final String ISERIALIZABLE = "iserializable";
+  public static final String COLLECTION = "collection";
   public static final String DEFAULT = "default";
 
   public static final String STRING_VALUE = "stringValue";
+  public static final String ITEM = "item";
   public static final String MODEL_UID = "modelUID";
   public static final String CLASS_NAME = "className";
   public static final String XSTREAM_VALUE = "xstreamValue";
@@ -62,6 +67,15 @@ public class Serializer {
       element.setAttribute(CLASS_NAME, value.getClass().getName());
       ((ISerializable)value).toElement(element);
       return;
+    }
+    if (value instanceof Collection) {
+      element.setAttribute(OBJECT_TYPE, COLLECTION);
+      element.setAttribute(CLASS_NAME, value.getClass().getName());
+      for (Object o : (Collection)value) {
+        Element childElement = new Element(ITEM);
+        serialize(childElement, o);
+        element.addContent(childElement);
+      }
     }
     {
       element.setAttribute(OBJECT_TYPE, DEFAULT);
@@ -97,9 +111,26 @@ public class Serializer {
       String className = element.getAttributeValue(CLASS_NAME);
       try {
         Class<ISerializable> c = (Class<ISerializable>) Class.forName(className);
+        //todo
       } catch (Throwable t) {
         LOG.error(t);
       }
+    }
+    if (COLLECTION.equals(OBJECT_TYPE)) {
+      String className = element.getAttributeValue(CLASS_NAME);
+      Collection collection = null;
+      try {
+        Class<? extends Collection> c = (Class<? extends Collection>) Class.forName(className);
+        collection = c.getConstructor().newInstance();
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+      if (collection != null) {
+        for (Element childElement : (List<Element>)element.getChildren(ITEM)) {
+          collection.add(deserialize(childElement));
+        }
+      }
+      return collection;
     }
     if (DEFAULT.equals(OBJECT_TYPE)) {
       Element child = element.getChild(XSTREAM_VALUE);
