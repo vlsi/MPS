@@ -32,8 +32,10 @@ public class RootTemplateAnnotator implements ApplicationComponent {
         SNode node = event.getRoot();
         if (node.getModel().getStereotype().equals(SModelStereotype.TEMPLATES)) {
           if (node.getNodeLanguage() != BootstrapLanguagesManager.getInstance().getTLBase()) {
-            SNode annotation = RootTemplateAnnotation.newInstance(node.getModel(), true).getNode();
-            node.addAttribute(RootTemplateAnnotation_AnnotationLink.ROOT_TEMPLATE_ANNOTATION, annotation);
+            if (node.getAttribute(RootTemplateAnnotation_AnnotationLink.ROOT_TEMPLATE_ANNOTATION) == null) {
+              SNode annotation = RootTemplateAnnotation.newInstance(node.getModel(), true).getNode();
+              node.addAttribute(RootTemplateAnnotation_AnnotationLink.ROOT_TEMPLATE_ANNOTATION, annotation);
+            }
           }
         }
       }
