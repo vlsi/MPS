@@ -137,16 +137,18 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877219563">
               <link role="classifier" targetNodeId="5.~ConceptAndSuperConceptsScope" resolveInfo="ConceptAndSuperConceptsScope" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1213877219564">
-              <link role="baseMethodDeclaration" targetNodeId="5.~ConceptAndSuperConceptsScope.&lt;init&gt;(jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration)" resolveInfo="ConceptAndSuperConceptsScope" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877219565">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877219566">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213877219567">
-                    <link role="variableDeclaration" targetNodeId="1213877219548" resolveInfo="attributedNode" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1214866672634">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1214866672636">
+                <link role="baseMethodDeclaration" targetNodeId="5.~ConceptAndSuperConceptsScope.&lt;init&gt;(jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration)" resolveInfo="ConceptAndSuperConceptsScope" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877219565">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877219566">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213877219567">
+                      <link role="variableDeclaration" targetNodeId="1213877219548" resolveInfo="attributedNode" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetConceptOperation" id="1213877219568" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetConceptOperation" id="1213877219568" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1213877219569" />
                 </node>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1213877219569" />
               </node>
             </node>
           </node>
@@ -345,12 +347,14 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877263103">
               <link role="classifier" targetNodeId="3.~StringBuilder" resolveInfo="StringBuilder" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1213877263104">
-              <link role="baseMethodDeclaration" targetNodeId="3.~StringBuilder.&lt;init&gt;(java.lang.String)" resolveInfo="StringBuilder" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877263105">
-                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1213877263106" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess" id="1213877263107">
-                  <link role="conceptProperty" targetNodeId="5v.1137473891462" resolveInfo="alias" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1214866671897">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1214866671899">
+                <link role="baseMethodDeclaration" targetNodeId="3.~StringBuilder.&lt;init&gt;(java.lang.String)" resolveInfo="StringBuilder" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877263105">
+                  <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1213877263106" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess" id="1213877263107">
+                    <link role="conceptProperty" targetNodeId="5v.1137473891462" resolveInfo="alias" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -1415,12 +1419,14 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877498467">
               <link role="classifier" targetNodeId="3.~StringBuilder" resolveInfo="StringBuilder" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1213877498468">
-              <link role="baseMethodDeclaration" targetNodeId="3.~StringBuilder.&lt;init&gt;(java.lang.String)" resolveInfo="StringBuilder" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877498469">
-                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1213877498470" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess" id="1213877498471">
-                  <link role="conceptProperty" targetNodeId="5v.1137473891462" resolveInfo="alias" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1214866671947">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1214866671949">
+                <link role="baseMethodDeclaration" targetNodeId="3.~StringBuilder.&lt;init&gt;(java.lang.String)" resolveInfo="StringBuilder" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877498469">
+                  <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1213877498470" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess" id="1213877498471">
+                    <link role="conceptProperty" targetNodeId="5v.1137473891462" resolveInfo="alias" />
+                  </node>
                 </node>
               </node>
             </node>
