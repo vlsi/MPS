@@ -116,7 +116,10 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     myMenuEmpty = false;
     final String pattern = getPatternEditor().getPattern();
 
-    List<INodeSubstituteAction> matchingActions = myNodeSubstituteInfo.getMatchingActions(pattern, false);
+    List<INodeSubstituteAction> matchingActions = myNodeSubstituteInfo.getMatchingActions(pattern, false);    
+    if (matchingActions.isEmpty()) {
+      matchingActions = myNodeSubstituteInfo.getMatchingActions(pattern.trim(), false);
+    }
 
     try {
       Collections.sort(matchingActions, new Comparator<INodeSubstituteAction>() {
