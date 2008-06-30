@@ -796,17 +796,6 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
       registerActions();
     }
 
-    protected JPopupMenu createPopupMenu(final MPSTreeNode node) {
-      return ModelAccess.instance().runReadAction(new Computable<JPopupMenu>() {
-        public JPopupMenu compute() {
-          ActionManager manager = ActionManager.getInstance();
-          ActionGroup actionGroup = node.getActionGroup();
-          if (actionGroup == null) return null;
-          return manager.createActionPopupMenu(ActionPlaces.PROJECT_VIEW_POPUP, actionGroup).getComponent();
-        }
-      });
-    }
-
     public void editNode(SNode node, IOperationContext context) {
       ProjectPane.this.editNode(node, context);
     }

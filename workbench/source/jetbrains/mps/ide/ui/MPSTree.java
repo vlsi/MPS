@@ -363,7 +363,14 @@ public abstract class MPSTree extends DnDAwareTree {
   }
 
   protected JPopupMenu createPopupMenu(final MPSTreeNode node) {
-    return null;
+    return ModelAccess.instance().runReadAction(new Computable<JPopupMenu>() {
+      public JPopupMenu compute() {
+        ActionManager manager = ActionManager.getInstance();
+        ActionGroup actionGroup = node.getActionGroup();
+        if (actionGroup == null) return null;
+        return manager.createActionPopupMenu(ActionPlaces.PROJECT_VIEW_POPUP, actionGroup).getComponent();
+      }
+    });
   }
 
   private void showPopup(MouseEvent e) {
