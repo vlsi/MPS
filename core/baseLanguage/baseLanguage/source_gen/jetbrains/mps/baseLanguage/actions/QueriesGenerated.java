@@ -73,7 +73,7 @@ public class QueriesGenerated {
   }
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_Visibility_1178549461018(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.Classifier") && SNodeOperations.getParent(_context.getParentNode(), null, false, false) == null;
+    return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.Classifier") && SNodeOperations.getParent(_context.getParentNode(), null, false, false) == null && !(_context.getWrapped());
   }
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_1178893978039(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
@@ -1091,6 +1091,74 @@ __switch__:
 
         public boolean returnSmallPart(SNode nodeToWrap) {
           return true;
+        }
+
+        public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc) {
+          SNode wrappedNode = this.wrapNode(nc, nc.getModel());
+          _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope());
+          if (this.returnSmallPart(nc)) {
+            return nc;
+          } else
+          {
+            return wrappedNode;
+          }
+        }
+
+      };
+      result.addAll(ModelActions.createChildSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext));
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_InstanceMethodDeclaration_1214829968974(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", operationContext.getScope());
+      AbstractConceptDeclaration wrappedConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Visibility", operationContext.getScope());
+      IChildNodeSetter setter = new AbstractChildNodeSetter() {
+
+        public SNode wrapNode(SNode nodeToWrap, SModel model) {
+          SNode method = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null);
+          SLinkOperations.setTarget(method, "visibility", nodeToWrap, true);
+          return method;
+        }
+
+        public boolean returnSmallPart(SNode nodeToWrap) {
+          return false;
+        }
+
+        public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc) {
+          SNode wrappedNode = this.wrapNode(nc, nc.getModel());
+          _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope());
+          if (this.returnSmallPart(nc)) {
+            return nc;
+          } else
+          {
+            return wrappedNode;
+          }
+        }
+
+      };
+      result.addAll(ModelActions.createChildSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext));
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_StaticMethodDeclaration_1214831660018(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", operationContext.getScope());
+      AbstractConceptDeclaration wrappedConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Visibility", operationContext.getScope());
+      IChildNodeSetter setter = new AbstractChildNodeSetter() {
+
+        public SNode wrapNode(SNode nodeToWrap, SModel model) {
+          SNode method = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", null);
+          SLinkOperations.setTarget(method, "visibility", nodeToWrap, true);
+          return method;
+        }
+
+        public boolean returnSmallPart(SNode nodeToWrap) {
+          return false;
         }
 
         public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc) {
