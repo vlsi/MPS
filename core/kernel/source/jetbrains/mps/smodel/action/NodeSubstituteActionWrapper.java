@@ -1,6 +1,8 @@
 package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.AbstractEditorComponent;
+import jetbrains.mps.nodeEditor.EditorContext;
 
 import javax.swing.Icon;
 
@@ -39,15 +41,15 @@ public class NodeSubstituteActionWrapper implements INodeSubstituteAction {
     return mySubstituteAction.getDescriptionText(pattern);
   }
 
-  public SNode doSubstitute(String pattern) {
-    return mySubstituteAction.doSubstitute(pattern);
-  }
-
   public boolean canSubstituteStrictly(String pattern) {
     return mySubstituteAction.canSubstituteStrictly(pattern);
   }
 
   public boolean canSubstitute(String pattern) {
     return mySubstituteAction.canSubstitute(pattern);
+  }
+
+  public SNode substitute(EditorContext context, String pattern) {
+    return mySubstituteAction.substitute(context, pattern);
   }
 }

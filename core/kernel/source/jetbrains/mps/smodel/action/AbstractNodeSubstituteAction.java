@@ -8,6 +8,10 @@ import jetbrains.mps.ide.ChooseItemComponent;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.nodeEditor.AbstractEditorComponent;
+import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 
 import javax.swing.Icon;
 
@@ -40,6 +44,8 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
 
   protected AbstractNodeSubstituteAction() {
   }
+
+  protected abstract SNode doSubstitute(String pattern);
 
   public SNode getSourceNode() {
     return mySourceNode;
@@ -133,6 +139,21 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     }
 
     return matchingText.toUpperCase().startsWith(pattern.toUpperCase());
+  }
+
+  public SNode substitute(EditorContext context, String pattern) {
+    EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
+    SNode newNode = doSubstitute(pattern);
+    if (newNode == null) {
+      // put caret at the end of text
+      if (selectedCell instanceof EditorCell_Label && ((EditorCell_Label) selectedCell).isEditable()) {
+        EditorCell_Label cell = (EditorCell_Label) selectedCell;
+        cell.end();
+      }
+    } else {
+      context.selectWRTFocusPolicy(newNode, false);
+    }
+    return newNode;
   }
 
   public String toString() {

@@ -21,15 +21,14 @@ public class IntelligentInputUtil {
       EditorManager.EditorCell_RTHint rtHintCell = (EditorCell_RTHint) cell;
       INodeSubstituteInfo substituteInfo = rtHintCell.getSubstituteInfo();
       if (canCompleteSmallPatternImmediately(substituteInfo, pattern, "")) {
-        SNode resultNode = substituteInfo.getMatchingActions(pattern, true).get(0).doSubstitute(pattern);
-        editorContext.selectWRTFocusPolicy(resultNode);
+        substituteInfo.getMatchingActions(pattern, true).get(0).substitute(editorContext, pattern);
       } else if (pattern.length() > 0) {
         String smallPattern = pattern.substring(0, pattern.length() - 1);
         String tail = "" + pattern.charAt(pattern.length() - 1);
         if (canCompleteSmallPatternImmediately(substituteInfo, smallPattern, tail)) {
           List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(smallPattern, true);
           INodeSubstituteAction item = matchingActions.get(0);
-          SNode newNode = item.doSubstitute(smallPattern);
+          SNode newNode = item.substitute(editorContext, smallPattern);
           editorContext.flushEvents();
           EditorCell cellForNewNode = editorContext.getNodeEditorComponent().findNodeCell(newNode);
 
@@ -81,7 +80,7 @@ public class IntelligentInputUtil {
 
       List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(smallPattern, true);
       INodeSubstituteAction item = matchingActions.get(0);
-      newNode = item.doSubstitute(smallPattern);
+      newNode = item.substitute(editorContext, smallPattern);
       assert newNode != null;
       cellForNewNode = editorContext.createNodeCellInAir(newNode, ourServiceEditorManager);
       EditorCell errorCell = EditorUtil.findErrorCell(cellForNewNode);
@@ -108,7 +107,7 @@ public class IntelligentInputUtil {
 
       List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(smallPattern + tail, true);
       INodeSubstituteAction item = matchingActions.get(0);
-      editorContext.selectWRTFocusPolicy(item.doSubstitute(smallPattern + tail));
+      editorContext.selectWRTFocusPolicy(item.substitute(editorContext, smallPattern + tail));
       return;
     } else {
       return;
@@ -164,7 +163,7 @@ public class IntelligentInputUtil {
       }
 
       INodeSubstituteAction rtItem = rtMatchingActions.get(0);
-      final SNode yetNewNode = rtItem.doSubstitute(smallPattern);
+      final SNode yetNewNode = rtItem.substitute(editorContext, smallPattern);
 
       editorContext.flushEvents();
 

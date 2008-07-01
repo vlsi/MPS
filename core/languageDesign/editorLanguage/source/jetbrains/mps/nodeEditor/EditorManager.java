@@ -273,9 +273,9 @@ public class EditorManager {
         List wrapperList = new LinkedList();
         for (Object action : list) {
           wrapperList.add(new NodeSubstituteActionWrapper((INodeSubstituteAction) action) {
-            public SNode doSubstitute(String pattern) {
+            public SNode substitute(EditorContext context, String pattern) {
               node.removeRightTransformHint();
-              return super.doSubstitute(pattern);
+              return super.substitute(context, pattern);
             }
           });
         }

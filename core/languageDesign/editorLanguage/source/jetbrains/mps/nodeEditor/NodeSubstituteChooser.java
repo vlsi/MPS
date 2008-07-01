@@ -325,18 +325,13 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     if (myNodeSubstituteInfo.hasExactlyNActions(pattern, false, 0) &&
       myNodeSubstituteInfo.hasExactlyNActions(prefix, true, 1)) {
       INodeSubstituteAction action = myNodeSubstituteInfo.getMatchingActions(prefix, true).get(0);
-      final SNode node = action.doSubstitute(prefix);
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-                  public void run() {
-                    EditorCell cell = myEditorComponent.findNodeCell(node);
-                    myEditorComponent.changeSelection(cell);
-                    IntelligentInputUtil.processCell(cell, myEditorComponent.getEditorContext(), pattern);
-                  }
-                });
-        }
-      });
+      final SNode node = action.substitute(myEditorComponent.getEditorContext(), prefix);
+
+      myEditorComponent.flushEvents();
+
+      EditorCell cell = myEditorComponent.findNodeCell(node);
+      myEditorComponent.changeSelection(cell);
+      IntelligentInputUtil.processCell(cell, myEditorComponent.getEditorContext(), pattern);
     }
   }
 
