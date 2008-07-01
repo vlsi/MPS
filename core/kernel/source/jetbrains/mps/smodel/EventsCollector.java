@@ -72,7 +72,7 @@ public class EventsCollector {
 
   public void flush() {
     if (myEvents.isEmpty()) return;
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         List<SModelEvent> wrappedEvents = Collections.unmodifiableList(myEvents);
         myEvents = new ArrayList<SModelEvent>();
