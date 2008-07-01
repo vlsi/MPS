@@ -602,46 +602,46 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1214927051992(final IOperationContext operationContext, final PropertyMacroContext _context) {
     do {
-      SNode matchedNode_1214930160313 = _context.getNode();
+      SNode matchedNode_1214931951171 = _context.getNode();
       {
-        boolean matches_1214930160316 = false;
-        matches_1214930160316 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateEquationStatement");
-        if (matches_1214930160316) {
+        boolean matches_1214931951174 = false;
+        matches_1214931951174 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateEquationStatement");
+        if (matches_1214931951174) {
           return "createEquation";
         }
       }
       {
-        boolean matches_1214930160321 = false;
-        matches_1214930160321 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateGreaterThanInequationStatement");
-        if (matches_1214930160321) {
+        boolean matches_1214931951179 = false;
+        matches_1214931951179 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateGreaterThanInequationStatement");
+        if (matches_1214931951179) {
           return "createGreaterThanInequation";
         }
       }
       {
-        boolean matches_1214930160326 = false;
-        matches_1214930160326 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateLessThanInequationStatement");
-        if (matches_1214930160326) {
+        boolean matches_1214931951184 = false;
+        matches_1214931951184 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateLessThanInequationStatement");
+        if (matches_1214931951184) {
           return "createLessThanInequation";
         }
       }
       {
-        boolean matches_1214930160331 = false;
-        matches_1214930160331 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateStrongLessThanInequationStatement");
-        if (matches_1214930160331) {
+        boolean matches_1214931951189 = false;
+        matches_1214931951189 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateStrongLessThanInequationStatement");
+        if (matches_1214931951189) {
           return "createLessThanInequationStrong";
         }
       }
       {
-        boolean matches_1214930160336 = false;
-        matches_1214930160336 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateComparableEquationStatement");
-        if (matches_1214930160336) {
+        boolean matches_1214931951194 = false;
+        matches_1214931951194 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateComparableEquationStatement");
+        if (matches_1214931951194) {
           return "createComparableEquation";
         }
       }
       {
-        boolean matches_1214930160341 = false;
-        matches_1214930160341 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateComparableEquationStatementStrong");
-        if (matches_1214930160341) {
+        boolean matches_1214931951199 = false;
+        matches_1214931951199 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateComparableEquationStatementStrong");
+        if (matches_1214931951199) {
           return "createComparableEquationStrong";
         }
       }
@@ -1188,6 +1188,106 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1214927817210(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.AbstractInequationStatement");
+  }
+
+  public static boolean ifMacro_Condition_1214931157675(final IOperationContext operationContext, final IfMacroContext _context) {
+    SNode grandparent = SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode(), null, false, false), null, false, false);
+    do {
+      SNode matchedNode_1214931953888 = grandparent;
+      {
+        boolean matches_1214931953890 = false;
+        matches_1214931953890 = SModelUtil_new.isAssignableConcept(grandparent.getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.AbstractEquationStatement");
+        if (matches_1214931953890) {
+          {
+            SNode leftPart = SLinkOperations.getTarget(matchedNode_1214931953888, "leftExpression", true);
+            do {
+              SNode matchedNode_1214931953899 = leftPart;
+              {
+                boolean matches_1214931953901 = false;
+                matches_1214931953901 = SModelUtil_new.isAssignableConcept(leftPart.getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause");
+                if (matches_1214931953901) {
+                  if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_1214931953899, "normalType", true), "jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression")) {
+                    if (SLinkOperations.getTarget(matchedNode_1214931953899, "normalType", true) == _context.getNode()) {
+                      return true;
+                    } else
+                    {
+                      return false;
+                    }
+                  }
+                  break;
+                }
+              }
+            } while(false);
+            SNode rightPart = SLinkOperations.getTarget(matchedNode_1214931953888, "rightExpression", true);
+            do {
+              SNode matchedNode_1214931953932 = rightPart;
+              {
+                boolean matches_1214931953934 = false;
+                matches_1214931953934 = SModelUtil_new.isAssignableConcept(rightPart.getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause");
+                if (matches_1214931953934) {
+                  if (SLinkOperations.getTarget(matchedNode_1214931953932, "normalType", true) == _context.getNode()) {
+                    return true;
+                  }
+                  break;
+                }
+              }
+            } while(false);
+            return false;
+          }
+        }
+      }
+      return false;
+    } while(false);
+  }
+
+  public static boolean ifMacro_Condition_1214931879685(final IOperationContext operationContext, final IfMacroContext _context) {
+    SNode grandparent = SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode(), null, false, false), null, false, false);
+    do {
+      SNode matchedNode_1214931953977 = grandparent;
+      {
+        boolean matches_1214931953979 = false;
+        matches_1214931953979 = SModelUtil_new.isAssignableConcept(grandparent.getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.AbstractEquationStatement");
+        if (matches_1214931953979) {
+          {
+            SNode leftPart = SLinkOperations.getTarget(matchedNode_1214931953977, "leftExpression", true);
+            do {
+              SNode matchedNode_1214931953988 = leftPart;
+              {
+                boolean matches_1214931953990 = false;
+                matches_1214931953990 = SModelUtil_new.isAssignableConcept(leftPart.getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause");
+                if (matches_1214931953990) {
+                  if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_1214931953988, "normalType", true), "jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression")) {
+                    if (SLinkOperations.getTarget(matchedNode_1214931953988, "normalType", true) == _context.getNode()) {
+                      return false;
+                    } else
+                    {
+                      return true;
+                    }
+                  }
+                  break;
+                }
+              }
+            } while(false);
+            SNode rightPart = SLinkOperations.getTarget(matchedNode_1214931953977, "rightExpression", true);
+            do {
+              SNode matchedNode_1214931954021 = rightPart;
+              {
+                boolean matches_1214931954023 = false;
+                matches_1214931954023 = SModelUtil_new.isAssignableConcept(rightPart.getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause");
+                if (matches_1214931954023) {
+                  if (SLinkOperations.getTarget(matchedNode_1214931954021, "normalType", true) == _context.getNode()) {
+                    return false;
+                  }
+                  break;
+                }
+              }
+            } while(false);
+            return true;
+          }
+        }
+      }
+      return true;
+    } while(false);
   }
 
   public static SNode sourceNodeQuery_1174654997817(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

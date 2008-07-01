@@ -37,7 +37,7 @@ public class typeof_ClassCreator_InferenceRule implements InferenceRule_Runtime 
     SNode constructedType = new QuotationClass_100().createNode(SLinkOperations.getTargets(creator, "typeParameter", true), methodClassifier);
     {
       SNode _nodeToCheck_1029348928467 = creator;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(creator, "jetbrains.mps.baseLanguage.helgins", "1212781606043", true), constructedType, _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1212781606039");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1212781606043", true), constructedType, _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1212781606039");
     }
     final SNode instanceType_typevar_1212781606045 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
     {

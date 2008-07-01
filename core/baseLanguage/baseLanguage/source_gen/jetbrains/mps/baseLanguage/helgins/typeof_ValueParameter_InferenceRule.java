@@ -16,7 +16,7 @@ public class typeof_ValueParameter_InferenceRule implements InferenceRule_Runtim
   public void applyRule(final SNode valueParameter) {
     {
       SNode _nodeToCheck_1029348928467 = valueParameter;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(valueParameter, "jetbrains.mps.baseLanguage.helgins", "1202594390188", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SNodeOperations.getAncestor(valueParameter, "jetbrains.mps.baseLanguage.structure.Property", false, false), "jetbrains.mps.baseLanguage.helgins", "1202594397696", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1202594395129");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1202594390188", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SNodeOperations.getAncestor(valueParameter, "jetbrains.mps.baseLanguage.structure.Property", false, false), "jetbrains.mps.baseLanguage.helgins", "1202594397696", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1202594395129");
     }
   }
 

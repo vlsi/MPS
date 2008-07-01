@@ -30,7 +30,7 @@ public class typeof_InstanceMethodCallOperation_InferenceRule implements Inferen
     final SNode instanceType_typevar_1204064731338 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(imco);
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338), TypeChecker.getInstance().getRuntimeSupport().typeOf(IOperation_Behavior.call_getOperand_1213877410070(imco), "jetbrains.mps.baseLanguage.helgins", "1204064784351", false), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1204064763142");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338), TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1204064784351", false), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1204064763142");
     }
     {
       SNode _nodeToCheck_1029348928467 = imco;

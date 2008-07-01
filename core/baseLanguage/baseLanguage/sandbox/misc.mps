@@ -249,45 +249,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214483231384">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214483231385">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.BaseMethodCall" id="1214483248645">
-              <link role="baseMethodDeclaration" targetNodeId="3.~Formatter.out():java.lang.Appendable" resolveInfo="out" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1214483231387">
-              <link role="baseMethodDeclaration" targetNodeId="124.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1214483231388">
-                <property name="value" value="Shalom!" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214488919605">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214488919606">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.BaseMethodCall" id="1214489129519">
-              <link role="baseMethodDeclaration" targetNodeId="3.~Formatter.out():java.lang.Appendable" resolveInfo="out" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1214488919608">
-              <link role="baseMethodDeclaration" targetNodeId="124.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1214488919609">
-                <property name="value" value="Shalom!" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214489157895">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214489157896">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.BaseMethodCall" id="1214489891296">
-              <link role="baseMethodDeclaration" targetNodeId="3.~Formatter.out():java.lang.Appendable" resolveInfo="out" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1214489157898">
-              <link role="baseMethodDeclaration" targetNodeId="124.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1214489157899">
-                <property name="value" value="Shalom!" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214488851615">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214488851616">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1214488851617">
