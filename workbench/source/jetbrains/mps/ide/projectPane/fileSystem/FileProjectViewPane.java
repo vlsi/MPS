@@ -6,9 +6,7 @@ import com.intellij.ide.SelectInTarget;
 import com.intellij.openapi.vfs.*;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
-import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
-import com.intellij.openapi.vcs.FileStatusManager;
-import com.intellij.openapi.vcs.FileStatusListener;
+import com.intellij.openapi.vcs.*;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.DataConstants;
 
@@ -22,8 +20,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
 
 import jetbrains.mps.vfs.VFileSystem;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.ide.projectPane.fileSystem.FolderTreeNode;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.ui.MPSTree;
@@ -49,6 +45,11 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
   private VirtualFileAdapter myFileListener;
   private final Timer myTimer;
   private static final int SECOND = 1000;
+  private VcsListener myDirectoryMappingListener = new VcsListener() {
+    public void directoryMappingChanged() {
+      rebuildTreeLater();
+    }
+  };
 
   protected FileProjectViewPane(Project project, final ProjectView projectView) {
     super(project);
@@ -56,14 +57,10 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
     myProject = project;
     myProjectView = projectView;
 
-    final VirtualFile baseDir = myProject.getBaseDir();
     myMPSTree = new MPSTree() {
       protected MPSTreeNode rebuild() {
         if (myProject != null && !myProject.isDisposed()) {
-          final IFile root = VFileSystem.toIFile(baseDir);
-          return new FolderTreeNode(new ProjectOperationContext(getProject()),
-            myProject.getComponent(VcsFileStatusProvider.class),
-            root);
+          return new CompositeTreeNode(new ProjectOperationContext(getProject()));
         } else {
           return new TextTreeNode("No Project");
         }
@@ -118,7 +115,7 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
   }
 
   private void rebuildTreeLater() {
-    if (myTimer.isRunning()){
+    if (myTimer.isRunning()) {
       return;
     } else {
       myTimer.restart();
@@ -171,14 +168,9 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
         myProjectView.addProjectPane(FileProjectViewPane.this);
       }
     });
-
-    FileStatusManager.getInstance(myProject).addFileStatusListener(myFileStatusListener);
-    VirtualFileManager.getInstance().addVirtualFileListener(myFileListener);
   }
 
   public void projectClosed() {
-    FileStatusManager.getInstance(myProject).removeFileStatusListener(myFileStatusListener);
-    VirtualFileManager.getInstance().removeVirtualFileListener(myFileListener);
   }
 
   @NonNls
@@ -188,11 +180,15 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
   }
 
   public void initComponent() {
-
+    FileStatusManager.getInstance(myProject).addFileStatusListener(myFileStatusListener);
+    VirtualFileManager.getInstance().addVirtualFileListener(myFileListener);
+    myProject.getComponent(ProjectLevelVcsManager.class).addVcsListener(myDirectoryMappingListener);
   }
 
   public void disposeComponent() {
-
+    FileStatusManager.getInstance(myProject).removeFileStatusListener(myFileStatusListener);
+    VirtualFileManager.getInstance().removeVirtualFileListener(myFileListener);
+    myProject.getComponent(ProjectLevelVcsManager.class).removeVcsListener(myDirectoryMappingListener);
   }
 
   public Object getData(String dataId) {
@@ -201,8 +197,10 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
       TreePath[] treePaths = getSelectionPaths();
       for (TreePath tp : treePaths) {
         Object lastPathComponent = tp.getLastPathComponent();
-        AbstractFileTreeNode node = (AbstractFileTreeNode) lastPathComponent;
-        files.add(VFileSystem.getFile(node.getFile()));
+        if (lastPathComponent instanceof AbstractFileTreeNode) {
+          AbstractFileTreeNode node = (AbstractFileTreeNode) lastPathComponent;
+          files.add(VFileSystem.getFile(node.getFile()));
+        }
       }
       return files.toArray(new VirtualFile[files.size()]);
     }
