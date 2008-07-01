@@ -220,7 +220,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
     if (matchingActions.size() == 1) {
       setVisible(false);
-      EditorUtil.substituteNode(matchingActions.get(0), pattern, myEditorComponent.getEditorContext());
+      matchingActions.get(0).substitute(myEditorComponent.getEditorContext(), pattern);
     }
     return true;
   }
@@ -280,7 +280,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     String pattern = getPatternEditor().getPattern();
     INodeSubstituteAction action = mySubstituteActions.get(myPopupWindow.getSelectionIndex());
     setVisible(false);
-    EditorUtil.substituteNode(action, pattern, myEditorComponent.getEditorContext());    
+    action.substitute(myEditorComponent.getEditorContext(), pattern);
   }
 
   private void updatePatternEditor() {

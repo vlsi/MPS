@@ -85,12 +85,22 @@
               </node>
             </node>
           </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1214927511332">
-            <property name="value" value="true" />
-          </node>
           <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1214927519962">
             <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214927519963">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1214927519964" />
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1214940771805">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" id="1214940773637">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1214940773671">
+                <property name="value" value="2" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1214940772480">
+                <property name="value" value="23" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1214940752819">
+              <property name="value" value="23" />
             </node>
           </node>
         </node>
@@ -98,7 +108,7 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214898924621">
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1214898924622">
               <link role="baseMethodDeclaration" targetNodeId="1214898913795" resolveInfo="abc" />
-              <link role="instanceMethodDeclaration" targetNodeId="16.1214927335676" />
+              <link role="instanceMethodDeclaration" targetNodeId="1214927335676" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1214927160840">
                 <property name="value" value="1" />
               </node>

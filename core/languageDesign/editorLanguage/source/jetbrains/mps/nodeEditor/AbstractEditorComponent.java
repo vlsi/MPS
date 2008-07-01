@@ -1912,7 +1912,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (trySubstituteNow) {
       List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(pattern, false);
       if (matchingActions.size() == 1 && pattern.length() > 0) {
-        EditorUtil.substituteNode(matchingActions.get(0), pattern, this.getEditorContext());
+        matchingActions.get(0).substitute(this.getEditorContext(), pattern);
         return true;
       }
     }
