@@ -352,6 +352,9 @@ public abstract class AbstractModule implements IModule {
     for (DevKit dk : getUsedDevkits()) {
       result.addAll(dk.getAllExportedLanguages());
     }
+    for (Language l : new HashSet<Language>(result)) {
+      result.addAll(l.getAllExtendedLanguages());
+    }    
     return new ArrayList<Language>(result);
   }
 
