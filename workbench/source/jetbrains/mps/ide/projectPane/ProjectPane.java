@@ -406,6 +406,8 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
               return;
             }
 
+            modelTreeNode.flush();
+
             // search in SModel sub-tree
             MPSTreeNodeEx treeNodeToSelect = findTreeNode(modelTreeNode, node);
             if (treeNodeToSelect != null) {
@@ -493,6 +495,7 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
       LOG.warning("Couldn't select node " + node.getDebugText() + " : tree node for model \"" + modelDescriptor.getModelUID() + "\" not found.");
       return;
     }
+    modelTreeNode.flush();
     MPSTreeNodeEx treeNodeToSelect = findTreeNode(modelTreeNode, node);
     if (treeNodeToSelect != null) {
       TreePath treePath = new TreePath(treeNodeToSelect.getPath());

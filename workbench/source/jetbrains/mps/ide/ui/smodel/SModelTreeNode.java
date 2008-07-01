@@ -39,7 +39,11 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   private String myLabel;
   private boolean myInitialized = false;
   private boolean myInitializing = false;
-  private MyCommandModelListener myModelListener = new MyCommandModelListener();
+  private EventsCollector myEventsCollector = new EventsCollector() {
+    protected void eventsHappened(List<SModelEvent> events) {
+      eventsHappenedInCommand(events);
+    }
+  };
   private MySimpleModelListener mySimpleModelListener = new MySimpleModelListener();
   private MyGenerationStatusListener myStatusListener = new MyGenerationStatusListener();
   private boolean myShowLongName;
@@ -304,6 +308,10 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return context;
   }
 
+  public void flush() {
+    myEventsCollector.flush();
+  }
+
   public JPopupMenu getQuickCreatePopupMenu() {
     BaseGroup group = new CreateRootNodeGroup();
     ActionContext context = getActionContext();
@@ -413,13 +421,13 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   private void addListeners() {
-    myModelDescriptor.addModelCommandListener(myModelListener);
+    myEventsCollector.add(myModelDescriptor);
     getSModelDescriptor().addModelListener(mySimpleModelListener);
     ModelGenerationStatusManager.getInstance().addGenerationStatusListener(myStatusListener);
   }
 
   private void removeListeners() {
-    getSModelDescriptor().removeModelCommandListener(myModelListener);
+    myEventsCollector.remove(myModelDescriptor);
     getSModelDescriptor().removeModelListener(mySimpleModelListener);
     ModelGenerationStatusManager.getInstance().removeGenerationStatusListener(myStatusListener);
   }
@@ -467,6 +475,269 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return false;
   }
 
+  private void eventsHappenedInCommand(final List<SModelEvent> events) {
+    Runnable action = new Runnable() {
+      public void run() {
+        final Set<SNode> addedRoots = new LinkedHashSet<SNode>();
+        final Set<SNode> removedRoots = new LinkedHashSet<SNode>();
+
+        final Set<SNode> addedNodes = new LinkedHashSet<SNode>();
+        final Set<SNode> removedNodes = new LinkedHashSet<SNode>();
+
+        final Set<SNode> nodesWithChangedPresentations = new LinkedHashSet<SNode>();
+        final Set<SNode> nodesWithChangedPackages = new LinkedHashSet<SNode>();
+
+        final Set<SNode> nodesWithChangedRefs = new LinkedHashSet<SNode>();
+
+        final Set<SNode> changedNodes = new LinkedHashSet<SNode>();
+
+        for (SModelEvent event : events) {
+          event.accept(new SModelEventVisitorAdapter() {
+            public void visitRootEvent(SModelRootEvent event) {
+              changedNodes.add(event.getRoot());
+
+              if (event.isAdded()) {
+                addedRoots.add(event.getRoot());
+                removedRoots.remove(event.getRoot());
+              }
+
+              if (event.isRemoved()) {
+                removedRoots.add(event.getRoot());
+                addedRoots.remove(event.getRoot());
+              }
+            }
+
+            public void visitChildEvent(SModelChildEvent event) {
+              changedNodes.add(event.getParent());
+              changedNodes.add(event.getChild());
+
+              if (event.isAdded()) {
+                addedNodes.add(event.getChild());
+              }
+
+              if (event.isRemoved()) {
+                removedNodes.add(event.getChild());
+              }
+            }
+
+            public void visitPropertyEvent(SModelPropertyEvent event) {
+              changedNodes.add(event.getNode());
+
+              nodesWithChangedPresentations.add(event.getNode());
+
+              if (PACK.equals(event.getPropertyName()) && event.getNode().isRoot()) {
+                nodesWithChangedPackages.add(event.getNode());
+              }
+            }
+
+            public void visitReferenceEvent(SModelReferenceEvent event) {
+              changedNodes.add(event.getReference().getSourceNode());
+
+              nodesWithChangedRefs.add(event.getReference().getSourceNode());
+            }
+          });
+        }
+
+        Set<SNodeTreeNode> treeNodesToUpdate = new LinkedHashSet<SNodeTreeNode>();
+        for (SNode changedNode : changedNodes) {
+          treeNodesToUpdate.addAll(getDependencyRecorder().getDependOn(changedNode));
+        }
+        for (SNodeTreeNode n : treeNodesToUpdate) {
+          nodesWithChangedPresentations.add(n.getSNode());
+        }
+
+        addAndRemoveRoots(removedRoots, addedRoots);
+        addAndRemoveVisibleChildren(removedNodes, addedNodes);
+
+        updateChangedPresentations(nodesWithChangedPresentations);
+
+        updateChangedRefs(nodesWithChangedRefs);
+        updateNodesWithChangedPackages(nodesWithChangedPackages);
+
+        updateAncestorsPresentationInTree();
+      }
+    };
+
+    if (ThreadUtils.isEventDispatchThread()) {
+      action.run();
+    } else {
+      getTree().rebuildTreeLater(action, false);
+    }
+  }
+
+  private void updateNodesWithChangedPackages(Set<SNode> nodes) {
+    DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+
+    for (SNode node : nodes) {
+      SNodeTreeNode treeNode = (SNodeTreeNode) findRootSNodeTreeNode(node);
+      if (treeNode == null) continue;
+
+      MPSTreeNode parent = (MPSTreeNode) treeNode.getParent();
+
+      treeModel.removeNodeFromParent(treeNode);
+      if (parent.getChildCount() == 0 && parent instanceof SNodeGroupTreeNode) {
+        groupBecameEmpty((SNodeGroupTreeNode) parent);
+      }
+    }
+
+    insertRoots(nodes);
+  }
+
+  private void updateChangedRefs(Set<SNode> nodesWithChangedRefs) {
+    if (!showPropertiesAndReferences()) return;
+
+    for (SNode sourceNode : nodesWithChangedRefs) {
+      MPSTreeNode nodeTreeNode = findDescendantWith(sourceNode);
+      if (nodeTreeNode == null || !nodeTreeNode.isInitialized()) return;
+
+      MPSTreeNodeEx refsNode = (MPSTreeNodeEx) nodeTreeNode.getChildAt(1);
+      refsNode.update();
+      refsNode.init();
+    }
+  }
+
+  private void updateChangedPresentations(Set<SNode> nodesWithChangedProperties) {
+    DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+    for (SNode node : nodesWithChangedProperties) {
+      SNodeTreeNode treeNode = (SNodeTreeNode) findDescendantWith(node);
+
+      if (treeNode == null) continue;
+      if (node.isRoot()) {
+        MPSTreeNode parentTreeNode = (MPSTreeNode) treeNode.getParent();
+        int currentIndex = parentTreeNode.getIndex(treeNode);
+
+        int newIndex = -1;
+        for (int i = 0; i < parentTreeNode.getChildCount(); i++) {
+          if (i == currentIndex) continue;
+          if (!(parentTreeNode.getChildAt(i) instanceof SNodeTreeNode)) continue;
+          SNodeTreeNode child = (SNodeTreeNode) parentTreeNode.getChildAt(i);
+
+          String rp = node.toString();
+          String cp = child.getSNode().toString();
+          if (rp.compareTo(cp) < 0) {
+            newIndex = i;
+            if (newIndex > currentIndex) {
+              newIndex--;
+            }
+            break;
+          }
+        }
+        if (newIndex == -1) {
+          newIndex = parentTreeNode.getChildCount() - 1;
+        }
+
+        if (currentIndex != newIndex) {
+          treeModel.removeNodeFromParent(treeNode);
+          treeModel.insertNodeInto(treeNode, parentTreeNode, newIndex);
+        }
+      }
+
+      if (treeNode.isInitialized() && showPropertiesAndReferences()) {
+        MPSTreeNodeEx propsNode = (MPSTreeNodeEx) treeNode.getChildAt(0);
+        propsNode.update();
+        propsNode.init();
+      }
+
+      treeNode.updatePresentation();
+      treeNode.updateNodePresentationInTree();
+    }
+  }
+
+  private void addAndRemoveVisibleChildren(Set<SNode> removedNodes, Set<SNode> addedNodes) {
+    DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+    for (SNode removed : removedNodes) {
+      SNodeTreeNode node = (SNodeTreeNode) findDescendantWith(removed);
+      if (node == null) continue;
+      treeModel.removeNodeFromParent(node);
+    }
+
+    outer:
+    for (SNode added : addedNodes) {
+      if (added.isDeleted()) continue;
+      if (added.getParent() == null) continue;
+      SNodeTreeNode parent = (SNodeTreeNode) findDescendantWith(added.getParent());
+      if (parent == null) continue;
+      if (!parent.isInitialized()) continue;
+      SNode parentNode = parent.getSNode();
+      int indexof = parentNode.getChildren().indexOf(added);
+      for (Object childO : CollectionUtil.enumerationAsIterable(parent.children())) {
+        if (childO instanceof SNodeTreeNode) {
+          SNodeTreeNode child = (SNodeTreeNode) childO;
+          SNode childNode = child.getSNode();
+          int index = parentNode.getChildren().indexOf(childNode);
+          if (index > indexof) { // insert added before it
+            treeModel.insertNodeInto(createSNodeTreeNode(added, added.getRole_(), getOperationContext()),
+              parent, treeModel.getIndexOfChild(parent, child));
+            continue outer;
+          }
+        }
+      }
+      treeModel.insertNodeInto(createSNodeTreeNode(added, added.getRole_(), getOperationContext()), parent, parent.getChildCount());
+    }
+  }
+
+  private void addAndRemoveRoots(Set<SNode> removedRoots, Set<SNode> addedRoots) {
+    DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+    for (SNode root : removedRoots) {
+      SNodeTreeNode node = (SNodeTreeNode) findRootSNodeTreeNode(root);
+      if (node == null) continue;
+
+      MPSTreeNode parent = (MPSTreeNode) node.getParent();
+      treeModel.removeNodeFromParent(node);
+
+      if (parent instanceof SNodeGroupTreeNode && parent.getChildCount() == 0) {
+        groupBecameEmpty((SNodeGroupTreeNode) parent);
+      }
+    }
+
+    insertRoots(addedRoots);
+  }
+
+  private void insertRoots(Set<SNode> addedRoots) {
+    if (addedRoots.isEmpty()) {
+      return;
+    }
+
+    DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+
+    final List<SNode> allRoots = new ArrayList<SNode>(getSModel().getRoots());
+    Collections.sort(allRoots, new ToStringComparator());
+
+    List<SNode> added = new ArrayList<SNode>(addedRoots);
+    Collections.sort(added, new Comparator<SNode>() {
+      public int compare(SNode o1, SNode o2) {
+        return new Integer(allRoots.indexOf(o1)).compareTo(allRoots.indexOf(o2));
+      }
+    });
+
+    for (SNode root : added) {
+      SNodeTreeNode nodeToInsert = new SNodeTreeNode(root, getOperationContext());
+      MPSTreeNode targetNode = getNodeGroupFor(root);
+
+      if (targetNode == null) {
+        targetNode = SModelTreeNode.this;
+      }
+
+      int index = -1;
+      for (int i = 0; i < targetNode.getChildCount(); i++) {
+        if (targetNode.getChildAt(i) instanceof SNodeGroupTreeNode) {
+          continue;
+        }
+        SNodeTreeNode child = (SNodeTreeNode) targetNode.getChildAt(i);
+        String rp = root.toString();
+        String cp = child.getSNode().toString();
+        if (rp.compareTo(cp) < 0) {
+          index = i;
+          break;
+        }
+      }
+      if (index == -1) {
+        index = targetNode.getChildCount();
+      }
+      treeModel.insertNodeInto(nodeToInsert, targetNode, index);
+    }
+  }
+
   private class MySimpleModelListener extends SModelAdapter {
     public void modelSaved(SModelDescriptor sm) {
       updateNodePresentation(false);
@@ -485,274 +756,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     public void generationStatusChanged(SModelDescriptor sm) {
       if (sm == getSModelDescriptor()) {
         updateNodePresentation(false);
-      }
-    }
-  }
-
-  private class MyCommandModelListener implements SModelCommandListener {
-    public MyCommandModelListener() {
-    }
-
-    public void eventsHappenedInCommand(final List<SModelEvent> events) {
-      Runnable action = new Runnable() {
-        public void run() {
-          final Set<SNode> addedRoots = new LinkedHashSet<SNode>();
-          final Set<SNode> removedRoots = new LinkedHashSet<SNode>();
-
-          final Set<SNode> addedNodes = new LinkedHashSet<SNode>();
-          final Set<SNode> removedNodes = new LinkedHashSet<SNode>();
-
-          final Set<SNode> nodesWithChangedPresentations = new LinkedHashSet<SNode>();
-          final Set<SNode> nodesWithChangedPackages = new LinkedHashSet<SNode>();
-
-          final Set<SNode> nodesWithChangedRefs = new LinkedHashSet<SNode>();
-
-          final Set<SNode> changedNodes = new LinkedHashSet<SNode>();
-
-          for (SModelEvent event : events) {
-            event.accept(new SModelEventVisitorAdapter() {
-              public void visitRootEvent(SModelRootEvent event) {
-                changedNodes.add(event.getRoot());
-
-                if (event.isAdded()) {
-                  addedRoots.add(event.getRoot());
-                  removedRoots.remove(event.getRoot());
-                }
-
-                if (event.isRemoved()) {
-                  removedRoots.add(event.getRoot());
-                  addedRoots.remove(event.getRoot());
-                }
-              }
-
-              public void visitChildEvent(SModelChildEvent event) {
-                changedNodes.add(event.getParent());
-                changedNodes.add(event.getChild());
-
-                if (event.isAdded()) {
-                  addedNodes.add(event.getChild());
-                }
-
-                if (event.isRemoved()) {
-                  removedNodes.add(event.getChild());
-                }
-              }
-
-              public void visitPropertyEvent(SModelPropertyEvent event) {
-                changedNodes.add(event.getNode());
-
-                nodesWithChangedPresentations.add(event.getNode());
-
-                if (PACK.equals(event.getPropertyName()) && event.getNode().isRoot()) {
-                  nodesWithChangedPackages.add(event.getNode());
-                }
-              }
-
-              public void visitReferenceEvent(SModelReferenceEvent event) {
-                changedNodes.add(event.getReference().getSourceNode());
-
-                nodesWithChangedRefs.add(event.getReference().getSourceNode());
-              }
-            });
-          }
-
-          Set<SNodeTreeNode> treeNodesToUpdate = new LinkedHashSet<SNodeTreeNode>();
-          for (SNode changedNode : changedNodes) {
-            treeNodesToUpdate.addAll(getDependencyRecorder().getDependOn(changedNode));
-          }
-          for (SNodeTreeNode n : treeNodesToUpdate) {
-            nodesWithChangedPresentations.add(n.getSNode());
-          }
-
-          addAndRemoveRoots(removedRoots, addedRoots);
-          addAndRemoveVisibleChildren(removedNodes, addedNodes);
-
-          updateChangedPresentations(nodesWithChangedPresentations);
-
-          updateChangedRefs(nodesWithChangedRefs);
-          updateNodesWithChangedPackages(nodesWithChangedPackages);
-
-          updateAncestorsPresentationInTree();
-        }
-      };
-
-      if (ThreadUtils.isEventDispatchThread()) {
-        action.run();
-      } else {
-        getTree().rebuildTreeLater(action, false);
-      }
-    }
-
-    private void updateNodesWithChangedPackages(Set<SNode> nodes) {
-      DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
-
-      for (SNode node : nodes) {
-        SNodeTreeNode treeNode = (SNodeTreeNode) findRootSNodeTreeNode(node);
-        if (treeNode == null) continue;
-
-        MPSTreeNode parent = (MPSTreeNode) treeNode.getParent();
-
-        treeModel.removeNodeFromParent(treeNode);
-        if (parent.getChildCount() == 0 && parent instanceof SNodeGroupTreeNode) {
-          groupBecameEmpty((SNodeGroupTreeNode) parent);
-        }
-      }
-
-      insertRoots(nodes);
-    }
-
-    private void updateChangedRefs(Set<SNode> nodesWithChangedRefs) {
-      if (!showPropertiesAndReferences()) return;
-
-      for (SNode sourceNode : nodesWithChangedRefs) {
-        MPSTreeNode nodeTreeNode = findDescendantWith(sourceNode);
-        if (nodeTreeNode == null || !nodeTreeNode.isInitialized()) return;
-
-        MPSTreeNodeEx refsNode = (MPSTreeNodeEx) nodeTreeNode.getChildAt(1);
-        refsNode.update();
-        refsNode.init();
-      }
-    }
-
-    private void updateChangedPresentations(Set<SNode> nodesWithChangedProperties) {
-      DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
-      for (SNode node : nodesWithChangedProperties) {
-        SNodeTreeNode treeNode = (SNodeTreeNode) findDescendantWith(node);
-
-        if (treeNode == null) continue;
-        if (node.isRoot()) {
-          MPSTreeNode parentTreeNode = (MPSTreeNode) treeNode.getParent();
-          int currentIndex = parentTreeNode.getIndex(treeNode);
-
-          int newIndex = -1;
-          for (int i = 0; i < parentTreeNode.getChildCount(); i++) {
-            if (i == currentIndex) continue;
-            if (!(parentTreeNode.getChildAt(i) instanceof SNodeTreeNode)) continue;
-            SNodeTreeNode child = (SNodeTreeNode) parentTreeNode.getChildAt(i);
-
-            String rp = node.toString();
-            String cp = child.getSNode().toString();
-            if (rp.compareTo(cp) < 0) {
-              newIndex = i;
-              if (newIndex > currentIndex) {
-                newIndex--;
-              }
-              break;
-            }
-          }
-          if (newIndex == -1) {
-            newIndex = parentTreeNode.getChildCount() - 1;
-          }
-
-          if (currentIndex != newIndex) {
-            treeModel.removeNodeFromParent(treeNode);
-            treeModel.insertNodeInto(treeNode, parentTreeNode, newIndex);
-          }
-        }
-
-        if (treeNode.isInitialized() && showPropertiesAndReferences()) {
-          MPSTreeNodeEx propsNode = (MPSTreeNodeEx) treeNode.getChildAt(0);
-          propsNode.update();
-          propsNode.init();
-        }
-
-        treeNode.updatePresentation();
-        treeNode.updateNodePresentationInTree();
-      }
-    }
-
-    private void addAndRemoveVisibleChildren(Set<SNode> removedNodes, Set<SNode> addedNodes) {
-      DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
-      for (SNode removed : removedNodes) {
-        SNodeTreeNode node = (SNodeTreeNode) findDescendantWith(removed);
-        if (node == null) continue;
-        treeModel.removeNodeFromParent(node);
-      }
-
-      outer:
-      for (SNode added : addedNodes) {
-        if (added.isDeleted()) continue;
-        if (added.getParent() == null) continue;
-        SNodeTreeNode parent = (SNodeTreeNode) findDescendantWith(added.getParent());
-        if (parent == null) continue;
-        if (!parent.isInitialized()) continue;
-        SNode parentNode = parent.getSNode();
-        int indexof = parentNode.getChildren().indexOf(added);
-        for (Object childO : CollectionUtil.enumerationAsIterable(parent.children())) {
-          if (childO instanceof SNodeTreeNode) {
-            SNodeTreeNode child = (SNodeTreeNode) childO;
-            SNode childNode = child.getSNode();
-            int index = parentNode.getChildren().indexOf(childNode);
-            if (index > indexof) { // insert added before it
-              treeModel.insertNodeInto(createSNodeTreeNode(added, added.getRole_(), getOperationContext()),
-                parent, treeModel.getIndexOfChild(parent, child));
-              continue outer;
-            }
-          }
-        }
-        treeModel.insertNodeInto(createSNodeTreeNode(added, added.getRole_(), getOperationContext()), parent, parent.getChildCount());
-      }
-    }
-
-    private void addAndRemoveRoots(Set<SNode> removedRoots, Set<SNode> addedRoots) {
-      DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
-      for (SNode root : removedRoots) {
-        SNodeTreeNode node = (SNodeTreeNode) findRootSNodeTreeNode(root);
-        if (node == null) continue;
-
-        MPSTreeNode parent = (MPSTreeNode) node.getParent();
-        treeModel.removeNodeFromParent(node);
-
-        if (parent instanceof SNodeGroupTreeNode && parent.getChildCount() == 0) {
-          groupBecameEmpty((SNodeGroupTreeNode) parent);
-        }
-      }
-
-      insertRoots(addedRoots);
-    }
-
-    private void insertRoots(Set<SNode> addedRoots) {
-      if (addedRoots.isEmpty()) {
-        return;
-      }
-
-      DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
-
-      final List<SNode> allRoots = new ArrayList<SNode>(getSModel().getRoots());
-      Collections.sort(allRoots, new ToStringComparator());
-
-      List<SNode> added = new ArrayList<SNode>(addedRoots);
-      Collections.sort(added, new Comparator<SNode>() {
-        public int compare(SNode o1, SNode o2) {
-          return new Integer(allRoots.indexOf(o1)).compareTo(allRoots.indexOf(o2));
-        }
-      });
-
-      for (SNode root : added) {
-        SNodeTreeNode nodeToInsert = new SNodeTreeNode(root, getOperationContext());
-        MPSTreeNode targetNode = getNodeGroupFor(root);
-
-        if (targetNode == null) {
-          targetNode = SModelTreeNode.this;
-        }
-
-        int index = -1;
-        for (int i = 0; i < targetNode.getChildCount(); i++) {
-          if (targetNode.getChildAt(i) instanceof SNodeGroupTreeNode) {
-            continue;
-          }
-          SNodeTreeNode child = (SNodeTreeNode) targetNode.getChildAt(i);
-          String rp = root.toString();
-          String cp = child.getSNode().toString();
-          if (rp.compareTo(cp) < 0) {
-            index = i;
-            break;
-          }
-        }
-        if (index == -1) {
-          index = targetNode.getChildCount();
-        }
-        treeModel.insertNodeInto(nodeToInsert, targetNode, index);
       }
     }
   }
