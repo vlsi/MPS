@@ -591,6 +591,14 @@ public class QueriesGenerated {
     return "child_" + SPropertyOperations.getString(_context.getNode(), "name");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1214926257511(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getNode().getModel().toString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1214926257520(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getNode().getId();
+  }
+
   public static Object referenceMacro_GetReferent_1174655195413(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode rule = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.AbstractRule", false, false);
     SNode method = _context.getGenerator().findOutputNodeByInputNodeAndMappingName(rule, "mainMethodForRule");
@@ -1108,6 +1116,14 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true) != null);
   }
 
+  public static boolean ifMacro_Condition_1214926257484(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "errorString", true) == null);
+  }
+
+  public static boolean ifMacro_Condition_1214926257494(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "errorString", true) != null);
+  }
+
   public static SNode sourceNodeQuery_1174654997817(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
@@ -1402,6 +1418,18 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "type", true);
   }
 
+  public static SNode sourceNodeQuery_1214926257466(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "leftExpression", true);
+  }
+
+  public static SNode sourceNodeQuery_1214926257474(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "rightExpression", true);
+  }
+
+  public static SNode sourceNodeQuery_1214926257503(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "errorString", true);
+  }
+
   public static List sourceNodesQuery_1174916595463(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "judgement", true);
   }
@@ -1479,7 +1507,7 @@ public class QueriesGenerated {
       SNode composite = SModelOperations.createNewNode(targetModel, "jetbrains.mps.core.structure.BaseConcept", null);
       composite.setReferent("leaf", leaf);
       SNode current = leaf;
-      while(dependencies.get(current) != null) {
+      while (dependencies.get(current) != null) {
         Pair<SNode, SNode> pair = dependencies.get(current);
         current = pair.o1;
         SNode method = pair.o2;
