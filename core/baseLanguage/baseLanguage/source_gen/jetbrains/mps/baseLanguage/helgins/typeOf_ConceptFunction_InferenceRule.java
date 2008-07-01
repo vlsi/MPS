@@ -54,14 +54,20 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
           }
         } else
         {
-          TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(LCS_typevar_1186052624152), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(returnStatement, "expression", true), "jetbrains.mps.baseLanguage.helgins", "1186053304515", true), SLinkOperations.getTarget(returnStatement, "expression", true), null, "jetbrains.mps.baseLanguage.helgins", "1186053304511", false, 0);
+          {
+            SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(returnStatement, "expression", true);
+            TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(LCS_typevar_1186052624152), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(returnStatement, "expression", true), "jetbrains.mps.baseLanguage.helgins", "1186053304515", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1186053304511", false, 0);
+          }
         }
       }
       // last expression statement can serve as return statement
       SNode lastStatement = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(func, "body", true), "statement", true)).last();
       if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
         SNode expression = SLinkOperations.getTarget(lastStatement, "expression", true);
-        TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(LCS_typevar_1186052624152), TypeChecker.getInstance().getRuntimeSupport().typeOf(expression, "jetbrains.mps.baseLanguage.helgins", "1186053084979", true), expression, null, "jetbrains.mps.baseLanguage.helgins", "1186053063874", false, 0);
+        {
+          SNode _nodeToCheck_1029348928467 = expression;
+          TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(LCS_typevar_1186052624152), TypeChecker.getInstance().getRuntimeSupport().typeOf(expression, "jetbrains.mps.baseLanguage.helgins", "1186053084979", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1186053063874", false, 0);
+        }
         somethingReturned = true;
       }
       if (!(somethingReturned)) {
@@ -74,9 +80,15 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
           TypeChecker.getInstance().reportTypeError(func, "function should return " + whatExpected, "jetbrains.mps.baseLanguage.helgins", "1179436928064", intentionProvider);
         }
       }
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(func, "jetbrains.mps.baseLanguage.helgins", "1186053169643", true), TypeChecker.getInstance().getEquationManager().getRepresentator(LCS_typevar_1186052624152), func, null, "jetbrains.mps.baseLanguage.helgins", "1186053174208");
+      {
+        SNode _nodeToCheck_1029348928467 = func;
+        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(func, "jetbrains.mps.baseLanguage.helgins", "1186053169643", true), TypeChecker.getInstance().getEquationManager().getRepresentator(LCS_typevar_1186052624152), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1186053174208");
+      }
       if ((expectedRetType != null)) {
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(func, "jetbrains.mps.baseLanguage.helgins", "1186053540851", true), expectedRetType, func, null, "jetbrains.mps.baseLanguage.helgins", "1186053540847", false, 0);
+        {
+          SNode _nodeToCheck_1029348928467 = func;
+          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(func, "jetbrains.mps.baseLanguage.helgins", "1186053540851", true), expectedRetType, _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1186053540847", false, 0);
+        }
       }
     }
   }

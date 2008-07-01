@@ -4,8 +4,8 @@ package jetbrains.mps.baseLanguage.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_DoWhileStatement_InferenceRule implements InferenceRule_Runtime {
@@ -14,7 +14,10 @@ public class typeOf_DoWhileStatement_InferenceRule implements InferenceRule_Runt
   }
 
   public void applyRule(final SNode doWhileStatement) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(doWhileStatement, "condition", true), "jetbrains.mps.baseLanguage.helgins", "1177667395190", true), new QuotationClass_68().createNode(), SLinkOperations.getTarget(doWhileStatement, "condition", true), null, "jetbrains.mps.baseLanguage.helgins", "1177667395187", false, 0);
+    {
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(doWhileStatement, "condition", true);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(doWhileStatement, "condition", true), "jetbrains.mps.baseLanguage.helgins", "1177667395190", true), new QuotationClass_68().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1177667395187", false, 0);
+    }
   }
 
   public String getApplicableConceptFQName() {

@@ -14,7 +14,10 @@ public class typeof_DotExpression_InferenceRule implements InferenceRule_Runtime
   }
 
   public void applyRule(final SNode dotExpression) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(dotExpression, "jetbrains.mps.baseLanguage.helgins", "1197028434327", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(dotExpression, "operation", true), "jetbrains.mps.baseLanguage.helgins", "1197028440830", false), dotExpression, null, "jetbrains.mps.baseLanguage.helgins", "1197028438070");
+    {
+      SNode _nodeToCheck_1029348928467 = dotExpression;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(dotExpression, "jetbrains.mps.baseLanguage.helgins", "1197028434327", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(dotExpression, "operation", true), "jetbrains.mps.baseLanguage.helgins", "1197028440830", false), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1197028438070");
+    }
   }
 
   public String getApplicableConceptFQName() {

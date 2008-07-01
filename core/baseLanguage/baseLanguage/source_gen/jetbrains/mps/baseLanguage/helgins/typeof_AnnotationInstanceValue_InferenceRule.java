@@ -4,8 +4,8 @@ package jetbrains.mps.baseLanguage.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_AnnotationInstanceValue_InferenceRule implements InferenceRule_Runtime {
@@ -14,7 +14,10 @@ public class typeof_AnnotationInstanceValue_InferenceRule implements InferenceRu
   }
 
   public void applyRule(final SNode annotationInstanceValue) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(annotationInstanceValue, "value", true), "jetbrains.mps.baseLanguage.helgins", "1188221904889", true), SLinkOperations.getTarget(SLinkOperations.getTarget(annotationInstanceValue, "key", false), "returnType", true), SLinkOperations.getTarget(annotationInstanceValue, "value", true), null, "jetbrains.mps.baseLanguage.helgins", "1188221827926", false, 0);
+    {
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(annotationInstanceValue, "value", true);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(annotationInstanceValue, "value", true), "jetbrains.mps.baseLanguage.helgins", "1188221904889", true), SLinkOperations.getTarget(SLinkOperations.getTarget(annotationInstanceValue, "key", false), "returnType", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1188221827926", false, 0);
+    }
   }
 
   public String getApplicableConceptFQName() {

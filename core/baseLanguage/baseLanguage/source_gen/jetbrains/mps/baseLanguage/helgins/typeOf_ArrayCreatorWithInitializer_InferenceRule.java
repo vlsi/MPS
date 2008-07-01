@@ -16,9 +16,15 @@ public class typeOf_ArrayCreatorWithInitializer_InferenceRule implements Inferen
 
   public void applyRule(final SNode arrayCreator) {
     for(SNode value : SLinkOperations.getTargets(arrayCreator, "initValue", true)) {
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value, "jetbrains.mps.baseLanguage.helgins", "1175600272400", true), SLinkOperations.getTarget(arrayCreator, "componentType", true), value, null, "jetbrains.mps.baseLanguage.helgins", "1175600269225", false, 0);
+      {
+        SNode _nodeToCheck_1029348928467 = value;
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value, "jetbrains.mps.baseLanguage.helgins", "1175600272400", true), SLinkOperations.getTarget(arrayCreator, "componentType", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1175600269225", false, 0);
+      }
     }
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(arrayCreator, "jetbrains.mps.baseLanguage.helgins", "1205279600881", true), new QuotationClass_8().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(arrayCreator, "componentType", true))), arrayCreator, null, "jetbrains.mps.baseLanguage.helgins", "1205279600879");
+    {
+      SNode _nodeToCheck_1029348928467 = arrayCreator;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(arrayCreator, "jetbrains.mps.baseLanguage.helgins", "1205279600881", true), new QuotationClass_8().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(arrayCreator, "componentType", true))), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1205279600879");
+    }
   }
 
   public String getApplicableConceptFQName() {

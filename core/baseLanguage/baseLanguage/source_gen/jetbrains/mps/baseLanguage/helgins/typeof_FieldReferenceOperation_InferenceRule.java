@@ -25,9 +25,15 @@ public class typeof_FieldReferenceOperation_InferenceRule implements InferenceRu
       return;
     }
     final SNode InstanceType_typevar_1206554174334 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(IOperation_Behavior.call_getOperand_1213877410070(fieldReference), "jetbrains.mps.baseLanguage.helgins", "1206554174339", true), TypeChecker.getInstance().getEquationManager().getRepresentator(InstanceType_typevar_1206554174334), IOperation_Behavior.call_getOperand_1213877410070(fieldReference), null, "jetbrains.mps.baseLanguage.helgins", "1206554174335");
+    {
+      SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(fieldReference);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(IOperation_Behavior.call_getOperand_1213877410070(fieldReference), "jetbrains.mps.baseLanguage.helgins", "1206554174339", true), TypeChecker.getInstance().getEquationManager().getRepresentator(InstanceType_typevar_1206554174334), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1206554174335");
+    }
     final SNode fieldClassifier = SNodeOperations.getAncestor(fieldDeclaration, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getEquationManager().getRepresentator(InstanceType_typevar_1206554174334), new QuotationClass_80().createNode(fieldClassifier), fieldReference, null, "jetbrains.mps.baseLanguage.helgins", "1206554174350", false, 0);
+    {
+      SNode _nodeToCheck_1029348928467 = fieldReference;
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getEquationManager().getRepresentator(InstanceType_typevar_1206554174334), new QuotationClass_80().createNode(fieldClassifier), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1206554174350", false, 0);
+    }
     {
       final SNode IT = TypeChecker.getInstance().getEquationManager().getRepresentator(InstanceType_typevar_1206554174334);
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(IT, new Runnable() {
@@ -36,7 +42,10 @@ public class typeof_FieldReferenceOperation_InferenceRule implements InferenceRu
           Map<SNode, List<SNode>> mmap = new HashMap<SNode, List<SNode>>();
           Pair<SNode, Map<SNode, List<SNode>>> pair;
           SNode matchedType = RulesFunctions_BaseLanguage.inference_matchTypeWithTypeVariables(SLinkOperations.getTarget(fieldDeclaration, "type", true), mmap);
-          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(fieldReference, "jetbrains.mps.baseLanguage.helgins", "1206554174385", true), matchedType, fieldReference, null, "jetbrains.mps.baseLanguage.helgins", "1206554174383");
+          {
+            SNode _nodeToCheck_1029348928467 = fieldReference;
+            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(fieldReference, "jetbrains.mps.baseLanguage.helgins", "1206554174385", true), matchedType, _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1206554174383");
+          }
           RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithTypeVariables(fieldClassifier, TypeChecker.getInstance().getEquationManager().getRepresentator(InstanceType_typevar_1206554174334), mmap);
           RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(mmap);
         }

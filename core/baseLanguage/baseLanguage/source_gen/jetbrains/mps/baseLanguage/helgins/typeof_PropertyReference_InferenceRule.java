@@ -18,8 +18,14 @@ public class typeof_PropertyReference_InferenceRule implements InferenceRule_Run
   public void applyRule(final SNode propertyReference) {
     SNode property = SLinkOperations.getTarget(propertyReference, "property", false);
     if ((property != null)) {
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(propertyReference, "jetbrains.mps.baseLanguage.helgins", "1201468020092", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(property, "jetbrains.mps.baseLanguage.helgins", "1201468039491", true), propertyReference, null, "jetbrains.mps.baseLanguage.helgins", "1201468036877");
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(IOperation_Behavior.call_getOperand_1213877410070(propertyReference), "jetbrains.mps.baseLanguage.helgins", "1201468086552", true), new QuotationClass_75().createNode(SNodeOperations.getAncestor(property, "jetbrains.mps.baseLanguage.structure.Classifier", false, false)), IOperation_Behavior.call_getOperand_1213877410070(propertyReference), null, "jetbrains.mps.baseLanguage.helgins", "1201468086542", false, 0);
+      {
+        SNode _nodeToCheck_1029348928467 = propertyReference;
+        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(propertyReference, "jetbrains.mps.baseLanguage.helgins", "1201468020092", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(property, "jetbrains.mps.baseLanguage.helgins", "1201468039491", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1201468036877");
+      }
+      {
+        SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(propertyReference);
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(IOperation_Behavior.call_getOperand_1213877410070(propertyReference), "jetbrains.mps.baseLanguage.helgins", "1201468086552", true), new QuotationClass_75().createNode(SNodeOperations.getAncestor(property, "jetbrains.mps.baseLanguage.structure.Classifier", false, false)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1201468086542", false, 0);
+      }
     }
   }
 

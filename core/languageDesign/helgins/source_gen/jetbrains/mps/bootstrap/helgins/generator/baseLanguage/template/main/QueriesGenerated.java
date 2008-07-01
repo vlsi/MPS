@@ -602,46 +602,46 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1214927051992(final IOperationContext operationContext, final PropertyMacroContext _context) {
     do {
-      SNode matchedNode_1214927916308 = _context.getNode();
+      SNode matchedNode_1214930160313 = _context.getNode();
       {
-        boolean matches_1214927916311 = false;
-        matches_1214927916311 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateEquationStatement");
-        if (matches_1214927916311) {
+        boolean matches_1214930160316 = false;
+        matches_1214930160316 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateEquationStatement");
+        if (matches_1214930160316) {
           return "createEquation";
         }
       }
       {
-        boolean matches_1214927916316 = false;
-        matches_1214927916316 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateGreaterThanInequationStatement");
-        if (matches_1214927916316) {
+        boolean matches_1214930160321 = false;
+        matches_1214930160321 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateGreaterThanInequationStatement");
+        if (matches_1214930160321) {
           return "createGreaterThanInequation";
         }
       }
       {
-        boolean matches_1214927916321 = false;
-        matches_1214927916321 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateLessThanInequationStatement");
-        if (matches_1214927916321) {
+        boolean matches_1214930160326 = false;
+        matches_1214930160326 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateLessThanInequationStatement");
+        if (matches_1214930160326) {
           return "createLessThanInequation";
         }
       }
       {
-        boolean matches_1214927916326 = false;
-        matches_1214927916326 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateStrongLessThanInequationStatement");
-        if (matches_1214927916326) {
+        boolean matches_1214930160331 = false;
+        matches_1214930160331 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateStrongLessThanInequationStatement");
+        if (matches_1214930160331) {
           return "createLessThanInequationStrong";
         }
       }
       {
-        boolean matches_1214927916331 = false;
-        matches_1214927916331 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateComparableEquationStatement");
-        if (matches_1214927916331) {
+        boolean matches_1214930160336 = false;
+        matches_1214930160336 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateComparableEquationStatement");
+        if (matches_1214930160336) {
           return "createComparableEquation";
         }
       }
       {
-        boolean matches_1214927916336 = false;
-        matches_1214927916336 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateComparableEquationStatementStrong");
-        if (matches_1214927916336) {
+        boolean matches_1214930160341 = false;
+        matches_1214930160341 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateComparableEquationStatementStrong");
+        if (matches_1214930160341) {
           return "createComparableEquationStrong";
         }
       }

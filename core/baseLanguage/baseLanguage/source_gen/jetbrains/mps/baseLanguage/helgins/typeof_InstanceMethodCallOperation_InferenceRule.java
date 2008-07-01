@@ -28,8 +28,14 @@ public class typeof_InstanceMethodCallOperation_InferenceRule implements Inferen
     // ---
     final SNode methodClassifier = SNodeOperations.getAncestor(SLinkOperations.getTarget(imco, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     final SNode instanceType_typevar_1204064731338 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338), TypeChecker.getInstance().getRuntimeSupport().typeOf(IOperation_Behavior.call_getOperand_1213877410070(imco), "jetbrains.mps.baseLanguage.helgins", "1204064784351", false), IOperation_Behavior.call_getOperand_1213877410070(imco), null, "jetbrains.mps.baseLanguage.helgins", "1204064763142");
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338), new QuotationClass_76().createNode(methodClassifier), imco, null, "jetbrains.mps.baseLanguage.helgins", "1204065906120", true, 0);
+    {
+      SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(imco);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338), TypeChecker.getInstance().getRuntimeSupport().typeOf(IOperation_Behavior.call_getOperand_1213877410070(imco), "jetbrains.mps.baseLanguage.helgins", "1204064784351", false), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1204064763142");
+    }
+    {
+      SNode _nodeToCheck_1029348928467 = imco;
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338), new QuotationClass_76().createNode(methodClassifier), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1204065906120", true, 0);
+    }
     // --- following piece of cake is identical for any method call ---
     {
       final SNode _representatorVar2 = TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338);

@@ -4,8 +4,8 @@ package jetbrains.mps.baseLanguage.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_VarRef_InferenceRule implements InferenceRule_Runtime {
@@ -14,7 +14,10 @@ public class typeOf_VarRef_InferenceRule implements InferenceRule_Runtime {
   }
 
   public void applyRule(final SNode varRef) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(varRef, "variableDeclaration", false), "jetbrains.mps.baseLanguage.helgins", "1195058475381", false), TypeChecker.getInstance().getRuntimeSupport().typeOf(varRef, "jetbrains.mps.baseLanguage.helgins", "1195058484236", true), SLinkOperations.getTarget(varRef, "variableDeclaration", false), null, "jetbrains.mps.baseLanguage.helgins", "1195058482169");
+    {
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(varRef, "variableDeclaration", false);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(varRef, "variableDeclaration", false), "jetbrains.mps.baseLanguage.helgins", "1195058475381", false), TypeChecker.getInstance().getRuntimeSupport().typeOf(varRef, "jetbrains.mps.baseLanguage.helgins", "1195058484236", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1195058482169");
+    }
   }
 
   public String getApplicableConceptFQName() {

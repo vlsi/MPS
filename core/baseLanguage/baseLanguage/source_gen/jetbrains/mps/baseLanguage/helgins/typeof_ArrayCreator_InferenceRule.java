@@ -19,7 +19,10 @@ public class typeof_ArrayCreator_InferenceRule implements InferenceRule_Runtime 
     for(int i = 0 ; i < ListSequence.fromList(SLinkOperations.getTargets(arrayCreator, "dimensionExpression", true)).count() ; i = i + 1) {
       type = new QuotationClass_89().createNode(type);
     }
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(arrayCreator, "jetbrains.mps.baseLanguage.helgins", "1209402739197", true), type, arrayCreator, null, "jetbrains.mps.baseLanguage.helgins", "1209402744151");
+    {
+      SNode _nodeToCheck_1029348928467 = arrayCreator;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(arrayCreator, "jetbrains.mps.baseLanguage.helgins", "1209402739197", true), type, _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1209402744151");
+    }
   }
 
   public String getApplicableConceptFQName() {

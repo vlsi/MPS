@@ -15,7 +15,10 @@ public class typeof_AnnotationInstanceExpression_InferenceRule implements Infere
 
   public void applyRule(final SNode annotationInstanceExpression) {
     SNode annotation = SLinkOperations.getTarget(SLinkOperations.getTarget(annotationInstanceExpression, "annotationInstance", true), "annotation", false);
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(annotationInstanceExpression, "jetbrains.mps.baseLanguage.helgins", "1188221584618", true), new QuotationClass_71().createNode(annotation), annotationInstanceExpression, null, "jetbrains.mps.baseLanguage.helgins", "1188221689320");
+    {
+      SNode _nodeToCheck_1029348928467 = annotationInstanceExpression;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(annotationInstanceExpression, "jetbrains.mps.baseLanguage.helgins", "1188221584618", true), new QuotationClass_71().createNode(annotation), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1188221689320");
+    }
   }
 
   public String getApplicableConceptFQName() {
