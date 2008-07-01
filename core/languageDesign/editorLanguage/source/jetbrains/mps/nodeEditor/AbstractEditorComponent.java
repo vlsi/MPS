@@ -107,6 +107,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   protected EditorCell myRootCell;
   protected EditorCell mySelectedCell;
+  private boolean mySelectionDisabled;
   private static final int MIN_SHIFT_X = 30;
   private static final int ADDITIONAL_SHIFT_X = 10;
   private int myShiftX = MIN_SHIFT_X + ADDITIONAL_SHIFT_X;
@@ -1574,6 +1575,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   @UseCarefully
   public void setSelectionDontClearStack(EditorCell newSelectedCell, boolean resetLastCaretX, boolean scrollToCell) {
+    if (mySelectionDisabled) return;
+
     if (resetLastCaretX) {
       resetLastCaretX();
     }
@@ -1584,7 +1587,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myNodeSubstituteChooser.setVisible(false);
     myNodeRangeSelection.deactivate();
 
-    EditorCell oldSelection = mySelectedCell;
+    final EditorCell oldSelection = mySelectedCell;
     if (mySelectedCell != null) {
       mySelectedCell.setSelected(false);
     }
@@ -1601,6 +1604,19 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     repaint();
 
     fireCellSelectionChanged(oldSelection, newSelectedCell);
+
+    if (oldSelection != null && !EditorUtil.isValidCell(oldSelection)) {
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          try {
+            mySelectionDisabled = true;
+            EditorUtil.validateCell(oldSelection, myEditorContext, true, true);
+          } finally {
+            mySelectionDisabled = false;
+          }
+        }
+      });
+    }
   }
 
   public void scrollToNode(SNode node) {
@@ -1610,7 +1626,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
   }
 
-  public void ensureSelectionVisible() {
+  public void ensureSelectionVisible() {                   
     if (getSelectedCell() == null) {
       return;
     }
