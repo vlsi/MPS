@@ -1275,6 +1275,10 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     return SPropertyOperations.getString(node, "noTargetText") == null;
   }
 
+  public static boolean renderingCondition12548_019(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "emptyNoTargetText"));
+  }
+
   private static Color calculateColor76(EditorCell cell) {
     Color result;
     result = Color.yellow;
@@ -1668,7 +1672,9 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.create_CollectionCell12548_03(context, node));
-    editorCell.addEditorCell(this.create_CollectionCell12548_06(context, node));
+    if (renderingCondition12548_019(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.create_CollectionCell12548_06(context, node));
+    }
     if (renderingCondition12548_018(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_CollectionCell12548_030(context, node));
     }

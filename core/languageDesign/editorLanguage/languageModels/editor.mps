@@ -4340,6 +4340,20 @@
           <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DrawBorderStyleSheetItem" id="1214314939681">
             <property name="flag" value="true" />
           </node>
+          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1214930378301">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214930378302">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214930403386">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1214930403387">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214930404922">
+                    <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1214930404092" />
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1214930407003">
+                      <link role="property" targetNodeId="2.1214560368769" resolveInfo="emptyNoTargetText" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1214560560907">
           <property name="vertical" value="false" />
