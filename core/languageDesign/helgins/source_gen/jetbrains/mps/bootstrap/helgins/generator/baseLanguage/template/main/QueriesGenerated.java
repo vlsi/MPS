@@ -13,6 +13,7 @@ import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
 import jetbrains.mps.smodel.BaseAdapter;
@@ -599,6 +600,63 @@ public class QueriesGenerated {
     return _context.getNode().getId();
   }
 
+  public static Object propertyMacro_GetPropertyValue_1214927051992(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    do {
+      SNode matchedNode_1214927916308 = _context.getNode();
+      {
+        boolean matches_1214927916311 = false;
+        matches_1214927916311 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateEquationStatement");
+        if (matches_1214927916311) {
+          return "createEquation";
+        }
+      }
+      {
+        boolean matches_1214927916316 = false;
+        matches_1214927916316 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateGreaterThanInequationStatement");
+        if (matches_1214927916316) {
+          return "createGreaterThanInequation";
+        }
+      }
+      {
+        boolean matches_1214927916321 = false;
+        matches_1214927916321 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateLessThanInequationStatement");
+        if (matches_1214927916321) {
+          return "createLessThanInequation";
+        }
+      }
+      {
+        boolean matches_1214927916326 = false;
+        matches_1214927916326 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateStrongLessThanInequationStatement");
+        if (matches_1214927916326) {
+          return "createLessThanInequationStrong";
+        }
+      }
+      {
+        boolean matches_1214927916331 = false;
+        matches_1214927916331 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateComparableEquationStatement");
+        if (matches_1214927916331) {
+          return "createComparableEquation";
+        }
+      }
+      {
+        boolean matches_1214927916336 = false;
+        matches_1214927916336 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateComparableEquationStatementStrong");
+        if (matches_1214927916336) {
+          return "createComparableEquationStrong";
+        }
+      }
+      return null;
+    } while(false);
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1214927791815(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "checkOnly");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1214927791823(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getInteger_def(_context.getNode(), "inequationPriority", "0");
+  }
+
   public static Object referenceMacro_GetReferent_1174655195413(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode rule = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.AbstractRule", false, false);
     SNode method = _context.getGenerator().findOutputNodeByInputNodeAndMappingName(rule, "mainMethodForRule");
@@ -1122,6 +1180,14 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1214926257494(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "errorString", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1214927805253(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.AbstractInequationStatement");
+  }
+
+  public static boolean ifMacro_Condition_1214927817210(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.AbstractInequationStatement");
   }
 
   public static SNode sourceNodeQuery_1174654997817(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
