@@ -5817,7 +5817,6 @@
       </node>
     </node>
   </node>
-  <visible index="3" modelUID="jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActions" id="1214919533012">
     <property name="package" value="rightTransform.expression" />
     <property name="name" value="postfix" />
@@ -5947,28 +5946,6 @@
           </node>
           <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1214919646211">
             <property name="text" value="postfix decrement" />
-          </node>
-        </node>
-      </node>
-      <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstitutePreconditionFunction" id="1214919543444">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214919543445">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214919549011">
-            <node role="expression" type="jetbrains.mps.bootstrap.helgins.structure.IsStrongSubtypeExpression" id="1214919560416">
-              <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214919561029">
-                <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1214919561030" />
-                <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1214919561031" />
-              </node>
-              <node role="supertypeExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214919575930">
-                <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1214919575931">
-                  <node role="quotedNode" type="jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef" id="1214919575932">
-                    <link role="descriptor" targetNodeId="3v.1196683729865" resolveInfo="Numeric" />
-                  </node>
-                </node>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1214919575933">
-                  <link role="link" targetNodeId="45.1159268661479" />
-                </node>
-              </node>
-            </node>
           </node>
         </node>
       </node>

@@ -205,10 +205,6 @@ __switch__:
     return Classifier_Behavior.call_hasStaticMemebers_1214840444586(SLinkOperations.getTarget(_context.getSourceNode(), "classifier", false));
   }
 
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1214919543444(final IOperationContext operationContext, final RTransformPreconditionContext _context) {
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), SLinkOperations.getTarget(new QuotationClass_4().createNode(), "descriptor", false), false, false);
-  }
-
   public static void nodeFactory_NodeSetup_InstanceMethodDeclaration_1158793299786(final IOperationContext operationContext, final NodeSetupContext _context) {
     SLinkOperations.setNewChild(_context.getNewNode(), "returnType", "jetbrains.mps.baseLanguage.structure.VoidType");
     SLinkOperations.setNewChild(_context.getNewNode(), "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
