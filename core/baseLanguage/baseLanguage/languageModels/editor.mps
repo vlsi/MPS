@@ -15617,5 +15617,31 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1214918842073">
+    <property name="package" value="prefix/postfix" />
+    <link role="conceptDeclaration" targetNodeId="17.1214918800624" resolveInfo="PostfixIncrementExpression" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1214918925498">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1214918928046">
+        <link role="relationDeclaration" targetNodeId="17.1214918834761" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1214918929704">
+        <property name="text" value="++" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1214919137520">
+    <property name="package" value="prefix/postfix" />
+    <link role="conceptDeclaration" targetNodeId="17.1214918975462" resolveInfo="PostfixDecrementExpression" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1214919139714">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1214919142236">
+        <link role="relationDeclaration" targetNodeId="17.1214918975463" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1214919144179">
+        <property name="text" value="--" />
+      </node>
+    </node>
+  </node>
 </model>
 

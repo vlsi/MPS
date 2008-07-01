@@ -954,7 +954,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell7(context, node));
+    editorCell.addEditorCell(this.createIndentCell8(context, node));
     editorCell.addEditorCell(this.create_fieldRefNodeListCell6031_0(context, node));
     return editorCell;
   }
@@ -965,7 +965,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell9(context, node));
+    editorCell.addEditorCell(this.createIndentCell10(context, node));
     editorCell.addEditorCell(this.create_constructorRefNodeListCell6031_0(context, node));
     return editorCell;
   }
@@ -976,7 +976,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell10(context, node));
+    editorCell.addEditorCell(this.createIndentCell11(context, node));
     editorCell.addEditorCell(this.create_methodRefNodeListCell6031_0(context, node));
     return editorCell;
   }
@@ -987,7 +987,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell11(context, node));
+    editorCell.addEditorCell(this.createIndentCell12(context, node));
     editorCell.addEditorCell(this.create_staticMethodRefNodeListCell6031_0(context, node));
     return editorCell;
   }
@@ -998,7 +998,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell6(context, node));
+    editorCell.addEditorCell(this.createIndentCell7(context, node));
     editorCell.addEditorCell(this.create_staticFieldRefNodeListCell6031_0(context, node));
     return editorCell;
   }
@@ -1009,7 +1009,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell13(context, node));
+    editorCell.addEditorCell(this.createIndentCell14(context, node));
     editorCell.addEditorCell(this.create_CollectionCell6031_08(context, node));
     return editorCell;
   }
@@ -1092,7 +1092,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell12(context, node));
+    editorCell.addEditorCell(this.createIndentCell13(context, node));
     editorCell.addEditorCell(this.create_staticInnerClassifiersRefNodeListCell6031_0(context, node));
     return editorCell;
   }
@@ -1134,7 +1134,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell8(context, node));
+    editorCell.addEditorCell(this.createIndentCell9(context, node));
     editorCell.addEditorCell(this.create_propertyRefNodeListCell6031_0(context, node));
     return editorCell;
   }
@@ -1145,7 +1145,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell5(context, node));
+    editorCell.addEditorCell(this.createIndentCell6(context, node));
     editorCell.addEditorCell(this.create_instanceInitializerRefNodeCell6031_0(context, node));
     return editorCell;
   }
@@ -1493,11 +1493,6 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell5(EditorContext context, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(context, node);
-    return result;
-  }
-
   public EditorCell createIndentCell6(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
@@ -1534,6 +1529,11 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createIndentCell13(EditorContext context, SNode node) {
+    EditorCell_Indent result = new EditorCell_Indent(context, node);
+    return result;
+  }
+
+  public EditorCell createIndentCell14(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
