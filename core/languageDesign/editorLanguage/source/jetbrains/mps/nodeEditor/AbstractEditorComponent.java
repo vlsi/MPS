@@ -1575,8 +1575,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   @UseCarefully
   public void setSelectionDontClearStack(EditorCell newSelectedCell, boolean resetLastCaretX, boolean scrollToCell) {
-    if (mySelectionDisabled) return;
-
     if (resetLastCaretX) {
       resetLastCaretX();
     }
@@ -1604,19 +1602,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     repaint();
 
     fireCellSelectionChanged(oldSelection, newSelectedCell);
-
-    if (oldSelection != null && !EditorUtil.isValidCell(oldSelection)) {
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-        public void run() {
-          try {
-            mySelectionDisabled = true;
-            EditorUtil.validateCell(oldSelection, myEditorContext, true, true);
-          } finally {
-            mySelectionDisabled = false;
-          }
-        }
-      });
-    }
   }
 
   public void scrollToNode(SNode node) {
