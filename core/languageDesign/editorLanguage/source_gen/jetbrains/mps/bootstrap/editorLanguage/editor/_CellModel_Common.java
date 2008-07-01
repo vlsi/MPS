@@ -448,7 +448,7 @@ public class _CellModel_Common extends AbstractCellProvider {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.create_ConstantCell2177_06(context, node, "condition"));
+    editorCell.addEditorCell(this.create_ConstantCell2177_06(context, node, "show if"));
     editorCell.addEditorCell(this.create_renderingConditionRefNodeCell2177_0(context, node));
     return editorCell;
   }

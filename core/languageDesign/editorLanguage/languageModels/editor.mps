@@ -14296,7 +14296,7 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1214478377110">
           <property name="vertical" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1214478377111">
-            <property name="text" value="condition" />
+            <property name="text" value="show if" />
             <link role="styleClass" targetNodeId="1214480913160" resolveInfo="property" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1214478377112">
