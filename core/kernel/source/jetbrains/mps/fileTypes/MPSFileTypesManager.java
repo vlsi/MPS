@@ -5,23 +5,25 @@ import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.fileTypes.PlainTextFileType;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.diff.DiffManager;
+import com.intellij.openapi.diff.DiffTool;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 
-import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.vcs.ui.ModelDiffTool;
+import jetbrains.mps.vcs.ui.ModelMergeTool;
 
 import java.io.InputStream;
 import java.io.LineNumberReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
-import java.util.regex.Pattern;
 
 public class MPSFileTypesManager implements ApplicationComponent {
-  private final FileType myModelFileType = new PlainTextFileType() {
+  public static final FileType MODEL_FILE_TYPE = new PlainTextFileType() {
 
     @NotNull
     @NonNls
@@ -66,6 +68,8 @@ public class MPSFileTypesManager implements ApplicationComponent {
       return super.getCharset(file);
     }
   };
+  private ModelDiffTool myModelDiffTool = new ModelDiffTool();
+  private ModelMergeTool myModelMergeTool = new ModelMergeTool();
 
   @NonNls
   @NotNull
@@ -74,10 +78,14 @@ public class MPSFileTypesManager implements ApplicationComponent {
   }
 
   public void initComponent() {
-    FileTypeManager.getInstance().associateExtension(myModelFileType, "mps");
+    DiffManager.getInstance().registerDiffTool(myModelDiffTool);
+    DiffManager.getInstance().registerDiffTool(myModelMergeTool);
+    FileTypeManager.getInstance().associateExtension(MODEL_FILE_TYPE, "mps");
   }
 
   public void disposeComponent() {
-    FileTypeManager.getInstance().removeAssociatedExtension(myModelFileType, "mps");
+    DiffManager.getInstance().unregisterDiffTool(myModelDiffTool);
+    DiffManager.getInstance().unregisterDiffTool(myModelMergeTool);
+    FileTypeManager.getInstance().removeAssociatedExtension(MODEL_FILE_TYPE, "mps");
   }
 }
