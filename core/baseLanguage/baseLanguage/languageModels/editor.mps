@@ -15627,6 +15627,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1214918929704">
         <property name="text" value="++" />
+        <property name="attractsFocus" value="1" />
       </node>
     </node>
   </node>
@@ -15640,6 +15641,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1214919144179">
         <property name="text" value="--" />
+        <property name="attractsFocus" value="1" />
       </node>
     </node>
   </node>
