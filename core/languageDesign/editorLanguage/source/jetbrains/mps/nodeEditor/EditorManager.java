@@ -17,6 +17,8 @@ import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.util.*;
 
+import org.jetbrains.annotations.Nullable;
+
 public class EditorManager {
   private static final Logger LOG = Logger.getLogger(EditorManager.class);
 
@@ -273,7 +275,7 @@ public class EditorManager {
         List wrapperList = new LinkedList();
         for (Object action : list) {
           wrapperList.add(new NodeSubstituteActionWrapper((INodeSubstituteAction) action) {
-            public SNode substitute(EditorContext context, String pattern) {
+            public SNode substitute(@Nullable EditorContext context, String pattern) {
               node.removeRightTransformHint();
               return super.substitute(context, pattern);
             }

@@ -15,6 +15,8 @@ import jetbrains.mps.nodeEditor.EditorCell_Label;
 
 import javax.swing.Icon;
 
+import org.jetbrains.annotations.Nullable;
+
 /**
  * Igor Alshannikov
  * May 5, 2006
@@ -141,17 +143,19 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     return matchingText.toUpperCase().startsWith(pattern.toUpperCase());
   }
 
-  public SNode substitute(EditorContext context, String pattern) {
-    EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
+  public final SNode substitute(@Nullable EditorContext context, String pattern) {
     SNode newNode = doSubstitute(pattern);
-    if (newNode == null) {
-      // put caret at the end of text
-      if (selectedCell instanceof EditorCell_Label && ((EditorCell_Label) selectedCell).isEditable()) {
-        EditorCell_Label cell = (EditorCell_Label) selectedCell;
-        cell.end();
+    if (context != null) {
+      EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
+      if (newNode == null) {
+        // put caret at the end of text
+        if (selectedCell instanceof EditorCell_Label && ((EditorCell_Label) selectedCell).isEditable()) {
+          EditorCell_Label cell = (EditorCell_Label) selectedCell;
+          cell.end();
+        }
+      } else {
+        context.selectWRTFocusPolicy(newNode, false);
       }
-    } else {
-      context.selectWRTFocusPolicy(newNode, false);
     }
     return newNode;
   }

@@ -261,6 +261,12 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1178535091153" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178535091154" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178535091155">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1214986281026">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1214986281027">
+            <property name="name" value="i" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1214986281028" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.regexp.structure.MatchRegexpStatement" id="1178535102780">
           <node role="expr" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1178535127611">
             <link role="variableDeclaration" targetNodeId="1178535120003" resolveInfo="emailToAnalyse" />

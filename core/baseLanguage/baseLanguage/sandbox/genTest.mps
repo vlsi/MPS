@@ -46,6 +46,7 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1214986064261" />
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214943309895">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression" id="1214943480793">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214943480794">

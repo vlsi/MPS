@@ -6,6 +6,8 @@ import jetbrains.mps.nodeEditor.EditorContext;
 
 import javax.swing.Icon;
 
+import org.jetbrains.annotations.Nullable;
+
 /**
  * Igor Alshannikov
  * Jan 30, 2006
@@ -49,7 +51,7 @@ public class NodeSubstituteActionWrapper implements INodeSubstituteAction {
     return mySubstituteAction.canSubstitute(pattern);
   }
 
-  public SNode substitute(EditorContext context, String pattern) {
+  public SNode substitute(@Nullable EditorContext context, String pattern) {
     return mySubstituteAction.substitute(context, pattern);
   }
 }

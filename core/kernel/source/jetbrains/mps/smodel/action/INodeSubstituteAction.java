@@ -6,6 +6,8 @@ import jetbrains.mps.nodeEditor.EditorContext;
 
 import javax.swing.Icon;
 
+import org.jetbrains.annotations.Nullable;
+
 public interface INodeSubstituteAction {
   SNode getSourceNode();
 
@@ -19,5 +21,5 @@ public interface INodeSubstituteAction {
   boolean canSubstituteStrictly(String pattern);
   boolean canSubstitute(String pattern);
 
-  SNode substitute(EditorContext context, String pattern);
+  SNode substitute(@Nullable EditorContext context, String pattern);
 }
