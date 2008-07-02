@@ -16,6 +16,7 @@
       </external-templates>
       <dependencies>
         <dependency reexport="false">jetbrains.mps.baseLanguage</dependency>
+        <dependency reexport="false">jetbrains.mps.bootstrap.helgins</dependency>
       </dependencies>
       <usedLanguages>
         <usedLanguages>jetbrains.mps.baseLanguage.unitTest</usedLanguages>

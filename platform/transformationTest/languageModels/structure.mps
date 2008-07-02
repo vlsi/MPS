@@ -63,20 +63,6 @@
       <link role="target" targetNodeId="1210673684636" resolveInfo="TestNodeAnnotation" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1211372351318">
-    <property name="name" value="AbstractNodeTest" />
-    <property name="rootable" value="false" />
-    <link role="extends" targetNodeId="3v.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1211372386867">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="nodeToCheck" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="3v.1133920641626" resolveInfo="BaseConcept" />
-    </node>
-    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1211372425154">
-      <link role="intfc" targetNodeId="3v.1169194658468" resolveInfo="INamedConcept" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1211896175875">
     <property name="name" value="NodesTest" />
     <property name="rootable" value="true" />
@@ -138,6 +124,47 @@
     <link role="extends" targetNodeId="3v.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1212572394344">
       <link role="intfc" targetNodeId="3v.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1214842326049">
+    <property name="name" value="AssertHasTypeError" />
+    <property name="package" value="typeAsserts" />
+    <link role="extends" targetNodeId="1214846310980" resolveInfo="TypeAssert" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1214844278165">
+      <property name="value" value="assert node has type error" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1214846310980">
+    <property name="package" value="typeAsserts" />
+    <property name="name" value="AbstractNodeAssert" />
+    <link role="extends" targetNodeId="2v.1068580123157" resolveInfo="Statement" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1214846370530">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="nodeToCheck" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2v.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1214846410329">
+      <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473854053" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1214846519585">
+    <property name="package" value="typeAsserts" />
+    <property name="name" value="AssertHasNoTypeErrors" />
+    <link role="extends" targetNodeId="1214846310980" resolveInfo="TypeAssert" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1214846541445">
+      <property name="value" value="assert node hasn't type errors" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1214991117002">
+    <property name="package" value="typeAsserts" />
+    <property name="name" value="AssertHasTypeWarning" />
+    <link role="extends" targetNodeId="1214846310980" resolveInfo="AbstractNodeAssert" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1214991143739">
+      <property name="value" value="assert node has type warning" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473891462" resolveInfo="alias" />
     </node>
   </node>
 </model>

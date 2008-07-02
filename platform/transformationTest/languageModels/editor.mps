@@ -192,5 +192,77 @@
       <link role="relationDeclaration" targetNodeId="2v.1169194664001" resolveInfo="name" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1214842429335">
+    <property name="package" value="typeAsserts" />
+    <link role="conceptDeclaration" targetNodeId="1.1214842326049" resolveInfo="AssertHasTypeError" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1214842449979">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1214842454450">
+        <property name="text" value="assert node" />
+        <link role="styleClass" targetNodeId="1214842784938" resolveInfo="assertStyle" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1214842479656">
+        <link role="relationDeclaration" targetNodeId="1.1214846370530" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1214842501096">
+        <property name="text" value="has type error" />
+        <link role="styleClass" targetNodeId="1214842784938" resolveInfo="AssertStyle" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1214845659932">
+        <property name="text" value=";" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheet" id="1214842776812">
+    <property name="name" value="transformationTest" />
+    <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1214842784938">
+      <property name="name" value="AssertStyle" />
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1214842837425">
+        <property name="color" value="blue" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1214846580306">
+    <property name="package" value="typeAsserts" />
+    <link role="conceptDeclaration" targetNodeId="1.1214846519585" resolveInfo="AssertHasNoTypeErrors" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1214846585307">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1214846590465">
+        <property name="text" value="assert node" />
+        <link role="styleClass" targetNodeId="1214842784938" resolveInfo="AssertStyle" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1214846664079">
+        <link role="relationDeclaration" targetNodeId="1.1214846370530" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1214846670503">
+        <property name="text" value="hasn't type errors" />
+        <link role="styleClass" targetNodeId="1214842784938" resolveInfo="AssertStyle" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1214846700785">
+        <property name="text" value=";" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1214991164420">
+    <property name="package" value="typeAsserts" />
+    <link role="conceptDeclaration" targetNodeId="1.1214991117002" resolveInfo="AsserHasTypeWarnings" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1214991171028">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1214991175015">
+        <property name="text" value="assert node" />
+        <link role="styleClass" targetNodeId="1214842784938" resolveInfo="AssertStyle" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1214991203135">
+        <link role="relationDeclaration" targetNodeId="1.1214846370530" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1214991208315">
+        <property name="text" value="has type warning" />
+        <link role="styleClass" targetNodeId="1214842784938" resolveInfo="AssertStyle" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1214991230267">
+        <property name="text" value="." />
+      </node>
+    </node>
+  </node>
 </model>
 
