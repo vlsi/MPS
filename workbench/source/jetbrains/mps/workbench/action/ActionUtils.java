@@ -25,19 +25,23 @@ public class ActionUtils {
     return ((BaseGroup) ActionManager.getInstance().getAction(id));
   }
 
-  public static JPopupMenu createPopup(String place,String groupId) {
-    return createPopup(place,getGroup(groupId));
+  public static DefaultActionGroup getDefaultGroup(String id) {
+    return ((DefaultActionGroup) ActionManager.getInstance().getAction(id));
   }
 
-  public static JPopupMenu createPopup(String place,ActionGroup g) {
+  public static JPopupMenu createPopup(String place, String groupId) {
+    return createPopup(place, getGroup(groupId));
+  }
+
+  public static JPopupMenu createPopup(String place, ActionGroup g) {
     return ActionManager.getInstance().createActionPopupMenu(place, g).getComponent();
   }
 
-  public static JComponent createComponent(String place,AnAction... actions) {
-    return createComponent(place,groupFromActions(actions));
+  public static JComponent createComponent(String place, AnAction... actions) {
+    return createComponent(place, groupFromActions(actions));
   }
 
-  public static JComponent createComponent(String place,ActionGroup g) {
+  public static JComponent createComponent(String place, ActionGroup g) {
     return ActionManager.getInstance().createButtonToolbar(place, g);
   }
 
@@ -95,11 +99,11 @@ public class ActionUtils {
     };
   }
 
-  public static AnActionEvent createEvent(String place,ActionContext context) {
-    return createEvent(place,new Presentation(),context);
+  public static AnActionEvent createEvent(String place, ActionContext context) {
+    return createEvent(place, new Presentation(), context);
   }
 
-  public static AnActionEvent createEvent(String place,Presentation presentation, final ActionContext context) {
+  public static AnActionEvent createEvent(String place, Presentation presentation, final ActionContext context) {
     DataContext dataContext = new DataContext() {
       @Nullable
       public Object getData(@NonNls String dataId) {

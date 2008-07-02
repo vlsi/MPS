@@ -14,82 +14,11 @@
     </group>
 
     <group id="GenerateMenu" popup="true" text="Generate">
-      <action id="SaveTransientModels" class="jetbrains.mps.workbench.actions.generate.SaveTransientModelsAction"
-              text="Save Transient Models"/>
-      <action id="GenerateCurrentModule" class="jetbrains.mps.workbench.actions.generate.GenerateCurrentModuleAction"
-              text="Generate Current Module">
-        <keyboard-shortcut first-keystroke="control F9" keymap="$default"/>
-      </action>
-      <action id="GenerateFilesFromCurrentModel" class="jetbrains.mps.workbench.actions.generate.GenerateFilesFromCurrentModelAction"
-              text="Generate Current Module">
-        <keyboard-shortcut first-keystroke="shift F9" keymap="$default"/>
-      </action>
-
-      <action id="GenerateTextFromCurrentModel" class="jetbrains.mps.workbench.actions.generate.GenerateTextFromCurrentModelAction"
-              text="Generate Text From Current Module">
-        <keyboard-shortcut first-keystroke="shift F10" keymap="$default"/>
-      </action>
-
       <add-to-group group-id="MainMenu" anchor="after" relative-to-action="GoToMenu"/>
     </group>
 
     <group id="BuildMenu" popup="true" text="Build">
-      <action id="MakeAllAction" text="Make All" class="jetbrains.mps.workbench.actions.build.MakeAllAction"/>
-      <action id="CleanAllAction" text="Clean All" class="jetbrains.mps.workbench.actions.build.CleanAllAction"/>
-      <action id="RebuildAllAction" text="Rebuild All" class="jetbrains.mps.workbench.actions.build.RebuildAllAction"/>
       <add-to-group group-id="MainMenu" anchor="after" relative-to-action="GenerateMenu"/>
-    </group>
-
-    <group>
-      <separator/>
-
-      <action id="GoToActionAction" class="com.intellij.ide.actions.GotoActionAction" text="Go To Action">
-        <keyboard-shortcut first-keystroke="control shift A" keymap="$default"/>
-      </action>
-
-      <separator/>
-      <action id="GoToRootAction" class="jetbrains.mps.workbench.actions.goTo.actions.GoToRootNodeAction"
-              text="Go To Root Node(new)">
-        <keyboard-shortcut first-keystroke="control N" keymap="$default"/>
-      </action>
-
-      <action id="GoToNamedNodeAction" class="jetbrains.mps.workbench.actions.goTo.actions.GoToNamedNodeAction"
-              text="Go To Symbol">
-        <keyboard-shortcut first-keystroke="control alt shift N" keymap="$default"/>
-      </action>
-
-      <action id="GoToConceptNodeAction" class="jetbrains.mps.workbench.actions.goTo.actions.GoToConceptNodeAction"
-              text="Go To Concept">
-        <keyboard-shortcut first-keystroke="control alt shift C" keymap="$default"/>
-      </action>
-
-      <action id="GoToModelAction" class="jetbrains.mps.workbench.actions.goTo.actions.GoToModelAction"
-              text="Go To Model">
-        <keyboard-shortcut first-keystroke="control alt shift M" keymap="$default"/>
-      </action>
-
-      <action id="GoToLanguageAction" class="jetbrains.mps.workbench.actions.goTo.actions.GoToLanguageAction"
-              text="Go To Language">
-        <keyboard-shortcut first-keystroke="control alt shift L" keymap="$default"/>
-      </action>
-
-      <action id="GoToSolutionAction" class="jetbrains.mps.workbench.actions.goTo.actions.GoToSolutionAction"
-              text="Go To Solution">
-        <keyboard-shortcut first-keystroke="control alt shift S" keymap="$default"/>
-      </action>
-
-      <action id="GoToNodeById" class="jetbrains.mps.ide.actions.gotoMenu.GoToNodeByIdAction"
-              text="Go To Node by ID"/>
-
-      <add-to-group anchor="last" group-id="GoToMenu"/>
-    </group>
-
-    <group>
-      <action id="InstallIDEAPlugin" class="jetbrains.mps.workbench.actions.InstallIDEAPluginAction" text="Install IntelliJ IDEA Plugin"/>
-      <separator />
-      <action id="ReloadAllAction" class="jetbrains.mps.workbench.actions.ReloadAllAction" text="Reload All Classes"/>
-
-      <add-to-group anchor="last" group-id="ToolsMenu"/>
     </group>
 
     <group>
@@ -113,7 +42,8 @@
     </group>
 
     <group id="SearchMenu" popup="true">
-      <action id="Find" class="com.intellij.openapi.editor.actions.IncrementalFindAction" icon="/actions/menu-find.png"/>
+      <action id="Find" class="com.intellij.openapi.editor.actions.IncrementalFindAction"
+              icon="/actions/menu-find.png"/>
       <action id="Replace" class="com.intellij.openapi.editor.actions.ReplaceAction" icon="/actions/menu-replace.png"/>
       <action id="FindNext" class="com.intellij.ide.actions.SearchAgainAction"/>
       <action id="FindPrevious" class="com.intellij.ide.actions.SearchBackAction"/>

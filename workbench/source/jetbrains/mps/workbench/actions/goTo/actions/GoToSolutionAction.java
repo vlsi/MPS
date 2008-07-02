@@ -17,11 +17,21 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.workbench.actions.goTo.framework.modules.BaseModuleItem;
 import jetbrains.mps.workbench.actions.goTo.framework.modules.BaseSolutionModel;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class GoToSolutionAction extends BaseProjectAction {
+  public GoToSolutionAction() {
+    super("Go To Solution");
+  }
+
+  @NotNull
+  protected String getKeyStroke() {
+    return "control alt shift S";
+  }
+
   public void doExecute(AnActionEvent e) {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;

@@ -15,11 +15,21 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.actions.goTo.framework.nodes.GoToNodeModel;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class GoToConceptNodeAction extends BaseProjectAction {
+  public GoToConceptNodeAction() {
+    super("Go To Concept");
+  }
+
+  @NotNull
+  protected String getKeyStroke() {
+    return "control alt shift C";
+  }
+
   public void doExecute(AnActionEvent e) {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;

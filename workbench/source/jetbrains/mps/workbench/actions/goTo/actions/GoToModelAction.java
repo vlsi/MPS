@@ -20,10 +20,20 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.actions.goTo.framework.models.BaseModelItem;
 import jetbrains.mps.workbench.actions.goTo.framework.models.BaseModelModel;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
 public class GoToModelAction extends BaseProjectAction {
+  public GoToModelAction() {
+    super("Go To Model");
+  }
+
+  @NotNull
+  protected String getKeyStroke() {
+    return "control alt shift M";
+  }
+
   public void doExecute(AnActionEvent e) {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;

@@ -13,11 +13,21 @@ import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.actions.goTo.framework.nodes.GoToNodeModel;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class GoToRootNodeAction extends BaseProjectAction {
+  public GoToRootNodeAction() {
+    super("Go To Root Node");
+  }
+
+  @NotNull
+  protected String getKeyStroke() {
+    return "control N";
+  }
+
   public void doExecute(AnActionEvent e) {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;

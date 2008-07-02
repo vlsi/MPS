@@ -14,11 +14,21 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.actions.goTo.framework.nodes.GoToNodeModel;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class GoToNamedNodeAction extends BaseProjectAction {
+  public GoToNamedNodeAction() {
+    super("Go To Symbol");
+  }
+
+  @NotNull
+  protected String getKeyStroke() {
+    return "control alt shift N";
+  }
+
   public void doExecute(AnActionEvent e) {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;

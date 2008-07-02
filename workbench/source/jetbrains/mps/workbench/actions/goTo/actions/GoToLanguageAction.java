@@ -17,8 +17,18 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.workbench.actions.goTo.framework.modules.BaseLanguageModel;
 import jetbrains.mps.workbench.actions.goTo.framework.modules.BaseModuleItem;
+import org.jetbrains.annotations.NotNull;
 
 public class GoToLanguageAction extends BaseProjectAction {
+  public GoToLanguageAction() {
+    super("Go To Language");
+  }
+
+  @NotNull
+  protected String getKeyStroke() {
+    return "control alt shift L";
+  }
+
   public void doExecute(AnActionEvent e) {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;
