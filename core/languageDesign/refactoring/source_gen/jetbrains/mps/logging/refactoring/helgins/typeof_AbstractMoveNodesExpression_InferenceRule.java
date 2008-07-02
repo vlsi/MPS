@@ -4,8 +4,8 @@ package jetbrains.mps.logging.refactoring.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_AbstractMoveNodesExpression_InferenceRule implements InferenceRule_Runtime {
@@ -14,8 +14,14 @@ public class typeof_AbstractMoveNodesExpression_InferenceRule implements Inferen
   }
 
   public void applyRule(final SNode nodeToCheck) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "whatToMove", true), "jetbrains.mps.logging.refactoring.helgins", "1199620292746", true), new QuotationClass_5().createNode(), SLinkOperations.getTarget(nodeToCheck, "whatToMove", true), null, "jetbrains.mps.logging.refactoring.helgins", "1199620292740", false, 0);
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.logging.refactoring.helgins", "1199621101272", true), new QuotationClass_13().createNode(), nodeToCheck, null, "jetbrains.mps.logging.refactoring.helgins", "1199621105994");
+    {
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(nodeToCheck, "whatToMove", true);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.logging.refactoring.helgins", "1199620292746", true), new QuotationClass_5().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.logging.refactoring.helgins", "1199620292740", false, 0);
+    }
+    {
+      SNode _nodeToCheck_1029348928467 = nodeToCheck;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.logging.refactoring.helgins", "1199621101272", true), new QuotationClass_13().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.logging.refactoring.helgins", "1199621105994");
+    }
   }
 
   public String getApplicableConceptFQName() {

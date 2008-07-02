@@ -4,8 +4,8 @@ package jetbrains.mps.logging.refactoring.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ExecuteFindersExpression_InferenceRule implements InferenceRule_Runtime {
@@ -14,9 +14,18 @@ public class typeof_ExecuteFindersExpression_InferenceRule implements InferenceR
   }
 
   public void applyRule(final SNode expression) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(expression, "searchNode", true), "jetbrains.mps.logging.refactoring.helgins", "1212243105532", true), new QuotationClass_16().createNode(), SLinkOperations.getTarget(expression, "searchNode", true), null, "jetbrains.mps.logging.refactoring.helgins", "1212243105530", true, 0);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(expression, "searchScope", true), "jetbrains.mps.logging.refactoring.helgins", "1212243079709", true), new QuotationClass_15().createNode(), SLinkOperations.getTarget(expression, "searchScope", true), null, "jetbrains.mps.logging.refactoring.helgins", "1212243088247", true, 0);
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(expression, "jetbrains.mps.logging.refactoring.helgins", "1212243132573", true), new QuotationClass_17().createNode(), expression, null, "jetbrains.mps.logging.refactoring.helgins", "1212243139732");
+    {
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(expression, "searchNode", true);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.logging.refactoring.helgins", "1212243105532", true), new QuotationClass_16().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.logging.refactoring.helgins", "1212243105530", true, 0);
+    }
+    {
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(expression, "searchScope", true);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.logging.refactoring.helgins", "1212243079709", true), new QuotationClass_15().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.logging.refactoring.helgins", "1212243088247", true, 0);
+    }
+    {
+      SNode _nodeToCheck_1029348928467 = expression;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.logging.refactoring.helgins", "1212243132573", true), new QuotationClass_17().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.logging.refactoring.helgins", "1212243139732");
+    }
   }
 
   public String getApplicableConceptFQName() {

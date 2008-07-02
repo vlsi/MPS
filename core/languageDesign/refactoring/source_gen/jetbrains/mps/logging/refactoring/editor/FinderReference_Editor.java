@@ -43,7 +43,7 @@ public class FinderReference_Editor extends DefaultNodeEditor {
   public EditorCell create_finderDeclarationRefCell14591_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("finderDeclaration");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no finderDeclaration>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_finderDeclarationRefCell14591_0_internal(context, node, provider);

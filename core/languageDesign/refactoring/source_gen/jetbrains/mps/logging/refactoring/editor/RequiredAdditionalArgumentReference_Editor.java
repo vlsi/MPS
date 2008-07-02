@@ -54,7 +54,7 @@ public class RequiredAdditionalArgumentReference_Editor extends DefaultNodeEdito
   public EditorCell create_argumentRefCell6335_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("argument");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no argument>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_argumentRefCell6335_0_internal(context, node, provider);
@@ -120,7 +120,7 @@ public class RequiredAdditionalArgumentReference_Editor extends DefaultNodeEdito
     public EditorCell create_namePropertyCell6335_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_namePropertyCell6335_0_internal(context, node, provider);

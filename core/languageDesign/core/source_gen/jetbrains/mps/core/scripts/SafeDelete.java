@@ -104,7 +104,7 @@ public class SafeDelete extends AbstractLoggableRefactoring {
 
   public void doRefactor(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
-      SNode node = actionContext.getNode();
+      SNode node = refactoringContext.getSelectedNode();
       SNodeOperations.deleteNode(node);
     }
   }

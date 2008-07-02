@@ -122,7 +122,7 @@ public class MoveNodesToNodeExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_whatToMoveRefNodeCell7421_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("whatToMove");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no whatToMove>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_whatToMoveRefNodeCell7421_0_internal(context, node, provider);
@@ -151,7 +151,7 @@ public class MoveNodesToNodeExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_destinationRefNodeCell7421_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("destination");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no destination>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_destinationRefNodeCell7421_0_internal(context, node, provider);
@@ -180,7 +180,7 @@ public class MoveNodesToNodeExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_roleInTargetRefNodeCell7421_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("roleInTarget");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no roleInTarget>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_roleInTargetRefNodeCell7421_0_internal(context, node, provider);

@@ -104,7 +104,7 @@ public class DeleteFeatureOperation_Editor extends DefaultNodeEditor {
   public EditorCell create_featureRefNodeCell20498_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("feature");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no feature>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_featureRefNodeCell20498_0_internal(context, node, provider);

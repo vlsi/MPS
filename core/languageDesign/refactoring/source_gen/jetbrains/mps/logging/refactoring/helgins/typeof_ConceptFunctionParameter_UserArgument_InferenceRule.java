@@ -17,7 +17,10 @@ public class typeof_ConceptFunctionParameter_UserArgument_InferenceRule implemen
   public void applyRule(final SNode conceptFunctionParameter_UserArgument) {
     SNode filterArgumentClause = SNodeOperations.getAncestor(conceptFunctionParameter_UserArgument, "jetbrains.mps.logging.refactoring.structure.FilterArgumentClause", false, false);
     SNode requiredUserEnteredArgument = SNodeOperations.getParent(filterArgumentClause, null, false, false);
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(SLinkOperations.getTarget(requiredUserEnteredArgument, "argumentType", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(conceptFunctionParameter_UserArgument, "jetbrains.mps.logging.refactoring.helgins", "1192795196477", true), conceptFunctionParameter_UserArgument, null, "jetbrains.mps.logging.refactoring.helgins", "1192795194145");
+    {
+      SNode _nodeToCheck_1029348928467 = conceptFunctionParameter_UserArgument;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(SLinkOperations.getTarget(requiredUserEnteredArgument, "argumentType", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(conceptFunctionParameter_UserArgument, "jetbrains.mps.logging.refactoring.helgins", "1192795196477", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.logging.refactoring.helgins", "1192795194145");
+    }
   }
 
   public String getApplicableConceptFQName() {

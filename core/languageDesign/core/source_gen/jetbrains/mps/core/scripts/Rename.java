@@ -103,7 +103,7 @@ public class Rename extends AbstractLoggableRefactoring {
 
   public void doRefactor(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
-      SNode node = actionContext.getNode();
+      SNode node = refactoringContext.getSelectedNode();
       node.setName(((String)refactoringContext.getParameter("newName")));
     }
   }

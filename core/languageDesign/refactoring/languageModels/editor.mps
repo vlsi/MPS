@@ -697,5 +697,12 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1214999768401">
+    <link role="conceptDeclaration" targetNodeId="1.1214999734945" resolveInfo="AbstractUIArgumentExpression" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1214999790482">
+      <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+      <link role="styleClass" targetNodeId="4.1186415544875" resolveInfo="KeyWord" />
+    </node>
+  </node>
 </model>
 

@@ -349,7 +349,7 @@ public class RequiredUserEnteredArgument_Editor extends DefaultNodeEditor {
   public EditorCell create_namePropertyCell9294_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no name>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_namePropertyCell9294_0_internal(context, node, provider);
@@ -378,7 +378,7 @@ public class RequiredUserEnteredArgument_Editor extends DefaultNodeEditor {
   public EditorCell create_argumentTypeRefNodeCell9294_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("argumentType");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no argumentType>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_argumentTypeRefNodeCell9294_0_internal(context, node, provider);
@@ -407,7 +407,7 @@ public class RequiredUserEnteredArgument_Editor extends DefaultNodeEditor {
   public EditorCell create_filterClauseRefNodeCell9294_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("filterClause");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no filterClause>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_filterClauseRefNodeCell9294_0_internal(context, node, provider);
@@ -436,7 +436,7 @@ public class RequiredUserEnteredArgument_Editor extends DefaultNodeEditor {
   public EditorCell create_chooseComponentClauseRefNodeCell9294_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("chooseComponentClause");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no chooseComponentClause>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_chooseComponentClauseRefNodeCell9294_0_internal(context, node, provider);
@@ -465,7 +465,7 @@ public class RequiredUserEnteredArgument_Editor extends DefaultNodeEditor {
   public EditorCell create_initialValueRefNodeCell9294_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("initialValue");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no initialValue>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_initialValueRefNodeCell9294_0_internal(context, node, provider);
@@ -494,7 +494,7 @@ public class RequiredUserEnteredArgument_Editor extends DefaultNodeEditor {
   public EditorCell create_presentationPropertyCell9294_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("presentation");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no presentation>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_presentationPropertyCell9294_0_internal(context, node, provider);

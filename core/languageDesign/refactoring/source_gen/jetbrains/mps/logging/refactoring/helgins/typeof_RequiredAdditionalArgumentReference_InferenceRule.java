@@ -14,7 +14,10 @@ public class typeof_RequiredAdditionalArgumentReference_InferenceRule implements
   }
 
   public void applyRule(final SNode requiredAdditionalArgumentReference) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(requiredAdditionalArgumentReference, "jetbrains.mps.logging.refactoring.helgins", "1190728598662", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(requiredAdditionalArgumentReference, "argument", false), "jetbrains.mps.logging.refactoring.helgins", "1190728606544", true), requiredAdditionalArgumentReference, null, "jetbrains.mps.logging.refactoring.helgins", "1190728604337");
+    {
+      SNode _nodeToCheck_1029348928467 = requiredAdditionalArgumentReference;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.logging.refactoring.helgins", "1190728598662", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(requiredAdditionalArgumentReference, "argument", false), "jetbrains.mps.logging.refactoring.helgins", "1190728606544", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.logging.refactoring.helgins", "1190728604337");
+    }
   }
 
   public String getApplicableConceptFQName() {

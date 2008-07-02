@@ -171,7 +171,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
 
   public void doRefactor(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
-      List<SNode> nodes = (List<SNode>)actionContext.getNodes();
+      List<SNode> nodes = refactoringContext.getSelectedNodes();
       SModel targetModel = null;
       List<SNode> movedNodes = null;
       if (((Object)refactoringContext.getParameter("target")) instanceof SModelDescriptor) {

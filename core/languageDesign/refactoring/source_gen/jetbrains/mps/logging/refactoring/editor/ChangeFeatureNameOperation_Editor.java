@@ -150,7 +150,7 @@ public class ChangeFeatureNameOperation_Editor extends DefaultNodeEditor {
   public EditorCell create_featureRefNodeCell19424_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("feature");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no feature>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_featureRefNodeCell19424_0_internal(context, node, provider);
@@ -179,7 +179,7 @@ public class ChangeFeatureNameOperation_Editor extends DefaultNodeEditor {
   public EditorCell create_newConceptFQNameRefNodeCell19424_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("newConceptFQName");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no newConceptFQName>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_newConceptFQNameRefNodeCell19424_0_internal(context, node, provider);
@@ -208,7 +208,7 @@ public class ChangeFeatureNameOperation_Editor extends DefaultNodeEditor {
   public EditorCell create_newFeatureNameRefNodeCell19424_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("newFeatureName");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no newFeatureName>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_newFeatureNameRefNodeCell19424_0_internal(context, node, provider);
