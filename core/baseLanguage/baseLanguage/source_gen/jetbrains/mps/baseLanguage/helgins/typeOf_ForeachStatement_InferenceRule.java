@@ -17,7 +17,7 @@ public class typeOf_ForeachStatement_InferenceRule implements InferenceRule_Runt
     final SNode T_typevar_1176561507041 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(foreachStatement, "iterable", true);
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1207147193776", true), new QuotationClass_81().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1176561507041), TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1176561507041)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1207147198311", false, 0);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1207147193776", true), new QuotationClass_80().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1176561507041), TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1176561507041)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1207147198311", false, 0);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(foreachStatement, "variable", true);

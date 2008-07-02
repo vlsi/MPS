@@ -20,7 +20,7 @@ public class PrimitiveArraySupertypes_SubtypingRule extends SubtypingRule_Runtim
   public List<SNode> getSubOrSuperTypes(SNode arrayType) {
     // see JLS 3.0
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(arrayType, "componentType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
-      return CollectionUtil.asList(new QuotationClass_85().createNode(), new QuotationClass_86().createNode(), new QuotationClass_87().createNode());
+      return CollectionUtil.asList(new QuotationClass_84().createNode(), new QuotationClass_85().createNode(), new QuotationClass_86().createNode());
     }
     return new ArrayList<SNode>();
   }

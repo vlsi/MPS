@@ -288,6 +288,35 @@
                       </node>
                     </node>
                   </node>
+                  <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1215004643687">
+                    <property name="name" value="mememe" />
+                    <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1215004643688" />
+                    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1215004646973" />
+                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215004643690" />
+                  </node>
+                  <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1215004653117">
+                    <property name="name" value="ufff" />
+                    <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1215004653118" />
+                    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1215004657185" />
+                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215004653120">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215004671090">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215004671091">
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215004671092">
+                            <link role="baseMethodDeclaration" targetNodeId="1215004643687" resolveInfo="mememe" />
+                          </node>
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1215004671093" />
+                        </node>
+                      </node>
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215004676785">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215004677865">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1215004676786" />
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215004679978">
+                            <link role="baseMethodDeclaration" targetNodeId="1214431379231" resolveInfo="me" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>

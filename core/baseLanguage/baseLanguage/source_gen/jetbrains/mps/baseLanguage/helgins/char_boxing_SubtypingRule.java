@@ -13,7 +13,7 @@ public class char_boxing_SubtypingRule extends SubtypingRule_Runtime implements 
   }
 
   public SNode getSubOrSuperType(SNode charType) {
-    return new QuotationClass_54().createNode();
+    return new QuotationClass_53().createNode();
   }
 
   public String getApplicableConceptFQName() {

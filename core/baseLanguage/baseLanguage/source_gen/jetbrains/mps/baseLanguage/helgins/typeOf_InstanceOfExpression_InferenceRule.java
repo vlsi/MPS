@@ -20,7 +20,7 @@ public class typeOf_InstanceOfExpression_InferenceRule implements InferenceRule_
     }
     {
       SNode _nodeToCheck_1029348928467 = instanceOfExpression;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1179744201892", true), new QuotationClass_42().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1179744208448");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1179744201892", true), new QuotationClass_41().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1179744208448");
     }
   }
 

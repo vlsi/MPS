@@ -28,13 +28,13 @@ public class typeof_ClassCreator_InferenceRule implements InferenceRule_Runtime 
       TypeChecker.getInstance().reportTypeError(creator, "wrong number of type parameters", "jetbrains.mps.baseLanguage.helgins", "1212781605971");
     }
     for(SNode parameter : SLinkOperations.getTargets(creator, "typeParameter", true)) {
-      if (!(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(parameter, SLinkOperations.getTarget(new QuotationClass_99().createNode(), "descriptor", false), false, false)))) {
+      if (!(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(parameter, SLinkOperations.getTarget(new QuotationClass_98().createNode(), "descriptor", false), false, false)))) {
         TypeChecker.getInstance().reportTypeError(parameter, "primitive type not allowed", "jetbrains.mps.baseLanguage.helgins", "1212781606006");
       }
     }
     // ---
     final SNode methodClassifier = SNodeOperations.getAncestor(SLinkOperations.getTarget(creator, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    SNode constructedType = new QuotationClass_100().createNode(SLinkOperations.getTargets(creator, "typeParameter", true), methodClassifier);
+    SNode constructedType = new QuotationClass_99().createNode(SLinkOperations.getTargets(creator, "typeParameter", true), methodClassifier);
     {
       SNode _nodeToCheck_1029348928467 = creator;
       TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1212781606043", true), constructedType, _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1212781606039");

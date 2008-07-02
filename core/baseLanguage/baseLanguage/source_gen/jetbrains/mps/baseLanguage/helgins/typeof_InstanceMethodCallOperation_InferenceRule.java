@@ -34,7 +34,7 @@ public class typeof_InstanceMethodCallOperation_InferenceRule implements Inferen
     }
     {
       SNode _nodeToCheck_1029348928467 = imco;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338), new QuotationClass_76().createNode(methodClassifier), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1204065906120", true, 0);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338), new QuotationClass_75().createNode(methodClassifier), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1204065906120", true, 0);
     }
     // --- following piece of cake is identical for any method call ---
     {

@@ -14,7 +14,7 @@ public class long_extends_integral_SubtypingRule extends SubtypingRule_Runtime i
   }
 
   public SNode getSubOrSuperType(SNode longType) {
-    return SLinkOperations.getTarget(new QuotationClass_49().createNode(), "descriptor", false);
+    return SLinkOperations.getTarget(new QuotationClass_48().createNode(), "descriptor", false);
   }
 
   public String getApplicableConceptFQName() {

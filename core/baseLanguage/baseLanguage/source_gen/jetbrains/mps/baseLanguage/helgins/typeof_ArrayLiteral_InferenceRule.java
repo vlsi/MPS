@@ -23,7 +23,7 @@ public class typeof_ArrayLiteral_InferenceRule implements InferenceRule_Runtime 
     }
     {
       SNode _nodeToCheck_1029348928467 = arrayLiteral;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1188221454647", true), new QuotationClass_70().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1188221443596)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1188221467376");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1188221454647", true), new QuotationClass_69().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1188221443596)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1188221467376");
     }
   }
 

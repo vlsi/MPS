@@ -32,7 +32,7 @@ public class typeof_FieldReferenceOperation_InferenceRule implements InferenceRu
     final SNode fieldClassifier = SNodeOperations.getAncestor(fieldDeclaration, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     {
       SNode _nodeToCheck_1029348928467 = fieldReference;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getEquationManager().getRepresentator(InstanceType_typevar_1206554174334), new QuotationClass_80().createNode(fieldClassifier), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1206554174350", false, 0);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getEquationManager().getRepresentator(InstanceType_typevar_1206554174334), new QuotationClass_79().createNode(fieldClassifier), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1206554174350", false, 0);
     }
     {
       final SNode IT = TypeChecker.getInstance().getEquationManager().getRepresentator(InstanceType_typevar_1206554174334);

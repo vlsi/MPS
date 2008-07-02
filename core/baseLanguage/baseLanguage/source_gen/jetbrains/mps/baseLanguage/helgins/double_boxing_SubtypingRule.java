@@ -13,7 +13,7 @@ public class double_boxing_SubtypingRule extends SubtypingRule_Runtime implement
   }
 
   public SNode getSubOrSuperType(SNode doubleType) {
-    return new QuotationClass_56().createNode();
+    return new QuotationClass_55().createNode();
   }
 
   public String getApplicableConceptFQName() {

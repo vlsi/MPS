@@ -21,7 +21,7 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
 
   public void applyRule(final SNode func) {
     SNode expectedRetType = ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(func);
-    boolean noReturnExpected = ((expectedRetType == null) || TypeChecker.getInstance().getSubtypingManager().isSubtype(expectedRetType, new QuotationClass_69().createNode()));
+    boolean noReturnExpected = ((expectedRetType == null) || TypeChecker.getInstance().getSubtypingManager().isSubtype(expectedRetType, new QuotationClass_68().createNode()));
     if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(expectedRetType), "jetbrains.mps.baseLanguage.structure.WildCardType")) {
       // function is expected to return value of any type
       expectedRetType = null;
