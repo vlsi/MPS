@@ -190,7 +190,8 @@ public class IntelligentInputUtil {
       }
     } else {
       editorContext.flushEvents();
-      prepareRTCell(editorContext, newNode, tail);
+      EditorCell_Label rtCell = prepareRTCell(editorContext, newNode, tail);
+      processCell(rtCell, editorContext, tail);
     }
   }
 
