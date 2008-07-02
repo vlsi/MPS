@@ -1,8 +1,13 @@
 package jetbrains.mps.ide.findusages.view;
 
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.KeyboardShortcut;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
@@ -45,6 +50,7 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 import javax.swing.JOptionPane;
+import javax.swing.KeyStroke;
 import javax.swing.SwingUtilities;
 import java.util.ArrayList;
 import java.util.List;
@@ -70,6 +76,9 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
 
   private static final String DEFAULT_FIND_OPTIONS = "default_find_options";
   private static final String DEFAULT_VIEW_OPTIONS = "default_view_options";
+
+  private static final String PREV_COMMAND = "FindUsages.Previous";
+  private static final String NEXT_COMMAND = "FindUsages.Next";
 
   private List<UsageViewData> myUsageViewsData = new ArrayList<UsageViewData>();
   private FindUsagesOptions myDefaultFindOptions = new FindUsagesOptions();
@@ -139,6 +148,39 @@ public class UsagesViewTool extends BaseMPSTool implements PersistentStateCompon
   private int currentTabIndex() {
     ContentManager contentManager = getContentManager();
     return contentManager.getIndexOfContent(contentManager.getSelectedContent());
+  }
+
+  public void doRegister() {
+    ActionManager.getInstance().registerAction(PREV_COMMAND, new AnAction() {
+      public void actionPerformed(AnActionEvent e) {
+        UsagesView usagesView = getCurrentView();
+        if (usagesView != null) usagesView.goToPrevious();
+      }
+    });
+    KeymapManager.getInstance().getActiveKeymap().addShortcut(PREV_COMMAND, getPrevShortcut());
+
+    ActionManager.getInstance().registerAction(NEXT_COMMAND, new AnAction() {
+      public void actionPerformed(AnActionEvent e) {
+        UsagesView usagesView = getCurrentView();
+        if (usagesView != null) usagesView.goToNext();
+      }
+    });
+    KeymapManager.getInstance().getActiveKeymap().addShortcut(NEXT_COMMAND, getNextShortcut());
+  }
+
+  private KeyboardShortcut getNextShortcut() {
+    return new KeyboardShortcut(KeyStroke.getKeyStroke("control alt DOWN"), null);
+  }
+
+  private KeyboardShortcut getPrevShortcut() {
+    return new KeyboardShortcut(KeyStroke.getKeyStroke("control alt UP"), null);
+  }
+
+  public void doUnregister() {
+    KeymapManager.getInstance().getActiveKeymap().removeShortcut(PREV_COMMAND, getPrevShortcut());
+    KeymapManager.getInstance().getActiveKeymap().removeShortcut(NEXT_COMMAND, getNextShortcut());
+    ActionManager.getInstance().unregisterAction(PREV_COMMAND);
+    ActionManager.getInstance().unregisterAction(NEXT_COMMAND);
   }
 
   //---FIND USAGES STUFF----

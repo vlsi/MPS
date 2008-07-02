@@ -171,7 +171,7 @@ public abstract class BaseTool {
     });
   }
 
-  public void register() {
+  public final void register() {
     if (myProject.isDisposed()) return;
     if (isRegistered()) return;
     setIsRegistered(true);
@@ -198,8 +198,13 @@ public abstract class BaseTool {
     if (!isInitiallyAvailable()) {
       setAvailable(false);
     }
+
+    doRegister();
   }
 
+  protected void doRegister() {
+
+  }
 
   protected BaseAction createCloseAction() {
     return new BaseAction("Close", "Close tool", Icons.CLOSE_ICON) {
@@ -221,7 +226,7 @@ public abstract class BaseTool {
     });
   }
 
-  public void unregister() {
+  public final void unregister() {
     if (!isRegistered()) return;
 
     if (myNumber != -1) {
@@ -236,6 +241,12 @@ public abstract class BaseTool {
 
     myWindowManager.unregisterToolWindow(myId);
     myIsRegistered = false;
+
+    doUnregister();
+  }
+
+  protected void doUnregister() {
+
   }
 
   public JComponent getComponent() {
