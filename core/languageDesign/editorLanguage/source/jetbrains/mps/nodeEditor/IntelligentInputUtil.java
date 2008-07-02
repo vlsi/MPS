@@ -54,9 +54,9 @@ public class IntelligentInputUtil {
         cell.getSNode().removeRightTransformHint();
 
         EditorCell_Label label = (EditorCell_Label) nextCell;
-        editorContext.getNodeEditorComponent().changeSelection(label);
         label.changeText(pattern);
         label.end();
+        editorContext.getNodeEditorComponent().changeSelection(label);
       }
 
       return;
