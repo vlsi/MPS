@@ -45,6 +45,10 @@ public class Style {
     }
   }
 
+  public <T> T getCurrent(StyleAttribute<T> attribute) {
+    return (T) myAttributeValues.get(attribute);
+  }
+
   public<T> void set(StyleAttribute<T> attribute, T value) {
     myAttributeValues.put(attribute, value);
     updateCache();
