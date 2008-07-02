@@ -243,7 +243,7 @@ public class IntelligentInputUtil {
       if (newNodeCell == null) {
         newNodeCell = nodeEditorComponent.findNodeCell(myNode, true);
       }
-      EditorCell_Label nextCell = EditorUtil.findRTHintCell(newNodeCell);
+      EditorCell_Label nextCell = newNodeCell.getRTHintCell();
 
       if (nextCell == null) {        
         EditorCell selectedCell = nodeEditorComponent.getSelectedCell();
