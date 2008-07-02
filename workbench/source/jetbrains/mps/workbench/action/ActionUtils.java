@@ -103,8 +103,34 @@ public class ActionUtils {
     return createEvent(place, new Presentation(), context);
   }
 
+  public static AnActionEvent createEvent(final AnActionEvent event, ActionContext context) {
+    final DataContext dataContext = createDataContext(context);
+    DataContext resDataContext = new DataContext() {
+      @Nullable
+      public Object getData(@NonNls String dataId) {
+        Object data = null;
+        try {
+          data = event.getDataContext().getData(dataId);
+        } catch (Throwable t) {
+        }
+        if (data != null) return data;
+        else return dataContext.getData(dataId);
+      }
+    };
+
+    AnActionEvent res = new AnActionEvent(null, resDataContext, ActionPlaces.UNKNOWN, event.getPresentation(), ActionManager.getInstance(), 0);
+    return res;
+  }
+
+
   public static AnActionEvent createEvent(String place, Presentation presentation, final ActionContext context) {
-    DataContext dataContext = new DataContext() {
+    DataContext dataContext = createDataContext(context);
+    AnActionEvent event = new AnActionEvent(null, dataContext, place, presentation, ActionManager.getInstance(), 0);
+    return event;
+  }
+
+  private static DataContext createDataContext(final ActionContext context) {
+    return new DataContext() {
       @Nullable
       public Object getData(@NonNls String dataId) {
         if (dataId.equals(MPSDataKeys.SNODE.getName())) {
@@ -129,8 +155,6 @@ public class ActionUtils {
         throw new UnsupportedOperationException(dataId);
       }
     };
-    AnActionEvent event = new AnActionEvent(null, dataContext, place, presentation, ActionManager.getInstance(), 0);
-    return event;
   }
 
   /*
