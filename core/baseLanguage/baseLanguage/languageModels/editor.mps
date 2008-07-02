@@ -925,7 +925,7 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1075233539828">
           <property name="noTargetText" value="&lt;no return type&gt;" />
           <property name="name" value="returnType" />
-          <property name="attractsFocus" value="1" />
+          <property name="attractsFocus" value="2" />
           <link role="relationDeclaration" targetNodeId="17.1068580123133" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1185275109560">
