@@ -955,7 +955,16 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
   private class MyPanel extends JPanel implements IActionDataProvider, DataProvider {
     public <T> T get(Class<T> cls) {
       if (cls == SNode.class) return (T) getSelectedNode();
-      if (cls == SModelDescriptor.class) return (T) getSelectedModel();
+      if (cls == SModelDescriptor.class) {
+        T model = (T) getSelectedModel();
+        if (model != null) {
+          return model;
+        }
+        SNode node = getSelectedNode();
+        if (node != null) {
+          return (T) node.getModel().getModelDescriptor();
+        }
+      }
       if (cls == List.class) {
         List result = new ArrayList();
         result.addAll(getSelectedModels());

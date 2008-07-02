@@ -38,6 +38,10 @@ public class RefactoringProcessor {
 
   public void execute(final @NotNull ActionContext context, final ILoggableRefactoring refactoring) {
     final RefactoringContext refactoringContext = new RefactoringContext(refactoring);
+    refactoringContext.setSelectedModel(context.getModel());
+    refactoringContext.setSelectedNode(context.getNode());
+    refactoringContext.setSelectedNodes(context.getNodes());
+
     boolean success = refactoring.askForInfo(context, refactoringContext);
     if (!success) return;
 
@@ -124,7 +128,7 @@ public class RefactoringProcessor {
       public void run() {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
-            SModelDescriptor modelDescriptor = context.getModel();
+            SModelDescriptor modelDescriptor = refactoringContext.getSelectedModel();
             SModelUID initialModelUID = modelDescriptor.getModelUID();
             refactoring.doRefactor(context, refactoringContext);
             final List<SNode> nodesToOpen = refactoring.getNodesToOpen(context, refactoringContext);

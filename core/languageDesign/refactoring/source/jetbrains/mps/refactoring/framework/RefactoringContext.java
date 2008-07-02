@@ -59,6 +59,10 @@ public class RefactoringContext {
   private SearchResults myUsages;
   private Set<String> myTransientParameters = new HashSet<String>();
   private boolean myIsLocal = false;
+
+  private SModelDescriptor mySelectedModel;
+  private SNode mySelectedNode;
+  private List<SNode> mySelectedNodes = new ArrayList<SNode>();
   //-----------------
 
   public RefactoringContext(ILoggableRefactoring refactoring) {
@@ -605,6 +609,30 @@ public class RefactoringContext {
 
   private Object deserialize(Element element) {
     return mySerializer.deserialize(element);
+  }
+
+  public void setSelectedModel(SModelDescriptor model) {
+    mySelectedModel = model;
+  }
+
+  public void setSelectedNode(SNode node) {
+    mySelectedNode = node;
+  }
+
+  public void setSelectedNodes(List<SNode> nodes) {
+    mySelectedNodes = new ArrayList<SNode>(nodes);
+  }
+
+  public SModelDescriptor getSelectedModel() {
+    return mySelectedModel;
+  }
+
+  public SNode getSelectedNode() {
+    return mySelectedNode;
+  }
+
+  public List<SNode> getSelectedNodes() {
+    return new ArrayList<SNode>(mySelectedNodes);
   }
 
   public static class FullNodeId implements Comparable<FullNodeId> {
