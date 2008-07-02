@@ -18,9 +18,9 @@ import jetbrains.mps.nodeEditor.ModelAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import java.util.List;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.nodeEditor.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -217,9 +217,9 @@ public class ConceptFunction_Component extends AbstractCellProvider {
 
       public String getText() {
         StringBuilder result = new StringBuilder();
-        if (SConceptPropertyOperations.getString(node, "conceptFunctionName") != null) {
-          result.append(SConceptPropertyOperations.getString(node, "conceptFunctionName"));
-        }
+        // by default 'alias' is not shown.
+        // if you need presentation like alias(...)->..
+        // then use the ConceptFunctionAliased_Component
         result.append("(");
         List<SNode> parameters = ConceptFunction_Behavior.call_getParameters_1213877374450(node);
         boolean isFirst = true;
