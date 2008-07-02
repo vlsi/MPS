@@ -319,7 +319,7 @@ public class EditorManager {
     if (newlySelectedCell == null) return;
     context.getNodeEditorComponent().changeSelection(newlySelectedCell);
     if (newlySelectedCell instanceof EditorCell_Label) {
-      ((EditorCell_Label) newlySelectedCell).getRenderedTextLine().setCaretPositionToLast();
+      ((EditorCell_Label) newlySelectedCell).getRenderedTextLine().end();
     }
   }
 

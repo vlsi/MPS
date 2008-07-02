@@ -142,7 +142,7 @@ public class IntelligentInputUtil {
           if (label.isEditable() && !(label instanceof EditorCell_Constant)) {
             label.changeText(smallPattern + tail);
           }
-          label.getRenderedTextLine().setCaretPositionToLast();
+          label.getRenderedTextLine().end();
         }
       }
       return;
