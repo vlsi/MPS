@@ -1498,9 +1498,6 @@
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptPropertyDeclaration" id="1199874763892">
       <property name="name" value="usesParameterObject" />
     </node>
-    <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration" id="1201882037552">
-      <property name="name" value="conceptFunctionName" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1137022507850">
       <property name="targetCardinality" value="1" />
       <property name="sourceCardinality" value="1" />

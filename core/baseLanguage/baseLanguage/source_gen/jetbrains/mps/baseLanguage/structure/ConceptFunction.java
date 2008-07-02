@@ -11,7 +11,6 @@ import jetbrains.mps.project.GlobalScope;
 public class ConceptFunction extends BaseConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ConceptFunction";
   public static String CPR_UsesParameterObject = "usesParameterObject";
-  public static String CPR_ConceptFunctionName = "conceptFunctionName";
   public static String CLNK_ConceptFunctionReturnType = "conceptFunctionReturnType";
   public static String CLNK_ConceptFunctionParameter = "conceptFunctionParameter";
   public static String CLNK_ApplicableConceptFunctionParameter = "applicableConceptFunctionParameter";
