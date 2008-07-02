@@ -721,6 +721,11 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitIfJumpStatement" id="1214992557899">
+          <node role="jumpTo" type="jetbrains.mps.bootstrap.dataFlow.structure.AfterPosition" id="1214992566403">
+            <node role="relativeTo" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1214992570741" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1206463711757">
           <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206463713088">
             <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1206463712775" />
@@ -739,11 +744,9 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitMayBeUnreachable" id="1206536503347">
-          <node role="emitStatement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitIfJumpStatement" id="1206463783421">
-            <node role="jumpTo" type="jetbrains.mps.bootstrap.dataFlow.structure.LabelPosition" id="1207063218095">
-              <link role="label" targetNodeId="1207063213423" resolveInfo="start" />
-            </node>
+        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitJumpStatement" id="1214992621851">
+          <node role="jumpTo" type="jetbrains.mps.bootstrap.dataFlow.structure.LabelPosition" id="1214992626065">
+            <link role="label" targetNodeId="1207063213423" resolveInfo="start" />
           </node>
         </node>
       </node>
