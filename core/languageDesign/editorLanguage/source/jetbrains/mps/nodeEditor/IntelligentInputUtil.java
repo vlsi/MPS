@@ -191,7 +191,9 @@ public class IntelligentInputUtil {
     } else {
       editorContext.flushEvents();
       EditorCell_Label rtCell = prepareRTCell(editorContext, newNode, tail);
-      processCell(rtCell, editorContext, tail);
+      if (rtCell != null) {
+        processCell(rtCell, editorContext, tail);
+      }
     }
   }
 
