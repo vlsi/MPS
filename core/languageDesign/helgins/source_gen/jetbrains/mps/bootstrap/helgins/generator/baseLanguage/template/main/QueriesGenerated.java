@@ -602,46 +602,46 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1214927051992(final IOperationContext operationContext, final PropertyMacroContext _context) {
     do {
-      SNode matchedNode_1214931951171 = _context.getNode();
+      SNode matchedNode_1214995031626 = _context.getNode();
       {
-        boolean matches_1214931951174 = false;
-        matches_1214931951174 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateEquationStatement");
-        if (matches_1214931951174) {
+        boolean matches_1214995031629 = false;
+        matches_1214995031629 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateEquationStatement");
+        if (matches_1214995031629) {
           return "createEquation";
         }
       }
       {
-        boolean matches_1214931951179 = false;
-        matches_1214931951179 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateGreaterThanInequationStatement");
-        if (matches_1214931951179) {
+        boolean matches_1214995031634 = false;
+        matches_1214995031634 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateGreaterThanInequationStatement");
+        if (matches_1214995031634) {
           return "createGreaterThanInequation";
         }
       }
       {
-        boolean matches_1214931951184 = false;
-        matches_1214931951184 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateLessThanInequationStatement");
-        if (matches_1214931951184) {
+        boolean matches_1214995031639 = false;
+        matches_1214995031639 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateLessThanInequationStatement");
+        if (matches_1214995031639) {
           return "createLessThanInequation";
         }
       }
       {
-        boolean matches_1214931951189 = false;
-        matches_1214931951189 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateStrongLessThanInequationStatement");
-        if (matches_1214931951189) {
+        boolean matches_1214995031644 = false;
+        matches_1214995031644 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateStrongLessThanInequationStatement");
+        if (matches_1214995031644) {
           return "createLessThanInequationStrong";
         }
       }
       {
-        boolean matches_1214931951194 = false;
-        matches_1214931951194 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateComparableEquationStatement");
-        if (matches_1214931951194) {
+        boolean matches_1214995031649 = false;
+        matches_1214995031649 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateComparableEquationStatement");
+        if (matches_1214995031649) {
           return "createComparableEquation";
         }
       }
       {
-        boolean matches_1214931951199 = false;
-        matches_1214931951199 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateComparableEquationStatementStrong");
-        if (matches_1214931951199) {
+        boolean matches_1214995031654 = false;
+        matches_1214995031654 = SModelUtil_new.isAssignableConcept(_context.getNode().getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.CreateComparableEquationStatementStrong");
+        if (matches_1214995031654) {
           return "createComparableEquationStrong";
         }
       }
@@ -1193,21 +1193,24 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_1214931157675(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode grandparent = SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode(), null, false, false), null, false, false);
     do {
-      SNode matchedNode_1214931953888 = grandparent;
+      SNode matchedNode_1214995034327 = grandparent;
       {
-        boolean matches_1214931953890 = false;
-        matches_1214931953890 = SModelUtil_new.isAssignableConcept(grandparent.getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.AbstractEquationStatement");
-        if (matches_1214931953890) {
+        boolean matches_1214995034329 = false;
+        matches_1214995034329 = SModelUtil_new.isAssignableConcept(grandparent.getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.AbstractEquationStatement");
+        if (matches_1214995034329) {
           {
-            SNode leftPart = SLinkOperations.getTarget(matchedNode_1214931953888, "leftExpression", true);
+            if ((SLinkOperations.getTarget(matchedNode_1214995034327, "nodeToCheck", true) != null)) {
+              return false;
+            }
+            SNode leftPart = SLinkOperations.getTarget(matchedNode_1214995034327, "leftExpression", true);
             do {
-              SNode matchedNode_1214931953899 = leftPart;
+              SNode matchedNode_1214995034347 = leftPart;
               {
-                boolean matches_1214931953901 = false;
-                matches_1214931953901 = SModelUtil_new.isAssignableConcept(leftPart.getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause");
-                if (matches_1214931953901) {
-                  if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_1214931953899, "normalType", true), "jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression")) {
-                    if (SLinkOperations.getTarget(matchedNode_1214931953899, "normalType", true) == _context.getNode()) {
+                boolean matches_1214995034349 = false;
+                matches_1214995034349 = SModelUtil_new.isAssignableConcept(leftPart.getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause");
+                if (matches_1214995034349) {
+                  if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_1214995034347, "normalType", true), "jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression")) {
+                    if (SLinkOperations.getTarget(matchedNode_1214995034347, "normalType", true) == _context.getNode()) {
                       return true;
                     } else
                     {
@@ -1218,14 +1221,14 @@ public class QueriesGenerated {
                 }
               }
             } while(false);
-            SNode rightPart = SLinkOperations.getTarget(matchedNode_1214931953888, "rightExpression", true);
+            SNode rightPart = SLinkOperations.getTarget(matchedNode_1214995034327, "rightExpression", true);
             do {
-              SNode matchedNode_1214931953932 = rightPart;
+              SNode matchedNode_1214995034380 = rightPart;
               {
-                boolean matches_1214931953934 = false;
-                matches_1214931953934 = SModelUtil_new.isAssignableConcept(rightPart.getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause");
-                if (matches_1214931953934) {
-                  if (SLinkOperations.getTarget(matchedNode_1214931953932, "normalType", true) == _context.getNode()) {
+                boolean matches_1214995034382 = false;
+                matches_1214995034382 = SModelUtil_new.isAssignableConcept(rightPart.getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause");
+                if (matches_1214995034382) {
+                  if (SLinkOperations.getTarget(matchedNode_1214995034380, "normalType", true) == _context.getNode()) {
                     return true;
                   }
                   break;
@@ -1243,21 +1246,24 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_1214931879685(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode grandparent = SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode(), null, false, false), null, false, false);
     do {
-      SNode matchedNode_1214931953977 = grandparent;
+      SNode matchedNode_1214995034425 = grandparent;
       {
-        boolean matches_1214931953979 = false;
-        matches_1214931953979 = SModelUtil_new.isAssignableConcept(grandparent.getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.AbstractEquationStatement");
-        if (matches_1214931953979) {
+        boolean matches_1214995034427 = false;
+        matches_1214995034427 = SModelUtil_new.isAssignableConcept(grandparent.getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.AbstractEquationStatement");
+        if (matches_1214995034427) {
           {
-            SNode leftPart = SLinkOperations.getTarget(matchedNode_1214931953977, "leftExpression", true);
+            if ((SLinkOperations.getTarget(matchedNode_1214995034425, "nodeToCheck", true) != null)) {
+              return true;
+            }
+            SNode leftPart = SLinkOperations.getTarget(matchedNode_1214995034425, "leftExpression", true);
             do {
-              SNode matchedNode_1214931953988 = leftPart;
+              SNode matchedNode_1214995034445 = leftPart;
               {
-                boolean matches_1214931953990 = false;
-                matches_1214931953990 = SModelUtil_new.isAssignableConcept(leftPart.getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause");
-                if (matches_1214931953990) {
-                  if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_1214931953988, "normalType", true), "jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression")) {
-                    if (SLinkOperations.getTarget(matchedNode_1214931953988, "normalType", true) == _context.getNode()) {
+                boolean matches_1214995034447 = false;
+                matches_1214995034447 = SModelUtil_new.isAssignableConcept(leftPart.getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause");
+                if (matches_1214995034447) {
+                  if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_1214995034445, "normalType", true), "jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression")) {
+                    if (SLinkOperations.getTarget(matchedNode_1214995034445, "normalType", true) == _context.getNode()) {
                       return false;
                     } else
                     {
@@ -1268,14 +1274,14 @@ public class QueriesGenerated {
                 }
               }
             } while(false);
-            SNode rightPart = SLinkOperations.getTarget(matchedNode_1214931953977, "rightExpression", true);
+            SNode rightPart = SLinkOperations.getTarget(matchedNode_1214995034425, "rightExpression", true);
             do {
-              SNode matchedNode_1214931954021 = rightPart;
+              SNode matchedNode_1214995034478 = rightPart;
               {
-                boolean matches_1214931954023 = false;
-                matches_1214931954023 = SModelUtil_new.isAssignableConcept(rightPart.getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause");
-                if (matches_1214931954023) {
-                  if (SLinkOperations.getTarget(matchedNode_1214931954021, "normalType", true) == _context.getNode()) {
+                boolean matches_1214995034480 = false;
+                matches_1214995034480 = SModelUtil_new.isAssignableConcept(rightPart.getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause");
+                if (matches_1214995034480) {
+                  if (SLinkOperations.getTarget(matchedNode_1214995034478, "normalType", true) == _context.getNode()) {
                     return false;
                   }
                   break;
