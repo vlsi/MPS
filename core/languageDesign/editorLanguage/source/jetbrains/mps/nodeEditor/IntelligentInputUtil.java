@@ -153,10 +153,10 @@ public class IntelligentInputUtil {
     EditorCell newCellForNewNode = editorContext.createNodeCellInAir(newNode, ourServiceEditorManager);
 
     cellFounder.run(newCellForNewNode);
-    EditorCell foundCell = cellFounder.getFoundCell(); // found cell should be a rt hint cell
+    EditorCell rtHintCell = cellFounder.getFoundCell(); // found cell should be a rt hint cell
 
-    if (foundCell != null) {
-      INodeSubstituteInfo rtSubstituteInfo = foundCell.getSubstituteInfo();
+    if (rtHintCell != null) {
+      INodeSubstituteInfo rtSubstituteInfo = rtHintCell.getSubstituteInfo();
       if (rtSubstituteInfo == null) {
         rtSubstituteInfo = new NullSubstituteInfo();
       }
@@ -173,6 +173,9 @@ public class IntelligentInputUtil {
       if (!canCompleteSmallPatternImmediately(rtSubstituteInfo, tail, "")) { //don't execute non-unique action on RT hint cell
         editorContext.flushEvents();
         cellFounder.run();
+        if (cellFounder.getFoundCell() != null) {
+          processCell(cellFounder.getFoundCell(), editorContext, tail);
+        }
         return;
       }
 
@@ -229,7 +232,6 @@ public class IntelligentInputUtil {
       myCallSelect = newCallSelect;
     }
 
-
     public void run() {
       run(null);
     }
@@ -259,8 +261,6 @@ public class IntelligentInputUtil {
         nodeEditorComponent.changeSelection(nextCell);
       }
       nodeEditorComponent.relayout();
-
-      processCell(nextCell, myEditorContext, myFoundCellText);
     }
   }
 }
