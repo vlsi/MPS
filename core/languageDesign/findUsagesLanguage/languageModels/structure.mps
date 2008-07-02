@@ -30,10 +30,6 @@
     <property name="name" value="FindBlock" />
     <property name="package" value="Methods" />
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1203860356143">
-      <property name="value" value="find" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1201882037552" resolveInfo="conceptFunctionName" />
-    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1206444393923">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="1197386047362" resolveInfo="ConceptFunctionParameter_node" />
@@ -45,6 +41,10 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1206444199040">
       <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1206444201370" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1215038387066">
+      <property name="value" value="find" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197044488845">
@@ -104,10 +104,6 @@
     <property name="name" value="IsApplicableBlock" />
     <property name="package" value="Methods" />
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1203860363614">
-      <property name="value" value="isApplicable" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1201882037552" resolveInfo="conceptFunctionName" />
-    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1197044488853">
       <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1197044488854" />
@@ -115,6 +111,10 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1197384599144">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="1197386047362" resolveInfo="ConceptFunctionParameter_node" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1215038387040">
+      <property name="value" value="isApplicable" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197386047362">
@@ -205,10 +205,6 @@
       <property name="value" value="getCategory" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1206461254554">
-      <property name="value" value="getCategory" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1201882037552" resolveInfo="conceptFunctionName" />
-    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1206461261180">
       <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206461308342">
@@ -228,10 +224,6 @@
       <property name="value" value="getPresentation(not implemented)" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1206461491163">
-      <property name="value" value="getPresentation(not implemented)" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1201882037552" resolveInfo="conceptFunctionName" />
-    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1206461500070">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="2v.1206467714548" resolveInfo="ConceptFunctionParameter_node" />
@@ -247,10 +239,6 @@
     <property name="package" value="Methods" />
     <property name="name" value="SearchedNodesBlock" />
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1206461978608">
-      <property name="value" value="getSearchedNodes" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1201882037552" resolveInfo="conceptFunctionName" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1206461992750">
       <property name="value" value="getSearchedNodes" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
