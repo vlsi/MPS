@@ -53,7 +53,7 @@ public class IntelligentInputUtil {
         target.end();
 
         if (!EditorUtil.isValidCell(target)) {
-          EditorUtil.validateCell(target, editorContext, true);
+          EditorUtil.validateCell(target, editorContext, true, true, false);
         }
       }
     } else if (substituteInfo.getMatchingActions(pattern, false).isEmpty() &&
@@ -149,11 +149,9 @@ public class IntelligentInputUtil {
     }
 
     rtAction.execute(editorContext);
-    final CellFinder cellFounder = new CellFinder(editorContext, newNode, tail);
     EditorCell newCellForNewNode = editorContext.createNodeCellInAir(newNode, ourServiceEditorManager);
 
-    cellFounder.run(newCellForNewNode);
-    EditorCell rtHintCell = cellFounder.getFoundCell(); // found cell should be a rt hint cell
+    EditorCell rtHintCell = prepareRTCell(editorContext, newCellForNewNode, tail);
 
     if (rtHintCell != null) {
       INodeSubstituteInfo rtSubstituteInfo = rtHintCell.getSubstituteInfo();
@@ -168,13 +166,13 @@ public class IntelligentInputUtil {
         ((EditorCell_Label) cell).changeText(smallPattern);
       }
 
-      cellFounder.setCallSelect(true);
-
       if (!canCompleteSmallPatternImmediately(rtSubstituteInfo, tail, "")) { //don't execute non-unique action on RT hint cell
         editorContext.flushEvents();
-        cellFounder.run();
-        if (cellFounder.getFoundCell() != null) {
-          processCell(cellFounder.getFoundCell(), editorContext, tail);
+
+        EditorCell foundCell = prepareRTCell(editorContext, newNode, tail);
+        if (foundCell != null) {
+          editorContext.getNodeEditorComponent().changeSelection(foundCell);
+          processCell(foundCell, editorContext, tail);
         }
         return;
       }
@@ -192,7 +190,7 @@ public class IntelligentInputUtil {
       }
     } else {
       editorContext.flushEvents();
-      cellFounder.run();
+      prepareRTCell(editorContext, newNode, tail);
     }
   }
 
@@ -210,57 +208,29 @@ public class IntelligentInputUtil {
     return info.hasExactlyNActions(smallPattern + tail, true, 1) && info.hasExactlyNActions(smallPattern + tail, false, 1);
   }
 
-  
-  private static class CellFinder implements Runnable {
-    private EditorCell_Label myFoundCell;
-    private final EditorContext myEditorContext;
-    private final SNode myNode;
-    private final String myFoundCellText;
-    private boolean myCallSelect = false;
-
-    public CellFinder(EditorContext editorContext, SNode node, String foundCellText) {
-      myEditorContext = editorContext;
-      myNode = node;
-      myFoundCellText = foundCellText;
-    }
-
-    public EditorCell_Label getFoundCell() {
-      return myFoundCell;
-    }
-
-    public void setCallSelect(boolean newCallSelect) {
-      myCallSelect = newCallSelect;
-    }
-
-    public void run() {
-      run(null);
-    }
-
-    public void run(EditorCell rootCell) {
-      myFoundCell = null;
-      AbstractEditorComponent nodeEditorComponent = myEditorContext.getNodeEditorComponent();
-      EditorCell newNodeCell = rootCell;
-      if (newNodeCell == null) {
-        newNodeCell = nodeEditorComponent.findNodeCell(myNode, true);
+  private static EditorCell_Label prepareRTCell(EditorContext context, EditorCell root, String textToSet) {
+    AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
+    EditorCell_Label rtCell = root.getRTHintCell();
+    if (rtCell == null) {
+      EditorCell selectedCell = nodeEditorComponent.getSelectedCell();
+      if (selectedCell != null && selectedCell instanceof EditorCell_Label && selectedCell.isErrorState()) {
+        rtCell = (EditorCell_Label) selectedCell;
+      } else {
+        return null;
       }
-      EditorCell_Label nextCell = newNodeCell.getRTHintCell();
-
-      if (nextCell == null) {        
-        EditorCell selectedCell = nodeEditorComponent.getSelectedCell();
-        if (selectedCell != null && selectedCell instanceof EditorCell_Label && selectedCell.isErrorState()) {
-          nextCell = (EditorCell_Label) selectedCell;
-        } else {
-          return;
-        }
-      }
-      myFoundCell = nextCell;
-      
-      nextCell.changeText(myFoundCellText);
-      nextCell.getRenderedTextLine().setCaretPositionToLast();
-      if (myCallSelect) {
-        nodeEditorComponent.changeSelection(nextCell);
-      }
-      nodeEditorComponent.relayout();
     }
+    rtCell.changeText(textToSet);
+    rtCell.end();
+
+    nodeEditorComponent.relayout();
+    return rtCell;
   }
+
+  private static EditorCell_Label prepareRTCell(EditorContext context, SNode node, String textToSet) {
+    EditorCell root = context.getNodeEditorComponent().findNodeCell(node, true);
+    if (root == null) {
+      return null;
+    }
+    return prepareRTCell(context, root, textToSet);
+  }  
 }
