@@ -59,6 +59,8 @@ public class MessagesGutter extends JPanel {
     }
     setStatus(status);
     myStatusIsDirty = false;
+
+    //otherwise some messages (removal of which do not affect model) could be not repainted
     repaint();
   }
 
