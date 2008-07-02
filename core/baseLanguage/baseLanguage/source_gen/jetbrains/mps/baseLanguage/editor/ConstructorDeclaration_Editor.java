@@ -190,7 +190,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ConstructorDeclaration_Editor.calculateColor79(cell);
+              return ConstructorDeclaration_Editor.calculateColor66(cell);
             }
 
           });
@@ -325,7 +325,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     return SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.AnonymousClass", false, false) == null;
   }
 
-  private static Color calculateColor79(EditorCell cell) {
+  private static Color calculateColor66(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

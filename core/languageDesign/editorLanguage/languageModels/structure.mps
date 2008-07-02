@@ -2875,5 +2875,35 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1215007762405">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="FloatStyleSheetItem" />
+    <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1215007802031">
+      <property name="name" value="value" />
+      <link role="dataType" targetNodeId="4.1113006251687" resolveInfo="_FPNumber_String" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1215007873046">
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1215007883204">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="PaddingLeftStyleSheetItem" />
+    <link role="extends" targetNodeId="1215007762405" resolveInfo="FloatStyleSheetItem" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1215007893986">
+      <property name="value" value="padding-left" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1215007897487">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="PaddingRightStyleSheetItem" />
+    <link role="extends" targetNodeId="1215007762405" resolveInfo="FloatStyleSheetItem" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1215007897488">
+      <property name="value" value="padding-right" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

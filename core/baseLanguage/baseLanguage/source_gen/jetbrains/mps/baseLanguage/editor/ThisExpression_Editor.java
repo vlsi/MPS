@@ -39,7 +39,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ThisExpression_Editor.calculateColor25(cell);
+              return ThisExpression_Editor.calculateColor22(cell);
             }
 
           });
@@ -65,7 +65,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ThisExpression_Editor.calculateColor48(cell);
+              return ThisExpression_Editor.calculateColor42(cell);
             }
 
           });
@@ -111,13 +111,13 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
     return (SLinkOperations.getTarget(node, "classConcept", false) != null);
   }
 
-  private static Color calculateColor25(EditorCell cell) {
+  private static Color calculateColor22(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor48(EditorCell cell) {
+  private static Color calculateColor42(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

@@ -8,8 +8,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
@@ -33,13 +31,6 @@ public class DotExpression_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return DotExpression_Editor.calculateColor39(cell);
-            }
-
-          });
         }
 
       };
@@ -58,12 +49,6 @@ public class DotExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_operationRefNodeCell7793_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Color calculateColor39(EditorCell cell) {
-    Color result;
-    result = Color.lightGray;
-    return result;
   }
 
 

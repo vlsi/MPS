@@ -10,13 +10,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Vertical;
@@ -82,21 +79,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell21166_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell21166_01");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return LocalVariableDeclaration_Editor.calculateColor64(cell);
-            }
-
-          });
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
   }
 
   private static void setupBasic_typeRefNodeCell21166_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -121,6 +104,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell21166_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell21166_02");
+    BaseLanguageStyle_StyleSheet.OPERATOR.apply(editorCell);
     LocalVariableDeclaration_Initializer_Actions.setCellActions(editorCell, node, context);
   }
 
@@ -202,12 +186,6 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition21166_02(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "annotation") > 0;
-  }
-
-  private static Color calculateColor64(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_BLUE;
-    return result;
   }
 
 

@@ -35,6 +35,7 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConceptPropertyCell7417_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConceptPropertyCell7417_0");
+    BaseLanguageStyle_StyleSheet.OPERATOR.apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

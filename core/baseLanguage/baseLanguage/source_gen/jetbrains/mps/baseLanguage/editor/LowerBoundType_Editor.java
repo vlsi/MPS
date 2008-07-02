@@ -37,7 +37,7 @@ public class LowerBoundType_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return LowerBoundType_Editor.calculateColor61(cell);
+              return LowerBoundType_Editor.calculateColor52(cell);
             }
 
           });
@@ -60,7 +60,7 @@ public class LowerBoundType_Editor extends DefaultNodeEditor {
   private static void setupLabel_boundRefNodeCell15803_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor61(EditorCell cell) {
+  private static Color calculateColor52(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

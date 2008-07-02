@@ -29,7 +29,7 @@ public class ClosureParameterReference_Editor extends DefaultNodeEditor {
   private static void setupLabel_closureParameterRefCell9431_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor37(EditorCell cell) {
+  private static Color calculateColor32(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
@@ -84,7 +84,7 @@ public class ClosureParameterReference_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return ClosureParameterReference_Editor.calculateColor37(cell);
+                return ClosureParameterReference_Editor.calculateColor32(cell);
               }
 
             });

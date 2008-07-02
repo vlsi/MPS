@@ -84,7 +84,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return StaticFieldDeclaration_Editor.calculateColor59(cell);
+              return StaticFieldDeclaration_Editor.calculateColor50(cell);
             }
 
           });
@@ -103,7 +103,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return StaticFieldDeclaration_Editor.calculateColor36(cell);
+              return StaticFieldDeclaration_Editor.calculateColor31(cell);
             }
 
           });
@@ -229,13 +229,13 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     return SLinkOperations.getCount(node, "annotation") > 0;
   }
 
-  private static Color calculateColor36(EditorCell cell) {
+  private static Color calculateColor31(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor59(EditorCell cell) {
+  private static Color calculateColor50(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

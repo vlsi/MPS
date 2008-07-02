@@ -153,7 +153,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return StaticMethodDeclaration_Editor.calculateColor71(cell);
+              return StaticMethodDeclaration_Editor.calculateColor59(cell);
             }
 
           });
@@ -207,7 +207,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return StaticMethodDeclaration_Editor.calculateColor85(cell);
+              return StaticMethodDeclaration_Editor.calculateColor72(cell);
             }
 
           });
@@ -336,13 +336,13 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     return SLinkOperations.getCount(node, "typeVariableDeclaration") > 0;
   }
 
-  private static Color calculateColor71(EditorCell cell) {
+  private static Color calculateColor59(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor85(EditorCell cell) {
+  private static Color calculateColor72(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

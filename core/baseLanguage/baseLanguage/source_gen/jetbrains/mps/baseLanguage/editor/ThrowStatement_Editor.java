@@ -33,7 +33,7 @@ public class ThrowStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ThrowStatement_Editor.calculateColor50(cell);
+              return ThrowStatement_Editor.calculateColor44(cell);
             }
 
           });
@@ -60,7 +60,7 @@ public class ThrowStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell10418_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor50(EditorCell cell) {
+  private static Color calculateColor44(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

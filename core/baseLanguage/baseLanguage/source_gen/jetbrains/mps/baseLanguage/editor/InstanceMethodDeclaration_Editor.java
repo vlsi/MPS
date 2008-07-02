@@ -166,7 +166,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return InstanceMethodDeclaration_Editor.calculateColor72(cell);
+              return InstanceMethodDeclaration_Editor.calculateColor60(cell);
             }
 
           });
@@ -203,7 +203,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return InstanceMethodDeclaration_Editor.calculateColor33(cell);
+              return InstanceMethodDeclaration_Editor.calculateColor28(cell);
             }
 
           });
@@ -388,13 +388,13 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     return SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.AnonymousClass", false, false) == null;
   }
 
-  private static Color calculateColor33(EditorCell cell) {
+  private static Color calculateColor28(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor72(EditorCell cell) {
+  private static Color calculateColor60(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

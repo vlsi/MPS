@@ -6,14 +6,9 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.ConceptPropertyCellProvider;
@@ -32,21 +27,7 @@ public class Type_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConceptPropertyCell12148_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConceptPropertyCell12148_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return Type_Editor.calculateColor65(cell);
-            }
-
-          });
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
   }
 
   private static void setupLabel_ErrorCell12148_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -57,12 +38,6 @@ public class Type_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition12148_0(SNode node, EditorContext editorContext, IScope scope) {
     return SConceptPropertyOperations.getBoolean(node, "abstract");
-  }
-
-  private static Color calculateColor65(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_BLUE;
-    return result;
   }
 
 

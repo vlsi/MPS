@@ -56,7 +56,7 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return TryCatchStatement_Editor.calculateColor16(cell);
+              return TryCatchStatement_Editor.calculateColor15(cell);
             }
 
           });
@@ -149,7 +149,7 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell18678_03(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor16(EditorCell cell) {
+  private static Color calculateColor15(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

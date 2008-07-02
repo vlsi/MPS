@@ -59,7 +59,7 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return SwitchStatement_Editor.calculateColor46(cell);
+              return SwitchStatement_Editor.calculateColor40(cell);
             }
 
           });
@@ -170,7 +170,7 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return SwitchStatement_Editor.calculateColor52(cell);
+              return SwitchStatement_Editor.calculateColor46(cell);
             }
 
           });
@@ -352,13 +352,13 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
     return !(SPropertyOperations.hasValue(node, "label", null));
   }
 
-  private static Color calculateColor46(EditorCell cell) {
+  private static Color calculateColor40(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor52(EditorCell cell) {
+  private static Color calculateColor46(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

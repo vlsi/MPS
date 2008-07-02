@@ -133,6 +133,11 @@ public class BaseLanguageStyle_StyleSheet {
     }
 
   };
+  public static final Style OPERATOR = new Style() {
+    {
+    }
+
+  };
 
   private static Color calculateColor(EditorCell cell) {
     Color result;

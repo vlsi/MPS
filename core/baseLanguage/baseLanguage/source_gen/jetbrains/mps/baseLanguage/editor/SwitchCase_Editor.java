@@ -46,7 +46,7 @@ public class SwitchCase_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return SwitchCase_Editor.calculateColor69(cell);
+              return SwitchCase_Editor.calculateColor57(cell);
             }
 
           });
@@ -108,7 +108,7 @@ public class SwitchCase_Editor extends DefaultNodeEditor {
   private static void setupLabel_bodyRefNodeCell8497_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor69(EditorCell cell) {
+  private static Color calculateColor57(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
