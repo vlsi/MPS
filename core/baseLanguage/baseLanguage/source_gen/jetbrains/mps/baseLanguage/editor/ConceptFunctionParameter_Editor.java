@@ -27,7 +27,7 @@ public class ConceptFunctionParameter_Editor extends DefaultNodeEditor {
         }
 
       };
-      inlineStyle.apply(editorCell);                                                                        
+      inlineStyle.apply(editorCell);
     }
   }
 
