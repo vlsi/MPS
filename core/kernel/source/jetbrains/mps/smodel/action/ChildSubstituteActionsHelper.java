@@ -140,7 +140,7 @@ public class ChildSubstituteActionsHelper {
       allBuilders.addAll(buildersFromSubconcepts);
       // create default action 1
       for (NodeSubstituteActionsBuilder builder : buildersFromSubconcepts) {
-        List<INodeSubstituteAction> actions = invokeActionFactory(builder, parentNode, currentChild, builder.getApplicableConcept(), childSetter, context);
+        List<INodeSubstituteAction> actions = invokeActionFactory(builder, parentNode, currentChild, childConcept, childSetter, context);
         resultActions.addAll(actions);
       }
 
