@@ -29,4 +29,7 @@ public class StyleAttributes {
 
   public static final StyleAttribute<Integer> FONT_STYLE = new InheritableStyleAttribute("font-style", Font.PLAIN);
   public static final StyleAttribute<Integer> FONT_SIZE = new InheritableStyleAttribute("font-size");
+
+  public static final StyleAttribute<Double> PADDING_LEFT = new SimpleStyleAttribute<Double>("padding-left", 0.5);
+  public static final StyleAttribute<Double> PADDING_RIGHT = new SimpleStyleAttribute<Double>("padding-right", 0.5);
 }
