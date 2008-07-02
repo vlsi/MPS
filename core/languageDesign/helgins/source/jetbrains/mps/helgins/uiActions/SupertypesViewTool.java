@@ -24,7 +24,7 @@ public class SupertypesViewTool extends AbstractHierarchyView {
   }
 
   protected JComponent createButtons() {
-    ToggleAction action = new ToggleAction("Strong", "Show Only Strong Supertypes", IconManager.EMPTY_ICON) {
+    ToggleAction action = new ToggleAction("Strong", "Show Only Strong Supertypes", Icons.STRONG_SUBTYPE_ICON) {
       private boolean myState = false;
 
       public boolean isSelected(AnActionEvent e) {

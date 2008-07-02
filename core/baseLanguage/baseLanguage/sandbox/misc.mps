@@ -343,6 +343,14 @@
                         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1214847958672">
                           <property name="name" value="i" />
                           <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1214847958673" />
+                          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215012087361">
+                            <property name="value" value="1" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1215012078310">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215012081875">
+                          <link role="variableDeclaration" targetNodeId="1214847958672" resolveInfo="i" />
                         </node>
                       </node>
                     </node>
@@ -688,6 +696,17 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215012117508">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215012117509">
+            <link role="variableDeclaration" targetNodeId="1214431474616" resolveInfo="l" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215012154274">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215012154275">
+            <link role="variableDeclaration" targetNodeId="1214431389939" resolveInfo="c1" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1215012188481" />
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1214431324744" />

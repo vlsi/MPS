@@ -104,4 +104,6 @@ public class Icons {
   public static final Icon PROP_AND_REF = new ImageIcon(Icons.class.getResource("nodes/propAndRef.png"));
   public static final Icon AUTOSCROLL_TO_SOURCE = new ImageIcon(Icons.class.getResource("nodes/autoscrollToSource.png"));
   public static final Icon AUTOSCROLL_FROM_SOURCE = new ImageIcon(Icons.class.getResource("nodes/autoscrollFromSource.png"));
+
+  public static final Icon STRONG_SUBTYPE_ICON = new ImageIcon(Icons.class.getResource("nodes/strongSubtype.png"));
 }
