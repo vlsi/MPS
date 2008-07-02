@@ -2153,6 +2153,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         return (T) getRootCell().getSNode();
       }
     }
+    if (cls == EditorCell.class) {
+      return (T) getSelectedCell();
+    }
     if (cls == SModelDescriptor.class && get(SNode.class) != null) {
       return ModelAccess.instance().runReadAction(new Computable<T>() {
         public T compute() {
@@ -2174,6 +2177,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       } else {
         return getRootCell().getSNode();
       }
+    }
+
+    if (dataId.equals(MPSDataKeys.EDITOR_CELL.getName())) {
+      return getSelectedCell();
     }
 
     if (dataId.equals(MPSDataKeys.SNODES.getName())){
