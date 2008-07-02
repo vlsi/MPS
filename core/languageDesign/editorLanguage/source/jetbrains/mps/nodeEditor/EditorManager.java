@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 import java.awt.Color;
 import java.awt.event.KeyEvent;
@@ -330,6 +331,7 @@ public class EditorManager {
     protected EditorCell_RTHint(EditorContext editorContext, SNode node) {
       super(editorContext, node, "");
       putUserObject(EditorCell.CELL_ID, node.getId());
+      setDefaultText(" ");
       setEditable(true);
       setDrawBorder(false);
       setCellBackgroundColor(Color.YELLOW);
