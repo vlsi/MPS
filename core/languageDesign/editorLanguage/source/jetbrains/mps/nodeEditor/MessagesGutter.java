@@ -59,6 +59,7 @@ public class MessagesGutter extends JPanel {
     }
     setStatus(status);
     myStatusIsDirty = false;
+    repaint();
   }
 
   private void removeLater(Set<IEditorMessage> messages) {
