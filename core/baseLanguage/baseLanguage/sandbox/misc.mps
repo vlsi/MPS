@@ -695,30 +695,6 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1214431324746" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1214431324747" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214431324748">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1214847895247">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1214847895248">
-            <property name="name" value="i" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1214847895249" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1214847901532">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1214847901533">
-            <property name="name" value="j" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1214847901534" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1214847909363">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1214847909364">
-            <property name="name" value="i" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1214847909365" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1214847909366">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1214847909367">
-            <property name="name" value="j" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1214847909368" />
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1214847918931">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1214847918932">
             <property name="name" value="iii" />
@@ -726,104 +702,6 @@
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215005665920">
               <property name="value" value="1" />
             </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1215006231752" />
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1215006219788" />
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1214862143730">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1214862143731">
-            <property name="name" value="i" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1214862143732" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215006239238">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215006239239">
-            <property name="name" value="i" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1215006239240" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215006239522">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215006239523">
-            <property name="name" value="i" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1215006239524" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215006239744">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215006239745">
-            <property name="name" value="i" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1215006239746" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215006239888">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215006239889">
-            <property name="name" value="i" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1215006239890" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215006240047">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215006240048">
-            <property name="name" value="i" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1215006240049" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215006240206">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215006240207">
-            <property name="name" value="i" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1215006240208" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215006240366">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215006240367">
-            <property name="name" value="i" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1215006240368" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215006240540">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215006240541">
-            <property name="name" value="i" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1215006240542" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215006240700">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215006240701">
-            <property name="name" value="i" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1215006240702" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215006240890">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215006240891">
-            <property name="name" value="i" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1215006240892" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215006241049">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215006241050">
-            <property name="name" value="i" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1215006241051" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215006241224">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215006241225">
-            <property name="name" value="i" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1215006241226" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215006241399">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215006241400">
-            <property name="name" value="i" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1215006241401" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215006241574">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215006241575">
-            <property name="name" value="i" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1215006241576" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215006241733">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215006241734">
-            <property name="name" value="i" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1215006241735" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215005656974">
