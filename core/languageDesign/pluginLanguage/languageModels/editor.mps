@@ -29,7 +29,6 @@
   <maxImportIndex value="21"/>
   <import index="1" modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="1"/>
   <import index="2" modelUID="jetbrains.mps.nodeEditor@java_stub" version="-1"/>
-  <import index="3" modelUID="java.io@java_stub" version="-1"/>
   <import index="5" modelUID="jetbrains.mps.bootstrap.structureLanguage.editor@java_stub" version="-1"/>
   <import index="6" modelUID="java.lang@java_stub" version="-1"/>
   <import index="7" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1"/>

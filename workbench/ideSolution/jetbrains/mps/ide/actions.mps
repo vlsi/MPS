@@ -10,9 +10,7 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83"/>
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0"/>
   </language>
-  <language namespace="jetbrains.mps.baseLanguage.classifiers">
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.classifiers.constraints" version="7"/>
-  </language>
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.classifiers.constraints" version="7"/>
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2"/>
@@ -22,7 +20,6 @@
   <import index="3" modelUID="jetbrains.mps.ide.actions.model@java_stub" version="-1"/>
   <import index="5" modelUID="jetbrains.mps.ide.actions.project@java_stub" version="-1"/>
   <import index="6" modelUID="jetbrains.mps.ide.actions.make@java_stub" version="-1"/>
-  <import index="7" modelUID="jetbrains.mps.ide.actions.file@java_stub" version="-1"/>
   <import index="8" modelUID="jetbrains.mps.ide.actions.language@java_stub" version="-1"/>
   <import index="9" modelUID="jetbrains.mps.ide.hierarchy@java_stub" version="-1"/>
   <import index="10" modelUID="jetbrains.mps.ide.actions.module@java_stub" version="-1"/>
@@ -32,33 +29,15 @@
   <import index="14" modelUID="jetbrains.mps.ide.actions.generate@java_stub" version="-1"/>
   <import index="15" modelUID="jetbrains.mps.ide.actions.cells@java_stub" version="-1"/>
   <import index="16" modelUID="jetbrains.mps.ide.actions.baseLanguage@java_stub" version="-1"/>
-  <import index="19" modelUID="jetbrains.mps.ide.actions@java_stub" version="-1"/>
   <import index="21" modelUID="jetbrains.mps.ide.actions.help@java_stub" version="-1"/>
   <import index="22" modelUID="jetbrains.mps.ide.actions.gotoMenu@java_stub" version="-1"/>
-  <import index="27" modelUID="jetbrains.mps.svn.ui@java_stub" version="-1"/>
-  <import index="29" modelUID="jetbrains.mps.vcs.ui.actions@java_stub" version="-1"/>
-  <import index="32" modelUID="jetbrains.mps.vcs.ui.actions.filepane@java_stub" version="-1"/>
-  <import index="33" modelUID="jetbrains.mps.ide.toolsPane@java_stub" version="-1"/>
-  <import index="34" modelUID="jetbrains.mps.ide@java_stub" version="-1"/>
-  <import index="35" modelUID="jetbrains.mps.ide.actions.view@java_stub" version="-1"/>
-  <import index="36" modelUID="jetbrains.mps.ide.action@java_stub" version="-1"/>
-  <import index="37" modelUID="java.lang@java_stub" version="-1"/>
-  <import index="38" modelUID="org.jetbrains.annotations@java_stub" version="-1"/>
-  <import index="39" modelUID="javax.swing@java_stub" version="-1"/>
   <import index="40" modelUID="jetbrains.mps.smodel@java_stub" version="-1"/>
   <import index="42" modelUID="jetbrains.mps.ide.classpath@java_stub" version="-1"/>
   <import index="43" modelUID="jetbrains.mps.transformation.TLBase.plugin.debug.actions@java_stub" version="-1"/>
-  <import index="44" modelUID="jetbrains.mps.transformation.TLBase.plugin.debug@java_stub" version="-1"/>
   <import index="46" modelUID="jetbrains.mps.workbench.actions.imports@java_stub" version="-1"/>
-  <import index="47" modelUID="com.intellij.openapi.actionSystem@java_stub" version="-1"/>
-  <import index="48" modelUID="com.intellij.openapi.wm@java_stub" version="-1"/>
-  <import index="49" modelUID="jetbrains.mps.workbench@java_stub" version="-1"/>
-  <import index="50" modelUID="jetbrains.mps.plugins.actions@java_stub" version="-1"/>
-  <import index="51" modelUID="jetbrains.mps.workbench.action@java_stub" version="-1"/>
   <import index="52" modelUID="jetbrains.mps.generator@java_stub" version="-1"/>
   <import index="53" modelUID="jetbrains.mps.workbench.actions.generate@java_stub" version="-1"/>
   <import index="54" modelUID="jetbrains.mps.workbench.actions.goTo.actions@java_stub" version="-1"/>
-  <import index="55" modelUID="jetbrains.mps.workbench.actions.goTo.framework.base@java_stub" version="-1"/>
   <import index="56" modelUID="jetbrains.mps.workbench.actions.build@java_stub" version="-1"/>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991215587">
     <property name="name" value="ProjectPaneNodeActions"/>
