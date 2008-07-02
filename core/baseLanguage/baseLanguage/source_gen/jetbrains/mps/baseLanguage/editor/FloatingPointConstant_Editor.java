@@ -26,7 +26,7 @@ public class FloatingPointConstant_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return FloatingPointConstant_Editor.calculateColor54(cell);
+              return FloatingPointConstant_Editor.calculateColor31(cell);
             }
 
           });
@@ -40,7 +40,7 @@ public class FloatingPointConstant_Editor extends DefaultNodeEditor {
   private static void setupLabel_valuePropertyCell9432_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor54(EditorCell cell) {
+  private static Color calculateColor31(EditorCell cell) {
     Color result;
     result = Color.blue;
     return result;

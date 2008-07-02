@@ -46,7 +46,7 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return EnumConstantDeclaration_Editor.calculateColor34(cell);
+              return EnumConstantDeclaration_Editor.calculateColor21(cell);
             }
 
           });
@@ -59,6 +59,7 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell6462_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6462_0");
+    BaseLanguageStyle_StyleSheet.PAREN.apply(editorCell);
   }
 
   private static void setupBasic_actualArgumentRefNodeListCell6462_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -67,6 +68,7 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell6462_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6462_01");
+    BaseLanguageStyle_StyleSheet.PAREN.apply(editorCell);
   }
 
   private static void setupLabel_namePropertyCell6462_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -81,7 +83,7 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell6462_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor34(EditorCell cell) {
+  private static Color calculateColor21(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;

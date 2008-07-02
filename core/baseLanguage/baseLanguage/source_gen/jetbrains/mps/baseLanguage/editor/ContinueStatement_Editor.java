@@ -41,6 +41,7 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell4891_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell4891_0");
+    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -48,7 +49,7 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ContinueStatement_Editor.calculateColor62(cell);
+              return ContinueStatement_Editor.calculateColor34(cell);
             }
 
           });
@@ -104,7 +105,7 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
     return !(SPropertyOperations.hasValue(node, "label", null));
   }
 
-  private static Color calculateColor62(EditorCell cell) {
+  private static Color calculateColor34(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

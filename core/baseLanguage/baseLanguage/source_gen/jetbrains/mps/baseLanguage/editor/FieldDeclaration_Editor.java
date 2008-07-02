@@ -79,6 +79,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell3369_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell3369_0");
+    BaseLanguageStyle_StyleSheet.OPERATOR.apply(editorCell);
   }
 
   private static void setupBasic_initializerRefNodeCell3369_0(EditorCell editorCell, SNode node, EditorContext context) {

@@ -31,6 +31,7 @@ public class CastExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell18526_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18526_0");
+    BaseLanguageStyle_StyleSheet.PAREN.apply(editorCell);
   }
 
   private static void setupBasic_typeRefNodeCell18526_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -38,6 +39,7 @@ public class CastExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell18526_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18526_01");
+    BaseLanguageStyle_StyleSheet.PAREN.apply(editorCell);
   }
 
   private static void setupLabel_expressionRefNodeCell18526_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

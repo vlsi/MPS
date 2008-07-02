@@ -27,6 +27,7 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell14651_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14651_0");
+    BaseLanguageStyle_StyleSheet.OPERATOR.apply(editorCell);
   }
 
   private static void setupBasic_ifTrueRefNodeCell14651_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -34,6 +35,7 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell14651_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14651_01");
+    BaseLanguageStyle_StyleSheet.OPERATOR.apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

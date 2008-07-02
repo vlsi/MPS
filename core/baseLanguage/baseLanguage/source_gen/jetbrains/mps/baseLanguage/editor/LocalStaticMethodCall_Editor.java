@@ -46,10 +46,12 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell10859_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell10859_0");
+    BaseLanguageStyle_StyleSheet.PAREN.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell10859_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell10859_01");
+    BaseLanguageStyle_StyleSheet.PAREN.apply(editorCell);
     if (renderingCondition10859_0(node, context, context.getScope())) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }

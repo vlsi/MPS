@@ -25,6 +25,7 @@ public class ArrayType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell6968_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6968_0");
+    BaseLanguageStyle_StyleSheet.BRACKET.apply(editorCell);
     ArrayType_Brackets_Actions.setCellActions(editorCell, node, context);
   }
 

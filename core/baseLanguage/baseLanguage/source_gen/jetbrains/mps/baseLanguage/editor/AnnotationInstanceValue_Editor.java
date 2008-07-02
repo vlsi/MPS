@@ -29,6 +29,7 @@ public class AnnotationInstanceValue_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell11217_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11217_0");
+    BaseLanguageStyle_StyleSheet.OPERATOR.apply(editorCell);
   }
 
   private static void setupBasic_valueRefNodeCell11217_0(EditorCell editorCell, SNode node, EditorContext context) {

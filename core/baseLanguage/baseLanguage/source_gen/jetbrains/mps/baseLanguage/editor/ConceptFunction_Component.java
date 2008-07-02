@@ -74,7 +74,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ConceptFunction_Component.calculateColor75(cell);
+              return ConceptFunction_Component.calculateColor42(cell);
             }
 
           });
@@ -87,6 +87,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
 
   private static void setupBasic_ConstantCell6954_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6954_0");
+    BaseLanguageStyle_StyleSheet.BRACE.apply(editorCell);
   }
 
   private static void setupBasic_CollectionCell6954_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -107,6 +108,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
 
   private static void setupBasic_ConstantCell6954_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6954_01");
+    BaseLanguageStyle_StyleSheet.BRACE.apply(editorCell);
   }
 
   private static void setupBasic_IndentCell6954_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -125,7 +127,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
   private static void setupLabel_ConstantCell6954_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor75(EditorCell cell) {
+  private static Color calculateColor42(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

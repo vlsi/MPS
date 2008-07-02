@@ -25,6 +25,7 @@ public class ArrayAccessExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell19469_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19469_0");
+    BaseLanguageStyle_StyleSheet.BRACKET.apply(editorCell);
     ArrayAccessExpression_Actions.setCellActions(editorCell, node, context);
   }
 
@@ -33,6 +34,7 @@ public class ArrayAccessExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell19469_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19469_01");
+    BaseLanguageStyle_StyleSheet.BRACKET.apply(editorCell);
   }
 
   private static void setupLabel_arrayRefNodeCell19469_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -44,13 +44,14 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell18949_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18949_0");
+    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return SuperMethodCall_Editor.calculateColor14(cell);
+              return SuperMethodCall_Editor.calculateColor12(cell);
             }
 
           });
@@ -67,10 +68,12 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell18949_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18949_01");
+    BaseLanguageStyle_StyleSheet.PAREN.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell18949_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18949_02");
+    BaseLanguageStyle_StyleSheet.PAREN.apply(editorCell);
     if (renderingCondition18949_0(node, context, context.getScope())) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
@@ -109,7 +112,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "parameter", true)).isEmpty();
   }
 
-  private static Color calculateColor14(EditorCell cell) {
+  private static Color calculateColor12(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

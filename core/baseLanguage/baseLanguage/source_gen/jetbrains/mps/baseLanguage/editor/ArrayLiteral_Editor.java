@@ -29,10 +29,12 @@ public class ArrayLiteral_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell15994_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15994_0");
+    BaseLanguageStyle_StyleSheet.BRACE.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell15994_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15994_01");
+    BaseLanguageStyle_StyleSheet.BRACE.apply(editorCell);
   }
 
   private static void setupBasic_itemRefNodeListCell15994_0(EditorCell editorCell, SNode node, EditorContext context) {

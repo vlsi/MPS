@@ -135,6 +135,25 @@ public class BaseLanguageStyle_StyleSheet {
   };
   public static final Style OPERATOR = new Style() {
     {
+      this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    }
+
+  };
+  public static final Style PAREN = new Style() {
+    {
+      this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    }
+
+  };
+  public static final Style BRACE = new Style() {
+    {
+      this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    }
+
+  };
+  public static final Style BRACKET = new Style() {
+    {
+      this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     }
 
   };

@@ -22,10 +22,12 @@ public class DimensionExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell18532_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18532_0");
+    BaseLanguageStyle_StyleSheet.BRACKET.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell18532_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18532_01");
+    BaseLanguageStyle_StyleSheet.BRACKET.apply(editorCell);
   }
 
   private static void setupBasic_expressionRefNodeCell18532_0(EditorCell editorCell, SNode node, EditorContext context) {

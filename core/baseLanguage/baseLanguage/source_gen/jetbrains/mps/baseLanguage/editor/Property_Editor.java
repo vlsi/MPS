@@ -49,6 +49,7 @@ public class Property_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell15789_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15789_0");
+    BaseLanguageStyle_StyleSheet.BRACE.apply(editorCell);
   }
 
   private static void setupBasic_propertyImplementationRefNodeCell15789_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -56,6 +57,7 @@ public class Property_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell15789_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15789_01");
+    BaseLanguageStyle_StyleSheet.BRACE.apply(editorCell);
   }
 
   private static void setupBasic_CollectionCell15789_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -80,10 +82,12 @@ public class Property_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell15789_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15789_02");
+    BaseLanguageStyle_StyleSheet.BRACE.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell15789_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15789_03");
+    BaseLanguageStyle_StyleSheet.BRACE.apply(editorCell);
   }
 
   private static void setupBasic_CollectionCell15789_03(EditorCell editorCell, SNode node, EditorContext context) {

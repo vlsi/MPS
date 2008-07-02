@@ -58,6 +58,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell19808_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19808_0");
+    BaseLanguageStyle_StyleSheet.PAREN.apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -120,6 +121,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell19808_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19808_02");
+    BaseLanguageStyle_StyleSheet.PAREN.apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -147,21 +149,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell19808_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19808_04");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return StaticMethodDeclaration_Editor.calculateColor59(cell);
-            }
-
-          });
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
   }
 
   private static void setupBasic_parameterRefNodeListCell19808_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -174,6 +162,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell19808_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19808_06");
+    BaseLanguageStyle_StyleSheet.BRACE.apply(editorCell);
     editorCell.addKeyMap(new InsertFirstStatement_KeyMap());
   }
 
@@ -196,18 +185,20 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell19808_07(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19808_07");
+    BaseLanguageStyle_StyleSheet.BRACE.apply(editorCell);
     editorCell.addKeyMap(new InsertFirstStatement_KeyMap());
   }
 
   private static void setupBasic_ConstantCell19808_08(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19808_08");
+    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return StaticMethodDeclaration_Editor.calculateColor72(cell);
+              return StaticMethodDeclaration_Editor.calculateColor40(cell);
             }
 
           });
@@ -336,13 +327,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     return SLinkOperations.getCount(node, "typeVariableDeclaration") > 0;
   }
 
-  private static Color calculateColor59(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_BLUE;
-    return result;
-  }
-
-  private static Color calculateColor72(EditorCell cell) {
+  private static Color calculateColor40(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

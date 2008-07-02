@@ -38,7 +38,7 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CommentedStatementsBlock_Editor.calculateColor30(cell);
+              return CommentedStatementsBlock_Editor.calculateColor19(cell);
             }
 
           });
@@ -58,7 +58,7 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CommentedStatementsBlock_Editor.calculateColor26(cell);
+              return CommentedStatementsBlock_Editor.calculateColor17(cell);
             }
 
           });
@@ -133,13 +133,13 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private static Color calculateColor26(EditorCell cell) {
+  private static Color calculateColor17(EditorCell cell) {
     Color result;
     result = Color.gray;
     return result;
   }
 
-  private static Color calculateColor30(EditorCell cell) {
+  private static Color calculateColor19(EditorCell cell) {
     Color result;
     result = Color.gray;
     return result;

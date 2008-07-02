@@ -49,6 +49,7 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
 
   private static void setupBasic_ConstantCell13020_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell13020_0");
+    BaseLanguageStyle_StyleSheet.PAREN.apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -66,6 +67,7 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
 
   private static void setupBasic_ConstantCell13020_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell13020_02");
+    BaseLanguageStyle_StyleSheet.PAREN.apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

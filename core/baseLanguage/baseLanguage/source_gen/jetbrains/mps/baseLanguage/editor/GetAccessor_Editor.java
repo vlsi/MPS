@@ -54,6 +54,7 @@ public class GetAccessor_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell11637_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11637_0");
+    BaseLanguageStyle_StyleSheet.BRACE.apply(editorCell);
   }
 
   private static void setupBasic_CollectionCell11637_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -71,10 +72,12 @@ public class GetAccessor_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell11637_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11637_01");
+    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell11637_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11637_02");
+    BaseLanguageStyle_StyleSheet.BRACE.apply(editorCell);
   }
 
   private static void setupLabel_statementListRefNodeCell11637_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

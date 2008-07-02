@@ -90,6 +90,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell15436_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15436_01");
+    BaseLanguageStyle_StyleSheet.BRACE.apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -168,6 +169,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell15436_06(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15436_06");
+    BaseLanguageStyle_StyleSheet.BRACE.apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

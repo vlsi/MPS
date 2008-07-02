@@ -8,12 +8,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -40,29 +38,17 @@ public class CatchClause_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell6964_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6964_0");
+    BaseLanguageStyle_StyleSheet.BRACE.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell6964_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6964_01");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return CatchClause_Editor.calculateColor21(cell);
-            }
-
-          });
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell6964_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6964_02");
+    BaseLanguageStyle_StyleSheet.PAREN.apply(editorCell);
   }
 
   private static void setupBasic_throwableRefNodeCell6964_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -70,6 +56,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell6964_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6964_03");
+    BaseLanguageStyle_StyleSheet.PAREN.apply(editorCell);
   }
 
   private static void setupBasic_CollectionCell6964_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -85,20 +72,16 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_ConstantCell6964_04(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6964_04");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+  private static void setupBasic_catchBodyRefNodeCell6964_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupBasic_catchBodyRefNodeCell6964_0(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConstantCell6964_04(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6964_04");
+    BaseLanguageStyle_StyleSheet.BRACE.apply(editorCell);
+  }
+
+  private static void setupBasic_IndentCell6964_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_IndentCell6964_0");
   }
 
   private static void setupLabel_ConstantCell6964_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -116,16 +99,10 @@ public class CatchClause_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell6964_03(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell6964_04(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
   private static void setupLabel_catchBodyRefNodeCell6964_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor21(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_BLUE;
-    return result;
+  private static void setupLabel_ConstantCell6964_04(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -154,7 +131,8 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.create_ConstantCell6964_01(context, node, "catch"));
     editorCell.addEditorCell(this.create_ConstantCell6964_02(context, node, "("));
     editorCell.addEditorCell(this.create_throwableRefNodeCell6964_0(context, node));
-    editorCell.addEditorCell(this.create_ConstantCell6964_03(context, node, ") {"));
+    editorCell.addEditorCell(this.create_ConstantCell6964_03(context, node, ")"));
+    editorCell.addEditorCell(this.create_ConstantCell6964_04(context, node, "{"));
     return editorCell;
   }
 
@@ -164,7 +142,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.create_ConstantCell6964_04(context, node, "  "));
+    editorCell.addEditorCell(this.createIndentCell17(context, node));
     editorCell.addEditorCell(this.create_catchBodyRefNodeCell6964_0(context, node));
     return editorCell;
   }
@@ -207,6 +185,11 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     setupLabel_ConstantCell6964_04(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
+  }
+
+  public EditorCell createIndentCell17(EditorContext context, SNode node) {
+    EditorCell_Indent result = new EditorCell_Indent(context, node);
+    return result;
   }
 
   public EditorCell create_throwableRefNodeCell6964_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
