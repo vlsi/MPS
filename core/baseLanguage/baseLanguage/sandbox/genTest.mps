@@ -55,6 +55,12 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1214993985920">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1214993985921">
+            <property name="name" value="i" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1214993985922" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214993780865">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1214993785468">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214993786690">

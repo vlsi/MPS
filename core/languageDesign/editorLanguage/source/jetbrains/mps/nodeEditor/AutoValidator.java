@@ -22,10 +22,13 @@ class AutoValidator {
           public void run() {
             ModelAccess.instance().runWriteActionInCommand(new Runnable() {
               public void run() {
-                Object memento = editor.getEditorContext().createMemento();
-                EditorUtil.validateCell(cellInfo.findCell(editor), null, true, true, false);
-                editor.flushEvents();
-                editor.getEditorContext().setMemento(memento);
+                EditorCell cell = cellInfo.findCell(editor);
+                if (cell != null) {
+                  Object memento = editor.getEditorContext().createMemento();
+                  EditorUtil.validateCell(cell, null, true, true, false);
+                  editor.flushEvents();
+                  editor.getEditorContext().setMemento(memento);
+                }
               }
             });
           }
