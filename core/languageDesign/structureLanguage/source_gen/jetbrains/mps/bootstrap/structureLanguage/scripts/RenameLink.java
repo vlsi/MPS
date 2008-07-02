@@ -84,7 +84,7 @@ public class RenameLink extends AbstractLoggableRefactoring {
 
   public boolean isApplicable(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
-      SNode node = actionContext.getNode();
+      SNode node = refactoringContext.getSelectedNode();
       return SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration") && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration"));
     }
   }
@@ -111,7 +111,7 @@ public class RenameLink extends AbstractLoggableRefactoring {
 
   public void doRefactor(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
-      SNode linkDeclaration = (SNode)actionContext.getNode();
+      SNode linkDeclaration = (SNode)refactoringContext.getSelectedNode();
       SNode concept = SNodeOperations.getAncestor(linkDeclaration, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration", false, false);
       refactoringContext.changeFeatureName(linkDeclaration, SNodeOperations.getModel(concept) + "" + SPropertyOperations.getString(concept, "name"), ((String)refactoringContext.getParameter("newName")));
     }
@@ -120,7 +120,7 @@ public class RenameLink extends AbstractLoggableRefactoring {
   public Map<IModule, List<SModel>> getModelsToGenerate(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
       Map<IModule, List<SModel>> result = new HashMap<IModule, List<SModel>>();
-      SModel model = actionContext.getNode().getModel();
+      SModel model = refactoringContext.getSelectedNode().getModel();
       Language language = Language.getLanguageFor(model.getModelDescriptor());
       if (language != null) {
         List<SModel> aspectList = ListSequence.fromList(((List<SModelDescriptor>)new ArrayList<SModelDescriptor>(language.getAspectModelDescriptors()))).select(new ISelector <SModelDescriptor, SModel>() {
@@ -152,8 +152,8 @@ public class RenameLink extends AbstractLoggableRefactoring {
     return true;
   }
 
-  public String newName_initialValue(ActionContext actionContext) {
-    SNode node = actionContext.getNode();
+  public String newName_initialValue(ActionContext actionContext, RefactoringContext refactoringContext) {
+    SNode node = refactoringContext.getSelectedNode();
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"))) {
       return "";
     }
@@ -167,7 +167,7 @@ public class RenameLink extends AbstractLoggableRefactoring {
       {
         IChooseComponent<String> chooseComponent;
         chooseComponent = new ChooseStringComponent();
-        chooseComponent.setInitialValue(this.newName_initialValue(actionContext));
+        chooseComponent.setInitialValue(this.newName_initialValue(actionContext, refactoringContext));
         chooseComponent.setPropertyName("newName");
         chooseComponent.setCaption("enter new name");
         chooseComponent.initComponent();

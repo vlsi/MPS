@@ -85,7 +85,7 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
 
   public boolean isApplicable(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
-      SNode node = actionContext.getNode();
+      SNode node = refactoringContext.getSelectedNode();
       if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"))) {
         return false;
       }
@@ -119,7 +119,7 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
 
   public void doRefactor(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
-      SNode linkDeclaration = (SNode)actionContext.getNode();
+      SNode linkDeclaration = (SNode)refactoringContext.getSelectedNode();
       refactoringContext.moveNodeToNode(linkDeclaration, linkDeclaration.getRole_(), ((SNode)refactoringContext.getParameter("targetConcept")));
       refactoringContext.changeFeatureName(linkDeclaration, SNodeOperations.getModel(((SNode)refactoringContext.getParameter("targetConcept"))) + "." + SPropertyOperations.getString(((SNode)refactoringContext.getParameter("targetConcept")), "name"), SPropertyOperations.getString(linkDeclaration, "role"));
     }
@@ -128,7 +128,7 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
   public Map<IModule, List<SModel>> getModelsToGenerate(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
       Map<IModule, List<SModel>> result = new HashMap<IModule, List<SModel>>();
-      SModel model = actionContext.getNode().getModel();
+      SModel model = refactoringContext.getSelectedNode().getModel();
       SModel targetModel = SNodeOperations.getModel(((SNode)refactoringContext.getParameter("targetConcept")));
       Language language = Language.getLanguageFor(model.getModelDescriptor());
       Language targetLanguage = Language.getLanguageFor(targetModel.getModelDescriptor());
@@ -172,8 +172,8 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
     return true;
   }
 
-  public IChooseComponent<SNode> targetConcept_componentCreator(ActionContext actionContext) {
-    SNode node = actionContext.getNode();
+  public IChooseComponent<SNode> targetConcept_componentCreator(ActionContext actionContext, RefactoringContext refactoringContext) {
+    SNode node = refactoringContext.getSelectedNode();
     SNode abstractConceptDeclaration = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration", false, false);
     return new HierarchicalChooseNodeComponent(actionContext, new ConceptAncestorsProvider(), abstractConceptDeclaration);
   }
@@ -184,7 +184,7 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
       List<IChooseComponent> components = new ArrayList<IChooseComponent>();
       {
         IChooseComponent<SNode> chooseComponent;
-        chooseComponent = this.targetConcept_componentCreator(actionContext);
+        chooseComponent = this.targetConcept_componentCreator(actionContext, refactoringContext);
         chooseComponent.setPropertyName("targetConcept");
         chooseComponent.setCaption("chooseTargetConcept");
         chooseComponent.initComponent();

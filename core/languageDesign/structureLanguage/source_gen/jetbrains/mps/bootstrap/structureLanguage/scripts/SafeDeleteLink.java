@@ -15,6 +15,7 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.refactoring.framework.RefactoringTarget;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.project.GlobalScope;
 import java.util.Map;
@@ -22,14 +23,15 @@ import jetbrains.mps.project.IModule;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import java.util.HashMap;
-import jetbrains.mps.smodel.Language;
 import java.util.ArrayList;
 
 public class SafeDeleteLink extends AbstractLoggableRefactoring {
+  public static final String sourceLanguage = "sourceLanguage";
 
   private Set<String> myTransientParameters = new HashSet<String>();
 
   public SafeDeleteLink() {
+    this.myTransientParameters.add("sourceLanguage");
   }
 
   public static String getKeyStroke_static() {
@@ -95,12 +97,13 @@ public class SafeDeleteLink extends AbstractLoggableRefactoring {
   }
 
   public SearchResults getAffectedNodes(ActionContext actionContext, RefactoringContext refactoringContext) {
+    refactoringContext.setParameter("sourceLanguage", Language.getLanguageFor(SNodeOperations.getModel(refactoringContext.getSelectedNode()).getModelDescriptor()));
     return FindUtils.getSearchResults(actionContext.createProgressIndicator(), actionContext.getNode(), GlobalScope.getInstance(), "jetbrains.mps.bootstrap.structureLanguage.findUsages.LinkExamples_Finder", "jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeAndDescendantsUsages_Finder");
   }
 
   public void doRefactor(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
-      SNode node = actionContext.getNode();
+      SNode node = refactoringContext.getSelectedNode();
       refactoringContext.deleteFeature(node);
     }
   }

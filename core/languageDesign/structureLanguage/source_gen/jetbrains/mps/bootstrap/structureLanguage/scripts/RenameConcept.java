@@ -84,7 +84,7 @@ public class RenameConcept extends AbstractLoggableRefactoring {
 
   public boolean isApplicable(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
-      SNode node = actionContext.getNode();
+      SNode node = refactoringContext.getSelectedNode();
       if (node == null) {
         return false;
       }
@@ -114,7 +114,7 @@ public class RenameConcept extends AbstractLoggableRefactoring {
 
   public void doRefactor(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
-      SNode node = (SNode)actionContext.getNode();
+      SNode node = (SNode)refactoringContext.getSelectedNode();
       refactoringContext.changeFeatureName(node, SNodeOperations.getModel(node).toString() + "." + ((String)refactoringContext.getParameter("newName")), ((String)refactoringContext.getParameter("newName")));
     }
   }
@@ -122,7 +122,7 @@ public class RenameConcept extends AbstractLoggableRefactoring {
   public Map<IModule, List<SModel>> getModelsToGenerate(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
       Map<IModule, List<SModel>> result = new HashMap<IModule, List<SModel>>();
-      SModel model = actionContext.getNode().getModel();
+      SModel model = refactoringContext.getSelectedNode().getModel();
       Language language = Language.getLanguageFor(model.getModelDescriptor());
       if (language != null) {
         List<SModel> aspectList = ListSequence.fromList(((List<SModelDescriptor>)new ArrayList<SModelDescriptor>(language.getAspectModelDescriptors()))).select(new ISelector <SModelDescriptor, SModel>() {
@@ -154,8 +154,8 @@ public class RenameConcept extends AbstractLoggableRefactoring {
     return true;
   }
 
-  public String newName_initialValue(ActionContext actionContext) {
-    SNode node = actionContext.getNode();
+  public String newName_initialValue(ActionContext actionContext, RefactoringContext refactoringContext) {
+    SNode node = refactoringContext.getSelectedNode();
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration"))) {
       return "";
     }
@@ -169,7 +169,7 @@ public class RenameConcept extends AbstractLoggableRefactoring {
       {
         IChooseComponent<String> chooseComponent;
         chooseComponent = new ChooseStringComponent();
-        chooseComponent.setInitialValue(this.newName_initialValue(actionContext));
+        chooseComponent.setInitialValue(this.newName_initialValue(actionContext, refactoringContext));
         chooseComponent.setPropertyName("newName");
         chooseComponent.setCaption("new concept name");
         chooseComponent.initComponent();

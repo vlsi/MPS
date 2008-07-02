@@ -90,7 +90,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
 
   public boolean isApplicable(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
-      List<SNode> nodes = actionContext.getNodes();
+      List<SNode> nodes = refactoringContext.getSelectedNodes();
       if (ListSequence.fromList(nodes).isEmpty()) {
         return false;
       }
@@ -125,8 +125,8 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
 
   public void doRefactor(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
-      List<SNode> nodes = (List<SNode>)actionContext.getNodes();
-      SModel model = actionContext.getNode().getModel();
+      List<SNode> nodes = (List<SNode>)refactoringContext.getSelectedNodes();
+      SModel model = refactoringContext.getSelectedNode().getModel();
       refactoringContext.setParameter("sourceModel", model.getModelDescriptor());
       Language sourceLanguage = Language.getLanguageFor(((SModelDescriptor)refactoringContext.getParameter("sourceModel")));
       Language targetLanguage = Language.getLanguageFor(((SModelDescriptor)refactoringContext.getParameter("targetModel")));
