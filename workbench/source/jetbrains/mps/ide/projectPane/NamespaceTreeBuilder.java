@@ -1,9 +1,21 @@
 package jetbrains.mps.ide.projectPane;
 
+import com.intellij.ide.DataManager;
+import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.IGenerationType;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ToStringComparator;
+import jetbrains.mps.workbench.action.BaseAction;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -132,6 +144,42 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode> {
       add(newChild);
 
       return newChild.getSubnamespace(otherElements);
+    }
+
+    public ActionGroup getActionGroup() {
+      DefaultActionGroup group = new DefaultActionGroup();
+      group.add(new BaseAction("Generate files", "Generate files from all models under this namespace", IconManager.EMPTY_ICON, true, true) {
+        protected void doExecute(AnActionEvent e) {
+          DataContext dataContext = DataManager.getInstance().getDataContext();
+          Project ideaProject = PlatformDataKeys.PROJECT.getData(dataContext);
+          if (ideaProject == null) return;
+          MPSProjectHolder holder = ideaProject.getComponent(MPSProjectHolder.class);
+          if (holder == null) return;
+          MPSProject project = holder.getMPSProject();
+          GeneratorManager manager = project.getComponentSafe(GeneratorManager.class);
+          List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
+          for (SModelDescriptor modelDescriptor : getModelsUnder(NamespaceNode.this)) {
+            if (!modelDescriptor.isTransient() && (modelDescriptor instanceof DefaultSModelDescriptor)) {
+              models.add(modelDescriptor);
+            }
+          }
+          manager.generateModelsFromDifferentModules(project.createOperationContext(), models, IGenerationType.FILES);
+        }
+      });
+      return group;
+    }
+
+    private List<SModelDescriptor> getModelsUnder(MPSTreeNode node) {
+      List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
+      for (MPSTreeNode child : node) {
+        if (child instanceof SModelTreeNode) {
+          models.add(((SModelTreeNode) child).getSModelDescriptor());
+        } else {
+          models.addAll(getModelsUnder(child));
+        }
+      }
+
+      return models;
     }
 
     public String getName() {
