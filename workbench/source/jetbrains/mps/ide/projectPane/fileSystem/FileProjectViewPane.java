@@ -40,10 +40,9 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
 
   private Project myProject;
   private ProjectView myProjectView;
-  private MPSTree myMPSTree;
   private FileStatusListener myFileStatusListener;
   private VirtualFileAdapter myFileListener;
-  private final Timer myTimer;
+  private Timer myTimer;
   private static final int SECOND = 1000;
   private VcsListener myDirectoryMappingListener = new VcsListener() {
     public void directoryMappingChanged() {
@@ -57,7 +56,7 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
     myProject = project;
     myProjectView = projectView;
 
-    myMPSTree = new MPSTree() {
+    myTree = new MPSTree() {
       protected MPSTreeNode rebuild() {
         if (myProject != null && !myProject.isDisposed()) {
           return new CompositeTreeNode(new ProjectOperationContext(getProject()));
@@ -66,9 +65,18 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
         }
       }
     };
-    myTree = myMPSTree;
 
-    // adding listeners
+    myTimer = new Timer(SECOND, new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        ModelAccess.instance().runReadInEDT(new Runnable() {
+          public void run() {
+            getTree().rebuildLater();
+          }
+        });
+      }
+    });
+    myTimer.setRepeats(false);
+    myTimer.setInitialDelay(3 * SECOND);
 
     myFileStatusListener = new FileStatusListener() {
       public void fileStatusesChanged() {
@@ -101,17 +109,26 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
         rebuildTreeLater();
       }
     };
-    myTimer = new Timer(SECOND, new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        ModelAccess.instance().runReadInEDT(new Runnable() {
-          public void run() {
-            myMPSTree.rebuildLater();
-          }
-        });
-      }
-    });
-    myTimer.setRepeats(false);
-    myTimer.setInitialDelay(3 * SECOND);
+  }
+
+  public void initComponent() {
+    FileStatusManager.getInstance(myProject).addFileStatusListener(myFileStatusListener);
+    VirtualFileManager.getInstance().addVirtualFileListener(myFileListener);
+    myProject.getComponent(ProjectLevelVcsManager.class).addVcsListener(myDirectoryMappingListener);
+  }
+
+  public void dispose() {
+    //if this method is not overridden, myTree is set to null on every change
+  }
+
+  public MPSTree getTree() {
+    return (MPSTree) myTree;
+  }
+
+  public void disposeComponent() {
+    FileStatusManager.getInstance(myProject).removeFileStatusListener(myFileStatusListener);
+    VirtualFileManager.getInstance().removeVirtualFileListener(myFileListener);
+    myProject.getComponent(ProjectLevelVcsManager.class).removeVcsListener(myDirectoryMappingListener);
   }
 
   private void rebuildTreeLater() {
@@ -121,7 +138,6 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
       myTimer.restart();
     }
   }
-
 
   private MPSProject getProject() {
     MPSProjectHolder holder = myProject.getComponent(MPSProjectHolder.class);
@@ -178,18 +194,6 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
   @NotNull
   public String getComponentName() {
     return "FileProjectViewPane";
-  }
-
-  public void initComponent() {
-    FileStatusManager.getInstance(myProject).addFileStatusListener(myFileStatusListener);
-    VirtualFileManager.getInstance().addVirtualFileListener(myFileListener);
-    myProject.getComponent(ProjectLevelVcsManager.class).addVcsListener(myDirectoryMappingListener);
-  }
-
-  public void disposeComponent() {
-    FileStatusManager.getInstance(myProject).removeFileStatusListener(myFileStatusListener);
-    VirtualFileManager.getInstance().removeVirtualFileListener(myFileListener);
-    myProject.getComponent(ProjectLevelVcsManager.class).removeVcsListener(myDirectoryMappingListener);
   }
 
   public Object getData(String dataId) {

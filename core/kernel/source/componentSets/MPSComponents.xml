@@ -400,13 +400,13 @@
     <!--project view tool tabs-->
 
     <component>
-      <implementation-class>jetbrains.mps.ide.projectPane.fileSystem.FileProjectViewPane</implementation-class>
+      <implementation-class>jetbrains.mps.ide.projectPane.ProjectPane</implementation-class>
       <option name="workspace" value="true"/>
       <skipForDummyProject/>
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.ide.projectPane.ProjectPane</implementation-class>
+      <implementation-class>jetbrains.mps.ide.projectPane.fileSystem.FileProjectViewPane</implementation-class>
       <option name="workspace" value="true"/>
       <skipForDummyProject/>
     </component>

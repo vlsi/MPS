@@ -158,65 +158,9 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   public ProjectPane(Project project, ProjectView projectView) {
     super(project);
     myProjectView = projectView;
+
     myTree = new MyTree();
-  }
 
-  public MPSTree getTree() {
-    return (MPSTree) myTree;
-  }
-
-  public Project getProject() {
-    return myProject;
-  }
-
-  public MPSProject getMPSProject() {
-    return myProject.getComponent(MPSProjectHolder.class).getMPSProject();
-  }
-
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return "ProjectPane";
-  }
-
-  public String getTitle() {
-    return "Logical View";
-  }
-
-  @NotNull
-  public String getId() {
-    return MPS_FILESYSTEM;
-  }
-
-  public int getWeight() {
-    return 100;
-  }
-
-  public SelectInTarget createSelectInTarget() {
-    return null;
-  }
-
-  public Icon getIcon() {
-    return Icons.MPS_SMALL_ICON;
-  }
-
-  public void updateFromRoot(boolean restoreExpandedPaths) {
-    throw new UnsupportedOperationException();
-  }
-
-  public void select(Object element, VirtualFile file, boolean requestFocus) {
-    throw new UnsupportedOperationException();
-  }
-
-  public JComponent createComponent() {
-    return getComponent();
-  }
-
-  public JComponent getComponent() {
-    return getPanel();
-  }
-
-  public void initComponent() {
     addListeners();
 
     getPanel().setLayout(new BorderLayout());
@@ -274,7 +218,9 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
 
     JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.FILE_VIEW, toolbarGroup, true).getComponent();
     getPanel().add(toolbar, BorderLayout.NORTH);
+  }
 
+  public void initComponent() {
     if (!IdeMain.isTestMode()) {
       ThreadUtils.runInUIThreadNoWait(new Runnable() {
         public void run() {
@@ -287,6 +233,61 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   public void disposeComponent() {
     getTree().clear();
     removeListeners();
+  }
+
+  public MPSTree getTree() {
+    return (MPSTree) myTree;
+  }
+
+  public Project getProject() {
+    return myProject;
+  }
+
+  public MPSProject getMPSProject() {
+    return myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+  }
+
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "ProjectPane";
+  }
+
+  public String getTitle() {
+    return "Logical View";
+  }
+
+  @NotNull
+  public String getId() {
+    return MPS_FILESYSTEM;
+  }
+
+  public int getWeight() {
+    return 0;
+  }
+
+  public SelectInTarget createSelectInTarget() {
+    return null;
+  }
+
+  public Icon getIcon() {
+    return Icons.MPS_SMALL_ICON;
+  }
+
+  public void updateFromRoot(boolean restoreExpandedPaths) {
+    throw new UnsupportedOperationException();
+  }
+
+  public void select(Object element, VirtualFile file, boolean requestFocus) {
+    throw new UnsupportedOperationException();
+  }
+
+  public JComponent createComponent() {
+    return getComponent();
+  }
+
+  public JComponent getComponent() {
+    return getPanel();
   }
 
   protected void editNode(SNode node, IOperationContext context) {
