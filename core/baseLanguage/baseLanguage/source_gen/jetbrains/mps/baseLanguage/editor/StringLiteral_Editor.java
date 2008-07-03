@@ -92,6 +92,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
           });
           this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
           this.set(StyleAttributes.PADDING_LEFT, 0.0);
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
       };

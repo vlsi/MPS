@@ -156,6 +156,15 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     private static void setupBasic_namePropertyCell19365_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell19365_0");
       BaseLanguageStyle_StyleSheet.STATIC_FIELD.apply(editorCell);
+      {
+        Style inlineStyle = new Style(editorCell) {
+          {
+            this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+          }
+
+        };
+        inlineStyle.apply(editorCell);
+      }
     }
 
     private static void setupLabel_namePropertyCell19365_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -208,6 +217,15 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell19365_01(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell19365_01");
+      {
+        Style inlineStyle = new Style(editorCell) {
+          {
+            this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+          }
+
+        };
+        inlineStyle.apply(editorCell);
+      }
     }
 
     private static void setupLabel_namePropertyCell19365_01(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -6,6 +6,8 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
@@ -42,6 +44,19 @@ public class CastExpression_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
   }
 
+  private static void setupBasic_ConstantCell18526_02(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18526_02");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
   private static void setupLabel_expressionRefNodeCell18526_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -52,6 +67,9 @@ public class CastExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell18526_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ConstantCell18526_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -66,6 +84,7 @@ public class CastExpression_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.create_CollectionCell18526_01(context, node));
+    editorCell.addEditorCell(this.create_ConstantCell18526_02(context, node, ""));
     editorCell.addEditorCell(this.create_expressionRefNodeCell18526_0(context, node));
     return editorCell;
   }
@@ -94,6 +113,14 @@ public class CastExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell18526_01(editorCell, node, context);
     setupLabel_ConstantCell18526_01(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell create_ConstantCell18526_02(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_ConstantCell18526_02(editorCell, node, context);
+    setupLabel_ConstantCell18526_02(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }

@@ -2613,6 +2613,9 @@
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleSheetItem" id="1215086394696">
           <property name="value" value="0.0" />
         </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleSheetItem" id="1215103780293">
+          <property name="value" value="0.0" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1079623722230">
         <property name="allowEmptyText" value="true" />
@@ -2654,6 +2657,9 @@
         <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleSheetItem" id="1215086402339">
           <property name="value" value="0.0" />
         </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleSheetItem" id="1215104244641">
+          <property name="value" value="0.0" />
+        </node>
       </node>
     </node>
   </node>
@@ -2676,6 +2682,9 @@
           <property name="text" value=")" />
           <link role="styleClass" targetNodeId="1215088010675" resolveInfo="RightParent" />
         </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215103594746">
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1215103598763" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1080902646664">
         <link role="relationDeclaration" targetNodeId="17.1070534934092" />
@@ -3424,6 +3433,9 @@
             <property name="noTargetText" value="&lt;no name&gt;" />
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="18.1169194664001" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleSheetItem" id="1215103162333">
+              <property name="value" value="0.0" />
+            </node>
           </node>
         </node>
       </node>
@@ -3440,6 +3452,9 @@
             <property name="readOnly" value="true" />
             <link role="styleClass" targetNodeId="1198160792349" resolveInfo="staticField" />
             <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleSheetItem" id="1215103151285">
+              <property name="value" value="0.0" />
+            </node>
           </node>
         </node>
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1165018744026">
@@ -5952,6 +5967,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1163668954406">
         <property name="text" value="?" />
         <link role="styleClass" targetNodeId="1215010940130" resolveInfo="Operator" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1215103882331" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1163668956502">
         <link role="relationDeclaration" targetNodeId="17.1163668922816" />
