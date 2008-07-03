@@ -85,7 +85,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213019919921">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213019919923">
                 <link role="baseMethodDeclaration" targetNodeId="8.~ChooseNodeOrModelComponent.&lt;init&gt;(jetbrains.mps.smodel.IOperationContext,java.lang.String,boolean,boolean)" resolveInfo="ChooseNodeOrModelComponent" />
-                <node role="actualArgument" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_ActionContext" id="1198076823903" />
+                <node role="actualArgument" type="jetbrains.mps.logging.refactoring.structure.OperationContextExpression" id="1215096163381" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1198076884972" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1198076889505">
                   <property name="value" value="true" />
