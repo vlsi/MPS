@@ -60,7 +60,7 @@ public class Properties {
     boolean ok2 = SPropertyOperations.hasValue(link, "sourceCardinality", "0..n", "0..1");
   }
 
-  public void enumProperty2_string(SNode link1, SNode link2) {
+  public void enumProperty_string2(SNode link1, SNode link2) {
     if (SPropertyOperations.getString_def(link1, "metaClass", "reference") != SPropertyOperations.getString_def(link2, "metaClass", "reference")) {
       SPropertyOperations.set(link1, "metaClass", SPropertyOperations.getString_def(link2, "metaClass", "reference"));
     }
@@ -70,11 +70,24 @@ public class Properties {
     }
   }
 
-  public void enumProperty3_integer(SNode cellModel) {
+  public void enumProperty_string3(SNode link1, SNode link2) {
+    SPropertyOperations.set(link1, "metaClass", "aggregation");
+    SPropertyOperations.set(link1, "metaClass", SPropertyOperations.getString_def(link2, "metaClass", "reference"));
+    SPropertyOperations.set(link1, "metaClass", SPropertyOperations.getString_def(link2, "metaClass", "reference"));
+  }
+
+  public void enumProperty_integer(SNode cellModel) {
     int i = SPropertyOperations.getInteger_def(cellModel, "attractsFocus", "0");
     if (SPropertyOperations.hasValue(cellModel, "attractsFocus", "0", "0")) {
       SPropertyOperations.set(cellModel, "attractsFocus", "2");
     }
+  }
+
+  public void enumProperty_integer2(SNode cellModel) {
+    SPropertyOperations.set(cellModel, "attractsFocus", "" + 1);
+    SPropertyOperations.set(cellModel, "attractsFocus", "" + SPropertyOperations.getInteger_def(cellModel, "attractsFocus", "0"));
+    SPropertyOperations.set(cellModel, "attractsFocus", "" + (SPropertyOperations.getInteger_def(cellModel, "attractsFocus", "0")));
+    SPropertyOperations.set(cellModel, "attractsFocus", "" + (10));
   }
 
 }

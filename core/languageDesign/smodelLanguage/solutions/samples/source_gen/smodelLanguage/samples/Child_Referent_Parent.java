@@ -14,7 +14,7 @@ public class Child_Referent_Parent {
   public void accessToChildNode_1(SNode ifStatement) {
     SNode condition = SLinkOperations.getTarget(ifStatement, "condition", true);
     SNodeOperations.deleteNode(condition);
-    SLinkOperations.deleteChild(ifStatement, "condition");
+    SLinkOperations.removeChild(ifStatement, "condition");
   }
 
   public void accessToChildNode_2(SNode ifStatement, SNode newCondition) {
@@ -44,7 +44,7 @@ public class Child_Referent_Parent {
     String oldMethopdName = SPropertyOperations.getString(oldMethod, "name");
     oldMethopdName = SPropertyOperations.getString(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "name");
     SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", method, false);
-    SLinkOperations.deleteChild(methodCall, "baseMethodDeclaration");
+    SLinkOperations.removeChild(methodCall, "baseMethodDeclaration");
   }
 
   public void accessToReferentNode_2(SNode methodCall, SNode method) {
@@ -54,7 +54,7 @@ public class Child_Referent_Parent {
   public void accessToParentNode_1(SNode expression) {
     SNode parent_IfStatement = null;
     SNode mayBe_IfStatement = SNodeOperations.getParent(expression, null, false, false);
-    while(mayBe_IfStatement != null) {
+    while (mayBe_IfStatement != null) {
       if (SNodeOperations.isInstanceOf(mayBe_IfStatement, "jetbrains.mps.baseLanguage.structure.IfStatement")) {
         parent_IfStatement = mayBe_IfStatement;
         break;

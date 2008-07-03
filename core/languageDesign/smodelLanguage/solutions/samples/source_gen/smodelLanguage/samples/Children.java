@@ -21,6 +21,7 @@ public class Children {
     List<SNode> statements = SLinkOperations.getTargets(statementList, "statement", true);
     int count2 = ListSequence.fromList(statements).count();
     int count3 = ((List<SNode>)statements).size();
+    List<SNode> removedStatements = SLinkOperations.removeAllChildren(statementList, "statement");
   }
 
   public void accessToChildren_2(SNode statementList1, SNode statementList2) {
