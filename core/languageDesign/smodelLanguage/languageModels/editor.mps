@@ -3015,5 +3015,15 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1215103637352">
+    <property name="package" value="operation.linkList" />
+    <link role="conceptDeclaration" targetNodeId="1.1215103457144" resolveInfo="LinkList_RemoveAllChildrenOperation" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1215103639666">
+      <property name="text" value="remove all" />
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1215103639667">
+        <property name="flag" value="true" />
+      </node>
+    </node>
+  </node>
 </model>
 

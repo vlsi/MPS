@@ -2144,5 +2144,21 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1215103457144">
+    <property name="name" value="LinkList_RemoveAllChildrenOperation" />
+    <property name="package" value="operation.linkList" />
+    <link role="extends" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1215103457146">
+      <property name="value" value="remove all" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1215103457147">
+      <property name="value" value="remove children" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1215103457148">
+      <link role="conceptPropertyDeclaration" targetNodeId="1138763350436" resolveInfo="applicable_to_linkList" />
+    </node>
+  </node>
 </model>
 

@@ -103,17 +103,31 @@ public class SLinkOperations {
   }
 
   /**
-   * actually only remove child from parent (node become 'in-air')
+   * actually only remove child from parent (node becomes 'in-air')
+   *
+   * @deprecated
    */
   public static SNode deleteChild(SNode parent, String role) {
-    if (parent != null) {
-      SNode child = parent.getChild(role);
-      if (child != null) {
-        parent.removeChild(child);
-        return child;
-      }
+    return removeChild(parent, role);
+  }
+
+  public static SNode removeChild(SNode parent, String role) {
+    if (parent == null) return null;
+    SNode child = parent.getChild(role);
+    if (child != null) {
+      parent.removeChild(child);
+      return child;
     }
     return null;
+  }
+
+  public static List<SNode> removeAllChildren(SNode parent, String role) {
+    if (parent == null) return new ArrayList<SNode>(1);
+    List<SNode> children = parent.getChildren(role);
+    for (SNode child : children) {
+      parent.removeChild(child);
+    }
+    return children;
   }
 
   public static int getCount(SNode parent, String role) {
