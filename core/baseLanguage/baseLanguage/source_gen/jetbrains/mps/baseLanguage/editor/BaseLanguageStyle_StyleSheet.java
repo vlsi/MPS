@@ -171,6 +171,20 @@ public class BaseLanguageStyle_StyleSheet {
     }
 
   };
+  public static final Style LEFT_BRACE = new Style() {
+    {
+      this.putAll(BaseLanguageStyle_StyleSheet.BRACE);
+      this.set(StyleAttributes.PADDING_LEFT, 1.0);
+      this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+    }
+
+  };
+  public static final Style RIGHT_BRACE = new Style() {
+    {
+      this.putAll(BaseLanguageStyle_StyleSheet.BRACE);
+    }
+
+  };
   public static final Style BRACKET = new Style() {
     {
       this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
@@ -187,6 +201,14 @@ public class BaseLanguageStyle_StyleSheet {
   public static final Style VARIABLE_NAME = new Style() {
     {
       this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+    }
+
+  };
+  public static final Style SEMICOLON = new Style() {
+    {
+      this.set(StyleAttributes.PADDING_LEFT, 0.0);
+      this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+      this.set(StyleAttributes.SELECTABLE, false);
     }
 
   };

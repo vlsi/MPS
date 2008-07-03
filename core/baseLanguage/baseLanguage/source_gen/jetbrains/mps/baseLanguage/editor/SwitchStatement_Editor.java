@@ -69,12 +69,12 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell14370_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14370_03");
-    BaseLanguageStyle_StyleSheet.BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.LEFT_BRACE.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell14370_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14370_04");
-    BaseLanguageStyle_StyleSheet.BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
   }
 
   private static void setupBasic_CollectionCell14370_02(EditorCell editorCell, SNode node, EditorContext context) {

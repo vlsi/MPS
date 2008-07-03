@@ -53,7 +53,7 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell18678_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18678_01");
-    BaseLanguageStyle_StyleSheet.BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.LEFT_BRACE.apply(editorCell);
   }
 
   private static void setupBasic_CollectionCell18678_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -91,7 +91,7 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell18678_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18678_02");
-    BaseLanguageStyle_StyleSheet.BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

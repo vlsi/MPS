@@ -47,7 +47,7 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell1091_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell1091_01");
-    BaseLanguageStyle_StyleSheet.BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.LEFT_BRACE.apply(editorCell);
   }
 
   private static void setupBasic_initValueRefNodeListCell1091_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -65,7 +65,7 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell1091_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell1091_02");
-    BaseLanguageStyle_StyleSheet.BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
   }
 
   private static void setupLabel_componentTypeRefNodeCell1091_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

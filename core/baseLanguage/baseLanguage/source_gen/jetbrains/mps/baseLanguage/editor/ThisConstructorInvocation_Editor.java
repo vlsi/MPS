@@ -50,6 +50,7 @@ public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell19417_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19417_04");
+    BaseLanguageStyle_StyleSheet.SEMICOLON.apply(editorCell);
   }
 
   private static void setupLabel_ConstantCell19417_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

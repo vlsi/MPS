@@ -40,7 +40,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell15273_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15273_0");
-    BaseLanguageStyle_StyleSheet.BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -84,7 +84,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell15273_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15273_01");
-    BaseLanguageStyle_StyleSheet.BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell15273_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -109,7 +109,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell15273_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15273_03");
-    BaseLanguageStyle_StyleSheet.BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.LEFT_BRACE.apply(editorCell);
   }
 
   private static void setupBasic_AlternationCell15273_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -177,7 +177,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell15273_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15273_05");
-    BaseLanguageStyle_StyleSheet.BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.LEFT_BRACE.apply(editorCell);
   }
 
   private static void setupBasic_IndentCell15273_0(EditorCell editorCell, SNode node, EditorContext context) {

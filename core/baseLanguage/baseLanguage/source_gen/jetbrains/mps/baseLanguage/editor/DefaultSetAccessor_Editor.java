@@ -26,6 +26,7 @@ public class DefaultSetAccessor_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell9640_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell9640_01");
+    BaseLanguageStyle_StyleSheet.SEMICOLON.apply(editorCell);
   }
 
   private static void setupBasic_visibilityRefNodeCell9640_0(EditorCell editorCell, SNode node, EditorContext context) {

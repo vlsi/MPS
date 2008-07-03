@@ -37,6 +37,7 @@ public class ExpressionStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell140_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell140_0");
+    BaseLanguageStyle_StyleSheet.SEMICOLON.apply(editorCell);
   }
 
   private static void setupLabel_expressionRefNodeCell140_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -65,6 +65,7 @@ public class VariableReference_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell19820_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell19820_0");
+      BaseLanguageStyle_StyleSheet.VARIABLE_NAME.apply(editorCell);
     }
 
     private static void setupLabel_namePropertyCell19820_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

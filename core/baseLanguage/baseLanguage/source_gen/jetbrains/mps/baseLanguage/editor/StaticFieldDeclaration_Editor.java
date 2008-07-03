@@ -114,6 +114,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell7665_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell7665_04");
+    BaseLanguageStyle_StyleSheet.SEMICOLON.apply(editorCell);
   }
 
   private static void setupBasic_CollectionCell7665_05(EditorCell editorCell, SNode node, EditorContext context) {

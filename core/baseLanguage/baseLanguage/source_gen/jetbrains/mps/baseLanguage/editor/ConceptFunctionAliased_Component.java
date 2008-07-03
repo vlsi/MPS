@@ -88,7 +88,7 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
 
   private static void setupBasic_ConstantCell13338_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell13338_0");
-    BaseLanguageStyle_StyleSheet.BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.LEFT_BRACE.apply(editorCell);
   }
 
   private static void setupBasic_CollectionCell13338_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -113,7 +113,7 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
 
   private static void setupBasic_ConstantCell13338_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell13338_01");
-    BaseLanguageStyle_StyleSheet.BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
   }
 
   private static void setupBasic_ConceptPropertyCell13338_0(EditorCell editorCell, SNode node, EditorContext context) {

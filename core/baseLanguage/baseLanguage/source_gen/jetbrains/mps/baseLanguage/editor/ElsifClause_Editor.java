@@ -38,7 +38,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell16141_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell16141_0");
-    BaseLanguageStyle_StyleSheet.BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell16141_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -58,7 +58,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell16141_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell16141_04");
-    BaseLanguageStyle_StyleSheet.BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.LEFT_BRACE.apply(editorCell);
   }
 
   private static void setupBasic_conditionRefNodeCell16141_0(EditorCell editorCell, SNode node, EditorContext context) {

@@ -38,7 +38,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell6964_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6964_0");
-    BaseLanguageStyle_StyleSheet.BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.LEFT_BRACE.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell6964_01(EditorCell editorCell, SNode node, EditorContext context) {
@@ -77,7 +77,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell6964_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell6964_04");
-    BaseLanguageStyle_StyleSheet.BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
   }
 
   private static void setupBasic_IndentCell6964_0(EditorCell editorCell, SNode node, EditorContext context) {

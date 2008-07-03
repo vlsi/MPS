@@ -30,6 +30,7 @@ public class ThrowStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell10418_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell10418_01");
+    BaseLanguageStyle_StyleSheet.SEMICOLON.apply(editorCell);
   }
 
   private static void setupLabel_ConstantCell10418_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

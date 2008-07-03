@@ -83,7 +83,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell12909_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell12909_02");
-    BaseLanguageStyle_StyleSheet.BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell12909_03(EditorCell editorCell, SNode node, EditorContext context) {
@@ -173,7 +173,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell12909_07(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell12909_07");
-    BaseLanguageStyle_StyleSheet.BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.LEFT_BRACE.apply(editorCell);
   }
 
   private static void setupBasic_IndentCell12909_0(EditorCell editorCell, SNode node, EditorContext context) {
