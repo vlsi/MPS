@@ -208,7 +208,7 @@ public class NodeEditorActions {
         ((EditorCell_Label)target).setCaretPosition(1);
       } else
       if (target instanceof EditorCell_Label) {
-        ((EditorCell_Label)target).setCaretPosition(0);
+        ((EditorCell_Label)target).home();
       }
     }
 

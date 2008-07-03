@@ -40,6 +40,8 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
             }
 
           });
+          this.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
       };
@@ -54,7 +56,6 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-          this.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
           this.set(StyleAttributes.EDITABLE, true);
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
@@ -63,6 +64,8 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
             }
 
           });
+          this.set(StyleAttributes.PADDING_LEFT, 0.0);
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
       };
@@ -80,7 +83,6 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-          this.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
@@ -88,6 +90,8 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
             }
 
           });
+          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
+          this.set(StyleAttributes.PADDING_LEFT, 0.0);
         }
 
       };
