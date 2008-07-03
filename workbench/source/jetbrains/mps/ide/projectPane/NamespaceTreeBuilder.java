@@ -6,12 +6,15 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
+import jetbrains.mps.ide.actions.project.NewLanguageAction;
+import jetbrains.mps.ide.actions.project.NewSolutionAction;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ToStringComparator;
@@ -23,7 +26,7 @@ import java.util.Collections;
 import java.util.List;
 
 public abstract class NamespaceTreeBuilder<N extends MPSTreeNode> {
-  private NamespaceNode myRootNamespace = new NamespaceNode("");
+  private NamespaceNode myRootNamespace = new NamespaceNode("", null);
 
   protected NamespaceTreeBuilder() {
   }
@@ -38,7 +41,7 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode> {
       pathElements.remove(0);
     }
 
-    myRootNamespace.getSubnamespace(pathElements).add(node);
+    myRootNamespace.getSubnamespace(pathElements, node.getOperationContext()).add(node);
   }
 
   public void fillNode(MPSTreeNode root) {
@@ -110,8 +113,8 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode> {
   private static final class NamespaceNode extends TextTreeNode {
     private String myName;
 
-    public NamespaceNode(String name) {
-      super(name);
+    public NamespaceNode(String name, IOperationContext context) {
+      super(name, context);
       setName(name);
     }
 
@@ -124,7 +127,7 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode> {
       return false;
     }
 
-    private NamespaceNode getSubnamespace(List<String> pathElements) {
+    private NamespaceNode getSubnamespace(List<String> pathElements, IOperationContext context) {
       if (pathElements.size() == 0) return this;
 
       String first = pathElements.get(0);
@@ -134,20 +137,27 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode> {
         if (getChildAt(i) instanceof NamespaceNode) {
           NamespaceNode child = (NamespaceNode) getChildAt(i);
           if (first.equals(child.getName())) {
-            return child.getSubnamespace(otherElements);
+            return child.getSubnamespace(otherElements, context);
           }
         }
       }
 
-      NamespaceNode newChild = new NamespaceNode(first);
+      NamespaceNode newChild = new NamespaceNode(first, context);
 
       add(newChild);
 
-      return newChild.getSubnamespace(otherElements);
+      return newChild.getSubnamespace(otherElements, context);
     }
 
     public ActionGroup getActionGroup() {
       DefaultActionGroup group = new DefaultActionGroup();
+
+      if (hasModulesUnder(this)) {
+        group.add(new NewSolutionAction(myName));
+        group.add(new NewLanguageAction(myName));
+        group.addSeparator();
+      }
+
       group.add(new BaseAction("Generate files", "Generate files from all models under this namespace", IconManager.EMPTY_ICON, true, true) {
         protected void doExecute(AnActionEvent e) {
           DataContext dataContext = DataManager.getInstance().getDataContext();
@@ -166,6 +176,7 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode> {
           manager.generateModelsFromDifferentModules(project.createOperationContext(), models, IGenerationType.FILES);
         }
       });
+
       return group;
     }
 
@@ -180,6 +191,18 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode> {
       }
 
       return models;
+    }
+
+    private boolean hasModulesUnder(MPSTreeNode node) {
+      for (MPSTreeNode child : node) {
+        if (child instanceof ProjectModuleTreeNode) {
+          return true;
+        } else {
+          if (child instanceof SModelTreeNode) return false;
+          if (hasModulesUnder(child)) return true;
+        }
+      }
+      return false;
     }
 
     public String getName() {
