@@ -145,6 +145,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1138406014241">
         <property name="attractsFocus" value="1" />
+        <property name="emptyNoTargetText" value="true" />
         <link role="relationDeclaration" targetNodeId="1.1138405853777" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1138406014240">
           <link role="conceptDeclaration" targetNodeId="3.1169125787135" />
@@ -1166,6 +1167,7 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1145383273157">
+        <property name="emptyNoTargetText" value="true" />
         <link role="relationDeclaration" targetNodeId="1.1145383142433" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1145383273158">
           <link role="conceptDeclaration" targetNodeId="3.1169125787135" />
