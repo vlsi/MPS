@@ -638,6 +638,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
         Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
+            this.set(StyleAttributes.PADDING_RIGHT, 0.0);
           }
 
         };

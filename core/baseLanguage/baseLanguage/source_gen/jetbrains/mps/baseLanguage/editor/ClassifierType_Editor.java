@@ -196,6 +196,15 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_nestedNamePropertyCell10928_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_nestedNamePropertyCell10928_0");
+      {
+        Style inlineStyle = new Style(editorCell) {
+          {
+            this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+          }
+
+        };
+        inlineStyle.apply(editorCell);
+      }
     }
 
     private static void setupLabel_nestedNamePropertyCell10928_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

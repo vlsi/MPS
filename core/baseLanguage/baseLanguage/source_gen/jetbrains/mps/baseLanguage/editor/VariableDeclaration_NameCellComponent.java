@@ -36,6 +36,7 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
+          this.set(StyleAttributes.PADDING_LEFT, 1.0);
         }
 
       };
