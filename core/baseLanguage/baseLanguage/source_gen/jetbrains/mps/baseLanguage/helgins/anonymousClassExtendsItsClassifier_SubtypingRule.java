@@ -18,11 +18,15 @@ public class anonymousClassExtendsItsClassifier_SubtypingRule extends SubtypingR
 
   public List<SNode> getSubOrSuperTypes(SNode classifierType) {
     List<SNode> result = new ArrayList<SNode>();
+    SNode classifier = SLinkOperations.getTarget(classifierType, "classifier", false);
+    if ((classifier == null)) {
+      return result;
+    }
     do {
-      SNode matchedNode_1215004601306 = SLinkOperations.getTarget(classifierType, "classifier", false);
+      SNode matchedNode_1215004601306 = classifier;
       {
         boolean matches_1215004601308 = false;
-        matches_1215004601308 = SModelUtil_new.isAssignableConcept(SLinkOperations.getTarget(classifierType, "classifier", false).getConceptFqName(), "jetbrains.mps.baseLanguage.structure.AnonymousClass");
+        matches_1215004601308 = SModelUtil_new.isAssignableConcept(classifier.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.AnonymousClass");
         if (matches_1215004601308) {
           ListSequence.fromList(result).addElement(new QuotationClass_102().createNode(SLinkOperations.getTargets(matchedNode_1215004601306, "typeParameter", true), SLinkOperations.getTarget(matchedNode_1215004601306, "classifier", false)));
           break;
