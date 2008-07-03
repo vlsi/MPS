@@ -692,7 +692,7 @@ public class SModel implements Iterable<SNode> {
       } else {
         if (!isLoading()) {
         LOG.error("Language \"" + languageNamespace + "\" isn't visible in scope " + scope + " . Used by model \"" + getUID() +
-                "\"\nAdd this language to the LANGUAGES section of the project properties");
+                "\"\nAdd this language to the LANGUAGES section of the module properties");
         }
       }
 
