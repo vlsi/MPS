@@ -285,7 +285,7 @@ public abstract class MPSTree extends DnDAwareTree {
 
     Object lastPathComponent = path.getLastPathComponent();
     if (lastPathComponent instanceof MPSTreeNode && ((MPSTreeNode) lastPathComponent).canBeOpened() && (e.getClickCount() == 2 ||
-      (e.getClickCount() == 1 && myAutoOpen))) {
+      (e.getClickCount() == 1 && isAutoOpen()))) {
       setSelectionPath(path);
       MPSTreeNode node = (MPSTreeNode) lastPathComponent;
       node.doubleClick();

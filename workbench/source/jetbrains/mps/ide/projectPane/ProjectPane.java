@@ -6,7 +6,9 @@ import com.intellij.ide.PasteProvider;
 import com.intellij.ide.SelectInTarget;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
-import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.openapi.actionSystem.DataProvider;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.command.CommandAdapter;
 import com.intellij.openapi.command.CommandEvent;
 import com.intellij.openapi.command.CommandProcessor;
@@ -57,11 +59,14 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
+import javax.swing.Timer;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
 import java.awt.Component;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
@@ -102,8 +107,6 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   public static final String AUTOSCROLL_TO_SOURCE = "autoscroll-to-source";
   public static final String AUTOSCROLL_FROM_SOURCE = "autoscroll-from-source";
 
-
-  private boolean myShowProperties;
   private SModelRepositoryListener mySModelRepositoryListener = new MyModelRepositoryAdapter();
   private MyCommandListener myCommandListener = new MyCommandListener();
   private MyModuleRepositoryListener myRepositoryListener = new MyModuleRepositoryListener();
@@ -112,10 +115,9 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   private ProjectModulesPoolTreeNode myModulesPool;
   private ProjectView myProjectView;
 
-  private ToggleAction myPAndRToggle;
-  private ToggleAction myAutoscrollToSource;
-  private ToggleAction myAutoscrollFromSource;
   private MyScrollPane myScrollPane;
+  private Timer myTimer;
+  private boolean myLastPropertiesState;
 
   private ReloadListener myReloadListener = new ReloadListener() {
     public void onBeforeReload() {
@@ -157,7 +159,10 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   public ProjectPane(Project project, ProjectView projectView) {
     super(project);
     myProjectView = projectView;
+    myLastPropertiesState = projectView.isShowMembers(MPS_FILESYSTEM);
+  }
 
+  public void initComponent() {
     myTree = new MyTree();
 
     addListeners();
@@ -175,44 +180,24 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
         }
       }
     });
-  }
 
-  public void addToolbarActions(final DefaultActionGroup group) {
-    myPAndRToggle = new ToggleAction("Show properties and references", "Show properties and references", Icons.PROP_AND_REF) {
-      public boolean isSelected(@Nullable AnActionEvent e) {
-        return isShowPropertiesAndReferences();
+    int interval = 1000;
+    myTimer = new Timer(interval, new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        boolean showMembers = myProjectView.isShowMembers(MPS_FILESYSTEM);
+        if (showMembers != myLastPropertiesState) {
+          myLastPropertiesState = showMembers;
+          ModelAccess.instance().runReadInEDT(new Runnable() {
+            public void run() {
+              getTree().rebuildNow();
+            }
+          });
+        }
       }
+    });
+    myTimer.setRepeats(true);
+    myTimer.start();
 
-      public void setSelected(@Nullable AnActionEvent e, boolean state) {
-        setShowPropertiesAndReferences(!isShowPropertiesAndReferences());
-      }
-    };
-    group.add(myPAndRToggle);
-
-    myAutoscrollToSource = new ToggleAction("Autoscroll to source", "Autoscroll to source", Icons.AUTOSCROLL_TO_SOURCE) {
-      public boolean isSelected(@Nullable AnActionEvent e) {
-        return getTree().isAutoOpen();
-      }
-
-      public void setSelected(@Nullable AnActionEvent e, boolean state) {
-        getTree().setAutoOpen(!getTree().isAutoOpen());
-      }
-    };
-    group.add(myAutoscrollToSource);
-
-    myAutoscrollFromSource = new ToggleAction("Autoscroll from source", "Autoscroll from source", Icons.AUTOSCROLL_FROM_SOURCE) {
-      public boolean isSelected(@Nullable AnActionEvent e) {
-        return false;
-      }
-
-      public void setSelected(@Nullable AnActionEvent e, boolean state) {
-
-      }
-    };
-    group.add(myAutoscrollFromSource);
-  }
-
-  public void initComponent() {
     if (!IdeMain.isTestMode()) {
       ThreadUtils.runInUIThreadNoWait(new Runnable() {
         public void run() {
@@ -307,13 +292,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   }
 
   public boolean isShowPropertiesAndReferences() {
-    return myShowProperties;
-  }
-
-  public void setShowPropertiesAndReferences(boolean showProperties) {
-    myShowProperties = showProperties;
-    myPAndRToggle.setSelected(null, showProperties);
-    rebuild();
+    return myLastPropertiesState;
   }
 
   public void openEditor() {
@@ -487,7 +466,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   }
 
   public void scrollFromSource(SNode node) {
-    if (isAutoscrollFromSource()) {
+    if (myProjectView.isAutoscrollFromSource(MPS_FILESYSTEM)) {
       selectNode(node);
     }
   }
@@ -692,10 +671,6 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     return selectedNodes;
   }
 
-  public boolean isAutoscrollFromSource() {
-    return myAutoscrollFromSource.isSelected(null);
-  }
-
   public void doRebuildTree() {
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
@@ -792,6 +767,11 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
 
     public void editNode(SNode node, IOperationContext context) {
       ProjectPane.this.editNode(node, context);
+    }
+
+    @Override
+    public boolean isAutoOpen() {
+      return myProjectView.isAutoscrollToSource(MPS_FILESYSTEM);
     }
 
     private void registerActions() {

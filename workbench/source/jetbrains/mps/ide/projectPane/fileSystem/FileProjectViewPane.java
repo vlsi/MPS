@@ -70,7 +70,7 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
       public void actionPerformed(ActionEvent e) {
         ModelAccess.instance().runReadInEDT(new Runnable() {
           public void run() {
-            getTree().rebuildLater();
+            getTree().rebuildNow();
           }
         });
       }
