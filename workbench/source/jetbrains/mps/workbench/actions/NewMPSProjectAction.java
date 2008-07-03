@@ -14,6 +14,11 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.action.BaseAction;
 
 public class NewMPSProjectAction extends BaseAction {
+
+  public NewMPSProjectAction() {
+    myExecuteOutsideCommand = true;
+  }
+
   public void doExecute(AnActionEvent e) {
     Project project = e.getData(PlatformDataKeys.PROJECT);
     JFrame frame = WindowManager.getInstance().getFrame(project);
