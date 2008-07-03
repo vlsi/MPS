@@ -151,13 +151,13 @@ public abstract class MPSTree extends DnDAwareTree {
 
         for (TreePath p : paths) {
           final MPSTreeNode lastNode = (MPSTreeNode) p.getLastPathComponent();
-
           ActionGroup actionGroup = lastNode.getActionGroup();
           if (actionGroup == null) continue;
-          final AnAction a = findAction(e, dataContext, actionGroup, eventKeyStroke);
-          if (a == null) continue;
           Presentation presentation = new Presentation();
           AnActionEvent event = new AnActionEvent(e, dataContext, ActionPlaces.UNKNOWN, presentation, ActionManager.getInstance(), 0);
+          actionGroup.update(event);
+          final AnAction a = findAction(e, dataContext, actionGroup, eventKeyStroke);
+          if (a == null) continue;
           a.actionPerformed(event);
           e.consume();
           return;
@@ -391,7 +391,7 @@ public abstract class MPSTree extends DnDAwareTree {
         return;
       }
     }
-    
+
     JPopupMenu defaultMenu = createDefaultPopupMenu();
     if (defaultMenu == null) return;
     defaultMenu.show(this, x, y);

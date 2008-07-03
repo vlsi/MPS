@@ -34,8 +34,6 @@ public class Goto_ActionGroup extends CurrentProjectGroup {
       this.add(new GoToEditorDeclarationAction());
       this.add(new GoToRulesAction());
       this.addSeparator();
-      this.add(new GoToProjectPaneAction());
-      this.addSeparator();
       this.add(new GoToModelAction());
       this.add(new GoToLanguageAction());
       this.add(new GoToSolutionAction());
