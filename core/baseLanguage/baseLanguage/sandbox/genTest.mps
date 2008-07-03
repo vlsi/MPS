@@ -22,7 +22,7 @@
   <import index="15" modelUID="java.io@java_stub" version="-1" />
   <import index="16" modelUID="jetbrains.mps.baseLanguage.sandbox.genTest" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1214554222480">
-    <property name="name" value="Fibo" />
+    <property name="name" value="Fibon" />
     <node role="staticInnerClassifiers" type="jetbrains.mps.baseLanguage.structure.Classifier" id="1215002795819">
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1215002795820" />
     </node>
@@ -57,6 +57,18 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215081574416">
               <property name="value" value="2" />
             </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1215084120365">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215084120366">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1215084121839">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215084122138">
+                <property name="value" value="239" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1215084120463">
+            <property name="value" value="true" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215002698337">
@@ -142,6 +154,7 @@
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1215075901019">
+      <property name="name" value="fuckingCrap" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ArrayType" id="1215075905523">
         <node role="componentType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1215075901020" />
       </node>

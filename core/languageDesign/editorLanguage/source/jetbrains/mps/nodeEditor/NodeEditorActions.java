@@ -155,7 +155,7 @@ public class NodeEditorActions {
       EditorCell target = findTarget(selection);
       if (target instanceof EditorCell_Label) {
         EditorCell_Label label = (EditorCell_Label) target;
-        label.moveCaret(0 - label.getCaretPosition(), false);
+        label.home();
         context.getNodeEditorComponent().resetLastCaretX();
       }
       context.getNodeEditorComponent().changeSelection(target);
@@ -180,7 +180,7 @@ public class NodeEditorActions {
       EditorCell target = findTarget(selection);
       if (target instanceof EditorCell_Label) {
         EditorCell_Label label = (EditorCell_Label) target;
-        label.moveCaret(label.getText().length() - label.getCaretPosition(), false);
+        label.end();
         context.getNodeEditorComponent().resetLastCaretX();
       }
       context.getNodeEditorComponent().changeSelection(target);
