@@ -38,9 +38,7 @@ public class RefactoringProcessor {
 
   public void execute(final @NotNull ActionContext context, final ILoggableRefactoring refactoring) {
     final RefactoringContext refactoringContext = new RefactoringContext(refactoring);
-    refactoringContext.setSelectedModel(context.getModel());
-    refactoringContext.setSelectedNode(context.getNode());
-    refactoringContext.setSelectedNodes(context.getNodes());
+    refactoringContext.setActionData(context);
 
     boolean success = refactoring.askForInfo(context, refactoringContext);
     if (!success) return;

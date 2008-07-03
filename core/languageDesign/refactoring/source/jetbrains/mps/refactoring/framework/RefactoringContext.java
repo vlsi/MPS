@@ -5,10 +5,13 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkMetaclass;
 import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
 
@@ -63,6 +66,10 @@ public class RefactoringContext {
   private SModelDescriptor mySelectedModel;
   private SNode mySelectedNode;
   private List<SNode> mySelectedNodes = new ArrayList<SNode>();
+  private IOperationContext myCurrentOperationContext;
+  private IScope myCurrentScope;
+  private MPSProject mySelectedMPSProject;
+  private IModule mySelectedModule;
   //-----------------
 
   public RefactoringContext(ILoggableRefactoring refactoring) {
@@ -611,19 +618,17 @@ public class RefactoringContext {
     return mySerializer.deserialize(element);
   }
 
-  public void setSelectedModel(SModelDescriptor model) {
-    mySelectedModel = model;
+  public void setActionData(ActionContext actionContext) {
+    mySelectedModel = actionContext.getModel();
+    mySelectedNode = actionContext.getNode();
+    mySelectedNodes = new ArrayList<SNode>(actionContext.getNodes());
+    mySelectedModule = actionContext.get(IModule.class);
+    mySelectedMPSProject = actionContext.getMPSProject();
+    myCurrentScope = actionContext.getScope();
+    myCurrentOperationContext = actionContext.getOperationContext();
   }
 
-  public void setSelectedNode(SNode node) {
-    mySelectedNode = node;
-  }
-
-  public void setSelectedNodes(List<SNode> nodes) {
-    mySelectedNodes = new ArrayList<SNode>(nodes);
-  }
-
-  public SModelDescriptor getSelectedModel() {
+   public SModelDescriptor getSelectedModel() {
     return mySelectedModel;
   }
 
@@ -633,6 +638,22 @@ public class RefactoringContext {
 
   public List<SNode> getSelectedNodes() {
     return new ArrayList<SNode>(mySelectedNodes);
+  }
+
+  public IModule getSelectedModule() {
+    return mySelectedModule;
+  }
+
+  public MPSProject getSelectedMPSProject() {
+    return mySelectedMPSProject;
+  }
+
+  public IScope getCurrentScope() {
+    return myCurrentScope;
+  }
+
+  public IOperationContext getCurrentOperationContext() {
+    return myCurrentOperationContext;
   }
 
   public static class FullNodeId implements Comparable<FullNodeId> {
