@@ -344,7 +344,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.Tool" id="1208269069496">
-    <property name="name" value="JUnit Test"/>
+    <property name="name" value="JUnitTest"/>
     <property name="package" value="tool"/>
     <property name="icon" value="${language_descriptor}\icons\junit.png"/>
     <node role="fieldDeclaration"
@@ -413,23 +413,13 @@
           id="1214308578072">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214308578073">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214308578074">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214679296848">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215111012331">
             <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson"
-                  id="1214679295441"/>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
-                  id="1214679305647">
-              <link role="baseMethodDeclaration"
-                    targetNodeId="20.~GeneratedTool.addCloseButton(javax.swing.JComponent):javax.swing.JComponent"
-                    resolveInfo="addCloseButton"/>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214679306898">
-                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson"
-                      id="1214679306899"/>
-                <node role="operation"
-                      type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation"
-                      id="1214679306900">
-                  <link role="member" targetNodeId="1214211896509" resolveInfo="myComponent"/>
-                </node>
-              </node>
+                  id="1215111012332"/>
+            <node role="operation"
+                  type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation"
+                  id="1215111012333">
+              <link role="member" targetNodeId="1214211896509" resolveInfo="myComponent"/>
             </node>
           </node>
         </node>
