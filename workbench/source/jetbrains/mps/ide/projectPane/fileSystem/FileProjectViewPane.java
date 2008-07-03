@@ -13,6 +13,7 @@ import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.VcsListener;
 import com.intellij.openapi.vfs.*;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -149,7 +150,7 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
   }
 
   public Icon getIcon() {
-    return null;
+    return Icons.CLOSED_FOLDER;
   }
 
   @NotNull
