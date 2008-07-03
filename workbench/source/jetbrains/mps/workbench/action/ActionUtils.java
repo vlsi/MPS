@@ -21,6 +21,14 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ActionUtils {
+  public static void updateGroup(ActionGroup group, AnActionEvent e) {
+    group.update(e);
+    for (AnAction child : group.getChildren(null)) {
+      child.update(e);
+      if (child instanceof ActionGroup) updateGroup((ActionGroup) child, e);
+    }
+  }
+
   public static BaseGroup getGroup(String id) {
     return ((BaseGroup) ActionManager.getInstance().getAction(id));
   }

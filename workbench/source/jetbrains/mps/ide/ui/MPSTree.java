@@ -10,6 +10,7 @@ import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
+import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.jdom.Element;
 
@@ -155,7 +156,7 @@ public abstract class MPSTree extends DnDAwareTree {
           if (actionGroup == null) continue;
           Presentation presentation = new Presentation();
           AnActionEvent event = new AnActionEvent(e, dataContext, ActionPlaces.UNKNOWN, presentation, ActionManager.getInstance(), 0);
-          actionGroup.update(event);
+          ActionUtils.updateGroup(actionGroup, event);
           final AnAction a = findAction(e, dataContext, actionGroup, eventKeyStroke);
           if (a == null) continue;
           a.actionPerformed(event);

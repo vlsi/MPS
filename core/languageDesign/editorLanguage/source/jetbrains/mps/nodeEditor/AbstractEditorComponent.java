@@ -3,7 +3,6 @@ package jetbrains.mps.nodeEditor;
 import com.intellij.ide.CopyProvider;
 import com.intellij.ide.CutProvider;
 import com.intellij.ide.PasteProvider;
-import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.command.undo.UndoManager;
 import com.intellij.openapi.project.Project;
@@ -14,7 +13,9 @@ import jetbrains.mps.helgins.inference.IErrorReporter;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.action.*;
+import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.action.IActionDataProvider;
+import jetbrains.mps.ide.action.MPSActionAdapter;
 import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.nodes.GoByFirstReferenceAction;
@@ -39,8 +40,8 @@ import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.workbench.action.BaseGroup;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -439,7 +440,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     for (BaseAction a : myMPSActionsWithShortcuts) {
       Shortcut[] shortcuts = a.getShortcutSet().getShortcuts();
       if (shortcuts.length == 0) continue;
-      KeyStroke keyStroke = ((KeyboardShortcut)shortcuts[0]).getFirstKeyStroke();
+      KeyStroke keyStroke = ((KeyboardShortcut) shortcuts[0]).getFirstKeyStroke();
       unregisterKeyboardAction(keyStroke);
     }
     myMPSActionsWithShortcuts.clear();
@@ -453,19 +454,20 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private void registerKeyStrokes(BaseGroup group, @Nullable final ActionContext actionContext) {
     if (group != null) {
-      for (final AnAction e : group.getChildren(null)) {
-        if (e instanceof BaseAction) {
-          BaseAction action = (BaseAction) e;
+      for (final AnAction child : group.getChildren(null)) {
+        if (child instanceof BaseAction) {
+          BaseAction action = (BaseAction) child;
           if (action.getShortcutSet().getShortcuts().length > 0) {
             registerNodeAction(action);
             myMPSActionsWithShortcuts.add(action);
           }
         }
-        if (e instanceof BaseGroup) {
+        if (child instanceof BaseGroup) {
           try {
             if (actionContext != null) {
-              e.update(ActionUtils.createEvent(ActionPlaces.EDITOR_POPUP,actionContext));
-              registerKeyStrokes((BaseGroup) e, actionContext);
+              AnActionEvent event = ActionUtils.createEvent(ActionPlaces.EDITOR_POPUP, actionContext);
+              ActionUtils.updateGroup((BaseGroup) child, event);
+              registerKeyStrokes((BaseGroup) child, actionContext);
             }
           } catch (Throwable t) {
             LOG.error(t);
@@ -627,7 +629,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   protected void registerNodeAction(BaseAction action) {
     for (Shortcut shortcut : action.getShortcutSet().getShortcuts()) {
-      registerNodeAction(action, ((KeyboardShortcut)shortcut).getFirstKeyStroke());
+      registerNodeAction(action, ((KeyboardShortcut) shortcut).getFirstKeyStroke());
     }
   }
 
@@ -639,7 +641,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         registerKeyboardAction(proxy, keyStroke, WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
       }
       AbstractEditorComponent.MPSActionProxy proxy = myActionProxies.get(keyStroke);
-      proxy.add(ActionPlaces.EDITOR_POPUP,action);
+      proxy.add(ActionPlaces.EDITOR_POPUP, action);
       return proxy;
     }
     return null;
@@ -680,7 +682,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     BaseGroup group = ActionUtils.getGroup(EDITOR_POPUP_MENU_ACTIONS);
     if (group == null) return;
 
-    JPopupMenu popupMenu = ActionUtils.createPopup(ActionPlaces.EDITOR_POPUP,group);
+    JPopupMenu popupMenu = ActionUtils.createPopup(ActionPlaces.EDITOR_POPUP, group);
 
     EditorCell cell = getSelectedCell();
     { // keymaps
@@ -717,9 +719,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           protected void dodoUpdate(ActionContext context) {
           }
         };
-//        mpsAction.setVisible(true);
-//        mpsAction.setEnabled(true);
-        keyMapActions.add(ActionUtils.createComponent(ActionPlaces.EDITOR_POPUP,mpsAction));
+        keyMapActions.add(ActionUtils.createComponent(ActionPlaces.EDITOR_POPUP, mpsAction));
       }
 
       popupMenu.add(keyMapActions);
@@ -1680,7 +1680,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public void addCellSelectionListener(ICellSelectionListener l) {
-    assert l != null;    
+    assert l != null;
     mySelectionListeners.add(l);
   }
 
@@ -2129,7 +2129,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   boolean isCellSwapInProgress() {
     return myCellSwapInProgress;
   }
-      
+
   /*package*/ CellInfo getRecentlySelectedCellInfo() {
     return myRecentlySelectedCellInfo;
   }
@@ -2184,7 +2184,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       return getSelectedCell();
     }
 
-    if (dataId.equals(MPSDataKeys.SNODES.getName())){
+    if (dataId.equals(MPSDataKeys.SNODES.getName())) {
       return getSelectedNodes();
     }
 
@@ -2403,7 +2403,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     private List<BaseAction> myActions = new ArrayList<BaseAction>();
     private String myPlace = ActionPlaces.UNKNOWN;
 
-    public void add(String place,BaseAction a) {
+    public void add(String place, BaseAction a) {
       myPlace = place;
       myActions.add(a);
     }
@@ -2414,12 +2414,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         if (mySelectedCell != null && mySelectedCell.getSNode() != null) {
           final ActionContext context = createActionContext();
           Presentation p = new Presentation();
-          action.update(ActionUtils.createEvent(myPlace,p, context));
+          action.update(ActionUtils.createEvent(myPlace, p, context));
           if (!p.isVisible() || !p.isEnabled()) {
             continue;
           }
 
-          action.actionPerformed(ActionUtils.createEvent(myPlace,context));
+          action.actionPerformed(ActionUtils.createEvent(myPlace, context));
           return;
         }
       }
