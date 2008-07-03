@@ -136,6 +136,8 @@ public class BaseLanguageStyle_StyleSheet {
   public static final Style OPERATOR = new Style() {
     {
       this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+      this.set(StyleAttributes.PADDING_LEFT, 1.0);
+      this.set(StyleAttributes.PADDING_RIGHT, 1.0);
     }
 
   };
@@ -148,12 +150,18 @@ public class BaseLanguageStyle_StyleSheet {
   public static final Style LEFT_PAREN = new Style() {
     {
       this.putAll(BaseLanguageStyle_StyleSheet.PAREN);
+      this.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
+      this.set(StyleAttributes.PADDING_LEFT, 0.0);
+      this.set(StyleAttributes.PADDING_RIGHT, 0.0);
     }
 
   };
   public static final Style RIGHT_PAREN = new Style() {
     {
       this.putAll(BaseLanguageStyle_StyleSheet.PAREN);
+      this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
+      this.set(StyleAttributes.PADDING_LEFT, 0.0);
+      this.set(StyleAttributes.PADDING_RIGHT, 0.0);
     }
 
   };
@@ -166,6 +174,19 @@ public class BaseLanguageStyle_StyleSheet {
   public static final Style BRACKET = new Style() {
     {
       this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    }
+
+  };
+  public static final Style METHOD_NAME = new Style() {
+    {
+      this.set(StyleAttributes.PADDING_LEFT, 0.0);
+      this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+    }
+
+  };
+  public static final Style VARIABLE_NAME = new Style() {
+    {
+      this.set(StyleAttributes.PADDING_RIGHT, 0.0);
     }
 
   };

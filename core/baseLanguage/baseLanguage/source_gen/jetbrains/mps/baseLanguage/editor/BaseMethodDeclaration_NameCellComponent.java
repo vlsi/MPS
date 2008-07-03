@@ -28,6 +28,7 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
 
   private static void setupBasic_namePropertyCell9984_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell9984_0");
+    BaseLanguageStyle_StyleSheet.METHOD_NAME.apply(editorCell);
   }
 
   private static void setupLabel_namePropertyCell9984_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

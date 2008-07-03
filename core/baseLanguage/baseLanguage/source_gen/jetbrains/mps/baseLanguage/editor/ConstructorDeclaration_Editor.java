@@ -133,6 +133,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_namePropertyCell2318_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell2318_0");
+    BaseLanguageStyle_StyleSheet.METHOD_NAME.apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

@@ -340,6 +340,9 @@ public class EditorManager {
           return new RTHintCellInfo(EditorCell_RTHint.this, myAnchorCell);
         }
       });
+
+      getStyle().set(StyleAttributes.PADDING_LEFT, 0.0);
+      getStyle().set(StyleAttributes.PADDING_RIGHT, 0.0);
     }
 
     private void setAnchor(EditorCell anchorCell) {
