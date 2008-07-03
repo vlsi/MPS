@@ -3,6 +3,7 @@ package jetbrains.mps.refactoring.framework;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.Condition;
 
 import javax.swing.JPanel;
@@ -21,8 +22,8 @@ import java.awt.GridBagConstraints;
 public class ChooseModelComponent implements IChooseComponent<SModel> {
   private ChooseNodeOrModelComponent myChooseNodeOrModelComponent;
 
-  public ChooseModelComponent(ActionContext actionContext) {
-    myChooseNodeOrModelComponent = new ChooseNodeOrModelComponent(actionContext, null, true, false, true);
+  public ChooseModelComponent(IOperationContext operationContext) {
+    myChooseNodeOrModelComponent = new ChooseNodeOrModelComponent(operationContext, null, true, false, true);
   }
 
   public SModel submit() throws InvalidInputValueException {

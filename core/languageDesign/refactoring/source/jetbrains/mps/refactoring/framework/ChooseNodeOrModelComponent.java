@@ -25,7 +25,6 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
   private MyChooseItemComponent myChooseItemComponent = new MyChooseItemComponent();
   private String myConceptFQName;
   private IOperationContext myOperationContext;
-  private ActionContext myActionContext;
   private Set<SModelDescriptor> myModels = new HashSet<SModelDescriptor>();
   private SModelDescriptor myModel = null;
   boolean myMayBeModel;
@@ -34,10 +33,8 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
 
   private Condition myCondition = Condition.TRUE_CONDITION;
 
-  public ChooseNodeOrModelComponent(ActionContext actionContext, String conceptFQName, boolean mayBeModel, boolean mayBeNode) {
-    //setLayout(new BorderLayout());
-    myActionContext = actionContext;
-    myOperationContext = myActionContext.getOperationContext();
+  public ChooseNodeOrModelComponent(IOperationContext operationContext, String conceptFQName, boolean mayBeModel, boolean mayBeNode) {
+    myOperationContext = operationContext;
     myMayBeModel = mayBeModel;
     myMayBeNode = mayBeNode;
     myConceptFQName = conceptFQName;
@@ -69,8 +66,8 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
   }
 
 
-  public ChooseNodeOrModelComponent(ActionContext actionContext, String conceptFQName, boolean mayBeModel, boolean mayBeNode, boolean useLoadedModels) {
-    this(actionContext, conceptFQName, mayBeModel, mayBeNode);
+  public ChooseNodeOrModelComponent(IOperationContext operationContext, String conceptFQName, boolean mayBeModel, boolean mayBeNode, boolean useLoadedModels) {
+    this(operationContext, conceptFQName, mayBeModel, mayBeNode);
     myReturnLoadedModels = useLoadedModels;
   }
 

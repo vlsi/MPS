@@ -84,7 +84,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1198076221377">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213019919921">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213019919923">
-                <link role="baseMethodDeclaration" targetNodeId="8.~ChooseNodeOrModelComponent.&lt;init&gt;(jetbrains.mps.ide.action.ActionContext,java.lang.String,boolean,boolean)" resolveInfo="ChooseNodeOrModelComponent" />
+                <link role="baseMethodDeclaration" targetNodeId="8.~ChooseNodeOrModelComponent.&lt;init&gt;(jetbrains.mps.smodel.IOperationContext,java.lang.String,boolean,boolean)" resolveInfo="ChooseNodeOrModelComponent" />
                 <node role="actualArgument" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_ActionContext" id="1198076823903" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1198076884972" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1198076889505">
@@ -1365,12 +1365,7 @@
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214223733419">
                   <link role="variableDeclaration" targetNodeId="1214223700099" resolveInfo="l" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214223665565">
-                  <node role="operand" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_ActionContext" id="1214223665566" />
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1214223665567">
-                    <link role="baseMethodDeclaration" targetNodeId="2.~ActionContext.getScope():jetbrains.mps.smodel.IScope" resolveInfo="getScope" />
-                  </node>
-                </node>
+                <node role="actualArgument" type="jetbrains.mps.logging.refactoring.structure.ScopeExpression" id="1215095228281" />
               </node>
             </node>
           </node>
@@ -1384,10 +1379,9 @@
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1214223665571">
               <link role="classConcept" targetNodeId="34.~FindUtils" resolveInfo="FindUtils" />
               <link role="baseMethodDeclaration" targetNodeId="34.~FindUtils.getSearchResults(com.intellij.openapi.progress.ProgressIndicator,jetbrains.mps.ide.findusages.model.SearchQuery,jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder[]):jetbrains.mps.ide.findusages.model.SearchResults" resolveInfo="getSearchResults" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214223665572">
-                <node role="operand" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_ActionContext" id="1214223665573" />
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1214223665574">
-                  <link role="baseMethodDeclaration" targetNodeId="2.~ActionContext.createProgressIndicator():com.intellij.openapi.progress.ProgressIndicator" resolveInfo="createProgressIndicator" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1215095219122">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1215095221233">
+                  <link role="baseMethodDeclaration" targetNodeId="36.~EmptyProgressIndicator.&lt;init&gt;()" resolveInfo="EmptyProgressIndicator" />
                 </node>
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214223665575">
@@ -1540,17 +1534,7 @@
                   <node role="actualArgument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1214841630601">
                     <link role="argument" targetNodeId="1214216915334" resolveInfo="newName" />
                   </node>
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214841630602">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214841630603">
-                      <node role="operand" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_ActionContext" id="1214841630604" />
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1214841630605">
-                        <link role="baseMethodDeclaration" targetNodeId="2.~ActionContext.getOperationContext():jetbrains.mps.smodel.IOperationContext" resolveInfo="getOperationContext" />
-                      </node>
-                    </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1214841630606">
-                      <link role="baseMethodDeclaration" targetNodeId="5.~IOperationContext.getMPSProject():jetbrains.mps.project.MPSProject" resolveInfo="getMPSProject" />
-                    </node>
-                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.logging.refactoring.structure.ProjectExpression" id="1215095212856" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1214841630607" />
                 </node>
               </node>

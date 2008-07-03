@@ -2,6 +2,7 @@ package jetbrains.mps.refactoring.framework;
 
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.util.Condition;
 
@@ -21,8 +22,8 @@ import java.awt.GridBagConstraints;
 public class ChooseModelDescriptorComponent implements IChooseComponent<SModelDescriptor> {
   private ChooseNodeOrModelComponent myChooseNodeOrModelComponent;
 
-  public ChooseModelDescriptorComponent(ActionContext actionContext) {
-    myChooseNodeOrModelComponent = new ChooseNodeOrModelComponent(actionContext, null, true, false);
+  public ChooseModelDescriptorComponent(IOperationContext operationContext) {
+    myChooseNodeOrModelComponent = new ChooseNodeOrModelComponent(operationContext, null, true, false);
   }
 
   public SModelDescriptor submit() throws InvalidInputValueException {

@@ -221,7 +221,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
   }
 
   public IChooseComponent<Object> target_componentCreator(ActionContext actionContext, RefactoringContext refactoringContext) {
-    return new ChooseNodeOrModelComponent(actionContext, null, true, true);
+    return new ChooseNodeOrModelComponent(refactoringContext.getCurrentOperationContext(), null, true, true);
   }
 
   public boolean askForInfo(ActionContext actionContext, RefactoringContext refactoringContext) {

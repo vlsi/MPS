@@ -236,7 +236,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
       List<IChooseComponent> components = new ArrayList<IChooseComponent>();
       {
         IChooseComponent<SModelDescriptor> chooseComponent;
-        chooseComponent = new ChooseModelDescriptorComponent(actionContext);
+        chooseComponent = new ChooseModelDescriptorComponent(refactoringContext.getCurrentOperationContext());
         chooseComponent.setCondition(new MoveConcepts.My_targetModel_Condition(actionContext));
         chooseComponent.setPropertyName("targetModel");
         chooseComponent.setCaption("choose target model");
