@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -54,30 +54,12 @@ public class Model_CreateNewRootNodeOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell5481_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5481_01");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell5481_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell5481_02");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-          this.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
   }
 
   private static void setupBasic_ReplaceableAlias_CompComponentCell5481_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -99,7 +81,7 @@ public class Model_CreateNewRootNodeOperation_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell5481_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor57(EditorCell cell) {
+  private static Color calculateColor54(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
@@ -230,7 +212,7 @@ public class Model_CreateNewRootNodeOperation_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return Model_CreateNewRootNodeOperation_Editor.calculateColor57(cell);
+                return Model_CreateNewRootNodeOperation_Editor.calculateColor54(cell);
               }
 
             });

@@ -62,7 +62,7 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return OperationParm_ConceptList_Editor.calculateColor56(cell);
+              return OperationParm_ConceptList_Editor.calculateColor53(cell);
             }
 
           });
@@ -88,7 +88,7 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private static Color calculateColor56(EditorCell cell) {
+  private static Color calculateColor53(EditorCell cell) {
     Color result;
     result = Color.lightGray;
     return result;

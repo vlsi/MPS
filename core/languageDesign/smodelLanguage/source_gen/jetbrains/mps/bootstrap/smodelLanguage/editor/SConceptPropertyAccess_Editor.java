@@ -29,7 +29,7 @@ public class SConceptPropertyAccess_Editor extends DefaultNodeEditor {
   private static void setupLabel_conceptPropertyRefCell3912_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor52(EditorCell cell) {
+  private static Color calculateColor50(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
@@ -84,7 +84,7 @@ public class SConceptPropertyAccess_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return SConceptPropertyAccess_Editor.calculateColor52(cell);
+                return SConceptPropertyAccess_Editor.calculateColor50(cell);
               }
 
             });

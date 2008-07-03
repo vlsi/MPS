@@ -42,7 +42,7 @@ public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return SConceptLinkAccess_Editor.calculateColor42(cell);
+              return SConceptLinkAccess_Editor.calculateColor41(cell);
             }
 
           });
@@ -65,7 +65,7 @@ public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private static Color calculateColor42(EditorCell cell) {
+  private static Color calculateColor41(EditorCell cell) {
     Color result;
     result = Color.darkGray;
     return result;

@@ -39,7 +39,7 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return Node_GetParentOperation_Editor.calculateColor62(cell);
+              return Node_GetParentOperation_Editor.calculateColor58(cell);
             }
 
           });
@@ -266,7 +266,7 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private static Color calculateColor62(EditorCell cell) {
+  private static Color calculateColor58(EditorCell cell) {
     Color result;
     result = Color.lightGray;
     return result;

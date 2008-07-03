@@ -28,7 +28,7 @@ public class RefConcept_Reference_Editor extends DefaultNodeEditor {
   private static void setupLabel_conceptDeclarationRefCell12656_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor58(EditorCell cell) {
+  private static Color calculateColor55(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
@@ -82,7 +82,7 @@ public class RefConcept_Reference_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return RefConcept_Reference_Editor.calculateColor58(cell);
+                return RefConcept_Reference_Editor.calculateColor55(cell);
               }
 
             });

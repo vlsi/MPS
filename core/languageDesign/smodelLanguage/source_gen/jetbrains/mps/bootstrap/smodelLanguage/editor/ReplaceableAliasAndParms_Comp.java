@@ -146,7 +146,7 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
     return result;
   }
 
-  private static Color calculateColor49(EditorCell cell) {
+  private static Color calculateColor47(EditorCell cell) {
     Color result;
     result = Color.lightGray;
     return result;
@@ -261,7 +261,7 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return ReplaceableAliasAndParms_Comp.calculateColor49(cell);
+                return ReplaceableAliasAndParms_Comp.calculateColor47(cell);
               }
 
             });

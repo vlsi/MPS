@@ -27,7 +27,7 @@ public class AbstractOperationParameter_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return AbstractOperationParameter_Editor.calculateColor50(cell);
+              return AbstractOperationParameter_Editor.calculateColor48(cell);
             }
 
           });
@@ -41,7 +41,7 @@ public class AbstractOperationParameter_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConceptPropertyCell12714_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor50(EditorCell cell) {
+  private static Color calculateColor48(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;

@@ -93,7 +93,7 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private static Color calculateColor51(EditorCell cell) {
+  private static Color calculateColor49(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
@@ -176,7 +176,7 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return EnumMemberReference_Editor.calculateColor51(cell);
+                return EnumMemberReference_Editor.calculateColor49(cell);
               }
 
             });

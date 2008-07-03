@@ -6,13 +6,12 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
@@ -21,6 +20,7 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 
 public class SNodeType_Editor extends DefaultNodeEditor {
@@ -31,27 +31,12 @@ public class SNodeType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell2853_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell2853_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-          this.set(StyleAttributes.EDITABLE, true);
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return SNodeType_Editor.calculateColor39(cell);
-            }
-
-          });
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell2853_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell2853_01");
+    BaseLanguageStyle_StyleSheet.BRACKET.apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -72,6 +57,7 @@ public class SNodeType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell2853_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell2853_02");
+    BaseLanguageStyle_StyleSheet.BRACKET.apply(editorCell);
   }
 
   private static void setupLabel_ConstantCell2853_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -89,12 +75,6 @@ public class SNodeType_Editor extends DefaultNodeEditor {
   private static Color calculateColor33(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
-    return result;
-  }
-
-  private static Color calculateColor39(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_BLUE;
     return result;
   }
 
