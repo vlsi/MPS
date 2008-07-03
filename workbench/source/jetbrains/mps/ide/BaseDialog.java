@@ -2,6 +2,7 @@ package jetbrains.mps.ide;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.ide.DialogDimensionsSettings.DialogDimensions;
+import jetbrains.mps.smodel.ModelAccess;
 
 import javax.swing.*;
 import java.awt.*;
@@ -109,6 +110,10 @@ public abstract class BaseDialog extends JDialog {
   public void showDialog() {
     if (!ThreadUtils.isEventDispatchThread()) {
       LOG.error("Dialogs should be shown in EDT ", new Throwable());
+    }
+
+    if (ModelAccess.instance().canRead() || ModelAccess.instance().canWrite()) {
+      LOG.error("Dialogs shouldn't be called with lock on a stack");
     }
 
     prepareDialog();

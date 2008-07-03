@@ -10392,9 +10392,7 @@
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleSheetItem" id="1215095046940">
         <property name="value" value="0.0" />
       </node>
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1215095048677">
-        <property name="flag" value="false" />
-      </node>
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.FirstPositionAllowedStyleSheetItem" id="1215098136621" />
     </node>
     <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1215096040201">
       <property name="name" value="Dot" />
@@ -14980,6 +14978,7 @@
             <property name="readOnly" value="true" />
             <property name="noTargetText" value="&lt;no name&gt;" />
             <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
+            <link role="styleClass" targetNodeId="1215090647074" resolveInfo="MethodName" />
           </node>
         </node>
       </node>

@@ -208,7 +208,7 @@ public class BaseLanguageStyle_StyleSheet {
     {
       this.set(StyleAttributes.PADDING_LEFT, 0.0);
       this.set(StyleAttributes.PADDING_RIGHT, 0.0);
-      this.set(StyleAttributes.SELECTABLE, false);
+      this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
     }
 
   };
