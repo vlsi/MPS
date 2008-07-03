@@ -1350,17 +1350,23 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215104041223">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215104045698">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215104042897">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1215104041224">
-                <link role="variableDeclaration" targetNodeId="1145580983579" resolveInfo="statementList" />
-              </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1215104044197">
-                <link role="link" targetNodeId="1.1068581517665" />
-              </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215104730893">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215104730894">
+            <property name="name" value="removedStatements" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType" id="1215104730895">
+              <link role="elementConcept" targetNodeId="1.1068580123157" resolveInfo="Statement" />
             </node>
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_RemoveAllChildrenOperation" id="1215104047310" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215104730896">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215104730897">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1215104730898">
+                  <link role="variableDeclaration" targetNodeId="1145580983579" resolveInfo="statementList" />
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1215104730899">
+                  <link role="link" targetNodeId="1.1068581517665" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_RemoveAllChildrenOperation" id="1215104730900" />
+            </node>
           </node>
         </node>
       </node>
