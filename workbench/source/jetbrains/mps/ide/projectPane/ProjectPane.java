@@ -189,7 +189,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   }
 
   public int getWeight() {
-    return 0;
+    return 100;
   }
 
   public SelectInTarget createSelectInTarget() {
