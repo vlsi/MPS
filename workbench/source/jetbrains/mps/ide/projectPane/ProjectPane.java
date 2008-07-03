@@ -3,8 +3,10 @@ package jetbrains.mps.ide.projectPane;
 import com.intellij.ide.CopyProvider;
 import com.intellij.ide.CutProvider;
 import com.intellij.ide.PasteProvider;
+import com.intellij.ide.SelectInTarget;
+import com.intellij.ide.projectView.ProjectView;
+import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import com.intellij.openapi.actionSystem.*;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.command.CommandAdapter;
 import com.intellij.openapi.command.CommandEvent;
 import com.intellij.openapi.command.CommandProcessor;
@@ -12,11 +14,14 @@ import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.wm.ToolWindowAnchor;
+import com.intellij.openapi.startup.StartupManager;
+import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.ide.*;
+import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.IActionDataProvider;
 import jetbrains.mps.ide.actions.*;
@@ -26,8 +31,11 @@ import jetbrains.mps.ide.actions.nodes.CutNodeAction;
 import jetbrains.mps.ide.actions.nodes.DeleteNodeAction;
 import jetbrains.mps.ide.actions.nodes.PasteNodeAction;
 import jetbrains.mps.ide.projectPane.ProjectPane.MyState;
-import jetbrains.mps.ide.ui.*;
+import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTree.TreeState;
+import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.MPSTreeNodeEx;
+import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.logging.Logger;
@@ -42,17 +50,19 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
-import jetbrains.mps.workbench.tools.BaseMPSTool;
 import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.*;
+import javax.swing.Icon;
+import javax.swing.JComponent;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
 import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
@@ -68,7 +78,7 @@ import java.util.List;
   )
     }
 )
-public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPane, PersistentStateComponent<MyState> {
+public class ProjectPane extends AbstractProjectViewPane implements PersistentStateComponent<MyState> {
   private static final Logger LOG = Logger.getLogger(ProjectPane.class);
 
   public static final String PROJECT_PANE_NODE_ACTIONS = ProjectPaneNodeActions_ActionGroup.ID;
@@ -101,13 +111,12 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
   private boolean myNeedRebuild = false;
   private boolean myDisposed;
   private ProjectModulesPoolTreeNode myModulesPool;
+  private ProjectView myProjectView;
 
-  private JToggleButton myPAndRToggle;
-  private JToggleButton myAutoscrollToSource;
-  private JToggleButton myAutoscrollFromSource;
-  private JToolBar myToolbar = new MPSToolBar();
+  private ToggleAction myPAndRToggle;
+  private ToggleAction myAutoscrollToSource;
+  private ToggleAction myAutoscrollFromSource;
   private MyPanel myPanel = new MyPanel();
-  private MyTree myTree = new MyTree();
 
   private ReloadListener myReloadListener = new ReloadListener() {
     public void onBeforeReload() {
@@ -144,28 +153,78 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
       });
     }
   };
+  public static final String MPS_FILESYSTEM = "MPSFileSystem";
 
-  public ProjectPane(Project project) {
-    super(project, "Project Pane", 1, Icons.MPS_SMALL_ICON, ToolWindowAnchor.LEFT, false);
+  public ProjectPane(Project project, ProjectView projectView) {
+    super(project);
+    myProjectView = projectView;
+    myTree = new MyTree();
   }
 
-  protected boolean isInitiallyAvailable() {
-    return true;
+  public MPSTree getTree() {
+    return (MPSTree) myTree;
+  }
+
+  public Project getProject() {
+    return myProject;
+  }
+
+  public MPSProject getMPSProject() {
+    return myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+  }
+
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "ProjectPane";
+  }
+
+  public String getTitle() {
+    return "Logical View";
+  }
+
+  @NotNull
+  public String getId() {
+    return MPS_FILESYSTEM;
+  }
+
+  public int getWeight() {
+    return 0;
+  }
+
+  public SelectInTarget createSelectInTarget() {
+    return null;
+  }
+
+  public Icon getIcon() {
+    return Icons.MPS_SMALL_ICON;
+  }
+
+  public void updateFromRoot(boolean restoreExpandedPaths) {
+    throw new UnsupportedOperationException();
+  }
+
+  public void select(Object element, VirtualFile file, boolean requestFocus) {
+    throw new UnsupportedOperationException();
+  }
+
+  public JComponent createComponent() {
+    return getComponent();
+  }
+
+  public JComponent getComponent() {
+    return getPanel();
   }
 
   public void initComponent() {
     addListeners();
 
-    super.initComponent();
     getPanel().setLayout(new BorderLayout());
 
-    myToolbar.setFloatable(false);
-    getPanel().add(myToolbar, BorderLayout.NORTH);
-
-    JScrollPane scroller = new JScrollPane(myTree);
+    JScrollPane scroller = new JScrollPane(getTree());
     scroller.setBorder(null);
     getPanel().add(scroller, BorderLayout.CENTER);
-    myTree.addKeyListener(new KeyAdapter() {
+    getTree().addKeyListener(new KeyAdapter() {
       public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_F4 && e.getModifiers() == 0) {
           openEditor();
@@ -178,71 +237,43 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
       }
     });
 
-    myToolbar.add(myPAndRToggle = new JToggleButton() {
-      {
-        setAction(new AbstractAction("", Icons.PROP_AND_REF) {
-          public void actionPerformed(ActionEvent e) {
-            setShowPropertiesAndReferences(!isShowPropertiesAndReferences());
-          }
-        });
+    DefaultActionGroup toolbarGroup = new DefaultActionGroup();
 
-        setToolTipText("Show properties and references");
+    myPAndRToggle = new ToggleAction("Show properties and references", "Show properties and references", Icons.PROP_AND_REF) {
+      public boolean isSelected(@Nullable AnActionEvent e) {
+        return isShowPropertiesAndReferences();
       }
 
-      public void updateUI() {
-        setUI(new MPSToolBarButtonUI());
+      public void setSelected(@Nullable AnActionEvent e, boolean state) {
+        setShowPropertiesAndReferences(!isShowPropertiesAndReferences());
       }
-    });
+    };
+    toolbarGroup.add(myPAndRToggle);
 
-    myToolbar.add(myAutoscrollToSource = new JToggleButton() {
-      {
-        setAction(new AbstractAction("", Icons.AUTOSCROLL_TO_SOURCE) {
-          public void actionPerformed(ActionEvent e) {
-            myTree.setAutoOpen(!myTree.isAutoOpen());
-          }
-        });
-
-        setToolTipText("Autoscroll to source");
+    myAutoscrollToSource = new ToggleAction("Autoscroll to source", "Autoscroll to source", Icons.AUTOSCROLL_TO_SOURCE) {
+      public boolean isSelected(@Nullable AnActionEvent e) {
+        return getTree().isAutoOpen();
       }
 
-      public void updateUI() {
-        setUI(new MPSToolBarButtonUI());
+      public void setSelected(@Nullable AnActionEvent e, boolean state) {
+        getTree().setAutoOpen(!getTree().isAutoOpen());
       }
-    });
+    };
+    toolbarGroup.add(myAutoscrollToSource);
 
-    myToolbar.add(myAutoscrollFromSource = new JToggleButton() {
-      {
-        setAction(new AbstractAction("", Icons.AUTOSCROLL_FROM_SOURCE) {
-          public void actionPerformed(ActionEvent e) {
-          }
-        });
-
-        setToolTipText("Autoscroll from source");
+    myAutoscrollFromSource = new ToggleAction("Autoscroll from source", "Autoscroll from source", Icons.AUTOSCROLL_FROM_SOURCE) {
+      public boolean isSelected(@Nullable AnActionEvent e) {
+        return false;
       }
 
-      public void updateUI() {
-        setUI(new MPSToolBarButtonUI());
+      public void setSelected(@Nullable AnActionEvent e, boolean state) {
+
       }
-    });
+    };
+    toolbarGroup.add(myAutoscrollFromSource);
 
-    myToolbar.add(new JButton() {
-      {
-        setAction(new AbstractAction("", jetbrains.mps.ide.findusages.view.icons.Icons.COLLAPSE_ICON) {
-          public void actionPerformed(ActionEvent e) {
-            for (MPSTreeNode rootChild : myTree.getRootNode()) {
-              myTree.collapseAll(rootChild);
-            }
-          }
-        });
-
-        setToolTipText("Collapse all");
-      }
-
-
-      public void updateUI() {
-        setUI(new MPSToolBarButtonUI());
-      }
-    });
+    JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.FILE_VIEW, toolbarGroup, true).getComponent();
+    getPanel().add(toolbar, BorderLayout.NORTH);
 
     if (!IdeMain.isTestMode()) {
       ThreadUtils.runInUIThreadNoWait(new Runnable() {
@@ -254,17 +285,8 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
   }
 
   public void disposeComponent() {
-    super.disposeComponent();
-    myTree.clear();
+    getTree().clear();
     removeListeners();
-  }
-
-  public void showProjectPane() {
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-      public void run() {
-        openToolLater(true);
-      }
-    });
   }
 
   protected void editNode(SNode node, IOperationContext context) {
@@ -274,23 +296,22 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
   }
 
   public void projectOpened() {
-    super.projectOpened();
     myReloadListener.onAfterReload();
     ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
+    StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
+      public void run() {
+        myProjectView.addProjectPane(ProjectPane.this);
+      }
+    });
   }
 
   public void projectClosed() {
     ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
-    super.projectClosed();
   }
 
 
   protected void onBeforeModelWillBeDeleted(SModelDescriptor sm) {
     selectNextTreeModel(sm);
-  }
-
-  public String getTitle() {
-    return "Logical View";
   }
 
   public boolean isShowPropertiesAndReferences() {
@@ -299,12 +320,12 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
 
   public void setShowPropertiesAndReferences(boolean showProperties) {
     myShowProperties = showProperties;
-    myPAndRToggle.getModel().setSelected(showProperties);
+    myPAndRToggle.setSelected(null, showProperties);
     rebuild();
   }
 
   public void openEditor() {
-    TreePath selectionPath = myTree.getSelectionPath();
+    TreePath selectionPath = getTree().getSelectionPath();
     if (selectionPath == null) return;
     if (!(selectionPath.getLastPathComponent() instanceof SNodeTreeNode)) return;
     SNodeTreeNode selectedTreeNode = (SNodeTreeNode) selectionPath.getLastPathComponent();
@@ -316,7 +337,7 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
   @Nullable
   public Object getData(@NonNls String dataId) {
     if (dataId.equals(MPSDataKeys.SNODE.getName())) {
-      return getSelectedNode();
+      return getSelectedSNode();
     }
 
     if (dataId.equals(MPSDataKeys.SNODES.getName())) {
@@ -355,7 +376,7 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
   }
 
   private IOperationContext getContextForSelection() {
-    TreePath[] selection = myTree.getSelectionPaths();
+    TreePath[] selection = getTree().getSelectionPaths();
     if (selection == null) return null;
     if (selection.length > 0) {
       MPSTreeNode lastPathComponent = (MPSTreeNode) selection[0].getLastPathComponent();
@@ -364,7 +385,7 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
     return null;
   }
 
-  private SNode getSelectedNode() {
+  private SNode getSelectedSNode() {
     if (getSelectedNodes() != null && getSelectedNodes().size() == 1) {
       return getSelectedNodes().get(0);
     }
@@ -382,8 +403,6 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
       public void run() {
         getTree().runWithoutExpansion(new Runnable() {
           public void run() {
-            openTool(true);
-
             IModule module = context.getModule();
             if (module == null) {
               selectNode(node);
@@ -412,8 +431,8 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
             MPSTreeNodeEx treeNodeToSelect = findTreeNode(modelTreeNode, node);
             if (treeNodeToSelect != null) {
               TreePath treePath = new TreePath(treeNodeToSelect.getPath());
-              myTree.setSelectionPath(treePath);
-              myTree.scrollPathToVisible(treePath);
+              getTree().setSelectionPath(treePath);
+              getTree().scrollPathToVisible(treePath);
             } else {
               LOG.warning("Couldn't select node " + node.getDebugText() + " : tree node not found.");
             }
@@ -424,7 +443,7 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
   }
 
   public MPSTreeNode findModuleTreeNode(final IModule module) {
-    DefaultTreeModel treeModel = (DefaultTreeModel) myTree.getModel();
+    DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
     MPSTreeNode rootTreeNode = (MPSTreeNode) treeModel.getRoot();
 
     MPSTreeNode result = findModuleTreeNode(module, rootTreeNode);
@@ -486,7 +505,7 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
   }
 
   public void selectNode(SNode node) {
-    DefaultTreeModel model = (DefaultTreeModel) myTree.getModel();
+    DefaultTreeModel model = (DefaultTreeModel) getTree().getModel();
     MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
     SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
     assert modelDescriptor != null;
@@ -499,19 +518,19 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
     MPSTreeNodeEx treeNodeToSelect = findTreeNode(modelTreeNode, node);
     if (treeNodeToSelect != null) {
       TreePath treePath = new TreePath(treeNodeToSelect.getPath());
-      myTree.setSelectionPath(treePath);
-      myTree.scrollPathToVisible(treePath);
+      getTree().setSelectionPath(treePath);
+      getTree().scrollPathToVisible(treePath);
     } else {
       LOG.warning("Couldn't select node " + node.getDebugText() + " : tree node not found.");
     }
   }
 
   public void selectRoot() {
-    myTree.setSelectionPath(new TreePath(myTree.getRootNode()));
+    getTree().setSelectionPath(new TreePath(getTree().getRootNode()));
   }
 
   public MPSTreeNode findNextTreeNode(SNode node) {
-    DefaultTreeModel model = (DefaultTreeModel) myTree.getModel();
+    DefaultTreeModel model = (DefaultTreeModel) getTree().getModel();
     MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
     SModelDescriptor sModel = node.getModel().getModelDescriptor();
     SModelTreeNode sModelNode = findSModelTreeNode(rootNode, sModel);
@@ -526,7 +545,7 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
   }
 
   public MPSTreeNode findNextTreeNode(SModelDescriptor modelDescriptor) {
-    DefaultTreeModel model = (DefaultTreeModel) myTree.getModel();
+    DefaultTreeModel model = (DefaultTreeModel) getTree().getModel();
     MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
     SModelTreeNode sModelNode = findSModelTreeNode(rootNode, modelDescriptor);
     if (sModelNode == null) return null;
@@ -539,22 +558,22 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
 
   public void selectNextTreeNode(SNode node) {
     MPSTreeNode mpsTreeNode = findNextTreeNode(node);
-    myTree.selectNode(mpsTreeNode);
+    getTree().selectNode(mpsTreeNode);
   }
 
   public void selectNextTreeModel(SModelDescriptor modelDescriptor) {
     MPSTreeNode mpsTreeNode = findNextTreeNode(modelDescriptor);
-    myTree.selectNode(mpsTreeNode);
+    getTree().selectNode(mpsTreeNode);
   }
 
   public void selectModel(SModelDescriptor modelDescriptor) {
-    DefaultTreeModel model = (DefaultTreeModel) myTree.getModel();
+    DefaultTreeModel model = (DefaultTreeModel) getTree().getModel();
     MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
     SModelTreeNode modelTreeNode = findSModelTreeNode(rootNode, modelDescriptor);
     if (modelTreeNode != null) {
       TreePath treePath = new TreePath(modelTreeNode.getPath());
-      myTree.setSelectionPath(treePath);
-      myTree.scrollPathToVisible(treePath);
+      getTree().setSelectionPath(treePath);
+      getTree().scrollPathToVisible(treePath);
     } else {
       LOG.warning("Couldn't select model \"" + modelDescriptor + "\" : tree node not found.");
     }
@@ -563,13 +582,13 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
   public void selectModule(final IModule module) {
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
-        DefaultTreeModel model = (DefaultTreeModel) myTree.getModel();
+        DefaultTreeModel model = (DefaultTreeModel) getTree().getModel();
         MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
         MPSTreeNode languageTreeNode = findModuleTreeNode(module);
         if (languageTreeNode != null) {
           TreePath treePath = new TreePath(languageTreeNode.getPath());
-          myTree.setSelectionPath(treePath);
-          myTree.scrollPathToVisible(treePath);
+          getTree().setSelectionPath(treePath);
+          getTree().scrollPathToVisible(treePath);
         } else {
           LOG.warning("Couldn't select module \"" + module + "\" : tree node not found.");
         }
@@ -613,7 +632,7 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
 
   public TreeNode getSelectedTreeNode() {
     TreeNode selectedTreeNode;
-    TreePath selectionPath = myTree.getSelectionPath();
+    TreePath selectionPath = getTree().getSelectionPath();
     if (selectionPath == null) {
       return null;
     }
@@ -627,7 +646,7 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
 
   public List<SModelDescriptor> getSelectedModels() {
     List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
-    TreePath[] paths = myTree.getSelectionPaths();
+    TreePath[] paths = getTree().getSelectionPaths();
     if (paths == null) return result;
     for (TreePath path : paths) {
       TreeNode node = (TreeNode) path.getLastPathComponent();
@@ -640,7 +659,7 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
 
   public List<IModule> getSelectedModules() {
     List<IModule> result = new ArrayList<IModule>();
-    TreePath[] paths = myTree.getSelectionPaths();
+    TreePath[] paths = getTree().getSelectionPaths();
     if (paths == null) return result;
     for (TreePath path : paths) {
       TreeNode node = (TreeNode) path.getLastPathComponent();
@@ -653,7 +672,7 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
 
   List<SNode> getSelectedNodes() {
     List<SNode> result = new ArrayList<SNode>();
-    TreePath[] paths = myTree.getSelectionPaths();
+    TreePath[] paths = getTree().getSelectionPaths();
     if (paths == null) return result;
     for (TreePath path : paths) {
       MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
@@ -681,12 +700,8 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
     return selectedNodes;
   }
 
-  public MPSTree getTree() {
-    return myTree;
-  }
-
   public boolean isAutoscrollFromSource() {
-    return myAutoscrollFromSource.getModel().isSelected();
+    return myAutoscrollFromSource.isSelected(null);
   }
 
   public JPanel getPanel() {
@@ -710,11 +725,6 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
         rebuildTree();
       }
     });
-  }
-
-
-  public void setProject(MPSProject project) {
-    assert false;
   }
 
   public boolean isDisposed() {
@@ -783,13 +793,6 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
     return null;
   }
 
-  public JComponent getComponent() {
-    return getPanel();
-  }
-
-  public Icon getIcon() {
-    return null;
-  }
 
   public class MyTree extends MPSTree {
     public MyTree() {
@@ -954,13 +957,13 @@ public class ProjectPane extends BaseMPSTool implements DataProvider, IProjectPa
 
   private class MyPanel extends JPanel implements IActionDataProvider, DataProvider {
     public <T> T get(Class<T> cls) {
-      if (cls == SNode.class) return (T) getSelectedNode();
+      if (cls == SNode.class) return (T) getSelectedSNode();
       if (cls == SModelDescriptor.class) {
         T model = (T) getSelectedModel();
         if (model != null) {
           return model;
         }
-        SNode node = getSelectedNode();
+        SNode node = getSelectedSNode();
         if (node != null) {
           return (T) node.getModel().getModelDescriptor();
         }

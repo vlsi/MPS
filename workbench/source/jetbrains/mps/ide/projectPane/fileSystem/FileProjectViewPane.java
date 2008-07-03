@@ -1,37 +1,37 @@
 package jetbrains.mps.ide.projectPane.fileSystem;
 
-import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
-import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.SelectInTarget;
-import com.intellij.openapi.vfs.*;
+import com.intellij.ide.projectView.ProjectView;
+import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
+import com.intellij.openapi.actionSystem.DataConstants;
+import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
-import com.intellij.openapi.vcs.*;
-import com.intellij.openapi.actionSystem.DataProvider;
-import com.intellij.openapi.actionSystem.DataConstants;
+import com.intellij.openapi.vcs.FileStatusListener;
+import com.intellij.openapi.vcs.FileStatusManager;
+import com.intellij.openapi.vcs.ProjectLevelVcsManager;
+import com.intellij.openapi.vcs.VcsListener;
+import com.intellij.openapi.vfs.*;
+import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.ide.ui.MPSTree;
+import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.vfs.VFileSystem;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
 import javax.swing.Timer;
 import javax.swing.tree.TreePath;
-
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.NonNls;
-
-import jetbrains.mps.vfs.VFileSystem;
-import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.ide.ui.MPSTree;
-import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.ProjectOperationContext;
-
-import java.util.List;
-import java.util.LinkedList;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.LinkedList;
+import java.util.List;
 
 public class FileProjectViewPane extends AbstractProjectViewPane implements DataProvider {
   @NonNls
@@ -151,8 +151,9 @@ public class FileProjectViewPane extends AbstractProjectViewPane implements Data
 
   public void select(Object element, VirtualFile file, boolean requestFocus) {
 
-  }// used for sorting tabs in the tabbed pane
+  }
 
+  // used for sorting tabs in the tabbed pane
   public int getWeight() {
     return 1;
   }
