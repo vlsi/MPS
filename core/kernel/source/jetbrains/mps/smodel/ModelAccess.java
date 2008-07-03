@@ -127,6 +127,10 @@ public class ModelAccess {
   }
 
   public <T> T runWriteActionInCommand(final Computable<T> c) {
+    return runWriteActionInCommand(c, null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+  }
+
+  public <T> T runWriteActionInCommand(final Computable<T> c, final String name, final UndoConfirmationPolicy policy) {
     return runWriteAction(new Computable<T>() {
       public T compute() {
         final Object[] result = new Object[1];
@@ -134,19 +138,23 @@ public class ModelAccess {
           public void run() {
             result[0] = c.compute();
           }
-        }, null, null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+        }, name, null, policy);
         return (T) result[0];
       }
     });
   }
 
   public void runWriteActionInCommand(final Runnable r) {
+    runWriteActionInCommand(r, null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+  }
+
+  public void runWriteActionInCommand(final Runnable r, String name, UndoConfirmationPolicy policy) {
     runWriteActionInCommand(new Computable<Object>() {
       public Object compute() {
         r.run();
         return null;
       }
-    });
+    }, name, policy);
   }
 
   public void runWriteActionInCommandAsync(final Runnable r) {

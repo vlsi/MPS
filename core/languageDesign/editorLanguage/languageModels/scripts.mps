@@ -1855,5 +1855,55 @@
       </node>
     </node>
   </node>
+  <visible index="2" modelUID="jetbrains.mps.baseLanguage.structure" />
+  <visible index="3" modelUID="jetbrains.mps.core.structure" />
+  <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1215082758571">
+    <property name="migrationFromBuild" value="727" />
+    <property name="name" value="test_script" />
+    <property name="category" value="test" />
+    <property name="title" value="test" />
+    <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1215082767744">
+      <property name="description" value="abc" />
+      <link role="affectedInstanceConcept" targetNodeId="2v.1068390468198" resolveInfo="ClassConcept" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Updater" id="1215082767745">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215082767746">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215082781060">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215082808193">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215082781171">
+                <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1215082781061" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1215082807942">
+                  <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1215082808571">
+                <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1215082809183">
+                  <property name="value" value="Fibonacci" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="affectedInstancePredicate" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Predicate" id="1215082797162">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215082797163">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215082797960">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215082798982">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215082797978">
+                <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1215082797961" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1215082798591">
+                  <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Simple" id="1215082801126">
+                <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1215082804910">
+                  <property name="value" value="Fibo" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

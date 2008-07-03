@@ -5,6 +5,11 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.command.undo.UndoManager;
+import com.intellij.openapi.command.CommandProcessor;
+import com.intellij.openapi.command.UndoConfirmationPolicy;
+import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.ide.DataManager;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -137,7 +142,7 @@ public class MigrationScriptsView {
             // ----
             checkMigrationResults();
           }
-        });
+        }, "migration refactoring", UndoConfirmationPolicy.REQUEST_CONFIRMATION);
       }
     });
   }
