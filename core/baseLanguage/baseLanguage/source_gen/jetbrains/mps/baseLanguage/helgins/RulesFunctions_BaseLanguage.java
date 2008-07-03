@@ -389,12 +389,17 @@ __switch__:
     }
     if ((prevStatementList != null)) {
       do {
-        SNode matchedNode_1201700829805 = SNodeOperations.getParent(prevStatementList, null, false, false);
+        SNode matchedNode_1 = SNodeOperations.getParent(prevStatementList, null, false, false);
         {
-          boolean matches_1201700829807 = false;
-          matches_1201700829807 = SModelUtil_new.isAssignableConcept(SNodeOperations.getParent(prevStatementList, null, false, false).getConceptFqName(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
-          if (matches_1201700829807) {
-            return SLinkOperations.getTarget(matchedNode_1201700829805, "staticInitializer", true) == prevStatementList;
+          boolean matches_1 = false;
+          {
+            SNode matchingNode_1 = SNodeOperations.getParent(prevStatementList, null, false, false);
+            if (matchingNode_1 != null) {
+              matches_1 = SModelUtil_new.isAssignableConcept(matchingNode_1.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+            }
+          }
+          if (matches_1) {
+            return SLinkOperations.getTarget(matchedNode_1, "staticInitializer", true) == prevStatementList;
           }
         }
       } while(false);
