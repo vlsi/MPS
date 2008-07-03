@@ -79,7 +79,7 @@ public class MapEntry_Editor extends DefaultNodeEditor {
   public EditorCell create_keyRefNodeCell2588_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("key");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no key>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_keyRefNodeCell2588_0_internal(context, node, provider);
@@ -108,7 +108,7 @@ public class MapEntry_Editor extends DefaultNodeEditor {
   public EditorCell create_valueRefNodeCell2588_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("value");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no value>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_valueRefNodeCell2588_0_internal(context, node, provider);

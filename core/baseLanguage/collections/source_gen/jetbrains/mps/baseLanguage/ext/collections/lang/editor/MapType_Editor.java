@@ -153,7 +153,7 @@ public class MapType_Editor extends DefaultNodeEditor {
   public EditorCell create_keyTypeRefNodeCell1763_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("keyType");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no keyType>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_keyTypeRefNodeCell1763_0_internal(context, node, provider);
@@ -182,7 +182,7 @@ public class MapType_Editor extends DefaultNodeEditor {
   public EditorCell create_valueTypeRefNodeCell1763_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("valueType");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no valueType>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_valueTypeRefNodeCell1763_0_internal(context, node, provider);

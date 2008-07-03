@@ -207,7 +207,6 @@ public class BaseLanguageStyle_StyleSheet {
   public static final Style SEMICOLON = new Style() {
     {
       this.set(StyleAttributes.PADDING_LEFT, 0.0);
-      this.set(StyleAttributes.PADDING_RIGHT, 0.0);
       this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
     }
 

@@ -137,7 +137,7 @@ public class SequenceType_Editor extends DefaultNodeEditor {
   public EditorCell create_elementTypeRefNodeCell423_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("elementType");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no elementType>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_elementTypeRefNodeCell423_0_internal(context, node, provider);

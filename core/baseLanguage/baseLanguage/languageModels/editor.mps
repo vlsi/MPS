@@ -5432,6 +5432,9 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1144231387423">
           <property name="text" value=";" />
           <link role="styleClass" targetNodeId="1215094139260" resolveInfo="Semicolon" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1215104976919">
+            <property name="flag" value="false" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1144231420872">
           <link role="relationDeclaration" targetNodeId="17.1144231399730" />
@@ -5439,6 +5442,7 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1144231423624">
           <property name="text" value=";" />
           <link role="styleClass" targetNodeId="1215094139260" resolveInfo="Semicolon" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1215104980873" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1144231426986">
           <link role="relationDeclaration" targetNodeId="17.1144231408325" />
@@ -5456,12 +5460,7 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1144231387427">
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1144231387428">
-          <property name="text" value="  " />
-          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310997052">
-            <property name="flag" value="false" />
-          </node>
-        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Indent" id="1215105400635" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1144231387429">
           <link role="relationDeclaration" targetNodeId="17.1154032183016" />
         </node>
@@ -10439,9 +10438,6 @@
     <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1215094139260">
       <property name="name" value="Semicolon" />
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleSheetItem" id="1215095044266">
-        <property name="value" value="0.0" />
-      </node>
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleSheetItem" id="1215095046940">
         <property name="value" value="0.0" />
       </node>
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.FirstPositionAllowedStyleSheetItem" id="1215098136621" />

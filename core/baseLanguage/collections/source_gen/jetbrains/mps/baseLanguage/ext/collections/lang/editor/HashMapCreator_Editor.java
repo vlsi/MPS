@@ -161,7 +161,7 @@ public class HashMapCreator_Editor extends DefaultNodeEditor {
   public EditorCell create_keyTypeRefNodeCell11619_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("keyType");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no keyType>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_keyTypeRefNodeCell11619_0_internal(context, node, provider);
@@ -190,7 +190,7 @@ public class HashMapCreator_Editor extends DefaultNodeEditor {
   public EditorCell create_valueTypeRefNodeCell11619_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("valueType");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no valueType>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_valueTypeRefNodeCell11619_0_internal(context, node, provider);
@@ -219,7 +219,7 @@ public class HashMapCreator_Editor extends DefaultNodeEditor {
   public EditorCell create_ConceptPropertyCell11619_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no alias>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_ConceptPropertyCell11619_0_internal(context, node, provider);
@@ -248,7 +248,7 @@ public class HashMapCreator_Editor extends DefaultNodeEditor {
   public EditorCell create_initializerRefNodeCell11619_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("initializer");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no initializer>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_initializerRefNodeCell11619_0_internal(context, node, provider);

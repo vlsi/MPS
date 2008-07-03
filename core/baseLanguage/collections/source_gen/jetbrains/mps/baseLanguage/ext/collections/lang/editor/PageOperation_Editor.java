@@ -116,7 +116,7 @@ public class PageOperation_Editor extends DefaultNodeEditor {
   public EditorCell create_fromElementRefNodeCell3703_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("fromElement");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no fromElement>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_fromElementRefNodeCell3703_0_internal(context, node, provider);
@@ -145,7 +145,7 @@ public class PageOperation_Editor extends DefaultNodeEditor {
   public EditorCell create_toElementRefNodeCell3703_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("toElement");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no toElement>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_toElementRefNodeCell3703_0_internal(context, node, provider);
