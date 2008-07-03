@@ -74,10 +74,18 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
         Matcher m = p.matcher(path);
         if (m.matches()) {
           SModelUID uid = SModelUID.fromString(m.group(1));
-          String id = m.group(2);
+          String name = m.group(2);
           SModelDescriptor sm = GlobalScope.getInstance().getModelDescriptor(uid);
           if (sm == null) return null;
-          SNode node = sm.getSModel().getNodeById(id);
+
+          SNode node = null;
+          for (SNode root : sm.getSModel().getRoots()) {
+            if (root.getPresentation().equals(name)) {
+              node = root;
+              break;
+            }
+          }
+
           if (node == null) return null;
           return getFileFor(node);
         } else {
