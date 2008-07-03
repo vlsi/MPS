@@ -17,10 +17,16 @@ public class typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule im
   public void applyRule(final SNode node) {
     SNode targetConcept = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint", false, false), "applicableLink", false), "target", false);
     if ((targetConcept == null)) {
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1208198552379", true), new QuotationClass_6().createNode(), node, null, "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1208198552377");
+      {
+        SNode _nodeToCheck_1029348928467 = node;
+        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1208198552379", true), new QuotationClass_6().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1208198552377");
+      }
     } else
     {
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1208198556680", true), new QuotationClass_7().createNode(targetConcept), node, null, "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1208198556678");
+      {
+        SNode _nodeToCheck_1029348928467 = node;
+        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1208198556680", true), new QuotationClass_7().createNode(targetConcept), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1208198556678");
+      }
     }
   }
 

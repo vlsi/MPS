@@ -1441,6 +1441,12 @@
                   </node>
                 </node>
               </node>
+              <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleSheetItem" id="1215115873357">
+                <property name="value" value="0.0" />
+              </node>
+              <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleSheetItem" id="1215115876922">
+                <property name="value" value="0.0" />
+              </node>
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206015371307">
               <property name="text" value="." />

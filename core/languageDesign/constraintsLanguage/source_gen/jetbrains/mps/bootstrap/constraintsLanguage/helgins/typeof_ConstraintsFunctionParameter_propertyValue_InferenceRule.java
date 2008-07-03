@@ -20,7 +20,10 @@ public class typeof_ConstraintsFunctionParameter_propertyValue_InferenceRule imp
     SNode property = SLinkOperations.getTarget(propertyConstraint, "applicableProperty", false);
     SNode dataType = SLinkOperations.getTarget(property, "dataType", false);
     if (dataType != null) {
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1212097666659", true), DataTypeDeclaration_Behavior.call_toBaseLanguageType_1213877229718(dataType), node, null, "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1212097666657");
+      {
+        SNode _nodeToCheck_1029348928467 = node;
+        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1212097666659", true), DataTypeDeclaration_Behavior.call_toBaseLanguageType_1213877229718(dataType), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1212097666657");
+      }
     }
   }
 
