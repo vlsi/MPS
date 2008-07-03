@@ -653,5 +653,37 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1215084399714">
+    <property name="name" value="ModuleExpression" />
+    <link role="extends" targetNodeId="1214999734945" resolveInfo="AbstractUIArgumentExpression" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1215084427352">
+      <property name="value" value="module" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1215084496797">
+    <property name="name" value="ProjectExpression" />
+    <link role="extends" targetNodeId="1214999734945" resolveInfo="AbstractUIArgumentExpression" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1215084512267">
+      <property name="value" value="project" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1215084545440">
+    <property name="name" value="ScopeExpression" />
+    <link role="extends" targetNodeId="1214999734945" resolveInfo="AbstractUIArgumentExpression" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1215084563863">
+      <property name="value" value="scope" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1215084612287">
+    <property name="name" value="OperationContextExpression" />
+    <link role="extends" targetNodeId="1214999734945" resolveInfo="AbstractUIArgumentExpression" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1215084635570">
+      <property name="value" value="operationContext" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 
