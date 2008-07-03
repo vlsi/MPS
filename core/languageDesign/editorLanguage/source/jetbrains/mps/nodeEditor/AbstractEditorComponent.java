@@ -1680,6 +1680,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public void addCellSelectionListener(ICellSelectionListener l) {
+    assert l != null;    
     mySelectionListeners.add(l);
   }
 
