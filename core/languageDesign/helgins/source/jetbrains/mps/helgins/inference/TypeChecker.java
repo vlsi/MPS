@@ -28,6 +28,7 @@ import java.util.*;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.command.CommandProcessor;
+import com.intellij.openapi.util.Computable;
 
 public class TypeChecker implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(TypeChecker.class);
@@ -392,10 +393,15 @@ public class TypeChecker implements ApplicationComponent {
   }
 
   @Nullable
-  public SNode getTypeDontCheck(SNode node) {
+  public SNode getTypeDontCheck(final SNode node) {
     if (node == null) return null;
-    NodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance().
-      getNodeTypesComponent(node.getContainingRoot());
+    NodeTypesComponent nodeTypesComponent = ModelAccess.instance().runReadAction(new Computable<NodeTypesComponent>() {
+      public NodeTypesComponent compute() {
+        return NodeTypesComponentsRepository.getInstance().getNodeTypesComponent(node.getContainingRoot());
+      }
+    });
+
+
     if (nodeTypesComponent == null) return null;
     return nodeTypesComponent.getType(node);
   }
