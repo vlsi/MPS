@@ -705,6 +705,7 @@ public class SModel implements Iterable<SNode> {
         for (Language l : devKit.getAllExportedLanguages()) {
           if (!languages.contains(l)) {
             languages.add(l);
+            languages.addAll(l.getAllExtendedLanguages());
           }
         }
       }
