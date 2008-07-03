@@ -3,10 +3,7 @@ package jetbrains.mps.ide;
 import jetbrains.mps.ide.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.modelProperties.ModelPropertiesDialog;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.smodel.*;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
@@ -14,6 +11,8 @@ import java.awt.GridLayout;
 import java.awt.HeadlessException;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+
+import com.intellij.openapi.util.Computable;
 
 public class NewModelDialog extends BaseDialog {
   private IOperationContext myContext;
@@ -77,25 +76,32 @@ public class NewModelDialog extends BaseDialog {
 
   @BaseDialog.Button(position = 0, name = "OK", defaultButton = true)
   public void buttonOk() {
+    SModelDescriptor model = ModelAccess.instance().runWriteActionInCommand(new Computable<SModelDescriptor>() {
+      public SModelDescriptor compute() {
+        if (myModelName.getText().length() == 0) {
+          setErrorText("Empty model's name isn't allowed");
+          return null;
+        }
 
-    if (myModelName.getText().length() == 0) {
-      setErrorText("Empty model's name isn't allowed");
+        SModelUID modelUID = new SModelUID(myModelName.getText(), myModelStereotype.getSelectedItem().toString());
+        if (SModelRepository.getInstance().getModelDescriptor(modelUID) != null) {
+          setErrorText("Model with an uid " + myModelName.getText() + " is already exists");
+          return null;
+        }
+
+        ModelRootWrapper wrapper = (ModelRootWrapper) myModelRoots.getSelectedItem();
+        if (!myModelName.getText().startsWith(wrapper.myModelRoot.getPrefix())) {
+          setErrorText("Model name should have a prefix " + wrapper.myModelRoot.getPrefix());
+          return null;
+        }
+
+        return myContext.getModule().createModel(modelUID, wrapper.myModelRoot);
+      }
+    });
+
+    if (model == null) {
       return;
     }
-
-    SModelUID modelUID = new SModelUID(myModelName.getText(), myModelStereotype.getSelectedItem().toString());
-    if (SModelRepository.getInstance().getModelDescriptor(modelUID) != null) {
-      setErrorText("Model with an uid " + myModelName.getText() + " is already exists");
-      return;
-    }
-
-    ModelRootWrapper wrapper = (ModelRootWrapper) myModelRoots.getSelectedItem();
-    if (!myModelName.getText().startsWith(wrapper.myModelRoot.getPrefix())) {
-      setErrorText("Model name should have a prefix " + wrapper.myModelRoot.getPrefix());
-      return;
-    }
-
-    SModelDescriptor model = myContext.getModule().createModel(modelUID, wrapper.myModelRoot);
 
     new ModelPropertiesDialog(model, myContext).showDialog();
 
@@ -113,13 +119,15 @@ public class NewModelDialog extends BaseDialog {
 
   private class ModelRootWrapper {
     private ModelRoot myModelRoot;
+    private String myText;
 
     private ModelRootWrapper(ModelRoot modelRoot) {
       myModelRoot = modelRoot;
+      myText = myModelRoot.getPath() + " (" + myModelRoot.getPrefix() + ")";
     }
 
     public String toString() {
-      return myModelRoot.getPath() + " (" + myModelRoot.getPrefix() + ")";
+      return myText; 
     }
   }
 }
