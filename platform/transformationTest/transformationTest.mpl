@@ -17,6 +17,7 @@
       <dependencies>
         <dependency reexport="false">jetbrains.mps.baseLanguage</dependency>
         <dependency reexport="false">jetbrains.mps.bootstrap.helgins</dependency>
+        <dependency reexport="false">jetbrains.mps.transformationTest.runtime</dependency>
       </dependencies>
       <usedLanguages>
         <usedLanguages>jetbrains.mps.baseLanguage.unitTest</usedLanguages>
@@ -54,6 +55,9 @@
     <entry path="${language_descriptor}\classes" />
   </languageRuntimeClassPath>
   <sourcePath />
+  <runtime>
+    <dependency reexport="false">jetbrains.mps.transformationTest.runtime</dependency>
+  </runtime>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>
     <extendedLanguage>jetbrains.mps.bootstrap.smodelLanguage</extendedLanguage>
