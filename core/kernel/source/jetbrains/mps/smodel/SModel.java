@@ -702,7 +702,7 @@ public class SModel implements Iterable<SNode> {
       DevKit devKit = scope.getDevKit(dk);
       if (devKit != null) {
         //addDevkitModelsVersions(dk, devKit);
-        for (Language l : devKit.getExportedLanguages()) {
+        for (Language l : devKit.getAllExportedLanguages()) {
           if (!languages.contains(l)) {
             languages.add(l);
           }
