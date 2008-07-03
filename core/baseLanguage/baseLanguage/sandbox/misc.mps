@@ -238,13 +238,13 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1213790647250" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213790647251" />
     </node>
-    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1213790392168">
-      <property name="name" value="pysh" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1213790392169" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1213790392170" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213790392171" />
-    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1213199242549" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1215092627959">
+      <property name="name" value="pysh" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1215092627960" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1215092627961" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215092627962" />
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1214431324743">
     <property name="name" value="C1" />

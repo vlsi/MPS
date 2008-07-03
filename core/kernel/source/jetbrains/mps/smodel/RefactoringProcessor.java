@@ -50,14 +50,14 @@ public class RefactoringProcessor {
           ThreadUtils.runInUIThreadAndWait(new Runnable() {
             public void run() {
               final boolean[] wasError = new boolean[]{false};
-              ProgressManager.getInstance().run(new Modal(context.get(Project.class),"Finding usages...",false) {
+              ProgressManager.getInstance().run(new Modal(refactoringContext.getCurrentOperationContext().getComponent(Project.class),"Finding usages...",false) {
                 public void run(@NotNull ProgressIndicator indicator) {
                   indicator.setIndeterminate(true);
                   ModelAccess.instance().runReadAction(new Runnable() {
                     public void run() {
                       try {
                         ActionContext newContext = new ActionContext(context);
-                        newContext.put(IOperationContext.class, new ProjectOperationContext(context.getOperationContext().getMPSProject()));
+                        newContext.put(IOperationContext.class, new ProjectOperationContext(refactoringContext.getSelectedMPSProject()));
                         refactoringContext.setUsages(refactoring.getAffectedNodes(newContext, refactoringContext));
                       } catch (Throwable t) {
                         LOG.error(t);
@@ -83,7 +83,7 @@ public class RefactoringProcessor {
               public void run() {
                 ModelAccess.instance().runReadAction(new Runnable() {
                   public void run() {
-                    context.getOperationContext().getComponent(NewRefactoringView.class).showRefactoringView(context, new LoggableRefactoringViewAction(refactoringContext), refactoringContext.getUsages());
+                    refactoringContext.getCurrentOperationContext().getComponent(NewRefactoringView.class).showRefactoringView(context, new LoggableRefactoringViewAction(refactoringContext), refactoringContext.getUsages());
                   }
                 });
               }
@@ -135,7 +135,7 @@ public class RefactoringProcessor {
                 public void run() {
                   for (SNode nodeToOpen : nodesToOpen) {
                     // we can't open node outside of EDT
-                    context.getOperationContext().getComponent(MPSEditorOpener.class).openNode(nodeToOpen);
+                    refactoringContext.getCurrentOperationContext().getComponent(MPSEditorOpener.class).openNode(nodeToOpen);
                   }
                 }
               });
@@ -165,7 +165,7 @@ public class RefactoringProcessor {
             SwingUtilities.invokeLater(new Runnable() {
               public void run() {
                 if (moduleToModelsMap != null && !moduleToModelsMap.isEmpty()) {
-                  ProgressManager.getInstance().run(new Modal(context.getOperationContext().getComponent(Project.class), "Generation", true) {
+                  ProgressManager.getInstance().run(new Modal(refactoringContext.getCurrentOperationContext().getComponent(Project.class), "Generation", true) {
                     public void run(@NotNull ProgressIndicator progress) {
                       generateModels(context, moduleToModelsMap, refactoringContext, progress);
                     }
@@ -207,7 +207,7 @@ public class RefactoringProcessor {
         public void run() {
           try {
             refactoringContext.setUpMembersAccessModifier(modifier);
-            IOperationContext operationContext = new ModuleContext(sourceModule, context.getOperationContext().getMPSProject());
+            IOperationContext operationContext = new ModuleContext(sourceModule, refactoringContext.getSelectedMPSProject());
             final List<SModel> models = sourceModels.get(sourceModule);
             modifier.addModelsToModify(models);
             SNode.setNodeMemeberAccessModifier(modifier);
