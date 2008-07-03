@@ -113,7 +113,7 @@ public abstract class BaseDialog extends JDialog {
     }
 
     if (ModelAccess.instance().canRead() || ModelAccess.instance().canWrite()) {
-      LOG.error("Dialogs shouldn't be called with lock on a stack");
+      LOG.error("Dialogs shouldn't be called with lock on a stack", new Throwable());
     }
 
     prepareDialog();
