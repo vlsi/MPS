@@ -145,6 +145,18 @@ public class BaseLanguageStyle_StyleSheet {
     }
 
   };
+  public static final Style LEFT_PAREN = new Style() {
+    {
+      this.putAll(BaseLanguageStyle_StyleSheet.PAREN);
+    }
+
+  };
+  public static final Style RIGHT_PAREN = new Style() {
+    {
+      this.putAll(BaseLanguageStyle_StyleSheet.PAREN);
+    }
+
+  };
   public static final Style BRACE = new Style() {
     {
       this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);

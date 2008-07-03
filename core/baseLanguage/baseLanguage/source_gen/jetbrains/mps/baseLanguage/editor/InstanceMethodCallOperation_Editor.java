@@ -46,7 +46,7 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell18816_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18816_0");
-    BaseLanguageStyle_StyleSheet.PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -64,7 +64,7 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell18816_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell18816_02");
-    BaseLanguageStyle_StyleSheet.PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

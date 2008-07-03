@@ -2499,6 +2499,9 @@
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1186402391299">
       <link role="intfc" targetNodeId="3.1169194658468" />
     </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1215087816795">
+      <link role="intfc" targetNodeId="4.1212170275853" resolveInfo="IValidIdentifier" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1186402475462">
     <property name="package" value="Stylesheet" />

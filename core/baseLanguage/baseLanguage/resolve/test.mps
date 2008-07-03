@@ -947,6 +947,28 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1215087203525">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215087203526">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215087204968">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1215087204969">
+                <property name="value" value="239" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1215087204029">
+            <property name="value" value="true" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215086642626">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1215086654862">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1215086661459">
+              <property name="value" value="k" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1215086642627">
+              <property name="value" value="sss" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1131709214228">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1131709214229">
             <property name="name" value="s" />

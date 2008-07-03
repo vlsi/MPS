@@ -96,7 +96,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell11373_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11373_04");
-    BaseLanguageStyle_StyleSheet.PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
   }
 
   private static void setupBasic_conditionRefNodeCell11373_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -104,6 +104,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell11373_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell11373_05");
+    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
   }
 
   private static void setupBasic_CollectionCell11373_04(EditorCell editorCell, SNode node, EditorContext context) {

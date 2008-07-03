@@ -30,8 +30,8 @@ public class StyleAttributes {
   public static final StyleAttribute<Integer> FONT_STYLE = new InheritableStyleAttribute("font-style", Font.PLAIN);
   public static final StyleAttribute<Integer> FONT_SIZE = new InheritableStyleAttribute("font-size");
 
-  public static final StyleAttribute<Double> PADDING_LEFT = new SimpleStyleAttribute<Double>("padding-left", 0.5);
-  public static final StyleAttribute<Double> PADDING_RIGHT = new SimpleStyleAttribute<Double>("padding-right", 0.5);
+  public static final StyleAttribute<Double> PADDING_LEFT = new SimpleStyleAttribute<Double>("padding-left", 0.0);
+  public static final StyleAttribute<Double> PADDING_RIGHT = new SimpleStyleAttribute<Double>("padding-right", 1.0);
 
   public static final StyleAttribute<Boolean> FIRST_POSITION_ALLOWED = new SimpleStyleAttribute<Boolean>("first-position-allowed", true);
   public static final StyleAttribute<Boolean> LAST_POSITION_ALLOWED = new SimpleStyleAttribute<Boolean>("last-position-allowed", true);

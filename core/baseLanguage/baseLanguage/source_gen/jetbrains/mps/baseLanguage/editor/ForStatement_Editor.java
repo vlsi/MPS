@@ -45,7 +45,7 @@ public class ForStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell17219_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell17219_01");
-    BaseLanguageStyle_StyleSheet.PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
   }
 
   private static void setupBasic_variableRefNodeCell17219_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -57,7 +57,7 @@ public class ForStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell17219_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell17219_03");
-    BaseLanguageStyle_StyleSheet.PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell17219_04(EditorCell editorCell, SNode node, EditorContext context) {

@@ -149,7 +149,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell15389_04(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15389_04");
-    BaseLanguageStyle_StyleSheet.PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
   }
 
   private static void setupBasic_parameterRefNodeListCell15389_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -158,7 +158,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell15389_05(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell15389_05");
-    BaseLanguageStyle_StyleSheet.PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
   }
 
   private static void setupBasic_CollectionCell15389_04(EditorCell editorCell, SNode node, EditorContext context) {

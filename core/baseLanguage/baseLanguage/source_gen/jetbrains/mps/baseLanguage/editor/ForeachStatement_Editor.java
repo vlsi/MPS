@@ -46,7 +46,7 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell19902_01(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19902_01");
-    BaseLanguageStyle_StyleSheet.PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell19902_02(EditorCell editorCell, SNode node, EditorContext context) {
@@ -67,7 +67,7 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell19902_03(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19902_03");
-    BaseLanguageStyle_StyleSheet.PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell19902_04(EditorCell editorCell, SNode node, EditorContext context) {
