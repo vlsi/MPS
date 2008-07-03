@@ -1094,12 +1094,7 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1209830389547">
             <property name="name" value="node" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1209830389548" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209830414986">
-              <node role="operand" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_ActionContext" id="1209830414218" />
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209830416193">
-                <link role="baseMethodDeclaration" targetNodeId="10.~ActionContext.getNode():jetbrains.mps.smodel.SNode" resolveInfo="getNode" />
-              </node>
-            </node>
+            <node role="initializer" type="jetbrains.mps.logging.refactoring.structure.NodeExpression" id="1215091276976" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1209830362432">
@@ -1246,12 +1241,7 @@
               <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1209831247777">
                 <link role="concept" targetNodeId="1.1081236700938" resolveInfo="StaticMethodDeclaration" />
               </node>
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209831247778">
-                <node role="operand" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_ActionContext" id="1209831247779" />
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209831247780">
-                  <link role="baseMethodDeclaration" targetNodeId="10.~ActionContext.getNode():jetbrains.mps.smodel.SNode" resolveInfo="getNode" />
-                </node>
-              </node>
+              <node role="expression" type="jetbrains.mps.logging.refactoring.structure.NodeExpression" id="1215091285794" />
             </node>
           </node>
         </node>
