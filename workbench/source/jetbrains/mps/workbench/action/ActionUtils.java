@@ -3,6 +3,7 @@ package jetbrains.mps.workbench.action;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
@@ -21,10 +22,20 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ActionUtils {
+  private static final Logger LOG = Logger.getLogger(ActionUtils.class);
+
   public static void updateGroup(ActionGroup group, AnActionEvent e) {
-    group.update(e);
+    try {
+      group.update(e);
+    } catch (Throwable t) {
+      LOG.error(t);
+    }
     for (AnAction child : group.getChildren(null)) {
-      child.update(e);
+      try {
+        child.update(e);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
       if (child instanceof ActionGroup) updateGroup((ActionGroup) child, e);
     }
   }
