@@ -3,71 +3,24 @@ package jetbrains.mps.fileTypes;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.fileTypes.FileType;
-import com.intellij.openapi.fileTypes.PlainTextFileType;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.diff.DiffManager;
-import com.intellij.openapi.diff.DiffTool;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
-import javax.swing.Icon;
 
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.vcs.ui.ModelDiffTool;
 import jetbrains.mps.vcs.ui.ModelMergeTool;
-
-import java.io.InputStream;
-import java.io.LineNumberReader;
-import java.io.InputStreamReader;
-import java.io.IOException;
+import jetbrains.mps.vfs.MPSExtentions;
 
 public class MPSFileTypesManager implements ApplicationComponent {
-  public static final FileType MODEL_FILE_TYPE = new PlainTextFileType() {
+  public static final FileType MODEL_FILE_TYPE = new MPSXMLFileType("Model", "MPS Model File Type", MPSExtentions.MODEL, Icons.MODEL_ICON);
+  public static final FileType SOLUTION_FILE_TYPE = new MPSXMLFileType("Solution", "MPS Solution File Type", MPSExtentions.SOLUTION, Icons.SOLUTION_ICON);
+  public static final FileType LANGUAGE_FILE_TYPE = new MPSXMLFileType("Language", "MPS Language File Type", MPSExtentions.LANGUAGE, Icons.LANGUAGE_ICON);
+  public static final FileType DEVKIT_FILE_TYPE = new MPSXMLFileType("Devkit", "MPS Devkit File Type", MPSExtentions.DEVKIT, Icons.DEVKIT_ICON);
+  public static final FileType PROJECT_FILE_TYPE = new MPSXMLFileType("Project", "MPS Project File Type", MPSExtentions.PROJECT, Icons.PROJECT_ICON);
 
-    @NotNull
-    @NonNls
-    public String getName() {
-      return "MPS Model";
-    }
+  private final FileType[] myFileTypes = {MODEL_FILE_TYPE, SOLUTION_FILE_TYPE, LANGUAGE_FILE_TYPE, DEVKIT_FILE_TYPE, PROJECT_FILE_TYPE};
 
-    @NotNull
-    public String getDescription() {
-      return "MPS Model File Type";
-    }
-
-    @NotNull
-    @NonNls
-    public String getDefaultExtension() {
-      return "mps";
-    }
-
-    @Nullable
-    public Icon getIcon() {
-      return Icons.MODEL_ICON;
-    }
-
-    @Override
-    public String getCharset(@NotNull VirtualFile file) {
-      InputStream inputStream = null;
-      try {
-        inputStream = file.getInputStream();
-        LineNumberReader numberReader = new LineNumberReader(new InputStreamReader(inputStream));
-        String firstLine = numberReader.readLine();
-        String str = "encoding=\"";
-        int start = firstLine.lastIndexOf(str);
-        int end = firstLine.lastIndexOf("\"");
-        if ((start == -1) || (end == -1)){
-          return super.getCharset(file);  
-        }
-        String encoding = firstLine.substring(start + str.length(), end);
-        return encoding;
-      } catch (IOException e) {
-        e.printStackTrace();
-      }
-      return super.getCharset(file);
-    }
-  };
   private ModelDiffTool myModelDiffTool = new ModelDiffTool();
   private ModelMergeTool myModelMergeTool = new ModelMergeTool();
 
@@ -80,12 +33,17 @@ public class MPSFileTypesManager implements ApplicationComponent {
   public void initComponent() {
     DiffManager.getInstance().registerDiffTool(myModelDiffTool);
     DiffManager.getInstance().registerDiffTool(myModelMergeTool);
-    FileTypeManager.getInstance().associateExtension(MODEL_FILE_TYPE, "mps");
+    for (FileType f : myFileTypes) {
+      FileTypeManager.getInstance().associateExtension(f, f.getDefaultExtension());
+    }
   }
 
   public void disposeComponent() {
     DiffManager.getInstance().unregisterDiffTool(myModelDiffTool);
     DiffManager.getInstance().unregisterDiffTool(myModelMergeTool);
-    FileTypeManager.getInstance().removeAssociatedExtension(MODEL_FILE_TYPE, "mps");
+    for (FileType f : myFileTypes) {
+      FileTypeManager.getInstance().removeAssociatedExtension(f, f.getDefaultExtension());
+    }
   }
+
 }
