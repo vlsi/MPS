@@ -212,6 +212,14 @@ public class BaseLanguageStyle_StyleSheet {
     }
 
   };
+  public static final Style DOT = new Style() {
+    {
+      this.set(StyleAttributes.PADDING_LEFT, 0.0);
+      this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+      this.set(StyleAttributes.SELECTABLE, false);
+    }
+
+  };
 
   private static Color calculateColor(EditorCell cell) {
     Color result;
