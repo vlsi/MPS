@@ -768,10 +768,6 @@
         <link role="javaClass" targetNodeId="1.~GoToRulesAction" resolveInfo="GoToRulesAction"/>
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204983581141"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1205404450015">
-        <link role="javaClass" targetNodeId="22.~GoToProjectPaneAction" resolveInfo="GoToProjectPaneAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204983590986"/>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1215005754235">
         <link role="javaClass" targetNodeId="54.~GoToModelAction" resolveInfo="GoToModelAction"/>
       </node>
