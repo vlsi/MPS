@@ -11,10 +11,10 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import java.util.List;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -95,7 +95,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
   }
 
   public boolean isApplicable(ActionContext actionContext, RefactoringContext refactoringContext) {
-    if (actionContext.getNodes().isEmpty()) {
+    if (ListSequence.fromList(refactoringContext.getSelectedNodes()).isEmpty()) {
       return false;
     }
     if (((Object)refactoringContext.getParameter("target")) instanceof SNode) {
@@ -123,7 +123,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
         }
 
       });
-      for(SNode node : actionContext.getNodes()) {
+      for(SNode node : refactoringContext.getSelectedNodes()) {
         String childRole = node.getRole_();
         if (!(Sequence.fromIterable(childLinksRoles).contains(childRole))) {
           return false;
@@ -139,7 +139,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
       return true;
     }
     if (((Object)refactoringContext.getParameter("target")) instanceof SModelDescriptor) {
-      for(SNode node : actionContext.getNodes()) {
+      for(SNode node : refactoringContext.getSelectedNodes()) {
         if (!(SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(node), "rootable"))) {
           return false;
         }
@@ -185,7 +185,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
       }
       if (targetModel != null) {
         IModule module = targetModel.getModelDescriptor().getModule();
-        MPSProject project = actionContext.getMPSProject();
+        MPSProject project = refactoringContext.getSelectedMPSProject();
         if (project != null) {
           final IOperationContext operationContext = new ModuleContext(module, project);
           if (operationContext != null) {
@@ -220,7 +220,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
     return true;
   }
 
-  public IChooseComponent<Object> target_componentCreator(ActionContext actionContext) {
+  public IChooseComponent<Object> target_componentCreator(ActionContext actionContext, RefactoringContext refactoringContext) {
     return new ChooseNodeOrModelComponent(actionContext, null, true, true);
   }
 
@@ -230,7 +230,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
       List<IChooseComponent> components = new ArrayList<IChooseComponent>();
       {
         IChooseComponent<Object> chooseComponent;
-        chooseComponent = this.target_componentCreator(actionContext);
+        chooseComponent = this.target_componentCreator(actionContext, refactoringContext);
         chooseComponent.setPropertyName("target");
         chooseComponent.setCaption("choose target");
         chooseComponent.initComponent();

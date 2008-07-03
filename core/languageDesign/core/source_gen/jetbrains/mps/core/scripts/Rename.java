@@ -78,7 +78,7 @@ public class Rename extends AbstractLoggableRefactoring {
   }
 
   public boolean isApplicable(ActionContext actionContext, RefactoringContext refactoringContext) {
-    return actionContext.getNode() != null;
+    return refactoringContext.getSelectedNode() != null;
   }
 
   public boolean isApplicableToModel(SModelDescriptor modelDescriptor) {
@@ -127,8 +127,8 @@ public class Rename extends AbstractLoggableRefactoring {
     return false;
   }
 
-  public String newName_initialValue(ActionContext actionContext) {
-    return actionContext.getNode().getName();
+  public String newName_initialValue(ActionContext actionContext, RefactoringContext refactoringContext) {
+    return refactoringContext.getSelectedNode().getName();
   }
 
   public boolean askForInfo(ActionContext actionContext, RefactoringContext refactoringContext) {
@@ -138,7 +138,7 @@ public class Rename extends AbstractLoggableRefactoring {
       {
         IChooseComponent<String> chooseComponent;
         chooseComponent = new ChooseStringComponent();
-        chooseComponent.setInitialValue(this.newName_initialValue(actionContext));
+        chooseComponent.setInitialValue(this.newName_initialValue(actionContext, refactoringContext));
         chooseComponent.setPropertyName("newName");
         chooseComponent.setCaption("new name:");
         chooseComponent.initComponent();

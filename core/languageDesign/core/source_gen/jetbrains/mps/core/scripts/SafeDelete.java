@@ -74,7 +74,7 @@ public class SafeDelete extends AbstractLoggableRefactoring {
 
   public boolean isApplicable(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
-      SNode node = actionContext.getNode();
+      SNode node = refactoringContext.getSelectedNode();
       if (node == null) {
         return false;
       }
