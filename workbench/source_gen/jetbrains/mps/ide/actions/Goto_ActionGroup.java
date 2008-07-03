@@ -5,7 +5,6 @@ package jetbrains.mps.ide.actions;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.actions.gotoMenu.GoToNodeByIdAction;
-import jetbrains.mps.ide.actions.gotoMenu.GoToProjectPaneAction;
 import jetbrains.mps.ide.actions.nodes.GoToConceptDeclarationAction;
 import jetbrains.mps.ide.actions.nodes.GoToEditorDeclarationAction;
 import jetbrains.mps.ide.actions.nodes.GoToRulesAction;
