@@ -184,7 +184,7 @@ public class Model_RootsIncludingImportedOperation_Editor extends DefaultNodeEdi
   public EditorCell create_scopeRefNodeCell6453_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("scope");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no scope>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_scopeRefNodeCell6453_0_internal(context, node, provider);
@@ -236,7 +236,7 @@ public class Model_RootsIncludingImportedOperation_Editor extends DefaultNodeEdi
     public EditorCell create_namePropertyCell6453_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_namePropertyCell6453_0_internal(context, node, provider);

@@ -132,7 +132,7 @@ public class SNodeCreator_Editor extends DefaultNodeEditor {
   public EditorCell create_createdTypeRefNodeCell10423_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("createdType");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no createdType>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_createdTypeRefNodeCell10423_0_internal(context, node, provider);
@@ -161,7 +161,7 @@ public class SNodeCreator_Editor extends DefaultNodeEditor {
   public EditorCell create_prototypeNodeRefNodeCell10423_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("prototypeNode");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no prototypeNode>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_prototypeNodeRefNodeCell10423_0_internal(context, node, provider);

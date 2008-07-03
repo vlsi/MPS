@@ -78,7 +78,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return NodeDefaultSearchScope_Editor.calculateColor22(cell);
+              return NodeDefaultSearchScope_Editor.calculateColor17(cell);
             }
 
           });
@@ -143,7 +143,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return NodeDefaultSearchScope_Editor.calculateColor21(cell);
+              return NodeDefaultSearchScope_Editor.calculateColor16(cell);
             }
 
           });
@@ -192,7 +192,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return NodeDefaultSearchScope_Editor.calculateColor25(cell);
+              return NodeDefaultSearchScope_Editor.calculateColor19(cell);
             }
 
           });
@@ -262,19 +262,19 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private static Color calculateColor21(EditorCell cell) {
+  private static Color calculateColor16(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor22(EditorCell cell) {
+  private static Color calculateColor17(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor25(EditorCell cell) {
+  private static Color calculateColor19(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

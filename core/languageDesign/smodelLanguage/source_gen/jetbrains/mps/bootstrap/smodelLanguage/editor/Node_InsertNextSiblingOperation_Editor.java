@@ -132,7 +132,7 @@ public class Node_InsertNextSiblingOperation_Editor extends DefaultNodeEditor {
   public EditorCell create_insertedNodeRefNodeCell13948_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("insertedNode");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no insertedNode>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_insertedNodeRefNodeCell13948_0_internal(context, node, provider);

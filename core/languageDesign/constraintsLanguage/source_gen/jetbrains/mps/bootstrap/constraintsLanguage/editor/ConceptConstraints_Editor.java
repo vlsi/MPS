@@ -159,7 +159,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ConceptConstraints_Editor.calculateColor6(cell);
+              return ConceptConstraints_Editor.calculateColor5(cell);
             }
 
           });
@@ -420,13 +420,13 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private static Color calculateColor6(EditorCell cell) {
+  private static Color calculateColor5(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor18(EditorCell cell) {
+  private static Color calculateColor13(EditorCell cell) {
     Color result;
     result = Color.lightGray;
     return result;
@@ -709,7 +709,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
   public EditorCell create_conceptRefCell19349_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("concept");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no concept>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_conceptRefCell19349_0_internal(context, node, provider);
@@ -883,7 +883,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
   public EditorCell create_defaultConcreteConceptRefCell19349_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("defaultConcreteConcept");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no defaultConcreteConcept>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_defaultConcreteConceptRefCell19349_0_internal(context, node, provider);
@@ -934,7 +934,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     public EditorCell create_namePropertyCell19349_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_namePropertyCell19349_0_internal(context, node, provider);
@@ -986,7 +986,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     public EditorCell create_namePropertyCell19349_01(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_namePropertyCell19349_01_internal(context, node, provider);
@@ -1015,7 +1015,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return ConceptConstraints_Editor.calculateColor18(cell);
+                return ConceptConstraints_Editor.calculateColor13(cell);
               }
 
             });

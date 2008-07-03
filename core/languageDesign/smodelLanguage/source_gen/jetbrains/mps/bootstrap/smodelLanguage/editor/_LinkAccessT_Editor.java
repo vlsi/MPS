@@ -139,7 +139,7 @@ public class _LinkAccessT_Editor extends DefaultNodeEditor {
   public EditorCell create_targetConceptRefCell3859_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("targetConcept");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no targetConcept>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_targetConceptRefCell3859_0_internal(context, node, provider);
@@ -168,7 +168,7 @@ public class _LinkAccessT_Editor extends DefaultNodeEditor {
   public EditorCell create_singularCradinalityPropertyCell3859_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("singularCradinality");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no singularCradinality>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_singularCradinalityPropertyCell3859_0_internal(context, node, provider);
@@ -197,7 +197,7 @@ public class _LinkAccessT_Editor extends DefaultNodeEditor {
   public EditorCell create_aggregationPropertyCell3859_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("aggregation");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no aggregation>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_aggregationPropertyCell3859_0_internal(context, node, provider);
@@ -248,7 +248,7 @@ public class _LinkAccessT_Editor extends DefaultNodeEditor {
     public EditorCell create_namePropertyCell3859_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_namePropertyCell3859_0_internal(context, node, provider);

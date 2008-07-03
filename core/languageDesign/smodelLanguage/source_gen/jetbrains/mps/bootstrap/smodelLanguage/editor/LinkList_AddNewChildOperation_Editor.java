@@ -205,7 +205,7 @@ public class LinkList_AddNewChildOperation_Editor extends DefaultNodeEditor {
     public EditorCell create_namePropertyCell21468_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_namePropertyCell21468_0_internal(context, node, provider);

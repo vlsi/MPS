@@ -160,7 +160,7 @@ public class SConceptType_Editor extends DefaultNodeEditor {
   public EditorCell create_conceptDeclaratonRefCell224_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("conceptDeclaraton");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no conceptDeclaraton>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_conceptDeclaratonRefCell224_0_internal(context, node, provider);

@@ -42,14 +42,14 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ConstraintFunction_ReferentSearchScope_Factory_Editor.calculateColor15(cell);
+              return ConstraintFunction_ReferentSearchScope_Factory_Editor.calculateColor11(cell);
             }
 
           });
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ConstraintFunction_ReferentSearchScope_Factory_Editor.calculateColor46(cell);
+              return ConstraintFunction_ReferentSearchScope_Factory_Editor.calculateColor36(cell);
             }
 
           });
@@ -237,7 +237,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ConstraintFunction_ReferentSearchScope_Factory_Editor.calculateColor48(cell);
+              return ConstraintFunction_ReferentSearchScope_Factory_Editor.calculateColor38(cell);
             }
 
           });
@@ -324,19 +324,19 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   private static void setupLabel_ConstantCell19273_013(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor15(EditorCell cell) {
+  private static Color calculateColor11(EditorCell cell) {
     Color result;
     result = Color.blue;
     return result;
   }
 
-  private static Color calculateColor46(EditorCell cell) {
+  private static Color calculateColor36(EditorCell cell) {
     Color result;
     result = Color.lightGray;
     return result;
   }
 
-  private static Color calculateColor48(EditorCell cell) {
+  private static Color calculateColor38(EditorCell cell) {
     Color result;
     result = Color.pink;
     return result;

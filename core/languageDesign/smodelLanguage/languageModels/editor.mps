@@ -2261,6 +2261,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1179409365157">
         <property name="text" value="(" />
+        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1179409369096">
         <property name="separatorText" value="," />
@@ -2275,6 +2276,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1179409379177">
         <property name="text" value=")" />
         <property name="attractsFocus" value="1" />
+        <link role="styleClass" targetNodeId="5.1215088010675" resolveInfo="RightParen" />
         <node role="focusPolicyApplicable" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1201515637070">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201515637071">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201515650920">

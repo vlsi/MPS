@@ -104,7 +104,7 @@ public class SemanticDowncastExpression_Editor extends DefaultNodeEditor {
   public EditorCell create_leftExpressionRefNodeCell17183_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("leftExpression");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no leftExpression>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_leftExpressionRefNodeCell17183_0_internal(context, node, provider);

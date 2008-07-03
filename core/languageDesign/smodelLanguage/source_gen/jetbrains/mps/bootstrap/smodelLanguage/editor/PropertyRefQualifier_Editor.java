@@ -94,7 +94,7 @@ public class PropertyRefQualifier_Editor extends DefaultNodeEditor {
     public EditorCell create_namePropertyCell18366_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_namePropertyCell18366_0_internal(context, node, provider);

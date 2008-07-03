@@ -147,7 +147,7 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
   public EditorCell create_enumMemberRefCell13171_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("enumMember");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no enumMember>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_enumMemberRefCell13171_0_internal(context, node, provider);

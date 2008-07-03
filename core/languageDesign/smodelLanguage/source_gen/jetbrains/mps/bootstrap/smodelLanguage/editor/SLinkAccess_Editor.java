@@ -95,7 +95,7 @@ public class SLinkAccess_Editor extends DefaultNodeEditor {
     public EditorCell create_rolePropertyCell3807_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("role");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no role>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_rolePropertyCell3807_0_internal(context, node, provider);

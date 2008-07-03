@@ -52,7 +52,7 @@ public class AllAttributesQualifier_Editor extends DefaultNodeEditor {
   public EditorCell create_ConceptPropertyCell4702_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no alias>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_ConceptPropertyCell4702_0_internal(context, node, provider);

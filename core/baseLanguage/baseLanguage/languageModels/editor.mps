@@ -2588,6 +2588,12 @@
       <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.EditableStyleSheetItem" id="1214398032152">
         <property name="flag" value="true" />
       </node>
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleSheetItem" id="1215096780687">
+        <property name="value" value="0.0" />
+      </node>
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleSheetItem" id="1215096783908">
+        <property name="value" value="0.0" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1079622224907">
@@ -3417,6 +3423,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1082740154394">
         <property name="text" value="." />
+        <link role="styleClass" targetNodeId="1215096040201" resolveInfo="Dot" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1088427644683">
         <property name="noTargetText" value="&lt;no static member&gt;" />
@@ -4924,6 +4931,12 @@
       <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
       <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934117">
         <property name="style" value="ITALIC" />
+      </node>
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleSheetItem" id="1215098077679">
+        <property name="value" value="0.0" />
+      </node>
+      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleSheetItem" id="1215098080040">
+        <property name="value" value="0.0" />
       </node>
     </node>
   </node>
@@ -15271,6 +15284,7 @@
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1212700054374">
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="18.1196978656277" resolveInfo="resolveInfo" />
+            <link role="styleClass" targetNodeId="1215090647074" resolveInfo="MethodName" />
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.RightTransformAnchorTagStyleSheetItem" id="1214321202508">
               <property name="tag" value="ext_1_RTransform" />
             </node>

@@ -99,7 +99,7 @@ public class LinkAttributeAccessQualifier_Editor extends DefaultNodeEditor {
   public EditorCell create_annotationLinkRefCell11337_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("annotationLink");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no annotationLink>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_annotationLinkRefCell11337_0_internal(context, node, provider);

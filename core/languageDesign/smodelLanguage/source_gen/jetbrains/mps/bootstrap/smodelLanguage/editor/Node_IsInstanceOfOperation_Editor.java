@@ -384,7 +384,7 @@ public class Node_IsInstanceOfOperation_Editor extends DefaultNodeEditor {
     public EditorCell create_namePropertyCell21039_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_namePropertyCell21039_0_internal(context, node, provider);

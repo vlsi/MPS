@@ -49,7 +49,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return NodePropertyConstraint_Editor.calculateColor17(cell);
+              return NodePropertyConstraint_Editor.calculateColor12(cell);
             }
 
           });
@@ -69,7 +69,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return NodePropertyConstraint_Editor.calculateColor14(cell);
+              return NodePropertyConstraint_Editor.calculateColor10(cell);
             }
 
           });
@@ -93,7 +93,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return NodePropertyConstraint_Editor.calculateColor39(cell);
+              return NodePropertyConstraint_Editor.calculateColor30(cell);
             }
 
           });
@@ -164,7 +164,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return NodePropertyConstraint_Editor.calculateColor10(cell);
+              return NodePropertyConstraint_Editor.calculateColor8(cell);
             }
 
           });
@@ -212,7 +212,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return NodePropertyConstraint_Editor.calculateColor27(cell);
+              return NodePropertyConstraint_Editor.calculateColor21(cell);
             }
 
           });
@@ -257,7 +257,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return NodePropertyConstraint_Editor.calculateColor20(cell);
+              return NodePropertyConstraint_Editor.calculateColor15(cell);
             }
 
           });
@@ -336,43 +336,43 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
   private static void setupLabel_propertyValidatorRefNodeCell4539_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
+  private static Color calculateColor8(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_BLUE;
+    return result;
+  }
+
   private static Color calculateColor10(EditorCell cell) {
     Color result;
+    result = MPSColors.DARK_MAGENTA;
+    return result;
+  }
+
+  private static Color calculateColor12(EditorCell cell) {
+    Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor14(EditorCell cell) {
+  private static Color calculateColor15(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_BLUE;
+    return result;
+  }
+
+  private static Color calculateColor21(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_BLUE;
+    return result;
+  }
+
+  private static Color calculateColor30(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
   }
 
-  private static Color calculateColor17(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_BLUE;
-    return result;
-  }
-
-  private static Color calculateColor20(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_BLUE;
-    return result;
-  }
-
-  private static Color calculateColor27(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_BLUE;
-    return result;
-  }
-
-  private static Color calculateColor39(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_MAGENTA;
-    return result;
-  }
-
-  private static Color calculateColor41(EditorCell cell) {
+  private static Color calculateColor32(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;
@@ -685,7 +685,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {
-                return NodePropertyConstraint_Editor.calculateColor41(cell);
+                return NodePropertyConstraint_Editor.calculateColor32(cell);
               }
 
             });

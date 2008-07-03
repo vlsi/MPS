@@ -128,7 +128,7 @@ public class LinkList_InsertChildFirstOperation_Editor extends DefaultNodeEditor
   public EditorCell create_parameterRefNodeCell17807_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("parameter");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no parameter>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_parameterRefNodeCell17807_0_internal(context, node, provider);

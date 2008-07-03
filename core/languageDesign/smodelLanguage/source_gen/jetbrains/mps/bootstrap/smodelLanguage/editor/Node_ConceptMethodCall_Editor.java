@@ -7,6 +7,7 @@ import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.smodel.IScope;
@@ -44,6 +45,7 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell17930_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell17930_0");
+    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
   }
 
   private static void setupBasic_actualArgumentRefNodeListCell17930_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -52,6 +54,7 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell17930_02(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell17930_02");
+    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
     if (renderingCondition17930_0(node, context, context.getScope())) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
@@ -135,7 +138,7 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
   public EditorCell create_conceptMethodDeclarationRefCell17930_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("conceptMethodDeclaration");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no conceptMethodDeclaration>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_conceptMethodDeclarationRefCell17930_0_internal(context, node, provider);
@@ -186,7 +189,7 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
     public EditorCell create_namePropertyCell17930_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
-      provider.setNoTargetText("");
+      provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.create_namePropertyCell17930_0_internal(context, node, provider);

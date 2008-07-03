@@ -125,7 +125,7 @@ public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return StaticConceptMethodDeclaration_Editor.calculateColor33(cell);
+              return StaticConceptMethodDeclaration_Editor.calculateColor24(cell);
             }
 
           });
@@ -144,7 +144,7 @@ public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return StaticConceptMethodDeclaration_Editor.calculateColor38(cell);
+              return StaticConceptMethodDeclaration_Editor.calculateColor29(cell);
             }
 
           });
@@ -233,13 +233,13 @@ public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     return !(SPropertyOperations.getBoolean(node, "isPrivate"));
   }
 
-  private static Color calculateColor33(EditorCell cell) {
+  private static Color calculateColor24(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
   }
 
-  private static Color calculateColor38(EditorCell cell) {
+  private static Color calculateColor29(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;
@@ -422,7 +422,7 @@ public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell create_bodyRefNodeCell19902_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no body>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_bodyRefNodeCell19902_0_internal(context, node, provider);
@@ -451,7 +451,7 @@ public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell create_isPrivatePropertyCell19902_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("isPrivate");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no isPrivate>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_isPrivatePropertyCell19902_0_internal(context, node, provider);
@@ -480,7 +480,7 @@ public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell create_returnTypeRefNodeCell19902_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("returnType");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no returnType>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_returnTypeRefNodeCell19902_0_internal(context, node, provider);
@@ -510,7 +510,7 @@ public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell create_namePropertyCell19902_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no name>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.create_namePropertyCell19902_0_internal(context, node, provider);

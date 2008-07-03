@@ -29,7 +29,7 @@ public class SuperNodeExpression_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return SuperNodeExpression_Editor.calculateColor12(cell);
+              return SuperNodeExpression_Editor.calculateColor9(cell);
             }
 
           });
@@ -43,7 +43,7 @@ public class SuperNodeExpression_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell14964_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor12(EditorCell cell) {
+  private static Color calculateColor9(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
     return result;

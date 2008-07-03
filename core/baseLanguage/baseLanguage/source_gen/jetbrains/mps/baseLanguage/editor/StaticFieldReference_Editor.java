@@ -33,6 +33,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell19365_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell19365_0");
+    BaseLanguageStyle_StyleSheet.DOT.apply(editorCell);
   }
 
   private static void setupBasic_staticFieldDeclarationRefCell19365_0(EditorCell editorCell, SNode node, EditorContext context) {
