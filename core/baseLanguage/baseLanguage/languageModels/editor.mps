@@ -8317,6 +8317,12 @@
           <property name="readOnly" value="true" />
           <link role="styleClass" targetNodeId="1198160792349" resolveInfo="staticField" />
           <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleSheetItem" id="1215116675593">
+            <property name="value" value="0.0" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleSheetItem" id="1215116678095">
+            <property name="value" value="0.0" />
+          </node>
         </node>
       </node>
     </node>
