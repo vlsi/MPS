@@ -225,6 +225,9 @@ public abstract class CompletionTextField extends JTextField {
       } else {
         myList.setSelectedIndex(Math.max(0, myList.getSelectedIndex() - 1));
       }
+      myList.ensureIndexIsVisible(myList.getSelectedIndex());
+
+
     }
 
     void down() {
@@ -236,6 +239,7 @@ public abstract class CompletionTextField extends JTextField {
       } else {
         myList.setSelectedIndex(Math.min(myList.getModel().getSize() - 1, myList.getSelectedIndex() + 1));
       }
+      myList.ensureIndexIsVisible(myList.getSelectedIndex());
     }
 
     void complete() {
