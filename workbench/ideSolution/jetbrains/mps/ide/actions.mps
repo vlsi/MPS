@@ -547,6 +547,10 @@
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980895985">
         <link role="javaClass" targetNodeId="1.~ShowInProjectAction" resolveInfo="ShowInProjectAction"/>
       </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1215113223054">
+        <link role="javaClass" targetNodeId="1.~SelectInActionAdapter" resolveInfo="SelectInActionAdapter"/>
+      </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1215112822585"/>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980902346">
         <link role="javaClass" targetNodeId="1.~GoToConceptDeclarationAction"
               resolveInfo="GoToConceptDeclarationAction"/>

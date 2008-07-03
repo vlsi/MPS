@@ -1,9 +1,6 @@
 package jetbrains.mps.ide.projectPane;
 
-import com.intellij.ide.CopyProvider;
-import com.intellij.ide.CutProvider;
-import com.intellij.ide.PasteProvider;
-import com.intellij.ide.SelectInTarget;
+import com.intellij.ide.*;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import com.intellij.openapi.actionSystem.DataContext;
@@ -52,6 +49,7 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -244,7 +242,31 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   }
 
   public SelectInTarget createSelectInTarget() {
-    return null;
+    return new SelectInTarget() {
+      public boolean canSelect(SelectInContext context) {
+        return true;
+      }
+
+      public void selectIn(final SelectInContext context, boolean requestFocus) {
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            selectNode(((MPSNodeVirtualFile) context.getVirtualFile()).getNode());
+          }
+        });
+      }
+
+      public String getToolWindowId() {
+        return MPS_FILESYSTEM;
+      }
+
+      public String getMinorViewId() {
+        return "min v id";
+      }
+
+      public float getWeight() {
+        return 0;
+      }
+    };
   }
 
   public Icon getIcon() {
