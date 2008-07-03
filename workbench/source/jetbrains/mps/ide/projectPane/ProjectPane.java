@@ -56,13 +56,12 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
-import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
-import java.awt.BorderLayout;
+import java.awt.Component;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
@@ -116,7 +115,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   private ToggleAction myPAndRToggle;
   private ToggleAction myAutoscrollToSource;
   private ToggleAction myAutoscrollFromSource;
-  private MyPanel myPanel = new MyPanel();
+  private MyScrollPane myScrollPane;
 
   private ReloadListener myReloadListener = new ReloadListener() {
     public void onBeforeReload() {
@@ -163,11 +162,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
 
     addListeners();
 
-    getPanel().setLayout(new BorderLayout());
-
-    JScrollPane scroller = new JScrollPane(getTree());
-    scroller.setBorder(null);
-    getPanel().add(scroller, BorderLayout.CENTER);
+    myScrollPane = new MyScrollPane(getTree());
     getTree().addKeyListener(new KeyAdapter() {
       public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_F4 && e.getModifiers() == 0) {
@@ -180,9 +175,9 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
         }
       }
     });
+  }
 
-    DefaultActionGroup toolbarGroup = new DefaultActionGroup();
-
+  public void addToolbarActions(final DefaultActionGroup group) {
     myPAndRToggle = new ToggleAction("Show properties and references", "Show properties and references", Icons.PROP_AND_REF) {
       public boolean isSelected(@Nullable AnActionEvent e) {
         return isShowPropertiesAndReferences();
@@ -192,7 +187,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
         setShowPropertiesAndReferences(!isShowPropertiesAndReferences());
       }
     };
-    toolbarGroup.add(myPAndRToggle);
+    group.add(myPAndRToggle);
 
     myAutoscrollToSource = new ToggleAction("Autoscroll to source", "Autoscroll to source", Icons.AUTOSCROLL_TO_SOURCE) {
       public boolean isSelected(@Nullable AnActionEvent e) {
@@ -203,7 +198,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
         getTree().setAutoOpen(!getTree().isAutoOpen());
       }
     };
-    toolbarGroup.add(myAutoscrollToSource);
+    group.add(myAutoscrollToSource);
 
     myAutoscrollFromSource = new ToggleAction("Autoscroll from source", "Autoscroll from source", Icons.AUTOSCROLL_FROM_SOURCE) {
       public boolean isSelected(@Nullable AnActionEvent e) {
@@ -214,10 +209,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
 
       }
     };
-    toolbarGroup.add(myAutoscrollFromSource);
-
-    JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.FILE_VIEW, toolbarGroup, true).getComponent();
-    getPanel().add(toolbar, BorderLayout.NORTH);
+    group.add(myAutoscrollFromSource);
   }
 
   public void initComponent() {
@@ -275,11 +267,11 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   }
 
   public void updateFromRoot(boolean restoreExpandedPaths) {
-    throw new UnsupportedOperationException();
+    getTree().rebuildLater();
   }
 
   public void select(Object element, VirtualFile file, boolean requestFocus) {
-    throw new UnsupportedOperationException();
+
   }
 
   public JComponent createComponent() {
@@ -287,7 +279,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   }
 
   public JComponent getComponent() {
-    return getPanel();
+    return myScrollPane;
   }
 
   protected void editNode(SNode node, IOperationContext context) {
@@ -309,7 +301,6 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   public void projectClosed() {
     ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
   }
-
 
   protected void onBeforeModelWillBeDeleted(SModelDescriptor sm) {
     selectNextTreeModel(sm);
@@ -705,10 +696,6 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     return myAutoscrollFromSource.isSelected(null);
   }
 
-  public JPanel getPanel() {
-    return myPanel;
-  }
-
   public void doRebuildTree() {
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
@@ -956,7 +943,11 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     }
   }
 
-  private class MyPanel extends JPanel implements IActionDataProvider, DataProvider {
+  private class MyScrollPane extends JScrollPane implements IActionDataProvider, DataProvider {
+    private MyScrollPane(Component view) {
+      super(view);
+    }
+
     public <T> T get(Class<T> cls) {
       if (cls == SNode.class) return (T) getSelectedSNode();
       if (cls == SModelDescriptor.class) {
@@ -1031,6 +1022,4 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       return true;
     }
   }
-
-
 }
