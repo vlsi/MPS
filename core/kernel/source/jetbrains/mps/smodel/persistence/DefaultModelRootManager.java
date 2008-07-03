@@ -28,6 +28,8 @@ import java.util.*;
 
 import com.intellij.openapi.project.Project;
 
+import javax.swing.SwingUtilities;
+
 /**
  * @author Kostik
  */
@@ -51,17 +53,18 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
 
       if (mineFile.exists() && !IdeMain.isTestMode()) {
         FileUtil.copyFile(mineFile, file);
-        ThreadUtils.runInUIThreadNoWait(new Runnable() {
+        SwingUtilities.invokeLater(new Runnable() {
           public void run() {
-            ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-              public void run() {
-                NodeReadAccessCaster.blockEvents();
-                try {
-                  Merger.merge(file);
-                } finally {
-                  NodeReadAccessCaster.unblockEvents();
-                }
+            NodeReadAccessCaster.blockEvents();
+            try {
+              Merger.merge(file);
+            } finally {
+              NodeReadAccessCaster.unblockEvents();
+            }
 
+
+            ModelAccess.instance().runWriteAction(new Runnable() {
+              public void run() {
                 modelDescriptor.reloadFromDisk();
               }
             });

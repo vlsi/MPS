@@ -102,12 +102,16 @@ public class MergeResultView extends JPanel {
   }
 
   private void rebuildData() {
-    collectConflicts();
-    collectWarnings();
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        collectConflicts();
+        collectWarnings();
 
-    rebuldResultModel();
+        rebuldResultModel();
 
-    updateView();
+        updateView();
+      }
+    });
   }
 
   private void rebuldResultModel() {
