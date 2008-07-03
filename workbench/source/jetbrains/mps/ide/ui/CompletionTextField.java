@@ -6,10 +6,7 @@ import javax.swing.event.DocumentListener;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.CaretListener;
 import javax.swing.event.CaretEvent;
-import java.awt.FlowLayout;
-import java.awt.BorderLayout;
-import java.awt.Window;
-import java.awt.Point;
+import java.awt.*;
 import java.awt.event.*;
 import java.util.List;
 import java.util.Arrays;
@@ -122,7 +119,17 @@ public abstract class CompletionTextField extends JTextField {
     }
   }
 
+  public boolean isValid() {
+    return true;
+  }
+
   private void updateCompletion() {
+    if (isValid()) {
+      setForeground(Color.BLACK);
+    } else {
+      setForeground(Color.RED);
+    }
+
     if (!isShowing()) {
       return;
     }
