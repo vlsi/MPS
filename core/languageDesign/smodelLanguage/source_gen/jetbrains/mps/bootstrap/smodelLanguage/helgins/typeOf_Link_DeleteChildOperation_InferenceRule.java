@@ -21,7 +21,10 @@ public class typeOf_Link_DeleteChildOperation_InferenceRule implements Inference
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(C, new Runnable() {
 
         public void run() {
-          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205528931094", true), new QuotationClass_68().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(C)), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205528931092");
+          {
+            SNode _nodeToCheck_1029348928467 = op;
+            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205528931094", true), new QuotationClass_68().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(C)), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205528931092");
+          }
         }
 
       }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205528931049");

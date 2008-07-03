@@ -25,7 +25,10 @@ public class typeof_NodeAttributeAccessQualifier_InferenceRule implements Infere
     SLinkOperations.setTarget(T, "targetConcept", SLinkOperations.getTarget(annotationLink, "target", false), false);
     SPropertyOperations.set(T, "singularCradinality", "" + (SPropertyOperations.hasValue(annotationLink, "sourceCardinality", "0..1", "0..1")));
     SPropertyOperations.set(T, "aggregation", "" + (true));
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205266078203", true), T, nodeToCheck, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205266078201");
+    {
+      SNode _nodeToCheck_1029348928467 = nodeToCheck;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205266078203", true), T, _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205266078201");
+    }
     // ---
     if (!(SPropertyOperations.hasValue(annotationLink, "stereotype", "node", "node"))) {
       TypeChecker.getInstance().reportTypeError(nodeToCheck, "node annotation link is expected", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204764593904");

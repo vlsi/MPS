@@ -215,7 +215,10 @@ public class RulesUtil {
           if (conceptDeclaration == null) {
             conceptDeclaration = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept");
           }
-          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, conceptDeclaration, null, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1208202100494");
+          {
+            SNode _nodeToCheck_1029348928467 = null;
+            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, conceptDeclaration, _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1208202100494");
+          }
         }
 
       }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1208202100447");
@@ -226,20 +229,32 @@ public class RulesUtil {
   public static void equate_inputNodeType(SNode op, SNode TypeToEquate) {
     final SNode Concept_typevar_1206099042246 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
     equate_inputNodeConcept(op, TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1206099042246));
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, new QuotationClass_75().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1206099042246)), null, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206099071408");
+    {
+      SNode _nodeToCheck_1029348928467 = null;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, new QuotationClass_75().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1206099042246)), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206099071408");
+    }
   }
 
   @InferenceMethod()
   public static void equate_conceptFromOpParm(SNode op, final SNode TypeToEquate) {
     SNode opParm = SNodeOperation_Behavior.call_getParameter_1213877508972(op, SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept"));
     if (opParm == null) {
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept"), null, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207352395113");
+      {
+        SNode _nodeToCheck_1029348928467 = null;
+        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept"), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207352395113");
+      }
     } else
     if (SLinkOperations.getTarget(opParm, "concept", false) != null) {
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, SLinkOperations.getTarget(opParm, "concept", false), null, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207352428450");
+      {
+        SNode _nodeToCheck_1029348928467 = null;
+        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, SLinkOperations.getTarget(opParm, "concept", false), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207352428450");
+      }
     } else
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(opParm, "conceptArgument", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference")) {
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, SLinkOperations.getTarget(SLinkOperations.getTarget(opParm, "conceptArgument", true), "conceptDeclaration", false), null, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207352483830");
+      {
+        SNode _nodeToCheck_1029348928467 = null;
+        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, SLinkOperations.getTarget(SLinkOperations.getTarget(opParm, "conceptArgument", true), "conceptDeclaration", false), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207352483830");
+      }
     } else
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(opParm, "conceptArgument", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression")) {
       {
@@ -249,10 +264,16 @@ public class RulesUtil {
           public void run() {
             SNode conceptType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(poundExpressionType), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType"), true);
             if (SLinkOperations.getTarget(conceptType, "conceptDeclaraton", false) != null) {
-              TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, SLinkOperations.getTarget(conceptType, "conceptDeclaraton", false), null, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1210624466615");
+              {
+                SNode _nodeToCheck_1029348928467 = null;
+                TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, SLinkOperations.getTarget(conceptType, "conceptDeclaraton", false), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1210624466615");
+              }
             } else
             {
-              TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept"), null, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1210624867499");
+              {
+                SNode _nodeToCheck_1029348928467 = null;
+                TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept"), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1210624867499");
+              }
             }
           }
 

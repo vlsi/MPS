@@ -14,7 +14,10 @@ public class typeof_AllAttributesQualifier_InferenceRule implements InferenceRul
 
   public void applyRule(final SNode nodeToCheck) {
     // assign type
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205357746693", true), new QuotationClass_66().createNode(), nodeToCheck, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205357746691");
+    {
+      SNode _nodeToCheck_1029348928467 = nodeToCheck;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205357746693", true), new QuotationClass_66().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205357746691");
+    }
   }
 
   public String getApplicableConceptFQName() {

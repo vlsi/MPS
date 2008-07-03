@@ -18,7 +18,10 @@ public class typeof_Node_IsInstanceOfOperation_InferenceRule implements Inferenc
     SNode conceptArg = SLinkOperations.getTarget(op, "conceptArgument", true);
     if (SNodeOperations.isInstanceOf(conceptArg, "jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression")) {
       // concept expected
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(conceptArg, "expression", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206659963964", false), new QuotationClass_83().createNode(), SLinkOperations.getTarget(conceptArg, "expression", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206659963962", false, 0);
+      {
+        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(conceptArg, "expression", true);
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206659963964", false), new QuotationClass_83().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206659963962", false, 0);
+      }
     }
   }
 

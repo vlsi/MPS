@@ -36,7 +36,10 @@ public class typeOf_LinkList_AddNewChildOperation_InferenceRule implements Infer
               TypeChecker.getInstance().reportTypeError(op, SPropertyOperations.getString(parameterConcept, "name") + " is not sub-concept of " + SPropertyOperations.getString(TypeChecker.getInstance().getEquationManager().getRepresentator(concreteConcept), "name"), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205771608879");
             }
           }
-          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205771608897", true), new QuotationClass_69().createNode(resultConcept), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205771608895");
+          {
+            SNode _nodeToCheck_1029348928467 = op;
+            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205771608897", true), new QuotationClass_69().createNode(resultConcept), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205771608895");
+          }
         }
 
       }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205771551269");

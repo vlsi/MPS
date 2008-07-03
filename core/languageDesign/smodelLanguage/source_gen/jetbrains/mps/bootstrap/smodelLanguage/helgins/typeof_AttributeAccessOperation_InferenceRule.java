@@ -14,7 +14,10 @@ public class typeof_AttributeAccessOperation_InferenceRule implements InferenceR
   }
 
   public void applyRule(final SNode nodeToCheck) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204927095797", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "attributeQualifier", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204927107972", false), nodeToCheck, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204927092918");
+    {
+      SNode _nodeToCheck_1029348928467 = nodeToCheck;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204927095797", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "attributeQualifier", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204927107972", false), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204927092918");
+    }
   }
 
   public String getApplicableConceptFQName() {

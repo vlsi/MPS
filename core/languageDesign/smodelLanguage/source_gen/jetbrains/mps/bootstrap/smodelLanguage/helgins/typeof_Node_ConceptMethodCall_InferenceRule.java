@@ -37,10 +37,16 @@ public class typeof_Node_ConceptMethodCall_InferenceRule implements InferenceRul
         }
         arg = arg_iterator.next();
         parameter = parameter_iterator.next();
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(arg, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179411075565", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179411084134", true), arg, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179411081637", false, 0);
+        {
+          SNode _nodeToCheck_1029348928467 = arg;
+          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179411075565", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179411084134", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179411081637", false, 0);
+        }
       }
     }
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(conceptMethodCall, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179410528345", true), SLinkOperations.getTarget(SLinkOperations.getTarget(conceptMethodCall, "conceptMethodDeclaration", false), "returnType", true), conceptMethodCall, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179410535708");
+    {
+      SNode _nodeToCheck_1029348928467 = conceptMethodCall;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179410528345", true), SLinkOperations.getTarget(SLinkOperations.getTarget(conceptMethodCall, "conceptMethodDeclaration", false), "returnType", true), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179410535708");
+    }
   }
 
   public String getApplicableConceptFQName() {

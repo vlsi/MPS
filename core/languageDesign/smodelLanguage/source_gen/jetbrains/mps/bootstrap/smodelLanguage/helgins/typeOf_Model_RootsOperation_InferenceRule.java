@@ -15,7 +15,10 @@ public class typeOf_Model_RootsOperation_InferenceRule implements InferenceRule_
 
   public void applyRule(final SNode node) {
     RulesUtil.checkAppliedCorrectly_generic(node);
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203711981682", true), new QuotationClass_45().createNode(SLinkOperations.getTarget(node, "concept", false)), node, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203711981680");
+    {
+      SNode _nodeToCheck_1029348928467 = node;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203711981682", true), new QuotationClass_45().createNode(SLinkOperations.getTarget(node, "concept", false)), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203711981680");
+    }
   }
 
   public String getApplicableConceptFQName() {

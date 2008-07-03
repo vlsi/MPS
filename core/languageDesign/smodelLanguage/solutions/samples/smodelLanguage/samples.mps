@@ -1350,6 +1350,19 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215104041223">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215104045698">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215104042897">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1215104041224">
+                <link role="variableDeclaration" targetNodeId="1145580983579" resolveInfo="statementList" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1215104044197">
+                <link role="link" targetNodeId="1.1068581517665" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_RemoveAllChildrenOperation" id="1215104047310" />
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1145580983579">
         <property name="name" value="statementList" />

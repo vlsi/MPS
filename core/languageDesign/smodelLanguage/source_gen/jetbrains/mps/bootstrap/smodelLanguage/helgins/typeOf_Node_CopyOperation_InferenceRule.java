@@ -22,12 +22,18 @@ public class typeOf_Node_CopyOperation_InferenceRule implements InferenceRule_Ru
 
         public void run() {
           SNode inputNodeConcept = TypeChecker.getInstance().getEquationManager().getRepresentator(C);
-          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205967749966", true), new QuotationClass_71().createNode(inputNodeConcept), node, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205967749964");
+          {
+            SNode _nodeToCheck_1029348928467 = node;
+            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205967749966", true), new QuotationClass_71().createNode(inputNodeConcept), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205967749964");
+          }
         }
 
       }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205967749957");
     }
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057865109", true), new QuotationClass_46().createNode(), node, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057869956", false, 0);
+    {
+      SNode _nodeToCheck_1029348928467 = node;
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057865109", true), new QuotationClass_46().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057869956", false, 0);
+    }
   }
 
   public String getApplicableConceptFQName() {

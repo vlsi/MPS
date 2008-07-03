@@ -28,24 +28,42 @@ public class typeof_Property_SetOperation_InferenceRule implements InferenceRule
     SNode value = SLinkOperations.getTarget(op, "value", true);
     if ((value != null)) {
       if (DataTypeUtil.isSimpleString(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059295984", true), new QuotationClass_3().createNode(), value, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059295979", false, 0);
+        {
+          SNode _nodeToCheck_1029348928467 = value;
+          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059295984", true), new QuotationClass_3().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059295979", false, 0);
+        }
       } else
       if (DataTypeUtil.isSimpleInteger(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059295997", true), new QuotationClass_4().createNode(), value, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059295992", false, 0);
+        {
+          SNode _nodeToCheck_1029348928467 = value;
+          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059295997", true), new QuotationClass_4().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059295992", false, 0);
+        }
       } else
       if (DataTypeUtil.isSimpleBoolean(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059296010", true), new QuotationClass_5().createNode(), value, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059296005", false, 0);
+        {
+          SNode _nodeToCheck_1029348928467 = value;
+          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059296010", true), new QuotationClass_5().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059296005", false, 0);
+        }
       } else
       if (DataTypeUtil.isEnum(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
         if (!(SNodeOperations.isInstanceOf(value, "jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference"))) {
           if (DataTypeUtil.isEnumOfInteger(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
-            TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1214430014542", true), new QuotationClass_99().createNode(), value, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1214430014537", false, 0);
+            {
+              SNode _nodeToCheck_1029348928467 = value;
+              TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1214430014542", true), new QuotationClass_99().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1214430014537", false, 0);
+            }
           } else
           if (DataTypeUtil.isEnumOfBoolean(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
-            TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1214430042918", true), new QuotationClass_100().createNode(), value, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1214430042913", false, 0);
+            {
+              SNode _nodeToCheck_1029348928467 = value;
+              TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1214430042918", true), new QuotationClass_100().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1214430042913", false, 0);
+            }
           } else
           {
-            TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059478775", true), new QuotationClass_6().createNode(), value, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059478770", false, 0);
+            {
+              SNode _nodeToCheck_1029348928467 = value;
+              TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059478775", true), new QuotationClass_6().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059478770", false, 0);
+            }
           }
         }
       } else

@@ -19,7 +19,10 @@ public class typeof_Node_GetConceptOperation_InferenceRule implements InferenceR
   public void applyRule(final SNode op) {
     RulesUtil.checkAppliedCorrectly_generic(op);
     RulesUtil.checkOpParameters_generic(op);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1210625778386", true), new QuotationClass_97().createNode(), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1210625806639", false, 0);
+    {
+      SNode _nodeToCheck_1029348928467 = op;
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1210625778386", true), new QuotationClass_97().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1210625806639", false, 0);
+    }
     SNode operand = SLinkOperations.getTarget(SNodeOperations.getParent(op, null, false, false), "operand", true);
     {
       final SNode operandType = TypeChecker.getInstance().getRuntimeSupport().typeOf(operand, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1210625639214", false);
@@ -31,7 +34,10 @@ public class typeof_Node_GetConceptOperation_InferenceRule implements InferenceR
             SNode coercedNode_3 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(operandType), pattern_3);
             if (coercedNode_3 != null) {
               if (SLinkOperations.getTarget(coercedNode_3, "concept", false) != null) {
-                TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1210625860175", true), new QuotationClass_98().createNode(SLinkOperations.getTarget(coercedNode_3, "concept", false)), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1210625868819");
+                {
+                  SNode _nodeToCheck_1029348928467 = op;
+                  TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1210625860175", true), new QuotationClass_98().createNode(SLinkOperations.getTarget(coercedNode_3, "concept", false)), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1210625868819");
+                }
               }
             }
           }

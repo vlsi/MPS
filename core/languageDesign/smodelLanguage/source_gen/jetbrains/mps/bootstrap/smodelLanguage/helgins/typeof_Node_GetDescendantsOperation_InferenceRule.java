@@ -17,7 +17,10 @@ public class typeof_Node_GetDescendantsOperation_InferenceRule implements Infere
     RulesUtil.checkOpParameters_generic(op);
     final SNode ConceptFromOpParm_typevar_1207353217271 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
     RulesUtil.equate_conceptFromOpParm(op, TypeChecker.getInstance().getEquationManager().getRepresentator(ConceptFromOpParm_typevar_1207353217271));
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207353493598", true), new QuotationClass_88().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(ConceptFromOpParm_typevar_1207353217271)), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207353493596");
+    {
+      SNode _nodeToCheck_1029348928467 = op;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207353493598", true), new QuotationClass_88().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(ConceptFromOpParm_typevar_1207353217271)), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207353493596");
+    }
   }
 
   public String getApplicableConceptFQName() {

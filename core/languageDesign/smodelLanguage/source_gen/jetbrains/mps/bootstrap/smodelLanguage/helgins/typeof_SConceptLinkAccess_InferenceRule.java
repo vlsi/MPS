@@ -34,7 +34,10 @@ public class typeof_SConceptLinkAccess_InferenceRule implements InferenceRule_Ru
       }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1208191126321");
     }
     // ==========
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712042826", true), new QuotationClass_22().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(op, "conceptLinkDeclaration", false), "targetType", false)), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712042824");
+    {
+      SNode _nodeToCheck_1029348928467 = op;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712042826", true), new QuotationClass_22().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(op, "conceptLinkDeclaration", false), "targetType", false)), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712042824");
+    }
   }
 
   public String getApplicableConceptFQName() {

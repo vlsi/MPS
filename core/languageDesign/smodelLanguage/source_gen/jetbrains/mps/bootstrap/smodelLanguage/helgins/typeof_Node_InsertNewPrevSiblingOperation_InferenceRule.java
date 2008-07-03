@@ -15,7 +15,10 @@ public class typeof_Node_InsertNewPrevSiblingOperation_InferenceRule implements 
 
   public void applyRule(final SNode op) {
     RulesUtil.checkAppliedCorrectly_generic(op);
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712014834", true), new QuotationClass_12().createNode(SLinkOperations.getTarget(op, "concept", false)), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712014832");
+    {
+      SNode _nodeToCheck_1029348928467 = op;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712014834", true), new QuotationClass_12().createNode(SLinkOperations.getTarget(op, "concept", false)), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712014832");
+    }
   }
 
   public String getApplicableConceptFQName() {

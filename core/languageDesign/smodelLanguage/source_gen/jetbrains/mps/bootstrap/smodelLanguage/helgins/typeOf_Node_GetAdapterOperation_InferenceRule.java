@@ -23,12 +23,18 @@ public class typeOf_Node_GetAdapterOperation_InferenceRule implements InferenceR
 
         public void run() {
           SNode inputNodeConcept = TypeChecker.getInstance().getEquationManager().getRepresentator(C);
-          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203710468988", true), AbstractConceptDeclaration_Behavior.call_getAdapterType_1213877394418(inputNodeConcept), node, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203710468986");
+          {
+            SNode _nodeToCheck_1029348928467 = node;
+            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203710468988", true), AbstractConceptDeclaration_Behavior.call_getAdapterType_1213877394418(inputNodeConcept), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203710468986");
+          }
         }
 
       }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057669142");
     }
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057680866", true), new QuotationClass_47().createNode(), node, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057690603", false, 500);
+    {
+      SNode _nodeToCheck_1029348928467 = node;
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057680866", true), new QuotationClass_47().createNode(), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057690603", false, 500);
+    }
   }
 
   public String getApplicableConceptFQName() {

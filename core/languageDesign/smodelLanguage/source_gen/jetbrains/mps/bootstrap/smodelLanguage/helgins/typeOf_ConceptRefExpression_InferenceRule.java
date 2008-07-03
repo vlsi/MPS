@@ -14,7 +14,10 @@ public class typeOf_ConceptRefExpression_InferenceRule implements InferenceRule_
   }
 
   public void applyRule(final SNode node) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203711929818", true), new QuotationClass_34().createNode(SLinkOperations.getTarget(node, "conceptDeclaration", false)), node, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203711929816");
+    {
+      SNode _nodeToCheck_1029348928467 = node;
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203711929818", true), new QuotationClass_34().createNode(SLinkOperations.getTarget(node, "conceptDeclaration", false)), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203711929816");
+    }
   }
 
   public String getApplicableConceptFQName() {

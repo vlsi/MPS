@@ -20,7 +20,10 @@ public class typeOf_LinkList_AddChildOperation_InferenceRule implements Inferenc
       final SNode ExpectedType_typevar_1206101161890 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
       RulesUtil.equate_inputNodeType(op, TypeChecker.getInstance().getEquationManager().getRepresentator(ExpectedType_typevar_1206101161890));
       SNode parmType = TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205272443654", true);
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(parmType, TypeChecker.getInstance().getEquationManager().getRepresentator(ExpectedType_typevar_1206101161890), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205272443656", false, 0);
+      {
+        SNode _nodeToCheck_1029348928467 = op;
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(parmType, TypeChecker.getInstance().getEquationManager().getRepresentator(ExpectedType_typevar_1206101161890), _nodeToCheck_1029348928467, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205272443656", false, 0);
+      }
     }
   }
 
