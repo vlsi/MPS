@@ -1740,8 +1740,8 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1198689023328">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213097219002">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213097219004">
-                <link role="baseMethodDeclaration" targetNodeId="24.~HierarchicalChooseNodeComponent.&lt;init&gt;(jetbrains.mps.ide.action.ActionContext,jetbrains.mps.refactoring.framework.IDescendantsProvider,jetbrains.mps.smodel.SNode)" resolveInfo="HierarchicalChooseNodeComponent" />
-                <node role="actualArgument" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_ActionContext" id="1198689063473" />
+                <link role="baseMethodDeclaration" targetNodeId="24.~HierarchicalChooseNodeComponent.&lt;init&gt;(jetbrains.mps.smodel.IOperationContext,jetbrains.mps.refactoring.framework.IDescendantsProvider,jetbrains.mps.smodel.SNode)" resolveInfo="HierarchicalChooseNodeComponent" />
+                <node role="actualArgument" type="jetbrains.mps.logging.refactoring.structure.OperationContextExpression" id="1215088370799" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213097221833">
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213097221835">
                     <link role="baseMethodDeclaration" targetNodeId="24.~ConceptAncestorsProvider.&lt;init&gt;()" resolveInfo="ConceptAncestorsProvider" />
@@ -2586,8 +2586,8 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1198776978577">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213097137342">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213097137344">
-                <link role="baseMethodDeclaration" targetNodeId="24.~HierarchicalChooseNodeComponent.&lt;init&gt;(jetbrains.mps.ide.action.ActionContext,jetbrains.mps.refactoring.framework.IDescendantsProvider,jetbrains.mps.smodel.SNode)" resolveInfo="HierarchicalChooseNodeComponent" />
-                <node role="actualArgument" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_ActionContext" id="1198776978581" />
+                <link role="baseMethodDeclaration" targetNodeId="24.~HierarchicalChooseNodeComponent.&lt;init&gt;(jetbrains.mps.smodel.IOperationContext,jetbrains.mps.refactoring.framework.IDescendantsProvider,jetbrains.mps.smodel.SNode)" resolveInfo="HierarchicalChooseNodeComponent" />
+                <node role="actualArgument" type="jetbrains.mps.logging.refactoring.structure.OperationContextExpression" id="1215088387769" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213097141172">
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213097141174">
                     <link role="baseMethodDeclaration" targetNodeId="24.~ConceptAncestorsProvider.&lt;init&gt;()" resolveInfo="ConceptAncestorsProvider" />

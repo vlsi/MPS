@@ -3,14 +3,12 @@ package jetbrains.mps.refactoring.framework;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyTree;
 import jetbrains.mps.ide.hierarchy.HierarchyTreeNode;
-import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import javax.swing.tree.TreePath;
 import java.util.HashSet;
 import java.util.Set;
@@ -25,14 +23,14 @@ import java.awt.*;
  */
 public class HierarchicalChooseNodeComponent extends JPanel implements IChooseComponent<SNode> {
   private MyHierarchyTree myHierarchyTree;
-  private ActionContext myActionContext;
+  private IOperationContext myOperationContext;
   private IDescendantsProvider myDescendantsProvider;
   private SNode myInitialNode;
   private String myPropertyName;
   private String myCaption;
 
-  public HierarchicalChooseNodeComponent(ActionContext actionContext, IDescendantsProvider descendantsProvider, SNode initialNode) {
-    myActionContext = actionContext;
+  public HierarchicalChooseNodeComponent(IOperationContext operationContext, IDescendantsProvider descendantsProvider, SNode initialNode) {
+    myOperationContext = operationContext;
     myDescendantsProvider = descendantsProvider;
     myInitialNode = initialNode;
 
@@ -57,7 +55,7 @@ public class HierarchicalChooseNodeComponent extends JPanel implements IChooseCo
     add(new JScrollPane(myHierarchyTree), constraints);
     setMinimumSize(new Dimension(350, 350));
     setPreferredSize(new Dimension(350, 350));
-    showHierarchy(myInitialNode, myActionContext.getOperationContext());
+    showHierarchy(myInitialNode, myOperationContext);
   }
 
   public void setCaption(String caption) {

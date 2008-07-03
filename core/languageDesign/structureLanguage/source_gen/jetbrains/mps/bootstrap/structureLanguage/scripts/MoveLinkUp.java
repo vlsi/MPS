@@ -177,7 +177,7 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
   public IChooseComponent<SNode> targetConcept_componentCreator(ActionContext actionContext, RefactoringContext refactoringContext) {
     SNode node = refactoringContext.getSelectedNode();
     SNode abstractConceptDeclaration = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration", false, false);
-    return new HierarchicalChooseNodeComponent(actionContext, new ConceptAncestorsProvider(), abstractConceptDeclaration);
+    return new HierarchicalChooseNodeComponent(refactoringContext.getCurrentOperationContext(), new ConceptAncestorsProvider(), abstractConceptDeclaration);
   }
 
   public boolean askForInfo(ActionContext actionContext, RefactoringContext refactoringContext) {
