@@ -31,12 +31,12 @@ public class BaseLanguageEditorPopup_ActionGroup extends CurrentProjectGroup {
 
   public void adjust() {
     {
-      BaseGroup gTo = ActionUtils.getGroup(EditorPopup_ActionGroup.ID);
+      BaseGroup gToBase = ActionUtils.getGroup(EditorPopup_ActionGroup.ID);
       BaseGroup gWhat = ActionUtils.getGroup(BaseLanguageEditorPopup_ActionGroup.ID);
-      if (gTo == null || gWhat == null) {
+      if (gToBase == null || gWhat == null) {
         return;
       }
-      gTo.add(gWhat);
+      gToBase.add(gWhat);
     }
   }
 

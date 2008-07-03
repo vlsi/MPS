@@ -52,7 +52,7 @@ public class MoveInitializerToConstructor_Intention extends BaseIntention implem
       SLinkOperations.insertChildFirst(SLinkOperations.getTarget(constr, "body", true), "statement", SNodeOperations.copyNode(assignmentStmt));
     }
     // 
-    SLinkOperations.deleteChild(node, "initializer");
+    SLinkOperations.removeChild(node, "initializer");
   }
 
   public Object[] getField(String key) {

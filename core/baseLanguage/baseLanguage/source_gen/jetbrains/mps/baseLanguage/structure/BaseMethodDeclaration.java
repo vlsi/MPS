@@ -115,19 +115,19 @@ public class BaseMethodDeclaration extends GenericDeclaration implements IValidI
     return this.getChildCount(BaseMethodDeclaration.THROWS_ITEM);
   }
 
-  public Iterator<ClassifierType> throwsItems() {
+  public Iterator<Type> throwsItems() {
     return this.children(BaseMethodDeclaration.THROWS_ITEM);
   }
 
-  public List<ClassifierType> getThrowsItems() {
+  public List<Type> getThrowsItems() {
     return this.getChildren(BaseMethodDeclaration.THROWS_ITEM);
   }
 
-  public void addThrowsItem(ClassifierType node) {
+  public void addThrowsItem(Type node) {
     this.addChild(BaseMethodDeclaration.THROWS_ITEM, node);
   }
 
-  public void insertThrowsItem(ClassifierType prev, ClassifierType node) {
+  public void insertThrowsItem(Type prev, Type node) {
     this.insertChild(prev, BaseMethodDeclaration.THROWS_ITEM, node);
   }
 

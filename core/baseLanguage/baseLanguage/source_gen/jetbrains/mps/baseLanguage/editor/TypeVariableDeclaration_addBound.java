@@ -8,17 +8,17 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
-public class _BaseMethodDeclaration_Actions {
+public class TypeVariableDeclaration_addBound {
 
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction("RIGHT_TRANSFORM", new _BaseMethodDeclaration_Actions._BaseMethodDeclaration_Actions_RIGHT_TRANSFORM(node));
+    editorCell.setAction("RIGHT_TRANSFORM", new TypeVariableDeclaration_addBound.TypeVariableDeclaration_addBound_RIGHT_TRANSFORM(node));
   }
 
-  public static class _BaseMethodDeclaration_Actions_RIGHT_TRANSFORM extends EditorCellAction {
+  public static class TypeVariableDeclaration_addBound_RIGHT_TRANSFORM extends EditorCellAction {
 
     /* package */SNode myNode;
 
-    public _BaseMethodDeclaration_Actions_RIGHT_TRANSFORM(SNode node) {
+    public TypeVariableDeclaration_addBound_RIGHT_TRANSFORM(SNode node) {
       this.myNode = node;
     }
 
@@ -27,7 +27,7 @@ public class _BaseMethodDeclaration_Actions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SLinkOperations.addNewChild(node, "throwsItem", "jetbrains.mps.baseLanguage.structure.Type");
+      SLinkOperations.setNewChild(node, "bound", "jetbrains.mps.baseLanguage.structure.Type");
     }
 
 }

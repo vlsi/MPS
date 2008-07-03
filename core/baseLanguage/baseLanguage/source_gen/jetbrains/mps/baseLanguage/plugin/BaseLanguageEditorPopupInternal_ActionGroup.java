@@ -25,12 +25,12 @@ public class BaseLanguageEditorPopupInternal_ActionGroup extends CurrentProjectG
 
   public void adjust() {
     {
-      BaseGroup gTo = ActionUtils.getGroup(EditorInternal_ActionGroup.ID);
+      BaseGroup gToBase = ActionUtils.getGroup(EditorInternal_ActionGroup.ID);
       BaseGroup gWhat = ActionUtils.getGroup(BaseLanguageEditorPopupInternal_ActionGroup.ID);
-      if (gTo == null || gWhat == null) {
+      if (gToBase == null || gWhat == null) {
         return;
       }
-      gTo.add(gWhat);
+      gToBase.add(gWhat);
     }
   }
 

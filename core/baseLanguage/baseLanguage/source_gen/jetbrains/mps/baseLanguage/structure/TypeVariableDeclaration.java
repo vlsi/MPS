@@ -8,6 +8,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import java.util.Iterator;
+import java.util.List;
 
 public class TypeVariableDeclaration extends BaseConcept implements IValidIdentifier, IResolveInfo {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration";
@@ -16,6 +18,9 @@ public class TypeVariableDeclaration extends BaseConcept implements IValidIdenti
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String RESOLVE_INFO = "resolveInfo";
+  public static String EXTENDS = "extends";
+  public static String BOUND = "bound";
+  public static String AUX_BOUNDS = "auxBounds";
 
   public TypeVariableDeclaration(SNode node) {
     super(node);
@@ -68,6 +73,42 @@ public class TypeVariableDeclaration extends BaseConcept implements IValidIdenti
 
   public void setResolveInfo(String value) {
     this.setProperty(TypeVariableDeclaration.RESOLVE_INFO, value);
+  }
+
+  public boolean getExtends() {
+    return this.getBooleanProperty(TypeVariableDeclaration.EXTENDS);
+  }
+
+  public void setExtends(boolean value) {
+    this.setBooleanProperty(TypeVariableDeclaration.EXTENDS, value);
+  }
+
+  public Type getBound() {
+    return (Type)this.getChild(TypeVariableDeclaration.BOUND);
+  }
+
+  public void setBound(Type node) {
+    super.setChild(TypeVariableDeclaration.BOUND, node);
+  }
+
+  public int getAuxBoundsesCount() {
+    return this.getChildCount(TypeVariableDeclaration.AUX_BOUNDS);
+  }
+
+  public Iterator<ClassifierType> auxBoundses() {
+    return this.children(TypeVariableDeclaration.AUX_BOUNDS);
+  }
+
+  public List<ClassifierType> getAuxBoundses() {
+    return this.getChildren(TypeVariableDeclaration.AUX_BOUNDS);
+  }
+
+  public void addAuxBounds(ClassifierType node) {
+    this.addChild(TypeVariableDeclaration.AUX_BOUNDS, node);
+  }
+
+  public void insertAuxBounds(ClassifierType prev, ClassifierType node) {
+    this.insertChild(prev, TypeVariableDeclaration.AUX_BOUNDS, node);
   }
 
 }

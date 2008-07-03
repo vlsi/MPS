@@ -24,7 +24,7 @@ public class typeof_PropertyReference_InferenceRule implements InferenceRule_Run
       }
       {
         SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(propertyReference);
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1201468086552", true), new QuotationClass_74().createNode(SNodeOperations.getAncestor(property, "jetbrains.mps.baseLanguage.structure.Classifier", false, false)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1201468086542", false, 0);
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(_nodeToCheck_1029348928467, "jetbrains.mps.baseLanguage.helgins", "1201468086552", true), new QuotationClass_73().createNode(SNodeOperations.getAncestor(property, "jetbrains.mps.baseLanguage.structure.Classifier", false, false)), _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.helgins", "1201468086542", false, 0);
       }
     }
   }

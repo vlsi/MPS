@@ -24,12 +24,12 @@ public class BaseLanguageNodeActionsInternal_ActionGroup extends CurrentProjectG
 
   public void adjust() {
     {
-      BaseGroup gTo = ActionUtils.getGroup(ProjectPaneNodeActionsInternal_ActionGroup.ID);
+      BaseGroup gToBase = ActionUtils.getGroup(ProjectPaneNodeActionsInternal_ActionGroup.ID);
       BaseGroup gWhat = ActionUtils.getGroup(BaseLanguageNodeActionsInternal_ActionGroup.ID);
-      if (gTo == null || gWhat == null) {
+      if (gToBase == null || gWhat == null) {
         return;
       }
-      gTo.add(gWhat);
+      gToBase.add(gWhat);
     }
   }
 

@@ -27,7 +27,7 @@ public class IfStatement_elseDelete_action {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SLinkOperations.deleteChild(node, "ifFalseStatement");
+      SLinkOperations.removeChild(node, "ifFalseStatement");
     }
 
 }

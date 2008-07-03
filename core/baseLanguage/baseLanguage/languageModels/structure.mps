@@ -294,7 +294,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="0..n" />
       <property name="role" value="throwsItem" />
-      <link role="target" targetNodeId="1107535904670" resolveInfo="ClassifierType" />
+      <link role="target" targetNodeId="1068431790189" resolveInfo="Type" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1212170354671">
       <link role="intfc" targetNodeId="1212170275853" resolveInfo="IValidIdentifier" />
@@ -1405,6 +1405,21 @@
     <property name="name" value="TypeVariableDeclaration" />
     <property name="package" value="type" />
     <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1214996933829">
+      <property name="name" value="extends" />
+      <link role="dataType" targetNodeId="4.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1214996921760">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="bound" />
+      <link role="target" targetNodeId="1068431790189" resolveInfo="Type" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1215091156086">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="auxBounds" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1107535904670" resolveInfo="ClassifierType" />
+    </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1212170629590">
       <link role="intfc" targetNodeId="1212170275853" resolveInfo="IValidIdentifier" />
     </node>

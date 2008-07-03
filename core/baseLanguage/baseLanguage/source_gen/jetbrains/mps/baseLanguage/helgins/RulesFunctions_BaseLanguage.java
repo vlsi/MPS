@@ -409,7 +409,7 @@ __switch__:
 
   /* package */static void check(Set<SNode> throwables, SNode mainNode) {
     for(SNode livingThrowable : new HashSet<SNode>(throwables)) {
-      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, new QuotationClass_91().createNode()) || TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, new QuotationClass_90().createNode())) {
+      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, new QuotationClass_90().createNode()) || TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, new QuotationClass_89().createNode())) {
         throwables.remove(livingThrowable);
       }
     }

@@ -31,7 +31,7 @@ public class LocalVariableDeclaration_Initializer_Actions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SLinkOperations.deleteChild(node, "initializer");
+      SLinkOperations.removeChild(node, "initializer");
     }
 
 }
