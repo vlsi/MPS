@@ -1774,11 +1774,15 @@
             <property name="noTargetText" value="&lt;no name&gt;" />
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="18.1169194664001" />
+            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleSheetItem" id="1215115108204">
+              <property name="value" value="0.0" />
+            </node>
           </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1081149570778">
         <property name="text" value="." />
+        <link role="styleClass" targetNodeId="1215096040201" resolveInfo="Dot" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1088427863670">
         <property name="noTargetText" value="&lt;no method&gt;" />
@@ -1788,6 +1792,7 @@
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1088427863672">
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
+            <link role="styleClass" targetNodeId="1215090647074" resolveInfo="MethodName" />
             <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1214314934150">
               <property name="style" value="ITALIC" />
             </node>

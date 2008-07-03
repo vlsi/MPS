@@ -36,6 +36,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell12257_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell12257_0");
+    BaseLanguageStyle_StyleSheet.DOT.apply(editorCell);
   }
 
   private static void setupBasic_staticMethodDeclarationRefCell12257_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -162,6 +163,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell12257_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell12257_0");
+      BaseLanguageStyle_StyleSheet.METHOD_NAME.apply(editorCell);
       {
         Style inlineStyle = new Style(editorCell) {
           {
@@ -223,6 +225,15 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_namePropertyCell12257_01(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_namePropertyCell12257_01");
+      {
+        Style inlineStyle = new Style(editorCell) {
+          {
+            this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+          }
+
+        };
+        inlineStyle.apply(editorCell);
+      }
     }
 
     private static void setupLabel_namePropertyCell12257_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
