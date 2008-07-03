@@ -47,6 +47,19 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
     ReturnStatement_Actions.setCellActions(editorCell, node, context);
   }
 
+  private static void setupBasic_ConstantCell17987_02(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell17987_02");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
   private static void setupLabel_expressionRefNodeCell17987_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -56,7 +69,14 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell17987_01(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupLabel_ConstantCell17987_02(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
   public static boolean renderingCondition17987_0(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "expression", true) != null;
+  }
+
+  public static boolean renderingCondition17987_01(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "expression", true) != null;
   }
 
@@ -72,6 +92,9 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.create_ConstantCell17987_01(context, node, "return"));
+    if (renderingCondition17987_01(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.create_ConstantCell17987_02(context, node, ""));
+    }
     if (renderingCondition17987_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_expressionRefNodeCell17987_0(context, node));
     }
@@ -91,6 +114,14 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_ConstantCell17987_01(editorCell, node, context);
     setupLabel_ConstantCell17987_01(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell create_ConstantCell17987_02(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_ConstantCell17987_02(editorCell, node, context);
+    setupLabel_ConstantCell17987_02(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
