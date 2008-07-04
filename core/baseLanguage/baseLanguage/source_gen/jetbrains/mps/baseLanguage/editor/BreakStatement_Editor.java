@@ -43,6 +43,7 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
       };
@@ -75,6 +76,8 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.EDITABLE, true);
+          this.set(StyleAttributes.PADDING_LEFT, 1.0);
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
       };
