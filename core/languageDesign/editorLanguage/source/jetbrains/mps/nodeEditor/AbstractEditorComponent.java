@@ -2413,7 +2413,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     public void actionPerformed(ActionEvent e) {
       for (final BaseAction action : myActions) {
         if (mySelectedCell != null && mySelectedCell.getSNode() != null) {
-          DataContext context = ActionUtils.createDataContext(DataManager.getInstance().getDataContext(AbstractEditorComponent.this, 100, 100), createActionContext());
+          DataContext context = ActionUtils.createDataContext(DataManager.getInstance().getDataContext(AbstractEditorComponent.this), createActionContext());
           AnActionEvent event = ActionUtils.createEvent(myPlace, context);
 
           action.update(event);
