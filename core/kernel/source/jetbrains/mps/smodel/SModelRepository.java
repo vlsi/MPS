@@ -459,6 +459,12 @@ public class SModelRepository implements ApplicationComponent {
     }
   }
 
+  private void fireModelFileChanged(IFile from, IFile to) {
+    for (SModelRepositoryListener l : listeners()) {
+      l.modelFileChanged(from, to);
+    }
+  }
+
   private void fireModelOwnerAdded(SModelDescriptor modelDescriptor, ModelOwner owner) {
     for (SModelRepositoryListener l : listeners()) {
       l.modelOwnerAdded(modelDescriptor, owner);
@@ -489,6 +495,14 @@ public class SModelRepository implements ApplicationComponent {
     for (SModelRepositoryListener listener : listeners()) {
       listener.beforeModelDeleted(modelDescriptor);
     }
+  }
+
+  public void setModelFile(DefaultSModelDescriptor defaultSModelDescriptor, IFile dest) {
+    IFile source = defaultSModelDescriptor.getModelFile();
+    removeModelFromFileCache(defaultSModelDescriptor);
+    defaultSModelDescriptor.setModelFile(dest);
+    addModelToFileCache(defaultSModelDescriptor);
+    fireModelFileChanged(source, dest);
   }
 
   private class ModelChangeListener extends SModelAdapter {
