@@ -12,14 +12,18 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ToStringComparator;
+import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.action.BaseAction;
 
+import javax.swing.JOptionPane;
+import java.awt.Frame;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -177,6 +181,27 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode> {
         }
       });
 
+      group.addSeparator();
+      group.add(new BaseAction("Rename") {
+        protected void doExecute(AnActionEvent e) {
+          Frame frame = NamespaceNode.this.getOperationContext().getMainFrame();
+          String newFolder = JOptionPane.showInputDialog(frame, "Enter new Folder", myName);
+          if (newFolder != null) {
+            if (newFolder.equals("")) {
+              newFolder = null;
+            }
+
+            ActionEventData data = new ActionEventData(e);
+
+            for (IModule m : getModulesUnder(NamespaceNode.this)) {
+              data.getMPSProject().setFolderFor(m, newFolder);
+            }
+
+            data.getMPSProject().getComponent(ProjectPane.class).rebuild();
+          }
+        }
+      });
+
       return group;
     }
 
@@ -194,15 +219,19 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode> {
     }
 
     private boolean hasModulesUnder(MPSTreeNode node) {
+      return getModelsUnder(node).size() > 0;
+    }
+
+    private List<IModule> getModulesUnder(MPSTreeNode node) {
+      List<IModule> modules = new ArrayList<IModule>();
       for (MPSTreeNode child : node) {
         if (child instanceof ProjectModuleTreeNode) {
-          return true;
+          modules.add(((ProjectModuleTreeNode) child).getModule());
         } else {
-          if (child instanceof SModelTreeNode) return false;
-          if (hasModulesUnder(child)) return true;
+          if (child instanceof NamespaceNode) modules.addAll(getModulesUnder(child));
         }
       }
-      return false;
+      return modules;
     }
 
     public String getName() {
