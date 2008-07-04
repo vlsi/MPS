@@ -1273,6 +1273,12 @@
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1164891084596">
               <property name="separatorText" value="," />
               <link role="relationDeclaration" targetNodeId="17.1164879685961" />
+              <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleSheetItem" id="1215196653093">
+                <property name="value" value="0.0" />
+              </node>
+              <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleSheetItem" id="1215196655033">
+                <property name="value" value="0.0" />
+              </node>
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1164891084597">
               <property name="text" value="{" />
