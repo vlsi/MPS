@@ -14,7 +14,7 @@
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2"/>
-  <maxImportIndex value="56"/>
+  <maxImportIndex value="57"/>
   <import index="1" modelUID="jetbrains.mps.ide.actions.nodes@java_stub" version="-1"/>
   <import index="2" modelUID="jetbrains.mps.ide.modelchecker@java_stub" version="-1"/>
   <import index="3" modelUID="jetbrains.mps.ide.actions.model@java_stub" version="-1"/>
@@ -39,6 +39,7 @@
   <import index="53" modelUID="jetbrains.mps.workbench.actions.generate@java_stub" version="-1"/>
   <import index="54" modelUID="jetbrains.mps.workbench.actions.goTo.actions@java_stub" version="-1"/>
   <import index="56" modelUID="jetbrains.mps.workbench.actions.build@java_stub" version="-1"/>
+  <import index="57" modelUID="jetbrains.mps.workbench.actions@java_stub" version="-1"/>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991215587">
     <property name="name" value="ProjectPaneNodeActions"/>
     <property name="id" value="ProjectPaneNodeActions"/>
@@ -795,8 +796,8 @@
     </node>
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents"
           id="1207148372239">
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1215010367817">
-        <link role="javaClass" targetNodeId="13.~ReloadAllAction" resolveInfo="ReloadAllAction"/>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1215189355311">
+        <link role="javaClass" targetNodeId="57.~ReloadAllAction" resolveInfo="ReloadAllAction"/>
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1215010257642"/>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983609908">

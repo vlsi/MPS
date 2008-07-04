@@ -4,12 +4,16 @@ package jetbrains.mps.ide.actions;
 
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.actions.tools.*;
+import jetbrains.mps.ide.actions.tools.CleanAllModulesAction;
+import jetbrains.mps.ide.actions.tools.InstallIDEAPluginAction;
+import jetbrains.mps.ide.actions.tools.MakeAllModulesAction;
+import jetbrains.mps.ide.actions.tools.RebuildAllModulesAction;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.CurrentProjectGroup;
 import jetbrains.mps.workbench.action.LabelledAnchor;
+import jetbrains.mps.workbench.actions.ReloadAllAction;
 
 public class Tools_ActionGroup extends CurrentProjectGroup {
   public static Logger LOG = Logger.getLogger(Tools_ActionGroup.class);
