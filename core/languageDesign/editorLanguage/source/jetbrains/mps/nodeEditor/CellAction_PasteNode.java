@@ -3,6 +3,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.datatransfer.CopyPasteUtil;
 import jetbrains.mps.datatransfer.PasteNodeData;
 import jetbrains.mps.datatransfer.PasteNodeUtil;
+import jetbrains.mps.datatransfer.PastePlaceHint;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.resolve.Resolver;
 import jetbrains.mps.smodel.*;
@@ -51,7 +52,12 @@ public class CellAction_PasteNode extends EditorCellAction {
     List<SNode> pasteNodes = pasteNodeData.getNodes();
     Set<SReference> requireResolveReferences = pasteNodeData.getRequireResolveReferences();
 
-    PasteNodeUtil.paste(selectedCell, pasteNodes);
+    if (isBeforePosition(selectedCell) && PasteNodeUtil.canPasteRelative(selectedNode, pasteNodes)) {
+      PasteNodeUtil.pasteRelative(selectedNode, pasteNodes, PastePlaceHint.BEFORE_ANCHOR);
+    } else {
+      PasteNodeUtil.paste(selectedCell, pasteNodes);
+    }
+
     Resolver.resolveReferences(requireResolveReferences, context.getOperationContext());
 
     // set selection
@@ -96,4 +102,8 @@ public class CellAction_PasteNode extends EditorCellAction {
     return cell;
   }
 
+  private boolean isBeforePosition(EditorCell cell) {
+    return cell instanceof EditorCell_Label && cell.getContainingBigCell().getFirstLeaf() == cell && ((EditorCell_Label) cell).getCaretPosition() == 0;
+  }
 }
+
