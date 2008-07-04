@@ -388,7 +388,7 @@
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/log">
       <fileset dir="log" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
-    <echo file="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/build.number">build.number=${build.number}${line.separator}revision.number=${build.vcs.number}${line.separator}configuration.name=${teamcity.buildConfName}</echo>
+    <echo file="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/build.number">build.number=${build.number}${line.separator}date=${DSTAMP}${line.separator}revision.number=${build.vcs.number}${line.separator}configuration.name=${teamcity.buildConfName}</echo>
     <copy file="entryPoints.xml" tofile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/entryPoints.xml" />
     <copy file="readme.txt" tofile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/readme.txt" />
     <copy file="mps.sh" tofile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/mps.sh" />
