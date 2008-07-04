@@ -83,7 +83,11 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
 
   protected void doInsertNode(SNode anchorNode, boolean insertBefore) {
     insertBefore = insertBefore != myIsReverseOrder;
-    getOwner().insertChild(anchorNode, getElementRole(), myInsertedNode, insertBefore);
+    if (anchorNode == null && insertBefore) {
+      getOwner().addChild(getElementRole(), myInsertedNode);
+    } else {
+      getOwner().insertChild(anchorNode, getElementRole(), myInsertedNode, insertBefore);
+    }
   }
 
   protected List<SNode> getNodesForList() {
