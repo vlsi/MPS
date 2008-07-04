@@ -66,18 +66,51 @@ public class MPSVCSManager implements ProjectComponent {
       @Override
       public void modelCreated(SModelDescriptor modelDescriptor) {
         IFile ifile = modelDescriptor.getModelFile();
-        if (ifile != null){
+        if (ifile != null) {
           VirtualFile f = VFileSystem.getFile(ifile);
-          if (f != null){
+          if (f != null) {
             addInternal(Collections.singletonList(f));
           }
         }
       }
 
       @Override
-      public void modelRenamed(SModelDescriptor modelDescriptor) {
+      public void modelFileChanged(IFile ifrom, IFile ito) {
+        if (ifrom != null) {
+          VirtualFile to = VFileSystem.getFile(ito);
+          VirtualFile from = VFileSystem.getFile(ifrom);
+          if (from != null) {
+            renameInternal(from, to);
+          }
+        }
       }
     };
+  }
+
+  private void renameInternal(final VirtualFile from, final VirtualFile to) {
+    final ProjectLevelVcsManager manager = ProjectLevelVcsManager.getInstance(myProject);
+//    System.out.println("rename from " + from + " to " + to);
+    invokeLater(new Runnable() {
+      public void run() {
+        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+          public void run() {
+            sheduleMissingFileInternal(manager, from);
+            sceduleUnversionedFileForAdditionInternal(to, manager);
+          }
+        });
+      }
+    });
+  }
+
+  private void sheduleMissingFileInternal(ProjectLevelVcsManager manager, VirtualFile file) {
+    AbstractVcs fromVCS = manager.getVcsFor(file);
+    if (fromVCS != null) {
+      CheckinEnvironment ci = fromVCS.getCheckinEnvironment();
+      if (ci != null && isUnderVCS(myProject, file)) {
+        FilePath path = VcsContextFactory.SERVICE.getInstance().createFilePathOn(file);
+        ci.scheduleMissingFileForDeletion(Collections.singletonList(path));
+      }
+    }
   }
 
   private void invokeLater(Runnable task) {
@@ -126,29 +159,7 @@ public class MPSVCSManager implements ProjectComponent {
 
     boolean result = true;
 
-    invokeLater(new Runnable() {
-      public void run() {
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
-          public void run() {
-            LocalFileSystem lfs = LocalFileSystem.getInstance();
-            for (VirtualFile vfile : inVCS) {
-              if (vfile != null) {
-                AbstractVcs vcs = manager.getVcsFor(vfile);
-                if (vcs != null) {
-                  CheckinEnvironment ci = vcs.getCheckinEnvironment();
-                  if (ci != null && isUnderVCS(myProject, vfile)) {
-                    FilePath path = VcsContextFactory.SERVICE.getInstance().createFilePathOn(vfile);
-                    ci.scheduleMissingFileForDeletion(Collections.singletonList(path));
-                  }
-                }
-              }
-            }
-          }
-        });
-      }
-    }
-
-    );
+    deleteInternal(inVCS);
 
     IProjectHandler projectHandler = myProject.getComponent(MPSProjectHolder.class).getMPSProject().getProjectHandler();
     if (projectHandler != null) {
@@ -167,6 +178,26 @@ public class MPSVCSManager implements ProjectComponent {
     return result;
   }
 
+  private void deleteInternal(final List<VirtualFile> inVCS) {
+    final ProjectLevelVcsManager manager = ProjectLevelVcsManager.getInstance(myProject);
+    invokeLater(new Runnable() {
+      public void run() {
+        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+          public void run() {
+            LocalFileSystem lfs = LocalFileSystem.getInstance();
+            for (VirtualFile vfile : inVCS) {
+              if (vfile != null) {
+                sheduleMissingFileInternal(manager, vfile);
+              }
+            }
+          }
+        });
+      }
+    }
+
+    );
+  }
+
   public boolean addFilesToVCS(final List<File> files) {
     List<VirtualFile> list = new LinkedList<VirtualFile>();
     for (File f : files) {
@@ -180,7 +211,7 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   public boolean addVFilesToVCS(final List<VirtualFile> files) {
-    System.out.println("adding files to vcs " + files);
+//    System.out.println("adding files to vcs " + files);
     final List<VirtualFile> inVCS = new LinkedList<VirtualFile>();
     List<File> notInVCS = new LinkedList<File>();
 
@@ -225,22 +256,26 @@ public class MPSVCSManager implements ProjectComponent {
               if (vf == null) {
                 continue;
               }
-              AbstractVcs vcs = manager.getVcsFor(vf);
-              if (vcs != null) {
-                CheckinEnvironment ci = vcs.getCheckinEnvironment();
-                if (ci != null && !isUnderVCS(myProject, vf)) {
-                  List<VirtualFile> vfs = new ArrayList<VirtualFile>();
-                  vfs.add(vf);
-                  List<VcsException> result = ci.scheduleUnversionedFilesForAddition(vfs);
-                  VcsDirtyScopeManager.getInstance(myProject).fileDirty(vf);
-                }
-              }
+              sceduleUnversionedFileForAdditionInternal(vf, manager);
             }
           }
         });
       }
     });
     return result;
+  }
+
+  private void sceduleUnversionedFileForAdditionInternal(VirtualFile vf, ProjectLevelVcsManager manager) {
+    AbstractVcs vcs = manager.getVcsFor(vf);
+    if (vcs != null) {
+      CheckinEnvironment ci = vcs.getCheckinEnvironment();
+      if (ci != null && !isUnderVCS(myProject, vf)) {
+        List<VirtualFile> vfs = new ArrayList<VirtualFile>();
+        vfs.add(vf);
+        List<VcsException> result = ci.scheduleUnversionedFilesForAddition(vfs);
+        VcsDirtyScopeManager.getInstance(myProject).fileDirty(vf);
+      }
+    }
   }
 
   public static boolean isUnderVCS(Project project, VirtualFile f) {

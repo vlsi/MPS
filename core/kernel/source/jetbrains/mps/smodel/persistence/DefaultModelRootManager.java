@@ -291,24 +291,17 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     SNodePointer.changeModelUID(oldModelUID, newModelUID);
 
     //set model file
-    ((DefaultSModelDescriptor) modelDescriptor).setModelFile(dest);
+    SModelRepository.getInstance().setModelFile((DefaultSModelDescriptor) modelDescriptor, dest);
 
     //create stub for an old UID
     String stubFileName = oldFileName.substring(0, oldFileName.lastIndexOf(MPSExtentions.DOT_MODEL)) + MPSExtentions.DOT_STUB;
     SModelDescriptor stubDescriptor = new StubModelDescriptor(this, FileSystem.getFile(stubFileName), oldModelUID, newModelUID);
     SModelRepository.getInstance().registerModelDescriptor(stubDescriptor, owner);
     stubDescriptor.save();
-    IFile stubDescriptorModelFile = stubDescriptor.getModelFile();
-
-    //vcs
-    Project ideaProject = project.createOperationContext().getProject();
-    MPSVCSManager manager = ideaProject.getComponent(MPSVCSManager.class);
-    boolean result = manager.deleteFilesAndRemoveFromVCS(CollectionUtil.asList(FileSystem.toFile(oldModelFile)));
-    result &= manager.addFilesToVCS(CollectionUtil.asList(FileSystem.toFile(dest)));
-    result &= manager.addFilesToVCS(CollectionUtil.asList(FileSystem.toFile(stubDescriptorModelFile)));
+//    IFile stubDescriptorModelFile = stubDescriptor.getModelFile();
 
     MPSModuleRepository.getInstance().invalidateCaches();
-    return result;
+    return true;
   }
 
   public void saveMetadata(@NotNull SModelDescriptor modelDescriptor) {

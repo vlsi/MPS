@@ -1,5 +1,7 @@
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.vfs.IFile;
+
 public interface SModelRepositoryListener {
 
   void modelCreated(SModelDescriptor modelDescriptor);
@@ -11,5 +13,7 @@ public interface SModelRepositoryListener {
   void modelRenamed(SModelDescriptor modelDescriptor);
   void modelOwnerAdded(SModelDescriptor modelDescriptor, ModelOwner owner);
   void modelOwnerRemoved(SModelDescriptor modelDescriptor, ModelOwner owner);
+
+  void modelFileChanged(IFile from, IFile to);
 }
 
