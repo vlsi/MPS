@@ -5,6 +5,8 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.watching.ModelChangesWatcher;
+import jetbrains.mps.watching.IModelFileCreatedListener;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.smodel.*;
@@ -66,7 +68,7 @@ public class MPSVCSManager implements ProjectComponent {
     myModelRepositoryListener = new SModelRepositoryAdapter() {
       @Override
       public void modelCreated(SModelDescriptor modelDescriptor) {
-        IFile ifile = modelDescriptor.getModelFile();
+        final IFile ifile = modelDescriptor.getModelFile();
         if (ifile != null) {
           VirtualFile f = VFileSystem.getFile(ifile);
           if (f != null) {
@@ -101,7 +103,6 @@ public class MPSVCSManager implements ProjectComponent {
 
   private void renameInternal(final VirtualFile from, final VirtualFile to) {
     final ProjectLevelVcsManager manager = ProjectLevelVcsManager.getInstance(myProject);
-//    System.out.println("rename from " + from + " to " + to);
     invokeLater(new Runnable() {
       public void run() {
         ApplicationManager.getApplication().runWriteAction(new Runnable() {
@@ -139,7 +140,6 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   public boolean deleteFilesAndRemoveFromVCS(List<File> files) {
-    System.out.println("deleting files from vcs " + files);
     List<VirtualFile> list = new LinkedList<VirtualFile>();
     for (File f : files) {
       VirtualFile file = VFileSystem.getFile(f);
@@ -224,7 +224,6 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   public boolean addVFilesToVCS(final List<VirtualFile> files) {
-//    System.out.println("adding files to vcs " + files);
     final List<VirtualFile> inVCS = new LinkedList<VirtualFile>();
     List<File> notInVCS = new LinkedList<File>();
 
